@@ -13,6 +13,7 @@
         <tr>
             <td>#
             </td>
+
             <td>
                 品名
             </td>
@@ -42,7 +43,11 @@
                 <%= product.id %>
             </td>
             <td>
-                <%= product.title %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url) %>
+              <% end %>
+
+              <center>  <%= product.title %> </center>
             </td>
             <td>
                 <%= simple_format(product.description) %>

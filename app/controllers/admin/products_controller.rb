@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticatd_user!
+  before_action :authenticate_user!
   before_action :admin_required
 
   def index
@@ -17,7 +17,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    if @product.find(params[:id])
+    if @product.update(product_params)
       redirect_to admin_products_path
     else
       render :edit
@@ -43,6 +43,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 end
