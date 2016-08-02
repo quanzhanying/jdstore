@@ -1,0 +1,21 @@
+<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Sign Up
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li> <%= link_to("I am a Customer", new_user_registration_path) %> </li>
+            <li> <%= link_to("I am a Seller", new_seller_registration_path) %> </li>
+        </ul>
+</li>
+
+<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Login
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li> <%= link_to("I am a Customer", new_user_session_path) %> </li>
+            <li> <%= link_to("I am a Seller", new_seller_session_path) %> </li>
+        </ul>
+</li>
