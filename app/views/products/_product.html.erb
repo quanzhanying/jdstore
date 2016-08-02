@@ -1,0 +1,9 @@
+<div class="col-md-3">
+  <div>
+    <%= image_tag(product.image_url, height: "200", width: "200") %>
+  </div>
+  <div>
+    <span><%= link_to(product.name, product_path(product)) %></span>
+    <span style="margin-left: 10px">$ <%= product.price %></span>
+  </div>
+</div>

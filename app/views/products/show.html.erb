@@ -1,0 +1,13 @@
+<div class="col-md-5">
+  <%= image_tag(@product.image_url, height: "400", width: "400") %>
+</div>
+<div class="col-md-7">
+    <h3><%= @product.name %></h3>
+    <p>
+      Remained Quantity: <%= @product.quantity%>
+    </p> 
+    <p>
+      Price: $ <%= @product.price %>
+    </p>
+    <button class="btn btn-primary">Add to Cart</button>
+</div>
