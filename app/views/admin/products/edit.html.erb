@@ -1,0 +1,17 @@
+<div class="col-md-4 col-md-offset-4">
+  <h1>Product Detail</h1>
+
+  <hr>
+
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <div class="form-group">
+      <%= f.input :name, input_html: {class: "form-control"} %>
+      <%= f.input :description, input_html: {class: "form-control"} %>
+      <%= f.input :quantity, as: :integer, input_html: {class: "form-control"} %>
+      <%= f.input :price, as: :decimal, input_html: {class: "form-control"} %>
+      <%= f.input :is_published, :label => "Published?" %>
+      <%= f.input :image %>
+    </div>
+    <%= f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submitting ..."} %>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("New Product", new_admin_product_path, class: "btn btn-primary btn-xs pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to(product.name, edit_admin_product_path(product)) %></td>
+          <td><%= product.description %></td>
+          <td><%= image_tag(product.image_url, height: "200", width: "200") %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.price %></td>
+          <td><%= render_product_status(product) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
