@@ -4,6 +4,7 @@
     <%= f.input :description, input_html: { class: "form-control" }, placeholder: "please input description" %>
     <%= f.input :price, input_html: { class: "form-control" }, placeholder: "please input price"  %>
     <%= f.input :quantity, input_html: { class: "form-control" }, placeholder: "please input quantity"  %>
+    <%= f.input :image, label: 'Image(only receive pic and must less than or equal to 10MB)' %>
   </div>
   <%= f.submit "Submit", class: "btn btn-default", data: {disable_with: "Submitting..."}%>
 <% end %>

@@ -1,21 +1,12 @@
-<div class="col-sm-12 col-md-3 col-lg-2">
-  <div class="thumbnail">
-    <%= link_to(admin_product_path(product)) do %>
-      <div>
-        <%= image_tag "avatar.jpg", {alt: "img", style: "max-width:100%;max-height:100%"}%>
-      </div>
-      <div style="margin: 10px 5px">
-        <p>
-          <span><%= product.title %></span> $ <span><%= product.price %></span>
-        </p>
-        <% if current_user.admin? %>
-          <p class="text-right">
-            <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-primary btn-xs") %>
-            <%= link_to("Delete", admin_product_path(product), class: "btn btn-danger btn-xs", method: :delete, data: {confirm: "Are you sure?"}) %>
-          </p>
-        <% end %>
-
-      </div>
-    <% end %>
-  </div>
-</div>
+<tr>
+  <td><%= link_to(product.id, admin_product_path(product)) %></td>
+  <td><%= product.title %></td>
+  <td><%= product.description %></td>
+  <td><%= product.quantity %></td>
+  <td><%= product.price %></td>
+  <td><%= product.created_at %></td>
+  <td>
+    <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-primary btn-xs") %>
+    <%= link_to("Delete", admin_product_path(product), class: "btn btn-danger btn-xs pull-right", method: :destroy, data: {confirm: "Are you sure?"}) %>
+  </td>
+</tr>
