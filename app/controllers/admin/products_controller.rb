@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :require_is_admin
 
     def index
       @products=Product.all
@@ -8,7 +10,6 @@ class Admin::ProductsController < ApplicationController
     def new
       @product=Product.new
       @product.user=current_user
-
     end
 
     def create
@@ -41,8 +42,11 @@ class Admin::ProductsController < ApplicationController
 
     def show
       @product=Product.find(params[:id])
-      
+
     end
+
+
+
 
     private
 
@@ -50,5 +54,12 @@ class Admin::ProductsController < ApplicationController
       params.require(:product).permit(:title, :description, :quantity, :price, :image)
     end
 
+    def require_is_admin
+      @user=current_user
+      if @user.is_admin == false
+        flash[:alert]="You are not admin!"
+        redirect_to root_path
+      end
+    end
 
 end

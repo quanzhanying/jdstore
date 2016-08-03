@@ -1,30 +1,27 @@
-<div class="">
+<div class="col-md-12">
   <%= link_to("Add a product",new_admin_product_path,class:"btn btn-default") %>
 </div>
-<div class="">
-    <table>
-      <% @products.each do |product| %>
-      <tr>
-        <td>
-          <%= link_to(product.image,admin_product_path(product)) %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= product.title %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= product.price %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= link_to("Edit",edit_admin_product_path(product),class:"btn btn-default") %>
-          <%= link_to("Delete",admin_product_path(product), method: :delete, class:"btn btn-default") %>
-        </td>
-      </tr>
-    <% end %>
-    </table>
+
+<div class="col-md-12">
+<div class="row">
+<% @products.each do |product| %>
+
+  <div class="col-sm-5 col-md-2">
+    <div class="thumbnail">
+      <%= link_to(product.image)%>
+      <div class="caption">
+        <h5><%= link_to(product.title,admin_product_path(product)) %></h5>
+        <p>
+          <%= link_to(product.price,admin_product_path(product)) %>
+        </p>
+        <p><%= link_to("Edit",edit_admin_product_path(product)) %> ｜
+          <%= link_to("Delete",admin_product_path(product), method: :delete) %>
+        </p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+      </div>
+    </div>
+  </div>
+
+<% end %>
+</div>
 </div>

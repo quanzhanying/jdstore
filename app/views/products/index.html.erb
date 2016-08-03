@@ -1,0 +1,20 @@
+<div class="col-md-12">
+<div class="row">
+<% @products.each do |product| %>
+
+  <div class="col-sm-5 col-md-3">
+    <div class="thumbnail">
+      <!-- <img src="..." alt="..."> -->
+      <div class="caption">
+        <h5><%= link_to(product.title,product_path(product)) %></h5>
+        <p>
+            <%= product.price %>
+        </p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+      </div>
+    </div>
+  </div>
+
+<% end %>
+</div>
+</div>

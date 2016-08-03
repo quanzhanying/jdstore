@@ -1,4 +1,7 @@
 <div class="col-md-12">
+  <%= link_to("Back to index",products_path,class:"btn btn-default") %>
+</div>
+<div class="col-md-12">
   <div class="row">
 
     <div class="col-sm-5 col-md-3">
@@ -6,9 +9,11 @@
         <!-- <img src="..." alt="..."> -->
         <div class="caption">
           <h5><%= @product.title %></h5>
-          <p><%= @product.description %></p>
-          <p><%= link_to("Edit",edit_admin_product_path(@product)) %> ｜
-            <%= link_to("Delete",admin_product_path(@product), method: :delete) %>
+          <ul>
+              <li><%= @product.description %></li>
+              <li><%= @product.quantity %></li>
+              <li><%= @product.price %></li>
+          </ul>
           </p>
           <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
         </div>
