@@ -10,5 +10,18 @@
         </p>
       </div>
     <% end %>
+    <div>
+      <p class="text-right">
+        <% if current_user && current_user.is_bookmark_of?(product) %>
+          <%= link_to(unlike_user_path(product)) do%>
+            <i class="fa fa-heart fa-1" aria-hidden="true"></i>
+          <% end %>
+        <% else %>
+          <%= link_to(like_user_path(product)) do%>
+            <i class="fa fa-heart-o fa-1" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
   </div>
 </div>

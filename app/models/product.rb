@@ -20,4 +20,7 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :quantity, numericality: { greater_than: 0 }
   validates :price, numericality: true
+
+  has_many :product_relations
+  has_many :members, through: :product_relations, source: :user
 end

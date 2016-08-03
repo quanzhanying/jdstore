@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">JD</a>
+      <a href="/" class="navbar-brand">JD</a>
     </div>
 
     <div class="nav collapse navbar-collapse" id="jdmenu">
@@ -18,6 +18,9 @@
         <li class="dropdown">
           <a href="" class="dropdown-toglle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <% if !current_user.is_admin? %>
+              <li><%= link_to("bookmarkList", bookmarks_user_path(1)) %></li>
+            <% end %>
             <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
           </ul>
         </li>
