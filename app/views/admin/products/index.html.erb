@@ -1,0 +1,7 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <%= link_to("add new product", new_admin_product_path, class: "btn btn-default pull-right") %>
+</div>
+
+<div class="row">
+<%= render partial: "product_item", collection: @products, as: "product" %>
+</div>
