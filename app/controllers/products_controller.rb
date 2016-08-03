@@ -1,7 +1,4 @@
-class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :admin_required
-
+class ProductsController < ApplicationController
 
   def index
     @products = Product.all
@@ -21,9 +18,8 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
     if @product.save
-      redirect_to root_path, notice: "Success"
+      redirect_to root_path
     else
       render :new
     end
@@ -32,7 +28,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to root_path, notice: "Update success"
+      redirect_to root_path, notice: "Update Success"
     else
       render :edit
     end
@@ -41,7 +37,6 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to root_path, alert: "Product Deleted"
   end
 
   private
