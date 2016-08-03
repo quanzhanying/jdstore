@@ -18,7 +18,10 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <%= link_to("注销", destroy_user_session_path, method: :delete) %>
+                        <li>
+                            <%= link_to("注销", destroy_user_session_path, method: :delete) %>
+                        </li>
+
                     </ul>
                 </li>
                 <% end %>
