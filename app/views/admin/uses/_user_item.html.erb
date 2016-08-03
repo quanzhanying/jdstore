@@ -1,0 +1,13 @@
+<% if user.role == 1 %>
+  <tr class="success">
+<% else %>
+  <tr class="active">
+<% end %>
+  <td><%= user.id %></td>
+  <td><%= user.email %></td>
+  <td><%= user.created_at %></td>
+  <td>
+    <%= link_to("ToBeAdmin", to_admin_admin_use_path(user), class: "btn btn-danger") %>
+    <%= link_to("ToBeUser", to_user_admin_use_path(user), class: "btn btn-primary") %>
+  </td>
+</tr>

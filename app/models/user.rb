@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  is_admin               :boolean          default(FALSE)
+#  role                   :integer          default(0)
 #
 
 class User < ApplicationRecord
@@ -27,5 +28,19 @@ class User < ApplicationRecord
 
   def admin?
     self.is_admin
+  end
+
+  def to_user!
+    if self.role != 0
+      self.role = 0
+      self.save
+    end
+  end
+
+  def to_admin!
+    if self.role != 1
+      self.role = 1
+      self.save
+    end
   end
 end
