@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-12 col-md-4 col-lg-4">
+    <div class="thumbnail">
+      <%= image_tag "avatar.jpg", {alt: "pic", style: "max-width:100%;max-height:100%"} %>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+    <div>
+      <h3><%= @product.title %></h3>
+      <p>
+        quantity: <span><%= @product.quantity %></span>
+      </p>
+      <p>
+        $ <span><%= @product.price %></span>
+      </p>
+      <%= link_to("add to car", "#", class: "btn btn-danger") %>
+    </div>
+  </div>
+
+</div>
