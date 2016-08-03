@@ -1,0 +1,7 @@
+<div class="col-md-7">
+        <%= image_tag(@item.image.medium.url, class: "img-rounded") if @item.image? %>
+</div>
+
+<div class="col-md-3">
+	<%= link_to("Add to Chart", "#", :class => "btn btn-default" ) %>
+</div>
