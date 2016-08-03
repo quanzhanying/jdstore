@@ -1,17 +1,13 @@
-<div class="row">
-  <div class="col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-    <table class="table">
-      <thead>
-        <tr>
-          <td>#</td>
-          <td>Email</td>
-          <td>Created At</td>
-          <td>Manager Operation</td>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render partial: "user_item", collection: @users, as: "user" %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Email</td>
+      <td>Created At</td>
+      <td>Manager Operation</td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "user_item", collection: @users, as: "user" %>
+  </tbody>
+</table>
