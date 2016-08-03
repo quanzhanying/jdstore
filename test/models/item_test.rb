@@ -10,6 +10,7 @@
 #  quantity    :integer
 #  price       :float
 #  user_id     :integer
+#  image       :string
 #
 
 require 'test_helper'

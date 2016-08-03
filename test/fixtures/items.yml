@@ -10,6 +10,7 @@
 #  quantity    :integer
 #  price       :float
 #  user_id     :integer
+#  image       :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

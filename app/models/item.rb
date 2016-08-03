@@ -10,13 +10,17 @@
 #  quantity    :integer
 #  price       :float
 #  user_id     :integer
+#  image       :string
 #
 
 class Item < ApplicationRecord
 	validates :title, presence: true
 	validates :description, presence: true
-	validates :quantity, numericality: { greater_or_equal_to: 0}
-	validates :price, numericality: { greater_or_equal_to: 0.0}
+	validates :quantity, numericality: { greater_or_equal_to: 0 }
+	validates :price, numericality: { greater_or_equal_to: 0.0 }
 
 	belongs_to :user
+
+	mount_uploader :image, ImageUploader
+
 end
