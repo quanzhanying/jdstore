@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to(product_iteration.index + 1, product_path(product)) %></td>
+  <td><%= product.title %></td>
+  <td><%= product.price %></td>
+  <td>
+    <%= link_to("unlike", unlike_user_path(product, location: "bookmarklist"), class: "btn btn-danger btn-xs", method: :get, data: {confirm: "Are you sure?"}) %>
+  </td>
+</tr>

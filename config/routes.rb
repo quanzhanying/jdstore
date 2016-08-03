@@ -12,5 +12,13 @@ Rails.application.routes.draw do
   end
 
   resources :products
+
+  resources :users do
+    member do
+      get :like
+      get :unlike
+      get :bookmarks
+    end
+  end
   root 'products#index'
 end

@@ -25,6 +25,20 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :product_relations
+  has_many :bookmarked_products, :through => :product_relations, :source => :product
+
+  def add_bookmark!(product)
+    bookmarked_products << product
+  end
+
+  def removebookmark!(product)
+    bookmarked_products.delete(product)
+  end
+
+  def is_bookmark_of?(product)
+    bookmarked_products.include?(product)
+  end
 
   def admin?
     self.is_admin
