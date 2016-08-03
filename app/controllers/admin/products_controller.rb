@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
     before_action :authenticate_user!
+    before_action :admin_required
     def index
         @products = Product.all
     end
@@ -34,10 +35,10 @@ class Admin::ProductsController < ApplicationController
         end
     end
 
-    def desroy
+    def destroy
         @product = Product.find(params[:id])
         @product.destroy
-        redirect_to admin_products_path
+        redirect_to admin_products_path, alert: "产品成功删除"
     end
 
     private
@@ -45,5 +46,7 @@ class Admin::ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:title, :description, :quantity, :price)
     end
+
+
 
 end
