@@ -30,7 +30,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to admin_products_path notice: "product updated success."
+      redirect_to admin_products_path, notice: "product updated success."
     else
       render "edit"
     end
@@ -39,7 +39,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to admin_jobs_path alert: "product deleted success."
+    redirect_to admin_products_path, alert: "product deleted success."
   end
 
   private
