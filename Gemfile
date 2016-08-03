@@ -34,6 +34,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'annotate'
 gem 'carrierwave'
+gem 'mini_magick'
 
 
 

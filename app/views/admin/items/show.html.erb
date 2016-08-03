@@ -2,10 +2,16 @@
 
       <tr>
         <td>
-          <%= link_to(@item.title, admin_item_path(@item)) %>
+          <%= image_tag(@item.image.small_thumb.url) if @item.image? %>
         </td>
         <td>
           <%= @item.description %>
+        </td>
+        <td>
+          <%= @item.quantity%>
+        </td>
+        <td>
+          <%= @item.price%>
         </td>
         <td>
           <%= @item.created_at %>
@@ -17,3 +23,4 @@
       </tr>
 
 </table>
+

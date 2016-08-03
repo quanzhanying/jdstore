@@ -1,0 +1,15 @@
+<table class="table">
+
+  <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= image_tag(item.image.thumb.url) if item.image? %>
+        </td>
+        <td>
+          <%= item.created_at %>
+        </td>
+      </tr>
+  <% end %>
+
+</table>
+
