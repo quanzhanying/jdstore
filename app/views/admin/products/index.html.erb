@@ -1,26 +1,30 @@
-
-<table>
-  <% @products.each do |product| %>
-  <tr>
-    <td>
-      <%= product.image %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <%= product.title %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <%= product.price %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <%= link_to("Edit",edit_admin_product_path(product),class:"btn btn-default") %>
-      <%= link_to("Delete",admin_product_path(product), method: :delete, class:"btn btn-default") %>
-    </td>
-  </tr>
-<% end %>
-</table>
+<div class="">
+  <%= link_to("Add a product",new_admin_product_path,class:"btn btn-default") %>
+</div>
+<div class="">
+    <table>
+      <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.image %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= product.title %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= product.price %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= link_to("Edit",edit_admin_product_path(product),class:"btn btn-default") %>
+          <%= link_to("Delete",admin_product_path(product), method: :delete, class:"btn btn-default") %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+</div>
