@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     member do
       get :like
       get :unlike
+    end
+    collection do
       get :bookmarks
     end
   end
