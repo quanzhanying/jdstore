@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin, @product] do |product| %>
+  <div class="form-group">
+    <%= product.input :title,label: "产品名称",input_html:{class: "form-control"} %>
+    <%= product.input :description,label: "产品描述",input_html:{class: "form-control"} %>
+    <%= product.input :price,label: "售价",input_html:{class: "form-control"} %>
+    <%= product.input :quantity,label: "库存",input_html:{class: "form-control"} %>
+    <%= product.input :is_on_shelf,label: "是否上架" %>
+    <%#= prouct.input :is_hidden%>
+  </div>
+
+  <%= product.submit "Submit",class: "btn btn-primary",data: {disable_with: "Submiting..."} %>
+<% end %>
