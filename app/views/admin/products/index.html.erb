@@ -6,7 +6,7 @@
       <% @products.each do |product| %>
       <tr>
         <td>
-          <%= product.image %>
+          <%= link_to(product.image,admin_product_path(product)) %>
         </td>
       </tr>
       <tr>

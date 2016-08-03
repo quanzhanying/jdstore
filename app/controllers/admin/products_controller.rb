@@ -39,6 +39,11 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path
     end
 
+    def show
+      @product=Product.find(params[:id])
+      
+    end
+
     private
 
     def params_product
