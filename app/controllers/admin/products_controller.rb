@@ -44,12 +44,6 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-  def require_admin
-    if !current_user.admin?
-      redirect_to "/", alert: "permission denied."
-    end
-  end
-
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price)
   end
