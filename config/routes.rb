@@ -6,7 +6,14 @@ Rails.application.routes.draw do
 
     namespace :admin do
         resources :products
+        resources :usertypes do
+            member do
+                post :set_admin
+                post :set_user
+            end
+        end
     end
+
 
 
 end

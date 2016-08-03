@@ -1,0 +1,43 @@
+<h1 class="text-center">管理用户权限</h1>
+<table class="table table-boldered">
+    <thead>
+        <tr>
+            <td>
+                #
+            </td>
+            <td>
+                用户邮箱
+            </td>
+            <td>
+                操作
+            </td>
+            <td>
+                创建时间
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @usertypes.each do |f| %>
+        <tr>
+            <td>
+                #
+            </td>
+            <td>
+                <%= f.email %>
+            </td>
+            <td>
+                <% if f.is_admin  %>
+                <%= link_to("设为用户", set_user_admin_usertype_path(f), method: :post, class: "btn btn-default") %>
+            <% else %>
+                <%= link_to("设为管理员",set_admin_admin_usertype_path(f) , method: :post, class: "btn btn-primary")%>
+                <% end %>
+
+            </td>
+            <td>
+                <%= f.created_at %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+
+</table>

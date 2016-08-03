@@ -1,4 +1,7 @@
 <h1 class="text-center">产品名称</h1>
+<div class="pull-right">
+    <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary")  %>
+</div>
 <table class="table table-boldered">
     <thead>
         <tr>
@@ -32,13 +35,13 @@
                 #
             </td>
             <td>
-                <%= link_to(product.title, new_admin_product_path(product)) %>
+                <%= link_to(product.title, edit_admin_product_path(product)) %>
             </td>
             <td>
                 <%= product.description %>
             </td>
             <td>
-                <%=product.quantity %>
+                <%= product.quantity %>
             </td>
             <td>
                 <%= product.price %>
