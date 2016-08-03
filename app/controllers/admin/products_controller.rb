@@ -41,13 +41,13 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to root_path, alert: "Product Deleted"
+    redirect_to admin_products_path, alert: "Product Deleted"
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 
 end

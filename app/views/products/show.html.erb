@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <div class="product">
+    <%= link_to("加入购物车", "#",class: "btn btn-danger pull-right")%>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+      <td></td>
+      <td></td>
+      <td>数量</td>
+      <td>价格</td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td><%= image_tag @product.image.medium %></td>
+  <td><h2><%= @product.title%></h2></td>
+  <td><%= @product.quantity %></td>
+  <td><%= @product.price %></td>
+</tr>
+</tbody>
+</table>
+
+
+
+</div>
