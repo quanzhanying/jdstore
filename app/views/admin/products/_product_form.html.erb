@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, item] do |f| %>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: "form-control" }, placeholder: "please input title" %>
+    <%= f.input :description, input_html: { class: "form-control" }, placeholder: "please input description" %>
+    <%= f.input :price, input_html: { class: "form-control" }, placeholder: "please input price"  %>
+    <%= f.input :quantity, input_html: { class: "form-control" }, placeholder: "please input quantity"  %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-default", data: {disable_with: "Submitting..."}%>
+<% end %>
