@@ -1,15 +1,14 @@
-<table class="table">
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-md-3">
+        <%= image_tag(item.image.thumb.url, class: "img-rounded") if item.image? %>
+        <p><%= item.title %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-  <% @items.each do |item| %>
-      <tr>
-        <td>
-          <%= image_tag(item.image.thumb.url) if item.image? %>
-        </td>
-        <td>
-          <%= item.created_at %>
-        </td>
-      </tr>
-  <% end %>
 
-</table>
+
 
