@@ -8,7 +8,7 @@
 
   <div class="col-sm-5 col-md-2">
     <div class="thumbnail">
-      <%= link_to(product.image)%>
+      <%= image_tag(product.image.medium.url) %>
       <div class="caption">
         <h5><%= link_to(product.title,admin_product_path(product)) %></h5>
         <p>
