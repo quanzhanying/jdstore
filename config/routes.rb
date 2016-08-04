@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :products
     resources :uses do
       member do
-        get :to_admin
-        get :to_user
+        get :upgrade_to_admin
+        get :degrade_to_user
       end
     end
   end

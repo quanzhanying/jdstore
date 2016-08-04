@@ -7,15 +7,15 @@ class Admin::UsesController < ApplicationController
     @users = User.all
   end
 
-  def to_admin
+  def upgrade_to_admin
     @user = User.find(params[:id])
-    @user.to_admin!
+    @user.upgrade_to_admin!
     redirect_to admin_uses_path, notice: "updated to admin success"
   end
 
-  def to_user
+  def degrade_to_user
     @user = User.find(params[:id])
-    @user.to_user!
+    @user.degrade_to_user!
     redirect_to admin_uses_path, notice: "updated to user success"
   end
 

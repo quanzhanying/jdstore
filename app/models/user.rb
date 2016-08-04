@@ -32,11 +32,11 @@ class User < ApplicationRecord
     bookmarked_products << product
   end
 
-  def removebookmark!(product)
+  def remove_bookmark!(product)
     bookmarked_products.delete(product)
   end
 
-  def is_bookmark_of?(product)
+  def alrady_bookmark?(product)
     bookmarked_products.include?(product)
   end
 
@@ -44,14 +44,14 @@ class User < ApplicationRecord
     self.is_admin
   end
 
-  def to_user!
+  def degrade_to_user!
     if self.role != 0
       self.role = 0
       self.save
     end
   end
 
-  def to_admin!
+  def upgrade_to_admin!
     if self.role != 1
       self.role = 1
       self.save

@@ -7,7 +7,10 @@
   <td><%= user.email %></td>
   <td><%= user.created_at %></td>
   <td>
-    <%= link_to("ToBeAdmin", to_admin_admin_use_path(user), class: "btn btn-danger") %>
-    <%= link_to("ToBeUser", to_user_admin_use_path(user), class: "btn btn-primary") %>
+    <% if user.role == 1 %>
+      <%= link_to("degrade", degrade_to_user_admin_use_path(user), class: "btn btn-primary") %>
+    <% else %>
+      <%= link_to("upgrade", upgrade_to_admin_admin_use_path(user), class: "btn btn-danger") %>
+    <% end %>
   </td>
 </tr>
