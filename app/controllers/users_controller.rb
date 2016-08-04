@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def like
     @product = Product.find(params[:id])
 
-    if !current_user.is_bookmark_of?(@product)
+    if !current_user.alrady_bookmark?(@product)
       current_user.add_bookmark!(@product)
       flash[:notice] = "Successfully like the product."
     else
@@ -37,8 +37,8 @@ class UsersController < ApplicationController
   def unlike
     @product = Product.find(params[:id])
 
-    if current_user.is_bookmark_of?(@product)
-      current_user.removebookmark!(@product)
+    if current_user.alrady_bookmark?(@product)
+      current_user.remove_bookmark!(@product)
       flash[:alert] = "Successfully unlike the product."
     else
       flash[:alert] = "You haven't like the product."
