@@ -3,15 +3,6 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def create
-    @product = Product.new(product_params)
-    if @product.save
-        redirect_to products_path, notice: "Created!"
-    else
-        render :new
-    end
-  end
-
   def show
     @product = Product.find(params[:id])
   end
