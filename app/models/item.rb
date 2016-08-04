@@ -20,6 +20,8 @@ class Item < ApplicationRecord
 	validates :price, numericality: { greater_or_equal_to: 0.0 }
 
 	belongs_to :user
+	has_many :relationship_item_and_users
+	has_many :fans, :through => :relationship_item_and_users, source: :user
 
 	mount_uploader :image, ImageUploader
 

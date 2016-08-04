@@ -3,6 +3,7 @@
     <% @items.each do |item| %>
       <div class="col-md-3">
         <%= render_image_link(item) %>
+        <p><%= link_to("Like", addToFavorites_customer_favorite_path(item), method: :post, class: "btn btn-sm btn-default") %></p>
       </div>
     <% end %>
   </div>

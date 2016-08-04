@@ -6,6 +6,8 @@
         <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+    	<li> <%= link_to("User Panel", customer_favorites_path) %> </li>
+        <li class="divider"></li>
         <li> <%= link_to("Logout", destroy_user_session_path, method: :delete) %> </li>
 
     </ul>

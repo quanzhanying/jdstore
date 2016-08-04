@@ -10,6 +10,19 @@ Rails.application.routes.draw do
 
   end
 
+  namespace :customer do
+
+  	resources :favorites do
+
+      member do
+        post :addToFavorites
+        post :removeFromFavorites
+      end
+      
+    end
+
+  end
+
   root "items#index"
   
 end

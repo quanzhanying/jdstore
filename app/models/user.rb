@@ -25,6 +25,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :items, dependent: :destroy
+         has_many :relationship_item_and_users
+         has_many :favorited_items, :through => :relationship_item_and_users, source: :item
 
          def admin?
          	is_admin
