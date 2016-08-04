@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-md-3">
+      	<p><%= item.title %></p>
+        <%= render_thumb_image_link(item) %>
+        <p><%= render_add_to_favorites_botton(item) %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
