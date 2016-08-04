@@ -1,0 +1,13 @@
+<% @products.each do |product| %>
+<div class="col-md-2">
+    <div class="img-thumbnail">
+        <%= link_to(image_tag(product.image.thumb),product_path(product)) %>
+    </div>
+        <br><br>
+    <div>
+            <%= product.title %> ¥
+            <%= product.price %>
+    </div>
+</div>
+
+<% end %>
