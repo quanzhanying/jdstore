@@ -1,19 +1,35 @@
+<div  class="col-md-12">
+  <%= link_to("Back to index",admin_products_path,class:"btn btn-primary",style:"margin-bottom:10px; background-color:#ea010f") %>
+</div>
+
+
 <div class="col-md-12">
   <div class="row">
-
-    <div class="col-sm-5 col-md-3">
-      <div class="thumbnail">
+    <div class="col-sm-10 col-md-10">
+      <div class="thumbnail showproduct">
         <!-- <img src="..." alt="..."> -->
-        <div class="caption">
-          <h5><%= @product.title %></h5>
-          <p><%= @product.description %></p>
-          <p><%= link_to("Edit",edit_admin_product_path(@product)) %> ｜
-            <%= link_to("Delete",admin_product_path(@product), method: :delete) %>
-          </p>
-          <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+        <div class="caption showproduct-font">
+          <div class="media-left">
+            <%= image_tag @product.image.medium %>
+          </div>
+
+          <div class="media-body">
+            <div style=" margin-left: 30px">
+                <h2 class="media-heading"><%= @product.title %></h2>
+                Description: <%= @product.description %><br/>
+                Quantity: <%= @product.quantity %><br/>
+                Price: <%= @product.price %><br/>
+                <div style="margin-top:10px">
+                  <%= link_to("Edit",edit_admin_product_path(@product),class:"btn btn-success") %>
+                  <%= link_to("Delete",admin_product_path(@product), method: :delete, class:"btn btn-danger") %>
+                </div>
+
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
-
   </div>
 </div>
