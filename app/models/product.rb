@@ -23,4 +23,20 @@ class Product < ApplicationRecord
 
   has_many :product_relations
   has_many :members, through: :product_relations, source: :user
+
+  scope :is_publish, -> {where is_publish: true}
+
+  def publish!
+    if !self.is_publish
+      self.is_publish = true
+      self.save
+    end
+  end
+
+  def hide!
+    if self.is_publish
+      self.is_publish = false
+      self.save
+    end
+  end
 end

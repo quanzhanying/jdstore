@@ -7,6 +7,11 @@
   <td><%= product.created_at %></td>
   <td>
     <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-primary btn-xs") %>
-    <%= link_to("Delete", admin_product_path(product), class: "btn btn-danger btn-xs pull-right", method: :destroy, data: {confirm: "Are you sure?"}) %>
+    <%= link_to("Delete", admin_product_path(product), class: "btn btn-danger btn-xs", method: :destroy, data: {confirm: "Are you sure?"}) %>
+    <% if product.is_publish %>
+      <%= link_to("Hide", hide_admin_product_path(product), class: "btn btn-warning btn-xs") %>
+    <% else %>
+      <%= link_to("Publish", publish_admin_product_path(product), class: "btn btn-success btn-xs") %>
+    <% end %>
   </td>
 </tr>
