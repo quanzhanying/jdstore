@@ -4,15 +4,29 @@
 
 <br><br>
 
-<table class="table table-boldered">
-  <% @products.each do |job| %>
+<table class="table table boldered">
   <tr>
+
+    <td>#</td>
+    <td>品名</td>
+    <td>叙述</td>
+    <td>库存</td>
+    <td>价格</td>
+    <td>选项</td>
+    <td>创建日期<td>
+
+  <tr>
+
+  <% @products.each_with_index do |product, index| %>
+
+    <td><%= index + 1 %></td>
+    <td><%= link_to(product.title, product_path(product)) %></td>
+    <td><%= link_to(product.description, product_path(product)) %></td>
+    <td><%= link_to(product.quantity, product_path(product)) %></td>
+    <td><%= link_to(product.price, product_path(product)) %></td>
     <td>
-      <%= link_to(product.title, admin_product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %> |
-      <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <%= link_to("Edit", edit_product_path(product)) %> |
+      <%= link_to("Destroy", product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td>
       <%= product.created_at %>
