@@ -43,6 +43,24 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path, alert: "product deleted success."
   end
 
+  def publish
+    @product = Product.find(params[:id])
+    if @product.publish!
+      redirect_to admin_products_path, notice: "product publish success."
+    else
+      redirect_to admin_products_path, alert: "product publish faild."
+    end
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+    if @product.hide!
+      redirect_to admin_products_path, notice: "product hide success."
+    else
+      redirect_to admin_products_path, alert: "product hide faild."
+    end
+  end
+
   private
 
   def product_params
