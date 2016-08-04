@@ -4,17 +4,30 @@
 <div class="col-md-12">
   <div class="row">
 
-    <div class="col-sm-5 col-md-3">
+    <div class="col-sm-5 col-md-8">
       <div class="thumbnail">
         <!-- <img src="..." alt="..."> -->
         <div class="caption">
           <h5><%= @product.title %></h5>
-          <ul>
-              <li><%= @product.description %></li>
-              <li><%= @product.quantity %></li>
-              <li><%= @product.price %></li>
-          </ul>
-          </p>
+          <table>
+            <tr>
+              <td>
+                <%= image_tag @product.image.medium %>
+              </td>
+              <td>
+                <table>
+                    <tr>
+                      <%= @product.description %><br/>
+                      <%= @product.quantity %><br/>
+                      <%= @product.price %><br/>
+                    </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+
           <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
         </div>
       </div>

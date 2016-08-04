@@ -6,5 +6,5 @@ class Product < ApplicationRecord
   # validates :price, presence: true
   validates :price, presence: true, numericality: {greater_than: 0}
 
-  mount_uploader :image, AttachmentUploader
+  mount_uploader :image, ImageUploaderUploader 
 end
