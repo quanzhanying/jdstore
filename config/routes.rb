@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'leading#index'
+  resources :products
+  root 'products#index'
 
 end
