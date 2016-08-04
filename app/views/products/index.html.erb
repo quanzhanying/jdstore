@@ -7,14 +7,10 @@
     <% @products.each do |product| %>
 
       <td>
-        <%= image_tag product.image.thumb %>
-        <br />
-        <br />
-      <%= link_to(product.title, product_path(product)) %></td>
+        <div style="border:1px solid #eee;padding:2px;float:left;margin-right:10px"><%= image_tag product.image.thumb %></div>
 
-
-
-
+        <div style="display:inline-block"><%= link_to(product.title, product_path(product)) %></div>
+      </td>
 
     <% end %>
   </tbody>
