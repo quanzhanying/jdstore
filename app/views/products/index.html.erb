@@ -1,27 +1,13 @@
-<div class="pull-right">
-  <%= link_to("Add a product", new_product_path, :class => "btn btn-default") %>
+<% @products.each do |product| %>
+<div class="col-md-2">
+    <div class="img-thumbnail">
+        <%= link_to(image_tag(product.image.thumb),product_path(product)) %>
+    </div>
+        <br><br>
+    <div>
+            <%= product.title %> ¥
+            <%= product.price %>
+    </div>
 </div>
 
-<br><br>
-<table class="table table-boldered">
-  <% @products.each do |product| %>
-  <tr>
-    <td>
-      <%= link_to(product.title, product_path(product)) %>
-    </td>
-    <td>
-      <%= product.quality %>
-    </td>
-    <td>
-      <%= product.price %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_product_path(product)) %> |
-      <%= link_to("Destroy", product_path(product), :method => :delete, :data => {:confim => "Are you sure?"}) %>
-    </td>
-    <td>
-      <%= product.created_at %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<% end %>

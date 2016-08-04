@@ -1,4 +1,40 @@
-<h1><%= @product.title %></h1>
-<p>
-  <%= simple_format(@product.description) %>
-</p>
+<head>
+    <style>
+.selector1{
+  padding-left: 100px;
+}
+.selector2{
+  padding-top: 150px;
+  padding-left: 100px;
+}
+.selector3{
+  padding-top: 220px;
+  padding-left: 100px;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-3 img-rounded">
+        <%= image_tag(@product.image.medium) %>
+    </div>
+
+    <div class="col-md-3">
+        <p class="selector1 lead">
+            <strong><%= @product.title %></strong>
+        </p>
+        <p class="selector2">
+          数量：<%= @product.quality %>
+          <br>
+          ¥
+          <%= @product.price %>
+        </p>
+
+    </div>
+
+    <div class="col-md-3 selector3">
+        <button type="button" class="btn btn-danger">加入购物车</button>
+    </div>
+</div>
+</body>
