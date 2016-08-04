@@ -14,14 +14,14 @@ class Admin::UsersController < ApplicationController
       @user = User.find(params[:id])
 
       @str = "";
-      if @is_admin==true
+      if @is_admin=='true'
         @user.is_admin = true
         @str = "已成为管理员！"
       else
         @user.is_admin = false
         @str = "不再是管理员！"
       end
-
+      
       if @user.save
         flash[:notice] = @str
       else
