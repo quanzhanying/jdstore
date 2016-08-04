@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :products
+  resources :products do
+    member do
+      post :join
+      post :quit
+    end
+  end
+
+  namespace :account do
+    resources :products
+  end
   namespace :admin do
     resources :products
   end

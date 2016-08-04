@@ -44,6 +44,31 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path, alert: "Product Deleted"
   end
 
+  # def join
+  #   @product = Product.find(params[:id])
+  #
+  #   if
+  #     current_user.join!(@product)
+  #     flash[:notice] = "加入收藏成功!"
+  #   else
+  #     flash[:warning] = "你已经收藏成功了！"
+  #   end
+  #
+  #   redirect_to product_path(@product)
+  # end
+  #
+  # def quit
+  #   @product =Product.find(params[:id])
+  #   if
+  #     current_user.quit!(@product)
+  #     flash[:alert] = "你已经取消收藏！"
+  #   else
+  #     flash[:warning] = "你没有收藏！"
+  #   end
+  #
+  #   redirect_to product_path(@product)
+  # end
+
   private
 
   def product_params
