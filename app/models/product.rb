@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  title       :string
 #  description :text
-#  stock       :integer
+#  quantity    :integer
 #  price       :float
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
