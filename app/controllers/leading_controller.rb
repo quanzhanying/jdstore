@@ -1,0 +1,2 @@
+class LeadingController < ApplicationController
+end
