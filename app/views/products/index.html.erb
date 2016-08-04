@@ -1,0 +1,19 @@
+<!--<div class="pull-right">
+  <%= link_to("Add a product", new_product_path, :class => "btn btn-default" ) %>
+</div>-->
+
+<table class="table table-hover">
+
+    <tbody>
+  <% @products.each do |product| %>
+
+    <td>
+      <div style="border:0px; padding:1em;float:left;margin-right:1em">
+      <%= image_tag product.image.thumb %></div>
+      <div style="display:inline-block"><%= link_to(product.title, product_path(product)) %></div>
+    </td>
+
+
+  <% end %>
+</tbody>
+</table>
