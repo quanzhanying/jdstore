@@ -1,4 +1,6 @@
 class Stores::ProductsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :require_is_store
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -47,5 +49,12 @@ class Stores::ProductsController < ApplicationController
 
   def find_product
     @product = Product.find(params[:id])
+  end
+
+  def require_is_store
+    if !current_user.store?
+      redirect_to products_path, notice: "You can't manage products!"
+    else
+    end
   end
 end
