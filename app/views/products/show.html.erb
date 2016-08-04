@@ -1,27 +1,20 @@
-<style media="screen">
-  .addToCar{background-color: #cc3835;color:white}
-
-  .addToCarDiv{margin:150px 0px 0px 250px}
-</style>
 <div class="col-md-12">
-  <div class="panel panel-default">
-    <div class="panel-heading">
+  <div class="panel panel-default ">
+    <!-- <div class="panel-heading">
       <h3 class="panel-title"><%= @product.title %></h3>
-    </div>
-    <div class="panel-body">
-
+    </div> -->
+    <div class="panel-body contant" >
       <img src="<%=@product.image.medium %>" alt=""/>
+    </div>
 
-      <div class="panel-body" style="float:right;margin-right:360px">
-        <p>描述：<%= @product.description %></p>
-        <p>售价：¥<%= @product.price %></p>
-        <p>库存：<%= @product.quantity %></p>
+    <div class="panel-body">
+      <p>描述：<%= @product.description %></p>
+      <p>售价：¥<%= @product.price %></p>
+      <p>库存：<%= @product.quantity %></p>
 
-        <div class="addToCarDiv">
-          <%= link_to("加入购物车", new_admin_product_path, class: "btn btn-default pull-right addToCar") %>
-        </div>
+      <div class="addToCarDiv">
+        <%= link_to("加入购物车", new_admin_product_path, class: "btn btn-default pull-right addToCar") %>
       </div>
-
     </div>
     <!-- <div class="panel-footer" style="height:50px;">
     </div> -->

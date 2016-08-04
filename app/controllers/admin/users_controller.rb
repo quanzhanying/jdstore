@@ -1,4 +1,9 @@
 class Admin::UsersController < ApplicationController
+    before_action :authenticate_user!
+    before_action :require_is_admin
+
+    layout "admin"
+
     def index
       @users = User.all
     end
@@ -21,7 +26,7 @@ class Admin::UsersController < ApplicationController
         @user.is_admin = false
         @str = "不再是管理员！"
       end
-      
+
       if @user.save
         flash[:notice] = @str
       else
