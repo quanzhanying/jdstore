@@ -1,0 +1,22 @@
+<%= link_to("add a product", new_stores_product_path ) %>
+<table>
+  <tr>
+    <td>
+      Title
+    </td>
+    <td>
+      Price
+    </td>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= link_to(product.title, stores_product_path(product) )%>
+      </td>
+      <td>
+        <%= product.money %>
+      </td>
+    </tr>
+  <% end %>
+</table>
