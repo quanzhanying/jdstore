@@ -12,7 +12,7 @@
                 产品名称
             </th>
             <th>
-                叙述
+                产品详情
             </th>
             <th>
                 数量
@@ -21,7 +21,7 @@
                 价格
             </th>
             <th>
-                选项
+                操作
             </th>
             <th>
                 创建时间
@@ -35,7 +35,7 @@
                 #
             </td>
             <td>
-                <%= link_to(product.title, edit_admin_product_path(product)) %>
+                <%= link_to(product.title, product_path(product)) %>
             </td>
             <td>
                 <%= product.description %>

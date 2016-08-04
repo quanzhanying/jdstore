@@ -1,0 +1,18 @@
+<div class="caption col-sm-6 col-md-4 " style="border: 1px solid pink; padding: 5px; text-align: center">
+    <%=image_tag @product.image.medium %>
+</div>
+
+<div class="col-sm-8 col-md-8">
+    <h1><%=@product.title %></h1>
+    <%=simple_format(@product.description)  %>
+    <br/>
+    价格:<%=@product.price %>RMB
+    <br/>
+    剩余数量:<%=@product.quantity %>只
+
+    <div style="margin-top: 190px">
+        <%= link_to("加入购物车", "#", class: "btn btn-danger" ) %>
+
+    </div>
+
+</div>

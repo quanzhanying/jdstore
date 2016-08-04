@@ -1,19 +1,19 @@
-<div>
-    <table class="table table-boldered">
-        <h1>products</h1>
-        <% @products.each do |f| %>
-        <tr>
-            <td>
-                <%= f.title %>
-            </td>
-            <td>
-                <%= f.description %>
-            </td>
-            <td>
-                <%= f.created_at %>
-            </td>
-        </tr>
-        <% end %>
-    </table>
+<div class="row">
 
+    <% @products.each do |f| %>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <%=image_tag f.image.thumb %>
+            <div class="caption">
+                <h3><%= f.title %></h3>
+                <p>
+                    <%= f.description %></p>
+                <p>
+                    <%= link_to("产品详情", product_path(f), class: "btn btn-danger") %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
 </div>
