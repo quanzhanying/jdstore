@@ -1,4 +1,3 @@
-<h2>Product List</h2>
 <div class="pull-right">
   <%= link_to("Add new product", new_admin_product_path, class: "btn btn-info") %>
 </div>
@@ -17,6 +16,7 @@
       <th>创建日期</th>
     </tr>
   </thead>
+
   <tbody>
     <% @products.each do |product| %>
       <tr>
@@ -34,6 +34,4 @@
       </tr>
     <% end %>
   </tbody>
-
-
 </table>

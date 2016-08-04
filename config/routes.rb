@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   resources :products
 
   namespace :admin do
+    resources :users do
+      member do
+        post :change_to_admin
+        post :change_to_user
+      end
+    end
+
     resources :products
   end
   root "products#index"
