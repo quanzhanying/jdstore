@@ -1,0 +1,8 @@
+<%= simple_form_for([:stores, @product], html: { class: 'form-horizontal' }) do |form| %>
+  <%= form.input :title %>
+  <%= form.input :money %>
+  <%= form.input :storage %>
+  <%= form.input :description %>
+  <%= form.input :is_hidden %>
+  <%= form.submit %>
+<% end %>
