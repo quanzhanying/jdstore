@@ -23,9 +23,10 @@ table td{padding: 5px 2px}
   <td><h2><%= @product.title%></h2>
 
     <table style="margin-top: 100px">
-<tr><td>数量:</td><td>  <%= @product.quantity %></td></tr>
-<tr><td class="right">$
-</td><td><%= @product.price %></td> </tr>
+<tr><td>数量:</td>
+  <td>  <%= @product.quantity %></td></tr>
+<tr><td class="right">$</td>
+<td><%= @product.price %></td> </tr>
     </table>
 <div style="float:right"><%= link_to("加入购物车", "#",class: "btn btn-danger pull-right")%></div>
 </tr>

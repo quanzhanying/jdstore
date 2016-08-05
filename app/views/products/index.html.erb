@@ -1,17 +1,13 @@
-<!-- <div class="pull-right">
-  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default") %>
-</div> -->
-  <table class="table table-hover">
+<% @products.each do |product| %>
 
-    <tbody>
-    <% @products.each do |product| %>
+<div class="col-xs-4 col-md-3 col-lg-2">
+    <div class="img-thumbnail">
+      <%= image_tag product.image.thumb %>
+  </div>
 
-      <td>
-        <div style="border:1px solid #eee;padding:2px;float:left;margin-right:10px"><%= image_tag product.image.thumb %></div>
+    <div class="text-left" style="padding: 10px">
+      <%= link_to(product.title, product_path(product)) %>
+  </div>
+</div>
 
-        <div style="display:inline-block"><%= link_to(product.title, product_path(product)) %></div>
-      </td>
-
-    <% end %>
-  </tbody>
-  </table>
+<% end %>
