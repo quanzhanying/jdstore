@@ -5,7 +5,18 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  resources :products
+  resources :products do
+    member do
+      post :join
+      post :quit
+    end
+    resources :posts
+  end
+
+  namespace :account do
+    resources :products
+  end
+
   root 'products#index'
 
 end
