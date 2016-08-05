@@ -7,5 +7,18 @@ class Admin::UsersController < ApplicationController
   def index
     @users = User.all
   end
-  
+
+  def promote
+    @user = User.find(params[:id])
+    @user.promote!
+      redirect_to :back
+  end
+
+  def demote
+    @user = User.find(params[:id])
+    @user.demote!
+      redirect_to :back
+  end
+
+
 end
