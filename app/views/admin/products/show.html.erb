@@ -26,10 +26,10 @@
         <td><%= image_tag(@product.image_url(:medium)) %></td>
         <td>
           <h2><%= @product.title %></h2>
-          <p><%= @product.description %></p>
+          <p><%= simple_format(@product.description) %></p>
 
-          <p><%= @product.quantity %></p>
-          <p><%= @product.price %></p>
+          <p>数量：<%= @product.quantity %></p>
+          <p>价格：<%= @product.price %></p>
           <p><%= @product.created_at %></p>
         </td>
       </tr>
