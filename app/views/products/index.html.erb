@@ -1,14 +1,14 @@
-<div class="col-md-12">
+<div class="col-md-12" >
 <div class="row">
 <% @products.each do |product| %>
 
   <div class="col-sm-2 col-md-2">
-    <div class="thumbnail showproduct">
+    <div class="thumbnail showproduct-bg">
       <%= link_to(image_tag(product.image.thumb.url),product_path(product)) %>
-      <div class="caption showproduct-font">
-        <h5><%= link_to(product.title,product_path(product)) %></h5>
-        <p>
-            <%= product.price %>
+      <div class="caption">
+        <h5><%= link_to(product.title,product_path(product),class:"indexproduct-title") %></h5>
+        <p class="indexproduct-otherfont">
+            ¥ <%= product.price %>
         </p>
         <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
       </div>

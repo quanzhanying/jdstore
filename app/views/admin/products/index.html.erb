@@ -7,7 +7,7 @@
 <% @products.each do |product| %>
 
   <div class="col-sm-2 col-md-2">
-    <div class="thumbnail showproduct">
+    <div class="thumbnail showproduct-bg">
       <%= link_to(image_tag(product.image.thumb.url),admin_product_path(product)) %>
       <div class="caption showproduct-font">
         <h5><%= link_to(product.title,admin_product_path(product)) %></h5>
