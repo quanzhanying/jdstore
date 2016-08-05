@@ -21,11 +21,7 @@
       <%= user.created_at %>
     </td>
     <td>
-      <% if user.is_admin %>
-         (Admin)
-      <% else %>
-         (User)
-      <% end %>
+      <%= render_user_level(user) %>
     </td>
     <td>
       &nbsp;
