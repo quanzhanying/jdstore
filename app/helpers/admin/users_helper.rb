@@ -1,9 +1,9 @@
 module Admin::UsersHelper
   def render_user_level(user)
   if user.is_admin
-    "Admin ^_^"
+      content_tag(:span, "", :class => "fa fa-user-secret")
   else
-    "User -_-||"
+      content_tag(:span, "", :class => "fa fa-user")
   end
 end
 end
