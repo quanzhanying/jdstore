@@ -11,9 +11,12 @@
 #  updated_at  :datetime         not null
 #
 
-class Product < ApplicationRecord
+class Product < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :quantity, presence: true
   validates :price, presence: true
+
+  mount_uploader :avatar, AvatarUploader
+
 end

@@ -2,10 +2,14 @@
 
 <%= simple_form_for [:admin, @product ] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :quantity %>
-<%= f.input :price %>
-
-  <%= f.submit "Submit" %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :price %>
+    <%= image_tag(@product.avatar_url(:small)) if @product.avatar %>
+      <div class="field">
+        <%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_cache %>
+      </div>
+    <%= f.submit "Submit" %>
 <% end %>
