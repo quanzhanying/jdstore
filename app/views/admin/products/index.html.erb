@@ -5,7 +5,9 @@
 <table class="table table-boldered">
   <tr>
     <td>Product</td>
+    <td>IMG</td>
     <td>Price</td>
+    <td>Quantity</td>
     <td>Oprate</td>
   </tr>
   <% @products.each do |product| %>
@@ -13,9 +15,14 @@
     <td>
       <%= link_to(product.title, product_path(product)) %>
     </td>
-    <!-- <td> <img src="<%#= image_tag(@product.avatar_url(:large)) if @product.avatar %>"></td> -->
+    <td>
+      <%= link_to(image_tag(product.avatar_url(:small)), product_path(product)) %>
+    </td>
     <td>
       <%= product.price %>
+    </td>
+    <td>
+      <%= product.quantity %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_product_path(product)) %>

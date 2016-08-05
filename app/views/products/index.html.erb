@@ -1,16 +1,5 @@
-<table class="table table-boldered">
-  <tr>
-    <td>Product</td>
-    <td>Description</td>
-  </tr>
+<div>
   <% @products.each do |product| %>
-  <tr>
-    <td>
-      <%= link_to(product.title, product_path(product)) %>
-    </td>
-    <td>
-      <%= product.created_at %>
-    </td>
-  </tr>
+      <%= link_to(image_tag(product.avatar_url(:small)), product_path(product)) %>
   <% end %>
-</table>
+</div>
