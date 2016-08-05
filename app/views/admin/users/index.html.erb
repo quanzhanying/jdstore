@@ -1,1 +1,28 @@
 <h1>Users Manager Panel</h1>
+
+<table class="table table-boldered">
+  <thead>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>Join Time</th>
+    <th>Operate</th>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= user.id %>
+    </td>
+    <td>
+      <%= user.email %>
+    </td>
+    <td>
+      <%= user.created_at %>
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
