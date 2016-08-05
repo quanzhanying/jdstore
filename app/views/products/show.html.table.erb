@@ -1,0 +1,30 @@
+<h1> <%= @product.title %> </h1>
+
+<table>
+  <tr>
+    <td rowspan="4"><%= image_tag(@product.avatar_url(:large)) if @product.avatar %></td>
+    <td valign="top" align="left">Tile</td>
+    <td valign="top" align="left"><%= simple_format(@product.title) %></td>
+  </tr>
+  <tr>
+    <td valign="top" align="left">Price:</td>
+    <td valign="top" align="left"><%= @product.price %></td>
+  </tr>
+  <tr>
+    <td valign="top" align="left">Quantity:</td>
+    <td valign="top" align="left"><%= @product.quantity %></td>
+  </tr>
+  <tr>
+    <td >
+      <div class="pull-right">
+      <%= link_to("Add to cart", "#", :class => "btn btn-info" ) %>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">Description</td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top" align="left"><%= simple_format(@product.description) %></td>
+  </tr>
+</table>

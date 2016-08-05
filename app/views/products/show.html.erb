@@ -1,6 +1,19 @@
 <h1> <%= @product.title %> </h1>
 
-<p>
-  <%= simple_format(@product.description) %>
-  <%= image_tag(@product.avatar_url(:large)) if @product.avatar %>
-</p>
+  <div class="container-fluid">
+    <p>
+      <%= image_tag(@product.avatar_url(:large)) if @product.avatar %>
+    </p>
+  </div>
+
+  <div class="container-fluid">
+    <p><%= @product.price %></p>
+    <p><%= @product.quantity %></p>
+    <div class="pull-left">
+      <%= link_to("Add to cart", "#", :class => "btn btn-info" ) %>
+    </div>
+  </div>
+<hr>
+  <div class="container-fluid">
+  <p><%= simple_format(@product.description) %></p>
+  </div>

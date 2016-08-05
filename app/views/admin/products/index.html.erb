@@ -13,7 +13,7 @@
   <% @products.each do |product| %>
   <tr>
     <td>
-      <%= link_to(product.title, product_path(product)) %>
+      <%= link_to(product.title, product_path(product),) %>
     </td>
     <td>
       <%= link_to(image_tag(product.avatar_url(:small)), product_path(product)) %>
