@@ -7,7 +7,7 @@ class Admin::UserMgController < ApplicationController
   end
 
   def change_admin
-    @user=current_user
+    @user=User.find(params[:id])
     @user.is_admin!
     redirect_to admin_user_mg_index_path
   end

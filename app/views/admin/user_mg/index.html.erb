@@ -1,4 +1,4 @@
-<div >
+<div class="user_mg-font">
 
   <table class="table table-boldered">
     <thead>
@@ -22,7 +22,11 @@
           <%= user.is_admin %>
         </td>
         <td>
-          <%= link_to("change admin rights",change_admin_admin_user_mg_path(user), method: :post,  class:"btn btn-default") %>
+          <% if user.super_user  %>
+            Super Admin
+          <% else %>
+            <%= link_to("change admin rights",change_admin_admin_user_mg_path(user), method: :post,  class:"btn btn-default") %>
+          <% end %>
         </td>
       </tr>
 
