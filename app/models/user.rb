@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :product_relationships
   has_many :participated_products, :through => :product_relationships, :source => :product
 
-
   def admin?
     is_admin
   end

@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
   end
 
   def quit
-    @product =Product.find(params[:id])
+    @product = Product.find(params[:id])
     if current_user.is_member_of?(@product)
       current_user.quit!(@product)
       flash[:alert] = "你已经取消收藏！"
@@ -63,6 +63,13 @@ class ProductsController < ApplicationController
 
     redirect_to product_path(@product)
   end
+
+  def add_to_cart
+    @product = Product.find(params[:id])
+    current_cart.add_product_to_cart(@product)
+    redirect_to :back
+  end
+
 
   private
 

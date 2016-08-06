@@ -28,7 +28,7 @@ table td{padding: 5px 2px}
 <tr><td class="right">$</td>
 <td><%= @product.price %></td> </tr>
     </table>
-<div style="float:right"><%= link_to("加入购物车", "#",class: "btn btn-danger pull-right")%></div>
+<div style="float:right"><%= link_to("加入购物车",add_to_cart_product_path(@product), :method => :post, class: "btn btn-danger pull-right")%></div>
 </tr>
 </tbody>
 </table>
