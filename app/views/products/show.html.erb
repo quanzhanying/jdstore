@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <img src="<%= @product.image_url %>" alt="...">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="caption">
+      <h2><%= @product.title %></h2>
+      <div class="well well-lg"><p>Description:<br><% @product.description %></p></div>
+      <p>
+        Price: <strong><%= @product.money %></strong>
+      </p>
+      <p>
+        Storage: <%= @product.storage %>
+      </p>
+      <p><a href="#" class="btn btn-default pull-right" role="button">Like</a>
+        <a href="#" class="btn btn-danger pull-right" role="button">Buy</a></p>
+    </div>
+  </div>
+</div>
