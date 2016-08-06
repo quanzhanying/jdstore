@@ -1,4 +1,24 @@
-<h1><%= @product.title %></h1>
-<p><%= simple_format(@product.description) %></p>
-<p><%= @product.quantity %></p>
-<p><%= @product.price %></p>
+<style>
+table td{padding: 5px 2px}
+.right { text-align: center}
+</style>
+  <table class="table table-hover">
+
+    <tbody>
+      <tr>
+  <td><%= image_tag @product.image.medium %></td>
+  <td><h2 style="text-align:left; color:blue"><%= @product.title%></h2>
+
+    <table style="margin-top: 15em">
+<tr><td>数量:</td><td><%= @product.quantity %></td></tr>
+
+<tr><td class="right">$
+</td><td><%= @product.price %></td> </tr>
+    </table>
+<div style="float:left">
+  <%= link_to("加入购物车", "#",class: "btn btn-danger pull-right")%>
+  <%= link_to("☆","#",class: "btn btn-danger pull-right")%>
+</div>
+</tr>
+</tbody>
+</table>
