@@ -5,7 +5,7 @@
         <article class="post tag-foreign-website tag-bootstrap-v3 tag-opensource-project">
           <div class="post-featured-image">
             <div class="thumbnail" href="/nemo/" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'Nemo'])" target="_blank">
-              <img src="http://image.youzhan.org/6/4d/e5d9c6129dbe6d4f9e2f4b32ebd09.png!thumb" width="700" height="438" alt="Nemo" onload="imgLoaded(this)">
+                <img src="<%=@product.attachment%>" width="700" height="438" onload="imgLoaded(this)">
             </div>
           </div>
             <div class="post-content">
@@ -18,8 +18,10 @@
 
             <div class="post-content">
               <h2><%= @product.title %></h2>
+              <font>作品阐述：</font></br>
               <p><%= simple_format(@product.description) %></p>
-              <font>库存量：<font color="#d9534f"><%= @product.store %></font></font>
+              <font>画面尺寸：<font color="#d9534f"><%= @product.width %>CM x <%= @product.height %>CM</font> </br>
+              <font>库存：<font color="#d9534f"><%= @product.store %></font>
               <div align="right">
               <button type="submit" class="btn btn-danger btn-right ">加入购物车</button>
               </div>

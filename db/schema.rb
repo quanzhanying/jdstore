@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805130708) do
+ActiveRecord::Schema.define(version: 20160806172323) do
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160805130708) do
     t.boolean  "is_hidden",       default: true
     t.string   "Product_picture"
     t.string   "attachment"
+    t.float    "width"
+    t.float    "height"
   end
 
   create_table "users", force: :cascade do |t|
