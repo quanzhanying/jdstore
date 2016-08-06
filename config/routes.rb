@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post :quit
     end
   end
+  resources :carts
 
   namespace :account do
     resources :products
