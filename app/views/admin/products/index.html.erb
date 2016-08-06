@@ -2,7 +2,7 @@
   <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default") %>
 </div>
 
-<br><br>
+<br>
 
 <table class="table table-boldered">
   <% @products.each do |product| %>
@@ -18,4 +18,5 @@
       <%= product.created_at %>
     </td>
       <% end %>
-    </table>
+    </tr>
+</table>
