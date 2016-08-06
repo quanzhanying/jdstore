@@ -34,6 +34,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   version :big do
     process :resize_to_fill => [800, 800]
   end
+
+  version :index do
+    process :resize_to_fill => [700, 438]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
 #指定上传文件的格式

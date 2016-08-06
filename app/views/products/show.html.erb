@@ -1,19 +1,29 @@
-<h1> <%= @product.title %> </h1>
-
   <div class="container-fluid">
-    <p>
-      <%= image_tag(@product.avatar_url(:large)) if @product.avatar %>
-    </p>
-  </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-8-offset-1">
+          <p>
+            <%= image_tag(@product.avatar_url(:large)) if @product.avatar %>
+          </p>
+        </div>
 
-  <div class="container-fluid">
-    <p><%= @product.price %></p>
-    <p><%= @product.quantity %></p>
-    <div class="pull-left">
-      <%= link_to("Add to cart", "#", :class => "btn btn-info" ) %>
+      <div class="col-xs-12 col-sm-5 col-md-8-offset-1">
+            <h1> <%= @product.title %> </h1>
+            <h3>Price: &nbsp ¥ <%= @product.price %></h3>
+            <h3>Quantity: &nbsp<%= @product.quantity %></h3>
+
+      <div class="pull-left">
+        <%= link_to("Add to cart", "#", :class => "btn btn-success" ) %>
+      </div>
     </div>
   </div>
-<hr>
-  <div class="container-fluid">
-  <p><%= simple_format(@product.description) %></p>
   </div>
+
+<hr>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-8-offset-1">
+          <p><%= simple_format(@product.description) %></p>
+        </div>
+      </div>
+    </div>
+<hr>
