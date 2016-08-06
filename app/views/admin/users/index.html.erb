@@ -27,15 +27,9 @@
             <%= link_to("Destroy", admin_user_path(user),
                         method: :delete, data: { confirm: "Are you sure?" }) %>
             |
-            <% if user.is_admin && user ==current_user %>
-              <%#= link_to("ChangeToUser", change_to_user_admin_user_path(user),method: :post ,:class => "btn btn-xs btn-info") %>
-            <% elsif user.is_admin && user !=current_user  %>
-              <%= link_to("ChangeToUser", change_to_user_admin_user_path(user),method: :post ,:class => "btn btn-xs btn-info") %>
-            <% else %>
-              <%= link_to("ChangeToAdmin", change_to_admin_admin_user_path(user),method: :post, :class => "btn btn-xs btn-info") %>
-            <% end %>
-        </td>
+            <%= change_user_status(user) %>
 
+        </td>
       </tr>
     <% end %>
   </tbody>
