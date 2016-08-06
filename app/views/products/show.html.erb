@@ -1,24 +1,14 @@
-<style>
-table td{padding: 5px 2px}
-.right { text-align: center}
-</style>
-  <table class="table table-hover">
-
-    <tbody>
-      <tr>
-  <td><%= image_tag @product.image.medium %></td>
-  <td><h2 style="text-align:left; color:blue"><%= @product.title%></h2>
-
-    <table style="margin-top: 15em">
-<tr><td>数量:</td><td><%= @product.quantity %></td></tr>
-
-<tr><td class="right">$
-</td><td><%= @product.price %></td> </tr>
-    </table>
 <div style="float:left">
-  <%= link_to("加入购物车", "#",class: "btn btn-danger pull-right")%>
-  <%= link_to("☆","#",class: "btn btn-danger pull-right")%>
+  <%= image_tag @product.image.medium %>
 </div>
-</tr>
-</tbody>
-</table>
+
+<div>
+  <br>
+  <h2 style="text-align:center"; "color:blue"><%= @product.title%></h2><br>
+  <h3 style="text-align:center"; "color:green" >数量:<%= @product.quantity %></h3>
+  <h3 style="text-align:center"; "color:green" >价格:￥<%= @product.price %></h3>
+<br><br>
+  <div style="text-align:center">
+    <button type="button" class="btn btn-warning">☆</button>
+    <button type="button" class="btn btn-danger">加入购物车</button>
+</div>
