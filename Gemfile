@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-gem "bootstrap-sass"
+gem "bootstrap-sass" #放在development test上面。
 gem "simple_form"
 
 group :development, :test do
