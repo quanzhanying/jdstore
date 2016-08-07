@@ -1,12 +1,30 @@
+
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src=<%="product.image.thumb"%> alt="show">
+<div class="col-sm-6 col-md-3">
+    <% @products.each do |product| %>
+      <!-- <%= image_tag product.image.thumb %> -->
+      <div class="thumbnail">
+        <!-- <div style="border:1px solid #eee;padding:2px;float:left;margin-right:10px"><%= image_tag product.image.thumb %></div> -->
+   <!-- <img src="product.image.thumb"/> -->
+   <%= link_to(image_tag product.image.thumb) %>
       <div class="caption">
-        <h3><%= product.title %></h3>
-        <p><%= product.description %></p>
+        <h5>《<%=link_to(product.title, product_path(product))%>》 </h5>
+         <!-- <p><%= product.description %></p> -->
+        <table class="table table-boldered">
+          <thead>
+            <tr>
+              <td>售价</td>
+              <td>库存</td>
+            </tr>
+          <tr>
+            <td><%= product.price %></td>
+              <td><%= product.quantity %></td>
+          </tr>
+        </table>
         <p><a href="#" class="btn btn-primary" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Collect</a></p>
       </div>
+
     </div>
+    <% end %>
   </div>
-</div>
+  </div>
