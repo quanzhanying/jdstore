@@ -23,10 +23,11 @@ class Cart < ApplicationRecord
     ci.save
   end
 
-  def del_all_product_from_cart
-    cart_items.each do |cart_item|
-      cart_item.destroy
-    end
+  def del_cart_items(ids)
+    puts "+++++#{ids}"
+    # cart_items = CartItem.find_by_sql("select * from cart_items where cart_id = #{self.id} and id in (#{ids})").delete_all
+    CartItem.find_by_sql("delete from cart_items where cart_id = #{self.id} and id in (#{ids})")
+    # cart_items.find_by(id: "#{ids}")
   end
 
   def total_price

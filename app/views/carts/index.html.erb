@@ -1,9 +1,14 @@
 <div class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom:15px">
   <h1>Cart </h1>
-  <%= link_to("Del All", del_all_cart_item_cart_path(current_cart), method: :post, class: "btn btn-danger pull-right") %>
+  <!-- del_all_cart_item_cart_path(current_cart) -->
+
+  <%= simple_form_for @cart, :url => del_cart_items_carts_path(), :method => :post do |f| %>
+    <input type="hidden" name="itemids" id="itemids">
+    <%= f.submit "Del All", class: "btn btn-danger", id: "delitem" ,data: {disable_with: "Submitting..."}%>
+  <% end %>
 </div>
 <div class="col-sm-12 col-md-12 col-lg-12">
-
+  <input type="hidden" name="item_ids" id="item_ids">
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -25,3 +30,36 @@
   </p>
   <%= link_to("Proceed to checkout", "#", class: "btn btn-danger")%>
 </div>
+<script>
+  $(function() {
+    checkAll();
+    delItem();
+
+  });
+
+  function delItem() {
+    var itemids = [];
+    $("#delitem").click(function() {
+      $("input[name='itemid']:checkbox").each(function() {
+        if(this.checked) {
+          itemids.push($(this).val());
+        }
+      })
+      $("#itemids").val(itemids);
+    })
+  }
+
+  function checkAll() {
+    $("#checkAll").click(function() {
+      if (this.checked) {
+        $("input[name='itemid']:checkbox").each(function() {
+          $(this).attr("checked", true);
+        })
+      } else {
+        $("input[name='itemid']:checkbox").each(function() {
+          $(this).attr("checked", false);
+        })
+      }
+    })
+  }
+</script>
