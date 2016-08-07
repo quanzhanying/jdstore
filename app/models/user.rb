@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def be_admin!
-    self.is_admin = ture
+    self.is_admin = true
     self.save
   end
 

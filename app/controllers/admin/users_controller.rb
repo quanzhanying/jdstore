@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+
+layout "admin"
   def index
     @users = User.all
   end
@@ -18,3 +20,5 @@ class Admin::UsersController < ApplicationController
     @user.be_user!
     redirect_to :back
   end
+
+end
