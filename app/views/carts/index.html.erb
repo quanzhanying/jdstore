@@ -1,0 +1,23 @@
+<h1>Cart </h1>
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Quantity</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "cart_items", collection: @cart_items, as:"item" %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 text-right" style="margin-bottom:15px">
+  <p>
+      总计：$ <%= render_cart_total_price(current_cart) %>
+  </p>
+  <%= link_to("Proceed to checkout", "#", class: "btn btn-danger")%>
+</div>

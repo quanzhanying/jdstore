@@ -12,7 +12,7 @@
     <div class="nav collapse navbar-collapse" id="jdmenu">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to go_to_cart_product_path do %>
+          <%= link_to carts_path do %>
             cart <i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
           <% end %>
 
