@@ -20,7 +20,7 @@ class Product < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :quantity, numericality: { greater_than: 0 }
+  validates :quantity, numericality:true
   validates :price, numericality: true
 
   has_many :product_relations

@@ -33,6 +33,6 @@ Rails.application.routes.draw do
   end
 
   resources :carts
-  
+
   root 'products#index'
 end
