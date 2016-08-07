@@ -13,7 +13,7 @@
       <td>创建时间</td>
     </tr>
   </thead>
-  <% @products.each do |f| %>
+  <% @products.each do |product| %>
   <tr>
     <td>
       <%= link_to(product.title, admin_product_path(product))%>
