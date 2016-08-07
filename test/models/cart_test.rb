@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: product_relations
+# Table name: carts
 #
 #  id         :integer          not null, primary key
-#  product_id :integer
-#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class ProductRelation < ApplicationRecord
-  belongs_to :product
-  belongs_to :user
+require 'test_helper'
+
+class CartTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
