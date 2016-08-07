@@ -9,5 +9,17 @@ class User < ApplicationRecord
 
   end
 
+  def change_to_admin!
+    self.is_admin = true
+    self.save
+
+  end
+
+  def change_to_user!
+    self.is_admin = false
+    self.save
+
+  end
+
 
 end
