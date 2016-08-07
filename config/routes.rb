@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products
+  resources :products do
+    member do
+      get :add_to_cart
+    end
+  end
 
   resources :users do
     member do

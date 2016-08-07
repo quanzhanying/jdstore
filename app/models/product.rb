@@ -9,6 +9,8 @@
 #  price       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  image       :string
+#  is_publish  :boolean          default(FALSE)
 #
 
 class Product < ApplicationRecord

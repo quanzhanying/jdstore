@@ -1,15 +1,13 @@
 # == Schema Information
 #
-# Table name: product_relations
+# Table name: cart_items
 #
 #  id         :integer          not null, primary key
-#  product_id :integer
-#  user_id    :integer
+#  quantity   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class ProductRelation < ApplicationRecord
+class CartItem < ApplicationRecord
   belongs_to :product
-  belongs_to :user
 end
