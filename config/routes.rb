@@ -34,7 +34,11 @@ Rails.application.routes.draw do
 
   resources :carts do
     member do
-      post :del_all_cart_item
+      post :up_cart_item_count
+      post :down_cart_item_count
+    end
+    collection do
+      post :del_cart_items
     end
   end
 
