@@ -13,7 +13,11 @@
       <p>
         price: $ <span><%= @product.price %></span>
       </p>
-      <%= link_to("add to car", add_to_cart_product_path, method: :post, class: "btn btn-danger") %>
+      <% if @product.quantity > 0  %>
+        <%= link_to("add to car", add_to_cart_product_path, method: :post, class: "btn btn-danger") %>
+      <% else %>
+        <button type="button" name="button" class="btn btn-default" disabled= "disabled">Sold Out</button>
+      <% end %>
     </div>
   </div>
 
