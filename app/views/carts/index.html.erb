@@ -3,9 +3,11 @@
   <%= link_to("Del All", del_all_cart_item_cart_path(current_cart), method: :post, class: "btn btn-danger pull-right") %>
 </div>
 <div class="col-sm-12 col-md-12 col-lg-12">
+
   <table class="table table-bordered">
     <thead>
       <tr>
+        <td>#</td>
         <td>Title</td>
         <td>Description</td>
         <td>Price</td>
@@ -17,7 +19,6 @@
     </tbody>
   </table>
 </div>
-
 <div class="col-sm-12 col-md-12 col-lg-12 text-right" style="margin-bottom:15px">
   <p>
       总计：$ <%= render_cart_total_price(current_cart) %>
