@@ -1,13 +1,14 @@
 
 <div class="row">
-
-<div class="col-sm-6 col-md-3">
   <% @products.each do |product| %>
+  <div class="col-sm-3 col-md-3" >
+
+
       <!-- <%= image_tag product.image.thumb %> -->
       <div class="thumbnail">
         <!-- <div style="border:1px solid #eee;padding:2px;float:left;margin-right:10px"><%= image_tag product.image.thumb %></div> -->
    <!-- <img src="product.image.thumb"/> -->
-   <%= image_tag product.image.thumb %>
+      <%= image_tag product.image.thumb %>
       <div class="caption">
         <h5>《<%=link_to(product.title, product_path(product))%>》 </h5>
          <!-- <p><%= product.description %></p> -->
@@ -26,6 +27,7 @@
       </div>
 
     </div>
-    <% end %>
+
   </div>
+    <% end %>
   </div>
