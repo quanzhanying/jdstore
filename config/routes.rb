@@ -32,7 +32,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts
+  resources :carts do
+    member do
+      post :del_all_cart_item
+    end
+  end
 
   root 'products#index'
 end

@@ -18,6 +18,12 @@ class Cart < ApplicationRecord
     ci.save
   end
 
+  def del_all_product_from_cart
+    cart_items.each do |cart_item|
+      cart_item.destroy
+    end
+  end
+
   def total_price
     sum = 0
     cart_items.each do |cart_item|
