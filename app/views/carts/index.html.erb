@@ -4,6 +4,7 @@
 
   <%= simple_form_for @cart, :url => del_cart_items_carts_path(), :method => :post do |f| %>
     <input type="hidden" name="itemids" id="itemids">
+    <input type="checkbox" name="name" id="checkAll"> 全选
     <%= f.submit "Del All", class: "btn btn-danger", id: "delitem" ,data: {disable_with: "Submitting..."}%>
   <% end %>
 </div>
@@ -53,11 +54,11 @@
     $("#checkAll").click(function() {
       if (this.checked) {
         $("input[name='itemid']:checkbox").each(function() {
-          $(this).attr("checked", true);
+          $(this).prop("checked", true);
         })
       } else {
         $("input[name='itemid']:checkbox").each(function() {
-          $(this).attr("checked", false);
+          $(this).prop("checked", false);
         })
       }
     })
