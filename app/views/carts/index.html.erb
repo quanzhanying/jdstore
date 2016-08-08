@@ -35,7 +35,7 @@
               <%= cart_item.quantity %>
             </td>
             <td>
-              <%= link_to("Delete", cart_path(cart_item), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+              <%= link_to("Delete", cart_path(cart_item), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger") %>
             </td>
           </tr>
         <% end %>
@@ -54,7 +54,8 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("Check Out", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("Clean Up", "#", method: :delet, class: "btn btn-lg btn-danger pull-left") %>
+      <%= link_to("Check Out", "#", method: :post, class: "btn btn-lg btn-success pull-right") %>
     </div>
   </div>
 </div>
