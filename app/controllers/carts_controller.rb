@@ -1,25 +1,14 @@
 class CartsController < ApplicationController
-  def index
-    @carts = Cart.all
+
+
+  def delall
+    current_cart.destroy
+    redirect_to carts_path
   end
 
-  def new
-    @cart = Cart.new
-  end
-
-  def edit
-    @cart = Cart.find(params[:id])
-  end
-
-  def show
-    @cart = Cart.find(params[:id])
-  end
-
-
-
-  def destroy
-    @cart = Cart.find(session[:cart_id])
-    @cart.destroy
+  def minusitem
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
     redirect_to carts_path
   end
 end
