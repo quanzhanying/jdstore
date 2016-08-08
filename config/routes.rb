@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :products
+    resources :users do
+      member do
+        post :publish
+        post :hide
+      end
+    end
   end
   root "products#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

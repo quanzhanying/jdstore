@@ -12,6 +12,7 @@
           <th>单价</th>
           <th>数量</th>
           <th>选项</th>
+          <th>#</th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +37,11 @@
           <td>
             <%= cart_item.quantity %>
           </td>
-          <td><%= link_to("删除", cart_path(@carts), class: "btn btn-xs btn-danger pull-right",
+        <td>
+        <%= link_to("+", "#", class:"btn btn-xs btn-success") %> |
+        <%= link_to("-", "#", class:"btn btn-xs btn-primary") %>
+      </td>
+          <td><%= link_to("删除", cart_path(@carts), class: "btn btn-xs btn-danger",
                method: :delete, data: { confirm:  "Are you sure?" } ) %></td>
         </tr>
         <% end %>

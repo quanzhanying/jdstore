@@ -22,5 +22,5 @@ class User < ApplicationRecord
   def quit!(product)
     participated_products.delete(product)
   end
-
+  
 end

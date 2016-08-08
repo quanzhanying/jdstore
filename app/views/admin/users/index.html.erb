@@ -1,0 +1,31 @@
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>用户名</td>
+        <td>设置管理员</td>
+        <td>创建时间</td>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td> <%= user.id %></td>
+      <td> <%= user.email %></td>
+    <td>  <% if user.is_admin = true %>
+                            <%= link_to("设为管理员", publish_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-success") %>
+                            <%= link_to("取消管理员", hide_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-info") %>
+                            <% end %>
+
+                          </td>
+        <td><%= user.created_at %></td>
+
+
+    </tr>
+    <% end %>
+  </tbody>
+  </table>

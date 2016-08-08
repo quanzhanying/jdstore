@@ -3,18 +3,6 @@ class CartsController < ApplicationController
     @carts = Cart.all
   end
 
-  def new
-    @cart = Cart.new
-  end
-
-  def edit
-    @cart = Cart.find(params[:id])
-  end
-
-  def show
-    @cart = Cart.find(params[:id])
-  end
-
 
 
   def destroy
