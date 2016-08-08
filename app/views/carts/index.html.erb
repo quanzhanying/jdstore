@@ -30,7 +30,11 @@
                         <%= cart_item.product.price %>
                     </td>
                     <td>
+                      <%= button_to '-', minus_an_item_cart_path(cart_item), method: :post %>
+
                         <%= cart_item.quantity %>
+                        <%= button_to '+', add_an_item_cart_path(cart_item), method: :post %>
+
                         <br><%= link_to("delete", delete_item_cart_path(cart_item), method: :post) %>
                     </td>
                 </tr>

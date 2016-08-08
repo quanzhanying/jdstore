@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
       current_cart.add_product_to_cart(@product)
     end
 
-
     redirect_to :back
   end
 

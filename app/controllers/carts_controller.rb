@@ -17,4 +17,18 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def add_an_item
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.quantity += 1
+    @cart_item.save
+    redirect_to :back
+  end
+
+  def minus_an_item
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.quantity -= 1
+    @cart_item.save
+    redirect_to :back
+  end
+
 end
