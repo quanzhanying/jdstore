@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
         product_list.save
       end
 
+      current_cart.destroy
+
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
