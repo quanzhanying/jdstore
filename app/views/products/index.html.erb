@@ -12,20 +12,24 @@
               <a href="<%= admin_product_path(product) %>"><img src="<%= product.image %>" alt=""   height="200" width="300" /></a>
               <br />
               <br>
-              
+
               </div>
               <div class="" style="margin-top: 20px;padding-right: 20px;">
                 <div class="row">
 
                   <div  style="padding-left: 20px;">
-                    数量：1
+                    数量：<%= product.quantity %>
                     <br />
                     价格：¥<%= product.price %>
                   </div>
                 </div>
 
                 <div>
-                <%= link_to("加入购物车", add_to_cart_product_path(product),method: :post, class: "btn btn-primary pull-right") %>
+                  <% if product.quantity != 0 %>
+                    <%= link_to("加入购物车", add_to_cart_product_path(product),method: :post, class: "btn btn-primary pull-right") %>
+                  <% else %>
+                    <button class="btn btn-primary pull-right" disabled="true">没有库存</button>
+                  <% end %>
               </div>
               </div>
             </div>

@@ -10,8 +10,18 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
-    redirect_to :back
+      if @product.quantity == 0
+        redirect_to :back,alert: "The product has no quantity,Please select others!"
+      else
+        @product.quantity = @product.quantity - 1
+        if @product.save
+          current_cart.add_product_to_cart(@product)
+        else
+          redirect_to :back , alert: "Failed to add product to cart"
+        end
+        redirect_to :back , alert: "Success to add product to cart"
+      end
+
   end
 
   private
