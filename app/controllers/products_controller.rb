@@ -46,13 +46,15 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
+    if @product.quantity > 0
+      current_cart.add_product_to_cart(@product)
+    end
     redirect_to :back
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quality, :price, :image)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 end

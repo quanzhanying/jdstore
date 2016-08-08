@@ -25,7 +25,7 @@
             <strong><%= @product.title %></strong>
         </p>
         <p class="selector2">
-          数量：<%= @product.quality %>
+          数量：<%= @product.quantity %>
           <br>
           ¥
           <%= @product.price %>
@@ -34,8 +34,14 @@
     </div>
 
     <div class="col-md-3 selector3">
+      <% if @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product),
   :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
     </div>
+    <% else %>
+    <%= link_to("加入购物车", add_to_cart_product_path(@product),
+:method => :post, :class => "btn btn-primary btn-lg btn-danger disabled") %>
+      <%= "库存为0，不能购买！"%>
+    <% end %>
 </div>
 </body>
