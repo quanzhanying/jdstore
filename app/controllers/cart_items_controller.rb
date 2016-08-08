@@ -4,4 +4,5 @@ class CartItemsController < ApplicationController
     @cart_item.destroy
     redirect_to carts_path
   end
+
 end

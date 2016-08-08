@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h2>购物车</h2>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th colspan="2">
@@ -19,12 +19,12 @@
                 </tr>
             </thead>
             <tbody>
-                <% current_cart.cart_items.each do |cart_item| %>
+                <% current_cart.cart_items.each do |f| %>
                 <tr>
                     <td>
-                        <%= link_to product_path(cart_item.product) do%>
-                        <% if cart_item.product.image.present? %>
-                        <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                        <%= link_to product_path(f.product) do%>
+                        <% if f.product.image.present? %>
+                        <%= image_tag(f.product.image.thumb.url, class: "thumbnail") %>
                     <% else %>
                         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                         <% end %>
@@ -32,18 +32,18 @@
 
                     </td>
                     <td>
-                        <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+                        <%= link_to(f.product.title, product_path(f.product)) %>
                     </td>
                     <td>
-                        <%= cart_item.product.price %>
+                        <%= f.product.price %>
                     </td>
                     <td>
-                        <%= cart_item.quantity %>
+                        <%= f.quantity %>
                     </td>
                     <td>
-                        <%= link_to("+1", up_product_cart_path(cart_item), method: :post, class: "btn btn-default" ) %>
-                        <%= link_to("-1", down_product_cart_path(cart_item), method: :post, class: "btn btn-default" ) %>
-                        <%= link_to("删除该产品", cart_item_path(cart_item), method: :delete, class: "btn btn-danger") %>
+                        <%= link_to("+1", up_product_cart_path(f), method: :post, class: "btn btn-default" ) %>
+                        <%= link_to("-1", down_product_cart_path(f), method: :post, class: "btn btn-default" ) %>
+                        <%= link_to("删除该产品", cart_item_path(f), method: :delete, class: "btn btn-danger") %>
                     </td>
                 </tr>
                 <% end %>
@@ -67,6 +67,7 @@
             <hr>
             <div class="checkout clearfix">
                 <%= link_to("确认结账", "#", method: :post, class:"btn btn-large btn-danger pull-right") %>
+                <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %>
             </div>
         </div>
     </div>
