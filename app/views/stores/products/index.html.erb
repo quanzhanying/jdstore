@@ -1,0 +1,29 @@
+<%= link_to("add a product", new_stores_product_path ) %>
+<table>
+  <tr>
+    <td>
+      Title
+    </td>
+    <td>
+      Price
+    </td>
+    <td>
+      Action
+    </td>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= link_to(product.title, stores_product_path(product) )%>
+      </td>
+      <td>
+        <%= product.money %>
+      </td>
+      <td>
+        <li><%= link_to("Edit", edit_stores_product_path(product), html: { class: "btn btn-default"}) %></li>|
+        <li><%= link_to("Delete", stores_product_path(product), html: { class: "btn btn-default"}, method: :delete, data: { confirm: "Are you sure?"}) %></li>
+      </td>
+    </tr>
+  <% end %>
+</table>
