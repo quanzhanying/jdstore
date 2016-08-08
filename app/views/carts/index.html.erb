@@ -1,4 +1,5 @@
 <h2>My Cart</h2>
+<%= link_to("Clear Cart", cart_path(current_cart), class: "btn btn-danger pull-right",method: :delete, data: { confirm: "Are you Sure?"}) %>
 <table class="table">
   <thead>
     <tr>
