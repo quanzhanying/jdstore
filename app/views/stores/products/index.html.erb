@@ -1,29 +1,43 @@
-<%= link_to("add a product", new_stores_product_path ) %>
-<table>
-  <tr>
-    <td>
+<h2>Manage Products</h2>
+<hr>
+<%= link_to("add a product", new_stores_product_path, class: "btn btn-success btn-lg pull-right") %>
+<table class="table">
+  <thead>
+    <th>
+      Image
+    </th>
+    <th>
       Title
-    </td>
-    <td>
+    </th>
+    <th>
       Price
-    </td>
-    <td>
+    </th>
+    <th>
       Action
-    </td>
-  </tr>
+    </th>
+  </thead>
 
-  <% @products.each do |product| %>
-    <tr>
-      <td>
-        <%= link_to(product.title, stores_product_path(product) )%>
-      </td>
-      <td>
-        <%= product.money %>
-      </td>
-      <td>
-        <li><%= link_to("Edit", edit_stores_product_path(product), html: { class: "btn btn-default"}) %></li>|
-        <li><%= link_to("Delete", stores_product_path(product), html: { class: "btn btn-default"}, method: :delete, data: { confirm: "Are you sure?"}) %></li>
-      </td>
-    </tr>
-  <% end %>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= link_to stores_product_path(product) do %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(product.title, stores_product_path(product) )%>
+        </td>
+        <td>
+          <%= product.money %>
+        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="...">
+            <%= link_to("Edit", edit_stores_product_path(product), class: "btn btn-default btn-sm") %>
+            <%= link_to("Delete", stores_product_path(product), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"}) %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
