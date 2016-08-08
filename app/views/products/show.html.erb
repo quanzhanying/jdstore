@@ -1,0 +1,13 @@
+<div style="float:left">
+  <%= image_tag @product.image.medium %>
+</div>
+
+<div>
+  <br>
+  <h2 style="text-align:center"; "color:blue"><%= @product.title%></h2><br>
+  <h3 style="text-align:center"; "color:green" >数量:<%= @product.quantity %></h3>
+  <h3 style="text-align:center"; "color:green" >价格:￥<%= @product.price %></h3>
+<br><br>
+  <div style="text-align:center">
+    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+</div>
