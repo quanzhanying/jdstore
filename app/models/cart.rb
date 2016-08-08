@@ -9,6 +9,12 @@ class Cart < ApplicationRecord
     c1.save
   end
 
+
+  def add_product_quantity(product)
+    self.quantity = product.quantity + 1
+    self.save
+  end
+
   def total_price
    sum = 0
    cart_items.each do |cart_item|
