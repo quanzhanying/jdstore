@@ -35,4 +35,8 @@ class CartsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def check_out
+    @order = Order.new
+    @cart_items = current_cart.cart_items
+  end
 end

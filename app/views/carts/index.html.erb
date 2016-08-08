@@ -29,7 +29,7 @@
   <p>
       总计：$ <%= render_cart_total_price(current_cart) %>
   </p>
-  <%= link_to("Proceed to checkout", "#", class: "btn btn-danger")%>
+  <%= link_to("Proceed to checkout", check_out_carts_path, method: :post, class: "btn btn-danger")%>
 </div>
 <script>
   $(function() {

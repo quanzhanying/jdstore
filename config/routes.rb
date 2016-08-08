@@ -39,8 +39,11 @@ Rails.application.routes.draw do
     end
     collection do
       post :del_cart_items
+      post :check_out
     end
   end
+
+  resources :orders
 
   root 'products#index'
 end
