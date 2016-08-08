@@ -42,26 +42,13 @@ class CartsController < ApplicationController
 
   def edit_cart_item_count
     cart_item = CartItem.find_by_id(params[:id])
-    product = cart_item.product.quantity
-    current_count = cart_item.quantity
-    puts "#{product}sfsdfsdfsd#{current_count}"
-    if product.blank? && current_count.blank? && current_count > 0 && current_count < product
-      if cart_item.update(cart_item_params)
-        redirect_back(fallback_location: root_path)
-      else
-        flash[:alert] = "Faild changed... item's quantity must less than product's quantity"
-        # @cart_items = current_cart.cart_items
-        # @cart = Cart.new
-        # render "index"
-        # redirect_back(fallback_location: root_path)
-        render "index"
-      end
+    result = cart_item.edit_cart_item_count!(params[:cart_item][:quantity])
+    if result
+      flash[:notice] = "Edit count Successfully."
+      redirect_back(fallback_location: root_path)
     else
-      # @cart_items = current_cart.cart_items
-      # @cart = Cart.new
-      flash[:alert] = "Faild changed...item's quantity must less than product's quantity and must be number."
+      flash[:alert] = "Faild changed... item's quantity must less than product's quantity"
       render "index"
-      # redirect_back(fallback_location: root_path)
     end
   end
 
