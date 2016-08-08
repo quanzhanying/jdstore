@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       post :join
       post :quit
+      post :add_to_cart
     end
     resources :posts
   end
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   namespace :account do
     resources :products
   end
+
+  resources :carts
 
   root 'products#index'
 
