@@ -17,19 +17,19 @@
       </thead>
       <tbody>
 
-        <% @order_items.each do |order_item| %>
+        <% @product_lists.each do |product_list| %>
           <tr>
             <td>
-              <%= order_item.product_name %>
+              <%= product_list.product_name %>
             </td>
             <td>
-              <%= order_item.price %>
+              <%= product_list.product_price %>
             </td>
             <td>
-              <%= order_item.quantity %>
+              <%= product_list.quantity %>
             </td>
             <td>
-              <%= order_item.quantity * order_item.price %>
+              <%= product_list.quantity * product_list.product_price %>
             </td>
           </tr>
         <% end %>
@@ -54,7 +54,7 @@
         </tr>
         <tr>
           <td>
-            <%= @order_info.billing_name %> - <%= @order_info.billing_address %>
+            <%= @order.billing_name %> - <%= @order.billing_address %>
           </td>
         </tr>
         <tr>
@@ -62,7 +62,7 @@
         </tr>
         <tr>
           <td>
-            <%= @order_info.shipping_name %> - <%= @order_info.shipping_address %>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
           </td>
         </tr>
       </tbody>
