@@ -1,8 +1,12 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 購物車 </h2>
+    <h2> 购物车 </h2>
 
+    <div class="checkout clearfix">
+      <%= link_to("清空购物车", clear_cart_cart_path(current_cart), method: :post, class: "btn btn-sm btn-danger pull-right") %>
+    </div>
+    <br/>
     <table class="table table-bordered">
       <thead>
         <tr>
