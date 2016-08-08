@@ -9,10 +9,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    
-                    <%= render_login_logout_part %>
-
+                    <%= link_to "#" do%>
+                        <i class="fa fa-shopping-cart"></i> (<%= current_cart.items.count %>)
+                    <% end %>
                 </li>
+                <%= render_login_logout_part %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: carts
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Cart < ApplicationRecord
+
+	has_many :cart_items
+	has_many :items, through: :cart_items, source: :item
+
+	def add_item_to_cart(item)
+		ci = cart_items.build
+		ci.item = item
+		ci.quantity = 1
+		ci.save
+	end
+
+end
