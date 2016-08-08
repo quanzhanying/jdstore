@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <div class="row">
+
+    <% @products.each do |product| %>
+    <div class="col-sm-3 col-md-3" style="text-align:center">
+      <div class="thumbnail">
+        <!-- <img src="..." alt="..."> -->
+        <a href="<%= product_path(product) %>">
+        <div class="caption">
+          <!-- <h3><%= product.title  %></h3> -->
+          <!-- <p>...</p> -->
+          <img src="<%=product.image.thumb %>" alt=""/>
+
+          <p>
+            <%= link_to( "¥#{product.price}#{product.title}", product_path(product))%>
+          </p>
+          <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+        </div>
+       </a>
+      </div>
+    </div>
+    <% end %>
+
+    <!-- /uploads/product/image/2/thumb_5747f9aeNfa6d5a36.jpg -->
+
+  </div>
+</div>
