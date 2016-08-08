@@ -21,12 +21,21 @@ class CartsController < ApplicationController
   def change_quantity
     @cart_item = CartItem.find(params[:id])
     addOrRM = params[:addOrRM]
+
     if addOrRM=="+"
-      @cart_item.quantity = @cart_item.quantity+1
+      quantity = @cart_item.product.quantity
+      if quantity > @cart_item.quantity+1
+        @cart_item.quantity = @cart_item.quantity+1
+        @cart_item.save
+      else
+        flash[:alert] = "商品已经抢光了哦"
+      end
     else
-      @cart_item.quantity = @cart_item.quantity-1
+      if @cart_item.quantity>1
+        @cart_item.quantity = @cart_item.quantity-1
+        @cart_item.save
+      end
     end
-    @cart_item.save
 
     redirect_to :back
   end
