@@ -2,7 +2,8 @@
 <div class="row">
   <div class="col-md-6">
     <div class="thumbnail">
-      <img src="<%= @product.image_url %>" alt="...">
+      <img src="<%= @product.image.medium %>" alt="...">
+      <!-- 也可以用image_tag -->
     </div>
   </div>
   <div class="col-md-6">

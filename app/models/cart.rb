@@ -8,4 +8,12 @@ class Cart < ApplicationRecord
     ci.quantity = 1
     ci.save
   end
+
+  def total_price
+    sum = 0
+    cart_items.each do |cici|
+      sum += cici.quantity * cici.product.money
+    end
+    return sum
+  end
 end
