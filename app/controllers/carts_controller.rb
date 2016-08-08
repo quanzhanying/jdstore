@@ -18,7 +18,6 @@ class CartsController < ApplicationController
 
 
   def destroy
-
     @cart = Cart.find(session[:cart_id])
     @cart.destroy
     redirect_to carts_path

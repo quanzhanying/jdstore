@@ -66,8 +66,13 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
+    if @product.quantity > 0
     current_cart.add_product_to_cart(@product)
     redirect_to :back
+    else
+    flash[:alert] = "商品销空"
+    redirect_to :back
+    end
   end
 
 
