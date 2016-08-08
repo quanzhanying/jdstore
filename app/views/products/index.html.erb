@@ -5,6 +5,19 @@
       <%= link_to(product.title, product_path(product)) %>
     </td>
     <td>
+      <%= link_to(image_tag(product.attachment.thumb), product_path(product)) %>
+      <%#= image_tag product.attachment.thumb %>
+    </td>
+    <td>
+      <%= product.description %>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+    <td>
+      <%= product.quantity %>
+    </td>
+    <td>
       <%= product.created_at %>
     </td>
   </tr>
