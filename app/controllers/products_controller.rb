@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
 
   end
 
-  def no_storage_alert
-    # redirect_to :back, alert: "No storage!"
-  end
+  # def no_storage_alert
+  #   # redirect_to :back, alert: "No storage!"
+  # end
 end

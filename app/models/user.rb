@@ -7,4 +7,8 @@ class User < ApplicationRecord
   def store?
     is_store
   end
+
+  def superadmin?
+    is_superadmin
+  end
 end
