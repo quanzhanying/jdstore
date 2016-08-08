@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     collection do
       delete :delete_all
     end
+    member do
+      post :number_up
+      post :number_down
+    end
     resources :cart_item
   end
 

@@ -13,4 +13,14 @@
 class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
+
+  def number_up!
+    self.quantity += 1
+    self.save
+  end
+
+  def number_down!
+    self.quantity -= 1
+    self.save
+  end
 end
