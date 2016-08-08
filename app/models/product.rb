@@ -4,5 +4,5 @@ class Product < ApplicationRecord
   validates :description ,presence: true
 
 
-    #mount_uploader :image, AaamageUploader
+  mount_uploader :image, ImageUploader
 end

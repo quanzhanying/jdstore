@@ -2,27 +2,34 @@
   <div class="group">
     <%= link_to("Add a product", new_admin_product_path, class: "btn btn-primary pull-right") %>
   </div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Title</td>
-        <td>Description</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td>#</td>
-          <td><%= link_to(product.title, admin_products_path(product)) %></td>
-          <td><%= product.description %></td>
-          <td>
-              <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", admin_products_path(product),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <div class="row">
+
+
+        <% @products.each do |product| %>
+
+        <div class="col-md-3"  >
+
+            <p>
+              <%= link_to(product.title, admin_product_path(product)) %>
+            </p>
+            <div style="height: 200px;width: 300px;">
+              <a href="<%= admin_product_path(product) %>"><img src="<%= product.image %>" alt=""   height="200" width="300" /></a>
+              <br />
+              <br>
+              <div class="pull-right">
+
+                  <div style="color: red;">¥&nbsp;<%= product.price %></div>
+
+
+              </div>
+            </div>
+
+
+                <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default")%>
+                <%= link_to("Delete", admin_products_path(product),    class: "btn btn-sm btn-default",
+                            method: :delete, data: { confirm: "Are you sure?" } )%>
+        </div>
+
+        <% end %>
+    </div>
 </div>
