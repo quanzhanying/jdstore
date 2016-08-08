@@ -42,6 +42,11 @@ end
     redirect_to products_path
   end
 
+def add_to_cart
+  @product = Product.find(params[:id])
+  redirect_to :back
+end 
+
 
   private
 
