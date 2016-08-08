@@ -8,6 +8,13 @@ class Cart < ApplicationRecord
     ci.quantity = 1
     ci.save
   end
+
+  # def delete_product_from_cart(product)
+  # ci = cart_items.destroy
+  # #ci.product = product
+  # #ci.save
+  # end
+
   def total_price
     sum = 0
     cart_items.each do |cart_item|

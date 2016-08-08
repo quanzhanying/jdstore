@@ -6,8 +6,12 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
-  
-  resources :carts
+
+  resources :carts do
+    member do
+      delete :delete_cart_item
+    end
+  end
 
   namespace :admin do
     resources :products
