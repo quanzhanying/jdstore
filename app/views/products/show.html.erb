@@ -27,8 +27,10 @@
         </p>
 
         <div style="margin-top: 190px">
+            <% if @product.quantity > 0 %>
             <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger pull-right" ) %>
-
+        <% else %>
+            <% end %>
         </div>
 
     </div>
