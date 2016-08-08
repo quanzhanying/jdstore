@@ -14,7 +14,9 @@ class CartsController < ApplicationController
 
   def change_quantity # 这是一个post的方法，在cart的index捕捉到item，然后创建一定数量的items
     @ci = CartItem.find(params[:id])
-    @ci.update(quantity_params)
+    if @ci.update(quantity_params)
+      flash[:notice] = "#{@ci.product.title} quantity has changed"
+    end
     redirect_to :back
   end
 
