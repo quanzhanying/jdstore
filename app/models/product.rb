@@ -7,6 +7,9 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  quantity    :integer
+#  price       :integer
+#  image       :string
 #
 
 class Product < ApplicationRecord
