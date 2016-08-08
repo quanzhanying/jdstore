@@ -1,0 +1,11 @@
+<% item.product_lists.each do |product| %>
+  <tr>
+    <td>
+      <%= product.product_name %>
+    </td>
+    <td><%= product.product_price %></td>
+    <td><%= product.quantity %></td>
+    <td><%= item.total_price %></td>
+    <td><%= render_created_at(item.created_at) %></td>
+  </tr>
+<% end %>
