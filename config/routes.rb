@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     member do
       post :up_cart_item_count
       post :down_cart_item_count
+      post :edit_cart_item_count
     end
     collection do
       post :del_cart_items

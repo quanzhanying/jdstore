@@ -3,7 +3,6 @@ class CartsController < ApplicationController
 
   def index
     @cart_items = current_cart.cart_items
-    @cart = Cart.new
   end
 
   def del_cart_items
@@ -40,4 +39,36 @@ class CartsController < ApplicationController
     @order = Order.new
     @cart_items = current_cart.cart_items
   end
+
+  def edit_cart_item_count
+    cart_item = CartItem.find_by_id(params[:id])
+    product = cart_item.product.quantity
+    current_count = cart_item.quantity
+    puts "#{product}sfsdfsdfsd#{current_count}"
+    if product.blank? && current_count.blank? && current_count > 0 && current_count < product
+      if cart_item.update(cart_item_params)
+        redirect_back(fallback_location: root_path)
+      else
+        flash[:alert] = "Faild changed... item's quantity must less than product's quantity"
+        # @cart_items = current_cart.cart_items
+        # @cart = Cart.new
+        # render "index"
+        # redirect_back(fallback_location: root_path)
+        render "index"
+      end
+    else
+      # @cart_items = current_cart.cart_items
+      # @cart = Cart.new
+      flash[:alert] = "Faild changed...item's quantity must less than product's quantity and must be number."
+      render "index"
+      # redirect_back(fallback_location: root_path)
+    end
+  end
+
+  private
+
+  def cart_item_params
+    params.require(:cart_item).permit(:quantity)
+  end
+
 end
