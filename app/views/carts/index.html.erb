@@ -32,16 +32,16 @@
             </td>
             <td>
               <div class="row">
-              <%= link_to("-1", cart_decream_quantity_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
+              <%= link_to("-1", decream_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
               <%= cart_item.quantity %>
-              <%= link_to("+1", cart_incream_quantity_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
+              <%= link_to("+1", incream_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
               </div>
             </td>
             <td>
               <%= cart_item.id %>
             </td>
             <td>
-              <%= link_to("删除", cart_delete_one_path(cart_item), method: :post, class: "btn btn-lg btn-danger pull-right") %>
+              <%= link_to("删除", delete_one_cart_path(cart_item), method: :post, class: "btn btn-lg btn-danger pull-right") %>
             </td>
           </tr>
         <% end %>
