@@ -9,6 +9,7 @@
           <th colspan="2">Product</th>
           <th>Unit Price</th>
           <th>Quantity</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,9 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+            </td>
+            <td>
+              <%= link_to("Delete", cart_path(cart_item), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
             </td>
           </tr>
         <% end %>
