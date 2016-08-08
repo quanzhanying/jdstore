@@ -26,6 +26,8 @@ class OrdersController < ApplicationController
         product_list.save
       end
 
+      current_cart.destroy
+
       flash[:notice] = "Successfully built..."
       redirect_to order_path(@order.token)
     else
