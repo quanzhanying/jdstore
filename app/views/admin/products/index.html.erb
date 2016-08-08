@@ -1,0 +1,61 @@
+<head>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid #dddddd;
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="pull-right">
+        <%= link_to("Add new Product", new_admin_product_path, :class => "btn btn-default") %>
+    </div>
+
+    <br><br>
+    <table class="table table-boldered" >
+
+        <thead>
+            <!-- <td>#</td> -->
+            <td>品名</td>
+            <td>描述</td>
+            <td>库存</td>
+            <td>价格</td>
+            <td>选项</td>
+            <td>创建日前</td>
+        </thead>
+
+        <tbody>
+            <% @products.each do |product| %>
+            <tr>
+                <!-- <td>
+                  <%#= product.iteration_index %>
+                </td> -->
+                <td>
+                    <%= product.title %>
+                </td>
+                <td>
+                    <%= product.description %>
+                </td>
+                <td>
+                    <%= product.quantity %>
+                </td>
+                <td>
+                    <%= product.price %>
+                </td>
+                <td>
+                    <%= link_to("Edit", edit_admin_product_path(product)) %>
+                    |
+                    <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => {:confim => "Are you sure?"}) %>
+                </td>
+                <td>
+                    <%= product.created_at %>
+                </td>
+            </tr>
+        </tbody>
+        <% end %>
+    </table>
+
+</body>
