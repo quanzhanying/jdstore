@@ -24,12 +24,14 @@
                     </td>
                     <td>
                         <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+
                     </td>
                     <td>
                         <%= cart_item.product.price %>
                     </td>
                     <td>
                         <%= cart_item.quantity %>
+                        <br><%= link_to("delete", delete_item_cart_path(cart_item), method: :post) %>
                     </td>
                 </tr>
                 <% end %>
@@ -49,7 +51,12 @@
 
         <hr>
         <div class="checkout clearfix">
+            <%# if !@cart.cart_items.quantity  %>
             <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+
+            <%# else %>
+            <%= link_to("Empty cart", cart_path(current_cart), method: :delete, class: "btn btn-lg btn-info pull-right") %>
+            <%# end %>
         </div>
     </div>
 </div>

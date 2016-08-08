@@ -7,7 +7,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts
+  resources :carts do
+    member do
+      post :delete_item
+    end
+  end
+  #   collection do
+  #     delete :clean
+  #   end
+  # end
 
   namespace :admin do
     resources :products
@@ -18,8 +26,7 @@ Rails.application.routes.draw do
         post :change_to_user
       end
     end
-
-
   end
+
   root "products#index"
 end

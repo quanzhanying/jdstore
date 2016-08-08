@@ -7,10 +7,6 @@ class Cart < ApplicationRecord
     ci.product = product
     ci.quantity = 1
     ci.save
-    if product.quantity > 0
-      product.quantity -= 1
-    end
-    product.save
   end
 
   def total_price
@@ -18,7 +14,8 @@ class Cart < ApplicationRecord
     cart_items.each do |cart_item|
       sum += cart_item.quantity * cart_item.product.price
     end
-    sum
+    return sum
   end
+
 
 end
