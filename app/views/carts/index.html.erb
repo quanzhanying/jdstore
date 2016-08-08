@@ -1,0 +1,61 @@
+<div class="row" style="margin:20px">
+  <div class="col-md-12 showproduct-bg showproduct-font">
+    <h2>My cart</h2>
+    <table class="table table-bordered ">
+      <thead>
+        <tr>
+          <th colspan="2">
+            Product
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Quantity
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="">
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+              <% if cart_item.product.image.present? %>
+                <%= image_tag(cart_item.product.image.thumb.url, class:"thumbnail showproduct-bg") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=NoPic", class:"thumbnail") %>
+              <% end %>
+              <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+          </td>
+          <td>
+            <%= cart_item.product.price %>
+          </td>
+          <td>
+            <%= cart_item.quantity %>
+
+            <div class="btn-group pull-right">
+              <%= link_to("+1",up_cart_path(cart_item), method: :post, class:"btn btn-sm btn-default")%>
+              <%= link_to("-1",down_cart_path(cart_item), method: :post, class:"btn btn-sm btn-default")%>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+    <div class="pull-right"> Total price: ¥ <%= render_cart_total_price(current_cart) %>
+    </div>
+
+    <br/>
+    <hr />
+  <div class="checkout clearfix" style="margin-bottom:30px">
+    <%= link_to("Confirm and Pay", "#",method: :post, class:"btn btn-lg btn-danger pull-right") %>
+    <%= link_to("Empty my cart",cart_path(current_cart), method: :delete, class:"btn btn-default") %>
+  </div>
+  </div>
+
+</div>
