@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h2>购物车</h2>
+        <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -67,7 +68,7 @@
             <hr>
             <div class="checkout clearfix">
                 <%= link_to("确认结账", "#", method: :post, class:"btn btn-large btn-danger pull-right") %>
-                <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %>
+                <!-- <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %> -->
             </div>
         </div>
     </div>
