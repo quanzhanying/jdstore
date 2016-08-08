@@ -36,7 +36,9 @@
               <%= cart_item.product.price %>
             </td>
             <td>
-              <%= cart_item.quantity %>
+              <%= link_to("-1", change_quantity_cart_path(cart_item,addOrRM: "-"),method: :post,class: "btn btn-xs btn-default") %>
+               <%= cart_item.quantity %>
+               <%= link_to("+1", change_quantity_cart_path(cart_item,addOrRM: "+"),method: :post,class: "btn btn-xs btn-default") %>
             </td>
             <td>
               <%= link_to("Delete", remove_item_from_cart_cart_path(cart_item), class: "btn btn-sm btn-default",method: :post, data: { confirm: "Are you sure?" } ) %>

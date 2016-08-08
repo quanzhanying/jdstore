@@ -18,4 +18,17 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def change_quantity
+    @cart_item = CartItem.find(params[:id])
+    addOrRM = params[:addOrRM]
+    if addOrRM=="+"
+      @cart_item.quantity = @cart_item.quantity+1
+    else
+      @cart_item.quantity = @cart_item.quantity-1
+    end
+    @cart_item.save
+
+    redirect_to :back
+  end
+
 end

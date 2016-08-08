@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     member do
       post :clear_cart
       post :remove_item_from_cart
+      post :change_quantity
     end
   end
 
