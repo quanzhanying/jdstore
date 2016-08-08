@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h2>购物车</h2>
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th colspan="2">
@@ -12,6 +12,9 @@
                     </th>
                     <th>
                         数量
+                    </th>
+                    <th colspan="2">
+                        操作
                     </th>
                 </tr>
             </thead>
@@ -36,6 +39,10 @@
                     </td>
                     <td>
                         <%= cart_item.quantity %>
+                    </td>
+                    <td>
+                        <%= link_to("+1", up_product_cart_path(cart_item), method: :post, class: "btn btn-default" ) %>
+                        <%= link_to("-1", down_product_cart_path(cart_item), method: :post, class: "btn btn-default" ) %>
                     </td>
                 </tr>
                 <% end %>

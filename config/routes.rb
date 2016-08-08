@@ -19,5 +19,12 @@ Rails.application.routes.draw do
     end
 
 
-    resources :carts
+    resources :carts do
+
+        member do
+          post :up_product
+          post :down_product
+        end
+      
+    end
 end
