@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     if @product.quantity < 1
-      out_of_stock
+      :show
     else
       current_cart.add_product_to_cart(@product)
       redirect_to :back

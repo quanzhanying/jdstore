@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
     @current_cart ||= find_cart
   end
 
-  def out_of_stock
-  end
-  
+  # def out_of_stock
+  # end
+
   private
 
   def find_cart
