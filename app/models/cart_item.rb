@@ -1,4 +1,5 @@
 class CartItem < ApplicationRecord
+  validates :quantity, numericality: true
   belongs_to :cart
   belongs_to :product
 

@@ -24,8 +24,7 @@ class CartsController < ApplicationController
     redirect_to :back
     end
 
-  def itemquantity
-    @product = Product.find(params[:id])
-    @product.quantity
+  def checkout
+    @order = Order.new
   end
 end

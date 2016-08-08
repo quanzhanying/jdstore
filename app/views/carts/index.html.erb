@@ -10,7 +10,8 @@
         <tr>
           <th colspan="2">商品资讯</th>
           <th>单价</th>
-          <th>数量</th>
+          <th>库存</th>
+          <th>购买</th>
           <th>选项</th>
           <th>#</th>
         </tr>
@@ -32,14 +33,17 @@
             <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
           </td>
           <td>
-            <%= cart_item.product.price %>
+            <%= cart_item.product.price  %> RMB
           </td>
+          <td>
+            <%= cart_item.product.quantity %>
           <td>
             <%= cart_item.quantity %>
           </td>
         <td>
           <% if cart_item.quantity < cart_item.product.quantity  %>
-        <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %> 
+        <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %>
+        <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
         <% else %>
         <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
         <% end %>
@@ -60,7 +64,7 @@
 
     <hr>
     <div class="checkout clearfix">
-      <%= link_to("确认结账","#",method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("确认结账",checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>

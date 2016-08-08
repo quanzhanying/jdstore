@@ -15,9 +15,10 @@ Rails.application.routes.draw do
       end
       collection do
         delete :delall
+        post :checkout
       end
   end
-
+  resources :orders
 
   namespace :account do
     resources :products
