@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :carts
+  resources :carts do
+    member do
+      post :remove_all_item_from_cart
+    end
+  end
 
   resources :items do
     member do

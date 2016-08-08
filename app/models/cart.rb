@@ -20,7 +20,7 @@ class Cart < ApplicationRecord
 	end
 
 	def remove_item_from_cart(cart_item)
-		cart_items.delete(cart_item)
+		cart_item.delete
 	end
 
 	def total_price

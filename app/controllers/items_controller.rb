@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 			@item.save
 			flash[:alert] = @item.quantity
 		else
-			flash[:alert] = "Out of Store"
+			flash[:alert] = "This Item is Out of Store"
 		end
 
 		redirect_to :back

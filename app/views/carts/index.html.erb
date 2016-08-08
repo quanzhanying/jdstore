@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-md-12">
-
+    <div class="pull-right">
+      <%= link_to("Remove all Items", remove_all_item_from_cart_cart_path(current_cart), method: :post, :class => "btn btn-default") %>
+    </div>
     <h2> 購物車 </h2>
-
+    
     <table class="table table-bordered">
       <thead>
         <tr>
