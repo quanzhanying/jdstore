@@ -44,7 +44,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <%= simple_form_for cici, :url => change_quantity_cart_path(cici) do |form| %>
-                <li><%= form.input :quantity %></li>
+                <li><%= form.input :quantity, :collection => 1..cici.product.storage %></li>
                 <li><%= form.submit "Change Quantity" %></li>
               <% end %>
             </ul>
