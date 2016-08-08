@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   end
 
 resources :carts do
-  member do
-    post :remove_item_from_cart
-  end
-end
+ member do
+   post :add_product
+   post :red_product
+ end
+ end
+  # member do
+  #   post :remove_item_from_cart
+  # end
 
 resources :products do
   member do

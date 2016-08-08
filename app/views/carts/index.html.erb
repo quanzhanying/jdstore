@@ -34,8 +34,10 @@
             <%= cart_item.quantity %>
           </td>
           <td>
-            <%= link_to("Delete", remove_item_from_cart_cart_path(cart_item), class: "btn btn-sm btn-info", method: :post)%>
+            <%= link_to("+1", add_product_cart_path(cart_item),class: "btn btn-sm btn-info", method: :post) %>
+            <%= link_to("-1", red_product_cart_path(cart_item),class: "btn btn-sm btn-info", method: :post) %>
           </td>
+
         </tr>
         <% end %>
       </tbody>
