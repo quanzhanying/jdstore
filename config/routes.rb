@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :products
   end
 
-resources :carts
+resources :carts do
+  member do
+    post :remove_item_from_cart
+  end
+end
 
 resources :products do
   member do
