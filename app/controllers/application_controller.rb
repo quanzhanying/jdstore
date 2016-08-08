@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_cart
+  helper_method :current_cart #因为current_cart只是下面的一个方法，不是model，没法current_cart.products，所以在这里说他是helper的方法
 
   def current_cart
     @current_cart ||= find_cart #可以试验一下拆开 ||=
