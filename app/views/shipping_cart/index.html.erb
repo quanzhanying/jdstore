@@ -1,0 +1,51 @@
+<div style="margin-top:30px">
+</div>
+  <div class="pull-right">
+
+  </div>
+    <table class="table table-boldered">
+      <%= link_to("清空购物车", new_admin_product_path, :class => "btn btn-danger pull-right") %>
+      <h1>购物车</h1>
+      <tHead>
+        <tr>
+          <td>商品图片</td>
+          <td>商品名称</td>
+          <td>商品数量</td>
+          <td>商品尺寸</td>
+          <td>商品价钱</td>
+        </tr>
+      </tHead>
+
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <img src="<%=cart_item.product.attachment.thumb%>" >
+            </td>
+
+            <td><%= cart_item.product.title %></td>
+            <td><%= cart_item.quantity %></td>
+            <td><%= cart_item.product.width %>cm x <%= cart_item.product.width %>cm</td>
+            <td><%= cart_item.product.price %></td>
+          </tr>
+
+      <% end %>
+    </tbody>
+            <td></td>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span> 总计: <%= render_cart_total_price(current_cart) %> RMB  </span>
+      </span>
+    </div>
+
+    <div style="margin-top:30px">
+    </div>
+
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    </div>
+
+    <div style="margin-top:30px">
+    </div>
