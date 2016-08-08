@@ -30,6 +30,14 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def pay_with_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.save
+
+    redirect_to :back
+  end
+
   private
 
   def order_params
