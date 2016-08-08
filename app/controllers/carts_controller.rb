@@ -14,15 +14,18 @@ class CartsController < ApplicationController
 
   def upitem
     @ci = CartItem.find(params[:id])
-    @ci.quantity += 1
-    @ci.save
+    @ci.upup!
     redirect_to :back
   end
 
   def downitem
     @ci = CartItem.find(params[:id])
-    @ci.quantity -= 1
-    @ci.save
+    @ci.downdown!
     redirect_to :back
     end
+
+  def itemquantity
+    @product = Product.find(params[:id])
+    @product.quantity
+  end
 end
