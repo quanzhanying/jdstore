@@ -1,0 +1,35 @@
+<div class="col-md-12">
+
+    <div class="row">
+        <% @products.each do |product| %>
+
+        <div class="col-md-3"  >
+
+            <p>
+              <%= link_to(product.title, admin_product_path(product)) %>
+            </p>
+            <div style="height: 200px;width: 300px;">
+              <a href="<%= admin_product_path(product) %>"><img src="<%= product.image %>" alt=""   height="200" width="300" /></a>
+              <br />
+              <br>
+              
+              </div>
+              <div class="" style="margin-top: 20px;padding-right: 20px;">
+                <div class="row">
+
+                  <div  style="padding-left: 20px;">
+                    数量：1
+                    <br />
+                    价格：¥<%= product.price %>
+                  </div>
+                </div>
+
+                <div>
+                <%= link_to("加入购物车", add_to_cart_product_path(product),method: :post, class: "btn btn-primary pull-right") %>
+              </div>
+              </div>
+            </div>
+
+        <% end %>
+    </div>
+</div>
