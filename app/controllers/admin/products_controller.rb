@@ -29,7 +29,8 @@ class Admin::ProductsController < ApplicationController
     end
 
     def update
-      if @product=Product.update(params_product)
+      @product=Product.find(params[:id])
+      if @product.update(params_product)
         redirect_to admin_products_path
       else
         render :edit

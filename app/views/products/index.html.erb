@@ -5,7 +5,7 @@
   <div class="col-sm-2 col-md-2">
     <div class="thumbnail showproduct-bg">
       <% if product.image.present? %>
-        <%= link_to(image_tag(product.image.thumb.url),admin_product_path(product)) %>
+        <%= link_to(image_tag(product.image.thumb.url),product_path(product)) %>
       <% else %>
         <%= image_tag("http://placehold.it/200x200&text=NoPic") %>
       <% end %>
@@ -14,7 +14,18 @@
         <p class="indexproduct-otherfont">
             ¥ <%= product.price %> ｜ Qty: <%= product.quantity %>
         </p>
-        <%= link_to("Add to cart", add_to_cart_product_path(product),method: :post,class:"btn btn-sm btn-danger") %>
+
+        <% if product.quantity==0 %>
+          <%= link_to("暂时缺货","#", class:"btn btn-sm btn-default") %>
+        <% else %>
+          <% if current_cart.is_cart_item?(product) %>
+              <%= link_to("Add to cart",up2_cart_path(product), method: :post, class:"btn btn-sm btn-danger")%>
+          <% else %>
+
+            <%= link_to("Add to cart", add_to_cart_product_path(product),method: :post,class:"btn btn-sm btn-danger") %>
+
+          <% end %>
+        <% end %>
         <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
       </div>
     </div>

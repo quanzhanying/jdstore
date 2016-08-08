@@ -17,4 +17,8 @@ class Cart < ApplicationRecord
       sum
   end
 
+  def is_cart_item?(product)
+    cart_products.include?(product)
+  end
+
 end

@@ -8,11 +8,11 @@
 
   <div class="col-sm-2 col-md-2">
     <div class="thumbnail showproduct-bg">
-      <% if product.image.present? %>
+      <!-- <% if product.image.present? %>
           <%= link_to(image_tag(product.image.thumb.url),admin_product_path(product)) %>
       <% else %>
         <%= image_tag("http://placehold.it/200x200&text=NoPic") %>
-      <% end %>
+      <% end %> -->
 
       <div class="caption showproduct-font">
         <h5><%= link_to(product.title,admin_product_path(product)) %></h5>
