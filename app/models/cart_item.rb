@@ -29,4 +29,18 @@ class CartItem < ApplicationRecord
       self.save
     end
   end
+
+  def edit_cart_item_count!(quantity)
+    product = self.product.quantity
+    if !product.blank? && !quantity.blank? && quantity.to_i > 0 && quantity.to_i < product
+      self.quantity = quantity
+      if self.save()
+        true
+      else
+        false
+      end
+    else
+      false
+    end
+  end
 end
