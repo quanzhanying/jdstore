@@ -7,7 +7,7 @@ class CartsController < ApplicationController
   end
 
   def delete_item
-    CartItem.find(params[:id]).destroy
+    CartItem.find(params[:id]).destroy # 如果我要删item，还是用最基本的找item的id的方法
     # current_cart.cart_items.first.destroy
     redirect_to :back, alert: "This item has gone away!"
   end
