@@ -12,6 +12,15 @@ class CartsController < ApplicationController
     redirect_to :back, alert: "This item has gone away!"
   end
 
+  def change_quantity # 这是一个post的方法，在cart的index捕捉到item，然后创建一定数量的items
+    @ci = CartItem.find(params[:id])
+    @ci.update(quantity_params)
+    redirect_to :back
+  end
+
+  def quantity_params
+    params.require(:cart_item).permit(:quantity)
+  end
   # def clear_all
   #   cart.cart_items.destroy_all
   #   redirect_to :back, alert: "Your cart has been cleared!"

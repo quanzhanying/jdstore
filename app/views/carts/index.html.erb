@@ -36,7 +36,20 @@
         <%= cici.product.money %>
       </td>
       <td>
-        <%= cici.quantity %>
+        <!-- 做一个quantity的下拉，下拉里面有simple_form -->
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <%= cici.quantity %>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <%= simple_form_for cici, :url => change_quantity_cart_path(cici) do |form| %>
+                <li><%= form.input :quantity %></li>
+                <li><%= form.submit "Change Quantity" %></li>
+              <% end %>
+            </ul>
+          </div>
+          <!-- 下拉结束 -->
       </td>
       <td>
         <%= link_to("Delete", delete_item_cart_path(cici), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"}) %>

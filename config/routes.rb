@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :carts do
     member do
       delete 'delete_item'
+      patch 'change_quantity'
     end
   end
 end
