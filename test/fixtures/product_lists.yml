@@ -4,9 +4,11 @@
 #
 #  id            :integer          not null, primary key
 #  order_id      :integer
+#  product_id    :integer
 #  product_name  :string
 #  product_price :integer
 #  quantity      :integer
+#  image         :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
@@ -15,12 +17,16 @@
 
 one:
   order_id: 1
+  product_id: 1
   product_name: MyString
   product_price: 1
   quantity: 1
+  image: MyString
 
 two:
   order_id: 1
+  product_id: 1
   product_name: MyString
   product_price: 1
   quantity: 1
+  image: MyString
