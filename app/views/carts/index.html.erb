@@ -13,6 +13,7 @@
           <th colspan="2">商品資訊</th>
           <th>單價</th>
           <th>數量</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -36,6 +37,9 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+            </td>
+            <td>
+              <%= link_to("Delete", remove_item_from_cart_cart_path(cart_item), class: "btn btn-sm btn-default",method: :post, data: { confirm: "Are you sure?" } ) %>
             </td>
           </tr>
         <% end %>
