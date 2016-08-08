@@ -45,13 +45,17 @@ end
 def add_to_cart
   @product = Product.find(params[:id])
 
- if @product.quantity > 0
+ if @product.quantity == 0
+   flash[:alert] = "Sorry, product quantity less than one"
+ end
+
+ if current_cart.products.include?(@product)
+   flash[:alert] = "this products already in cart"
+ else
   current_cart.add_product_to_cart(@product)
   redirect_to :back
-else
-  flash[:alert]="sorry,this product has sold out"
-  redirect_to :back
 end
+
 end
 
 
