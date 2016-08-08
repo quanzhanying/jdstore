@@ -19,4 +19,10 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def quantity
+    @num = Product.find(params[:id])
+    @num.quantity
+  end
+  
+
 end
