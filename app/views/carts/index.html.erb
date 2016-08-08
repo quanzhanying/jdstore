@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <h2> 购物车 </h2>
+     <%= link_to("删除全部",cart_path(@carts), class: "btn btn-md btn-danger pull-right",
+          method: :delete, data: { confirm:  "Are you sure?" } ) %>
+          <br /> <br />
 
     <table class="table table-bordered">
       <thead>
@@ -8,6 +11,7 @@
           <th colspan="2">商品资讯</th>
           <th>单价</th>
           <th>数量</th>
+          <th>选项</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +36,8 @@
           <td>
             <%= cart_item.quantity %>
           </td>
+          <td><%= link_to("删除", "#", class: "btn btn-xs btn-danger pull-right",
+               method: :delete, data: { confirm:  "Are you sure?" } ) %></td>
         </tr>
         <% end %>
       </tbody>
@@ -39,7 +45,8 @@
     <br>
     <div class="total clearfix">
       <span class="pull-right">
-        <span>总计 xxx RMB</span>
+        <span><%= render_cart_total_price(current_cart) %></span> RMB
+
       </span>
     </div>
 
