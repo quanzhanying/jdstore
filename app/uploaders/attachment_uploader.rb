@@ -3,8 +3,8 @@
 class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+   include CarrierWave::RMagick
+  # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -16,15 +16,15 @@ class AttachmentUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process resize_to_fit: [700, 438]
+    process resize_to_fit: [700, 438]
 
-  version :thumb do
-    process resize_to_fit: [175, 191]
-  end
+    version :thumb do
+      process resize_to_fit: [175, 191]
+    end
 
-  version :medium do
-    process resize_to_fit: [350, 219]
-  end
+    version :medium do
+      process resize_to_fit: [350, 219]
+    end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

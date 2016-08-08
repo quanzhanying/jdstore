@@ -1,12 +1,27 @@
-<main class="main" role="main">
-  <div class="container">
+<section style="height: 240px; background-image: url(http://www.shangyutang.com.cn/images/banner1.jpg);">
+ <div class="center-block w-100p p-15" style="max-width: 1000px;">
+   <div class="row">
+     <div class="col-sm-12 text-center mt-40 mb-60 headline">
+       <h1 class="heading"><br/>热爱艺术的种种方式，<br>尽在一处。</h1>
+       <div class="mt-20 font-18 lh-30 center-block subheading">
+         <p> 我们对于艺术的热爱，一直让我们引以为豪。<br /> 从一开始，这种爱就不断推动和启发着我们。</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+
+<div style="margin-top:30px">
+</div>
+
+
     <div class="row" id="post-list">
       <% @products.each do |product| %>
       <div class="col-xs-12 col-sm-6">
         <article class="post tag-foreign-website tag-bootstrap-v3 tag-opensource-project">
           <div class="post-featured-image">
             <a class="thumbnail" href="<%= product_path(product) %>" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'Nemo'])" target="_blank">
-              <img src="<%=product.attachment%>" width="700" height="438" onload="imgLoaded(this)">
+              <img src="<%=product.attachment%>" width="700" height="438">
             </a>
           </div>
             <div class="post-content">
@@ -17,4 +32,3 @@
       <% end %>
     </div>
   </div>
-</main>
