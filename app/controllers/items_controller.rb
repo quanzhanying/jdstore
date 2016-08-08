@@ -11,13 +11,20 @@ class ItemsController < ApplicationController
 
 	def add_to_cart
 		@item = Item.find(params[:id])
-		if @item.quantity > 0
-			current_cart.add_item_to_cart(@item)
-			@item.quantity_decrease(1)
-			@item.save
-			flash[:alert] = @item.quantity
+		cart_item = CartItem.find_by_item_id(@item.id)
+		if @item.quantity > 0 
+
+			if cart_item.nil?
+				current_cart.add_item_to_cart(@item)
+			elsif @item.quantity > cart_item.quantity
+				cart_item.quantity = cart_item.quantity + 1
+				cart_item.save
+			else
+				flash[:alert] = "Only " + @item.quantity.to_s + " in Stock, you can't add more to your Cart"
+			end
+
 		else
-			flash[:alert] = "This Item is Out of Store"
+			flash[:alert] = "This item is out of stock"
 		end
 
 		redirect_to :back
@@ -26,9 +33,6 @@ class ItemsController < ApplicationController
 	def remove_from_cart
 		@cart_item = CartItem.find(params[:id])
 		current_cart.remove_item_from_cart(@cart_item)
-		@cart_item.item.quantity_increase(@cart_item.quantity)
-		@cart_item.item.save
-		flash[:alert] = @cart_item.item.quantity
 
 		redirect_to :back
 	end

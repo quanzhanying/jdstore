@@ -13,16 +13,10 @@ class Cart < ApplicationRecord
 	has_many :items, through: :cart_items, source: :item
 
 	def add_item_to_cart(item)
-		cart_item = CartItem.find_by_item_id(item.id)
-		if cart_item.nil?
-			ci = cart_items.build
-			ci.item = item
-			ci.quantity = 1
-			ci.save
-		else
-			cart_item.quantity = cart_item.quantity + 1
-			cart_item.save
-		end
+		ci = cart_items.build
+		ci.item = item
+		ci.quantity = 1
+		ci.save
 	end
 
 	def remove_item_from_cart(cart_item)
