@@ -20,7 +20,7 @@
                   </p>
                   Quantity: <%= @product.quantity %> |
                   Price: ¥ <%= @product.price %><br/>
-                  <%= link_to("加入购物车","#",class:"btn btn-primary red_button",style:"margin-top:10px; ") %>
+                  <%= link_to("加入购物车","add_to_cart_product(@product)",class:"btn btn-primary red_button",style:"margin-top:10px; ") %>
                   <%= link_to("收藏","#",class:"btn btn-primary",style:"margin-top:10px;") %>
               </div>
 
