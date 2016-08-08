@@ -40,6 +40,7 @@
             <div class="btn-group pull-right">
               <%= link_to("+1",up_cart_path(cart_item), method: :post, class:"btn btn-sm btn-default")%>
               <%= link_to("-1",down_cart_path(cart_item), method: :post, class:"btn btn-sm btn-default")%>
+              <%= link_to("delete",cart_path(cart_item), method: :delete, class:"btn btn-sm btn-primary")%>
             </div>
           </td>
         </tr>
@@ -54,7 +55,7 @@
     <hr />
   <div class="checkout clearfix" style="margin-bottom:30px">
     <%= link_to("Confirm and Pay", "#",method: :post, class:"btn btn-lg btn-danger pull-right") %>
-    <%= link_to("Empty my cart",cart_path(current_cart), method: :delete, class:"btn btn-default") %>
+    <%= link_to("Empty my cart",empty_cart_cart_path(current_cart), method: :delete, class:"btn btn-default") %>
   </div>
   </div>
 

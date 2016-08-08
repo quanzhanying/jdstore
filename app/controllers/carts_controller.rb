@@ -1,8 +1,14 @@
 class CartsController < ApplicationController
   def destroy
-    current_cart.cart_items.destroy_all
-    current_cart.destroy
+    @cart_items=CartItem.find(params[:id])
+    @cart_items.destroy
     redirect_to :back
+  end
+
+  def empty_cart
+    current_cart.cart_items.destroy_all
+    # current_cart.destroy
+    redirect_to :back  
   end
 
   def up
