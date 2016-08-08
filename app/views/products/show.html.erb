@@ -18,6 +18,8 @@
       <p>价格：<%= @product.price %></p>
     </div>
     <div class="col-md-3 col-md-offset-6" style="margin-top: 200px">
+      <% if @product.quantity > 0 %>
       <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% end %>
     </div>
   </div>

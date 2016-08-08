@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-  end
+    end
 
   def join
     @product = Product.find(params[:id])
@@ -35,7 +35,12 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
+    if @product.quantity > 0
+      current_cart.add_product_to_cart(@product)
+      render :show
+    else
     redirect_to :back
+    end
   end
+
 end
