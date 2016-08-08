@@ -13,6 +13,7 @@
           <td>商品数量</td>
           <td>商品尺寸</td>
           <td>商品价钱</td>
+          <td>删除商品</td>
         </tr>
       </tHead>
 
@@ -27,6 +28,7 @@
             <td><%= cart_item.quantity %></td>
             <td><%= cart_item.product.width %>cm x <%= cart_item.product.width %>cm</td>
             <td><%= cart_item.product.price %></td>
+            <td><%= link_to("删除商品", shipping_cart_path(cart_item) ,:method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger")%></td>
           </tr>
 
       <% end %>
