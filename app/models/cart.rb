@@ -24,7 +24,7 @@ class Cart < ApplicationRecord
   end
 
   def del_cart_items(ids)
-    puts "+++++#{ids}"
+    # puts "+++++#{ids}"
     # cart_items = CartItem.find_by_sql("select * from cart_items where cart_id = #{self.id} and id in (#{ids})").delete_all
     CartItem.find_by_sql("delete from cart_items where cart_id = #{self.id} and id in (#{ids})")
     # cart_items.find_by(id: "#{ids}")

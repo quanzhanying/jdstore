@@ -1,0 +1,41 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <h1>Product List</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Price</td>
+        <td>Quantity</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "carts/check_out_cart_items", collection: @cart_items, as: "item"  %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 text-right">
+  <p>
+      总计：$ <%= render_cart_total_price(current_cart) %>
+  </p>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <h1>Order Info</h1>
+  <%= simple_form_for @order do |f| %>
+    <div class="form-group col-sm-12 col-md-8 col-offset-2 col-lg-8 col-lg-offset-2">
+      <h2>Order Person</h2>
+      <%= f.input :billing_name, input_html: {class: "form-control"}, placeholder: "please input billing name" %>
+      <%= f.input :billing_address, input_htm: {class: "form-control"}, placeholder: "please input billing address" %>
+    </div>
+    <div class="form-group col-sm-12 col-md-8 col-offset-2 col-lg-8 col-lg-offset-2">
+      <h2>Receiver</h2>
+      <%= f.input :shipping_name, input_html: {class: "form-control"}, placeholder: "please input shipping name"%>
+      <%= f.input :shipping_address, input_html: {class: "form-control"}, placeholder: "please input shipping address" %>
+    </div>
+    <div class="form-group col-sm-12 col-md-8 col-offset-2 col-lg-8 col-lg-offset-2">
+      <%= f.submit "build order", class: "btn btn-danger pull-right", data: {disable_with: "Submitting..."}%>
+    </div>
+  <% end %>
+
+</div>
