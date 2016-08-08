@@ -1,0 +1,78 @@
+<h2>My Cart</h2>
+<%= link_to("Clear Cart", cart_path(current_cart), class: "btn btn-danger pull-right",method: :delete, data: { confirm: "Are you Sure?"}) %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Items
+      </th>
+      <th>
+        Title
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Quantity
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_cart.cart_items.each do |cici| %>
+    <tr>
+      <td>
+        <%= link_to product_path(cici.product) do %>
+          <%= image_tag(cici.product.image.thumb.url, class: "thumbnail") %>
+        <% end %>
+      </td>
+      <td>
+        <%= cici.product.title %>
+      </td>
+      <td>
+        <%= cici.product.money %>
+      </td>
+      <td>
+        <!-- 做一个quantity的下拉，下拉里面有simple_form -->
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <%= cici.quantity %>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <%= simple_form_for cici, :url => change_quantity_cart_path(cici) do |form| %>
+                <li><%= form.input :quantity, :collection => 1..cici.product.storage %></li>
+                <li><%= form.submit "Change Quantity" %></li>
+              <% end %>
+            </ul>
+          </div>
+          <!-- 下拉结束 -->
+      </td>
+      <td>
+        <%= link_to("Delete", delete_item_cart_path(cici), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"}) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div class="total clearfix">
+
+  <span class="pull-right">
+    <%= render_cart_total_price(current_cart) %> $$
+
+  </span>
+
+  <span class="pull-right">Total:</span>
+</div>
+
+<hr>
+
+<div class="checkout clearfix">
+  <%= link_to("Confirm", '#', method: :post, class: "btn btn-danger pull-right") %>
+</div>
+<br>
