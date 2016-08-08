@@ -9,7 +9,7 @@ class CartsController < ApplicationController
 			cart_item.item.save
 		end
 
-		flash[:alert] = "His"
+		flash[:alert] = "Remove All Item"
 		redirect_to :back
 
 	end
