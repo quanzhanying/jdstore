@@ -1,0 +1,23 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <img src="<%= @product.image.medium %>" alt="...">
+      <!-- 也可以用image_tag -->
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="caption">
+      <h2><%= @product.title %></h2>
+      <div class="well well-lg"><p>Description:<br><% @product.description %></p></div>
+      <p>
+        Price: <strong><%= @product.money %></strong>
+      </p>
+      <p>
+        Storage: <%= @product.storage %>
+      </p>
+      <p><a href="#" class="btn btn-default pull-right" role="button">Like</a>
+        <%= link_to("Add to Cart", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %></p>
+    </div>
+  </div>
+</div>
