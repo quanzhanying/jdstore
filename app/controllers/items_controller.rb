@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 	def remove_from_cart
 		@cart_item = CartItem.find(params[:id])
 		current_cart.remove_item_from_cart(@cart_item)
-		@cart_item.item.quantity_increase(1)
+		@cart_item.item.quantity_increase(@cart_item.quantity)
 		@cart_item.item.save
 		flash[:alert] = @cart_item.item.quantity
 

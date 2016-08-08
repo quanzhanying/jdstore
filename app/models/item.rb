@@ -22,6 +22,7 @@ class Item < ApplicationRecord
 	belongs_to :user
 	has_many :relationship_item_and_users, dependent: :destroy
 	has_many :fans, :through => :relationship_item_and_users, source: :user
+	has_many :cart_items, dependent: :destroy
 
 	mount_uploader :image, ImageUploader
 

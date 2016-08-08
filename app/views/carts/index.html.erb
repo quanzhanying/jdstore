@@ -30,6 +30,7 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+              <%= link_to("+1", add_to_cart_item_path(cart_item.item), method: :post, :class => "btn btn-default" ) %>
             </td>
           </tr>
         <% end %>
