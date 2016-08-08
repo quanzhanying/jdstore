@@ -8,15 +8,24 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    if @product.quantity >0
-      current_cart.add_product_to_cart(@product)
-      flash[:notice] = "已加入购物车"
+    if current_cart.is_seller_of?(@product)
+      #current_cart.products.include?(@product)
+      flash[:alert] = "不能重复加入购物车"
     else
-      flash[:alert] = "已售罄"
 
+      if @product.quantity > current_cart.cart_items.count
+        current_cart.add_product_to_cart(@product)
+        flash[:notice] = "已加入购物车"
+      else
+        flash[:alert] = "已售罄"
+      end
     end
+
+    #flash[:warning] = current_cart.is_seller_of?(@product)
+
     redirect_to :back
   end
+
 
   # def move_from_cart
   #   @product = Product.find(params[:id])
