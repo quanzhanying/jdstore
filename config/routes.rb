@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   root 'products#index'
 
   namespace :admin do
-    resources :products
-     resources :users do
+    resources :products 
+
+    resources :users do
        member do
          post :be_admin
          post :be_user
        end
-     end
+    end
    end
 
    resources :products do
@@ -17,7 +18,11 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
-  
-  resources :carts
-  resources :products
+
+
+  resources :carts do
+    member do
+      post :move_product_from_cart
+    end
+  end
 end

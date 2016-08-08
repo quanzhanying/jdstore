@@ -18,6 +18,14 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  # def move_from_cart
+  #   @product = Product.find(params[:id])
+  #     current_cart.move_product_from_cart(@product)
+  #     flash[:alert] = "已移出购物车"
+  #   redirect_to :back
+  # end
+
+
 end
 
 private

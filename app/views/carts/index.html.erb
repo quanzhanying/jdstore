@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-12">
     <h2>购物车</h2>
+
     <table class="table table_bordered">
       <thead>
         <tr>
@@ -29,6 +30,11 @@
           </td>
           <td>
             <%= cart_item.quantity %>
+          </td>
+          <td>
+            <%= link_to("删除", move_product_from_cart_cart_path(cart_item),method: :post)%>
+
+
           </td>
         </tr>
         <% end %>
