@@ -9,7 +9,7 @@ class Cart < ApplicationRecord
     else
       ci = cart_items.build
       ci.product = product
-      ci.quantity =1
+      ci.quantity = 1
     end
     ci.save
   end

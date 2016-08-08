@@ -68,9 +68,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.quantity > 0
     current_cart.add_product_to_cart(@product)
+    flash[:notice] = "已加入购物车"
     redirect_to :back
     else
-    flash[:alert] = "商品销空"
+    flash[:alert] = "The product is sold out"
     redirect_to :back
     end
   end
