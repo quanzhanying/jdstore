@@ -7,7 +7,15 @@ Rails.application.routes.draw do
       post :quit
     end
   end
-  resources :carts
+  resources :carts do
+      member do
+        delete :minusitem
+      end
+      collection do
+        delete :delall
+      end
+  end
+
 
   namespace :account do
     resources :products
