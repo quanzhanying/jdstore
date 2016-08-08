@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
 
   def index
     @cart_items = current_cart.cart_items
