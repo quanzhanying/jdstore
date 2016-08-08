@@ -1,8 +1,4 @@
 
-  <div  class="col-md-12">
-    <%= link_to("Back to index",products_path,class:"btn btn-primary",style:"margin-bottom:10px; background-color:#ea010f") %>
-  </div>
-
 <div class="col-md-12">
   <div class="row">
     <div class="col-sm-1 col-md-1" ></div>
@@ -24,7 +20,7 @@
                   </p>
                   Quantity: <%= @product.quantity %> |
                   Price: ¥ <%= @product.price %><br/>
-                  <%= link_to("加入购物车","#",class:"btn btn-primary",style:"margin-top:10px; background-color:#ea010f") %>
+                  <%= link_to("加入购物车","#",class:"btn btn-primary red_button",style:"margin-top:10px; ") %>
                   <%= link_to("收藏","#",class:"btn btn-primary",style:"margin-top:10px;") %>
               </div>
 
@@ -35,4 +31,9 @@
 
     </div>
   </div>
+
+  <div  class="col-md-11" style="">
+    <%= link_to("Back to index",products_path,class:"btn btn-primary red_button",style:"margin-bottom:10px; float:right;") %>
+  </div>
+
 </div>
