@@ -10,13 +10,13 @@ class Customer::FavoritesController < ApplicationController
 
 	def addToFavorites
 		current_user.favorited_items << @item
-		flash[:notice] = @item.title + 'has been added to Favorites'
+		flash[:notice] = @item.title + ' has been added to Favorites'
 		redirect_to :back
 	end
 
 	def removeFromFavorites
 		current_user.favorited_items.delete(@item)
-		flash[:alert] = @item.title + 'has been Removed From Favorites'
+		flash[:alert] = @item.title + ' has been Removed From Favorites'
 		redirect_to :back
 	end
 

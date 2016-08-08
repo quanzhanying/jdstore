@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  resources :carts
+
   resources :items do
     member do
       post :add_to_cart

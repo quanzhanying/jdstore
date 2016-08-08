@@ -3,5 +3,5 @@
 </div>
 
 <div class="col-md-3">
-	<%= link_to("Add to Chart", add_to_cart_item_path(@item), :class => "btn btn-default" ) %>
+	<%= link_to("Add to Chart", add_to_cart_item_path(@item), method: :post, :class => "btn btn-default" ) %>
 </div>
