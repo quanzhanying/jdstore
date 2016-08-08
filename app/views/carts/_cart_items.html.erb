@@ -10,7 +10,11 @@
       <%= link_to("-", "#", class: "btn btn-default btn-xs", disabled: "disabled") %>
     <% end %>
     <span><%= item.quantity %></span>
-    <%= link_to("+", up_cart_item_count_cart_path(item), class: "btn btn-default btn-xs", method: :post) %>
+    <% if item.quantity < item.product.quantity   %>
+      <%= link_to("+", up_cart_item_count_cart_path(item), class: "btn btn-default btn-xs", method: :post) %>
+    <% else %>
+      <%= link_to("+", "#", class: "btn btn-default btn-xs", disabled: "disabled") %>
+    <% end %>
     <%= link_to("del", del_cart_items_carts_path(:itemids => item.id), class: "btn btn-danger", method: :post )%>
   </td>
 </tr>
