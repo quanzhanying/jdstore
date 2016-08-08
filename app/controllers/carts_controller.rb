@@ -13,9 +13,14 @@ class CartsController < ApplicationController
 
 def add_product
  @cart_item = CartItem.find(params[:id])
+ @product = @cart_item.product
+ if (@cart_item.quantity + 1) > @product.quantity
+   flash[:alert]="sorry, we don't have enough items for you"
+ else
  @cart_item.quantity = @cart_item.quantity + 1
  @cart_item.save
  redirect_to :back
+ end
  end
 
  def red_product

@@ -53,7 +53,7 @@ def add_to_cart
    flash[:alert] = "this products already in cart"
  else
   current_cart.add_product_to_cart(@product)
-  redirect_to :back
+  redirect_to carts_path
 end
 
 end
