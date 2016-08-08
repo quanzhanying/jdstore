@@ -35,7 +35,12 @@ class ProductsController < ApplicationController
         end
         redirect_to :back , alert: "Success to add product to cart"
       end
+  end
 
+  def incream_quantity
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.quantity = @cart_item.quantity + 1
+    @cart_item.save
   end
 
   private

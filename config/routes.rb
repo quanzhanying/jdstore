@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
     resources :carts do
       post :delete_one
+      post :incream_quantity
+      post :decream_quantity
     end
 
 end

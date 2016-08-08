@@ -31,7 +31,11 @@
               <%= cart_item.product.price %>
             </td>
             <td>
+              <div class="row">
+              <%= link_to("-1", cart_decream_quantity_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
               <%= cart_item.quantity %>
+              <%= link_to("+1", cart_incream_quantity_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
+              </div>
             </td>
             <td>
               <%= cart_item.id %>
