@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :carts do
       member do
         delete :minusitem
+        post :upitem
+        post :downitem
       end
       collection do
         delete :delall

@@ -11,4 +11,18 @@ class CartsController < ApplicationController
     @cart_item.destroy
     redirect_to carts_path
   end
+
+  def upitem
+    @ci = CartItem.find(params[:id])
+    @ci.quantity += 1
+    @ci.save
+    redirect_to :back
+  end
+
+  def downitem
+    @ci = CartItem.find(params[:id])
+    @ci.quantity -= 1
+    @ci.save
+    redirect_to :back
+    end
 end

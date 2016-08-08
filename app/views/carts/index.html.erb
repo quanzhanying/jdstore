@@ -38,8 +38,8 @@
             <%= cart_item.quantity %>
           </td>
         <td>
-        <%= link_to("+", "#", class:"btn btn-xs btn-success") %> |
-        <%= link_to("-", "#", class:"btn btn-xs btn-primary") %>
+        <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %> |
+        <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
       </td>
           <td><%= link_to("删除",minusitem_cart_path(cart_item), class: "btn btn-xs btn-danger",
                method: :delete, data: { confirm:  "Are you sure?" } ) %></td>
