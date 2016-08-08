@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  
+   resources :carts
 
     resources :products do
       member do
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
       end
     end
 
-  root 'products#index'
+   root 'products#index'
 
     namespace :admin do
       resources :products
