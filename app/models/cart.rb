@@ -9,7 +9,7 @@
 
 class Cart < ApplicationRecord
 
-	has_many :cart_items
+	has_many :cart_items, dependent: :destroy
 	has_many :items, through: :cart_items, source: :item
 
 	def add_item_to_cart(item)
@@ -17,6 +17,10 @@ class Cart < ApplicationRecord
 		ci.item = item
 		ci.quantity = 1
 		ci.save
+	end
+
+	def remove_item_from_cart(cart_item)
+		cart_items.delete(cart_item)
 	end
 
 	def total_price

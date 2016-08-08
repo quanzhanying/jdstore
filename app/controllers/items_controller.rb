@@ -15,5 +15,12 @@ class ItemsController < ApplicationController
 
 		redirect_to :back
 	end
+
+	def remove_from_cart
+		@cart_item = CartItem.find(params[:id])
+		current_cart.remove_item_from_cart(@cart_item)
+
+		redirect_to :back
+	end
 	
 end

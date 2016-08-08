@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <%= link_to carts_path do%>
-                        <i class="fa fa-shopping-cart"></i> (<%= current_cart.items.count %>)
+                        <i class="fa fa-shopping-cart"></i> (<%= current_cart.cart_items.count %>)
                     <% end %>
                 </li>
                 <%= render_login_logout_part %>

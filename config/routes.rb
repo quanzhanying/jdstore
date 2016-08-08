@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       post :add_to_cart
+      put :remove_from_cart
     end
   end
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
 
       member do
         post :addToFavorites
-        post :removeFromFavorites
+        put :removeFromFavorites
       end
       
     end

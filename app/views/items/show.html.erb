@@ -1,5 +1,13 @@
-<div class="col-md-7">
+<div class="col-md-5">
         <%= render_medium_image_link(@item) %>
+</div>
+
+<div class="col-md-2">
+	<ul>
+        <li><%= @item.title %></li>
+        <li><%= @item.price %></li>
+        <li><%= @item.quantity %></li>
+    </ul>
 </div>
 
 <div class="col-md-3">

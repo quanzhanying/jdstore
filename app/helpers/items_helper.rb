@@ -22,7 +22,7 @@ module ItemsHelper
 	def render_add_to_favorites_botton(item)
 		if current_user && !current_user.admin?
 			if current_user.favorited_items.include?(item)
-				link_to("Unlike", removeFromFavorites_customer_favorite_path(item), method: :post, class: "btn btn-sm btn-default")
+				link_to("Unlike", removeFromFavorites_customer_favorite_path(item), method: :put, class: "btn btn-sm btn-default")
 			else
 				link_to("Like", addToFavorites_customer_favorite_path(item), method: :post, class: "btn btn-sm btn-default")
 			end
