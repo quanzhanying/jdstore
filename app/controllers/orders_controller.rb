@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
-    @order.payment_method = "alipay"
+    @order.payment_method = 'alipay'
     @order.save
 
     redirect_to :back
