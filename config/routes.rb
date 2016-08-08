@@ -25,6 +25,8 @@ Rails.application.routes.draw do
           post :up_product
           post :down_product
         end
-      
     end
+
+    resources :cart_items
+
 end
