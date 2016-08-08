@@ -1,0 +1,36 @@
+<div class="user_mg-font">
+
+  <table class="table table-boldered">
+    <thead>
+      <td>
+        Email
+      </td>
+      <td>
+        Is admin?
+      </td>
+      <td>
+        change admin rights
+      </td>
+    </thead>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <%= user.is_admin %>
+        </td>
+        <td>
+          <% if user.super_user  %>
+            Super Admin
+          <% else %>
+            <%= link_to("change admin rights",change_admin_admin_user_mg_path(user), method: :post,  class:"btn btn-default") %>
+          <% end %>
+        </td>
+      </tr>
+
+    <% end %>
+
+  </table>
+</div>

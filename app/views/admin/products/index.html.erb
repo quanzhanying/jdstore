@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <%= link_to("Add a product",new_admin_product_path,class:"btn btn-primary", style:"margin-bottom:10px; background-color:#ea010f") %>
+</div>
+
+
+<div class="row" style="margin-left:1px">
+<% @products.each do |product| %>
+
+  <div class="col-sm-2 col-md-2">
+    <div class="thumbnail showproduct-bg">
+      <%= link_to(image_tag(product.image.thumb.url),admin_product_path(product)) %>
+      <div class="caption showproduct-font">
+        <h5><%= link_to(product.title,admin_product_path(product)) %></h5>
+        <p>
+          Price: <%= product.price %>
+        </p>
+        <p><%= link_to("Edit",edit_admin_product_path(product)) %> ｜
+          <%= link_to("Delete",admin_product_path(product), method: :delete) %>
+        </p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+      </div>
+    </div>
+  </div>
+
+<% end %>
+</div>
