@@ -24,11 +24,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         has_many :items, dependent: :destroy
-         has_many :relationship_item_and_users, dependent: :destroy
-         has_many :favorited_items, :through => :relationship_item_and_users, source: :item
+  has_many :items, dependent: :destroy
+  has_many :relationship_item_and_users, dependent: :destroy
+  has_many :favorited_items, :through => :relationship_item_and_users, source: :item
 
-         def admin?
-         	is_admin
-         end
+  def admin?
+  	is_admin
+  end
 end
