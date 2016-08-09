@@ -26,6 +26,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :product_relations
+  has_many :orders
   has_many :bookmarked_products, :through => :product_relations, :source => :product
 
   def add_bookmark!(product)

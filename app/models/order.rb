@@ -43,7 +43,7 @@ class Order < ApplicationRecord
       transitions from: [:shipped, :appling_good_return], to: :good_returned
     end
 
-    event :cancell_order do
+    event :cancel_order do
       transitions from: [:order_placed, :paid, :appling_cancel_order], to: :order_cancelled
     end
 
@@ -87,14 +87,28 @@ class Order < ApplicationRecord
   def apply_cancle_order!
     if !self.appling_cancel_order?
       self.apply_cancel_order!
-      OrderMailer.notify_order_state_change(self).deliver!
+      OrderMailer.notify_order_state_change(self, "user").deliver!
     end
   end
 
   def apply_return_good!
     if !self.appling_good_return?
       self.apply_good_return!
-      OrderMailer.notify_order_state_change(self).deliver!
+      OrderMailer.notify_order_state_change(self, "user").deliver!
+    end
+  end
+
+  def cancle_order!
+    if self.appling_cancel_order? || self.order_placed? || self.paid?
+      self.cancel_order!
+      OrderMailer.notify_order_state_change(self, "admin").deliver!
+    end
+  end
+
+  def ship_order!
+    if self.paid?
+      self.ship!
+      OrderMailer.notify_order_state_change(self, "admin").deliver!
     end
   end
 
