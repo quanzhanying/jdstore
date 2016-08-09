@@ -33,6 +33,7 @@ class Order < ApplicationRecord
   def pay!(payment_method)
     if !self.is_paid
       self.update_columns({:is_paid => true, :payment_method => payment_method})
+      OrderMailer.notify_order_placed(self).deliver!
     end
   end
 
