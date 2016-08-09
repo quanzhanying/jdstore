@@ -17,8 +17,9 @@
 #
 
 class Order < ApplicationRecord
+
   belongs_to :user
-  has_many :item_lists
+  has_many :item_lists, dependent: :destroy
 
   validates :billing_name, presence: true
   validates :billing_address, presence: true
@@ -27,6 +28,11 @@ class Order < ApplicationRecord
 
   def generate_token
     self.token = SecureRandom.uuid
+  end
+
+
+  def order_submitted_notification
+    JdstoreMailer.order_notification(self).deliver
   end
 
 end

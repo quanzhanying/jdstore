@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
       end
 
       current_cart.remove_all_item
+      @order.order_submitted_notification
       redirect_to customer_order_path(@order.token)
     else
       render 'carts/checkout'
