@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
   layout "admin"
-  
+
   def show
     @product = Product.find(params[:id])
   end
@@ -40,7 +40,7 @@ class Admin::ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-      redirect_to admin_products_path
+    redirect_to admin_products_path
   end
 
   private

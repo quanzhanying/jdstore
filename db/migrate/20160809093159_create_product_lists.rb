@@ -5,6 +5,7 @@ class CreateProductLists < ActiveRecord::Migration[5.0]
       t.string :product_name
       t.integer :product_price
       t.integer :quantity
+      t.integer :product
       t.timestamps
     end
   end

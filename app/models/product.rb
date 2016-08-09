@@ -13,10 +13,10 @@
 #
 
 class Product < ApplicationRecord
-
+  
   has_many :cart_items
   has_many :carts, through: :cart_items, source: :cart
   mount_uploader :image, ImageUploader
 
-  
+
 end
