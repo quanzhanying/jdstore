@@ -4,6 +4,9 @@
     <%= render_order_state(item) %>
     <br>
     <%= render_created_at(item.created_at) %>
+    <% if !current_user.admin? %>
+    <%=  render_order_operation(item) %>
+    <% end %>
   </td>
 </tr>
 <% item.product_lists.each do |product| %>

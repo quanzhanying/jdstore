@@ -1,0 +1,62 @@
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <h1>Product List <br>
+    <small><%= link_to("Go to Deal", admin_orders_url) %></small>
+  </h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Subtotal</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "product_item", collection: @product_lists, as: "item"  %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 text-right">
+  <p>
+      Total Price：$ <%= @order.total_price %>
+  </p>
+</div>
+<hr />
+<div class="col-sm-12 col-md-12 col-lg-12">
+  <h1>Order Info</h1>
+  <table class="table table-striped table-bordered">
+    <tr>
+      <td>Order Person</td>
+    </tr>
+    <tr>
+      <td>
+        <address>
+          <strong>Address</strong><br>
+          <%= @order.billing_address %>
+        </address>
+
+        <address>
+          <strong>Full Name</strong><br>
+          <%= @order.billing_name %>
+        </address>
+      </td>
+    </tr>
+    <tr>
+      <td>Receiver</td>
+    </tr>
+    <tr>
+      <td>
+        <address>
+          <strong>Address</strong><br>
+          <%= @order.shipping_address %>
+        </address>
+
+        <address>
+          <strong>Full Name</strong><br>
+          <%= @order.shipping_name %>
+        </address>
+      </td>
+    </tr>
+  </table>
+</div>

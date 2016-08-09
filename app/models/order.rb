@@ -24,6 +24,9 @@ class Order < ApplicationRecord
     state :shipped
     state :order_cancelled
     state :good_returned
+    state :appling_cancel_order
+    state :appling_good_return
+
     event :make_payment do
       transitions from: :order_placed, to: :paid
     end
@@ -37,11 +40,19 @@ class Order < ApplicationRecord
     end
 
     event :return_good do
-      transitions from: :shipped, to: :good_returned
+      transitions from: [:shipped, :appling_good_return], to: :good_returned
     end
 
     event :cancell_order do
-      transitions from: [:order_placed, :paid], to: :order_cancelled
+      transitions from: [:order_placed, :paid, :appling_cancel_order], to: :order_cancelled
+    end
+
+    event :apply_cancel_order do
+      transitions from: [:order_placed, :paid], to: :appling_cancel_order
+    end
+
+    event :apply_good_return do
+      transitions from: :shipped, to: :appling_good_return
     end
 
   end
@@ -70,6 +81,20 @@ class Order < ApplicationRecord
       self.update_columns({:is_paid => true, :payment_method => payment_method})
       self.make_payment!
       OrderMailer.notify_order_placed(self).deliver!
+    end
+  end
+
+  def apply_cancle_order!
+    if !self.appling_cancel_order?
+      self.apply_cancel_order!
+      OrderMailer.notify_order_state_change(self).deliver!
+    end
+  end
+
+  def apply_return_good!
+    if !self.appling_good_return?
+      self.apply_good_return!
+      OrderMailer.notify_order_state_change(self).deliver!
     end
   end
 
