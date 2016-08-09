@@ -1,12 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
-
-  def index
-    @orders = Order.all
-  end
+  before_action :authenticate_user!
 
   def show
-    @order = Order.find_by_token(params[:id])
+    @order = Order.find_by_token_and_user_id(params[:id], current_user.id)
   end
 
   def create
@@ -41,7 +37,7 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     # 要加权限 只能修改本人
-    order = Order.find_by_token(params[:id])
+    order = Order.find_by_token_and_user_id(params[:id], current_user.id)
     if order.pay!("Alipay")
       flash[:notice] = "Pay Successfully."
     else
@@ -52,7 +48,7 @@ class OrdersController < ApplicationController
 
   def pay_with_wechat
     # 要加权限 只能修改本人
-    order = Order.find_by_token(params[:id])
+    order = Order.find_by_token_and_user_id(params[:id], current_user.id)
     if order.pay!("WeChat")
       flash[:notice] = "Pay Successfully."
     else
