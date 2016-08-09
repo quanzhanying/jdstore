@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :authenticated_user!
+  before_action :authenticate_user!
+
+  def new
+    @product = Product.new
+  end
 
   def index
     @products = Product.all
@@ -10,7 +14,7 @@ class ProductsController < ApplicationController
   end
 	
   def create
-    @product = Product.new(job_params)
+    @product = Product.new(product_params)
 
     if @product.save
       redirect_to products_path
@@ -35,7 +39,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:job).permit(:title, :description)
+    params.require(:product).permit(:title, :description)
   end
 
 end
