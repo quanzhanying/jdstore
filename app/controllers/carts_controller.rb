@@ -24,6 +24,7 @@ class CartsController < ApplicationController
     redirect_to :back
     end
 
+    
   def checkout
     @order = Order.new
   end
