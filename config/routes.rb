@@ -19,5 +19,11 @@ Rails.application.routes.draw do
       delete 'delete_item'
       patch 'change_quantity'
     end
+
+    collection do
+      post :checkout
+    end
   end
+
+  resources :orders
 end

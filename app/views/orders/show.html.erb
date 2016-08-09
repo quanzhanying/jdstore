@@ -1,0 +1,62 @@
+<h2>Order Details</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th width="60%">Stuff</th>
+      <th>Price</th>
+      <th>
+        Quantity
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
+            </td>
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="total clearfix">
+      <span class="pull-right">
+        Total: <%= @order.total %> $$
+      </span>
+</div>
+
+<hr>
+
+<h2>Shipping Details</h2>
+
+<table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>
+            <strong>Order by</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.billing_name %> - <%= @order.billing_address %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Ship to</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+          </td>
+        </tr>
+      </tbody>
+</table>
