@@ -1,13 +1,13 @@
 <h1> <%= @product.title %> </h1>
 
 <p>
-  <%= simple_format(@product.description) %>
+  <%= @product.description %>
 </p>
 
 <p>
-  <%= simple_format(@product.quantity) %>
+  <%= @product.quantity %>
 </p>
 
 <p>
-  <%= simple_format(@product.price) %>
+  <%= image_tag(@product.image.thumb) %>
 </p>

@@ -1,41 +1,19 @@
+<div class="container-fluid">     
+  <div class="row">         
+    <% @products.each do |product| %>         
+      <div class="col-sm-6 col-md-4">             
+        <div class="thumbnail">                 
+<!-- <img src="..." alt="..."> -->                 
+            <%= link_to(image_tag(product.image.thumb), product_path(product)) %>                 
+            <div class="caption">                     
+                <h3><%= link_to(product.title, product_path(product)) %></h3>                     
+                <p>rmb <%= product.price %></p>                 
+            </div>             
+        </div>         
+      </div>         
+    <% end %>     
+  </div> 
+</div>
 
-<table class="table table-boldered">
-    <thead>
-        <tr>
-            <td>#</td>
-            <td>
-                品名</td>
-            <td>叙述</td>
-            <td>库存</td>
-            <td>价格</td>
-            <td>选项</td>
-            <td>创建日期</td>
-        </tr>
 
-    </thead>
 
-  <% @products.each do |product| %>
-  <tr>
-    <td>
-       <%= product .wage_lower_bound %>
-    </td>
-    <td>
-      <%= link_to(product.title, product_path(product)) %>
-    </td>
-    <td>
-       <%= product .description %>
-    </td>
-    <td>
-       <%= product .wage_lower_bound %>
-    </td>
-    <td>
-       <%= product.wage_upper_bound %>
-    </td>
-    
-
-    <td>
-      <%= product.created_at %>
-    </td>
-  </tr>
-  <% end %>
-</table>
