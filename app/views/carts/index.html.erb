@@ -1,3 +1,14 @@
+
+<script type="text/javascript">
+  // function changeQuantity(){
+  //   alert(1);
+  //   debugger;
+  //   $("#quantityForm").submit();
+  // }
+</script>
+
+
+
 <h2>My Cart</h2>
 <%= link_to("Clear Cart", cart_path(current_cart), class: "btn btn-danger pull-right",method: :delete, data: { confirm: "Are you Sure?"}) %>
 <table class="table">
@@ -44,8 +55,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <%= simple_form_for cici, :url => change_quantity_cart_path(cici) do |form| %>
-                <li><%= form.input :quantity, :collection => 1..cici.product.storage %></li>
-                <li><%= form.submit "Change Quantity" %></li>
+                <li><%= form.input :quantity, :collection => 1..cici.product.storage, :input_html => {:onchange => "this.form.submit()"}%></li>
               <% end %>
             </ul>
           </div>

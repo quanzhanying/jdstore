@@ -7,13 +7,14 @@ class CartsController < ApplicationController
   end
 
   def delete_item
-    CartItem.find(params[:id]).destroy # 如果我要删item，还是用最基本的找item的id的方法
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy # 如果我要删item，还是用最基本的找item的id的方法
     # current_cart.cart_items.first.destroy
     redirect_to :back, alert: "This item has gone away!"
   end
 
   def change_quantity # 这是一个post的方法，在cart的index捕捉到item，然后创建一定数量的items
-    @ci = CartItem.find(params[:id])
+    @ci = current_cart.cart_items.find(params[:id])
     if @ci.update(quantity_params)
       flash[:notice] = "#{@ci.product.title} quantity has changed"
     end
