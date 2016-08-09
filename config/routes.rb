@@ -15,9 +15,10 @@ Rails.application.routes.draw do
     end
 
     resources :carts do
-      member do
-        post :delete_one
+      collection do
+        post :checkout
       end
+
     end
 
     resources :cart_items do
@@ -26,6 +27,9 @@ Rails.application.routes.draw do
         post :increase_quantity
         post :decrease_quantity
       end
+    end
+
+    resources :orders do
 
     end
 
