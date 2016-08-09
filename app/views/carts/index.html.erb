@@ -54,7 +54,7 @@
     <br/>
     <hr />
   <div class="checkout clearfix" style="margin-bottom:30px">
-    <%= link_to("Confirm and Pay", "#",method: :post, class:"btn btn-lg btn-danger pull-right") %>
+    <%= link_to("Confirm and Pay",new_order_path, class:"btn btn-lg btn-danger pull-right") %>
     <%= link_to("Empty my cart",empty_cart_cart_path(current_cart), method: :delete, class:"btn btn-default") %>
   </div>
   </div>

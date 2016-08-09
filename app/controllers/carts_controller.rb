@@ -44,4 +44,10 @@ class CartsController < ApplicationController
     flash[:notice] = "Add to cart successfully"
     redirect_to :back
   end
+
+  # def checkout
+  #   @order = Order.new
+  # end
+
+
 end

@@ -1,0 +1,78 @@
+<div class="row showproduct-bg showproduct-font">
+  <div class="col-md-12">
+    <h2>Order details</h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="80%">商品明細</th>
+          <th>單價</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        總計 <%= @order.total %> RMB
+      </span>
+    </div>
+
+     <hr>
+
+     <h2> 寄送資訊 </h2>
+
+     <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            訂購人
+          </td>
+          <td>
+            订购地址
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.billing_name %>
+          </td>
+          <td>
+            <%= @order.billing_address %>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            收件人
+          </td>
+          <td>
+            收件地址
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_name %>  
+          </td>
+          <td>
+            <%= @order.shipping_address %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
