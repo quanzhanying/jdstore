@@ -1,0 +1,25 @@
+<h2>Super Admin</h2>
+<hr>
+<table class="table">
+  <thead>
+    <th>
+      Email
+    </th>
+    <th>
+      Is Store?
+    </th>
+  </thead>
+
+  <tbody>
+    <% @user.each do |uu| %>
+      <tr>
+        <td>
+          <%= uu.email  %>
+        </td>
+        <td>
+          <%= uu.is_store %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

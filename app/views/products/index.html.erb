@@ -1,0 +1,18 @@
+<div class="row">
+  <% @products.each do |product| %>
+
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="<%= product.image.thumb %>" alt="No Picture">
+          <div class="caption">
+            <h3><%= link_to(product.title, product_path(product)) %></h3>
+            <p>Price: <%= product.money %></p>
+            <p><%= link_to("Add to Cart", add_to_cart_product_path(product), method: :post, class: "btn btn-primary") %>
+              <%= link_to("Details", product_path(product), class: "btn btn-default") %></p>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+
+</div>
