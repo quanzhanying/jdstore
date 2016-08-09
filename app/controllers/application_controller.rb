@@ -4,10 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_cart
 
   def require_admin
-    # if !current_user.admin?
-    #   redirect_to "/", alert: "permission denied."
-    # end
-    true
+    if !current_user.admin?
+      redirect_to "/", alert: "permission denied."
+    end
   end
 
   def store_location
