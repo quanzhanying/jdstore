@@ -62,6 +62,7 @@
   <% if @order.is_paid %>
     <%= link_to("Already Paid", "###", class: "btn btn-default pull-right", disabled: "disabled") %>
   <% else %>
-    <%= link_to("Use Alipay", pay_with_alipay_order_path, method: :post, class: "btn btn-success pull-right") %>
+    <%= link_to("Use Alipay", pay_with_alipay_order_path, method: :post, class: "btn btn-primary pull-right") %>
+    <%= link_to("Use WeChat", pay_with_wechat_order_path, method: :post, class: "btn btn-success pull-right") %>
   <% end %>
 </div>

@@ -50,6 +50,17 @@ class OrdersController < ApplicationController
     redirect_to order_path(order.token)
   end
 
+  def pay_with_wechat
+    # 要加权限 只能修改本人
+    order = Order.find_by_token(params[:id])
+    if order.pay!("WeChat")
+      flash[:notice] = "Pay Successfully."
+    else
+      flash[:alert] = "Pay Faild"
+    end
+    redirect_to order_path(order.token)
+  end
+
   private
 
   def order_params
