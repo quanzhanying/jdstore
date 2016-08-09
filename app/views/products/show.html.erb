@@ -1,6 +1,45 @@
-<h1> <%= @product.title %> </h1>
+<head>
+    <style>
+.selector1{
+  padding-left: 100px;
+}
+.selector2{
+  padding-top: 150px;
+  padding-left: 100px;
+}
+.selector3{
+  padding-top: 220px;
+  padding-left: 100px;
+}
+    </style>
+</head>
 
-<p>
-  <%= simple_format(@product.description) %>
+<body>
+<div class="row">
+    <div class="col-md-3 img-rounded">
+        <%= image_tag(@product.attachment.medium) %>
+    </div>
 
-</p>
+    <div class="col-md-3">
+        <p class="selector1 lead">
+            <strong><%= @product.title %></strong>
+        </p>
+        <p class="selector2">
+          Quantity：<%= @product.quantity %>
+          <br>
+          Price：¥ <%= @product.price %>
+        </p>
+
+    </div>
+
+    <div class="col-md-3 selector3">
+      <% if @product.quantity > 0 %>
+        <%= link_to("Add to cart", add_to_cart_product_path(@product),
+  :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+    </div>
+      <% else %>
+        <%= link_to("Add to cart", add_to_cart_product_path(@product),
+  :method => :post, :class => "btn btn-primary btn-lg btn-danger disabled") %>
+      <% end %>
+</div>
+</body>
