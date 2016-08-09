@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
 
 
+  def checkout
+    @order = Order.new
+  end
+
 	def remove_all_item_from_cart
 
 		current_cart.cart_items.delete_all

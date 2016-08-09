@@ -6,7 +6,13 @@ Rails.application.routes.draw do
     member do
       post :remove_all_item_from_cart
     end
+
+    collection do
+      post :checkout
+    end
   end
+
+  resources :orders
 
   resources :items do
     member do
