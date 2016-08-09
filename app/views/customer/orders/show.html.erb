@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-md-12">
-
-    <h2> 訂單明細 </h2>
-
+    <div>
+      <h2 class="pull-left"> 訂單明細 </h2>
+      <%= render_payment_status(@order) %>
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -60,7 +61,5 @@
         </tr>
       </tbody>
     </table>
-    <%= link_to("支付宝付款", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
-    <%= link_to("微信付款", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
   </div>
 </div>

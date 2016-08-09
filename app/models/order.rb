@@ -12,6 +12,8 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  token            :string
+#  is_paid          :boolean          default(FALSE)
+#  payment_method   :string
 #
 
 class Order < ApplicationRecord
@@ -26,4 +28,5 @@ class Order < ApplicationRecord
   def generate_token
     self.token = SecureRandom.uuid
   end
+
 end

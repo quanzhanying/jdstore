@@ -2,6 +2,9 @@
   <% @items.each do |item| %>
       <tr>
         <td>
+          <%= image_tag(item.image.small_thumb.url) if item.image? %>
+        </td>
+        <td>
           <%= link_to(item.title, item_path(item)) %>
         </td>
         <td>
