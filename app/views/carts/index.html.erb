@@ -1,17 +1,11 @@
 <div class="row">
   <div class="col-md-12">
     <h2>购物车</h2>
-
-    <div class="ClearCar">
-      <%= link_to("删除所有", clear_cart_item_path(current_cart), method: :post, class: "btn btn-primary btn-lg btn-danger pull-right") %>
-    </div>
-
-
     <table class="table table_bordered">
       <thead>
         <tr>
           <th cospan="2">图片</th>
-          <th>名称</th>
+          <th >名称</th>
           <th>单价</th>
 
           <th>数量</th>
@@ -34,9 +28,9 @@
             <%= link_to(cart_item.product.price, product_path(cart_item.product))%>
           </td>
           <td>
-           <%= link_to("+1",add_item_cart_item_path(cart_item), method: :post, class: "btn btn-primary btn-lg btn-danger")%>
+           <%= link_to("+1",add_item_cart_item_path(cart_item), method: :post, class: "btn btn-success btn-sm ")%>
            <%= cart_item.quantity %>
-           <%= link_to("-1",des_item_cart_item_path(cart_item), method: :post, class: "btn btn-primary btn-lg btn-danger")%>
+           <%= link_to("-1",des_item_cart_item_path(cart_item), method: :post, class: "btn btn-success btn-sm ")%>
           </td>
           <td>
             <%= link_to("删除", cart_item_path(cart_item), :method => :delete, :data =>{:confirm => "are you sure?"})%>
@@ -57,7 +51,10 @@
     </div>
     <hr>
     <div class="checkout clearfix">
-      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right")%>
+      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-info pull-right")%>
+    </div>
+    <div class="ClearCar">
+      <%= link_to("删除所有", clear_cart_item_path(current_cart), method: :post, class: "btn btn-primary btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>
