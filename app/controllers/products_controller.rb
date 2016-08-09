@@ -14,34 +14,30 @@ class ProductsController < ApplicationController
         redirect_to :back, alert: "The product has no quantity,Please select others!"
       else
         #如果有库存，那么加入购物车
-        @product.quantity = @product.quantity - 1
-        if @product.save
           flag = 0
           #判断
           current_cart.products.each do |product|
-
             if product.id == @product.id
               flag = 1
               @cart_item = CartItem.find_by(cart_id: current_cart.id,product_id: product.id)
-              @cart_item.quantity = @cart_item.quantity + 1
-              @cart_item.save
+              if @cart_item.quantity < product.quantity
+                @cart_item.quantity = @cart_item.quantity + 1
+                @cart_item.save
+                redirect_to :back , alert: "Success to add product to cart"
+
+              else
+                redirect_to :back, alert: "购物车内该商品数量超过库存"
+              end
             end
           end
           if flag == 0
             current_cart.add_product_to_cart(@product)
+            redirect_to :back , alert: "Success to add product to cart"
           end
-        else
-          redirect_to :back , alert: "Failed to add product to cart"
-        end
-        redirect_to :back , alert: "Success to add product to cart"
       end
+
   end
 
-  def incream_quantity
-    @cart_item = CartItem.find(params[:id])
-    @cart_item.quantity = @cart_item.quantity + 1
-    @cart_item.save
-  end
 
   private
 
