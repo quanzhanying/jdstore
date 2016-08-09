@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:join, :quit, :add_to_cart]
   def index
     @products = Product.all
   end
@@ -43,4 +44,8 @@ class ProductsController < ApplicationController
     end
   end
 
+  def read_cart_item_product_id
+    @id = CartItem.find(params[:product_id])
+    @id.product_id
+  end
 end
