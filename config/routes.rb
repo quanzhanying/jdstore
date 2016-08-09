@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       delete :delete_all
+      post :checkout
     end
     member do
       post :number_up
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
     end
     resources :posts
   end
+
+  resources :orders
 
   namespace :account do
     resources :products

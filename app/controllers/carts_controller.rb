@@ -23,6 +23,10 @@ class CartsController < ApplicationController
     @num = Product.find(params[:id])
     @num.quantity
   end
-  
+
+  def checkout
+    @order = Order.new
+  end
+
 
 end
