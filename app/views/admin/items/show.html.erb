@@ -1,0 +1,26 @@
+<table class="table table-boldered">
+
+      <tr>
+        <td>
+          <%= image_tag(@item.image.small_thumb.url) if @item.image? %>
+        </td>
+        <td>
+          <%= @item.description %>
+        </td>
+        <td>
+          <%= @item.quantity%>
+        </td>
+        <td>
+          <%= @item.price%>
+        </td>
+        <td>
+          <%= @item.created_at %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_item_path(@item)) %> |
+          <%= link_to("Destroy", admin_item_path(@item), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        </td>
+      </tr>
+
+</table>
+

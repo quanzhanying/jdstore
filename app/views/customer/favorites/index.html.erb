@@ -1,0 +1,16 @@
+
+<table class="table table-boldered">
+  <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= link_to(item.title, "#") %>
+        </td>
+        <td>
+          <%= item.created_at %>
+        </td>
+        <td>
+          <%= link_to("Remove From Favorites", removeFromFavorites_customer_favorite_path(item), method: :put, class: "btn btn-sm btn-default") %>
+        </td>
+      </tr>
+  <% end %>
+</table>
