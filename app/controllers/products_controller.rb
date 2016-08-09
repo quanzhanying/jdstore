@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  
+
   def show
     @product = Product.find(params[:id])
   end
@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.find(product_params)
+    @product = Product.new(product_params)
 
     if @product.save
       redirect_to products_path
