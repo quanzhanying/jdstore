@@ -1,0 +1,15 @@
+<div class="col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-md-offset-3">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td colspan="2">Product</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>TotalPrice</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "account/orders/order_item", collection: @orders, as: "item" %>
+    </tbody>
+  </table>
+</div>

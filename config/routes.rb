@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         get :degrade_to_user
       end
     end
+    resources :orders
   end
 
   namespace :account do
