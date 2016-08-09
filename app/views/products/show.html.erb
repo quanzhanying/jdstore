@@ -1,5 +1,17 @@
-<h1> <%= @product.title %> </h1>
-
-<p>
-  <%= simple_format(@product.description) %>
-</p>
+<section class="you-create-we-secure">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+       <div class="create-secure-wrapper">
+         <div class="create-secure-wrapper-left">
+           <img src="<%= @product.attachment.medium %>">
+         </div>
+         <div class="create-secure-wrapper-right">
+            <h1> <%= @product.title %> </h1>
+            <p><%= simple_format(@product.description) %></p>
+         </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
