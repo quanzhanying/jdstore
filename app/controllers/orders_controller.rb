@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       save_product_list
-      redirect_to order_path(@order)
+      redirect_to order_path(@order.token)
     else
       render 'carts/checkout' # 调用carts下面的checkout页面，调用template
     end
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
   end
 
