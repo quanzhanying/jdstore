@@ -1,6 +1,13 @@
 <div class="col-sm-12 col-md-12 col-lg-12">
   <h1>Product List <br>
-    <small><%= link_to("Go to Deal", admin_orders_url) %></small>
+    <small>
+      <% if @role == "admin" %>
+        <%= link_to("Go to Check", account_orders_url) %>
+      <% else %>
+        <%= link_to("Go to Deal", admin_orders_url) %>
+      <% end %>
+
+    </small>
   </h1>
   <table class="table table-bordered table-hover">
     <thead>

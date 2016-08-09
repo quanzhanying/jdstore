@@ -29,13 +29,18 @@ module Admin::OrdersHelper
     end
   end
 
-  def render_order_operation(order)
-    if order.order_placed? || order.paid?
-      link_to("Apply cancle", account_order_apply_cancle_order_path(order), class: "btn btn-danger btn-xs", method: :post, data: {confirm: "Are you sure?"})
-    elsif order.shipped?
-      link_to("Apply return", account_order_apply_return_good_path(order), class: "btn btn-danger btn-xs", method: :post, data: {confirm: "Are you sure?"})
-    else
-      ""
+  def render_order_operation_admin(order)
+    content = ""
+    if order.order_placed? || order.paid? || order.appling_cancel_order?
+      content = link_to("Cancle Order", cancle_order_admin_order_path(order.token), class: "btn btn-danger btn-xs", method: :post, data: {confirm: "Are you sure?"})
+      if order.paid?
+        content +=
+        link_to("Ship", ship_order_admin_order_path(order.token), class: "btn btn-primary btn-xs", method: :post, data: {confirm: "Are you sure?"})
+      else
+        return content
+      end
     end
   end
+
+
 end

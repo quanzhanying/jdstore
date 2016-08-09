@@ -5,7 +5,9 @@
     <br>
     <%= render_created_at(item.created_at) %>
     <% if !current_user.admin? %>
-    <%=  render_order_operation(item) %>
+      <%= render_order_operation(item) %>
+    <% else %>
+      <%= render_order_operation_admin(item) %>
     <% end %>
   </td>
 </tr>
