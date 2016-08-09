@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_cart
 
   def require_admin
-    if !current_user.admin?
-      redirect_to "/", alert: "permission denied."
-    end
+    # if !current_user.admin?
+    #   redirect_to "/", alert: "permission denied."
+    # end
+    true
   end
 
   def store_location
@@ -29,7 +30,7 @@ class ApplicationController < ActionController::Base
       admin_orders_path
     else
       session[:previous_url] || root_path
-    end 
+    end
   end
 
   def after_sign_out_path_for(resource)
