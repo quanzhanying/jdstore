@@ -4,8 +4,8 @@
 
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :quantity %>
-<%= f.input :price %>
+<%= f.input :wage_lower_bound, :label => "库存" %>
+<%= f.input :wage_upper_bound, :label => "价格" %>
 
   <%= f.submit "Submit" %>
 <% end %>

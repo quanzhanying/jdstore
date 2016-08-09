@@ -13,33 +13,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 	
-  def create
-    @product = Product.new(product_params)
 
-    if @product.save
-      redirect_to products_path
-    else
-      render :new
-    end
-  end
-
-  def edit
-    @product = Product.find(params[:id])
-  end
-
-  def update
-    @product = Product.find(params[:id])
-    if @product.update(product_params)
-      redirect_to products_path
-    else
-      render :edit
-    end
-  end
+  
+  
 
   private
 
   def product_params
-    params.require(:product).permit(:title, :description)
+    params.require(:product).permit(:title, :description,  :wage_upper_bound, :wage_lower_bound)
   end
 
 end

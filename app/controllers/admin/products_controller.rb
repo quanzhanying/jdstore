@@ -49,6 +49,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description)
+    params.require(:product).permit(:title, :description, :wage_upper_bound, :wage_lower_bound)
   end
 end
