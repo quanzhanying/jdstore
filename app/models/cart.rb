@@ -18,6 +18,11 @@ class Cart < ApplicationRecord
         ci.quantity += 1
       end
     else
+      # ci = CartItem.new
+      # ci.cart = self
+      # ci.product = product
+      # ci.quantity = 1
+
       ci = cart_items.build
       ci.product = product
       ci.quantity = 1
