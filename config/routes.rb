@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      post :apply_cancle_order
+      post :apply_return_good
+    end
   end
 
   resources :products do
