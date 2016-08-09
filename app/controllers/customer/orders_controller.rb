@@ -13,23 +13,14 @@ class Customer::OrdersController < ApplicationController
   end
 
   def pay_with_wechat
-    @order.payment_method = "wechat"
-    @order.is_paid = true
-
-    if @order.save
-      redirect_to :back
-    end
+    @order.pay("wechat")
+    redirect_to :back
   end
 
 
   def pay_with_alipay
-
-    @order.payment_method = "alipay"
-    @order.is_paid = true
-
-    if @order.save
-      redirect_to :back
-    end
+    @order.pay("alipay")
+    redirect_to :back
   end
 
   private

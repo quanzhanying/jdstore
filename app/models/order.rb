@@ -30,6 +30,15 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
+  def pay(pay_way)
+    self.payment_method = pay_way
+    self.is_paid = true
+
+    self.save
+    order_submitted_notification
+  end
+
+private
 
   def order_submitted_notification
     JdstoreMailer.order_notification(self).deliver
