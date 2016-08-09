@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
 
+#  def remove_product_from_cart
   def destroy
     @cart_item = CartItem.find(params[:id])
     if  @cart_item.destroy

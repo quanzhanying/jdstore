@@ -10,9 +10,7 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    if @product.quantity < 1
-      :show
-    else
+    if @product.quantity > 0
       current_cart.add_product_to_cart(@product)
       redirect_to :back
     end
