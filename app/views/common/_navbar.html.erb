@@ -27,11 +27,13 @@
               <li> <%= link_to("Admin Panel", admin_products_path) %></li>
               <li> <%= link_to("Admin Users", admin_users_path) %></li>
               <li> <%= link_to("My Favorites", account_products_path) %></li>
+              <li> <%= link_to("My CheckList",account_orders_path ) %></li>
               <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
 
 
               <% else %>
               <li> <%= link_to("My Favorites", account_products_path) %></li>
+              <li> <%= link_to("My CheckList",account_orders_path ) %></li>
               <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
               <% end %>
             </ul>

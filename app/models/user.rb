@@ -25,9 +25,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
+  has_many :orders
   has_many :product_relationships
   has_many :participated_products, :through => :product_relationships, :source => :product
-  
+
   def admin?
     is_admin
   end
