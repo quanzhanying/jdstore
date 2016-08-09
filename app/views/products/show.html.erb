@@ -25,7 +25,12 @@
               <font>画面尺寸：<font color="#d9534f"><%= @product.width %>CM x <%= @product.height %>CM</font> </br>
               <font>库存：<font color="#d9534f"><%= @product.store %></font>
               <div align="right">
-                  <%= link_to("加入购物车", add_to_cart_product_path, :method => :post, :class => "btn btn-danger btn-right") %>
+
+                  <% if @product.store == 0 %>
+                    <%= link_to("商品处于缺货状态", add_to_cart_product_path, :method => :post, :disabled=> :true, :class => "btn btn-danger btn-right") %>
+                  <% else %>
+                    <%= link_to("加入购物车", add_to_cart_product_path, :method => :post, :class => "btn btn-danger btn-right") %>
+                  <% end %>
               </div>
             </div>
         </article>

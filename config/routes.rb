@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :shipping_cart
+  resources :shipping_cart do
+    member do
+      post :destroy_all_items
+    end
+  end
 
   root 'products#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
