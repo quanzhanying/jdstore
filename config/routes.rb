@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     member do
       post :clear_cart
     end
+
+    collection do
+      post :checkout
+    end
   end
 
   resources :cart_items do
@@ -19,6 +23,8 @@ Rails.application.routes.draw do
       post :change_quantity
     end
   end
+
+  resources :orders
 
   namespace :admin do
     resources :products

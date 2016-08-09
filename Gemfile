@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-
+#source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -35,6 +35,8 @@ gem 'devise'
 gem "simple_form"
 gem "carrierwave"
 gem "mini_magick"
+
+gem "awesome_rails_console" # 讓你的 rails console 變整齊漂亮的 gem
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
