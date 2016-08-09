@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-md-3">
+      	<p><%= item.title %></p>
+        <%= render_thumb_image_link(item) %>
+        <div>
+        	<%= render_add_to_favorites_botton(item) %>
+        	<%= link_to("Add to Cart", add_to_cart_item_path(item), method: :post, class: "btn btn-sm btn-default") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+

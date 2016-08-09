@@ -1,0 +1,18 @@
+<table class="table table-boldered">
+  <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= image_tag(item.image.small_thumb.url) if item.image? %>
+        </td>
+        <td>
+          <%= link_to(item.title, item_path(item)) %>
+        </td>
+        <td>
+          <%= item.description %>
+        </td>
+        <td>
+          <%= link_to("Remove From Favorites", removeFromFavorites_customer_favorite_path(item), method: :put, class: "btn btn-sm btn-default") %>
+        </td>
+      </tr>
+  <% end %>
+</table>
