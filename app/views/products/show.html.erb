@@ -5,11 +5,11 @@
        <div class="create-secure-wrapper">
          <div class="create-secure-wrapper-left">
            <img src="<%= @product.attachment.medium %>">
+           <h1> <%= @product.title %> </h1>
          </div>
-         <div class="create-secure-wrapper-right">
-            <h1> <%= @product.title %> </h1>
-            <p><%= simple_format(@product.description) %></p>
-         </div>
+       </div>
+       <div class="create-secure-wrapper-right">
+          <p><%= simple_format(@product.description) %></p>
        </div>
       </div>
     </div>
