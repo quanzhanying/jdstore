@@ -33,17 +33,17 @@
             <td>
 
               <div class="btn-group" role="group" aria-label="Basic example">
-                  <%= link_to("-1", decream_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-left") %>
+                  <%= link_to("-1", decrease_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-sm btn-default pull-left") %>
 
-                  <input value="<%= cart_item.quantity %>"></input>
-                  <%= link_to("+1", incream_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-lg btn-default pull-right") %>
+                  <input  value="<%= cart_item.quantity %>" style="height: 30px;"></input>
+                  <%= link_to("+1", increase_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-sm btn-default pull-right") %>
 
               </div>
 
             </td>
-            
+
             <td>
-              <%= link_to("删除", delete_one_cart_path(cart_item), method: :post, class: "btn btn-lg btn-danger pull-right") %>
+              <%= link_to("删除", delete_one_product_cart_item_path(cart_item), method: :post, class: "btn btn-lg btn-danger pull-right") %>
             </td>
           </tr>
         <% end %>
@@ -65,7 +65,7 @@
 
       <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-primary pull-right") %>
       &nbsp;
-      <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("清空购物车", cart_item_path(current_cart), method: :delete, class: "btn btn-lg btn-danger pull-right") %>
 
     </div>
   </div>

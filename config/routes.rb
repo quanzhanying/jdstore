@@ -17,14 +17,14 @@ Rails.application.routes.draw do
     resources :carts do
       member do
         post :delete_one
-
       end
-
     end
+
     resources :cart_items do
       member do
-        post :incream_quantity
-        post :decream_quantity
+        post :delete_one_product
+        post :increase_quantity
+        post :decrease_quantity
       end
 
     end

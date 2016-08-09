@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
                 @cart_item.quantity = @cart_item.quantity + 1
                 @cart_item.save
                 redirect_to :back , alert: "Success to add product to cart"
-
               else
                 redirect_to :back, alert: "购物车内该商品数量超过库存"
               end
