@@ -27,6 +27,8 @@
             <% if !current_user.is_admin? %>
               <li><%= link_to("BookmarkList", bookmarks_users_path) %></li>
               <li><%= link_to("OderList", account_orders_path) %></li>
+            <% else %>
+              <li><%= link_to("Admin board", admin_products_path) %></li>
             <% end %>
             <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
           </ul>

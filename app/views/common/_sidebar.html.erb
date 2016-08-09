@@ -1,15 +1,19 @@
 <ul class="nav nav-pills nav-stacked">
   <li id="product" class="active"><%= link_to("Product Management", admin_products_path) %></li>
   <li id="user"><%= link_to("User Management", admin_uses_path) %></li>
+  <li id="order"><%= link_to("Order Management", admin_orders_path) %></li>
 </ul>
 
 <script>
   var url = $(location).attr('href').split("/")[4];
   if (url == "uses") {
-    $("#product").removeClass("active")
+    $("#user").siblings().removeClass("active")
     $("#user").addClass("active")
-  } else {
-    $("#user").removeClass("active")
+  } else if(url == "products") {
+    $("#product").siblings().removeClass("active")
     $("#product").addClass("active")
+  } else {
+    $("#order").siblings().removeClass("active")
+    $("#order").addClass("active")
   }
 </script>
