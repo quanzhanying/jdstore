@@ -33,4 +33,13 @@ Rails.application.routes.draw do
       post :des_item
     end
   end
+
+  resources :carts do
+    collection do
+      post :checkout
+    end
+  end
+
+  resources :orders
+
 end
