@@ -1,0 +1,26 @@
+<table class="table table-boldered">
+  <tr>
+    <td>
+      订单收件人
+    </td>
+    <td>
+      商品总价
+    </td>
+    <td>
+      订单建立时间
+    </td>
+  </tr>
+  <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= link_to(order.shipping_name, customer_order_path(order)) %>
+        </td>
+        <td>
+          <%= order.total %> RMB
+        </td>
+        <td>
+          <%= order.created_at %>
+        </td>
+      </tr>
+  <% end %>
+</table>

@@ -23,6 +23,10 @@ class Cart < ApplicationRecord
 		cart_item.delete
 	end
 
+	def remove_all_item
+		self.cart_items.delete_all
+	end
+
 	def total_price
 
 		sum = 0

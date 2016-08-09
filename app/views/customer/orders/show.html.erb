@@ -1,0 +1,21 @@
+<h2> 訂單資訊 </h2>
+
+    <div class="order-form">
+
+          <legend> 訂購人 </legend>
+          <div class="form-group col-lg-6">
+            <%= @order.billing_name  %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= @order.billing_address  %>
+          </div>
+
+          <legend> 收貨人</legend>
+          <div class="form-group col-lg-6">
+           <%= @order.shipping_name  %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= @order.shipping_address  %>
+          </div>
+
+    </div>

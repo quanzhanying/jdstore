@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   namespace :customer do
 
+    resources :orders
+
   	resources :favorites do
 
       member do

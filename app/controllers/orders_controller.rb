@@ -7,7 +7,8 @@ class OrdersController < ApplicationController
     @order.total = current_cart.total_price
 
     if @order.save
-      redirect_to order_path(order)
+      current_cart.remove_all_item
+      redirect_to customer_order_path(@order)
     else
       render 'carts/checkout'
     end

@@ -26,12 +26,12 @@ class Item < ApplicationRecord
 
 	mount_uploader :image, ImageUploader
 
-	def quantity_decrease(i)
-		self.quantity = self.quantity - i
+	def quantity_decrease(amount)
+		self.quantity = self.quantity - amount
 	end
 
-	def quantity_increase(i)
-		self.quantity = self.quantity + i
+	def quantity_increase(amount)
+		self.quantity = self.quantity + amount
 	end
 
 end
