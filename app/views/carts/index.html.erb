@@ -35,7 +35,7 @@
           </td>
           <td>
             <%= link_to("+1", add_product_cart_path(cart_item),class: "btn btn-sm btn-info", method: :post) %>
-            <%= link_to("-1", red_product_cart_path(cart_item),class: "btn btn-sm btn-info", method: :post) %>
+            <%= link_to("-1", reduce_product_cart_path(cart_item),class: "btn btn-sm btn-info", method: :post) %>
           </td>
 
         </tr>
@@ -56,7 +56,7 @@
     <hr>
 
     <div class="checkout clearfix">
-        <%= link_to("确认结账","#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+        <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
       <%= link_to("一键清空", cart_path(2), method: :delete, class: "btn btn-lg btn-warning pull-right" ) %>
 
     </div>

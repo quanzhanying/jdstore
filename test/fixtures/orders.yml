@@ -1,10 +1,15 @@
 # == Schema Information
 #
-# Table name: carts
+# Table name: orders
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :integer          not null, primary key
+#  total            :integer          default(0)
+#  billing_name     :string
+#  billing_address  :string
+#  shipping_name    :string
+#  shipping_address :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
