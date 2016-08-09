@@ -41,6 +41,7 @@ gem "font-awesome-rails"
 gem 'rubocop'
 gem 'letter_opener', group: :development
 gem 'figaro'
+gem 'aasm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,7 +1,7 @@
 <tr >
   <td colspan="5">
     订单号：<%= link_to(item.token, order_path(item.token)) %>
-    <% if item.is_paid %>
+    <% if item.paid? %>
       <span class="label label-success">Paid</span>
     <% else %>
       <span class="label label-danger">Not Paid</span>
