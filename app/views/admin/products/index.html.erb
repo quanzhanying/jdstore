@@ -35,6 +35,14 @@
        <td>
          <%= link_to("Edit", edit_admin_product_path(product)) %> |
          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" } )%>
+
+         |
+         <% if product.is_hidden %>
+
+         <%= link_to("Publish", publish_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+         <% else %>
+         <%= link_to("Hide", hide_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+         <% end %>
        </td>
        <td>
          <%= product.created_at %>
