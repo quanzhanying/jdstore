@@ -57,17 +57,12 @@
         <div class="total clearfix">
             <div class="pull-right">
                 <span>
-                    <% sum = 0 %>
-                    <% current_cart.cart_items.each do |cart_item| %>
-                    <% sum = sum + cart_item.quantity * cart_item.product.price %>
-                    <% end %>
-
-                    统计<%= sum %>RMB
+                    统计<%= render_cart_total_price(current_cart) %>RMB
                 </span>
             </div>
             <hr>
             <div class="checkout clearfix">
-                <%= link_to("确认结账", "#", method: :post, class:"btn btn-large btn-danger pull-right") %>
+                <%= link_to("确认结账", checkout_carts_path, method: :post, class:"btn btn-large btn-danger pull-right") %>
                 <!-- <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %> -->
             </div>
         </div>
