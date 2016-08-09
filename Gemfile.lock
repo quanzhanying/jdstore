@@ -1,7 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+<<<<<<< HEAD
     CFPropertyList (2.3.2)
+=======
+>>>>>>> 6fdccfee49ea793a0a6e6f0dbbfe76d25f8b57a6
     aasm (4.11.0)
     actioncable (5.0.0)
       actionpack (= 5.0.0)
@@ -84,6 +87,7 @@ GEM
     file_validators (2.1.0)
       activemodel (>= 3.0)
       mime-types (>= 1.0)
+<<<<<<< HEAD
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.38.0)
@@ -215,6 +219,10 @@ GEM
     font-awesome-rails (4.6.3.1)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
+=======
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
+>>>>>>> 6fdccfee49ea793a0a6e6f0dbbfe76d25f8b57a6
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -362,7 +370,10 @@ DEPENDENCIES
   devise
   figaro
   file_validators
+<<<<<<< HEAD
   fog
+=======
+>>>>>>> 6fdccfee49ea793a0a6e6f0dbbfe76d25f8b57a6
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails

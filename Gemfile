@@ -42,7 +42,10 @@ gem 'rubocop'
 gem 'letter_opener', group: :development
 gem 'figaro'
 gem 'aasm'
+<<<<<<< HEAD
 gem "fog"
+=======
+>>>>>>> 6fdccfee49ea793a0a6e6f0dbbfe76d25f8b57a6
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
