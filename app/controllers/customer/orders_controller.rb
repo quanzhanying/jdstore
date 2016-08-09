@@ -9,6 +9,7 @@ class Customer::OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
+    @item_lists = @order.item_lists
   end
 
 end
