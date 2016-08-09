@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li>
                 <%= link_to carts_path do  %>
-                  My Cart <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>( <%= current_cart.products.count %> )
+                  My Cart <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> ( <%= current_cart.products.count %> )
                 <% end %>
               </li>
               <% if !current_user %>
