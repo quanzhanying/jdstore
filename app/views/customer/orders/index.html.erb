@@ -13,7 +13,7 @@
   <% @orders.each do |order| %>
       <tr>
         <td>
-          <%= link_to(order.shipping_name, customer_order_path(order)) %>
+          <%= link_to(order.shipping_name, customer_order_path(order.token)) %>
         </td>
         <td>
           <%= order.total %> RMB

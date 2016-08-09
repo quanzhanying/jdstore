@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     @order.total = current_cart.total_price
+    @order.generate_token
 
     if @order.save
 
@@ -18,11 +19,11 @@ class OrdersController < ApplicationController
       end
 
       current_cart.remove_all_item
-      redirect_to customer_order_path(@order)
+      redirect_to customer_order_path(@order.token)
     else
       render 'carts/checkout'
     end
-    
+
   end
 
   private

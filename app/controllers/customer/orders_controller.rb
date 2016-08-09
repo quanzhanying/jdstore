@@ -8,7 +8,7 @@ class Customer::OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find(params[:id])
+    @order = current_user.orders.find_by_token(params[:id])
     @item_lists = @order.item_lists
   end
 
