@@ -15,14 +15,25 @@ class CartItemsController < ApplicationController
   end
 
   def add_item
-    @cart_item = CartItem.find_by(params[:id])
-    @cart_item.quantity = @cart_item.quantity + 1
-    @cart_item.save
-    redirect_to  :back
+    #flash[:alert] = params[:quantity]
+    #可以用来debug
+    @cart_item = current_cart.cart_items.find(params[:id])
+    #@cart_item = CartItem.find(params[:id])
+    #@cart_item = CartItem.find_by(id:params[:id])
+    #通过params[:id]从数据库中找到数据传给@cart_item
+    if @cart_item.quantity < @cart_item.product.quantity
+      @cart_item.quantity = @cart_item.quantity + 1
+      @cart_item.save
+      redirect_to  :back
+    else
+      redirect_to :back
+      flash[:alert] = "已经没有库存"
+    end
   end
 
   def des_item
-    @cart_item = CartItem.find_by(params[:id])
+    @cart_item = current_cart.cart_items.find(params[:id])
+    #@cart_item = CartItem.find(params[:id])
     @cart_item.quantity = @cart_item.quantity - 1
     @cart_item.save
     redirect_to  :back
