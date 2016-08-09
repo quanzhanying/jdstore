@@ -29,6 +29,7 @@
                 <ul class="nav">
                   <li class="<%= 'active' if params[:controller] == 'admin/products' %>"><%= link_to("产品管理",admin_products_path)%></li>
                   <li class="<%= 'active' if params[:controller] == 'admin/users' %>"><%= link_to("用户管理",admin_users_path)%></li>
+                  <li class="<%= 'active' if params[:controller] == 'admin/orders' %>"><%= link_to("订单管理",admin_orders_path)%></li>
                   <!-- <li><a href="javascript:;">About</a></li> -->
                 </ul>
             </nav>
