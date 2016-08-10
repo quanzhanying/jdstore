@@ -25,6 +25,13 @@ Rails.application.routes.draw do
 
   	resources :items
 
+    resources :users do
+      member do
+        post :change_to_admin
+        post :change_to_customer
+      end
+    end
+
   end
 
   namespace :customer do

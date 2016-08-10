@@ -41,7 +41,7 @@ class Order < ApplicationRecord
 private
 
   def order_submitted_notification
-    JdstoreMailer.order_notification(self).deliver
+    JdstoreMailer.order_notification(self).deliver!
   end
 
 end
