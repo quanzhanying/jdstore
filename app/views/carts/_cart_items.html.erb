@@ -14,12 +14,12 @@
     <% if item.quantity >= 2 %>
       <%= link_to("-", down_cart_item_count_cart_path(item), class: "btn btn-default btn-xs", method: :post) %>
     <% else %>
-      <%= link_to("-", "#", class: "btn btn-default btn-xs", disabled: "disabled") %>
+      <%= link_to("-", "javascript:void(0)", class: "btn btn-default btn-xs", disabled: "disabled") %>
     <% end %>
     <% if item.quantity < item.product.quantity   %>
       <%= link_to("+", up_cart_item_count_cart_path(item), class: "btn btn-default btn-xs", method: :post) %>
     <% else %>
-      <%= link_to("+", "#", class: "btn btn-default btn-xs", disabled: "disabled") %>
+      <%= link_to("+", "javascript:void(0)", class: "btn btn-default btn-xs", disabled: "disabled") %>
     <% end %>
     <%= link_to("del", del_cart_items_carts_path(:itemids => item.id), class: "btn btn-danger", method: :post )%>
   </td>

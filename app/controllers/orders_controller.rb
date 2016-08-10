@@ -2,7 +2,11 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @order = Order.find_by_token_and_user_id(params[:id], current_user.id)
+    if current_user.admin?
+      @order = Order.find_by_token(params[:id])
+    else
+      @order = current_user.orders.find_by_token(params[:id])
+    end
   end
 
   def create

@@ -16,7 +16,11 @@
 
 <div class="col-sm-12 col-md-12 col-lg-12 text-right">
   <p>
-      总计：$ <%= render_cart_total_price(current_cart) %>
+      <% if current_user.admin? %>
+        总计：$ <%= @order.total_price %>
+      <% else %>
+        总计：$ <%= render_cart_total_price(current_cart) %>
+      <% end %>
   </p>
 </div>
 
@@ -58,11 +62,11 @@
   </table>
 </div>
 
-<div class="col-sm-12 col-md-12 col-lg-12">
+<div class="pull-right">
   <% if @order.is_paid %>
-    <%= link_to("Already Paid", "###", class: "btn btn-default pull-right", disabled: "disabled") %>
+    <%= link_to("Already Paid", "javascript:void(0);", class: "btn btn-default pull-right", disabled: "disabled") %>
   <% else %>
-    <%= link_to("Use Alipay", pay_with_alipay_order_path, method: :post, class: "btn btn-primary pull-right") %>
-    <%= link_to("Use WeChat", pay_with_wechat_order_path, method: :post, class: "btn btn-success pull-right") %>
+    <%= link_to("Use Alipay", pay_with_alipay_order_path, method: :post, class: "btn btn-primary") %>
+    <%= link_to("Use WeChat", pay_with_wechat_order_path, method: :post, class: "btn btn-success") %>
   <% end %>
 </div>
