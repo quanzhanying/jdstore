@@ -45,6 +45,8 @@ gem "annotate"
 gem "font-awesome-rails"
 gem "rubocop"
 gem "letter_opener", group: :development
+gem "fog"
+gem "figaro"
 
 group :production do
   gem "pg"
