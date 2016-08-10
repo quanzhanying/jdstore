@@ -27,13 +27,28 @@ class OrdersController < ApplicationController
     end
 
     def pay_with_alipay
-      render :pay
+      @order = current_cart.order(params[:id])
+      if  @order.is_paid?
+        render :pay
+      else
+
+        # notice: "您已经支付过了"
+        redirect_to order_path(@order)
+        flash[:alert] = 'You are not admin'
+      end
     end
 
 
     def pay_with_wechat
+      @order = current_cart.order(params[:id])
+      if @order.is_paid?
       render :pay
+    else
+
+      redirect_to order_path(@order)
+      flash[:alert] = 'You are not admin'
       end
+    end
 
   private
 
