@@ -31,6 +31,52 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+# use 2 action to manage alipay and wechat respectively
+  # def pay_with_alipay
+  #   @order = Order.find(params[:id])
+  #   if @order.is_paid == true
+  #     redirect_to :back, alert: "Already Paid!"
+  #     return # break the action to prevent payment
+  #   end
+  #   @order.is_paid = true
+  #   @order.payment_method = "Alipay"
+  #   if @order.save
+  #     redirect_to account_orders_path, notice: "You have paid an order just now!"
+  #   else
+  #     redirect_to :back, alert: "Something went wrong with your payment!"
+  #   end
+  # end
+  #
+  # def pay_with_wechat
+  #   @order = Order.find(params[:id])
+  #   if @order.is_paid == true
+  #     redirect_to :back, alert: "Already Paid!"
+  #     return
+  #   end
+  #   @order.is_paid = true
+  #   @order.payment_method = "Wechat"
+  #   if @order.save
+  #     redirect_to account_orders_path, notice: "You have paid an order just now!"
+  #   else
+  #     redirect_to :back, alert: "Something went wrong with your payment!"
+  #   end
+  # end
+# end payment management
+
+  def pay_with_alipay_or_wechat
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      redirect_to :back, alert: "You have paid order No.#{@order.id}"
+      return
+    end
+    @order.is_paid = true
+    @order.payment_method = params[:payment_method]
+    if @order.save
+    redirect_to account_orders_path, notice: "You have paid order No.#{@order.id} just now"
+    end
+  end
+
+
   private
 
   def order_params

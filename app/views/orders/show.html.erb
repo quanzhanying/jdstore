@@ -60,3 +60,11 @@
         </tr>
       </tbody>
 </table>
+<br>
+<div class="btn-group btn-group-lg pull-right">
+  <!-- <!%= link_to("Pay with WeChat", pay_with_wechat_order_path(@order), method: :post, class: "btn btn-danger") %> -->
+  <!-- <!%= link_to("Pay with Alipay", pay_with_alipay_order_path(@order), method: :post, class: "btn btn-danger") %> -->
+  <%= link_to("Pay with WeChat", pay_with_alipay_or_wechat_order_path(@order, payment_method: "WeChat"), method: :post, class: "btn btn-danger") %>
+  <%= link_to("Pay with Alipay", pay_with_alipay_or_wechat_order_path(@order, payment_method: "Alipay"), method: :post, class: "btn btn-danger") %>
+</div>
+<br>
