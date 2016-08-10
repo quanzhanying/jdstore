@@ -37,13 +37,14 @@ end
 
     if  @order.is_paid
         flash[:alert] = '您已支付过了'
-        render :pay
+        # render :pay
+        redirect_to :back
         # redirect_to :back
 
         #不能用render
     else
         @order.is_paid = true
-        @order.payment_method = params[:payment_method]
+        # @order.payment_method = params[:payment_method]
 #这一步确定了是否支付的逻辑
     if @order.save
           # notice: "您已经支付过了"
@@ -65,11 +66,12 @@ end
         # == false不需要这句
         flash[:alert] = "您已支付过了"
         # :payment_method(params[:id])
-        render :pay
+        # render :pay
+        redirect_to :back
 
       else
         @order.is_paid = true
-        @order.payment_method = params[:payment_method]
+        # @order.payment_method = params[:payment_method]
 
      if order.save
         flash[:notice] = '支付成功'
