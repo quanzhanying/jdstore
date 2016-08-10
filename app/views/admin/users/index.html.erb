@@ -21,10 +21,9 @@
        </td>
        <td>
          <% if user.is_admin %>
-
-         <%= link_to("Admin", admin_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+         <%= link_to(" Change to User", user_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
          <% else %>
-         <%= link_to("User", user_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+         <%= link_to("Change to Admin", admin_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
          <% end %>
        </td>
      </tr>
