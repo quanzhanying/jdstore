@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> Cart </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2"> Description </th>
+          <th> Unit Price </th>
+          <th> Quantity </th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+            <% if cart_item.product.attachment.present? %>
+            <%= image_tag(cart_item.product.attachment.thumb.url, class: "thumbnail" ) %>
+            <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+          </td>
+          <td>
+            <%= cart_item.product.price %>
+          </td>
+          <td>
+            <%= cart_item.quantity %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        <span>
+          <%#= f.text_field :cost, :class => 'cost', :value => (number_with_precision(f.object.cost, :precision => 2) || 0) %>
+          Total <%= number_with_precision(render_cart_total_price(current_cart), :precision => 2 || 0) %> USD
+        </span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("Confirm", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    </div>
+  </div>
+</div>

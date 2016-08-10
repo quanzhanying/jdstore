@@ -10,9 +10,12 @@
         <h1> <%= @product.title %> </h1>
         <h3> USD: <%= @product.price %>/pc </h3>
         <h3> Qty: <%= @product.quantity %> </h3>
-        <div class="pull-right">
-          <%= link_to("Add to Cart", add_to_cart_product_path(@product),
-                      :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <div style="margin-top: 100px"; class="pull-right">
+          <% if @product.quantity > 0 %>
+          <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+          <% else %>
+          <%= link_to("Out of Stock", "#", :class => "btn btn-warning disabled" )%>
+          <% end %>
         </div>
       </div>
     </div>
