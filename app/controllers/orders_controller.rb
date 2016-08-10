@@ -31,11 +31,29 @@ end
   end
 
   def pay_with_wechat
-    @order = Order.find_by_token(params[:id])
+    @order = Order.find(params[:id])
+    if @order.is_paid = true
+      flash[:alert] = '你已经付过款了'
+    else
+      @order.is_paid = true
+      @order.payment_method = params[:payment_method]
+      @order.save
+      flash[:alert] = '新订单已完成'
+    end
+    redirect_to account_orders_path
   end
 
   def pay_with_alipay
-    @order = Order.find_by_token(params[:id])
+    @order = Order.find(params[:id])
+    if @order.is_paid = true
+      flash[:alert] = '你已经付过款了'
+    else
+      @order.is_paid = true
+      @order.payment_method = params[:payment_method]
+      @order.save
+      flash[:alert] = '新订单已完成'
+    end
+    redirect_to account_orders_path
   end
 
   private

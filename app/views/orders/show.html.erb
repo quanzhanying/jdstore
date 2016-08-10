@@ -58,9 +58,9 @@
 
         </table>
         <div class=" btn-lg pull-right btn-lg">
-            <%= link_to("支付宝付款", pay_with_alipay_order_path(@order), method: :post, class: "btn btn-info", style: "margin-right: 10px " )%>
+            <%= link_to("支付宝付款", pay_with_alipay_order_path(@order, payment_method: "alipay"), method: :post, class: "btn btn-info", style: "margin-right: 10px " )%>
 
-            <%= link_to("微信付款", pay_with_wechat_order_path(@order), method: :post, class: "btn btn-success ") %>
+            <%= link_to("微信付款", pay_with_wechat_order_path(@order, payment_method: "wechat"), method: :post, class: "btn btn-success ") %>
         </div>
 
     </div>
