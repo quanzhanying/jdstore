@@ -39,6 +39,7 @@ end
         flash[:alert] = '您已支付过了'
         # render :pay
         redirect_to :back
+
         # redirect_to :back
 
         #不能用render
@@ -49,6 +50,7 @@ end
     if @order.save
           # notice: "您已经支付过了"
           flash[:notice] = '支付成功'
+          OrderMailer.notify_order_placed(@order).deliver!
           redirect_to order_path(@order.token)
     else
           flash[:alert] = '支付失败'
@@ -75,6 +77,7 @@ end
 
      if order.save
         flash[:notice] = '支付成功'
+        OrderMailer.notify_order_placed(@order).deliver!
         redirect_to order_path(@order.token)
       else
         flash[:alert] = "支付失败"
