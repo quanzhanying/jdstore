@@ -1,12 +1,18 @@
 <h2>My Orders</h2>
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
+      <th>
+        Order Info
+      </th>
       <th>
         Order Content
       </th>
       <th>
         Total
+      </th>
+      <th>
+        Payment
       </th>
     </tr>
   </thead>
@@ -15,10 +21,34 @@
     <% @orders.each do |o| %>
       <tr>
         <td>
-          <%= o.token %>
+          <p>
+            <strong>Created At: </strong><%= o.created_at %>
+          </p>
+          <p>
+            <strong>Order No. </strong><%= o.id %>
+          </p>
+        </td>
+        <td>
+          <% o.product_lists.each do |prod| %>
+            <p>
+              <%= prod.product_name %>($ <%= prod.product_price %>) * <%= prod.quantity %>
+            </p>
+          <% end %>
         </td>
         <td>
           <%= o.total %>
+        </td>
+        <td>
+          <% if o.is_paid %>
+            <p>
+              Paid
+            </p>
+          <% else %>
+            <p>
+              Unpaid
+            </p>
+            <%= link_to("Go to Pay", order_path(o.token), class:"btn btn-danger btn-xs") %>
+          <% end %>
         </td>
       </tr>
     <% end %>
