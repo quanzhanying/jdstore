@@ -38,6 +38,7 @@ gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'fog'
 gem 'carrierwave-aws'
+gem "figaro"
 
 # debug gem
 gem 'airbrake', '~> 5.4'
