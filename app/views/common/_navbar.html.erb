@@ -25,8 +25,8 @@
                   <ul class="dropdown-menu">
                     <% if current_user.admin? %>
                       <li><%= link_to("Admin Panel", admin_products_path) %></li>
-
                     <% end %>
+                    <li><%= link_to("My orders", account_orders_path) %></li>
                     <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
                   </ul>
                 </li>
