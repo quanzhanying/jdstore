@@ -28,6 +28,13 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def pay_with_wechat
+  end
+
+  def pay_with_alipay
+
+  end
+
   private
 
   def order_params
