@@ -31,7 +31,8 @@
               <%= cart_item.product.price %>
             </td>
             <td>
-              <%= cart_item.quantity %>
+              <%= cart_item.quantity %> 
+              <%= link_to("Delete", delete_cart_item_cart_path(cart_item), method: :delete, class: "btn btn-danger pull-right") %>
             </td>
           </tr>
         <% end %>
