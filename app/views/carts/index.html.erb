@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>购物车</h2>
+        <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        产品
+                    </th>
+                    <th>
+                        单价
+                    </th>
+                    <th>
+                        数量
+                    </th>
+                    <th colspan="2">
+                        操作
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% current_cart.cart_items.each do |f| %>
+                <tr>
+                    <td>
+                        <%= link_to product_path(f.product) do%>
+                        <% if f.product.image.present? %>
+                        <%= image_tag(f.product.image.thumb.url, class: "thumbnail") %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                        <% end %>
+                        <% end %>
+
+                    </td>
+                    <td>
+                        <%= link_to(f.product.title, product_path(f.product)) %>
+                    </td>
+                    <td>
+                        <%= f.product.price %>
+                    </td>
+                    <td>
+                        <%= f.quantity %>
+                    </td>
+                    <td>
+                        <%= link_to("+1", up_product_cart_path(f), method: :post, class: "btn btn-default" ) %>
+                        <%= link_to("-1", down_product_cart_path(f), method: :post, class: "btn btn-default" ) %>
+                        <%= link_to("删除该产品", cart_item_path(f), method: :delete, class: "btn btn-danger") %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <div class="total clearfix">
+            <div class="pull-right">
+                <span>
+                    <% sum = 0 %>
+                    <% current_cart.cart_items.each do |cart_item| %>
+                    <% sum = sum + cart_item.quantity * cart_item.product.price %>
+                    <% end %>
+
+                    统计<%= sum %>RMB
+                </span>
+            </div>
+            <hr>
+            <div class="checkout clearfix">
+                <%= link_to("确认结账", "#", method: :post, class:"btn btn-large btn-danger pull-right") %>
+                <!-- <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class:"btn btn-large btn-default pull-right") %> -->
+            </div>
+        </div>
+    </div>
+
+</div>

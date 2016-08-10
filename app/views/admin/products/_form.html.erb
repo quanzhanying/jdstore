@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @product] do |f|%>
+<%= f.input :title, label: "产品标题" %>
+<%= f.input :description, label: "产品描述" %>
+<%= f.input :quantity, label: "产品数量" %>
+<%= f.input :price, label: "价格" %>
+<%= f.input :image, label: "产品图片" %>
+<%= f.submit "提交" %>
+
+<% end %>
