@@ -9,12 +9,6 @@ class Cart < ApplicationRecord
     ci.save
   end
 
-#  def delete_product_from_cart
-#    ci = cart_items.destroy
-#    ci.product = product
-#    ci.save  
-
-#  end
 
   def total_price
     sum = 0
