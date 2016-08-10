@@ -32,6 +32,7 @@ class OrdersController < ApplicationController
     @order.is_paid = true
     @order.save
     redirect_to :back
+    OrderMailer.notify_order_placed(@order).deliver!
   end
 
   def pay_with_wechat
@@ -39,6 +40,7 @@ class OrdersController < ApplicationController
     @order.is_paid = true
     @order.save
     redirect_to :back
+    OrderMailer.notify_order_placed(@order).deliver!
   end
 
 
