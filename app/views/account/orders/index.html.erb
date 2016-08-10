@@ -68,10 +68,10 @@ body {
               ¥<%= order.total %>
             </td>
             <td>
-               未支付
+               <%= order.pay_status %>
             </td>
             <td>
-              <%= link_to("订单详情",account_order_path(order)) %>
+              <%= link_to("订单详情",account_order_path(order.token)) %>
             </td>
           </tr>
           </tbody>

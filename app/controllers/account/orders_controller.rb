@@ -7,7 +7,7 @@ class Account::OrdersController < ApplicationController
 
   def show
 
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     #render :text => params[:token]
     #flash[:notice] = @order.billing_name
     #flash[:notice] = @order.id

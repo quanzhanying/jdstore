@@ -60,5 +60,11 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="checkout clearfix pull-right">
+      <%= link_to("支付宝支付", go_pay_order_path(@order,payment_method:"ali"), method: :post, class: "btn btn-sm btn-danger") %>
+
+      <%= link_to("微信支付", go_pay_order_path(@order,payment_method:"wx"), method: :post, class: "btn btn-sm btn-danger",style: "margin-left:10px") %>
+    </div>
   </div>
 </div>

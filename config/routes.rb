@@ -24,7 +24,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders
+  resources :orders do
+    member do
+      post :go_pay
+    end
+  end
 
   namespace :account do
     resources :orders
