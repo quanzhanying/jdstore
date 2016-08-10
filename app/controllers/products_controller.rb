@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
+  def add_to_cart
+    @product = Product.find(params[:id])
+    current_cart.add_product_to_cart(@product)
+    redirect_to :back
+  end
+
   def show
     @product = Product.find(params[:id])
 
