@@ -1,17 +1,24 @@
-<section class="you-create-we-secure">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 col-md-12">
-       <div class="create-secure-wrapper">
-         <div class="create-secure-wrapper-left">
-           <img src="<%= @product.attachment.medium %>">
-           <h1> <%= @product.title %> </h1>
-         </div>
-       </div>
-       <div class="create-secure-wrapper-right">
-          <p><%= simple_format(@product.description) %></p>
-       </div>
+      <div class="col-xs-12 col-sm-6 col-md-8-offset-1">
+       <p>
+         <img src="<%= @product.attachment.thumb %>">
+       </p>
+    </div>
+
+      <div class="col-xs-12 col-sm-5 col-md-8-offset-1">
+        <h1> <%= @product.title %> </h1>
+        <h3> USD: <%= @product.price %>/pc </h3>
+        <h3> Qty: <%= @product.quantity %> </h3>
       </div>
     </div>
+
   </div>
-</section>
+
+
+  <div class="col-lg-6 col-md-12">
+    <h2> Description: </h2>
+    <div class="create-secure-wrapper-right">
+      <p><%= simple_format(@product.description) %></p>
+    </div>
+  </div>
