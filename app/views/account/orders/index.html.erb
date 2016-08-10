@@ -33,7 +33,7 @@
       </table>
 
 
-    
+
 
       <h2>寄送咨询</h2>
       <table class="table table-striped table-bordered">
@@ -62,8 +62,15 @@
       </table>
       <div class="total clearfix">
         <span class="pull-right">总计<%= order.total %>RMB</span>
+        <div class="pull-right" style="margin-right: 20px;color: red;">
+          <% if order.is_paid %>
+          <%= "已付款  " %>
+          <% else %>
+          <%= "待支付  " %>
+          <% end %>
+        </div>
 
-<br />
+        <br />
 
     <div class="group pull-right">
       <%= link_to("支付宝支付", pay_with_alipay_order_path(order) , method: :post ,class: "btn btn-danger") %>
