@@ -34,11 +34,14 @@
             <%= cart_item.product.price %>
           </td>
           <td>
-            <%= cart_item.quantity %>
             <% if cart_item.quantity < cart_item.product.quantity %>
               <%= link_to("+",number_up_cart_path(cart_item),method: :number_up,class:"btn btn-xs btn-danger") %>
+                <%= cart_item.quantity %>
               <%= link_to("-",number_down_cart_path(cart_item),method: :number_down,class:"btn btn-xs btn-default") %>
             <% else %>
+              <%= link_to("+","#",method: :number_up,class:"btn btn-xs btn-danger disabled") %>
+              <%= cart_item.quantity %>
+              <%= link_to("-",number_down_cart_path(cart_item),method: :number_down,class:"btn btn-xs btn-default") %>
               <% flash[:warning] = 'Product is not enough' %>
             <% end %>
           </td>
