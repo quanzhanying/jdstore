@@ -8,6 +8,7 @@ class CartsController < ApplicationController
   def delete_cart_item
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
+    flash[:alert] = "Delete Succeeded"
     redirect_to :back
 
   end
