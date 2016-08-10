@@ -1,0 +1,26 @@
+<h2>My Orders</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Order Content
+      </th>
+      <th>
+        Total
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |o| %>
+      <tr>
+        <td>
+          <%= o.token %>
+        </td>
+        <td>
+          <%= o.total %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,51 @@
+<h2>Checkout</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Stuff
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Quantity
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_cart.cart_items.each do |c| %>
+      <tr>
+        <td>
+          <%= link_to(c.product.title, product_path(c.product)) %>
+        </td>
+        <td>
+          <%= c.product.money %>
+        </td>
+        <td>
+          <%= c.quantity %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="total clearfix">
+  <span class="pull-right">Total: <%= render_cart_total_price(current_cart) %> $$</span>
+</div>
+<hr>
+
+<h2>Shipping Info</h2>
+
+<div class="order-form">
+  <%= simple_form_for @order do |f| %>
+    <%= f.input :billing_name %>
+    <%= f.input :billing_address %>
+
+    <%= f.input :shipping_name %>
+    <%= f.input :shipping_address %>
+
+    <%= f.submit "Yes! Order", class: "btn btn-primary" %>
+  <% end %>
+</div>

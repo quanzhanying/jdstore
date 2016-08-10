@@ -1,0 +1,43 @@
+<h2 class="text-center">Product Info</h2>
+<%= link_to("Edit this Product", edit_stores_product_path(@product), class: "btn btn-primary btn-lg pull-right") %>
+<br>
+<table class="table">
+  <thead>
+    <th>
+      Image
+    </th>
+    <th>
+      Title
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Money
+    </th>
+    <th>
+      Storage
+    </th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        <%= image_tag(@product.image.thumb.url, class: "thumbnail") %>
+      </td>
+      <td>
+        <%= @product.title %>
+      </td>
+      <td>
+        <%= @product.description %>
+      </td>
+      <td>
+        <%= @product.money %>
+      </td>
+      <td>
+        <%= @product.storage %>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
