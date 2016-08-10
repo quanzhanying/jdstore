@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
 end
 
 gem "bootstrap-sass"
@@ -44,6 +45,10 @@ gem "annotate"
 gem "font-awesome-rails"
 gem "rubocop"
 gem "letter_opener", group: :development
+
+group :production do
+  gem "pg"
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
