@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
         product_list.quantity = cart_item.product.quantity
         product_list.save
       end
+      current_cart.cart_items.destroy_all
 
       redirect_to order_path(@order.token)
     else
@@ -35,6 +36,7 @@ class OrdersController < ApplicationController
     else
       @order.is_paid  =true
       if @order.save
+        OrderMailer.notify_order_placed(@order).deliver!
         redirect_to :back,alert: "商品支付成功"
       else
         redirect_to :back,alert: "商品支付失败"
@@ -49,6 +51,7 @@ class OrdersController < ApplicationController
     else
       @order.is_paid  =true
       if @order.save
+        OrderMailer.notify_order_placed(@order).deliver!
         redirect_to :back,alert: "商品支付成功"
       else
         redirect_to :back,alert: "商品支付失败"
