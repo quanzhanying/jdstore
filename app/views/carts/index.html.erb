@@ -9,6 +9,7 @@
           <th colspan="2"> Description </th>
           <th> Unit Price </th>
           <th> Quantity </th>
+          <th> Delete </th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +32,9 @@
           <td>
             <%= cart_item.quantity %>
           </td>
+          <td>
+            <%= link_to("Delete", cart_path(cart_item), method: :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger")%>
+          </td>
         </tr>
         <% end %>
       </tbody>
@@ -41,8 +45,12 @@
     <div class="total clearfix">
       <span class="pull-right">
         <span>
+          Total Qty: <%= render_cart_total_quantity(current_cart) %> PC
+        </span>
+        <br>
+        <span>
           <%#= f.text_field :cost, :class => 'cost', :value => (number_with_precision(f.object.cost, :precision => 2) || 0) %>
-          Total <%= number_with_precision(render_cart_total_price(current_cart), :precision => 2 || 0) %> USD
+          Total Price: <%= number_with_precision(render_cart_total_price(current_cart), :precision => 2 || 0) %> USD
         </span>
       </span>
     </div>
@@ -50,6 +58,7 @@
     <hr>
 
     <div class="checkout clearfix">
+      <%= link_to("Empty Cart", cart_path(current_cart), method: :delete, :data => { :confirm => "Are you sure?" }, class: "btn btn-lg btn-info pull-left") %>
       <%= link_to("Confirm", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>

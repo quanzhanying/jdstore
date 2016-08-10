@@ -6,4 +6,12 @@ module CartsHelper
     end
     sum
   end
+
+  def render_cart_total_quantity(cart)
+    sum = 0
+    cart.cart_items.each do |cart_item|
+      sum += cart_item.quantity 
+    end
+    sum
+  end
 end

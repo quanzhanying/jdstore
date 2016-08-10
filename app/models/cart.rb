@@ -1,5 +1,5 @@
 class Cart < ApplicationRecord
-  validates :quantity, presence: true
+  #validates :quantity, presence: true
 
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
