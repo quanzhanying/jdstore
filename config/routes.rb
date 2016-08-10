@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :shipping_cart do
     member do
       post :destroy_all_items
+      post :current_cart_add_item
+      post :current_cart_delete_item
     end
   end
 

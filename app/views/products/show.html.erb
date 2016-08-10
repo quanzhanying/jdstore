@@ -25,7 +25,6 @@
               <font>画面尺寸：<font color="#d9534f"><%= @product.width %>CM x <%= @product.height %>CM</font> </br>
               <font>库存：<font color="#d9534f"><%= @product.store %></font>
               <div align="right">
-
                   <% if @product.store == 0 %>
                     <%= link_to("商品处于缺货状态", add_to_cart_product_path, :method => :post, :disabled=> :true, :class => "btn btn-danger btn-right") %>
                   <% else %>
@@ -36,5 +35,26 @@
         </article>
       </div>
     </div>
+
+    <h1>猜你喜欢</h1>
+    <hr>
+    <div class="row" id="post-list">
+      <% @products.each do |product| %>
+      <div class="col-xs-12 col-sm-6">
+        <article class="post tag-foreign-website tag-bootstrap-v3 tag-opensource-project">
+          <div class="post-featured-image">
+            <a class="thumbnail" href="<%= product_path(product) %>" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'Nemo'])" target="_blank">
+              <img src="<%=product.attachment%>" width="700" height="438">
+            </a>
+          </div>
+            <div class="post-content">
+              <div align="right" style = "font-size :18px"><%= link_to(product.title, product_path(product), :style => "color: #ec3f42;")%> |  <%= product.width %>CM x <%= product.height %>CM | <%= product.price %>元 | <div class="btn btn-danger"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </div></div>
+            </div>
+          <div style="height: 20px"></div>
+        </article>
+      </div>
+      <% end %>
+    </div>
+
   </div>
 </main>
