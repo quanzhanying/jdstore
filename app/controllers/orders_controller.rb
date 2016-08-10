@@ -23,13 +23,31 @@ class OrdersController < ApplicationController
         product_list.save
       end
 
-      OrderMailer.notify_order_placed(Order.last).deliver!
+
+      mail_to_customer
 
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
     end
-  end 
+  end
+
+  def mail_to_customer
+    if Rails.env == "development"
+      OrderMailer.notify_order_placed(Order.last).deliver!
+    else
+      send_simple_message
+    end
+  end
+
+  def send_simple_message
+    RestClient.post "https://api:key-7628122ee4f899ec78714824a0c8678b"\
+    "@api.mailgun.net/v3/sandboxa3156e06806a4097a7054dca2c2dccd1.mailgun.org/messages",
+    :from => "Mailgun Sandbox <postmaster@sandboxa3156e06806a4097a7054dca2c2dccd1.mailgun.org>",
+    :to => "chenyunli <m18301662790@gmail.com>",
+    :subject => "Hello chenyunli",
+    :text => "Congratulations chenyunli, you just sent an email with Mailgun!  You are truly awesome!  You can see a record of this email in your logs: https://mailgun.com/cp/log .  You can send up to 300 emails/day from this sandbox server.  Next, you should add your own domain so you can send 10,000 emails/month for free."
+  end
 
   def go_pay
     payment_method = params[:payment_method]
