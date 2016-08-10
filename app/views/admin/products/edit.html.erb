@@ -1,0 +1,16 @@
+<h1> 编辑此商品 </h1>
+
+<%= simple_form_for [:admin,@product] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.input :store %>
+<%= f.input :width %>
+<%= f.input :height %>
+<img src="<%=@product.attachment.thumb%>" width="350" height="219">
+<%= f.input :attachment%>
+<%= f.input :is_hidden %>
+<%= f.submit "提交商品" %>
+
+<% end %>
