@@ -87,4 +87,7 @@ Rails.application.configure do
   config.after_initialize do
     # Pay2go.integratioin_mode = :production
   end
+
+  # Default Mailer Host
+  Rails.application.routes.default_url_options[:host] = 'jdstore.herokuapp.com'
 end
