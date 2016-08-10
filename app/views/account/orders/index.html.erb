@@ -1,0 +1,93 @@
+<style media="screen">
+body {
+    font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+    color: #666;
+    background: #fff;
+}
+.order-tb thead th {
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #f5f5f5;
+  color: #666;
+  font-weight: 400
+}
+
+.order-tb .tr-th {
+    background: #f5f5f5;
+    height: 31px;
+    line-height: 31px;
+    color: #aaa;
+    overflow: hidden;
+}
+
+</style>
+<div class="row">
+  <div class="col-md-12">
+
+    <h4> 全部订单 </h4>
+
+    <div class="checkout clearfix">
+    </div>
+    <br/>
+    <table class="table table-bordered order-tb">
+      <thead>
+        <tr>
+          <th colspan="2">商品資訊</th>
+          <th>单价</th>
+          <th>收货人</th>
+          <th>总额</th>
+          <th>订单状态</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+
+
+      <% @orders.each do |order| %>
+        <tbody>
+          <tr style="border-left: hidden;border-right: hidden;">
+            <td colspan="7" style="height:20px;"></td>
+          </tr>
+          <tr class="tr-th">
+            <td colspan="7">
+              <%= order.created_at.to_s(:db)  %>
+              <span style="margin-left:20px;">订单编号：<%= order.token %></span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <% order.product_lists.each do |p_list| %>
+                <div style="float:left;margin-top:20px;">
+                <%= p_list.product_name %> x <%= p_list.quantity %>
+                ¥<%= p_list.product_price %>
+                <%= order.shipping_name %>
+                <div>
+              <% end %>
+            </td>
+            <td>
+              ¥<%= order.total %>
+            </td>
+            <td>
+               <%= order.pay_status %>
+            </td>
+            <td>
+              <%= link_to("订单详情",account_order_path(order.token)) %>
+            </td>
+          </tr>
+          </tbody>
+        <% end %>
+    </table>
+
+    <br>
+    <div class="total clearfix">
+      <span class="pull-right">
+
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+    </div>
+  </div>
+</div>
