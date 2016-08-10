@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    if current_cart.is_seller_of?(@product)
+    if current_cart.is_incar?(@product)
       #current_cart.products.include?(@product)
       flash[:alert] = "不能重复加入购物车"
     else

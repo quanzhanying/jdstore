@@ -11,7 +11,7 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
 
-  def is_seller_of?(product)
+  def is_incar?(product)
     products.include?(product)
   end
 

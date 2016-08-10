@@ -15,17 +15,25 @@ class OrdersController < ApplicationController
         product_list.save
       end
 
-      redirect_to order_path(@order) #怎么快速识别哪个path对应的路径?
+      redirect_to order_path(@order.token) #怎么快速识别哪个path对应的路径?
     else
       render 'carts/checkout'
     end
   end
 
     def show
-      @order = Order.find(params[:id])
+      @order = Order.find_by_token(params[:id])
       @product_lists = @order.product_lists
     end
 
+    def pay_with_alipay
+      render :pay
+    end
+
+
+    def pay_with_wechat
+      render :pay
+      end
 
   private
 

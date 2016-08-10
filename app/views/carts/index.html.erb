@@ -16,7 +16,7 @@
         <% current_cart.cart_items.each do |cart_item| %>
         <tr>
           <td>
-            <%= link_to product_path(cart_item.product) do %>
+            <%= link_to product_path(cart_item.product) do %><!--这里后面一段是link_to加的内容-->
               <% if cart_item.product.image.present?%>
               <%= image_tag(cart_item.product.image.mini.url, class: "thumbnail")%>
               <% end %>
@@ -36,8 +36,6 @@
           <td>
             <%= link_to("删除", cart_item_path(cart_item), :method => :delete, :data =>{:confirm => "are you sure?"})%>
             </td>
-
-
         </tr>
         <% end %>
       </body>
@@ -55,8 +53,8 @@
       <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-sm btn-info btn-info")%>
         <%= link_to("删除所有", clear_cart_item_path(current_cart), method: :post, class: "btn btn-default btn-sm btn-warning") %>
     </div>
-    <div class="ClearCar">
 
-    </div>
+
+  
   </div>
 </div>

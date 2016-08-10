@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    # flash[:alert]=current_cart.id
   end
 
   def new
