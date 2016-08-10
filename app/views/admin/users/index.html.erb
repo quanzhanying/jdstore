@@ -1,0 +1,32 @@
+<div class="pull-right">
+  <%= link_to("添加用户", new_admin_user_path, :class => "btn btn-default")%>
+</div>
+<br><br>
+  <table class="table table-boldered">
+      <thead>
+      <tr>
+        <td>用户名</td>
+        <td>上次登录时间</td>
+        <td>权限</td>
+      </tr>
+    </thead>
+
+        <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to(user.email, admin_user_path(user))%>
+          </td>
+          <td>
+            <%= user.last_sign_in_at%>
+          </td>
+          <td>
+            <% if user.admin? %>
+            <%= link_to("成为消费者", be_user_admin_user_path(user), :method => :post,  :class => "btn btn-sm btn-default")%>
+             <% else %>
+             <%= link_to("成为管理员", be_admin_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-default")%>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+
+      </table>
