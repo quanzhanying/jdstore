@@ -4,7 +4,7 @@ class Admin::OrdersController < ApplicationController
   layout "admin"
 
   def index
-    @orders = Order.all
+    @orders = Order.all.recent
   end
 
 
