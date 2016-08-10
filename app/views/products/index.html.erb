@@ -1,0 +1,14 @@
+<!--<div class="pull-right">
+  <%= link_to("Add a product", new_product_path, :class => "btn btn-default" ) %>
+</div>-->
+  <% @products.each do |product| %>
+
+  <div class="col-sm-4 col-md-3 col-lg-2">
+      <div class="row text-center">
+        <%= image_tag product.image.thumb %>
+      </div>
+      <div class="text-center">
+      <%= link_to(product.title, product_path(product)) %>
+      </div>
+  </div>
+  <% end %>
