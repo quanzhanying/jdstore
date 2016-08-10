@@ -1,7 +1,14 @@
+<style media="screen">
+  body {
+      font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+      color: #666;
+      background: #fff;
+  }
+</style>
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 订单明细 </h2>
+    <h4> 订单明细 </h4>
 
     <table class="table table-bordered">
       <thead>
@@ -34,7 +41,7 @@
 
      <hr>
 
-     <h2> 寄送信息 </h2>
+     <h4> 寄送信息 </h4>
 
      <table class="table table-striped table-bordered">
       <tbody>
@@ -61,8 +68,6 @@
       </tbody>
     </table>
 
-    <div class="checkout clearfix pull-right">
-      <%= render_payment_method(@order) %>
-    </div>
+
   </div>
 </div>

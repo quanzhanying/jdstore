@@ -35,7 +35,7 @@ gem 'devise'
 gem "simple_form"
 gem "carrierwave"
 gem "mini_magick"
-
+gem "letter_opener",group: :development
 gem "awesome_rails_console" # 讓你的 rails console 變整齊漂亮的 gem
 
 group :development, :test do
