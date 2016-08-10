@@ -37,6 +37,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'fog'
+gem 'carrierwave-aws'
 
 gem 'letter_opener', group: :development
 
