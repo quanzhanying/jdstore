@@ -16,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def is_admin?
-    is_admin || self.email == "123@123"
+    is_admin || self.email == "1234@123"
   end
 end

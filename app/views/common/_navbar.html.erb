@@ -26,7 +26,7 @@
                           <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <% if current_user.is_admin %>
+                        <% if current_user.is_admin? %>
                         <li><%= link_to("管理产品", admin_products_path) %></li>
                         <li><%= link_to("管理用户", admin_user_mg_index_path()) %></li>
                         <% end %>
