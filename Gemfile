@@ -39,6 +39,9 @@ gem 'font-awesome-sass'
 gem 'fog'
 gem 'carrierwave-aws'
 
+# debug gem
+gem 'airbrake', '~> 5.4'
+
 gem 'letter_opener', group: :development
 
 group :development, :test do
