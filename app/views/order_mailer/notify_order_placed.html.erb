@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Order Details</h2><br>
+    <small><%= link_to("See more in order Page", order_url(@order.token)) #Does it work with order_path %></small>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="60%">
+            Details
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Quantity
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @order.product_lists.each do |pd| %>
+        <tr>
+          <td>
+            <%= pd.product_name %>
+          </td>
+          <td>
+            <%= pd.product_price %>
+          </td>
+          <td>
+            <%= pd.quantity %>
+          </td>
+        </tr>
+      </tbody>
+      <tr>
+        <p class="pull-right">
+          Total: <%= @order.total %>
+        </p>
+      </tr>
+    </table>
+    <br>
+    <div class="well well-lg"><p>
+      Ship to: <br>
+      <%=  @order.shipping_name %> - <%= @order.shipping_address %>
+    </p></div>
+  </div>
+</div>
