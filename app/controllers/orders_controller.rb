@@ -20,8 +20,9 @@ class OrdersController < ApplicationController
 
       redirect_to order_path(@order.token) #怎么快速识别哪个path对应的路径?
   else
-      flash[:alert]="dsfdsf"
+      # flash[:alert]="dsfdsf"z..........................
       render 'carts/checkout'
+      # action或者thml
   end
 end
 
