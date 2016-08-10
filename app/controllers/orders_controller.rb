@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
         product_list.product_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.product.quantity
+        product_list.save
       end
 
       redirect_to order_path(@order.token)
