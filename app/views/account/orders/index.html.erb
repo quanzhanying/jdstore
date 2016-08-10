@@ -1,0 +1,47 @@
+<div class="col-md-12">
+    <h2>订单详情</h2>
+    <% @orders.each do |o| %>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width :20%">
+                    订购人
+                </th>
+                <th style="width :20%">
+                    订购人地址
+                </th>
+                <th style="width :20%">
+                    邮寄人
+                </th>
+                <th style="width :20%">
+                    邮寄人地址
+                </th>
+                <th style="width :20%">
+                    总价
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    <%= o.billing_name %>
+                </td>
+                <td>
+                    <%= o.billing_address %>
+                </td>
+
+                <td>
+                    <%= o.shipping_name %>
+                </td>
+                <td>
+                    <%= o.shipping_address %>
+                </td>
+
+                <td>
+                    <%= o.total %>
+                </td>
+            </tr>
+            <table>
+                <br/><br/>
+                <% end %>

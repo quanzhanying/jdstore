@@ -11,6 +11,9 @@
 #  billing_address  :string
 #  shipping_name    :string
 #  shipping_address :string
+#  token            :string
+#  is_paid          :boolean          default(FALSE)
+#  payment_method   :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

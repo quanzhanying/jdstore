@@ -27,8 +27,4 @@ class CartsController < ApplicationController
     @cart.cart_items.destroy_all
     redirect_to :back
   end
-
-  def checkout
-    @order = Order.new
-  end
 end

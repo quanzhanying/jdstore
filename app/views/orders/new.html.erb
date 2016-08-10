@@ -41,7 +41,7 @@
         </div>
         <hr>
 
-        <h2>订单咨询</h2>
+        <h2>订单详情</h2>
         <div class="order-form">
             <%= simple_form_for @order do |f| %>
 
@@ -62,7 +62,7 @@
             </div>
 
             <div class="checkout">
-                <%= f.submit"生成订单", class: "btn btn-lg btn-danger pull-right", data: {disable_with: "Submitting..."} %>
+                <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right", data: {disable_with: "Submitting..."} %>
             </div>
 
             <% end %>

@@ -7,5 +7,6 @@ class CreateProductLists < ActiveRecord::Migration[5.0]
       t.integer :quantity
       t.timestamps
     end
+    add_index :product_lists, :order_id
   end
 end
