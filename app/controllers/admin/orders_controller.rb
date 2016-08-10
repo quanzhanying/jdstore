@@ -1,4 +1,6 @@
 class Admin::OrdersController < ApplicationController
+
+
   def index
     @orders = current_user.orders.all
   end
@@ -26,4 +28,33 @@ class Admin::OrdersController < ApplicationController
       render "carts/checkout"
     end
   end
+
+  def pay_with_alipay
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      puts "++++++++++++++++"
+      redirect_to :back ,alert: "paid successful, you can't pay again"
+    else
+      puts "***************"
+      @order.is_paid  =true
+      if @order.save
+        redirect_to :back,alert: "paid successful"
+      else
+        redirect_to :back,alert: "paid failed"
+      end
+    end
+  end
+
+  def pay_with_wechat
+      @order = Order.find(params[:id])
+      @order.is_paid = true
+      @order.save
+      redirect_to :back
+    end
+
+    private
+
+    def order_params
+      params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    end
 end
