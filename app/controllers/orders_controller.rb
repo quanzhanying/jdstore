@@ -27,6 +27,36 @@ class OrdersController < ApplicationController
 
   end
 
+  def pay_with_alipay
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      redirect_to :back ,alert: "商品已经支付，不能重复支付"
+    else
+      @order.is_paid  =true
+      if @order.save
+        redirect_to :back,alert: "商品支付成功"
+      else
+        redirect_to :back,alert: "商品支付失败"
+      end
+    end
+  end
+
+  def pay_with_wechat
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      redirect_to :back ,alert: "商品已经支付，不能重复支付"
+    else
+      @order.is_paid  =true
+      if @order.save
+        redirect_to :back,alert: "商品支付成功"
+      else
+        redirect_to :back,alert: "商品支付失败"
+      end
+    end
+  end
+
+
+
   private
 
   def order_params
