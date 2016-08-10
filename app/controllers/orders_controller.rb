@@ -1,12 +1,17 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!,only: [:create]
 
+  def index
+    @user = current_user
+    @orders = Order.where(user_id: @user)
+
+  end
 
   def new
       @order = Order.new
   end
 
-  
+
 
   def create
       @order = Order.new(order_params)
@@ -24,6 +29,7 @@ class OrdersController < ApplicationController
         end
 
         redirect_to order_path(@order.token)
+
       else
         render :new
       end
@@ -34,7 +40,22 @@ class OrdersController < ApplicationController
         @product_lists = @order.product_lists
     end
 
+    def destroy
+      @order = Order.find(params[:id])
+      @order.destroy
+      redirect_to :back
+    end
 
+
+    def is_paid
+       @order = Order.find(params[:id])
+       if !@order.is_paid
+         @order.is_paid!
+       else
+         flash[:alert]= "You have paid already! Thanks!"
+       end
+       redirect_to  orders_path
+    end
 
     private
     def order_params

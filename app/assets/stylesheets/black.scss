@@ -40,11 +40,19 @@
 }
 
 .navbar{
-  
+
   background: rgba(100,10,20,0.9)
 
 }
 
 .navbar-font{
   color: #f8f8f8;
+}
+
+.table-dotted{
+  width: 90%;
+
+  border: dotted 1px;
+  height: 40px
+  // padding: 8px;
 }

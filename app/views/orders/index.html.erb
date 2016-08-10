@@ -1,0 +1,47 @@
+<div class="row showproduct-bg showproduct-font" style="margin:30px">
+  <div class="col-md-12">
+    <h2>My orders</h2>
+    <% @orders.each do |order| %>
+      <legend class="showproduct-font">order id:<%= order.id %>
+        <div class="pull-right">
+          <% if order.is_paid %>
+            <label> 已支付</label>
+          <% else %>
+            <%= link_to("去支付", order_path(order.token),class:"btn btn-danger") %>
+            <%= link_to("删除", order_path(order),method: :delete, class:"btn btn-primary") %>
+          <% end %>
+        </div>
+      </legend>
+      <table class="table-dotted" style="margin:30px">
+        <!-- <thead> -->
+          <tr class="table-dotted">
+            <td>
+              Product title
+            </td>
+            <td>
+              Product price
+            </td>
+            <td>
+              Product Qty
+            </td>
+          </tr>
+        <!-- </thead>
+        <tbody> -->
+          <% order.product_lists.each do |product_list| %>
+          <tr class="table-dotted">
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+                <%= product_list.product_price %>
+            </td>
+            <td>
+                <%= product_list.quantity %>
+            </td>
+          </tr>
+          <% end %>
+        <!-- </tbody> -->
+      </table>
+    <% end %>
+  </div>
+</div>

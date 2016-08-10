@@ -1,4 +1,5 @@
-<div class="row showproduct-bg showproduct-font">
+<div class="row showproduct-bg showproduct-font" style="margin:30px">
+
   <div class="col-md-12">
     <h2>Order details</h2>
 
@@ -64,7 +65,7 @@
         </tr>
         <tr>
           <td>
-            <%= @order.shipping_name %>  
+            <%= @order.shipping_name %>
           </td>
           <td>
             <%= @order.shipping_address %>
@@ -74,5 +75,8 @@
     </table>
 
   </div>
-
+  <div class="btn pull-right">
+    <%= link_to("支付宝支付",is_paid_order_path(@order),method: :post,class:"btn btn-primary") %>
+    <%= link_to("微信支付",is_paid_order_path(@order),method: :post,class:"btn btn-danger") %>
+  </div>
 </div>

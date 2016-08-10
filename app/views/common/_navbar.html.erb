@@ -31,6 +31,7 @@
                         <li><%= link_to("管理用户", admin_user_mg_index_path()) %></li>
                         <% end %>
                         <li role="separator" class="divider"></li>
+                        <li><%= link_to("My orders", orders_path) %></li>
                         <li><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
                     </ul>
                 </li>

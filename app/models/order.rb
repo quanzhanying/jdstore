@@ -12,4 +12,10 @@ class Order < ApplicationRecord
   def generate_token
     self.token = SecureRandom.uuid
   end
+
+  def is_paid!
+    self.is_paid=true
+    self.save
+  end
+
 end

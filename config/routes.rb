@@ -43,4 +43,11 @@ Rails.application.routes.draw do
   end
 
   resources :orders
+
+  resources :orders do
+    member do
+      post :is_paid
+    end
+  end
+
 end
