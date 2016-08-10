@@ -30,6 +30,18 @@ class OrdersController < ApplicationController
       end
     end
 
+    def pay_with_alipay
+      @order = Order.find_by_token(params[:id])
+      @product_lists = @order.product_lists
+      render 'orders/alipay'
+    end
+
+    def pay_with_wechat
+      @order = Order.find_by_token(params[:id])
+      @product_lists = @order.product_lists
+      render 'orders/wechat'
+    end
+
   private
 
     def order_params

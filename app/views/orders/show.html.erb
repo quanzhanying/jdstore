@@ -11,7 +11,6 @@
         </tr>
       </thead>
       <tbody>
-<!-- 在订单结算页面无法看到商品的历史名称、价格 -->
         <% @product_lists.each do |product_list| %>
           <tr>
             <td>
@@ -58,5 +57,9 @@
         </tr>
       </tbody>
     </table>
+    <div class="group pull-right">
+      <%= link_to("Pay with Alipay", pay_with_alipay_order_path, :method => :post, :class => "btn btn-info") %>
+      <%= link_to("Pay with Wechat", pay_with_wechat_order_path, :method => :post, :class => "btn btn-success") %>
+    </div>
   </div>
 </div>

@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+   devise_for :users
+   root 'products#index'
 
-    resources :products do
+   resources :products do
       member do
         post :add_to_cart
       end
     end
-
-   root 'products#index'
 
     namespace :admin do
       resources :products
@@ -16,14 +15,20 @@ Rails.application.routes.draw do
         member do
           post :promote
           post :demote
+        end
       end
-    end
    end
 
     resources :carts do
-        collection do
+      collection do
           post :checkout
-        end
       end
-    resources :orders
+    end
+
+    resources :orders do
+      member do
+        post :pay_with_alipay
+        post :pay_with_wechat
+      end
+    end
 end
