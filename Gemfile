@@ -38,7 +38,7 @@ gem "mini_magick"
 gem "font-awesome-rails"
 gem "rubocop", require: false
 gem "awesome_rails_console"
-
+gem "letter_opener", group: :development
 
 
 

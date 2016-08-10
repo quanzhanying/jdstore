@@ -1,17 +1,24 @@
-<div class="row showproduct-bg showproduct-font" style="margin:30px">
-
+<div class="row">
   <div class="col-md-12">
-    <h2>Order details</h2>
-
-    <table class="table table-bordered">
+    <h2>shopping list</h2>
+      <small><%= link_to("Link to the order", order_url(@order.token)) %></small>
+    <table>
       <thead>
         <tr>
-          <th width="80%">商品明細</th>
-          <th>單價</th>
+          <th width="70%">
+            Product name
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Quantity
+          </th>
+
         </tr>
       </thead>
-      <tbody>
 
+      <tbody>
         <% @product_lists.each do |product_list| %>
           <tr>
             <td>
@@ -19,6 +26,9 @@
             </td>
             <td>
               <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
             </td>
           </tr>
         <% end %>
@@ -75,8 +85,5 @@
     </table>
 
   </div>
-  <div class="btn pull-right">
-    <%= link_to("支付宝支付",is_paid_order_path(@order, payment_method: "alipay"),method: :post,class:"btn btn-primary") %>
-    <%= link_to("微信支付",is_paid_order_path(@order,payment_method: "wechat"),method: :post,class:"btn btn-danger") %>
-  </div>
+
 </div>

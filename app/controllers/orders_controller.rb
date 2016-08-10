@@ -2,8 +2,8 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!,only: [:create]
 
   def index
-    @user = current_user
-    @orders = Order.where(user_id: @user)
+    # @user = current_user
+    @orders = Order.where(user_id: current_user)
 
   end
 
@@ -51,16 +51,26 @@ class OrdersController < ApplicationController
        @order = Order.find(params[:id])
        if !@order.is_paid
          @order.is_paid!
+         @order.payment_method = params[:payment_method]
+         @order.save
+         notify_order_email
        else
          flash[:alert]= "You have paid already! Thanks!"
        end
        redirect_to  orders_path
     end
 
+    def notify_order_email
+
+      OrderMailer.notify_order_placed(@order).deliver!
+
+    end
+
     private
     def order_params
       params.require(:order).permit(:billing_name,:billing_address,:shipping_name,:shipping_address)
     end
+
 
 
 
