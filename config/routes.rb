@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+        post :request_to_cancel
+      end
+    end
   end
 end

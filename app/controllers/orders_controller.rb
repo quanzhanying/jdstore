@@ -40,6 +40,7 @@ end
       @order.make_payment!
       @order.save
       flash[:notice] = '新订单已完成'
+      OrderMailer.notify_order_placed(@order).deliver!
       @cart = current_cart
       @cart.cart_items.destroy_all
     end
@@ -56,6 +57,7 @@ end
       @order.make_payment!
       @order.save
       flash[:notice] = '新订单已完成'
+      OrderMailer.notify_order_placed(@order).deliver!
       @cart = current_cart
       @cart.cart_items.destroy_all
     end

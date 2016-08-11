@@ -23,7 +23,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart = current_cart
     @cart.cart_items.destroy_all
     redirect_to :back
   end
