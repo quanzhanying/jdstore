@@ -29,6 +29,7 @@
               <li> <%= link_to("My Favorites", account_products_path) %></li>
               <li> <%= link_to("My CheckList",account_orders_path ) %></li>
               <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+              <li> <%= link_to("用户订单", admin_orders_path) %></li>
 
 
               <% else %>

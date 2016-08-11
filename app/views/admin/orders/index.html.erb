@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>订单号</td>
+      <td>价格</td>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+    <% @orders.each do |order| %> <!--可以任意更改，相应的下面也需要改-->
+    <td><%= link_to(order.token , order_path(order.token)) %></td>
+    <td><%= order.total %></td>
+  <% order.product_lists.each do |order| %>
+
+    </tr>
+    <tr>
+      <td>
+        <%= order.product_name %>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
