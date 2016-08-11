@@ -9,4 +9,10 @@ class Account::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     RequestForCancelOrderMailer.request_for_cancellation(@order).deliver!
   end
+
+  def shipped
+    @order = Order.find(params[:id])
+    @order.deliver!
+    redirect_to :back, notice: '设置到货状态成功~'
+  end
 end

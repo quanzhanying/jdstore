@@ -1,0 +1,43 @@
+<h2>以下是订单详情
+    <br>
+    <small><%= link_to("订单链接",order_url(@order.token)) %></small>
+</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th width=70%>
+                产品详情
+            </th>
+            <th>
+                单价
+            </th>
+            <th>
+                数量
+            </th>
+            <th>
+                小记
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @product_lists.each do |l| %>
+        <tr>
+            <td style="text-right">
+                <%= l.product_name %>
+            </td>
+
+            <td>
+                <%= l.product_price %>
+            </td>
+
+            <td>
+                <%= l.quantity %>
+            </td>
+            <td>
+                <%= l.product_price * l.quantity %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

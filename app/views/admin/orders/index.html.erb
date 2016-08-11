@@ -24,6 +24,9 @@
                 <th style="width :20%">
                     订单状态
                 </th>
+                <th style="width :20%">
+                    操作
+                </th>
 
             </tr>
         </thead>
@@ -48,6 +51,9 @@
                 </td>
                 <td>
                     <%= o.aasm_state %>
+                </td>
+                <td>
+                    <%= render_order_state(o) %>
                 </td>
 
             </tr>
