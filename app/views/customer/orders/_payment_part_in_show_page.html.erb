@@ -1,4 +1,0 @@
-<%= content_tag :div, class: "pull-right" do %>
-  <%= link_to("微信付款", pay_with_alipay_customer_order_path(order.token), method: :post, class: "btn btn-lg btn-success") %>
-  <%= link_to("支付宝付款", pay_with_wechat_customer_order_path(order.token), method: :post, class: "btn btn-lg btn-info") %>
-<% end %>

@@ -14,7 +14,7 @@
 #  token            :string
 #  payment_method   :string
 #  aasm_state       :string           default("order_created")
-#  order_state      :string
+#  order_state      :string           default("等待付款")
 #
 
 class Order < ApplicationRecord
@@ -39,7 +39,7 @@ class Order < ApplicationRecord
     state :order_placed
 
     event :make_payment do
-      transitions from: :order_created, to: :paid, after: lambda{ set_order_state("已付款") }
+      transitions from: :order_created, to: :paid, after: lambda{ set_order_state("买家已付款") }
     end
 
     event :request_a_refund do
@@ -47,7 +47,7 @@ class Order < ApplicationRecord
     end
 
     event :ship do 
-      transitions from: :paid, to: :shipping, after: lambda{ set_order_state("已发货") }
+      transitions from: :paid, to: :shipping, after: lambda{ set_order_state("卖家已发货") }
     end
 
     event :request_a_return do
@@ -58,7 +58,7 @@ class Order < ApplicationRecord
       transitions from: :shipping, to: :order_placed, after: lambda{ set_order_state("交易成功") }
     end
 
-    event :cancell_order do
+    event :cancel_order do
       transitions from: [:order_created, :good_returning, :refunding], to: :order_cancelled, after: lambda{ set_order_state("交易关闭") }
     end
 

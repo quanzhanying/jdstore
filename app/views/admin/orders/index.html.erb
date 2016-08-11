@@ -13,18 +13,23 @@
       操作
     </th>
     <th>
-      订单建立时间
+      订单创建时间
     </th>
   </tr>
   <% @orders.each do |order| %>
       <tr>
         <td>
-          <%= link_to(order.shipping_name, customer_order_path(order.token)) %>
+          <%= link_to(order.shipping_name, admin_order_path(order.token)) %>
         </td>
         <td>
           <%= order.total %> RMB
         </td>
-          <%= render_status_in_index(order) %>
+        <td>
+          <%= render_order_status_in_admin(order) %>
+        </td>
+        <td>
+          <%= render_operations_in_admin(order) %>
+        </td>
         <td>
           <%= order.created_at %>
         </td>

@@ -1,6 +1,6 @@
 class Customer::OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_order_from_params, only: [:show, :pay_with_wechat, :pay_with_alipay]
+  before_action :get_order_from_params, except: [:index]
   layout 'customer'
 
 
@@ -20,6 +20,28 @@ class Customer::OrdersController < ApplicationController
 
   def pay_with_alipay
     @order.pay("alipay")
+    redirect_to :back
+  end
+
+  def request_a_return
+    @order.request_a_return!
+    redirect_to :back
+  end
+
+  def request_a_refund
+    @order.request_a_refund!
+    redirect_to :back
+  end
+
+  def receive_goods
+    @order.received!
+    redirect_to :back
+  end
+
+  def cancel_order
+    if @order.may_make_payment?
+      @order.cancel_order!
+    end
     redirect_to :back
   end
 

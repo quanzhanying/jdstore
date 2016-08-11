@@ -14,7 +14,7 @@
 #  token            :string
 #  payment_method   :string
 #  aasm_state       :string           default("order_created")
-#  order_state      :string
+#  order_state      :string           default("等待付款")
 #
 
 require 'test_helper'

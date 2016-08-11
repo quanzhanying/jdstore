@@ -1,0 +1,3 @@
+<%= link_to("查看物流", "#", class: "btn btn-warning btn-sm") %>
+<%= link_to("确认收货", receive_goods_customer_order_path(order.token), method: :post, class: "btn btn-success btn-sm") %>
+<%= link_to("申请退货", request_a_return_customer_order_path(order.token), method: :post, class: "btn btn-danger btn-sm") %>

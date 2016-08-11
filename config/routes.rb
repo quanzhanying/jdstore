@@ -23,7 +23,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
-    resources :orders
+    resources :orders do
+      member do
+        post :ship
+        post :cancel_order
+      end
+    end
 
   	resources :items
 
@@ -42,6 +47,10 @@ Rails.application.routes.draw do
       member do
         post :pay_with_alipay
         post :pay_with_wechat
+        post :request_a_return
+        post :request_a_refund
+        post :receive_goods
+        post :cancel_order
       end
     end
 
