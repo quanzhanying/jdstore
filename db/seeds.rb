@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "这个seed会自动建立一个admin账号, 并且 10 个 商品信息, 库存依次为0-9；没有图片"
+
+create_account = User.create([email: 'example@gmail.com', password: '12345678', password_confirmation: '12345678', is_admin: 'true'])
+puts "Admin account created."
+
+create_products = for i in 1..10 do
+  Product.create!([title: "Product no.#{i}", description: "这是用seed建立的第 #{i} 个产品", quantity: "#{i-1}", price: rand(100), image: "http://imageshack.com/a/img924/1556/GXBptx.png"])
+end
+  puts "10 Products created."
