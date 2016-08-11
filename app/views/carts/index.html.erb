@@ -9,7 +9,7 @@
           <th colspan="2">Product</th>
           <th>Unit Price</th>
           <th>Quantity</th>
-          <th>Move</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -45,7 +45,7 @@
               <% end %>
             </td>
             <td>
-              <%= link_to("Move", cart_path(cart_item), :method => :delete, :class => "btn btn-xs btn-danger") %>
+              <%= link_to("Delete", cart_path(cart_item), :method => :delete, :class => "btn btn-xs btn-danger") %>
             </td>
           </tr>
         <% end %>
