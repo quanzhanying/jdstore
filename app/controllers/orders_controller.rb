@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
 
   def pay_with_wechat
     @order = Order.find(params[:id])
-    @order.is_paid = true
+    @order.make_payment!
     @order.save
     flash[:notice] = "付款成功！"
     redirect_to :back
