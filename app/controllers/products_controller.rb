@@ -3,14 +3,13 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    if @product.quantity > 0
-      current_cart.add_product_to_cart(@product)
-       @product.quantity_decrease(1)
-       @product.save
-     else
-       flash[:alert] = "Out of Store"
-     end
-
+     if @product.quantity > 0
+        if current_cart.products.include?(@product)
+         flash[:warning] = "This product alreary in cart!"
+        else
+         current_cart.add_product_to_cart(@product)
+        end
+      end
      redirect_to :back
   end
 
