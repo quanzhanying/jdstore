@@ -39,6 +39,8 @@ gem "mini_magick"
 gem "awesome_rails_console"
 gem "annotate"
 gem "letter_opener", group: :development
+gem "fog"
+gem "figaro"
 
 group :production do
   gem 'pg'
