@@ -1,0 +1,42 @@
+<table class="table">
+ <thead>
+     <tr>
+         <td>用户名</td>
+         <td>注册时间</td>
+         <td>上次登录时间</td>
+         <td>管理选项</td>
+     </tr>
+ </thead>
+
+ <tbody>
+   <% @users.each do |user| %>
+     <tr>
+
+       <td>
+         <%= render_user_status(user) %>
+         <%= user.email %></td>
+       <td>
+           <%= user.created_at %>
+       </td>
+       <td>
+           <%= user.last_sign_in_at %>
+       </td>
+
+       <td>
+           <%= link_to("Edit", edit_admin_user_path(user))%> |
+        <%= link_to("Destroy", admin_user_path(user), :method => :delete, data: { confirm: "Are you sure?" }) %> 
+           <%#= change_to_user_admin_user_path %>
+
+           <% if user.is_admin %>
+
+        <%= link_to("turn to user",  turn_to_user_admin_user_url(user), :method => :post, :class => "btn btn-xs btn-default") %>
+        <% else %>
+        <%= link_to("turn to admin", turn_to_admin_admin_user_url(user), :method => :post, :class => "btn btn-xs btn-default") %>
+        <% end %>
+       </td>
+
+
+     </tr>
+   <% end %>
+ </tbody>
+</table>
