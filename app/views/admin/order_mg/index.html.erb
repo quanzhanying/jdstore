@@ -24,19 +24,23 @@
         <th>
           Total amount
         </th>
-        <th>
-          Is paid?
-        </th>
+
         <th>
           Payment method
         </th>
+
         <th>
           Created_at
         </th>
         <th>
           Updated_at
         </th>
-
+        <th>
+          Current State
+        </th>
+        <th>
+          Change status
+        </th>
       </tr>
 
       <% @orders.each do |order| %>
@@ -50,9 +54,8 @@
         <td>
           <%= order.total %>
         </td>
-        <td>
-          <%= order.is_paid %>
-        </td>
+
+
         <td>
           <%= order.payment_method %>
         </td>
@@ -61,6 +64,17 @@
         </td>
         <td>
           <%= order.updated_at %>
+        </td>
+
+        <td>
+          <%= order.aasm_state %>
+        </td>
+        <td>
+          <% if order.aasm_state == "order_cancelled" %>
+            <%= link_to(order.next_state(order),change_state_order_path(order),method: :post,class:"btn btn-danger") %>
+          <% else %>
+            <%= link_to(order.next_state(order),change_state_order_path(order),method: :post,class:"btn btn-primary") %>
+          <% end %>
         </td>
       </tr>
       <% end %>

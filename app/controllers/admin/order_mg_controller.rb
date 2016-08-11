@@ -5,7 +5,7 @@ class Admin::OrderMgController < ApplicationController
   def index
     # @users = User.all
     @orders = case params[:order]
-    when "by_order_total"
+      when "by_order_total"
         Order.order("total DESC")
       when "by_created_time"
         Order.order("created_at DESC")

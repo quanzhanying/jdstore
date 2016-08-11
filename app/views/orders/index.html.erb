@@ -6,6 +6,14 @@
         <div class="pull-right">
           <% if order.is_paid %>
             <label> 已支付</label>
+              <% case order.aasm_state %>
+                <% when "order_cancelled" %>
+                  <label> 正在申请退货</label>
+                <% when "good_returned" %>
+                    <label> 退货成功</label>
+                <% else %>
+                    <%= link_to("申请退货", return_good_order_path(order,aasm_state: "order_cancelled"), method: :post,class:"btn btn-danger",data: { disable_with: "退货中..."}) %>
+                <% end %>
           <% else %>
             <%= link_to("去支付", order_path(order.token),class:"btn btn-danger") %>
             <%= link_to("删除", order_path(order),method: :delete, class:"btn btn-primary") %>

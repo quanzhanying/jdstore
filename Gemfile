@@ -41,6 +41,7 @@ gem "awesome_rails_console"
 gem "letter_opener", group: :development
 gem "fog"
 gem "figaro"
+gem "aasm"
 
 
 group :development, :test do

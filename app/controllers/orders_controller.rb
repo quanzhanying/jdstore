@@ -54,6 +54,7 @@ class OrdersController < ApplicationController
          @order.payment_method = params[:payment_method]
          @order.save
          notify_order_email
+         @order.make_payment
        else
          flash[:alert]= "You have paid already! Thanks!"
        end
@@ -62,6 +63,20 @@ class OrdersController < ApplicationController
 
     def notify_order_email
       OrderMailer.notify_order_placed(@order).deliver!
+    end
+
+    def change_state
+      @order = Order.find(params[:id])
+      @order.change_state!(@order)
+      redirect_to :back
+    end
+
+    def return_good
+      @order = Order.find(params[:id])
+      @order.aasm_state = params[:aasm_state]
+      @order.save
+      flash[:notice] = "申请退货中..."
+      redirect_to :back
     end
 
     private
