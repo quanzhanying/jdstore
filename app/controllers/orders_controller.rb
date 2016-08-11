@@ -33,11 +33,11 @@ class OrdersController < ApplicationController
   end
 
   def mail_to_customer
-    if Rails.env == "development"
-      OrderMailer.notify_order_placed(Order.last).deliver!
-    else
-      send_simple_message
-    end
+    # if Rails.env == "development"
+        OrderMailer.notify_order_placed(Order.last).deliver!
+    # else
+      #send_simple_message
+    # end
   end
 
   def send_simple_message
