@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
     devise_for :users
 
+  resources :orders
+
   namespace :admin do
     resources :products do
       member do
@@ -27,6 +29,10 @@ Rails.application.routes.draw do
 
 
   resources :carts do
+    collection do
+      post :checkout
+    end
+
     member do
       post :delete_one_item
     end

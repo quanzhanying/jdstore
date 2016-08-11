@@ -65,7 +65,7 @@
 
     <div class="checkout clearfix">
       <%= link_to("Empty Cart", cart_path(current_cart), method: :delete, :data => { :confirm => "Are you sure?" }, class: "btn btn-lg btn-info pull-left") %>
-      <%= link_to("Confirm", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("Confirm", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>
