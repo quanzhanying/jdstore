@@ -44,6 +44,9 @@ group :development, :test do
 end
 gem "fog"
 gem "figaro"
+gem 'airbrake', '~> 5.4'
+gem 'paper_trail'
+gem 'aasm'
 group :production do
   gem 'pg'
 end
