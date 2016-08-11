@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +38,8 @@ gem "rubocop"
 gem 'letter_opener', group: :development
 gem 'fog'
 gem 'figaro'
+gem 'aasm'
+gem 'awesome_rails_console'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

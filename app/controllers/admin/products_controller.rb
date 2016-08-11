@@ -44,6 +44,9 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path, alert: "Product Deleted"
   end
 
+
+
+
   # def join
   #   @product = Product.find(params[:id])
   #
