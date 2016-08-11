@@ -36,10 +36,9 @@ module Admin::OrdersHelper
       if order.paid?
         content +=
         link_to("Ship", ship_order_admin_order_path(order.token), class: "btn btn-primary btn-xs", method: :post, data: {confirm: "Are you sure?"})
-      else
-        return content
       end
     end
+    content.html_safe
   end
 
 

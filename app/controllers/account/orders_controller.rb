@@ -18,9 +18,9 @@ class Account::OrdersController < ApplicationController
   def apply_return_good
     order = current_user.orders.find(params[:order_id])
     if order.apply_return_good!
-      flash[:notice] = "Successfully appling cancle order..."
+      flash[:notice] = "Successfully appling return good..."
     else
-      flash[:alert] = "Faild appling cancle order..."
+      flash[:alert] = "Faild appling return good...."
     end
     redirect_to account_orders_path
   end
