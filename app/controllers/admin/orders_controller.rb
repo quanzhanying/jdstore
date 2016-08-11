@@ -32,12 +32,11 @@ class Admin::OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find(params[:id])
     if @order.is_paid
-      puts "++++++++++++++++"
       redirect_to :back ,alert: "paid successful, you can't pay again"
     else
-      puts "***************"
       @order.is_paid  =true
       if @order.save
+        OrderMailer.notify_order_placed(@order).deliver!
         redirect_to :back,alert: "paid successful"
       else
         redirect_to :back,alert: "paid failed"
@@ -46,10 +45,18 @@ class Admin::OrdersController < ApplicationController
   end
 
   def pay_with_wechat
-      @order = Order.find(params[:id])
-      @order.is_paid = true
-      @order.save
-      redirect_to :back
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      redirect_to :back ,alert: "paid successful, you can't pay again"
+    else
+      @order.is_paid  =true
+      if @order.save
+        OrderMailer.notify_order_placed(@order).deliver!
+        redirect_to :back,alert: "paid successful"
+      else
+        redirect_to :back,alert: "paid failed"
+      end
+    end
     end
 
     private
