@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       end
 
 
-      mail_to_customer
+      #mail_to_customer
 
       redirect_to order_path(@order.token)
     else
