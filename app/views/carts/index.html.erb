@@ -1,14 +1,16 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> My shopping bag </h2>
+    <h2> 👸的购物车 </h2>
 
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>商品資訊</th>
-          <th>單價</th>
-          <th>數量</th>
+          <th>#买了啥</th>
+          <th>#多少钱</th>
+          <th>#几只</th>
+          <th>#－数量＋</th>
+          <th>#不要了</th>
         </tr>
       </thead>
 
@@ -29,6 +31,21 @@
             <td>
               <%= cart_item.quantity %>
             </td>
+            <td>
+            
+                <%= link_to("-1", decrease_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+            
+
+              <%= cart_item.quantity %>
+
+               <%= link_to("+1", increase_item_cart_path(cart_item), method: :post, class: "btn btn-xs btn-info") %>
+            
+
+            </td>
+
+            <td>
+              <%= link_to("Delete", cart_path(cart_item), :method => :delete, class: "btn btn-xs btn-danger") %>
+            </td>
 
           </tr>
         <% end %>
@@ -39,19 +56,21 @@
     <br>
 
     <div class="total clearfix">
-
-
-
-      <span>
-        總計 <%= render_cart_total_price(current_cart) %> RMB 
+      <span class="pull-right">
+         <span> 一共花了 <%= render_cart_total_price(current_cart) %> 元</span>
       </span>
-    
     </div>
 
+
+
    <!--  <hr> -->
+  
+            
+            
 
     <div class="checkout clearfix">
-      <%= link_to("確認結賬", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("一键下单", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class: "btn btn-lg btn-info pull-left") %>
     </div>
 
   </div>

@@ -4,10 +4,17 @@ class Cart < ApplicationRecord
 
 
   def add_product_to_cart(product)
-    ci = cart_items.build
-    ci.product = product
-    ci.quantity = 1
-    ci.save
+    if products.include?(product)
+      cart_item = cart_items.find_by(product_id: product)
+      if cart_item.quantity < product.quantity
+        cart_item.quantity += 1
+      end
+    else
+      cart_item = cart_items.build
+      cart_item.product = product
+      cart_item.quantity = 1
+    end
+    cart_item.save
   end
   
   def total_price
