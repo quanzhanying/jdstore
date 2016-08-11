@@ -1,0 +1,36 @@
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>用户姓名</th>
+        <th>上次登录时间</th>
+        <th>操作</th>
+      </tr>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= link_to(user.email,admin_user_path(user)) %>
+            </td>
+            <td>
+              <%= user.last_sign_in_at %>
+            </td>
+
+            <td>
+              <% if !user.is_admin %>
+
+                <%= link_to("成为管理员", be_admin_admin_user_path(user,is_admin:true), class: "btn btn-sm btn-default",
+                              method: :post,data: { confirm: "确定要设定为管理员么?" })%>
+              <% else %>
+
+                <%= link_to("成为消费者", be_admin_admin_user_path(user,is_admin:false), class: "btn btn-sm btn-default",
+                              method: :post,data: { confirm: "确定要设定为消费者么?" })%>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </thead>
+  </table>
+</div>
