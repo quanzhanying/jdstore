@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :products
     resources :orders do
       member do
-        post :cancelorder
+        post :cancel
       end
     end
     resources :users do

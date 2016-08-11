@@ -3,24 +3,17 @@ class Admin::OrdersController < ApplicationController
   before_action :require_is_admin
   layout "admin"
 
-
-
   def index
-    @orders= Order.all
-  end
-
-  def new
-    @Order = Order.new
+    @orders = Order.all
   end
 
 
   def show
     @order = Order.find_by_token(params[:id])
-  
+    @order_lists= @order.product_lists
   end
 
-
-  def cancelorder
+  def cancel
     @order = Order.find(params[:id])
     @order.cancell_order!
     redirect_to :back

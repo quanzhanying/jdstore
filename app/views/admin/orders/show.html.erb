@@ -9,7 +9,8 @@
         </tr>
       </thead>
       <tbody>
-        <% @orders.product_lists.each do |product_list|%>
+        <% @orders.each do |order| %>
+        <% @order_lists.each do |f|%>
         <tr>
           <td>
             <%= product_list.product_name%>
@@ -18,10 +19,9 @@
             <%= product_list.product_price%>
           </td>
         </tr>
-        <% end %>
-
       </tbody>
     </table>
+      <% end %>
     <div class="total clearfix">
       <span class="pull-right">
         总计 <%= @order.total %>RMB
@@ -65,3 +65,4 @@
   </div>
 </div>
 </div>
+<% end %>

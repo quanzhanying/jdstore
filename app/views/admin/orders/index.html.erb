@@ -3,8 +3,8 @@
   <thead>
     <tr>
       <th>订单编号</th>
-      <th>billname</th>
-      <th>token </th>
+      <th>客户姓名</th>
+      <!-- <th>token </th> -->
       <th>订单状态</th>
       <th>订单总额</th>
       <th>订单操作</th>
@@ -19,18 +19,18 @@
     <td><%= order.id %></td>
 
     <td><%= order.billing_name%></td>
-    <td><%= link_to(order.token, admin_order_path(order))%></td>
+    <!-- <td><%= link_to(order.token, admin_order_path(order.token))%></td> -->
     <td><%= order.aasm_state %></td>
     <td><%= order.total %></td>
     <td>
-      <%= link_to("取消订单",cancelorder_admin_order_path(order))%> |
-      <%= link_to("发货", "#")%>
+      <%= link_to("取消订单", cancel_admin_order_path(order),method: :post, data: {confirm: "确定取消吗?"}, class:"btn btn-success btn-sm")%> |
+      <%= link_to("发货", "#", class:"btn btn-success btn-sm")%>
     </td>
-    <td> <%= link_to("查看详情", "#")%></td>
+    <td> <%= link_to("查看详情", admin_order_path(order.token))%></td>
     <td><%= order.created_at%></td>
     <!-- 可以这么用吗？ -->
 
   </tr>
-    <td><%= order.is_paid %></td>
+    <!-- <td><%= order.is_paid %></td> -->
   <% end %>
 </table>
