@@ -21,6 +21,14 @@ body {
     overflow: hidden;
 }
 
+.order-tb .tr-td {
+    height: 31px;
+    text-align: center;
+    line-height: 31px;
+    color: #aaa;
+    overflow: hidden;
+}
+
 </style>
 <div class="row">
   <div class="col-md-12">
@@ -54,21 +62,23 @@ body {
               <span style="margin-left:20px;">订单编号：<%= order.token %></span>
             </td>
           </tr>
-          <tr>
+          <tr class="tr-td">
             <td colspan="4">
               <% order.product_lists.each do |p_list| %>
                 <div style="float:left;margin-top:20px;">
+                <%= image_tag(p_list.image,height: '60', width: '60') %>
                 <%= p_list.product_name %> x <%= p_list.quantity %>
                 ¥<%= p_list.product_price %>
                 <%= order.shipping_name %>
                 <div>
               <% end %>
             </td>
-            <td>
+            <td >
               ¥<%= order.total %>
             </td>
             <td>
-               <%= order.pay_status %>
+               <!-- <!%= order.pay_status %> -->
+                <%= order.order_status %><%=render_order_operate(order) %>
             </td>
             <td>
               <%= link_to("订单详情",account_order_path(order.token)) %>

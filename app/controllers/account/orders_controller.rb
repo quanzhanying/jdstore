@@ -13,4 +13,20 @@ class Account::OrdersController < ApplicationController
     #flash[:notice] = @order.id
     @product_lists = @order.product_lists
   end
+
+  def appl_cancell_order
+    @order = Order.find(params[:id])
+    @order.appl_cancell_order!
+
+    flash[:notice] = "订单取消申请中"
+    redirect_to account_orders_path
+  end
+
+  def appl_return_good
+    @order = Order.find(params[:id])
+    @order.appl_good_returned!
+
+    flash[:notice] = "退货申请中"
+    redirect_to account_orders_path
+  end
 end

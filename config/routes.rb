@@ -31,12 +31,24 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+        post :appl_cancell_order
+        post :appl_return_good
+      end
+    end
   end
 
   namespace :admin do
     resources :products
-    resources :orders
+    resources :orders do
+      member do
+        post :cancell_order
+        post :return_good
+        post :ship
+        post :deliver
+      end
+    end
     resources :users do
       member do
         post :be_admin

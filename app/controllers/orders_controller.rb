@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
       current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
         product_list.order = @order
+        product_list.image = cart_item.product.image
         product_list.product_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
@@ -24,7 +25,7 @@ class OrdersController < ApplicationController
       end
 
 
-      #mail_to_customer
+      mail_to_customer
 
       redirect_to order_path(@order.token)
     else
@@ -33,6 +34,9 @@ class OrdersController < ApplicationController
   end
 
   def mail_to_customer
+    if Rails.env == "development"
+      OrderMailer.notify_order_placed(Order.last).deliver!
+    end
     # if Rails.env == "development"
         # OrderMailer.notify_order_placed(Order.last).deliver!
     # else
@@ -63,6 +67,7 @@ class OrdersController < ApplicationController
     @order.is_paid = true
 
     if @order.save
+      @order.make_payment!
       flash[:notice] = "支付成功"
       redirect_to account_orders_path
     else

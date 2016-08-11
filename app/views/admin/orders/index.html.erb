@@ -12,7 +12,7 @@
         <th>收货地址</th>
         <th>订单状态</th>
         <th>最后更新时间</th>
-        <!-- <th>操作</th> -->
+        <th>操作</th>
       </tr>
 
       <tbody>
@@ -34,16 +34,13 @@
               <%= order.shipping_address %>
             </td>
             <td>
-              <%= order.pay_status %>
+              <%= order.order_status %>
             </td>
             <td>
               <%= order.updated_at_formate  %>
             </td>
-            <!-- <td>
-                <!%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default")%>
-                <!%= link_to("Delete", admin_product_path(product),    class: "btn btn-sm btn-default",
-                            method: :delete, data: { confirm: "Are you sure?" } )%> -->
-
+            <td>
+                <%= render_admin_order_operate(order) %>
             </td>
           </tr>
         <% end %>
