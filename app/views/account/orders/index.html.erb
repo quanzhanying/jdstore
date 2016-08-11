@@ -6,16 +6,19 @@
 
 <div class="panel panel-success">
     <div class="panel-heading">
-        订单号 <%= link_to(order.token, order_path(order)) %>  | 总价 <%= order.total %>
+        订单号
+        <%= link_to(order.token, order_path(order.token)) %>
+        | 总价 $
+        <%= order.total %>
     </div>
 
     <div class="panel-body">
-      <% order.product_lists.each do |product_list| %>
-        <%= product_list.product_name %>
-         <%= product_list.product_price %>
-          <br />
+        <% order.product_lists.each do |product_list| %>
+          <%= product_list.product_name %>
+           $ <%= product_list.product_price %>
+          <br/>
         <% end %>
 
     </div>
-  </div>
+</div>
 <% end %>
