@@ -26,7 +26,7 @@ class Customer::OrdersController < ApplicationController
   private
 
   def get_order_from_params
-    @order = current_user.orders.find_by_token(params[:id])
+    @order = Order.find_by_token(params[:id])
   end
 
 end

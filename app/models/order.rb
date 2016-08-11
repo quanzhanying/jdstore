@@ -12,11 +12,13 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  token            :string
-#  is_paid          :boolean          default(FALSE)
 #  payment_method   :string
+#  aasm_state       :string           default("order_created")
+#  order_state      :string
 #
 
 class Order < ApplicationRecord
+  include AASM
 
   belongs_to :user
   has_many :item_lists, dependent: :destroy
@@ -26,19 +28,60 @@ class Order < ApplicationRecord
   validates :shipping_name, presence: true
   validates :shipping_address, presence: true
 
+
+  aasm do
+    state :order_created, initial: true
+    state :paid
+    state :refunding
+    state :shipping
+    state :order_cancelled
+    state :good_returning
+    state :order_placed
+
+    event :make_payment do
+      transitions from: :order_created, to: :paid, after: lambda{ set_order_state("已付款") }
+    end
+
+    event :request_a_refund do
+      transitions from: :paid, to: :refunding, after: lambda{ set_order_state("退款中") }
+    end
+
+    event :ship do 
+      transitions from: :paid, to: :shipping, after: lambda{ set_order_state("已发货") }
+    end
+
+    event :request_a_return do
+      transitions from: :shipping, to: :good_returning, after: lambda{ set_order_state("退货中") }
+    end
+
+    event :received do
+      transitions from: :shipping, to: :order_placed, after: lambda{ set_order_state("交易成功") }
+    end
+
+    event :cancell_order do
+      transitions from: [:order_created, :good_returning, :refunding], to: :order_cancelled, after: lambda{ set_order_state("交易关闭") }
+    end
+
+  end
+
+
   def generate_token
     self.token = SecureRandom.uuid
   end
 
   def pay(pay_way)
     self.payment_method = pay_way
-    self.is_paid = true
+    self.make_payment!
 
     self.save
     order_submitted_notification
   end
 
 private
+
+  def set_order_state(state)
+    self.order_state = state
+  end
 
   def order_submitted_notification
     JdstoreMailer.order_notification(self).deliver!

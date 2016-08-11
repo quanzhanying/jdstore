@@ -12,8 +12,9 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  token            :string
-#  is_paid          :boolean          default(FALSE)
 #  payment_method   :string
+#  aasm_state       :string           default("order_created")
+#  order_state      :string
 #
 
 require 'test_helper'

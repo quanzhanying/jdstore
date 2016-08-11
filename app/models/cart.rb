@@ -21,6 +21,7 @@ class Cart < ApplicationRecord
 
 	def remove_item_from_cart(cart_item)
 		cart_item.delete
+		self.delete
 	end
 
 	def remove_all_item
