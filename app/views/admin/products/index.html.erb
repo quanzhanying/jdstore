@@ -1,0 +1,53 @@
+<div class="pull-right">
+  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td> Thumbnail </td>
+      <td> Title </td>
+      <td> Quantity </td>
+      <td> Price </td>
+      <td> Option </td>
+      <td> Published Time </td>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @products.each_with_index do |product, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><img src="<%=product.attachment.thumb%>" width="60" height="30"></td>
+       <td>
+         <%= render_product_status(product) %>
+         <%= link_to(product.title, admin_product_path(product)) %>
+       </td>
+       <td>
+         <%= product.quantity %>
+       </td>
+       <td>
+         <%= product.price %>
+       </td>
+       <td>
+         <%= link_to("Edit", edit_admin_product_path(product)) %> |
+         <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" } )%>
+
+         |
+         <% if product.is_hidden %>
+
+         <%= link_to("Publish", publish_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+         <% else %>
+         <%= link_to("Hide", hide_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+         <% end %>
+       </td>
+       <td>
+         <%= product.created_at %>
+       </td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>
