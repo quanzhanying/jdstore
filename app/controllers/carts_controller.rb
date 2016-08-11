@@ -11,8 +11,18 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def delete_all_cart_item
+    @cart_items = CartItem.find(params[:id])
+    if  @cart_items.delete_all
+      flash[:notice] = "Empty cart success！"
+    else
+      flash[:warning] = "Empty cart failed！"
+    end
+    redirect_to :back
+  end
+
   def checkout
     @order = Order.new
   end
-  
+
 end

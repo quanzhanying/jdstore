@@ -23,6 +23,9 @@ Rails.application.routes.draw do
       collection do
           post :checkout
       end
+      member do
+          delete :delete_all
+      end
     end
 
     resources :orders do

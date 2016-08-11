@@ -1,10 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
-    def index
-      @product_lists = ProductList.all
-    end
-
     def show
       @order = Order.find_by_token(params[:id])
       @product_lists = @order.product_lists
@@ -31,14 +27,25 @@ class OrdersController < ApplicationController
     end
 
     def pay_with_alipay
-      @order = Order.find_by_token(params[:id])
-      @product_lists = @order.product_lists
+        @order = Order.find_by_token(params[:id])
+        @product_lists = @order.product_lists
+      if @order.is_padd == 1
+        flash[:alert] = 'You are already paid.'
+        render :back
+      else
+        @order.is_padd = 1
+        @order.payment_method = 'alipay'
+        @order.save
       render 'orders/alipay'
+      end
     end
 
     def pay_with_wechat
       @order = Order.find_by_token(params[:id])
       @product_lists = @order.product_lists
+      @order.is_padd = 1
+      @order.payment_method = 'wechat'
+      @order.save
       render 'orders/wechat'
     end
 
