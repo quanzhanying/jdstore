@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :orders do
       post :apply_cancle_order
       post :apply_return_good
+      post :confirm_receipt
     end
   end
 

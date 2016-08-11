@@ -114,4 +114,12 @@ class Order < ApplicationRecord
     end
   end
 
+  def confirm_receipt!
+    if self.shipping?
+      self.deliver!
+      OrderMailer.notify_order_state_change(self, "user").deliver!
+    end
+
+  end
+
 end

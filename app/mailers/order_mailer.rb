@@ -15,7 +15,7 @@ class OrderMailer < ApplicationMailer
 
     case role
       when "user"
-        mail(from: @user.email, to: "shaojunda@gmail.com", subject: "[JDStore] A customer appling #{subject} , please go to deal with.")
+        mail(from: @user.email, to: "shaojunda@gmail.com", subject: "[JDStore] A customer#{subject} , please go to deal with.")
       when "admin"
           @role = "admin"
           mail(to: @user.email, subject: "[JDStore] Your order #{subject} , please go to check.")
@@ -29,9 +29,11 @@ class OrderMailer < ApplicationMailer
   def generate_subject(order)
     subject = ""
     if order.appling_cancel_order?
-      subject = "cancel order"
+      subject = " appling cancel order"
     elsif order.appling_good_return?
-      subject = "return good"
+      subject = " appling return good"
+    elsif order.shipped?
+      subject = "'s good is shipped."
     elsif order.order_cancelled?
       subject = "is canclled"
     elsif order.shipping?
