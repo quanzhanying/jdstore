@@ -1,0 +1,10 @@
+
+<%= simple_form_for([:stores, @product], html: { class: 'form-group' }) do |form| %>
+  <%= form.input :title %>
+  <%= form.input :money %>
+  <%= form.input :storage %>
+  <%= form.input :description %>
+  <%= form.input :image %>
+  <%= form.input :is_hidden %>
+  <%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>
