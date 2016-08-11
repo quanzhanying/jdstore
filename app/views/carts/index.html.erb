@@ -9,7 +9,8 @@
           <th colspan="2"> Description </th>
           <th> Unit Price </th>
           <th> Quantity </th>
-          <th> Delete </th>
+          <th> Amount </th>
+          <th> Option </th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +34,10 @@
             <%= cart_item.quantity %>
           </td>
           <td>
-            <%= link_to("Delete", cart_path(cart_item), method: :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger")%>
+            <%= sum = cart_item.quantity * cart_item.product.price %>
+          </td>
+          <td>
+            <%= link_to("Delete", delete_one_item_cart_path(cart_item), method: :post, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-default")%>
           </td>
         </tr>
         <% end %>

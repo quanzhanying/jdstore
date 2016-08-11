@@ -25,10 +25,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts
-
-  # namespace :carts do
-    # resources :cart_items
-  # end
+  resources :carts do
+    member do
+      post :delete_one_item
+    end
+  resources :cart_items
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
