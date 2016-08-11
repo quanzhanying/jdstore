@@ -15,9 +15,15 @@
 #  is_paid          :boolean          default(FALSE)
 #  payment_method   :string
 #  product_id       :string
+#  aasm_state       :string           default("order_placed")
+#
+# Indexes
+#
+#  index_orders_on_aasm_state  (aasm_state)
 #
 
 class Order < ApplicationRecord
+  include AASM
   before_create :generate_token
 
   belongs_to :user
@@ -30,5 +36,35 @@ class Order < ApplicationRecord
 
   def generate_token
     self.token = SecureRandom.uuid
+  end
+
+
+  aasm do
+    state :order_placed, initial: true
+    state :paid
+    state :shipping
+    state :shipped
+    state :order_cancelled
+    state :good_returned
+
+    event :make_payment do
+      transitions from: :order_placed, to: :paid
+    end
+
+    event :ship do
+      transitions from: :paid, to: :shipping
+    end
+
+    event :deliver do
+      transitions from: :shipping, to: :shipped
+    end
+
+    event :return_good do
+      transitions from: :shipped, to: :good_returned
+    end
+
+    event :cancell_order do
+      transitions from: [:order_placed, :paid], to: :order_cancelled
+    end
   end
 end
