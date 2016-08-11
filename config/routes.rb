@@ -20,11 +20,11 @@ Rails.application.routes.draw do
    end
 
     resources :carts do
-      collection do
-          post :checkout
-      end
       member do
-          delete :delete_all
+        post :empty_cart_items
+      end
+      collection do
+        post :checkout
       end
     end
 
