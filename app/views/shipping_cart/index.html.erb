@@ -1,0 +1,62 @@
+<div style="margin-top:30px">
+</div>
+  <div class="pull-right">
+
+  </div>
+    <table class="table table-boldered">
+      <%= link_to("清空购物车", destroy_all_items_shipping_cart_path(current_cart), :method => :post , :class => "btn btn-danger pull-right") %>
+      <h1> <%= current_user.user_name %>的购物车</h1>
+      <tHead>
+        <tr>
+          <td>商品图片</td>
+          <td>商品名称</td>
+          <td>商品数量</td>
+          <td>商品尺寸</td>
+          <td>商品价钱</td>
+          <td>删除商品</td>
+        </tr>
+      </tHead>
+
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <img src="<%=cart_item.product.attachment.thumb%>" >
+            </td>
+
+            <td><%= cart_item.product.title %></td>
+            <td>
+              <% if cart_item.quantity >= cart_item.product.store %>
+                <%= link_to("+1", "#", :class => "btn btn-xs btn-danger disabled")%>
+              <% else %>
+                <%= link_to("+1", current_cart_add_item_shipping_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-danger")%>
+              <% end %>
+              <%= cart_item.quantity %> 件
+              <%= link_to("-1", current_cart_delete_item_shipping_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-danger")%>
+              <%= set_product_instore_outstore(cart_item.product) %>
+            </td>
+            <td><%= cart_item.product.width %>cm x <%= cart_item.product.width %>cm</td>
+            <td><%= cart_item.product.price %></td>
+            <td><%= link_to("删除商品", shipping_cart_path(cart_item), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger")%></td>
+          </tr>
+
+      <% end %>
+    </tbody>
+            <td></td>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span> 总计: <%= render_cart_total_price(current_cart) %> RMB  </span>
+      </span>
+    </div>
+
+    <div style="margin-top:30px">
+    </div>
+
+    <div class="checkout clearfix">
+      <%= link_to("去结账", checkout_shipping_cart_index_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    </div>
+
+    <div style="margin-top:30px">
+    </div>

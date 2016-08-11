@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>feijigao.com</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag ('logos/site_mini_icon.ico') %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="background-image: url(http://www.shangyutang.com.cn/images/fake_brick1.png);)>
+
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield%>
+
+      <%= render "common/footer" %>
+    </div>
+
   </body>
 </html>
