@@ -1,12 +1,21 @@
-<h1> <%= @product.title %> </h1>
 
-<p>
-  <%= @product.description %>
-</p>
+  <div class="container-fluid">
 
-<p>
-  <%= @product.quantity %>
-</p>
+    <div class="row">
+    
+
+    <div class="col-xs-12 col-sm-5 col-md-8-offset-1">
+            <h3> <%= @product.title %> </h3>
+            <h4>Price: &nbsp ¥ <%= @product.price %></h4>
+            <h4>Quantity: &nbsp<%= @product.quantity %></h4>
+      <div class="pull-left">
+        <% if @product.quantity>0 %>
+          <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-success" ) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
 
 <p>
   <%= image_tag(@product.image.thumb) %>
@@ -14,3 +23,4 @@
 
 <%= link_to("加入購物車", add_to_cart_product_path(@product),
   :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+

@@ -1,9 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @product = Product.new
-  end
 
   def index
     @products = Product.all
@@ -16,15 +13,10 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-       current_cart.add_product_to_cart(@product)
-    redirect_to :back
-  end
-  
-
-  private
-
-  def product_params
-    params.require(:product).permit(:title, :description,  :wage_upper_bound, :wage_lower_bound)
+    if @product.quantity > 0
+      current_cart.add_product_to_cart(@product)
+      redirect_to :back
+    end
   end
 
 end
