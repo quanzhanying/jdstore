@@ -9,7 +9,7 @@ module Admin::OrdersHelper
       elsif order.aasm_state=="order_cancell_appled"
         concat link_to("取消订单", cancell_order_admin_order_path(order), method: :post)
       elsif order.aasm_state=="good_returned_appled"
-        concat link_to("退货申请", return_good_admin_order_path(order), method: :post)
+        concat link_to("退货", return_good_admin_order_path(order), method: :post)
       end
    end
   end
