@@ -42,8 +42,8 @@ gem 'rubocop'
 gem 'letter_opener', group: :development
 gem 'figaro'
 gem 'aasm'
-
 gem "fog"
+gem "awesome_rails_console"
 
 
 group :development, :test do
