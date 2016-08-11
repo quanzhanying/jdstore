@@ -20,7 +20,7 @@
           <td>
             <%= link_to product_path(cart_item.product) do %>
             <% if cart_item.product.attachment.present? %>
-            <%= image_tag(cart_item.product.attachment.thumb.url, class: "thumbnail" ) %>
+            <%= image_tag(cart_item.product.attachment.thumb.url, class: "thumbnail", style: "width:100px") %>
             <% end %>
             <% end %>
           </td>
@@ -31,10 +31,12 @@
             <%= cart_item.product.price %>
           </td>
           <td>
+            <%= link_to '-1', minus_an_item_cart_item_path(cart_item), class: "btn btn-default", method: :post %>
             <%= cart_item.quantity %>
+            <%= link_to '+1', add_an_item_cart_item_path(cart_item), class: "btn btn-default", method: :post %>
           </td>
           <td>
-            <%= sum = cart_item.quantity * cart_item.product.price %>
+            <%= sum = number_with_precision(cart_item.quantity * cart_item.product.price, :precision => 2 ||0) %>
           </td>
           <td>
             <%= link_to("Delete", delete_one_item_cart_path(cart_item), method: :post, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-default")%>
