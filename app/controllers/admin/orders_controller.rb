@@ -15,6 +15,8 @@ class Admin::OrdersController < ApplicationController
 
   def ship
     @order.ship!
+    
+    JdstoreMailer.ship_notification(@order).deliver!
     redirect_to :back
   end
 

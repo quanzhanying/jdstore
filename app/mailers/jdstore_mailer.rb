@@ -13,4 +13,13 @@ class JdstoreMailer < ApplicationMailer
 
     mail to: @customer.email, subject: "JDstore.com order ... "
   end
+
+  def ship_notification(order)
+    @order = order
+    @customer = order.user
+    @item_lists = order.item_lists
+
+    mail to: @customer.email, subject: "Your order has been shipped "
+  end
+
 end
