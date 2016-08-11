@@ -34,6 +34,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem "simple_form"
 gem "carrierwave"
+gem "carrierwave-aws"
 gem "mini_magick"
 gem "letter_opener", group: :development
 gem "awesome_rails_console" # 讓你的 rails console 變整齊漂亮的 gem
