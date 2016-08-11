@@ -24,3 +24,6 @@ public/uploads
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore db/migrate to solve pg migration error on heroku
+/db/migrate
