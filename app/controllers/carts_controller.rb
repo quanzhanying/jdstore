@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   def destroy
     @cart_item = current_cart.cart_items.find(params[:id])
     if  @cart_item.destroy
-      flash[:notice] = "Move product success！"
+      flash[:notice] = "Delete product success！"
     else
       flash[:warning] = "Delete product failed！"
     end
@@ -21,13 +21,13 @@ class CartsController < ApplicationController
   def increase_cart_item
     @cart_item = current_cart.cart_items.find(params[:id])
     @cart_item.increase_product_quantity
-    redirect_to :back
+     redirect_to :back
   end
 
   def decrease_cart_item
     @cart_item = current_cart.cart_items.find(params[:id])
     @cart_item.decrease_product_quantity
-    render :back
+     redirect_to :back
   end
 
   def checkout
