@@ -31,7 +31,12 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :products
-    resources :orders
+    resources :orders do
+      member do
+        post :ship
+        post :cancelled
+      end
+    end
     resources :users do
       member do
         post :publish

@@ -10,6 +10,7 @@
         <td>库存</td>
         <td>价格</td>
         <td>选项</td>
+
         <td>创建日期</td>
       </tr>
     </thead>
@@ -26,6 +27,8 @@
       <td> <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-xs btn-primary") %> |
            <%= link_to("Destroy", admin_product_path(product), class: "btn btn-xs btn-danger",
             method: :delete, data: { confirm:  "Are you sure?" } ) %></td>
+
+
       <td>
         <%= product.created_at %>
       </td>

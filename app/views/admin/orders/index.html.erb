@@ -1,26 +1,61 @@
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <td>订单号</td>
-      <td>价格</td>
+<div class="row">
+  <div class="col-md-12">
 
-    </tr>
-  </thead>
+    <h2> 订单明细</h2>
 
-  <tbody>
-    <tr>
-    <% @orders.each do |order| %> <!--可以任意更改，相应的下面也需要改-->
-    <td><%= link_to(order.token , order_path(order.token)) %></td>
-    <td><%= order.total %></td>
-  <% order.product_lists.each do |order| %>
+      <% @orders.each do |order| %> <!--可以任意更改，相应的下面也需要改-->
+  <span class="btn btn-primary"> <%= order.user.email %></span>
+  <div class="pull-left">
+    <%= render_order_state(order) %>
+  </div>
 
-    </tr>
-    <tr>
-      <td>
-        <%= order.product_name %>
-      </td>
-    </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
+
+<!-- <span>
+<% if order.shipping? %>
+<label class="label label-success"> 已发货 </label>
+<% end %>
+</span> -->
+
+<%= link_to("取消订单",cancelled_admin_order_path(order),method: :post, class: "btn btn-md btn-default pull-right") %>
+<%= link_to("出货",ship_admin_order_path(order), method: :post, class: "btn btn-md btn-success pull-right") %>
+
+
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>订单号   <%= link_to(order.token , order_path(order.token)) %></td>
+          <td>价格</td>
+          <td>数量</td>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+
+      <% order.product_lists.each do |order| %>
+
+        </tr>
+        <tr>
+          <td>
+            <%= order.product_name %>
+          </td>
+          <td>
+            <%= order.product_price %>
+          </td>
+          <td>
+            <%= order.quantity %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+        <div class="total clearfix">
+          <span class="pull-right">
+
+        总计 <%= order.total %> RMB
+      </span>
+    </div>
+      <% end %>
+
+  </div>

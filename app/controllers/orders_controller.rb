@@ -29,19 +29,18 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find(params[:id])
-    @order.is_paid = true
-    @order.save
+    @order.make_payment!
     OrderMailer.notify_order_placed(@order).deliver!
     redirect_to :back
   end
 
   def pay_with_wechat
     @order = Order.find(params[:id])
-    @order.is_paid = true
-    @order.save
+    @order.make_payment!
     OrderMailer.notify_order_placed(@order).deliver!
     redirect_to :back
   end
+
 
 
 private
