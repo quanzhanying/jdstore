@@ -13,6 +13,9 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.cancell_order!
 
+    if Rails.env == "development"
+      OrderMailer.notify_cancell_order(@order).deliver!
+    end
     flash[:notice] = "订单已取消"
     redirect_to admin_orders_path
   end
@@ -29,6 +32,9 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.ship!
 
+    if Rails.env == "development"
+      OrderMailer.notify_ship(@order).deliver!
+    end
     flash[:notice] = "出货中"
     redirect_to admin_orders_path
   end

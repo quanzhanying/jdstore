@@ -18,6 +18,10 @@ class Account::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.appl_cancell_order!
 
+    if Rails.env == "development"
+      OrderMailer.notify_order_cancell_appl(@order).deliver!
+    end
+
     flash[:notice] = "订单取消申请中"
     redirect_to account_orders_path
   end

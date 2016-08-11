@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
 
   def mail_to_customer
     if Rails.env == "development"
-      OrderMailer.notify_order_placed(Order.last).deliver!
+      OrderMailer.notify_order_placed(@order).deliver!
     end
     # if Rails.env == "development"
         # OrderMailer.notify_order_placed(Order.last).deliver!
