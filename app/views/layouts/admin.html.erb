@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobListing</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'admin/layout', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'products', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+    // $(function($) {
+    //
+    // });
+
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+
+      <div class="row">
+        <div class="col-md-2">
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                  <li class="<%= 'active' if params[:controller] == 'admin/products' %>"><%= link_to("产品管理",admin_products_path)%></li>
+                  <li class="<%= 'active' if params[:controller] == 'admin/users' %>"><%= link_to("用户管理",admin_users_path)%></li>
+                  <li class="<%= 'active' if params[:controller] == 'admin/orders' %>"><%= link_to("订单管理",admin_orders_path)%></li>
+                  <!-- <li><a href="javascript:;">About</a></li> -->
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>

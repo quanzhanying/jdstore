@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">订单详情</h3>
+    </div>
+    <!-- <div class="panel-body contant">
+
+      <img src="<!%=@order.image.medium %>" alt=""/>
+    </div> -->
+
+    <div class="panel-body">
+      <p>订购人：<%= @order.billing_name %></p>
+      <p>订购者：<%= @order.billing_address %></p>
+      <p>收货人：<%= @order.shipping_name %></p>
+      <p>收货地址：<%= @order.shipping_address %></p>
+
+      <p>订单价格：¥<%= @order.total %></p>
+
+    </div>
+    <!-- <div class="panel-footer" style="height:50px;">
+    </div> -->
+  </div>
+</div>

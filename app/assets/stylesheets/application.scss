@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body {
+     font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+     color: #666;
+     background: #fff;
+ }
