@@ -34,13 +34,16 @@ class OrdersController < ApplicationController
     @order.save
     flash[:notice] = "付款成功！"
     redirect_to :back
+    OrderMailer.notify_order_placed(@order).deliver!
   end
 
   def pay_with_alipay
     @order = Order.find(params[:id])
     @order.make_payment!
+    @order.save
     flash[:notice] = "付款成功！"
     redirect_to :back
+    OrderMailer.notify_order_placed(@order).deliver!
   end
 
 

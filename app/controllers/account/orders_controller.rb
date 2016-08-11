@@ -7,6 +7,7 @@ class Account::OrdersController < ApplicationController
 
   def cancel
     @order = Order.find(params[:id])
+    OrderMailer.notify_order_cancelled(@order).deliver!
     @order = @order.cancell_order!
     redirect_to :back
   end
