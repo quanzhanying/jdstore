@@ -19,12 +19,17 @@ Rails.application.routes.draw do
   end
 
   resources :carts do
+    collection do
+      post :checkout
+    end
     member do
       delete :delete_cart_item
       post :plus_one_to_item
       post :minus_one_to_item
     end
   end
+
+  resources :orders
 
   root 'products#index'
 end
