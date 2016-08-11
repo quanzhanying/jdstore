@@ -3,7 +3,22 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
+    if @product.quantity > 0
+      current_cart.add_product_to_cart(@product)
+       @product.quantity_decrease(1)
+       @product.save
+     else
+       flash[:alert] = "Out of Store"
+     end
+
+     redirect_to :back
+  end
+
+  def remove_from_cart
+    @cart_item = CartItem.find(params[:id])
+    current_cart.remove_product_from_cart(@cart_item)
+    @cart_item.product.quantity_increase(1)
+    @cart_item.product.save
     redirect_to :back
   end
 
