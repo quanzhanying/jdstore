@@ -20,7 +20,13 @@
                   </p>
                   Quantity: <%= @product.quantity %> |
                   Price: ¥ <%= @product.price %><br/>
-                  <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,class:"btn btn-primary red_button",style:"margin-top:10px; ") %>
+                  <!-- <%= link_to("加入购物车",add_to_cart_product_path(@product),method: :post,class:"btn btn-primary red_button",style:"margin-top:10px; ") %> -->
+                  <% if current_cart.is_cart_item?(@product) %>
+                      <%= link_to("Add to cart",up2_cart_path(@product), method: :post, class:"btn btn-primary red_button",style:"margin-top:10px;")%>
+                  <% else %>
+                    <%= link_to("Add to cart", add_to_cart_product_path(@product),method: :post,class:"btn btn-primary red_button",style:"margin-top:10px;") %>
+                  <% end %>
+
                   <%= link_to("收藏","#",class:"btn btn-primary",style:"margin-top:10px;") %>
               </div>
 

@@ -21,9 +21,7 @@
           <% if current_cart.is_cart_item?(product) %>
               <%= link_to("Add to cart",up2_cart_path(product), method: :post, class:"btn btn-sm btn-danger")%>
           <% else %>
-
             <%= link_to("Add to cart", add_to_cart_product_path(product),method: :post,class:"btn btn-sm btn-danger") %>
-
           <% end %>
         <% end %>
         <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->

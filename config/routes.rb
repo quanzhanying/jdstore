@@ -50,4 +50,7 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :order_mg
+  end
 end

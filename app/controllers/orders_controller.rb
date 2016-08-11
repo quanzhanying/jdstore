@@ -61,9 +61,7 @@ class OrdersController < ApplicationController
     end
 
     def notify_order_email
-
       OrderMailer.notify_order_placed(@order).deliver!
-
     end
 
     private

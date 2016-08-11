@@ -1,0 +1,70 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin:15px">
+    排序 <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to("Sort by User", admin_order_mg_index_path(order: "by_user")) %></li>
+    <li><%= link_to("Sort by Created time", admin_order_mg_index_path(order: "by_created_time")) %></li>
+    <li><%= link_to("Sort by total amount", admin_order_mg_index_path(order: "by_order_total")) %></li>
+    <!-- <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li> -->
+  </ul>
+</div>
+
+<div class="col-md-12">
+  <div class="showproduct-bg showproduct-font">
+    <table class="table">
+      <tr>
+        <th>
+          User email
+        </th>
+        <th>
+          Order id
+        </th>
+        <th>
+          Total amount
+        </th>
+        <th>
+          Is paid?
+        </th>
+        <th>
+          Payment method
+        </th>
+        <th>
+          Created_at
+        </th>
+        <th>
+          Updated_at
+        </th>
+
+      </tr>
+
+      <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= order.user.email %>
+        </td>
+        <td>
+          <%= order.id %>
+        </td>
+        <td>
+          <%= order.total %>
+        </td>
+        <td>
+          <%= order.is_paid %>
+        </td>
+        <td>
+          <%= order.payment_method %>
+        </td>
+        <td>
+          <%= order.created_at %>
+        </td>
+        <td>
+          <%= order.updated_at %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>
