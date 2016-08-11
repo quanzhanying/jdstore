@@ -3,14 +3,14 @@ CarrierWave.configure do |config|
     config.storage :fog
     config.fog_credentials = {
       provider:              'AWS',
-      aws_access_key_id:     ENV["AKIAIW3GYLQCG5SHDP2Q"],      # 你的 key
+      aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],      # 你的 key
 
-      aws_secret_access_key: ENV["pJnzJIfDtdU/cZQvl7GZVrvp4z4zE2YRhr7vbvKo"],      # 你的 secret key
+      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],      # 你的 secret key
 
-      region:                'us-east-1' # 你的 S3 bucket 的 Region 位置
+      region:                ENV['REGION'] # 你的 S3 bucket 的 Region 位置
 
     }
-    config.fog_directory  = ENV["jdstore-li"] # 你設定的 bucket name
+    config.fog_directory  = ENV["AWS_BUCKET_NAME"] # 你設定的 bucket name
 
 
   else
