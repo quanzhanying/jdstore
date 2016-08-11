@@ -1,0 +1,4 @@
+<%= link_to("微信付款", pay_with_alipay_customer_order_path(order.token), method: :post, class: "btn btn-sm btn-success") %>
+<%= link_to("支付宝付款", pay_with_wechat_customer_order_path(order.token), method: :post, class: "btn btn-sm btn-info") %>
+<%= link_to("取消订单", cancel_order_customer_order_path(order.token), method: :post, class: "btn btn-default btn-sm") %>
+

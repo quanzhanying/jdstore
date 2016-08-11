@@ -1,0 +1,28 @@
+<br><br>
+
+<table class="table table-boldered">
+  <tr>
+    <td>
+      用户
+    </td>
+    <td>
+      权限操作
+    </td>
+    <td>
+      创建时间
+    </td>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= render_authority_operation(user) %>
+      </td>
+      <td>
+        <%= user.created_at %>
+      </td>
+    </tr>
+  <% end %>
+</table>

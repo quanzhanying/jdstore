@@ -1,0 +1,38 @@
+<table class="table table-boldered">
+  <tr>
+    <th>
+      订单收件人
+    </th>
+    <th>
+      商品总价
+    </th>
+    <th>
+      订单状态
+    </th>
+      <th>
+      操作
+    </th>
+    <th>
+      订单创建时间
+    </th>
+  </tr>
+  <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= link_to(order.shipping_name, customer_order_path(order.token)) %>
+        </td>
+        <td>
+          <%= order.total %> RMB
+        </td>
+        <td>
+          <%= render_order_status_in_index(order) %>
+        </td>
+        <td>
+          <%= render_payment_status_in_index(order) %>
+        </td>
+        <td>
+          <%= order.created_at %>
+        </td>
+      </tr>
+  <% end %>
+</table>

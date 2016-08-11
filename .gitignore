@@ -20,3 +20,9 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
+
+# Ignore testing Uploaded Images in Database
+public/uploads
+
+# Ignore application configuration
+/config/application.yml
