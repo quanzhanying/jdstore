@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :carts do
       member do
         post :empty_cart_items
+        post :increase_cart_item
+        post :decrease_cart_item
       end
       collection do
         post :checkout

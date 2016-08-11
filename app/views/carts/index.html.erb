@@ -32,7 +32,17 @@
               <%= cart_item.product.price %>
             </td>
             <td>
+              <% if cart_item.quantity > 1 %>
+                <%= link_to("-1", decrease_cart_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+              <% else %>
+                <%= link_to("-1", "#", :class => "btn btn-xs btn-info disabled") %>
+              <% end %>
               <%= cart_item.quantity %>
+              <% if cart_item.quantity < cart_item.product.quantity %>
+                <%= link_to("+1", increase_cart_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+              <% else %>
+                <%= link_to("+1", "#", :class => "btn btn-xs btn-info disabled") %>
+              <% end %>
             </td>
             <td>
               <%= link_to("Move", cart_path(cart_item), :method => :delete, :class => "btn btn-xs btn-danger") %>

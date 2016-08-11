@@ -18,6 +18,18 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def increase_cart_item
+    @cart_item = current_cart.cart_items.find(params[:id])
+    @cart_item.increase_product_quantity
+    redirect_to :back
+  end
+
+  def decrease_cart_item
+    @cart_item = current_cart.cart_items.find(params[:id])
+    @cart_item.decrease_product_quantity
+    render :back
+  end
+
   def checkout
     @order = Order.new
   end
