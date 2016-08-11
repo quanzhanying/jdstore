@@ -41,10 +41,15 @@
             <%= cart_item.quantity %>
           </td>
         <td>
-          <% if cart_item.quantity < cart_item.product.quantity  %>
+        <% if cart_item.quantity < 1 %>
+        <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %>
+        <%= link_to("-", "#", class:"btn btn-xs btn-success disabled") %>
+        <% elsif cart_item.quantity < cart_item.product.quantity %>
         <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %>
         <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
+
         <% else %>
+        <%= link_to("+", "#", class:"btn btn-xs btn-success disabled") %>
         <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
         <% end %>
       </td>
@@ -64,7 +69,11 @@
 
     <hr>
     <div class="checkout clearfix">
+      <!-- <%# current_cart.cart_items.each do |f| %> -->
+      <!-- <%# if f.quantity >= 1 %> -->
       <%= link_to("确认结账",checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <!-- <%# end %> -->
+      <%# end %>
     </div>
   </div>
 </div>
