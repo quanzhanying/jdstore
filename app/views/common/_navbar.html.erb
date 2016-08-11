@@ -29,7 +29,7 @@
                     <li> <%= link_to("Admin Panel", admin_products_path) %> </li>
                   <% end %>
                   <% if current_user %>
-                    <li> <%= link_to("My Order", orders_path) %> </li>
+                    <li> <%= link_to("My Order", account_orders_path) %> </li>
                   <% end %>
                     <li> <%= link_to("Log out", destroy_user_session_path, method: :delete, :data => { :confirm => "You really want to logout?" }) %> </li>
                 </ul>
