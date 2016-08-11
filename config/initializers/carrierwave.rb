@@ -5,10 +5,10 @@ CarrierWave.configure do |config|
       provider:               'AWS',
       aws_access_key_id:      ENV["AWS_ACCESS_KEY_ID"],
       aws_secret_access_key:  ENV["AWS_SECRET_ACCESS_KEY"],
-      region:                 ENV["AWS_Region"] #S3 bucket 的Region 位置
+      region:                 ENV["AWS_REGION"] #S3 bucket 的Region 位置
     }
     config.fog_directory  = ENV["AWS_BUCKET_NAME"]
-  elsel
+  else
     config.storage :file
 
   end
