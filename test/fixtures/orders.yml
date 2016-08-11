@@ -10,6 +10,11 @@
 #  shipping_address :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  user_id          :integer
+#  token            :string
+#  is_paid          :boolean          default(FALSE)
+#  payment_method   :string
+#  aasm_state       :string           default("order_placed")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
