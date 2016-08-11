@@ -24,6 +24,9 @@ class ShippingCartController < ApplicationController
     @cart_item_quantity.quantity = @cart_item_quantity.quantity - 1
     @cart_item_quantity.save
     redirect_to :back
+  end
 
+  def checkout
+    @order = Order.new
   end
 end

@@ -20,7 +20,12 @@ Rails.application.routes.draw do
       post :current_cart_add_item
       post :current_cart_delete_item
     end
+    collection do
+      post :checkout
+    end
   end
+
+  resources :orders
 
   root 'products#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
