@@ -15,5 +15,19 @@ class OrderMailer < ApplicationMailer
     mail(to: @admin.email, subject: "[JDStore] Order cancelled! Please find the detailed list below #{order.token}")
   end
 
+  def notify_order_shipping(order)
+    @order = order
+    @user = order.user
+    @product_lists = @order.product_lists
 
+    mail(to: @user.email, subject: "[JDStore] Thanks for shopping! Please find the shipping list below.")
+  end
+
+  def notify_order_confirm_cancellation(order)
+    @order = order
+    @user = order.user
+    @product_lists = @order.product_lists
+
+    mail(to: @user.email, subject: "[JDStore] Order cancelled successfully! Please find the detailed list below")
+  end
 end

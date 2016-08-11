@@ -63,12 +63,14 @@ class Order < ApplicationRecord
           order.make_payment!
         when "paid"
           order.ship!
+          OrderMailer.notify_order_shipping(order).deliver!
         when "shipping"
           order.deliver!
         when "shipped"
           order.return_good!
         when "order_cancelled"
           order.confirm_cancellation!
+          OrderMailer.notify_order_confirm_cancellation(order).deliver!
       end
     end
 
