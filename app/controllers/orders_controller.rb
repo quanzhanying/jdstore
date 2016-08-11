@@ -54,16 +54,14 @@ class OrdersController < ApplicationController
          @order.payment_method = params[:payment_method]
          @order.save
          notify_order_email
-         @order.make_payment
+         @order.make_payment!
        else
          flash[:alert]= "You have paid already! Thanks!"
        end
        redirect_to  orders_path
     end
 
-    def notify_order_email
-      OrderMailer.notify_order_placed(@order).deliver!
-    end
+
 
     def change_state
       @order = Order.find(params[:id])
@@ -77,6 +75,7 @@ class OrdersController < ApplicationController
       @order.save
       flash[:notice] = "申请退货中..."
       redirect_to :back
+      OrderMailer.notify_order_cancelled(@order).deliver!
     end
 
     private
@@ -84,7 +83,9 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:billing_name,:billing_address,:shipping_name,:shipping_address)
     end
 
-
+    def notify_order_email
+      OrderMailer.notify_order_placed(@order).deliver!
+    end
 
 
 end
