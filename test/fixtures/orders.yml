@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id               :integer          not null, primary key
+#  total            :float
+#  billing_name     :string
+#  billing_address  :string
+#  shipping_name    :string
+#  shipping_address :string
+#  user_id          :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  token            :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total: 1
+  billing_name: MyString
+  billing_address: MyString
+  shipping_name: MyString
+  shipping_address: MyString
+  user_id: 1
+
+two:
+  total: 1
+  billing_name: MyString
+  billing_address: MyString
+  shipping_name: MyString
+  shipping_address: MyString
+  user_id: 1
