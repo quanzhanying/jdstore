@@ -32,26 +32,32 @@ end
 
   def pay_with_wechat
     @order = Order.find(params[:id])
-    if @order.is_paid = true
+    if @order.is_paid == true
       flash[:alert] = '你已经付过款了'
     else
       @order.is_paid = true
-      @order.payment_method = params[:payment_method]
+      @order.payment_method = '微信支付'
+      @order.make_payment!
       @order.save
-      flash[:alert] = '新订单已完成'
+      flash[:notice] = '新订单已完成'
+      @cart = current_cart
+      @cart.cart_items.destroy_all
     end
     redirect_to account_orders_path
   end
 
   def pay_with_alipay
     @order = Order.find(params[:id])
-    if @order.is_paid = true
+    if @order.is_paid == true
       flash[:alert] = '你已经付过款了'
     else
       @order.is_paid = true
-      @order.payment_method = params[:payment_method]
+      @order.payment_method = '支付宝'
+      @order.make_payment!
       @order.save
-      flash[:alert] = '新订单已完成'
+      flash[:notice] = '新订单已完成'
+      @cart = current_cart
+      @cart.cart_items.destroy_all
     end
     redirect_to account_orders_path
   end

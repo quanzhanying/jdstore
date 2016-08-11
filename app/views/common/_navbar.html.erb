@@ -27,23 +27,30 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
+
                             <% if current_user.admin? %>
-                            <%= link_to("管理产品", admin_products_path) %>
-                            <%= link_to("管理用户", admin_usertypes_path)%>
-                            <% end %>
-                            <%= link_to("我的订单", account_orders_path) %>
-                            <%= link_to("注销", destroy_user_session_path, method: :delete) %>
-                        </li>
+                        <li><%= link_to("管理产品", admin_products_path) %></li>
+                        <li>
+                            <%= link_to("管理用户", admin_usertypes_path)%></li>
+                        <li>
+                            <%= link_to("所有订单", admin_orders_path)%></li>
+                        <% end %>
+                        <li>
+                            <%= link_to("我的订单", account_orders_path) %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to("注销", destroy_user_session_path, method: :delete) %></li>
 
-                    </ul>
-                </li>
-                <% end %>
+                    </li>
 
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+                </ul>
+            </li>
+            <% end %>
+
+        </ul>
     </div>
-    <!-- /.container-fluid -->
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
 </nav>
 
 <!-- /.container-fluid -->

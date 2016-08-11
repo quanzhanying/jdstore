@@ -1,7 +1,5 @@
 class Admin::OrdersController < ApplicationController
-  @order = Order.all
-
   def index
-    @order = Order.all
+    @orders = Order.all.order('created_at DESC')
   end
 end
