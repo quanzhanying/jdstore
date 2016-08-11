@@ -1,0 +1,54 @@
+<div class="col-md-12">
+    <h2>订单详情</h2>
+    <% @orders.each do |order| %>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width :10%">
+                    订购人
+                </th>
+                <th style="width :10%">
+                    收货人
+                </th>
+
+                <th style="width :10%">
+                    总价
+                </th>
+                <th style="width :20%">
+                    付款时间
+                </th>
+                <th style="width :10%">
+                    订单状态
+                </th>
+                <th style="width :20%">
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    <%= order.billing_name %>
+                </td>
+                <td>
+                    <%= order.shipping_name%>
+                </td>
+
+                <td>
+                    <%= order.total %>
+                </td>
+                <td>
+                    <%= order.created_at %>
+                </td>
+                <td>
+                    <%= order.aasm_state %>
+                </td>
+                <td>
+                    <%= render_order_state1(order) %>
+                </td>
+
+            </tr>
+            <table>
+                <br/><br/>
+                <% end %>

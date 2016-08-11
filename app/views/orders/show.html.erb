@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>订单详情</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="80%">
+                        产品明细
+                    </th>
+                    <th>
+                        单价
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @product_lists.each do |l| %>
+                <tr>
+                    <td>
+                        <%= l.product_name %>
+                    </td>
+                    <td>
+                        <%= l.product_price  %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <div class="total clearfix">
+            <span class="pull-right">
+                统计<%= @order.total %>RMB
+            </span>
+        </div>
+        <hr>
+        <h2>寄送资讯</h2>
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        订购人
+                    </td>
+                </tr>
+                <td>
+                    <%= @order.billing_name %>
+                    -
+                    <%= @order.billing_address %>
+                </td>
+                <tr>
+                    <td>
+                        收件人
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%= @order.shipping_name %>-<%= @order.shipping_address %>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div class=" btn-lg pull-right btn-lg">
+            <%= link_to("支付宝付款", pay_with_alipay_order_path(@order, payment_method: "alipay"), method: :post, class: "btn btn-info", style: "margin-right: 10px " )%>
+
+            <%= link_to("微信付款", pay_with_wechat_order_path(@order, payment_method: "wechat"), method: :post, class: "btn btn-success ") %>
+        </div>
+
+    </div>
+</div>

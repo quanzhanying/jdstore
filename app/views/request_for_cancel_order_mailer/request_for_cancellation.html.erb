@@ -1,0 +1,52 @@
+<table class="table table-bordered">
+    该用户发起“取消订单“请求，以下为详细信息，请及时处理
+    <thead>
+        <tr>
+            <th style="width :10%">
+                订购人
+            </th>
+            <th style="width :20%">
+                用户邮箱
+            </th>
+
+            <th style="width :15%">
+                总价
+            </th>
+            <th style="width :10%">
+                付款方式
+            </th>
+            <th style="width :20%">
+                付款时间
+            </th>
+            <th style="width :20%">
+                订单状态
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr style="text-align: center">
+            <td>
+                <%= @order.billing_name %>
+            </td>
+            <td>
+                <%= @order.user.email%>
+            </td>
+            <td>
+                <%= @order.total %>
+            </td>
+            <td>
+                <%= @order.payment_method %>
+            </td>
+
+            <td>
+                <%= @order.created_at %>
+            </td>
+            <td>
+                <%= @order.aasm_state %>
+            </td>
+
+        </tr>
+
+        <table>
+            <br/><br/>
