@@ -11,7 +11,8 @@ class CartsController < ApplicationController
   end
 
   def empty_cart_items
-    @cart = Cart.find(params[:id])
+    # @cart = Cart.find(params[:id])
+    @cart = current_cart
     @cart.cart_items.destroy_all
     flash[:warning] = "Empty cart success！"
     redirect_to :back
