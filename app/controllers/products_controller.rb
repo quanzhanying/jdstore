@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:join, :quit, :add_to_cart]
+
+
   def index
     @products = Product.all
   end
