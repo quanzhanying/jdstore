@@ -2,7 +2,7 @@
   <%#= @user.email %>&nbsp Orders History
 </h1>
 
-<div class="container-fluid">
+<div class="container-fluid ">
   <table class="table table-bordered">
     <thead >
       <tr>
@@ -14,7 +14,7 @@
         <th>Oprate</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="split-tbody">
       <tr>
         <td colspan="6">&nbsp</td>
       </tr>
@@ -22,14 +22,14 @@
   <% order.product_lists.each do |product_list| %>
     <tr>
       <td>
-        <%= order.created_at %>
+        <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
       </td>
       <td colspan="5">
         Order No : <%= link_to(order.token,account_order_path(order.token)) %>
       </td>
       <tr>
       <td><%= product_list.product_name %></td>
-      <td><%= product_list.quantity %></td>
+      <td>x<%= product_list.quantity %></td>
       <td >
         <%= order.shipping_name %>
       </td>

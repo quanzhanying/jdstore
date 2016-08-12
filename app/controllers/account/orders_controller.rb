@@ -2,12 +2,11 @@ class Account::OrdersController < ApplicationController
   before_filter :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
-    @orders = Order.all
-    #@user = @orders.users
+    @orders = current_user.orders
   end
 
   def show
-    @order = Order.find_by_token(params[:id])
+    @order = current_user.orders.find_by_token(params[:id])
     @product_lists = @order.product_lists
   end
 
