@@ -1,0 +1,50 @@
+<div class="col-md-12">
+  <div class="group">
+    <!-- <%= link_to("Add A Product", new_admin_product_path, class: "btn btn-default pull-right") %> -->
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>订单id</th>
+        <th>订购人</th>
+        <th>订购地址</th>
+        <th>收货人</th>
+        <th>收货地址</th>
+        <th>订单状态</th>
+        <th>最后更新时间</th>
+        <th>操作</th>
+      </tr>
+
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td>
+              <%= link_to(order.id,admin_order_path(order)) %>
+            </td>
+            <td>
+              <%= order.billing_name %>
+            </td>
+            <td>
+              <%= order.billing_address %>
+            </td>
+            <td>
+              <%= order.shipping_name %>
+            </td>
+            <td>
+              <%= order.shipping_address %>
+            </td>
+            <td>
+              <%= order.order_status %>
+            </td>
+            <td>
+              <%= order.updated_at_formate  %>
+            </td>
+            <td>
+                <%= render_admin_order_operate(order) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </thead>
+  </table>
+</div>
