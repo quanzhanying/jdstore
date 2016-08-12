@@ -31,24 +31,29 @@ class OrdersController < ApplicationController
 def pay_with_alipay
   @order = Order.find(params[:id])
   if @order.is_paid
-    puts "++++++++++++++++"
-    redirect_to :back ,alert: "paid successful, you can't pay again"
+    redirect_to :back ,alert: "已支付，请勿重复付款"
   else
-    puts "***************"
     @order.is_paid  =true
     if @order.save
-      redirect_to :back,alert: "paid successful"
+      redirect_to :back,alert: "支付成功"
     else
-      redirect_to :back,alert: "paid failed"
+      redirect_to :back,alert: "支付不成功"
     end
   end
   end
 
 def pay_with_wechat
-    @order = Order.find(params[:id])
-    @order.is_paid = true
-    @order.save
-    redirect_to :back
+  @order = Order.find(params[:id])
+  if @order.is_paid
+    redirect_to :back ,alert: "已支付，请勿重复付款"
+  else
+    @order.is_paid  =true
+    if @order.save
+      redirect_to :back,alert: "支付成功"
+    else
+      redirect_to :back,alert: "支付不成功"
+    end
+  end
   end
 
   private

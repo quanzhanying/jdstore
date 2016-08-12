@@ -2,7 +2,7 @@
   <div class="col-md-12">
 
     <% @orders.each do |order| %>
-    <h2>订单明细</h2>
+    <h4>订单明细</h4>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -27,14 +27,23 @@
 
 
           <div class="total clearfix">
-          <span class="pull-right">
-          总计 <%= order.total %> RMB
-          </span>
+
+
+          <div class="group pull-right">
+            <%= link_to("微信支付", pay_with_wechat_order_path(order), method: :post, class: "btn btn-sm btn-success pull-right" ) %>
+            <%= link_to("支付宝", pay_with_alipay_order_path(order), method: :post, class: "btn btn-sm btn-primary pull-right" ) %>
+        </div>
+
+        <span class="pull-right">
+        总计 <%= order.total %> RMB
+        </span>
           </div>
 
           <hr>
 
-          <h2>寄送资讯</h2>
+
+
+          <h4>寄送资讯</h4>
           <table class="table tabe-striped table-bordered">
           <tbody>
           <tr>
@@ -61,12 +70,6 @@
           </table>
           </div>
           </div>
-
-
-          <div class="group pull-right">
-            <%= link_to("微信支付", pay_with_wechat_order_path(order), method: :post, class: "btn btn-lg btn-success pull-right" ) %>
-            <%= link_to("支付宝", pay_with_alipay_order_path(order), method: :post, class: "btn btn-lg btn-primary pull-right" ) %>
-        </div>
       </div>
       <% end %>
     </div>
