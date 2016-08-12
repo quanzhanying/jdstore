@@ -25,7 +25,7 @@ module Admin::OrdersHelper
     when "shipping"
       content_tag("span","发货中", class:"label label-default")
     when "shipped"
-      content_tag("span","已发货", class:"label label-default")
+      content_tag("span","已到货", class:"label label-default")
     when "order_cancelled"
       content_tag("span","已取消", class:"label label-default")
     when "good_returned"

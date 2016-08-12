@@ -44,6 +44,8 @@ Rails.application.routes.draw do
     resources :orders do
       member do
         post :cancel
+        post :deliver
+        post :return_good
       end
     end
   end

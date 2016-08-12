@@ -33,9 +33,11 @@
         <% if order.order_cancelled? %>
     <% else %>
         <div class="pull-right">
+            <% if order.order_placed? || order.paid? %>
             <%= link_to("取消订单",cancel_admin_order_path(order),:method => :post, class:"btn btn-md btn-default") %>
             <% if order.paid? %>
             <%= link_to("出货",ship_admin_order_path(order),:method => :post, class:"btn btn-md btn-default") %>
+            <% end %>
             <% end %>
         </div>
         <% end %>

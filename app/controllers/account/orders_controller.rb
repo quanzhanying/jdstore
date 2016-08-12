@@ -11,4 +11,16 @@ class Account::OrdersController < ApplicationController
     @order = @order.cancell_order!
     redirect_to :back
   end
+
+  def deliver
+    @order = Order.find(params[:id])
+    @order = @order.deliver!
+    redirect_to :back
+  end
+
+  def return_good
+    @order = Order.find(params[:id])
+    @order = @order.return_good!
+    redirect_to :back
+  end
 end
