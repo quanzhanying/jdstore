@@ -1,5 +1,5 @@
 GEM
-  remote: https://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.2)
     aasm (4.11.0)

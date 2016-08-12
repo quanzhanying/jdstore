@@ -41,7 +41,13 @@ class OrdersController < ApplicationController
     redirect_to :back
   end
 
-
+  def cancel_order
+    @order = Order.find(params[:id])
+    @order.is_paid = true
+    @order.save
+    OrderMailer.notify_order_placed(@order).deliver!
+    redirect_to :back
+  end
 
 private
 def order_params
