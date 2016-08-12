@@ -56,6 +56,12 @@ def pay_with_wechat
   end
   end
 
+def cancel
+  @order = Order.find(params[:id])
+  @order.destroy
+  redirect_to root_path, alert: "订单已取消"
+end
+
   private
 
   def order_params
