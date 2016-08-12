@@ -4,11 +4,11 @@
 </div>
 <table class="table table-boldered">
   <tr>
-    <td>Product</td>
-    <td>IMG</td>
-    <td>Price</td>
-    <td>Quantity</td>
-    <td>Oprate</td>
+    <th>Product</th>
+    <th>IMG</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Oprate</th>
   </tr>
   <% @products.each do |product| %>
   <tr>
@@ -25,9 +25,8 @@
       <%= product.quantity %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %>
-      <%= link_to("Hide/Pubilsh", "#") %>
-      <%= link_to("Delete", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>
+      <%= link_to("Delete", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger") %>
     </td>
   </tr>
   <% end %>

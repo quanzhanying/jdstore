@@ -1,31 +1,49 @@
 <h1>
-  Order History
+  <%#= @user.email %>&nbsp Orders History
 </h1>
 
 <div class="container-fluid">
-  <table>
-    <thead>
+  <table class="table table-bordered">
+    <thead >
       <tr>
-        <td>order no</td>
-        <td>total price</td>
-        <td>product_name</td>
-        <td>quantity</td>
+        <th>All orders</th>
+        <th>Order detail</th>
+        <th>Consignee</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Oprate</th>
       </tr>
     </thead>
-
+    <tbody>
+      <tr>
+        <td colspan="6">&nbsp</td>
+      </tr>
   <% @orders.each do |order| %>
   <% order.product_lists.each do |product_list| %>
-
-    <tbody>
     <tr>
-      <td >
+      <td>
+        <%= order.created_at %>
+      </td>
+      <td colspan="5">
         Order No : <%= link_to(order.token,account_order_path(order.token)) %>
       </td>
-      <td >
-        Total Price: ¥ <%= order.total %>
-      </td>
+      <tr>
       <td><%= product_list.product_name %></td>
       <td><%= product_list.quantity %></td>
+      <td >
+        <%= order.shipping_name %>
+      </td>
+      <td >
+        TotalPrice ¥ <%= order.total %>
+        <br />
+        Paymthod
+      </td>
+      <td >
+        Status<%#= order.status %>
+      </td>
+      <td>
+        <%= link_to("Delete", account_order_path(order), :method => :delete, :data => { :confirm => "Are you sure?" } , :class => "btn btn-xs btn-danger") %>
+      </td>
     </tr>
   </tbody>
   <% end %>
