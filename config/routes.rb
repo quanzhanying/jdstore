@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders
+  resources :cart_items
 
   root 'products#index'
 end

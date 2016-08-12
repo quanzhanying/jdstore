@@ -25,7 +25,9 @@
             </td>
             <td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
             <td><%= cart_item.product.price %></td>
-            <td><%= cart_item.quantity %></td>
+            <td><%= cart_item.quantity %> |
+              <%= link_to("删除", cart_item_path(cart_item),
+    :method => :delete) %></td>
           </tr>
         <% end %>
       </tbody>
@@ -41,6 +43,8 @@
     <hr>
 
     <div class="checkout clearfix">
+      <%= link_to("清空购物车", cart_path(current_cart),
+  :method => :delete) %>
       <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
