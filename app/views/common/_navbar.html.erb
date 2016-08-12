@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">JD Store</a>
@@ -6,7 +6,7 @@
 
     <div class="collpase navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        
+
         <li><%= link_to carts_path do %>
           购物车 <i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
           <% end %>
