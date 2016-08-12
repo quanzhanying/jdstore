@@ -10,5 +10,5 @@ module OrdersHelper
       end
     end
   end
-  
+
 end
