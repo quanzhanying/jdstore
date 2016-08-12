@@ -56,8 +56,19 @@
       </tbody>
     </table>
     <div class="group pull-right">
-      <%= link_to("Pay with Alipay", pay_with_alipay_order_path, :method => :post, :class => "btn btn-info") %>
-      <%= link_to("Pay with Wechat", pay_with_wechat_order_path, :method => :post, :class => "btn btn-success") %>
+      <%= link_to("Back", :back, :class => "btn btn-default") %>
+      <% if @order.is_paid? %>
+          <% if @order.payment_method == 'alipay' %>
+          <%= link_to("You have already pay with Alipay", "#", :class => "btn btn-info disabled") %>
+          <% else %>
+          <% @order.payment_method == 'wechat' %>
+          <%= link_to("You have already pay with Wechat", "#", :class => "btn btn-success disabled") %>
+          <% end %>
+      <% else %>
+        <%= link_to("Pay With Alipay", pay_with_alipay_order_path, :method => :post, :class => "btn btn-info") %>
+        <%= link_to("Pay With Wechat", pay_with_wechat_order_path, :method => :post, :class => "btn btn-success") %>
+      <% end %>
+
     </div>
   </div>
 </div>

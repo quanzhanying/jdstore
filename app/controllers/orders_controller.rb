@@ -29,11 +29,11 @@ class OrdersController < ApplicationController
     def pay_with_alipay
         @order = Order.find_by_token(params[:id])
         @product_lists = @order.product_lists
-      if @order.is_padd == 1
+      if @order.is_paid == 1
         flash[:alert] = 'You are already paid.'
         render :back
       else
-        @order.is_padd = 1
+        @order.is_paid = 1
         @order.payment_method = 'alipay'
         @order.save
       render 'orders/alipay'
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
     def pay_with_wechat
       @order = Order.find_by_token(params[:id])
       @product_lists = @order.product_lists
-      @order.is_padd = 1
+      @order.is_paid = 1
       @order.payment_method = 'wechat'
       @order.save
       render 'orders/wechat'

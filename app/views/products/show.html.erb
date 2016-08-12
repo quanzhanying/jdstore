@@ -11,7 +11,7 @@
             <h3> <%= @product.title %> </h3>
             <h4>Price: &nbsp ¥ <%= @product.price %></h4>
             <h4>Quantity: &nbsp<%= @product.quantity %></h4>
-      <div class="pull-left">
+      <div class="pull-right">
         <% if @product.quantity>0 %>
           <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-success" ) %>
         <% else %>
