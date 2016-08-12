@@ -45,10 +45,12 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
-    redirect_to :back
-  end
+      @product = Product.find(params[:id])
+  	  if @product.quantity > 0
+      current_cart.add_product_to_cart(@product)
+      end
+      redirect_to :back
+    end
 
   private
 

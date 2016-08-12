@@ -32,8 +32,15 @@
     </div>
 
     <div class="col-md-3 selector3">
-      <%= link_to("加入购物车", add_to_cart_product_path(@product),
-  :method => :post, :class => "btn btn-danger") %>
+      <% if @product.quantity > 0 %>
+      	<%= link_to("加入购物车", add_to_cart_product_path(@product),
+        :method => :post, :class => "btn btn-danger") %>
+      <% else %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product),
+      :method => :post, :class => "btn btn-danger disabled") %>
+      <% end %>
+
+
     </div>
   </div>
 </body>

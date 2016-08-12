@@ -18,7 +18,13 @@ Rails.application.routes.draw do
   end
 
   resources :orders
-  resources :cart_items
+  
+  resources :cart_items do
+    member do
+      post :increment
+      post :decrement
+    end
+  end
 
   root 'products#index'
 end
