@@ -28,6 +28,38 @@ class OrdersController < ApplicationController
     end
   end
 
+  def pay_with_alipay
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      flash[:warning] = "Already Paid"
+      redirect_to :back
+    else
+      @order.is_paid = true
+      if @order.save
+        flash[:notice] = "Paid Success"
+      else
+        flash[:alert] = "Paid Failed"
+        redirect_to :back
+      end
+    end
+  end
+
+    def pay_with_wechat
+      @order = Order.find(params[:id])
+      if @order.is_paid
+        flash[:warning] = "Already Paid"
+        redirect_to :back
+      else
+        @order.is_paid = true
+          if @order.save
+            flash[:notice] = "Paid Success"
+          else
+            flash[:alert] = "Paid Failed"
+            redirect_to :back
+          end
+        end
+      end
+
   private
 
   def order_params

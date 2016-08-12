@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
     devise_for :users
 
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_wechat
+      post :pay_with_alipay
+    end
+  end
 
   namespace :admin do
     resources :products do
