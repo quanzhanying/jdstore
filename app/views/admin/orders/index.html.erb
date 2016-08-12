@@ -1,6 +1,5 @@
-<h1>
-  &nbsp My Orders History
-</h1>
+<h1>&nbsp Orders Manager Panel</h1>
+
 
 <div class="container-fluid ">
   <table class="table table-bordered">
@@ -51,7 +50,7 @@
         <% end %>
       </td>
       <td>
-        <%= link_to("Delete", account_order_path(order), :method => :delete, :data => { :confirm => "Are you sure?" } , :class => "btn btn-xs btn-danger") %>
+        <%= link_to("Delete", admin_order_path(order), :method => :delete, :data => { :confirm => "Are you sure?" } , :class => "btn btn-xs btn-danger") %>
       </td>
     </tr>
   </tbody>

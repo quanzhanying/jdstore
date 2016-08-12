@@ -56,7 +56,7 @@
       </tbody>
     </table>
     <div class="group pull-right">
-      <%= link_to("Back", :back, :class => "btn btn-default") %>
+      <%= link_to("Back", account_orders_path, :class => "btn btn-default") %>
       <% if @order.is_paid? %>
           <% if @order.payment_method == 'alipay' %>
           <%= link_to("You have already pay with Alipay", "#", :class => "btn btn-info disabled") %>
