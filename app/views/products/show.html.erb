@@ -1,0 +1,33 @@
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-8-offset-1">
+          <p class="thumbnail">
+            <%= image_tag(@product.avatar_url(:large)) if @product.avatar %>
+          </p>
+        </div>
+
+      <div class="col-xs-12 col-sm-5 col-md-8-offset-1">
+            <h3> <%= @product.title %> </h3>
+            <h4>Price: &nbsp ¥ <%= @product.price %></h4>
+            <h4>Quantity: &nbsp<%= @product.quantity %></h4>
+      <div class="pull-right">
+        <% if @product.quantity>0 %>
+          <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-success" ) %>
+        <% else %>
+          <%= link_to("Out of Stock", "#", :class => "btn btn-warning disabled" ) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<hr>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-8-offset-1">
+          <p><%= simple_format(@product.description) %></p>
+        </div>
+      </div>
+    </div>
+<hr>
