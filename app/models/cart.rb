@@ -2,6 +2,10 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products,through: :cart_items,source: :product
 
+  def updated_at_formate
+    self.updated_at.strftime("%Y-%m-%d %H:%M:%S")
+  end
+
   def add_product_to_cart(product)
     cart_item = cart_items.build
     cart_item.product = product
