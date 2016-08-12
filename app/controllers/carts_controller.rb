@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 
-  def delete_all
+  def destroy_cart
     # @cart = Cart.find(session[:cart_id])
     #   @cart.destroy
     current_cart.destroy

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :carts do
     collection do
-      delete :delete_all
+      delete :destroy_cart
       post :checkout
     end
     member do
