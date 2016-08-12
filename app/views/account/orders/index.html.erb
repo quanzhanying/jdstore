@@ -36,6 +36,7 @@ body {
     <h4> 全部订单 </h4>
 
     <div class="checkout clearfix">
+      <%= link_to("清空订单", clear_order_account_orders_path, method: :post, class: "btn btn-sm btn-danger pull-right", data: { confirm: "确定要清空所有订单么?" }) %>
     </div>
     <br/>
     <table class="table table-bordered order-tb">
@@ -65,12 +66,12 @@ body {
           <tr class="tr-td">
             <td colspan="4">
               <% order.product_lists.each do |p_list| %>
-                <div style="float:left;margin-top:20px;">
-                <%= image_tag(p_list.image,height: '60', width: '60') %>
-                <%= p_list.product_name %> x <%= p_list.quantity %>
-                ¥<%= p_list.product_price %>
-                <%= order.shipping_name %>
-                <div>
+                <div style="text-align:left;margin-top:20px;">
+                  <%= image_tag(p_list.image,height: '60', width: '60') %>
+                  <%= p_list.product_name %> x <%= p_list.quantity %>
+                  ¥<%= p_list.product_price %>
+                  <%= order.shipping_name %>
+                </div>
               <% end %>
             </td>
             <td >
@@ -82,6 +83,8 @@ body {
             </td>
             <td>
               <%= link_to("订单详情",account_order_path(order.token)) %>
+
+              <%= render_order_delete(order) %>
             </td>
           </tr>
           </tbody>

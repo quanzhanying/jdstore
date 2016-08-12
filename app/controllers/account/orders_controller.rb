@@ -14,6 +14,20 @@ class Account::OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def destroy
+    @order = Order.find_by_token(params[:id])
+
+    @order.destroy
+    redirect_to account_orders_path
+  end
+
+  #清空订单
+  def clear_order
+    current_user.orders.destroy_all
+    flash[:alert] = "订单已清空"
+    redirect_to account_orders_path
+  end
+
   def appl_cancell_order
     @order = Order.find(params[:id])
     @order.appl_cancell_order!

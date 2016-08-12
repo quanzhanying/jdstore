@@ -68,6 +68,9 @@ class OrdersController < ApplicationController
 
     if @order.save
       @order.make_payment!
+
+      current_cart.cart_items.destroy_all
+
       flash[:notice] = "支付成功"
       redirect_to account_orders_path
     else

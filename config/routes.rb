@@ -35,6 +35,10 @@ Rails.application.routes.draw do
       member do
         post :appl_cancell_order
         post :appl_return_good
+
+      end
+      collection do
+        post :clear_order
       end
     end
   end
