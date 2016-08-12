@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2> 购物车 </h2>
+     <%= link_to("删除全部",delall_carts_path, class: "btn btn-md btn-danger pull-right",
+          method: :delete, data: { confirm:  "Are you sure?" } ) %>
+          <br /> <br />
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">商品资讯</th>
+          <th>单价</th>
+          <th>库存</th>
+          <th>购买</th>
+          <th>选项</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+            <% if cart_item.product.image.present? %>
+            <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+             <% image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+             <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+          </td>
+          <td>
+            <%= cart_item.product.price  %> RMB
+          </td>
+          <td>
+            <%= cart_item.product.quantity %>
+          <td>
+            <%= cart_item.quantity %>
+          </td>
+        <td>
+        <% if cart_item.quantity < 1 %>
+        <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %>
+        <%= link_to("-", "#", class:"btn btn-xs btn-success disabled") %>
+        <% elsif cart_item.quantity < cart_item.product.quantity %>
+        <%= link_to("+", upitem_cart_path(cart_item),method: :upitem, class:"btn btn-xs btn-success") %>
+        <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
+
+        <% else %>
+        <%= link_to("+", "#", class:"btn btn-xs btn-success disabled") %>
+        <%= link_to("-", downitem_cart_path(cart_item),method: :downitem, class:"btn btn-xs btn-primary") %>
+        <% end %>
+      </td>
+          <td><%= link_to("删除",minusitem_cart_path(cart_item), class: "btn btn-xs btn-danger",
+               method: :delete, data: { confirm:  "Are you sure?" } ) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <div class="total clearfix">
+      <span class="pull-right">
+        <span><%= render_cart_total_price(current_cart) %></span> RMB
+
+      </span>
+    </div>
+
+    <hr>
+    <div class="checkout clearfix">
+      <!-- <%# current_cart.cart_items.each do |f| %> -->
+      <!-- <%# if f.quantity >= 1 %> -->
+      <%= link_to("确认结账",checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <!-- <%# end %> -->
+      <%# end %>
+    </div>
+  </div>
+</div>

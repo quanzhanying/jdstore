@@ -1,0 +1,41 @@
+
+<div class="col-md-12">
+  <span class="pull-right">
+    <% if current_user && current_user.is_member_of?(@product) %>
+    <label class="label label-success"> 已收藏 </label>
+    <%= link_to("取消收藏", quit_product_path(@product), method: :post, class:"btn btn-default") %>
+    <% else %>
+    <label class="label label-warning"> 未收藏 </label>
+    <%= link_to("加入收藏", join_product_path(@product), method: :post, class:"btn btn-default") %>
+    <% end %>
+  </span>
+  <!-- <div style="float:right; margin: 10px"><%= link_to("加入收藏夹", "#",class: "btn btn-warning pull-right") %></div> -->
+
+<style>
+table td{padding: 5px 2px}
+.right { text-align: right}
+</style>
+  <table class="table table-hover">
+
+    <tbody>
+      <tr>
+  <td><%= image_tag @product.image.medium %></td>
+  <td><h2><%= @product.title%></h2>
+
+    <table style="margin-top: 100px">
+<tr><td>数量:</td>
+  <td>  <%= @product.quantity %></td></tr>
+<tr><td class="right">$</td>
+<td><%= @product.price %></td> </tr>
+    </table>
+   <% if @product.quantity > 0 %>
+<div style="float:right"><%= link_to("加入购物车",add_to_cart_product_path(@product), :method => :post, class: "btn btn-danger pull-right")%></div>
+  <% end %>
+
+</tr>
+</tbody>
+</table>
+
+<!-- ;margin-top:-100px -->
+
+</div>

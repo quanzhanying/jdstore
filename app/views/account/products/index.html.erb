@@ -1,0 +1,27 @@
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>品名</td>
+        <td>叙述</td>
+        <td>价格</td>
+      </tr>
+    </thead>
+    <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td> <%= product.id %>
+      <td>
+        <%= link_to(product.title, product_path(product)) %>
+      </td>
+      <td><%= product.description %></td>
+
+      <td><%= product.price %></td>
+
+
+      </td>
+
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
