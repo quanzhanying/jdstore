@@ -1,0 +1,44 @@
+<head>
+  <style>
+    table,th,td{
+      border: 1px solid #dddddd;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+  <body>
+
+
+
+    <table class="table table-boldered">
+      <thead>
+        <td>已下订单</td>
+        <td>订单编号</td>
+        <td>送货至</td>
+        <td>订单明细</td>
+        <td>总计</td>
+      </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+			<tr>
+            <td><%= order.created_at %></td>
+            <td><%= order.token %></td>
+            <td><%= order.shipping_name %></td>
+
+            <td><% order.product_lists.each do |product_list|%>
+                 <%= product_list.product_name %>
+                <br>¥ <%= product_list.product_price %>
+                <br>
+                <% end %>
+
+            </td>
+            <td><%= order.total %></td>
+            </tr>
+          <% end %>
+
+      </tbody>
+    </table>
+
+
+  </body>

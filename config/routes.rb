@@ -18,12 +18,16 @@ Rails.application.routes.draw do
   end
 
   resources :orders
-  
+
   resources :cart_items do
     member do
       post :increment
       post :decrement
     end
+  end
+
+  namespace :account do
+    resources :orders
   end
 
   root 'products#index'
