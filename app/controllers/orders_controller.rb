@@ -35,17 +35,17 @@ class OrdersController < ApplicationController
       flash[:warning] = "不可重复支付"
       redirect_to :back
     else
-      @order.is_paid = true
-      if @order.save
-         flash[:notice] = "支付成功"
-         OrderMailer.notify_order_placed(@order).deliver!
-         redirect_to account_orders_path
-      else
-         flash[:alert] = "支付失败"
-         redirect_to :back
-      end
+      @order.make_payment!
+      # @order.is_paid = true
+      # if @order.save
+      flash[:notice] = "支付成功"
+      OrderMailer.notify_order_placed(@order).deliver!
+      redirect_to account_orders_path
+      # else
+      #    flash[:alert] = "支付失败"
+      #    redirect_to :back
+      # end
     end
-
   end
 
   def pay_with_alipay
@@ -54,17 +54,17 @@ class OrdersController < ApplicationController
       flash[:warning] = "不可重复支付"
       redirect_to :back
     else
-      @order.is_paid = true
-      if @order.save
-         flash[:notice] = "支付成功"
-         OrderMailer.notify_order_placed(@order).deliver!
-         redirect_to account_orders_path
-      else
-         flash[:alert] = "支付失败"
-         redirect_to :back
-      end
+      @order.make_payment!
+      # @order.is_paid = true
+      # if @order.save
+      flash[:notice] = "支付成功"
+      OrderMailer.notify_order_placed(@order).deliver!
+      redirect_to account_orders_path
+      # else
+      #    flash[:alert] = "支付失败"
+      #    redirect_to :back
+      # end
     end
-
   end
 
   private

@@ -1,0 +1,38 @@
+<h2>订单列表</h2>
+
+<br />
+
+<% @orders.each do |order| %>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td>
+        <%= order.created_at %> |
+        订单号:
+        <%= link_to(order.token, order_path(order.token)) %>
+      </td>
+    </tr>
+
+  </tbody>
+  <tbody>
+    <tr>
+      <td>
+        <% order.product_lists.each do |product_list| %>
+          <%= product_list.product_name %> | ￥ <%= product_list.product_price %> |
+          <%= product_list.quantity %>
+          <br />
+        <% end %>
+      </td>
+      <td>
+        总价 ￥
+        <%= order.total %>
+      </td>
+      <td>
+        <%= render_order_status(order) %><br />
+        <%= link_to("取消订单", cancel_admin_order_path(order), method: :post) %><br />
+        <%= link_to("出货", ship_admin_order_path(order), method: :post) %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
