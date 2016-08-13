@@ -1,8 +1,9 @@
 <h1>Products Manager Panel</h1>
 <div class="pull-right">
-  <%= link_to("Add a Product", new_admin_product_path, :class => "btn btn-default" ) %>
+  <%= link_to("Add a Product", new_admin_product_path, :class => "btn btn-success" ) %>
 </div>
 <table class="table table-boldered">
+  <thead>
   <tr>
     <th>Product</th>
     <th>IMG</th>
@@ -10,13 +11,15 @@
     <th>Quantity</th>
     <th>Oprate</th>
   </tr>
+</thead>
+<tbody>
   <% @products.each do |product| %>
   <tr>
     <td>
       <%= link_to(product.title, product_path(product),) %>
     </td>
-    <td>
-      <%= link_to(image_tag(product.avatar_url(:small)), product_path(product)) %>
+    <td >
+      <%= link_to(image_tag(product.avatar_url(:small)), product_path(product),) %>
     </td>
     <td>
       <%= product.price %>
@@ -30,4 +33,5 @@
     </td>
   </tr>
   <% end %>
+</tbody>
 </table>

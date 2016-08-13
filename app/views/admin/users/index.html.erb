@@ -18,16 +18,16 @@
       <%= user.email %>
     </td>
     <td>
-      <%= user.created_at %>
+      <%= user.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
     </td>
     <td>
       <%= render_user_level(user) %>
     </td>
     <td>
       <% if !user.is_admin %>
-        <%= link_to("Set As Admin", promote_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-default") %>
+        <%= link_to("Set As Admin", promote_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-danger") %>
       <% else %>
-        <%= link_to("Set As User", demote_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-default") %>
+        <%= link_to("Set As User", demote_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-success") %>
       <% end %>
     </td>
   </tr>
