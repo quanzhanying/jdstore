@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> My Cart </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to product_path(cart_item.product) do %>
+                <% if cart_item.product.avatar.present? %>
+                  <%= image_tag(cart_item.product.avatar.small.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+              <% if cart_item.quantity > 1 %>
+                <%= link_to("-1", decrease_cart_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+              <% else %>
+                <%= link_to("-1", "#", :class => "btn btn-xs btn-info disabled") %>
+              <% end %>
+              <%= cart_item.quantity %>
+              <% if cart_item.quantity < cart_item.product.quantity %>
+                <%= link_to("+1", increase_cart_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+              <% else %>
+                <%= link_to("+1", "#", :class => "btn btn-xs btn-info disabled") %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to("Delete", cart_path(cart_item), :method => :delete, :class => "btn btn-xs btn-danger") %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span> Total: <%= render_cart_total_price(current_cart) %></span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+
+      <%= link_to("Empty Cart",  empty_cart_items_cart_path(current_cart), method: :post, :data => { :confirm => "Are you sure?" }, class: "btn btn-lg btn-danger pull-left" ) %>
+
+      <%= link_to("Check Out", checkout_carts_path, method: :post, class: "btn btn-lg btn-success pull-right") %>
+    </div>
+  </div>
+</div>
