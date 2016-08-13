@@ -48,8 +48,12 @@
       </td>
       <td>
         <%= render_order_status(order) %><br />
-        <%= link_to("取消订单", cancel_admin_order_path(order), method: :post) %><br />
-        <%= link_to("出货", ship_admin_order_path(order), method: :post) %>
+        <% if order.order_cancelled? %>
+        <%= link_to("取消订单", cancel_admin_order_path(order), method: :post, class: "btn disabled") %><br />
+        <% else %>
+        <%= link_to("取消订单", cancel_admin_order_path(order), method: :post, class: "btn") %><br />
+        <% end %>
+        <%= link_to("出货", ship_admin_order_path(order), method: :post,  class: "btn") %>
       </td>
     </tr>
   </tbody>
