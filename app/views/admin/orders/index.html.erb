@@ -15,11 +15,30 @@
 
   </tbody>
   <tbody>
+<!--
+                    <% order.product_lists.each do |product_list| %>
+                    <tr>
+                        <td>
+                            <%= product_list.product_name %>
+                        </td>
+                        <td>
+                            <%= product_list.product_price %>
+                        </td>
+                        <td>
+                            <%= product_list.quantity %>
+                        </td>
+                        <td>
+                            <%= product_list.product_price * product_list.quantity %>
+                        </td>
+                    </tr>
+                    <% end %> -->
+
     <tr>
-      <td>
+      <td colspan="3">
         <% order.product_lists.each do |product_list| %>
-          <%= product_list.product_name %> | ￥ <%= product_list.product_price %> |
-          <%= product_list.quantity %>
+          <%= product_list.product_name %>
+          <span class="pull-right"> ￥ <%= product_list.product_price %> |
+          <%= product_list.quantity %></span>
           <br />
         <% end %>
       </td>

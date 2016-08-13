@@ -1,13 +1,11 @@
 <div class="row">
     <div class="col-md-12">
         <h2>订单明细</h2>
-        <span class="pull-right">
-          <% if @order.is_paid %>
-            <label class="label label-success"> 已支付 </label>
-          <% else %>
-            <label class="label label-warning"> 未支付 </label>
-          <% end %>
-        </span>
+        <h4 class="pull-right">
+
+          <label class="label label-info"> <%= render_order_status(@order) %>  </label>
+
+        </h4>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -67,15 +65,19 @@
                 </tr>
             </tbody>
         </table>
-
+        <div class="pull-left">
+          <% if @order.order_placed? || @order.paid? %>
+            <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn  btn-info") %>
+          <% end %>
+        </div>
         <div class="group pull-right">
-            <%# if !@cart.cart_items.quantity  %>
+            <% if !@order.is_paid %>
             <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order), method: :post, class: "btn  btn-danger") %>
 
             <%= link_to("以微信支付", pay_with_wechat_order_path(@order), method: :post, class: "btn  btn-danger") %>
 
             <%# else %>
-            <%# end %>
+            <% end %>
         </div>
 
     </div>
