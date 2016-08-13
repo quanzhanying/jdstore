@@ -1,0 +1,38 @@
+<div class="pull-right">
+  <%= link_to("Add new product", new_admin_product_path, class: "btn btn-info") %>
+</div>
+
+
+<div class="pull-right">
+  <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-primary")%>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <!-- <th>#</th>
+      <th>品名</th>
+      <th>叙述</th>
+      <th>库存</th>
+      <th>价格</th>
+      <th>选项</th>
+      <th>创建日期</th> -->
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <tr>
+        <td><%= image_tag(@product.image_url(:medium)) %></td>
+        <td>
+          <h2><%= @product.title %></h2>
+          <p><%= simple_format(@product.description) %></p>
+
+          <p>数量：<%= @product.quantity %></p>
+          <p>价格：<%= @product.price %></p>
+          <p><%= @product.created_at %></p>
+        </td>
+      </tr>
+
+  </tbody>
+</table>
