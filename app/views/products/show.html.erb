@@ -17,7 +17,11 @@
 <body>
   <div class="row">
     <div class="col-md-3">
-      <%= image_tag(@product.image.medium) %>
+      <% if @product.image.present? %>
+            <%= image_tag(@product.image.medium) %>
+      <% else %>
+            <%= image_tag("http://imageshack.com/a/img921/9103/wGKUot.jpg") %>
+      <% end %>
     </div>
 
     <div class="col-md-3">
@@ -39,8 +43,7 @@
         <%= link_to("加入购物车", add_to_cart_product_path(@product),
       :method => :post, :class => "btn btn-danger disabled") %>
       <% end %>
-
-
     </div>
+    
   </div>
 </body>

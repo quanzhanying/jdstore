@@ -1,7 +1,12 @@
 <% @products.each do |product| %>
   <div class="col-md-2">
     <div class="img-thumbnail">
-      <%= link_to(image_tag(product.image.thumb), product_path(product)) %>
+        <% if product.image.present? %>
+          <%= link_to(image_tag(product.image.thumb), product_path(product)) %>
+        <% else %>
+          <%= link_to(image_tag("http://imageshack.com/a/img921/9103/wGKUot.jpg"), product_path(product)) %>
+        <% end %>
+
     </div>
 
     <br><br>

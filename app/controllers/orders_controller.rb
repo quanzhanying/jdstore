@@ -29,9 +29,26 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+
+  def pay_with_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = "true"
+    @order.payment_method = "支付宝支付"
+    @order.save
+    redirect_to :back, notice: '支付成功'
+  end
+
+  def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = "true"
+    @order.payment_method = "微信支付"
+    @order.save
+    redirect_to :back, notice: '支付成功'
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
   end
 end
