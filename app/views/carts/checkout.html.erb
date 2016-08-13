@@ -9,6 +9,7 @@
           <th width="80%">Product</th>
           <th>Price</th>
           <th>Quantity</th>
+          <th>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -19,13 +20,14 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart_item.product.price %>
-            </td>
-
-            <td>
               <%= cart_item.quantity %>
             </td>
-
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+              <%= cart_item.quantity * cart_item.product.price %>
+            </td>
           </tr>
         <% end %>
 

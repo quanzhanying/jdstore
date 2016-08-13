@@ -6,8 +6,14 @@ class Account::OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find_by_token(params[:id])
-    @product_lists = @order.product_lists
+    if current_user.admin?
+      @order = Order.find_by_token(params[:id])
+      @product_lists = @order.product_lists
+    else
+      @order = current_user.orders.find_by_token(params[:id])
+      @product_lists = @order.product_lists
+    end
+
   end
 
   def destroy
