@@ -11,7 +11,7 @@ class CartItemsController < ApplicationController
 
 def decrement
     @cart_item = current_cart.cart_items.find(params[:id])
-    if @cart_item.quantity > 0
+    if @cart_item.quantity > 1
     @cart_item.quantity -= 1
     end
     @cart_item.save
