@@ -7,9 +7,9 @@
       <thead>
         <tr>
           <th width="80%">Product</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
+          <th>Unit price</th>
+          <th>Qty</th>
+          <th>Amount</th>
         </tr>
       </thead>
       <tbody>
@@ -20,10 +20,10 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart_item.quantity %>
+              <%= cart_item.product.price %>
             </td>
             <td>
-              <%= cart_item.product.price %>
+              <%= cart_item.quantity %>
             </td>
             <td>
               <%= cart_item.quantity * cart_item.product.price %>
@@ -36,7 +36,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        Total: <%= render_cart_total_price(current_cart) %> RMB
+        Total: ¥<%= render_cart_total_price(current_cart) %> RMB
       </span>
     </div>
 

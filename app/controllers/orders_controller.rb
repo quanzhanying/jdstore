@@ -37,17 +37,24 @@ class OrdersController < ApplicationController
         @order.payment_method = 'alipay'
         @order.save
       render 'orders/alipay'
+       OrderMailer.notify_order_placed(@order).deliver!
       end
     end
 
     def pay_with_wechat
       @order = Order.find_by_token(params[:id])
       @product_lists = @order.product_lists
+      if @order.is_paid == 1
+        flash[:alert] = 'You are already paid.'
+        render :back
+      else
       @order.is_paid = 1
       @order.payment_method = 'wechat'
       @order.save
       render 'orders/wechat'
+      OrderMailer.notify_order_placed(@order).deliver!
     end
+   end
 
   private
 
