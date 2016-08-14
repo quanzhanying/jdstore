@@ -60,6 +60,13 @@ class OrdersController < ApplicationController
         end
       end
 
+      # def cancel
+      #   @order = Order.find(params[:id])
+      #   OrderMailer.notify_cancel_order(@order).deliver!
+      #   flash[:notice] = "Applied"
+      #   redirect_to :back
+      # end
+
   private
 
   def order_params

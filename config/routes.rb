@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       post :pay_with_wechat
       post :pay_with_alipay
+      post :cancel
     end
   end
 
@@ -48,6 +49,10 @@ Rails.application.routes.draw do
       post :add_an_item
       post :minus_an_item
     end
+  end
+
+  namespace :account do
+    resources :orders
   end
 
 
