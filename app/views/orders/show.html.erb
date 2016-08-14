@@ -2,6 +2,13 @@
   <div class="col-md-12">
 
     <h2> Order Detail </h2>
+    <span class="pull-right">
+      <% if @order.is_paid %>
+        <label class="label label-success"> Paid </label>
+      <% else %>
+        <label class="label label-warning"> Unpaid </label>
+      <% end %>
+    </span>
 
     <table class="table table-bordered">
       <thead>

@@ -2,7 +2,7 @@ class Account::OrdersController < ApplicationController
   before_filter :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
-    @orders = Order.all
+    @orders = Order.recent
 
   end
 
@@ -10,5 +10,5 @@ class Account::OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
 
   end
-  
+
 end

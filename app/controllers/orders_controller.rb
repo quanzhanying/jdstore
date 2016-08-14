@@ -32,15 +32,45 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
-    @product_lists = @order.product_lists
-    render 'orders/alipay'
+
+    if @order.is_paid
+      flash[:warning] = "You have already paid this order."
+      redirect_to :back
+      return
+    end
+
+    @order.is_paid = true
+    if @order.save
+      flash[:notice] = "Paid Succeed"
+      redirect_to account_orders_path
+    else
+      flash[:alert] = "Paid Failed"
+      redirect_to :back
+
+    #@product_lists = @order.product_lists
+    #render 'orders/alipay'
 
   end
 
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
-    @product_lists = @order.product_lists
-    render 'orders/wechat'
+
+    if @order.is_paid
+      flash[:warning] = "You have already paid this order."
+      redirect_to :back
+      return
+    end
+
+    @order.is_paid = true
+    if @order.save
+      flash[:notice] = "Paid Succeed"
+      redirect_to account_orders_path
+    else
+      flash[:alert] = "Paid Failed"
+      redirect_to :back
+
+    #@product_lists = @order.product_lists
+    #render 'orders/wechat'
 
   end
 
@@ -49,4 +79,5 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
   end
+
 end

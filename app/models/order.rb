@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   has_many :product_lists
   before_create :generate_token
 
+  scope :recent, -> {order("created_at DESC")}
+
   def generate_token
     self.token = SecureRandom.uuid
 
