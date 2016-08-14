@@ -1,0 +1,15 @@
+</h1>
+
+ <div class="container-fluid">
+
+  <% @orders.each do |order| %>
+  <table>
+    <tr>
+      <td>
+        <%= link_to(order.id, account_order_path(order)) %>
+      </td>
+    </tr>
+  </table>
+  <% end %>
+
+ </div>
