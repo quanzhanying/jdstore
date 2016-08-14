@@ -36,4 +36,15 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
+
+  namespace :admin do
+    resources :orders do
+      member do
+        patch :ship
+        patch :deliver
+        patch :return_good
+        patch :cancell_order
+      end
+    end
+  end
 end

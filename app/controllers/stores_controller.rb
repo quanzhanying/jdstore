@@ -6,9 +6,9 @@ class StoresController < ApplicationController
     @user = User.all
   end
 
-  def require_is_superadmin
-    if !current_user.superadmin?
-      redirect_to root_path, alert: "You are not superadmin seriously"
-    end
-  end
+  # def require_is_superadmin
+  #   if !current_user.superadmin?
+  #     redirect_to root_path, alert: "You are not superadmin seriously"
+  #   end
+  # end
 end

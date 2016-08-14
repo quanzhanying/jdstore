@@ -41,6 +41,7 @@ gem "annotate"
 gem "letter_opener", group: :development
 gem "fog"
 gem "figaro"
+gem "aasm"
 
 group :production do
   gem 'pg'

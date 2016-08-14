@@ -72,6 +72,7 @@ class OrdersController < ApplicationController
     @order.is_paid = true
     @order.payment_method = params[:payment_method] # 如果我把这个参数写在permit里面，那会有问题吧
     if @order.save
+    @order.make_payment!
     redirect_to account_orders_path, notice: "You have paid order No.#{@order.id} just now"
     end
   end

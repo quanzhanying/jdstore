@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_cart #因为current_cart只是下面的一个方法，不是model，没法current_cart.products，所以在这里说他是helper的方法
      # helper_method让下面的这个方法变成了helper的方法（或者说模块）， 这样才能在views里面应用，controller的方法是不能在views里面引用的。
 
+     def require_is_superadmin
+       if !current_user.superadmin?
+         redirect_to root_path, alert: "You are not superadmin seriously"
+       end
+     end
+
   def current_cart
     @current_cart ||= find_cart #可以试验一下拆开 ||=
   end
