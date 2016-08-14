@@ -25,7 +25,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
-  
+  has_many :products
+
   def admin?
     is_admin
   end
