@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       save_product_list
+      OrderMailer.notify_order_placed(@order).deliver!
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout' # 调用carts下面的checkout页面，调用template
@@ -75,6 +76,14 @@ class OrdersController < ApplicationController
     @order.make_payment!
     redirect_to account_orders_path, notice: "You have paid order No.#{@order.id} just now"
     end
+  end
+
+  def apply_cancell
+    @order = Order.find(params[:id]) # Will it cause to cancell other's orders?
+    @order.apply_cancell!
+    OrderMailer.notify_apply_cancell(@order).deliver!
+    flash[:notice] = "Applied! We have informed the administrator!"
+    redirect_to :back
   end
 
 

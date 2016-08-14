@@ -45,6 +45,9 @@
         </td>
         <td>
           <!-- 做一个Action的下拉，下拉里面有simple_form -->
+          <% if o.order_cancelled? %>
+            <button type="button" class="btn btn-default" disabled="disabled">Cancelled</button>
+          <% else %>
             <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <%= "Action" %>
@@ -54,17 +57,22 @@
                 <%#= simple_form_for o, :url => make_transitions_admin_order_path(o) do |form| %>
                   <!-- <li><%#= form.input :aasm_state, hint: "Handle Orders",collection: [:ship, :deliver, :return_good, :cancell_order], :input_html => {:onchange => "this.form.submit()"}%></li> -->
                 <%# end %>
-                <!-- <#%= if o.aasm_state == "order_placed" then %> -->
-                <!-- <#%= if o.aasm_state == :order_placed then %> -->
+                <!-- <#%= if o.aasm_state == "order_placed" then %> 傻了，看官方文档上说了，用o.order_placed?-->
+                <% if o.paid? %>
                   <li><%= link_to("Ship", ship_admin_order_path(o), class: "btn btn-primary", method: :patch, data: {confirm: "Are you sure?"}) %></li>
-                <!-- <#%= end %> -->
-                <!-- <#%= if o.aasm_state == "shipping" then %> -->
+                <% end %>
+                <% if o.shipping? %>
                   <li><%= link_to("Delivered", deliver_admin_order_path(o), class:"btn btn-primary", method: :patch ) %></li>
-                <!-- <#%= end %> -->
-                <li><%= link_to("Confirm Return Good", return_good_admin_order_path(o), class:"btn btn-primary", method: :patch) %></li>
-                <li><%= link_to("Confirm Cancell Order", cancell_order_admin_order_path(o), class:"btn btn-danger", method: :patch, data: {confirm: "Are you sure?"} ) %></li>
+                <% end %>
+                <% if o.shipped? %>
+                  <li><%= link_to("Confirm Return Good", return_good_admin_order_path(o), class:"btn btn-primary", method: :patch) %></li>
+                <% end %>
+                <% if o.order_placed? || o.paid? || o.good_returned? || o.buyer_apply_to_cancell? %>
+                  <li><%= link_to("Cancell Order", cancell_order_admin_order_path(o), class:"btn btn-danger", method: :patch, data: {confirm: "Are you sure?"} ) %></li>
+                <% end %>
               </ul>
             </div>
+          <% end %>
           <!-- 下拉结束 -->
         </td>
       </tr>

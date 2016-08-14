@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       post :pay_with_wechat
       post :pay_with_alipay
       post :pay_with_alipay_or_wechat
+      patch :apply_cancell
     end
   end
 
