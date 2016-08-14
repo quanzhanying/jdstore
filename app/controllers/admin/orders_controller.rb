@@ -4,6 +4,21 @@ class Admin::OrdersController < ApplicationController
   def index
     @orders = current_user.orders.all
   end
+
+  def ship
+      @order = Order.find(params[:id])
+      @order.ship!
+      OrderMailer.notify_order_shipping(@order).deliver!
+      redirect_to :back
+    end
+
+    def cancelled
+      @order = Order.find(params[:id])
+      @order.cancell_order!
+      OrderMailer.notify_order_cancelled(@order).deliver!
+      redirect_to :back
+    end
+
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
@@ -57,6 +72,14 @@ class Admin::OrdersController < ApplicationController
         redirect_to :back,alert: "支付不成功"
       end
     end
+    end
+
+    def cancell_order
+      @order = Order.find(params[:id])
+      @order.is_paid = true
+        @order.save
+        OrderMailer.notify_order_placed(@order).deliver!
+        redirect_to :back
     end
 
     private

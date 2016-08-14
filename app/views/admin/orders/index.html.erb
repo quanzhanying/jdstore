@@ -1,8 +1,23 @@
 <div class="row">
   <div class="col-md-12">
 
-    <% @orders.each do |order| %>
     <h4>订单明细</h4>
+
+    <% @orders.each do |order| %> <!--可以任意更改，相应的下面也需要改-->
+      <span class="btn btn-primary"> <%= order.user.email %></span>
+      <span>
+      <% if order.is_paid?%>
+      <label class="label label-danger">用户已申请取消</label>
+      <% end %>
+      </span>
+      <div class="pull-left">
+        <%= render_order_state(order) %>
+      </div>
+
+    <%= link_to("取消订单",cancell_order_admin_order_path(order),method: :post, class: "btn btn-md btn-default pull-right") %>
+    <%= link_to("出货",ship_admin_order_path(order), method: :post, class: "btn btn-md btn-success pull-right") %>
+
+
     <table class="table table-bordered">
       <thead>
         <tr>
