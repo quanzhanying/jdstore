@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 gem "bootstrap-sass"
 gem "simple_form"
+gem "aasm"
+gem "letter_opener", group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
