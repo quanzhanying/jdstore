@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.total = current_cart.total_price
 
-    if @order.save!
+    if @order.save
 
       current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
@@ -42,6 +42,7 @@ class OrdersController < ApplicationController
         redirect_to :back
       end
     end
+    @order.make_payment!
   end
 
     def pay_with_wechat

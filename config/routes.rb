@@ -17,6 +17,7 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
+
     end
 
     resources :users do
@@ -25,6 +26,13 @@ Rails.application.routes.draw do
         post :user
       end
     end
+
+        resources :orders do
+          member do
+            post :cancel
+            post :ship
+          end
+        end
   end
 
 
