@@ -5,6 +5,13 @@ class Account::OrdersController < ApplicationController
       @orders = current_user.orders
     end
 
+    def destroy
+      @order = current_user.orders.find(params[:id])
+      @order.destroy
+      flash[:alert] = 'Delete order success!'
+      redirect_to :back
+    end
+
   # def cancel_order
   #   @order = current_user.orders.find(params[:id])
   #   @order.cancel!

@@ -7,9 +7,10 @@
   <div class="panel panel-success">
       <div class="panel-heading">
           订单号
-          <%= link_to(order.token, order_path(order.token)) %>
+          <%= link_to(order.token, account_orders_path(order.token)) %>
           | Total $
           <%= order.total %>
+          <%= link_to("Delete", account_order_path(order), method: :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger pull-right")%>
       </div>
 
       <div class="panel-body">
