@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root "topics#index"
-  
+  root "products#index"
+
     devise_for :users
 
   resources :orders do
