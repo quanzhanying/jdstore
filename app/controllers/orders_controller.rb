@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     @order.total = current_cart.total_price
-
+    #binding.pry
     if @order.save
 
       current_cart.cart_items.each do |cart_item|
@@ -62,11 +62,19 @@ class OrdersController < ApplicationController
       end
 
       # def cancel
-      #   @order = Order.find(params[:id])
-      #   OrderMailer.notify_cancel_order(@order).deliver!
-      #   flash[:notice] = "Applied"
+      #   @order = current_user.orders.find(params[:id])
+      #   @order.cancel!
+      #   flash[:notice] = "You already cancel the order"
       #   redirect_to :back
       # end
+
+
+      def cancel
+        @order = Order.find(params[:id])
+        OrderMailer.notify_cancel_order(@order).deliver!
+        flash[:notice] = "Applied"
+        redirect_to :back
+      end
 
   private
 

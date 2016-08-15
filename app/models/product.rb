@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   validates :title, presence: true
-
+  #has_many :cart_items
   mount_uploader :attachment, AttachmentUploader
 
   def publish!

@@ -12,8 +12,11 @@ class Account::OrdersController < ApplicationController
       redirect_to :back
     end
 
-  # def cancel_order
-  #   @order = current_user.orders.find(params[:id])
-  #   @order.cancel!
-  # end
+    # def cancel
+    #   @order = current_user.orders.find(params[:id])
+    #   @order.cancel!
+    #   flash[:notice] = "You already cancel the order"
+    #   redirect_to :back
+    # end
+
 end
