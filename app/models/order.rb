@@ -1,5 +1,4 @@
 class Order < ApplicationRecord
-  belongs_to :user
   before_create :generate_token
 
   def generate_token
@@ -11,6 +10,7 @@ class Order < ApplicationRecord
   validates :shipping_name, presence: true
   validates :shipping_address, presence: true
 
+  belongs_to :user
   has_many :product_lists
 
 end

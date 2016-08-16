@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :products
 
 
-
   # resources :users do
+  # end
 
   namespace :admin do
     resources :products
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         post :turn_to_admin
       end
     end
+    resources :orders
   end
 
   resources :products do
@@ -23,18 +24,18 @@ Rails.application.routes.draw do
     end
   end
 
-   resources :carts do
-     member do
-        delete :destroy_item
-        post :increase_item
-        post :decrease_item
-        delete :empty_cart_items
-      end
-
-      collection do
-        post :checkout
-      end
+  resources :carts do
+    member do
+      delete :destroy_item
+      post :increase_item
+      post :decrease_item
+      delete :empty_cart_items
     end
+
+    collection do
+      post :checkout
+    end
+  end
 
   resources :orders do
     member do
@@ -42,8 +43,11 @@ Rails.application.routes.draw do
       post :pay_with_alipay
     end
   end
-    
-  
+
+  namespace :account do
+    resources :orders
+  end
+
   root 'products#index'
 
 end

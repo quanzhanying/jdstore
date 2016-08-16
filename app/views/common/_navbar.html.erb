@@ -20,6 +20,7 @@
                    <li><%= link_to("註冊", new_user_registration_path) %> </li>
                    <li><%= link_to("登入", new_user_session_path) %></li>
 
+
                  <% else %>
 
                     <li>
@@ -34,10 +35,16 @@
                          <b class="caret"></b>
                      </a>
                      <ul class="dropdown-menu">
+
                         <% if current_user.admin? %>
+                       
                         <li> <%= link_to("卖家", admin_products_path) %> </li>
+                        
                         <% end %> 
+                        <li> <%= link_to("我的訂單", account_orders_path) %></li>
+
                          <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                        
                      </ul>
                     </li>
 
