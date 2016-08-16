@@ -6,11 +6,11 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>#买了啥</th>
-          <th>#多少钱</th>
-          <th>#几只</th>
-          <th>#－数量＋</th>
-          <th>#不要了</th>
+          <th>心爱之物</th>
+          <th>银子💰</th>
+          <th>件数</th>
+          <th>➖／➕</th>
+          <th>抛弃🚮</th>
         </tr>
       </thead>
 
@@ -33,18 +33,18 @@
             </td>
             <td>
             
-                <%= link_to("-1", decrease_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+                <%= link_to("-", decrease_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
             
 
               <%= cart_item.quantity %>
 
-               <%= link_to("+1", increase_item_cart_path(cart_item), method: :post, class: "btn btn-xs btn-info") %>
+               <%= link_to("+", increase_item_cart_path(cart_item), method: :post, class: "btn btn-xs btn-info") %>
             
 
             </td>
 
             <td>
-              <%= link_to("Delete", cart_path(cart_item), :method => :delete, class: "btn btn-xs btn-danger") %>
+              <%= link_to("删除", destroy_item_cart_path(cart_item), :method => :delete, class: "btn btn-xs btn-danger") %>
             </td>
 
           </tr>
@@ -69,8 +69,9 @@
             
 
     <div class="checkout clearfix">
-      <%= link_to("一键下单", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
-      <%= link_to("清空购物车", cart_path(current_cart), method: :delete, class: "btn btn-lg btn-info pull-left") %>
+      <%= link_to("一键下单", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+
+      <%= link_to("清空购物车", empty_cart_items_cart_path(current_cart), method: :delete, class: "btn btn-lg btn-info pull-right") %>
     </div>
 
   </div>

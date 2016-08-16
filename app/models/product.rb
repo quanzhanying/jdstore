@@ -3,5 +3,4 @@ class Product < ApplicationRecord
 
 	validates :title, presence: true
 	#validates :description, presence: true
-    #validates :wage_lower_bound, presence: true
 end
