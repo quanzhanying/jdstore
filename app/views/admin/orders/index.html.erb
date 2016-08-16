@@ -5,11 +5,11 @@
 
 <% @orders.each do |order| %>
   <span class="btn btn-primary"> <%= order.user.email %></span>
-  <span>
+  <!-- <span>
     <% if order.is_paid? %>
     <label class="label label-danger"> 用户申请取消 </label>
     <% end %>
-  </span>
+  </span> -->
   <div class="pull-left">
     <%= render_order_state(order) %>
   </div>

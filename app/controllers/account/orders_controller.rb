@@ -14,10 +14,13 @@ class Account::OrdersController < ApplicationController
 
   def cancel
     @order = current_user.orders.find(params[:id])
-    @order.order_cancelled?
+
+    @order.apply_cancel!
+
     OrderMailer.notify_order_cancelled(@order).deliver!
     @order.save
     redirect_to :back
   end
+
 
 end

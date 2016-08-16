@@ -30,11 +30,36 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find(params[:id])
+    if @order.is_paid
+      flash[:warning] = 'Already Paid'
+      redirect_to :back
+    else
+      @order.make_payment!
+      @order.is_paid = true
+      if @order.save
+        # @product.cart_items.each do |cart_item|
+        #   cart_item.product.quantity - 1
+        #   cart_item.product.quantity.save
+        flash[:notice] = 'Paid Success'
+
+
+      end
+        else
+        flash[:alert] = 'Paid Failed'
+        redirect_to :back
+      end
+    end
+    #@order.make_payment
+  end
+
+  def pay_with_wechat
+    @order = Order.find(params[:id])
     OrderMailer.notify_order_placed(@order).deliver!
     if @order.is_paid
       flash[:warning] = 'Already Paid'
       redirect_to :back
     else
+      @order.make_payment!
       @order.is_paid = true
       if @order.save
         flash[:notice] = 'Paid Success'
@@ -43,25 +68,7 @@ class OrdersController < ApplicationController
         redirect_to :back
       end
     end
-    @order.make_payment
   end
-
-  def pay_with_wechat
-    @order = Order.find(params[:id])
-    if @order.is_paid
-      flash[:warning] = 'Already Paid'
-      redirect_to :back
-    else
-      @order.is_paid = true
-      OrderMailer.notify_order_placed(@order).deliver!
-      if @order.save
-        flash[:notice] = 'Paid Success'
-      else
-        flash[:alert] = 'Paid Failed'
-        redirect_to :back
-      end
-      end
-    end
 
   # def cancel
   #   @order = current_user.order.find(params[:id])
@@ -74,7 +81,7 @@ class OrdersController < ApplicationController
   def cancel
     @order = Order.find(params[:id])
     OrderMailer.notify_order_cancelled(@order).deliver!
-    flash[:notice] = "申请取消订单中"
+    flash[:notice] = '申请取消订单中'
     @order.save
     redirect_to :back
   end
