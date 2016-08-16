@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find(params[:id])
+    OrderMailer.notify_order_placed(@order).deliver!
     if @order.is_paid
       flash[:warning] = 'Already Paid'
       redirect_to :back
@@ -41,9 +42,6 @@ class OrdersController < ApplicationController
         #   cart_item.product.quantity - 1
         #   cart_item.product.quantity.save
         flash[:notice] = 'Paid Success'
-
-
-      end
         else
         flash[:alert] = 'Paid Failed'
         redirect_to :back
