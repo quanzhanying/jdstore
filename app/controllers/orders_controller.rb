@@ -52,6 +52,7 @@ class OrdersController < ApplicationController
       redirect_to :back
     else
       @order.is_paid = true
+      OrderMailer.notify_order_placed(@order).deliver!
       if @order.save
         flash[:notice] = 'Paid Success'
       else

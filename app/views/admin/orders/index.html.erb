@@ -14,13 +14,13 @@
     <%= render_order_state(order) %>
   </div>
 
-  <%= link_to("取消订单", "#", class: "btn btn-md btn-default pull-right") %>
-  <%= link_to("出货","#", class: "btn btn-md btn-success pull-right") %>
+  <%= link_to("取消订单", cancel_admin_order_path(order), method: :post, class: "btn btn-md btn-default pull-right") %>
+  <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-md btn-success pull-right") %>
 
   <table class="table table-bordered">
     <thead>
       <tr>
-        <td> 订单号 <%= link_to(order.token, admin_orders_path(order.token)) %> </td>
+        <td> 订单号 <%= link_to(order.token, order_path(order.token)) %> </td>
         <td> 品名 </td>
         <td> 价格 </td>
         <td> 数量 </td>
