@@ -36,39 +36,38 @@ class OrdersController < ApplicationController
     if @order.is_paid
       flash[:warning] = "You have already paid this order."
       redirect_to :back
-      return
-    end
-
-    @order.is_paid = true
-    if @order.save
-      flash[:notice] = "Paid Succeed"
-      redirect_to account_orders_path
     else
-      flash[:alert] = "Paid Failed"
-      redirect_to :back
-
+      @order.is_paid = true
+      if @order.save
+        flash[:notice] = "Paid Succeed"
+        OrderMailer.notify_order_placed(@order).deliver!
+        redirect_to account_orders_path
+      else
+        flash[:alert] = "Paid Failed"
+        redirect_to :back
+      end
     #@product_lists = @order.product_lists
-    #render 'orders/alipay'
+    #render 'orders/wechat'
 
   end
 
+  
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
 
     if @order.is_paid
       flash[:warning] = "You have already paid this order."
       redirect_to :back
-      return
-    end
-
-    @order.is_paid = true
-    if @order.save
-      flash[:notice] = "Paid Succeed"
-      redirect_to account_orders_path
     else
-      flash[:alert] = "Paid Failed"
-      redirect_to :back
-
+      @order.is_paid = true
+      if @order.save
+        flash[:notice] = "Paid Succeed"
+        OrderMailer.notify_order_placed(@order).deliver!
+        redirect_to account_orders_path
+      else
+        flash[:alert] = "Paid Failed"
+        redirect_to :back
+      end
     #@product_lists = @order.product_lists
     #render 'orders/wechat'
 
@@ -79,5 +78,4 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
   end
-
 end
