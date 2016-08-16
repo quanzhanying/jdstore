@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+
+<h2> 订单列表 </h2>
+
+<% @orders.each do |order| %>
+  <div class="panel panel-success">
+      <div class="panel-heading">
+          订单号
+          <%= link_to(order.token, account_orders_path(order.token)) %>
+          | Total $
+          <%= order.total %>
+          <%= render_order_state(order)%>
+          <%= link_to("删除", account_order_path(order), method: :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger pull-right")%>
+
+          <%= link_to("取消订单", cancel_account_order_path(order), method: :post, :data => { :confirm => "Are you sure to cancel?"}, :class => "btn btn-xs btn-danger pull-right")%>
+      </div>
+
+      <div class="panel-body">
+          <% order.product_lists.each do |product_list| %>
+          <td> Movie Name: <%= product_list.product_name %> </td>
+          <br>
+          <td> Unit Price: $ <%= product_list.product_price %></td>
+            <br>
+            <td> Quantity: <%= product_list.quantity %></td>
+            <br/>
+            <% end %>
+      </div>
+  </div>
+  <% end %>
+</div>
+</div>
