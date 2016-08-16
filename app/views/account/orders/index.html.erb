@@ -10,6 +10,7 @@
           <%= link_to(order.token, account_orders_path(order.token)) %>
           | Total $
           <%= order.total %>
+          <%= render_order_state(order)%>
           <%= link_to("Delete", account_order_path(order), method: :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger pull-right")%>
 
           <%= link_to("Cancel", cancel_order_path(order), method: :post, :data => { :confirm => "Are you sure to cancel?"}, :class => "btn btn-xs btn-danger pull-right")%>

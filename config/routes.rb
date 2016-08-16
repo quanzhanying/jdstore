@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "products#index"
+  root 'products#index'
 
-    devise_for :users
+  devise_for :users
 
   resources :orders do
     member do
@@ -26,22 +26,19 @@ Rails.application.routes.draw do
       end
     end
 
-        resources :orders do
-          member do
-            post :cancel
-            post :ship
-          end
-        end
+    resources :orders do
+      member do
+        post :cancel
+        post :ship
+      end
+    end
   end
-
 
   resources :products do
     member do
       post :add_to_cart
     end
   end
-  root 'products#index'
-
 
   resources :carts do
     collection do
@@ -63,7 +60,5 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
-
-
 end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.h
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.h

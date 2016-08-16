@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     @order.total = current_cart.total_price
-    #binding.pry
+    # binding.pry
     if @order.save
 
       current_cart.cart_items.each do |cart_item|
@@ -31,50 +31,52 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find(params[:id])
     if @order.is_paid
-      flash[:warning] = "Already Paid"
+      flash[:warning] = 'Already Paid'
       redirect_to :back
     else
       @order.is_paid = true
       if @order.save
-        flash[:notice] = "Paid Success"
+        flash[:notice] = 'Paid Success'
       else
-        flash[:alert] = "Paid Failed"
+        flash[:alert] = 'Paid Failed'
         redirect_to :back
       end
     end
     @order.make_payment!
   end
 
-    def pay_with_wechat
-      @order = Order.find(params[:id])
-      if @order.is_paid
-        flash[:warning] = "Already Paid"
-        redirect_to :back
+  def pay_with_wechat
+    @order = Order.find(params[:id])
+    if @order.is_paid
+      flash[:warning] = 'Already Paid'
+      redirect_to :back
+    else
+      @order.is_paid = true
+      if @order.save
+        flash[:notice] = 'Paid Success'
       else
-        @order.is_paid = true
-          if @order.save
-            flash[:notice] = "Paid Success"
-          else
-            flash[:alert] = "Paid Failed"
-            redirect_to :back
-          end
-        end
-      end
-
-      # def cancel
-      #   @order = current_user.orders.find(params[:id])
-      #   @order.cancel!
-      #   flash[:notice] = "You already cancel the order"
-      #   redirect_to :back
-      # end
-
-
-      def cancel
-        @order = Order.find(params[:id])
-        OrderMailer.notify_cancel_order(@order).deliver!
-        flash[:notice] = "Applied"
+        flash[:alert] = 'Paid Failed'
         redirect_to :back
       end
+      end
+    end
+
+  def cancel
+    @order = current_user.orders.find(params[:id])
+    #binding.pry
+    @order.cancel_order
+    #binding.pry
+    @order.save
+    flash[:alert] = 'You already cancel the order'
+    redirect_to :back
+  end
+
+  # def cancel
+  #   @order = Order.find(params[:id])
+  #   OrderMailer.notify_cancel_order(@order).deliver!
+  #   flash[:notice] = "Applied"
+  #   redirect_to :back
+  # end
 
   private
 
