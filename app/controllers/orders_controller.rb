@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
         redirect_to :back
       end
     end
-    @order.make_payment!
+    @order.make_payment
   end
 
   def pay_with_wechat
@@ -63,22 +63,21 @@ class OrdersController < ApplicationController
       end
     end
 
-  def cancel
-    @order = current_user.orders.find(params[:id])
-    #binding.pry
-    @order.cancel_order
-    #binding.pry
-    @order.save
-    flash[:alert] = 'You already cancel the order'
-    redirect_to :back
-  end
-
   # def cancel
-  #   @order = Order.find(params[:id])
-  #   OrderMailer.notify_cancel_order(@order).deliver!
-  #   flash[:notice] = "Applied"
+  #   @order = current_user.order.find(params[:id])
+  #   @order.cancel_order
+  #   @order.save
+  #   flash[:alert] = 'You already cancel the order'
   #   redirect_to :back
   # end
+
+  def cancel
+    @order = Order.find(params[:id])
+    OrderMailer.notify_order_cancelled(@order).deliver!
+    flash[:notice] = "申请取消订单中"
+    @order.save
+    redirect_to :back
+  end
 
   private
 

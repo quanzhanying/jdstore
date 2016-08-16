@@ -9,18 +9,16 @@ class Admin::OrdersController < ApplicationController
 
   def cancel
     @order = Order.find(params[:id])
-    @order.order_cancelled?
-    OrderMailer.notify_order_cancelled(@order).deliver!
-    @order.save
-    flash[:notice] = "You have cancelled order."
+    OrderMailer.notify_order_cancelled_by_admin(@order).deliver!
+    @order = @order.order_cancelled?
     redirect_to :back
   end
 
   def ship
     @order = Order.find(params[:id])
-    OrderMailer.notify_order_cancelled(@order).deliver!
+    OrderMailer.notify_order_shipped(@order).deliver!
     @order = @order.ship!
     redirect_to :back
   end
-  
+
 end
