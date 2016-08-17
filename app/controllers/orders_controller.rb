@@ -29,6 +29,38 @@ class OrdersController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @order = Order.find_by_token(params[:id])
+
+  #   @order.destroy
+  #   redirect_to orders_path,alert: '訂單已刪除'
+  # end
+
+
+  def pay_with_alipay
+    @order = Order.find(params[:id])
+    @product_lists = @order.product_lists
+    if @order.is_paid == 1
+      flash[:alert] = '已經付過了唷～'
+      render :back
+    else
+      @order.is_paid = 1
+      @order.payment_method = 'alipay'
+      @order.save
+      render 'orders/alipay'
+    end
+  end
+
+  def pay_with_wechat
+    @order = Order.find(params[:id])
+    @product_lists = @order.product_lists
+    @order.is_paid = 1
+    #binding.pry
+    @order.payment_method = 'wechat'
+    @order.save
+    render 'orders/wechat'
+  end
+
   private
 
   def order_params
