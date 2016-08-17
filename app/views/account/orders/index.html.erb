@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+
+  <% @orders.each do |order| %>
+  <tr>
+    <td>
+       <%= order.id %>
+
+    </td>
+    <td>
+      <%= link_to(order.token, order_path(order.token)) %>
+    </td>
+
+    <td>
+      <%= order.created_at %>
+    </td>
+  </tr>
+
+  <% end %>
+</table>
