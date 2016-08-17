@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808025832) do
+ActiveRecord::Schema.define(version: 20160817105956) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160808025832) do
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
+    t.text     "pingpp_info"
   end
 
   create_table "product_lists", force: :cascade do |t|

@@ -32,11 +32,18 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
-    @order.is_paid = true
-    @order.payment_method = 'alipay'
-    @order.save
-    flash[:notice] = '已付款'
-    redirect_to :back
+
+    @pay_object = Pingpp::Charge.create(
+      subject: 'Your Subject',
+      body: 'Your Body',
+      amount: 100,
+      order_no: '123456789',
+      channel: 'alipay_pc_direct',
+      currency: 'cny',
+      client_ip: '127.0.0.1',
+      app: { 'id' => PINGPP_APP_ID },
+      extra: { success_url: 'http://baidu.com' }
+    )
   end
 
   private
