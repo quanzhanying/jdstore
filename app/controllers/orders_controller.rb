@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     @order.is_paid = true
     @order.payment_method = 'alipay'
     @order.save
-
+    flash[:notice] = '已付款'
     redirect_to :back
   end
 
