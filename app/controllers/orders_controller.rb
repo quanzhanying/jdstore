@@ -33,17 +33,22 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
 
-    @pay_object = Pingpp::Charge.create(
-      subject: 'Your Subject',
-      body: 'Your Body',
-      amount: 100,
-      order_no: '123456789',
-      channel: 'alipay_pc_direct',
-      currency: 'cny',
-      client_ip: '127.0.0.1',
-      app: { 'id' => PINGPP_APP_ID },
-      extra: { success_url: 'http://baidu.com' }
-    )
+    if @order.pingpp_info.blank?
+
+      @pay_object = Pingpp::Charge.create(
+        subject: 'Your Subject',
+        body: 'Your Body',
+        amount: 100,
+        order_no: '123456789',
+        channel: 'alipay_pc_direct',
+        currency: 'cny',
+        client_ip: '127.0.0.1',
+        app: { 'id' => PINGPP_APP_ID },
+        extra: { success_url: 'http://baidu.com' }
+      )
+      @order.pingpp_info = @pay_object['credential']
+      @order.save
+    end
   end
 
   private
