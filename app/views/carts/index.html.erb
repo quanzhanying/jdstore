@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> Cart </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product Info</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to product_path(cart_item.product) do %>
+                <% if cart_item.product.attachment.present? %>
+                  <%= image_tag(cart_item.product.attachment.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+              <%= button_to '-', minus_one_to_item_cart_path(cart_item), method: :post %>
+              <%= cart_item.quantity %>
+              <%= button_to '+', plus_one_to_item_cart_path(cart_item), method: :post %>
+              <%= link_to("Delete", delete_cart_item_cart_path(cart_item), method: :delete, class: "btn btn-danger pull-right") %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span>
+           Total <%= render_cart_total_price(current_cart) %> RMB
+         </span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("Checkout", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("Empty cart", cart_path(current_cart), method: :delete, class: "btn btn-lg btn-info pull-right") %>
+    </div>
+  </div>
+</div>

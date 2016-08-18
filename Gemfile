@@ -1,10 +1,10 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -29,11 +29,38 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "bootstrap-sass"
+
+gem "devise"
+
+gem "simple_form"
+
+gem "font-awesome-rails"
+
+gem "carrierwave"
+
+gem "mini_magick"
+
+gem "rubocop"
+
+gem "letter_opener", group: :development
+
+gem "fog"
+
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
+
+group :production do
+  gem "pg"
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

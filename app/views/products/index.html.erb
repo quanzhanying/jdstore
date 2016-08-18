@@ -1,0 +1,25 @@
+<table class="table table-boldered">
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= link_to(product.title, product_path(product)) %>
+    </td>
+    <td>
+      <%= link_to(image_tag(product.attachment.thumb), product_path(product)) %>
+      <%#= image_tag product.attachment.thumb %>
+    </td>
+    <td>
+      <%= product.description %>
+    </td>
+    <td>
+      价格：￥ <%= product.price %>
+    </td>
+    <td>
+      数量：<%= product.quantity %>
+    </td>
+    <td>
+      <%= product.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> Order Detail </h2>
+    <span class="pull-right">
+      <% if @order.is_paid %>
+        <label class="label label-success"> Paid </label>
+      <% else %>
+        <label class="label label-warning"> Unpaid </label>
+      <% end %>
+    </span>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="80%">Product Info</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <tr>
+      <span class="pull-right">
+        Total <%= @order.total %> RMB
+      </span>
+      </tr>
+    </div>
+
+     <hr>
+
+     <h2> Shipping Detail </h2>
+
+     <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <th>
+            Billing Info
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.billing_name %> - <%= @order.billing_address %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Shipping Info
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="group pull-right">
+      <%= link_to("Pay with Alipay", pay_with_alipay_order_path, :method => :post, :class => "btn btn-info") %>
+      <%= link_to("Pay with Wechat", pay_with_wechat_order_path, :method => :post, :class => "btn btn-success") %>
+    </div>
+  </div>
+</div>
