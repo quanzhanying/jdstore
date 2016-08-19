@@ -1,0 +1,40 @@
+<div class="row showproduct-bg showproduct-font" style="margin:30px">
+  <div class="col-md-12">
+    <h2>My orders</h2>
+    <% @orders.each do |order| %>
+    
+ 
+
+      <table class="table-dotted" style="margin:30px">
+        <!-- <thead> -->
+          <tr class="table-dotted">
+            <td>
+              Product title
+            </td>
+            <td>
+              Product price
+            </td>
+            <td>
+              Product Qty
+            </td>
+          </tr>
+        <!-- </thead>
+        <tbody> -->
+          <% order.product_lists.each do |product_list| %>
+          <tr class="table-dotted">
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+                <%= product_list.product_price %>
+            </td>
+            <td>
+                <%= product_list.quantity %>
+            </td>
+          </tr>
+          <% end %>
+        <!-- </tbody> -->
+      </table>
+    <% end %>
+  </div>
+</div>

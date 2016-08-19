@@ -5,12 +5,13 @@
   <table class="table table-bordered">
     <thead >
       <tr>
-        <th>My orders</th>
-        <th>Order detail</th>
-        <th>Consignee</th>
-        <th>Price</th>
-        <th>Status</th>
-        <th>Oprate</th>
+        <th>全部訂單</th>
+        <th>數量</th>
+        <th>訂購人姓名</th>
+        <th>價格</th>
+        <th>付款狀態</th>
+        <th>訂單狀態</th>
+      
       </tr>
     </thead>
     <tbody class="split-tbody">
@@ -44,14 +45,50 @@
       </td>
       <td >
         <% if order.is_paid?%>
+
           Paid
         <% else %>
           Not Paid
+
         <% end %>
       </td>
+
+
+
+
+
+
       <td>
-        <%= link_to("Delete", admin_order_path(order), :method => :delete, :data => { :confirm => "Are you sure?" } , :class => "btn btn-xs btn-danger") %>
-      </td>
+        <% if order.shipping? %>
+          已出貨
+        <% elsif !order.is_paid? %>
+        <% elsif order.aasm_state == 'order_cancelled' %>
+        <% else %>
+          <%= link_to("出货", ship_order_path(order,aasm_state: "shipping"), method: :post,  class: "btn") %>
+        <% end %>
+
+
+        <%#= render_order_status(order) %><br />
+        <% if order.order_cancelled? %>
+        <%= link_to("已取消", apply_to_cancel_order_path(order,aasm_state: "order_cancelled"), method: :post, class: "btn disabled") %><br />
+        <% elsif !order.is_paid? %>
+        <% else %>
+        
+       
+        
+        <%= link_to("退貨", return_good_order_path(order), method: :post, class: "btn") %><br />
+
+        <% end %>
+
+        <% if order.shipped? %>
+        <%= link_to("退貨", return_good_order_path(order), method: :post,  class: "btn") %>
+        <% else %>
+        <%#= link_to("出貨", ship_order_path(order), method: :post,  class: "btn") %>
+        <% end %> 
+
+      </td> 
+
+  
     </tr>
   </tbody>
   <% end %>

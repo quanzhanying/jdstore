@@ -14,6 +14,20 @@ class Account::OrdersController < ApplicationController
 
   end
 
+  def ship
+    @order = Order.find(params[:id])
+    @order.ship!
+    OrderMailer.notify_ship(@order).deliver!
+    redirect_to :back
+  end
+
+  def cancel
+    @order = Order.find(params[:id])
+    @order.cancel_order!
+    OrderMailer.notify_cancel(@order).deliver!
+    redirect_to :back
+  end
+
   # def destroy
   #   @order = Order.find(params[:id])
   #   @order.destroy
@@ -21,10 +35,10 @@ class Account::OrdersController < ApplicationController
   # end
 
     def destroy
-    @order = Order.find_by_token(params[:id])
+    @order = Order.find(params[:id])
 
     @order.destroy
-    redirect_to orders_path,alert: '訂單已刪除'
+    redirect_to account_orders_path, alert: '訂單已刪除'
   end
 
 end

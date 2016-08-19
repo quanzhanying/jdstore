@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
     @order.total = current_cart.total_price
 
     if @order.save
-
       current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
         product_list.order = @order
@@ -39,26 +38,97 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find(params[:id])
-    @product_lists = @order.product_lists
-    if @order.is_paid == 1
-      flash[:alert] = '已經付過了唷～'
-      render :back
-    else
-      @order.is_paid = 1
-      @order.payment_method = 'alipay'
-      @order.save
-      render 'orders/alipay'
-    end
+    @order.make_payment!
+    @order.is_paid = true
+    @order.save
+    flash[:notice] = "支付成功"
+    OrderMailer.notify_order_placed(@order).deliver!
+    redirect_to :back
   end
 
   def pay_with_wechat
     @order = Order.find(params[:id])
-    @product_lists = @order.product_lists
-    @order.is_paid = 1
-    #binding.pry
-    @order.payment_method = 'wechat'
+    @order.make_payment!
+    @order.is_paid = true
     @order.save
-    render 'orders/wechat'
+    flash[:notice] = "支付成功"
+    OrderMailer.notify_order_placed(@order).deliver!
+    redirect_to :back
+  end
+
+  # def pay_with_alipay
+  #   @order = Order.find(params[:id])
+  #   @product_lists = @order.product_lists
+  #   if @order.is_paid == 1
+  #     flash[:alert] = 'You are already paid.'
+  #     render :back
+  #   else
+  #     @order.is_paid = 1
+  #     @order.payment_method = 'alipay'
+  #     @order.save
+  #     render 'orders/alipay'
+  #   end
+  # end
+
+  # def pay_with_wechat
+  #   @order = Order.find(params[:id])
+  #   @product_lists = @order.product_lists
+  #   @order.is_paid = 1
+  #   @order.payment_method = 'wechat'
+  #   @order.save
+  #   render 'orders/wechat'
+  # end
+
+
+  def ship
+    @order = Order.find(params[:id])
+    @order.ship!
+    # OrderMailer.ship(@order).deliver!
+    @order.save
+    flash[:notice] = "已出貨"
+    redirect_to :back
+  end
+
+  def deliver
+    @order = Order.find(params[:id])
+    @order.deliver!
+    @order.save
+    redirect_to :back
+  end
+
+  def  return_good
+    @order = Order.find(params[:id])
+    @order.return_good!
+    @order.save
+    redirect_to :back
+  end
+
+
+  def apply_to_cancel
+    @order = Order.find(params[:id])
+    @order.cancel_order!
+    OrderMailer.apply_cancel(@order).deliver!
+    @order.save
+    flash[:notice] = "已提交申请"
+    redirect_to :back
+  end
+
+
+  def return_good
+    @order = Order.find(params[:id])
+    @order.return_good!
+    OrderMailer.return_good(@order).deliver!
+    @order.save
+    flash[:notice] = "已申請退貨"
+    redirect_to :back
+  end
+
+
+  def destroy
+    @order = Order.find(params[:id])
+
+    @order.destroy
+    redirect_to orders_path,alert: '訂單已刪除'
   end
 
   private

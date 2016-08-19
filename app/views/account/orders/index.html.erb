@@ -1,4 +1,4 @@
-<h1>&nbsp Orders Manager Panel</h1>
+<h1>&nbsp 我的訂單</h1>
 
 
 <div class="container-fluid ">
@@ -6,11 +6,13 @@
     <thead >
       <tr>
         <th>My orders</th>
-        <th>Order detail</th>
-        <th>Consignee</th>
-        <th>Price</th>
-        <th>Status</th>
-        <th>Oprate</th>
+        <th>商品數量</th>
+        <th>訂貨人</th>
+        <th>價格</th>
+        <th>付款狀態</th>
+        <th>發貨狀態</th>
+        <th>訂單狀態</th>
+        
       </tr>
     </thead>
     <tbody class="split-tbody">
@@ -24,7 +26,7 @@
         <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
       </td>
       <td colspan="5">
-        Order No : <%= link_to(order.token,admin_orders_path(order.token)) %>
+        Order No : <%= link_to(order.token,account_orders_path(order.token)) %>
       </td>
       <tr>
       <td><%= product_list.product_name %></td>
@@ -44,14 +46,48 @@
       </td>
       <td >
         <% if order.is_paid?%>
-          Paid
+          已支付
+         <% elsif order.aasm_state == 'order_cancelled' %>
         <% else %>
-          Not Paid
+
+         <%= link_to("去支付", order_path(order.token),class:"btn btn-danger") %>
         <% end %>
       </td>
+
       <td>
-        <%= link_to("Delete", admin_order_path(order), :method => :delete, :data => { :confirm => "Are you sure?" } , :class => "btn btn-xs btn-danger") %>
+        <% if order.shipping? %>
+        已出貨
+
+        <% else %>
+        未出貨
+        <% end %>      
       </td>
+              
+      <td>
+        <%#= render_order_status(order) %>
+        <% if order.order_cancelled? %>
+        <%= link_to("正在取消订单", apply_to_cancel_order_path(order), method: :post, class: "btn disabled") %><br />
+        <% else %>
+
+
+        <% if order.shipping? %>
+
+        <%= link_to("申請退貨", return_good_order_path(order), method: :post, class: "btn disabled") %><br />
+        
+        <% elsif !order.is_paid? %>
+
+        <% else %>
+        <%= link_to("申請取消订单", apply_to_cancel_order_path(order,aasm_state: "order_cancelled"), method: :post,class:"btn btn-danger",data: { disable_with: "申請中..."}) %> 
+        <% end %>
+
+        <% end %>      
+       
+      </td>
+
+
+       
+
+     
     </tr>
   </tbody>
   <% end %>

@@ -42,15 +42,17 @@ Rails.application.routes.draw do
       post :pay_with_wechat
       post :pay_with_alipay
       post :apply_to_cancel
+      post :ship
+      post :return_good
+      delete :destroy
     end
   end
 
   namespace :account do
     resources :orders
-    
-    delete :destroy_order
-    
+    delete :destroy_order   
   end
+
 
   root 'products#index'
 
