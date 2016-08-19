@@ -49,6 +49,8 @@ class OrdersController < ApplicationController
       @order.pingpp_info = @pay_object['credential']
       @order.save
     end
+
+    redirect_to AlipayService.new(@order).fullurl
   end
 
   private

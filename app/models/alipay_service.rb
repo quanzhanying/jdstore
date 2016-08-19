@@ -11,7 +11,10 @@ class AlipayService
 
   def url
     uri = URI(GATEWAY_URL)
-    uri.query = URI.encode_www_form(credential)
-    uri
+    URI.encode_www_form(credential)
+  end
+
+  def fullurl
+    "#{GATEWAY_URL}?#{url}"
   end
 end
