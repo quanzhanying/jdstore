@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> 👸的购物车 </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>心爱之物</th>
+          <th>银子💰</th>
+          <th>件数</th>
+          <th>➖／➕</th>
+          <th>抛弃🚮</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            
+
+            <td>
+              <%= cart_item.product.title %>
+            </td>
+
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+
+            <td>
+              <%= cart_item.quantity %>
+            </td>
+            <td>
+            
+                <%= link_to("-", decrease_item_cart_path(cart_item), :method => :post, :class => "btn btn-xs btn-info") %>
+            
+
+              <%= cart_item.quantity %>
+
+               <%= link_to("+", increase_item_cart_path(cart_item), method: :post, class: "btn btn-xs btn-info") %>
+            
+
+            </td>
+
+            <td>
+              <%= link_to("删除", destroy_item_cart_path(cart_item), :method => :delete, class: "btn btn-xs btn-danger") %>
+            </td>
+
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span> 一共花了 <%= render_cart_total_price(current_cart) %> 元</span>
+      </span>
+    </div>
+
+
+
+   <!--  <hr> -->
+  
+            
+            
+
+    <div class="checkout clearfix">
+      <%= link_to("一键下单", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+
+      <%= link_to("清空购物车", empty_cart_items_cart_path(current_cart), method: :delete, class: "btn btn-lg btn-info pull-right") %>
+    </div>
+
+  </div>
+</div>

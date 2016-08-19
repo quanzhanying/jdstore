@@ -1,0 +1,97 @@
+<h1>&nbsp Orders Manager Panel</h1>
+
+
+<div class="container-fluid ">
+  <table class="table table-bordered">
+    <thead >
+      <tr>
+        <th>全部訂單</th>
+        <th>數量</th>
+        <th>訂購人姓名</th>
+        <th>價格</th>
+        <th>付款狀態</th>
+        <th>訂單狀態</th>
+      
+      </tr>
+    </thead>
+    <tbody class="split-tbody">
+      <tr>
+        <td colspan="6">&nbsp</td>
+      </tr>
+  <% @orders.each do |order| %>
+  <% order.product_lists.each do |product_list| %>
+    <tr>
+      <td>
+        <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+      </td>
+      <td colspan="5">
+        Order No : <%= link_to(order.token,admin_orders_path(order.token)) %>
+      </td>
+      <tr>
+      <td><%= product_list.product_name %></td>
+      <td>x<%= product_list.quantity %></td>
+      <td >
+        <%= order.shipping_name %>
+      </td>
+      <td >
+        TotalPrice ¥ <%= order.total %>
+        <br />
+        <% if order.payment_method =='alipay' %>
+          Alipay
+        <% else %>
+          <% order.payment_method =='Wechat' %>
+          Wechat
+        <% end %>
+      </td>
+      <td >
+        <% if order.is_paid?%>
+
+          Paid
+        <% else %>
+          Not Paid
+
+        <% end %>
+      </td>
+
+
+
+
+
+
+      <td>
+        <% if order.shipping? %>
+          已出貨
+        <% elsif !order.is_paid? %>
+        <% elsif order.aasm_state == 'order_cancelled' %>
+        <% else %>
+          <%= link_to("出货", ship_order_path(order,aasm_state: "shipping"), method: :post,  class: "btn") %>
+        <% end %>
+
+
+        <%#= render_order_status(order) %><br />
+        <% if order.order_cancelled? %>
+        <%= link_to("已取消", apply_to_cancel_order_path(order,aasm_state: "order_cancelled"), method: :post, class: "btn disabled") %><br />
+        <% elsif !order.is_paid? %>
+        <% else %>
+        
+       
+        
+        <%= link_to("退貨", return_good_order_path(order), method: :post, class: "btn") %><br />
+
+        <% end %>
+
+        <% if order.shipped? %>
+        <%= link_to("退貨", return_good_order_path(order), method: :post,  class: "btn") %>
+        <% else %>
+        <%#= link_to("出貨", ship_order_path(order), method: :post,  class: "btn") %>
+        <% end %> 
+
+      </td> 
+
+  
+    </tr>
+  </tbody>
+  <% end %>
+  <% end %>
+  </table>
+</div>

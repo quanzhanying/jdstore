@@ -1,0 +1,26 @@
+
+  <div class="container-fluid">
+
+    <div class="row">
+    
+
+    <div class="col-xs-12 col-sm-5 col-md-8-offset-1">
+            <h3> <%= @product.title %> </h3>
+            <p>
+  <%= image_tag(@product.image.thumb) %>
+            </p>
+            <h4>Price: &nbsp ¥ <%= @product.price %></h4>
+            <h4>Quantity: &nbsp<%= @product.quantity %></h4>
+      <div class="pull-left">
+      
+        <% if @product.quantity>0 %>
+          <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-success" ) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
