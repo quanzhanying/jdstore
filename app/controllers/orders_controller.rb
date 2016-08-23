@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
         currency: 'cny',
         client_ip: '127.0.0.1',
         app: { 'id' => PINGPP_APP_ID },
-        extra: { success_url: 'http://baidu.com' }
+        extra: { success_url: 'http://jdstore.dev' }
       )
       @order.pingpp_info = @pay_object['credential']
       @order.save
