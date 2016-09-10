@@ -16,7 +16,6 @@ table,th,td { border: 1px solid black; border-collapse: collapse; text-align: ce
     <th>时间</th>
   </tr>
   <% @products.each do |product| %>
-
   <tr>
     <td>
       <%= link_to(product.title, admin_product_path(product)) %>

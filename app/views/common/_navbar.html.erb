@@ -1,5 +1,4 @@
 <nav class="navbar navbar-inverse" role="navigation">
-
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">JDstore</a>
@@ -12,19 +11,14 @@
       </li>
       </ul>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-s">
       <ul class="nav navbar-nav navbar-right">
-
         <li>
           <%= link_to carts_path do %>
           购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
           <% end %>
         </li>
-
-
         <% if !current_user %>
-
         <li><%= link_to("注册", new_user_registration_path) %></li>
         <li><%= link_to("登入", new_user_session_path) %></li>
         <% else %>
@@ -34,17 +28,13 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             <% if current_user.admin? %>
-            <li><%= link_to("Admin Panel", admin_products_path) %></li>
-            <li><%= link_to("Admin Users", admin_users_path) %></li>
-            <li><%= link_to("历史订单", admin_orders_path) %></li>
-
+            <li><%= link_to("管理面板", admin_products_path) %></li>
             <% end %>
+            <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
           </ul>
         </li>
         <% end %>
-
       </ul>
     </div>
   </div>

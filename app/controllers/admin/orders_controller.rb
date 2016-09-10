@@ -1,5 +1,5 @@
 class Admin::OrdersController < ApplicationController
-
+layout "admin"
 
   def index
     @orders = current_user.orders.all
