@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :products
     resources :users do
       member do
-      post :publish
-      post :hide
+      post :promote
+      post :demote
     end
   end
     resources :orders do

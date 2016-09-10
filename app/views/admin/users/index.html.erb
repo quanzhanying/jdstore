@@ -5,9 +5,6 @@
         <td>用户名</td>
         <td>设置管理员</td>
         <td>创建时间</td>
-
-
-
       </tr>
     </thead>
     <tbody>
@@ -15,15 +12,15 @@
     <tr>
       <td> <%= user.id %></td>
       <td> <%= user.email %></td>
-    <td>  <% if user.is_admin = true %>
-                            <%= link_to("设为管理员", publish_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-success") %>
-                            <%= link_to("取消管理员", hide_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-info") %>
-                            <% end %>
-
-                          </td>
-        <td><%= user.created_at %></td>
-
-
+      <td>  <% if !user.is_admin %>
+      <%= link_to("设为管理员", promote_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-success", :data => { :confirm => "确定将该用户权限提升为管理员?" }) %>
+      <% else %>
+            <% if user.email != "admin@gmail.com" %>
+      <%= link_to("取消管理员", demote_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-info", :data => { :confirm => "确定将该用户权限降为普通用户?" }) %>
+            <% end %>
+      <% end %>
+      </td>
+      <td><%= user.created_at %></td>
     </tr>
     <% end %>
   </tbody>
