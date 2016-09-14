@@ -1,0 +1,16 @@
+<div class="col-md-12">
+  <div class="col-md-3 img-thumbnail">
+    <%= image_tag @product.image.medium %>
+  </div>
+  <div class="col-md-5 col-md-offset-2">
+    <h1><%= @product.title %></h1>
+    <h2 style="color: red">(效果预览)</h2>
+  </div>
+  <div class="col-md-5 col-md-offset-2" style="margin-top: 100px">
+    <p>数量：<%= @product.quantity %></p>
+    <p>价格：<%= @product.price %></p>
+  </div>
+  <div class="col-md-3 col-md-offset-6" style="margin-top: 200px">
+    <button type="button" class="btn btn-danger">加入购物车</button>
+  </div>
+</div>
