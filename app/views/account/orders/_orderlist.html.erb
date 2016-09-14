@@ -1,0 +1,36 @@
+<span class="pull-left">
+  <% if order.is_paid == true %>
+  <label class="label label-success">已付款</label>
+  <% else %>
+  <label class="label label-warning">未付款</label>
+  <% end %>
+</span>
+<div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td><%= link_to("商品明细",order_path(order.token)) %></td>
+      <td>单价</td>
+      <td>数量</td>
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+      <% order.product_lists.each do |product| %>
+      <tr>
+        <td><%= product.product_name %></td>
+        <td><%= product.product_price %></td>
+        <td><%= product.quantity %>
+
+      </tr>
+
+      <% end %>
+
+  </tbody>
+</table>
+<div class="pull-right">
+总价<%= order.total %>
+</div>
+</div>

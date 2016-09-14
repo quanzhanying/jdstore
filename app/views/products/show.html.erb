@@ -1,0 +1,28 @@
+  <div class="col-md-12">
+    <div class="col-md-3 img-thumbnail">
+      <%= image_tag @product.image.medium %>
+    </div>
+    <div class="col-md-5 col-md-offset-2">
+      <h1><%= @product.title %></h1>
+      <span class="pull-right">
+         <% if current_user && current_user.is_member_of?(@product) %>
+          <label class="label label-success"> 我的收藏 </label>
+          <%= link_to("取消收藏", quit_product_path(@product), method: :post, class: "btn btn-default") %>
+        <% else %>
+           <%= link_to("加入收藏", join_product_path(@product), method: :post, class: "btn btn-default") %>
+        <% end %>
+      </span>
+    </div>
+    <div class="col-md-5 col-md-offset-2" style="margin-top: 100px">
+      <p>数量：<%= @product.quantity %></p>
+      <p>价格：<%= @product.price %></p>
+    </div>
+    <div class="col-md-3 col-md-offset-6" style="margin-top: 200px">
+      <% if @product.quantity > 0  %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+      <% flash[:warning] = "you can not add this product to cart" %>
+      redirect_to :back
+      <% end %>
+    </div>
+  </div>
