@@ -1,0 +1,24 @@
+<div class="col-md-12">
+
+  <h2 class="text-center">我的收藏夹</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>产品</th>
+        <th>产品描述</th>
+        <th>产品图片</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to(product.title, product_path(product)) %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag product.image.thumb %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

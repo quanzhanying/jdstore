@@ -1,0 +1,48 @@
+<div class="pull-left">
+      <%= render_order_state(order) %>
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td><%= link_to("商品明细",order_path(order.token)) %></td>
+                <td>单价</td>
+                <td>数量</td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <% order.product_lists.each do |product| %>
+            <tr>
+                <td><%= product.product_name %></td>
+                <td><%= product.product_price %></td>
+                <td><%= product.quantity %>
+
+                </tr>
+
+                <% end %>
+
+            </tbody>
+        </table>
+        <div class="pull-right">
+            总价<%= order.total %>
+        </div>
+        <br>
+        <% if order.order_cancelled? %>
+        <% else %>
+        <div class="pull-right">
+            <% if order.order_placed? || order.paid? %>
+            <%= link_to("取消订单",cancel_account_order_path(order),:method => :post, class:"btn btn-md btn-default") %>
+            <% else %>
+            <% if order.shipping? %>
+            <%= link_to("收到货物",deliver_account_order_path(order),:method => :post, class:"btn btn-md btn-default") %>
+            <% else %>
+            <% if order.shipped? %>
+            <%= link_to("退货",return_good_account_order_path(order),:method => :post, class:"btn btn-md btn-default") %>
+            <% end %>
+            <% end %>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
