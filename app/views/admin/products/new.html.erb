@@ -1,0 +1,9 @@
+<h1> Add a product </h1>
+<%= simple_form_for [:admin,@product] do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :quantity, input_html:{ min:1, max:1_000_000 } %>
+<%= f.input :price, input_html:{ min:1, max:1_000_000 } %>
+<%= f.input :image %>
+<%= f.submit "Submit" %>
+<% end %>

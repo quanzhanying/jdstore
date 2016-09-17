@@ -1,0 +1,41 @@
+<div class="pull-right">
+  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-primary") %>
+</div>
+
+<br><br>
+<style>
+table,th,td { border: 1px solid black; border-collapse: collapse; text-align: center;}
+</style>
+<table style="width:100%">
+  <tr>
+    <th>名称</th>
+    <th>图片</th>
+    <th>库存</th>
+    <th>价格</th>
+    <th>管理</th>
+    <th>时间</th>
+  </tr>
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= link_to(product.title, admin_product_path(product)) %>
+    </td>
+    <td>
+      <%= image_tag product.image.thumb %>
+    </td>
+    <td>
+      <%= link_to(product.quantity, admin_product_path(product)) %>
+    </td>
+    <td>
+      <%= link_to(product.price, admin_product_path(product)) %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-success") %>
+      <%= link_to("Destroy", admin_product_path(product), :class => "btn btn-info", :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= product.created_at %>
+    </td>
+      <% end %>
+    </tr>
+</table>
