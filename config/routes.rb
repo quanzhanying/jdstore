@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :productions
   end
-  root "welcome#index"
+  root "admin/productions#index"
 end
