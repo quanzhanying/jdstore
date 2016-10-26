@@ -1,0 +1,30 @@
+<h2 style="text-align:center;"> Items list </h2>
+
+
+<div style="text-align:center;">
+  <%= link_to("Add an item", new_admin_item_path) %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <% @items.each do |item| %>
+  <tr>
+    <td>
+      <%= link_to(item.title, admin_item_path(item)) %>
+    </td>
+
+    <td>
+      <%= link_to("Edit", edit_admin_item_path(item)) %>
+    </td>
+
+    <td>
+      <%= link_to("Delete", admin_item_path(item), :method => :delete) %>
+    </td>
+
+    <td>
+      <%= item.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
