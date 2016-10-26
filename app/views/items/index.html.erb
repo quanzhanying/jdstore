@@ -1,1 +1,26 @@
-<h2> ? </h2>
+<h2 style="text-align:center;"> Items </h2>
+
+<table class="table table-boldered">
+  <% @items.each do |item| %>
+  <tr>
+
+    <td>
+      <%= item.attachment %>
+    </td>
+
+    <td>
+      <%= link_to(item.title, item_path(item)) %>
+    </td>
+
+    <td>
+      <%= item.price %>
+    </td>
+
+
+    <td>
+      <%= item.created_at %>
+    </td>
+  </tr>
+
+  <% end %>
+</table>

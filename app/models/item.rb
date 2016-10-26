@@ -2,8 +2,8 @@ class Item < ApplicationRecord
 
 
 
-  mount_uploader :attachment, AttachmentUploder
+  # mount_uploader :attachment, AttachmentUploder
 
 
-  
+
 end
