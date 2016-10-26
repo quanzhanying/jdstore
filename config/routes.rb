@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   resources :welcome
 
   namespace :admin do
+    resources :users do
+      member do
+        post :administrator
+        post :consumer
+      end
+    end
+
     resources :products
   end
 

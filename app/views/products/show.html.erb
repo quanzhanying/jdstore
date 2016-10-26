@@ -15,8 +15,10 @@
     </div>
     <div> 數量 : <%= @product.quantity %> </div>
     <div class="product-price"> $ <%= @product.price %> </div>
-    <div class="pull-right">
-      <%= link_to("加入購物車", :class => "btn btn-primary btn-lg btn-danger", :method => :post ) %>
+    <div class="pull-left">
+      <%= link_to("购买","#", :class => "glyphicon glyphicon-star btn btn-primary btn-lg btn-danger", :method => :post ) %>
+      <%= link_to("加入購物車","#", :class => "glyphicon glyphicon-star btn btn-danger btn-lg btn-danger", :method => :post ) %>
+    </div>
     </div>
   </div>
 </div>

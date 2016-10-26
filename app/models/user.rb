@@ -31,6 +31,7 @@ class User < ApplicationRecord
 
   has_many :products
 
+  #scope:zengzheng -> {where(user_id: 1)}
   def admin?
     is_admin
   end
