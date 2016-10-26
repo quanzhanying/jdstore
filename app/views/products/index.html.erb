@@ -1,13 +1,17 @@
 
-<table class="table table-boldered">
-
-<tbody>
-    <% @products.each do |product| %>
-    <tr>
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+       <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+      <div class="caption">
+        <p>
+          <a href="#" class="btn btn-primary" role="button">购买</a>
+          <a href="#" class="btn btn-default" role="button">了解详情</a>
+        </p>
         <td><%= link_to(product.title, product_path(product)) %></td>
-
-        <td><%= product.image %> </td>
-
+      </div>
+    </div>
+  </div>
     <% end %>
-</tbody>
-</table>
+</div>
