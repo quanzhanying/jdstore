@@ -1,4 +1,9 @@
-class ProductController < ApplicationController
-  before_action :authenticate_user! 
+class ProductsController < ApplicationController
+  before_action :authenticate_user!
+
+def index
+  @products = Product.all
+end
+
 
 end
