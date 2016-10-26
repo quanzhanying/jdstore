@@ -1,7 +1,5 @@
-class Admin::ProductsController < ApplicationController
+class ProductsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :admin_required
-
     def show
       @product = Product.find(params[:id])
     end
@@ -18,7 +16,7 @@ class Admin::ProductsController < ApplicationController
       @product = Product.new(product_params)
 
       if @product.save
-        redirect_to admin_products_path
+        redirect_to products_path
       else
         render :new
       end
@@ -31,7 +29,7 @@ class Admin::ProductsController < ApplicationController
     def update
       @product = Product.find(params[:id])
       if @product.update(product_params)
-        redirect_to admin_products_path
+        redirect_to products_path
       else
         render :edit
       end
@@ -42,10 +40,8 @@ class Admin::ProductsController < ApplicationController
 
       @product.destroy
 
-      redirect_to admin_products_path
+      redirect_to products_path
     end
-
-
 
     private
 

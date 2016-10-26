@@ -1,5 +1,5 @@
 <div class="pull-right">
-  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default" ) %>
+  <%= link_to("Add new product", new_product_path, :class => "btn btn-default" ) %>
 </div>
 
 <br><br>
@@ -28,8 +28,8 @@
     <td><%= product.price %></td>
     <td><%= product.image %></td>
     <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %>
-      <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <%= link_to("Edit", edit_product_path(product)) %>
+      <%= link_to("Destroy", product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td> <%= product.created_at %> </td>
   </tr>
