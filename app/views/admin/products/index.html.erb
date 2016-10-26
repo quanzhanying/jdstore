@@ -3,30 +3,11 @@
    <%= link_to("新建商品", new_admin_product_path, class: "btn btn-primary pull-right") %>
   </div>
 
-  <h1>商品列表</h1>
+  <h4>商品列表</h4>
+  <hr>
 
-  <table class="table table-hover">
-      <tr>
-        <th>#</th>
-        <th>产品名</th>
-        <th>描述</th>
-        <th>库存</th>
-        <th>价格</th>
-        <th>选项</th>
-        <th>创建日期</th>
-      </tr>
 
-      <% @products.each do |product| %>
-          <tr>
-              <td><%= product.id %></td>
-              <td><%= link_to(product.title, admin_product_path(product)) %></td>
-              <td><%= product.description %></td>
-              <td><%= product.quantity %></td>
-              <td><%= product.price %></td>
-              <td><%= link_to('编辑',edit_admin_product_path(product)) %> | <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "确定删除?" }) %></td>
-              <td><%= product.created_at %></td>
-          </tr>
-      <% end %>
 
-  </table>
+  <%= render 'thumbnail' %>
+
 </div>

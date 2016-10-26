@@ -1,30 +1,15 @@
 <div class="col-md-12">
 
 
-  <h1>商品列表</h1>
+  <h4>商品列表</h4>
+  <hr>
 
-  <table class="table table-hover">
-      <tr>
-        <th>#</th>
-        <th>产品名</th>
-        <th>描述</th>
-        <th>库存</th>
-        <th>价格</th>
 
-        <th>创建日期</th>
-      </tr>
 
-      <% @products.each do |product| %>
-          <tr>
-              <td><%= product.id %></td>
-              <td><%= link_to(product.title, product_path(product)) %></td>
-              <td><%= product.description %></td>
-              <td><%= product.quantity %></td>
-              <td><%= product.price %></td>
+  <%= render 'thumbnail' %>
 
-              <td><%= product.created_at %></td>
-          </tr>
-      <% end %>
 
-  </table>
+
+
+
 </div>
