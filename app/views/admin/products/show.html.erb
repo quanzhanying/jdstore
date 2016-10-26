@@ -1,14 +1,26 @@
-<h1> <%= @product.title %> </h1>
+<div style="width: 100%;">
+   <div style="float:left;">
+		 <p>
+		   <!-- <strong>Image:</strong> -->
+		   <%= image_tag @product.image.medium.url, :class => "style_image" %>
+		 </p>
+	 </div>
 
-<p><strong>Description: </strong><%= simple_format(@product.description) %></p>
-<p><strong>Quantity: </strong><%= @product.quantity %></p>
-<p><strong>Price: </strong><%= @product.price %></p>
+	 <div style="float:right;">
+		 <h2> <%= @product.title %> </h2>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @product.image.thumb.url unless @product.image.blank? %>
-</p>
+		 <p><strong>Description: </strong><%= simple_format(@product.description) %></p>
+		 <p><strong>Quantity: </strong><%= @product.quantity %></p>
+		 <p><strong>Price: </strong>$<%= @product.price %></p>
+   </div>
+</div>
+<div style="clear:both"></div>
+
+
+
+<div style="float:right;">
 <% if current_user.is_admin = true %>
 <%= link_to 'Edit', edit_admin_product_path(@product) %> |
 <%= link_to 'Back', admin_products_path %>
 <% end %>
+</div>
