@@ -7,7 +7,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th> # </th>
+      <th>On Sale</th>
       <th>Title</th>
       <th>Description</th>
       <th>Price</th>
@@ -20,7 +20,7 @@
   <tbody>
     <% @products.each do |product| %>
     <tr>
-      <td> # </td>
+      <td><%= product.onsale %></td>
       <td>
         <%= link_to(product.title, admin_product_path(product)) %>
       </td>
@@ -35,5 +35,5 @@
         <%= product.created_at %>
       </td>
     </tr>
-  <% end %>
+    <% end %>
 </table>
