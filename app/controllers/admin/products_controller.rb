@@ -43,7 +43,7 @@ class Admin::ProductsController < ApplicationController
       flash[:alert] = 'You are not admin'
       redirect_to root_path
     end
-  end 
+  end
 
   def product_params
     params.require(:product).permit(:title, :description)
