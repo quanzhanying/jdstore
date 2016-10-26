@@ -7,6 +7,7 @@
 <table class="table table-boldered">
   <tr>
     <td>商品名称</td>
+    <td>商品照片</td>
     <td>商品描述</td>
     <td>数量</td>
     <td>价格</td>
@@ -17,6 +18,7 @@
 
   <tr>
     <td><%= link_to(product.title, admin_product_path(product)) %></td>
+    <td><%= link_to(product.image, admin_product_path(product)) %></td>
     <td><%= link_to(product.description, admin_product_path(product)) %></td>
     <td><%= link_to(product.quantity, admin_product_path(product)) %></td>
     <td><%= link_to(product.price, admin_product_path(product)) %></td>

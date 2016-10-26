@@ -3,9 +3,14 @@
 <%= simple_form_for @product do |f| %>
 
 <%= f.input :title %>
+<div>
+  <%= f.input :image %>
+</div>
+
 <%= f.input :description %>
-<%= f.input :quantity %> 
+<%= f.input :quantity %>
 <%= f.input :price %>
+
 
   <%= f.submit "Submit" %>
 <% end %>
