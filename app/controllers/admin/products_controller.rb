@@ -1,4 +1,7 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
+  before_filter :authenticate_user!,only:[:new,:create,:update,:edit,:destroy]
+  before_filter :require_is_admin
+
 
   def index
     @products=Product.all
@@ -17,10 +20,10 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product=Product.new(product_params)
+    @product= Product.new(product_params)
 
-    if @product.save
-      redirect_to products_path
+    if @product.save!
+      redirect_to admin_products_path
     else
       render :new
     end
@@ -30,23 +33,23 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
-        redirect_to products_path,notice:'Update Success'
+      redirect_to admin_products_path,notice:'Update Success'
     else
       render :edit
-    end
 
+    end
   end
 
   def destroy
     @product =Product.find(params[:id])
 
     @product.destroy
-    redirect_to products_path ,alert:'Product deleted'
+    redirect_to admin_products_path ,alert:'Product deleted'
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:title,:description,:quantity,:price)
+     params.require(:product).permit(:title, :description, :quantity, :price)
   end
 end
