@@ -1,0 +1,28 @@
+<h1>Product List</h1>
+
+<br><br>
+
+<table class="table table-boldered">
+  <thead>
+   <tr>
+    <td>产品</td>
+    <td>描述</td>
+    <td>数量</td>
+    <td>价格</td>
+    <td>创建日期</td>
+   </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to(product.title, admin_product_path(product)) %></td>
+      <td><%= product.description %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.price %></td>
+      <td><%= product.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
