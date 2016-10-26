@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user! , only: [:order]
-  # before_action :admin_required
+  before_action :admin_redirect
 
   def index
+    # if current_user and current_user.admin?
+    #   redirect_to '/admin/products'
+    # end
     @products = Product.all
   end
 
@@ -54,11 +57,17 @@ class ProductsController < ApplicationController
   end
 
 
-  # private
+  private
 
   # def product_params
   #   params.require(:product).permit(:title, :description, :quantity, :price)
   # end
+
+  def admin_redirect
+    if current_user and current_user.admin?
+      redirect_to admin_products_path
+    end
+  end
 
 
 end
