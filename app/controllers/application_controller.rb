@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     if !current_user.is_admin
-     redirect_to jobs_path,flash[:alert]='You are not the admin!'
+     flash[:alert]='You are not the admin!'
+     redirect_to products_path
    end
   end
 end
