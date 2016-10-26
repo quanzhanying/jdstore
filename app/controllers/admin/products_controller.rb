@@ -1,13 +1,13 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!#, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :require_is_admin
 
   def index
-    @products = Product.all
+    @products = Product.all.recent
   end
 
   def show
-    @product =Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def new

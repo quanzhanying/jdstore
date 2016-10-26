@@ -2,10 +2,10 @@
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :quantity %>
-<%= f.input :price %>
+  <%= f.input :title, :label => "商品名称" %>
+  <%= f.input :description, :label => "商品简介"  %>
+  <%= f.input :quantity, :label => "库存" %>
+  <%= f.input :price, :label => "价格"  %>
 
 <%= f.submit "Submit" %>
 <% end %>
