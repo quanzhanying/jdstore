@@ -1,0 +1,10 @@
+  <h1><%= @product.title %></h1>
+  <h6>产品描述</h6>
+  <p><%= simple_format(@product.description) %></p>
+  <h6>库存</h6>
+  <p><%= @product.quantity %></p>
+  <h6>价格</h6>
+  <p><%= @product.price %></p>
+  <br>
+  <hr>
+  <p>购买 <span class="badge"></span></p>
