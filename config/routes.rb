@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :productions
+    resources :products
   end
-  root "admin/productions#index"
+  root "admin/products#index"
 end

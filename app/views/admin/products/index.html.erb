@@ -1,5 +1,9 @@
 <h1>Product List</h1>
 
+<div class="pull-right">
+  <%= link_to("Add new product", new_admin_product_path) %>
+</div>
+
 <table class="table table-boldered">
   <thead>
     <tr>
@@ -19,7 +23,7 @@
         <%= p.id %>
       </td>
       <td>
-        <%= link_to(p.title, job_path(p)) %>
+        <%= link_to(p.title, admin_product_path(p)) %>
       </td>
       <td>
         <%= p.description %>
@@ -31,11 +35,11 @@
         <%= p.price %>
       </td>
       <td>
-        <%= link_to("Edit", edit_admin_production(p)) %>
-        <%= link_to("Delete", admin_production(p), method: :delete, data: {confirm: "下架了吧，矬人"}) %>
+        <%= link_to("Edit", edit_admin_product_path(p)) %>
+        <%= link_to("Delete", admin_product_path(p), method: :delete, data: {confirm: "下架了吧，矬人"}) %>
       </td>
       <td>
-        <%= job.created_at %>
+        <%= p.created_at %>
       </td>
     </tr>
     <% end %>
