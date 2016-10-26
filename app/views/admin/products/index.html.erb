@@ -20,7 +20,12 @@
         <tbody>
            <% @products.each do |product| %>
            <tr>
-           <td>#</td>
+           <% if product.image %>
+             <td><%= image_tag "#{product.image.thumb.url}" %></td>
+           <% else %>
+             <td><%= image_tag "#{product.image.url}" %></td>
+           <% end %>
+           
 
            <td><%= link_to product.title, admin_product_path(product) %></td>
            <td><%= product.description %></td>
