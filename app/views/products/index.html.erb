@@ -1,0 +1,21 @@
+<table class="table table-boldered">
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= product.title %>
+    </td>
+    <td>
+      <%= product.description %>
+    </td>
+    <td>
+      <%= product.quantity %>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+    <td>
+      <%= product.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
