@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -19,7 +19,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% if current_user.admin? %>
-                          <li> <%= link_to("Admin Panel", admin_jobs_path) %></li>
+                          <li> <%= link_to("All products", admin_products_path) %></li>
                         <% end %>
                         <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
