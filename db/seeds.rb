@@ -9,7 +9,7 @@
 
 puts '建立预备资料库'
 
-create_account = User.create([email: 'liangchaob@163.com', password: 'P@ssw0rd', password_confirmation: 'P@ssw0rd'])
+create_account = User.create([email: 'liangchaob@163.com', password: 'P@ssw0rd', password_confirmation: 'P@ssw0rd',is_admin: 'true'])
 puts "管理员建立成功."
 
 create_account = User.create([email: 'idk2idk2@126.com', password: 'P@ssw0rd', password_confirmation: 'P@ssw0rd'])
