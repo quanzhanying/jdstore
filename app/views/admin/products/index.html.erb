@@ -11,7 +11,9 @@
         <tr>
             <td>#
             </td>
-
+            <td>
+              图片
+            </td>
             <td>
                 商品
             </td>
@@ -39,6 +41,11 @@
         <tr>
             <td>
                 <%= product.id %>
+            </td>
+            <td>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url) %>
+              <% end %>
             </td>
             <td>
              <%= product.title %>

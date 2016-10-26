@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    @produt = Product.find(prams[:id])
+    @product = Product.find(params[:id])
 
   end
 
@@ -27,7 +27,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    @produt = Product.find(prams[:id])
+    @product = Product.find(params[:id])
 
     if @product.update(product_params)
       redirect_to admin_products_path, notice:'Product added sucessfully.'
@@ -46,7 +46,7 @@ class Admin::ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 
 
