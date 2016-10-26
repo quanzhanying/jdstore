@@ -1,0 +1,14 @@
+<h1> Add a product </h1>
+
+<%= simple_form_for [:admin,@product] do |f| %>
+
+<%= f.input :title, :label => "商品" %>
+<%= f.input :description, :label => "物品名称" %>
+<%= f.input :quantity, :label => "商品数量" %>
+<%= f.input :price, :label => "商品价格" %>
+
+
+
+
+  <%= f.submit "Submit" %>
+<% end %>

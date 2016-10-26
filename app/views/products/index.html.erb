@@ -1,7 +1,7 @@
+<h1>store list</h1>
+<br><br>
 
-<div class="pull-right">
-  <%= link_to("Add a product", new_product_path, :class => "btn btn-default" ) %>
-</div>
+
 
 
 <table class="table table-boldered">
@@ -9,7 +9,7 @@
   <tr>
     <td>
       <%= link_to(product.title, product_path(product)) %>
-        <%= link_to("Destroy", product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
     </td>
     <td>
       <%= product.created_at %>
