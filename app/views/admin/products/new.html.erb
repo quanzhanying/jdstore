@@ -1,0 +1,22 @@
+<h2>发布新的产品</h2>
+<div class="col-md-4 col-md-offset-4">
+	<hr>
+	<%= simple_form_for [:admin, @product] do |f| %>
+
+	<%= f.input :title %>
+	<br>
+
+	<%= f.input :quantity %>
+	<br>
+
+	<%= f.input :price %>
+	<br>	
+
+	<%= f.input :description %>
+	<br>
+
+	<%= f.submit "发布产品", :disable_with => "提交中..." %>
+	<% end %>
+
+
+</div>
