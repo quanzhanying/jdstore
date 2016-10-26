@@ -1,0 +1,54 @@
+<h2>Prodcut List</h2>
+
+<div class="pull-right">
+    <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default" ) %>
+    <br><br>
+</div>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+
+
+            <td>
+                商品
+            </td>
+            <td>
+                商品介绍
+            </td>
+
+            <td>
+                库存
+            </td>
+            <td>
+               价格
+            </td>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @products.each do |product| %>
+        <tr>
+
+            <td>
+             <%= product.title %>
+            </td>
+            <td>
+                <%= simple_format(product.description) %>
+            </td>
+            <td>
+                <%= product.quantity %>
+            </td>
+            <td>
+                <%= product.price %>
+            </td>
+
+   
+
+        </tr>
+        <% end %>
+
+    </tbody>
+</table>
