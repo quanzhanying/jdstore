@@ -5,13 +5,22 @@
 <br><br>
 
 <table class="table table-boldered">
-  <% @products.each do |product| %>
   <tr>
-    <td>
-      <%= link_to(product.title, admin_product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %>
+    <td>商品名称</td>
+    <td>商品描述</td>
+    <td>数量</td>
+    <td>价格</td>
+    <td>管理者选项</td>
+    <td>时间</td>
+  </tr>
+  <% @products.each do |product| %>
+
+  <tr>
+    <td><%= link_to(product.title, admin_product_path(product)) %></td>
+    <td><%= link_to(product.description, admin_product_path(product)) %></td>
+    <td><%= link_to(product.quantity, admin_product_path(product)) %></td>
+    <td><%= link_to(product.price, admin_product_path(product)) %></td>
+    <td><%= link_to("Edit", edit_admin_product_path(product)) %>
       <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td>
