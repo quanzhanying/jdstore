@@ -32,7 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 
 gem 'bootstrap-sass'
-
+gem "simple_form"
+gem "devise"
 #gem 'mini_magic'
 
 group :development, :test do
