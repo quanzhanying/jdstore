@@ -1,7 +1,7 @@
 class Admin::ProductsController < ApplicationController
-
-  before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  before_filter :require_is_admin
+  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :admin_required
   def show
     @product = Product.find(params[:id])
   end
@@ -17,7 +17,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    if @product.save
+    if @product.save!
       redirect_to admin_products_path
     else
       render :new
@@ -30,7 +30,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.update(product_params)
+    if @product.find(product_params)
       redirect_to admin_products_path
     else
       render :edit
@@ -44,6 +44,13 @@ class Admin::ProductsController < ApplicationController
 
     redirect_to admin_products_path
   end
+  # def require_is_admin
+  #   # if !current_user.admin?
+  #     flash[:alert] = 'You are not admin'
+  #     redirect_to root_path
+  #   # end
+  # end
+
 
   private
 
