@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: productions
+# Table name: products
 #
 #  id          :integer          not null, primary key
 #  title       :string
@@ -11,16 +11,10 @@
 #  updated_at  :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'test_helper'
 
-one:
-  title: MyString
-  description: MyString
-  quantity: 1
-  price: 1
-
-two:
-  title: MyString
-  description: MyString
-  quantity: 1
-  price: 1
+class ProductTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

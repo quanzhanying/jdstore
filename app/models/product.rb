@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: productions
+# Table name: products
 #
 #  id          :integer          not null, primary key
 #  title       :string
@@ -11,5 +11,5 @@
 #  updated_at  :datetime         not null
 #
 
-class Production < ApplicationRecord
+class Product < ApplicationRecord
 end

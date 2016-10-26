@@ -1,0 +1,44 @@
+<h1>Product List</h1>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td> # </td>
+      <td> 品名 </td>
+      <td> description </td>
+      <td> quantity </td>
+      <td> price </td>
+      <td> 选项 </td>
+      <td> 创建日期 </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+    <tr>
+      <td>
+        <%= p.id %>
+      </td>
+      <td>
+        <%= link_to(p.title, job_path(p)) %>
+      </td>
+      <td>
+        <%= p.description %>
+      </td>
+      <td>
+        <%= p.quantity %>
+      </td>
+      <td>
+        <%= p.price %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_admin_production(p)) %>
+        <%= link_to("Delete", admin_production(p), method: :delete, data: {confirm: "下架了吧，矬人"}) %>
+      </td>
+      <td>
+        <%= job.created_at %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
