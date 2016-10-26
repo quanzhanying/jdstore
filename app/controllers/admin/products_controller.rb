@@ -20,6 +20,7 @@ class Admin::ProductsController < ApplicationController
 
     if @product.save
       redirect_to admin_products_path
+      flash[:notice] = "娘子，我上了！"
     else
       render :new
     end
@@ -30,6 +31,7 @@ class Admin::ProductsController < ApplicationController
 
     if @product.update(product_params)
       redirect_to admin_products_path
+      flash[:notice] = "人心啊，反复啊反复，无常啊无常"
     else
       render :edit
     end
@@ -39,6 +41,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to admin_products_path
+    flash[:alert] = "相公，你这就下了？"
   end
 
   private
