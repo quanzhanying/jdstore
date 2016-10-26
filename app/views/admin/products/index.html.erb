@@ -1,4 +1,4 @@
-<h1>JD</h1>
+<h1>JD 商品列表</h1>
 <div class="text-center, pull-right">
   <%= link_to("添加商品", new_admin_product_path(@product), :style => "font-size: 30px; text-decoration:underline;") %>
 </div>
@@ -9,6 +9,7 @@
             <td>商品描述</td>
             <td>库存</td>
             <td>价格</td>
+            <td>图片</td><td></td>
             <td>上传时间</td>
         </tr>
 
@@ -20,6 +21,11 @@
             <td><%= product.description %></td>
             <td><%= product.quantity %></td>
             <td><%= product.price %></td>
+            <td><%= product.image %></td>
+            <td><%= link_to("Edit", edit_admin_product_path(product)) %>|
+            <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %></td>
+
+
             <td><%= product.created_at %></td>
         </tr>
         <% end %>
