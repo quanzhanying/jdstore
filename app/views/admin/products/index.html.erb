@@ -13,6 +13,7 @@
       <th>#</th>
       <th>商品名称</th>
       <th>描述</th>
+      <th>图片</th>
       <th>库存</th>
       <th>价格</th>
       <th>选项</th>
@@ -30,6 +31,11 @@
       </td>
       <td>
         <%= product.description %>
+      </td>
+      <td>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url) %>
+        <% end %>
       </td>
       <td>
         <%= product.quantity %>
