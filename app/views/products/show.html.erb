@@ -1,0 +1,20 @@
+<h2><%= @product.title %></h2>
+<br>
+<br>
+
+<div class="col-md-4 col-md-offset-2">
+	<%= image_tag "#{@product.image.medium.url}" %>
+
+</div>
+<div class="col-md-4 col-xs-3">
+	<hr>
+	<h2><%= simple_format(@product.title) %></h2>	
+	<br>
+	<h3>价格</h3><%= @product.price %>
+	<h3>库存</h3><%= simple_format(@product.quantity) %>
+
+	<%= link_to("加入购物车", "#", class: "btn btn-primary pull-right") %>
+	
+</div>
+
+
