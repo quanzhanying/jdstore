@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+create_account = User.create([email: 'atlantis.ray@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'true'])
+create_account = User.create([email: '111111@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'false'])
+
+create_products = for i in 1..10 do
+  Product.create!([title: "Product no.#{i}", description: "這是用種子建立的第 #{i} 個商品", price: rand(50..99)*100, quantity: 10])
+end
