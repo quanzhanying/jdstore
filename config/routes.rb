@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 		resources :products
 	end
 
-	root 'admin/products#index'
+	root 'welcome#index'
 end
