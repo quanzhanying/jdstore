@@ -2,7 +2,7 @@
   <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default" ) %>
 </div>
 
-<br><br>
+<br><br><br>
   <table class="table table-boldered">
   <style>table, th, td {border: 1px solid black;border-collapse: collapse;}</style>
       <thead>
@@ -22,7 +22,7 @@
   <% @products.each do |product| %>
   <tr>
     <td><%= product.id %></td>
-    <td><%= product.title %></td>
+    <td><%= link_to(product.title, admin_product_path(product)) %></td>
     <td><%= product.description %></td>
     <td><%= product.quantity %></td>
     <td><%= product.price %></td>

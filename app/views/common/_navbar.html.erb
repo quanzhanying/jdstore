@@ -18,7 +18,9 @@
                         Hi!, <%= current_user.email %>
                         <b class="caret"></b>
                     </a>
+                    <% if current_user.admin? %>
                     <ul class="dropdown-menu">
+                      <% end %>
                       <li> <%= link_to("Admin", admin_products_path) %> </li>
                         <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
