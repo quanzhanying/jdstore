@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   before_action :authenticate_user! , only: [:order]
-  before_action :admin_redirect
+  # 管理员自动跳转
+  # before_action :admin_redirect
 
   def index
     # if current_user and current_user.admin?

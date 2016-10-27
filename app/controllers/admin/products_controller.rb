@@ -54,7 +54,7 @@ class Admin::ProductsController < ApplicationController
   def publish
     @product = Product.find(params[:id])
     @product.is_hidden = false
-    @product.update
+    @product.save
 
     redirect_to :back
   end
@@ -62,7 +62,7 @@ class Admin::ProductsController < ApplicationController
   def private
     @product = Product.find(params[:id])
     @product.is_hidden = true
-    @product.update
+    @product.save
 
     redirect_to :back    
   end

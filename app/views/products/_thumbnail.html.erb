@@ -1,5 +1,6 @@
 <div class="row">
   <% @products.each do |product| %>
+  <% if !product.is_hidden %>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
 
@@ -23,5 +24,6 @@
         </div>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
