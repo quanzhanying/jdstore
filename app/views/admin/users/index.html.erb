@@ -1,0 +1,29 @@
+<div class="pull-right">
+  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>ID</td>
+    <td>email</td>
+    <td>created_at</td>
+    <td>is_admin</td>
+    <td>Operation</td>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+
+    <td><%= user.id%></td>
+    <td><%= user.email %></td>
+    <td><%= user.created_at %></td>
+    <td><%= user.is_admin %></td>
+
+    <td><%=link_to("admin",administrator_admin_user_path(user),method: :post)%>
+        |
+        <%=link_to("consumer",consumer_admin_user_path(user),method: :post)%>
+    </td>
+  </tr>
+  <% end %>
+</table>

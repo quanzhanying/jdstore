@@ -31,7 +31,8 @@ class User < ApplicationRecord
 
   has_many :products
 
-  #scope:zengzheng -> {where(user_id: 1)}
+  scope :all_except, ->(user) { where.not(id: user) }
+
   def admin?
     is_admin
   end
