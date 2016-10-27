@@ -10,6 +10,7 @@
   <thead>
     <tr>
       <td>#</td>
+      <td>图片</td>
       <td>品名</td>
       <td>叙述</td>
       <td>库存</td>
@@ -26,6 +27,9 @@
       <%= product.id %>
     </td>
     <td>
+      <%= image_tag("#{product.image.small.url}") %>
+    </td>
+    <td>
       <%= product.title %>
     </td>
     <td>
@@ -37,6 +41,7 @@
     <td>
       <%= product.price %>
     </td>
+
     <td>
       <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default") %>
       <%= link_to("Delete", admin_product_path(product),    class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Are you sure?"})%>
