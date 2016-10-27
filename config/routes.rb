@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
- devise_for :users
- namespace :admin do
-   resources :products
- end
-
+  devise_for :users
   namespace :admin do
-    resources :user_group do
-      post :admin
-      post :user
-     end
+    resources :products
+    resources :users do
+      member do
+        post :drop
+        post :push
+      end
     end
   end
-
- root 'products#index'
+  resources :products
+  root 'products#index'
 end

@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_filter :authenticate_user! , only:[:new, :create, :edit, :update, :destroy]
-
+  before_filter :admin_require
+  layout "admin"
   def show
     @product = Product.find(params[:id])
   end
@@ -41,8 +42,6 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
-  #def require_is_admin
-    #if current_user.admin?
 
   private
 

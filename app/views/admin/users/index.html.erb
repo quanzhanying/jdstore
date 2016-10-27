@@ -1,0 +1,28 @@
+
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>用户名称</td>
+      <td>权限设置</td>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @users.each do |user| %>
+  <tr>
+    <td>
+      <% if current_user.is_admin = true%>
+      (admin)
+      <% else %>
+      (user)
+      <% end %>
+     <%= user.email %>
+    </td>
+    <td>
+    <%= link_to("push", push_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+  </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
