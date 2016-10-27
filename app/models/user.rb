@@ -27,4 +27,9 @@ class User < ApplicationRecord
   def admin?
   	is_admin
   end
+
+  def is_not_admin
+  	!is_admin
+  end
+  
 end

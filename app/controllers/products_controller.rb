@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@other_products = Product.all[1,2]
 	end
 
 	private

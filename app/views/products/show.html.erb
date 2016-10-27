@@ -2,23 +2,42 @@
 <br>
 <br>
 
-<div class="col-md-4 col-md-offset-2">
-	<%= image_tag "#{@product.image.medium.url}" %>
+<div class="row">
+	<div class="col-md-4 col-md-offset-1">
+		<%= render "common/medium_product_image" %>	
+	</div>
+
+	<div class="col-md-4 col-xs-3">
+		<br>
+		<h2><%= simple_format(@product.title) %></h2>	
+		<br>
+		<%= @product.description %>
+		<br>
+		<h3>价格</h3><%= @product.price %>
+		<h3>库存</h3><%= simple_format(@product.quantity) %>
+		<br>
+		<%= render "common/add_to_cart_button" %>
+	</div>
+
+	<div class="col-md-3">
+		<br>
+		<h3>其他类似产品</h3>
+		<br>
+		<div class="row">
+			<% @other_products.each do |other_product| %>
+				<div class="col-md-12">
+					<%= link_to image_tag("#{other_product.image.thumb.url}",), product_path(other_product) %>
+					<br>	
+					<%= link_to "#{other_product.title}", product_path(other_product) %>
+					<br>
+					<%= other_product.price %>
+				</div>
+			<% end %>
+		</div>
+		
+	</div>
 
 </div>
-<div class="col-md-4 col-xs-3">
-	<hr>
-	<h2><%= simple_format(@product.title) %></h2>	
-	<br>
-	<h3>价格</h3><%= @product.price %>
-	<h3>库存</h3><%= simple_format(@product.quantity) %>
-	<% if current_user %>
-		<%= link_to("加入购物车", "#", class: "btn btn-primary pull-right") %>
-	<% else %>
-		<%= link_to("加入购物车", new_user_session_path, class: "btn btn-primary pull-right") %>
-	<% end %>
-	
-	
-</div>
+
 
 

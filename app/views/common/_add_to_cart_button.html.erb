@@ -1,0 +1,40 @@
+	<% if current_user %>
+		<% if current_user.is_not_admin %>
+
+			<!-- 加入购物车数量 -->
+			<div class="input-group", style="width:150px">
+				<!-- 减号 -->
+         		<span class="input-group-btn">
+             		<button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                 		<span class="glyphicon glyphicon-minus"></span>
+              		</button>
+          		</span>
+				
+				<!-- 数字input -->
+          		<input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+          		
+          		
+          		<!-- 加号 -->
+          		<span class="input-group-btn">
+          	    	<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                  		<span class="glyphicon glyphicon-plus"></span>
+             		</button>
+        	  	</span>
+
+        	  	<span class="input-group-btn">
+          	    	
+        	  	</span>
+
+        	  	<br>
+
+        	  	
+     		</div>
+
+     		<%= link_to("加入购物车", "#", class: "btn btn-primary", style: "width:150px") %>	
+
+					
+		<% end %>
+		
+	<% else %>
+		<%= link_to("登录", new_user_session_path, class: "btn btn-primary") %>
+	<% end %>	

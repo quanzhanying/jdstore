@@ -1,0 +1,24 @@
+	<% @products.each do |product|%>
+      <div class="col-xs-6 col-md-6 col-lg-4 col-sm-6 bit ">
+      	
+      	<div class="row">
+      		<div class="col-lg-8 col-lg-offset-2">
+      		    
+      		    <div class="col-center">
+      		    	<%= link_to image_tag("#{product.image.thumb.url}",), product_path(product)%>
+      		   		<br>
+      		   		<br>
+      		    	<%= link_to product.title, product_path(product) %>
+      		    	<br>
+      		    	<%= product.price %>
+      		    </div>
+                
+                <br>
+        		
+
+      		</div>
+      	</div> 
+
+        <br>
+      </div>
+    <% end %>
