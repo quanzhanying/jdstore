@@ -1,32 +1,28 @@
-<h2 style="text-align:center;"> Items List </h2>
 
-<table class="table table-boldered">
 
     <% @items.each do |item| %>
 
       <% if item.is_available %>
 
-        <tr>
 
-          <td>
-            <%= item.attachment %>
-          </td>
+          <p>
+            <% if item.attachment %>
+              <%= image_tag item.attachment_url(:thumb).to_s %>
+            <% else %>
+             <p class="No Pic"></p>
+            <% end %>
 
-          <td>
+          </p>
+
+          <p>
             <%= link_to(item.title, item_path(item)) %>
-          </td>
+          </p>
 
-          <td>
+          <p>
             <%= item.price %>
-          </td>
+          </p>
 
-
-          <td>
-            <%= item.created_at %>
-          </td>
-        </tr>
       <% else %>
 
       <% end %>
     <% end %>
-</table>
