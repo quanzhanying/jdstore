@@ -1,26 +1,32 @@
 <h2 style="text-align:center;"> Items List </h2>
 
 <table class="table table-boldered">
-  <% @items.each do |item| %>
-  <tr>
 
-    <td>
-      <%= item.attachment %>
-    </td>
+    <% @items.each do |item| %>
 
-    <td>
-      <%= link_to(item.title, item_path(item)) %>
-    </td>
+      <% if item.is_available %>
 
-    <td>
-      <%= item.price %>
-    </td>
+        <tr>
+
+          <td>
+            <%= item.attachment %>
+          </td>
+
+          <td>
+            <%= link_to(item.title, item_path(item)) %>
+          </td>
+
+          <td>
+            <%= item.price %>
+          </td>
 
 
-    <td>
-      <%= item.created_at %>
-    </td>
-  </tr>
+          <td>
+            <%= item.created_at %>
+          </td>
+        </tr>
+      <% else %>
 
-  <% end %>
+      <% end %>
+    <% end %>
 </table>

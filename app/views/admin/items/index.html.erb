@@ -23,6 +23,15 @@
     </td>
 
     <td>
+      <% if item.is_available %>
+        <%= link_to("Off Shelf", hide_admin_item_path(item), :method => :post) %>
+      <% else %>
+        <%= link_to("On Shelf", publish_admin_item_path(item), :method => :post) %>
+      <% end %>
+
+    </td>
+
+    <td>
       <%= item.created_at %>
     </td>
   </tr>

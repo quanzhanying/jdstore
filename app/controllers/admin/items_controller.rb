@@ -2,15 +2,19 @@ class Admin::ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show, :index]
   before_action :require_is_admin
 
-
-
-  def require_is_admin
-    if !current_user.admin?
-      falsh[:alert] = "You are not Admin"
-      redirect_to root_path
-    end
+  def publish
+    @item = Item.find(params[:id])
+    @item.publish!
+    redirect_to :back
   end
-  
+
+  def hide
+    @item = Item.find(params[:id])
+    @item.hide!
+    redirect_to :back
+  end
+
+
   def index
     @items = Item.all
   end
