@@ -44,7 +44,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
-  def job_params
+  def product_params
     params.require(:product).permit(:title, :description, :price, :quantity, :onsale)
   end
 
