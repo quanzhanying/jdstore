@@ -1,0 +1,28 @@
+
+
+  <% @products.each do |product| %>
+
+
+
+  <div class="container">
+  	<ul class="thumbnails">
+  		<li class="span5">
+  			<div class="thumbnail">
+          <%=link_to(image_tag(product.image.url(:thumb)) )%>
+
+  				<div class="caption">
+  					<h5>  <%= link_to(product.title, product_path(product)) %></h5>
+  					<p>    <%= link_to(product.description, product_path(product)) %>
+          <br></p>
+  					<p><a href="#" class="btn btn-success">数量
+               <%= link_to(product.quantity, product_path(product)) %> 个</a>
+               <a href="#" class="btn btn-warning">价钱
+                  <%= link_to(product.price, product_path(product)) %> 元</a>
+                 </p>
+  				</div>
+  			</div>
+  		</li>
+  	</ul>
+  	<hr>
+  </div>
+  <% end %>
