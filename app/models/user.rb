@@ -7,4 +7,14 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
+  def master!
+    self.is_admin = true
+    self.save
+  end
+
+  def guest!
+    self.is_admin = false
+    self.save
+  end 
 end
