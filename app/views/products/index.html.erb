@@ -1,0 +1,16 @@
+
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+     <%= image_tag(product.image.thumb.url) %>
+      <div class="caption">
+        <p><a href="#"></a> </p>
+      </div>
+        <%= link_to(product.title, product_path(product)) %>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+    </div>
+  </div>
+  <% end %>
+</div>

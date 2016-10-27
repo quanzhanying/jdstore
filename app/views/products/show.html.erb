@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="pull-left">
+       <p><%= image_tag @product.image_url unless @product.image_url.nil? %></p>
+        <div class="pull-right">
+         <%= link_to("加入购物车", product_path, :class => "btn btn-default" ) %>
+       </div>
+     </div>
+   </div>
+</div>
