@@ -1,10 +1,11 @@
 <div style="width: 60%;">
    <div style="float:left;">
-		<p>
-			<div class="thumbnail" >
-		  	<%= image_tag @product.image.medium.url, :class => "style_image" %>
-			</div>
-		</p>
+		 <div class="thumbnail" >
+			 <p>
+			   <!-- <strong>Image:</strong> -->
+			   <%= image_tag @product.image.medium.url, :class => "style_image" %>
+			 </p>
+	 	</div>
 	 </div>
 
 	 <div style="float:right;">
@@ -19,11 +20,4 @@
 
 <div class="buy">
 	<%= link_to("Add to Cart", "#", class: "btn btn-primary pull-right") %>
-</div>
-</br></br>
-<div style="float:right;">
-<% if current_user.is_admin %>
-<%= link_to 'Edit', edit_admin_product_path(@product) %> |
-<%= link_to 'Back', admin_products_path %>
-<% end %>
 </div>

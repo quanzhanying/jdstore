@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 	namespace :admin do
-		resources :products do
-			resources :pictures
-		end
+		resources :products
 	end
 
+	resources :products
 
-	root 'admin/products#index'
+	root 'products#index'
 end
