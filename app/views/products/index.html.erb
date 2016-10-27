@@ -23,7 +23,7 @@
       <%= link_to(product.price, product_path(product)) %>
     </td>
     <td>
-      <%= image_tag @product.image_url(:thumb).to_s %>
+      <%= link_to(product.image, product_path(product))  %>
     </td>
 
 
