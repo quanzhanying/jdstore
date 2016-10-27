@@ -2,7 +2,7 @@ class Item < ApplicationRecord
 
 
 
-  # mount_uploader :attachment, AttachmentUploder
+  mount_uploader :attachment, AttachmentUploader
 
     def hide!
       self.is_available = false
