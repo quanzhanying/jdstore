@@ -34,7 +34,9 @@
       </td>
       <td>
         <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url) %>
+          <%= image_tag(product.image.thumb.url, class:"thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200", class:"thumbnail")%>
         <% end %>
       </td>
       <td>
