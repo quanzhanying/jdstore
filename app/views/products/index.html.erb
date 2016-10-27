@@ -3,8 +3,12 @@
     <% @products.each do |product| %>
     <div class="thumbnail">
       <div class="caption">
-        <h3><%= product.title %></h3>
-        <img src="<%= product.image.thumb %>">
+        <h3><%= link_to("product.title", product_path(product)) %></h3>
+        <% if !product.image.blank? %>
+          <img src="<%= product.image.thumb %>">
+        <% else %>
+          <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200">
+        <% end %>
         <p><%= product.description %></p>
         <p>单价：<%= product.price %><br>库存：<%= product.quantity %></p>
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>

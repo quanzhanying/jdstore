@@ -31,11 +31,16 @@
         <% end %>
       </td>
       <td>
-        <%= link_to(product.title, admin_product_path(product)) %>
+        <%= link_to(product.title, product_path(product)) %>
       </td>
       <td>
-          <img src= <%= product.image.thumb %> ><br>
-          <%= product.description %>
+        <% if !product.image.blank? %>
+          <img src="<%= product.image.thumb %>">
+        <% else %>
+          <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200">
+        <% end %>
+        <br>
+        <%= product.description %>
       </td>
       <td>
           单价:<%= product.price %><br>
