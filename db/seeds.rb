@@ -11,8 +11,11 @@ puts "這個種子檔會自動建立一個admin帳號, 並且創建 10 個 publi
 
 create_account = User.create([email: 't@t', password: '123123', password_confirmation: '123123', is_admin: 'true'])
 puts "Admin account created."
+create_account = User.create([email: 'u@u', password: '123123', password_confirmation: '123123'])
+puts "顾客建立成功"
+
 
 create_jos = for i in 1..10 do
-  Product.create!([title: "Product no.#{i}", description: "這是用種子建立的第 #{i} 個Public工作", price: rand(50..99)*100])
+  Product.create!([title: "Product no.#{i}", description: "这是用种子程序生产的第 #{i} 个小僵尸", quantity: rand(2..6), price: rand(50..99)*100])
 end
-puts "10 Public products created."
+puts "10 僵尸产品 created."
