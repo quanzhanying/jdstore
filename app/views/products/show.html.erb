@@ -1,17 +1,17 @@
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3><%= @product.title %></h3>
-        <% if !@product.image.blank? %>
-          <img src="<%= @product.image.medium %>">
-        <% else %>
-          <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="400">
-        <% end %>
-        <p><%= @product.description %></p>
-        <p>单价：<%= @product.price %><br>库存：<%= @product.quantity %></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+  <div class="row">
+    <div class="col-md-6">
+      <% if !@product.image.blank? %>
+        <img src="<%= @product.image.medium %>">
+      <% else %>
+        <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="400">
+      <% end %>
+    </div>
+    <div class="col-sm-3">
+      <h3><%= @product.title %></h3>
+      <p><%= @product.description %></p>
+      <p>单价：<%= @product.price %><br>库存：<%= @product.quantity %></p>
+      <div class="pull-right">
+        <%= link_to("加入购物车", "" , :class => "btn btn-danger") %>
       </div>
     </div>
   </div>
-</div>
