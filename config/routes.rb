@@ -14,7 +14,12 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :products
+    resources :products do
+      member do
+        post :hide
+        post :publish
+      end
+    end
   end
 
   root 'products#index'

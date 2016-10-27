@@ -21,10 +21,12 @@
     <td>
       <%= render_user_status(user)%>
       <%= user.is_admin %></td>
-
-    <td><%=link_to("admin",administrator_admin_user_path(user),method: :post, :class => "btn btn-xs btn-default")%>
-        |
-        <%=link_to("consumer",consumer_admin_user_path(user),method: :post, :class => "btn btn-xs btn-default")%>
+    <td>
+        <% if !user.is_admin %>
+          <%=link_to("admin",administrator_admin_user_path(user),method: :post, :class => "btn btn-xs btn-default")%>
+        <% else %>
+          <%=link_to("consumer",consumer_admin_user_path(user),method: :post, :class => "btn btn-xs btn-default")%>
+        <% end %>
     </td>
   </tr>
   <% end %>
