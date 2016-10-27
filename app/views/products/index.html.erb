@@ -3,12 +3,13 @@
   <div class="col-sm-6 col-md-4">
 
     <div class="thumbnail">
-      
+
       <% if product.image.present? %>
-       <%=image_tag( product.image.thumb.url )%>
+
+       <%= link_to( image_tag( product.image.thumb.url ),product_path(product)) %>
 
       <% else %>
-        <%=image_tag("http://placehold.it/200x200&text=No Pic") %>
+        <%=link_to(image_tag("http://placehold.it/200x200&text=No Pic"),product_path(product) )%>
       <% end %>
 
       <div class="caption">
