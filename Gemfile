@@ -38,6 +38,8 @@ gem 'mini_magick'
 gem 'annotate'
 gem "rails-erd"
 
+gem 'pry'
+
 
 
 
