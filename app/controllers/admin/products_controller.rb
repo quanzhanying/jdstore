@@ -18,6 +18,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save!
+      flash[:notice] = "成功！"
       redirect_to admin_products_path
     else
       render :new
@@ -32,6 +33,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     #if @product.find(product_params)
     if @product.update(product_params)
+  
       redirect_to admin_products_path
     else
       render :edit
