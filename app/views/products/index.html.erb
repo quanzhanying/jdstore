@@ -1,44 +1,25 @@
 <div class="row">
+    <% @products.each do |product| %>
   <div class="col-sm-6 col-md-4">
+
     <div class="thumbnail">
-      <img data-src="holder.js/200x200" alt="...">
+      
+      <% if product.image.present? %>
+       <%=image_tag( product.image.thumb.url )%>
+
+      <% else %>
+        <%=image_tag("http://placehold.it/200x200&text=No Pic") %>
+      <% end %>
+
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
+        <%= product.title %>
+        <p><%= product.description %></p>
+        <p><%= product.price %></p>
         <p><a href="#" class="btn btn-primary" role="button">购买</a>
           <a href="#" class="btn btn-default" role="button">加到购物车</a></p>
       </div>
     </div>
+
   </div>
-</div>
-
-
-<table class="table table-boldered">
-  <% @products.each do |product| %>
-  <tr>
-    <td>
-    <% if product.image.present? %>
-     <%=image_tag( product.image.thumb.url )%>
-
-    <% else %>
-      <%= "No pic" %>
-    <% end %>
-  </td>
-    <td>
-      <%= product.title %>
-    </td>
-    <td>
-      <%= product.description %>
-    </td>
-    <td>
-      <%= product.quantity %>
-    </td>
-    <td>
-      <%= product.price %>
-    </td>
-    <td>
-      <%= product.created_at %>
-    </td>
-  </tr>
   <% end %>
-</table>
+</div>
