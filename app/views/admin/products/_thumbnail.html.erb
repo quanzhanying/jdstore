@@ -1,8 +1,19 @@
 <div class="row">
   <% @products.each do |product| %>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-      <a href="<%= admin_product_path(product) %>"><img src="<%= product.image %>" alt="<%= product.title %>"></a>
+
+      <a href="<%= admin_product_path(product) %>">
+
+        <!-- 显示图判断 -->
+        <% if no_pic?(product) %>
+          <img src="/nopic.png" alt="no picture" class="img-responsive">
+        <% else %>
+          <img src="<%= product.image %>" alt="<%= product.title %>" class="img-responsive">
+        <% end %>
+
+
+      </a>
         
         <div class="caption">
           <h3>￥<%= product.price %>.00</h3>

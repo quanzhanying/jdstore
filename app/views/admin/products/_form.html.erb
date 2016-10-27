@@ -1,9 +1,17 @@
 <%= simple_form_for [:admin, @product] do |f| %>
-
 <div class="form-group">
     <%= f.input :title, label: '商品名',input_html: { class: "form-control"} %>
     <%= f.input :description, label: '描述',input_html: { class: "form-control"} %>
     <%= f.input :image, label: '图片'%>
+
+        <!-- 显示图判断 -->
+        <% if no_pic?(@product) %>
+          <img src="/nopic.png" alt="no picture" class="img-responsive">
+        <% else %>
+          <img src="<%= @product.image %>" alt="<%= @product.title %>" class="img-responsive">
+        <% end %>
+
+
     <%= f.input :quantity, label: '库存',input_html: { class: "form-control"} %>
     <%= f.input :price, label: '价格',input_html: { class: "form-control"} %>
 

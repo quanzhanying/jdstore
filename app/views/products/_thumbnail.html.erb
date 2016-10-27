@@ -5,18 +5,18 @@
 
       <a href="<%= product_path(product) %>">
 
-      <% if product.image.length == 0 %>
-      <img src="/nopic.png" alt="no picture">
-      <% else %>
-
-      <img src="<%= product.image %>" alt="<%= product.title %>">
-        
-      <% end %>
+        <!-- 显示图判断 -->
+        <% if no_pic?(product) %>
+          <img src="/nopic.png" alt="no picture" class="img-responsive">
+        <% else %>
+          <img src="<%= product.image %>" alt="<%= product.title %>" class="img-responsive">
+        <% end %>
 
 
       </a>
         
         <div class="caption">
+        <h5><%= product.title %></h5>  
           <h3>￥<%= product.price %>.00</h3>
           <p><%= product.description %></p>
 
