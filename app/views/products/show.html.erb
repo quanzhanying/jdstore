@@ -1,0 +1,31 @@
+
+
+<div class="row">
+
+  <div class="col-md-5 col-xs-6">
+    <% if @product.image?  %>
+      <%= image_tag @product.image.medium.url %>
+    <% else %>
+      <img src="http://placehold.it/400x400&text=laoMa" alt="" />
+      <%#= image_tag http://placehold.it/300&text=C7SKY.COM %>
+    <% end %>
+  </div>
+
+  <div class="col-md-4 col-xs-3">
+    <h2><%= @product.title %></h2>
+    <br><br><br>
+    <p>
+      数量：<%= @product.quantity %>
+    </p>
+    <p>
+      $: <%= @product.price %>
+    </p>
+  </div>
+
+  <div class="col-md-2 col-xs-3">
+    <h2>
+      <%= link_to("Add it to Chart!", product_path(@product), class:"btn btn-danger") %>
+    </h2>
+  </div>
+
+</div>

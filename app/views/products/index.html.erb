@@ -1,0 +1,43 @@
+<!--
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+        <% @products.each do |product| %>
+        <div class="thumbnail">
+          <%= image_tag product.image_url(:medium) if product.image?%>
+          <div class="caption">
+            <h3>
+              <%= product.title %>
+              <%= product.price %>
+            </h3>
+            <%= link_to("买买买", product_path(product), class: "btn btn-default") %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+ -->
+
+    <div class="row">
+      <% @products.each do |product| %>
+      <%= link_to(product_path(product)) do %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <% if product.image?  %>
+            <%= image_tag product.image.thumb.url %>
+          <% else %>
+            <img src="http://placehold.it/200x200&text=laoMa" alt="" />
+            <%#= image_tag http://placehold.it/300&text=C7SKY.COM %>
+          <% end %>
+          <div class="caption">
+            <h3>
+              <%= product.title %>
+              $<%= product.price %>
+            </h3>
+            <%= link_to("Add it to Chart", edit_product_path(product), class: "btn btn-default") %>
+            <%= link_to("Buy it!", edit_product_path(product), class: "btn btn-danger") %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
