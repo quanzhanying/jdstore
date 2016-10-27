@@ -36,7 +36,6 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path,notice:'Update Success'
     else
       render :edit
-
     end
   end
 
@@ -50,6 +49,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-     params.require(:product).permit(:title, :description, :quantity, :price)
+     params.require(:product).permit(:title, :description, :quantity, :price,:image)
   end
 end
