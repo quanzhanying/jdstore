@@ -19,7 +19,13 @@
   <tbody>
     <% @products.each do |product| %>
     <tr>
-      <td><%= product.onsale %></td>
+      <td>
+        <% if product.onsale %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-eye-slash" aria-hidden="true"></i>
+        <% end %>
+      </td>
       <td>
         <%= link_to(product.title, admin_product_path(product)) %>
       </td>
