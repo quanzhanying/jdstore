@@ -1,28 +1,38 @@
 
-
+<table class="table">
+  <tr>
+    <div class="row">
+    <div class="col-md-4">
     <% @items.each do |item| %>
+
 
       <% if item.is_available %>
 
 
-          <p>
+          <td>
             <% if item.attachment %>
-              <%= image_tag item.attachment_url(:thumb).to_s %>
+
+                <%= image_tag item.attachment_url(:thumb).to_s %>
+
             <% else %>
-             <p class="No Pic"></p>
+
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" class="img-thumbnail" width="200" height="200">
+
             <% end %>
-
-          </p>
-
-          <p>
+            <br>
             <%= link_to(item.title, item_path(item)) %>
-          </p>
-
-          <p>
+            <br>
+            <%= '$' %>
             <%= item.price %>
-          </p>
+
+          </td>
 
       <% else %>
 
       <% end %>
     <% end %>
+  </div>
+  </div>
+  </tr>
+
+</table>
