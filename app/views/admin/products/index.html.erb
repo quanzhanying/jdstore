@@ -1,0 +1,48 @@
+<h1>Product List</h1>
+
+<div class="pull-right">
+  <%= link_to("Add new product", new_admin_product_path) %>
+</div>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td> # </td>
+      <td> 品名 </td>
+      <td> description </td>
+      <td> quantity </td>
+      <td> price </td>
+      <td> 选项 </td>
+      <td> 创建日期 </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+    <tr>
+      <td>
+        <%= p.id %>
+      </td>
+      <td>
+        <%= link_to(p.title, admin_product_path(p)) %>
+      </td>
+      <td>
+        <%= p.description %>
+      </td>
+      <td>
+        <%= p.quantity %>
+      </td>
+      <td>
+        <%= p.price %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_admin_product_path(p)) %>
+        <%= link_to("Delete", admin_product_path(p), method: :delete, data: {confirm: "下架了吧，矬人"}) %>
+      </td>
+      <td>
+        <%= p.created_at %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
