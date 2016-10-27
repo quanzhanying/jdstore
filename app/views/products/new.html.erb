@@ -1,11 +1,16 @@
 <h1> Add a product </h1>
 
 <%= simple_form_for @product do |f| %>
-
+title:
 <%= f.input :title %>
+description
 <%= f.input :description %>
-<%= f.input :quantity %> 
+quntity
+<%= f.input :quantity %>
+price
 <%= f.input :price %>
+image
+<%= f.file_field :image %>
 
   <%= f.submit "Submit" %>
 <% end %>

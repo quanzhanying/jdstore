@@ -1,14 +1,12 @@
-<div class="pull-right">
-  <%= link_to("Add a product", new_product_path, :class => "btn btn-default" ) %>
-</div>
+
 <table class="table table-boldered">
   <tr>
     <td>商品名称</td>
     <td>商品描述</td>
     <td>数量</td>
     <td>价格</td>
-    
-    <td>时间</td>
+
+    <td>图片</td>
   </tr>
   <% @products.each do |product| %>
   <tr>
@@ -24,6 +22,10 @@
     <td>
       <%= link_to(product.price, product_path(product)) %>
     </td>
+    <td>
+      <%= image_tag @product.image_url(:thumb).to_s %>
+    </td>
+
 
     <td>
       <%= product.created_at %>

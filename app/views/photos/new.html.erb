@@ -1,0 +1,9 @@
+<h3>上传照片 <%= @product.title %> </h3>
+
+<hr>
+
+<%= simple_form_for [@product, @photo] do |f| %>
+  <%= f.input :content %>
+    <%= f.input :attachment %> 
+  <%= f.submit "上传" %>
+<% end %>
