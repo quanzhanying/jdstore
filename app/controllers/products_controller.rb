@@ -10,9 +10,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def new
-    @product =Product.new
-  end
+  # def new
+  #   @product =Product.new
+  # end
   def admin_require
     if !current_user.admin?
       redirect_to root_path

@@ -3,17 +3,17 @@ before_filter :authenticate_user!
 before_filter :admin_require
 layout "admin"
   def index
-    @users = User.all
+    @users = User.all_except(current_user)
   end
 
-  def drop
+  def user
     @user = User.find(params[:id])
     @user.is_admin = false
     @user.save
     redirect_to :back
   end
 
-  def push
+  def admin
     @user = User.find(params[:id])
     @user.is_admin = true
     @user.save

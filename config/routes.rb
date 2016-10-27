@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     resources :products
     resources :users do
       member do
-        post :drop
-        post :push
+        post :admin
+        post :user
       end
     end
   end

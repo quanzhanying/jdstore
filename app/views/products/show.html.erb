@@ -1,5 +1,14 @@
-<h1><%= @product.title %></h1>
-<p>
-  <%= @product.description %>
-  <%= image_tag @product.image_url.to_s %>
-</p>
+
+  <div class="row">
+    <div class="col-md-4">
+  <!-- <%= image_tag @product.image_url.to_s %> -->
+  <%= image_tag(@product.image.medium.url) %>
+    </div>
+    <div class="col-md-8">
+      <h1>商品名称:<%= @product.title %></h1>
+      <h5>商品概述:<%= @product.description %></h5>
+      <h5>价格:<%= @product.price %></h5>
+      <h5>库存:<%= @product.quantity %></h5>
+      <%= link_to("加入购物车", "#", :class => "btn btn-xs btn-danger") %>
+    </div>
+  </div>

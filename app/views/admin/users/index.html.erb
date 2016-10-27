@@ -1,5 +1,4 @@
-
-
+<h1>User List</h1>
 <table class="table table-boldered">
   <thead>
     <tr>
@@ -9,18 +8,19 @@
   </thead>
 
   <tbody>
-<% @users.each do |user| %>
+<% @users.each do |user, current_user| %>
   <tr>
     <td>
-      <% if current_user.is_admin = true%>
-      (admin)
-      <% else %>
-      (user)
-      <% end %>
+     <%= render_is_admin(user) %>
      <%= user.email %>
     </td>
     <td>
-    <%= link_to("push", push_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+
+    <% if user.is_admin %>
+      <%= link_to("user", user_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+    <% else %>
+      <%= link_to("admin", admin_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+    <% end %>
   </td>
   </tr>
 <% end %>
