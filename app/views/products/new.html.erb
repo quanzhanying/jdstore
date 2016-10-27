@@ -1,6 +1,6 @@
 <h1> Add a product </h1>
 
-<%= simple_form_for @product do |f| %>
+<%= simple_form_for @product,html => {:multipart => true } do |f| %>
 title:
 <%= f.input :title %>
 description
@@ -10,7 +10,7 @@ quntity
 price
 <%= f.input :price %>
 image
-<%= f.file_field :image %>
+<%= image_tag(@product.image_url) %>
 
   <%= f.submit "Submit" %>
 <% end %>
