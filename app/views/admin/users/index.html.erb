@@ -1,0 +1,36 @@
+<h2> Users List </h2>
+
+
+<table class="table table-boldered">
+  <thead>
+       <tr>
+           <td>用户名称</td>
+           <td>管理</td>
+           <td>创建时间</td>
+
+       </tr>
+
+   </thead>
+ <tbody>
+   <% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= user.email %>
+    </td>
+
+
+    <td>
+      <% if user.is_admin %>
+      <%= link_to("user", user_admin_user_path(user), :method => :post) %>
+      <%else %>
+      <%= link_to("admin", admin_admin_user_path(user), method: :post) %>
+    <% end %>
+    </td>
+
+    <td>
+      <%= user.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>

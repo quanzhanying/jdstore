@@ -1,6 +1,26 @@
 <h1> <%= @product.title %> </h1>
+<div class="row">
 
-<p>
-  <%= simple_format(@product.description) %>
+  <div class="col-xs-6 col-md-3">
+    <% if @product.image? %>
+      <%= image_tag(@product.image.medium.url, class:"medium") %>
+    <% else %>
+      <image src="http://andresgaleano.eu/wp-content/uploads/2015/09/No-I-mage-Available.gif", width="400", class="medium">
+    <% end %>
+  </div>
 
-</p>
+<div class="col-xs-6 col-md-4">
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
+    <h3>商品详情：<%=@product.description%></h3>
+    <h3>商品数量：<%=@product.quantity%>个</h3>
+    <h3>商品价格：<%= @product.price%>元</h3>
+    <p>
+    <a href="#" class="btn btn-default" role="button">加入购物车</a>
+    </p>
+</div>
+
+</div>
