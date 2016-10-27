@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :users do
+      member do
+        post :admin
+        post :user
+      end
+    end
   end
 
   resources :products

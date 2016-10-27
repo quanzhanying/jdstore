@@ -9,6 +9,7 @@
             <td>商品描述</td>
             <td>库存</td>
             <td>价格</td>
+            <td>邮箱</td>
             <td>图片</td><td></td>
             <td>上传时间</td>
         </tr>
@@ -21,6 +22,7 @@
             <td><%= product.description %></td>
             <td><%= product.quantity %></td>
             <td><%= product.price %></td>
+            <td><%= product.email %></td>
             <td><%= product.image %></td>
             <td><%= link_to("Edit", edit_admin_product_path(product)) %>|
             <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %></td>
