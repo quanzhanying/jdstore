@@ -20,10 +20,12 @@
     <% @products.each do |product| %>
     <tr>
       <td>
-        <% if product.onsale %>
-          <i class="fa fa-eye" aria-hidden="true"></i>
-        <% else %>
+        <% if !product.onsale %>
           <i class="fa fa-eye-slash" aria-hidden="true"></i>
+          <%= link_to("上架", onsale_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+        <% else %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+          <%= link_to("下架", soldout_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
         <% end %>
       </td>
       <td>

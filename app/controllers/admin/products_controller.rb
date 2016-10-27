@@ -43,6 +43,18 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  def onsale
+    @product = Product.find(params[:id])
+    @product.onsale!
+    redirect_to :back
+  end
+
+  def soldout
+    @product = Product.find(params[:id])
+    @product.soldout!
+    redirect_to :back
+  end
+  
   private
   def product_params
     params.require(:product).permit(:title, :description, :price, :quantity, :onsale, :image)
