@@ -21,11 +21,13 @@
     <tr>
       <td>
         <% if !product.onsale %>
-          <i class="fa fa-eye-slash" aria-hidden="true"></i>
-          <%= link_to("上架", onsale_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+          <!-- <i class="fa fa-eye-slash" aria-hidden="true"></i> -->
+          <%= link_to("", onsale_admin_product_path(product), :method => :post, :class => "fa fa-eye-slash") %>
+            <!-- <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </button>"btn btn-xs btn-default") %> -->
         <% else %>
-          <i class="fa fa-eye" aria-hidden="true"></i>
-          <%= link_to("下架", soldout_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+          <%= link_to("", soldout_admin_product_path(product), :method => :post, :class => "fa fa-eye") %>
         <% end %>
       </td>
       <td>
