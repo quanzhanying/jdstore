@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  validates :title,presence:true
+  validates :title,:description,:quantity,:price,presence:true
   mount_uploader :image,ImageUploader
-has_many :photos 
+has_many :photos
 
 end
