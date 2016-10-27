@@ -1,10 +1,11 @@
-<h1> 展示商品－<%= @production.title %> </h1>
+<h1> 展示商品－<%= @product.title %> </h1>
 
 <hr>
 <p>
-  <%= simple_format(@job.description) %>
-  <%= simple_format(@job.quantity) %>
-  <%= simple_format(@job.price) %>
-  <%= simple_format(@job.created_at) %>
+  <%#= simple_format(@product.description) %>
+  <%= @product.description %> <br>
+  <%= @product.quantity %> <br>
+  <%= @product.price %> <br>
+  <%= @product.created_at %>
 
 </p>
