@@ -8,6 +8,13 @@ Rails.application.routes.draw do
         post :hide
       end
     end
+
+    resources :users do
+      member do
+        post :Adm
+        post :Use
+      end
+    end
   end
 
   resources :items

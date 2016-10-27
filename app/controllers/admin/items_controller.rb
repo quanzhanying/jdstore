@@ -2,6 +2,9 @@ class Admin::ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show, :index]
   before_action :require_is_admin
 
+
+  layout "admin"
+  
   def publish
     @item = Item.find(params[:id])
     @item.publish!
