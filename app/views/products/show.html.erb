@@ -1,0 +1,22 @@
+  <h1><%= @product.title %></h1>
+  <h6>产品描述</h6>
+  <p><%= simple_format(@product.description) %></p>
+  <h6>图片</h6>
+
+      <% if @product.image.length == 0 %>
+      <p>空</p>
+      <!-- <img src="/nopic.png" alt="no picture"> -->
+      <% else %>
+
+
+      <img src="<%= @product.image %>" alt="<%= @product.title %>">
+        
+      <% end %>
+
+  <h6>库存</h6>
+  <p><%= @product.quantity %></p>
+  <h6>价格</h6>
+  <p><%= @product.price %></p>
+  <br>
+  <hr>
+  <div class="btn btn-primary">购买</div>
