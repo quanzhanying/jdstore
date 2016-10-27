@@ -12,8 +12,12 @@
 	<br>
 	<h3>价格</h3><%= @product.price %>
 	<h3>库存</h3><%= simple_format(@product.quantity) %>
-
-	<%= link_to("加入购物车", "#", class: "btn btn-primary pull-right") %>
+	<% if current_user %>
+		<%= link_to("加入购物车", "#", class: "btn btn-primary pull-right") %>
+	<% else %>
+		<%= link_to("加入购物车", new_user_session_path, class: "btn btn-primary pull-right") %>
+	<% end %>
+	
 	
 </div>
 
