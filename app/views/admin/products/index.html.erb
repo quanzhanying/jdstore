@@ -10,8 +10,7 @@
       <th>On Sale</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Price</th>
-      <th>Quantity</th>
+      <th>Price & Quantity</th>
       <th>Action</th>
       <th>Last Update</th>
     </tr>
@@ -24,9 +23,14 @@
       <td>
         <%= link_to(product.title, admin_product_path(product)) %>
       </td>
-      <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= product.quantity %></td>
+      <td>
+          <img src= <%= product.image.thumb %> ><br>
+          <%= product.description %>
+      </td>
+      <td>
+          单价:<%= product.price %><br>
+          库存:<%= product.quantity %>
+      </td>
       <td>
         <%= link_to("Edit", edit_admin_product_path(product)) %>
         <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
