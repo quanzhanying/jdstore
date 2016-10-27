@@ -9,6 +9,7 @@
         <% if no_pic?(product) %>
           <img src="/nopic.png" alt="no picture" class="img-responsive">
         <% else %>
+
           <img src="<%= product.image %>" alt="<%= product.title %>" class="img-responsive">
         <% end %>
 
@@ -16,9 +17,12 @@
       </a>
         
         <div class="caption">
+        <h5><%= product.title %></h5> 
           <h3>￥<%= product.price %>.00</h3>
           <p><%= product.description %></p>
-          <p><%= link_to('编辑',edit_admin_product_path(product),class: "btn btn-primary",role: "button") %> <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "确定删除?" },class: "btn btn-primary",role: "button") %>
+          <%= link_to('编辑',edit_admin_product_path(product),class: "btn btn-primary",role: "button") %> 
+          <%= link_to("下架", admin_product_path(product), :method => :delete, :data => { :confirm => "确定删除?" },class: "btn btn-warning",role: "button") %>
+          <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "确定删除?" },class: "btn btn-danger",role: "button") %>
         </div>
       </div>
     </div>

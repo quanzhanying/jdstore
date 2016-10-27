@@ -2,6 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:index]
   before_action :admin_required
 
+  layout "admin"
 
   def index
     @products = Product.all
@@ -49,6 +50,22 @@ class Admin::ProductsController < ApplicationController
 
   end
 
+  # 可以改变状态按钮
+  def publish
+    @product = Product.find(params[:id])
+    @product.is_hidden = false
+    @product.update
+
+    redirect_to :back
+  end
+
+  def private
+    @product = Product.find(params[:id])
+    @product.is_hidden = true
+    @product.update
+
+    redirect_to :back    
+  end
 
 
 
