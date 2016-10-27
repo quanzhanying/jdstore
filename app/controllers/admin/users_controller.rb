@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   layout "admin"
 
   def index
-    @users = User.all.order("created_at DESC")
+    @users = User.all_except(current_user).order("created_at DESC")
   end
 
   def admin

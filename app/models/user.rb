@@ -9,7 +9,7 @@ class User < ApplicationRecord
   end
 
 
-
+  scope :all_except, ->user{where.not(id:user)}
 
 
 end
