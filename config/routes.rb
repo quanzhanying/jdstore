@@ -9,6 +9,14 @@ Rails.application.routes.draw do
         put :private
       end
     end
+
+    resources :users do
+      member do
+        put :cgadmin
+        put :cguser
+      end
+    end
+
   end
 
   resources :products

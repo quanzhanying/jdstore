@@ -11,10 +11,11 @@
 
         <!-- 显示图判断 -->
         <% if no_pic?(product) %>
-          <img src="/nopic.png" alt="no picture" class="img-responsive">
+        <%= image_tag(product.image.default_url, class: "thumbnail") %>
+          <!-- <img src="/nopic.png" alt="no picture" class="img-responsive"> -->
         <% else %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
 
-          <img src="<%= product.image %>" alt="<%= product.title %>" class="img-responsive">
         <% end %>
 
 

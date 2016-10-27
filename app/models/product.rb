@@ -10,6 +10,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image       :string
+#  is_hidden   :boolean          default(FALSE)
 #
 
 class Product < ApplicationRecord
