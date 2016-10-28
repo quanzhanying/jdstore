@@ -1,8 +1,19 @@
 <div class="container-fluid">
-  <h2>商品一览</h2>
+
+  <div class="jumbotron">
+    <p>商品一栏</p>
+  </div>
+
   <div class="row">
     <%= render "common/thumb_product_images" %>
+    <% if session %>
+    	<%= puts "!!!!!!!!!!!!!" %>
+    	<% session[:test_key] = "@@@@@@@@" %>
+    	<%= puts session[:test_key] %>
+    	<%= puts session[:session_id] %>
+    <% end %>
   </div>
+
 </div>
 
 

@@ -1,5 +1,6 @@
 	<% if  "#{@product.image.medium.url}" == "default.thumb.png" %>
 		<%= image_tag "default.medium.png" %>
+
 	<% else %>
-		<%= image_tag "#{@product.image.medium.url}" %>
+		<%= image_tag @product.image.url(:medium) %>
 	<% end %>

@@ -6,5 +6,7 @@ class ApplicationController < ActionController::Base
 			redirect_to root_path, alert: "没有管理员权限"
 		end
 	end
+
+	 
 	
 end
