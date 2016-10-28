@@ -37,16 +37,11 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  
+
   private
 
-  def require_is_admin
-    if current_user.admin?
-      flash[:alert] = 'You are not admin'
-      redirect_to root_path
-    end
-  end
-
   def product_params
-    params.require(:product).permit(:title, :description)
+    params.require(:product).permit(:title, :description, :image)
   end
 end

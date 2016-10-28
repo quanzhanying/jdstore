@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  before_filter :require_is_admin
   layout "admin"
   def index
     @users = User.all
@@ -7,7 +8,7 @@ class Admin::UsersController < ApplicationController
   def master
     @user = User.find(params[:id])
     @user.master!
-    
+
     redirect_to :back
   end
 
@@ -17,5 +18,4 @@ class Admin::UsersController < ApplicationController
 
     redirect_to :back
   end
-
 end

@@ -1,9 +1,17 @@
-<table class="table table-boldered">
-  <% @products.each do |product| %>
-  <tr>
-    <td>
-      <%= link_to(product.title, product_path(product)) %>
-    </td>
-  </tr>
+<%# form_for @product, :html => { :multipart => true } do |f| %>
+<%#= f.file_field :photo %>
+<%# end %>
+
+  <div class="field">
+<%#= render :partial => "form", :collection => @products, :as => :u %>
+  </div>
+
+<% @products.each do |product| %>
+  <% if product.image.length != 0 %>
+    <%= image_tag(product.image.thumb.url) %>
   <% end %>
-</table>
+<% end %>
+
+<%# @product.image %>
+<%#= image_tag @product.image.medium.url %>
+<%# end %>

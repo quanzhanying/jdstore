@@ -1,4 +1,8 @@
-<h1><%= @product.title %></h1>
+<h1><%#= @product.title %></h1>
 <p>
-  <%= simple_format(@product.description) %>
+  <%#= simple_format(@product.description) %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @product.image.thumb.url %>
 </p>

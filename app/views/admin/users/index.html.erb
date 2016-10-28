@@ -7,17 +7,25 @@
   <% @users.each do |user| %>
   <tr>
     <td>
+    <% if user.is_admin %>
+      Admin
+      <% else %>
+      Guest
+      <% end %>
+    </td>
+    <td>
       <%= link_to(user.email, admin_user_path(user)) %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_user_path(user)) %> |
       <%= link_to("Destroy", admin_user_path(user), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
 
-      <% if user.is_admin %>
-        <%= link_to("Admin", master_admin_user_path(user), class => "btn btn-xs btn-default") %>
-      <% else %>
-        <%= link_to("Guest", guest_admin_user_path(user), class => "btn btn-xs btn-default") %>
-      <% end %>
+      <%# if user.is_admin %>
+        <%#= link_to("Admin", master_admin_user_path(user), :method => :post, class => "btn btn-xs btn-default") %>
+      <%# else %>
+        <%#= link_to("Guest", guest_admin_user_path(user), :method => :post, class => "btn btn-xs btn-default") %>
+      <%# end %>
+
     </td>
     <td>
       <%= user.created_at %>
