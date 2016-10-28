@@ -7,10 +7,18 @@
   </div>
 
 <% @products.each do |product| %>
-  <% if product.image.length != 0 %>
-    <%= image_tag(product.image.thumb.url) %>
+<%#= link_to(image_tag(product.image(:thumb))) %>
+
+  <%# if product.image.length != 0 %>
+    <%#= image_tag(product.image.thumb.url) %>
+  <%# end %>
+
+  <% if product.image.present? %>
+  <%= image_tag(product.image.thumb.url) %>
   <% end %>
 <% end %>
+
+
 
 <%# @product.image %>
 <%#= image_tag @product.image.medium.url %>

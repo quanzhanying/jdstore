@@ -1,3 +1,9 @@
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to(product.title, admin_product_path(product)) %></li>
+  <% end %>
+</ul>
+
 <div class="pull-right">
   <%= link_to("Add ne product", new_admin_product_path, :class => "btn btn-default") %>
 </div>

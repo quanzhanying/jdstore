@@ -1,9 +1,28 @@
-<h1> Add a product </h1>
-<%= simple_form_for [:admin,@product] do |f| %>
+<h2> New Product </h2>
+<%#= simple_form_for [:admin,@product] do |f| %>
+  <%#= f.input :title %>
+  <%#= f.input :description %>
+  <%#= f.input :quantity %>
+  <%#= f.input :price %>
+  <%#= f.input :image %>
+  <%#= f.submit "Create Product" %>
+<%# end %>
+<%= simple_form_for [:admin, @product] do |f| %>
+<div class="group">
   <%= f.input :title %>
+</div>
+
+<div class="group">
   <%= f.input :description %>
+</div>
+
+<div class="group">
   <%= f.input :quantity %>
+</div>
+
+<div class="group">
   <%= f.input :price %>
-  <%= f.input :image %>
-  <%= f.submit "Create Product" %>
+</div>
+
+<%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>
