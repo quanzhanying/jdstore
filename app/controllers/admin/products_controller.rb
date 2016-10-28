@@ -1,7 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :require_is_admin
-
+  layout "sidebar"
   def index
     @products = Product.all
   end
@@ -54,7 +54,7 @@ class Admin::ProductsController < ApplicationController
     @product.soldout!
     redirect_to :back
   end
-  
+
   private
   def product_params
     params.require(:product).permit(:title, :description, :price, :quantity, :onsale, :image)
