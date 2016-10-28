@@ -16,8 +16,8 @@
 class Product < ApplicationRecord
 	mount_uploader :image, ImageUploader
 
-	def self.search(search)
-		where("title LIKE ? or description LIKE ?", "%#{search}%", "%#{search}%")
+	def self.search(value)
+		where("title LIKE ? or description LIKE ?", "%#{value}%", "%#{value}%")
 	end
 
 end

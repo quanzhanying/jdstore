@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 
   <div class="jumbotron vertical-center" style="height:100px">
     <p>商品一栏</p>
@@ -6,12 +6,6 @@
 
   <div class="row">
     <%= render "common/thumb_product_images" %>
-    <% if session %>
-    	<%= puts "!!!!!!!!!!!!!" %>
-    	<% session[:test_key] = "@@@@@@@@" %>
-    	<%= puts session[:test_key] %>
-    	<%= puts session[:session_id] %>
-    <% end %>
   </div>
 
 </div>

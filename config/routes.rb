@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   # get 网址 , to controller#action
-  get 'no_result', to:'products#no_result'
+  # get 'no_result', to:'products#no_result'
 
   namespace :admin do
   	resources :products

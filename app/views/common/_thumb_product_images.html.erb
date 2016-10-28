@@ -27,12 +27,16 @@
 
 <% @products.each do |product|%>
   <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <%= link_to image_tag("#{product.image.thumb.url}",), product_path(product) %>
+    <div class="thumbnail text-center">
+        
+        <%= link_to image_tag("#{product.image.thumb.url}"), product_path(product) %>
+      
+      
       <div class="caption text-center">
         <h4><%= link_to product.title, product_path(product) %></h4>
-        <p><%= product.description %></p>
+        <p><%= product.description %></p>        
       </div>
+
     </div>
   </div>
 <% end %>    
