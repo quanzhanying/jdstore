@@ -16,5 +16,6 @@ class User < ApplicationRecord
     self.is_admin = false
     self.save
   end
+  has_many :orders
 
 end

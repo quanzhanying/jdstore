@@ -12,5 +12,6 @@ class Product < ApplicationRecord
     self.onsale = false
     self.save
   end
-  
+  has_many :order_relationships
+  has_many :participated_orders, :through => :order_relationships, :source => :order
 end
