@@ -10,16 +10,11 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- 搜索条 -->
-               <%= form_for products_path, method: :get, html: { role: "search", class: "navbar-form navbar-left"} do %>
-                    <div class="form-group">
-                        <%= text_field_tag :search, params[:search], class: "form-control" %>
-                    </div>
-
-                    <div class="form-group">
-                        <%= submit_tag "搜索", class: "btn btn-default" %>
-                    </div>
-                <% end %>
-
+                <li><%= form_tag products_path, method: :get, class: "navbar-form navbar-left" do %>
+                    <%= text_field_tag :search, params[:search], class: "form-control" %>
+                    <%= submit_tag "搜索", class: "btn btn-default" %>
+                <% end %></li> 
+               
 
                 <% if !current_user %>
                     <li><%= link_to("注册", new_user_registration_path) %></li>
