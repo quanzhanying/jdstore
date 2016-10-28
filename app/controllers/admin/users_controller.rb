@@ -40,4 +40,12 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+
+
+  # def user_params
+  #   params.require(:user).permit(:title, :description, :image,:quantity, :price)
+  # end
+
+
+
 end
