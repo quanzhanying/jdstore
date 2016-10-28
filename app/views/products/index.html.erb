@@ -1,19 +1,50 @@
-<div class="row">
+<!-- <div class="row">
   <% @products.each do |product| %>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3><%= link_to("product.title", product_path(product)) %></h3>
+    <div class="col-md-4" style="height: 450px;">
+
+    <div>
+      <%= link_to(product_path(product)) do %>
         <% if !product.image.blank? %>
-          <img src="<%= product.image.thumb %>">
+          <%= image_tag(product.image.thumb, :class => "thumbnail") %>
         <% else %>
-          <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200">
+          <%= image_tag("http://placehold.it/200x200") %>
         <% end %>
-        <p><%= product.description %></p>
-        <p>单价：<%= product.price %><br>库存：<%= product.quantity %></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
+      <% end %>
     </div>
+
+    <div class="clearfix">
+      <h3><%= link_to("product.title", product_path(product)) %></h3>
+      <p><%= product.description %></p>
+      <p>单价：<%= product.price %><br>库存：<%= product.quantity %></p>
+    </div>
+
   </div>
   <% end %>
+
+</div> -->
+
+<div class="row">
+<% @products.each do |product| %>
+
+<div class="col-sm-6 col-md-4" style="height: 450px;">
+  <div class="clearfix">
+    <div >
+        <%= link_to(product_path(product)) do %>
+          <% if !product.image.blank? %>
+            <%= image_tag(product.image.thumb, :class => "pic-with-border") %>
+          <% else %>
+            <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200", class = "pic-with-border"/>
+          <% end %>
+        <% end %>
+    </div>
+    <div class="clearfix">
+      <h3><%= link_to("product.title", product_path(product)) %></h3>
+      <p><%= product.description %></p>
+      <p>单价：<%= product.price %><br>库存：<%= product.quantity %></p>
+    </div>
+  </div>
+</div>
+
+
+<% end %>
 </div>
