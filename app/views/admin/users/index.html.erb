@@ -1,0 +1,42 @@
+
+<table class="table table-boldered">
+    <thead>
+        <tr>
+            <td>用户</td>
+            <td>商用切换</td>
+
+            <td>上传时间</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+
+            <td>
+              <% if user.is_admin  %>
+                     (Admin)
+                  <% else %>
+                     (User)
+                  <% end %>
+
+
+              <%= user.email %></td>
+            <td><%= link_to("Edit", edit_admin_user_path(user)) %>|
+            <%= link_to("Destroy", admin_user_path(user), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+            <% if user.is_admin %>
+
+            <%= link_to("User", admin_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-default") %>
+        <% else %>
+            <%= link_to("Admin", user_admin_user_path(user), :method => :post,  :class => "btn btn-xs btn-default") %>
+            <% end %>
+
+          </td>
+
+
+            <td><%= user.created_at %></td>
+        </tr>
+        <% end %>
+    </tbody>
+
+</table>

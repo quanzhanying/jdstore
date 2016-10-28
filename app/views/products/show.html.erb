@@ -1,0 +1,11 @@
+<div class="pull-right">
+  <%= link_to("购买", :class => "btn btn-default" ) %>
+</div>
+
+<h1> <%= @product.title %> </h1>
+
+
+<%= @product.description %>
+
+<%= @product.quantity %>
+<%= image_tag@product.image_url %>
