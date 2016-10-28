@@ -9,12 +9,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 
-                <form class="navbar-form navbar-left" role="search">
+                <!-- 搜索条 -->
+               <%= form_for products_path, method: :get, html: { role: "search", class: "navbar-form navbar-left"} do %>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <%= text_field_tag :search, params[:search], class: "form-control" %>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+
+                    <div class="form-group">
+                        <%= submit_tag "搜索", class: "btn btn-default" %>
+                    </div>
+                <% end %>
+
 
                 <% if !current_user %>
                     <li><%= link_to("注册", new_user_registration_path) %></li>

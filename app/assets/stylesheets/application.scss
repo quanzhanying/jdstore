@@ -22,6 +22,12 @@
     background-color:#f4f4f4 !important; 
 }
 
+.vertical-center {
+
+  display: flex;
+  align-items: center;
+}
+
 .col-center{
   display: block;
   margin-left: auto;

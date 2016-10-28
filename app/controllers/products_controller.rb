@@ -2,6 +2,20 @@ class ProductsController < ApplicationController
 
 	def index
 		@products = Product.all
+		if params[:search]
+			@products = Product.search(params[:search]).order("created_at DESC")
+		else
+			@products = Product.all.order("created_at DESC")
+		end
+
+		if !@products.any?
+			render :no_result
+		end
+
+	end
+
+	def no_result
+
 	end
 
 	def show
