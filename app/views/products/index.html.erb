@@ -1,0 +1,17 @@
+<%# form_for @product, :html => { :multipart => true } do |f| %>
+<%#= f.file_field :photo %>
+<%# end %>
+
+  <div class="field">
+<%#= render :partial => "form", :collection => @products, :as => :u %>
+  </div>
+
+<% @products.each do |product| %>
+  <% if product.image.length != 0 %>
+    <%= image_tag(product.image.thumb.url) %>
+  <% end %>
+<% end %>
+
+<%# @product.image %>
+<%#= image_tag @product.image.medium.url %>
+<%# end %>
