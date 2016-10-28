@@ -4,6 +4,7 @@
     <tr>
       <th>#</th>
       <th>User</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +12,15 @@
     <tr>
       <td>#</td>
       <td><%= user.email %></td>
+      <td><%= user.is_admin %>
+        <% if user == current_user %>
+        <p class="btn btn-default">本人</p>
+        <% elsif user.is_admin  %>
+          <%= link_to("设为用户", become_user_admin_user_path(user), :method => :post, :class => "btn btn-default") %>
+        <% else %>
+          <%= link_to("设为管理员", become_admin_admin_user_path(user), :method => :post, :class => "btn btn-default") %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

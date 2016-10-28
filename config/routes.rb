@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products
   namespace :admin do
-    resources :users
+    resources :users do
+      member do
+        post :become_admin
+        post :become_user
+      end
+    end
     resources :products do
       member do
         post :onsale
