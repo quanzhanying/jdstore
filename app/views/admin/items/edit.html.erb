@@ -5,8 +5,8 @@
 <%= f.input :description %>
 <%= f.input :price %>
 <%= f.input :storage %>
-<%= f.input :attachment %>
+<%= f.label :picture %>
+<%= f.file_field :attachment %>
 <%= f.input :is_available %>
-
-<%= f.submit "Submit" %>
+<%= f.submit "Submit", :class => "btn btn-success" %>
 <% end %>

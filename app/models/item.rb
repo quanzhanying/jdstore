@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-
+  validates :title, presence: true
 
   mount_uploader :attachment, AttachmentUploader
 

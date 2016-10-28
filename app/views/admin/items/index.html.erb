@@ -1,6 +1,8 @@
 
-<div style="text-align:center;">
-  <%= link_to("Add new item", new_admin_item_path) %>
+<div style="text-align:center;" class='pull-right'>
+
+  <%= button_to("Add new item", new_admin_item_path, :class => "btn btn-success btn-lg", :method => :get) %>
+<br><br>
 </div>
 
 <br><br>
@@ -13,6 +15,16 @@
     </td>
 
     <td>
+
+        <% if item.is_available %>
+          <%= "Available" %>
+        <% else %>
+          <%= "Not Available" %>
+        <% end %>
+
+    </td>
+
+    <td>
       <%= link_to("Edit", edit_admin_item_path(item)) %>
     </td>
 
@@ -21,12 +33,7 @@
     </td>
 
     <td>
-      <% if item.is_available %>
-        <%= link_to("Off Shelf", hide_admin_item_path(item), :method => :post) %>
-      <% else %>
-        <%= link_to("On Shelf", publish_admin_item_path(item), :method => :post) %>
-      <% end %>
-
+      <%= on_off_shelf(item) %>
     </td>
 
     <td>
