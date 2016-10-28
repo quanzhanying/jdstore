@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
 
  def show
    @product = Product.find(params[:id])
+
+   if @product.is_hidden
+     flash[:warning] = "This Job already archieved"
+     redirect_to
+   end
  end
 
 

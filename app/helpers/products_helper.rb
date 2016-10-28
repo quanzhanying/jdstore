@@ -2,9 +2,9 @@ module ProductsHelper
 
   def render_product_status(product)
     if product.is_hidden
-      "(Hidden)"
+      content_tag(:span, "", :class => "fa fa-lock")
     else
-      "(Public)"
+      content_tag(:span, "", :class => "fa fa-globe")
     end
   end
 end

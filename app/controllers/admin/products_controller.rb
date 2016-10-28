@@ -3,6 +3,19 @@ class Admin::ProductsController < ApplicationController
   before_filter :require_is_admin
   layout "admin"
 
+  def publish
+    @product =Product.find(params[:id])
+    @product.publish!
+
+    redirect_to :back
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+    @product.hide!
+    redirect_to :back
+  end
+  
   def index
     @products = Product.all
 
