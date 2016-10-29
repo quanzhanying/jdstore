@@ -15,7 +15,7 @@ class Admin::ProductsController < ApplicationController
     @product.hide!
     redirect_to :back
   end
-  
+
   def index
     @products = Product.all
 
@@ -59,6 +59,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image, :is_hidden)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :is_hidden, :is_admin)
   end
 end

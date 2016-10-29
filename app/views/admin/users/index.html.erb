@@ -1,0 +1,29 @@
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>  #  </td>
+      <td> 用户名 </td>
+      <td> 修改权限 </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= render_is_admin(user) %>
+      </td>
+      <td>
+        <%= simple_format(user.email) %>
+      </td>
+      <td>
+        <% if user.is_admin %>
+          <%= link_to("商家", adm_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-success", data: {confirm: "Are you sure change to 'user'?"}) %>
+        <% else %>
+          <%= link_to("消费者", usr_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-primary", data: {confirm: "Are you sure change to 'admin'?"}) %>
+        <% end %>
+      </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

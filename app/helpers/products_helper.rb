@@ -7,4 +7,12 @@ module ProductsHelper
       content_tag(:span, "", :class => "fa fa-globe")
     end
   end
+
+  def render_is_admin(user)
+    if user.is_admin
+      "(Admin)"
+    else
+      "(User)"
+    end
+  end
 end

@@ -11,5 +11,5 @@ class Product < ApplicationRecord
     self.save
   end
 
-
+  
 end
