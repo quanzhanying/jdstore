@@ -1,23 +1,22 @@
-<div style="width: 60%;">
+<div class="col-md-6">
+
    <div style="float:left;">
 		 <div class="thumbnail" >
 			 <p>
 			   <!-- <strong>Image:</strong> -->
-			   <%= image_tag @product.image.medium.url, :class => "style_image" %>
+			   <%= image_tag @product.image.medium.url %>
 			 </p>
 	 	</div>
 	 </div>
+</div>
 
-	 <div style="float:right;">
 		 <h2> <%= @product.title %> </h2>
 
 		 <p><strong>Description: </strong><%= simple_format(@product.description) %></p>
 		 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 		 <p><strong>Price: </strong>$<%= @product.price %></p>
-   </div>
-</div>
-<div style="clear:both"></div>
 
-<div class="buy">
-	<%= link_to("Add to Cart", "#", class: "btn btn-primary pull-right") %>
-</div>
+
+		 <div>
+		 	<%= link_to("Add to Cart", "#", class: "btn btn-primary pull-right") %>
+		 </div>
