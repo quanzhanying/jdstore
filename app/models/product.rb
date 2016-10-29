@@ -14,6 +14,9 @@
 #
 
 class Product < ApplicationRecord
+
+	has_many :cart_items
+
 	mount_uploader :image, ImageUploader
 
 	def self.search(value)
