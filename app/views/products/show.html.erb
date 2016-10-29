@@ -1,3 +1,5 @@
+<div class="container-fluid">
+  <div class="col-xs-4">
      <% if @product.image.present? %>
        <%=image_tag( @product.image.medium.url )%>
 
@@ -5,11 +7,15 @@
         <%=image_tag("http://placehold.it/200x200&text=No Pic") %>
       <% end %>
 
-
-      <h3><%= @product.title %><h3>
-      <p><%= @product.quantity %></p>
-      <%= @product.price %>
-
-
-
-      <a href="#" class="btn btn-default" role="button">加到购物车</a>
+  </div>
+  <div class="col-xs-4">
+      <h2><%= @product.title %><h2>
+      <br>
+      数量<%= @product.quantity %>
+      <br>
+      价格<%= @product.price %>
+  </div>
+  <div class="col-xs-4">
+      <a href="#" class="btn" role="button">加到购物车</a>
+  </div>
+</div>

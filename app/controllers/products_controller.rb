@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products=Product.all
+    @products=Product.where(:is_hidden=>false)
   end
 
   def new
@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
 
   def show
     @product=Product.find(params[:id])
+    if product.is_hidden
+      flash[:waring]="此商品已下架！"
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -47,6 +51,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title,:description,:quantity,:price)
+    params.require(:product).permit(:title,:description,:quantity,:price,:is_hidden)
   end
 end
