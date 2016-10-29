@@ -8,5 +8,5 @@
 create_account = User.create([email:'f@b.com', password:'fbfbfb', password_confirmation:'fbfbfb', is_admin: 'true'])
 
 create_jos = for i in 1..10 do
-  Product.create!([title:"Product no.#{i}", description:"This is No. #{i} Product created by the seed", quantity: rand(1.99), price: rand(1..99)])
+  Product.create!([title:"Product no.#{i}", description:"This is No. #{i} Product created by the seed", quantity: rand(1..99), price: rand(1..99)])
 end
