@@ -26,6 +26,7 @@ class User < ApplicationRecord
 
   has_one :cart
   has_many :delivery_addresses
+  has_many :orders
 
   def admin?
   	is_admin

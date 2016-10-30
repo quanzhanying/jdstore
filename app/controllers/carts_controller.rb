@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
 	def index
 		# @cart = current_cart
-		@cart_items = current_cart.cart_items
+		@cart_items = current_cart.cart_items.where(order_id: nil)
 	end
 
 

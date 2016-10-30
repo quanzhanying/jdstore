@@ -10,7 +10,7 @@
 	<div class="col-md-4 col-md-offset-1">
 		<h2><%= simple_format(@product.title) %></h2>	
 		<br>
-		<h3>库存</h3><%= simple_format(@product.quantity) %>
+		<h3>库存</h3><%= @product.quantity %>
 		<h3>描述</h3><%= simple_format(@product.description) %>
 		<%= render "common/add_to_cart_button" %>
 	</div>

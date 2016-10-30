@@ -2,12 +2,12 @@
 #
 # Table name: orders
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  address    :text
-#  status     :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                  :integer          not null, primary key
+#  status              :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  delivery_address_id :integer
+#  user_id             :integer
 #
 
 require 'test_helper'
