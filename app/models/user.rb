@@ -25,6 +25,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :cart
+  has_many :delivery_addresses
 
   def admin?
   	is_admin

@@ -61,9 +61,9 @@
 	
 	<div class="row" style="padding-right: 15px">
 		<% if @cart_items.any? %>
-			<%= link_to "去结算", "#", class: "btn btn-warning pull-right btn-lg" %>
+			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg" %>
 		<% else %>
-			<%= link_to "去结算", "#", class: "btn btn-warning pull-right btn-lg disabled" %>
+			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg disabled" %>
 		<% end %>
 		
 	</div>

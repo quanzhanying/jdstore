@@ -1,2 +1,6 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<div class="container">
+	<%= simple_form_for @order do |f| %>
+		<%= f.input :name, input_html: { class: "form-control"}  %>
+		<%= f.input :address, input_html: { class: "form-control"}  %>
+	
+</div>
