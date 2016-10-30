@@ -9,9 +9,11 @@
 #  updated_at :datetime         not null
 #  cart_id    :integer
 #  product_id :integer
+#  order_id   :integer
 #
 
 class CartItem < ApplicationRecord
 	belongs_to :cart
 	belongs_to :product
+	belongs_to :order
 end

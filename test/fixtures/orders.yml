@@ -1,23 +1,23 @@
 # == Schema Information
 #
-# Table name: cart_items
+# Table name: orders
 #
 #  id         :integer          not null, primary key
-#  quantity   :integer
-#  price      :float
+#  name       :string
+#  address    :text
+#  status     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  cart_id    :integer
-#  product_id :integer
-#  order_id   :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  quantity: 1
-  price: 1.5
+  name: MyString
+  address: MyText
+  status: MyString
 
 two:
-  quantity: 1
-  price: 1.5
+  name: MyString
+  address: MyText
+  status: MyString

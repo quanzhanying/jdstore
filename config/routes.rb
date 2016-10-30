@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+
+  get 'orders/new'
+
+  get 'orders/show'
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
@@ -16,5 +22,6 @@ Rails.application.routes.draw do
   
   resources :cart_items, only: [:create, :destroy]
 
+  resources :orders, only: [:index, :new, :show, :create]
 
 end
