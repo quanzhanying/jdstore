@@ -7,7 +7,7 @@ class Admin::ProductsController < ApplicationController
     end
 
     def index
-      @products = Product.all
+      @products = Product.all.order("created_at DESC")
     end
 
     def new
@@ -30,6 +30,7 @@ class Admin::ProductsController < ApplicationController
 
     def update
       @product = Product.find(params[:id])
+      
       if @product.update(product_params)
         redirect_to admin_products_path
       else

@@ -2,11 +2,27 @@
 
   <%= simple_form_for [:admin,@product] do |f| %>
 
-  <%= f.input :title %>
+
+  <div class="group">
+     <%= f.input :title %>
+  </div>
+
+  <div class="group">
   <%= f.input :description %>
+  </div>
+
+  <div class="group">
   <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
   <%= f.input :price %>
+ </div>
+
+  <div class="group">
   <%= f.input :image %>
-  <%= f.submit "Create Product" %>
+  </div>
+
+  <%= f.submit "Create Product", data: { disable_with: "Submitting..." } %>
 
 <% end %>
