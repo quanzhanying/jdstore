@@ -16,7 +16,7 @@
     <% @products.each do |product| %>
     <tr>
       <td>
-        <% if !product.onsale %>
+        <% unless product.onsale %>
           <!-- <i class="fa fa-eye-slash" aria-hidden="true"></i> -->
           <%= link_to("", onsale_admin_product_path(product), :method => :post, :class => "fa fa-eye-slash") %>
             <!-- <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -30,7 +30,7 @@
         <%= link_to(product.title, product_path(product)) %>
       </td>
       <td>
-        <% if !product.image.blank? %>
+        <% unless product.image? %>
           <img src="<%= product.image.thumb %>">
         <% else %>
           <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200">

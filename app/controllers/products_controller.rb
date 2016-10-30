@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+
+    unless @product.onsale
+      flash[:warning] = "This product is sold out."
+      redirect_to root_path
+    end
   end
 
   def new

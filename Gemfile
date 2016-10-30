@@ -33,7 +33,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
 gem 'font-awesome-rails'
