@@ -53,9 +53,9 @@ class ProductsController < ApplicationController
 
   # end
 
-  def order
+  # def order
     
-  end
+  # end
 
 
   private

@@ -67,6 +67,16 @@ class Admin::ProductsController < ApplicationController
     redirect_to :back    
   end
 
+  # def order
+  #   @product = Product.find(params[:id])
+  #   pid = @product.id
+  #   uid = current_user.id
+  #   puts  pid
+  #   puts  uid
+
+  #   User.create([id: pid, user_id: uid])
+  # end
+
 
 
   private

@@ -11,8 +11,9 @@
 
         <!-- 显示图判断 -->
         <% if no_pic?(product) %>
+        <!-- <img data-src="http://placehold.it/300x300" alt="..."> -->
         <%= image_tag(product.image.default_url, class: "thumbnail") %>
-          <!-- <img src="/nopic.png" alt="no picture" class="img-responsive"> -->
+          <!-- <img src="/images/fallback/nopic.png" alt="no picture" class="img-responsive"> -->
         <% else %>
           <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
 

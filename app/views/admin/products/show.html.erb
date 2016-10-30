@@ -4,6 +4,7 @@
   
         <!-- 显示图判断 -->
         <% if no_pic?(@product) %>
+        <!-- <img data-src="http://placehold.it/300x300" alt="..." class="img-responsive"> -->
           <img src="/nopic.png" alt="no picture" class="img-responsive">
         <% else %>
           <img src="<%= @product.image %>" alt="<%= @product.title %>" class="img-responsive">
