@@ -1,8 +1,8 @@
-<nav class="navbar narbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/"><%= image_tag "jd.jpg" %></a>
+      <a class="navbar-brand" href="/"><%= image_tag "jd.png" %></a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-examle-navbar-collapse-1">
@@ -23,6 +23,11 @@
                   <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                 <li>
+                  <%= link_to("Admin 选单", admin_products_path) %>
+                 </li>
+                <% end %>
                 <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
               </ul>
             </li>
