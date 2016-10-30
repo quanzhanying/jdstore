@@ -1,0 +1,32 @@
+
+<br>
+<br>
+
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr class="info">
+				<td>收货人姓名</td>
+				<td>收货地址</td>
+				<td>手机号</td>
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @delivery_addresses.each do |delivery_address| %>
+				<tr class="active">
+					<td><%= delivery_address.name %></td>
+					<td><%= delivery_address.address %></td>
+					<td><%= delivery_address.phone %></td>
+					<td>
+						<%= link_to "修改", edit_users_delivery_address_path(delivery_address), class: "btn btn-default" %>
+						<%= link_to "删除", users_delivery_address_path(delivery_address), method: :delete, class: "btn btn-default", data: {confirm: "Are you sure?"} %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+	<%= link_to "新增收货地址", new_users_delivery_address_path, method: :get, class: "btn btn-primary pull-right" %>
+
+</div>

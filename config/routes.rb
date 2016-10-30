@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'orders/index'
 
   get 'orders/new'
@@ -14,6 +15,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
   	resources :products
+  end
+
+  namespace :users do
+    resources :delivery_addresses
   end
 
   resources :products, only: [:show, :index] 

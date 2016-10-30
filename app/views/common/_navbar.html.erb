@@ -31,7 +31,12 @@
                             <% if current_user.admin? %>
                                 <li><%= link_to("后台商品管理", admin_products_path) %></li>
                                 <li class="divider"> </li>
+
+                            <% else %>
+                                <li><%= link_to "管理我的收货地址", users_delivery_addresses_path %></li>
+                                <li class="divider"> </li>
                             <% end %>
+
                             <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                         </ul>
                     </li>
