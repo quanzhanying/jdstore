@@ -26,7 +26,7 @@
     <td><%= product.description %></td>
     <td><%= product.quantity %></td>
     <td><%= product.price %></td>
-    <td><%= product.image %></td>
+    <td><%= link_to(image_tag(product.image.thumb.url), admin_product_path(product)) %></td>
     <td>
       <%= link_to("Edit", edit_admin_product_path(product)) %>
       <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>

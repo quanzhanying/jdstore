@@ -5,6 +5,8 @@
        <p><%= image_tag @product.image_url unless @product.image_url.nil? %></p>
         <div class="pull-right">
          <%= link_to("加入购物车", product_path, :class => "btn btn-default" ) %>
+         <%= @product.description %>
+         <%= @product.price %>
        </div>
      </div>
    </div>
