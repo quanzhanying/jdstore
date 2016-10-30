@@ -1,7 +1,8 @@
 class Admin::ProductsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :admin_required
-
+  layout "admin"
+  
     def show
       @product = Product.find(params[:id])
     end
@@ -30,7 +31,7 @@ class Admin::ProductsController < ApplicationController
 
     def update
       @product = Product.find(params[:id])
-      
+
       if @product.update(product_params)
         redirect_to admin_products_path
       else
