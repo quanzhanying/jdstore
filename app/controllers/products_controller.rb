@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     @products = Product.all
   end
@@ -25,6 +26,23 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     current_cart.add_product_to_cart(@product)
     redirect_to :back
+
+
+    # @product = Product.find(params[:id])
+    # @cart = current_cart
+    # # @cart_item = CartItem.where( :cart_id => @cart.id)
+    # #  @cart_item.each do |d|
+    # #   # if d.product_id.count > 1
+    # #   #   # @cart_item.quantity += 1
+    # #   #
+    # #   # else
+    # #   #   current_cart.add_product_to_cart(@product)
+    # #   #     redirect_to carts_path
+    # #   # end
+    # # # end
+    # #   puts "********"#d.product_id.count
+    # end
+    # redirect_to carts_path
   end
 
   private

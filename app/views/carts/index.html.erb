@@ -28,7 +28,7 @@
                 <% if cart_item.product.image.present? %>
                   <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
                 <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=NoPic", class: "thumbnail") %>
+                  <%= image_tag("http://placehold.it/200x200", class:"thumbnail")%>
                 <% end %>
               <% end %>
             </td>
