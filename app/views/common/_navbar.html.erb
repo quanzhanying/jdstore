@@ -26,12 +26,17 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-left">
+        <!-- <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      </form> -->
+        <li>
+          <%= link_to carts_path do %>
+          购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+          <% end %>
+        </li>
         <li>
           <% if !current_user %>
             <li><%= link_to("sign up", new_user_registration_path) %></li>
