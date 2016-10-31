@@ -7,23 +7,23 @@ class CartItemsController < ApplicationController
     @cart_items.destroy
     redirect_to :back
   end
-  def edit
-  @cart_item = CartItem.find(params[:id])
-end
 
-  def change_quantity(quantity_params)
-    cart_id = params[:cart_item_id]
+
+
+
+
+  def update
     @cart =current_cart
-    @cart_item = CartItem.find(params[:id])
+     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+     if @cart_item.product.quantity >= quantity_params[:quantity].to_i
+       @cart_item.update(quantity_params)
+        flash[:notice] ="Your items has been modified"
+      else
+        flash[:warning] ="no enough goods"
+      end
+      redirect_to carts_path
 
-    if quantity <= @cart_item.product.quantity
-      @cart_item.quantity = quantity_params
-      @cart_item.save!
-      rediect_to :back
-    else
-      redirect_to :back, notice:"卖光了！"
-    end
-  end
+end
 
 
 
@@ -31,7 +31,7 @@ end
 
   private
   def quantity_params
-    params.require(:cart_item).permit(:quanity)
+    params.require(:cart_item).permit(:quantity)
  end
 
 end
