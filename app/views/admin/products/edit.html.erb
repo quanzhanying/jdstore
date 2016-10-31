@@ -19,6 +19,11 @@
     <%= f.input :price %>
   </div>
 
+  <% if @product.image.present? %>
+    <span>目前商品图</span>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
   <div class="group">
     <%= f.input :image, as: :file %>
   </div>
