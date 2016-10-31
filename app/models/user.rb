@@ -9,10 +9,7 @@ class User < ApplicationRecord
   end
 
   scope :all_except, -> (user) {where.not(id: user)}
+   has_many :cars
+   has_many :products
 
-  # def render_is_admin_status
-  #   if current_user.is_admin
-  #   content_tag(:span, "", :class => "fa fa-")
-  #   else
-  #
 end

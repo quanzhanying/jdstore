@@ -8,7 +8,7 @@
       <% if product.image.present? %>
       <%= image_tag(product.image.thumb.url, class: "thumbnail" ) %>
       <% else %>
-      <image src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg", width="200", class="thumbnail">
+      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
       <div class="caption">

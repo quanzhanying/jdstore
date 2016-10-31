@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   #before_action :admin_require
 
   def index
-    @products = Product.all
+    @products = Product.published.recent
   end
 
   def show

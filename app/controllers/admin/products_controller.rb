@@ -7,7 +7,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.recent
   end
 
   def new
@@ -42,10 +42,21 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  def publish
+    @product = Product.find(params[:id])
+    @product.publish!
+    redirect_to admin_products_path
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+    @product.hide!
+    redirect_to admin_products_path
+  end
 
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :is_hidden)
   end
 end

@@ -16,6 +16,7 @@
     <td>数量</td>
     <td>价格</td>
     <td>管理员选项</td>
+    <td>商品选项</td>
     <td>创建日期</td>
    </tr>
   </thead>
@@ -28,9 +29,16 @@
       <td><%= product.quantity %></td>
       <td><%= product.price %></td>
       <td>
-        <%= link_to("Edit", edit_admin_product_path(product)) %>
+        <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-xs btn-default") %>
         |
-        <%= link_to("Delete", admin_product_path(product), :method => :delete, :data => { :confirm => " Are you sure ?"}) %>
+        <%= link_to("Delete", admin_product_path(product), :method => :delete, class: "btn btn-xs btn-default", :data => { :confirm => " Are you sure ?"}) %>
+      </td>
+      <td>
+        <% if product.is_hidden %>
+        <%= link_to("上架", publish_admin_product_path(product), :method => :post , class: "btn btn-xs btn-default" ) %>
+        <% else %>
+        <%= link_to("下架", hide_admin_product_path(product), :method => :post , class: "btn btn-xs btn-danger") %>
+        <% end %>
       </td>
       <td><%= product.created_at %></td>
     </tr>
