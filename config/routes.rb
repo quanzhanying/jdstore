@@ -28,7 +28,14 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       post :clear_cart
-      resources :cart_items
+      # put :item_increase
+      # put :item_decrease
+      resources :cart_items do
+        member do
+          put :item_increase
+          put :item_decrease
+        end
+      end
       # post :rm_from_cart
     end
 

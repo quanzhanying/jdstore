@@ -3,6 +3,20 @@ class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
 
+  def num_increase
+    self.quantity += 1
+    self.save
+    # puts '~~'
+    # puts cart_item.quantity
+    # quantity = quantity+1
+    # puts '~~'
+    # quantity = quantity + 1
+  end
+
+  def num_decrease
+     self.quantity -= 1
+     self.save
+  end
 
 end
 

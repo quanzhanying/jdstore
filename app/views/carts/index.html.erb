@@ -6,17 +6,17 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">商品资讯</th>
-          <th>单价</th>
-          <th>数量</th>
-          <th>操作</th>
+          <th colspan="2" align="center">商品资讯</th>
+          <th align="center">单价</th>
+          <th align="center">数量</th>
+          <th align="center">操作</th>
         </tr>
       </thead>
       <tbody>
 
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
-            <td>
+            <td align="center">
               <%= link_to product_path(cart_item.product) do %>
                 <% if cart_item.product.image.present? %>
                   <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
@@ -31,11 +31,16 @@
             <td>
               <%= cart_item.product.price %>
             </td>
-            <td>
+            <td align="center">
+              <%= link_to("-", item_decrease_cart_item_path(cart_item), method: :put, class: "btn btn-xs btn-default pull-left") %>
+
               <%= cart_item.quantity %>
+              <%= link_to("+", item_increase_cart_item_path(cart_item), method: :put, class: "btn btn-xs btn-default pull-right") %>
             </td>
-            <td>
-              <%= link_to("删除", cart_item_path(cart_item), method: :delete, class: "btn btn-lg btn-warning pull-right") %>
+            <td align="center">
+            <small><%= link_to("删除", cart_item_path(cart_item), method: :delete) %></small>
+
+              <%#= link_to("删除", cart_item_path(cart_item), method: :delete, class: "btn btn-lg btn-warning pull-right") %>
             </td>
           </tr>
         <% end %>

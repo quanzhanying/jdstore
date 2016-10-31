@@ -56,9 +56,36 @@ class ProductsController < ApplicationController
   # def order
     
   # end
+
+
+    # puts '~~~'
+    # puts product
+    # puts '~~~'
+    # p = Product.find(product.id)
+    # if cart_items.where(product_id: p.id)
+    #   puts 'haha'
+    # else
+    #   puts 'ohno'
+    # end
+    # # p.quantity = p.quantity + 1
+    # # puts p.quantity
+    # puts '~~~'
+
+
   def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
+    # 首先看是否购物车中添加过同类商品
+    @p = current_cart.cart_items.where(product_id: @product.id)
+    # 如果有，直接在原产品上数量+1
+    if @p.present?
+      puts '~~ already have this product ~~'
+      # 注意where查出来的是个collection
+      @p.first.num_increase
+    # 如果没有就添加一项到产品里面去
+    else
+      puts '~~ have no this product ~~ '  
+      current_cart.add_product_to_cart(@product)    
+    end    
     redirect_to :back
   end
 
