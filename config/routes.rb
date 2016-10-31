@@ -24,7 +24,11 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :carts
+  resources :carts do
+    collection do
+      delete :destroy
+    end
+  end
   root 'products#index'
 
 end

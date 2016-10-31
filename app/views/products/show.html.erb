@@ -9,6 +9,10 @@
       <h5>商品概述:<%= @product.description %></h5>
       <h5>价格:<%= @product.price %></h5>
       <h5>库存:<%= @product.quantity %></h5>
+      <% if @product.quantity > 0 %>
       <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-xs btn-danger") %>
+      <% else %>
+       加紧搬用中。。。
+       <% end %>
     </div>
   </div>
