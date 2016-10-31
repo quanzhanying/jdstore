@@ -13,7 +13,11 @@ class CartsController < ApplicationController
 
   # 删除购物车内某一商品
   def rm_from_cart
-    
+    # puts item
+    # # item_rm = current_cart.cart_items.find(item)
+    # # item.destroy
+    # # 重定向回来
+    # redirect_to :back    
   end
 
   # 不能在购物车内重复添加同一商品
