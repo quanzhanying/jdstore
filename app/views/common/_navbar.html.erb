@@ -12,7 +12,7 @@
 							<li>
 								<% if current_user %>
 								<%= link_to "#" do %>
-								Shopping Cart<i class="fa fa-shopping-cart"></i> (<%#= current_cart.products.count %>)
+								Shopping Cart<i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
 								<% end %>
 								<% end %>
 							</li>
