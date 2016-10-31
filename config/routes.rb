@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  delete 'carts', to: 'carts#destroy'
+
   resources :products do
     member do
       post :add_to_cart

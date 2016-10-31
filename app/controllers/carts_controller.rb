@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @carts = Cart.all
@@ -35,7 +36,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find(current_cart.id)
     @cart.destroy
     redirect_to carts_path
   end
