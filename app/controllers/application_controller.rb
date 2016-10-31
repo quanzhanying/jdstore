@@ -14,6 +14,13 @@ class ApplicationController < ActionController::Base
 	    @current_cart ||= find_cart
 	  end
 
+		def clear_cart
+			current_cart.cart_items.each do |item|
+				item.destroy
+			end
+			redirect_to :back
+		end
+
 	  private
 
 	  def find_cart
@@ -24,4 +31,8 @@ class ApplicationController < ActionController::Base
 	    session[:cart_id] = cart.id
 	    return cart
 	  end
+
+
+
+
 	end
