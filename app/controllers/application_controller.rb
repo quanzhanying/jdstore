@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 			current_cart.cart_items.each do |item|
 				item.destroy
 			end
-			redirect_to :back
+			redirect_to :back, alert: "Cart Cleared."
 		end
 
 	  private
