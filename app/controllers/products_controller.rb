@@ -45,7 +45,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     current_cart.add_product_to_cart(@product)
     redirect_to :back
+
   end
+
   private
 
   def product_params

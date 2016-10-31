@@ -51,10 +51,10 @@
       <% end %>
         <div class="caption">
           <h3><%=product.title%></h3>
-          <p>
+
             <%= link_to("look", product_path(product), class:"btn btn-danger")%>
-            <a href="#" class="btn btn-default" role="button">加入购物车</a>
-            </p>
+            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-danger")%>
+
 
         </div>
       </div>
