@@ -18,5 +18,4 @@ class Admin::UsersController < ApplicationController
     @users = User.all.except_user(current_user)
   end
 
-
 end

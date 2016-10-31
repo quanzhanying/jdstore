@@ -18,9 +18,9 @@
       </td>
       <td>
         <% if user.is_admin %>
-          <%= link_to("商家", adm_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-success", data: {confirm: "Are you sure change to 'user'?"}) %>
+          <%= link_to("更改成消费者", usr_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-success") %>
         <% else %>
-          <%= link_to("消费者", usr_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-primary", data: {confirm: "Are you sure change to 'admin'?"}) %>
+          <%= link_to("更改成商家", adm_admin_user_path(user), :method => :post, :class => "btn btn-sm btn-primary") %>
         <% end %>
       </td>
       <% end %>
