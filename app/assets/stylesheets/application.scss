@@ -19,6 +19,8 @@
  @import "style";
  @import "etalage";
  @import "megamenu";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
  .jumbotron {
        width:100%;
@@ -60,6 +62,11 @@ $bgHighlight    : #f2f1ec;
 $colDefault     : #e3d9c3;
 $colHighlight   : #908f89;
 $dropDown       : true;
+
+.fa-shopping-cart{
+ color: $colDefault;
+ &:hover, &:focus {
+   color: $colHighlight; }}
 
 .footer-default {
  background-color: $bgDefault;

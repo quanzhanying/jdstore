@@ -18,5 +18,5 @@
 
 
 		 <div>
-		 	<%= link_to("Add to Cart", "#", class: "btn btn-primary pull-right") %>
+		 	<%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
 		 </div>
