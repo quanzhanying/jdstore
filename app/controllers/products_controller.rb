@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
   def new
     @product = Product.new
-    
+
   end
   def create
     @product = Product.new(product_params)
@@ -37,6 +37,12 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to  products_path
   end
+
+ def add_to_cart
+   @product = Product.find(params[:id])
+   current_cart.add_product_to_cart(@product) 
+   redirect_to :back
+ end
 
   private
 
