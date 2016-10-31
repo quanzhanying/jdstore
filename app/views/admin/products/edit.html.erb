@@ -1,0 +1,13 @@
+<h1> Edit Product </h1>
+
+<%= simple_form_for [:admin, @product ] do |f| %>
+
+<%= f.input :image, as: :file %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :quantity %>
+<%= f.input :price %>
+<%= f.input :is_hidden %>
+
+<%= f.submit "Submit" %>
+<% end %>

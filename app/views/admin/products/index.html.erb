@@ -1,0 +1,59 @@
+
+<div class="pull-right">
+  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>图片</td>
+      <td>品名</td>
+      <td>叙述</td>
+      <td>库存</td>
+      <td>价格</td>
+      <td>选项</td>
+      <td>创建日间</td>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= product.id %>
+    </td>
+    <td>
+      <%= image_tag("#{product.image.small.url}") %>
+    </td>
+    <td>
+      <%= render_product_status(product) %>
+      <%= product.title %>
+    </td>
+    <td>
+      <%= product.description %>
+    </td>
+    <td>
+      <%= product.quantity %>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+
+    <td>
+      <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default") %>
+      <%= link_to("Delete", admin_product_path(product),    class: "btn btn-sm btn-default", method: :delete, data: {confirm: "Are you sure?"})%>
+      <% if product.is_hidden %>
+        <%= link_to("Publish", publish_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-primary") %>
+      <% else %>
+        <%= link_to("Hide", hide_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-default") %>
+      <% end %>
+    </td>
+    <td>
+      <%= product.created_at %>
+    </td>
+    <% end %>
+  </tbody>
+</table>
