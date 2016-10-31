@@ -35,7 +35,9 @@
 				</td>
 
 				<td>
-					<p><%= cart_item.quantity%></p>
+					<span><%= link_to "-", cart_item_decrement_path(cart_item), class: "btn btn-default btn-xs", method: :post %></span>
+					<span><%= cart_item.quantity%></span>
+					<span><%= link_to "+", cart_item_increment_path(cart_item), class: "btn btn-default btn-xs", method: :post %></span>
 				</td>
 
 				<td>

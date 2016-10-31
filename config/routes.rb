@@ -28,7 +28,10 @@ Rails.application.routes.draw do
     post :empty_cart
   end
   
-  resources :cart_items, only: [:create, :destroy]
+  resources :cart_items, only: [:create, :destroy] do 
+    post :increment
+    post :decrement
+  end
 
   resources :orders, only: [:index, :new, :show, :create, :update]
 

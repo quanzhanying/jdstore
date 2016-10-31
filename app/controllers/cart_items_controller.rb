@@ -33,6 +33,30 @@ class CartItemsController < ApplicationController
 		redirect_to :back
 	end
 
+	def increment
+		cart_id = params[:cart_item_id]
+		item = CartItem.find(cart_id)
+		if item.quantity + 1 <= item.product.quantity
+			item.quantity += 1
+			item.save
+			redirect_to :back
+		else
+			redirect_to :back, notice: "没有更多库存"
+		end
+	end
+
+	def decrement
+		cart_id = params[:cart_item_id]
+		item = CartItem.find(cart_id)
+		if item.quantity - 1 > 0 
+			item.quantity -= 1
+			item.save
+			redirect_to :back
+		end
+	end
+
+
+
 	def destroy
 		@cart_item = CartItem.where(order_id: nil).find(params[:id])
 		@cart_item.destroy
