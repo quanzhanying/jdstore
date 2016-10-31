@@ -24,15 +24,9 @@
              <% end %>
            <% end %>
           </td>
-          <td>
-            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-          </td>
-          <td>
-            <%= cart_item.product.price %>
-          </td>
-          <td>
-            <%= cart_item.quantity %>
-          </td>
+          <td>  <%= link_to(cart_item.product.title, product_path(cart_item.product)) %> </td>
+          <td> <%= cart_item.product.price %>  </td>
+          <td>  <%= cart_item.quantity %>  </td>
         </tr>
       <% end %>
 
@@ -42,7 +36,9 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-      <span> 总计 xxx RMB</span>
+      <span>
+
+        总计 <%= render_cart_total_price(current_cart) %> RMB </span>
       </span>
     </div>
     <hr>
