@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">京东商城</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+                <!-- 搜索条 -->
+                <li><%= form_tag products_path, method: :get, class: "navbar-form navbar-left" do %>
+                    <%= text_field_tag :search, params[:search], class: "form-control" %>
+                    <%= submit_tag "搜索", class: "btn btn-default" %>
+                <% end %></li> 
+               
+
+                <% if !current_user %>
+                    <li><%= link_to("注册", new_user_registration_path) %></li>
+                    <li><%= link_to("登录", new_user_session_path) %></li>
+                <% else %>
+                    <li><%= link_to "购物车（#{CartItem.sum("quantity")}）", carts_path %></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          欢迎 <%= current_user.email %> 
+                          <b class="caret"></b>
+                        </a>  
+                        <ul class="dropdown-menu">
+                            <% if current_user.admin? %>
+                                <li><%= link_to("后台商品管理", admin_products_path) %></li>
+                                <li class="divider"> </li>
+                            <% end %>
+                            <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                        </ul>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+            
+
+

@@ -1,0 +1,32 @@
+
+<div class="container">
+
+  <div class="row" style="padding-right: 15px">
+    <%= link_to("发布新的产品", new_admin_product_path, class:"btn btn-success pull-right btn-lg") %>
+
+  </div>
+
+  <br>
+
+  <div class="row">
+    <% @products.each do |product|%>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <div class="text-center">
+          <%= link_to image_tag("#{product.image.thumb.url}"), admin_product_path(product) %>  
+        </div>              
+        
+        <div class="caption text-center">
+          <h4><%= link_to product.title, product_path(product) %></h4>
+          <p><%= product.description %></p>
+          <%= link_to "编辑", edit_admin_product_path(product), class: "btn btn-sm btn-primary"%>
+          <%= link_to "下架", "#", method: :post, class: "btn btn-sm btn-warning", data: { confirm: "确认下架产品？"}%>
+          <%= link_to "删除", admin_product_path(product), method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "确认删除产品？"}%>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
