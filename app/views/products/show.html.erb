@@ -19,7 +19,7 @@
     </div>
     <br><br>
     <div class=" btn btn-danger pull-right">
-      加入购物车
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
     </div>
   </div>
 
