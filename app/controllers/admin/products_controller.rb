@@ -1,4 +1,15 @@
 class Admin::ProductsController < ApplicationController
+  before_filter :authenticate_user!
+  before_action :admin_required
+
+  layout "admin"
+
+  def admin_required
+    if !current_user.admin?
+      redirect_to "/"
+    end
+  end
+
   def new
     @product = Product.new
   end
