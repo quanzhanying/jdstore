@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.11.1.min
+//= require jquery-ui.min
+//= require jquery.etalage.min
+//= require jquery.jscrollpane.min
+//= require megamenu
+//= require menu_jquery
+//= require simpleCart.min
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require_tree .
