@@ -1,7 +1,7 @@
-<h1> <%= @product.title %> </h1>
+
 <div class="row">
 
-  <div class="col-xs-6 col-md-3">
+  <div class="col-xs-6">
     <% if @product.image? %>
       <%= image_tag(@product.image.medium.url, class:"medium") %>
     <% else %>
@@ -9,18 +9,19 @@
     <% end %>
   </div>
 
-<div class="col-xs-6 col-md-4">
-  <br><br>
-  <br><br>
-  <br><br>
-  <br><br>
-  <br><br>
-    <h3>商品详情：<%=@product.description%></h3>
-    <h3>商品数量：<%=@product.quantity%>个</h3>
-    <h3>商品价格：<%= @product.price%>元</h3>
+<div class="col-xs-6">
+  <h1> <%= @product.title %> </h1>
+  <div style="heigh:100px;">
     <p>
-    <a href="#" class="btn btn-default" role="button">加入购物车</a>
+    <h4>商品详情：<%=@product.description%></h4>
     </p>
+  </div>
+  <div>  <h4>商品数量：<%=@product.quantity%>个</h4> </div>
+  <div>  <h4>商品数量：<%=@product.price%>元</h4> </div>
+  <div class="pull-right">
+    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+
 </div>
 
+</div>
 </div>
