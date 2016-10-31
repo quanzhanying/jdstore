@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def orders_not_complete_for_current_user
-		Order.where(user_id: current_user.id).not_deliveried
+		Order.where(user_id: current_user.id).not_finished
 	end
 
 	def current_cart

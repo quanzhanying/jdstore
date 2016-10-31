@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
 
   before_action :authenticate_user!
- 
+  before_action :get_order, only: [:pay, :confirm, :cancel, :return_good]
+
   def index
-  	@orders = Order.where(user_id: current_user.id).all
+  	@orders = Order.where(user_id: current_user.id).all.order("created_at DESC")
     
   end
 
@@ -40,7 +41,6 @@ class OrdersController < ApplicationController
       end
 
       @order.user = current_user
-      @order.status = "ORDERED"
       @order.save
 
       redirect_to root_path
@@ -52,26 +52,63 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.user_id == current_user.id
-      if @order.status == "ORDERED"
-        @order.status = "PAID"
-      elsif @order.status == "DELIVERING"
-        @order.status = "DELIVERED"
+      if @order.order_placed?
+        @order.make_payment!
+      elsif @order.shipping?
+        @order.deliver!
       else
         redirect_to orders_path, notice: "Order Update Failed"
       end
       @order.save
       redirect_to orders_path, notice: "完成支付"
     else
-      redirect_to orders_path, notice: "Order Update Failed"
+      redirect_to orders_path, notice: "Not current user's order"
     end
   end
 
 
   def show
+  end
+
+  def cancel
+    @order.cancell_order!
+    @order.cart_items.each do |item|
+      if item.product
+        item.product.quantity += item.quantity
+        item.product.save
+      end
+    redirect_to orders_path, notice: "成功取消订单"
+    end
+
 
   end
 
+  def pay
+    @order.make_payment!
+    redirect_to orders_path, notice: "完成支付"
+  end
+
+  def confirm
+    @order.deliver!
+    redirect_to orders_path, notice: "确认收货"
+  end
+
+  def return_good
+    @order.return_good!
+    @order.cart_items.each do |item|
+      if item.product
+        item.product.quantity += item.quantity
+        item.product.save
+      end
+    redirect_to orders_path, notice: "退货成功"
+    end
+  end
+
   private 
+
+  def get_order
+    @order = Order.find(params[:id])
+  end
 
 
 

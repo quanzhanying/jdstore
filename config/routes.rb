@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
   	resources :products
-    resources :orders, only: [:index, :edit, :update, :destroy]
+    resources :orders, only: [:index, :edit, :update, :destroy] do
+      member do
+        post :ship
+      end
+    end
   end
 
   namespace :users do
@@ -33,6 +37,13 @@ Rails.application.routes.draw do
     post :decrement
   end
 
-  resources :orders, only: [:index, :new, :show, :create, :update]
+  resources :orders, only: [:index, :new, :show, :create, :update] do
+    member do
+      post :cancel
+      post :pay
+      post :confirm
+      post :return_good
+    end
+  end
 
 end

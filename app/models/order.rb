@@ -35,8 +35,8 @@ class Order < ApplicationRecord
     event :ship do                     #已付款→出貨→轉成出貨中
       transitions from: :paid,         to: :shipping
     end
-    event :deliver do                  #出貨中→運送中→轉成已到貨
 
+    event :deliver do                  #出貨中→運送中→轉成已到貨
       transitions from: :shipping,     to: :shipped
     end
 
@@ -47,11 +47,13 @@ class Order < ApplicationRecord
     event :cancell_order do            #已下訂→欲取消訂單→完成取消訂單            
       transitions from: [:order_placed, :paid], to: :order_cancelled
     end
-    
+
   end
+
 	has_many :cart_items
 	has_one :delivery_address
 	belongs_to :user
 
-	scope :not_deliveried, -> { where.not(status: "DELIVERED") }
+	# scope :not_deliveried, -> { where.not(status: "DELIVERED") }
+	scope :not_finished, -> { where(aasm_state: "order_placed" ) | where(aasm_state: "paid" ) | where(aasm_state: "shipping" ) }
 end
