@@ -6,6 +6,8 @@
 
 
 <%= @product.description %>
+<%= @product.price %>
 
 <%= @product.quantity %>
 <%= image_tag@product.image_url %>
+<%= link_to("加入購物車", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
