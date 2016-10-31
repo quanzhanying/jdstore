@@ -24,7 +24,8 @@
 			</p>
 		</div>
 		<div class="col-md-2 column ">
-			 <button type="button" class="btn btn-default btn-danger">加到购物车</button>
+			 
+			 <%= link_to("加到购物车",add_to_cart_product_path(@product),:method=>:post,:class=>"btn btn-default btn-danger")  %>
 		</div>
 	</div>
 </div>
