@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   def show
     @product=Product.find(params[:id])
-    if product.is_hidden
+    if @product.is_hidden
       flash[:waring]="此商品已下架！"
       redirect_to root_path
     end
