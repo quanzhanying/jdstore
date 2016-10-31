@@ -1,0 +1,30 @@
+<h1> <%= @product.title %> </h1>
+
+<p>
+  <%= simple_format(@product.description) %>
+
+</p>
+
+
+<div class="row">
+  <div class="col-md-6">
+     <% if @product.image.present? %>
+       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+       <%= image_tag("https://img1.doubanio.com/lpic/s6485769.jpg", class: "thumbnail") %>
+     <% end %>
+   </div>
+   <div class="col-md-4">
+     <h2> <%= @product.title %> </h2>
+     <div style="height:100px;">
+       <p>
+         <%= @product.description %>
+       </p>
+     </div>
+     <div> 库存 : <%= @product.quantity %> </div>
+     <div class="product-price"> $ <%= @product.price %> </div>
+     <div class="pull-right">
+       <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+     </div>
+   </div>
+ </div>
