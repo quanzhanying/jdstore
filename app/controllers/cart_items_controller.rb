@@ -19,8 +19,12 @@ class CartItemsController < ApplicationController
 
   def subtract_amount
     @cart_item = CartItem.find(params[:id])
-    @cart_item.quantity -= 1
-    @cart_item.save
+      if @cart_item.quantity < 1
+        flash[:warning] = '不能再少啦，你可以删除它'
+      else
+        @cart_item.quantity -= 1
+        @cart_item.save
+      end
     redirect_to carts_path
   end
 
