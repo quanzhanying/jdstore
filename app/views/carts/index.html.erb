@@ -62,8 +62,10 @@
 	<div class="row" style="padding-right: 15px">
 		<% if @cart_items.any? %>
 			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg" %>
+			<%= link_to "清空购物车", cart_empty_cart_path(current_user.cart), class: "btn btn-danger pull-left btn-lg", method: :post, style: "margin-left: 15px" %>
 		<% else %>
 			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg disabled" %>
+			<%= link_to "清空购物车", cart_empty_cart_path(current_user.cart), class: "btn btn-danger pull-left btn-lg disabled", style: "margin-left: 15px"  %>
 		<% end %>
 		
 	</div>
