@@ -1,4 +1,9 @@
 class Admin::ProductsController < ApplicationController
+  before_filter :authenticate_user!#, only: [:index, :new, :show, :create]
+  before_filter :admin_required#, only: [:index, :new, :show, :create]
+  layout "admin"
+
+
   def new
     @product = Product.new
   end
