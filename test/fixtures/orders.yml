@@ -8,6 +8,7 @@
 #  updated_at          :datetime         not null
 #  delivery_address_id :integer
 #  user_id             :integer
+#  aasm_state          :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
