@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   def new
   	@order = Order.new
     @delivery_addresses = current_user.delivery_addresses
+    # 已经属于某order的items不是这次新加入购物车的items，应当筛出去
     @cart_items = current_user.cart.cart_items.where(order_id: nil)
   end
 
@@ -24,6 +25,8 @@ class OrdersController < ApplicationController
       @order.delivery_address_id = params[:delivery_address].to_i
       cart_item_ids = params[:cart_items].split(" ").map { |s| s.to_i }
 
+
+      # cart_item条目填入order的信息，说明这个条目已属于某特定的order
       cart_item_ids.each do |item_id|
         item = CartItem.find(item_id)
         # item.order_id = @order.id

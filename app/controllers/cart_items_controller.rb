@@ -4,8 +4,10 @@ class CartItemsController < ApplicationController
 		
 		#判断库存数量是否够用
 
-		existing_item = CartItem.find_by(product_id: cart_item_params[:product_id])
-		stock_number = Product.find(cart_item_params[:product_id]).quantity.to_i
+		existing_item = CartItem.where(order_id: nil).find_by(product_id: cart_item_params[:product_id])
+		stock_number = Product.find(cart_item_params[:product_id]).quantity
+		puts "#{stock_number}"
+
 		new_require_number = cart_item_params[:quantity].to_i
 	
 
@@ -32,7 +34,7 @@ class CartItemsController < ApplicationController
 	end
 
 	def destroy
-		@cart_item = CartItem.find(params[:id])
+		@cart_item = CartItem.where(order_id: nil).find(params[:id])
 		@cart_item.destroy
 		redirect_to :back
 	end

@@ -20,7 +20,7 @@
                     <li><%= link_to("注册", new_user_registration_path) %></li>
                     <li><%= link_to("登录", new_user_session_path) %></li>
                 <% else %>
-                    <li><%= link_to "购物车（#{CartItem.where(order_id: nil).sum("quantity")}）", carts_path %></li>
+                    <li><%= link_to "购物车（#{CartItem.where(order_id: nil).where(cart_id: current_user.cart.id).sum("quantity")}）", carts_path %></li>
                     <li><%= link_to "我的订单（#{Order.where(user_id: current_user.id).where.not(status: "DELIVERED").count}）", orders_index_path %></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
