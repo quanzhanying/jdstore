@@ -1,0 +1,26 @@
+<div class="col-xs-12 col-sm-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400", class:"thumbnail")%>
+    <% end %>
+  <br>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+  <h2><%= @product.title %></h2>
+  <div style="height:100px;">
+     <p>
+       <%= @product.description %>
+     </p>
+   </div>
+  库存：<%= @product.quantity %>
+  <br>
+  $ <%= @product.price %>
+  <br>
+</div>
+
+
+<div class="pull-right">
+  <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger" ) %>
+</div>
