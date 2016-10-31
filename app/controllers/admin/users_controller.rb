@@ -17,9 +17,9 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.is_admin = 'true'
     @user.save
-
     redirect_to :back      
   end
+
 
   def cguser
     @user = User.find(params[:id])

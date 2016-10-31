@@ -16,5 +16,5 @@
 class Product < ApplicationRecord
     
     mount_uploader :image,  ImageUploader
-    validates :title,:quantity,:price,presence:true
+    validates :title,:quantity,:price,presence: true
 end
