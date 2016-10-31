@@ -1,0 +1,21 @@
+<div class="container">
+
+	<% @orders.each do |order| %>
+
+	<% delivery_address = DeliveryAddress.find(order.delivery_address_id ) %>
+
+	<div class="row well">
+		<%= render partial: "common/order_table", locals: {delivery_address: delivery_address, order: order} %>
+
+
+		<% if order.status == "PAID" %>
+			<%= link_to "发货", admin_order_path(order), method: :PUT, class: "btn btn-primary pull-right" %>
+		<% end %>
+
+		<%= link_to order.status, "#", class: "btn btn-warning pull-left", disabled: "disabled" %>
+	
+	</div>
+
+	<% end %>
+	
+</div>

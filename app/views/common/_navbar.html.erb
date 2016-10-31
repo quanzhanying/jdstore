@@ -22,12 +22,12 @@
                 <% else %>
                     <li>
                         <%= link_to carts_path do %>
-                            购物车 <i class="fa fa-shopping-cart"> </i> （<%= new_items_for_current_user.sum("quantity") %>）
+                            <i class="fa fa-shopping-cart"> 购物车</i> （<%= new_items_for_current_user.sum("quantity") %>）
                         <% end %>
                     </li>
                     <li>
                         <%= link_to orders_index_path do %>
-                            我的订单 <i class="fa fa-sticky-note" aria-hidden="true"></i>（<%= orders_not_complete_for_current_user.count %>）
+                            <i class="fa fa-sticky-note" aria-hidden="true"></i> 我的订单（<%= orders_not_complete_for_current_user.count %>）
                         <% end %>
                     </li>
                     <li class="dropdown">
