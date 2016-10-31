@@ -10,19 +10,19 @@ class CartItemsController < ApplicationController
     redirect_to carts_path
   end
 
+  def add_amount
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.quantity += 1
+    @cart_item.save
+    redirect_to carts_path
+  end
 
-
-  # def add_amount
-  #   @cart_item = Cart_item.find(params[:id])
-  #   @cart_item = @cart_item.count+1
-  #   redirect_to :back
-  # end
-  #
-  # def subtract_amount
-  #   @cart_item = Cart_item.find(params[:id])
-  #   @cart_item = @cart_item.count-1
-  #   redirect_to :back
-  # end
+  def subtract_amount
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.quantity -= 1
+    @cart_item.save
+    redirect_to carts_path
+  end
 
   # private
   #

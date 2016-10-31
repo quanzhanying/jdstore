@@ -29,8 +29,5 @@ class Cart < ApplicationRecord
     sum
   end
 
-  # def remove_item(cart)
-  #   @cart_item.delete(product_id)
-  # end
 
 end
