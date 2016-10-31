@@ -15,7 +15,9 @@
       <h3>  <%= product.title %></h3>
         <p>
           <%= link_to("look look", product_path(product), class: "btn btn-danger") %>
-          <a href="#" class="btn btn-default" role="button">加入购物车</a>
+
+          <%= link_to("加入购物车",add_to_cart_product_path(product),method: :post, class: "btn btn-default") %>
+
         </p>
       </div>
     </div>
