@@ -1,4 +1,9 @@
 class CartItem < ApplicationRecord
+  validates :cart_id, uniqueness: {scope: :product_id, message: "dont"}
+
+  def meg
+    flash[:alert] = '玩蛋儿去'
+  end
 
   belongs_to :product
   belongs_to :cart

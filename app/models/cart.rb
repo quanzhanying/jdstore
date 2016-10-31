@@ -7,8 +7,22 @@ class Cart < ApplicationRecord
     ci = cart_items.build
     ci.product = product
     ci.quantity = 1
-    ci.save
+  #  if cart_items.product_id.present?
+  #    flash[:alert] = '你已经加入了哦~'
+  #  else
+      ci.save
+  #  end
   end
+
+  def total_price
+    sum = 0
+    cart_items.each do |cart_item|
+      sum += cart_item.product.price * cart_item.quantity
+    end
+    sum
+  end
+
+
 end
 
 # == Schema Information

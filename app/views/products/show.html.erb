@@ -17,7 +17,7 @@
     <div class="product-price"> $ <%= @product.price %> </div>
     <div class="pull-left">
       <%= link_to("购买","#", :class => "btn btn-primary btn-lg btn-danger", :method => :post ) %>
-      <%= link_to("加入購物車", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger btn-lg btn-danger") %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger btn-lg btn-danger") %>
     </div>
     </div>
   </div>
