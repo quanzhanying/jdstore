@@ -56,6 +56,12 @@ class ProductsController < ApplicationController
       redirect_to :back
   end
 
+  def del_to_cart
+     
+
+     redirect_to :back
+  end
+
 
 
   private

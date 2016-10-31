@@ -43,6 +43,10 @@
 
     <div class="total clearfix">
       <span class="pull-right">
+        <span>
+
+          <%= link_to("清空购物车","#",:class=>"btn btn-default btn-default")  %>
+        </span>
          <span>
             总计<%= render_cart_total_price(current_cart) %>RMB
          </span>

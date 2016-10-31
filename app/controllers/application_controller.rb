@@ -8,16 +8,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # helper_method :current_cart
-  #
-  # def current_cart
-  #   @current_cart ||= find_cart
-  # end
+
   helper_method :current_cart
+
 
   def current_cart
     @current_cart ||= find_cart
   end
+
+
 
   private
 
