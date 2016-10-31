@@ -1,6 +1,12 @@
 class CartsController < ApplicationController
 
 
+  def  index
+    @cart = current_cart
+    @cart_items = @cart.cart_items.all
+  end
+
+
   def destroy
     @cart = current_cart
     @cart.destroy
