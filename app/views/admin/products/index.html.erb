@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>On Sale</th>
-      <th>Title</th>
+      <th>Product</th>
       <th>Description</th>
       <th>Price & Quantity</th>
       <th>Action</th>
@@ -28,14 +28,15 @@
       </td>
       <td>
         <%= link_to(product.title, product_path(product)) %>
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url) %>
+          <% else %>
+            <%= image_tag("http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width: "200") %>
+          <% end %>
+        <% end %>
       </td>
       <td>
-        <% unless product.image? %>
-          <img src="<%= product.image.thumb %>">
-        <% else %>
-          <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200">
-        <% end %>
-        <br>
         <%= product.description %>
       </td>
       <td>
