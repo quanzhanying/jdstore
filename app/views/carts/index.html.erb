@@ -1,0 +1,32 @@
+<div class="pull-right">
+  <%= link_to("炸毁购物车", current_cart, :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-default" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>image</td>
+    <td>Title</td>
+    <td>Quantity</td>
+    <td>Price</td>
+    <td>Totle</td>
+    <td>Opration</td>
+  </tr>
+  <% @cart_item.each do |c1| %>
+    <tr>
+      <td><%= image_tag(c1.product.image.medium.url) %></td>
+      <td><%= c1.product.title %></td>
+      <td><%= c1.quantity %></td>
+      <td><%= c1.product.price %></td>
+      <td><%= c1.quantity * c1.product.price  %></td>
+      <td><%= link_to("不买了", cart_item_path(c1), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-default" ) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="pull-right">
+<span>
+  总计：<%= render_cart_totle_price(current_cart) %>￥
+</span>
+</div>

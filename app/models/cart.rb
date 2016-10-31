@@ -1,0 +1,37 @@
+class Cart < ApplicationRecord
+
+  has_many :cart_items
+  has_many :products, through: :cart_items, source: :product
+
+  def add_product_to_cart(product)
+    ci = cart_items.build
+    ci.product = product
+    ci.quantity = 1
+  #  if cart_items.product_id.present?
+  #    flash[:alert] = '你已经加入了哦~'
+  #  else
+      ci.save
+  #  end
+  end
+
+  def total_price
+    sum = 0
+    cart_items.each do |cart_item|
+      sum += cart_item.product.price * cart_item.quantity
+    end
+    sum
+  end
+
+
+end
+
+# == Schema Information
+#
+# Table name: carts
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  cart_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
