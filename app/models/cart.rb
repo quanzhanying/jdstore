@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: carts
+#
+#  id         :integer          not null, primary key
+#  cart_id    :integer
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+
 class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
@@ -16,5 +28,9 @@ class Cart < ApplicationRecord
     end
     sum
   end
+
+  # def remove_item(cart)
+  #   @cart_item.delete(product_id)
+  # end
 
 end

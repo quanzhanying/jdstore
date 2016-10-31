@@ -10,9 +10,19 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
+    resources :cart_items
   end
 
-  resources :carts
-  
+  resources :carts do
+    resources :cart_items do
+      member do
+      post :add_amount
+      post :subtract_amount
+      end
+    end
+  end
+
+  resources :cart_items 
+
   root 'products#index'
 end

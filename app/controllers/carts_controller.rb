@@ -1,5 +1,15 @@
 class CartsController < ApplicationController
 
+  # def index
+  #   @cart = current_cart
+  #   @cart_item = CartItem.where( :cart_id => @cart.id)
+  # end
+
+  def show
+    @cart_items = current_cart.cart_items
+  end
+
+
   # def new
   #   @cart = Cart.new
   # end
@@ -15,17 +25,18 @@ class CartsController < ApplicationController
   # end
 
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart = current_cart
     @cart.destroy
+
+    @cart_item = CartItem.where( :cart_id => @cart.id)
+    @cart_item.each do |d|
+      d.destroy
+    end
 
     redirect_to products_path
     flash[:notice] = '💥  购物车已清空'
   end
 
-
-  # def show
-  #   @cart_items = current_cart.cart_items
-  # end
 
 
 
