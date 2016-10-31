@@ -35,6 +35,12 @@
               <%= cart_item.quantity %>
             </td>
             <td>
+
+              <%= simple_form_for cart_item do |f| %>
+              <%= f.input :quantity,:url=>cart_item_change_quantity_path(cart_item), method: :post  %>
+              <%= f.submit "更改数量", data: { disable_with: "Submitting..." }, class:"btn btn-sm btn-primary" %>
+              <% end %>
+
              <%=link_to("删除商品", cart_item_path(cart_item), method: :delete) %>
             </td>
           </tr>

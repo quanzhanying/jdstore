@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :carts
 
-  resources :cart_items
+  resources :cart_items do
+    post :change_quantity
+  end
 
 
 
