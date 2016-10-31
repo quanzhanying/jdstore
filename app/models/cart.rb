@@ -10,6 +10,18 @@ class Cart < ApplicationRecord
     ci.save
   end
 
+	def remove_product_from_cart(product)
+		# puts '~~~~'
+		# puts i
+		# puts params[:id]
+		cart_item = @cart_items.find(product)
+		ci = cart_item.product.destroy(product)
+		# ci.product = product
+		# ci.quantity = 1
+		# ci.save
+	end
+
+
 	def total_price
 		sum = 0
 		cart_items.each do |cart_item|

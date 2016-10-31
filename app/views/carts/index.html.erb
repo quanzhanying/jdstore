@@ -9,6 +9,7 @@
           <th colspan="2">Item Details</th>
           <th>Price</th>
           <th>Quantity</th>
+					<th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,9 @@
             <td>
               <%= cart_item.quantity %>
             </td>
+						<td>
+							<%= link_to("Remove Item", remove_from_cart_product_path(cart_item.product), method: :post, class: "btn btn-lg btn-primary pull-right") %>
+						</td>
           </tr>
         <% end %>
 
