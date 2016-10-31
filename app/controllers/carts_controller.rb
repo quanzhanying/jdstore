@@ -5,8 +5,11 @@ class CartsController < ApplicationController
     @cart = current_cart
     @cart.destroy
 
-    redirect_to '/'
+    redirect_to :back
   end
+
+  # def cart_item_delete
+  #   @cart = current_cart
 
 
 
