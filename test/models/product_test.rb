@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  image       :string
 #  is_hidden   :boolean          default(FALSE)
+#  picture     :json
 #
 
 require 'test_helper'

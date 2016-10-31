@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :products
-  resources :welcome
+  resources :products do
+    member do
+      post :add_to_cart
+      post :hide
+      post :publish
+    end
+  end
 
   namespace :admin do
     resources :users do
@@ -14,12 +19,9 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :products do
-      member do
-        post :hide
-        post :publish
-      end
-    end
+    resources :products
+    #resources :welcome
+
   end
 
   root 'products#index'

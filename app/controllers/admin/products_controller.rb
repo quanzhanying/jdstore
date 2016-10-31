@@ -62,14 +62,14 @@ class Admin::ProductsController < ApplicationController
     redirect_to :back
   end
 
-  def require_is_hidden
-    @product = Product.find(params[:id])
-
-    if @product.is_hidden
-      flash[:alert] = '这个工作是隐藏的'
-      redirect_to :back
-    end
-  end
+  # def require_is_hidden
+  #   @product = Product.find(params[:id])
+  #
+  #   if @product.is_hidden
+  #     flash[:alert] = '这个工作是隐藏的'
+  #     redirect_to :back
+  #   end
+  # end
 
 
   private
