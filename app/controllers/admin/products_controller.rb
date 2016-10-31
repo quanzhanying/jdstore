@@ -56,6 +56,7 @@ class Admin::ProductsController < ApplicationController
 
 	def edit
 		@product = Product.find(params[:id])
+		
 	end
 
 	private

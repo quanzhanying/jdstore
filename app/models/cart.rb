@@ -13,6 +13,13 @@ class Cart < ApplicationRecord
 	has_many :products, through: :cart_items, source: :product
 	belongs_to :user
 
+	def total_price
+		sum = 0
+		cart_items.new_added.each do |item|
+			sum += item.price * item.quantity
+		end
+		sum
+	end
 
 
 	# def self.current_cart

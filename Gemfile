@@ -37,6 +37,9 @@ gem "devise"
 gem 'annotate'
 gem "carrierwave"
 gem 'mini_magick'
+gem 'font-awesome-sass'
+gem 'pry'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

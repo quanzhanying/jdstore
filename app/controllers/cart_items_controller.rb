@@ -30,7 +30,7 @@ class CartItemsController < ApplicationController
 			@cart_item.save
 		end
 
-		redirect_to :back
+		redirect_to :back, notice: "成功加入购物车"
 	end
 
 	def increment

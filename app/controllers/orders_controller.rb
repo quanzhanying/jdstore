@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   	@order = Order.new
     @delivery_addresses = current_user.delivery_addresses
     # 已经属于某order的items不是这次新加入购物车的items，应当筛出去
-    @cart_items = current_user.cart.cart_items.where(order_id: nil)
+    @cart_items = current_cart.cart_items.where(order_id: nil)
   end
 
   def create

@@ -12,6 +12,12 @@ class ProductsController < ApplicationController
 			render :no_result
 		end
 
+		puts "!!!!!!!!!!!!!!!session_id: #{session[:session_id]}"
+		puts "!!!!!!!!!!!!!!!cart_id:    #{session[:cart_id]}"
+		puts "!!!!!!!!!!!!!!!user_id:    #{session[:user_id]}"
+
+		# binding.pry
+
 	end
 
 	def no_result

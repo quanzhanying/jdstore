@@ -7,6 +7,7 @@
         
         <%= form_for @cart_item, remote: true do |f| %>
         <h4 class="text-right">Unit Price: <span style="color: green"><%= @product.price %></span></h4>
+        <br>
         <div class="input-group">
           <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
           <div class="input-group-btn">

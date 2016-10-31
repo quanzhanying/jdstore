@@ -14,4 +14,6 @@ class Order < ApplicationRecord
 	has_many :cart_items
 	has_one :delivery_address
 	belongs_to :user
+
+	scope :not_deliveried, -> { where.not(status: "DELIVERED") }
 end

@@ -58,7 +58,7 @@
 	</table>
 	
 	<div class="row" style="padding-right: 15px">
-		<h3 style="color: green " class="pull-right"><%= "总计：" + "#{total_price}" %></h3>	
+		<h3 style="color: green " class="pull-right"><%= "总计：" + "#{current_cart.total_price}" %></h3>	
 	</div>
 	
 	<div class="row" style="padding-right: 15px">
@@ -67,7 +67,7 @@
 			<%= link_to "清空购物车", cart_empty_cart_path(current_user.cart), class: "btn btn-danger pull-left btn-lg", method: :post, style: "margin-left: 15px", data: { confirm: "确认清空购物车？"}  %>
 		<% else %>
 			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg disabled" %>
-			<%= link_to "清空购物车", cart_empty_cart_path(current_user.cart), class: "btn btn-danger pull-left btn-lg disabled", style: "margin-left: 15px"  %>
+			<%= link_to "清空购物车", cart_empty_cart_path(current_cart), class: "btn btn-danger pull-left btn-lg disabled", style: "margin-left: 15px"  %>
 		<% end %>
 		
 	</div>
