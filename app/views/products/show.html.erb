@@ -11,7 +11,7 @@
       <p><%= @product.description %></p>
       <p>单价：<%= @product.price %><br>库存：<%= @product.quantity %></p>
       <div class="pull-right">
-        <%= link_to("加入购物车", "" , :class => "btn btn-danger") %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product) , :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       </div>
     </div>
   </div>
