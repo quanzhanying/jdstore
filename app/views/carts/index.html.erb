@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> shopping cart </h2>
+    <h2> shopping cart </h2> <br>
+
+    <%= link_to("清空购物车", current_cart.destroy, class: "btn btn-lg btn-danger pull-right") %>
+
+    <br><br>
 
     <table class="table table-bordered">
       <thead>
