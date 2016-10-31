@@ -52,9 +52,11 @@
     </div>
 
     <hr>
-
+      
     <div class="checkout clearfix">
       <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <div class="pull-right">&nbsp;</div>
+      <%= link_to("清空购物车", clear_cart_carts_path, method: :post, class: "btn btn-lg btn-warning pull-right") %>
     </div>
   </div>
 </div>
