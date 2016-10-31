@@ -40,7 +40,11 @@
             </td>
             <td>
               <button type="button" class="btn btn-outline-secondary btn-sm">
-                <%= link_to("-", subtract_amount_cart_item_path(cart_item), method: :post)%>
+                <% if cart_item.quantity = 1 %>
+                  <%= link_to("-", subtract_amount_cart_item_path(cart_item), method: :post,:data => {:confirm => "真的不买了吗?"})%>
+                <% else %>
+                  <%= link_to("-", subtract_amount_cart_item_path(cart_item), method: :post)%>
+                <% end %>
               </button>
               <%= cart_item.quantity %>
               <button type="button" class="btn btn-outline-secondary btn-sm">
