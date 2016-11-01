@@ -28,8 +28,6 @@
 
     <br>
 
-    <p class='pull-right'>
-      <button type="button" class="btn btn-success">Add to Cart</button>
-    </p>
+    <%= link_to("Add to Cart", add_to_cart_item_path(@item), :method => :post, :class => "btn btn primary btn-lg btn-success") %>
   </div>
   </div>

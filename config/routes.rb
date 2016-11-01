@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+
+  resources :cart_item
+
+
   namespace :admin do
     resources :items do
       member do
@@ -17,7 +21,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items
+  resources :items do
+    member do
+      post :add_to_cart
+    end
+  end
+
+  resources :carts
+
+
+
   root "items#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

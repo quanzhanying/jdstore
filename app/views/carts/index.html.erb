@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> 购物车 </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Products</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <%# if current_cart.cart_items.item_id != nil %>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to items_path(cart_item.item) do %>
+                <% if cart_item.item.attachment.present? %>
+                  <%= image_tag(cart_item.item.attachment.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(cart_item.item.title, item_path(cart_item)) %>
+            </td>
+            <td>
+              <%= cart_item.item.price %>
+            </td>
+            <td>
+              <%= cart_item.storage %>
+            </td>
+            <td>
+              <%= link_to("Deleete", cart_item_path(cart_item), method: :delete, class: "btn btn-md btn-danger") %>
+            </td>
+            </tr>
+        <% end %>
+        <%# end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span>
+
+           Total Amount $<%= render_cart_total_price(current_cart) %>
+
+         </span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-success pull-right") %>
+      <%= link_to("爆炸吧", cart_path(current_cart), method: :delete, class: "btn btn-space btn-lg btn-danger pull-right") %>
+
+        <%#= link_to("Delete", admin_item_path(item), :method => :delete) %>
+
+    </div>
+  </div>
+</div>
