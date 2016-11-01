@@ -1,16 +1,17 @@
 <%= simple_form_for [:admin, @product] do |f| %>
-  <div class="form-group">
+<div class="form-group">
 
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :quantity %>
-    <%= f.input :price %>
-		<%= f.input :image %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+	<%= f.input :price, as: :integer, input_html: {cols: 14} %>
+	<br><br><br><br>
+	<div class = "form-group">
+	<%= f.input :image %>
+</div>
 
-        <%# if current_user.admin? %>
-          <%#= f.input :is_hidden, as: :boolean, checked_value: true, unchecked_value: false, :default => false %>
-        <%# end %>
 
-    </div>
-      <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
-    <% end %>
+</div>
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+
+<% end %>

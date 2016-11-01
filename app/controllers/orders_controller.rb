@@ -30,10 +30,15 @@ class OrdersController < ApplicationController
 
 	def pay_with_wechat
 		@order = Order.find(params[:id])
-		@order.paid_wechat!
-		# current_cart.clear_cart
-		flash[:notice] = "Thank you for your order! We will be in touch shortly."
-		redirect_to :root
+		if @order.is_paid = false
+			@order.paid_wechat!
+			# current_cart.clear_cart
+			flash[:notice] = "Thank you for your order! We will be in touch shortly."
+			redirect_to :root
+		else
+			redirect_to :back
+			flash[:warning] = "This order has already been paid for. We will be in touch shortly."
+		end
 	end
 
 	def pay_with_alipay
