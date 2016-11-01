@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :carts do
-    # resources :cart_item do
-    #   member do
-    #     delete :destroy_single
-    #   end
-    # end
+    collection do
+      post :checkout
+    end
+  end
+
+  resources :orders do
+
   end
 
   resources :cart_items do

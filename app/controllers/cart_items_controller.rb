@@ -8,14 +8,14 @@ class CartItemsController < ApplicationController
 
   def add_quantity
     @cart_item = CartItem.find(params[:id])
-    @cart_item.plus_button
+    # @cart_item.plus_button
 
-    # if @cart_item.quantity < @cart_item.product.quantity
-    #   @cart_item.quantity += 1
-    #   @cart_item.save
-    # else
-    #   flash[:alert] = '已超出库存'
-    # end
+    if @cart_item.quantity < @cart_item.product.quantity
+      @cart_item.quantity += 1
+      @cart_item.save
+    else
+      flash[:alert] = '已超出库存'
+    end
 
     redirect_to :back
   end

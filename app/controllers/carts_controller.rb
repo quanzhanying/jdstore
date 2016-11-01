@@ -2,7 +2,7 @@ class CartsController < ApplicationController
 
   def index
     @cart = current_cart
-    @cart_item = CartItem.where( :cart_id => @cart.id)
+    @cart_item = CartItem.current_ci(@cart)
   end
 
   def destroy
@@ -11,12 +11,16 @@ class CartsController < ApplicationController
     @cart = current_cart
     @cart.destroy
 
-    @cart_items = CartItem.where( :cart_id => @cart.id)
+    @cart_items = CartItem.current_ci(@cart)
     @cart_items.each do |d|
       d.destroy
     end
 
     redirect_to carts_path
+  end
+
+  def checkout
+    @order = Order.new
   end
 
   # def destroy_single

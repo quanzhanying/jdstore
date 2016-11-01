@@ -31,6 +31,9 @@
 
 <div class="pull-right">
 <span>
-  总计：<%= render_cart_totle_price(current_cart) %>￥
+  总计：<%= render_cart_total_price(current_cart) %>￥
 </span>
+<br><br>
+
+<%= link_to("确认购买",checkout_carts_path(current_cart), method: :post,class: "btn btn-lg btn-danger pull-right") %>
 </div>

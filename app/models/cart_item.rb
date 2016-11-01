@@ -5,14 +5,14 @@ class CartItem < ApplicationRecord
     flash[:alert] = '玩蛋儿去'
   end
 
-  def plus_button
-    if self.quantity < self.product.quantity
-      self.quantity += 1
-      self.save
-    else
-      flash[:alert] = '已超出库存'
-    end
-  end
+  # def plus_button
+  #   if self.quantity < self.product.quantity
+  #     self.quantity += 1
+  #     self.save
+  #   else
+  #     flash_alter
+  #   end
+  # end
 
   def reduce_button
     self.quantity -= 1
@@ -21,6 +21,8 @@ class CartItem < ApplicationRecord
 
   belongs_to :product
   belongs_to :cart
+
+  scope :current_ci, -> (cart){where(cart_id: cart.id)}
 end
 
 # == Schema Information
