@@ -29,7 +29,10 @@
           价格：$<%= product.price %>
         </p>
         <p>
-           <a class="btn btn-primary" href="#">购买</a> <a class="btn" href="#">加到购物车</a>
+           <a class="btn btn-primary" href="#">购买</a>
+           <%= link_to("加到购物车",add_to_cart_product_path(product),:method=>:post,:class=>"btn btn-default btn-danger")  %>
+
+
 
         </p>
       </div>
