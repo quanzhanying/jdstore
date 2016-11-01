@@ -25,8 +25,15 @@
     <h6>库存: <%= @product.quantity %></h6>
     <h2>￥<%= @product.price %>.00</h2>
     <%#= link_to('编辑',edit_admin_product_path(product),class: "btn btn-primary",role: "button") %> 
-    <%= link_to('加入购物车',add_to_cart_product_path(@product), :method => :post,class: "btn btn-danger btn-lg",role:"button") %>
+    
 
+    <% if @product.quantity == 0 %>
+    <%= link_to('加入购物车',add_to_cart_product_path(@product), :method => :post,class: "btn btn-danger btn-lg",role: "button", disabled: "disabled") %>
+      
+    <% else %>
+
+    <%= link_to('加入购物车',add_to_cart_product_path(@product), :method => :post,class: "btn btn-danger btn-lg",role:"button") %>
+    <% end %>
     <!-- <button type="button" class="btn btn-danger btn-lg">加入购物车</button> -->
 
 
