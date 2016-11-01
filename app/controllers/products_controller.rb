@@ -24,8 +24,9 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    # @product.quantity -= 1
     current_cart.add_product_to_cart(@product)
+    @product.quantity -= 1
+    @product.save
     redirect_to :back
 
 
