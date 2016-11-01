@@ -21,6 +21,12 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
+    # resources :cart_items do
+    #   member do
+    #     post :up_cart_item
+    #     post :down_cart_item
+    #   end
+    # end
   end
 
   resources :users
@@ -32,7 +38,12 @@ Rails.application.routes.draw do
   end
 
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :up_cart_item
+      post :down_cart_item
+    end
+  end
 
   root 'products#index'
 

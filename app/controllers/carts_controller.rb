@@ -4,13 +4,15 @@ class CartsController < ApplicationController
   def destroy
     @cart = current_cart
     @cart.destroy
+    # @cart_item = CartItem.where()
+    # @cart_items.each do |cart_item|
+    #   d.cart_item
 
     redirect_to :back
   end
 
-  # def cart_item_delete
-  #   @cart = current_cart
-
+  def add_cart_item
+  end
 
 
 end

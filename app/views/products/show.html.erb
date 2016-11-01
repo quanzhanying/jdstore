@@ -1,8 +1,11 @@
 
   <div class="row">
     <div class="col-md-4">
-  <!-- <%= image_tag @product.image_url.to_s %> -->
-  <%= image_tag(@product.image.medium.url) %>
+      <% if @product.image.present? %>
+      <%= image_tag(@product.image.thumb.url, class: "thumbnail" ) %>
+      <% else %>
+      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
     </div>
     <div class="col-md-8">
       <h1>商品名称:<%= @product.title %></h1>
