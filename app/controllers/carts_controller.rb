@@ -9,7 +9,9 @@ class CartsController < ApplicationController
     @cart_items = current_cart.cart_items
   end
 
-
+  def checkout
+    @order = Order.new
+  end
   # def new
   #   @cart = Cart.new
   # end

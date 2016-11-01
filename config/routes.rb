@@ -14,12 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :carts do
-    # resources :cart_items do
-    #   member do
-    #     post :add_amount
-    #     post :subtract_amount
-    #   end
-    # end
+    resources :cart_items
+    collection do
+      post :checkout
+    end
   end
 
   resources :cart_items do
@@ -29,5 +27,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders
+  
   root 'products#index'
 end
