@@ -1,0 +1,32 @@
+<div class="col-xs-12 col-sm-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/200x200", class:"thumbnail")%>
+
+      <!-- <%= image_tag("http://chuantu.biz/t5/40/1477930381x2071042332.png", class:"thumbnail") %> -->
+    <% end %>
+  <br>
+</div>
+
+<div class="col-xs-12 col-sm-6">
+  <h2><%= @product.title %></h2>
+  <div style="height:100px;">
+     <p>
+       <%= @product.description %>
+     </p>
+   </div>
+  库存：<%= @product.quantity %>
+  <br>
+  $ <%= @product.price %>
+  <br>
+</div>
+
+
+<div class="pull-right">
+  <% if @product.quantity > 0 %>
+    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-success" ) %>
+  <% else %>
+    <a href="#" class="btn btn-danger" disabled> 暂时缺货 </a>
+  <% end %> 
+</div>
