@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> 历史订单 </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>订单号</th>
+          <th>总价</th>
+          <th>付款人</th>
+          <th>收货人</th>
+          <th>收货地址</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.total %></td>
+          <td><%= order.billing_name %></td>
+          <td><%= order.shipping_name %></td>
+          <td><%= order.shipping_address %></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+
+  </div>
+</div>

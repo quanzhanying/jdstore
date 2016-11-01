@@ -50,6 +50,12 @@ Rails.application.routes.draw do
       get :payfailed
     end
   end
+
+
+
+  namespace :account do
+    resources :orders
+  end
   
   root 'products#index'
 
