@@ -11,6 +11,7 @@
 #  shipping_address :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  token            :string
 #
 
 require 'test_helper'
