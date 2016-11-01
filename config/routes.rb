@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
   root 'products#index'
   devise_for :users
-  resources :orders
+
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
+
+  namespace :account do
+    resources :orders
+  end
+
   resources :carts do
     collection do
       delete :destroy
       post :checkout
     end
   end
+
   resources :cart_items
 
   namespace :admin do
