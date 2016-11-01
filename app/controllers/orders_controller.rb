@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def create
     @order = Order.new(order_params)
     @order.user = current_user
@@ -27,18 +28,22 @@ class OrdersController < ApplicationController
   end
 
   def pay_with_wechat
-    @order = Order.find_by_token(params[:id])
-    @order.payment_method = "支付宝"
+    @order = Order.find(params[:id])
+    @order.payment_method = "微信"
+    @order.save
+    redirect_to order_path(@order.token)
   end
 
   def pay_with_alipay
-    @order = Order.find_by_token(params[:id])
-    @order.payment_method = "微信"
+    @order = Order.find(params[:id])
+    @order.payment_method = "支付宝"
+    @order.save
+    redirect_to order_path(@order.token)
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :payment_method)
   end
 end

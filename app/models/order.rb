@@ -1,8 +1,10 @@
 class Order < ApplicationRecord
   before_create :generate_token
-  
+
   belongs_to  :user
   has_many :product_lists
+
+  scope :current_order, -> (user){where(user_id: user)}
 
   validates :billing_name, presence: true
   validates :billing_address, presence: true

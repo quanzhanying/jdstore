@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  namespace :account do
+    resources :orders
+  end
+
   resources :carts do
     collection do
       post :checkout
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders do
-    method do
+    member do
       post :pay_with_wechat
       post :pay_with_alipay
     end
@@ -32,7 +36,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-
     resources :users do
       member do
         post :administrator
@@ -47,6 +50,9 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :orders do
+
+      end
     end
 
     resources :products
