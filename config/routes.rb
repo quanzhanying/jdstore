@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+	post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
+
 	namespace :admin do
 		resources :products
 	end

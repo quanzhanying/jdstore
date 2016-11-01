@@ -10,7 +10,13 @@ class ProductsController < ApplicationController
 
 	def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
+    cart_item = current_cart.cart_items.where(product_id: @product.id).first
+			if cart_item
+				cart_item.quantity = cart_item.quantity + 1
+				cart_item.save
+			else
+				current_cart.add_product_to_cart(@product)
+			end
     redirect_to :back
   end
 
