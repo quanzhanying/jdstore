@@ -24,9 +24,16 @@ Rails.application.routes.draw do
       post :checkout
     end
   end
-  resources :orders
-  resources :products
-  resources :carts
+
+  resources :orders do
+    member do
+      post :pay_with_wechat
+      post :post_with_alipay
+    end
+  end
+
+
+
   resources :cart_items
   root 'products#index'
 end
