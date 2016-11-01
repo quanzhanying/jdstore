@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :admin do
+
     resources :products do
       member do
         put :publish
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :orders
+    
   end
 
   resources :products do
