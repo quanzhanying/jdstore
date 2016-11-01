@@ -8,7 +8,16 @@
           <%= image_tag("http://placehold.it/200x200&text=Hu lu wa", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %>  $  <%= product.price %>
+      <%= product.title %>  $  <%= product.price %> <br>
+      数量： <%= product.quantity %>
+      <div class="pull-right">
+        <% if product.quantity != 0 %>
+          <%= link_to("add it to cart", add_to_cart_product_path(product), method: :post, class: "btn btn-primary btn-danger") %>
+        <% else %>
+          <%#= link_to("add it to cart", add_to_cart_product_path(@product), method: :post, class: "btn btn-primary btn-lg btn-danger disabled") %>
+          <%= link_to("Out of stock", "#", method: :post, class: "btn btn-primary btn-danger disabled") %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
