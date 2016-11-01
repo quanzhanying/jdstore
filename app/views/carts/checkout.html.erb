@@ -38,7 +38,7 @@
     </div>
 
     <hr>
-    <h2> 商品详单 </h2>
+    <h2> 收件信息 </h2>
 
     <h3> 付款人 </h3>
     <hr>
@@ -50,10 +50,9 @@
       <hr>
       <%= f.input :shipping_name, :label => "收件人" %>
       <%= f.input :shipping_address, :label => "收件人地址"  %>
+      <hr>
+      <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right", data: { disable_with: "Submitting..." } %>
     <% end %>
 
-    <div class="checkout clearfix">
-      <%= link_to("生成订单", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
-    </div>
   </div>
 </div>
