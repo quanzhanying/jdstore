@@ -4,7 +4,7 @@
     <h2> 购物车 </h2>
     <div class="text-center, pull-right">
 
-    <%= link_to("清空购物车", cart_path(@carts), :method => :delete) %></td>
+    <%= link_to("清空购物车", cart_path(@carts), :method => :delete, class: "btn btn-lg btn-default") %></td>
     </div>
     <table class="table table-bordered">
       <thead>
@@ -35,10 +35,12 @@
               <%= cart_item.product.price %>
             </td>
             <td>
+              <%= button_to '+1', up_cart_item_cart_item_path(cart_item),method: :post  %>
               <%= cart_item.quantity %>
-            </td>
+              <%= button_to '-1', down_cart_item_cart_item_path(cart_item),method: :post %></td>
+
             <td>
-              <%= link_to("从购物车拿走", cart_item_path(cart_item), :method => :delete) %></td>
+              <%= link_to("滚蛋", cart_item_path(cart_item), :method => :delete, class: "btn btn-lg btn-default" ) %></td>
             </td>
           </tr>
         <% end %>
@@ -61,7 +63,7 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>

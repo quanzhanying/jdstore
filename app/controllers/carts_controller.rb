@@ -4,13 +4,15 @@ class CartsController < ApplicationController
      @carts = Cart.all
    end
 
+   def checkout
+     @order = Order.new
+   end
 
    def destroy
      @cart = current_cart
      @cart.destroy
      redirect_to :back
    end
-
 
 
 
