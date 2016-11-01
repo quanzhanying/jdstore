@@ -9,10 +9,7 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
     @cart = Cart.new
   end
 
-  def show
-    @cart = Cart.find(params[:id])
-  end
-
+  
   def edit
     @cart = Cart.find(params[:id])
   end
@@ -39,6 +36,10 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
     @cart = Cart.find(current_cart.id)
     @cart.destroy
     redirect_to carts_path
+  end
+
+  def checkout
+    @order = Order.new
   end
 
   private
