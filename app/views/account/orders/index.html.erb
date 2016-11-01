@@ -1,0 +1,30 @@
+<h1>手冢</h1>
+
+<table class="table table-borded">
+  <thead>
+    <tr>
+      <th> # </th>
+      <th width="220">  total price  </th>
+      <th> billing name </th>
+      <th> shipping name </th>
+      <th> created_at </th>
+      <th width="100"> is_paid </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= link_to(order.id, order_path(order.token))  %>
+        </td>
+        <td>
+          <%= order.total %>
+        </td>
+        <td> <%= order.billing_name %> </td>
+        <td> <%= order.shipping_name%> </td>
+        <td> <%= order.created_at %> </td>
+        <td> <%= order.is_paid %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
