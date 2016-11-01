@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <h2 class="text-center"> 我的订单 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>单号</th>
+        <th>定单名</th>
+        <th>总额</th>
+        <th>付款状态</th>
+        <th>付款方式</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+      <tr>
+        <td> <%= order.id %> </td>
+        <td> <%= order.billing_name %> </td>
+        <td> <%= order.total %> </td>
+        <td> <%= order.is_paid %> </td>
+        <td> <%= order.payment_method %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

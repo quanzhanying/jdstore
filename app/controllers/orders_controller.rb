@@ -1,6 +1,19 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+  def pay_with_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.save
+
+  end
+
+  def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.save
+  end
+  
   def create
     @order = Order.new(order_params)
     @order.user = current_user

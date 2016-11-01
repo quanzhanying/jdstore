@@ -9,7 +9,7 @@ u = User.new
 u.email = "bbb@bbb.com"
 u.password = "bbbbbb"
 u.password_confirmation = "bbbbbb"
-u.is_admin = true
+u.is_admin = false
 u.save
 
 u = User.new
