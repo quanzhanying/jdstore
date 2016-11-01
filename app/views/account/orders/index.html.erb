@@ -17,7 +17,9 @@
 
         <% @orders.each do |order| %>
         <tr>
-          <td><%= order.id %></td>
+          <td>
+            <%= link_to(order.id,order_path(order.token)) %> 
+          </td>
           <td><%= order.total %></td>
           <td><%= order.billing_name %></td>
           <td><%= order.shipping_name %></td>
