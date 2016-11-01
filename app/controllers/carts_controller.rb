@@ -6,4 +6,10 @@ class CartsController < ApplicationController
     flash[:alert] = "Cart Deleted"
     redirect_to carts_path
   end
+
+  def checkout
+    @order = Order.new
+  end
+
+
 end
