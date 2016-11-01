@@ -10,6 +10,12 @@ devise_for :users
      post :add_to_cart
    end
  end
-
+ resources :carts do
+     collection do
+       post :checkout
+     end
+   end
  resources :carts
+ resources :orders
+
   end
