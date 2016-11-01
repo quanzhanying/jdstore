@@ -5,18 +5,25 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find()
+    @cart = Cart.find(params[:id])
   end
 
   def new
-    @cart = Cart
+    @cart = Cart.new
   end
 
+  def edit
+    @cart = Cart.find(params[:id])
+  end
 
   def destroy
     @cart = Cart.find(params[:id])
     @cart.destroy
 
     redirect_to carts_path
+  end
+
+  def checkout
+    @order = Order.new
   end
 end

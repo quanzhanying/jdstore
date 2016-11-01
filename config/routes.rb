@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+    resources :orders
+
+    resources :carts do
+      collection do
+        post :checkout
+      end
+    end
+
      resources :carts
      resources :cart_items
 
@@ -16,5 +24,5 @@ Rails.application.routes.draw do
      end
    end
 
-  root 'products#index'  
+  root 'products#index'
 end
