@@ -5,17 +5,17 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
-  end
   def create
     @order = Order.new(order_params)
     @order.user = current_user
     @order.total = current_cart.total_price
 
     if @order.save
-      current_cart.cart.items.each do |cart_item|
+      current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
         product_list.order = @order
         product_list.product_name = cart_item.product.title
+        product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
         product_list.save
       end
