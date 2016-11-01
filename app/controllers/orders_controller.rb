@@ -44,9 +44,14 @@ class OrdersController < ApplicationController
       @order.user = current_user
       @order.save
 
-      redirect_to root_path
+      redirect_to order_path(@order.token)
 
     end   
+
+  end
+
+  def show
+    @order = Order.find_by_token(params[:id])
 
   end
 
@@ -65,10 +70,6 @@ class OrdersController < ApplicationController
     else
       redirect_to orders_path, notice: "Not current user's order"
     end
-  end
-
-
-  def show
   end
 
   def cancel

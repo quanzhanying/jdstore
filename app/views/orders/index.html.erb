@@ -5,6 +5,10 @@
 	<% delivery_address = DeliveryAddress.find(order.delivery_address_id ) %>
 
 	<div class="row well">
+
+		<%= puts order.token %>
+
+		<%= link_to "查看详情", order_path(order.token), method: :get, class: "btn btn-default pull-right" %>
 		
 		<%= render partial: "common/order_table", locals: {delivery_address: delivery_address, order: order} %>
 

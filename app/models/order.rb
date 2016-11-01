@@ -60,6 +60,8 @@ class Order < ApplicationRecord
 	has_many :cart_items
 	has_one :delivery_address
 	belongs_to :user
+  has_many :product_lists
+
 
 	# scope :not_deliveried, -> { where.not(status: "DELIVERED") }
 	scope :not_finished, -> { where(aasm_state: "order_placed" ) | where(aasm_state: "paid" ) | where(aasm_state: "shipping" ) }

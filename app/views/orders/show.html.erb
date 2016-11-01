@@ -1,2 +1,14 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="container">
+
+	<% delivery_address = DeliveryAddress.find(@order.delivery_address_id ) %>
+
+	<div class="row well">
+		
+		<%= render partial: "common/order_table", locals: {delivery_address: delivery_address, order: @order} %>
+
+		<%= render partial: "customer_order_action", locals: {order: @order} %>
+	
+	</div>
+
+	
+</div>
