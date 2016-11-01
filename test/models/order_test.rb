@@ -20,4 +20,6 @@ end
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  token            :string
+#  is_paid          :boolean          default(FALSE)
+#  payment_method   :string
 #

@@ -27,10 +27,40 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def pay_with_alipay
+    @order = Order.find(params[:id])
+      if !@order.is_paid
+        @order.is_paid = true
+        @order.save
+      else
+      redirect_to order_path(@order.token)
+    end
+  end
+
+  def pay_with_wechat
+    @order = Order.find(params[:id])
+      if !@order.is_paid
+        @order.is_paid = true
+        @order.save
+      else
+      redirect_to order_path(@order.token)
+    end
+  end
+
+  def pay_with_apple
+    @order = Order.find(params[:id])
+      if !@order.is_paid
+        @order.is_paid = true
+        @order.save
+      else
+      redirect_to order_path(@order.token)
+    end
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
   end
 
 end
