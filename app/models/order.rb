@@ -28,7 +28,9 @@ class Order < ApplicationRecord
   has_many :product_lists
 
   def generate_token
-    self.token = SecureRandom.uuid    
+    self.token = SecureRandom.uuid
   end
+
+  scope :current_order, -> (user){where(:user_id => user)} 
 
 end
