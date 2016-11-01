@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+<div class="form-group">
+
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+	<%= f.input :price, as: :integer, input_html: {cols: 14} %>
+	<br><br><br><br>
+	<div class = "form-group">
+	<%= f.input :image %>
+</div>
+
+
+</div>
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+
+<% end %>

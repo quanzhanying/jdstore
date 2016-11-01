@@ -1,0 +1,36 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> My Orders </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Order No. </th>
+        <th> Recipient </th>
+        <th> Address </th>
+        <th> Payment Method </th>
+        <th> Total </th>
+				<th> Order Placed </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= "#" %> </td>
+          <td> <%= order.shipping_name %> </td>
+          <td> <%= order.shipping_address %> </td>
+          <td>
+					<% if order.is_paid %>
+						<%= order.payment_method %>
+					<% else %>
+						<%= link_to("Pay Now", order_path(order.token), class: "btn btn-sm btn-negative pull-left") %>
+					<% end %>
+					</td>
+					<td> <%= order.total %> </td>
+					<td> <%= order.created_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,44 @@
+<div class="jumbotron">
+      <div class="container">
+				<div class="arriv-dz">
+					<h2>Welcome to DZ Fashion</h2>
+					<p>Check out our top picks tailored just for you.</p>
+					<div class="crt-btn">
+					<!-- <p><%= link_to("Take a Look") %></p> -->
+					</div>
+				</div>
+			</div>
+</div>
+
+<hr class = "style16">
+
+<div class="arriv">
+	<div class="container">
+		<div class="arriv-top">
+			<% @products.each do |product| %>
+				<div class="col-md-6 arriv-top">
+					<%= image_tag (product.image.thumb.url) %>
+						<div class="arriv-info">
+							<h3><%= product.title.upcase %></h3>
+							<p><%= product.description.upcase %></p>
+							<div class="crt-btn">
+								<p><%= link_to("Take a Look", product_path(product)) %></p>
+							</div>
+						</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<br></br>
+
+<hr class = "style17">
+<br></br>
+
+	<!--A Design by W3layouts
+	Author: W3layout
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+	-->

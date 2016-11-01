@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "This seed document will automatically generate 1 admin account and 1 normal account"
+
+create_account = User.create([email: 'davidzhu126@126.com', password: '12345678', password_confirmation: '12345678', is_admin: 'true'])
+puts "Admin account created."
+
+create_account = User.create([email: 'dyz2102@gmail.com', password: '12345678', password_confirmation: '12345678', is_admin: 'false'])
+puts "Normal account created."
