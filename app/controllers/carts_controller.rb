@@ -19,6 +19,7 @@ class CartsController < ApplicationController
   def edit
     @cart = Cart.find(params[:id])
   end
+
   def show
     @cart = Cart.find(params[:id])
   end
@@ -33,16 +34,20 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart= Cart.find(params[:id])
+    @cart = Cart.find(params[:id])
     @cart.destroy
 
     redirect_to carts_path
   end
 
- private
- def cart_params
-   params.require(:cart).permit(:created_at,:updated_at)
- end
+  def checkout
+  
+    @order = Order.new
+  end
 
+  private
 
+  def cart_params
+    params.require(:cart).permit(:created_at, :updated_at)
+  end
 end
