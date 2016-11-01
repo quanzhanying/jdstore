@@ -1,0 +1,196 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "style";
+ @import "etalage";
+ @import "megamenu";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+
+
+ .jumbotron {
+       width:100%;
+       height:400px;
+       background: url("street.jpg");
+       background-size:cover;
+			 background-position: center;
+     }
+
+
+hr.style16 {
+		     border: 0;
+		     height: 1px;
+		     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		 }
+
+
+hr.style17 {
+		     padding: 0;
+		     border: none;
+		     border-top: medium double #333;
+		     color: #333;
+		     text-align: center;
+		 }
+hr.style17:after {
+		     content: "§";
+		     display: inline-block;
+		     position: relative;
+		     top: -0.7em;
+		     font-size: 1.5em;
+		     padding: 0 0.25em;
+		     background: white;
+		 }
+
+
+
+$bgDefault      : #0b0603;
+$bgHighlight    : #f2f1ec;
+$colDefault     : #e3d9c3;
+$colHighlight   : #908f89;
+$dropDown       : true;
+
+.fa-shopping-cart{
+ color: $colDefault;
+ &:hover, &:focus {
+   color: $colHighlight; }}
+
+.footer-default {
+ background-color: $bgDefault;
+ border-color: $bgHighlight; }
+.footer-text {
+ color: $colDefault; }
+
+.navbar-default {
+background-color: $bgDefault;
+border-color: $bgHighlight;
+.navbar-brand {
+ color: $colDefault;
+ &:hover, &:focus {
+   color: $colHighlight; }}
+.navbar-text {
+ color: $colDefault; }
+.navbar-nav {
+ > li {
+   > a {
+     color: $colDefault;
+     &:hover,  &:focus {
+       color: $colHighlight; }}
+   @if $dropDown {
+     > .dropdown-menu {
+       background-color: $bgDefault;
+       > li {
+         > a {
+           color: $colDefault;
+           &:hover,  &:focus {
+             color: $colHighlight;
+             background-color: $bgHighlight; }}
+         > .divider {
+           background-color: $bgHighlight;}}}}}
+ @if $dropDown {
+   .open .dropdown-menu > .active {
+     > a, > a:hover, > a:focus {
+       color: $colHighlight;
+       background-color: $bgHighlight; }}}
+ > .active {
+   > a, > a:hover, > a:focus {
+     color: $colHighlight;
+     background-color: $bgHighlight; }}
+ > .open {
+   > a, > a:hover, > a:focus {
+     color: $colHighlight;
+     background-color: $bgHighlight; }}}
+.navbar-toggle {
+ border-color: $bgHighlight;
+ &:hover, &:focus {
+   background-color: $bgHighlight; }
+ .icon-bar {
+   background-color: $colDefault; }}
+.navbar-collapse,
+.navbar-form {
+ border-color: $colDefault; }
+.navbar-link {
+ color: $colDefault;
+ &:hover {
+   color: $colHighlight; }}}
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu {
+ > li > a {
+   color: $colDefault;
+   &:hover, &:focus {
+     color: $colHighlight; }}
+ > .active {
+   > a, > a:hover, > a:focus {
+     color: $colHighlight;
+     background-color: $bgHighlight; }}}
+}
+
+/* button section */
+
+.btn {
+    padding: 11px 20px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+// This is the code for when the button is clicked.
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+		background: $bgDefault;
+		color: $colDefault ;
+}
+
+
+.btn-primary {
+    background: $bgDefault;
+    color: $colDefault ;
+}
+
+// This is the code when mouse hovers over the button
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: $colDefault;
+		color: $bgDefault ;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: $colDefault;
+    color: $colDefault ;
+		box-shadow: none;
+}
+
+.btn-primary[disabled] {
+	background: $colDefault;
+	color: $bgDefault ;
+}
+
+
+/* font color changes */
+
+ul.nav li a, ul.nav li a:visited {
+    color: $bgHighlight !important;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+    color: $colHighlight !important;
+}
+
+ul.nav li.active a {
+    color: $colDefault !important;
+}
