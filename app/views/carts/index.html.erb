@@ -58,7 +58,7 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-success pull-right") %>
+      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-success pull-right") %>
       <%= link_to("爆炸吧", cart_path(current_cart), method: :delete, class: "btn btn-space btn-lg btn-danger pull-right") %>
 
         <%#= link_to("Delete", admin_item_path(item), :method => :delete) %>
