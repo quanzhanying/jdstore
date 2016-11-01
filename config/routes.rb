@@ -42,7 +42,14 @@ Rails.application.routes.draw do
   end
 
 
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+      get :paysuccess
+      get :payfailed
+    end
+  end
   
   root 'products#index'
 
