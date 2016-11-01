@@ -14,4 +14,11 @@ class CartsController < ApplicationController
     redirect_to :back, notice: "The cart is empty now."
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @product_lists = @order.product_lists
+  end
+  def checkout
+    @order = Order.new
+  end
 end
