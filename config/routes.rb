@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   end
 
   resources :orders do
-
+    method do
+      post :pay_with_wechat
+      post :pay_with_alipay
+    end
   end
 
   resources :cart_items do
