@@ -16,7 +16,11 @@
 		 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 		 <p><strong>Price: </strong>$<%= @product.price %></p>
 
-
+		 <br>
 		 <div>
+			<% if @product.quantity <= 0 %>
+			<%= link_to("Sold Out", "#", :class => "btn btn-primary disabled ") %>
+			<% else %>
 		 	<%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+			<% end %>
 		 </div>

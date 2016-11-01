@@ -22,6 +22,27 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+
+// // .btn.nohover:hover {
+// //      /* here copy default .btn class styles */
+// //      cursor:default !important;
+// //      /* or something like that */
+// //  }
+//
+// .nohover {
+//   cursor: not-allowed;
+//   pointer-events: all !important;
+// }
+
+// .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+//   pointer-events: none;
+//   cursor: not-allowed;
+//   filter: alpha(opacity=65);
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+//   opacity: .65;
+// }
+
  .jumbotron {
        width:100%;
        height:400px;
