@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>order_id</td>
+    <td>total</td>
+    <td>payment_method</td>
+    <td>is_paid</td>
+    <td>created_at</td>
+  </tr>
+  <% @order.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td><%= order.total%></td>
+    <td><%= order.payment_method %></td>
+    <td><%= order.is_paid %></td>
+    <td><%= order.created_at %></td>
+  </tr>
+  <% end %>
+</table>
