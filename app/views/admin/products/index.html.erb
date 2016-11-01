@@ -1,0 +1,6 @@
+<ul>
+  <% @products.each do |product| %>
+  <li><%= link_to(product.title, admin_products_path(product)) %> </li>
+  <%= link_to "删除", admin_product_path(product), method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "确认删除产品？"}%>
+  <% end %>
+</ul>
