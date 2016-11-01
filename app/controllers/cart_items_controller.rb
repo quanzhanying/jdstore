@@ -6,4 +6,14 @@ class CartItemsController < ApplicationController
     flash[:alert] = "Cart_item Deleted"
     redirect_to carts_path
   end
+
+
+
+
+
+
+
+
+
+
 end
