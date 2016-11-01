@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       post :clear_cart
+      get :checkout
       # put :item_increase
       # put :item_decrease
       resources :cart_items do
@@ -38,8 +39,10 @@ Rails.application.routes.draw do
       end
       # post :rm_from_cart
     end
-
   end
+
+
+  resources :orders
   
   root 'products#index'
 
