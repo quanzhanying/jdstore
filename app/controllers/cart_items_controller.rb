@@ -12,16 +12,19 @@ class CartItemsController < ApplicationController
 
   def add_amount
     @cart_item = CartItem.find(params[:id])
-    @cart_item.quantity += 1
-    @cart_item.save
-    redirect_to carts_path
+    if @cart_item.quantity < @cart_item.product.quantity
+      @cart_item.quantity += 1
+      @cart_item.save
+      redirect_to carts_path
+    else
+      render :text => "库存不够啦"
+    end
   end
 
   def subtract_amount
     @cart_item = CartItem.find(params[:id])
       if @cart_item.quantity < 2
         @cart_item.destroy
-        # flash[:warning] = '不能再少啦，你可以删除它'
       else
         @cart_item.quantity -= 1
         @cart_item.save
