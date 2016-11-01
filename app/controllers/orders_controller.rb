@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :get_order, only: [:pay, :confirm, :cancel, :return_good]
+  before_action :get_order, only: [:pay, :confirm, :cancel, :return_good, :pay_by_wechat, :pay_by_alipay]
 
   def index
   	@orders = Order.where(user_id: current_user.id).all.order("created_at DESC")
@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
       redirect_to new_order_path, notice: "购物车为空"
     else
       @order = Order.new
+      @order.is_paid = false
       @order.delivery_address_id = params[:delivery_address].to_i
       cart_item_ids = params[:cart_items].split(" ").map { |s| s.to_i }
 
@@ -86,6 +87,22 @@ class OrdersController < ApplicationController
   def pay
     @order.make_payment!
     redirect_to orders_path, notice: "完成支付"
+  end
+
+  def pay_by_wechat
+    @order.is_paid = true
+    @order.paid_by = "wechat"
+    @order.save
+    @order.make_payment!
+    redirect_to orders_path, notice: "完成微信支付"    
+  end
+
+  def pay_by_alipay
+    @order.is_paid = true    
+    @order.paid_by = "alipay"
+    @order.save
+    @order.make_payment!
+    redirect_to orders_path, notice: "完成支付宝支付"    
   end
 
   def confirm

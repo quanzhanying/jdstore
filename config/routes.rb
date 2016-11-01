@@ -40,7 +40,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :show, :create, :update] do
     member do
       post :cancel
-      post :pay
+      post :pay_by_wechat
+      post :pay_by_alipay
       post :confirm
       post :return_good
     end

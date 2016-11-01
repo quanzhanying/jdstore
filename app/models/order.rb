@@ -9,9 +9,16 @@
 #  delivery_address_id :integer
 #  user_id             :integer
 #  aasm_state          :string
+#  token               :string
+#  is_paid             :boolean
+#  paid_by             :string
 #
 
 class Order < ApplicationRecord
+
+	before_create :generate_token
+
+
   include AASM
 
   aasm do
@@ -56,4 +63,11 @@ class Order < ApplicationRecord
 
 	# scope :not_deliveried, -> { where.not(status: "DELIVERED") }
 	scope :not_finished, -> { where(aasm_state: "order_placed" ) | where(aasm_state: "paid" ) | where(aasm_state: "shipping" ) }
+
+
+	private
+
+	def generate_token
+		self.token = SecureRandom.uuid
+	end
 end

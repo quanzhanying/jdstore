@@ -9,6 +9,9 @@
 #  delivery_address_id :integer
 #  user_id             :integer
 #  aasm_state          :string
+#  token               :string
+#  is_paid             :boolean
+#  paid_by             :string
 #
 
 require 'test_helper'
