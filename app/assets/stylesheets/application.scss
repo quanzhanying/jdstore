@@ -65,6 +65,15 @@ $colDefault     : #e3d9c3;
 $colHighlight   : #908f89;
 $dropDown       : true;
 
+
+.btn-negative{
+	background-color: $bgHighlight;
+	color: $colHighlight;
+	&:hover, &:focus {
+		background-color: $bgDefault;
+		color: $colDefault;
+	}
+}
 .fa-shopping-cart{
  color: $colDefault;
  &:hover, &:focus {

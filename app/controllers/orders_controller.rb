@@ -16,7 +16,9 @@ class OrdersController < ApplicationController
 			 product_list.quantity = cart_item.quantity
 			 product_list.save
 		 end
-
+		 	 current_cart.cart_items.each do |item|
+			 	item.destroy
+			end
 			 redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
@@ -30,21 +32,23 @@ class OrdersController < ApplicationController
 
 	def pay_with_wechat
 		@order = Order.find(params[:id])
-		if @order.is_paid = false
+		#  @order.is_paid = false
 			@order.paid_wechat!
 			# current_cart.clear_cart
 			flash[:notice] = "Thank you for your order! We will be in touch shortly."
+
 			redirect_to :root
-		else
-			redirect_to :back
-			flash[:warning] = "This order has already been paid for. We will be in touch shortly."
-		end
+		# else
+		# 	redirect_to :back
+		# 	flash[:warning] = "This order has already been paid for. We will be in touch shortly."
+		# end
 	end
 
 	def pay_with_alipay
 		@order = Order.find(params[:id])
 		@order.paid_alipay!
 		flash[:notice] = "Thank you for your order! We will be in touch shortly."
+
 		redirect_to :root
 	end
 
