@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>管理员后台</title>
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+
+<body>
+	<div class="container-fluid">
+		<%= render "common/navbar" %>
+		<%= render "common/flashes" %>
+
+		
+		<div class="row">
+			<div class="col-md-1 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active">
+						<%= link_to("产品管理", admin_products_path) %>
+					</li>
+					<li>
+						<%= link_to "订单管理", admin_orders_path %>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-md-11">
+				<%= yield %>
+			</div>
+
+		</div>
+		
+
+
+
+
+		<%= render "common/footer" %>
+	</div>
+</body>
+</html>
+

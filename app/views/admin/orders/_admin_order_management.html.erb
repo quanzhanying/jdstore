@@ -1,0 +1,10 @@
+
+
+
+
+	<% if order.paid? %>
+		<%= link_to "发货",  ship_admin_order_path(order), method: :post, class: "btn btn-success pull-right" %>
+	<% end %> 
+
+	<%= link_to order.aasm_state.upcase, "#", class: "btn btn-warning pull-left", disabled: "disabled" %>
+

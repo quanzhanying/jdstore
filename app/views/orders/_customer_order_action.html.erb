@@ -1,0 +1,20 @@
+
+
+
+
+	<% if order.shipped? %>
+		<%= link_to "退货", return_good_order_path(order), method: :post, class: "btn btn-default pull-right", style: "margin-left: 20px" %>
+	<% end %>
+
+	<% if order.order_placed? or order.paid? %>
+		<%= link_to "取消订单", cancel_order_path(order), method: :post, class: "btn btn-danger pull-right", style: "margin-left: 20px" %>
+	<% end %>
+
+	<% if order.order_placed? %>
+		<%= link_to "使用微信付款",    pay_by_wechat_order_path(order), method: :post, class: "btn btn-success pull-right", style: "margin-left: 20px"  %>
+		<%= link_to "使用支付宝付款",    pay_by_alipay_order_path(order), method: :post, class: "btn btn-success pull-right" %>
+	<% elsif order.shipping? %>
+		<%= link_to "确认收货", confirm_order_path(order), method: :post, class: "btn btn-primary pull-right" %>		
+	<% end %> 
+
+	<%= link_to order.aasm_state.upcase, "#", class: "btn btn-warning pull-left", disabled: "disabled" %>
