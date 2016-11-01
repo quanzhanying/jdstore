@@ -1,12 +1,22 @@
 <div class="row">
   <div class="col-md-12">
+    <div class="col-md-6">
     <h2>购物车</h2>
+  </div>
+  <div class="pull-right">
+    <br>
+      <%= link_to("清空购物车", destroy_cart_carts_path, :method => :post,
+                  :data => { :confirm => "Are you sure?"}, :class => "btn btn-default")%>
+      <%#= link_to("Delete", cart_path(@cart), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+    </div>
+
     <table class="table table-bordered">
       <thead>
         <tr>
           <th colspan="2">商品资讯</th>
           <th>单价</th>
           <th>数量</th>
+          <th>编辑</th>
         </tr>
       </thead>
       <tbody>
@@ -30,10 +40,14 @@
           <td>
             <%= cart_item.quantity %>
           </td>
+          <td>
+
+          </td>
         </tr>
         <% end %>
       </tbody>
     </table>
+
     <br>
     <div class="total clearfix">
       <span class="pull-right">

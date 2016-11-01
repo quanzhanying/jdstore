@@ -1,5 +1,14 @@
 class CartsController < ApplicationController
   def index
     @carts = Cart.all
-  end 
+  end
+
+  def destroy_cart
+    # @product = Product.find(params[:product_id])
+    current_cart.cart_items.each do |item|
+      item.destroy
+    end
+    redirect_to carts_path
+  end
+
 end
