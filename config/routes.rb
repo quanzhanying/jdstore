@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :cart_items do
-    # member do
-    #   delete :destroy_single
-    # end
+    member do
+      post :add_quantity
+      post :reduce_quantity
+    end
   end
 
   resources :products do

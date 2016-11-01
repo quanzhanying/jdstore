@@ -17,10 +17,18 @@
     <tr>
       <td><%= image_tag(c1.product.image.medium.url) %></td>
       <td><%= c1.product.title %></td>
-      <td><%= c1.quantity %></td>
+      <td>
+        <%= link_to("＋", add_quantity_cart_item_path(c1), method: :post, :class => "btn-default" )%>
+        <%= c1.quantity %>
+        <% if c1.quantity <= 1 %>
+          <%= link_to("-", cart_item_path(c1), :method => :delete, :data => { :confirm => "今日不剁再等一年?" }, :class => "btn-default" ) %>
+        <% else %>
+          <%= link_to("-", reduce_quantity_cart_item_path(c1), method: :post, :class => "btn-default" )%>
+        <% end %>
+      </td>
       <td><%= c1.product.price %></td>
       <td><%= c1.quantity * c1.product.price  %></td>
-      <td><%= link_to("不买了", cart_item_path(c1), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-default" ) %></td>
+      <td><%= link_to("不买了", cart_item_path(c1), :method => :delete, :data => { :confirm => "今日不剁再等一年?" }, :class => "btn btn-default" ) %></td>
     </tr>
   <% end %>
 </table>
