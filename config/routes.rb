@@ -7,11 +7,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items 
-  resources :carts do
+  resources :cart_items do
     member do
       post :increase
       post :decrease
+    end
+  end
+  resources :carts do
+    collection do
+      post :checkout
     end
   end
 

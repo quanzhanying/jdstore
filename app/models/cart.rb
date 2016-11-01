@@ -20,13 +20,6 @@ class Cart < ApplicationRecord
       ci.save
   end
 
-  def increase(product)
-    ci.product += 1
-  end
-
-  def decrease(product)
-    ci.product -= 1
-  end
 
   def total_price
     sum = 0

@@ -14,12 +14,17 @@ class CartsController < ApplicationController
   #     render :new
   #   end
   # end
-  def remove_from_cart
-
-    @current_cart.remove_product_from_cart(@product)
-    redirect_to :back
-  end
-
+  #  def add_one_item
+  #    @cart = current_cart
+  #    @cart.cart_items.item_increase
+  #    redirect_to :back
+  #  end
+   #
+  #  def delete_one_item
+  #    @cart = current_cart
+  #    @cart.cart_items.item_decrease
+  #    redirect_to :back
+  #  end
 
   def destroy
     @cart = current_cart
