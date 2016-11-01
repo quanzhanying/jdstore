@@ -10,4 +10,9 @@ class CartsController < ApplicationController
 	# 	redirect_to products_path, alert: "Cart Cleared."
 	# end
 
+	def checkout
+		@order = Order.new
+	end
+	
+
 end

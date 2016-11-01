@@ -18,10 +18,12 @@ Rails.application.routes.draw do
 	resources :carts do
 		collection do
 			post :clear_cart
+			post :checkout
 		end
 	end
 
 	resources :cart_item
+	resources :orders
 
 	root 'products#index'
 
