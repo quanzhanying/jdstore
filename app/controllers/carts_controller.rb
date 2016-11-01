@@ -33,8 +33,9 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart= current_cart 
+    @cart= Cart.find(params[:id])
     @cart.destroy
+
     redirect_to carts_path
   end
 

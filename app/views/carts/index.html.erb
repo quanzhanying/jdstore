@@ -1,5 +1,5 @@
 <div class="pull-right">
-  <%= link_to("清空购物车", current_cart_path(@product),:method => :delete, :class => "btn btn-primary btn-lg btn-danger") %>
+  <%= link_to("清空购物车", cart_path(current_cart),:method => :delete, :class => "btn btn-primary btn-lg btn-danger") %>
 </div>
 <div class="row">
   <div class="col-md-12">
