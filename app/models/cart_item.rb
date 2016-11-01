@@ -14,15 +14,6 @@ class CartItem < ApplicationRecord
     end
   end
 
-  def plus_button
-    if self.quantity < self.product.quantity
-      self.quantity += 1
-      self.save
-    else
-      flash[:alert] = '已超出库存'
-    end
-  end
-
   def reduce_button
     self.quantity -= 1
     self.save
