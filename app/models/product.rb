@@ -12,6 +12,7 @@
 #  image       :string
 #  image_id    :integer
 #  picture     :json
+#  is_hidden   :boolean          default(FALSE)
 #
 
 class Product < ApplicationRecord
@@ -22,5 +23,17 @@ class Product < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  scope :recent, -> { order("created_at DESC")}
+  scope :recent, -> {order("created_at DESC")}
+  scope :publish, -> {where(is_hidden: false)}
+
+  def publish!
+    self.is_hidden = false
+    self.save
+  end
+
+  def hide!
+    self.is_hidden = true
+    self.save
+  end
+
 end

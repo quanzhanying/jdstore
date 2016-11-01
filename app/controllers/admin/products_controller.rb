@@ -2,6 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!#, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :require_is_admin
   require 'carrierwave/processing/mini_magick'
+  layout "admin"
 
   def index
     @products = Product.all.recent
@@ -43,6 +44,18 @@ class Admin::ProductsController < ApplicationController
     @product.destroy
     redirect_to admin_products_path
   end
+
+  def publish
+    @product = Product.find(params[:id])
+    @product.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+    @product.hide!
+    redirect_to :back
+  end 
 
   private
 

@@ -1,11 +1,16 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.publish.recent
   end
 
   def show
     @product =Product.find(params[:id])
+
+    if @product.is_hidden
+      flash[:warning] = "This product has been archieved."
+      redirect_to root_path
+    end
   end
 
   def new

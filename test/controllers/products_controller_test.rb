@@ -12,6 +12,7 @@
 #  image       :string
 #  image_id    :integer
 #  picture     :json
+#  is_hidden   :boolean          default(FALSE)
 #
 
 require 'test_helper'

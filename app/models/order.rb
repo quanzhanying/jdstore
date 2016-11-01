@@ -31,6 +31,7 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
-  scope :current_order, -> (user){where(:user_id => user)} 
+  scope :current_order, -> (user){where(:user_id => user)}
+  scope :recent, -> { order("created_at DESC")}
 
 end
