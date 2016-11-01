@@ -3,7 +3,6 @@
 # Table name: orders
 #
 #  id                  :integer          not null, primary key
-#  status              :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  delivery_address_id :integer
