@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   resources :carts
 
-  resources :cart_items
+  resources :cart_items do
+    member  do
+      post :add_one
+      delete :minus_one
+    end
+  end
 
   namespace :admin do
     resources :products
