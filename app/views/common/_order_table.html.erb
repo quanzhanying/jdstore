@@ -31,12 +31,12 @@
 			</thead>
 
 			<tbody>
-				<% order.cart_items.each do |item| %>
+				<% order.product_lists.each do |list| %>
 				<tr>
-					<td><%=  item.product.title %></td>
-					<td><%=  item.quantity %></td>
-					<td><%=  item.price %></td>
-					<td><%=  item.quantity * item.price %></td>
+					<td><%=  Product.find_by(id: list.product_id).title %></td>
+					<td><%=  list.quantity %></td>
+					<td><%=  list.price %></td>
+					<td><%=  list.quantity * list.price %></td>
 				</tr>
 				<% end %>
 			</tbody>

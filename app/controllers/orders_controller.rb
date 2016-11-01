@@ -31,12 +31,21 @@ class OrdersController < ApplicationController
       # cart_item条目填入order的信息，说明这个条目已属于某特定的order
       cart_item_ids.each do |item_id|
         item = CartItem.find(item_id)
-        # item.order_id = @order.id
-        item.order = @order
-        item.save
 
+        item.order = @order
         product = Product.find(item.product_id)
+
+
+        product_list = ProductList.new
+        product_list.quantity = item.quantity
+        product_list.price = product.price
+        product_list.product_id = product.id
+        product_list.order = @order
+        product_list.save
+
         product.quantity = (product.quantity - item.quantity)
+
+        item.destroy
         product.save
 
       end
@@ -81,8 +90,6 @@ class OrdersController < ApplicationController
       end
     redirect_to orders_path, notice: "成功取消订单"
     end
-
-
   end
 
   def pay
@@ -113,10 +120,11 @@ class OrdersController < ApplicationController
 
   def return_good
     @order.return_good!
-    @order.cart_items.each do |item|
-      if item.product
-        item.product.quantity += item.quantity
-        item.product.save
+    @order.product_lists.each do |list|
+      product = Product.find_by(id: list.product_id)
+      if product
+        product.quantity += list.quantity
+        product.save
       end
     redirect_to orders_path, notice: "退货成功"
     end
