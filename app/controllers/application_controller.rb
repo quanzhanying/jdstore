@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_cart
 
   def require_is_admin
     if !current_user.admin?
@@ -9,6 +8,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  helper_method :current_cart
 
   def current_cart
     @current_cart ||= find_cart
@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
       cart = Cart.create
     end
     session[:cart_id] = cart.id
-    return cart
+   cart
   end
 end
