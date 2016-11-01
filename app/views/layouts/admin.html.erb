@@ -15,9 +15,10 @@
 		<%= render "common/navbar" %>
 		<%= render "common/flashes" %>
 
+		
 		<div class="row">
-			<div class="col-md-2">
-				<ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
+			<div class="col-md-1 sidebar">
+				<ul class="nav nav-sidebar">
 					<li class="active">
 						<%= link_to("产品管理", admin_products_path) %>
 					</li>
@@ -27,10 +28,13 @@
 				</ul>
 			</div>
 
-			<div class="col-md-10">
+			<div class="col-md-11">
 				<%= yield %>
 			</div>
+
 		</div>
+		
+
 
 
 

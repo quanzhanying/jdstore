@@ -13,5 +13,10 @@
 
 class DeliveryAddress < ApplicationRecord
 	belongs_to :user
+
+	validates :name, presence: :true
+	validates :phone, presence: :true, length: { is: 11 }
+	validates :address, presence: :true
+
 	
 end
