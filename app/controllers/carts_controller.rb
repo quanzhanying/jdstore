@@ -10,8 +10,12 @@ class CartsController < ApplicationController
       @cart_item=CartItem.where(:cart_id => @cart.id)
       @cart_item.each do |d|
         d.destroy
-    end
+      end
       redirect_to carts_path
+    end
+
+    def checkout
+      @order =Order.new
     end
 
 end
