@@ -15,7 +15,7 @@
         <% current_user.orders.each do |order| %>
           <tr>
             <td>
-              <%= link_to(order.id, orders_path(order)) %>
+              <%= link_to(order.id, account_orders_path(order)) %>
             </td>
             <td>
               <%= order.created_at %>
