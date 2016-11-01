@@ -1,0 +1,38 @@
+<h2> Users List </h2>
+
+
+<table class="table table-boldered">
+  <table width="1200" height="100px" border="1" cellpadding="10" cellspacing="10">
+  <thead>
+       <tr>
+           <td height="50" align="center">用户名称</td>
+           <td height="50" align="center">管理</td>
+           <td height="50" align="center">创建时间</td>
+
+       </tr>
+
+   </thead>
+ <tbody>
+   <% @users.each do |user| %>
+  <tr>
+    <td height="50" align="center">
+      <%= render_user_status(user) %>
+      <%= user.email %>
+    </td>
+
+
+    <td height="50" align="center">
+      <% if user.is_admin %>
+      <%= link_to("user", user_admin_user_path(user), :method => :post) %>
+      <%else %>
+      <%= link_to("admin", admin_admin_user_path(user), method: :post) %>
+    <% end %>
+    </td>
+
+    <td height="50" align="center">
+      <%= user.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
