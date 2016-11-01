@@ -1,0 +1,40 @@
+<div class="col-md-12">
+  <div class="product">
+    <%= link_to("Add Product", new_admin_product_path, class: "btn btn-primary pull-right") %>
+  </div>
+
+	<!-- <table class="table table-hover"> -->
+		<!-- <thead> -->
+			<!-- <tr> -->
+				<!-- <td><%#= image_tag @product.image.thumb.url, :class => "style_image" %></td> -->
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Product Name</td>
+        <td>Description</td>
+				<td>Quantity</td>
+				<td>Price</td>
+				<td>Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= link_to(product.title, admin_product_path(product)) %></td>
+          <td><%= product.description %></td>
+					<td><%= product.quantity %></td>
+					<td><%= number_to_currency(product.price) %></td>
+          <td>
+              <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", admin_product_path(product), class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
