@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'products#index'
   devise_for :users
+  resources :orders
   resources :carts do
     collection do
       delete :destroy
+      post :checkout
     end
   end
   resources :cart_items
