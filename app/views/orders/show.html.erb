@@ -62,3 +62,9 @@
     </table>
   </div>
 </div>
+
+<div class="checkout clearfix">
+<%= link_to("Pay by Alipay", pay_with_alipay_order_path(@order), :method => :post, class: "btn btn-lg btn-primary pull-right") %>
+<%= link_to("Pay by Wechat", pay_with_wechat_order_path(@order), :method => :post, class: "btn btn-lg btn-primary pull-right") %>
+</div>
+<br>

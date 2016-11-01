@@ -20,6 +20,15 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
+
+/*$bgDefault      : #0b0603;
+$bgHighlight    : #f2f1ec;
+$colDefault     : #e3d9c3;
+$colHighlight   : #908f89;
+$dropDown       : true;*/
+
+
 /*----*/
 .itemContainer{
 			width:100%;
@@ -951,9 +960,18 @@ ul.megamenu.skyblue {
   transition: all 0.3s ease-in-out;
 }
 .crt-btn a:hover{
-  background:#ff6978;
-  border:1px solid #ff6978;
+  background:#0b0603;
+  border:1px solid #908f89;
+	color: #908f89;
 }
+
+
+/*$bgDefault      : #0b0603;
+$bgHighlight    : #f2f1ec;
+$colDefault     : #e3d9c3;
+$colHighlight   : #908f89;*/
+
+
 .arriv-info1 {
   position: absolute;
   top: 145px;
