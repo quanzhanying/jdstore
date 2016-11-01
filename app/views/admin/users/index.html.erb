@@ -1,0 +1,52 @@
+<div class="pull-right">
+  <%#= link_to("新建用户", new_user_registration_path, :class => "btn btn-primary" ) %>
+</div>
+
+  <h4>商品列表</h4>
+  <hr>
+<table class="table table-boldered">
+
+<tr>
+  <th>用户id <span class="badge"><%= @users.count %></span></th>
+  <th>用户名</th>
+  <th>身份</th>
+  <th>建立时间</th>
+  <th>操作</th>
+</tr>
+  <% @users.each do |user| %>
+      <!-- 修饰是否发布 -->
+      <% if user.is_admin %>
+      <tr class="success">
+      <% else %>
+      <tr  class="danger">
+      <% end %>
+    <td><%= user.id %></td>
+
+    <td>
+      <%= user.email %>
+    </td>
+
+
+    <td>
+      <% if user.is_admin %>
+      <i class="fa fa-user" aria-hidden="true"> 商家</i>
+      <% else %>
+      <i class="fa fa-user-o" aria-hidden="true"> 用户</i>
+      <% end %>
+    </td>
+    <td>
+      <%= user.created_at %>
+    </td>
+
+    <td>
+      <%= link_to("删除", admin_user_path(user), :method => :delete, :data => { :confirm => "确定删除?" }) %> | 
+      <% if user.is_admin %>
+      <%= link_to("设为用户", cguser_admin_user_path(user) , :method => :put) %>
+      <% else %>
+
+      <%= link_to("设为商家", cgadmin_admin_user_path(user) , :method => :put) %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
