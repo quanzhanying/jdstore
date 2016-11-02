@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   helper_method :orders_not_complete_for_current_user
   helper_method :current_cart
 
+  $DEFAULT_MEDIUM_IMAGE = "http://placehold.it/300x400&text=No Pic"
+  $DEFAULT_THUMB_IMAGE = "http://placehold.it/150x200&text=No Pic"
+  $DEFAULT_IMAGE = "http://placehold.it/600x800&text=No Pic"
+
+
 
   	def require_is_admin 
 		if !current_user.admin?

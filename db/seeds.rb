@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 create_account = User.create([email: 'atlantis.ray@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'true'])
-create_account = User.create([email: '111111@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'false'])
+create_account = User.create([email: '458112682@qq.com', password: '111111', password_confirmation: '111111', is_admin: 'false'])
 
 create_address = DeliveryAddress.create([name: '大花', address: '北京市朝阳区建外soho东区8号楼2802', phone: '13333445678', user_id: 2])
 

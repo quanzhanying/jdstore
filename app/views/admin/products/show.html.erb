@@ -1,36 +1,18 @@
-<% if false %>
-<div class="col-md-4 col-md-offset-1">
-	<%= render "common/medium_product_image" %>	
-</div>
-
-<div class="col-md-4">
-	<hr>
-	<h2><%= simple_format(@product.title) %></h2>	
-	<br>
-	<h3>价格</h3><%= @product.price %>
-	<h3>库存</h3><%= simple_format(@product.quantity) %>
-</div>
-
-<% end %>
-
 
 
 <br>
 <br>
-
-
 
 <div class="container">
 	<div class="col-md-4">
-		<%= image_tag @product.image.url(:medium) %>
+			<%= render partial: "common/product_image", locals: {product: @product, size: "medium", admin: true} %>		
 	</div>
-	<div class="col-md-4 col-md-offset-2">
+	<div class="col-md-4 col-md-offset-1">
 		<h2><%= simple_format(@product.title) %></h2>	
 		<br>
 		<h3>价格</h3><%= @product.price %>
-		<h3>库存</h3><%= simple_format(@product.quantity) %>
+		<h3>库存</h3><%= @product.quantity %>
 		<h3>描述</h3><%= simple_format(@product.description) %>
-
 	</div>
 </div>
 

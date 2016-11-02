@@ -21,7 +21,14 @@
 			<tr class="warning">
 				<td>
 					<div class="col-md-8">
-						<%= link_to image_tag("#{cart_item.product.image.thumb.url}"), product_path(cart_item.product) %>  
+
+						<% if cart_item.product.image.present? %>
+							<%= link_to image_tag("#{cart_item.product.image.thumb.url}"), product_path(cart_item.product) %>  
+
+						<% else %>
+							<%= link_to image_tag($DEFAULT_THUMB_IMAGE), product_path(cart_item.product) %>  
+
+						<% end %>
 					</div>
 
 					<div class="col-md-4">

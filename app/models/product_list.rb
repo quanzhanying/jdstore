@@ -15,4 +15,5 @@ class ProductList < ApplicationRecord
 
 	belongs_to :order
 
+	# scope :product, -> {Product.find(product_id)}
 end

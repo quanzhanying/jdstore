@@ -64,7 +64,7 @@ class Order < ApplicationRecord
 
 	# scope :not_deliveried, -> { where.not(status: "DELIVERED") }
 	scope :not_finished, -> { where(aasm_state: "order_placed" ) | where(aasm_state: "paid" ) | where(aasm_state: "shipping" ) }
-
+  # scope :two_other_random_items, -> { where.not(id: id). }
 
 	private
 

@@ -1,0 +1,36 @@
+
+
+<!-- For general Usage -->
+<% image_url = "" %>
+<% size ||= "" %>
+<% if size == "medium" %>
+	<% image_url = product.image.url(:medium) %>
+<% elsif size == "thumb" %>
+	<% image_url = product.image.url(:thumb) %>
+<% else %>
+	<% image_url = product.image.url %>
+<% end %>
+
+
+<% path = "" %>
+<% admin ||= false %>
+<% only_image ||= false %>
+
+<% if only_image %>
+	<%= image_tag(image_url) %>
+<% else %>
+	<% if admin %>
+		<% path = admin_product_path(product) %>
+	<% else %>
+		<% path = product_path(product) %>
+	<% end %>
+
+	<% if product.image.present? %>
+		<%= link_to image_tag(image_url), path %>
+	<% else %>
+		<%= link_to image_tag(image_url), path %>	
+	<% end %>
+<% end %>
+
+
+
