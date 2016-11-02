@@ -30,11 +30,19 @@ class OrdersController < ApplicationController
   end
 
   def pay_with_alipay
-    @order.make_payment
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.payment_method = "alipay"
+    @order.make_payment!
+    @order.save
   end
 
   def wechat_pay
-    @order.make_payment
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.payment_method = "wechatpay"
+    @order.make_payment!
+    @order.save
   end
 
   private

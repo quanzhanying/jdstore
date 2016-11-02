@@ -6,6 +6,7 @@
            <td>总价(元)</td>
            <td>付款人</td>
            <td>收件人</td>
+           <td>是否付款</td>
            <td>订单时间</td>
 
        </tr>
@@ -28,6 +29,10 @@
 
     <td>
       <%= order.shipping_name%>
+    </td>
+
+    <td>
+      <%= order.is_paid %>
     </td>
 
     <td>
