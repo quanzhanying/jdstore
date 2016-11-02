@@ -15,7 +15,7 @@ class CartItemsController < ApplicationController
       @cart_item.save
       redirect_to carts_path
     else
-      flash[:warning] = "已售完"
+      flash[:warning] = "库存没有了哦！"
       redirect_to carts_path
     end
   end
