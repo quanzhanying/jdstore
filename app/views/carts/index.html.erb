@@ -36,7 +36,9 @@
               <%= cart_item.product.price %>
             </td>
             <td>
+              <%= button_to "+", plus_cart_item_path(cart_item), method: :post%>
               <%= cart_item.quantity %>
+              <%= button_to "-", minus_cart_item_path(cart_item), method: :post%>
             </td>
             <td>
               <%= link_to("不要了", cart_item_path(cart_item), method: :delete) %>
