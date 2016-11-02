@@ -17,14 +17,14 @@
         </tr>
       </thead>
       <tbody>
-      <% @product_lists.each do |product| %>
+      <%# @product_lists.each do |product| %>
         <tr>
-          <td><%= product.title %></td>
-          <td><%= product.price %></td>
-          <td><%= product.quantity %></td>
-          <td><%= product.price * product.quantity %></td>
+          <td><%#= product.title %></td>
+          <td><%#= product.price %></td>
+          <td><%#= product.quantity %></td>
+          <td><%#= product.price * product.quantity %></td>
         </tr>
-      <% end %>
+      <%# end %>
       </tbody>
       <h2>总计： 
       <%= @order.total %>

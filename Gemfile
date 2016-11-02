@@ -35,6 +35,9 @@ gem 'font-awesome-sass', '~> 4.7.0'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'letter_opener',group: :development
+
+
 
 gem 'annotate'
 gem "rails-erd"
