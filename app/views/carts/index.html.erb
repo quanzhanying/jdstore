@@ -30,7 +30,11 @@
             <%= cart_item.product.price %>
           </td>
           <td>
-            <%= cart_item.quantity %>
+            <p>
+              <%= link_to("-", minus_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-sm btn-info") %>
+              <%= cart_item.quantity %>
+              <%= link_to("+", add_quantity_cart_item_path(cart_item), method: :post, class: "btn btn-sm btn-info") %>
+            </p>
           </td>
           <td>
             <%= link_to("Delete", cart_item_path(cart_item),    class: "btn btn-sm btn-default",   method: :delete, data: { confirm: "Are you sure?" } )%>

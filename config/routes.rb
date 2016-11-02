@@ -15,7 +15,12 @@ Rails.application.routes.draw do
       post :checkout
     end
   end
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :add_quantity
+      post :minus_quantity
+    end
+  end
   resources :orders do
     member do
       post :pay_with_wechat

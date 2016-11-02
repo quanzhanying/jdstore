@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>单号</th>
+        <th>商品</th>
         <th>定单名</th>
         <th>总额</th>
         <th>付款状态</th>
@@ -15,6 +16,11 @@
       <% @orders.each do |order| %>
       <tr>
         <td> <%= order.id %> </td>
+        <td>
+          <% order.product_lists.each do |product_list|%>
+            <%= product_list.product_name %>
+          <% end %>
+        </td>
         <td> <%= order.billing_name %> </td>
         <td> <%= order.total %> </td>
         <td> <%= order.is_paid %> </td>
