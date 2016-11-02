@@ -16,6 +16,8 @@ class OrdersController < ApplicationController
    @order = Order.find(params[:id])
    if !@order.is_paid
      @order.is_paid = true
+     @order.make_payment!
+   else
      redirect_to account_orders_path
    end
   end
@@ -24,6 +26,8 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if !@order.is_paid
       @order.is_paid = true
+      @order.make_payment!
+    else
       redirect_to account_orders_path
     end
   end

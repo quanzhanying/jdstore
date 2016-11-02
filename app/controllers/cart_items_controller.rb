@@ -11,7 +11,7 @@ class CartItemsController < ApplicationController
        @cart_item.save
        redirect_to :back
      else
-       flash[:warning] = "没有了，还要呀！"
+       flash[:warning] = "小子，没货啦！"
        redirect_to :back
      end
    end
@@ -19,10 +19,11 @@ class CartItemsController < ApplicationController
    def down_cart_item
      @cart_item = CartItem.find(params[:id])
      @cart_item.quantity -= 1
-     if @cart_item.quantity <1
+     if @cart_item.quantity < 1
      else
        @cart_item.save
      end
+     flash[:warning] = "求求你，买一件吧！"
      redirect_to :back
    end
 

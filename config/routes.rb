@@ -19,6 +19,9 @@ Rails.application.routes.draw do
    end
  end
 
+ namespace :admin do
+   resources :orders
+ end
   resources :products do
     member do
       post :add_to_cart
@@ -46,14 +49,13 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :cart_items do
     member do
       post :up_cart_item
       post :down_cart_item
     end
   end
-  resources :cart_items
-  resources :products
   root 'products#index'
 
 end

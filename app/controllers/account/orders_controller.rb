@@ -1,9 +1,7 @@
 class Account::OrdersController < ApplicationController
 
     def index
-      @orders = Order.all
-    #  @c = @order.product_lists#
-
+      @orders = current_user.orders
     end
 
     def show
