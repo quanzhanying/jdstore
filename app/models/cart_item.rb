@@ -19,14 +19,14 @@ class CartItem < ApplicationRecord
   #   @quantity = 1
   # end
   def increment_quantity!
-    if self.quantity < product.quantity
+    # if self.quantity < product.quantity
     self.quantity += 1
-    else
-    flash[:notice] = '无货存！'
+    # else
+
     self.save
-    end
+    # end
   end
-  def decrement_quantity! 
+  def decrement_quantity!
     self.quantity -= 1
     self.save
   end
