@@ -45,22 +45,22 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order =Order.find_by_token(params[:id])
-    if @order.is_paid == false
+    if @order.is_paid == true
+      flash[:warning] = "You've already paid."
+    else
       @order.pay_with_alipay!
       flash[:success] = "Paid Successfully."
-    else
-      flash[:warning] = "You've already paid."
     end
     redirect_to order_path(@order.token)
   end
 
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
-    if @order.is_paid == false
+    if @order.is_paid == true
+      flash[:warning] = "You've already paid."
+    else
       @order.pay_with_wechat!
       flash[:success] = "Paid Successfully."
-    else
-      flash[:warning] = "You've already paid."
     end
     redirect_to order_path(@order.token)
   end
