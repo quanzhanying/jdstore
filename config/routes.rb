@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         post :nobody
       end
     end
+    resources :orders
   end
 
   resources :products do

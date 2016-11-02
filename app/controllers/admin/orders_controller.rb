@@ -1,12 +1,12 @@
-class Account::OrdersController < ApplicationController
+class Admin::OrdersController < ApplicationController
+  layout "admin"
+
   def index
-    @orders = Order.current_order(current_user).recent
+    @orders = Order.all.recent
   end
 
   def show
     @order = Order.find(params[:id])
     @product_lists = @order.product_lists
   end
-
-
 end
