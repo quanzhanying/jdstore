@@ -13,7 +13,7 @@ class OrderMailer < ApplicationMailer
     @user = order.user
     @product_lists = @order.product_lists
 
-    mail(to: @user.email, subject: "[JDstore] 你已经提交取消申请，请耐心等待商家确认！ #{@order.token}")
+    mail(to: "admin@jdstore.com", subject: "#{@user.email}提交了订单号为 #{@order.token}的撤回请求")
   end
 
   def notify_delivered(order)
