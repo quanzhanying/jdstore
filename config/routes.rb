@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   resources :cart_items
+  # resources :cart_items do
+  #   member do
+  #     post :initialize
+  #     post :increment_quantity
+  #     post :decrement_quantity
+  #     post :title
+  #     post :price
+  #   end
+  # end
+
   resources :orders do
     member do
       post :pay_with_alipay
@@ -11,9 +21,10 @@ Rails.application.routes.draw do
     collection do
       post :checkout
     end
-    # member do
-      # delete :destroy_to_cart
-    # end
+    member do
+       post :add_product
+
+     end
   end
 
   devise_for :users
@@ -25,7 +36,7 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
-      #delete :destroy_to_cart
+      delete :destroy_to_cart
     end
   end
 

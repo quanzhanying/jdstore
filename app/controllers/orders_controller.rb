@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     if @order.is_paid
       flash[:alert] = "已支付！"
-    
+
       redirect_to order_path
     else
       @order.is_paid = true
