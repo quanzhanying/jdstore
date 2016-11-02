@@ -26,10 +26,10 @@
           <% if order.aasm_state == "cancelling" %>
           <%= link_to("确认取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-danger') %>
           <% else %>
-        <%= link_to("取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-sm') %>
+        <%= link_to("后台取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-sm') %>
         <% end %>
-        <% if order.aasm_state == "order_paid" %>
-        <%= link_to("出货", deliver_admin_order_path(order.token), method: :post,class:'btn btn-default btn-sm') %>
+        <% if order.aasm_state == "paid" %>
+        <%= link_to("出货", ship_admin_order_path(order.token), method: :post,class:'btn btn-default btn-danger') %>
         <% end %>
 
 

@@ -19,9 +19,9 @@ class Admin::OrdersController < ApplicationController
 
   end
 
-  def deliver
+  def ship
        @order = Order.find_by_token(params[:id])
-       @order.deliver!
+       @order.ship!
        OrderMailer.notify_delivered(@order).deliver!
        redirect_to :back, notice:'确认取消订单请求！'
     end
