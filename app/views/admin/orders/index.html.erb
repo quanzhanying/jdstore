@@ -5,25 +5,37 @@
     <tr>
       <th> # </th>
       <th> User </th>
-      <th width="220">  total price  </th>
-      <th> billing name </th>
-      <th> shipping name </th>
-      <th> created_at </th>
-      <th width="100"> is_paid </th>
+      <th width="100">  total price  </th>
+      <th width="100"> order_state </th>
+      <th> </th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td> <%= link_to(order.id, order_path(order.token))  %> </td>
         <td>
-          <%= order.user.email %>
+          <%= link_to(order.id, order_path(order.token))  %>
+          <% if order.is_applied_cancell%>
+            <label class="label label-danger">is applied cancell!!!</label>
+          <% end %>
         </td>
+        <td> <%= order.user.email %> </td>
         <td> $ <%= order.total %> </td>
-        <td> <%= order.billing_name %> </td>
-        <td> <%= order.shipping_name%> </td>
-        <td> <%= order.created_at %> </td>
-        <td> <%= order.is_paid %> </td>
+        <td><label class="label label-success"> <%= order.aasm_state %></label> </td>
+        <td>
+          <% if (order.order_placed? || order.paid?) && order.is_applied_cancell %>
+            <%= link_to("cancell_order", cancell_order_order_path(order), method: :post, class: "btn btn-danger") %>
+          <% else %>
+            <%= link_to("cancell_order", cancell_order_order_path(order), method: :post, class: "btn btn-danger disabled") %>
+          <% end %>
+
+          <% if order.paid? %>
+            <%= link_to("   ship   ", ship_order_path(order), method: :post, class: "btn btn-danger") %>
+          <% else %>
+            <%= link_to("   ship   ", ship_order_path(order), method: :post, class: "btn btn-danger disabled") %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

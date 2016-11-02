@@ -5,8 +5,8 @@
     <tr>
       <th> # </th>
       <th width="220">  total price  </th>
-      <th> billing name </th>
-      <th> shipping name </th>
+      <th> </th>
+      <th>  order state </th>
       <th> created_at </th>
       <th width="100"> is_paid </th>
     </tr>
@@ -15,13 +15,16 @@
     <% @orders.each do |order| %>
       <tr>
         <td>
-          <%= link_to(order.id, order_path(order.token))  %>
-        </td>
+           <%= link_to(order.id, order_path(order.token))  %>
+           <% if order.is_applied_cancell%>
+             <label class="label label-danger">is applied cancell!!!</label>
+           <% end %>
+         </td>
+        <td> <%= order.total %> </td>
         <td>
-          <%= order.total %>
+          <%= link_to("apply to cancell!!!", apply_for_cancell_account_order_path(order.token), method: :post, class: "btn btn-default") %>
         </td>
-        <td> <%= order.billing_name %> </td>
-        <td> <%= order.shipping_name%> </td>
+        <td> <%= order.aasm_state %> </td>
         <td> <%= order.created_at %> </td>
         <td> <%= order.is_paid %> </td>
       </tr>

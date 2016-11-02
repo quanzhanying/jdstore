@@ -23,9 +23,14 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = Order.find_by_token(params[:id])
+    @product_lists = @order.product_lists
+  end
+
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
-    @order.is_paid = true
+    @order.make_payment!
     @order.save
 
     redirect_to account_orders_path
@@ -33,16 +38,27 @@ class OrdersController < ApplicationController
 
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
-    @order.is_paid = true
+    @order.make_payment!
     @order.save
 
     redirect_to account_orders_path
   end
 
-  def show
-    @order = Order.find_by_token(params[:id])
-    @product_lists = @order.product_lists
+  def cancell_order
+    @order = Order.find(params[:id])
+    @order.cancell_order!
+    flash[:alert] = "下面没有了"
+    redirect_to admin_orders_path
   end
+
+  def ship
+    @order = Order.find(params[:id])
+    @order.ship!
+    OrderMailer.notify_order_placed(@order).deliver!
+    flash[:notice] = "信货两发发了"
+    redirect_to admin_orders_path
+  end
+
 
   private
 
