@@ -2,7 +2,9 @@
   <div class="col-md-12">
 
     <h2> 详单明细 </h2>
-
+    <h3>
+      <%= link_to("详单链接", order_url(@order.token)) %>
+       </h3>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -64,14 +66,5 @@
         </tr>
       </tbody>
     </table>
-
-    <div class="pull-right">
-
-        <%= link_to("支付宝付款", pay_with_alipay_order_path(@order), pay_with_alipay_order_path(@order), :method => :post, :class => "btn btn-primary" ) %>
-        <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_order_path(@order), :method => :post ) %>
-        <%= link_to(" Apple Pay",  pay_with_apple_order_path(@order),pay_with_apple_order_path(@order), :method => :post, :class => "btn btn-default" ) %>
-
-    </div>
-    <br>
   </div>
 </div>
