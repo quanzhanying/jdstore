@@ -17,14 +17,14 @@
         </tr>
       </thead>
       <tbody>
-      <%# @product_lists.each do |product| %>
+      <% @product_lists.each do |product_list| %>
         <tr>
-          <td><%#= product.title %></td>
-          <td><%#= product.price %></td>
-          <td><%#= product.quantity %></td>
-          <td><%#= product.price * product.quantity %></td>
+          <td><%= product_list.product_name %></td>
+          <td><%= product_list.product_price %></td>
+          <td><%= product_list.quantity %></td>
+          <td><%= product_list.product_price * product_list.quantity %></td>
         </tr>
-      <%# end %>
+      <% end %>
       </tbody>
       <h2>总计： 
       <%= @order.total %>
@@ -32,7 +32,7 @@
     </table>
 
     <hr>
-    <h1>邮寄信息</h1>
+    <h2>邮寄信息</h2>
     <h6>订货人</h6>
     <p>
       <%= @order.billing_name %>
