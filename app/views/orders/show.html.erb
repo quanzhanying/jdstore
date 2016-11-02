@@ -63,7 +63,7 @@
 
     <div class="pull-right">
 
-      <% if @order.is_paid = false %>
+      <% if @order.is_paid == false %>
 
         <%= link_to("WeChat", pay_with_wechat_order_path(@order), method: :post, class:"btn btn-lg btn-success") %>
 

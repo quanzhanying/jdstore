@@ -13,7 +13,6 @@
       </thead>
       <tbody>
 
-        <%# if current_cart.cart_items.item_id != nil %>
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
@@ -35,7 +34,7 @@
               <%= cart_item.storage %>
             </td>
             <td>
-              <%= link_to("Deleete", cart_item_path(cart_item), method: :delete, class: "btn btn-md btn-danger") %>
+              <%= link_to("Delete", cart_item_path(cart_item), method: :delete, class: "btn btn-md btn-danger") %>
             </td>
             </tr>
         <% end %>

@@ -1,2 +1,0 @@
-class AccountController < ApplicationController
-end
