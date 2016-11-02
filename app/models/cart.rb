@@ -10,6 +10,7 @@
 class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
+  # belongs_to :orders
   def add_product_to_cart(product)
     ci = cart_items.build
     ci.product = product
@@ -22,5 +23,5 @@ class Cart < ApplicationRecord
       sum += cart_item.quantity * cart_item.product.price
     end
     sum
-  end 
+  end
 end

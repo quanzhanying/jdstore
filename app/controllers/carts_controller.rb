@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @carts = Cart.all
   end
@@ -41,7 +42,7 @@ class CartsController < ApplicationController
   end
 
   def checkout
-  
+
     @order = Order.new
   end
 
