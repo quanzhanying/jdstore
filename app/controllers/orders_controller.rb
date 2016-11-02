@@ -29,6 +29,23 @@ class OrdersController < ApplicationController
   end
 end
 
+  def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.save
+
+    redirect_to account_orders_path
+  end
+
+
+  def pay_with_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.is_paid = true
+    @order.save
+
+    redirect_to account_orders_path
+  end
+
   private
 
   def order_params

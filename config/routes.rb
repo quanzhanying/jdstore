@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-    resources :orders
 
     resources :carts do
       collection do
@@ -23,6 +22,16 @@ Rails.application.routes.draw do
        post :add_to_cart
      end
    end
+
+   resources :orders do
+     member do
+       post :pay_with_wechat
+       post :pay_with_alipay
+     end
+   end
+   namespace :account do
+   resources :orders
+ end
 
   root 'products#index'
 end
