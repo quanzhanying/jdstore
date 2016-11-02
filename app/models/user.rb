@@ -28,6 +28,8 @@ class User < ApplicationRecord
     is_admin
   end
 
+  has_many :orders
+  
   def master!
     self.is_admin = true
     self.save
@@ -36,5 +38,5 @@ class User < ApplicationRecord
   def guest!
     self.is_admin = false
     self.save
-  end 
+  end
 end

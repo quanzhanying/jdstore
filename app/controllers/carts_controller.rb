@@ -3,6 +3,10 @@ class CartsController < ApplicationController
     @carts = Cart.all
   end
 
+  def checkout
+    @order = Order.new
+  end 
+
   def destroy_cart
     # @product = Product.find(params[:product_id])
     current_cart.cart_items.each do |item|
