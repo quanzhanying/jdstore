@@ -36,6 +36,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
+gem 'aasm'
+gem 'letter_opener', group: :development
 
 
 group :development, :test do

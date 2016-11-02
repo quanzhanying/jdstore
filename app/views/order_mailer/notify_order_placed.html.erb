@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> Order Summary <br>
+		<small>
+			<%= link_to("Order Link", order_url(@order.token)) %>
+		</small>
+		</h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="70%">Item Details</th>
+          <th>Price</th>
+					<th>Quantity</th>
+					<th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <% @product_lists.each do |product_list| %>
+        <tr>
+          <td><%= product_list.product_name %></td>
+          <td><%= product_list.product_price %></td>
+					<td><%= product_list.quantity %></td>
+					<td><%#= product_list.subtotal_price %></td>
+        </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        Total <%= @order.total %> CNY
+      </span>
+    </div>
