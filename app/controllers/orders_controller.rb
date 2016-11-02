@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
   end
-  
+
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
@@ -31,6 +31,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:billing_name,:billing_address,:shipping_name,:shipping_address)
+    params.require(:order).permit(:billing_name,:billing_address,:shipping_name,:shipping_address,:is_paid)
   end
 end

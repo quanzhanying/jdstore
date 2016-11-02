@@ -61,11 +61,8 @@
         </tr>
       </tbody>
     </table>
-
+    <% if @order.is_paid? %>
+      <%= link_to("已支付", carts_path, class: "btn btn-danger")  %>
+    <% end %>
   </div>
 </div>
-
-
-<% if @order.is_paid %>
-  <%= link_to("wocaolaoma", carts_path, class: "btn")  %>
-<% end %>

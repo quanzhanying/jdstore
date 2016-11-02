@@ -1,9 +1,31 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id               :integer          not null, primary key
+#  total            :integer          default(0)
+#  user_id          :integer
+#  billing_name     :string
+#  billing_address  :string
+#  shipping_name    :string
+#  shipping_address :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  token            :string
+#  is_paid          :boolean          default(FALSE)
+#
+
 class Order < ApplicationRecord
   before_create :generate_token
   # belongs_to :carts
   def generate_token
     self.token = SecureRandom.uuid
   end
+
+  def is_paid?
+    is_paid
+  end
+  
   belongs_to :user
   validates :billing_name,presence:true
   validates :billing_address,presence:true
