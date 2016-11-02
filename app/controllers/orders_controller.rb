@@ -29,8 +29,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def pay_with_alipay
+    @order.make_payment
+  end
+
+  def wechat_pay
+    @order.make_payment
+  end
+
   private
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :aasm_state)
   end
 end

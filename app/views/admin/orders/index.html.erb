@@ -7,6 +7,7 @@
            <td>付款人</td>
            <td>收件人</td>
            <td>订单时间</td>
+           <td>订单状态<td>
 
        </tr>
 
@@ -33,6 +34,11 @@
     <td>
       <%= order.created_at %>
     </td>
+
+    <td>
+      <%= order.aasm_state %>
+    </td>
+
   </tr>
   <% end %>
 <tbody>
