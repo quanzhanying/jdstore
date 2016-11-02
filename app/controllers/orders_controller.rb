@@ -47,6 +47,8 @@ class OrdersController < ApplicationController
   def cancell_order
     @order = Order.find(params[:id])
     @order.cancell_order!
+    OrderMailer.notify_order_cancelled(@order).deliver!
+
     flash[:alert] = "下面没有了"
     redirect_to admin_orders_path
   end
@@ -55,6 +57,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.ship!
     OrderMailer.notify_order_placed(@order).deliver!
+
     flash[:notice] = "信货两发发了"
     redirect_to admin_orders_path
   end
