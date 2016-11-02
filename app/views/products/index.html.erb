@@ -1,0 +1,64 @@
+<h2> Produce List </h2>
+<br><br>
+<!-- <table class="table table-boldered">
+  <thead>
+       <tr>
+           <td>商品名称</td>
+           <td>商品详情</td>
+           <td>商品数量</td>
+           <td>价格</td>
+           <td>创建时间</td>
+
+       </tr>
+
+   </thead>
+ <tbody>
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= link_to(product.title, admin_product_path(product)) %>
+    </td>
+
+    <td>
+      <%= product.description%>
+    </td>
+
+    <td>
+      <%= product.quantity %>
+    </td>
+
+    <td>
+      <%= product.price %>
+    </td>
+
+    <td>
+      <%= product.created_at %>
+    </td>
+  </tr>
+  <% end %>
+<tbody>
+</table> -->
+
+<div class="row">
+  <% @products.each do |product| %>
+  <%= link_to(product_path(product)) do %>
+    <div class="col-xs-6 col-md-3">
+       <div class="thumbnail">
+      <% if product.image? %>
+        <%= image_tag(product.image.thumb.url,class: "thumbnail") %>
+      <% else %>
+        <image src="http://andresgaleano.eu/wp-content/uploads/2015/09/No-I-mage-Available.gif", width="200", class="thumbnail">
+      <% end %>
+        <div class="caption">
+          <h3><%=product.title%></h3>
+
+            <%= link_to("look", product_path(product), class:"btn btn-danger")%>
+            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-danger")%>
+
+
+        </div>
+      </div>
+    </div>
+    <%end%>
+    <%end%>
+</div>
