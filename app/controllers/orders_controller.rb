@@ -28,6 +28,37 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def pay_with_alipay
+    @order = Order.find(params[:id])
+    @order.payment_method = 'alipay'
+    @order.is_paid = true
+    if @order.save
+      flash[:notice] = "付款success"
+      redirect_to carts_path
+    else
+      flash[:notice] = "付款失败！请重试"
+      redirect_to :back
+    end
+  end
+
+  def pay_with_wechat
+    @order = Order.find(params[:id])
+    @order.payment_method = 'wechat'
+    @order.is_paid = true
+    if @order.save
+      flash[:notice] = "付款success"
+      redirect_to carts_path
+    else
+      flash[:notice] = "付款失败！请重试"
+      redirect_to :back
+    end
+  end
+
+
+
+
+
+
   private
 
   def order_params
