@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
 		@order = Order.find(params[:id])
 		#  @order.is_paid = false
 			@order.paid_wechat!
+			@order.make_payment!
 			# current_cart.clear_cart
 			flash[:notice] = "Thank you for your order! We will be in touch shortly."
 
@@ -47,10 +48,13 @@ class OrdersController < ApplicationController
 	def pay_with_alipay
 		@order = Order.find(params[:id])
 		@order.paid_alipay!
+		@order.make_payment!
 		flash[:notice] = "Thank you for your order! We will be in touch shortly."
 
 		redirect_to :root
 	end
+
+
 
   private
 
