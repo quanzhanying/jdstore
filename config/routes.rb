@@ -33,10 +33,12 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders 
+    resources :orders
   end
 
-
+  namespace :admin do
+    resources :orders
+  end
 
   resources :cart_items
   root 'products#index'
