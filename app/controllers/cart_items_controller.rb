@@ -13,10 +13,12 @@ class CartItemsController < ApplicationController
 
     @cart = current_cart
     @cart_item =@cart.cart_items.find_by(product_id: params[:id])
-    if @cart_item.update(quantity_params)
+    
+    if @cart_item.product.quantity >= quantity_params[:quantity].to_i
+      @cart_item.update(quantity_params)
       flash[:notice]="ok "
     else
-      flase[:warning]="no enough goods"
+      flash[:warning]="已经超出库存数量"
     end
 
     redirect_to carts_path
