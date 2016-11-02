@@ -49,6 +49,7 @@ class OrdersController < ApplicationController
       flash[:warning] = "You've already paid."
     else
       @order.pay_with_alipay!
+      @order.make_payment!
       flash[:success] = "Paid Successfully."
     end
     redirect_to order_path(@order.token)
@@ -60,6 +61,7 @@ class OrdersController < ApplicationController
       flash[:warning] = "You've already paid."
     else
       @order.pay_with_wechat!
+      @order.make_payment!
       flash[:success] = "Paid Successfully."
     end
     redirect_to order_path(@order.token)
@@ -67,7 +69,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method, :aasm_state)
   end
 end
 

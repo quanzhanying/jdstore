@@ -7,6 +7,7 @@
       <th>Orders</th>
       <th>Is Paid</th>
       <th>Payment Method</th>
+      <th>Order Statement</th>
       <th>Last Update</th>
     </tr>
   </thead>
@@ -23,6 +24,11 @@
       </td>
       <td>
         <%= order.payment_method %>
+      </td>
+      <td>
+        <%= order.aasm_state %>
+        <%= link_to("Cancell", cancell_order_admin_order_path(order.token), method: :post, class: "btn btn-default") %>
+        <%= link_to("Ship", cancell_order_admin_order_path(order.token), method: :post, class: "btn btn-default") %>
       </td>
       <td>
         <%= order.created_at %>
