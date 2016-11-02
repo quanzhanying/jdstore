@@ -1,10 +1,16 @@
 
 
 
+	<% if order.order_placed? or order.paid? %>
+		<%= link_to "取消订单", cancel_admin_order_path(order), method: :post, class: "btn btn-danger pull-right", style: "margin-left: 20px" %>
+	<% end %>
+
 
 	<% if order.paid? %>
 		<%= link_to "发货",  ship_admin_order_path(order), method: :post, class: "btn btn-success pull-right" %>
 	<% end %> 
+
+
 
 	<%= link_to order.aasm_state.upcase, "#", class: "btn btn-warning pull-left", disabled: "disabled" %>
 

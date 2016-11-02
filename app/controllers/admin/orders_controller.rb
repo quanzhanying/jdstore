@@ -26,6 +26,14 @@ class Admin::OrdersController < ApplicationController
 		@order = Order.find(params[:id])
 		@order.ship!
 		redirect_to admin_orders_path, notice: "成功发货"
+		OrderMailer.order_ship_email(@order.user, @order).deliver
+	end
+
+	def cancel
+		@order = Order.find(params[:id])
+		@order.cancell_order!
+		redirect_to admin_orders_path, notice: "取消订单"
+		OrderMailer.order_cancel_email(@order.user, @order).deliver
 	end
 
 	def destroy

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :edit, :update, :destroy] do
       member do
         post :ship
+        post :cancel
       end
     end
   end

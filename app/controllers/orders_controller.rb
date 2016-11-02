@@ -53,6 +53,10 @@ class OrdersController < ApplicationController
       @order.user = current_user
       @order.save
 
+      ## Add Mailer
+      OrderMailer.order_email(current_user, @order).deliver
+
+
       redirect_to order_path(@order.token)
 
     end   
@@ -88,8 +92,8 @@ class OrdersController < ApplicationController
         item.product.quantity += item.quantity
         item.product.save
       end
-    redirect_to orders_path, notice: "成功取消订单"
     end
+    redirect_to orders_path, notice: "成功取消订单"
   end
 
   def pay
