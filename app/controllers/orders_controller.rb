@@ -36,7 +36,9 @@ class OrdersController < ApplicationController
     else
       @order.payment_method = 'alipay'
       @order.is_paid = true
+      # 发邮件
       OrderMailer.notify_order_placed(@order).deliver
+      @order.make_payment!
       @order.save
       redirect_to paysuccess_order_path,notice: "付款成功"
     end
