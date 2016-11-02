@@ -2,8 +2,14 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
   def index
     @carts = Cart.all
-  end
 
+  end
+  # def destroy_to_cart
+    #@product = Product.find(params[:id])
+    # binding.pry
+    #current_cart.destroy_product_to_cart(@product)
+    # redirect_to :back
+  # end
   def new
     @cart = Cart.new
   end

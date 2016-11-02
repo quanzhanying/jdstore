@@ -12,6 +12,7 @@
           <th colspan="2">商品资讯</th>
           <th>单价</th>
           <th>数量</th>
+          <th>删除商品</th>
         </tr>
       </thead>
       <tbody>
@@ -37,7 +38,7 @@
               <%= cart_item.quantity %>
             </td>
             <td>
-              <%#= link_to() %>
+              <%#= link_to("删除商品", destroy_to_cart_cart_path(cart_item), method: :delete) %>
             </td>
           </tr>
         <% end %>
