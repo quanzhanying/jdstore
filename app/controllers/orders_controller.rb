@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :pay_with_alipay, :pay_with_wechat]
   # def index
   #   @orders = Order.all
   # end
@@ -43,9 +43,31 @@ class OrdersController < ApplicationController
     end
   end
 
+  def pay_with_alipay
+    @order =Order.find_by_token(params[:id])
+    if @order.is_paid == false
+      @order.pay_with_alipay!
+      flash[:success] = "Paid Successfully."
+    else
+      flash[:warning] = "You've already paid."
+    end
+    redirect_to order_path(@order.token)
+  end
+
+  def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    if @order.is_paid == false
+      @order.pay_with_wechat!
+      flash[:success] = "Paid Successfully."
+    else
+      flash[:warning] = "You've already paid."
+    end
+    redirect_to order_path(@order.token)
+  end
+
   private
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
   end
 end
 

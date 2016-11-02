@@ -62,3 +62,7 @@
     </table>
   </div>
 </div>
+<div class="group pull-right">
+  <%= link_to("支付宝付款", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-lg btn-danger", :data => { :confirm => "Are you sure?" }) %>
+  <%= link_to("微信付款", pay_with_wechat_order_path(@order.token), method: :post, class: "btn btn-lg btn-danger", :data => { :confirm => "Are you sure?" }) %>
+</div>

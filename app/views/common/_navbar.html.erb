@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                   <%= link_to carts_path do %>
-                    我的购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
+                    我的购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.cart_items.sum("quantity") %>)
                   <% end %>
                 </li>
                 <% if !current_user %>

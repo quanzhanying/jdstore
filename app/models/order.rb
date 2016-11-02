@@ -9,4 +9,15 @@ class Order < ApplicationRecord
   validates :billing_address, presence: true
   validates :shipping_name, presence: true
   validates :shipping_address, presence: true
+  def pay_with_alipay!
+    self.is_paid = true
+    self.payment_method = "alipay"
+    self.save
+  end
+
+  def pay_with_wechat!
+    self.is_paid = true
+    self.payment_method = "wechat"
+    self.save
+  end  
 end

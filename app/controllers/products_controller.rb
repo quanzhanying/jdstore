@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :check_if_product_in_cart, only: [:add_to_cart]
   def index
     @products = Product.where(:onsale => true)
   end
@@ -49,7 +50,6 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-
     # current_cart.cart_items.each do |cart_item|
     #   if @product == @cart_item
     #     break
@@ -63,15 +63,17 @@ class ProductsController < ApplicationController
     #     flash[:warning] = "This product is already in your cart, click button to change quantity."
     #   end
     # end
+    # if current_cart.cart_items.products.include?(@product)
+    #   flash[:warning] = "This product is already in your cart, click button to change quantity."
+    # end
 
-    if current_cart.cart_items.include? (@product)
-      flash[:warning] = "This product is already in your cart, click button to change quantity."
-    elsif @product.quantity > 0
+    if @product.quantity > 0
       current_cart.add_product_to_cart(@product)
+      return redirect_to carts_path
     else
-      flash[:warning] = "This product is sold out."
+      flash[:warning] = "This product is sold out. Check out something else."
+      return redirect_to root_path
     end
-    redirect_to carts_path
   end
 
 
@@ -87,6 +89,23 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:title, :description, :price, :quantity, :onsale, :image)
+  end
+
+  # def check_if_product_in_stock
+  #   if @product.quantity == 0
+  #     redirect_to carts_path
+  #     flash[:warning] = "This product is sold out."
+  #   end
+  # end
+
+  def check_if_product_in_cart
+    @product = Product.find(params[:id])
+    current_cart.cart_items.each do |cart_item|
+      if cart_item.product == @product
+        flash[:warning] = "This product is already in your cart, click button to change quantity."
+        return redirect_to carts_path
+      end
+    end
   end
 
 end
