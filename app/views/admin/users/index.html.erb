@@ -1,0 +1,37 @@
+<!-- <div class="pull-right">
+  <%= link_to("Add a user", new_admin_user_path, :class => "btn btn-default" ) %>
+</div> -->
+
+<br><br>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>是否管理员</th>
+      <th>切换身份</th>
+      <th>创建时间</th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.email  %>
+      </td>
+      <td>
+        <%= user.is_admin %>
+      </td>
+      <td>
+        <% if user.is_admin %>
+          <%= link_to("解除管理员", nobody_admin_user_path(user) , :method => :post, :class => "btn btn-xs btn-default") %>
+        <% else %>
+          <%= link_to("设为管理员", king_admin_user_path(user), :method => :post,  :class => "btn btn-xs btn-default") %>
+        <% end %>
+      </td>
+      <td>
+        <%= user.created_at %>
+      </td>
+    </tr>
+  <% end %>
+</table>

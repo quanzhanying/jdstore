@@ -34,4 +34,17 @@ class User < ApplicationRecord
   end
 
   has_many :orders
+
+  scope :all_except, ->(user) { where.not(id: user) }
+
+
+    def king!
+      self.is_admin = true
+      self.save
+    end
+
+    def nobody!
+      self.is_admin = false
+      self.save
+    end
 end

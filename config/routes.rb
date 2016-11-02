@@ -9,12 +9,17 @@ Rails.application.routes.draw do
         post :hide
       end
     end
+    resources :users do
+      member do
+        post :king
+        post :nobody
+      end
+    end
   end
 
   resources :products do
     member do
       post :add_to_cart
-
     end
     resources :cart_items
   end
