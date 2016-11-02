@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
   def pay_with_wechat
     @order = Order.find(params[:id])
     @order.wechat!
+    @order.make_payment!
 
     redirect_to :back
   end
@@ -39,6 +40,7 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find(params[:id])
     @order.alipay!
+    @order.make_payment!
 
     redirect_to :back
   end
