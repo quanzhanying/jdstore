@@ -31,20 +31,23 @@ class OrdersController < ApplicationController
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
-    @order.is_paid = true
-    @order.payment_method = "alipay"
-    @order.make_payment!
-    @order.save
+    if @order.is_paid == true
+      flash[:warning] = "订单已付款"
+    else
+      @order.pay_with_alipay!
+      redirect_to order_path(@order.token)
+    end
   end
 
-  def wechat_pay
-    @order = Order.find_by_token(params[:id])
-    @order.is_paid = true
-    @order.payment_method = "wechatpay"
-    @order.make_payment!
-    @order.save
-  end
-
+    def pay_with_wechat
+      @order = Order.find_by_token(params[:id])
+      if @order.is_paid == true
+        flash[:warning] = "订单已付款"
+      else
+        @order.pay_with_wechat!
+        redirect_to order_path(@order.token)
+      end
+   end
   private
   def order_params
     params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :aasm_state)

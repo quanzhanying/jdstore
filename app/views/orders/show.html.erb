@@ -52,7 +52,11 @@
     </table>
 
     <div class="group pull-right">
-      <%= link_to("支付宝", pay_with_alipay_order_path, method: :post, :class => "btn btn-danger") %>
-      <%= link_to("微信支付", pay_with_wechat_order_path, method: :post, :class => "btn btn-danger") %>
+      <% if @order.is_paid == true %>
+      <a href="#" class="btn btn-danger" disable> 已付款 </a>
+      <% else %>
+      <%= link_to("支付宝", pay_with_alipay_order_path(@order.token), method: :post, :class => "btn btn-danger") %>
+      <%= link_to("微信支付", pay_with_wechat_order_path(@order.token), method: :post, :class => "btn btn-danger") %>
+      <% end %>
   </div>
 </div>
