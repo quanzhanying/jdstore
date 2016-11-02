@@ -14,13 +14,15 @@ class Admin::OrdersController < ApplicationController
   def cancel
     @order = Order.find_by_token(params[:id])
     @order.cancell_order!
+     OrderMailer.notify_cancel(@order).deliver!
     redirect_to :back, notice:'确认取消订单请求！'
 
   end
 
   def deliver
        @order = Order.find_by_token(params[:id])
-       @order.deliver! 
+       @order.deliver!
+       OrderMailer.notify_delivered(@order).deliver!
        redirect_to :back, notice:'确认取消订单请求！'
     end
 
