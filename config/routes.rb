@@ -55,6 +55,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :product_lists
   end
   root 'products#index'
 
