@@ -4,8 +4,8 @@ class OrderMailer < ApplicationMailer
     @order = order
     @user = order.user
     @product_lists = @order.product_lists
-
     mail(to: @user.email, subject: "[JD Store] Your order is shown below #{order.token}")
   end
 
+   
 end

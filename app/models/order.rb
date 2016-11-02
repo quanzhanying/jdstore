@@ -35,5 +35,12 @@ class Order < ApplicationRecord
   scope :current_order, -> (user){where(:user_id => user)}
   scope :recent, -> { order("created_at DESC")}
 
+  def order_price
+    sum = 0
+    product_lists.each do |product_list|
+      sum += product_list.quantity * product_list.product_price
+    end
+    sum
+  end
 
 end

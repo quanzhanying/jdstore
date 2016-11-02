@@ -67,9 +67,9 @@
 
     <div class="pull-right">
 
-        <%= link_to("支付宝付款", pay_with_alipay_order_path(@order), pay_with_alipay_order_path(@order), :method => :post, :class => "btn btn-primary" ) %>
+        <%= link_to("支付宝付款", pay_with_alipay_order_path(@order), :method => :post, :class => "btn btn-primary" ) %>
         <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_order_path(@order), :method => :post ) %>
-        <%= link_to(" Apple Pay",  pay_with_apple_order_path(@order),pay_with_apple_order_path(@order), :method => :post, :class => "btn btn-default" ) %>
+        <%= link_to(" Apple Pay", pay_with_apple_order_path(@order), :method => :post, :class => "btn btn-default" ) %>
 
     </div>
     <br>
