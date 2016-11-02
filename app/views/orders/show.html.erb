@@ -56,9 +56,16 @@
         <tr>
           <td>
             <%= @order.shipping_name %> - <%= @order.shipping_address %>
+
           </td>
         </tr>
       </tbody>
     </table>
+
   </div>
 </div>
+
+
+<% if @order.is_paid %>
+  <%= link_to("wocaolaoma", carts_path, class: "btn")  %>
+<% end %>
