@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   def destroy
     @cart = current_cart
     @cart.destroy
-    # @cart_item = CartItem.current_cart.id
+    # @cart_item = CartItem.current_ci(@cart)
     # @cart_item.each do |d|
     #   d.destroy
     # end

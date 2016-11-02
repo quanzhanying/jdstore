@@ -8,7 +8,9 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.user_id = current_user
+    #@order.user_id = current_user
+    @order.user = current_user
+    #binding.pry
     @order.total = current_cart.total_price
     if @order.save
       current_cart.cart_items.each do |cart_item|
@@ -24,6 +26,15 @@ class OrdersController < ApplicationController
       render 'carts/checkout'
     end
   end
+
+    def pay_with_wechat
+      @order = Order.find_by_token(params[:id])
+      @order.make_payment!
+    end
+
+    def pay_with_alipay
+      @oreder.make_payment!
+    end
 
   private
 

@@ -3,10 +3,10 @@ class Cart < ApplicationRecord
   has_many :cart_items
   #validates :product, uniqueness: true
   def add_product_to_cart(product)
-    ci = cart_items.build
-    ci.product = product
-    ci.quantity = 1
-    ci.save
+    c = cart_items.build
+    c.product = product
+    c.quantity = 1
+    c.save
   end
 
   def total_price
