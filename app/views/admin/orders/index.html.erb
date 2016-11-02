@@ -18,10 +18,10 @@
     <tbody>
       <tr>
         <td>
-          <%= link_to(order.id, admin_order_path(order), :method => :get)%>
+          <%= link_to(order.id, admin_order_path(order.token), :method => :get)%>
         </td>
         <td>
-          <%= order.billing_name %>
+          <%= order.user.email %>
         </td>
         <td>
           <%= order.created_at %>

@@ -12,10 +12,10 @@
         </tr>
       </thead>
       <tbody>
-        <% current_user.orders.each do |order| %>
+        <% @orders.each do |order| %>
           <tr>
             <td>
-              <%= link_to(order.id, account_order_path(order)) %>
+              <%= link_to(order.id, account_order_path(order.token)) %>
             </td>
             <td>
               <%= order.created_at %>
@@ -27,6 +27,5 @@
         <% end %>
       </tbody>
     </table>
-
   </div>
 </div>

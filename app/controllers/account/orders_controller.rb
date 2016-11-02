@@ -1,10 +1,11 @@
 class Account::OrdersController < ApplicationController
   def index
-    @orders = Order.all.recent
+
+    @orders = Order.current_order(current_user).recent
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
   end
 

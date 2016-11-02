@@ -7,5 +7,12 @@ class OrderMailer < ApplicationMailer
     mail(to: @user.email, subject: "[JD Store] Your order is shown below #{order.token}")
   end
 
-   
+  def order_price
+    sum = 0
+    product_lists.each do |product_list|
+      sum += product_list.quantity * product_list.product_price
+    end
+    sum
+  end
+  
 end
