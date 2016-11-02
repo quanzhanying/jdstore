@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
+    @order.payment_method = "alipay"
+    @order.make_payment!
     @order.save
 
   end
@@ -11,9 +13,11 @@ class OrdersController < ApplicationController
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
+    @order.payment_method = "wechat"
+    @order.make_payment!
     @order.save
   end
-  
+
   def create
     @order = Order.new(order_params)
     @order.user = current_user
