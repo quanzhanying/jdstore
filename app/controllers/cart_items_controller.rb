@@ -2,7 +2,7 @@ class CartItemsController < ApplicationController
 
   def item_increase
     @cartItem = CartItem.find(params[:id])
-    if !@cartItem.num_increase
+    if !@cartItem.num_increase?
     #   flash[:notice] = "increase"
     # else
       flash[:notice] = "不能超过库存"
@@ -12,10 +12,10 @@ class CartItemsController < ApplicationController
 
   def item_decrease
     @cartItem = CartItem.find(params[:id])
-    if !@cartItem.num_decrease
+    if !@cartItem.num_decrease?
     #   flash[:notice] = "decrease"
     # else
-      flash[:notice] = "数量不能低于0"
+      flash[:notice] = "数量不能低于1"
     end
     # @cartItem.num_decrease
     redirect_to carts_path    

@@ -3,7 +3,7 @@ class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
 
-  def num_increase
+  def num_increase?
     # self.quantity += 1
     # self.save
     # 放置一个可以添加数量的上限
@@ -22,8 +22,8 @@ class CartItem < ApplicationRecord
     # quantity = quantity + 1
   end
 
-  def num_decrease
-    if self.quantity <= 0
+  def num_decrease?
+    if self.quantity <= 1
       return false
     else
       self.quantity -= 1

@@ -11,14 +11,14 @@ class ApplicationController < ActionController::Base
 
   def find_cart
     # 进场先找是否已经有了购物车
-    cart = Cart.find_by(id:session[:cart_id])
+    @cart = Cart.find_by(id:session[:cart_id])
     # 如果没有则新建一个
-    if cart.blank?
-      cart = Cart.create
+    if @cart.blank?
+      @cart = Cart.create
     end
     # 获取sessionid
-    session[:cart_id] = cart.id
-    return cart
+    session[:cart_id] = @cart.id
+    return @cart
   end
 
 end

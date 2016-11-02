@@ -85,7 +85,7 @@ class ProductsController < ApplicationController
         flash[:notice] = "添加购物车成功！" 
         puts '~~ already have this product ~~'
         # 注意where查出来的是个collection
-        if !p_already.first.num_increase
+        if !p_already.first.num_increase?
           flash[:notice] = "不能超过库存"
         end
 
