@@ -30,9 +30,9 @@
             <%= cart_item.product.price %>
           </td>
           <td>
-            <%= button_to '+1', up_cart_item_cart_item_path(cart_item), method: :post %>
+            <%= button_to '+', up_cart_item_cart_item_path(cart_item), method: :post ,class: "btn btn-sm btn-primary"%>
             <%= cart_item.quantity %>
-            <%= button_to '-1', down_cart_item_cart_item_path(cart_item), method: :post %>
+            <%= button_to '-', down_cart_item_cart_item_path(cart_item), method: :post, class: "btn btn-sm btn-primary"%>
           </td>
           <td>
             <%= link_to("Delete", cart_item_path(cart_item), method: :delete,data: { confirm: "滚啦？" }) %>
@@ -52,7 +52,7 @@
 
        <hr>
         <div class="checkout clearfix">
-          <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+          <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
         </div>
     </div>
   </div>

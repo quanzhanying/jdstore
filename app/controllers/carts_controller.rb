@@ -4,15 +4,17 @@ class CartsController < ApplicationController
   def destroy
     @cart = current_cart
     @cart.destroy
-    # @cart_item = CartItem.where()
-    # @cart_items.each do |cart_item|
-    #   d.cart_item
-
+    # @cart_item = CartItem.current_cart.id
+    # @cart_item.each do |d|
+    #   d.destroy
+    # end
     redirect_to :back
   end
 
-  def add_cart_item
+  def checkout
+    @order = Order.new
   end
+
 
 
 end

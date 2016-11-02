@@ -1,7 +1,7 @@
 class Cart < ApplicationRecord
   has_many :products, through: :cart_items, source: :product
   has_many :cart_items
-
+  #validates :product, uniqueness: true
   def add_product_to_cart(product)
     ci = cart_items.build
     ci.product = product
@@ -17,5 +17,5 @@ class Cart < ApplicationRecord
     sum
   end
 
-  
+
 end

@@ -33,8 +33,10 @@ Rails.application.routes.draw do
 
   resources :carts do
       collection do
+      post :checkout
       delete :destroy
     end
+
   end
 
 
@@ -44,7 +46,16 @@ Rails.application.routes.draw do
       post :down_cart_item
     end
   end
+  resources :orders do
+    member do
+      post :pay_with_wechat
+      post :pay_with_alipay
+    end
+  end
 
+  namespace :account do
+    resources :orders
+  end
   root 'products#index'
 
 end

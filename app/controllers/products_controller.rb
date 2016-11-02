@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def index
     @products = Product.published.recent
@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
+    # @cart_item = CartItem.id
+    # if @cart_item == 0
     current_cart.add_product_to_cart(@product)
     flash[:notice] = "成功加入购物车！"
     redirect_to :back

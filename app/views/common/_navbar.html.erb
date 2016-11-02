@@ -22,11 +22,13 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Hi!, <%= current_user.email %>
                         <b class="caret"></b>
+
                     </a>
                     <ul class="dropdown-menu">
                       <% if current_user.admin? %>
                       <li><%= link_to("Admin Pannel", admin_products_path) %></li>
                       <% end %>
+                        <li><%= link_to("My Orders", account_orders_path ) %></li>
                         <li> <%= link_to("返回首页", root_path) %></li>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
