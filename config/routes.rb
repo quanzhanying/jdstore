@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :cart_items
-  # resources :cart_items do
-  #   member do
-  #     post :initialize
-  #     post :increment_quantity
-  #     post :decrement_quantity
-  #     post :title
-  #     post :price
-  #   end
-  # end
+  # resources :cart_items
+  resources :cart_items do
+    member do
+      post :initialize
+      post :increment_quantity
+      post :decrement_quantity
+      post :title
+      post :price
+    end
+  end
 
   resources :orders do
     member do
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       post :checkout
     end
     member do
-       post :add_product
+       post :add_product_to_cart
 
      end
   end

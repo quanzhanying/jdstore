@@ -14,17 +14,23 @@ class CartItem < ApplicationRecord
   belongs_to :cart
   belongs_to :product
   # attr_reader :product,:quantity
-  def initialize(product)
-    @product = product
-    @quantity = 1
+  # def initialize
+  #   @product = product
+  #   @quantity = 1
+  # end
+  def increment_quantity!
+    if self.quantity < product.quantity
+    self.quantity += 1
+    else
+    flash[:notice] = '无货存！'
+    self.save
+    end
   end
-  def increment_quantity
-    @quantity +=1
+  def decrement_quantity! 
+    self.quantity -= 1
+    self.save
   end
-  def decrement_quantity
-    @quantity -=1
-  end
-  
+
   def title
     @product.title
   end
