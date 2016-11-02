@@ -7,6 +7,7 @@
       <th>发货地址</th>
       <th>购买总价</th>
       <th>订单状态</th>
+      <th>操作订单</th>
       <th>下单时间</th>
 
 
@@ -19,7 +20,20 @@
         <td><%= link_to(order.id, order_path(order.token))%></td>
         <td><%= order.ship_name %>
         <td><%= order.total %></td>
-        <td><%= order.status %></td>
+        <td><%= order.aasm_state %></td>
+
+        <td>
+          <% if order.aasm_state == "cancelling" %>
+          <%= link_to("确认取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-danger') %>
+          <% else %>
+        <%= link_to("取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-sm') %>
+        <% end %>
+        <% if order.aasm_state == "order_paid" %>
+        <%= link_to("出货", deliver_admin_order_path(order.token), method: :post,class:'btn btn-default btn-sm') %>
+        <% end %>
+
+
+        </td>
         <td><%= order.created_at %></td>
       </tr>
     <% end %>

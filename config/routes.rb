@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
-    resources :orders
+    resources :orders do
+      member do
+      post :cancel
+      post :deliver
+    end
+  end
   end
 
   resources :carts do
@@ -31,6 +36,10 @@ resources :orders do
 
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+      post :cancelling
+    end
+    end
   end
 end

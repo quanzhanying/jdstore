@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
 
+
   def create
     @order = Order.new(order_params)
     @order.user = current_user
@@ -33,6 +34,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     @order.pay!
     @order.set_payment_with!("wechat")
+    @order.make_payment!
 
 
     redirect_to :back,notice: "貌似成功用微信付款了，付了我也不发货。"
@@ -42,9 +44,12 @@ class OrdersController < ApplicationController
   @order = Order.find_by_token(params[:id])
   @order.pay!
   @order.set_payment_with!("alipay")
+  @order.make_payment!
 
   redirect_to :back,notice: "貌似成功用支付宝付款了，付了也不发货。"
 end
+
+
 
   private
 
