@@ -5,15 +5,17 @@ class CartItemsController < ApplicationController
     redirect_to :back
   end
 
-  def item_increase
+  def increase
     @cart_item = CartItem.find(params[:id])
-    @cart_item.increase
+    @cart_item.quantity += 1
+    @cart_item.save
     redirect_to :back
   end
 
-  def item_decrease
+  def decrease
     @cart_item = CartItem.find(params[:id])
-    @cart_item.decrease
+    @cart_item.quantity -= 1
+    @cart_item.save
     redirect_to :back
   end
 

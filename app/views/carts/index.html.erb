@@ -28,9 +28,9 @@
         <%= cart_item.product.price %>
       </td>
       <td>
-        <%= button_to '-1', decrease_cart_item_path(cart_item), method: :post %>
-        <%= cart_item.quantity %>
-        <%= button_to '+1', increase_cart_item_path(cart_item), method: :post %>
+          <%= button_to '-', decrease_cart_item_path(cart_item), method: :post %>
+          <%= cart_item.quantity %>
+          <%= button_to '+', increase_cart_item_path(cart_item), method: :post %>
       </td>
       <td>
         <%= link_to("Remove the product", cart_item_path(cart_item), :method => :delete, :class => "btn btn-default") %>
