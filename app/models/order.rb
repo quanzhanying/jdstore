@@ -38,7 +38,25 @@ class Order < ApplicationRecord
   end
 
   scope :current_order, -> (user){where(:user_id => user)}
-  scope :recent, -> { order("created_at DESC")}
+  scope :recent, -> {order("created_at DESC")}
+
+  def pay_with_alipay!
+    self.is_paid = true
+    self.payment_method = "alipay"
+    self.save
+  end
+
+  def pay_with_wechat!
+    self.is_paid = true
+    self.payment_method = "wechat"
+    self.save
+  end
+
+  def pay_with_apple!
+    self.is_paid = true
+    self.payment_method = "apple"
+    self.save
+  end
 
   def order_price
     sum = 0

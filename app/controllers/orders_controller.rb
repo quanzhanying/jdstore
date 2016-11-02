@@ -25,34 +25,35 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+    @order.user = current_user
   end
 
   def pay_with_alipay
     @order = Order.find(params[:id])
-      if !@order.is_paid
-        @order.is_paid = true
-        @order.save
+      if @order.is_paid == true
+        flash[:warning] = 'Order has been paid.'
       else
+        @order.pay_with_alipay!
       redirect_to order_path(@order.token)
     end
   end
 
   def pay_with_wechat
     @order = Order.find(params[:id])
-      if !@order.is_paid
-        @order.is_paid = true
-        @order.save
+      if @order.is_paid == true
+        flash[:warning] = 'Order has been paid.'
       else
+        @order.pay_with_wechat!
       redirect_to order_path(@order.token)
     end
   end
 
   def pay_with_apple
     @order = Order.find(params[:id])
-      if !@order.is_paid
-        @order.is_paid = true
-        @order.save
+      if @order.is_paid == true
+        flash[:warning] = 'Order has been paid.'
       else
+        @order.pay_with_apple!
       redirect_to order_path(@order.token)
     end
   end

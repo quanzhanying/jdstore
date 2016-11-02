@@ -1,6 +1,6 @@
 class Account::OrdersController < ApplicationController
   def index
-    @orders = Order.current_order(current_user).recent
+    @orders = Order.all.recent
   end
 
   def show
