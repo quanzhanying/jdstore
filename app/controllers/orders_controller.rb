@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     else
       render 'carts/checkout'
     end
-    
+
   end
 
   private
