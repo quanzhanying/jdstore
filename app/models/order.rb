@@ -9,6 +9,13 @@ class Order < ApplicationRecord
     self.update_columns(payment_method: method)
   end
 
+  def status
+    s = "未支付"
+    if is_paid == true
+      s = "已支付"
+    end
+    s
+  end
 
   def pay!
       self.update_columns(is_paid: true)
