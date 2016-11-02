@@ -8,7 +8,9 @@
   </tr>
   <% @orders.each do |order| %>
   <tr>
-    <td><%= order.id %></td>
+    <td>
+      <%= link_to(order.id, admin_order_path(order),method: :get,:class => "btn btn-xs btn-default") %>
+    </td>
     <td><%= order.total%></td>
     <td><%= order.payment_method %></td>
     <td><%= order.is_paid %></td>
