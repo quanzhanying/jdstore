@@ -17,8 +17,6 @@ devise_for :users
    end
  resources :carts
  resources :orders
- resources :cart_items do
- post :change_quantity
-   end
+ resources :cart_items
 
   end

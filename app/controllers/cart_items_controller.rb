@@ -1,27 +1,22 @@
 class CartItemsController < ApplicationController
   def destroy
+    @cart = current_cart
     @cart_items = CartItem.find(params[:id])
     @cart_items.destroy
     redirect_to :back
   end
 
-  def edit
-    @cart_item = CartItem.find(params[:id])
-   end
-
-  def change_quantity(quantity_params)
-    cart_id = params[:cart_item_id]
+  def update
     @cart = current_cart
-    @cart_item = CartItem.find(params[:id])
-
-    if quantity <= @cart_item.product.quantity
-      @cart_item.quantity = quantity_params
-      @cart_item.save!
-      rediect_to :back
+    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+    if @cart_item.product.quantity >= quantity_params[:quantity].to_i
+      @cart_item.update(quantity_params)
+      flash[:notice] = '是的，老板我已经上货了'
     else
-      redirect_to :back, notice: '啥都没了，下次早点来'
+      flash[:warning] = '货物不够，请及时剁手'
       end
-   end
+    redirect_to carts_path
+end
 
   private
 
