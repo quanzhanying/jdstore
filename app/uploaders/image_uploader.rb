@@ -24,9 +24,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [300, 400]
   end
 
-  # def default_url(*args)
-  #   "default.thumb.png"
-  # end
+  def default_url(*args)
+    "default.thumb.png"
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
