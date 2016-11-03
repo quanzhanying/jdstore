@@ -35,8 +35,14 @@ class OrdersController < ApplicationController
         item.order = @order
         product = Product.find(item.product_id)
 
+        existing_product = ProductList.find_by_product_id(item.product_id)
 
-        product_list = ProductList.new
+        if existing_product.nil?
+          product_list = ProductList.new
+        else
+          product_list = existing_product
+        end
+
         product_list.quantity = item.quantity
         product_list.price = product.price
         product_list.product_id = product.id

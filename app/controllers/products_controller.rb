@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-		@other_products = Product.all[1,2]
+		@other_products = Product.where.not(id: @product.id)[1,2]
 		@cart_item = CartItem.new
 		puts "#{@cart_item}"
 	end
