@@ -27,9 +27,10 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
-  def cancell_order
+  def cancell_order_from_user
     @order = Order.find_by_token(params[:id])
     @order.cancell_order!
+    OrderMailer.notify_order_cancelled_from_user(@order).deliver!
     redirect_to :back
   end
 
@@ -50,6 +51,7 @@ class OrdersController < ApplicationController
     if @order.is_paid == false
       @order.wechat_pay!
       @order.make_payment!
+      OrderMailer.notify_order_placed(@order).deliver!
       redirect_to order_path(@order.token)
     else
       flash[:alert] = '您已经付款了哦'
@@ -62,6 +64,7 @@ class OrdersController < ApplicationController
     if @order.is_paid == false
       @order.alipay_pay!
       @order.make_payment!
+      OrderMailer.notify_order_placed(@order).deliver!
       redirect_to order_path(@order.token)
     else
       flash[:alert] = '您已经付款了哦'

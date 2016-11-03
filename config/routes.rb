@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     member do
       post :pay_with_wechat
       post :pay_with_alipay
-      put :cancell_order
+      put :cancell_order_from_user
+
       put :deliver
       put :return_good
 
@@ -57,7 +58,7 @@ Rails.application.routes.draw do
       resources :orders do
         member do
           put :ship
-          put :cancell_order
+          put :cancell_order_from_admin
         end
       end
     end

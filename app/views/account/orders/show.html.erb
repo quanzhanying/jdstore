@@ -65,7 +65,7 @@ z<div class="row">
     <% case @order.aasm_state %>
     <% when "paid" %>
       <%= link_to("已付款","#",:class => "btn btn-info",disabled: :true) %>
-      <%= link_to("取消订单",cancell_order_order_path(@order.token),method: :put,:class => "btn btn-danger") %>
+      <%= link_to("取消订单",cancell_order_from_user_order_path(@order.token),method: :put,:class => "btn btn-danger") %>
     <% when "order_cancelled" %>
         <%= link_to("订单已取消","#",:class => "btn btn-success",disabled: :true) %>
     <% when "shipping" %>

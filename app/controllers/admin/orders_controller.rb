@@ -18,9 +18,10 @@ class Admin::OrdersController < ApplicationController
     redirect_to :back
   end
 
-  def cancell_order
+  def cancell_order_from_admin
     @order = Order.find_by_token(params[:id])
     @order.cancell_order!
+    OrderMailer.notify_order_cancelled_from_admin(@order).deliver!
     redirect_to :back
   end
 
