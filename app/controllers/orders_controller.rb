@@ -28,6 +28,12 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def notify_order_cancel
+    @order = Order.find_by_token(params[:id])
+    @product_lists = @order.product_lists
+    OrderMailer.notify_order_cancel(@order).deliver
+  end
+
   def pay_with_alipay
     @order = Order.find(params[:id])
     @order.payment_method = 'alipay'
@@ -57,27 +63,31 @@ class OrdersController < ApplicationController
   end
 
   def go_pay
-  payment_method = params[:payment_method]
-  @order = Order.find(params[:id])
+    payment_method = params[:payment_method]
+    @order = Order.find(params[:id])
+    OrderMailer.notify_order_placed(@order).deliver
 
-  if @order.is_paid
-    flash[:alert] = "无需再次支付"
-    redirect_to :back
-    return
+
+    if @order.is_paid
+      flash[:alert] = "无需再次支付"
+      redirect_to :back
+      return
+    end
+
+    @order.payment_method = payment_method
+    @order.is_paid = true
+
+    if @order.save
+      flash[:notice] = "支付成功"
+      redirect_to account_orders_path
+    else
+      flash[:notice] = "支付失败"
+      redirect_to :back
+    end
+
+    @order.make_payment!
+
   end
-
-  @order.payment_method = payment_method
-  @order.is_paid = true
-
-  if @order.save
-    flash[:notice] = "支付成功"
-    redirect_to account_orders_path
-  else
-    flash[:notice] = "支付失败"
-    redirect_to :back
-  end
-
-end
 
   private
 

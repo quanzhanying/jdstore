@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       post :pay_with_alipay
       post :pay_with_wechat
       post :go_pay
+      post :notify_order_cancel
     end
   end
 
@@ -26,6 +27,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+  end
+
+  namespace :admin do
+    resources :orders
   end
 
   namespace :account do
