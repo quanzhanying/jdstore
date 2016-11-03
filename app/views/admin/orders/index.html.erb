@@ -44,6 +44,7 @@
       <% case order.aasm_state %>
         <% when 'order_placed' %>
           <i class="fa fa-gavel" aria-hidden="true"> 已下订 </i>
+          <%= link_to('取消',order_to_cancell_admin_order_path(order.token),:method => :put,class: "btn btn-sm btn-default") %>        
         <% when 'paid' %>
           <i class="fa fa-money" aria-hidden="true"> 已付款 </i>
           <%= link_to('取消',order_to_cancell_admin_order_path(order.token),:method => :put,class: "btn btn-sm btn-default") %>

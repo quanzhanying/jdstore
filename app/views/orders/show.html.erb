@@ -80,18 +80,29 @@
       <% end %>
     </h5>
 
+    <!-- 管理员可以取消订单 -->
+    <% if current_user.admin? &&  (@order.aasm_state == 'order_placed' || @order.aasm_state == 'paid' )%>
+    <div class="group pull-right">
+    <%= link_to('取消订单',order_to_cancell_admin_order_path(@order.token),:method => :put,class: "btn btn-lg btn-danger") %>
+    </div>
+    <% end %>
+
+    <br>
+    <br>
+    <br>
+
+    
+    <!-- 支付方式 -->
     <div class="group pull-right">
     <% if !@order.is_paid %>
       <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token),:method => :post, class: "btn btn-primary") %> 
       <%= link_to("以微信支付",pay_with_wechat_order_path(@order.token),:method => :post, class: "btn btn-success") %>      
     <% end %>
-
-    <!-- 管理员可以取消订单 -->
-    <% if current_user.admin? &&  (@order.aasm_state == 'order_placed' || @order.aasm_state == 'paid' )%>
-    <%= link_to('取消订单',order_to_cancell_admin_order_path(@order.token),:method => :put,class: "btn btn-lg btn-danger") %>
-    <% end %>
-
     </div>
+
+
+
+    
 
   </div>
 </div>

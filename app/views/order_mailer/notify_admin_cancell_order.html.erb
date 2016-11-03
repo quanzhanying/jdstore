@@ -1,12 +1,14 @@
 <div class="row">
   <div class="col-md-12">
     <h2>
-      下单成功！
+      您的订单退订成功！
       <br>
       <small>
       <%= link_to("订单链接",order_url(@order.token)) %>
       </small>
     </h2>
+    <h3>退订人</h3>
+    <h3><%= @order.user.email %></h3>
     <table class="table table-bordered">
       <thead>
         <tr>
