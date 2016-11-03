@@ -32,19 +32,27 @@ end
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
+    @order.payment_method = "wechat"
+    @order.make_payment!
     @order.save
 
-    redirect_to account_orders_path
-  end
+  redirect_to account_orders_path
+
+
+end
 
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
-    @order.save
+    @order.payment_method = "alipay"
+   @order.make_payment!
+   @order.save
 
     redirect_to account_orders_path
-  end
+
+end
+
 
   private
 
