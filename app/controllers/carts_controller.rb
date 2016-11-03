@@ -15,7 +15,7 @@ class CartsController < ApplicationController
     end
 
     def checkout
-      @order =Order.new
+      @order = Order.new
     end
 
 end
