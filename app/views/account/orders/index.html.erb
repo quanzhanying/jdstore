@@ -8,7 +8,7 @@
   </tr>
   <% @order.each do |order| %>
   <tr>
-    <td><%= order.id %></td>
+    <td><%= link_to(order.id,account_order_path(order.token),method: :get) %></td>
     <td><%= order.total%></td>
     <td><%= order.payment_method %></td>
     <td><%= order.is_paid %></td>

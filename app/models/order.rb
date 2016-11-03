@@ -14,6 +14,49 @@ class Order < ApplicationRecord
   def generate_token
     self.token = SecureRandom.uuid
   end
+
+  def wechat_pay!
+    self.payment_method = "微信"
+    self.is_paid = true
+    self.save
+  end
+
+  def alipay_pay!
+    self.payment_method = "支付宝"
+    self.is_paid = true
+    self.save
+  end
+
+include AASM
+  aasm do
+    state :order_placed, initial: true
+    state :paid
+    state :shipping
+    state :shipped
+    state :order_cancelled
+    state :good_returned
+
+    event :make_payment do
+      transitions from: :order_placed, to: :paid
+    end
+
+    event :ship do
+      transitions from: :paid, to: :shipping
+    end
+
+    event :deliver do
+      transitions from: :shipping, to: :shipped
+    end
+
+    event :return_good do
+      transitions from: :shipped, to: :good_returned
+    end
+
+    event :cancell_order do
+      transitions from: [:order_placed, :paid], to: :order_cancelled
+    end
+  end
+
 end
 
 # == Schema Information
@@ -32,4 +75,9 @@ end
 #  token            :string
 #  is_paid          :boolean          default(FALSE)
 #  payment_method   :string
+#  aasm_state       :string           default("order_placed")
+#
+# Indexes
+#
+#  index_orders_on_aasm_state  (aasm_state)
 #

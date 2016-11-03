@@ -28,17 +28,29 @@ class OrdersController < ApplicationController
   end
 
   def pay_with_wechat
-    @order = Order.find(params[:id])
-    @order.payment_method = "微信"
-    @order.save
+    @order = Order.find_by_token(params[:id])
+    if @order.is_paid == false
+      @order.wechat_pay!
+
+    else
+      flash[:alert] = '您已经付款了哦'
+        redirect_to :back
+    end
+    #@order.make_payment!
     redirect_to order_path(@order.token)
   end
 
   def pay_with_alipay
-    @order = Order.find(params[:id])
-    @order.payment_method = "支付宝"
-    @order.save
-    redirect_to order_path(@order.token)
+    @order = Order.find_by_token(params[:id])
+    if @order.is_paid == false
+      @order.alipay_pay!
+      redirect_to order_path(@order.token)
+    else
+      flash[:alert] = '您已经付款了哦'
+        redirect_to :back
+    end
+    #@order.make_payment!
+
   end
 
   private
