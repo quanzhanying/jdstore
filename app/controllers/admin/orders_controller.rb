@@ -9,12 +9,18 @@ class Admin::OrdersController < ApplicationController
 
   def cancell_order
     @order = Order.find_by_token(params[:id])
-    @order.cancell_order!
+    if @order.order_placed? or @order.paid?
+      @order.cancell_order!
+    end
+    redirect_to admin_orders_path
   end
 
   def ship
     @order = Order.find_by_token(params[:id])
-    @order.ship!
+    if @order.paid?
+      @order.ship!
+    end
+    redirect_to admin_orders_path
   end
 
   private

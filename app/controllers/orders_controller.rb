@@ -51,6 +51,7 @@ class OrdersController < ApplicationController
       @order.pay_with_alipay!
       @order.make_payment!
       flash[:success] = "Paid Successfully."
+      # notify_order_placed
     end
     redirect_to order_path(@order.token)
   end
@@ -63,6 +64,7 @@ class OrdersController < ApplicationController
       @order.pay_with_wechat!
       @order.make_payment!
       flash[:success] = "Paid Successfully."
+      # notify_order_placed
     end
     redirect_to order_path(@order.token)
   end

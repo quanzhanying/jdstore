@@ -28,7 +28,7 @@
       <td>
         <%= order.aasm_state %>
         <%= link_to("Cancell", cancell_order_admin_order_path(order.token), method: :post, class: "btn btn-default") %>
-        <%= link_to("Ship", cancell_order_admin_order_path(order.token), method: :post, class: "btn btn-default") %>
+        <%= link_to("Ship", ship_admin_order_path(order.token), method: :post, class: "btn btn-default") %>
       </td>
       <td>
         <%= order.created_at %>
