@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
-    OrderMailer.notify_order_placed(Order.last).deliver!
+    #OrderMailer.notify_order_placed(Order.last).deliver!
 
   end
 

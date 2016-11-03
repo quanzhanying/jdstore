@@ -19,7 +19,7 @@ class Admin::OrdersController < ApplicationController
     @order.is_cancell = true
     @order.save
     redirect_to :back
-    OrderMailer.notify_order_placed(Order.last).deliver!
+    #OrderMailer.notify_order_placed(Order.last).deliver!
   end
 
   def shipping
@@ -34,6 +34,6 @@ class Admin::OrdersController < ApplicationController
     @order.is_ship = true
     @order.save
     redirect_to :back
-    OrderMailer.notify_order_placed(Order.last).deliver!
+    #OrderMailer.notify_order_placed(Order.last).deliver!
   end
 end
