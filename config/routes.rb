@@ -7,7 +7,16 @@ Rails.application.routes.draw do
 	namespace :admin do
 		resources :products
 		resources :orders do
-			post :admin_cancel_order
+			member do
+				post :admin_cancel_order
+			end
+		end
+	end
+
+	resources :orders do
+		member do
+			post :pay_with_wechat
+			post :pay_with_alipay
 		end
 	end
 
@@ -31,12 +40,7 @@ Rails.application.routes.draw do
 
 	resources :cart_item
 
-	resources :orders do
-		member do
-			post :pay_with_wechat
-			post :pay_with_alipay
-		end
-	end
+
 
 	root 'products#index'
 

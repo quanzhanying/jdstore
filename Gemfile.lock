@@ -217,6 +217,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   mini_magick
+  pry
   puma (~> 3.0)
   rails (~> 5.0.0)
   sass-rails (~> 5.0)

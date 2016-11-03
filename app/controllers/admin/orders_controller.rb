@@ -13,4 +13,16 @@ class Admin::OrdersController < ApplicationController
 		redirect_to admin_orders_path, alert: "Order Deleted."
 	end
 
+	def admin_cancel_order
+		@order = Order.find_by_token(params[:id])
+		if @order.aasm_state === "order_cancelled"
+			flash[:warning] = "Order already cancelled."
+		else
+		@order.cancel_order!
+		flash[:alert] = "Order cancelled, customer will be notified by email."
+		end
+
+		redirect_to admin_orders_path
+	end
+
 end

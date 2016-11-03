@@ -26,6 +26,10 @@ class Order < ApplicationRecord
 		self.save
 	end
 
+	# def cancel_order!
+	# 	self.save
+	# end
+
 
 	aasm do
 		state :order_placed, initial: true

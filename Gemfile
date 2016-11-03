@@ -39,6 +39,7 @@ gem 'font-awesome-sass'
 gem 'aasm'
 gem 'letter_opener', group: :development
 gem 'awesome_rails_console'
+gem 'pry'
 
 
 group :development, :test do
