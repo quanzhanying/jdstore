@@ -38,8 +38,14 @@
        </td>
 
        <td>
-         <%= cart_item.product.price %>
-       </td>
+           <%= link_to("—", minus_cart_item_path(cart_item), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
+             <%= cart_item.quantity %>
+          <% if cart_item.quantity < cart_item.product.quantity %>
+           <%= link_to("+", add_cart_item_path(cart_item), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
+          <% else %>
+          库存限制
+          <% end %>
+        </td>
 
        <td>
          <%= link_to("删除此项", cart_item_path(cart_item),  :class => "btn btn-xs btn-default", :method => :delete, :data => { :confirm => "Are you sure" }) %>
