@@ -9,6 +9,7 @@
           <th>订单编号</th>
           <th>生成时间</th>
           <th>是否付款</th>
+          <th>订单状态</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,9 @@
             </td>
             <td>
               <%= order.is_paid %>
+            </td>
+            <td>
+              <%= order.aasm_state %>
             </td>
           </tr>
         <% end %>

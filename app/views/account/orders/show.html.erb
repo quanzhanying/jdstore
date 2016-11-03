@@ -65,13 +65,34 @@
       </tbody>
     </table>
     <div class="pull-right">
-      <% if @order.is_paid == true %>
-        <a href="#" class="btn btn-danger" disabled> 已付款 </a>
-      <% else %>
+
+      <% if @order.order_placed?%>
         <%= link_to("支付宝付款", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-primary" ) %>
         <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_order_path(@order.token), :method => :post ) %>
         <%= link_to(" Apple Pay", pay_with_apple_order_path(@order.token), :method => :post, :class => "btn btn-default" ) %>
+        <%= link_to("取消订单", cancel_order_account_order_path(@order.token), :method => :post, :class => "btn btn-warning" ) %>
       <% end %>
+
+      <% if @order.paid? %>
+        <a href="#" class="btn btn-danger" disabled> 已付款 </a>
+      <% end %>
+
+      <% if @order.order_cancelled? %>
+        <a href="#" class="btn btn-danger" disabled> 订单已取消 </a>
+      <% end %>
+
+      <% if @order.shipping? %>
+        <%= link_to("确认收货", deliver_account_order_path(@order.token), :method => :post, :class => "btn btn-success" ) %>
+      <% end %>
+
+      <% if @order.shipped? %>
+        <%= link_to("退货", return_good_account_order_path(@order.token), :method => :post, :class => "btn btn-danger" ) %>
+      <% end %>
+
+      <% if @order.good_returned? %>
+        <a href="#" class="btn btn-danger" disabled> 已退货 </a>
+      <% end %>
+
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@
       <th>是否付款</th>
       <th>付款方式</th>
       <th>订单状态</th>
+      <th>修改订单状态</th>
     </tr>
   </thead>
     <% @orders.each do |order| %>
@@ -33,7 +34,28 @@
           <%= order.payment_method %>
         </td>
         <td>
-          <%= "#" %>
+          <%= order.aasm_state %>
+        </td>
+        <td>
+          <% if order.paid? %>
+            <%= link_to("出货", ship_admin_order_path(order.token) , :method => :post, :class => "btn btn-xs btn-default") %>
+          <% elsif order.order_cancelled? %>
+            订单取消
+          <% elsif order.shipping? %>
+            已出货
+          <% elsif order.order_placed? %>
+            未付款
+          <% elsif order.good_returned? %>
+            已退货
+          <% end %>
+
+          <% if order.order_placed? %>
+          | <%= link_to("取消订单", cancel_order_admin_order_path(order.token) , :method => :post, :class => "btn btn-xs btn-default") %>
+          <% elsif order.paid? %>
+          | <%= link_to("取消订单", cancel_order_admin_order_path(order.token) , :method => :post, :class => "btn btn-xs btn-default") %>
+          <% else  %>
+          <% end %>
+
         </td>
       </tr>
     </tbody>

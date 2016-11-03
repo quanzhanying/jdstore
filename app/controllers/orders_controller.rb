@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def create
-    @order = Order.new(order_params)
-    @order.user = current_user
+    # @order = Order.new(order_params)
+    # @order.user = current_user
+    @order = current_user.orders.build(order_params)
     @order.total = current_cart.total_price
 
     if @order.save
@@ -60,7 +61,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
+    params.require(:order).permit(:billing_name, :billing_address, :user_id, :shipping_name, :shipping_address, :token, :is_paid, :payment_method, :aasm_state)
   end
 
 end

@@ -15,7 +15,12 @@ Rails.application.routes.draw do
         post :nobody
       end
     end
-    resources :orders
+    resources :orders do
+      member do
+        post :ship
+        post :cancel_order
+      end
+    end
   end
 
   resources :products do
@@ -48,7 +53,17 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+        post :pay_with_alipay
+        post :pay_with_wechat
+        post :pay_with_apple
+        post :make_payment
+        post :cancel_order
+        post :deliver
+        post :return_good
+      end
+    end
   end
 
   root 'products#index'

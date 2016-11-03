@@ -43,27 +43,22 @@ class Order < ApplicationRecord
   def pay_with_alipay!
     self.is_paid = true
     self.payment_method = "alipay"
+    self.make_payment!
     self.save
   end
 
   def pay_with_wechat!
     self.is_paid = true
     self.payment_method = "wechat"
+    self.make_payment!
     self.save
   end
 
   def pay_with_apple!
     self.is_paid = true
     self.payment_method = "apple"
+    self.make_payment!
     self.save
-  end
-
-  def order_price
-    sum = 0
-    product_lists.each do |product_list|
-      sum += product_list.quantity * product_list.product_price
-    end
-    sum
   end
 
   include AASM
