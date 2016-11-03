@@ -1,0 +1,39 @@
+<div class="row">
+  <% @products.each do |product| %>
+  <% if !product.is_hidden %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+
+      <a href="<%= product_path(product) %>">
+
+        <!-- 显示图判断 -->
+        <% if no_pic?(product) %>
+        
+        <%= image_tag(product.image.default_url, class: "thumbnail") %>
+          <!-- <img src="/nopic.png" alt="no picture" class="img-responsive"> -->
+        <% else %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% end %>
+
+
+      </a>
+        
+        <div class="caption">
+        <h5><%= product.title %></h5>  
+          <h3>￥<%= product.price %>.00</h3>
+          <p><%= product.description %></p>
+          <% if product.quantity == 0 %>
+          <%= link_to('加入购物车',add_to_cart_product_path(product), :method => :post,class: "btn btn-danger btn-lg",role: "button", disabled: "disabled") %>
+            
+          <% else %>
+          <%= link_to('加入购物车',add_to_cart_product_path(product), :method => :post,class: "btn btn-danger btn-lg",role: "button") %>
+            
+          <% end %>
+          
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>

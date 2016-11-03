@@ -1,0 +1,50 @@
+<div class="pull-right">
+  <%#= link_to("新建用户", new_user_registration_path, :class => "btn btn-primary" ) %>
+</div>
+
+  <h4>全部订单</h4>
+  <hr>
+<table class="table table-boldered">
+
+<tr>
+  <th>订单号 <span class="badge"><%= @orders.count %></span></th>
+  <th>用户</th>
+  <th>总价</th>
+  <th>付款状态</th>
+  <th>收货地址</th>
+  <th>订单时间</th>
+</tr>
+  <% @orders.each do |order| %>
+      <!-- 修饰是否发布 -->
+      <% if order.is_paid %>
+      <tr class="success">
+      <% else %>
+      <tr  class="danger">
+      <% end %>
+    <td><%= order.id %></td>
+
+    <td>
+      <%= order.user_id %>
+    </td>
+
+    <td>
+      <%= order.total %>
+    </td>
+
+    <td>
+      <% if order.is_paid %>
+      <i class="fa fa-square" aria-hidden="true"> 已付款</i>
+      <% else %>
+      <i class="fa fa-square-o" aria-hidden="true"> 未付款</i>
+      <% end %>
+    </td>
+    <td>
+      <%= order.shipping_address %>
+    </td>
+    <td>
+      <%= order.created_at %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>
