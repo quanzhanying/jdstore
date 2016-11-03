@@ -35,22 +35,29 @@ class Order < ApplicationRecord
 		state :order_cancelled
 		state :good_returned
 
+# Step 1 - Order created (no AASM action)
+
+# Step 2 - Order paid (by user)
 		event :make_payment do
 			transitions from: :order_placed, to: :paid
 		end
 
+# Step 3 - Order already paid, so admin ships order (by admin)
 		event :ship do
 			transitions from: :paid, 				 to: :shipping
 		end
 
+# Step 4 - User receives shipment, changes status to "shipped" (by user)
 		event :deliver do
 			transitions from: :shipping,		 to: :shipped
 		end
 
+# Step 5 - User returns good (by user)
 		event :return_good do
 			transitions from: :shipped, 		 to: :good_returned
 		end
 
+# Possibility 1 - Admin cancels order for user
 		event :cancel_order do
 			transitions from: [:order_placed, :paid], to: :order_cancelled
 		end

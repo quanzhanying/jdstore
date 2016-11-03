@@ -26,6 +26,7 @@ class Admin::OrdersController < ApplicationController
 		redirect_to admin_orders_path
 	end
 
+# Step 3 - Order already paid, so admin ships order
 	def admin_ships
 		@order = Order.find_by_token(params[:id])
 		if @order.aasm_state === "paid"

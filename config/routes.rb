@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 			post :pay_with_wechat
 			post :pay_with_alipay
 			post :ask_cancel
+			post :user_received
+			post :user_returns
 		end
 	end
 
