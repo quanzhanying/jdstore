@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+# source 'https://gems.ruby-china.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -39,8 +39,9 @@ gem 'letter_opener',group: :development
 gem 'aasm'
 
 
+
 gem 'annotate'
-gem "rails-erd"
+# gem "rails-erd"
 
 gem 'pry'
 
@@ -60,6 +61,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rails-erd"
+  # gem "awesome-rails-console"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
