@@ -1,0 +1,36 @@
+<h2> 所有订单 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>订单时间</th>
+      <th>编号</th>
+      <th>详细</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= order.created_at %>
+        </td>
+        <td>
+          <%= order.token %>
+        </td>
+        <td >
+          <% order.product_lists.each do |p| %>
+            <%= p.product_name %>
+            <%= p.quantity %>
+            <%= p.product_price %>
+          <% end %>
+        </td>
+        <td><%= order.aasm_state %></td>
+        <td>
+
+          <%= link_to("取消订单", notify_order_cancel_order_path(order.token), method: :post, data: { confirm: "Are you sure?" }) %>
+        </td>
+    <% end %>
+  </tbody>
+</table>
