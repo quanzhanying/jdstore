@@ -30,7 +30,15 @@
           </td>
           <td>  <%= link_to(cart_item.product.title, product_path(cart_item.product)) %> </td>
           <td> <%= cart_item.product.price %>  </td>
-          <td>  <%= cart_item.quantity %>  </td>
+          <td>
+            <%= link_to("—", minus_cart_item_path(cart_item), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
+            <%= cart_item.quantity %>
+            <% if cart_item.quantity < cart_item.product.quantity %>
+              <%= link_to("+", add_cart_item_path(cart_item),method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
+            <% else %>
+              库存限制
+              <% end %>
+         </td>
           <td>
             <%= link_to("Delete", cart_item_path(cart_item), :method => :delete, :data => { :confirm => "Are you shure?"}) %>
           </td>
@@ -50,7 +58,8 @@
     </div>
     <hr>
     <div class="checkout clearfix">
-      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("确认结账", checkout_cart_path(current_cart), method: :post, class: "btn btn-lg btn-danger pull-right") %>
+
     </div>
   </div>
 </div>

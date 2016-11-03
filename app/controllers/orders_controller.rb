@@ -1,6 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+  def index
+    @orders = Order.all
+  end
+
+
+
+
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
@@ -9,19 +16,40 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
+    @order.payment_method = "支付宝"
+    @order.make_payment!
     @order.save
-
+    OrderMailer.notify_order_placed(Order.last).deliver!
     redirect_to account_orders_path
+
   end
 
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
+    @order.payment_method = "微信"
+    @order.make_payment!
     @order.save
-
+    OrderMailer.notify_order_placed(Order.last).deliver!
     redirect_to account_orders_path
   end
 
+  def cancell_order
+    @order = Order.find(params[:id])
+    @order.cancell_order!
+    OrderMailer.notify_order_cancelled(Order.last).deliver!
+    redirect_to :back
+    flash[:alert] = "订单取消成功"
+  end
+
+  def ship
+    @order = Order.find(params[:id])
+    @order.ship!
+
+    OrderMailer.notify_order_ship(Order.last).deliver!
+    redirect_to :back
+    flash[:alert] = "出货成功"
+  end
 
   def create
     @order = Order.new(order_params)

@@ -8,16 +8,13 @@
           <thead>
             <tr>
 
-
-
               <th>
                商品信息
               </th>
               <th>  总价 </th>
-              <th>  是否付款  </th>
-              <th>  支付方式  </th>
-              <th>  删除订单  </th>
-                <th>  申请取消订单  </th>
+              <th>  订单状态  </th>
+
+              <th>  编辑操作  </th>
             </tr>
           </thead>
 
@@ -31,11 +28,12 @@
                 <% end %>
               </td>
               <td> <%= order.total  %></td>
-              <td> <%= order.is_paid %></td>
-              <td> <%= order.payment_method %> </td>
-              <td> <%= link_to("Delete", account_order_path(order.id), :method => :delete, :data => { :confirm => "Are you sure?"}) %> </td>
-              <td> <%= link_to("取消订单", cancell_order_account_order_path(order.id), :method => :post, :data => { :confirm => "Are you sure?"}, :class => "btn btn-danger ") %></td>
+              <td> <%= order.aasm_state %> </td>
 
+              <td>
+                <%= link_to("取消订单", cancell_order_order_path(order), method: :post, :class => "btn btn-primary ", style: "margin-left:20px") %>
+                <%= link_to("出货", ship_order_path(order), method: :post, :class => "btn btn-danger ") %>
+              </td>
             </tr>
             <% end %>
           </tbody>
@@ -43,8 +41,6 @@
 
         </table>
       </div>
-
-
 
   </div>
   </div>

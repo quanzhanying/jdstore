@@ -47,8 +47,8 @@
         <%= link_to("支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger ", style: "margin-left:20px") %>
         <%= link_to("微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger ") %>
       <% else %>
-        <%= link_to("支付宝支付",  "btn btn-danger ", style: "margin-left:20px") %>
-        <%= link_to("微信支付",   "btn btn-danger ") %>
+      <%= link_to("已经支付", class: "btn btn-danger pull-right") %>
+
       <% end %>
     </div>
   </div>
