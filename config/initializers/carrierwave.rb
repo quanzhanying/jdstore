@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
 
 
     }
-    config.fog_directory  = ENV["hanhan_test"] # 你设定的 bucket name
+    config.fog_directory  = 'hanhan_test' # 你设定的 bucket name
 
 
 
