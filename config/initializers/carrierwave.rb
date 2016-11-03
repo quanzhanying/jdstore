@@ -10,11 +10,11 @@ CarrierWave.configure do |config|
       aws_secret_access_key: ENV["S3_key_secret"],      # 你的 secret key
 
 
-      region:                ENV['ap-northeast-2'] # 你的 S3 bucket 的 Region 位置
+      region:                'ap-northeast-2' # 你的 S3 bucket 的 Region 位置
 
 
     }
-    config.fog_directory  = "jdonline-bucket" # 你设定的 bucket name
+    config.fog_directory  = ENV["jdonline-bucket"] # 你设定的 bucket name
 
 
 
