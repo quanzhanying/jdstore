@@ -6,4 +6,5 @@ class OrderMailer < ApplicationMailer
 
     mail(to: @user.email, subject: "[JDStore] 感谢您您完成本次的下单，以下是您这次购物明细 #{order.token}")
   end
+
 end
