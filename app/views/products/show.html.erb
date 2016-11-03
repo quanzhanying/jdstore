@@ -1,0 +1,17 @@
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.image.present? %>
+        <img src="<%= @product.image.medium %>", class="img-thumbnail">
+      <% else %>
+        <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="400", class="img-thumbnail">
+      <% end %>
+    </div>
+    <div class="col-sm-3">
+      <h3><%= @product.title %></h3>
+      <p><%= @product.description %></p>
+      <p>单价：<%= @product.price %><br>库存：<%= @product.quantity %></p>
+      <div class="pull-right">
+        <%= link_to("加入购物车", "" , :class => "btn btn-danger") %>
+      </div>
+    </div>
+  </div>
