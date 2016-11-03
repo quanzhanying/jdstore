@@ -1,18 +1,24 @@
+
 CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_credentials = {
-      provider: 'ASW'
-      aws_access_key_id: ENV[AKIAITWSS7ZRV3XQBBAQ],
-      aws_secret_acess_key: ENV[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]
+      provider:              'AWS',
+      aws_access_key_id:     ENV["AKIAITWSS7ZRV3XQBBAQ"],      # 你的 key
 
-      region: 'ap-northeast-2
+
+      aws_secret_access_key: ENV["W/5bgUc4SN0REgs+RaVDBUe6mTunLx3HA6isXodz"],      # 你的 secret key
+
+
+      region:                'ap-northeast-2' # 你的 S3 bucket 的 Region 位置
+
 
     }
-    config.fog_directory = EVN(jdonline-bucket)
+    config.fog_directory  = ENV["jdonline-bucket"] # 你设定的 bucket name
+
 
 
   else
-    config.storage :files
+    config.storage :file
   end
 end
