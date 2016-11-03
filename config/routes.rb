@@ -18,7 +18,12 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :orders
+    resources :orders do
+      member do
+        put :order_to_cancell
+        put :order_to_shipping
+      end
+    end
     
   end
 
@@ -57,7 +62,9 @@ Rails.application.routes.draw do
 
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      post :apply_cancell_order
+    end
   end
   
   root 'products#index'

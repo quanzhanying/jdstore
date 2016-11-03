@@ -25,23 +25,23 @@ class Order < ApplicationRecord
     state :shipped
     state :order_cancelled
     state :good_returned
-
+    # 付款
     event :make_payment do
       transitions from: :order_placed, to: :paid
     end
-
+    # 发货
     event :ship do
       transitions from: :paid, to: :shipping
     end
-
+    # 送货
     event :deliver do
       transitions from: :shipping, to: :shipped
     end
-
+    # 退货
     event :return_good do
       transitions from: :shipped, to: :good_returned
     end
-
+    # 取消订单
     event :cancell_order do
       transitions from: [:order_placed, :paid], to: :order_cancelled
     end

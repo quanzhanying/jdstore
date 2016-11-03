@@ -11,6 +11,8 @@
           <th>付款人</th>
           <th>收货人</th>
           <th>收货地址</th>
+          <th>订单状态</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +26,30 @@
           <td><%= order.billing_name %></td>
           <td><%= order.shipping_name %></td>
           <td><%= order.shipping_address %></td>
+
+          <td>
+            <% case order.aasm_state %>
+              <% when 'order_placed' %>
+                <i class="fa fa-gavel" aria-hidden="true"> 已下订 </i>
+              <% when 'paid' %>
+                <i class="fa fa-money" aria-hidden="true"> 已付款 </i>
+              <% when 'shipping' %>
+                <i class="fa fa-trunk" aria-hidden="true"> 出货中 </i>
+              <% when 'shipped' %>
+                <i class="fa fa-square" aria-hidden="true"> 到货 </i>
+              <% when 'order_cancelled' %>
+                <i class="fa fa-close" aria-hidden="true"> 已取消 </i>
+              <% when 'good_returned' %>
+                <i class="fa fa-reply" aria-hidden="true"> 已退货 </i>
+              <% else %>
+                <i class="fa fa-question" aria-hidden="true"> 无状态 </i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to('退订',account_order_apply_cancell_order_path(order.token),:method => :post,class: "btn btn-sm btn-default") %>
+          </td>
+
+
         </tr>
         <% end %>
 

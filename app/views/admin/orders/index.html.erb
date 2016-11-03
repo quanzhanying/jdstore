@@ -11,15 +11,17 @@
   <th>用户</th>
   <th>总价</th>
   <th>付款状态</th>
+  <th>订单状态</th>
   <th>收货地址</th>
   <th>订单时间</th>
+  <!-- <td>操作</td> -->
 </tr>
   <% @orders.each do |order| %>
       <!-- 修饰是否发布 -->
-      <% if order.is_paid %>
-      <tr class="success">
+      <% if order.aasm_state == 'order_cancelled' || order.aasm_state == 'good_returned' %>
+      <tr class="danger">
       <% else %>
-      <tr  class="danger">
+      <tr  class="success">
       <% end %>
     <td><%= order.id %></td>
 
@@ -33,9 +35,29 @@
 
     <td>
       <% if order.is_paid %>
-      <i class="fa fa-square" aria-hidden="true"> 已付款</i>
+      <i class="fa fa-square" aria-hidden="true"> 已付款 </i>
       <% else %>
-      <i class="fa fa-square-o" aria-hidden="true"> 未付款</i>
+      <i class="fa fa-square-o" aria-hidden="true"> 未付款 </i>
+      <% end %>
+    </td>
+    <td>
+      <% case order.aasm_state %>
+        <% when 'order_placed' %>
+          <i class="fa fa-gavel" aria-hidden="true"> 已下订 </i>
+        <% when 'paid' %>
+          <i class="fa fa-money" aria-hidden="true"> 已付款 </i>
+          <%= link_to('取消',order_to_cancell_admin_order_path(order.token),:method => :put,class: "btn btn-sm btn-default") %>
+          <%= link_to('出货',order_to_shipping_admin_order_path(order.token),:method => :put,class: "btn btn-sm btn-default") %>
+        <% when 'shipping' %>
+          <i class="fa fa-trunk" aria-hidden="true"> 出货中 </i>
+        <% when 'shipped' %>
+          <i class="fa fa-square" aria-hidden="true"> 到货 </i>
+        <% when 'order_cancelled' %>
+          <i class="fa fa-close" aria-hidden="true"> 已取消 </i>
+        <% when 'good_returned' %>
+          <i class="fa fa-reply" aria-hidden="true"> 已退货 </i>
+        <% else %>
+          <i class="fa fa-question" aria-hidden="true"> 无状态 </i>
       <% end %>
     </td>
     <td>
@@ -44,6 +66,7 @@
     <td>
       <%= order.created_at %>
     </td>
+
 
   </tr>
   <% end %>

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
+  # before_action :admin_required, only: [:order_to_cancell]
 
   def create
     @order = Order.new(order_params)
@@ -36,9 +37,13 @@ class OrdersController < ApplicationController
     else
       @order.payment_method = 'alipay'
       @order.is_paid = true
+
       # 发邮件
       OrderMailer.notify_order_placed(@order).deliver
+      # 状态转换
       @order.make_payment!
+
+
       @order.save
       redirect_to paysuccess_order_path,notice: "付款成功"
     end
@@ -53,6 +58,12 @@ class OrdersController < ApplicationController
       @order = Order.find_by_token(params[:id])
       @order.payment_method = 'wechat'
       @order.is_paid = true 
+
+      # 发订单确认邮件
+      OrderMailer.notify_order_placed(@order).deliver
+      # 状态转换
+      @order.make_payment!
+
       @order.save 
       redirect_to paysuccess_order_path,notice: "付款成功"
     end
@@ -72,10 +83,16 @@ class OrdersController < ApplicationController
     render 'orders/payfailed'
   end
 
+
+
+
+
   private
 
   def order_params
     params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
   end
+
+
 
 end
