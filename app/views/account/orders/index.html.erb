@@ -1,18 +1,19 @@
 <% @orders.each do |order| %>
    <tbody>
-     
-         <%= order.created_at.to_s(:db)  %>
-         <span style="margin-left:20px;">订单编号：<%= order.token %></span>
-       </td>
+     <tr>
+     <%= order.created_at  %>
+     <td>
+      订单编号：<%= order.token %>
+      </td>
      </tr>
      <tr>
-       <td colspan="4">
+       <td >
          <% order.product_lists.each do |p_list| %>
-           <div style="float:left;margin-top:20px;">
+
            <%= p_list.product_name %> x <%= p_list.quantity %>
            ¥<%= p_list.product_price %>
            <%= order.shipping_name %>
-           <div>
+
          <% end %>
        </td>
        <td>
