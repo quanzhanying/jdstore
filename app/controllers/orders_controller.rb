@@ -33,17 +33,11 @@ class OrdersController < ApplicationController
 
 	def pay_with_wechat
 		@order = Order.find(params[:id])
-		#  @order.is_paid = false
 			@order.paid_wechat!
 			@order.make_payment!
-			# current_cart.clear_cart
 			flash[:notice] = "Thank you for your order! We will be in touch shortly."
 
 			redirect_to :root
-		# else
-		# 	redirect_to :back
-		# 	flash[:warning] = "This order has already been paid for. We will be in touch shortly."
-		# end
 	end
 
 	def pay_with_alipay
@@ -53,6 +47,12 @@ class OrdersController < ApplicationController
 		flash[:notice] = "Thank you for your order! We will be in touch shortly."
 
 		redirect_to :root
+	end
+
+	def ask_cancel
+		@order = Order.find_by_token(params[:id])
+		OrderMailer.user_wants_cancel(Order.last).deliver!
+		flash[:notice] = "Your cancellation request has been placed. We will be in touch shortly."
 	end
 
 
