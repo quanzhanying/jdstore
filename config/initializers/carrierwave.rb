@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
 
 
     }
-    config.fog_directory  = ENV["jdonline-bucket"] # 你设定的 bucket name
+    config.fog_directory  = ENV["S3_bucket_name"] # 你设定的 bucket name
 
 
 
