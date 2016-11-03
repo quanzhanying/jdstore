@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     if @order.is_paid == false
       @order.wechat_pay!
-      @order.make_payment!
+      #@order.make_payment!
       redirect_to order_path(@order.token)
     else
       flash[:alert] = '您已经付款了哦'
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     if @order.is_paid == false
       @order.alipay_pay!
-      @order.make_payment!
+      #@order.make_payment!
       redirect_to order_path(@order.token)
     else
       flash[:alert] = '您已经付款了哦'
