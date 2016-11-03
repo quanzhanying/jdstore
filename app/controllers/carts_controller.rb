@@ -1,9 +1,11 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @carts = Cart.all
-
+    @cart = current_cart
+    @cart_items = @cart.cart_items.all
   end
+
+
   # def destroy_to_cart
     #@product = Product.find(params[:id])
     # binding.pry
@@ -29,6 +31,7 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
+    @product_lists = @order.product_lists
   end
 
   def update
@@ -43,12 +46,11 @@ class CartsController < ApplicationController
   def destroy
     @cart = Cart.find(params[:id])
     @cart.destroy
-
-    redirect_to carts_path
+    session[:cart_id] = nil
+    redirect_to :back
   end
 
   def checkout
-
     @order = Order.new
   end
 

@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
     if @order.is_paid
       flash[:alert] = '已支付！'
 
-      redirect_to notify_order_placed_mailers_path
+      redirect_to :back
     else
       @order.is_paid = true
       @order.payment_method = '支付宝'
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
       @order.save
 
       end
-    redirect_to notify_order_placed_mailers_path
+    redirect_to  :back
   end
 
   def pay_with_wechat
@@ -51,7 +51,7 @@ class OrdersController < ApplicationController
     if @order.is_paid
       flash[:alert] = '已支付！'
 
-      redirect_to notify_order_placed_mailers_path
+      redirect_to  :back
     else
       @order.is_paid = true
       @order.payment_method = '微信'
@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
       @order.save
 
       end
-    redirect_to notify_order_placed_mailers_path
+    redirect_to  :back 
   end
 
   private

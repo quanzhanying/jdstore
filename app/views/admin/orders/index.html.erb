@@ -6,7 +6,6 @@
     <thead>
       <tr>
         <th> 订单编号 </th>
-        <!-- <th> 用户邮箱 </th> -->
         <th> 订单总价 </th>
         <th> 支付状态 </th>
         <th> 支付方式 </th>
@@ -16,16 +15,12 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td> <%= link_to(order.id,order_path(order)) %> </td>
-          <td> <%#= user.email_find_by_order.user_id %> </td>
+          <td> <%= link_to(order.id,order_path(order.token)) %> </td>
           <td> <%= order.total %> </td>
-          <td> <%# if @order.is_paid? %>
-            已支付
-            <%# else %>
-            未支付
-             <%# end  %>
+          <td> <% if !order.is_paid %>  未支付
+            <% else %> 已支付
+             <% end  %>
             </td>
-
           <td> <%= order.payment_method %> </td>
         </tr>
       <% end %>
