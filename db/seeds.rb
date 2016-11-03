@@ -43,22 +43,29 @@ puts "User account created."
 
 
 
-create_product = for i in 1..10 do
-  Product.create!([title: "Product no.#{i}", description: "這是用種子建立的第 #{i} 個on sale product", price: rand(50..99)*100, quantity: rand(10..49)*100, onsale: "true"])
+create_item = for i in 1..10 do
+  Item.create!([title: "item no.#{i}", description: "這是用種子建立的第 #{i} 個on sale item", price: rand(50..99)*100, storage: rand(10..49)*100, is_available: "true"])
 end
 puts "10 on sale products created."
 
-create_product = for i in 1..10 do
-  Product.create!([title: "Product no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個not on sale product", price: rand(50..99)*100, quantity: rand(10..49)*100, onsale: "false"])
+create_item = for i in 1..10 do
+  Item.create!([title: "item no.#{i+10}", description: "這是用種子建立的第 #{i+10} 個not on sale item", price: rand(50..99)*100, storage: rand(10..49)*100, is_available: "false"])
 end
 puts "10 not on sale products created."
 
 create_order = for i in 1..10 do
-  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "wechat", aasm_state: "paid"])
+  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "wechat"])
 end
+
 puts "10 oreders paid with wechat."
 
 create_order = for i in 11..20 do
-  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "alipay", aasm_state: "paid"])
+  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "alipay"])
 end
+
 puts "10 orders paid with alipay."
+
+for i in 1..20 do
+  Order.find(i).make_payment!
+end
+puts "make_payment"
