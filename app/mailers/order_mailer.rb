@@ -15,4 +15,18 @@ class OrderMailer < ApplicationMailer
     mail(to: @user.email, subject: "[JDstore] 已经申请退货！ #{order.token}")
   end
 
+  def notify_order_cancel_by_admin(order)
+    @order = order
+    @user = order.user
+    @product_lists = order.product_lists
+    mail(to: @user.email, subject: "[JDstore] 管理员取消订单！ #{order.token}")
+  end
+
+  def notify_order_ship(order)
+    @order = order
+    @user = order.user
+    @product_lists = order.product_lists
+    mail(to: @user.email, subject: "[JDstore] 配送中！ #{order.token}")
+  end
+
 end

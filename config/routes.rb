@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       post :pay_with_wechat
       post :go_pay
       post :notify_order_cancel
+      post :notify_order_cancel_by_admin
+      post :cancell_order
+      post :ship
     end
   end
 
