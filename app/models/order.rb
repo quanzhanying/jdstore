@@ -16,12 +16,14 @@ class Order < ApplicationRecord
   def pay_with_alipay!
     self.is_paid = true
     self.payment_method = "alipay"
+    self.make_payment :paid
     self.save
   end
 
   def pay_with_wechat!
     self.is_paid = true
     self.payment_method = "wechat"
+    self.make_payment :paid
     self.save
   end
 

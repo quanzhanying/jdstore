@@ -1,44 +1,79 @@
-<h1> Order List </h1>
+<h1>
+    Order List
+</h1>
 <table class="table table-boldered">
-  <thead>
-       <tr>
-           <td>订单编号</td>
-           <td>总价(元)</td>
-           <td>付款人</td>
-           <td>收件人</td>
-           <td>是否付款</td>
-           <td>订单时间</td>
+    <thead>
+        <tr>
+            <td>订单编号</td>
+            <td>总价(元)</td>
+            <td>付款人</td>
+            <td>收件人</td>
+            <td>是否付款</td>
+            <td>订单时间</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
 
-       </tr>
+    </thead>
+    <tbody>
+        <% @orders.each do |order| %>
+        <tr>
+            <td>
+                <%= link_to(truncate(order.token, length: 8), account_order_path(order.token)) %>
+            </td>
 
-   </thead>
- <tbody>
-  <% @orders.each do |order| %>
-  <tr>
-    <td>
-     <%= link_to(truncate(order.token, length: 8), order_path(order.token)) %>
-    </td>
+            <td>
+                <%= order.total%>
+            </td>
 
-    <td>
-      <%= order.total%>
-    </td>
+            <td>
+                <%= order.billing_name %>
+            </td>
 
-    <td>
-      <%= order.billing_name %>
-    </td>
+            <td>
+                <%= order.shipping_name%>
+            </td>
 
-    <td>
-      <%= order.shipping_name%>
-    </td>
+            <td>
+                <%= order.is_paid %>
+            </td>
 
-    <td>
-      <%= order.is_paid %>
-    </td>
+            <td>
+                <%= order.created_at %>
+            </td>
 
-    <td>
-      <%= order.created_at %>
-    </td>
-  </tr>
-  <% end %>
-<tbody>
+            <td>
+                <%= order.aasm_state %>
+            </td>
+
+            <td>
+                <%  case order.aasm_state %>
+                <%  when "order_placed" %>
+                <%= link_to("取消订单", cancel_order_path(order.token), :method => :post, :data => { :confirm => "取消订单?" }) %>
+                <%  when "paid" %>
+                <p>
+                    配送中
+                </P>
+                <%  when "shipping" %>
+                <%= link_to("收货", deliver_account_order_path(order.token), :method => :post) %>
+                <%  when "shipped" %>
+                <%= link_to("退货", return_good_account_order_path(order.token), :method => :post) %>
+                <%  when "good_returned" %>
+                <p>
+                    货都退了
+                </p>
+                <%  when "order_cancelled" %>
+                <p>
+                    订单已取消
+                </p>
+                <% else %>
+                <p>
+                    异常
+                </p>
+                <%  end %>
+
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>

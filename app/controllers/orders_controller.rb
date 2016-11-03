@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
-
-
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
@@ -32,6 +30,7 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     if @order.is_paid == true
+      @order.save
       flash[:warning] = "订单已付款"
     else
       @order.pay_with_alipay!
@@ -48,6 +47,14 @@ class OrdersController < ApplicationController
         redirect_to order_path(@order.token)
       end
    end
+
+    def cancel
+      @order = Order.find_by_token(params[:id])
+      @order.cancell_order!
+      redirect_to  products_path
+    end
+
+
   private
   def order_params
     params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :aasm_state)

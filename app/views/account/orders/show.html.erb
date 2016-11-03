@@ -61,13 +61,29 @@
                 </table>
 
                 <div class="group pull-right">
-                    <% if @order.is_paid ==true %>
-                    <a herf="#", class = "btn btn-danger", disable> 已付款 </a>
-                    <% else %>
+                    <% case @order.aasm_state %>
+                    <% when "order_placed" %>
                     <%= link_to("支付宝", pay_with_alipay_order_path(@order.token), method: :post, :class => "btn btn-danger") %>
                     <%= link_to("微信支付", pay_with_wechat_order_path(@order.token), method: :post, :class => "btn btn-danger") %>
                     <%= link_to("取消订单", cancel_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+
+                    <% when "paid" %>
+                    <a herf="#" class= "btn btn-danger" disabled> 已付款 </a>
+                    <%= link_to("取消订单", cancel_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+
+                    <% when "order_cancelled" %>
+                    <a herf="#" class= "btn btn-danger" disabled> 订单已取消 </a>
+
+                    <% when "shipping" %>
+                    <%= link_to("确认收货", deliver_account_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+
+                    <% when "shipped" %>
+                    <%= link_to("退货", return_account_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+
+                    <% when "good_returned" %>
+                    <a herf="#" class= "btn btn-danger" disabled> 货都退了 </a>
                     <% end %>
+
                 </div>
             </div>
 

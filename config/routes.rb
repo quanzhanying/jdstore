@@ -29,15 +29,30 @@ Rails.application.routes.draw do
     member do
       post :pay_with_wechat
       post :pay_with_alipay
+      post :cancel
+      post :ship
+
     end
   end
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+        post :return_good
+        post :deliver
+      end
+    end
   end
 
   namespace :admin do
-    resources :orders
+    resources :orders do
+      member do
+        post :ship
+        post :cancel
+        post :deliver
+        post :return
+      end
+    end
   end
 
   resources :cart_items
