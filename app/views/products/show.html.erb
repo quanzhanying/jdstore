@@ -23,7 +23,7 @@
       <% if @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% else %>
-        <a href="#" class="btn btn-danger">暂时缺货</a>
+        <%= link_to("暂时缺货", "#", :class => "btn btn-danger") %>
       <% end %>
     </div>
   </div>
