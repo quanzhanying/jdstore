@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
   if Rails.env.production?
-    config.storage :aws
+    config.storage :fog
     config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:    ENV["S3_key_id"],      # 你的 key
@@ -14,7 +14,6 @@ CarrierWave.configure do |config|
 
     }
     config.fog_directory  = ENV["S3_bucket"]  # 你设定的 bucket name
-
 
   else
     config.storage :file
