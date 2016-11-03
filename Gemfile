@@ -33,7 +33,10 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
-gem "aasm"
+gem 'aasm'
+gem 'figaro'
+gem 'pry'
+gem 'awesome_rails_console'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
