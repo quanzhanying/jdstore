@@ -29,16 +29,23 @@ class OrdersController < ApplicationController
 
     def pay_with_wechat
       @order = Order.find_by_token(params[:id])
+      @order.is_paid = true
       @order.make_payment!
+      @order.save
+      redirect_to :back
     end
 
     def pay_with_alipay
-      @oreder.make_payment!
+      @order = Order.find_by_token(params[:id])
+      @order.is_paid = true
+      @order.make_payment!
+      @order.save
+      redirect_to :back
     end
 
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :aasm_state)
   end
 end

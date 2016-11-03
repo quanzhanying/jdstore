@@ -5,6 +5,8 @@
 <%= f.input :quantity %>
 <%= f.input :price %>
 <%= f.input :is_hidden %>
-<%= f.input :image %>
+<%= f.input :image, as: :file %>
+<%= f.label :avatar %>
+<%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
 <%= f.submit "Submit" %>
 <% end %>

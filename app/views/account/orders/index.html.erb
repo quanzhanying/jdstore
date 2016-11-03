@@ -6,6 +6,7 @@
       <th>寄送资讯</th>
       <th>订购人</th>
       <th>总价</th>
+      <th>订单状态</th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +30,9 @@
     </td>
     <td>
       <%= order.aasm_state %>
+    </td>
+    <td>
+      <%= link_to("取消订单", cancell_account_order_path(order), method: :post, class: "btn btn-danger") %>
     </td>
   </tr>
     <% end %>

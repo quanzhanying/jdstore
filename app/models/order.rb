@@ -11,7 +11,7 @@ class Order < ApplicationRecord
   validates :shipping_name, presence: true
   validates :shipping_address, presence: true
 
-  scope :only, ->(user){where.(id: user)}
+  # scope :only, ->(user){where.(id: user)}
 
   include AASM
 

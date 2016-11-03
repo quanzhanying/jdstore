@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   scope :published, -> { where(:is_hidden => false)}
   scope :recent, -> { order("created_at DESC")}
+  has_many :photos
+  accepts_nested_attributes_for :photos
   def publish!
     self.is_hidden = false
     self.save
