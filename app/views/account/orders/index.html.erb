@@ -1,0 +1,35 @@
+<% @orders.each do |order| %>
+   <tbody>
+     <tr>
+     <%= order.created_at  %>
+     <td>
+      订单编号：<%= order.token %>
+      </td>
+     </tr>
+     <tr>
+       <td >
+         <% order.product_lists.each do |p_list| %>
+
+           <%= p_list.product_name %> x <%= p_list.quantity %>
+           ¥<%= p_list.product_price %>
+           <%= order.shipping_name %>
+
+         <% end %>
+       </td>
+       <td>
+         ¥<%= order.total %>
+       </td>
+
+       <td>
+         <%= link_to("订单详情",account_order_path(order.token)) %>
+       </td>
+     </tr>
+     </tbody>
+   <% end %>
+
+
+
+
+
+  </div>
+</div>
