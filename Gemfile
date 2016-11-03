@@ -42,6 +42,7 @@ gem 'rails-erd'
 gem 'aasm'
 gem 'pry'
 gem "awesome_rails_console"
+gem "fog"
 
 group :production do
   gem "pg"
