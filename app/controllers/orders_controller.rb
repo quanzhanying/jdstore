@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!,only:[:create]
+  before_action :authenticate_user!, only: [:create]
   def new
     @order = Order.new
   end
@@ -33,34 +33,38 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
 
     if @order.is_paid
-      flash[:alert] = "已支付！"
+      flash[:alert] = '已支付！'
 
-      redirect_to order_path
+      redirect_to notify_order_placed_mailers_path
     else
       @order.is_paid = true
-      @order.payment_method = "支付宝"
+      @order.payment_method = '支付宝'
+      @order.make_payment!
       @order.save
-      redirect_to notify_order_placed_mailers_path
+
       end
+    redirect_to notify_order_placed_mailers_path
   end
 
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     if @order.is_paid
-      flash[:alert] = "已支付！"
+      flash[:alert] = '已支付！'
 
-      redirect_to order_path
+      redirect_to notify_order_placed_mailers_path
     else
       @order.is_paid = true
-      @order.payment_method = "微信"
+      @order.payment_method = '微信'
+      @order.make_payment!
       @order.save
-      redirect_to notify_order_placed_mailers_path
-      end
 
+      end
+    redirect_to notify_order_placed_mailers_path
   end
 
   private
+
   def order_params
-    params.require(:order).permit(:billing_name,:billing_address,:shipping_name,:shipping_address,:is_paid,:payment_method)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
   end
 end
