@@ -1,0 +1,55 @@
+<h2>我的购物车</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_cart.cart_items.each do |cart_item| %>
+    <tr>
+      <td>
+        <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+        <br>
+        <%= link_to product_path(cart_item.product) do %>
+          <% if cart_item.product.image.present? %>
+            <%= image_tag(cart_item.product.image.thumb.url) %>
+          <% else %>
+            <%= image_tag("http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width: "200") %>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <%= cart_item.product.price %>
+      </td>
+      <td>
+        <%= button_to '-1', decrease_cart_item_path(cart_item), method: :post %>
+        <%= cart_item.quantity %>
+        <%= button_to '+1', increase_cart_item_path(cart_item), method: :post %>
+      </td>
+      <td>
+        <%= link_to("Remove the product", cart_item_path(cart_item), :method => :delete, :class => "btn btn-default") %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="pull-right">
+  总计 <%= render_cart_total_price(current_cart) %> RMB
+</div>
+<br>
+<div class="checkout clearfix">
+  <%= link_to("Empty the cart", current_cart, :method => :delete, :class => "btn btn-lg btn-danger pull-right", :data => { :confirm => "Are you sure?" }) %>
+</div>
+<br>
+<div class="checkout clearfix">
+  <%= link_to("Confirm to pay", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+</div>

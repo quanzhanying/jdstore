@@ -1,0 +1,55 @@
+<h2 class="text-center">Products List</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>On Sale</th>
+      <th>Product</th>
+      <th>Description</th>
+      <th>Price & Quantity</th>
+      <th>Action</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td>
+        <% if !product.onsale %>
+          <!-- <i class="fa fa-eye-slash" aria-hidden="true"></i> -->
+          <%= link_to("", onsale_admin_product_path(product), :method => :post, :class => "fa fa-eye-slash") %>
+            <!-- <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </button>"btn btn-xs btn-default") %> -->
+        <% else %>
+          <%= link_to("", soldout_admin_product_path(product), :method => :post, :class => "fa fa-eye") %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to(product.title, product_path(product)) %>
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url) %>
+          <% else %>
+            <%= image_tag("http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width: "200") %>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <%= product.description %>
+      </td>
+      <td>
+          单价:<%= product.price %><br>
+          库存:<%= product.quantity %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_admin_product_path(product)) %>
+        <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+      <td>
+        <%= product.created_at %>
+      </td>
+    </tr>
+    <% end %>
+</table>

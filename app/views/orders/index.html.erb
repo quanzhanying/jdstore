@@ -1,0 +1,17 @@
+<h2 class="text-center">Orders List</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Order</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.@orders.each do |order| %>
+    <tr>
+      <td>#</td>
+      <td><%= @user.orders %></td>
+    </tr>
+    <% end %>
+  </tbody>
