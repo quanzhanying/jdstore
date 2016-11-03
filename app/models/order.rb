@@ -27,10 +27,10 @@ class Order < ApplicationRecord
     self.save
   end
 
-  def make_payment!
-    self.payment_method = "paid"
-    self.save
-  end
+  # def make_payment!
+  #   self.payment_method = "paid"
+  #   self.save
+  # end
 
 include AASM
   aasm do
