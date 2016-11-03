@@ -43,6 +43,7 @@ gem 'aasm'
 gem 'pry'
 gem "awesome_rails_console"
 gem "fog"
+gem "figaro"
 
 group :production do
   gem "pg"
