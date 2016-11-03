@@ -40,6 +40,7 @@ gem 'aasm'
 gem 'letter_opener', group: :development
 gem 'awesome_rails_console'
 gem 'pry'
+gem 'roadie-rails'
 
 
 group :development, :test do
