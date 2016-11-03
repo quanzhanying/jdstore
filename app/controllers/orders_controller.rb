@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
       @order.is_paid = true
       @order.payment_method = "支付宝"
       @order.save
-      redirect_to order_path
+      redirect_to notify_order_placed_mailers_path
       end
   end
 
@@ -54,7 +54,7 @@ class OrdersController < ApplicationController
       @order.is_paid = true
       @order.payment_method = "微信"
       @order.save
-      redirect_to order_path
+      redirect_to notify_order_placed_mailers_path
       end
 
   end

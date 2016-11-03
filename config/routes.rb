@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  # resources :cart_items
+  get 'mailer/OrderMailer'
+
+  resources :mailers do
+    collection do
+      post :notify_order_placed
+    end
+  end
   resources :cart_items do
     member do
       post :initialize
@@ -22,9 +28,8 @@ Rails.application.routes.draw do
       post :checkout
     end
     member do
-       post :add_product_to_cart
-
-     end
+      post :add_product_to_cart
+    end
   end
 
   devise_for :users
@@ -43,7 +48,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :products
     resources :orders
-  end 
+  end
 
   root 'products#index' # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
