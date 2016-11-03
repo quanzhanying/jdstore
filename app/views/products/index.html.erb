@@ -1,0 +1,50 @@
+<!-- <div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-4" style="height: 450px;">
+
+    <div>
+      <%= link_to(product_path(product)) do %>
+        <% if !product.image.blank? %>
+          <%= image_tag(product.image.thumb, :class => "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200") %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="clearfix">
+      <h3><%= link_to("product.title", product_path(product)) %></h3>
+      <p><%= product.description %></p>
+      <p>单价：<%= product.price %><br>库存：<%= product.quantity %></p>
+    </div>
+
+  </div>
+  <% end %>
+
+</div> -->
+
+<div class="row">
+<% @products.each do |product| %>
+
+<div class="col-sm-6 col-md-4" style="height: 450px;">
+  <div class="clearfix">
+    <div >
+        <%= link_to(product_path(product)) do %>
+          <% if !product.image.blank? %>
+            <%= image_tag(product.image.thumb, :class => "pic-with-border") %>
+          <% else %>
+            <img src="http://ussec.org/wp-content/plugins/social-media-builder//img/no-image.png", width="200", class = "pic-with-border"/>
+          <% end %>
+        <% end %>
+    </div>
+    <div class="clearfix">
+      <h3><%= link_to("product.title", product_path(product)) %></h3>
+      <p><%= product.description %></p>
+      <p>单价：<%= product.price %><br>库存：<%= product.quantity %></p>
+    </div>
+  </div>
+</div>
+
+
+<% end %>
+</div>
