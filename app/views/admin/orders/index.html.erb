@@ -25,6 +25,9 @@
         <td> <%= order.total %> </td>
         <td> <%= order.is_paid %> </td>
         <td> <%= order.payment_method %> </td>
+        <td>
+          <%= link_to("取消订单", admin_order_path(order),    class: "btn btn-sm btn-default",   method: :delete, data: { confirm: "Are you sure?" } )%>
+        </td>
       </tr>
       <% end %>
     </tbody>
