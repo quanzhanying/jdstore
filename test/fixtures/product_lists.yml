@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: product_lists
+#
+#  id         :integer          not null, primary key
+#  quantity   :integer
+#  price      :float
+#  order_id   :integer
+#  product_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  price: 1.5
+  order_id: 1
+  product_id: 1
+
+two:
+  quantity: 1
+  price: 1.5
+  order_id: 1
+  product_id: 1

@@ -1,0 +1,17 @@
+<div class="container">
+
+	<% delivery_address = DeliveryAddress.find(@order.delivery_address_id ) %>
+	
+	<div class="row">
+		<%= link_to "所有订单", orders_path, class: "btn btn-primary pull-right btn-lg", style: "margin-bottom: 20px" %>
+	</div>
+	
+	<div class="row well">
+		
+		<%= render partial: "common/order_table", locals: {delivery_address: delivery_address, order: @order} %>
+
+		<%= render partial: "customer_order_action", locals: {order: @order} %>
+	
+	</div>
+
+</div>

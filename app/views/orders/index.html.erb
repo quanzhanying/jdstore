@@ -1,0 +1,19 @@
+<div class="container">
+
+	<% @orders.each do |order| %>
+
+	<% delivery_address = DeliveryAddress.find(order.delivery_address_id ) %>
+
+	<div class="row well">
+
+		<%= link_to "查看详情", order_path(order.token), method: :get, class: "btn btn-default pull-right" %>
+		
+		<%= render partial: "common/order_table", locals: {delivery_address: delivery_address, order: order} %>
+
+		<%= render partial: "customer_order_action", locals: {order: order} %>
+	
+	</div>
+
+	<% end %>
+	
+</div>

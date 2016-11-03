@@ -1,0 +1,21 @@
+
+<% @products.each do |product|%>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail text-center">
+
+      <% if product.image.present? %>
+        <%= link_to image_tag(product.image.url(:thumb)), product_path(product) %>
+      <% else %>
+        <%= link_to image_tag($DEFAULT_THUMB_IMAGE), product_path(product) %>
+      <% end %>
+        
+      
+      
+      <div class="caption text-center">
+        <h4><%= link_to product.title, product_path(product) %></h4>
+        <p><%= "￥#{product.price}" %></p>        
+      </div>
+
+    </div>
+  </div>
+<% end %>    

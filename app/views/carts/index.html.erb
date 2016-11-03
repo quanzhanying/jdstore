@@ -1,0 +1,85 @@
+<br>
+<br>
+
+<div class="container">
+
+	<table class="table">
+		<thead>
+			<tr class="text-left success">
+				<td class="col-md-4">商品</td>
+				<td class="col-md-2">价格</td>
+				<td class="col-md-2">数量</td>
+				<td class="col-md-2">小计（元）</td>
+				<td class="col-md-2">操作</td>	
+			</tr>
+		</thead>
+
+		<tbody>
+			<% total_price = 0 %>
+
+			<% @cart_items.each do |cart_item| %>
+			<tr class="warning">
+				<td>
+					<div class="col-md-8">
+
+						<% if cart_item.product.image.present? %>
+							<%= link_to image_tag("#{cart_item.product.image.thumb.url}"), product_path(cart_item.product) %>  
+
+						<% else %>
+							<%= link_to image_tag($DEFAULT_THUMB_IMAGE), product_path(cart_item.product) %>  
+
+						<% end %>
+					</div>
+
+					<div class="col-md-4">
+						<p><%= cart_item.product.title %></p>
+					</div>
+					
+				</td>
+				
+				<td >
+					<p><%= cart_item.price %></p>
+				</td>
+
+				<td>
+					<span><%= link_to "-", cart_item_decrement_path(cart_item), class: "btn btn-default btn-xs", method: :post %></span>
+					<span><%= cart_item.quantity%></span>
+					<span><%= link_to "+", cart_item_increment_path(cart_item), class: "btn btn-default btn-xs", method: :post %></span>
+				</td>
+
+				<td>
+					<p><%= cart_item.price * cart_item.quantity %></p>
+				</td>
+				
+				<td>
+					<%= link_to "移除", cart_item_path(cart_item), method: :delete, class: "btn btn-default", data: { confirm: "确认移除此商品？"} %>
+				</td>
+			</tr>
+
+			<% total_price += cart_item.price * cart_item.quantity %>
+			
+			<% end %>
+			
+		</tbody>
+
+	</table>
+	
+	<div class="row" style="padding-right: 15px">
+		<h3 style="color: green " class="pull-right"><%= "总计：" + "#{current_cart.total_price}" %></h3>	
+	</div>
+	
+	<div class="row" style="padding-right: 15px">
+		<% if @cart_items.any? %>
+			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg" %>
+			<%= link_to "清空购物车", cart_empty_cart_path(current_user.cart), class: "btn btn-danger pull-left btn-lg", method: :post, style: "margin-left: 15px", data: { confirm: "确认清空购物车？"}  %>
+		<% else %>
+			<%= link_to "去结算", new_order_path, class: "btn btn-warning pull-right btn-lg disabled" %>
+			<%= link_to "清空购物车", cart_empty_cart_path(current_cart), class: "btn btn-danger pull-left btn-lg disabled", style: "margin-left: 15px"  %>
+		<% end %>
+		
+	</div>
+
+	
+</div>
+
+

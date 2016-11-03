@@ -1,0 +1,11 @@
+	<%= simple_form_for [:users, @delivery_address] do |f| %>
+
+		<div class="form-group">
+			<%= f.input :name, input_html: { class: "form-control"} %>
+			<%= f.input :address, input_html: { class: "form-control"} %>
+			<%= f.input :phone, input_html: { class: "form-control"} %>
+		</div>
+		<div class="form-action">
+			<%= f.submit "更新地址", disable_with: "Submitting...", class: "btn btn-primary" %>
+		</div>
+	<% end %>

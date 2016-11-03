@@ -1,0 +1,77 @@
+<div class="container">
+	<div class="row">
+
+	<%= form_tag orders_path, method: :post do %>
+
+		<table class="table table-condensed">
+			
+			<thead>
+				<th class="info col-md-3">请选择收货地址</th>
+
+				<tr class="active">
+					<td>收货人姓名</td>
+					<td>收货人地址</td>
+					<td class="col-md-2">联系方式</td>
+					<td class="col-md-1">选择</td>
+				</tr>				
+			</thead>
+
+			<tbody>
+				<% @delivery_addresses.each do |delivery_address| %>
+					<tr>
+						<td><%=  delivery_address.name %></td>
+						<td><%=  delivery_address.address %></td>
+						<td><%=  delivery_address.phone %></td>
+						<td>
+							<div class="form-group">
+								<%= radio_button_tag "delivery_address", delivery_address.id %>
+							</div>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+
+		</table>
+
+		<%= link_to "新增收货地址", new_users_delivery_address_path, class: "btn btn-primary" %>
+
+		<hr>
+
+		<table class="table table-condensed">
+			
+			<thead>
+				<th class="info col-md-3">购物车清单</th>
+				<tr class="active">
+					<td>商品名称</td>
+					<td>价格</td>
+					<td>数量</td>
+					<td>小计（元）</td>
+				</tr>				
+			</thead>
+			<tbody>
+				<% selected_cart_items = [] %>
+				<!-- 这个@cart_items，应该是通过cart页面筛选过后的，需要更新 -->
+				<% @cart_items.each do |cart_item| %>
+					<tr>
+						<td><%=  cart_item.product.title %></td>
+						<td><%=  cart_item.price %></td>
+						<td><%=  cart_item.quantity %></td>
+						<td><%=  cart_item.price * cart_item.quantity %></td>
+						<% selected_cart_items << cart_item.id %>
+					</tr>
+				<% end %>
+				<%= hidden_field_tag "cart_items", selected_cart_items %>
+			</tbody>
+		</table>
+
+		<div class="row form-action", style="padding-right: 15px">
+		<%= submit_tag "提交订单", class: "form-action pull-right btn btn-warning btn-lg" %>
+	</div>
+
+	<% end %>
+
+	</div>
+
+	
+	
+</div>

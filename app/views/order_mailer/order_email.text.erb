@@ -1,0 +1,6 @@
+<%= DeliveryAddress.find_by(id: @order.delivery_address_id) %>您好
+您的订单已经生成
+<% @order.product_lists.each do |list|%>
+	<%= Product.find_by(id:list.product_id).title %>, <%= list.quantity %>件, 总计<%= list.quantity * list.price %>元
+<% end %>
+	

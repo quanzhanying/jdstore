@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% sum = 0 %>
+  	<h1><%= DeliveryAddress.find_by(id: @order.delivery_address_id).name %>, 您好</h1>
+  	<p>您的订单已经发货</p>
+  	<% @order.product_lists.each do |list|%>
+	    <p><span><%= Product.find_by(id:list.product_id).title %> </span><span>, <%= list.quantity %>件, <%= list.quantity * list.price %>元</span> </p> 
+      <% sum += list.quantity * list.price %>
+	  <% end %>
+    <h3>总计：<%= "#{sum}" %>元</h3>
+    <h4>邮寄地址: <%= DeliveryAddress.find_by(id: @order.delivery_address_id).address %></h4>
+  </body>
+</html>

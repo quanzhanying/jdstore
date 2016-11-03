@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -30,9 +30,35 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'bootstrap-sass'
+gem "simple_form"
+gem "devise"
+gem 'annotate'
+gem "carrierwave"
+gem 'mini_magick'
+gem 'font-awesome-sass'
+gem 'pry'
+gem 'aasm'
+gem "figaro"
+gem 'mailgun-ruby', '~>1.1.1'
+gem "fog"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
+  gem "letter_opener"
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+
+
+end
+
+group :production do
+	gem "pg"
 end
 
 group :development do
@@ -42,7 +68,17 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'awesome_rails_console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Please clean up duplicated gems if any.
+# Feel free to remove gems that you don't want to use or if they conflict with other gem dependencies. (you might need to update .pryrc also)
+# group :development, :test do
+#   gem 'hirb'
+#   gem 'hirb-unicode'
+#   gem 'pry-byebug'
+#   gem 'pry-stack_explorer'
+# end
