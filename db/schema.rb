@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20161102084335) do
 
   create_table "Orders", force: :cascade do |t|
+    t.integer  "total",            default: 0
     t.integer  "user_id"
     t.string   "billing_name"
     t.string   "billing_address"
@@ -20,7 +21,6 @@ ActiveRecord::Schema.define(version: 20161102084335) do
     t.string   "shipping_address"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.integer  "total",            default: 0
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
