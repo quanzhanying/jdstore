@@ -32,9 +32,6 @@ CarrierWave.configure do |config|
                             'Cache-Control'=>"max-age=#{365.day.to_i}",
                             'Expires'=>'Tue, 29 Dec 2015 23:23:23 GMT'
                           }
-end
-
-
 
   else
     config.storage :file
