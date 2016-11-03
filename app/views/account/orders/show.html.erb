@@ -62,12 +62,22 @@ z<div class="row">
     </table>
 
     <div class="pull-right">
-      <% if @order.is_paid == true  %>
-        <%= link_to("已付款","#",:class => "btn btn-danger btn-lg",disabled: :true) %>
-      <% else %>
-        <%= link_to("使用支付宝支付",pay_with_alipay_order_path(@order.token), method: :post,:class => "btn btn-primary btn-lg") %>
-        <%= link_to("使用微信支付", pay_with_wechat_order_path(@order.token), method: :post, :class => "btn btn-lg btn-success") %>
-      <% end %>
+    <% case @order.aasm_state %>
+    <% when "paid" %>
+      <%= link_to("已付款","#",:class => "btn btn-info",disabled: :true) %>
+      <%= link_to("取消订单",cancell_order_order_path(@order.token),method: :put,:class => "btn btn-danger") %>
+    <% when "order_cancelled" %>
+        <%= link_to("订单已取消","#",:class => "btn btn-success",disabled: :true) %>
+    <% when "shipping" %>
+      <%= link_to("确认收货",deliver_order_path(@order.token),method: :put,:class => "btn btn-success") %>
+    <% when  "shipped" %>
+      <%= link_to("申请退货",return_good_order_path(@order.token),method: :put,:class => "btn btn-danger") %>
+    <% when "good_returned" %>
+      <%= link_to("您已退货","#",:class => "btn btn-warning",disabled: :true) %>
+    <% when "order_placed" %>
+    <%= link_to("使用支付宝支付",pay_with_alipay_order_path(@order.token), method: :post,:class => "btn btn-primary") %>
+    <%= link_to("使用微信支付", pay_with_wechat_order_path(@order.token), method: :post, :class => "btn btn-success") %>
+    <% end %>
     </div>
 
   </div>

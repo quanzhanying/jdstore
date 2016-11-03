@@ -27,6 +27,24 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def cancell_order
+    @order = Order.find_by_token(params[:id])
+    @order.cancell_order!
+    redirect_to :back
+  end
+
+  def deliver
+    @order = Order.find_by_token(params[:id])
+    @order.deliver!
+    redirect_to :back
+  end
+
+  def return_good
+    @order = Order.find_by_token(params[:id])
+    @order.return_good!
+    redirect_to :back
+  end
+
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     if @order.is_paid == false

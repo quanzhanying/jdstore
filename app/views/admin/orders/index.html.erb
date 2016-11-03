@@ -21,8 +21,19 @@
     <td><%= order.created_at %></td>
     <td><%= order.aasm_state %></td>
     <td>
-      <%= link_to("发货", ship_admin_order_path(order.token),method: :put,:class => "btn btn-xs btn-success") %>
-      <%= link_to("取消订单", cancell_order_admin_order_path(order.token),method: :put,:class => "btn btn-xs btn-danger") %>
+      <% case order.aasm_state %>
+      <% when "order_cancelled" %>
+        <%= link_to("订单已取消","#",:class => "btn btn-xs btn-warning", disabled: true) %>
+      <% when "good_returned" %>
+        <%= link_to("客户已退货","#",:class => "btn btn-xs btn-danger", disabled: true) %>
+      <% when "shipped" %>
+        <%= link_to("已确认收货","#",:class => "btn btn-xs btn-success", disabled: true) %>
+      <% when "shipping" %>
+        <%= link_to("您已发货","#",:class => "btn btn-xs btn-primary", disabled: true) %>
+      <% else %>
+        <%= link_to("发货", ship_admin_order_path(order.token),method: :put,:class => "btn btn-xs btn-success") %>
+        <%= link_to("取消订单", cancell_order_admin_order_path(order.token),method: :put,:class => "btn btn-xs btn-danger") %>
+      <% end%>
     </td>
   </tr>
   <% end %>

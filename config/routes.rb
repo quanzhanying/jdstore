@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     member do
       post :pay_with_wechat
       post :pay_with_alipay
+      put :cancell_order
+      put :deliver
+      put :return_good
+
     end
   end
 
