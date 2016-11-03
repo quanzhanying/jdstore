@@ -12,4 +12,6 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
+
+
 end
