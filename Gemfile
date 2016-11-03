@@ -38,6 +38,7 @@ gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'aasm'
 gem 'letter_opener', group: :development
+gem 'awesome_rails_console'
 
 
 group :development, :test do

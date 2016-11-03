@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">DZ's JD Store</a>
+            <a class="navbar-brand" href="/">DZ Fashion</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -11,9 +11,9 @@
 
 							<li>
 								<% if current_user %>
-								<%= link_to carts_path do %>
-								Shopping Cart<i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
-								<% end %>
+									<%= link_to carts_path do %>
+									Shopping Cart<i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
+									<% end %>
 								<% end %>
 							</li>
 
@@ -29,6 +29,7 @@
 									<ul class="dropdown-menu">
 										<% if current_user.admin? %>
 											<li><%= link_to("Admin Panel", admin_products_path) %></li>
+											<li><%= link_to("All Orders", admin_orders_path) %></li>
 										<% end %>
 											<li><%= link_to("My Orders", account_orders_path) %></li>
 											<li class="divider"></li>

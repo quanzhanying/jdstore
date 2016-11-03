@@ -100,3 +100,9 @@ Class notes
 // why not @user.save!, because if validate the statement, might break the code
 
 *big* is the _next_ **this is bold**
+
+*How to set up github key on heroku*
+heroku config set -e XXXX=XXXX
+
+but once it exceeds a certain number of keys, it becomes too many to maintain
+use _figaro gem_ can do this in one command

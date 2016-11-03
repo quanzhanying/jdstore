@@ -16,10 +16,11 @@ class OrdersController < ApplicationController
 			 product_list.quantity = cart_item.quantity
 			 product_list.save
 		 end
-		 	 current_cart.cart_items.each do |item|
-			 	item.destroy
-			end
-			 redirect_to order_path(@order.token)
+		 current_cart.cart_items.each do |item|
+			item.destroy
+		 end
+		 OrderMailer.notify_order_placed(Order.last).deliver!
+		 redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
     end

@@ -17,7 +17,7 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td> <%= "#" %> </td>
+          <td> <%= link_to(order.id, account_order_path(order)) %> </td>
           <td> <%= order.shipping_name %> </td>
           <td> <%= order.shipping_address %> </td>
           <td>
