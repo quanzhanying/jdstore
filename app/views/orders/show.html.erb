@@ -61,8 +61,8 @@
       </tbody>
     </table>
     <div class="group pull-right">
-      <%= link_to("支付宝", pay_with_alipay_order_path(@order), :method => :post, :class => "btn btn-danger") %>
-      <%= link_to("微信", pay_with_wechat_order_path(@order), :method => :post, :class => "btn btn-danger") %>
+      <%= link_to("支付宝", go_pay_order_path(@order), :method => :post, :class => "btn btn-danger") %>
+      <%= link_to("微信", go_pay_order_path(@order), :method => :post, :class => "btn btn-danger") %>
     </div>
   </div>
 </div>

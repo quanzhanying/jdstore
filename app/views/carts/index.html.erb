@@ -52,7 +52,7 @@
       <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
       <%#= link_to("清空购物车", cart_path, class: "btn btn-lg btn-danger pull-right", method: :delete, data: { confirm: "Are you sure?" }) %>
       <%= link_to("清空购物车", cart_path(current_cart),  class: "btn btn-lg btn-danger pull-right", method: :delete, data: { confirm: "Are you sure?" }) %>
-
+      <%= link_to("查看购物记录", account_orders_path, class: "btn btn-lg btn-danger pull-right") %>
     </div>
     <div>
 

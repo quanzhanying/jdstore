@@ -31,14 +31,16 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find(params[:id])
     @order.payment_method = 'alipay'
+
     @order.is_paid = true
-    if @order.save
-      flash[:notice] = "付款success"
-      redirect_to carts_path
-    else
-      flash[:notice] = "付款失败！请重试"
-      redirect_to :back
-    end
+      if @order.save
+        flash[:notice] = "付款success"
+        redirect_to carts_path
+      else
+        flash[:notice] = "付款失败！请重试"
+        redirect_to :back
+      end
+
   end
 
   def pay_with_wechat
@@ -54,10 +56,28 @@ class OrdersController < ApplicationController
     end
   end
 
+  def go_pay
+  payment_method = params[:payment_method]
+  @order = Order.find(params[:id])
 
+  if @order.is_paid
+    flash[:alert] = "无需再次支付"
+    redirect_to :back
+    return
+  end
 
+  @order.payment_method = payment_method
+  @order.is_paid = true
 
+  if @order.save
+    flash[:notice] = "支付成功"
+    redirect_to account_orders_path
+  else
+    flash[:notice] = "支付失败"
+    redirect_to :back
+  end
 
+end
 
   private
 
