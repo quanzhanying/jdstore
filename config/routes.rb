@@ -51,7 +51,10 @@ Rails.application.routes.draw do
       end
 
       resources :orders do
-
+        member do
+          put :ship
+          put :cancell_order
+        end
       end
     end
 
