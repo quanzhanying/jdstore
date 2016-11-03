@@ -7,6 +7,7 @@
     <td>payment_method</td>
     <td>is_paid</td>
     <td>created_at</td>
+    <td>aasm_state</td>
     <td>operation</td>
   </tr>
   <% @orders.each do |order| %>
@@ -18,6 +19,7 @@
     <td><%= order.payment_method %></td>
     <td><%= order.is_paid %></td>
     <td><%= order.created_at %></td>
+    <td><%= order.aasm_state %></td>
     <td><%= link_to("发货", admin_order_path(order),method: :get,:class => "btn btn-xs btn-default") %></td>
   </tr>
   <% end %>

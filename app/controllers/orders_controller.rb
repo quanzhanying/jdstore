@@ -31,26 +31,24 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     if @order.is_paid == false
       @order.wechat_pay!
-
+      @order.make_payment!
+      redirect_to order_path(@order.token)
     else
       flash[:alert] = '您已经付款了哦'
         redirect_to :back
     end
-    #@order.make_payment!
-    redirect_to order_path(@order.token)
   end
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     if @order.is_paid == false
       @order.alipay_pay!
+      @order.make_payment!
       redirect_to order_path(@order.token)
     else
       flash[:alert] = '您已经付款了哦'
         redirect_to :back
     end
-    #@order.make_payment!
-
   end
 
   private
