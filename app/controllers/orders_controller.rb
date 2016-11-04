@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
     @order.payment_method = "支付宝"
     @order.make_payment!
     @order.save
-    OrderMailer.notify_order_placed(@order).deliver!
+    #OrderMailer.notify_order_placed(@order).deliver!
     redirect_to account_orders_path
 
   end
@@ -34,14 +34,14 @@ class OrdersController < ApplicationController
     @order.payment_method = "微信"
     @order.make_payment!
     @order.save
-    OrderMailer.notify_order_placed(@order).deliver!
+    #OrderMailer.notify_order_placed(@order).deliver!
     redirect_to account_orders_path
   end
 
   def cancell_order
     @order = Order.find(params[:id])
     @order.cancell_order!
-    OrderMailer.notify_order_cancelled(@order).deliver!
+    #OrderMailer.notify_order_cancelled(@order).deliver!
     redirect_to :back
     flash[:alert] = "订单取消成功"
   end
@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.ship!
 
-    OrderMailer.notify_order_ship(@order).deliver!
+    #OrderMailer.notify_order_ship(@order).deliver!
     redirect_to :back
     @order.save
     flash[:alert] = "出货成功"
