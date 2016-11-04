@@ -1,0 +1,9 @@
+
+
+<%= @order.pingpp_info %>
+
+
+<%= form_tag AlipayService.new(@order).credential do %>
+
+  <%= submit_tag "Submit" %>
+<% end %>
