@@ -22,7 +22,9 @@ class Account::OrdersController < ApplicationController
 
   def require_cancell
       @order = Order.find(params[:id])
+      @order.cancell_require!
       OrderMailer.notify_order_cancell(@order).deliver!
+      redirect_to :back
   end
 
   def require_return_good

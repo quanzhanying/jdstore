@@ -3,46 +3,46 @@
 <br><br>
 
 <div class="pull-right">
-  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
+    <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
 </div>
 
 <br><br>
 
 <table class="table table-boldered">
-  <thead>
-   <tr>
-    <td>产品</td>
-    <td>描述</td>
-    <td>数量</td>
-    <td>价格</td>
-    <td>管理员选项</td>
-    <td>商品选项</td>
-    <td>创建日期</td>
-   </tr>
-  </thead>
+    <thead>
+        <tr>
+            <td>产品</td>
+            <td>描述</td>
+            <td>数量</td>
+            <td>价格</td>
+            <td>管理员选项</td>
+            <td>商品选项</td>
+            <td>创建日期</td>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-    <tr>
-      <td><%= link_to(product.title, admin_product_path(product)) %></td>
-      <td><%= product.description %></td>
-      <td><%= product.quantity %></td>
-      <td><%= product.price %></td>
-      <td>
-        <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-xs btn-default") %>
-        |
-        <%= link_to("Delete", admin_product_path(product), :method => :delete, class: "btn btn-xs btn-default", :data => { :confirm => " Are you sure ?"}) %>
-      </td>
-      <td>
-        <% if product.is_hidden %>
-        <%= link_to("上架", publish_admin_product_path(product), :method => :post , class: "btn btn-xs btn-default" ) %>
-        <% else %>
-        <%= link_to("下架", hide_admin_product_path(product), :method => :post , class: "btn btn-xs btn-danger") %>
+    <tbody>
+        <% @products.each do |product| %>
+        <tr>
+            <td><%= link_to(product.title, admin_product_path(product)) %></td>
+            <td><%= product.description %></td>
+            <td><%= product.quantity %></td>
+            <td><%= product.price %></td>
+            <td>
+                <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-xs btn-default") %>
+                |
+                <%= link_to("Delete", admin_product_path(product), :method => :delete, class: "btn btn-xs btn-default", :data => { :confirm => " Are you sure ?"}) %>
+            </td>
+            <td>
+                <% if product.is_hidden %>
+                <%= link_to("上架", publish_admin_product_path(product), :method => :post , class: "btn btn-xs btn-default" ) %>
+            <% else %>
+                <%= link_to("下架", hide_admin_product_path(product), :method => :post , class: "btn btn-xs btn-danger") %>
+                <% end %>
+            </td>
+            <td><%= product.created_at %></td>
+        </tr>
         <% end %>
-      </td>
-      <td><%= product.created_at %></td>
-    </tr>
-    <% end %>
-  </tbody>
+    </tbody>
 
 </table>

@@ -1,61 +1,66 @@
-
-
 <table class="table table-hover table-inverse">
-  <thead>
-    <tr>
-      <th>商品明细</th>
-      <th>寄送资讯</th>
-      <th>订购人</th>
-      <th>总价</th>
-      <th>订单状态</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-    <% order.product_lists.each do |product_list| %>
-    <tr>
-      <td>
-        <%= product_list.product_name %>
-      </td>
-      <td>
-        <%= order.billing_name %> - <%= order.billing_address %>
-      </td>
-      <td>
-        <%= order.shipping_name %> - <%= order.shipping_address %>
-      </td>
-      <td>
-        <%= order.total %>
-      </td>
-      <td>
-        <%= order.aasm_state %>
-      </td>
-      <td>
-        <% case order.aasm_state %>
-        <% when "order_placed" %>
-         <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <% when "paid" %>
-        <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-         <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <% when "shipping" %>
-         <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <% when "shipped" %>
-         <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <% when "good_returned" %>
-         <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
-        <% when "order_cancelled" %>
-        <a href="#", class="btn btn-danger" disable>已取消</a>
-         <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
+    <thead>
+        <tr>
+            <th>商品明细</th>
+            <th>寄送资讯</th>
+            <th>订购人</th>
+            <th>总价</th>
+            <th>订单状态</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @orders.each do |order| %>
+        <% order.product_lists.each do |product_list| %>
+        <tr>
+            <td>
+                <%= product_list.product_name %>
+            </td>
+            <td>
+                <%= order.billing_name %>
+                -
+                <%= order.billing_address %>
+            </td>
+            <td>
+                <%= order.shipping_name %>
+                -
+                <%= order.shipping_address %>
+            </td>
+            <td>
+                <%= order.total %>
+            </td>
+            <td>
+                <%= order.aasm_state %>
+            </td>
+            <td>
+                <% case order.aasm_state %>
+                <% when "order_placed" %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <% when "paid" %>
+                <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <% when "shipping" %>
+                <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <% when "shipped" %>
+                <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <% when "good_returned" %>
+                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
+                <% when "order_cancelled" %>
+                <a href="#" , class="btn btn-danger" disable>已取消</a>
+                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
+                <% when "sent_cancell_require" %>
+                <a href="#" , class="btn btn-danger" disable>买家申请取消订单</a>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+
+                <% end %>
+            </td>
+
+        </tr>
         <% end %>
-      </td>
-
-    </tr>
-      <% end %>
-      <% end %>
+        <% end %>
     </tbody>
-  </table>
+</table>
 
-
-  <!-- <div>
+<!-- <div>
       <div class="row">
         <div class="col-md-12">
              <div class="panel panel-default panel-table">
