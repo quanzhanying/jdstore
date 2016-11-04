@@ -41,6 +41,8 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem "awesome_rails_console"
 gem 'roadie-rails', '~> 1.0'
+gem 'fog'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
