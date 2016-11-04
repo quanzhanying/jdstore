@@ -40,6 +40,7 @@ Rails.application.routes.draw do
       member do
         post :return_good
         post :deliver
+        post :require_cancel
       end
     end
   end

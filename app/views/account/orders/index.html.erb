@@ -51,9 +51,10 @@
                 <%  when "order_placed" %>
                 <%= link_to("取消订单", cancel_order_path(order.token), :method => :post, :data => { :confirm => "取消订单?" }) %>
                 <%  when "paid" %>
-                <p>
-                    配送中
-                </P>
+                <a>配送中</a>
+                |
+                <%= link_to("申请取消订单", require_cancel_account_order_path(order.token), :method => :post, :data => { :confirm => "取消订单?" }) %>
+
                 <%  when "shipping" %>
                 <%= link_to("收货", deliver_account_order_path(order.token), :method => :post) %>
                 <%  when "shipped" %>

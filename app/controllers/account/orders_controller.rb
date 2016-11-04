@@ -22,4 +22,11 @@ class Account::OrdersController < ApplicationController
     redirect_to account_orders_path
   end
 
+  def require_cancel
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.notify_cancel(@order).deliver!
+    redirect_to  products_path
+  end
+
+
 end

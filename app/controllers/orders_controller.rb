@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
       flash[:warning] = "订单已付款"
     else
       @order.pay_with_alipay!
+      OrderMailer.notify_paid(@order).deliver!
       redirect_to order_path(@order.token)
     end
   end
