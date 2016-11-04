@@ -13,22 +13,26 @@ class OrdersController < ApplicationController
   end
 
   def  pay_with_alipay
-   @order = Order.find(params[:id])
+   @order = Order.find_by_token(params[:id])
    if !@order.is_paid
      @order.is_paid = true
+     flash[:warning] = "Order has been paid."
      @order.make_payment!
    else
-     redirect_to account_orders_path
+     redirect_to order_path(@order.token)
    end
   end
 
   def pay_with_wechat
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     if !@order.is_paid
       @order.is_paid = true
+      flash[:warning] = "Order has been paid."
       @order.make_payment!
+
     else
-      redirect_to account_orders_path
+      @order.pay_with_wechat!
+      redirect_to order_path(@order.token)
     end
   end
   def create
@@ -51,6 +55,36 @@ class OrdersController < ApplicationController
     else
       render 'carts/checkout'
     end
+  end
+
+  def ship
+
+    @order = Order.find_by_token(params[:id])
+    #binding.pry
+    @order.ship!
+    @order.save
+
+    redirect_to :back
+  end
+
+
+  def cancell_order
+    @order = Order.find_by_token(params[:id])
+    @order.cancell_order!
+    redirect_to :back
+
+  end
+
+  def deliver
+    @order = Order.find_by_token(params[:id])
+    @order.deliver!
+    redirect_to :back
+  end
+
+  def return_good
+    @order = Order.find_by_token(params[:id])
+    @order.return_good!
+    redirect_to :back
   end
 
   private

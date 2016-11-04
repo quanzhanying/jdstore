@@ -5,6 +5,17 @@ class Order < ApplicationRecord
      self.token = SecureRandom.uuid
    end
 
+   def pay_with_alipay!
+     self.is_paid =  true
+     self.payment_method = "alipay"
+     self.save
+   end
+
+   def pay_with_wechat!
+     self.is_paid = true
+     self.payment_method = "wechat"
+     self.save
+   end
 
 
    belongs_to :user

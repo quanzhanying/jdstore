@@ -15,13 +15,27 @@ Rails.application.routes.draw do
    resources :orders do
      member do
        post :account
+       post :cancell_order
+       post :shipping
+       post :ship
+       post :shipped
      end
    end
  end
 
  namespace :admin do
-   resources :orders
+   resources :orders do
+     member do
+        put :ship
+        post :cancell_order
+        post :shipping
+        post :shipped
+        post :deliver
+        post :return_good
+     end
+  end
  end
+
   resources :products do
     member do
       post :add_to_cart
@@ -40,6 +54,12 @@ Rails.application.routes.draw do
     member do
       post :pay_with_wechat
       post :pay_with_alipay
+      put :ship
+      post :cancell_order
+      post :shipping
+      post :shipped
+      post :deliver
+      post :return_good
     end
   end
 
