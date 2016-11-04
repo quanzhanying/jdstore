@@ -8,6 +8,7 @@ class Account::OrdersController < ApplicationController
   def cancell
     @order = Order.find(params[:id])
     @order.cancell_order!
+    OrderMailer.notify_order_cancell(@order).deliver!
     redirect_to :back
   end
 
@@ -17,5 +18,15 @@ class Account::OrdersController < ApplicationController
     @order.make_payment!
     @order.save
     redirect_to account_orders_path
+  end
+
+  def require_cancell
+      @order = Order.find(params[:id])
+      OrderMailer.notify_order_cancell(@order).deliver!
+  end
+
+  def require_return_good
+    @order = Order.find(params[:id])
+    OrderMailer.notify_require_return_good(@order).deliver!
   end
 end

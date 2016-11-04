@@ -53,14 +53,17 @@ Rails.application.routes.draw do
       post :pay_with_wechat
       post :pay_with_alipay
     end
+      resources :product_lists
   end
 
   namespace :account do
     resources :orders do
       member do
+        post :require_cancell
         post :cancell
         post :pay_with_wechat
         post :pay_with_alipay
+        post :require_return_good
       end
     end
     resources :product_lists

@@ -30,193 +30,111 @@
         <%= order.aasm_state %>
       </td>
       <td>
-        <% if order.aasm_state == "paid" %>
+        <% case order.aasm_state %>
+        <% when "order_placed" %>
+         <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+        <% when "paid" %>
         <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <% else %>
-        <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-        <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
-        <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+         <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+        <% when "shipping" %>
+         <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+        <% when "shipped" %>
+         <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+        <% when "good_returned" %>
+         <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
+        <% when "order_cancelled" %>
+        <a href="#", class="btn btn-danger" disable>已取消</a>
+         <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
         <% end %>
       </td>
+
     </tr>
       <% end %>
       <% end %>
     </tbody>
   </table>
 
-  <!-- <div class="container">
-  	<div class="row">
 
-  		<section class="content">
-  			<h1>Table Filter</h1>
-  			<div class="col-md-8 col-md-offset-2">
-  				<div class="panel panel-default">
-  					<div class="panel-body">
-  						<div class="pull-right">
-  							<div class="btn-group">
-  								<button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
-  								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
-  								<button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
-  								<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
-  							</div>
-  						</div>
-  						<div class="table-container">
-  							<table class="table table-filter">
-  								<tbody>
-  									<tr data-status="pagado">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox1">
-  												<label for="checkbox1"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pagado">(Pagado)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="pendiente">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox3">
-  												<label for="checkbox3"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pendiente">(Pendiente)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="cancelado">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox2">
-  												<label for="checkbox2"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right cancelado">(Cancelado)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="pagado" class="selected">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox4" checked>
-  												<label for="checkbox4"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star star-checked">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pagado">(Pagado)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  									<tr data-status="pendiente">
-  										<td>
-  											<div class="ckbox">
-  												<input type="checkbox" id="checkbox5">
-  												<label for="checkbox5"></label>
-  											</div>
-  										</td>
-  										<td>
-  											<a href="javascript:;" class="star">
-  												<i class="glyphicon glyphicon-star"></i>
-  											</a>
-  										</td>
-  										<td>
-  											<div class="media">
-  												<a href="#" class="pull-left">
-  													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-  												</a>
-  												<div class="media-body">
-  													<span class="media-meta pull-right">Febrero 13, 2016</span>
-  													<h4 class="title">
-  														Lorem Impsum
-  														<span class="pull-right pendiente">(Pendiente)</span>
-  													</h4>
-  													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-  												</div>
-  											</div>
-  										</td>
-  									</tr>
-  								</tbody>
-  							</table>
-  						</div>
-  					</div>
-  				</div>
-  				<div class="content-footer">
-  					<p>
-  						Page © - 2016 <br>
-  						Powered By <a href="https://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a>
-  					</p>
-  				</div>
-  			</div>
-  		</section>
+  <!-- <div>
+      <div class="row">
+        <div class="col-md-12">
+             <div class="panel panel-default panel-table">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col col-xs-12">
+                      <h3 class="panel-title">Order List</h3>
+                    </div>
 
-  	</div>
-  </div> -->
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <table class="table table-striped table-bordered table-list">
+                    <thead>
+                      <tr>
+                          <th><em class="fa fa-cog"></em></th>
+                          <th class="hidden-xs">ID</th>
+                          <th>商品明细</th>
+                          <th>寄送资讯</th>
+                          <th>订购人</th>
+                          <th>总价</th>
+                          <th>订单状态</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                              <% @orders.each do |order| %>
+                              <% order.product_lists.each do |product_list| %>
+
+                              <td> <%= link_to admin_order_path(order), method: :delete do %>
+                                <a class="btn btn-danger"><em class="fa fa-trash" href=""></em></a>
+                                <% end %>
+                                <a class="btn btn-default"><em class="fa fa-pencil" href=""></em></a>
+
+                              </td>
+                              <td class="hidden-xs">1</td>
+
+
+                              <td><%= product_list.product_name %></td>
+                              <td>
+                                <%= order.billing_name %> - <%= order.billing_address %>
+                              </td>
+                              <td>
+                                <%= order.shipping_name %> - <%= order.shipping_address %>
+                              </td>
+                              <td>
+                                <%= order.total %>
+                              </td>
+                              <td>
+                                <%= order.aasm_state %>
+                              </td>
+
+
+                            </tr>
+                            <% end %>
+                            <% end %>
+                          </tbody>
+                  </table>
+
+                </div>
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="col col-xs-4">Page 1 of 5
+                    </div>
+                    <div class="col col-xs-8">
+                      <ul class="pagination hidden-xs pull-right">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                      </ul>
+                      <ul class="pagination visible-xs pull-right">
+                          <li><a href="#">«</a></li>
+                          <li><a href="#">»</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+  </div></div></div> -->
