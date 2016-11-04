@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :orders do
     member do
       post :cancell_order
+      post :cancelled
     end
   end
 end

@@ -13,8 +13,9 @@
               </th>
               <th>  总价 </th>
               <th>  订单状态  </th>
-
+              <th>  是否出货  </th>
               <th>  编辑操作  </th>
+              <th>  订单删除  </th>
             </tr>
           </thead>
 
@@ -31,9 +32,32 @@
               <td> <%= order.aasm_state %> </td>
 
               <td>
-                <%= link_to("取消订单", cancell_order_order_path(order), method: :post, :class => "btn btn-primary ", style: "margin-left:20px") %>
-                <%= link_to("出货", ship_order_path(order), method: :post, :class => "btn btn-danger ") %>
-              </td>
+
+               <% if order.aasm_state == 'paid' %>
+                   <%= link_to("出货", ship_order_path(order), method: :post, :class => "btn btn-warning ") %>
+               <% end %>
+
+                  <% if order.aasm_state == 'order_cancelled' %>
+                     <%= link_to("#","#",class: "btn btn-default") %>
+                <% end %>
+                  <% if order.aasm_state == 'shipping' %>
+                     <%= link_to("订单已出货","#",class: "btn btn-success") %>
+                <% end %>
+             </td>
+
+
+              <td>
+                <% if order.aasm_state == 'order_cancelled' %>
+                   <%= link_to("订单已取消","#",class: "btn btn-primary") %>
+                <% end %>
+                <% if order.aasm_state == 'paid' %>
+                   <%= link_to("取消订单", cancell_order_order_path(order), method: :post, :class => "btn btn-danger ", style: "margin-left:20px") %>
+              <% else %>
+                 <%= link_to("","#",) %>
+                 <% end %>
+                </td>
+                <td> <%= link_to("Delete", order_path(order), :method => :delete, :data => { :confirm => "Are you sure?"}) %> </td>
+
             </tr>
             <% end %>
           </tbody>

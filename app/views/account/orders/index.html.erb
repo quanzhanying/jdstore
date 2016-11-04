@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 全部订单</h2>
+    <h2> 我的订单</h2>
 
       <div class="row well">
         <table class="table table-bordered">
@@ -34,8 +34,17 @@
               <td> <%= order.is_paid %></td>
               <td> <%= order.payment_method %> </td>
               <td> <%= link_to("Delete", account_order_path(order.id), :method => :delete, :data => { :confirm => "Are you sure?"}) %> </td>
-              <td> <%= link_to("取消订单", cancell_order_account_order_path(order.id), :method => :post, :data => { :confirm => "Are you sure?"}, :class => "btn btn-danger ") %></td>
+              <td>
+                <%#= order.aasm_state%>
+              <% if order.aasm_state == 'order_cancelled' %>
 
+                <%= link_to("订单已取消","#",class: "btn btn-primary") %>
+                      <% else %>
+
+                <%= link_to("取消订单", cancell_order_account_order_path(order), :method => :post, :data => { :confirm => "Are you sure?"}, :class => "btn btn-danger ") %>
+
+              <% end %>
+              </td>
             </tr>
             <% end %>
           </tbody>

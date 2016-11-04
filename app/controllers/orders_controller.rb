@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+    redirect_to orders_path
+  end
 
 
   def show
@@ -19,7 +23,7 @@ class OrdersController < ApplicationController
     @order.payment_method = "支付宝"
     @order.make_payment!
     @order.save
-    OrderMailer.notify_order_placed(Order.last).deliver!
+    OrderMailer.notify_order_placed(@order).deliver!
     redirect_to account_orders_path
 
   end
@@ -30,24 +34,35 @@ class OrdersController < ApplicationController
     @order.payment_method = "微信"
     @order.make_payment!
     @order.save
-    OrderMailer.notify_order_placed(Order.last).deliver!
+    OrderMailer.notify_order_placed(@order).deliver!
     redirect_to account_orders_path
   end
 
   def cancell_order
     @order = Order.find(params[:id])
     @order.cancell_order!
-    OrderMailer.notify_order_cancelled(Order.last).deliver!
+    OrderMailer.notify_order_cancelled(@order).deliver!
     redirect_to :back
     flash[:alert] = "订单取消成功"
+  end
+
+  def cancelled
+    @order = Order.find(params[:id])
+    @order.cancell_order = true
+    @order.cancelled!
+
+    redirect_to :back
+    flash[:alert] = "订单取消成功"
+    @order.save
   end
 
   def ship
     @order = Order.find(params[:id])
     @order.ship!
 
-    OrderMailer.notify_order_ship(Order.last).deliver!
+    OrderMailer.notify_order_ship(@order).deliver!
     redirect_to :back
+    @order.save
     flash[:alert] = "出货成功"
   end
 
