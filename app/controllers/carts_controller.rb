@@ -17,5 +17,12 @@ class CartsController < ApplicationController
   #    @cart_items = @cart.cart_items.all
   # end
 
+  def show
+    @order = Order.find(params[:id])
+    @product_list = @group.product_lists
+  end
+   
+
+
 
 end

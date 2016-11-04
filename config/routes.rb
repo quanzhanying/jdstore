@@ -3,6 +3,7 @@ root 'products#index'
 devise_for :users
   namespace :admin do
    resources :products
+      resources :orders
  end
 
   resources :products do
@@ -15,8 +16,18 @@ devise_for :users
        post :checkout
      end
    end
- resources :carts
- resources :orders
+
+ resources :orders do
+   member do
+     post :pay_with_alipay
+     post :pay_with_wechat
+   end
+ end
  resources :cart_items
+
+ namespace :account do
+     resources :orders
+   end
+
 
   end

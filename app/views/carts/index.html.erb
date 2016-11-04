@@ -16,7 +16,7 @@
             </thead>
             <tbody>
 
-                <%-# @carts.each do |cart|--> <%= cart.XXX commented line -%>
+                <%# @carts.each do |cart|--> <%= cart.XXX commented line -%>
 
                 <% current_cart.cart_items.each do |cart_item| %>
                 <tr>
@@ -40,17 +40,14 @@
                     </td>
                     <td>
 
-                        <!-- <%= simple_form_for cart_item do |f| %>
-                        <%= f.input :quantity,:url=>cart_item_change_quantity_path(cart_item), method: :post  %>
-                        <%= f.submit "更改数量", data: { disable_with: "Submitting..." }, class:"btn btn-sm btn-primary" %>
-                        <hr>
-                        <% end %> -->
+                        <%#=# <!-- <%=# simple_form_for cart_item do |f| %> <%#=# f.input :quantity,:url=>cart_item_change_quantity_path(cart_item), method: :post %> <%#=# f.submit "更改数量", data: { disable_with: "Submitting..." }, class:"btn btn-sm btn-primary" %> <hr> <%#
+                        end %> --> -%>
 
                         <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>
                         <%= simple_form_for cart_item, url: cart_item_path(cart_item.product_id)  do |f| %>
-                         <%= f.input :quantity%>
-                         <%= f.submit "更改数量", data: { disable_with: "Submitting..."}, class:"btn btn-default btn-primary" %>
-                         <% end %>
+                        <%= f.input :quantity%>
+                        <%= f.submit "更改数量", data: { disable_with: "Submitting..."}, class:"btn btn-default btn-primary" %>
+                        <% end %>
                         <hr>
                         <%= link_to('删除商品', cart_item_path(cart_item), method: :delete, class:"btn btn-default btn-primary" ) %>
 

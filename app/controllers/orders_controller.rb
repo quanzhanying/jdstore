@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
         product_list.quantity = cart_item.quantity
         product_list.save
       end
+      current_cart.destroy
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
@@ -24,6 +25,22 @@ class OrdersController < ApplicationController
 def show
   @order = Order.find_by_token(params[:id])
   @product_lists = @order.product_lists
+end
+def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.pay!
+    @order.set_payment_with!("wechat")
+
+
+    redirect_to :back,notice: "听说你用微信付钱了，哈哈哈你被骗了"
+  end
+
+  def pay_with_alipay
+  @order = Order.find_by_token(params[:id])
+  @order.pay!
+  @order.set_payment_with!("alipay")
+
+  redirect_to :back,notice: "听说你用支付宝付钱了，悄悄告诉你被骗了"
 end
 
   private
