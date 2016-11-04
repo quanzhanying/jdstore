@@ -22,3 +22,9 @@
 config/database.yml
 
 public/uploads/*
+
+
+/config/application.yml
+/config/database.yml
+
+rootkey.csv
