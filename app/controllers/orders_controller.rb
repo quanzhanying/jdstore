@@ -2,8 +2,8 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
    def index
-     @orders = Order.all
-   end
+     @orders = current_user.orders
+  end
 
    def show
      @order = Order.find_by_token(params[:id])
@@ -37,8 +37,9 @@ end
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
     @order.payment_method = "wechat"
-    #@order.make_payment!
+    @order.make_payment!
     @order.save
+    OrderMailer.notify_order_placed(Order.last).deliver!
 
   redirect_to account_orders_path
 
@@ -50,12 +51,36 @@ end
     @order = Order.find_by_token(params[:id])
     @order.is_paid = true
     @order.payment_method = "alipay"
-    #@order.make_payment!
+    @order.make_payment!
     @order.save
+    OrderMailer.notify_order_placed(Order.last).deliver!
 
     redirect_to account_orders_path
-
 end
+
+
+  def cancell
+    @order = Order.find(params[:id])
+    @order.is_cancell = false
+    @order.save
+    redirect_to :back
+    OrderMailer.notify_order_cancelled(Order.last).deliver!
+  end
+
+  def cancelled
+    @order = Order.find(params[:id])
+    @order.is_cancell = true
+    @order.save
+    redirect_to :back
+    OrderMailer.notify_order_placed(Order.last).deliver!
+  end
+
+  def ship
+    @order = Order.find(params[:id])
+    @order.ship!
+    redirect_to :back
+    OrderMailer.notify_order_ship(Order.last).deliver!
+  end
 
 
   private

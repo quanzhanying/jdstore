@@ -60,8 +60,10 @@
        </tbody>
      </table>
      <div class="pull-right">
-       <%= link_to("支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-       <%= link_to("微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+       <% if @order.is_paid == false %>
+          <%= link_to("支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+          <%= link_to("微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+       <% end %>
      </div>
   </div>
 </div>
