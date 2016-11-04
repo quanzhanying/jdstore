@@ -35,12 +35,12 @@
            </td>
 
            <td>
-             <% if order.aasm_state == 'shipping' %>
-             出货中
+             <% if order.aasm_state == 'paid' %>
+            <%= link_to("出货", ship_order_path(order), :method => :post, :class => "btn btn-danger") %>
            <%#= link_to("出货中", shipped_order_path(order), :method => :post, :class => "btn btn-danger") %>
-            <% elsif order.aasm_state == 'shipped' %>
-            已出货
-          <%#= link_to("已出货", ship_order_path(order), :method => :post, :class => "btn btn-danger") %>
+            <%# elsif order.aasm_state == 'shipped' %>
+              <% else %>
+             <%= link_to("已出货", "", :class => "btn btn-danger") %>
              <% end %>
             </td>
         </tr>

@@ -30,8 +30,7 @@ Rails.application.routes.draw do
       post :pay_with_wechat
       post :pay_with_alipay
       post :cancell
-      post :shipping
-      post :shipped
+      post :ship
     end
   end
 
