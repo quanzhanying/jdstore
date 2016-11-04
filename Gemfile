@@ -41,7 +41,7 @@ gem 'pry'
 gem 'roadie-rails', '~> 1.0'
 gem 'figaro'
 
-gem :production do
+group :production do
 	gem "pg"
 end
 
