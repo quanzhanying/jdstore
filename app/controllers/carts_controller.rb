@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
   def checkout
     @order = Order.new
-  end 
+  end
 
   def destroy_cart
     # @product = Product.find(params[:product_id])

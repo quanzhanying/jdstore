@@ -10,8 +10,10 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image       :string
+#  in_the_cart :boolean          default(TRUE)
 #
 
 class Product < ApplicationRecord
-  mount_uploader :image, ImageUploader 
+  mount_uploader :image, ImageUploader
+  belongs_to :cart
 end

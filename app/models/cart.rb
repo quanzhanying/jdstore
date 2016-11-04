@@ -1,19 +1,26 @@
+# == Schema Information
+#
+# Table name: carts
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
 
   def add_product_to_cart(product)
+    # 括号里的（product）是
     ci = cart_items.build
     ci.product = product
     ci.quantity = 1
     ci.save
   end
 
-  def destroy_product_to_cart(product)
-    di = cart_items.destry
-    di.product = product
-    di.quantity = -1
-    di.save
+  def have_product_id(product)
+    participated_carts.include?(product)
   end
 
   def total_price
