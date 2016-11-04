@@ -15,8 +15,7 @@ class Cart < ApplicationRecord
 
     # current_item = @items.find {|item| item.product == product}
     #判断是否存在，存在当前的item，则购物车数量增加1，否则把CartItem放进items里头
-      cart_item = self.cart_items.find_by_product_id(product.id)
-      if 
+    if cart_item = self.cart_items.find_by_product_id(product.id)
        cart_item.quantity = cart_item.quantity+1
        cart_item.save
 
