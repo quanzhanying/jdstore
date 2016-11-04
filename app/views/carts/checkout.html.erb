@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> 商品详单 </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th> 商品 </th>
+          <th>单价</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+                <%= cart_item.quantity %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        <span>
+          总计 <%= render_cart_total_price(current_cart) %> RMB
+        </span>
+      </span>
+    </div>
+
+    <hr>
+    <h2> 收件信息 </h2>
+
+    <h3> 付款人 </h3>
+    <hr>
+    <%= simple_form_for @order do |f| %>
+      <%= f.input :billing_name, :label => "Billing Name" %>
+      <%= f.input :billing_address, :label => "Billing Address"  %>
+
+      <h3> 商品详单 </h3>
+      <hr>
+      <%= f.input :shipping_name, :label => "收件人" %>
+      <%= f.input :shipping_address, :label => "收件人地址"  %>
+      <hr>
+      <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right", data: { disable_with: "Submitting..." } %>
+    <% end %>
+
+  </div>
+</div>
