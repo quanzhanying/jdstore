@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+    OrderMailer.notify_order_placed(order.last).deliver!
   end
 
   def create
@@ -43,7 +44,7 @@ class OrdersController < ApplicationController
       @order.save
 
       end
-    redirect_to  :back
+    redirect_to :back
   end
 
   def pay_with_wechat
@@ -51,7 +52,7 @@ class OrdersController < ApplicationController
     if @order.is_paid
       flash[:alert] = '已支付！'
 
-      redirect_to  :back
+      redirect_to :back
     else
       @order.is_paid = true
       @order.payment_method = '微信'
@@ -59,12 +60,35 @@ class OrdersController < ApplicationController
       @order.save
 
       end
-    redirect_to  :back 
+    redirect_to :back
+  end
+
+  def cancell
+    @order = Order.find(params[:id])
+    @order.is_cancell = true
+    @order.save
+    redirect_to :back
+    OrderMailer.notify_order_cancelled(@order).deliver!
+  end
+
+  def shipping
+    @order = Order.find(params[:id])
+    @order.is_ship = false
+    @order.save
+    redirect_to :back
+  end
+
+  def shipped
+    @order = Order.find(params[:id])
+    @order.is_ship = true
+    @order.save
+    redirect_to :back
+    OrderMailer.notify_shipped(@order).deliver!
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :is_paid, :payment_method, :is_cancell, :is_ship)
   end
 end
