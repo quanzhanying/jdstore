@@ -28,7 +28,7 @@ class OrderMailer < ApplicationMailer
     @user = order.user
     @product_lists = @order.product_lists
 
-    mail(to: @user.email, subject: "感谢您,我的订单已申请取消，以下是我这次的订单明细#{order.token}")
+    mail(to: @user.email, subject: "感谢您,我的订单已申请取消，请尽快批准！以下是我这次的订单明细#{order.token}")
   end
 
   def notify_good_returned(order)
@@ -36,6 +36,6 @@ class OrderMailer < ApplicationMailer
     @user = order.user
     @product_lists = @order.product_lists
 
-    mail(to: @user.email_find_by(user.is_admin), subject: "感谢您,我的货物已申请退货，以下是我这次的退货清单明细#{order.token}")
+    mail(to: @user.email, subject: "感谢您,我的货物已申请退货，以下是我这次的退货清单明细#{order.token}")
   end
 end

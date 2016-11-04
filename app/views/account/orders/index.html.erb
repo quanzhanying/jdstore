@@ -74,15 +74,32 @@
                 </td>
 
                 <td>
-                  <% if order.is_cancell == false %>
-                    <%= link_to("申请取消订单",cancell_admin_order_path(order),method: :post,class:"btn btn-danger") %>
-                <% else %>
-                    <%= link_to("已取消订单",cancell_admin_order_path(order),method: :post,class:"btn btn-default") %>
+                    <% if order.order_placed? || order.paid?  %>
+                    <%=link_to("取消订单",cancell_order_order_path(order),method: :post,class:"btn btn-danger")  %>
+                <%   else  %>
+                    已取消订单
                     <% end %>
+                </td>
+                <td>
+                    <% if order.aasm_state == "shipping" %>
+                    <%=link_to("确认到货",deliver_order_path(order),method: :post,class:"btn btn-danger")  %>
+                <%   else  %>
+                    确认到货
+                    <% end %>
+                </td>
+                <td>
+                    <% if  order.shipped? %>
+                    <%=link_to("退货",return_good_order_path(order),method: :post,class:"btn btn-danger")  %>
+                <% else %>
+                    退货
+                    <% end  %>
                 </td>
 
             </tr>
             <% end %>
         </tbody>
     </table>
+    <div class="text-center">
+  <%= will_paginate @posts %>
+</div>
 </div>

@@ -19,12 +19,19 @@
                 <th>
                     支付方式
                 </th>
+
                 <th>
                     取消订单
                 </th>
                 <th>
+                    AASM
+                </th>
+                <th>
                     出货状态
                 </th>
+                <td>
+                退货
+                </td>
             </tr>
         </thead>
 
@@ -48,23 +55,38 @@
                     <%= order.payment_method %>
                 </td>
                 <td>
-                    <% if order.is_cancell == false %>
-                    <%=link_to("取消订单",cancell_admin_order_path(order),method: :post,class:"btn btn-danger")  %>
+                    <% if order.order_placed? || order.paid?  %>
+                    <%=link_to("取消订单",cancell_order_order_path(order),method: :post,class:"btn btn-danger")  %>
                 <% else  %>
-                    <%=link_to("已取消订单",cancelled_admin_order_path(order),method: :post,class:"btn btn-danger")  %>
+                    已取消订单
                     <% end  %>
                 </td>
                 <td>
-                    <% if order.is_ship == false %>
-                    <%=link_to("出货",shipping_admin_order_path(order),method: :post,class:"btn btn-danger")  %>
-                <% else  %>
+                  <%= order.aasm_state %>
+                </td>
+                <td>
+                    <% if  order.is_paid? && order.aasm_state == 'paid'%>
 
-                    <%=link_to("已发货",shipped_admin_order_path(order),method: :post,class:"btn btn-danger")  %>
-
+                    <%=link_to("出货",ship_order_path(order),method: :post,class:"btn btn-danger")  %>
+                      <% else  %>
+                      出货
                     <% end  %>
                 </td>
+                <td>
+                  <% if order.aasm_state == "shipped"  %>
+                  <%= link_to("退货",return_good_order_path(order),method: :post,class:"btn btn-danger") %>
+
+                  <% else  %>
+
+                  退货
+                  <% end  %>
+                </td>
+
             </tr>
             <% end  %>
         </tbody>
     </table>
+    <div class="text-center">
+  <%= will_paginate @posts %>
+</div>
 </div>

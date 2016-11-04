@@ -8,9 +8,14 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @product = Product.find(params[:id]) 
-    current_cart.add_product_to_cart(@product)
-    redirect_to :back
+    @product = Product.find(params[:id])
+      if @product.id>0
+       current_cart.add_product_to_cart(@product)
+       redirect_to :back
+      else
+      flash[:alert] = "库存为零"
+      redirect_to :back
+      end
   end
 
   def destroy_to_cart
