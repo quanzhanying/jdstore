@@ -1,0 +1,2 @@
+module AddToCart::ProductsHelper
+end

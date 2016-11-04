@@ -1,0 +1,21 @@
+
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
+       <% if product.image.present? %>
+       <%= link_to(image_tag(product.image.thumb.url),product_path(product), class: "thumbnail") %>
+       <% else %>
+       <%=image_tag("http://placehold.it/200x200&text=No Pic") %>
+       <% end %>
+      <div class="caption">
+        <p>
+          <a href="product_path(product)" class="btn btn-primary" role="button">购买</a>
+          <a href="product_path(product)" class="btn btn-default" role="button">了解详情</a>
+        </p>
+        <td><%= link_to(product.title, product_path(product)) %></td>
+      </div>
+    </div>
+  </div>
+    <% end %>
+</div>

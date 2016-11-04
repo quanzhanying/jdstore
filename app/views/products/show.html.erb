@@ -1,0 +1,29 @@
+
+<h1> <%= @product.title %> </h1>
+
+<table class="table table-boldered">
+    <thead>
+        <tr>
+            <td>商品</td>
+            <td>商品描述</td>
+            <td>库存</td>
+            <td>价格</td>
+
+            <td>图片</td><td></td>
+
+        </tr>
+
+    </thead>
+
+
+
+<td><%= @product.description %></td>
+
+<td><%= @product.price %></td>
+
+<td><%= @product.quantity %></td>
+<td><%= image_tag@product.image_url %></td>
+<td><%= link_to("加入購物車", add_to_cart_product_path(@product), method: :post, :class => "btn btn-primary btn-lg btn-danger") %></td>
+
+
+</table>
