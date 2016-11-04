@@ -1,0 +1,40 @@
+<div class="col-md-12">
+  <h2 class="text-center"> 我的订单 </h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>单号</th>
+        <th>商品</th>
+        <th>定单名</th>
+        <th>总额</th>
+        <th>付款状态</th>
+        <th>付款方式</th>
+        <th>订单状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+      <tr>
+        <td> <%= order.id %> </td>
+        <td>
+          <% order.product_lists.each do |product_list|%>
+            <%= product_list.product_name %>
+          <% end %>
+        </td>
+        <td> <%= order.billing_name %> </td>
+        <td> <%= order.total %> </td>
+        <td> <%= order.is_paid %> </td>
+        <td> <%= order.payment_method %> </td>
+        <td>
+          <% if order.is_cancell == false %>
+            <%= link_to("取消订单", cancelled_admin_order_path(order),  :method => :post, :class => "btn btn-sm btn-success" )%>
+          <% else %>
+            <%= link_to("已取消订单", cancell_admin_order_path(order),  :method => :post, :class => "btn btn-sm btn-danger" )%>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
