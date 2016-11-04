@@ -1,11 +1,13 @@
 class OrderMailer < ApplicationMailer
+  default from: "me@MYDOMAIN.com"
+
   def notify_order_placed(order)
     @order = order
     @user = order.user
     @product_lists = @order.product_lists
 
     mail(to: @user.email,
-    subject: "[JDstore] 感谢您本次剁手，以下是您的✋。#{order.token}")
+    subject: "[JDstore] 感谢您本次剁手，以下是您的。#{order.token}")
   end
 
   def notify_order_cancelled_from_user(order)
@@ -14,7 +16,7 @@ class OrderMailer < ApplicationMailer
     @product_lists = @order.product_lists
 
     mail(to: "admin@a.com",
-    subject: "大爷我错了😭。#{order.token}")
+    subject: "大爷我错了。#{order.token}")
   end
 
   def notify_order_cancelled_from_admin(order)
@@ -23,7 +25,7 @@ class OrderMailer < ApplicationMailer
     @product_lists = @order.product_lists
 
     mail(to: @user.email,
-    subject: "不好意思，老子不卖了😆。#{order.token}")
+    subject: "不好意思，老子不卖了。#{order.token}")
   end
 
   # def product_list_total_price
