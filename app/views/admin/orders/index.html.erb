@@ -1,0 +1,50 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 所有订单 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> 序号 </th>
+        <th> 产品 </th>
+        <th> 价格 </th>
+        <th> 付款方式 </th>
+        <th> 付款状态 </th>
+        <th> 订单状态 </th>
+        <th> 订单操作 </th>
+        <th> 出货状态 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= order.id %> </td>
+          <td> <%= order.billing_name %> </td>
+          <td> <%= order.total %> </td>
+          <td> <%= order.payment_method %> </td>
+          <td> <%= order.is_paid %> </td>
+          <td> <%= order.aasm_state %> </td>
+          <td>
+            <% if order.aasm_state == 'order_cancelled' %>
+          <%= link_to("取消订单", cancell_order_path(order), :method => :post, :class => "btn btn-danger") %>
+           <% else %>
+          <%= link_to("订单已取消", "", :class => "btn btn-danger") %>
+            <% end %>
+           </td>
+
+           <td>
+             <% if order.aasm_state == 'paid' %>
+            <%= link_to("出货", ship_order_path(order), :method => :post, :class => "btn btn-danger") %>
+           <%#= link_to("出货中", shipped_order_path(order), :method => :post, :class => "btn btn-danger") %>
+            <%# elsif order.aasm_state == 'shipped' %>
+              <% else %>
+             <%= link_to("已出货", "", :class => "btn btn-danger") %>
+             <% end %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
