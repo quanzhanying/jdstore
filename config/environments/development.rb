@@ -60,5 +60,19 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :letter_opener
 
+  # # mailgun
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :authentication => :plain,
+  #   :address => "smtp.mailgun.org",
+  #   :port => 587,
+  #   :domain => "MYDOMAIN.mailgun.org",
+  #   :user_name => "postmaster@MYDOMAIN.mailgun.org",
+  #   :password => "MYPASSWORD"
+  # }
+  Mailgun.configure do |config|
+    config.api_key = 'key-06bf80eb430e74e4027cd3650a7fae30'
+  end
+
 
 end

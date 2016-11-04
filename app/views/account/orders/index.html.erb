@@ -46,7 +46,9 @@
             <% end %>
           </td>
           <td>
+          <% if order.aasm_state == 'order_placed' || order.aasm_state == 'paid'%>
             <%= link_to('退订',account_order_apply_cancell_order_path(order.token),:method => :post,class: "btn btn-sm btn-default") %>
+            <% end %>
           </td>
 
 

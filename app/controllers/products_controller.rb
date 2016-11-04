@@ -33,6 +33,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    puts '~~ before mail ~~'
+    
+
+
+    puts '~~ after mail ~~'
   end
 
   # def update

@@ -42,6 +42,9 @@ gem 'aasm'
 gem "awesome_rails_console"
 gem 'fog'
 gem 'figaro'
+# gem 'mailgun_rails'
+
+gem 'mailgun-ruby', '~>1.1.1'
 
 
 gem 'annotate'
