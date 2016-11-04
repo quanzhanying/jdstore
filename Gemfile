@@ -40,6 +40,7 @@ gem 'awesome_rails_console'
 gem 'pry'
 gem 'roadie-rails', '~> 1.0'
 gem 'figaro'
+gem 'fog'
 
 group :production do
 	gem "pg"
