@@ -33,11 +33,11 @@
                       <% if current_user.admin? %>
                       <li> <%= link_to("Admin 选单", admin_products_path ) %></li>
                       <li> <%= link_to("所有订单", admin_orders_path) %></li>
-                        <li>  <%= link_to("我的订单", account_orders_path) %></li>
+                        <li>  <%= link_to("用户订单", account_orders_path) %></li>
                       <li class="divider"> </li>
                     </ul>
                     <% end %>
-
+                       <li>  <%= link_to("我的订单", account_orders_path) %></li>
                       <li> <%= link_to(content_tag(:i,'登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
 
                   </li>

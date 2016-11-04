@@ -61,7 +61,7 @@ end
 
   def cancell
     @order = Order.find(params[:id])
-    @order.is_cancell = false
+    @order.is_cancell = true
     @order.save
     redirect_to :back
     OrderMailer.notify_order_cancelled(Order.last).deliver!
