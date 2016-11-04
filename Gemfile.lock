@@ -72,6 +72,8 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    css_parser (1.4.6)
+      addressable
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -160,6 +162,12 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    roadie (3.2.0)
+      css_parser (~> 1.4.5)
+      nokogiri (>= 1.5.0, < 1.7.0)
+    roadie-rails (1.1.1)
+      railties (>= 3.0, < 5.1)
+      roadie (~> 3.1)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -225,6 +233,7 @@ DEPENDENCIES
   pry
   puma (~> 3.0)
   rails (~> 5.0.0)
+  roadie-rails (~> 1.0)
   sass-rails (~> 5.0)
   simple_form
   spring

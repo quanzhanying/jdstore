@@ -39,14 +39,18 @@
         <td>
           <% if order.paid? %>
             <%= link_to("出货", ship_admin_order_path(order.token) , :method => :post, :class => "btn btn-xs btn-default") %>
+          <% elsif order.waiting_cancel? %>
+            <%= link_to("同意取消", cancel_order_admin_order_path(order.token) , :method => :post, :class => "btn btn-xs btn-default") %>
           <% elsif order.order_cancelled? %>
-            订单取消
+              订单取消
           <% elsif order.shipping? %>
-            已出货
+              已出货
           <% elsif order.order_placed? %>
-            未付款
+              未付款
+          <% elsif order.shipped? %>
+              已签收
           <% elsif order.good_returned? %>
-            已退货
+              已退货
           <% end %>
 
           <% if order.order_placed? %>
@@ -54,7 +58,7 @@
           <% elsif order.paid? %>
           | <%= link_to("取消订单", cancel_order_admin_order_path(order.token) , :method => :post, :class => "btn btn-xs btn-default") %>
           <% else  %>
-          <% end %>
+        <% end %>
 
         </td>
       </tr>

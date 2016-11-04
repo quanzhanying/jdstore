@@ -62,6 +62,7 @@ Rails.application.routes.draw do
         post :cancel_order
         post :deliver
         post :return_good
+        post :wish_cancel
       end
     end
   end

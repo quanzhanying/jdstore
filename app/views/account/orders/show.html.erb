@@ -1,98 +1,118 @@
 <div class="row">
-  <div class="col-md-12">
+    <div class="col-md-12">
 
-    <h2> 详单明细 </h2>
+        <h2>
+            详单明细
+        </h2>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>商品</th>
-          <th>单价</th>
-          <th>数量</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @product_lists.each do |product_list| %>
-          <tr>
-            <td>
-              <%= product_list.product_name %>
-            </td>
-            <td>
-              <%= product_list.product_price %>
-            </td>
-            <td>
-              <%= product_list.quantity %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @product_lists.each do |product_list| %>
+                <tr>
+                    <td>
+                        <%= product_list.product_name %>
+                    </td>
+                    <td>
+                        <%= product_list.product_price %>
+                    </td>
+                    <td>
+                        <%= product_list.quantity %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
 
+        <div class="total clearfix">
+            <span class="pull-right">
+                <span>
+                    总计
+                    <%= render_cart_total_price(current_cart) %>
+                    RMB
+                </span>
+            </span>
+        </div>
 
-    <div class="total clearfix">
-      <span class="pull-right">
-        <span>
-          总计 <%= render_cart_total_price(current_cart) %> RMB
-        </span>
-      </span>
+        <hr>
+        <h2>
+            寄送信息
+        </h2>
+
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        订购人
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%= @order.billing_name %>
+                        |
+                        <%= @order.billing_address %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        收件人
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%= @order.shipping_name %>
+                        |
+                        <%= @order.shipping_address %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pull-right">
+
+            <% if @order.order_placed?%>
+            <%= link_to("支付宝付款", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-primary" ) %>
+            <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_order_path(@order.token), :method => :post ) %>
+            <%= link_to(" Apple Pay", pay_with_apple_order_path(@order.token), :method => :post, :class => "btn btn-default" ) %>
+            <%= link_to("取消订单", cancel_order_account_order_path(@order.token), :method => :post, :class => "btn btn-warning" ) %>
+            <% end %>
+
+            <% if @order.paid? %>
+            <a href="#" class="btn btn-danger" disabled> 已付款 </a>
+            <%= link_to("申请取消订单", wish_cancel_account_order_path(@order.token), :method => :post, :class => "btn btn-warning" ) %>
+            <% end %>
+
+            <% if @order.waiting_cancel? %>
+            <a href="#" class="btn btn-danger" disabled>
+                等待确认@
+            </a>
+            <% end %>
+
+            <% if @order.order_cancelled? %>
+            <a href="#" class="btn btn-danger" disabled>
+                订单已取消
+            </a>
+            <% end %>
+
+            <% if @order.shipping? %>
+            <%= link_to("确认收货", deliver_account_order_path(@order.token), :method => :post, :class => "btn btn-success" ) %>
+            <% end %>
+
+            <% if @order.shipped? %>
+            <%= link_to("退货", return_good_account_order_path(@order.token), :method => :post, :class => "btn btn-danger" ) %>
+            <% end %>
+
+            <% if @order.good_returned? %>
+            <a href="#" class="btn btn-danger" disabled>
+                已退货
+            </a>
+            <% end %>
+
+        </div>
     </div>
-
-    <hr>
-    <h2> 寄送信息 </h2>
-
-    <table class="table table-striped table-bordered">
-      <tbody>
-        <tr>
-          <td>
-            订购人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.billing_name %> | <%= @order.billing_address %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            收件人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.shipping_name %> | <%= @order.shipping_address %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="pull-right">
-
-      <% if @order.order_placed?%>
-        <%= link_to("支付宝付款", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-primary" ) %>
-        <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_order_path(@order.token), :method => :post ) %>
-        <%= link_to(" Apple Pay", pay_with_apple_order_path(@order.token), :method => :post, :class => "btn btn-default" ) %>
-        <%= link_to("取消订单", cancel_order_account_order_path(@order.token), :method => :post, :class => "btn btn-warning" ) %>
-      <% end %>
-
-      <% if @order.paid? %>
-        <a href="#" class="btn btn-danger" disabled> 已付款 </a>
-      <% end %>
-
-      <% if @order.order_cancelled? %>
-        <a href="#" class="btn btn-danger" disabled> 订单已取消 </a>
-      <% end %>
-
-      <% if @order.shipping? %>
-        <%= link_to("确认收货", deliver_account_order_path(@order.token), :method => :post, :class => "btn btn-success" ) %>
-      <% end %>
-
-      <% if @order.shipped? %>
-        <%= link_to("退货", return_good_account_order_path(@order.token), :method => :post, :class => "btn btn-danger" ) %>
-      <% end %>
-
-      <% if @order.good_returned? %>
-        <a href="#" class="btn btn-danger" disabled> 已退货 </a>
-      <% end %>
-
-    </div>
-  </div>
 </div>

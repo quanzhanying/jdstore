@@ -38,10 +38,17 @@ class Account::OrdersController < ApplicationController
     end
   end
 
-
   def cancel_order
     @order = Order.find_by_token(params[:id])
     @order.cancel_order!
+    OrderMailer.notify_order_cancelled(@order).deliver!
+    redirect_to :back
+  end
+
+  def wish_cancel
+    @order = Order.find_by_token(params[:id])
+    @order.wish_cancel!
+    OrderMailer.order_cancel_request(@order).deliver!
     redirect_to :back
   end
 

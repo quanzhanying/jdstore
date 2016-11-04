@@ -15,6 +15,7 @@ class Admin::OrdersController < ApplicationController
   def ship
     @order = Order.find_by_token(params[:id])
     @order.ship!
+    OrderMailer.notify_order_depatched(@order).deliver!
     redirect_to :back
   end
 
