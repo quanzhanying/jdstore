@@ -1,0 +1,39 @@
+<div class="pull-right">
+  <%= link_to("炸毁购物车", current_cart, :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-default" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>image</td>
+    <td>Title</td>
+    <td>Quantity</td>
+    <td>Price</td>
+    <td>Totle</td>
+    <td>Opration</td>
+  </tr>
+  <% @cart_item.each do |c1| %>
+    <tr>
+      <td><%= image_tag(c1.product.image.medium.url) %></td>
+      <td><%= c1.product.title %></td>
+      <td>
+        <%= link_to("＋", add_quantity_cart_item_path(c1), method: :post, :class => "btn-default" )%>
+        <%= c1.quantity %>
+        <%= render_cart_item_cant_negative(c1)%>
+      </td>
+      <td><%= c1.product.price %></td>
+      <td><%= c1.quantity * c1.product.price  %></td>
+      <td><%= link_to("不买了", cart_item_path(c1), :method => :delete, :data => { :confirm => "今日不剁再等一年?" }, :class => "btn btn-default" ) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="pull-right">
+<span>
+  总计：<%= render_cart_total_price(current_cart) %>￥
+</span>
+<br><br>
+
+<%= link_to("确认购买",checkout_carts_path(current_cart), method: :post,class: "btn btn-lg btn-danger pull-right") %>
+</div>

@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>order_id</td>
+    <td>total</td>
+    <td>payment_method</td>
+    <td>is_paid</td>
+    <td>aasm_state</td>
+    <td>created_at</td>
+  </tr>
+  <% @order.each do |order| %>
+  <tr>
+    <td><%= link_to(order.id,account_order_path(order.token),method: :get) %></td>
+    <td><%= order.total%></td>
+    <td><%= order.payment_method %></td>
+    <td><%= order.is_paid %></td>
+    <td><%= order.aasm_state %></td>
+    <td><%= order.created_at %></td>
+  </tr>
+  <% end %>
+</table>
