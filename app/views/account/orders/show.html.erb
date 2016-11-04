@@ -76,9 +76,9 @@
         <div class="pull-right">
 
             <% if @order.order_placed?%>
-            <%= link_to("支付宝付款", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-primary" ) %>
-            <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_order_path(@order.token), :method => :post ) %>
-            <%= link_to(" Apple Pay", pay_with_apple_order_path(@order.token), :method => :post, :class => "btn btn-default" ) %>
+            <%= link_to("支付宝付款", pay_with_alipay_account_order_path(@order.token), :method => :post, :class => "btn btn-primary" ) %>
+            <%= link_to(content_tag(:i, "微信支付", class: " btn btn-success fa fa-weixin"), pay_with_wechat_account_order_path(@order.token), :method => :post ) %>
+            <%= link_to(" Apple Pay", pay_with_apple_account_order_path(@order.token), :method => :post, :class => "btn btn-default" ) %>
             <%= link_to("取消订单", cancel_order_account_order_path(@order.token), :method => :post, :class => "btn btn-warning" ) %>
             <% end %>
 
@@ -89,7 +89,7 @@
 
             <% if @order.waiting_cancel? %>
             <a href="#" class="btn btn-danger" disabled>
-                等待确认@
+                等待商家确认取消
             </a>
             <% end %>
 
