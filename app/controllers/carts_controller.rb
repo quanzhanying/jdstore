@@ -20,5 +20,11 @@ class CartsController < ApplicationController
   end
 
 
-  
+  def plus_quantity
+    @cart_item = CartItem.where(:cart_id => @cart.id)
+    @cart_item.quantity += 1
+    @cart_item.save
+  end
+
+
 end
