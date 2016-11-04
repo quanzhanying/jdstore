@@ -41,9 +41,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    airbrake (5.6.1)
+      airbrake-ruby (~> 1.6)
+    airbrake-ruby (1.6.0)
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
+    ansi (1.5.0)
     arel (7.1.1)
     autoprefixer-rails (6.5.0.2)
       execjs
@@ -52,6 +56,12 @@ GEM
       awesome_print
       pry-rails
       railties
+    aws-sdk (2.6.18)
+      aws-sdk-resources (= 2.6.18)
+    aws-sdk-core (2.6.18)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.6.18)
+      aws-sdk-core (= 2.6.18)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -66,6 +76,11 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    chronic (0.10.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -230,6 +245,7 @@ GEM
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jmespath (1.3.1)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -260,6 +276,15 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
+    papertrail (0.9.17)
+      ansi (~> 1.5)
+      chronic (~> 0.10)
     pg (0.19.0)
     pkg-config (1.1.7)
     pry (0.10.4)
@@ -364,8 +389,10 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  airbrake
   annotate
   awesome_rails_console
+  aws-sdk
   bootstrap-sass
   byebug
   carrierwave
@@ -381,6 +408,8 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   mini_magick
+  paperclip
+  papertrail
   pg
   pry
   pry-byebug
@@ -398,4 +427,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.2
+   1.13.6
