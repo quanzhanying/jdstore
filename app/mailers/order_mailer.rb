@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-
+	include Roadie::Rails::Automatic
 
 # From nothing to "order_placed"
 	def notify_order_placed(order)
@@ -13,7 +13,7 @@ class OrderMailer < ApplicationMailer
 # From "order_placed" to "paid" - NO EMAIL
 
 # FROM "order_placed" or "paid" to "order_cancelled"
-	# User initiate
+	# User initiate (but only Admin can cancel)
 	def user_wants_cancel(order)
 		@order = order
 		@user = order.user

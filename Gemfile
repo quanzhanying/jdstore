@@ -40,7 +40,7 @@ gem 'aasm'
 gem 'letter_opener', group: :development
 gem 'awesome_rails_console'
 gem 'pry'
-#gem "roadie", "2.4.3"
+gem 'roadie-rails', '~> 1.0'
 gem 'figaro'
 
 
