@@ -1,28 +1,77 @@
 
+<div class="well text-center">
+    <button type="button" class="btn btn-hot text-uppercase btn-lg">Hot button</a>
+</button>
+<button type="button" class="btn btn-sunny text-uppercase btn-lg">Sunny button</a>
+</button>
+<button type="button" class="btn btn-fresh text-uppercase btn-lg">Fresh button</a>
+</button>
+<button type="button" class="btn btn-sky text-uppercase btn-lg">sky button</a>
+</button>
+</div>
+
+<div class="container">
 <div class="row">
-  <% @products.each do |product| %>
-  <%= link_to(product_path(product)) do %>
-  <div class="col-sm-6 col-md-3">
+<!-- Carousel -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+</ol>
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="item active">
+    <%= image_tag "002.jpg" %>
+    <!-- <img src="http://stokpic.com/wp-content/uploads/2015/09/Everything-Apple-iMac-iPhone-iPad-Macbook-And-Apple-Watch.jpg" alt="First slide"> -->
+    <!-- Static Header -->
+    <div class="header-text hidden-xs">
+        <div class="col-md-12 text-center">
+            <h2>
+                <span>Welcome to
+                    <strong>LOREM IPSUM</strong>
+                </span>
+            </h2>
+            <br>
+            <h3>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            </h3>
+            <br>
 
-    <div class="thumbnail">
-      <% if product.image.present? %>
-      <%= image_tag(product.image.thumb.url, class: "thumbnail" ) %>
-      <% else %>
-      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <div class="caption">
-      <h3>  <%= product.title %></h3>
-        <p>
-          <%= link_to("look look", product_path(product), class: "btn btn-danger") %>
-
-          <%= link_to("加入购物车",add_to_cart_product_path(product),method: :post, class: "btn btn-default") %>
-
-        </p>
-      </div>
+        </div>
+        <!-- /header-text -->
     </div>
 
-  </div>
-  <% end %>
+</div>
+
+<br><br>
+
+<div class="row">
+    <% @products.each do |product| %>
+    <%= link_to(product_path(product)) do %>
+    <div class="col-sm-6 col-md-3">
+
+        <div class="thumbnail">
+            <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail" ) %>
+        <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+            <% end %>
+            <div class="caption">
+                <h3>
+                    <%= product.title %></h3>
+                <p>
+                    <%= link_to("look look", product_path(product), class: "btn btn-danger") %>
+
+                    <%= link_to("加入购物车",add_to_cart_product_path(product), method: :post, class: "btn btn-default") %>
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <% end %>
 
 </div>

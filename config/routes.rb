@@ -69,6 +69,6 @@ Rails.application.routes.draw do
     resources :product_lists
   end
 
-  root 'products#index'
+  root 'welcome#index'
 
 end
