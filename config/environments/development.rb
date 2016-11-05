@@ -70,9 +70,10 @@ Rails.application.configure do
   #   :user_name => "postmaster@MYDOMAIN.mailgun.org",
   #   :password => "MYPASSWORD"
   # }
-  Mailgun.configure do |config|
-    config.api_key = 'key-06bf80eb430e74e4027cd3650a7fae30'
-  end
+  
+  # Mailgun.configure do |config|
+  #   config.api_key = 'key-06bf80eb430e74e4027cd3650a7fae30'
+  # end
 
 
 end
