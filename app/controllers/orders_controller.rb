@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
       @order.aasm_state == "paid"
       @order.cancell_order!
       flash[:warning] = "订单取消中"
-      OrderMailer.notify_order_cancel(@order).deliver
+      # OrderMailer.notify_order_cancel(@order).deliver
       redirect_to account_orders_path
     end
 
@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
     else
       @order.cancell_order!
       flash[:warning] = "取消订单"
-      OrderMailer.notify_order_cancel_by_admin(@order).deliver
+      # OrderMailer.notify_order_cancel_by_admin(@order).deliver
       redirect_to admin_orders_path
     end
 
@@ -69,7 +69,7 @@ class OrdersController < ApplicationController
     if @order.aasm_state == "paid"
        flash[:warning] = "打包中"
        @order.ship!
-       OrderMailer.notify_order_ship(@order).deliver
+      #  OrderMailer.notify_order_ship(@order).deliver
        redirect_to admin_orders_path
     else
       redirect_to admin_orders_path
@@ -109,7 +109,7 @@ class OrdersController < ApplicationController
   def go_pay
     payment_method = params[:payment_method]
     @order = Order.find(params[:id])
-    OrderMailer.notify_order_placed(@order).deliver
+    # OrderMailer.notify_order_placed(@order).deliver
 
 
     if @order.is_paid
