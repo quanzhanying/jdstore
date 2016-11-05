@@ -1,0 +1,42 @@
+<h2>后台发生的所有订单</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>订单货号</th>
+            <th>发货地址</th>
+            <th>购买总价</th>
+            <th>订单状态</th>
+           <th>操作</th>
+            <th>下单时间</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <% @orders.each do |order| %>
+        <tr>
+            <td><%= link_to(order.id, order_path(order.token))%></td>
+            <td><%= order.shipping_name %>
+                <td><%= order.total %></td>
+
+                <td><%= order.aasm_state %></td>
+
+         <td>
+           <% if order.aasm_state == "cancelling" %>
+           <%= link_to("确认取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-danger') %>
+           <% else %>
+         <%= link_to("取消订单", cancel_admin_order_path(order.token),method: :post, class:'btn btn-default btn-sm') %>
+         <% end %>
+         <% if order.aasm_state == "paid" %>
+         <%= link_to("出货", ship_admin_order_path(order.token), method: :post, class:'btn btn-default btn-sm') %>
+         <% end %>
+
+
+         </td>
+                <td><%= order.created_at%></td>
+            </tr>
+            <% end %>
+
+        </tbody>
+    </table>
