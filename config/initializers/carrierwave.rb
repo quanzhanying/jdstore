@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
 
       region:                'us-west-2'
     }
-    config.fog_directory  = ENV["jingdong.mike"]
+    config.fog_directory  = ENV["AWS_BUCKET_NAME"]
 
 
 
