@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
         product_list.save
       end
       current_cart.destroy
+      OrderMailer.notify_order_placed(@order).deliver!
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
@@ -59,7 +60,7 @@ def pay_with_wechat
   @order = Order.find_by_token(params[:id])
   @order.pay!
   @order.set_payment_with!("alipay")
-
+    @order.make_payment!
 
   redirect_to :back,notice: "听说你用支付宝付钱了，悄悄告诉你被骗了"
 end

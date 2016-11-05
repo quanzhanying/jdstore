@@ -8,6 +8,7 @@
             <th>购买总价</th>
             <th>下单时间</th>
             <th>下单状态</th>
+            <th>操作</th>
         </tr>
     </thead>
 
@@ -19,9 +20,11 @@
             <td><%= order.shipping_name %>
                 <td><%= order.total %></td>
                 <td><%= order.created_at%></td>
-                 <td><%= order.status %></td>
+                <td><%= order.aasm_state %></td>
+                <% if order.aasm_state == "paid" or "order_placed" %>
+                <td><%= link_to("取消订单", cancelling_account_order_path(order.token), method: :post, class:'btn btn-default btn-sm') %></td>
             </tr>
             <% end %>
-
+            <% end %>
         </tbody>
     </table>
