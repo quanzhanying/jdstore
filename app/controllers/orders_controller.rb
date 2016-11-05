@@ -26,10 +26,30 @@ def show
   @order = Order.find_by_token(params[:id])
   @product_lists = @order.product_lists
 end
+
+def cancell_order
+     @order = Order.find_by_token(params[:id])
+     @order.cancell_order!
+    redirect_to :back
+   end
+
+   def deliver
+     @order = Order.find_by_token(params[:id])
+     @order.deliver!
+     redirect_to :back
+   end
+
+   def return_good
+     @order = Order.find_by_token(params[:id])
+     @order.return_good!
+     redirect_to :back
+   end
+
 def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.pay!
     @order.set_payment_with!("wechat")
+    @order.make_payment!
 
 
     redirect_to :back,notice: "听说你用微信付钱了，哈哈哈你被骗了"
@@ -40,8 +60,13 @@ def pay_with_wechat
   @order.pay!
   @order.set_payment_with!("alipay")
 
+
   redirect_to :back,notice: "听说你用支付宝付钱了，悄悄告诉你被骗了"
 end
+
+
+
+
 
   private
 

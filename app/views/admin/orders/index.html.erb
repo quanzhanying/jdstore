@@ -6,6 +6,7 @@
             <th>订单货号</th>
             <th>发货地址</th>
             <th>购买总价</th>
+            <th>订单状态</th>
             <th>下单时间</th>
 
         </tr>
@@ -17,6 +18,7 @@
             <td><%= link_to(order.id, order_path(order.token))%></td>
             <td><%= order.shipping_name %>
                 <td><%= order.total %></td>
+                <td><%= order.status %></td>
                 <td><%= order.created_at%></td>
             </tr>
             <% end %>
