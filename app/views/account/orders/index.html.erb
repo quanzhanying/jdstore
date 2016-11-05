@@ -1,0 +1,42 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我的订单 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> 序号 </th>
+        <th> 订购人 </th>
+        <th> 价格 </th>
+        <th> 付款方式 </th>
+        <th> 付款状态 </th>
+        <th> 订单状态 </th>
+        <th> 订单操作 </th>
+        <th> 删除订单 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= order.id %> </td>
+          <td> <%= order.billing_name %> </td>
+          <td> <%= order.total %> </td>
+          <td> <%= order.payment_method %> </td>
+          <td> <%= order.is_paid %> </td>
+          <td> <%= order.aasm_state %> </td>
+          <td>
+            <% if order.aasm_state == 'order_cancelled' %>
+              <%= link_to("订单已取消", ) %>
+              <% end %>
+            <% if order.aasm_state == 'paid'  %>
+              <%= link_to("申请取消订单", cancell_account_order_path(order), :method => :post, :class => "btn btn-danger") %>
+            <% end %>
+           </td>
+           <td> <%= link_to("删除订单", account_order_path(order), :method => :delete, :data => { :confirm => "Are you sure?" }) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

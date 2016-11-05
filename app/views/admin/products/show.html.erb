@@ -1,0 +1,12 @@
+
+<h1> <%= @product.title %> </h1>
+
+<p>
+  <%= simple_format(@product.description) %>
+
+</p>
+
+<p>
+  <%= image_tag @product.image_url unless @product.image_url.nil? %>
+
+</p>
