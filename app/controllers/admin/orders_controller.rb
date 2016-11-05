@@ -10,7 +10,7 @@ class Admin::OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product = product_list.product
-    OrderMailer.notify_order_placed(@order).deliver!
+    # OrderMailer.notify_order_placed(@order).deliver!
   end
 
   def cancell_order
@@ -18,7 +18,7 @@ class Admin::OrdersController < ApplicationController
     @order.cancell_order!
     @order.save
     redirect_to :back
-    OrderMailer.notify_order_cancelled(@order).deliver!
+    # OrderMailer.notify_order_cancelled(@order).deliver!
   end
 
   def ship
@@ -33,7 +33,7 @@ class Admin::OrdersController < ApplicationController
     @order.deliver!
     @order.save
     redirect_to :back
-    OrderMailer.notify_shipped(@order).deliver!
+    # OrderMailer.notify_shipped(@order).deliver!
   end
 
     def return_good
@@ -41,7 +41,7 @@ class Admin::OrdersController < ApplicationController
       @order.return_good!
       @order.save
       redirect_to :back
-      OrderMailer.notify_return_good(@order).deliver!
+      # OrderMailer.notify_return_good(@order).deliver!
   end
 
 

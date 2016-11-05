@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     else
       flash[:alert] = '库存为零'
     end
-    redirect_to :back
+    redirect_to carts_path
   end
 
   def destroy

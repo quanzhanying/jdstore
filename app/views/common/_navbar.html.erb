@@ -14,13 +14,13 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!-- <li>
+                <li>
                     <%= link_to carts_path do %>
-                    购物车
+                    服务车
                     <i class="fa fa-shopping-cart"></i>
                     (<%= current_cart.products.count %>)
                     <% end %>
-                </li> -->
+                </li>
                 <% if !current_user %>
 
                 <li>
@@ -38,7 +38,7 @@
                         <li><%= link_to("服务管理",admin_products_path)%></li>
 
                         <li><%= link_to("订单管理",admin_orders_path) %></li>
-                          <li><%= link_to("用户管理",users_path) %></li> 
+                          <li><%= link_to("用户管理",users_path) %></li>
                         <% end %>
                           <li class="divider"></li>
                         <li><%= link_to("我的订单",account_orders_path) %></li>

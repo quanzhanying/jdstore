@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
-    OrderMailer.notify_order_placed(@order).deliver!
+    # OrderMailer.notify_order_placed(@order).deliver!
   end
 
   def create
@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
     if @order.is_paid
       flash[:alert] = '已支付！'
 
-      redirect_to :back
+
     else
       @order.is_paid = true
       @order.payment_method = '支付宝'
@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
     if @order.is_paid
       flash[:alert] = '已支付！'
 
-      redirect_to :back
+
     else
       @order.is_paid = true
       @order.payment_method = '微信'
@@ -68,7 +68,7 @@ class OrdersController < ApplicationController
     @order.cancell_order!
     @order.save
     redirect_to :back
-    OrderMailer.notify_order_cancelled(@order).deliver!
+    # OrderMailer.notify_order_cancelled(@order).deliver!
   end
 
   def ship
@@ -83,14 +83,14 @@ class OrdersController < ApplicationController
     @order.deliver!
     @order.save
     redirect_to :back
-    OrderMailer.notify_shipped(@order).deliver!
+    # OrderMailer.notify_shipped(@order).deliver!
 end
     def return_good
       @order = Order.find(params[:id])
       @order.good_returned?
       @order.save
       redirect_to :back
-      OrderMailer.notify_good_returned(@order).deliver!
+      # OrderMailer.notify_good_returned(@order).deliver!
   end
 
   private
