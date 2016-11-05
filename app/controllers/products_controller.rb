@@ -13,12 +13,16 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     @cart_item = CartItem.find_by(params[:id])
-    if current_cart.products.include?(@product)
-      @cart_item.quantity += 1
-    flash[:notice] = "你已经加过了"
-  else
-    current_cart.add_product_to_cart(@product)
-    flash[:notice] = "成功加入购物车！"
+    if existing_item && current_cart.id == existing_item.cart_id && existing_item.price == Product.find(cart_item_params[:product_id]).price
+  			existing_item.quantity += cart_item_params[:quantity].to_i
+  			existing_item.save
+  		else #否则新建购物条目
+  			@cart_item = CartItem.new(cart_item_params)
+  			@cart_item.cart_id = current_cart.id
+
+  		# 以后可以将这里封装到model中去
+  			@cart_item.price = Product.find(cart_item_params[:product_id]).price
+  			@cart_item.save
   end
     redirect_to :back
   end

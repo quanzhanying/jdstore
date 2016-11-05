@@ -200,8 +200,12 @@
 
         <br>
           <div class="">
+          <% if !current_user %>
           <%= link_to("注册", new_user_registration_path, class: "btn btn-theme") %>
           <%= link_to('登入', new_user_session_path, class: "btn btn-theme") %>
+          <% else %>
+          hi
+          <% end %>
          </div>
           </div>
 
