@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'mailer/OrderMailer'
   devise_for :users
-
+resources :users
   resources :mailers do
     collection do
       post :notify_order_placed
@@ -49,7 +49,7 @@ Rails.application.routes.draw do
       member do
         post :notify_order_placed
 
-        
+
       end
     end
   end

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <h2>
+            会员信息明细
+        </h2>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="20%">会员编号</th>
+                    <th>会员邮箱</th>
+                    <th>管理权限</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% @users.each do |user| %>
+                <tr>
+                    <td>
+                        <%= user.id %></td>
+                </td>
+                <td>
+
+                    <%= user.email %></td>
+                <td>
+                    <% if user.is_admin == true  %>
+                    管理员
+                <% else %>
+                    会员
+                    <% end  %>
+                </td>
+
+            </tr>
+            <% end %>
+
+        </tbody>
+    </table>
