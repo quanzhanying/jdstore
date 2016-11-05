@@ -10,13 +10,13 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     if @product.quantity > 0
-      banding pry
-      if current_cart.cart_items.quantity >= @product.quantity
-        flash[:alert] = '超出库存'
-      else
+
+      # if current_cart.cart_items >= @product.quantity
+      #   flash[:alert] = '超出库存'
+      # else
         current_cart.add_product_to_cart(@product)
         flash[:alert] = '已加入购物车！'
-      end
+      # end
     else
       flash[:alert] = '库存为零'
     end
