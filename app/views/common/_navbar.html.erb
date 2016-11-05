@@ -66,6 +66,7 @@
 
                       <% if current_user.admin? %>
                       <li> <%= link_to("Admin Panel",admin_products_path) %> </li>
+                      <li> <%= link_to("所有订单",admin_orders_path) %> </li>
                       <% end %>
                   </ul>
                 </li>

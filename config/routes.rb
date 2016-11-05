@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :orders
     resources :products do
       member do
         post :publish

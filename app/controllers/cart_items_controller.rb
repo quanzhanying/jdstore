@@ -23,7 +23,7 @@ class CartItemsController < ApplicationController
           flash[:warning]="已经超出库存数量"
       end
    else
-     flash[:warning]="不能为0"
+     flash[:warning]="不能为小于等于0"
    end
     redirect_to carts_path
 
