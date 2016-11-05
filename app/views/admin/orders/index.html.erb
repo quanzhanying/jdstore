@@ -1,0 +1,92 @@
+<div class="col-md-12">
+
+    <h2 class="text-center">
+        订单汇总
+    </h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    订单编号
+                </th>
+                <th>
+                    订单总价
+                </th>
+                <th>
+                    支付状态
+                </th>
+                <th>
+                    支付方式
+                </th>
+
+                <th>
+                    取消订单
+                </th>
+                <th>
+                    AASM
+                </th>
+                <th>
+                    出货状态
+                </th>
+                <td>
+                退货
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+                <td>
+                    <%= link_to(order.id,order_path(order.token)) %>
+                </td>
+                <td>
+                    <%= order.total %>
+                </td>
+                <td>
+                    <% if !order.is_paid %>
+                    未支付
+                <% else %>
+                    已支付
+                    <% end  %>
+                </td>
+                <td>
+                    <%= order.payment_method %>
+                </td>
+                <td>
+                    <% if order.order_placed? || order.paid?  %>
+                    <%=link_to("取消订单",cancell_order_order_path(order),method: :post,class:"btn btn-danger")  %>
+                <% else  %>
+                    已取消订单
+                    <% end  %>
+                </td>
+                <td>
+                  <%= order.aasm_state %>
+                </td>
+                <td>
+                    <% if  order.is_paid? && order.aasm_state == 'paid'%>
+
+                    <%=link_to("出货",ship_order_path(order),method: :post,class:"btn btn-danger")  %>
+                      <% else  %>
+                      出货
+                    <% end  %>
+                </td>
+                <td>
+                  <% if order.aasm_state == "shipped"  %>
+                  <%= link_to("退货",return_good_order_path(order),method: :post,class:"btn btn-danger") %>
+
+                  <% else  %>
+
+                  退货
+                  <% end  %>
+                </td>
+
+            </tr>
+            <% end  %>
+        </tbody>
+    </table>
+    <div class="text-center">
+  <%= will_paginate @posts %>
+</div>
+</div>
