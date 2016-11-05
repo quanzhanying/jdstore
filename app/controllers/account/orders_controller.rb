@@ -17,7 +17,7 @@ class Account::OrdersController < ApplicationController
     @order.is_cancell = true
     @order.save
     redirect_to :back
-    OrderMailer.notify_order_cancelled(@order).deliver!
+    # OrderMailer.notify_order_cancelled(@order).deliver!
   end
 
   private
