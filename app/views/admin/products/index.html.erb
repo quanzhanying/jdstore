@@ -38,7 +38,10 @@
             </td>
             <td>
                 <%= link_to("Edit", edit_admin_product_path(product)) %>
+                |
+                <%= link_to("商品下架", product_path(product),method: :delete ,class:"") %>
             </td>
+
         </tr>
         <% end %>
     </tbody>

@@ -22,7 +22,7 @@
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
-              <%= link_to product_path(cart_item.product) do %>
+              <%= link_to product_path(cart_item.product)  do %>
                 <% if cart_item.product.image.present? %>
                   <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
                 <% else %>
