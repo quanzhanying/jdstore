@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
   <div class="col-md-12">
     <h2>  购物车 </h2>
@@ -19,7 +20,7 @@
         <tr>
           <td>
            <%= link_to product_path(cart_item.product) do %>
-            <% if cart_item.product.photos[0].present? %>
+           <% if cart_item.product.photos[0].present? %>
               <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
@@ -30,9 +31,11 @@
             <%= cart_item.product.price %>
           </td>
           <td>
-            <%= button_to '+', up_cart_item_cart_item_path(cart_item), method: :post ,class: "btn btn-sm btn-primary"%>
-            <%= cart_item.quantity %>
-            <%= button_to '-', down_cart_item_cart_item_path(cart_item), method: :post, class: "btn btn-sm btn-primary"%>
+            <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>
+                <%= simple_form_for cart_item,url: cart_item_path(cart_item.product_id) do |f|%>
+                <%= f.input :quantity %>
+                <%= f.submit "更改" ,data:{ disable_with:"Submitting..."},class:"btn btn-default btn-primary" %>
+                <% end %>
           </td>
           <td>
             <%= link_to("Delete", cart_item_path(cart_item), method: :delete,data: { confirm: "滚啦？" }) %>
@@ -55,4 +58,5 @@
           <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
         </div>
     </div>
+  </div>
   </div>
