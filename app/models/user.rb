@@ -11,6 +11,7 @@ class User < ApplicationRecord
   scope :all_except, -> (user) {where.not(id: user)}
    has_many :cars
    has_many :products
-   has_many :orders 
+   has_many :orders
+   has_many :posts
 
 end

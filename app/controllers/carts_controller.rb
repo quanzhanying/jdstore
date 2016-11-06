@@ -17,5 +17,6 @@ class CartsController < ApplicationController
 
   def create
     @cart = current_cart
+    @cart_item = CartItem.find_by_token(params[:id])
   end
 end

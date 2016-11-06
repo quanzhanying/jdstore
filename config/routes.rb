@@ -23,6 +23,11 @@ Rails.application.routes.draw do
         post :deliver
       end
     end
+    resources :posts do
+      member do
+        post :create
+      end
+    end
   end
 
   resources :products do
@@ -69,6 +74,7 @@ Rails.application.routes.draw do
     resources :product_lists
   end
 
+ resources :posts
   root 'welcome#index'
 
 end
