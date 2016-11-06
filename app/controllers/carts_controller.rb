@@ -17,5 +17,5 @@ class CartsController < ApplicationController
 
   def create
     @cart = current_cart
-    
+  end
 end
