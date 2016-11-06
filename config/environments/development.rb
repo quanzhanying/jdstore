@@ -26,6 +26,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
@@ -51,4 +53,27 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+
+
+  # 添加开发模式的letter_opener
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :letter_opener
+
+  # # mailgun
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :authentication => :plain,
+  #   :address => "smtp.mailgun.org",
+  #   :port => 587,
+  #   :domain => "MYDOMAIN.mailgun.org",
+  #   :user_name => "postmaster@MYDOMAIN.mailgun.org",
+  #   :password => "MYPASSWORD"
+  # }
+  
+  # Mailgun.configure do |config|
+  #   config.api_key = 'key-06bf80eb430e74e4027cd3650a7fae30'
+  # end
+
+
 end

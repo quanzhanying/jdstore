@@ -20,3 +20,11 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
+
+public/uploads/*
+
+
+/config/application.yml
+/config/database.yml
+
+rootkey.csv
