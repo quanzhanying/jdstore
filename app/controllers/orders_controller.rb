@@ -17,6 +17,15 @@ class OrdersController < ApplicationController
         item_list.save
       end
 
+      @cart = current_cart
+      @cart.destroy
+
+      @cart_items = CartItem.where(:cart_id => @cart.id)
+      @cart_items.each do |d|
+        d.destroy
+      end
+
+
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'

@@ -16,7 +16,8 @@
 class Item < ApplicationRecord
 
   validates :title, presence: true
-
+  has_many :cart_item
+   
   mount_uploader :attachment, AttachmentUploader
 
     def hide!

@@ -31,7 +31,7 @@
               <%= cart_item.item.price %>
             </td>
             <td>
-              <%= link_to("-", plus_quantity_cart_item_path(cart_item), method: :post, class:"btn btn-xs btn-default") %>
+              <%= link_to("-", minus_quantity_cart_item_path(cart_item), method: :post, class:"btn btn-xs btn-default") %>
                <%= cart_item.storage %>
               <%= link_to("+", plus_quantity_cart_item_path(cart_item), method: :post, class:"btn btn-xs btn-default") %>
 
@@ -41,7 +41,6 @@
             </td>
             </tr>
         <% end %>
-        <%# end %>
       </tbody>
     </table>
 
