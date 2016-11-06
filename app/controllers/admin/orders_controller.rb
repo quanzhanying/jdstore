@@ -21,7 +21,11 @@ class Admin::OrdersController < ApplicationController
   def ship
     @order = Order.find_by_token(params[:id])
     @order.ship!
-    @order.save
+    if @order.save
+      redirect_to admin_orders_path,notice:'订单发货成功'
+
+      # OrderMailer.notify_shipping(@order).deliver!
+    end
   end
 
   def deliver
@@ -39,7 +43,12 @@ class Admin::OrdersController < ApplicationController
   def cancell_order
     @order = Order.find_by_token(params[:id])
     @order.cancell_order!
-    @order.save
+    if @order.save
+      redirect_to admin_orders_path,notice:'订单取消成功'
+
+      # OrderMailer.notify_order_cancelled(@order).deliver!
+    end
+
   end
 
  private
