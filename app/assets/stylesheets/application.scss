@@ -125,3 +125,22 @@ body {
 .login-help{
   font-size: 12px;
 }
+
+
+.btn-outlined {
+   border-radius: 0;
+   -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+           transition: all 0.3s;
+}
+.btn-outlined.btn-primary {
+   background: none;
+   border: 3px solid #222831 ;
+   color: #222831 ;
+}
+.btn-outlined.btn-primary:hover,
+.btn-outlined.btn-primary:active {
+   color: #FFF;
+   background: #222831 ;
+   border-color: #222831;
+}

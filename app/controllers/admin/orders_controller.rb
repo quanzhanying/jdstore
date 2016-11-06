@@ -11,7 +11,7 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.ship!
     redirect_to :back
-    OrderMailer.notify_admin_order_shipping(@order).deliver!
+    # OrderMailer.notify_admin_order_shipping(@order).deliver!
   end
 
   def cancell
@@ -30,7 +30,7 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.deliver!
     redirect_to :back
-    OrderMailer.notify_order_shipped(@order).deliver!
+    # OrderMailer.notify_order_shipped(@order).deliver!
   end
 
   def destroy
