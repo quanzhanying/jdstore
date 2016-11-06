@@ -24,6 +24,13 @@ Rails.application.routes.draw do
         post :Use
       end
     end
+
+    resources :orders do
+      member do
+        post :paid_to_ship
+
+      end
+    end
   end
 
   resources :items do
