@@ -34,22 +34,22 @@
             <td>
                 <% case order.aasm_state %>
                 <% when "order_placed" %>
-                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-dark") %>
                 <% when "paid" %>
-                <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-danger") %>
-                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-dark") %>
                 <% when "shipping" %>
-                <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-dark") %>
                 <% when "shipped" %>
-                <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-dark") %>
                 <% when "good_returned" %>
-                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
+                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-dark") %>
                 <% when "order_cancelled" %>
                 <a href="#" , class="btn btn-danger" disable>已取消</a>
-                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-danger") %>
+                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-dark") %>
                 <% when "sent_cancell_require" %>
                 <a href="#" , class="btn btn-danger" disable>买家申请取消订单</a>
-                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-danger") %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-dark") %>
 
                 <% end %>
             </td>

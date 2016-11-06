@@ -1,7 +1,4 @@
 <h1>Product List</h1>
-
-<br><br>
-
 <div class="pull-right">
     <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
 </div>
@@ -35,7 +32,7 @@
                 <% if product.is_hidden %>
                 <%= link_to("上架", publish_admin_product_path(product), :method => :post , class: "btn btn-xs btn-default" ) %>
             <% else %>
-                <%= link_to("下架", hide_admin_product_path(product), :method => :post , class: "btn btn-xs btn-danger") %>
+                <%= link_to("下架", hide_admin_product_path(product), :method => :post , class: "btn btn-xs btn-dark") %>
                 <% end %>
             </td>
             <td><%= product.created_at %></td>

@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
       @order.is_paid = true
       @order.make_payment!
       @order.save
-      OrderMailer.notify_order_placed(@order).deliver!
+      # OrderMailer.notify_order_placed(@order).deliver!
       redirect_to :back
     end
 
@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
       @order.is_paid = true
       @order.make_payment!
       @order.save
-      OrderMailer.notify_order_placed(@order).deliver!
+      # OrderMailer.notify_order_placed(@order).deliver!
       redirect_to :back
     end
 

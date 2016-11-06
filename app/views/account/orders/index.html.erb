@@ -7,6 +7,7 @@
       <th>订购人</th>
       <th>总价</th>
       <th>订单状态</th>
+      <th>用户选项</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +33,7 @@
       <%= order.aasm_state %>
     </td>
     <td>
-      <%= link_to("申请取消订单", require_cancell_account_order_path(order), method: :post, class: "btn btn-danger") %>
+      <%= link_to("申请取消订单", require_cancell_account_order_path(order), method: :post, class: "btn btn-dark") %>
     </td>
   </tr>
     <% end %>
