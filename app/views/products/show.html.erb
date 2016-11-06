@@ -18,7 +18,7 @@
     <div class="col-md-7">
       <div class="container">
 	<div class="row clearfix">
-		<div class="col-md-12 column">
+		<div class="col-md-7 column">
 
       <h1>商品名称:<%= @product.title %></h1>
       <br>
@@ -31,8 +31,11 @@
       <% if @product.quantity == 0 %>
       加紧搬用中。。。
       <% else %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-xs btn-danger") %>
+      <br><br><br><br><br>
+      <div class="pull-right">
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-default") %>
        <% end %>
+     </div>
 		</div>
 	</div>
 </div>
