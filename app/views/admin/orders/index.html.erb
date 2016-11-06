@@ -17,7 +17,7 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td> <%= order.token %> </td>
+          <td> <%=link_to(order.token,order_path(order.token)) %> </td>
           <td> <%= order.total %> </td>
           <td> <%= order.updated_at %> </td>
           <td><% if  order.is_paid %>
@@ -28,7 +28,10 @@
            </td>
 
           <td><%= order.user.email %> </td>
-          <td> </td>
+          <td><%= order.aasm_state %></td>
+          <td>
+          <%= link_to("Destroy",admin_order_path(order.token),:method => :delete, :data => { :confirm => "Are you sure?" })%>
+          </td>
         </tr>
       <% end %>
     </tbody>

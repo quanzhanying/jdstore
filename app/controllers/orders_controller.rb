@@ -28,37 +28,57 @@ class OrdersController < ApplicationController
 
    def pay_with_alipay
      @order = Order.find_by_token(params[:id])
-
-     if @order.is_paid
-       flash[:alert]="已经支付，不用支付了"
-       redirect_to :back
-     else
        @order.is_paid=true
        @order.payment_method="支付宝支付"
+
+       @order.make_payment!
+
        @order.save
        flash[:notice]="支付宝成功"
        redirect_to :back
-     end
-
-
 
    end
 
    def pay_with_wechat
      @order = Order.find_by_token(params[:id])
-
-     if @order.is_paid
-       flash[:alert]="已经支付，不用再支付了"
-       redirect_to :back
-     else
        @order.is_paid=true
        @order.payment_method="微信支付"
+
+       @order.make_payment!
+
        @order.save
        flash[:notice]="微信支付成功"
        redirect_to :back
-     end
+   end
 
+   def make_payment
+     @order = Order.find_by_token(params[:id])
+     @order.make_payment!
+     @order.save
+   end
 
+   def ship
+     @order = Order.find_by_token(params[:id])
+     @order.ship!
+     @order.save
+   end
+
+   def deliver
+     @order = Order.find_by_token(params[:id])
+     @order.deliver!
+     @order.save
+   end
+
+   def return_good
+     @order = Order.find_by_token(params[:id])
+     @order.return_good!
+     @order.save
+   end
+
+   def cancell_order
+     @order = Order.find_by_token(params[:id])
+     @order.cancell_order!
+     @order.save
    end
 
   private

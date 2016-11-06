@@ -9,6 +9,7 @@
         <th> 订单金额 </th>
         <th> 下单时间 </th>
         <th> 付款情况 </th>
+        <th> 订单状态 </th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -16,7 +17,7 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td> <%= order.token %> </td>
+          <td> <%= link_to(order.token,order_path(order.token)) %> </td>
           <td> <%= order.total %> </td>
           <td> <%= order.updated_at %> </td>
           <td><% if  order.is_paid %>
@@ -26,8 +27,17 @@
               <% end %>
            </td>
 
-          <td> </td>
-          <td> </td>
+          <td><%= order.aasm_state %></td>
+
+          <% case  order.aasm_state %>
+          <% when "order_placed","paid" %>
+          <td><%= link_to('取消订单',cancell_order_account_order_path(order.token), method: :post) %> </td>
+          <% when "shipped" %>
+          <td><%= link_to('退货',good_returned_account_order_path(order.token), method: :post) %> </td>
+          <% else %>
+          <td></td>
+          <% end %>
+
         </tr>
       <% end %>
     </tbody>
