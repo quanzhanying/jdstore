@@ -1,0 +1,34 @@
+
+<div style="text-align:center;">
+  <h2>Order History</h2>
+
+<br><br>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <% @orders.each do |order| %>
+  <tr>
+    <td>
+      <%= link_to(order.id, order_path(order.token)) %>
+    </td>
+
+    <td>
+
+        <% if order.is_paid %>
+          <%= "Paid" %>
+        <% else %>
+          <%= "Not Paid" %>
+        <% end %>
+
+    </td>
+
+
+
+    <td>
+      <%= order.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

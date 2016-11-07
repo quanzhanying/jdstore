@@ -1,0 +1,36 @@
+<table class="table table-boldered">
+  <% @users.each do |user| %>
+  <tr>
+    <td><%=user.email%> </td>
+    <td>
+      <% if user.is_admin %>
+        <%= Admin %>
+      <% else %>
+        <%= User %>
+      <% end %>
+    </td>
+
+    <td>
+      <% if current_user == user %>
+        <%= "You cannot Delete your own account" %>
+      <% else %>
+        <%= link_to("Delete", admin_user_path(user), :method => :delete) %>
+      <% end %>
+    </td>
+
+    <td>
+      <% if user.is_admin %>
+        <% if current_user == user %>
+          <%= "You cannot change your own status" %>
+        <% else %>
+          <%= link_to("Make it user", Use_admin_user_path(user), :method => :post) %>
+        <% end %>
+      <% else %>
+        <%= link_to("Make it Admin", Adm_admin_user_path(user), :method => :post) %>
+      <% end %>
+
+    </td>
+
+  </tr>
+  <% end %>
+</table

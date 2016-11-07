@@ -1,0 +1,33 @@
+  <div class="row">
+    <div class="col-md-4">
+      <% if @item.attachment %>
+
+        <%= image_tag @item.attachment_url(:medium).to_s %>
+
+      <% else %>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" class="img-thumbnail" width="400" height="400">
+      <% end %>
+    </div>
+
+
+  <div class="col-md-8">
+
+    <h2 style="text-align:center;"><%= @item.title %></h2>
+
+    <br><br><br>
+
+
+    <p style="text-align:center;">
+      <%= @item.description %>
+    </p>
+
+    <p style="text-align:center;">
+      <%= "$" %>
+      <%= @item.price %>
+    </p>
+
+    <br>
+
+    <%= link_to("Add to Cart", add_to_cart_item_path(@item), :method => :post, :class => "btn btn primary btn-lg btn-success") %>
+  </div>
+  </div>
