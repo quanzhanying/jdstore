@@ -56,6 +56,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :up_cart_item
+      post :down_cart_item
+    end
+  end
+
   root 'products#index'
 end
