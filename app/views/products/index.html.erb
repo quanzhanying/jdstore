@@ -1,0 +1,32 @@
+
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <% if product.image.present? %>
+
+       <%= link_to( image_tag( product.image.medium.url ),product_path(product)) %>
+
+      <% else %>
+        <%=link_to(image_tag("http://placehold.it/200x200&text=No Pic"),product_path(product) )%>
+
+      <% end %>
+      <div class="caption">
+        <h3>
+          <%= product.title %>
+        </h3>
+        <p>
+          价格：$<%= product.price %>
+        </p>
+        <p>
+           <a class="btn btn-primary" href="#">购买</a>
+           <%= link_to("加到购物车",add_to_cart_product_path(product),:method=>:post,:class=>"btn btn-default btn-danger")  %>
+
+
+
+        </p>
+      </div>
+    </div>
+  </div>
+ <% end %>
+</div>

@@ -1,0 +1,31 @@
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-5 column ">
+      <% if @product.image.present? %>
+        <%=image_tag( @product.image.medium.url )%>
+
+       <% else %>
+         <%=image_tag("http://placehold.it/200x200&text=No Pic") %>
+       <% end %>
+
+		</div>
+		<div class="col-md-5 column">
+			<h2>
+				<%= @product.title %>
+			</h2>
+			<p>
+        数量<%= @product.quantity %>
+        <br>
+        价格<%= @product.price %>
+      </p>
+			<p>
+				 <a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+		<div class="col-md-2 column ">
+			 
+			 <%= link_to("加到购物车",add_to_cart_product_path(@product),:method=>:post,:class=>"btn btn-default btn-danger")  %>
+		</div>
+	</div>
+</div>

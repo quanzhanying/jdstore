@@ -1,0 +1,35 @@
+<div class="pull-right">
+  <%= link_to("Add a product",new_admin_product_path,:class=>"btn btn-default")  %>
+</div>
+
+<table class="table table-boldered">
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= render_product_status(product) %>
+      <%= link_to( product.title,admin_product_path(product)) %>
+    </td>
+    <td>
+      <%= product.description %>
+    </td>
+    <td>
+      <%= product.quantity %>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+    <td>
+      <%= link_to("Edit",edit_admin_product_path(product))%>
+      <%= link_to("Destroy",admin_product_path(product),:method => :delete, :data => { :confirm => "Are you sure?" })%>
+      <% if product.is_hidden %>
+         <%= link_to("上架",publish_admin_product_path(product),:method=>:post ,:class=>"btn btn-xs btn-primary") %>
+      <% else %>
+         <%= link_to("下架",hide_admin_product_path(product),:method=>:post,:class=>"btn btn-xs btn-default")  %>
+      <% end %>
+    </td>
+    <td>
+      <%= product.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

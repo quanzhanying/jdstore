@@ -1,0 +1,49 @@
+
+
+  <h2 class="text-center"> 所有订单 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> 订单编号 </th>
+        <th> 订单金额 </th>
+        <th> 下单时间 </th>
+        <th> 付款情况 </th>
+        <th> 客户邮箱 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%=link_to(order.token,order_path(order.token)) %> </td>
+          <td> <%= order.total %> </td>
+          <td> <%= order.updated_at %> </td>
+          <td><% if  order.is_paid %>
+              <%= order.payment_method %>
+              <% else %>
+              <%= order.is_paid %>
+              <% end %>
+           </td>
+
+          <td><%= order.user.email %> </td>
+          <td><%= order.aasm_state %></td>
+
+          <% case  order.aasm_state %>
+          <% when "paid" %>
+          <td><%= link_to('出货',ship_admin_order_path(order.token), method: :post) %> </td>
+          <% when "shipped" %>
+          <td><%= link_to('退货',return_good_admin_order_path(order.token), method: :post) %> </td>
+          <% when "order_placed" %>
+          <td><%= link_to('取消订单',cancell_order_admin_order_path(order.token), method: :post) %> </td>
+          <% else %>
+          <td></td>
+          <% end %>
+          <td>
+          <%= link_to("Destroy",admin_order_path(order.token),:method => :delete, :data => { :confirm => "Are you sure?" })%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
