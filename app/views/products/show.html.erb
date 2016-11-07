@@ -1,0 +1,31 @@
+
+<div class="row">
+
+  <div class="col-xs-6">
+    <% if @product.image? %>
+      <%= image_tag(@product.image.medium.url, class:"medium") %>
+    <% else %>
+      <image src="http://andresgaleano.eu/wp-content/uploads/2015/09/No-I-mage-Available.gif", width="400", class="medium">
+    <% end %>
+  </div>
+
+<div class="col-xs-6">
+  <h1> <%= @product.title %> </h1>
+  <div style="heigh:100px;">
+    <p>
+    <h4>商品详情：<%=@product.description%></h4>
+    </p>
+  </div>
+  <div>  <h4>商品数量：<%=@product.quantity%>个</h4> </div>
+
+  <div>  <h4>商品数量：<%=@product.price%>元</h4> </div>
+  <div class="pull-right">
+    <% if @product.quantity > 0 %>
+    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+    <% else %>
+    <a href="#" class="btn btn-danger">暂时缺货</a>
+    <% end %>
+</div>
+
+</div>
+</div>
