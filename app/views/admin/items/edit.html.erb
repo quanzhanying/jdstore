@@ -1,0 +1,12 @@
+<h1> Edit an Item </h1>
+
+<%= simple_form_for [:admin, @item] do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.input :storage %>
+<%= f.label :picture %>
+<%= f.file_field :attachment %>
+<%= f.input :is_available %>
+<%= f.submit "Submit", :class => "btn btn-success" %>
+<% end %>

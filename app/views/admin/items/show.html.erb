@@ -1,0 +1,22 @@
+<h2 style="text-align:center;"><%= @item.title %></h2>
+
+
+<p>
+  <%= simple_format(@item.description) %>
+</p>
+
+
+<p>
+  <%= @item.price %>
+</p>
+
+
+
+<p>
+  <%= @item.storage %>
+</p>
+
+
+<p>
+  <%= image_tag @item.attachment_url(:medium).to_s %>
+</p>

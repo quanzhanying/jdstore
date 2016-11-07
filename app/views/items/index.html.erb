@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <% @items.each do |item| %>
+
+      <div class="col-sm-3" "col-md-4" "col-lg-4">
+
+        <% if item.is_available %>
+          <% if item.attachment.length != 0 %>
+            <%= link_to item_path(item) do %>
+              <%= image_tag item.attachment_url(:thumb).to_s %>
+            <% end %>
+          <% else%>
+            <%= link_to item_path(item) do %>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" width="200" height="200">
+            <% end %>
+          <% end %>
+          <br>
+          <%= link_to(item.title, item_path(item)) %><br>
+          <%= '$' %>
+          <%= item.price %>
+
+        <% end %>
+
+      </div>
+    <% end %>
+
+  </div>
+</div>

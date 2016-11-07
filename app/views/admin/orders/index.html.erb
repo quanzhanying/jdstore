@@ -1,0 +1,42 @@
+<div style="text-align:center;">
+  <h2>Order Management</h2>
+
+<br><br>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <% @orders.each do |order| %>
+  <tr>
+    <td>
+      <%= link_to(order.id, order_path(order.token)) %>
+    </td>
+
+    <td>
+      <%= order.user_id %>
+    </td>
+
+    <td>
+      <% case order.aasm_state %>
+        <% when "order_placed" %>
+          <%= "Unpaid" %>
+        <% when "paid" %>
+          <%= link_to("Ship the product", paid_to_ship_admin_order_path(order.token), method: :post) %>
+        <% when "shipping" %>
+          <%= "It's shipping" %>
+        <% when "shipped" %>
+          <%= "It's shipped" %>
+        <% when "order_cancelled" %>
+          <%= "It's cancelled" %>
+        <% when "good_returned" %>
+          <%= link_to("Confirm return", return_good_admin_order_path(order.token), method: :post) %>
+      <% end %>
+    </td>
+
+    <td>
+      <%= order.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
