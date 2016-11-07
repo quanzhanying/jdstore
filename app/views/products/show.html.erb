@@ -17,10 +17,14 @@
     </p>
   </div>
   <div>  <h4>商品数量：<%=@product.quantity%>个</h4> </div>
+
   <div>  <h4>商品数量：<%=@product.price%>元</h4> </div>
   <div class="pull-right">
+    <% if @product.quantity > 0 %>
     <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-
+    <% else %>
+    <a href="#" class="btn btn-danger">暂时缺货</a>
+    <% end %>
 </div>
 
 </div>

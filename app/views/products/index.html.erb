@@ -53,8 +53,11 @@
           <h3><%=product.title%></h3>
 
             <%= link_to("look", product_path(product), class:"btn btn-danger")%>
-            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-danger")%>
-
+            <% if product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn  btn-danger") %>
+            <% else %>
+            <a href="#" class="btn btn-danger">暂时缺货</a>
+            <% end %>
 
         </div>
       </div>
