@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  namespace :account do
+    resources :orders
+  end
+
   namespace :admin do
     resources :users do
       member do
@@ -9,12 +13,12 @@ Rails.application.routes.draw do
       end
     end
     resources :products
+    resources :orders
   end
 
   resources :products do
     member do
       post :add_to_cart
-      post :bought
     end
   end
 
@@ -31,7 +35,7 @@ Rails.application.routes.draw do
       post :pay_with_wechat_wechat
       post :pay_with_alipay
     end
-  end 
+  end
   root 'products#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
