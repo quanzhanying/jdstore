@@ -57,8 +57,14 @@
 
     <hr>
 		<div class="checkout clearfix">
-		<%= link_to("Clear Cart", clear_cart_carts_path, method: :post, class: "btn btn-lg btn-primary pull-right") %>
-    <%= link_to("CHECK OUT", checkout_carts_path, method: :post, class: "btn btn-lg btn-primary pull-right") %>
+			<% if current_cart.cart_items.any? %>
+				<%= link_to("Clear Cart", clear_cart_carts_path, method: :post, class: "btn btn-lg btn-primary pull-right") %>
+		    <%= link_to("CHECK OUT", checkout_carts_path, method: :post, class: "btn btn-lg btn-primary pull-right") %>
+			<% else %>
+				<%= link_to("CART EMPTY", "#", class: "btn btn-lg btn-negative disabled pull-right") %>
+			<% end %>
     </div>
+	</hr>
+	<br>
   </div>
 </div>
