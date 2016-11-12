@@ -1,6 +1,6 @@
 class Account::OrdersController < ApplicationController
   before_action :authenticate_user!
   def index
-    @order = Order.all
+    @orders = current_user.orders
   end
 end
