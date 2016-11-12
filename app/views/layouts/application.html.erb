@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>Jostore 后台</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-trcak': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <div class="row">
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "common/footer" %>
   </body>
 </html>

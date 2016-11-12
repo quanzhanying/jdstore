@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-6">
+    <h2>购物车</h2>
+  </div>
+  <div class="pull-right">
+    <br>
+      <%= link_to("清空购物车", destroy_cart_carts_path, :method => :post,
+                  :data => { :confirm => "Are you sure?"}, :class => "btn btn-default")%>
+      <%#= link_to("Delete", cart_path(@cart), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">商品资讯</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>编辑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+              <% if cart_item.product.image.present? %>
+                <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+          </td>
+          <td>
+            <%= cart_item.product.price %>
+          </td>
+          <td>
+            <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>
+            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+            <%= f.select :quantity, 1..cart_item.product.quantity %>
+            <%= f.submit "更新", data: {disable_with: "Submiting..."} %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to("删除", cart_item_path(cart_item), :method => :delete) %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <div class="total clearfix">
+      <span class="pull-right">
+        <span>
+          <%# sum = 0 %>
+          <%# current_cart.cart_items.each do |cart_item| %>
+            <%# sum = sum + cart_item.quantity * cart_item.product.price %>
+          <%# end %>
+          总计 <%= render_cart_total_price(current_cart) %><%#= sum %> RMB
+
+        </span>
+      </span>
+    </div>
+    <hr>
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    </div>
+  </div>
+</div>

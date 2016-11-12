@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1></h1>
+  <p></p>
+</div>
+<div class="row">
+  <% @products.each do |p| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(p) do %>
+        <% if p.image.present? %>
+          <%= image_tag(p.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= p.title %> ¥ <%= p.price %>
+    </div>
+  <% end %>
+</div>
