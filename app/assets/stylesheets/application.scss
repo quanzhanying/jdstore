@@ -149,45 +149,64 @@ border-color: $bgHighlight;
      background-color: $bgHighlight; }}}
 }
 
-/* button section */
+// /* button section */
+//
+// .btn {
+//     padding: 11px 20px;
+//     border: 0 none;
+//     font-weight: 700;
+//     letter-spacing: 1px;
+//     text-transform: uppercase;
+// }
+//
+// // This is the code for when the button is clicked.
+// .btn:focus, .btn:active:focus, .btn.active:focus {
+//     outline: 0 none;
+// 		background: $bgDefault;
+// 		color: $colDefault ;
+// }
 
-.btn {
-    padding: 11px 20px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
 }
-
-// This is the code for when the button is clicked.
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
-		background: $bgDefault;
-		color: $colDefault ;
+.btn-default.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
 }
-
-
-.btn-primary {
-    background: $bgDefault;
-    color: $colDefault ;
+.btn-default.outline:hover, .btn-default.outline:focus, .btn-default.outline:active, .btn-default.outline.active, .open > .dropdown-toggle.btn-default {
+    color: #33a6cc;
+    border-color: #33a6cc;
 }
-
-// This is the code when mouse hovers over the button
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: $colDefault;
-		color: $bgDefault ;
+.btn-default.outline:active, .btn-default.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
 }
+//
+// .btn-primary {
+//     background: $bgDefault;
+//     color: $colDefault ;
+// }
+//
+// // This is the code when mouse hovers over the button
+// .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+//     background: $colDefault;
+// 		color: $bgDefault ;
+// }
+//
+// .btn-primary:active, .btn-primary.active {
+//     background: $colDefault;
+//     color: $colDefault ;
+// 		box-shadow: none;
+// }
+//
+// .btn-primary[disabled] {
+// 	background: $colDefault;
+// 	color: $bgDefault ;
+// }
 
-.btn-primary:active, .btn-primary.active {
-    background: $colDefault;
-    color: $colDefault ;
-		box-shadow: none;
-}
-
-.btn-primary[disabled] {
-	background: $colDefault;
-	color: $bgDefault ;
-}
 
 
 /* font color changes */
