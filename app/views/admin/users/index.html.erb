@@ -1,0 +1,28 @@
+<h1>User List</h1>
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>用户名称</td>
+      <td>权限设置</td>
+    </tr>
+  </thead>
+
+  <tbody>
+<% @users.each do |user| %>
+  <tr>
+    <td>
+     <%= render_is_admin(user) %>
+     <%= user.email %>
+    </td>
+    <td>
+
+    <% if user.is_admin %>
+      <%= link_to("user", user_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+    <% else %>
+      <%= link_to("admin", admin_admin_user_path(user), :method => :post, :class => "btn btn-xs btn-default") %>
+    <% end %>
+  </td>
+  </tr>
+<% end %>
+</tbody>
+</table>

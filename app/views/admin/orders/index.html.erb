@@ -1,0 +1,145 @@
+<table class="table table-hover table-inverse">
+    <thead>
+        <tr>
+            <th>商品明细</th>
+            <th>寄送资讯</th>
+            <th>订购人</th>
+            <th>总价</th>
+            <th>订单状态</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @orders.each do |order| %>
+        <% order.product_lists.each do |product_list| %>
+        <tr>
+            <td>
+                <%= product_list.product_name %>
+            </td>
+            <td>
+                <%= order.billing_name %>
+                -
+                <%= order.billing_address %>
+            </td>
+            <td>
+                <%= order.shipping_name %>
+                -
+                <%= order.shipping_address %>
+            </td>
+            <td>
+                <%= order.total %>
+            </td>
+            <td>
+                <%= order.aasm_state %>
+            </td>
+            <td>
+                <% case order.aasm_state %>
+                <% when "order_placed" %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+                <% when "paid" %>
+                <%= link_to("出货", ship_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+                <% when "shipping" %>
+                <%= link_to("已到货", deliver_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+                <% when "shipped" %>
+                <%= link_to("退货", return_good_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+                <% when "good_returned" %>
+                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-dark") %>
+                <% when "order_cancelled" %>
+                <a href="#" , class="btn btn-danger" disable>已取消</a>
+                <%= link_to("删除订单", admin_order_path(order), method: :delete, class: "btn btn-dark") %>
+                <% when "sent_cancell_require" %>
+                <a href="#" , class="btn btn-danger" disable>买家申请取消订单</a>
+                <%= link_to("取消订单", cancell_admin_order_path(order), method: :post, class: "btn btn-dark") %>
+
+                <% end %>
+            </td>
+
+        </tr>
+        <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<!-- <div>
+      <div class="row">
+        <div class="col-md-12">
+             <div class="panel panel-default panel-table">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col col-xs-12">
+                      <h3 class="panel-title">Order List</h3>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <table class="table table-striped table-bordered table-list">
+                    <thead>
+                      <tr>
+                          <th><em class="fa fa-cog"></em></th>
+                          <th class="hidden-xs">ID</th>
+                          <th>商品明细</th>
+                          <th>寄送资讯</th>
+                          <th>订购人</th>
+                          <th>总价</th>
+                          <th>订单状态</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                              <% @orders.each do |order| %>
+                              <% order.product_lists.each do |product_list| %>
+
+                              <td> <%= link_to admin_order_path(order), method: :delete do %>
+                                <a class="btn btn-danger"><em class="fa fa-trash" href=""></em></a>
+                                <% end %>
+                                <a class="btn btn-default"><em class="fa fa-pencil" href=""></em></a>
+
+                              </td>
+                              <td class="hidden-xs">1</td>
+
+
+                              <td><%= product_list.product_name %></td>
+                              <td>
+                                <%= order.billing_name %> - <%= order.billing_address %>
+                              </td>
+                              <td>
+                                <%= order.shipping_name %> - <%= order.shipping_address %>
+                              </td>
+                              <td>
+                                <%= order.total %>
+                              </td>
+                              <td>
+                                <%= order.aasm_state %>
+                              </td>
+
+
+                            </tr>
+                            <% end %>
+                            <% end %>
+                          </tbody>
+                  </table>
+
+                </div>
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="col col-xs-4">Page 1 of 5
+                    </div>
+                    <div class="col col-xs-8">
+                      <ul class="pagination hidden-xs pull-right">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                      </ul>
+                      <ul class="pagination visible-xs pull-right">
+                          <li><a href="#">«</a></li>
+                          <li><a href="#">»</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+  </div></div></div> -->

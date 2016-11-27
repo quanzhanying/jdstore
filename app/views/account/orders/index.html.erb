@@ -1,0 +1,42 @@
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>商品明细</th>
+      <th>单价</th>
+      <th>寄送资讯</th>
+      <th>订购人</th>
+      <th>总价</th>
+      <th>订单状态</th>
+      <th>用户选项</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <% order.product_lists.each do |product_list| %>
+  <tr>
+    <td>
+      <%= link_to product_list.product_name, order_path(order.token) %>
+    </td>
+    <td>
+      <%= product_list.product_price %>
+    </td>
+    <td>
+      <%= order.billing_name %> - <%= order.billing_address %>
+    </td>
+    <td>
+      <%= order.shipping_name %> - <%= order.shipping_address %>
+    </td>
+    <td>
+      <%= order.total %>
+    </td>
+    <td>
+      <%= order.aasm_state %>
+    </td>
+    <td>
+      <%= link_to("申请取消订单", require_cancell_account_order_path(order), method: :post, class: "btn btn-dark") %>
+    </td>
+  </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

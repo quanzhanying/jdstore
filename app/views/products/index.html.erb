@@ -1,0 +1,82 @@
+
+<!-- <div class="well text-center">
+    <button type="button" class="btn btn-hot text-uppercase btn-lg">Hot button</a>
+</button>
+<button type="button" class="btn btn-sunny text-uppercase btn-lg">Sunny button</a>
+</button>
+<button type="button" class="btn btn-fresh text-uppercase btn-lg">Fresh button</a>
+</button>
+<button type="button" class="btn btn-sky text-uppercase btn-lg">sky button</a>
+</button>
+</div> -->
+
+
+<!-- <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>
+					Hello, world!
+				</h1>
+				<p>
+					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+				</p>
+
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div class="container">
+<div class="row">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<div class="item active">
+    <%= image_tag "0001.png" %>
+    <div class="header-text hidden-xs">
+        <div class="col-md-12 text-center">
+            <!-- <h2>
+                <span>Welcome to
+                    <strong>LOREM IPSUM</strong>
+                </span>
+            </h2>
+            <br>
+            <h3>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            </h3>
+            <br> -->
+
+        </div>
+    </div>
+
+</div>
+
+<br><br>
+
+<div class="row">
+    <% @products.each do |product| %>
+    <%= link_to(product_path(product)) do %>
+    <div class="well col-sm-6 col-md-3">
+
+
+           <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+        <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+            <% end %>
+            <div class="caption">
+                <h3 class="text-center"><%= product.title %></h3>
+                <p class="text-center">
+                    <%= link_to("我要看", product_path(product), class: "btn btn-default") %>
+
+                    <%= link_to("我要买",add_to_cart_product_path(product), method: :post, class: "btn btn-default") %>
+
+                </p>
+            </div>
+
+
+    </div>
+    <% end %>
+
+</div>

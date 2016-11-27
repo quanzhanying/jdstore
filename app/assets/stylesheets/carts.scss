@@ -1,0 +1,259 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn3d {
+    position:relative;
+    top: -6px;
+    border:0;
+     transition: all 40ms linear;
+     margin-top:10px;
+     margin-bottom:10px;
+     margin-left:2px;
+     margin-right:2px;
+}
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+    -moz-outline-style:none;
+         outline:medium none;
+}
+.btn3d:active, .btn3d.active {
+    top:2px;
+}
+.btn3d.btn-white {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#fff;
+}
+.btn3d.btn-white:active, .btn3d.btn-white.active {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+    background-color:#fff;
+}
+.btn3d.btn-default {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#f9f9f9;
+}
+.btn3d.btn-default:active, .btn3d.btn-default.active {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+    background-color:#f9f9f9;
+}
+.btn3d.btn-primary {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#4274D7;
+}
+.btn3d.btn-primary:active, .btn3d.btn-primary.active {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color:#4274D7;
+}
+.btn3d.btn-success {
+    box-shadow:0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#78d739;
+}
+.btn3d.btn-success:active, .btn3d.btn-success.active {
+    box-shadow:0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #78d739;
+}
+.btn3d.btn-info {
+    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #348FD2, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#39B3D7;
+}
+.btn3d.btn-info:active, .btn3d.btn-info.active {
+    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #39B3D7;
+}
+.btn3d.btn-warning {
+    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#FEAF20;
+}
+.btn3d.btn-warning:active, .btn3d.btn-warning.active {
+    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #FEAF20;
+}
+.btn3d.btn-danger {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#D73814;
+}
+.btn3d.btn-danger:active, .btn3d.btn-danger.active {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #D73814;
+}
+.btn3d.btn-magick {
+    color: #fff;
+    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #9823d5, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#bb39d7;
+}
+.btn3d.btn-magick:active, .btn3d.btn-magick.active {
+    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #bb39d7;
+}
+
+
+
+
+
+
+
+.row {
+    margin: 80px 0px 80px 0px;
+    }
+
+img.big {
+    margin: 10px 10px 10px 10px;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    }
+
+img:hover {
+	cursor: pointer;
+	-webkit-transform: scale(2, 2);
+    -ms-transform: scale(2, 2);
+    transform: scale(2, 2);
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    box-shadow: 10px 10px 5px #888888;
+    z-index: 1;
+    }
+
+
+
+
+
+    div.table-title {
+       display: block;
+      margin: auto;
+      max-width: 100%;
+      padding:5px;
+      width: 100%;
+    }
+
+    // .table-title h3 {
+    //    color: #fafafa;
+    //    font-size: 30px;
+    //    font-weight: 400;
+    //    font-style:normal;
+    //    font-family: "Roboto", helvetica, arial, sans-serif;
+    //
+    //    text-transform:uppercase;
+    // }
+    //
+    //
+    // /*** Table Styles **/
+    //
+    // .table-fill {
+    //   background: white;
+    //   border-radius:3px;
+    //   border-collapse: collapse;
+    //   height: 320px;
+    //   margin: auto;
+    //   max-width: 100%;
+    //   padding:5px;
+    //   width: 100%;
+    //
+    // }
+    //
+    th {
+      color:#D5DDE5;;
+      background:#1b1e24;
+      border-bottom:4px solid #9ea7af;
+      border-right: 1px solid #343a45;
+      font-size:23px;
+      font-weight: 100;
+      padding:24px;
+      text-align:left;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      vertical-align:middle;
+    }
+    //
+    // th:first-child {
+    //   border-top-left-radius:3px;
+    // }
+    //
+    // th:last-child {
+    //   border-top-right-radius:3px;
+    //   border-right:none;
+    // }
+    //
+    // tr {
+    //   border-top: 1px solid #C1C3D1;
+    //   border-bottom-: 1px solid #C1C3D1;
+    //   color:#666B85;
+    //   font-size:16px;
+    //   font-weight:normal;
+    //   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+    // }
+    //
+    // // tr:hover td {
+    // //   background:#4E5066;
+    // //   color:#FFFFFF;
+    // //   border-top: 1px solid #22262e;
+    // //   border-bottom: 1px solid #22262e;
+    // // }
+    //
+    // tr:first-child {
+    //   border-top:none;
+    // }
+    //
+    // tr:last-child {
+    //   border-bottom:none;
+    // }
+    //
+    // tr:nth-child(odd) td {
+    //   background:#EBEBEB;
+    // }
+    //
+    // tr:nth-child(odd):hover td {
+    //   background:#4E5066;
+    // }
+    //
+    // tr:last-child td:first-child {
+    //   border-bottom-left-radius:3px;
+    // }
+    //
+    // tr:last-child td:last-child {
+    //   border-bottom-right-radius:3px;
+    // }
+    //
+    // td {
+    //   background:#FFFFFF;
+    //   padding:20px;
+    //   text-align:left;
+    //   vertical-align:middle;
+    //   font-weight:300;
+    //   font-size:18px;
+    //   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    //   border-right: 1px solid #C1C3D1;
+    // }
+    //
+    // td:last-child {
+    //   border-right: 0px;
+    // }
+    //
+    // th.text-left {
+    //   text-align: left;
+    // }
+    //
+    th.text-center {
+      text-align: center;
+    }
+    //
+    // th.text-right {
+    //   text-align: right;
+    // }
+    //
+    // td.text-left {
+    //   text-align: left;
+    // }
+    //
+    td.text-center {
+      text-align: center;
+    }
+    //
+    // td.text-right {
+    //   text-align: right;
+    // }
