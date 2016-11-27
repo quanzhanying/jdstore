@@ -1,0 +1,69 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> All Orders </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Order No. </th>
+				<th> Status </th>
+        <th> User </th>
+        <!-- <th> Name </th> -->
+        <th> Payment Method </th>
+        <th> Total </th>
+				<th> Order Placed </th>
+				<th colspan = "3"> Admin Actions </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= link_to(order.id, account_order_path(order)) %> </td>
+          <td> <%= order.aasm_state %> </td>
+          <td> <%= order.user.email %> </td>
+          <!-- <td> <%= order.billing_name %> </td> -->
+						<% if order.payment_method %>
+						<td> <%= order.payment_method %> </td>
+						<% else %>
+						<td> Not Paid </td>
+						<% end %>
+					<td> <%= order.total %> </td>
+					<td> <%= order.created_at %> </td>
+					<% case order.aasm_state
+					when "order_placed"%>
+						<td><%= link_to("Ship", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to('Cancel', admin_cancel_order_admin_order_path(order.token), :method => :post, class: "btn btn-negative btn-xs") %></td>
+		        <td><%= link_to('Delete', admin_order_path(order.token), method: :delete,
+						data: { confirm: "Are you sure?"}, class: "btn btn-negative btn-xs") %></td>
+					<% when "paid" %>
+						<td><%= link_to('Ship',  admin_ships_admin_order_path(order.token), :method => :post, class: "btn btn-negative btn-xs") %></td>
+						<td><%= link_to('Cancel', admin_cancel_order_admin_order_path(order.token), :method => :post, class: "btn btn-negative btn-xs") %></td>
+						<td><%= link_to('Delete', admin_order_path(order.token), method: :delete,
+						data: { confirm: "Are you sure?"}, class: "btn btn-negative btn-xs") %></td>
+					<% when "shipping" %>
+						<td><%= link_to("Ship", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to("Cancel", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to('Delete', admin_order_path(order.token), method: :delete,
+							data: { confirm: "Are you sure?"}, class: "btn btn-negative btn-xs") %></td>
+					<% when "shipped" %>
+						<td><%= link_to("Ship", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to("Cancel", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to('Delete', admin_order_path(order.token), method: :delete,
+							data: { confirm: "Are you sure?"}, class: "btn btn-negative btn-xs") %></td>
+					<% when "good_returned" %>
+						<td><%= link_to("Ship", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to("Cancel", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to('Delete', admin_order_path(order.token), method: :delete,
+							data: { confirm: "Are you sure?"}, class: "btn btn-negative btn-xs") %></td>
+					<% when "order_cancelled" %>
+						<td><%= link_to("Ship", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to("Cancel", "#", class: "btn btn-sm btn-negative pull-left disabled") %></td>
+						<td><%= link_to('Delete', admin_order_path(order.token), method: :delete,
+							data: { confirm: "Are you sure?"}, class: "btn btn-negative btn-xs") %></td>
+					<% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
