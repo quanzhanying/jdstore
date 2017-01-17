@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@media (min-width: 768px){
+  .navbar{
+    border-radius: 0px;
+  }
+}
+
+.navbar-header{
+  margin-left: 30px;
+}
+.navbar-collapse{
+  margin-right: 30px;
+}
+.container-fluid .well{
+  margin-top: 15px;
+  width: 350px;
+}
