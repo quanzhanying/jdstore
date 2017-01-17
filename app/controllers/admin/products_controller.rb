@@ -5,6 +5,7 @@ class Admin::ProductsController < ApplicationController
   def index
     @products = Product.all
   end
+
   def new
     @product = Product.new
   end
@@ -19,9 +20,6 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def new
-    @product = Product.new
-  end
   def edit
     @product = Product.find(params[:id])
   end
@@ -33,9 +31,8 @@ class Admin::ProductsController < ApplicationController
       render :edit
     end
   end
-  def show
-    @product = Product.find(params[:id])
-  end
+
+
   private
 
   def product_params
