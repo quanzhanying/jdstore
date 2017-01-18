@@ -1,0 +1,11 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2>New Product</h2>
+  <br>
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :price %>
+    <%= f.submit "Create Product", class: "btn btn-default" %>
+  <% end %>
+</div>
