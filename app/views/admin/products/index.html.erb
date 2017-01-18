@@ -1,0 +1,41 @@
+<div class="col-md-10">
+  <div class="pull-right">
+    <%= link_to("Add new product", new_admin_product_path, class: "btn btn-default") %>
+  </div>
+  <h2>Product List</h2>
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td></td>
+        <td width="220">Product Pic</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td width="120">Options</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td>
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= product.title %></td>
+          <td><%= product.price %></td>
+          <td>
+            <%= link_to("Edit", edit_admin_product_path(product)) %> |
+            <%= link_to("Dsetroy", admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
