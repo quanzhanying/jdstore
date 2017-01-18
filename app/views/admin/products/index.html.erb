@@ -1,0 +1,31 @@
+<div class="col-md-12">
+  <div class="row">
+    <%= link_to("new", new_admin_product_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <h2>所有商品</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>price</th>
+        <th>stock</th>
+        <th>is_hidden</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to(product.title, admin_product_path(product)) %></td>
+        <td><%= simple_format(product.description) %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
+        <td><%= product.is_hidden %></td>
+        <td><%= link_to('编辑', edit_admin_product_path(product), class: "btn btn-primary") %></td>
+        <td><%= link_to('删除', admin_product_path(product), method: :delete, data: { confirm: "Are you sure？" }, class: "btn btn-danger") %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="row">
+    <%= link_to("编辑", edit_admin_product_path(@product), class: "btn btn-primary pull-right") %>
+  </div>
+  <h2><%= @product.title %></h2>
+  <ul class="list-unstyled">
+    <li>description:<%= simple_format(@product.description) %></li>
+    <li>price:<%= @product.price %></li>
+    <li>stock:<%= @product.stock %></li>
+    <li>is_hidden:<%= @product.is_hidden %></li>
+  </ul>
+</div>
