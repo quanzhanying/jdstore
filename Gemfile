@@ -36,6 +36,9 @@ gem 'devise'
 # 给专案简化复杂的表单
 gem 'simple_form'
 
+# 给专案添加厉害的图示套件
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
