@@ -25,6 +25,12 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <li>
+                <% if current_user.admin? %>
+                  <%= link_to('<span class="glyphicon glyphicon-home"></span> Admin Panel'.html_safe, admin_products_path) %>
+                <% end %>
+              </li>
+
               <li> <%= link_to('<span class="glyphicon glyphicon-log-out"></span> Log out'.html_safe, destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>
