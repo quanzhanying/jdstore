@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>Jdstore Admin</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +13,16 @@
     <%= render "common/flashes" %>
 
     <div class="container-fluid">
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills nav-justified" style="max-width: 200px;">
+            <li class="active"><%= link_to("Products", admin_products_path) %></li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
     <%= render "common/footer" %>
