@@ -8,12 +8,12 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
                 <li class="active">
-                  <%= link_to("Products", products_path) %>
+                    <%= link_to("Products", products_path) %>
                 </li>
-              </ul>
-              
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
 
                 <% if !current_user %>
@@ -28,16 +28,23 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+                        <% if current_user.admin? %>
                         <li>
-                          <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                            <%= link_to("Admin 选单", admin_products_path ) %>
                         </li>
-                    </ul>
-                </li>
-                <% end %>
+                        <% end %>
 
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+                        <li>
+                            <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                        </li>
+                    </li>
+                </ul>
+            </li>
+            <% end %>
+
+        </ul>
     </div>
-    <!-- /.container-fluid -->
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
 </nav>
