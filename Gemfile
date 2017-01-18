@@ -33,6 +33,9 @@ gem 'bootstrap-sass'
 # 给专案装个登入系统
 gem 'devise'
 
+# 给专案简化复杂的表单
+gem 'simple_form'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
