@@ -1,7 +1,70 @@
-<ul>
+<h2>Product List</h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("Add a new product", new_admin_product_path, class: "btn btn-primary btn-sm")%>
+</div>
+
+<br /><br />
+
+<div class="col-md-12">
+  <table class="table table-boldered table-striped custab">
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th width="220">
+          Product Pic
+        </th>
+        <th>
+          Product Name
+        </th>
+        <th>
+          Price
+        </th>
+        <th width="100">
+          Manage Items
+        </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @product.each do |p|%>
+      <tr>
+        <td>
+          <%= p.id%>
+        </td>
+        <td>
+          <%= link_to product_path(p)%>
+            <% if p.image.present? %>
+              <%= image_tag(p.image.thumb.url, class: "thumbnail")%>
+            <%= else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+            <%= end %>
+          <%= end %>
+        </td>
+        <td>
+          <%= p.title%>
+        </td>
+        <td>
+          <%= p.price%>
+        </td>
+
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(p))%>
+          <%= link_to("Delete", admin_product_path(p), method: :delete, class: "btn btn-xs btn-default btn-danger", data: { confirm: "Are you sure to delete?"})%>")%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- <ul>
   <% @products.each do |p|%>
     <li>
       <%= link_to(p.title, admin_product_path(p))%>
     </li>
   <% end %>
-</ul>
+</ul> -->
