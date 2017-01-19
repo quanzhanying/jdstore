@@ -7,6 +7,10 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.new
 	end
 
+	def edit
+		@product = Product.find(params[:id])
+	end
+
 	def create
 		@product = Product.create(product_params)
 		if @product.save
