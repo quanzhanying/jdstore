@@ -42,7 +42,7 @@ class Admin::ProductsController < ApplicationController
 
     @product.destroy
 
-    redirect_to admin_products_path 
+    redirect_to admin_products_path
   end
 
   private
