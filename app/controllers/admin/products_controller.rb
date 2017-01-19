@@ -44,9 +44,9 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path, alert: "Product Deleted!"
   end
 
-  private
+  privateimage
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 end
