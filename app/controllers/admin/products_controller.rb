@@ -25,11 +25,15 @@ class Admin::ProductsController < ApplicationController
 
  def update
    @product = Product.find(params[:id])
-   if @product.update(product_params)
+   if params[:product][:image] && @product.image
+      old_image = Product.find(params[:id]).image
+  end
+  if @product.update(product_params)
+      old_image.remove! if old_image
      redirect_to admin_products_path, notice: "修改成功！"
-   else
+  else
      render :edit
-   end
+  end
  end
 
  def destroy

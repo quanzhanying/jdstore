@@ -1,1 +1,13 @@
-<h2>hello</h2>
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-md-3">
+    <div class="thumbnial">
+      <%= image_tag(product.image_url(:thumb)) if product.image? %>
+      <div class="caption">
+        <h3><%= product.title %></h3>
+        <p><%= product.price %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
