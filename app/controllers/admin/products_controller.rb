@@ -46,7 +46,7 @@ class Admin::ProductsController < ApplicationController
  private
 
  def product_params
-   params.require(:product).permit(:title, :description, :price, :stock, :is_hidden)
+   params.require(:product).permit(:title, :description, :price, :stock, :is_hidden, :image)
  end
  def check_admin
    if !current_user.is_admin
