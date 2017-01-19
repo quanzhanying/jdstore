@@ -1,0 +1,13 @@
+<tr>
+	<td>#</td>
+	<td><%= product.title %></td>
+	<td><%= product.description %></td>
+	<td><%= product.quantity %></td>
+	<td><%= product.price %></td>
+	<td>
+		<%= link_to("Edit", edit_admin_product_path(product)) %>
+		|
+		<%= link_to("Destroy", admin_product_path(product), method: :delete, data: { confirm: "Are you sure?" }) %>
+	</td>
+	<td><%= product.created_at %></td>
+</tr>
