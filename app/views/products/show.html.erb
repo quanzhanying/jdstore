@@ -13,11 +13,12 @@
         <%= @product.description%>
       </p>
     </div>
+    <br /><br /><br />
     <div>
-      product: <%= @product.quantity%>
+      Quantity: <%= @product.quantity%>
     </div>
     <div class="product-price">
-      ¥ <%= @product.price%>
+      Price: ¥ <%= @product.price%>
     </div>
     <div class="pull-right">
       <%= link_to("Add to my busket", "#", class: "btn btn-primary btn-lg-btn-danger")%>
