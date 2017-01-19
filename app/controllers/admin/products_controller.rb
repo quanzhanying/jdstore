@@ -20,6 +20,15 @@ class Admin::ProductsController < ApplicationController
 		end
 	end
 
+	def update
+		@product = Product.find(params[:id])
+		if @product.update(product_params)
+			redirect_to admin_products_path, notice: "Update success"
+		else
+			render :edit
+		end
+	end
+
 	private
 
 	def product_params
