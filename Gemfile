@@ -27,6 +27,18 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# 给专案穿上衣服
+gem 'bootstrap-sass'
+
+# 给专案装个登入系统
+gem 'devise'
+
+# 给专案简化复杂的表单
+gem 'simple_form'
+
+# 给专案添加厉害的图示套件
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
