@@ -1,26 +1,57 @@
-<!-- <div class="col-md-12">
-  <table class="table">
+<div class="pull-right">
+  <%= link_to("Add a product", new_admin_product_path, class: "btn btn-primary")%>
+</div>
+
+<br /><br />
+
+<div class="col-md-12">
+  <table class="table table-boldered table-striped custab">
     <thead>
       <tr>
         <th>
-
+          Product Name
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Quantity Left
+        </th>
+        <th>
+          Manage Items
+        </th>
+        <th>
+          Created At
         </th>
       </tr>
     </thead>
-    <tbody class="table">
+    <tbody>
+      <% @product.each do |p|%>
       <tr>
         <td>
-
+          <%= link_to(p.title, admin_product_path(p))%>
+        </td>
+        <td>
+          <%= p.description%>
+        </td>
+        <td>
+          <%= p.price%>
+        </td>
+        <td>
+          <%= p.quantity%>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(p))%>
+          <%= link_to("Delete", admin_product_path(p), method: :delete, class: "btn btn-xs btn-default btn-danger", data: { confirm: "Are you sure to delete?"})%>")%>
+        </td>
+        <td>
+          <%= p.created_at%>
         </td>
       </tr>
+      <% end %>
     </tbody>
   </table>
-</div> -->
-
-<ul>
-  <% @products.each do |p|%>
-    <li>
-      <%= link_to(p.title, admin_product_path(p))%>
-    </li>
-  <% end %>
-</ul>
+</div>

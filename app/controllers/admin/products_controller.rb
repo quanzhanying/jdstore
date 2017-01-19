@@ -18,6 +18,10 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def edit
     @product = Product.find(params[:id])
   end
@@ -30,6 +34,13 @@ class Admin::ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
+    redirect_to admin_products_path, warning: "Product deleted!"
   end
 
   private
