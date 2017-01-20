@@ -5,6 +5,7 @@ namespace :admin do
   resources :products
 end
 
+resources :products
 
 
 root 'products#index'
