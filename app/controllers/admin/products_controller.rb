@@ -1,4 +1,7 @@
 class Admin::ProductsController < ApplicationController
+  layout "admin"
+  before_action :authenticate_user!
+  before_action :admin_required
   def new
     @product = Product.new
   end
@@ -24,7 +27,15 @@ class Admin::ProductsController < ApplicationController
       render :edit
     end
   end
-
+  def show
+    @product = Product.find(params[:id])
+  end
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
+      redirect_to admin_products_path
+    end
+  end
 
   private
   def product_params
