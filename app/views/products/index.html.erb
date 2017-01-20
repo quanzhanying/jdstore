@@ -1,0 +1,18 @@
+<table class="table table-bolered">
+  <% @products.each do |product| %>
+  <thead>
+      <tr>
+         <td>#</td>
+         <td>品名</td>
+      </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>
+           <%= link_to(product.title, product_path(product)) %>
+        </td>
+      </tr>
+  </tbody>
+  <% end %>
+</table>
