@@ -1,0 +1,22 @@
+<div class="innercontent">
+  <div class="col-md-6">
+    <% if @product.image? %>
+    <%= image_tag(@product.image_url(:normal)) %>
+  <% else %>
+    <%= image_tag("nopic-normal.jpg") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <h2><%= @product.title %></h2>
+    </div>
+    <div class="row">
+      <p><%= @product.description %></p>
+    </div>
+    <div class="row">
+      <p>数量:<%= @product.stock %></p>
+      <p>&yen;<%= @product.price %></p>
+      <%= link_to("加入购物车", '#', class: "btn btn-danger pull-right") %>
+    </div>
+  </div>
+</div>
