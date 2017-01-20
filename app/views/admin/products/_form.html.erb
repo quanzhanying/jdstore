@@ -3,6 +3,9 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
+  <%= image_tag(@product.image_url) if @product.image? %>
+  <%= f.input :image %>
+  <%= f.input :image_cache %>
 
   <%= f.submit 'Create Product', :class => "btn btn-info" %>
 <% end %>
