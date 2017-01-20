@@ -1,10 +1,13 @@
 class Admin::ProductsController < ApplicationController
+  layout "admin"
+  before_action :authenticate_user!
+  before_action :admin_required
   def index
     @products = Product.all
   end
 
   def show
-    @product = Product.find(:id)
+    @product = Product.find(params[:id])
   end
 
   def new
