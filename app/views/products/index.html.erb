@@ -1,0 +1,8 @@
+<% @products.each do |product| %>
+  <div style="margin-left: 20px; float: left;">
+    <div style="width: 200px; height: 200px; border: 1px solid grey">
+      <img src="<%= product.image_url %>" style="width: 200px; height: 200px;" />
+    </div>
+    <%= link_to product.title, product_path(product) %>  $<%= product.price %>
+  </div>
+<% end %>

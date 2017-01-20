@@ -1,0 +1,16 @@
+<div>
+  <div style="float: left;">
+    <img src="<%= @product.image_url %>" style="width: 400px; height: 400px;" />
+  </div>
+  <div style="float: left; width: 70%;">
+    <div>
+      <h2><%= @product.title %></h2>
+      <p><%= @product.quantity %></p>
+      <p>$<%= @product.price %></p>
+      <div style="float: right;">
+        <%= link_to '加入购物车', "#", :class => "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+
+</div>
