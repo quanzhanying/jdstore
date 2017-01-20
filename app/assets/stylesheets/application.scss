@@ -15,3 +15,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.custab td{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+
+  transition: 0.5s;
+}
