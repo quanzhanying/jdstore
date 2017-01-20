@@ -1,4 +1,4 @@
 # README
 
 第三周
-JDstore Part1
+STORY-3 Done!
