@@ -8,6 +8,9 @@
     <% end %>
   </div>
   <div class="col-md-6">
+    <div class="pull-right">
+      <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger")%>
+    </div>
     <h2><%=@product.title %></h2>
     <div style="height:100px;">
       <p>
@@ -19,8 +22,6 @@
     </div>
     <div class="product-price"> ¥ <%= @product.price %>
     </div>
-    <div class="pull-right">
-      <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger")%>
-    </div>
+
   </div>
 </div>
