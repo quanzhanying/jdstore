@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  before_action :require_is_admin
+
   def index
     @products = Product.all
   end
