@@ -32,6 +32,7 @@ class Admin::ProductsController < ApplicationController
             redirect_to admin_products_path, alert: "Update Success!"
         else
             render :edit
+        end
     end
 
     def destroy
