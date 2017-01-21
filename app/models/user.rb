@@ -8,4 +8,14 @@ class User < ApplicationRecord
          def admin?
            is_admin
          end
+
+         def manager!
+           self.is_admin = true
+           self.save
+         end
+
+         def consumer!
+           self.is_admin = false
+           self.save
+         end
 end
