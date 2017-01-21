@@ -1,4 +1,3 @@
-class Product < ApplicationRecord
-  belongs_to :user
-  validates :title, presence: true
+class Product < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
 end
