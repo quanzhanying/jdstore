@@ -1,8 +1,12 @@
-<% @products.each do |product| %>
-  <div style="margin-left: 20px; float: left;">
-    <div style="width: 200px; height: 200px; border: 1px solid grey">
-      <img src="<%= product.image_url %>" style="width: 200px; height: 200px;" />
-    </div>
-    <%= link_to product.title, product_path(product) %>  $<%= product.price %>
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-3">
+        <div style="border: 1px solid lightgrey;">
+          <%= link_to image_tag(product.image.thumb.url), product_path(product) %>
+        </div>
+        <%= link_to product.title, product_path(product) %>  $<%= product.price %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
