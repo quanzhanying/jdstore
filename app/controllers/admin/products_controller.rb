@@ -31,12 +31,17 @@ before_action :require_is_admin
 
   def create
     @product = Product.new(product_params)
-
     if @product.save
       redirect_to admin_products_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @job = Product.find(params[:id])
+    @job.destroy
+    redirect_to admin_products_path
   end
 
   private
@@ -45,10 +50,4 @@ before_action :require_is_admin
     params.require(:product).permit(:title, :description, :quantity, :price)
   end
 
-  def require_is_admin
-  if !current_user.admin?
-    flash[:alert] = 'You are not admin'
-    redirect_to root_path
-  end
-end
 end
