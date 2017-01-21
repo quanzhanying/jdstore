@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <%= image_tag(@product.image.medium.url) %>
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+      <% end %>
     </div>
     <div class="col-md-6">
       <div class="header">

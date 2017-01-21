@@ -3,7 +3,11 @@
     <% @products.each do |product| %>
       <div class="col-md-3">
         <div style="border: 1px solid lightgrey;">
-          <%= link_to image_tag(product.image.thumb.url), product_path(product) %>
+          <% if product.image.present? %>
+            <%= link_to image_tag(product.image.thumb.url), product_path(product) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic"), product_path(product) %>
+          <% end %>
         </div>
         <%= link_to product.title, product_path(product) %>  $<%= product.price %>
       </div>
