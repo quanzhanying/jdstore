@@ -1,5 +1,10 @@
 class Admin::ProductsController < ApplicationController
 
+    layout "admin"
+
+    before_action :authenticate_user!
+    before_action :admin_required
+
     def new
         @product = Product.new
     end
@@ -32,7 +37,11 @@ class Admin::ProductsController < ApplicationController
       end
     end
 
-
+    def admin_required
+        if !current_user.admin?
+          redirect_to "/"
+        end
+    end
 
 
 
