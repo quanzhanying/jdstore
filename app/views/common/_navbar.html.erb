@@ -9,7 +9,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if !current_user %>
-                    <li> <%= link_to("Sign Up", new_user_registration_path) %> </li>
+      <!--              <li> <%= link_to("Sign Up", new_user_registration_path) %> </li>    -->
+                    <li> <%= link_to(content_tag(:i, 'Log in', class: 'fa fa-sign-in'), new_user_session_path) %> </li>
                     <li> <%= link_to("Log in", new_user_session_path) %> </li>
                 <% else %>
                     <li class="dropdown">
@@ -19,7 +20,8 @@
                         </a>
 
                     <ul class="dropdown-menu">
-                        <li> <%= link_to("Log out", destroy_user_session_path, method: :delete) %> </li>
+      <!--                  <li> <%= link_to("Log out", destroy_user_session_path, method: :delete) %> </li>     -->
+                            <li> <%= link_to(content_tag(:i, 'Log out', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
                 <% end %>
