@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+  <%= f.input :price %>
+  <%= image_tag(@product.image.thumb.url) if @product.image? %>
+  <%= f.input :image, as: :file %>
+
+  <%= f.submit 'Submit', data: { disable_with: "Submitting" },  :class => "btn btn-info" %>
+<% end %>
