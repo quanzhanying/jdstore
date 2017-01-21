@@ -1,8 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  layout "admin"
 
-  before_action :authenticate_user!
-  before_action :admin_required
 
   def index
     @products = Product.all
@@ -27,7 +24,7 @@ def update
 end
 
   def create
-      @procuct = Product.new(product_params)
+      @product = Product.new(product_params)
 
       if @product.save
         redirect_to admin_products_path
@@ -39,6 +36,6 @@ end
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 end
