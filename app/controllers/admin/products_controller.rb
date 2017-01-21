@@ -39,16 +39,17 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
+
+    redirect_to admin_products_path
+  end
 
 
   private
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = 'You are not admin'
-      redirect_to root_path
-    end
-  end
-  
+
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price)
   end
