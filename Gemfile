@@ -39,6 +39,9 @@ gem 'simple_form'
 # 给专案添加厉害的图示套件
 gem 'font-awesome-rails'
 
+# 专案要能上传图片
+gem 'carrierwave'
+gem 'mini_magick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
