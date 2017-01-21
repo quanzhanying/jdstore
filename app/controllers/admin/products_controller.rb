@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
-  # before action :authenticate_user!
+  before_filter :authenticate_user!
+  before_filter :admin_required
 
   def index
     @products = Product.all
@@ -23,18 +24,25 @@ end
    end
 
    def update
-     @product = Product.find(pramas[:id])
+     @product = Product.find(params[:id])
      if @product.update(product_params)
-       flash
        redirect_to admin_products_path
      else
        render :edit
      end
    end
 
+   def destroy
+     @product = Product.find(params[:id])
+     @product.destroy
+       flash[:alert] = "Product deleted"
+     redirect_to admin_products_path
+   end
+
+
 private
    def product_params
-  params.require(product).permit(:title,:description,:quantity,:price)
+  params.require(:product).permit(:title,:description,:quantity,:price)
 end
 
 end
