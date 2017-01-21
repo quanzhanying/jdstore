@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :products
   def admin?
-    email == "admin@gmail.com"
+    is_admin
   end
 end
