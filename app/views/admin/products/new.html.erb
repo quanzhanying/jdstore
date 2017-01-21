@@ -1,0 +1,8 @@
+<h2 class="text-center"> 发布新商品</h2>
+<%= simple_form_for [:admin, @product] do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :quantity %>
+<%= f.input :price %>
+<%= f.submit "Submit" %>
+<% end %>
