@@ -1,14 +1,6 @@
-<div class="pull-right">
-    <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default" ) %>
-</div>
+<ul>
+  <% @products.each do |product| %>
 
-<br><br>
-
-<table class="table table-boldered">
-    <ul>
-        <% @products.each do |product| %>
-
-            <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
-        <% end %>
-    </ul>
-</table>
+    <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
+  <% end %>
+</ul>
