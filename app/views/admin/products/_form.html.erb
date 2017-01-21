@@ -3,9 +3,8 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  <%= image_tag(@product.image_url) if @product.image? %>
-  <%= f.input :image %>
-  <%= f.input :image_cache %>
+  <%= image_tag(@product.image.thumb.url) if @product.image? %>
+  <%= f.input :image, as: :file %>
 
-  <%= f.submit 'Create Product', :class => "btn btn-info" %>
+  <%= f.submit 'Submit', data: { disable_with: "Submitting" },  :class => "btn btn-info" %>
 <% end %>
