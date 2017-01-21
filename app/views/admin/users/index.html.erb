@@ -1,0 +1,32 @@
+<h2> User List </h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+
+      <th>Email</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.id %>
+        </td>
+
+        <td>
+          <%= user.email %>
+        </td>
+
+        <td>
+          <% if !user.admin? %>
+          <%= link_to("设为管理者", manager_admin_user_path(user),:method => :post, data: { confirm: "Are you sure?" } ) %>
+          <% else %>
+            <%= link_to("设为消费者", consumer_admin_user_path(user),:method => :post, data: { confirm: "Are you sure?" } ) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
