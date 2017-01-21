@@ -8,12 +8,12 @@
     <% @products.each do |product| %>
         <tr>
             <td>
-                <%= link_to(product.title, admin_products_path(product)) %>
+                <%= link_to(product.title, admin_product_path(product)) %>
             </td>
             <td>
                 <%= link_to("Edit", edit_admin_product_path(product)) %>
                 |
-                <%= link_to("Destroy", admin_products_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+                <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
             </td>
             <td>
                 <%= product.created_at %>
