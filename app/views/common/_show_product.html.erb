@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-default product-panel">
+			<div class="panel-heading">商品名称</div>
+			<div class="panel-body"><%= @product.title %></div>
+			<div class="panel-heading">商品描述</div>
+			<div class="panel-body"><%= @product.description %></div>
+			<div class="panel-heading">商品价格</div>
+			<div class="panel-body"><%= @product.price %></div>
+			<div class="panel-heading">商品库存</div>
+			<div class="panel-body"><%= @product.storage %></div>
+		</div>
+		<div><%= @product.image.url%></div>
+		<div><%= @product.image.current_path%></div>
+	</div>
+</div>
