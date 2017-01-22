@@ -10,4 +10,6 @@ class Product < ApplicationRecord
 		self.is_hidden = true
 		save
 	end
+
+	mount_uploader :image, ImageUploader
 end
