@@ -41,6 +41,18 @@ class Admin::ProductsController < ApplicationController
 		redirect_to admin_products_path, alert: "Product Deleted"
 	end
 
+	def publish
+		@product = Product.find(params[:id])
+		@product.publish!
+		redirect_to admin_products_path
+	end
+
+	def hide
+		@product = Product.find(params[:id])
+		@product.hide!
+		redirect_to admin_products_path
+	end
+
 	private
 
 	def product_params
