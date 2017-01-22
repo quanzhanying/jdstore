@@ -30,6 +30,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'carrierwave'
+gem 'mini_magick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
