@@ -13,5 +13,16 @@
   <div>
     <%= f.input :price%>
   </div>
+
+
+  <% if @product.image.present?%>
+      <span>目前商品图</span> <br />
+      <%= image_tag(@product.image.thum.url)%>
+  <% end %>
+
+  <div>
+    <%= f.input :image, as: :file%>
+  </div>
+
   <%= f.submit "Submit", data: { disable_with: "Submitting..."}%>
 <% end %>
