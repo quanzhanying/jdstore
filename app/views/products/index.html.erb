@@ -1,4 +1,3 @@
-<p class="pull-right"> <%= link_to("发布新品",new_admin_product_path, :class => "btn btn-default")  %> </p>
 <table class="table table-boldered">
   <thead>
     <tr>
@@ -17,12 +16,8 @@
       <td> <%= product.description %></td>
       <td> <%= product.quantity %></td>
       <td> <%= product.price %> </td>
-      <td>
-        <%= link_to("编辑", edit_admin_product_path(product), :class => "btn btn-default") %>
-        <%= link_to("删除", admin_product_path(product), :class => "btn btn-default", :method => :delete, :data => { :confirm => "确定要删除吗？"}) %>
-      </td>
-      <td> <%= product.created_at %></td>
+      <td> <%= product.created_at %> </td>
     </tr>
-    <% end %>
+  <% end %>
   </body>
 </table>
