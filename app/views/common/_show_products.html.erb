@@ -1,18 +1,5 @@
 <div class="container-fluid">
-	<div class="col-md-8 col-md-offset-2">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>品名</th>
-					<th>描述</th>
-					<th>价格</th>
-					<th>库存</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%= render :partial => "products/product_item", :collection => @products, :as => :product %>
-			</tbody>
-		</table>
+	<div class="col-md-12">
+		<%= render :partial => "products/product_item", :collection => @products, :as => :product %>
 	</div>
 </div>

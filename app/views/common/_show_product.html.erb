@@ -1,16 +1,13 @@
 <div class="container-fluid">
-	<div class="col-md-6 col-md-offset-3">
-		<div class="panel panel-default product-panel">
-			<div class="panel-heading">商品名称</div>
-			<div class="panel-body"><%= @product.title %></div>
-			<div class="panel-heading">商品描述</div>
-			<div class="panel-body"><%= @product.description %></div>
-			<div class="panel-heading">商品价格</div>
-			<div class="panel-body"><%= @product.price %></div>
-			<div class="panel-heading">商品库存</div>
-			<div class="panel-body"><%= @product.storage %></div>
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag(@product.image.medium.url) %>
 		</div>
-		<div><%= @product.image.url%></div>
-		<div><%= @product.image.current_path%></div>
+		<div class="col-md-8">
+			<h3><%= @product.title %></h3>
+			<p style="margin-top: 10em;">库存：<%= @product.storage %></p>
+			<p>￥<%= @product.price %></p>
+			<%= link_to("加入购物车", "#", class: "btn btn-danger pull-right", style: "margin-left: 8em;") %>
+		</div>
 	</div>
 </div>

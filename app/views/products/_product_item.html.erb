@@ -1,7 +1,5 @@
-<tr>
-	<td>#</td>
-	<td><%= link_to(product.title, product_path(product)) %></td>
-	<td><%= product.description %></td>
-	<td><%= product.price %></td>
-	<td><%= product.storage %></td>
-</tr>
+<div class="col-md-3" style="margin-bottom: 3em;">
+	<%= link_to(product_path(product)) do %><%= image_tag(product.image.sm.url) %><% end %>
+	<h3 style="color: red;">￥<%= product.price %></h3>
+	<%= product.title %>
+</div>
