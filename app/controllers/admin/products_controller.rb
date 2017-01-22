@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+	before_action :authenticate_user!
+	
 	def index
 		@products = Product.all
 	end
@@ -16,7 +18,7 @@ class Admin::ProductsController < ApplicationController
 			render :edit
 		end
 	end
-	
+
 	def new
 		@product = Product.new
 	end
