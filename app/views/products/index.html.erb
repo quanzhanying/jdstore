@@ -5,14 +5,11 @@
         <%= link_to product_path(product) do %>
         <% if product.image.present? %>
         <%= image_tag(product.image.thumb.url, class: "thumbnial")   %>
-    <% else %>
+        <% else %>
         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnial")   %>
         <% end %>
-
         <% end %>
-        <%= product.title %>
-        ¥
-        <%= product.price %>
+        <%= product.title %> ¥ <%= product.price %>
     </div>
     <% end %>
 </div>
