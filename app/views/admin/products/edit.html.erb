@@ -5,6 +5,11 @@
     <%= f.input :description %>
     <%= f.input :quantity %>
     <%= f.input :price %>
+    <% if @product.image.present? %>
+      <span>Current Imge</span><br>
+      <%= image_tag(@product.image.thumb.url) %>
+    <% end %>
+    <%= f.input :image, as: :file %>
     <%= f.submit "Submit", class: "btn btn-default" %>
   <% end %>
 </div>
