@@ -15,9 +15,9 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
   def update
-    @job = Product.find(params[:id])
-    if @job.update(job_params)
-      redirect_to admin_procducts_path
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to admin_products_path
     else
       render :edit
     end
