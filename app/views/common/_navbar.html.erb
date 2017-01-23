@@ -16,8 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
-          <li><%= link_to('<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_registration_path) %></li>
-          <li><%= link_to('<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, new_user_session_path) %></li>
+          <li><%= link_to(content_tag(:i, " Sign In", class: "fa fa-sign-in"), new_user_registration_path) %></li>
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -27,10 +26,12 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li>
-                  <%= link_to('<span class="glyphicon glyphicon-home"></span> Admin Panel'.html_safe, admin_products_path) %>
+                  <%= link_to(content_tag(:i, " Admin Panel", class: "fa fa-lock"), admin_products_path) %>
                 </li>
               <% end %>
-              <li> <%= link_to('<span class="glyphicon glyphicon-log-out"></span> Log out'.html_safe, destroy_user_session_path, method: :delete) %> </li>
+              <li>
+                <%= link_to(content_tag(:i, " Sign Out", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
+              </li>
             </ul>
           </li>
         <% end %>
