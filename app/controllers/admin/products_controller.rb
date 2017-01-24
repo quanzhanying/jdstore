@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
+  before_action :admin_required
 
   def index
     @products = Product.all
@@ -40,6 +41,8 @@ class Admin::ProductsController < ApplicationController
     @product.destroy
     redirect_to admin_products_path, alert: "Product Deleted"
   end
+
+
 
   private
 
