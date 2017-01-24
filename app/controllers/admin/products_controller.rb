@@ -28,8 +28,8 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.upd ate(product_params)
-      redirect_to admim_products_path, notice: "Update Success"
+    if @product.update(product_params)
+      redirect_to admin_products_path, notice: "Update Success"
     else
       render :edit
     end
@@ -37,7 +37,8 @@ class Admin::ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy, alert: "Product Deleted"
+    @product.destroy
+    redirect_to admin_products_path, alert: "Product Deleted"
   end
 
   private
