@@ -1,5 +1,10 @@
 class Admin::ProductsController < ApplicationController
 
+layout "admin"
+
+  before_action :authenticate_user!
+  before_action :admin_required
+
   def new
     @product = Product.new
   end
@@ -30,8 +35,7 @@ class Admin::ProductsController < ApplicationController
     else
       render :edit
     end
-  end 
-
+  end
 
 
 
