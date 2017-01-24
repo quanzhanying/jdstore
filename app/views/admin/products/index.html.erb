@@ -5,18 +5,25 @@
   <!-- http://www.w3schools.com/bootstrap/bootstrap_ref_css_tables.asp  内含table的不同显示样式。 -->
   <thead>
     <tr>
+      <td>照片</td>
       <td>名称</td>
       <td>简介</td>
       <td>库存</td>
       <td>价格</td>
       <td>操作选项</td>
-      <td>创建时间</td>
     </tr>
   </thead>
 
   <tbody>
   <% @products.each do |product| %>
     <tr>
+      <td>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url) %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+        <% end %>
+      </td>
       <td>
         <%= link_to(product.title, admin_product_path(product))%>
       </td>
@@ -33,9 +40,6 @@
         <%= link_to("修改", edit_admin_product_path(product), :class => "btn btn-default btn-xs")%>
         <%= link_to("删除", admin_product_path(product), method: :delete , data: {confirm: "确定删除吗?"}, class: "btn btn-default btn-xs")%>
         <!--  不同的写法-->
-      </td>
-      <td>
-        <%= product.created_at%>
       </td>
     </tr>
   <% end %>
