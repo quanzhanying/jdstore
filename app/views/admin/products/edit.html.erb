@@ -5,7 +5,13 @@
   <%= f.input :description, :label => "简介" %>
   <%= f.input :quantity, :label => "库存" %>
   <%= f.input :price, :label => "单价" %>
-  <%= f.input :image, :label => "图像" %>
+
+  <% if @product.image.present? %>
+    <span>目前的商品图</span> <br>
+    <%= image_tag(@product.image.thumb.url)%>
+  <% end %>
+  <%= f.input :image, :label => "图像", as: :file%>
+
   <%= f.submit "提交修改后的信息", class: "btn btn-lg btn-primary",
       data: {disable_with: "提交等待中..."}%>
 <% end %>
