@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+购物网站jdstore基础建设：
+fork
+挂上bootstrap-sass这个gem
+nav/footer
+layout/application.html全局html样式
+welcome page
+bootstrap的js提示套件bootstrap/alert挂进项目_flashes.html.erb
+"common底下flashes的partial"
+加入flashes_helper
+安装登入系统gem devise,rails g devise:install,rails g devise user,rake db:migrate
+gem‘simple_form’简化
+使用gem 'font-awesome－rails'
+css里面导入'font-awesome'
