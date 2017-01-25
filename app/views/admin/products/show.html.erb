@@ -1,0 +1,13 @@
+<div class="pull-right">
+  <%= link_to("Edit", edit_admin_product_path(@product)) %>
+</div>
+<h2> <%= @product.title %> </h2>
+<br>
+<p>
+  描述：
+  <br>
+  <%= simple_format(@product.description) %>
+  库存：<%= @product.quantity %>
+  <br>
+  价格：<%= @product.price %>
+</p>
