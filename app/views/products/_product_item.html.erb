@@ -1,5 +1,7 @@
-<div class="col-md-3" style="margin-bottom: 3em;">
-	<%= link_to(product_path(product)) do %><%= image_tag(product.image.sm.url) %><% end %>
-	<h3 style="color: red;">￥<%= product.price %></h3>
-	<%= product.title %>
+<div class="image">
+	<%= link_to(product_path(product), class: "image_content") do %><%= image_tag(product.image.sm.url, class: "image_content") %><% end %>
+	<div class="desc">
+		<h3 style="color: red;">￥<%= product.price %></h3>
+		<%= product.title %>
+	</div>
 </div>
