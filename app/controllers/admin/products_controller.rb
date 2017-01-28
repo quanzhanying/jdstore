@@ -9,8 +9,8 @@ class Admin::ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def index
-    @products = Product.all
+  def show
+   @product = Product.find(params[:id])
   end
 
   def new
