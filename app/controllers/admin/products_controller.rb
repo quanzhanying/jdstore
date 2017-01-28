@@ -1,6 +1,8 @@
 class Admin::ProductsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :admin_required
+  layout "admin"
 
   def index
     @products = Product.all
@@ -39,11 +41,6 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  private
-
-  def product_params
-    params.require(:product).permit(:title, :description, :price, :quanlity)
-  end
 
   def destroy
     @product = Product.find(params[:id])
@@ -51,4 +48,18 @@ class Admin::ProductsController < ApplicationController
     flash[:alert] = "Product Deleted"
     redirect_to admin_products_path
   end
+
+
+  def admin_required
+    if !current_user.admin?
+      redirect_to "/", alert: "You are not admin"
+    end
+  end
+  private
+
+  def product_params
+    params.require(:product).permit(:title, :description, :price, :quanlity)
+  end
+
+
 end
