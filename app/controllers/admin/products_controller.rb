@@ -19,9 +19,23 @@ class Admin::ProductsController < ApplicationController
 
     if @product.save
       flash[:notice] = "Success Created"
-      redirect_to root_path
+      redirect_to admin_products_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+
+    if @product.update(product_params)
+      redirect_to admin_products_path
+    else
+      render :edit
     end
   end
 
@@ -29,5 +43,12 @@ class Admin::ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:title, :description, :price, :quanlity)
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product Deleted"
+    redirect_to admin_products_path
   end
 end
