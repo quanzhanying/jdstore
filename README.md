@@ -13,3 +13,15 @@ bootstrap的js提示套件bootstrap/alert挂进项目_flashes.html.erb
 gem‘simple_form’简化
 使用gem 'font-awesome－rails'
 css里面导入'font-awesome'
+
+
+pull request:
+atom README.md
+git add .
+git commit -m "first story"
+git push origin story1
+
+open github
+click Branch
+choose stroy1
+click New pull request
