@@ -1,0 +1,8 @@
+<h4><%= title %></h4>
+<%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :price %>
+    <%= f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submitting..."}  %>
+<% end %>

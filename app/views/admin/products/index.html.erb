@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="admin index">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Desc.</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @products.each do |product| %>
+                    <tr>
+                        <td><%= product.title %></td>
+                        <td><%= product.description %></td>
+                        <td><%= product.quantity %></td>
+                        <td><%= product.price %></td>
+                        <td><%= link_to "Edit", edit_admin_product_path(product) %>|<%= link_to "Delete", admin_product_path(product), method: :delete, data: {confirm:"Are you sure to delete this product?"} %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
