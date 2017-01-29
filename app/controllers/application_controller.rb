@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
   def require_is_admin
     if !current_user.admin?
-      
       redirect_to "/"
     end
   end
