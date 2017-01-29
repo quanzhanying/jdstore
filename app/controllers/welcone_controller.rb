@@ -1,0 +1,2 @@
+class WelconeController < ApplicationController
+end
