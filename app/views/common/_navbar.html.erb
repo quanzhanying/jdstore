@@ -12,6 +12,9 @@
         <!-- Collect the nav links, forms, and other contents for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-menu">
             <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <%= link_to "Products", products_path %>
+                </li>
                 <% if !user_signed_in? %>
                     <li><%= link_to "Login", new_user_session_path %></li>
                     <li><%= link_to "Sign up", new_user_registration_path %></li>
