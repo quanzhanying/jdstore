@@ -1,4 +1,3 @@
-<li><%= link_to("登入", '#' ) %></li>
 <% if !current_user %>
 	<li><%= link_to("注册", new_user_registration_path ) %></li>
 	<li><%= link_to("登入", new_user_session_path ) %></li>
