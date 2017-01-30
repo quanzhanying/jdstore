@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+	before_action :admin_required
 
 	def index
 		@products = Product.all
@@ -38,6 +39,14 @@ class Admin::ProductsController < ApplicationController
 
 		@product.destroy
 		redirect_to admin_products_path, alert: "Product Deleted."
+	end
+
+	def admin_required
+		if !current_user.try(:admin?)
+		#if !current_user.admin?
+			flash[:alert] = 'You are not admin' 
+			redirect_to "/" 
+		end
 	end
 
 	private
