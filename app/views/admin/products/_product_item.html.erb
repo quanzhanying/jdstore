@@ -1,0 +1,12 @@
+<tr>
+	<td><%= product.title  %></td>
+<td><%= product.price  %></td>
+<td><%= product.quantity  %></td>
+<td><%= product.created_at.strftime("%d %b. %Y")  %></td>
+	<td><span class="label label-success">On sale</span></td>
+
+	<td>
+		<%= link_to("Edit",edit_admin_product_path(product)) %> | 
+		<%= link_to("Delete",admin_product_path(product),:method=>:delete,:data=>{:confirm=>"Are you sure?"}) %>
+	</td>
+</tr>

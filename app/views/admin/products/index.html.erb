@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="span5">
+			<table class="table table-striped table-condensed">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Date Created</th>
+						<th>State</th>
+						<th>Management</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				<%= render partial:"product_item",:collection=>@products,:as=>:product %>
+			</table>
+		</div>
+	</div>
+</div>
