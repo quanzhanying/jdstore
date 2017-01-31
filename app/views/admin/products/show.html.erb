@@ -1,23 +1,6 @@
-<h2> Show Product </h2>
+<h1> <%= @product.title %> </h1>
 
-<%= simple_form_for [:admin, @product] do |f| %>
+<p>
+  <%= simple_format(@product.description) %>
 
-  <div class="group">
-    <%= f.input :title %>
-  </div>
-
-  <div class="group">
-    <%= f.input :description %>
-  </div>
-
-  <div class="group">
-    <%= f.input :quantity %>
-  </div>
-
-  <div class="group">
-    <%= f.input :price %>
-  </div>
-
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-
-<% end %>
+</p>
