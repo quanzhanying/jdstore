@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+	<%= f.input :title, :label => "品名" %>
+	<%= f.input :description, :label => "描述" %>
+	<%= f.input :price, :label => "价格" %>
+	<%= f.input :quantity, :label => "库存" %>
+
+	<% if @product.photo.present?  %>
+		<span>目前商品图</span> <br>
+		<%= image_tag(@product.photo.thumb.url) %>
+	<% end %>
+	<%= f.input :photo, as: :file %>
+
+	<%= f.submit "Submit", data: { disable_with: "Submitting..." }, class: "btn btn-primary" %>
+<% end %>

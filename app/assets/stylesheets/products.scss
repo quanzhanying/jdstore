@@ -1,0 +1,57 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.product-list {
+    //position: relative;
+    margin-right: -10px;
+    //height: 323px;
+    _height: 326px;
+    //overflow: hidden;
+		list-style: none;
+}
+
+ul.product-list li {
+    float: left;
+    width: 240px;
+    margin-right: 10px;
+}
+
+.p-card {
+  float: left;
+  width: 20.0%;
+  padding: .75rem;
+  //margin-bottom: 2rem;
+  //border: 0;
+	border: solid 1px #e8e8e8;
+	overflow: hidden;
+}
+
+.p-img {
+    //padding-top: 30px;
+    height: 202px;
+    text-align: center;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.p-info {
+    //position: relative;
+    padding: 10px 14px;
+    height: 69px;
+    background: #f4f4f4;
+}
+
+.p-name {
+    height: 36px;
+    overflow: hidden;
+}
+
+.p-price{
+	height: 30px;
+	padding-top: 5px;
+	font: 20px/30px "microsoft yahei";
+	color: #c81623;
+	overflow: hidden;
+}
