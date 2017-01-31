@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Git branches:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## EPIC-1
+- Forking from [quanzhanying](https://github.com/quanzhanying/jdstore)
+- Implication Bootstrap
+- Devise
+- SimpleForm
+- user can login/logout/signup
+- pullrequst
