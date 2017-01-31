@@ -4,8 +4,8 @@
 
 <table class="table table-boldered table-striped">
 	<thead>
+		<td>图片</td>
 		<td>品名</td>
-		<td>描述</td>
 		<td>价格</td>
 		<td>库存</td>
 		<td>管理</td>
@@ -14,14 +14,20 @@
 	<% @products.each do |product| %>
 	<tr>
 		<td>
+		  <% if product.photo.present? %>
+			  <%= image_tag(product.photo.thumb.url, class: "thumbnail") %>		
+		  <% else %>
+			  <%= image_tag("http://placehold.it/180x180&text=No Pic", class: "thumbnail") %>		
+		  <% end %>
+		</td>
+		<td>
 			<%= link_to(product.title, admin_product_path(product)) %>
 		</td>
-		<td><%= product.description %></td>
 		<td><%= product.price %></td>
 		<td><%= product.quantity %></td>
 		<td>
-			<%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>  
-			<%= link_to("Delete", admin_product_path(product), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
+			<%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-info") %>  
+			<%= link_to("Delete", admin_product_path(product), :method => :delete, :class => "btn btn-danger", :data => { :confirm => "Are you sure?" }) %>
 		</td>
 		<td><%= product.created_at %></td>
 	</tr>
