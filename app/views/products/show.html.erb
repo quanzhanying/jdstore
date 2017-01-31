@@ -1,4 +1,4 @@
-<div class="row">
+<<div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
@@ -14,7 +14,7 @@
       </p>
     </div>
     <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ¥ <%= @product.price %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
       <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger") %>
     </div>
