@@ -25,7 +25,7 @@ body {
   max-width: 40rem;
 }
 
-.album {
+.album2 {
   min-height: 50rem; /* Can be removed; just added for demo purposes */
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -42,6 +42,14 @@ body {
 
 .card > img {
   margin-bottom: .75rem;
+}
+
+.card img{
+  vertical-align: middle;
+  border-style: none;
+  height: 240px;
+  width: 100%;
+  display: block;
 }
 
 .card-text {

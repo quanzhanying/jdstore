@@ -1,38 +1,14 @@
-
-<table class="table table-boldered table-striped">
-	<thead>
-		<td>品名</td>
-		<td>描述</td>
-		<td>价格</td>
-		<td>库存</td>
-		<td>管理</td>
-		<td>创建日期</td>
-	</thead>
-	<% @products.each do |product| %>
-	<tr>
-		<td>
-			<%= link_to(product.title, product_path(product)) %>
-		</td>
-		<td><%= product.description %></td>
-		<td><%= product.price %></td>
-		<td><%= product.quantity %></td>
-		<td>
-		</td>
-		<td><%= product.created_at %></td>
-	</tr>
-	<% end %>
-</table>
-
-
-<div class="album text-muted">
-	<div class="container">
-		<% @products.each do |product| %>
-			<div class="card">
-					<img data-src="holder.js/100px280/thumb" alt="100%x280" style="height: 280px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22216%22%20height%3D%22280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20216%20280%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_159f22922af%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_159f22922af%22%3E%3Crect%20width%3D%22216%22%20height%3D%22280%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2271.671875%22%20y%3D%22146.3%22%3E216x280%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-
-
-				<p class="card-text"><%= link_to(product.title, product_path(product)) %></p>
-			</div>
-		<% end %>
+<div class="row">
+  <% @products.each do |product| %>
+	<div class="col-xs-6 col-md-3">
+	  <%= link_to product_path(product) do %>
+		<% if product.photo.present? %>
+			<%= image_tag(product.photo.thumb.url, class: "thumbnail") %>
+	    <% else %>
+			<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail" ) %>
+	    <% end %>
+      <% end %>
+	  <%= product.title %> $ <%= product.price %>
 	</div>
+  <% end %>
 </div>
