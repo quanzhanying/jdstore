@@ -8,4 +8,5 @@ Git branches:
 - Devise
 - SimpleForm
 - user can login/logout/signup
+- install font-awesome-rails
 - pullrequst
