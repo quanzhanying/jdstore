@@ -22,9 +22,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem "bootstrap-sass"
-gem  "devise"
-gem "simple_form"
+#gem "bootstrap-sass"
+#gem  "devise"
+#gem "simple_form"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -36,6 +36,9 @@ gem "bootstrap-sass"
 gem "devise"
 gem "simple_form"
 gem 'font-awesome-rails'
+gem 'carrierwave'
+
+gem 'mini_magick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
