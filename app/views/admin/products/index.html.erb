@@ -1,4 +1,7 @@
-<h2> Product List </h2>
+<div class='container'>
+  <h2>Product List </h2>
+
+</div>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
@@ -34,7 +37,8 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-success") %>
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "btn btn-danger") %>
         </td>
       </tr>
     <% end %>
