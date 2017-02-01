@@ -3,13 +3,18 @@ before_action :authenticate_user!
 before_action :admin_required
 
   def index
-  @products = Prouduct.all
-end
-
-  def new
-  @products = Product.new
+  @products = Product.all
   end
 
+  def show
+  @product = Product.find(params[:id])
+   end
+
+
+
+  def new
+  @product = Product.new
+  end
 
 
   def create
@@ -21,6 +26,20 @@ end
     render :new
   end
 end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+       redirect_to admin_products_path
+     else
+       render :edit
+     end
+   end
+
 
   private
 
