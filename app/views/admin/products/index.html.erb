@@ -18,14 +18,15 @@
     <tbody>
       <% @products.each do |product| %>
         <tr>
-<td>
-  <% if product.picture.present? %>
-    <%= image_tag(product.picture.thumb.url, class: "thumbnail") %>
-  <% else %>
-    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-  <% end %>
-</td>
-
+          <td>
+            <%= link_to product_path(product) do %>
+            <% if product.picture.present? %>
+            <%= image_tag(product.picture.thumb.url, class: "thumbnail") %>
+            <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+            <% end %>
+          </td>
           <td><%= product.title %></td>
           <td><%= product.description %></td>
           <td><%= product.quantity %></td>
