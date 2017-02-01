@@ -1,0 +1,9 @@
+<ul>
+  <% @products.each do |product| %>
+
+    <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
+       <td>
+         <%=   product.created_at %>
+       </td>
+  <% end %>
+</ul>
