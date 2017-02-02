@@ -6,16 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.new
-u.email = "admin@gmail.com"
-u.password = "111111"
-u.password_confirmation = "111111"
-u.is_admin = true
-u.save
-
-u = User.new
-u.email = "example@gmail.com"
-u.password = "111111"
-u.password_confirmation = "111111"
-u.is_admin = true
-u.save
+create_account = User.create([email: 'admin@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'true'])
+puts "Admin account created."
+create_account = User.create([email: 'example@gmail.com', password: '111111', password_confirmation: '111111', is_admin: 'false'])
+puts "Normal account created."
