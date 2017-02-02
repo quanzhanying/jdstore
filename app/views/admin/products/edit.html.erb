@@ -19,8 +19,8 @@
   </div>
 
   <% if @product.image.present? %>
-    <span>目前商品圈</span> <br>
-    <%= image_tag(@product.inage.thumb.url) %>
+    <span>目前商品图</span> <br>
+    <%= image_tag(@product.image.thumb.url) %>
   <% end %>
 
   <div class="group">
