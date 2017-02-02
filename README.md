@@ -1,5 +1,7 @@
 # README
 
+jdstore 第一周 add bootstrap simple_form devise 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
