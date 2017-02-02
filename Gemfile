@@ -40,7 +40,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'carrierwave'
-
+gem 'mini_magick'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
