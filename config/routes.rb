@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :products
-  root "products#index"
+  root "welcome#index"
 end
