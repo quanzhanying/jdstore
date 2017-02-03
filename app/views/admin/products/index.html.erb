@@ -1,12 +1,6 @@
-<table class="table table-boldered">
+<ul>
   <% @products.each do |product| %>
-  <tr>
-    <td>
-      <%= link_to(product.title, product_path(product)) %>
-    </td>
-    <td>
-      <%= product.created_at %>
-    </td>
-  </tr>
+
+    <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
   <% end %>
-</table>
+</ul>
