@@ -1,0 +1,39 @@
+<h2> Product List </h2>
+
+<div class="pull-right">
+  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
+</div>
+
+<br><br>
+
+<table class="table">
+
+  <thead>
+    <tr>
+      <th> Product Name </th>
+      <th> Description </th>
+      <th> Quantity </th>
+      <th> Price </th>
+      <th> Option </th>
+      <th> Created Date </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to(product.title, admin_product_path(product)) %></td>
+      <td><%= product.description %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.price %></td>
+      <td>
+        <%= link_to edit_admin_product_path(product), :class => "btn btn-xs btn-info" do%><i class="fa fa-pencil"></i> <% end %>
+        |
+        <%= link_to admin_product_path(product), :method => :delete, :data => {:confirm => "Are you sure?" }, :class => "btn btn-xs btn-danger" do %><i class="fa fa-trash-o"></i><% end %>
+      </td>
+      <td><%= product.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
