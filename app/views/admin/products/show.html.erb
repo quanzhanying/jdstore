@@ -1,23 +1,22 @@
-<h2><%= @product.title %></h2>
-
-  <div class="group">
-    <%= @product.description %>
-  </div>
-
-  <div class="group">
-    <%= @product.quantity %>
-  </div>
-
-  <div class="group">
-    <%= @product.price %>
-  </div>
-
-  <% if @product.image.present? %>
-    <span> Present Image </span> <br>
-    <%= image_tag(@product.image.thumb.url) %>
-  <% end %>
-
-
-  <div class="group">
-    <%= @product.quantity %>
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&tex=No Pic", class: "thumbnail") %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2><%= @product.title %></h2>
+      <div style="height: 100px;">
+        <p>
+          <%= @product.description %>
+        </p>
+      </div>
+      <div> Quantity: <%= @product.quantity %> </div>
+      <div class="product-price"> ¥ <%= @product.price %></div>
+      <div class="pull-right">
+        <%=link_to("Add to Card", "#", class: "btn btn-primary btn-lg btn-danger") %>
+      </div>
+    </div>
   </div>
