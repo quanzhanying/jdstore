@@ -2,6 +2,11 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="bs-example-navbar-collapse-1">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> -->
             <a class="navbar-brand" href="/">JDStore
             </a>
         </div>
@@ -9,10 +14,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <% if !current_user %>
+                <% if !current_user %>
                 <li><%= link_to("注册",new_user_registration_path) %></li>
                 <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-              <% else %>
+            <% else %>
                 <li class="dropdown">
                     <a href="#" , class="dropdown-toggle" data-toggle="dropdown">
                         Hi!,<%= current_user.email %>
@@ -24,7 +29,7 @@
                         </li>
                     </ul>
                 </li>
-              <% end %>
+                <% end %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
