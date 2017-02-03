@@ -1,14 +1,30 @@
-<h1><%= @product.title %></h1>
-<ul>
-  <li><%= simple_format(@product.description)%></li>
-  <li><%= @product.created_at %></li>
-  <li><%= @product.quantity %></li>
-  <li><%= @product.price %></li>
-  <li><%= @product.image %></li>
-  <!--<imag src=/@product.image> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <% if @product.image.present? %>
+        <!--<span> 目前商品图 </span> <br> -->
+        <%= image_tag(@product.image.medium.url)%>
+      <% end %>
+    </div>
 
-    <% if @product.image.present? %>
-      <span> 目前商品图 </span> <br>
-      <%= image_tag(@product.image.thumb.url)%>
-    <% end %>
-</ul>
+    <div class="col-md-4">
+      <h1><%= @product.title %></h1>
+
+
+      <p>
+        <%= simple_format(@product.description)%>
+        <br>
+          <!--<li><%= @product.created_at %></li> -->
+        数量：<%= @product.quantity %>
+        <br>
+        价格：¥<%= @product.price %>
+        <br>
+        <button type="button" class="btn btn-warning"> 立即购买 </button>
+        <button type="button" class="btn btn-danger"> 加入购物车</button>
+      <!--  <li><%= @product.image %></li>
+        <imag src=/@product.image> -->
+      </p>
+    </div>
+
+  </div>
+</div>
