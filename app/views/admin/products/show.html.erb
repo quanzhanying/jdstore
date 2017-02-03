@@ -1,0 +1,14 @@
+<h1><%= @product.title %></h1>
+<ul>
+  <li><%= simple_format(@product.description)%></li>
+  <li><%= @product.created_at %></li>
+  <li><%= @product.quantity %></li>
+  <li><%= @product.price %></li>
+  <li><%= @product.image %></li>
+  <!--<imag src=/@product.image> -->
+
+    <% if @product.image.present? %>
+      <span> 目前商品图 </span> <br>
+      <%= image_tag(@product.image.thumb.url)%>
+    <% end %>
+</ul>
