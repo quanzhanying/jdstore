@@ -18,6 +18,11 @@
     <%= f.input :price %>
   </div>
 
+  <% if @product.image.present? %>
+    <span><b>Present Image</b></span> <br>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
   <%= f.submit "Submit", data: { disable_with: "Submitting" }%>
 
   <% end %>

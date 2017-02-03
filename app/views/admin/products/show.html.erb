@@ -1,13 +1,23 @@
 <h2><%= @product.title %></h2>
 
-<table class="table">
-  <tr>
-    <td><%= @product.description %></td>
-  </tr>
-  <tr>
-    <td><%= @product.quantity %></td>
-  </tr>
-  <tr>
-    <td><%= @product.price %></td>
-  </tr>
-</table>
+  <div class="group">
+    <%= @product.description %>
+  </div>
+
+  <div class="group">
+    <%= @product.quantity %>
+  </div>
+
+  <div class="group">
+    <%= @product.price %>
+  </div>
+
+  <% if @product.image.present? %>
+    <span> Present Image </span> <br>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+
+  <div class="group">
+    <%= @product.quantity %>
+  </div>
