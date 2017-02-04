@@ -1,0 +1,9 @@
+<table class="table table-boldered">
+  <% @products.each do |product| %>
+    <tr>
+       <td>
+          <%= link_to(product.title, admin_product_path(product)) %>
+       </td>
+    </tr>
+  <% end %>
+</table>
