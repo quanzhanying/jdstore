@@ -1,0 +1,26 @@
+<div class="container-fluid">
+
+  <div class = "row">
+    <div class = "col-sm-5 col-md-5">
+      <%= image_tag("#{@product.image.medium.url}") %>
+    </div>
+    <div class = "col-sm-3 col-md-3">
+      <h2>
+        <%= @product.title %>
+      </h2>
+    </div>
+    <br><br><br>
+    <div class = "col-sm-2 col-md-2">
+      <span>数量:</span>
+       <%= @product.price %>
+      <br>
+      <span> $ : </span>
+       <%= @product.quantity %>
+    </div>
+    <br><br>
+    <div class=" btn btn-danger pull-right">
+      加入购物车
+    </div>
+  </div>
+
+</div>

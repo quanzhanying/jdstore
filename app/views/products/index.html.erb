@@ -1,0 +1,19 @@
+
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <% if product.image.length != 0 %>
+        <%= link_to(image_tag("#{product.image.thumb.url}"), product_path(product)) %>
+      <% else %>
+        <img src="http://placehold.it/200x200">
+      <% end %>
+    </div>
+      <%= product.title %>
+      <%= product.price %>
+      <br> <br><br>
+
+  </div>
+  <% end %>
+
+</div>
