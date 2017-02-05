@@ -11,7 +11,7 @@
     </div>
 
     <div class="group">
-      <%= f.input :quantity, label: "品质" %>
+      <%= f.input :quantity, label: "数量" %>
     </div>
 
     <div class="group">
@@ -24,7 +24,7 @@
     <% end %>
 
     <div class="group">
-      <%= f.input :image, as: :file %>
+      <%= f.input :image, as: :file, label: "图片" %>
     </div>
 
     <%= f.submit "提交", data: { disable_with: "上传中……"} %>
