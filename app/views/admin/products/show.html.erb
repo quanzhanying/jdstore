@@ -1,0 +1,24 @@
+<div class="col-md-12">
+
+  <p>宝贝</p>
+  <h2><%= @product.title %></h2>
+
+  <hr>
+
+  <p>🔎详情(描述):</p>
+  <h4><%= simple_format(@product.description) %></h4>
+  <br>
+  <p>库存</p>
+  <h4><%= @product.quantity %></h4>
+  <br>
+  <p>价格</p>
+  <h4><%= @product.price %></h4>
+
+  <div class="products_back">
+    <%= link_to("🔙返回", admin_products_path, class: "btn btn-success pull-right")%>
+  </div>
+  <div class="product_edit">
+    <%= link_to("📝编辑", edit_admin_product_path(@product), class: "btn btn-primary pull-right")%>
+  </div>
+
+</div>
