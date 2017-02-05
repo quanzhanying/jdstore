@@ -1,0 +1,31 @@
+<div class="row">
+
+  <div class="col-md-6">
+    <% if @prouduct.image.present? %>
+      <%= image_tag(@product.imate.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+
+  <div>
+    <h2><%= @product.title %></h2>
+
+    <div style="height:100px">
+      <p><%= @product.description %></P>
+    </div>
+
+    <div>
+      数量 ： <%= @prouduct.quantity  %>
+    </div>
+
+    <div>
+      ￥ <%= @product.price %>
+    </div>
+
+    <div>
+      <%= link_to("加入购物车"，"#"， :class => "btn btn-primary btn-lg btn-danger") %>
+    </div>
+  </div>
+
+</div>
