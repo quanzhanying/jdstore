@@ -14,5 +14,9 @@
      <%= f.input :price %>
    </div>
 
+   <div class="group">
+     <%= f.input :image, as: :file %>
+   </div>
+
    <%= f.submit "Submit", data: { diable_with: "Submitting..." } %>
 <% end %>
