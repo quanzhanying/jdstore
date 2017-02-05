@@ -1,0 +1,36 @@
+<style media="screen">
+    .floatleft {
+        float: left;
+    }
+
+</style>
+
+<div class="panel panel-default ">
+    <div class="panel panel-body floatleft">
+        <%=image_tag @product.image.medium %>
+    </div>
+    <div class="panel panel-body">
+        <p>
+            <h1><%=@product.title %></h1>
+        </p>
+        <p>
+            描述:
+            <%=@product.description %>
+        </p>
+        <p>
+            价格:
+            <%=@product.price %>
+        </p>
+        <p>
+            数量:
+            <%=@product.quantity %>
+        </p>
+
+        <div style="margin-top: 190px">
+            <%= link_to("加入购物车", "#", class: "btn btn-danger pull-right" ) %>
+
+        </div>
+
+    </div>
+
+</div>
