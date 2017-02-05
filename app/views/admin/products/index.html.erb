@@ -48,7 +48,7 @@ body {font-family:Monospace;}
           <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-primary pull-left")%> |
           <%= link_to("Destroy", admin_product_path(product), :method => :delete, :class => "btn btn btn-danger pull-center", :data => { :confirm => "Are you sure?" }) %>
         </td>
-<!-- 此处需要增加编辑与删除按钮 -->
+
         <td>
           <%= product.created_at %>
         </td>
