@@ -1,0 +1,41 @@
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-sm-6 col-md-3">
+      <% if product.is_hidden %>
+        <div class="thumbnail" style="background-color: #999">
+        <% else %>
+        <div class="thumbnail" >
+        <% end %>
+
+      <a href="<%= admin_product_path(product) %>">
+
+        <!-- 显示图判断 -->
+        <% if no_pic?(product) %>
+        <%= image_tag(product.image.default_url, class: "thumbnail") %>
+          <!-- <img src="/nopic.png" alt="no picture" class="img-responsive"> -->
+        <% else %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+
+        <% end %>
+
+
+      </a>
+        
+        <div class="caption">
+        <h5><%= product.title %></h5> 
+          <h3>￥<%= product.price %>.00</h3>
+          <p><%= product.description %></p>
+          <%= link_to('编辑',edit_admin_product_path(product),class: "btn btn-primary",role: "button") %> 
+          <% if product.is_hidden %>
+          <%= link_to("上架", publish_admin_product_path(product), :method => :put,class: "btn btn-warning",role: "button") %>
+          
+          <% else %>
+          <%= link_to("下架", private_admin_product_path(product), :method => :put,class: "btn btn-warning",role: "button") %>
+          <% end %>
+
+          <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "确定删除?" },class: "btn btn-danger",role: "button") %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
