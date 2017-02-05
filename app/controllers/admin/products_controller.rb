@@ -39,6 +39,12 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+      redirect_to admin_products_path, alert: '产品信息已删除！'
+  end
+
 
   private
 
