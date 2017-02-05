@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :products
-  root 'welcome#index'
+
 end
