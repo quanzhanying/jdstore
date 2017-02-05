@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
 # in here to fill before conditions
 
   def index
