@@ -35,6 +35,13 @@ before_action :admin_required
     end
   end
 
+  def destroy
+    @product=Product.find(params[:id])
+    @product.destroy
+    redirect_to admin_products_path
+    flash[:alert]="Product deleted"
+  end
+
     private
     def product_params
       params.require(:product).permit(:title, :descriptin, :price, :quantity, :image)
