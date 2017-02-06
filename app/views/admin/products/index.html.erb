@@ -32,7 +32,7 @@
          <% end %>
        </td>
           <td><%= link_to(product.title, admin_product_path(product)) %></td>
-          <td><%= product.description %></td>
+          <td><%= simple_format(product.description) %></td>
           <td><%= product.quantity %></td>
           <td><%= product.price %></td>
           <td>
