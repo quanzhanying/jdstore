@@ -12,8 +12,12 @@ class Cart < ApplicationRecord
     def total_price
         sum = 0
         cart_items.each do |cart_item|
-            sum += cart_item.quantity * cart_item.product.price
+            sum = cart_item.quantity * cart_item.product.price
         end
         sum
   end
 end
+
+def clean!
+    cart_items.destroy_all
+  end
