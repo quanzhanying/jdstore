@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   def admin_required
     if !current_user.admin?
+      flash[:notice] = "您还不是管理员，没有该权限！"
       redirect_to "/"
     end
   end
