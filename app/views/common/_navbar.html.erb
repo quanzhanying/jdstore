@@ -15,6 +15,11 @@
                 <li class="active">
                     <%= link_to "Products", products_path %>
                 </li>
+                <li>
+                    <%= link_to "#" do %>
+                        Cart <%= fa_icon "shopping-cart" %> (<%= current_cart.products.count %>)
+                  <% end %>
+                </li>
                 <% if !user_signed_in? %>
                     <li><%= link_to "Login", new_user_session_path %></li>
                     <li><%= link_to "Sign up", new_user_registration_path %></li>

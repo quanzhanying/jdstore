@@ -30,6 +30,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'font-awesome-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
