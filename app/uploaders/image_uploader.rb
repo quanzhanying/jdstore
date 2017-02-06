@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   process resize_to_fit: [800, 800]
 
-  vesrion :thumb do
+  version :thumb do
     process resize_to_fill: [200, 200]
   end
 
