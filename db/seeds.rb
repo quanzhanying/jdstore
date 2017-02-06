@@ -8,11 +8,11 @@
 
 
 u = User.new
-u.email = "bbeeaanns@gmail.com"
+u.email = "admin@test.com"
 
 u.password = "bb112255"
 
-u.password_confirmation = "bb112255"   
+u.password_confirmation = "bb112255"
 
 u.is_admin = true
 u.save
