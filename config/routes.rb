@@ -20,5 +20,6 @@ resources :products do
 
 resources :products
  resources :carts
+ resources :orders
 root 'welcome#index'
 end
