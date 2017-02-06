@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 root 'welcome#index'
 
 resources :products do
-  
+
 member do
   post :add_to_cart
 end
@@ -14,5 +14,6 @@ namespace :admin do
   resources :products
 end
 
+resources :carts 
 
 end
