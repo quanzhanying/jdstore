@@ -12,6 +12,11 @@ resources :products do
 
     end
   end
+  resources :carts do
+      collection do
+        post :checkout
+      end
+    end
 
 resources :products
  resources :carts
