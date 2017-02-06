@@ -16,7 +16,7 @@
                     <%= link_to "Products", products_path %>
                 </li>
                 <li>
-                    <%= link_to "#" do %>
+                    <%= link_to carts_path do %>
                         Cart <%= fa_icon "shopping-cart" %> (<%= current_cart.products.count %>)
                   <% end %>
                 </li>
