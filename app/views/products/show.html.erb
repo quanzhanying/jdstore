@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-6 col-md-4" id="pl">
+    <img src="<%= @product.image %>" alt="" class="img-thumbnail">
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <h2 class="right"><%= @product.title %></h2>
+    <br><br><br>
+    <p >数量:<%= @product.quantity %>
+    <br>¥ <%= @product.price %></P>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <button type="button" class="btn btn-danger pull-right">加入购物车</button>
+  </div>
+</div>

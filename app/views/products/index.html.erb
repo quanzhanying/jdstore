@@ -3,7 +3,7 @@
     <div>
       <% @products.each do |product| %>
       <ul class="hp-ul">
-          <a href="product_path(product)">
+          <a href="/products/<%= product.id %>">
             <div>
               <img src="<%= product.image %>" alt="" class="img-thumbnail">
             </div>
