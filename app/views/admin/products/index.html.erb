@@ -11,6 +11,9 @@
         Product Pic
       </th>
       <th>
+        Name
+      </th>
+      <th>
         Price
       </th>
       <th width="100">
@@ -19,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= @products.each do |product| %>
+    <% @products.each do |product| %>
       <tr>
         <td>
           <%= product.id %>
