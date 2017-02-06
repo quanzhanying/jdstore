@@ -1,0 +1,17 @@
+<h1> Edit a product </h1>
+
+<%= simple_form_for @product do |f| %>
+
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+  <%= f.input :newprice %>
+
+  <% if @product.image.present? %>
+    <span>目前商品图</span><br>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+  <%= f.input :image, as: :file%>
+  <%= f.submit "Submit" %>
+<% end %>
