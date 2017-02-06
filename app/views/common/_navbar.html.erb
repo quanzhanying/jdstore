@@ -22,7 +22,7 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <%= if current_user.admin? %>
+            <% if current_user.admin? %>
             <li>
               <%= link_to("Admin 选单", admin_products_path) %>
             </li>
