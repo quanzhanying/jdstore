@@ -31,7 +31,8 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.save(product_params)
+
+    if @product.update(product_params)
       redirect_to admin_products_path, notice: "Update Success!"
     else
       render :edit
@@ -44,7 +45,7 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path, alert: "Product Deleted!"
   end
 
-  privateimage
+  private
 
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price, :image)
