@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206150442) do
+ActiveRecord::Schema.define(version: 20170206153549) do
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer  "card_id"
+    t.integer  "cart_id"
     t.integer  "product_id"
     t.integer  "quantity",   default: 1
     t.datetime "created_at",             null: false
