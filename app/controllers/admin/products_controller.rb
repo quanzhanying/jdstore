@@ -1,7 +1,8 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
-# in here to fill before conditions
-
+  # before_action must login!
+   before_filter :require_is_admin
+  # only admin can into back platform!
   def index
     @products = Product.all
   end
@@ -44,6 +45,14 @@ class Admin::ProductsController < ApplicationController
     @product.destroy
     redirect_to admin_products_path, alert: '产品删除成功！'
   end
+
+  def require_is_admin
+      if !current_user.admin?
+        flash[:alert] = 'You are not admin!'
+        redirect_to root_path
+      end
+  end
+
 
   private
 
