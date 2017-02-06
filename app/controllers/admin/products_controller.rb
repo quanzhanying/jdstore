@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+
   layout "admin"
 
   before_action :authenticate_user!
@@ -10,6 +11,15 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to admin_products_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -26,22 +36,16 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def create
-    @product = Product.new(product_params)
-    if @product.save
-      redirect_to admin_products_path
-    else
-      render :new
-    end
-  end
-
   def destroy
-    @product = product.find(params[:id])
+    @product = Product.find(params[:id])
 
     @product.destroy
 
     redirect_to admin_products_path
   end
+
+
+
 
   private
 
