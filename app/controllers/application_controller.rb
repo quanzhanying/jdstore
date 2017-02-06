@@ -1,32 +1,21 @@
 class ApplicationController < ActionController::Base
+    def admin_required
+        redirect_to '/' unless current_user.is_admin?
+    end
 
-def admin_required
-if !current_user.is_admin?
- redirect_to "/"
-end
-end
+    helper_method :current_cart
 
+    def current_cart
+        @current_cart ||= find_cart
+    end
 
-def current_cart
-@current_cart ||= find_cart
-end
+    private
 
+    def find_cart
+        cart = Cart.find_by(id: session[:cart_id])
+        cart = Cart.create if cart.blank?
 
-private
-
-def find_cart
-cart = Cart.find_by(id: session[:cart_id])
-if cart.blank?
-  cart = Cart.create_table
-end
-session[:cart_id]=cart.id
-return cart
-end 
-
-end
-
-
-
-
-
+        session[:cart_id] = cart.id
+        cart
+    end
 end
