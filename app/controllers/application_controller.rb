@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
      redirect_to "/", alert: "You are not admin."
    end
  end
-end
 helper_method :current_cart
 
   def current_cart
@@ -22,4 +21,5 @@ helper_method :current_cart
     session[:cart_id] = cart.id
     return cart
   end
+
 end
