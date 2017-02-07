@@ -8,6 +8,7 @@
                     <th colspan="2"> Product Info</th>
                     <th>Unit Price</th>
                     <th>Quantity</th>
+                    <th>操作选项</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +31,11 @@
                         </td>
                         <td>
                             <%= ci.quantity %>
+                        </td>
+                        <td>
+                            <%= link_to cart_item_path(ci.product_id), method: :delete, data:{confirm: "Are you sure to delete #{ci.product.title} from cart?"} do %>
+                                <%= fa_icon "trash" %>
+                            <% end %>
                         </td>
                     </tr>
                 <% end %>
