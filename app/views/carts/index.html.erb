@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-md-12">
+      <%= link_to("清空购物车", clean_cart_path(current_cart), method: :delete, class: "btn btn-primary pull-right", data: {confirm: "Are you sure?"}) %>
         <h2>
             购物车
         </h2>
@@ -23,9 +24,9 @@
                     <td>
                         <%= link_to product_path(cart_item.product) do %>
                         <% if cart_item.product.image.present? %>
-                        <%= image_tag(cart_item.product.image.thumb.url, class:"thumbnail") %>
-                    <% else %>
-                        <%= image_tag("http://placehold.it/200x200&text= No Pic", class:"thumbnail") %>
+                          <%= image_tag(cart_item.product.image.thumb.url, class:"thumbnail") %>
+                        <% else %>
+                          <%= image_tag("http://placehold.it/200x200&text= No Pic", class:"thumbnail") %>
                         <% end %>
                         <% end %>
                     </td>
