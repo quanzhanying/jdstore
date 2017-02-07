@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_cart
-
+#  current_cart其实原本是一个 controller 内的 method，我们为了要在 view 里面要可以存取它。
+#  所以，我们得在 applications_controller.rb 宣告他是 helper_method，才能直接存取。
   def current_cart
       @current_cart ||= find_cart
   end
