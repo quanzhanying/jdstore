@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   root 'products#index'
 
+  resources :cart_items
+
   resources :carts do
     collection do
       delete :clean
     end
   end
-
-  resources :cart_items
 
   devise_for :users
   namespace :admin do
