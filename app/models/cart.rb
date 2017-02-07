@@ -7,4 +7,5 @@ class Cart < ApplicationRecord
     ci.product = product
     ci.quantity = 1
     ci.save
+  end
 end
