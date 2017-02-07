@@ -6,6 +6,6 @@ class Cart < ApplicationRecord
     ci = cart_items.build
     ci.product = product
     ci.quantity = 1
-    ci.sace
+    ci.save
   end
 end
