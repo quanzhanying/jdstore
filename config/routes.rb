@@ -11,9 +11,11 @@ resources :products do
 end
 resources :carts do
   collection do
+    post :clean
     post :checkout
   end
 end
 resources :cart_items
+resources :orders
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
