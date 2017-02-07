@@ -1,0 +1,10 @@
+<h1> <% @product.title %></h1>
+
+<p>
+  <%= simple_format(@product.title) %> 
+  <%= simple_format(@product.description) %>
+  价格：<%= @product.price %> <br/>
+  数量：<%= @product.quantity %> <br/>
+
+  <%= image_tag @product.image_url.to_s %>
+</p>
