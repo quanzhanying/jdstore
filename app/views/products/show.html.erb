@@ -9,7 +9,11 @@
   </div>
   <div class="col-md-6">
     <div class="pull-right">
+      <% if @product.quantity >0 %>
       <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger")%>
+      <% else %>
+      已经销售一空，无法购买
+      <% end %>
     </div>
     <h2><%=@product.title %></h2>
     <div style="height:100px;">
