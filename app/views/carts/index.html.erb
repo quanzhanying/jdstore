@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12" >
     <%= link_to("清空购物车",clean_carts_path,method: :delete, class:"pull-right",
     style: "text-decoration:underline;",data:{confirm:"你确定要清空整个购物车吗?"})%>
     <h2>购物车</h2>
@@ -17,7 +17,7 @@
             数量
           </th>
           <th>
-            操作
+            操作选项
           </th>
         </tr>
       </thead>
@@ -45,7 +45,11 @@
               <%= cart_item.quantity %>
             </td>
             <td>
-              <%=link_to("删除",cart_path(cart_item), method: :delete, class:"btn btn-danger",data:{confirm:"Are you sure?"})%>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+              <i class="fa fa-trash"></i>
+              <% end %>
+              
+
             </td>
         </tr>
         <% end %>
