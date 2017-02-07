@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   def generate_token
     self.token = SecureRandom.uuid
   end
+
   belongs_to :user
 
   validates :billing_name, presence: true
