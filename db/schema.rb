@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20170207090728) do
     t.string   "billing_name"
     t.string   "billing_address"
     t.string   "shipping_name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "shipping_address"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "products", force: :cascade do |t|
