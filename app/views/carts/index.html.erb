@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to("Clear the cart", clean_carts_path, method: :delete, class: "btn btn-lg btn-danger pull-right", style: "text-decoration: underline;", data: { confirm: "Are you sure to clear the whole cart? "})%>
+    <h2>Shopping Cart</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product info</th>
+          <th>Price</th>
+          <th>Number</th>
+          <th>Manage Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product ) do %>
+              <% if cart_item.product.image.present? %>
+                <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail")%>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product))%>
+          </td>
+          <td>
+            <%= cart_item.product.price %>
+          </td>
+          <td>
+            <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>
+            <%= simple_form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+              <%= f.select :quantity, 1..cart_item.product.quantity %>
+              <%= f.submit "Update", data: { disable_with: "Submiting..."}%>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br />
+
+    <div class="total clearfix">
+      <span class="pull-right">
+          <span>
+            Total: ¥ <%= render_cart_total_price(current_cart) %>
+          </span>
+      </span>
+    </div>
+
+    <hr />
+
+    <div class="checkout clearfix">
+      <%= link_to("Confirm the bill", "#", method: :post, class: "btn btn-lg btn-danger pull-right")%>
+    </div>
+  </div>
+</div>
