@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
-  def render_cart_total_price(cart)
-    cart.total_price
+  def clean
+    current_cart.clean!
+    flash[:warning]="Emptied cart successfully"
+    redirect_to carts_path
   end
 end
