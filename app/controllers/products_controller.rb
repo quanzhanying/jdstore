@@ -12,4 +12,10 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title,:description,:quantity,:price,:image)
   end
+
+  def add_to_cart
+    @product = Product.find(params[:id])
+    redirect_to :back
+    flash[:notice] = "测试加入购物车"
+  end
 end
