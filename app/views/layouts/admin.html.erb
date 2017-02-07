@@ -12,7 +12,16 @@
         <div class="container-fluid">
             <%= render "common/navbar"%>
             <%= render "common/flashes"%>
+            <div class="col-md-2">
+              <div class="collapse navbar-collapse">
+                <ul class="nav nav-pills nav-stacked" style="max-width:300px;">
+                  <li><%= link_to("Products", admin_products_path)%></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-10">
             <%= yield %>
+          </div>
         </div>
         <%= render "common/footer"%>
     </body>
