@@ -1,5 +1,8 @@
 <div class="row">
 	<div class="col-md-12">
+	<%= link_to("Clean Cart",clean_carts_path,
+		method: :delete, class: "btn btn-lg btn-danger pull-right",
+		data:{confirm: "Are you sure?"}) %>
 		<h2>Cart</h2>
 		<table class="table table-bordered">
 			<thead>
@@ -18,14 +21,7 @@
 		<div class="total clearfix">
 			<span class="pull-right">
 				<span>
-				<% sum=0  %>	
-				<% current_cart.cart_items.each do |cart_item| %>
-				<% if cart_item.product.price.present? %>
-				<% sum = sum+ cart_item.quantity * cart_item.product.price  %>
-					
-				<% end %>
-					
-				<% end %>
+
 					Total <%= render_cart_total_price(current_cart)  %> RMB
 				</span>
 			</span>
