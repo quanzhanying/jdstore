@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'bootstrap-sass'
