@@ -4,8 +4,7 @@
     <h2> 购物车 </h2>
 
     <div class="btn btn-lg btn-default pull-right">
-      <%= link_to("Clear Cart",carts_path) %>
-<!-- 可以用删除所有cart_item 的办法-->
+      <%= link_to("Clear Cart",clean_carts_path, method: :delete, data: { confirm: "你确定要清空整个购物车吗？"}) %>
     </div>
 
     <table class="table table-bordered">
