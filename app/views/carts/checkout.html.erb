@@ -10,25 +10,15 @@
 			<tbody>
 				<% current_cart.cart_items.each do |cart_item| %>
 				<tr>
-					<td>
-						<%= link_to(cart_item.product.title,product_path(cart_item.product)) %>
-					</td>
-					<td>
-						<%= cart_item.product.price  %>
-					</td>
-					<td>
-						<%= cart_item.quantity  %>
-					</td>
+					<td><%= link_to(cart_item.product.title,product_path(cart_item.product)) %></td>
+					<td><%= cart_item.product.price %></td>
+					<td><%= cart_item.quantity %></td>
 				</tr>
-				
 				<% end %>
 			</tbody>
 		</table>
 		<div class="total clearfix">
-			<span class="pull-right">
-				Total <%= render_cart_total_price(current_cart)  %>CNY
-			</span>
-			
+			<span class="pull-right">Total <%= render_cart_total_price(current_cart)  %>CNY</span>
 		</div>
 		<hr>
 		<h2>Order info</h2>
@@ -36,26 +26,17 @@
 			
 			<%= simple_form_for @order do |f| %>
 			<legend>Buyer Name</legend>
-			<div class="form-group col-lg-6">
-				<%= f.input :billing_name %>
-			</div>
-			<div class="form-group col-lg-6">
-				<%= f.input :billing_address %>
-			</div>
+			<div class="form-group col-lg-6"><%= f.input :billing_name %></div>
+			<div class="form-group col-lg-6"><%= f.input :billing_address %></div>
+			
 			<legend>Receiver Name</legend>
-			<div class="form-group col-lg-6">
-				<%= f.input :shipping_name %>
-			</div>
-			<div class="form-group col-lg-6">
-				<%= f.input :shipping_address %>
-			</div>
+			<div class="form-group col-lg-6"><%= f.input :shipping_name %></div>
+			<div class="form-group col-lg-6"><%= f.input :shipping_address %></div>
+			
 			<div class="checkout">
 				<%= f.submit "Process To Bill", disable_with: 'Submiting...', class: " btn btn-lg pull-right btn-danger" %>
 			</div>
 			<% end %>
-			
-			
-			
 		</div>
 	</div>
 	
