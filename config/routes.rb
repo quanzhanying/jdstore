@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :carts
+  resources :cart_items
 
   resources :carts do
     collection do
