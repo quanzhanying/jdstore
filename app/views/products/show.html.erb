@@ -18,7 +18,11 @@
         <p>$<%= @product.price %></p>
       </div>
       <div class="pull-right">
-        <%= link_to '加入购物车', add_to_cart_product_path(@product), :method => :post, class: "btn btn-primary btn-danger" %>
+        <% if @product.quantity > 0 %>
+          <%= link_to '加入购物车', add_to_cart_product_path(@product), :method => :post, class: "btn btn-primary btn-danger" %>
+        <% else %>
+          <%= link_to '库存不足', "", class: "btn btn-default" %>
+        <% end %>
       </div>
     </div>
   </div>
