@@ -9,9 +9,13 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    redirect_to product_path
+    # redirect_to product_path
     # redirect_to :back 也可以用。
+    # current_cart.add_product_to_cart(@product)
+    # flash[:notice] =  "测试加入购物车"
+
     current_cart.add_product_to_cart(@product)
-    flash[:notice] =  "测试加入购物车"
+    flash[:notice] = "成功加入购物车"
+    redirect_to :back
   end
 end
