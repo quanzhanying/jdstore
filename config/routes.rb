@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 	end
 
 	namespace :account do
-		resources :products
+		resources :orders
 	end
 
 	resources :carts do
