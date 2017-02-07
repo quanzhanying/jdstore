@@ -48,16 +48,18 @@
 
 }
 .lp-section-1 {
-    display: block;
-    background-color: #ffffff;
+    //display: block;
+  //background-color: #ffffff;
+    background-image: url('https://ww1.sinaimg.cn/large/006tNbRwgy1fch3o344x9j31hc0b415x.jpg');
+    background-repeat: no-repeat;
     background-position: center 80%;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     width: 100%;
-    height: 300px;
-    position: relative;
+    height: 400px;
+    //position: relative;
 }//banner区块
 
 .lp-section-2 {
@@ -67,15 +69,38 @@
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
-    height: 500px;
+  //height: 500px;
     position: relative;
+
 }//特卖、秒杀区块 产品广告区
 
 .lp-section-3 {
 
 }// 热卖产品推荐区
+
+.hotpiclink1 {
+  margin-left: 35px;
+  margin-right: 0px;
+}
+
+.hotpiclink2 {
+  margin-left: 0px;
+  margin-right: 35px;
+}
+
+.hotpic {
+
+  background-image: url('https://ww1.sinaimg.cn/large/006tNbRwgy1fch3o344x9j31hc0b415x.jpg');
+  height: 300px;
+  //margin-left: 25px;
+  //margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .lp-section-4{
   display: block;
   background-color: #f5f5f5;
@@ -91,8 +116,38 @@
 }// 新品推荐
 
 .lp-section-5 {
+  display: block;
+  //background-color: #ffffff;
+  background-position: center 80%;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+//height: 500px;
+  position: relative;
 
 }// 产品分类导图
+
+.lp-section-6 {
+  display: block;
+  background-color: #f5f5f5;
+  background-position: center 80%;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
 
 .item {
     position: relative;
@@ -129,4 +184,8 @@
 .col-md-3 {
    padding-left: 5px;
    padding-right: 5px;
+}
+
+.footnav {
+  padding-top: 20px;
 }
