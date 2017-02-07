@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
+  resources :orders
+
   root 'welcome#index'
   resources :carts
 
