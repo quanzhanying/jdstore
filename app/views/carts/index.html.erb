@@ -18,7 +18,15 @@
 		<div class="total clearfix">
 			<span class="pull-right">
 				<span>
-					Total XXX RMB
+				<% sum=0  %>	
+				<% current_cart.cart_items.each do |cart_item| %>
+				<% if cart_item.product.price.present? %>
+				<% sum = sum+ cart_item.quantity * cart_item.product.price  %>
+					
+				<% end %>
+					
+				<% end %>
+					Total <%= render_cart_total_price(current_cart)  %> RMB
 				</span>
 			</span>
 		</div>
