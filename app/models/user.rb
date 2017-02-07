@@ -8,6 +8,7 @@ def admin?
   is_admin
 end
 
+has_many :orders
 
 
 end
