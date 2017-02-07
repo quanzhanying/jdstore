@@ -1,16 +1,28 @@
-<h1> Edit a product </h1>
+<h2> Edit a product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :quantity %>
-<%= f.input :price %>
+<div class="group">
+   <%= f.input :title %>
+ </div>
+
+ <div class="group">
+   <%= f.input :description %>
+ </div>
+
+ <div class="group">
+   <%= f.input :quantity %>
+ </div>
+
+ <div class="group">
+   <%= f.input :price %>
+ </div>
+ 
 <% if @product.image.present? %>
    <span>目前商品图</span> <br>
    <%= image_tag(@product.image.thumb.url) %>
  <% end %>
- 
+
 <div class="group">
   <%= f.input :image, as: :file %>
 </div>
