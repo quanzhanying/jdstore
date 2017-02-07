@@ -1,6 +1,6 @@
 module CartsHelper
 
-  def render_cart_totle_price(cart)
-    cart.totle_price
+  def render_cart_total_price(cart)
+    cart.total_price
   end
 end
