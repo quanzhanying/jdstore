@@ -7,9 +7,11 @@ class CartItemsController < ApplicationController
 
   def increase_quantity
     @cart_item = CartItem.find(params[:id])
-    @cart_item.quantity = @cart_item.quantity + 1
-    @cart_item.save
-    redirect_to carts_path
+    if @cart_item.quantity < @cart_item.product.quantity
+      @cart_item.quantity = @cart_item.quantity + 1
+      @cart_item.save
+      redirect_to carts_path
+    end
   end
 
   def decrease_quantity
