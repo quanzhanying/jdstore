@@ -11,7 +11,7 @@ resources :products do
 end
 resources :carts do
   collection do
-    post :clean
+    delete :clean
     post :checkout
   end
 end
