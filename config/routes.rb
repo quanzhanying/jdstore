@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :cart_items
+  resources :orders
 
   resources :carts do
     collection do
