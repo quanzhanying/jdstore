@@ -82,31 +82,96 @@
 
 }
 .logobar{
-  height: 120px;
+  //height: 120px;
   background-color: #fff;
 
 }
 
  .logobar .logo,
-.logobar .activity {
+.logobar .activity ,{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 50px;
     height: 100px;
 }
- .logobar .btn-cart {
+ .logobar .searchform {
+   margin-top: 30px;
+   margin-bottom: 10px;
+   margin-right: 50px;
+   height: 100px;
+
+ }
+
+
+ .logobar  .btn-cart {
     position: relative;
     margin-top: 30px;
-    border-color: #ccc ;
-    //padding-left: 60px;
-    padding-top:10px;
+    padding-left: 60px;
+    padding-right: 25px;
     padding-bottom: 10px;
     margin-right: 30px;
-    //background-image: url(https://ww3.sinaimg.cn/large/006tNc79gy1fchox1n6abj305k05k0sm.jpg);
+    background-image: url('https://www.youkastation.com/themes/new/assets/images/global/icon-shopping-cart.png');
     background-repeat: no-repeat;
     background-position: left center;
+    height: 41px;
+    border-color: #ccc ;
+
 
 }
+.logobar .acart .btn-default{
+      border-color: #ccc ;
+
+
+}
+.logobar .acart .btn {
+
+  padding-top: 8px;
+  border: 2px solid #ccc;
+
+  //padding-bottom: 0px;
+}
+
+ .logobar .btn-cart .badge {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #fd5400;
+    border-radius: 21.14286px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.searchstyle {
+  display: block;
+  color: #999;
+}
+.searchstyle div{
+  display: inline-block;
+  margin: 5px;
+
+}
+
+.searchstyle a{
+  color: #999;
+}
+.form-inline .input-group  .form-control{
+  //width: auto;
+  //width: 350px;
+  height: 41px;
+  border: 2px solid #EF6C00;
+}
+.form-inline .input-group .btn {
+
+  height: 41px;
+  background-color: #EF6C00;
+  color: #fff;
+  border-color: #ccc ;
+  //width: 80px;
+  border: 2px solid transparent;
+}
+
 .lp-section-1 {
     //display: block;
   //background-color: #ffffff;
