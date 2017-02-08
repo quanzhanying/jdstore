@@ -5,7 +5,7 @@
             购物车
         </h2>
         <div class="delete all cart_item">
-            <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-lg pull-right" , data: { confirm: "Are you sure?"} )%>
+            <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-sm pull-right" , data: { confirm: "Are you sure?"} )%>
         </div>
 
         <table class="table table-bordered">
@@ -14,6 +14,7 @@
                     <th colspan="2">商品资讯</th>
                     <th>单价</th>
                     <th>数量</th>
+                    <th>管理选项</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +28,7 @@
                     <% else %>
                         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                         <% end %>
-                    <% end %>
+                        <% end %>
                     </td>
                     <td>
                         <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
@@ -37,6 +38,11 @@
                     </td>
                     <td>
                         <%= cart_item.quantity %>
+                    </td>
+                    <td>
+                        <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                        <i class="fa fa-trash"></i>
+                        <% end %>
                     </td>
                 </tr>
                 <% end %>
@@ -48,7 +54,9 @@
         <div class="total clearfix">
             <span class="pull-right">
                 <span>
-                    总计 <%= render_cart_total_price(current_cart) %> RMB
+                    总计
+                    <%= render_cart_total_price(current_cart) %>
+                    RMB
                 </span>
             </span>
         </div>
