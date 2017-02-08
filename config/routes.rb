@@ -28,6 +28,7 @@ resources :products do
 
 resources :products
  resources :carts
+ resources :cart_items
  resources :orders
 root 'welcome#index'
 end
