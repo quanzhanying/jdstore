@@ -19,9 +19,7 @@ class Cart < ApplicationRecord
     sum
   end
 
-  def destroy_all_cis(product)
-    cid = cart_items.destroy
-    cid.product.blank?
-    cid.save
+  def clean!
+    cart_items.destroy_all
   end
 end

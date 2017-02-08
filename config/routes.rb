@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :carts do
-    member do
-      post :destroy_all_cis
+    collection do
+      delete :clean
     end
   end
 end
