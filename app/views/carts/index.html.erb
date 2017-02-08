@@ -32,7 +32,7 @@
                         <td>
                             <% ci = current_cart.cart_items.find_by(product_id: ci.product_id) %>
                             <%= form_for ci, url: cart_item_path(ci.product_id) do |f| %>
-                                <%= f.select :quantity, [1,2,3,4,5] %>
+                                <%= f.select :quantity, 1..ci.product.quantity %>
                                 <%= f.submit "Update", data: {disable_with: "Updating..."} %>
                             <% end %>
                         </td>
