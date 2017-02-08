@@ -4,6 +4,9 @@
         <h2>
             购物车
         </h2>
+        <div class="delete all cart_item">
+            <%= link_to("一键清空购物车", destroy_all_cis_cart_path(@carts), method: :post, class: "btn btn-lg btn-danger pull-right") %>
+        </div>
 
         <table class="table table-bordered">
             <thead>

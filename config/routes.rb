@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts
+  resources :carts do
+    member do
+      post :destroy_all_cis
+    end
+  end
 end
