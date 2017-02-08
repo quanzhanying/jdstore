@@ -13,6 +13,6 @@ class ProductsController < ApplicationController
     else
       flash[:warning] = "你的购物车内已有此物品"
     end
-    redirect_to :back
+    redirect_to product_path
   end
 end
