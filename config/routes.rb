@@ -25,5 +25,7 @@ Rails.application.routes.draw do
       post :reduce_number
     end
   end
+
+  resources :orders
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
