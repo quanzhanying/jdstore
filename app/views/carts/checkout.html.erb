@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Cart Details</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th wdith = "80%">Porduct details</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% current_cart.cart_items.each do |ci| %>
+                    <tr>
+                        <td>
+                            <%= link_to(ci.product.title, product_path(ci.product)) %>
+                        </td>
+                        <td><%= ci.product.price %></td>
+                        <td><%= ci.quantity %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="total clearfix">
+                <span class="pull-right"></span>
+                Total <%= render_cart_total_price(current_cart) %> US$
+            </div>
+            <hr>
+            <h2> Order Info</h2>
+            <div class="order-form">
+                <%= simple_form_for @order do |f| %>
+                    <legend>Purchaser</legend>
+                    <div class="form-group col-lg-6">
+                        <%= f.input :billing_name %>
+                    </div>
+                    <div class="form-group col-lg-6">
+                    </div>
+                    <legend>Recipient</legend>
+                    <div class="form-group col-lg-6">
+                        <%= f.input :shipping_name %>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <%= f.input :shipping_address %>
+                    </div>
+                    <div class="checkout">
+                        <%= f.submit "Generate Order", class: "btn btn-lg btn danger pull-right", data: {disable_with: "Submitting..."} %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
