@@ -20,6 +20,6 @@ class Cart < ApplicationRecord
   end
 
   def clean!
-    cart_items.destroy_all
+   cart_items.destroy_all
   end
 end
