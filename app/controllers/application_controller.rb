@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
         redirect_to '/', alert: 'you are not admin.' unless current_user.admin?
   end
 
-    helper_methed :current_cart
+    helper_method :current_cart
 
     def current_cart
         @current_cart ||= find_cart
