@@ -13,6 +13,11 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "#" do %>
+          购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+          <% end %>
+        </li>
         <% if !current_user %>
         <li><%= link_to(content_tag(:i, ' SignUp',class: 'glyphicon glyphicon-user' ), new_user_registration_path) %> </li>
         <li><%= link_to(content_tag(:i,' Longin', class: 'glyphicon glyphicon-log-in'), new_user_session_path) %></li>
