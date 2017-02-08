@@ -13,15 +13,16 @@ Rails.application.routes.draw do
   end
 
   resources :products
-  resources :carts
+
   resources :cart_items
 
   resources :carts do
     collection do
       delete :clean
+      post :checkout
     end
   end
-  
+
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
