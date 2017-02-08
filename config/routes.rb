@@ -4,7 +4,12 @@ Rails.application.routes.draw do
      resources :products
   end
 
-  resources :products
+  resources :products do
+    memder do
+      post :add_to_cart
+    end
+  end
+
   root 'products#index'
 
 end
