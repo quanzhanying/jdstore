@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>JD Store</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,8 +9,13 @@
   </head>
 
   <body>
-    <%=render "common/flashes"%>
+    <div class="container-fluid">
+      <%=render "common/navbar"%>
+      <%=render "common/flashes"%>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
+
+    <%=render "common/footer"%>
   </body>
 </html>
