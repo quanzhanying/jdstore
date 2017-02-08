@@ -13,6 +13,7 @@ root 'products#index'
  resources :carts do
    collection do
      delete :clean
+     post :checkout
    end
 end
 resources :cart_items
