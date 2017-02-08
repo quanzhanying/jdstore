@@ -49,10 +49,10 @@
 
           <legend> 订购人 </legend>
           <div class="form-group col-lg-6">
-            <%= if.input :billing_name %>
+            <%= f.input :billing_name %>
           </div>
           <div class="form_group col-lg-6">
-            <%= if.input :billing_address %>
+            <%= f.input :billing_address %>
           </div>
 
           <legend> 收货人 </legend>
@@ -63,7 +63,7 @@
             <%= f.input :shipping_address %>
           </div>
         <div class="checkout">
-          <%= f.submit "生成订单"， class: "btn btn-lg btn-danger-right",
+          <%= f.submit "生成订单", class: "btn btn-lg btn-danger-right",
                        data: { disable_with: "Submitting..." } %>
         </div>
      <% end %>
