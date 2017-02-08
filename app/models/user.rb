@@ -8,4 +8,6 @@ class User < ApplicationRecord
     is_admin
   end
 #    email == 'lilei@sina.com'
+
+   has_many :orders
 end
