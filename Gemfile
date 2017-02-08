@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'simple_form'
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 
 group :development, :test do
