@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'products#index'
 
+  resources :orders
+  
   devise_for :users
   namespace :admin do
     resources :products
