@@ -17,4 +17,5 @@ resources :products
       delete :clean
     end
   end
+  resources :cart_items
 end
