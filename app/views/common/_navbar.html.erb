@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Happy Go</a>
-    </div>
+     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -32,7 +32,10 @@
                 <% if current_user.admin?%>
                 <li><%= link_to("Admin Panel",admin_products_path)%></li>
                 <% end %>
-                <li><%= link_to("退出",destroy_user_session_path,method: :delete)%></li>
+                <li>
+                  <%= link_to("My Order", account_orders_path ) %>
+                </li>
+                <li><%= link_to("Exit",destroy_user_session_path,method: :delete)%></li>
               </ul>
             </li>
           <% end %>
@@ -40,4 +43,29 @@
       </ul>
     </div>
   </div>
+  <div class="logobar">
+   <div class="container-fluid">
+     <div class="pull-left">
+       <a href="/">
+         <img class="logo" src="https://ww1.sinaimg.cn/large/006tKfTcgy1fcix5zhkq6j308r03cgll.jpg" alt="快乐购 www.happygo.com">
+        </a>
+     </div>
+     <div class="pull-left">
+       <a href="/" class="pull-left">
+         <img class="activity" src="https://ww1.sinaimg.cn/large/006tKfTcgy1fcix6feqx7j303b02sdfx.jpg" alt="快乐购 www.happygo.com">
+        </a>
+     </div>
+     <div class="pull-right">
+        <a class="btn btn-default btn-cart" href="#">
+            <i class="fa fa-shopping-cart"> </i>
+            我的购物车 <i class="fa fa-angle-right"></i>
+            <span class="badge j_cartNum">0</span>
+         </a>
+      </div>
+     <div class="pull-right">
+      </div>
+    </div>
+   </div>
+
+
 </nav>
