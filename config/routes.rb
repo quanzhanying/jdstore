@@ -22,5 +22,9 @@ Rails.application.routes.draw do
 
     resources :cart_items
 
+    namespace :account do
+        resources :orders
+    end
+
     root 'products#index'
 end
