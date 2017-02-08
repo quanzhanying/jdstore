@@ -19,7 +19,7 @@
       ￥
       <%= @product.price %></div>
     <div class="pull-right">
-      <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger") %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :psot, :class => "btn btn-primary btn-lg btn-danger") %>
     </div>
   </div>
 
