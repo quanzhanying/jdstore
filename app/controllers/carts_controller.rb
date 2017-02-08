@@ -11,5 +11,8 @@ class CartsController < ApplicationController
   end
   def cart_params
    params.require(:cart).permit(:price, :quantity)
- end
+  end
+  def checkout
+    @order = Order.new
+  end
 end
