@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :user_id
+  belongs_to :user
 
   validates :billing_name, presence: true
   validates :billing_address, presence: true
