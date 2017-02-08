@@ -19,5 +19,6 @@ Rails.application.routes.draw do
       delete :clean
        post :checkout
     end
-  end # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  end
+   resources :orders  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
