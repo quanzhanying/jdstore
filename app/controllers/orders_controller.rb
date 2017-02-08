@@ -14,8 +14,8 @@ class OrdersController < ApplicationController
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
         product_list.save
-
-        redirect_to order_path(@order)
+        end
+        redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
     end
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
   end
 
