@@ -19,8 +19,8 @@
             <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
           </td>
           <td>
-          <%= cart_item.product.price %>
-        </td>
+            <%= cart_item.product.price %>
+          </td>
         <td>
           <%= cart_item.quantity %>
         </td>
@@ -63,7 +63,7 @@
 
     <div class="checkout">
       <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
-                    data: { disabel_with: "Submitting..." } %>
+                    data: { disable_with: "Submitting..." } %>
     </div>
     <% end %>
 
