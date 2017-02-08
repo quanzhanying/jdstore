@@ -18,33 +18,35 @@
                         <td><%= ci.product.price %></td>
                         <td><%= ci.quantity %></td>
                     </tr>
-                </tbody>
-            </table>
-            <div class="total clearfix">
-                <span class="pull-right"></span>
-                Total <%= render_cart_total_price(current_cart) %> US$
-            </div>
-            <hr>
-            <h2> Order Info</h2>
-            <div class="order-form">
-                <%= simple_form_for @order do |f| %>
-                    <legend>Purchaser</legend>
-                    <div class="form-group col-lg-6">
-                        <%= f.input :billing_name %>
-                    </div>
-                    <div class="form-group col-lg-6">
-                    </div>
-                    <legend>Recipient</legend>
-                    <div class="form-group col-lg-6">
-                        <%= f.input :shipping_name %>
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <%= f.input :shipping_address %>
-                    </div>
-                    <div class="checkout">
-                        <%= f.submit "Generate Order", class: "btn btn-lg btn danger pull-right", data: {disable_with: "Submitting..."} %>
-                    </div>
                 <% end %>
+            </tbody>
+        </table>
+        <div class="total clearfix">
+            <span class="pull-right"></span>
+            Total <%= render_cart_total_price(current_cart) %> US$
             </div>
+        <hr>
+        <h2> Order Info</h2>
+        <div class="order-form">
+            <%= simple_form_for @order do |f| %>
+                <legend>Purchaser</legend>
+                <div class="form-group col-lg-6">
+                    <%= f.input :billing_name %>
+                </div>
+                <div class="form-group col-lg-6">
+                    <%= f.input :billing_address %>
+                </div>
+                <legend>Recipient</legend>
+                <div class="form-group col-lg-6">
+                    <%= f.input :shipping_name %>
+                </div>
+                <div class="form-group col-lg-6">
+                    <%= f.input :shipping_address %>
+                </div>
+                <div class="checkout">
+                    <%= f.submit "Generate Order", class: "btn btn-lg btn-danger pull-right", data: {disable_with: "Submitting..."} %>
+                </div>
+            <% end %>
         </div>
     </div>
+</div>
