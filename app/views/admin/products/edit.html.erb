@@ -1,0 +1,15 @@
+<div class="col-md-4 col-md-offset-4">
+  <h2 class="text-center">Edit a Product</h2>
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :price %>
+    <% if @product.image.present? %>
+      <span>Current Imge</span><br>
+      <%= image_tag(@product.image.thumb.url) %>
+    <% end %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>
