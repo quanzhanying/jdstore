@@ -20,7 +20,7 @@
               <%else%>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
               <% end %>
-            <% end %>  
+            <% end %>
           </td>
           <td>
             <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
@@ -38,7 +38,16 @@
     <br>
     <div class="total clearfix">
       <span class="pull-right">
-        <span>总计 XXX 元（RMB）</span>
+        <span>
+          <!-- <% sum = 0 %>
+          <% current_cart.cart_items.each do |cart_item| %>
+              <% if cart_item.product.price.present? %>
+                <% sum = sum + cart_item.quantity * cart_item.product.price %>
+              <% end %>
+            <% end %>
+          总计 <%= sum %> 元（RMB） -->
+          总计 <%= render_cart_total_price(current_cart) %> 元（RMB）
+        </span>
       </span>
     </div>
     <hr>
