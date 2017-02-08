@@ -19,4 +19,5 @@ resources :products
     end
   end
   resources :cart_items
+  resources :orders
 end
