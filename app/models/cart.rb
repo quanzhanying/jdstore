@@ -19,7 +19,7 @@ def total_price
     sum
   end
 
-  def clean
+  def clean!
     cart_items.destroy_all
   end
 
