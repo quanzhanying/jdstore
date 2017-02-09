@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-md-12">
 
+    <%= link_to("qingkong", clean_cart_path,method: :delete, class:"pull-right",style:"text-decoration: underline;",data:{confirm:"你要清空整个购物车么?"})%>
+
     <h2>购物车</h2>
 
     <table class="table table-bordered">
@@ -43,13 +45,14 @@
       <!-- clearfix是清除浮动的意思 -->
       <span class="pull-right">
         <span>
-          <% sum = 0 %>
+          <!-- <% sum = 0 %>
           <% current_cart.cart_items.each do |cart_item| %>
             <% if cart_item.product.price.present? %>
               <% sum = sum + cart_item.quantity * cart_item.product.price %>
             <% end %>
           <% end %>
-          总计 <%= sum %> RMB
+          总计 <%= sum %> RMB -->
+          总计 <%= render_cart_total_price(current_cart) %> RMB
         </span>
       </span>
     </div>
