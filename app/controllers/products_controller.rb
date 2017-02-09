@@ -8,9 +8,10 @@ class ProductsController < ApplicationController
   end
   def add_to_cart
     @product = Product.find(params[:id])
-    redirect_to :back
+    current_cart.add_product_to_cart(@product)
     flash[:notice] = "测试加入购物车"
-  end 
+    redirect_to :back
+  end
   private
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price)
