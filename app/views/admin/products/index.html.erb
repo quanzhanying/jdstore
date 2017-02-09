@@ -1,5 +1,5 @@
 <h2> Product List </h2>
-<div class="pull-right" style="padding-bottom: 20px;">
+<div class="pull-right" style="padding-bottom: 30px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
@@ -8,8 +8,9 @@
       <th width="100">#</th>
       <th width="220">Product Pic</th>
       <th width="150">Name</th>
+      <th width="250">Description</th>
       <th width="150">Price</th>
-      <th width="200"> Options</th>
+      <th width="150"> Options</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +31,9 @@
         <td>
           <%= product.title %>
         </td>
+        <td>
+        <%= product.description %>
+      </td>
         <td>
           <%= product.price %>
         </td>
