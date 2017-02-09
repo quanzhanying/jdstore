@@ -11,4 +11,6 @@ class Order < ApplicationRecord
   validates :billing_address, presence: true
   validates :shipping_name, presence: true
   validates :shipping_address, presence: true
+
+  scope :recent, -> { order("created_at DESC")}
 end
