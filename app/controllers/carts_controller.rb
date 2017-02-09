@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
-  def clean 
+  def clean
    current_cart.clean!
-   flash[:warning] = "Successfully created..."
+   flash[:warning] = "Successfully cleaned..."
    redirect_to carts_path
   end
 end
