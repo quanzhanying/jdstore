@@ -9,11 +9,12 @@
         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnial")   %>
         <% end %>
         <% end %>
-        <div class="col-md-6">
+        <div class="col-md-9">
           <%= product.title %>
-        </div>
-        <div class="col-md-6">
-        ¥ <%= product.price %>
+
+         <div class="col-md-6">
+         ¥<%= product.price %>
+         </div>
         </div>
     </div>
     <% end %>
