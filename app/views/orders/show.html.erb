@@ -12,6 +12,9 @@
                     <th>
                         单价
                     </th>
+                    <th>
+                        购买数量
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +25,9 @@
                     </td>
                     <td>
                         <%= product_list.product_price %>
+                    </td>
+                    <td>
+                        <%= product_list.quantity %>
                     </td>
                 </tr>
                 <% end %>
@@ -48,7 +54,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <%= @order.billing_name %> - <%= @order.billing_address %>
+                        <%= @order.billing_name %>
+                        -
+                        <%= @order.billing_address %>
                     </td>
                 </tr>
                 <tr>
@@ -57,9 +65,11 @@
                     </td>
                 </tr>
                 <tr>
-                  <td>
-                    <%= @order.shipping_name %> - <%= @order.shipping_address %>
-                  </td>
+                    <td>
+                        <%= @order.shipping_name %>
+                        -
+                        <%= @order.shipping_address %>
+                    </td>
                 </tr>
             </tbody>
         </table>
