@@ -17,9 +17,9 @@ Rails.application.routes.draw do
       delete :clean
         post :checkout
     end
-
-    resources :orders
   end
 
   resources :cart_items
+  resources :orders
+
 end
