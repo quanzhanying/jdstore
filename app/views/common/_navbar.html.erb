@@ -13,8 +13,12 @@
         </li>
         </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-
+                <!-- <li> -->
+                   <li>
+                      <%= link_to "#" do  %>
+                         购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                      <% end %>
+                   </li>
                 <% if !current_user %>
                   <li><%= link_to("注册", new_user_registration_path) %> </li>
 
@@ -35,7 +39,7 @@
                     </ul>
                   </li>
                 <% end %>
-                </li>
+                <!-- </li> -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
