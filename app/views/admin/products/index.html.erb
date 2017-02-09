@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>product lists</title>
+    </head>
+    <body>
+        <button type="button" name="button" >添加新商品</button>
+        <table class="table table-boldered table-striped custab">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>商品名称</td>
+                    <td>描述</td>
+                    <td>库存量</td>
+                    <td>价格</td>
+                    <td>管理选项</td>
+                    <td>发布日期</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @products.each do |product| %>
+                    <tr>
+                        <td><%= %></td>
+                        <td><%= link_to(product.title, admin_product_path(product)) %></td>
+                        <td><%= product.description%></td>
+                        <td><%= product.quantity%></td>
+                        <td><%= product.price%></td>
+                        <td> 编辑 | 删除</td>
+                        <td><%= product.created_at%></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </body>
+</html>
