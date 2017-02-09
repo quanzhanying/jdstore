@@ -35,7 +35,7 @@
               <%= link_to('+', increase_quantity_cart_item_path(cart_item), :method => :post, class: "btn btn-sm btn-default") %>
             </td>
             <td>
-              <%= link_to("Delete", cart_item_path(cart_item), method: :delete, class: "btn btn-sm btn-default") %>
+              <%= link_to("Delete", cart_item_path(cart_item.product_id), method: :delete, class: "btn btn-sm btn-default") %>
             </td>
           </tr>
         <% end %>
