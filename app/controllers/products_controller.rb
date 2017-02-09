@@ -13,10 +13,10 @@ class ProductsController < ApplicationController
       flash[:notice] = "成功加入购物车"
       redirect_to :back
   end
-    private
+    # private
 
-    def product_params
-      params.require(:product).permit(:title, :description, :quantity, :price, :image)
-    end
+    # def product_params
+      # params.require(:product).permit(:title, :description, :quantity, :price, :image)
+    # end
 
 end
