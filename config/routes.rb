@@ -18,6 +18,8 @@ end
     end
   end
 
+  resources :orders
+
 resources :cart_items
 
     root 'products#index'
