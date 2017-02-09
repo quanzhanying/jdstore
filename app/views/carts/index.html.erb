@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col-md-12">
 
+    <%= link_to("清空购物车", clean_carts_path ,
+              method: :delete , class: "pull-right",
+              style: "text-decoration: underline;",
+              data: { confirm: "你确定要清空整个购物车吗？"} )%>
+
     <h2> 购物车 </h2>
 
     <table class="table table-bordered">
