@@ -1,2 +1,0 @@
-class WelcomController < ApplicationController
-end
