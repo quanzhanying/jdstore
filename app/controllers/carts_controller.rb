@@ -4,4 +4,9 @@ class CartsController < ApplicationController
     flash[:warning] = "yiqingkong"
     redirect_to carts_path
   end
+
+  def checkout
+    @order = Order.new
+  end
+
 end
