@@ -1,7 +1,4 @@
 class CartsController < ApplicationController
-  def index
-    @carts = Cart.all
-  end
 
   def clean
     current_cart.clean!
