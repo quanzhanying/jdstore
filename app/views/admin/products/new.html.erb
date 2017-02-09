@@ -1,0 +1,19 @@
+<h2> New Product </h2>
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+  <div class="group">
+    <%= f.input :image, as: :file %>
+  </div>
+  <%= f.submit "Submit" %>
+<% end %>
