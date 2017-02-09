@@ -19,8 +19,10 @@
                         </td>
                     </tr>
                 <% end %>
+
             </tbody>
         </table>
+        
         <div class="total clearfix">
             <span class="pull-right">
                 总计 <%= @order.total %> CNY
@@ -35,14 +37,15 @@
                         订购人
                     </td>
                 </tr>
+
                 <tr>
                     <td>
-                        收件人
+                        <%= @order.billing_name %> - <%= @order.billing_address %>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <%= @order.billing_name %> - <%= @order.billing_address %>
+                        收件人
                     </td>
                 </tr>
                 <tr>
