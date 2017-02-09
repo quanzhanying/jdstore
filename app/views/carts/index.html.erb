@@ -40,8 +40,17 @@
     <br>
 
     <div class="total clearfix">
+      <!-- clearfix是清除浮动的意思 -->
       <span class="pull-right">
-        <span> 总计 xxx RMB </span>
+        <span>
+          <% sum = 0 %>
+          <% current_cart.cart_items.each do |cart_item| %>
+            <% if cart_item.product.price.present? %>
+              <% sum = sum + cart_item.quantity * cart_item.product.price %>
+            <% end %>
+          <% end %>
+          总计 <%= sum %> RMB
+        </span>
       </span>
     </div>
 
