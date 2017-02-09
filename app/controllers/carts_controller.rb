@@ -1,5 +1,9 @@
 class CartsController < ApplicationController
-  def index 
+  def index
 
+  end
+
+  def checkout
+    @order = Order.new 
   end
 end
