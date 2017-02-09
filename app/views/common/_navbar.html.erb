@@ -17,7 +17,7 @@
                 <%= link_to carts_path do  %>
                    购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                 <% end %>
-                     
+
              </li>
 
               <% if !current_user %>
@@ -34,10 +34,12 @@
                         <li>
                           <%= link_to("Admin 选单", admin_products_path ) %>
                         </li>
-                        <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-                      <% else %>
-                         <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                       <% end %>
+                      <li>
+                        <%= link_to("个人订单列表", account_orders_path ) %>
+                      </li>
+                        <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+
                     </ul>
                   </li>
                 <% end %>
