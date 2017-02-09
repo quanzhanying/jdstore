@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Price</th>
       <th width="100"> Options</th>
+      <th width="100"> Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +36,9 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
+        </td>
+        <td>
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
         </td>
       </tr>
     <% end %>
