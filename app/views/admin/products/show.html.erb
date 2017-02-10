@@ -15,7 +15,7 @@
 		<div> Quantity:<%= @product.quantity%></div>
 		<div class="product-price">￥<%= @product.price %></div>
 		<div class="pull-right">
-			<%= link_to("Add to Cart","#",:class=>"btn btn-primary btn-lg btn-danger") %>
+			<%= link_to("Add to Cart",add_to_cart_product_path,:method=>:post,:class=>"btn btn-primary btn-lg btn-danger") %>
 		</div>
 	</div>
 	
