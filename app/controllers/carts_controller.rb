@@ -4,6 +4,11 @@ class CartsController < ApplicationController
   end
 
   def checkout
-    @order = Order.new 
+    @order = Order.new
+  end
+
+  def clean
+    current_cart.clean!
+    flash[:warning] = "Successfully clean carts..."
   end
 end
