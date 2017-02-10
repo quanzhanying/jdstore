@@ -1,0 +1,36 @@
+<div class="row">
+<div class="col-md-12">
+	<h2>Cart</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th colspan="2">Product Info</th>
+				<th>Price</th>
+				<th>Quantity</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% current_cart.cart_items.each do |cart_item| %>
+			<tr>
+				<td>show_product_image(cart_item.product)</td>
+				<td><%= link_to(cart_item.product.title,product_path(cart_item.product)) %></td>
+				<td><%= cart_item.product.price %></td>
+				<td><%= cart_item.quantity %></td>
+			</tr>
+		<% end %>
+			
+		</tbody>
+	</table>
+	<br>
+	<div class="total clearfix">
+		<span class="pull-right">
+			<span>Total XXX RMB</span>
+		</span>
+	</div>
+	<hr>
+	<div class="checkout clearfix">
+		<%= link_to("Confirm","#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+	</div>
+</div>
+	
+</div>
