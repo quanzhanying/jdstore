@@ -15,7 +15,7 @@ class CartItemsController < ApplicationController
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
 
-    if @cart_item.produc,t.quantity >= cart_item_params[:quantity].to_i
+    if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
       @cart_item.update(cart_item_params)
       flash[:notice] = "Successfully change sum..."
     else
