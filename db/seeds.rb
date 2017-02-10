@@ -23,5 +23,6 @@ u = User.create([ email: 'a@a.com' ,  password: '123456' ,password_confirmation:
 puts "create a adminer"
 
 p1 = Product.create([title:products[0][:title],description:products[0][:description],quantity:10,price:111,image:open(products[0][:image_path])])
-p1 = Product.create([title:products[1][:title],description:products[1][:description],quantity:20,price:222,image:open(products[1][:image_path])])
+p2 = Product.create([title:products[1][:title],description:products[1][:description],quantity:20,price:222,image:open(products[1][:image_path])])
+p3 = Product.create([title:"None",description:"None",quantity:0,price:222,image:""])
 puts "create products"
