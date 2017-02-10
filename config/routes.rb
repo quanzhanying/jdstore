@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       delete :clean
+      post :checkout 
     end
   end
 
-  resources :cart_items 
+  resources :cart_items
 
   root 'welcome#index'
 end
