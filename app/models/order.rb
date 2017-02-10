@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :users
+  has_many :product_lists
 
   validates :billing_name, presence: true
   validates :billing_address, presence: true
