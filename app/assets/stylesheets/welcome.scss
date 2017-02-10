@@ -26,10 +26,12 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.40);
 }
+
 .bs-slider > .carousel-inner > .item > img,
 .bs-slider > .carousel-inner > .item > a > img {
     margin: auto;
-    width: 100% !important;
+    width: 2000px;
+
 }
 
 /********************
@@ -52,6 +54,7 @@
     -ms-transition: opacity ease-in-out 1s;
     -o-transition: opacity ease-in-out 1s;
     transition: opacity ease-in-out 1s;
+
 }
 .fade .item:first-child {
     top: auto;
@@ -60,11 +63,14 @@
 .fade .item.active {
     opacity: 1;
     z-index: 2;
+    width: 100%;
+    height:auto;
     -webkit-transition: opacity ease-in-out 1s;
     -moz-transition: opacity ease-in-out 1s;
     -ms-transition: opacity ease-in-out 1s;
     -o-transition: opacity ease-in-out 1s;
     transition: opacity ease-in-out 1s;
+    background-size: cover;
 }
 
 
@@ -205,7 +211,7 @@
     left: 0;
     top: 25%;
     right: 0;
-    margin: auto;
+    margin:auto;
     padding: 10px;
     position: absolute;
     text-align: left;
@@ -215,7 +221,7 @@
 
 .slide-text > h1 {
 
-    padding: 0;
+    padding-left: 50px;
     color: #ffffff;
     font-size: 70px;
     font-style: normal;
@@ -227,7 +233,7 @@
     animation-delay: 0.7s;
 }
 .slide-text > p {
-    padding: 0;
+    padding-left: 50px;
     color: #ffffff;
     font-size: 20px;
     line-height: 24px;
@@ -243,6 +249,8 @@
     font-size: 13px;
     line-height: 15px;
     margin-right: 10px;
+    margin-left: 50px;
+    margin-bottom: 200px;
     text-align: center;
     padding: 17px 30px;
     white-space: nowrap;
@@ -257,12 +265,13 @@
 
 }
 .slide-text > a.btn-primary{
-    color: #ffffff;
+    color: #000;
     cursor: pointer;
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
     margin-left: 10px;
+    margin-bottom: 200px;
     text-align: center;
     padding: 17px 30px;
     white-space: nowrap;

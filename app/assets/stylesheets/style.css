@@ -349,6 +349,8 @@ a:hover, a:active, a:focus {
         align-items: center;
   height: 100vh;
   text-align: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 #home h1 {
@@ -358,6 +360,7 @@ a:hover, a:active, a:focus {
 #home .col-md-8 {
   padding-left: 62px;
 }
+
 
 
 
