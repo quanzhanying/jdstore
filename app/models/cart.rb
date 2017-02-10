@@ -16,5 +16,9 @@ has_many :products, through: :cart_items, source: :product
       end
     end
     sum
-  end
+   end
+
+   def clean!
+     cart_items.destroy_all
+   end
 end
