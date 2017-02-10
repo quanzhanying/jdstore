@@ -11,4 +11,6 @@ class CartsController < ApplicationController
     current_cart.clean!
     flash[:warning] = "Successfully clean carts..."
   end
+
+  
 end
