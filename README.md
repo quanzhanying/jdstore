@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+jbstore first week
 
-Things you may want to cover:
+20170120
 
-* Ruby version
+20170202
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+jdstore second week
+20170207 finish step5
+20170210 finish part 3 order
+finish order homework
