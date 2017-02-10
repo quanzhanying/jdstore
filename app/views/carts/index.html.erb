@@ -1,12 +1,14 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 购物车 </h2>
+    <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-danger pull-right", data: { confirm: "你确定清空购物车吗？"})%>
+
+    <h2>购物车</h2>
 
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">商品资讯</th>
+          <th colspan='2'>商品资讯</th>
           <th>单价</th>
           <th>数量</th>
         </tr>
@@ -18,10 +20,11 @@
             <td>
               <%= link_to product_path(cart_item.product) do %>
                 <% if cart_item.product.image.present? %>
-                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail")%>
-                <!-- image.thubm.url 不懂 -->
+                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                  <!--  You can also use Bootstrap's grid system in conjunction
+                  with the .thumbnail class to create an image gallery.-->
                 <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
                 <% end %>
               <% end %>
             </td>
@@ -29,13 +32,13 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart_item.product.price %>
+              <%= cart_item.product.price%>
             </td>
             <td>
               <%= cart_item.quantity %>
             </td>
           </tr>
-        <% end %>
+        <%end %>
 
       </tbody>
     </table>
@@ -43,21 +46,15 @@
     <br>
 
     <div class="total clearfix">
-      <!--total ,不明白？？  -->
-      <!--  .clearfix和float配合，一般是to prevent strange wrapping with uneven content:-->
       <span class="pull-right">
-        <!-- .pull-right 也是bootstrap中的helper classes 中的一个类 -->
-        <span>
-        总计<%= render_cart_total_price(current_cart) %> RMB
-        </span>
+        总计 <%= render_cart_total_price(current_cart) %> RMB
       </span>
     </div>
 
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("确认结账","#", method: :post, class: "btn btn-danger pull-right") %>
     </div>
-
   </div>
 </div>
