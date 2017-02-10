@@ -1,15 +1,11 @@
-<h2> Product List </h2>
-<div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
-</div>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
+      <th width="220">产品图片</th>
+      <th>产品名称</th>
+      <th>价格</th>
+      <th width="100">操作</th>
     </tr>
   </thead>
   <tbody>
@@ -34,9 +30,17 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>|<%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          <%= link_to edit_admin_product_path(product) do %>
+          <img src="https://ooo.0o0.ooo/2017/02/10/589d4a574ac69.png" class="highlight"></img>
+          <% end %>
+          <%= link_to admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" } do %>
+          <img src="https://ooo.0o0.ooo/2017/02/10/589d4a05a0ee8.png" class="highlight"></img>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class="text-center col-md-12 pagination">
+  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>

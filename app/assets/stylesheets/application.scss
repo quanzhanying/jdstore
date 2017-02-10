@@ -17,3 +17,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+/***后台logo***/
+.logo {
+    max-height: 130px;
+}
+
+.logo>img {
+    margin-top: 30px;
+    padding: 3px;
+    border: 3px solid white;
+    border-radius: 100%;
+    width: 64px; //定制图片宽度
+    height: 64px; //定制图片高度
+}
+
+
+/***分页按钮优化***/
+.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
+
+
+/***鼠标经过放大***/
+.highlight { transition: 0.3s;}
+.highlight:hover {-webkit-transform:scale(1.5);transform:scale(1.5);}
+
+
+/***购物车上的数字***/
+.label {
+  position: relative;
+  left: 0px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}

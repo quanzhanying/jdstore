@@ -1,3 +1,31 @@
+
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <div id="myCarousel" class="carousel slide">
+  	<!-- 轮播（Carousel）指标 -->
+  	<ol class="carousel-indicators">
+  		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  		<li data-target="#myCarousel" data-slide-to="1"></li>
+  		<li data-target="#myCarousel" data-slide-to="2"></li>
+  	</ol>
+  	<!-- 轮播（Carousel）项目 -->
+  	<div class="carousel-inner">
+  		<div class="item active">
+  			<img src="http://p1.yokacdn.com/pic/luxury/car/2010/600U10P1T117D195897F2577DT20101111152514_maxh550.jpg" alt="First slide">
+  		</div>
+  		<div class="item">
+  			<img src="http://www.neeu.com/uploads/images/2011/4/1/1301629753173.jpg" alt="Second slide">
+  		</div>
+  		<div class="item">
+  			<img src="http://www.paochefang.com/wp-content/uploads/paoimage/2012/07/172335aGv.jpg" alt="Third slide">
+  		</div>
+  	</div>
+  	<!-- 轮播（Carousel）导航 -->
+  	<a class="carousel-control left" href="#myCarousel"
+  	   data-slide="prev">&lsaquo;</a>
+  	<a class="carousel-control right" href="#myCarousel"
+  	   data-slide="next">&rsaquo;</a>
+  </div>
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
