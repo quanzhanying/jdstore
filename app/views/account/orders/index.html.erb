@@ -1,0 +1,21 @@
+<% @orders.each do |order| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= order.created_at.to_s(:long) %>&nbsp;&nbsp;
+    <span>订单编号:<%= order.token %></span>
+    <span class="pull-right">订单总计:<%= order.total %>RMB</span>
+  </div>
+  <table class="table">
+    <th>商品</th>
+    <th>价格</th>
+    <th>数量</th>
+    <% order.product_lists.each do |product_list| %>
+    <tr>
+      <td><%= product_list.product_name %></td>
+      <td><%= product_list.product_price %></td>
+      <td><%= product_list.quantity %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<% end %>
