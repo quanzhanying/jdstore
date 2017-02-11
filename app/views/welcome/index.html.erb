@@ -1,1 +1,70 @@
-<h1>你好！</h1>
+<html>
+  <head>
+
+    <style>
+      .wel-bg-img{
+      background-image:url("https://ww2.sinaimg.cn/large/006tNbRwgy1fclf06qp4lj31hc0zktjj.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-style: none;
+      margin: 30px 10px 10px;
+      }
+    </style>
+  </head>
+
+  <body class="wel-bg-img">
+    <div class="container-fulid">
+      <div class="row">
+        <div class="navbar navbar-none" role="navigation">
+
+          <div class="navbar-header navbar-left" >
+            <span class="navbar-brand glyphicon glyphicon-home dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-hidden="true"></span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+             <li><%= link_to("HOME", ) %></li>
+             <li><%= link_to("SHOP", products_path) %></li>
+             <li><a href="#">ABOUT</a></li>
+             <li><a href="#">BLOG</a></li>
+             <li role="separator" class="divider"></li>
+             <li><a href="#">HELP</a></li>
+           </ul>
+          </div>
+
+          <div class="navbar-header ">
+            <ul class="nav navbar-nav ">
+              <li class="active ">
+                <%= link_to("Products", products_path) %>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-header navbar-right">
+            <span class="navbar-brand glyphicon glyphicon-user dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-hidden="true"></span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <% if !current_user %>
+                <li><%= link_to("Sign up", new_user_registration_path) %> </li>
+                <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+              <% else %>
+                <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hi!,<%= current_user.email %>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <% if current_user.admin? %>
+                      <li><%= link_to("Admin 选单", admin_products_path)%></li>
+                    <% end %>
+                    <li>
+                     <%= link_to("个人订单列表", account_orders_path ) %>
+                   </li>
+                    <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                  </ul>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
