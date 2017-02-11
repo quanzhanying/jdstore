@@ -40,7 +40,15 @@
 				<br>
 				<div class="total clearfix">
 					<span class="pull-right">
-						<span>总计xxxRMB</span>
+						<span>
+							<% sum=0 %>
+							<% current_cart.cart_item.each do |cart_item| %>
+							  <% if cart_item.product.price.present? %>
+							    <% sum=sum+ cart_item.product.price * cart_item.product.quantity %>
+							  <% end %>
+							<% end %>
+							总计  <%= render_cart_total_price(current_cart) %> RMB
+						</span>
 					</span>
 				</div>
 
@@ -50,4 +58,4 @@
 					<%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
 				</div>
 			</div>
-		</div>
+		</div>  
