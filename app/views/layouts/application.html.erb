@@ -3,9 +3,16 @@
   <head>
     <title>Jdstore</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery-1.7.2.min"%>
+    <%= javascript_include_tag "move-top"%>
+    <%= javascript_include_tag "easing"%>
+    <%= javascript_include_tag "startstop-slider"%>
   </head>
 
   <body>
