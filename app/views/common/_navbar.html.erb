@@ -31,6 +31,10 @@
 					</li>
 						
 					<% end %>
+
+					<li>
+						<%= link_to("Your Orders",account_orders_path) %>
+					</li>
 						<li>
 							<%= link_to(content_tag(:i,'Log Out',class:'fa fa-sign-out'),destroy_user_session_path,method: :delete) %>
 						</li>
