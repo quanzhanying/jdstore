@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-md-12">
+	<%= link_to("Clean Cart",clean_carts_path,
+		method: :delete, class: "btn btn-lg btn-danger pull-right",
+		data:{confirm: "Are you sure?"}) %>
+		<h2>Cart</h2>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th colspan="2">Commodity info</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Option</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial=>"cart_item", :collection=>current_cart.cart_items,:as=>:cart_item %>
+			</tbody>
+			
+		</table>
+		<br>
+		<div class="total clearfix">
+			<span class="pull-right">
+				<span>
+
+					Total <%= render_cart_total_price(current_cart)  %> RMB
+				</span>
+			</span>
+		</div>
+		<hr>
+		<div class="checkout clearfix">
+			<%= link_to("Proceed to checkout","#",mothod: :post, class: "btn btn-lg btn-danger pull-right") %>
+		</div>
+	</div>
+</div>
