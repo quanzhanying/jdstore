@@ -13,6 +13,11 @@
             </li>
           </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to '#' do %>
+                  Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.product.count %> )
+                <% end %>
+              </li>
             <% if !current_user %>
               <li>
                 <%= link_to("Sign up", new_user_registration_path) %> </li>
