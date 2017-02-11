@@ -1,0 +1,53 @@
+
+<div class="lp-section-1">
+
+</div>
+
+<div class="lp-section-2">
+  <h2 class="text-center">品牌热卖 </h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+
+        <div class="hotpic">
+
+        </div>
+
+    </div>
+    <div class="col-xs-12 col-md-6">
+
+        <div class="hotpic">
+
+        </div>
+    
+    </div>
+  </div>
+</div>
+
+<div class="lp-section-4">
+  <h2 class="text-center"> 新品推荐</h2>
+  <div class="row">
+    <% @products.each do |product|%>
+      <div class="col-xs-6 col-md-3">
+        <div class="item">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <div class="pic">
+                <%= image_tag(product.image.thumb.url,size: "280x280")%>
+              </div>
+            <% else %>
+              <div class="pic">
+                <%= image_tag("http://placehold.it/200x200&text=NoPic",class: "thumbnail",size: "200x200")%>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="name">
+            <%= product.title %>
+          </div>
+          <div class="price">
+            ¥ <%= product.price%>
+          </div>
+        </div>
+     </div>
+    <% end %>
+  </div>
+</div>
