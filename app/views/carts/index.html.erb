@@ -36,7 +36,15 @@
               <%= cart_item.product.price%>
             </td>
             <td>
-              <%= cart_item.quantity %>
+              <!-- <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id)%> -->
+              <!-- 是什么意思？上面已经有 cart_item的循环了,就是把edit的action,放到views里面？, -->
+              <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+              <!-- url是什么意思？ -->
+                <%= f.text_field :quantity %>
+                <!-- <%= f.select :quantity, [1,2,3,4,5] %> -->
+                <%= f.submit "更新", data: {disable_with: "Subimtting..."} %>
+              <% end %>
+              <%= cart_item.quantity%>
             </td>
             <td>
               <%= link_to cart_item_path(cart_item.product_id), method: :delete, data: { confirm: "你要去掉这个商品吗？"} do %>
