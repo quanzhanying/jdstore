@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-12">
+    <%= link_to("Clean the Cart", clean_carts_path, method: :delete, class: "pull-right", style: "text-decoration: underline;", data: {confirm: "Are you sure to clean the cart?"}) %>
     <h2>Cart</h2>
     <table class="table table-bordered">
       <thead>
