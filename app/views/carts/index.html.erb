@@ -39,8 +39,11 @@
               <%= cart_item.quantity %>
             </td>
             <td>
-              <%= link_to("不买了，删除", cart_item_path(cart_item.product_id), method: :delete)%>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete, data: { confirm: "你要去掉这个商品吗？"} do %>
+                <i class="fa fa-trash">不买了，删除</i>
+              <% end %>
             </td>
+
           </tr>
         <%end %>
 
