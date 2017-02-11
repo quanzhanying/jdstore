@@ -1,0 +1,13 @@
+<div class="col-sm-3">
+	<div class="product_cover">
+		<%= link_to(product_path(product)) do %>
+			<% if product.image.present? %>
+				<%= image_tag(product.image.thumb.url) %>
+			<% else %>
+				<div class="no_pic">No Pic</div>
+			<% end %>	
+		<% end %>
+	</div>
+
+	<h3 class="title"><%= product.title %></h3>
+</div>
