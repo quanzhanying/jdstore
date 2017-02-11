@@ -1,0 +1,50 @@
+
+<h2 class="text-center">Product List </h2>
+<div class="pull-right" style="padding-bottom:20px;">
+  <%=link_to("Add new product",new_admin_product_path,:class => "btn btn-primary btn-sm") %>
+</div>
+
+<br>
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <th> # </th>
+      <th width="220"> Product Pic </th>
+      <th> Name         </th>
+      <th> Price        </th>
+      <th> Action       </th>
+      <th> Create Date  </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product|%>
+    <tr>
+      <td>
+        <%= product.id %>
+      </td>
+      <td>
+        <%= link_to product_path(product) do%>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url,class: "thumbnail",size: "200x200")%>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=NOPic",class: "thumbnail")%>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to(product.title,admin_product_path(product)) %>
+      </td>
+      <td>
+        <%= product.price%>
+      </td>
+      <td>
+        <%= link_to("Edit",edit_admin_product_path(product))%> |
+        <%= link_to("Delte",admin_product_path(product),:method => :delete,:data => {:confirm => "Are you sure?"})%>
+      </td>
+      <td>
+        <%= product.created_at%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
