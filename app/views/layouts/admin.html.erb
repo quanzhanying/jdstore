@@ -18,19 +18,13 @@
            <div class="sidebar-brand text-center"><%= link_to("产品管理", admin_products_path) %></div>
         </div>
         <br>
+        <hr>
         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
           <li> <%= link_to("首页", root_path, :class => "btn btn-info fa fa-home" ) %> </li>
           <li>  </li>
           <li> <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm fa fa-plus-circle") %> </li>
           <li> <%= link_to("登出", destroy_user_session_path, :class => "btn btn-warning fa fa-sign-out", method: :delete) %> </li>
         </ul>
-        <div class="app-container flex-row" ng-app="masterPageApp" ng-controller="masterPageAppCtrl" class="app-container" ng-click="onGlobalAppClick()">
-    <global-header state="localState" notifications="localData.notifications"></global-header>
-    <global-user-menu open="localState.userMenuOpen" notifications="localData.notifications"></global-user-menu>
-    <global-site-nav open="localState.navMenuOpen"></global-site-nav>
-    <global-page-content page="localData.activeNavItem" navopen="localState.navMenuOpen"></global-page-content>
-    <global-page-notifications notifications="localData.notifications" open="localState.notificationsOpen"></global-page-notifications>
-</div>
       </div>
       <div class="col-md-10">
         <%= yield %>
