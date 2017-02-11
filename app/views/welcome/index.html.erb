@@ -45,9 +45,13 @@
           <span class="icon icon-bar"></span>
           <span class="icon icon-bar"></span>
           <span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
         </button>
+
         <a href="/" class="navbar-brand smoothScroll">Easy GuQin</a>
+
       </div>
+
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#home" class="smoothScroll"><span>Home</span></a></li>
@@ -55,12 +59,10 @@
 						<li><a href="#team-carousel" class="smoothScroll"><span>Team</span></a></li>
             <li><a href="#gallery" class="smoothScroll"><span>services</span></a></li>
             <li><a href="#contact" class="smoothScroll"><span>Contact</span></a></li>
-
-	            <li class="active">
-	              <%= link_to("Start!", products_path) %>
-	            </li>
-
-          </ul>
+						<li>
+							<%= link_to("Get Start!", products_path) %>
+						</li>
+				  </ul>
        </div>
 
     </div>
@@ -311,7 +313,7 @@
             <figcaption>
               <h1>Instrument</h1>
               <small>Guqin and related tools.</small>
-              <a href="#">Details</a>
+              <a href="classify_products_path, class: "bootstrap-override-2"">Details</a>
             </figcaption>
           </figure>
         </li>

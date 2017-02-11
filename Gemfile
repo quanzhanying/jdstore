@@ -43,6 +43,9 @@ end
 gem "bootstrap-sass"
 gem "simple_form"
 gem "font-awesome-rails"
+gem 'ransack'
+gem 'will_paginate'
+gem 'seo_helper'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -60,4 +63,4 @@ gem "devise"
 
 group :production do
   gem 'pg'
-end 
+end
