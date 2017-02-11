@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'seed 数据自动创建'
+
+User.create(email: "cw@test.com", password: "123456", password_confirmation: "123456", is_admin: 'false')
+puts 'create user: cw@test.com,  not admin'
+
+User.create(email: "admin@test.com", password: "123456", password_confirmation: "123456", is_admin: 'true')
+puts 'create user: admin@test.com,  is admin'
