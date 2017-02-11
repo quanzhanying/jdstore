@@ -1,0 +1,32 @@
+<div class="row well">
+  <div class="col-md-4">
+    <h3>配送地址</h3>
+    <p><%= @order.shipping_name %></p>
+    <p><%= @order.shipping_address %></p>
+  </div>
+
+  <div class="col-md-4">
+    <h3>寄件人</h3>
+    <p><%= @order.billing_name %></p>
+    <p><%= @order.billing_address %></p>
+  </div>
+  <div class="col-md-4">
+    <h3>订单总计:<%= @order.total %>RMB</h3>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">订单明细</div>
+  <table class="table">
+    <th>商品</th>
+    <th>价格</th>
+    <th>数量</th>
+    <% @product_lists.each do |product_list| %>
+    <tr>
+      <td><%= product_list.product_name %></td>
+      <td><%= product_list.product_price %></td>
+      <td><%= product_list.quantity %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
