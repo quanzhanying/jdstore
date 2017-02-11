@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+购物车练习作业:
+			- 清空购物车
+			- 可以删除购物车内某一件物品
+			- 已经加入购物车的物品，不能重复加入
+			- 可以更改购物车内的购买数量
+			- 库存为0的货物不能购买
+			- 在购物车新增数量时，不能更新超过原有库存的数量
