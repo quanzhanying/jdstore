@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 root 'products#index'
+
   namespace :admin do
     resources :products
   end
@@ -16,4 +17,5 @@ resources :carts do
      delete :clean
    end
  end
+ resources :cart_items
 end
