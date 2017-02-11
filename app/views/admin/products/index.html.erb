@@ -1,0 +1,58 @@
+<div class="pull-right">
+  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default") %>
+</div>
+
+
+<head>
+<style type="text/css">
+body {font-family:Monospace;}
+</style>
+</head>
+
+<body>
+<h2>Product Listing</h2>
+</body>
+
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>品名</th>
+      <th>描述</th>
+      <th>库存</th>
+      <th>价格</th>
+      <th>选项</th>
+      <th>创建日期</th>
+    </tr>
+  </thead>
+
+  <% @products.each do |product| %>
+    <tr>
+        <td>
+          <%= link_to(product.title, admin_product_path(product)) %>
+        </td>
+
+        <td>
+          <%= product.description %>
+        </td>
+
+        <td>
+          <%= product.quantity %>
+        </td>
+
+        <td>
+          <%= product.price %>
+        </td>
+
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-primary pull-left")%> |
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :class => "btn btn btn-danger pull-center", :data => { :confirm => "Are you sure?" }) %>
+        </td>
+
+        <td>
+          <%= product.created_at %>
+        </td>
+
+    </tr>
+  <% end %>
+</table>
