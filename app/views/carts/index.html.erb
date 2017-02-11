@@ -16,10 +16,11 @@
           <th>数量</th>
         </tr>
       </thead>
-      <tbody>
 
-        <% current_cart.cart_items.each do |cart_item| %>
-          <tr>
+    <tbody>
+
+      <% current_cart.cart_items.each do |cart_item| %>
+      <tr>
             <td>
               <%= link_to product_path(cart_item.product) do %>
                 <% if cart_item.product.image.present? %>
