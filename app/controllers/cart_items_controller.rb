@@ -7,6 +7,6 @@ class CartItemsController < ApplicationController
     @cart_item.destroy
 
     flash[:warning] = "成功将 #{@product.title}从购物车删除！"
-    redirct_to :back
+    redirect_to :back
   end
 end
