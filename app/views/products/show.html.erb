@@ -1,56 +1,83 @@
-<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        车太帅，没货了
-      <% end %>
-    </div>
-  </div>
-</div>
-
 <div class="container">
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-6">
 
-						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
-						  <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-						  <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-						  <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-						  <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
-						</div>
-						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-						  <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-						  <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-						  <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-						  <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-						</ul>
+            <div class=" col-sm-4 col-xs-4">
+            <div class="container">
+            <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+                <div class='carousel-outer'>
+                    <!-- me art lab slider -->
+                    <div class='carousel-inner '>
+                        <div class='item active'>
+                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg' alt=''id="zoom_05"  data-zoom-image="http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg"/>
+                        </div>
+                        <div class='item'  id="zoom_05">
+                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg" />
+                        </div>
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg" />
+                        </div>
+
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/3/6/7/0/4850763/multi/image1xxl.jpg" id="zoom_05"/>
+                        </div>
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/5/2/1/3/4603125/gold/image1xxl.jpg" id="zoom_05"/>
+                        </div>
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/5/3/6/8/4948635/mink/image1xxl.jpg" id="zoom_05"/>
+                        </div>
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/1/3/0/8/5268031/image2xxl.jpgg' alt='' data-zoom-image="http://images.asos-media.com/inv/media/1/3/0/8/5268031/image2xxl.jpg" id="zoom_05"/>
+                        </div>
+                        <script>$("#zoom_05").elevateZoom({ zoomType    : "inner", cursor: "crosshair" });</script>
+                    </div>
+
+                    <!-- sag sol -->
+                    <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+                        <span class='glyphicon glyphicon-chevron-left'></span>
+                    </a>
+                    <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+                        <span class='glyphicon glyphicon-chevron-right'></span>
+                    </a>
+                </div>
+
+                <!-- thumb -->
+                <ol class='carousel-indicators mCustomScrollbar meartlab'>
+                    <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='3'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='4'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='5'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='6'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+
+                </ol>
+            </div>
+
+            <script type="text/javascript">
+
+            $(document).ready(function() {
+                $(".mCustomScrollbar").mCustomScrollbar({axis:"x"});
+            });
+            </script>
+            </div>
+            </div>
 
 					</div>
+
 					<div class="details col-md-6">
+            <br>
+
 						<h3 class="product-title"><%= @product.title %></h3>
+            <br>
+            <br>
+
 						<p class="product-description"><%= @product.description %></p>
             <div> 数量 : <%= @product.quantity %> </div>
+            <br>
 						<h4 class="price">￥ <%= @product.price %></h4>
 						<div class="action">
               <button class="like btn btn-default">
@@ -60,13 +87,14 @@
                   车太帅，没货了
                 <% end %>
               </button>
-							<button class="like btn btn-default" type="button"><span class="fa fa-heart">心愿清单</span></button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart">收藏</span></button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
   <div class="container-fluid">
 			<div class="col-md-12 product-info">
 					<ul id="myTab" class="nav nav-tabs nav_tabs">

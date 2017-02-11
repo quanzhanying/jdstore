@@ -1,4 +1,8 @@
 <div class="row">
+  <% if current_cart.products.count == 0 %>
+  <img src="https://ooo.0o0.ooo/2017/02/12/589f491051f06.jpg" class="center-block">
+  <h1 class="text-center">购物车空空如也，购物车君表示很伤心……</h1>
+  <% else %>
   <div class="col-md-12">
     <%= link_to("清空购物车", clean_carts_path ,
                 method: :delete , class: "fa fa-trash pull-right",
@@ -67,4 +71,5 @@
       <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
+  <% end %>
 </div>

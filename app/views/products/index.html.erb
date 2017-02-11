@@ -1,42 +1,42 @@
-
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <div id="myCarousel" class="carousel slide">
-  	<!-- 轮播（Carousel）指标 -->
-  	<ol class="carousel-indicators">
-  		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  		<li data-target="#myCarousel" data-slide-to="1"></li>
-  		<li data-target="#myCarousel" data-slide-to="2"></li>
-  	</ol>
-  	<!-- 轮播（Carousel）项目 -->
-  	<div class="carousel-inner">
-  		<div class="item active">
-  			<img src="http://p1.yokacdn.com/pic/luxury/car/2010/600U10P1T117D195897F2577DT20101111152514_maxh550.jpg" alt="First slide">
-  		</div>
-  		<div class="item">
-  			<img src="http://www.neeu.com/uploads/images/2011/4/1/1301629753173.jpg" alt="Second slide">
-  		</div>
-  		<div class="item">
-  			<img src="http://www.paochefang.com/wp-content/uploads/paoimage/2012/07/172335aGv.jpg" alt="Third slide">
-  		</div>
+<br>
+<div id="myCarousel" class="carousel slide">
+  <!-- 轮播（Carousel）指标 -->
+  <ol class="carousel-indicators">
+  	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  	<li data-target="#myCarousel" data-slide-to="1"></li>
+  	<li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- 轮播（Carousel）项目 -->
+  <div class="carousel-inner">
+  	<div class="item active">
+  		<img src="http://p1.yokacdn.com/pic/luxury/car/2010/600U10P1T117D195897F2577DT20101111152514_maxh550.jpg" alt="First slide">
   	</div>
-  	<!-- 轮播（Carousel）导航 -->
-  	<a class="carousel-control left" href="#myCarousel"
-  	   data-slide="prev">&lsaquo;</a>
-  	<a class="carousel-control right" href="#myCarousel"
-  	   data-slide="next">&rsaquo;</a>
+  	<div class="item">
+  		<img src="http://www.neeu.com/uploads/images/2011/4/1/1301629753173.jpg" alt="Second slide">
+  	</div>
+  	<div class="item">
+  		<img src="http://www.paochefang.com/wp-content/uploads/paoimage/2012/07/172335aGv.jpg" alt="Third slide">
+  	</div>
   </div>
+	<!-- 轮播（Carousel）导航 -->
+	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
 <div class="row">
   <% @products.each do |product| %>
 	<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail">
-
+    		<span class="thumbnail product-item">
+					<div class="pi-img-wrapper">
 						<% if product.image.present? %>
 							<%= image_tag(product.image.thumb.url, class: "thumbnail") %>
 						<% else %>
 							<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
 						<% end %>
-      		<h4><%= product.title %></h4>
+						<div>
+							<a href="#" class="btn">收藏</a>
+						</div>
+					</div>
+      		<h3><%= link_to(product.title, product_path(product)) %></h3>
       		<div class="ratings">
             <span class="glyphicon glyphicon-star"></span>
             <span class="glyphicon glyphicon-star"></span>
@@ -44,18 +44,86 @@
             <span class="glyphicon glyphicon-star"></span>
             <span class="glyphicon glyphicon-star-empty"></span>
           </div>
+          <span class="badge">90%</span>
       		<p><%= product.description %></p>
       		<hr class="line">
       		<div class="row">
       				<div class="col-md-6 col-sm-6">
-      					<p class="price">￥ <%= product.price %></p>
+      					<p class="pi-price">￥ <%= product.price %></p>
       				</div>
       				<div class="col-md-6 col-sm-6">
-      					<button class="btn btn-info right" > <%= link_to(content_tag(:i, 'Buy', class: 'fa fa-shopping-cart'), product_path(product)) %></button>
+      					<div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
       				</div>
       			</div>
+						<div class="sticker sticker-new"></div>
     		</span>
   		</div>
 
   <% end %>
 </div>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+
+
+
+<br>
+<br>
+<h3>猜你喜欢</h3>
+<marquee style=""  scrollamount="6" scrolldelay="90" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
+
+<ul class="list-inline list-unstyled r">
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product1</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product2</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product3</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product4</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product5</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product6</div>
+</li>
+<li class=" productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product7</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product8</div>
+</li>
+<li class="productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product9</div>
+</li>
+<li class=" productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product10</div>
+</li>
+<li class=" productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product11</div>
+</li>
+<li class=" productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product12</div>
+</li>
+<li class=" productbox">
+   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
+   <div class="producttitle"> product13 </div>
+</li>
+</ul></a><br>
+</marquee>
