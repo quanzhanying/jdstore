@@ -6,8 +6,7 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-  def die
-    current_cart.cart_item.delete
-    redirect_to carts_path
+  def checkout
+    @order = Order.new
   end
 end
