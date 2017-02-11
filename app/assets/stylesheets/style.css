@@ -380,7 +380,7 @@ a:hover, a:active, a:focus {
 #about .about-thumb {
   background: #ffffff;
   border-radius: 4px;
-  padding: 100px;
+  padding: 50px;
   position: relative;
 }
 
@@ -388,7 +388,7 @@ a:hover, a:active, a:focus {
   border: 8px solid #ffffff;
   position: absolute;
   left: -120px;
-  bottom: -325px;
+  bottom: -425px;
   padding: 12px;
 }
 
