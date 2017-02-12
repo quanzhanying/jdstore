@@ -17,3 +17,69 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+/* for navbar panel */
+
+.navbar-default {
+    background-color: #505050;//背景颜色
+    border-color: #505050;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+.navbar {
+        border-radius: 0; //圆角为0
+    }
+
+.navbar-default .navbar-brand {
+   color: #fff; //字体颜色
+   padding-left: 120px;
+   padding-right: 40px;
+ }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #E61C64; //鼠标放置在链接上的文字颜色
+  background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-right {
+  margin-right: 100px;
+}
+
+.navbar-default .navbar-nav > li > a{
+   font-family:  "Geneva", "Gill Sans", serif;
+   font-size: 15px;
+   color: #fff;
+   background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #E61C64;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #E61C64;
+
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.fa-fw {
+  margin-right: 5px;
+}
+
+.navbar-nav.navbar-toggle { background: #E61C64; border-radius: 2px; }
+.navbar-nav.navbar-toggle:hover { background: #E61C64; }
+.navbar-nav.navbar-toggle > span.icon-bar { background: #fff; }
+.navbar-nav ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+.navbar-nav ul.dropdown-menu > li > a { color: #444; }
+.navbar-nav ul.dropdown-menu > li > a:hover { background: #E61C64; color: #fff; }
+.navbar-nav span.badge { background: #E61C64; font-weight: normal; font-size: 11px; margin: 0 4px; }
