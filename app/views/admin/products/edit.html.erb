@@ -18,7 +18,7 @@
     <%= f.input :price %>
   </div>
 
-  <%= if @product.image.present? %>
+  <% if @product.image.present? %>
      <span>current product image</span>
      <%= image_tag(@product.image.thumb.url) %>
   <% end %>
