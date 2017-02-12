@@ -10,8 +10,6 @@ class OrdersController < ApplicationController
       render 'carts/checkout'
       # ?是否是回到checkout.html.erb
     end
-
-    redirect_to products_path
   end
 
 
