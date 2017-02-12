@@ -13,13 +13,19 @@
 
             <div class="form-inputs">
 
-              <%= f.input :email, required: true, autofocus: true,label: "电子邮箱" %>
-              <%= f.input :password,label: "设置密码", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-              <%= f.input :password_confirmation, required: true ,label: "确认密码"%>
+              <%= f.input :email, required: true, autofocus: true,label: "电子邮箱", placeholder: "请输入电子邮箱" %>
+                <%= f.input :password,label: "设置密码", required: true,placeholder: "密码至少6位" %>
+              <!--
+              <%= f.input :password,label: "设置密码", required: true,placeholder: "密码至少6位", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+-->
+              <%= f.input :password_confirmation, required: true ,label: "确认密码",placeholder: "请再次输入密码"%>
             </div>
 
-            <div class="form-actions">
-                <%= f.button :submit, "注册" %>
+
+
+            <div class="form-actions ">
+              <!--<%= f.button :submit, "登录" %> -->
+              <button class="btn btn-login" >注 册</button>
             </div>
         <% end %>
 
