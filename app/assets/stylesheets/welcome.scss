@@ -349,7 +349,6 @@
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    background-color: #A7FFEB;
 }
 
 .left {
@@ -367,4 +366,22 @@
 
 .display {
     clear: both;
+}
+
+.display ul {
+    list-style: none;
+    text-align: center;
+    display: inline;
+}
+
+.display li {
+    float: left;
+    background-color: #E0F7FA;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.display img {
+    height: 200px;
+    width: 200px;
 }

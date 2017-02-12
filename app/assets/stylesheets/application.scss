@@ -17,3 +17,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar-default {
+    margin-bottom: 0;
+    border-radius: 0;
+}
