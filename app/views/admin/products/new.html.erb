@@ -21,6 +21,30 @@
     <%= f.input :image, as: :file %>
   </div>
 
+  <div class="group">
+    <%= f.input :shirt_name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :sweatre_name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :jean_name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :jacket_name %>
+  </div>
+
+<div class="group">
+  <%= f.input :is_hidden %>
+  <%= f.input :is_shirt %>
+  <%= f.input :is_sweatre %>
+  <%= f.input :is_jean %>
+  <%= f.input :is_jacket %>
+</div>
+
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>

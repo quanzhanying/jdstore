@@ -1,6 +1,17 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = case params[:order]
+    when 'by_shirt'
+      Product.where(is_shirt: true).order('shirt_name DESC')
+    when 'by_sweatre'
+      Product.where(is_sweatre: true).order('sweatre_name DESC')
+    when 'by_jean'
+      Product.where(is_jean: true).order('jean_name DESC')
+    when 'by_jacket'
+      Product.where(is_jacket: true).order('jacket_name DESC')
+    else
+      Product.order('created_at DESC')
+    end
   end
 
   def show
