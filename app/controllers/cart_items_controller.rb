@@ -6,7 +6,7 @@ class CartItemsController < ApplicationController
     @product = @cart_item.product
     @cart_item.destroy
 
-    flash[:warning] = "Delete #{}{@product.title} from cart!"
+    flash[:warning] = "Delete #{@product.title} from cart!"
     redirect_to :back
   end
 
