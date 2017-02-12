@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
-    
+
  end
 
  resources :carts do
@@ -29,5 +29,7 @@ resources :orders
 namespace :account do
    resources :orders
 end
+
+get '/guqin', to:'pages#guqin'
 
 end

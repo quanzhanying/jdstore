@@ -495,11 +495,11 @@ a:hover, a:active, a:focus {
     Contact section
 -----------------------------------------*/
 
-#contact, footer {
+#contact {
   background: #304352;
   color: #ffffff;
   padding: 20px;
-  height: 180px;
+  height: 590px;
 }
 
 #contact .form-control {
@@ -542,7 +542,11 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 footer {
-  padding-bottom: 80px;
+  padding-bottom: 50px;
+  background: #304352;
+  color: #ffffff;
+  padding: 20px;
+  height: 180px;
 }
 
 
