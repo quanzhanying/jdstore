@@ -19,5 +19,13 @@
  @import "font-awesome";
 
 .jumbotron{
-  background: linear-gradient(180deg, #EEEEEE, white)
+  background: linear-gradient(180deg, #EEEEEE, white);
+}
+.bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+.bg-2 {
+    background: linear-gradient(180deg, #EEEEEE, white);
+    color: black;
 }
