@@ -1,21 +1,23 @@
+
 <div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
-     <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("https://ww1.sinaimg.cn/large/006tKfTcgy1fclukp87ixj30b40b4763.jpg", class: "thumbnail") %>
     <% end %>
   </div>
-  <div>
+  <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
-    <div style="heiht:100px;">
+    <div style="height:100px;">
       <p>
-        <% @product.description %>
+        <%= @product.description %>
       </p>
     </div>
-
-    <div> 数量 ：<%= @product.quantity %> </div>
-    <div class="product-price"> <%= @product.price %> </div>
+    <div> 数量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
-      <%= link_to("加入购物车"，"#", :class => "btn btn-primary btn-lg btn-danger") %>
+      <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger") %>
     </div>
   </div>
 </div>
