@@ -1,4 +1,6 @@
-# README
+# 购物网站魔改大赛
+
+求队友，欢迎骚扰。
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
