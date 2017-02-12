@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Billing Name</h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th with="80%">Product Details</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        Total <%= @order.total %> CNY
+      </span>
+    </div>
+
+    <hr>
+
+    <h2>Shipping Address</h2>
+
+    <table class="table table-stripped table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            Billing Name
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.billing_name %> - <%= @order.billing_address %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Shipping Name
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
