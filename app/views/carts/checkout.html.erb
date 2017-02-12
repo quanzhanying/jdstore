@@ -50,7 +50,6 @@
       <%= simple_form_for @order do |f| %>
 
         <legend>订购人</legend>
-        <!-- 不明白的语法 -->
         <div class="col-lg-6">
           <%= f.input :billing_name%>
         </div>
@@ -65,6 +64,7 @@
         <div class="form-group col-lg-6">
           <%= f.input :shipping_address, input_html: { class: "form-controlz"}%>
         </div>
+
         <%= f.submit "提交", class: "btn btn-primary btn-lg", data: { disable_with: "Submitting..."}%>
       <% end %>
     </div>
