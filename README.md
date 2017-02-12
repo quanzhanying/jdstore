@@ -51,3 +51,6 @@ version 1.7-EPIC-7 create at 2017-2-7
 可以填写寄送资讯
 订单明细页
 订单明细页网址必须秘密
+
+verision 1.8-EPIC-8 create at 2017-2-11
+定制devise页面

@@ -21,7 +21,7 @@
  .navbar-default{
   // background-color: #EF6C00 ;
    //border-color: #EF6C00 ;
-   //margin-bottom: 0;
+   margin-bottom: 0;
  }
 
  .navbar-default .navbar-brand {
@@ -314,4 +314,42 @@
 
 .footnav {
   padding-top: 20px;
+}
+
+
+.login-wap {
+  //background-image: url('https://img13.360buyimg.com/da/jfs/t2749/276/1020747574/33213/870500f1/5731485aN1134b4f0.png');
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  padding-right:120px;
+  background-color: #6e18ff;
+}
+
+.login-wap .login-banner img{
+  width: 100%
+}
+
+.login-banner{
+//background-color: #e93854;
+}
+
+.login-user {
+  background-color: #fff;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  //padding-right: 15px;
+
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.login-user .w{
+  ///margin-right:10px;
+  //margin-left:10px;
+  //margin-top:20px;
+  //margin-bottom:20px;
+
 }
