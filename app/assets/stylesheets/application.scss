@@ -158,7 +158,7 @@
 }
 .form-inline .input-group  .form-control{
   //width: auto;
-  //width: 350px;
+  width: 350px;
   height: 41px;
   border: 2px solid #EF6C00;
 }
@@ -175,7 +175,7 @@
 .lp-section-1 {
     //display: block;
   //background-color: #ffffff;
-    background-image: url('https://ww1.sinaimg.cn/large/006tNbRwgy1fch3o344x9j31hc0b415x.jpg');
+    //background-image: url('https://ww1.sinaimg.cn/large/006tNbRwgy1fch3o344x9j31hc0b415x.jpg');
     background-repeat: no-repeat;
     background-position: center 80%;
     background-size: cover;
@@ -183,7 +183,7 @@
     margin-right: auto;
     margin-top: 0;
     width: 100%;
-    height: 400px;
+    //height: 400px;
     //position: relative;
 }//banner区块
 
@@ -364,4 +364,30 @@ margin-bottom: 15px;
 
 .fontlink{
  color: #999;
+}
+
+.carousel-inner > .item > img  {
+    //-webkit-filter: grayscale(90%);
+    //filter: grayscale(90%); /* make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    //height: 400px;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+
+.carousel-control.left{
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  }
+
+.carousel-control.right{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.0) 100%);
 }
