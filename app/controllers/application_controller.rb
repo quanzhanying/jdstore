@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  
+
  def find_cart
    cart = Cart.find_by(id: session[:cart_id])
    if cart.blank?
