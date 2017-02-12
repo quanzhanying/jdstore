@@ -343,7 +343,7 @@
 }
 
 /*---------- 人气推荐 ----------*/
-.suggestions {
+.home {
     width: auto;
     height: auto;
     margin-right: auto;
@@ -366,12 +366,12 @@
 
 .display {
     clear: both;
+    text-align: center;
 }
 
 .display ul {
     list-style: none;
-    text-align: center;
-    display: inline;
+    display: inline-block;
 }
 
 .display li {
