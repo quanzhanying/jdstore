@@ -1,0 +1,17 @@
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
+<!--  class: "thumbnail"是bootstrap内置的image的图像属性：意思是带边框 -->
+<!--  bootstrap,有很多现成的image加文字链接的代码案例-->
+<!-- css语言来表述，就是border 加 padding 的组合 -->

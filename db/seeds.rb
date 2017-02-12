@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "这个种子档案自动建立一个admin账号"
+create_account = User.create([email: 'ctw@gmail.com', password: '111111',
+  password_confirmation: '111111', is_admin: 'true'])
+
+u = User.new
+u.email = "12@12.com"
+u.password = "111111"
+u.password_confirmation = "111111"
+u.is_admin = true
+u.save
