@@ -6,9 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.new
-u.email = "kkman@hotmail.com"
-u.password = "kfc55555"
-u.password_confirmation = "kfc55555"
-u.is_admin = true
-u.save
+User.create(email: 'kkman@hotmail.com',password: 'kfc55555', password_confirm: 'kfc55555',is_admin: true)试下
