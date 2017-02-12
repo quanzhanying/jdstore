@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <h3 style="text-align:center;
+  background:#dddddd;
+  border:3px solid #a1a1a1;
+  padding:10px 40px;
+  border-radius:25px;">买家列表</h3>
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-xs-6 col-md-3">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://oj8zlumqh.bkt.clouddn.com/image/noimage.png", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+        <%= product.title %> ￥ <%= product.price %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
