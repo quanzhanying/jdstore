@@ -1,14 +1,16 @@
 class ProductsController < ApplicationController
- def add_to_cart
-   @product = Product.find(params[:id])
-   current_cart.add_product_to_cart(@product)
-   redirect_to :back
-   flash[:notice] = "测试加入购物车"
- end
+  def add_to_cart
+    @product = Product.find(params[:id])
+     current_cart.add_product_to_cart(@product)
+     flash[:notice] = "成功加入购物车"
+    redirect_to :back
+   end
+
    def index
-   @products = Product.all
+    @products = Product.all
+   end
+
+   def show
+    @product = Product.find(params[:id])
+   end
  end
- def show
-   @product = Product.find(params[:id])
- end
-end
