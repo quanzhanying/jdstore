@@ -34,7 +34,6 @@
      <div class="sk-spinner sk-spinner-pulse"></div>
 </div>
 
-
 <!-- Navigation section  -->
 
  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -47,8 +46,8 @@
           <span class="icon icon-bar"></span>
 					<span class="icon icon-bar"></span>
         </button>
-
-        <a href="/" class="navbar-brand smoothScroll">Easy GuQin</a>
+<a href="/" class="navbar-brand smoothScroll">Easy GuQin</a>
+<p>Simplify Guqin learning</p>
 
       </div>
 
@@ -64,8 +63,8 @@
 						</li>
 				  </ul>
        </div>
+		 </div>
 
-    </div>
   </div>
 
 
@@ -97,7 +96,7 @@
             <div class="carousel-inner" role="listbox">
 
                 <!-- First Slide -->
-                <div class="item active">
+                <div class="item active" margin-top="200px">
 
                     <!-- Slide Background -->
 
@@ -423,6 +422,24 @@
 <a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
 
 <!-- Javascript  -->
+
+<script type="text/javascript">
+$(function(){
+var nav=$(".navbar navbar-default navbar-fixed-top"); //得到导航对象
+var win=$(window); //得到窗口对象
+var sc=$(document);//得到document文档对象。
+win.scroll(function(){
+	if(sc.scrollTop()>=100){
+		nav.addClass("fixednav");
+	 $(".navTmp").fadeIn();
+	}else{
+	 nav.removeClass("fixednav");
+	 $(".navTmp").fadeOut();
+	}
+})
+})
+</script>
+
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/vegas.min.js"></script>
