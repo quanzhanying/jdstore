@@ -24,3 +24,6 @@ public/uploads
 
 # Ignore seeds.rb file
 /db/seeds.rb
+
+# Ignore application configuration
+/config/application.yml

@@ -34,6 +34,8 @@ gem 'font-awesome-rails'
 gem 'seed_dump'
 gem 'letter_opener'
 gem 'aasm'
+gem 'figaro'
+gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
