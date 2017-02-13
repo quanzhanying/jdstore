@@ -2,7 +2,7 @@ CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_credentials = {
-      provider:              'fullstack',
+      provider:              'fog/aws',
       aws_access_key_id:     ENV["AKIAJLL3VYVMDV654LXA"],      # 你的 key
 
 
