@@ -1,6 +1,6 @@
 # README
 
-第一周作业
+第二周作业
 application up and running.
 
 Things you may want to cover:
