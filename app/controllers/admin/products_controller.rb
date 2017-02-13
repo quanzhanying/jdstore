@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.all
+    @products = Product.where.not(:id => 9)
   end
 
   def new
@@ -40,9 +40,31 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    cart_items = CartItem.where(product_id: params[:id])
+    cart_items.update_all(product_id: 9)
+
+    redirect_to admin_products_path, alert: "Product deleted."
+  end
+
+  def publish
+    @product = Product.find(params[:id])
+    @product.publish!
+    redirect_to :back
+  end
+
+  def hidden
+    @product = Product.find(params[:id])
+    @product.hide!
+    redirect_to :back
+  end
+
   private
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :is_hidden)
   end
 
 end

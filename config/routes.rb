@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   namespace :admin do
-    resources :products
+    resources :products do
+      member do
+        post :publish
+        post :hidden
+      end
+    end
   end
 
   resources :products do
@@ -25,7 +30,7 @@ Rails.application.routes.draw do
   resources :orders
 
   namespace :account do
-    resources :orders 
+    resources :orders
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

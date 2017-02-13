@@ -15,18 +15,19 @@
 
       <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
+          <% if !cart_item.product.is_hidden %>
           <tr>
             <td>
-              <%= link_to product_path(cart_item.product) do %>
-                <% if cart_item.product.image.present? %>
-                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                <%= link_to product_path(cart_item.product) do %>
+                  <% if cart_item.product.image.present? %>
+                    <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                  <% end %>
                 <% end %>
-              <% end %>
             </td>
             <td>
-              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+                <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
               <%= cart_item.product.price %>
@@ -46,6 +47,32 @@
               <% end %>
             </td>
           </tr>
+          <% else %>
+          <tr>
+            <td>
+                  <% if cart_item.product.image.present? %>
+                    <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail", style: "opacity:0.4;") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                  <% end %>
+            </td>
+            <td>
+                <%= cart_item.product.title %>
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              0
+            </td>
+            <td>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+
         <% end %>
       </tbody>
     </table>
