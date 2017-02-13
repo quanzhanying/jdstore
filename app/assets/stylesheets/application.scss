@@ -30,10 +30,25 @@
         border-radius: 0; //圆角为0
     }
 
+.navbar-brand > img {
+        margin-right: 0; //图片和链接文字拉开一点距离
+        width: 25px; //定制图片宽度
+        height: 25px; //定制图片高度
+        margin-bottom: 13px;
+        margin-top: 7px;
+        display: inline-block;	//图片和链接文字显示在同一行
+
+
+}
+
 .navbar-default .navbar-brand {
    color: #fff; //字体颜色
+   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
    padding-left: 120px;
    padding-right: 40px;
+   margin-top: -10px;
+
+
  }
 
 .navbar-default .navbar-brand:hover,
