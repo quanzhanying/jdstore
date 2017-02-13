@@ -52,7 +52,7 @@
 
 
 /*购物车上的数字*/
-.label {
+.labelnumber {
   position: relative;
   left: 0px;
   top: -10px;
@@ -68,291 +68,22 @@
 
 
 /*产品详情页*/
-body {
-  font-family: 'open sans';
-  overflow-x: hidden; }
-
-img {
-  max-width: 100%; }
-
-.preview {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  @media screen and (max-width: 996px) {
-    .preview {
-      margin-bottom: 20px; } }
-
-.preview-pic {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.preview-thumbnail.nav-tabs {
-  border: none;
-  margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-right: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
-      max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
-
-.tab-content {
-  overflow: hidden; }
-  .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
-
-.card {
-  margin-top: 50px;
-  background: #eee;
-  padding: 3em;
-  line-height: 1.5em; }
-
-@media screen and (min-width: 997px) {
-  .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; } }
-
-.details {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.colors {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.product-title, .price, .sizes, .colors {
-  text-transform: UPPERCASE;
-  font-weight: bold; }
-
-.checked, .price span {
-  color: #ff9f1a; }
-
-.product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; }
-
-.product-title {
-  margin-top: 0; }
-
-.size {
-  margin-right: 10px; }
-  .size:first-of-type {
-    margin-left: 40px; }
-
-.color {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  height: 2em;
-  width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
-
+//按钮样式
 .add-to-cart, .like {
-  background: #ff9f1a;
+  a {
+    color: #FFF;//改变链接颜色
+  }
+  background: #90CAF9;
   padding: 1.2em 1.5em;
   border: none;
   text-transform: UPPERCASE;
   font-weight: bold;
-  color: #fff;
+  color: white;
   -webkit-transition: background .3s ease;
           transition: background .3s ease; }
   .add-to-cart:hover, .like:hover {
-    background: #b36800;
+    background: #0D47A1;
     color: #fff; }
-
-.not-available {
-  text-align: center;
-  line-height: 2em; }
-  .not-available:before {
-    font-family: fontawesome;
-    content: "\f00d";
-    color: #fff; }
-
-.orange {
-  background: #ff9f1a; }
-
-.green {
-  background: #85ad00; }
-
-.blue {
-  background: #0076ad; }
-
-.tooltip-inner {
-  padding: 1.3em; }
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-    transform: scale(3);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-
-/*----------------------------------功能分割线----------------------------------*/
-
-
-/*产品详情页css*/
-@import url("bootstrap/bootstrap.min.css");
-@import url("bootstrap-override.css");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-
-.gold{
-	color: #FFBF00;
-}
-
-.product{
-	border: 1px solid #dddddd;
-	height: 321px;
-}
-
-.product>img{
-	max-width: 230px;
-}
-
-.product-rating{
-	font-size: 20px;
-	margin-bottom: 25px;
-}
-
-.product-title{
-	font-size: 20px;
-}
-
-.product-desc{
-	font-size: 14px;
-}
-
-.product-price{
-	font-size: 22px;
-}
-
-.product-stock{
-	color: #74DF00;
-	font-size: 20px;
-	margin-top: 10px;
-}
-
-.product-info{
-		margin-top: 50px;
-}
-
-.content-wrapper {
-	max-width: 1140px;
-	background: #fff;
-	margin: 0 auto;
-	margin-top: 25px;
-	margin-bottom: 10px;
-	border: 0px;
-	border-radius: 0px;
-}
-
-.view-wrapper {
-	float: right;
-	max-width: 70%;
-	margin-top: 25px;
-}
-
-.container {
-	padding-left: 0px;
-	padding-right: 0px;
-	max-width: 100%;
-}
-
-.service1-items {
-	padding: 0px 0 0px 0;
-	float: left;
-	position: relative;
-	overflow: hidden;
-	max-width: 100%;
-	height: 321px;
-	width: 130px;
-}
-
-.service1-item {
-	height: 107px;
-	width: 120px;
-	display: block;
-	float: left;
-	position: relative;
-	padding-right: 20px;
-	border-right: 1px solid #DDD;
-	border-top: 1px solid #DDD;
-	border-bottom: 1px solid #DDD;
-}
-
-.service1-item > img {
-	max-height: 110px;
-	max-width: 110px;
-	opacity: 0.6;
-	transition: all .2s ease-in;
-	-o-transition: all .2s ease-in;
-	-moz-transition: all .2s ease-in;
-	-webkit-transition: all .2s ease-in;
-}
-
-.service1-item > img:hover {
-	cursor: pointer;
-	opacity: 1;
-}
-
-.service-image-left {
-	padding-right: 50px;
-}
-
-.service-image-right {
-	padding-left: 50px;
-}
-
-.service-image-left > center > img,.service-image-right > center > img{
-	max-height: 155px;
-}
-
 
 /*----------------------------------功能分割线----------------------------------*/
 
@@ -361,21 +92,13 @@ img {
 .product-item {
     padding: 15px;
     background: #fff;
-    margin: 20px 7px 0;
+    margin: 15px -8px 0;//首页产品列表白色框框大小调节
     position: relative;
 }
 .product-item:hover {
     box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
 }
-.product-item:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    font-size: 0;
-    line-height:0;
-}
+//列表右上角new的样式
 .sticker {
     position: absolute;
     top: 0;
@@ -388,6 +111,7 @@ img {
     left: auto;
     right: 0;
 }
+//收藏按钮样式
 .pi-img-wrapper {
     position: relative;
 }
@@ -420,7 +144,6 @@ img {
     background: #e84d1c;
     border-color: #c8c8c8;
 }
-
 .product-item h3 {
     font-size: 14px;
     font-weight: 300;
@@ -431,10 +154,10 @@ img {
     color: #3e4d5c;
 }
 .product-item h3 a:hover {
-    color: #E02222;
+    color: #0D47A1;
 }
 .pi-price {
-    color: #e84d1c;
+    color: #0D47A1;
     font-size: 18px;
     float: left;
     padding-top: 1px;
@@ -448,9 +171,10 @@ img {
 }
 .product-item .add2cart:hover {
     color: #fff;
-    background: #e84d1c;
-    border-color: #e84d1c;
+    background: #BBDEFB;
+    border-color: #BBDEFB;
 }
+//列表右上角90%的样式
 .badge {
     background: #b20c0c;
     position: absolute;
@@ -528,9 +252,10 @@ img {
 #carousel-custom .carousel-outer {
   position: relative;
 }
+//产品详情底部小图控制
 .carousel-indicators li img {
   height: 66px;
-  width: 52px;
+  width: 66px;
 }
 
 
@@ -569,9 +294,7 @@ marquee>a, marquee>a:hover{color:#000; text-decoration:none;}
   color:#000;
   text-decoration:none;
 }
-.producttitle .btn{
-  background-color:#EDEEF0;
-}
+
 
 
 /*----------------------------------功能分割线----------------------------------*/
@@ -582,7 +305,8 @@ marquee>a, marquee>a:hover{color:#000; text-decoration:none;}
   padding: 30px;
   max-width: 350px;
   width: 100% !important;
-  background-color: #F7F7F7;
+  background: #90CAF9;
+  background-color: #90CAF9;
   margin: 0 auto;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -682,8 +406,6 @@ marquee>a, marquee>a:hover{color:#000; text-decoration:none;}
   border-radius:0px;
   margin-bottom: 0px;
   border: 0px;
-}
-.navbar-default {
   background-color: #0c224f;
   border-color: #12131e;
 }
@@ -906,3 +628,25 @@ marquee>a, marquee>a:hover{color:#000; text-decoration:none;}
 {
     border-color:#fff;
 }
+
+
+/*----------------------------------功能分割线----------------------------------*/
+
+
+/*固定像素*/
+//设定整个网页居中，且最宽为1024
+div.container {
+  margin-left:auto;
+  margin-right:auto;
+  width:1024px;
+}
+
+
+/*----------------------------------功能分割线----------------------------------*/
+
+
+/*将页脚固定在底部*/
+html{height:100%;}
+body{min-height:100%;margin:0;padding:0;position:relative;}
+main{padding-bottom:100px;}/* main的padding-bottom值要等于或大于footer的height值 */
+footer{position:absolute;bottom:0;width:120%;height:100px;}

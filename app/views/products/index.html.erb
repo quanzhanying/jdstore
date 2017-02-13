@@ -1,7 +1,5 @@
-<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div class="row">
-<div class="span12">
+<div class="container">
 			<div class="carousel slide" id="carousel-706828">
 				<ol class="carousel-indicators">
 					<li class="active" data-slide-to="0" data-target="#carousel-706828">
@@ -61,6 +59,11 @@
                 </div>
               </div>
           </div>
+<div class="container">
+
+
+<h3>超跑列表</h3>
+					<hr>
 <div class="row">
   <% @products.each do |product| %>
 	<div class="col-md-3 col-sm-6">
@@ -76,7 +79,7 @@
 						</div>
 					</div>
       		<h3><%= link_to(product.title, product_path(product)) %></h3>
-      		<div class="ratings">
+      		<div>
             <span class="glyphicon glyphicon-star"></span>
             <span class="glyphicon glyphicon-star"></span>
             <span class="glyphicon glyphicon-star"></span>
@@ -100,12 +103,16 @@
 
   <% end %>
 </div>
-
+</div>
 
 
 <br>
 <br>
+<div class="container">
+
+
 <h3>猜你喜欢</h3>
+<hr>
 <marquee style=""  scrollamount="6" scrolldelay="90" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
 
 <ul class="list-inline list-unstyled r">
@@ -163,3 +170,4 @@
 </li>
 </ul></a><br>
 </marquee>
+</div>
