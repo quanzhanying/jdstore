@@ -19,13 +19,13 @@
                     <%= product.id %>
                 </td>
                 <td>
-                    <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                            <%= image_tag(product.image.thumb.url, class:"thumbnail") %>
-                        <% else %>
-                            <%= image_tag("http://www.teesnthings.com/ProductImages/ladies-t-shirts/plain-tee-shirt.jpg", class: "thumbnail") %>
-                        <% end %>
+                  <%= link_to product_path(product) do %>
+                    <% if product.image.present? %>
+                      <%= image_tag(product.image.thumb.url, class:"thumbnail") %>
+                    <% else %>
+                      <%= image_tag("http://www.teesnthings.com/ProductImages/ladies-t-shirts/plain-tee-shirt.jpg", class: "thumbnail") %>
                     <% end %>
+                  <% end %>
                 </td>
                 <td>
                     <%= product.title %>
