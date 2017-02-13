@@ -1,1 +1,238 @@
-<h1>Hello World!</h1>
+<header id="header" role="header">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">乐活生活馆</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <%= link_to("首页", root_path) %>
+          </li>
+          <li>
+            <%= link_to("产品", products_path) %>
+          </li>
+          <li>
+            <%= link_to("关于我们", "#") %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to carts_path do %>
+              购物车 <i class="fa fa-shopping-cart fa-lg"></i> (<%= current_cart.products.count %>)
+            <% end %>
+          </li>
+          <% if !current_user %>
+            <li>
+              <div class="login">
+                <%= link_to("注册", new_user_registration_path) %> |
+                <%= link_to("登录", new_user_session_path) %>
+              </div>
+            </li>
+          <% else %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Hi!, <%= current_user.email %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                  <li>
+                    <%= link_to(content_tag(:i, " Admin Panel", class: "fa fa-lock"), admin_products_path) %>
+                  </li>
+                <% end %>
+                <li>
+                  <%= link_to(content_tag(:i, " My Orders", class: "fa fa-history"), account_orders_path) %>
+                </li>
+                <li>
+                  <%= link_to(content_tag(:i, " Sign Out", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-6">
+      <div class="slogan">
+        <h2>
+          欢迎来到乐活生活馆
+        </h2>
+        <h2>
+          ——好物尽在这里
+        </h2>
+        <h2>
+          ——随便逛逛, <%= link_to("点这里", products_path) %>
+        </h2>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-6">
+      <div class="picture">
+        <%= image_tag "pic4.jpg", class: "img-circle" %>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="products">
+  <div class="wrapper1">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <form class="search-container">
+          <input type="text" id="search-bar" placeholder="产品，商铺...">
+          <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+        </form>
+        <h2 class="text-center">  热销商品</h2>
+        <div class="row hot-products">
+
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%= image_tag("pic7.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic5.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row hot-products">
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic2.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic1.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+        </div>
+
+        <h2 class="text-center">精选商品</h2>
+        <div class="row specific-products">
+
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic7.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic5.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row specific-products">
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic2.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <figure class="snip1423">
+              <%=  image_tag("pic1.jpg") %>
+              <figcaption>
+                <h3>商品名称 <span>￥19.00</span></h3>
+                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+              </figcaption>
+              <a href="#"></a>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="footer">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="footer-chunk">
+        <h4>关于产品</h4>
+        <ul>
+          <li>卧室</li>
+          <li>浴室</li>
+          <li>客厅</li>
+          <li>厨房</li>
+          <li>其他</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="footer-chunk">
+        <h4>关于我们</h4>
+        <ul>
+          <li>理念：</li>
+          <li>设计者：陈慧娟</li>
+          <li>设计者：刘慧玲</li>
+          <li>其他</li>
+          <li>其他</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="footer-chunk">
+        <h4>售后服务</h4>
+        <ul>
+          <li>24小时热线服务</li>
+          <li>热线咨询：123456789</li>
+          <li>邮箱咨询：email</li>
+          <li>帮助</li>
+          <li>意见</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="design">
+      <span><a href="#">Github仓库</a></span>  <span><a href="#">关于我们</a></span>  <span><a href="#">联系我们</a></span>
+      <p>This website is Designed  and Built By <span>Megy Chen</span> & <span>Chris Liu</span>, welcome to here!</p>
+      <p>@Copyright 2017</p>
+    </div>
+  </div>
+</div>
