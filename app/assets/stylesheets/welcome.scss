@@ -13,14 +13,6 @@
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
 }
-.bs-slider .bs-slider-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.40);
-}
 .bs-slider > .carousel-inner > .item > img,
 .bs-slider > .carousel-inner > .item > a > img {
     margin: auto;
@@ -198,7 +190,7 @@
 
 .slide-text {
     left: 0;
-    top: 35%;
+    top: 30%;
     right: 0;
     margin: auto;
     padding: 10px;
@@ -350,16 +342,47 @@
 
 }
 
-/*---------- Product Categories ----------*/
-
-.caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
+/*---------- 人气推荐 ----------*/
+.products {
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    background-color: #FAFAFA;
 }
 
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
+.left {
+    float: left;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.right {
+    float: right;
+    font-size: 14px;
+    padding-top: 28px;
+    padding-right: 10px;
+}
+
+.display {
+    clear: both;
+    text-align: center;
+}
+
+.display ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.display li {
+    float: left;
+    background-color: #E0F7FA;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.display img {
+    height: 200px;
+    width: 200px;
 }

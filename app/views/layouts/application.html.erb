@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>美丽家居</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,13 +10,16 @@
 
   <body>
 
-    <div class="container-fluid">
-        <%= render "common/navbar" %>
-        <%= render "common/flashes"%>
-        <%= yield %>
+    <div class="container-fluid row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 main">
+            <%= render "common/navbar" %>
+            <%= render "common/flashes"%>
+            <%= yield %>
+            <%= render "common/footer" %>
+        </div>
+        <div class="col-md-2"></div>
     </div>
-
-    <%= render "common/footer" %>
 
   </body>
 </html>

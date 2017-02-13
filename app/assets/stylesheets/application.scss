@@ -18,6 +18,7 @@
 @import "bootstrap";
 @import "font-awesome";
 
+<<<<<<< HEAD
 body {
   position: relative;
   min-height: 100%;
@@ -32,4 +33,51 @@ body {
   bottom: 0;
   margin-bottom: 0;
   border-width: 1px 0 0;
+=======
+/* navbar */
+.navbar-default {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: 0 none;
+}
+
+/* footer */
+footer {
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+    background-color: #EFEBE9;
+}
+footer div {
+    display: inline-block;
+}
+footer .phone {
+    font-size: 22px;
+}
+
+footer .goal_detail {
+    font-size: 16px;
+}
+footer img {
+    height: 32px;
+    width: 32px;
+}
+footer img.author {
+    height: 150px;
+    width: 150px;
+}
+footer .dropdown {
+    position: relative;
+    display: inline-block;
+}
+footer .dropdown-content {
+    display: none;
+    position: absolute;
+}
+footer .dropdown:hover .dropdown-content {
+    display: block;
+}
+footer .copyright {
+    clear: both;
+>>>>>>> 5638963520aaa479da307d2502075e12ff54fddb
 }
