@@ -16,3 +16,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar-default {
+    background-color: rgb(255,255,255);//背景颜色
+    border-color: white;//边框色
+}
+
+.navbar-default .navbar-brand {
+  font-size: 23px;
+  font-weight:bold;
+  color:black;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: grey;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: rgb(169,169,169);
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a{
+  color: black;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: rgb(169,169,169);
+  background-color: transparent;
+}
