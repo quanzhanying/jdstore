@@ -140,4 +140,87 @@
  }
 
 
- 
+ /****** LOGIN Panle ******/
+
+.-page {
+  // background-image: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+  height: 650px;
+  }
+
+
+.-panel {
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 25px;
+}
+
+.-title {
+  margin-top: 25px;
+  font-size: 35px;
+  margin-bottom: 45px;
+}
+
+
+.form-inputs {
+  font-family: "Geneva", "Gill Sans", serif;
+  font-size: 16px;
+  color: #595958
+}
+
+.user_email {
+  width: 350px;
+  height: 70px;
+  text-align: left;
+  margin-left: 540px;
+}
+
+.user_password{
+  width: 350px;
+  height: 70px;
+  margin-left: 540px;
+  text-align: left;
+}
+
+.user_password_confirmation {
+  width: 350px;
+  height: 70px;
+  margin-left: 540px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.help-block {
+  font-size: 12px;
+}
+
+.user_remember_me {
+  margin-left: 540px;
+  text-align: left;
+  padding-top: -15px;
+  font-size: 14px;
+}
+
+
+.form-actions .btn-default {
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Geneva", "Gill Sans", serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fff !important;
+    background-color: rgb(230,28,100) !important;
+    border-color: rgb(230,28,100) !important;
+    text-align: center;
+
+}
+
+.form-actions :hover {
+    color: #fff !important;
+    background-color: rgb(35,66,158) !important;
+    border-color: rgb(35,66,158) !important;
+    text-align: center;
+}
+
+a {
+  font-size: 15px;
+}
