@@ -53,3 +53,20 @@
   color: rgb(169,169,169);
   background-color: transparent;
 }
+
+.item-number {
+    border-radius: 3px;
+    background-color: rgb(128,128,128);
+    height: 17px;
+    padding: 3px 6px;
+    font-weight: 400;
+    display: inline-block;
+    color: #fff;
+    line-height: 12px;
+    margin-left: 10px;
+}
+
+  .cart-button {
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
+}
