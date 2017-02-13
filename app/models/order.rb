@@ -3,7 +3,7 @@ class Order < ApplicationRecord
 
   def generate_token
     self.token = SecureRandom.uuid
-  end 
+  end
 
 
 
@@ -14,6 +14,17 @@ class Order < ApplicationRecord
   validates :billing_address, presence: true
   validates :shipping_name, presence: true
   validates :shipping_address, presence:true
+
+
+  def set_payment_with!(method)
+    self.update_columns(payment_method: method)
+  end
+
+  def pay!
+    self.update_columns(is_paid: true)
+  end
+
+  
 
 
 end
