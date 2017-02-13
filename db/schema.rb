@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170212235555) do
     t.string   "shipping_address"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "token"
   end
 
   create_table "product_lists", force: :cascade do |t|
