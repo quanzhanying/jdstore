@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>电子商城</title>
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,7 +15,7 @@
 
   <body>
 
-        <div class="container-fluid">
+        <div class="container">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <%= yield %>

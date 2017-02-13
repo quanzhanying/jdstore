@@ -1,55 +1,4 @@
 <div class="wrap">
-	<div class="header">
-		<div class="headertop_desc">
-			<div class="call">
-				 <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
-			</div>
-			<div class="account_desc">
-				<ul>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Delivery</a></li>
-					<li><a href="#">Checkout</a></li>
-					<li><a href="#">My Account</a></li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="header_top">
-			<div class="logo">
-				<a href="index.html"><%=image_tag("logo.png")  %></a>
-				
-			</div>
-			  <div class="cart">
-			  	   <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-			  	   	<ul class="dropdown">
-							<li>you have no items in your Shopping cart</li>
-					</ul></div></p>
-			  </div>
-			  <script type="javascript">
-			function DropDown(el) {
-				this.dd = el;
-				this.initEvents();
-			}
-			DropDown.prototype = {
-				initEvents : function() {
-					var obj = this;
-					obj.dd.on('click', function(event){
-						$(this).toggleClass('active');
-						event.stopPropagation();
-					});
-				}
-			}
-			$(function() {
-				var dd = new DropDown( $('#dd') );
-				$(document).click(function() {
-					// all dropdowns
-					$('.wrapper-dropdown-2').removeClass('active');
-				});
-			});
-		</script>
-	 <div class="clear"></div>
-  </div>
 	<div class="header_bottom">
 	     	<div class="menu">
 	     		<ul>
@@ -275,7 +224,9 @@
     </div>
  </div>
 </div>
-   <div class="footer">
+
+
+	 <div class="footer">
    	  <div class="wrap">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
@@ -328,11 +279,9 @@
 				</div>
 			</div>
         </div>
-        <div class="copy_right">
-				<p>Company Name © All rights Reseverd | Design by  <a href="http://w3layouts.com">W3Layouts</a> </p>
-		   </div>
+
     </div>
-    <script type="javascript">
+    <script type="text/javascript">
 		$(document).ready(function() {
 			$().UItoTop({ easingType: 'easeOutQuart' });
 		});
