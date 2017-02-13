@@ -33,6 +33,7 @@ gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'seed_dump'
 gem 'letter_opener'
+gem 'aasm'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
