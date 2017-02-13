@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
             current_cart.cart_items.each do |cart_item|
                 product_list = ProductList.new
                 product_list.order = @order
+                
                 product_list.product_name = cart_item.product.title
                 product_list.product_price = cart_item.product.price
                 product_list.quantity = cart_item.quantity
