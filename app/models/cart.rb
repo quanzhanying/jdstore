@@ -15,7 +15,11 @@ class Cart < ApplicationRecord
       if cart_item.product.price.present?
         sum += cart_item.quantity * cart_item.product.price
       end
-    end 
+    end
     sum
+  end
+
+  def clean!
+    cart_items.destroy_all   
   end
 end
