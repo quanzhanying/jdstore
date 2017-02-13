@@ -18,7 +18,13 @@
 @import "bootstrap";
 @import "font-awesome";
 
-
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 200px;
+}
 /* navbar */
 .navbar-default {
     margin-top: 0;
@@ -30,6 +36,7 @@
   height: 80px;
   padding-top:25px;
   padding-left: 200px;
+  padding-right: 200px;
   background-color: #FFF;
 }
 .navbar-brand {
@@ -69,6 +76,86 @@ padding-right: 50px;
   margin-top: -30px;
   border-radius: 10px;
 
+}
+.narbar-right-new {
+
+}
+/* lisuji footer */
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 200px;
+  background-color: #414141;
+}
+#footer .container {
+  width: auto;
+  // max-width: 680px;
+  padding: 30px 15px 0px;
+  margin-bottom: 0px;
+}
+#footer .g-row {
+  width: auto;
+}
+#footer ul {
+  width: auto;
+  height: 51px;
+  margin-bottom: 30px;
+  padding: 0;
+  display: block;
+}
+#footer .footertext {
+  display: block;
+  color: #ffffff;
+  float: right;
+  line-height: 51px;
+  text-align: left;
+  font-size: 18px;
+  padding-left: 15px;
+  font-family: "Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
+}
+#footer .item  {
+  width: 33.33%;
+  text-align: center;
+  float: left;
+}
+#footer .inner  {
+  line-height: 51px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#footer .fa {
+  font-size: 60px;
+  color: #fff;
+  margin-right: 17px;
+}
+#footer hr{
+  display: block;
+  height: 1px;
+  width: 90%;
+  margin-bottom: 27px;
+  border: 0;
+  background-color: #4f4f4f;
+}
+/* footer-lisuji 第三部分 */
+#footer .nav {
+  display: inline-block;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+#footer .nav .text{
+  color: #6d6d6d;
+}
+#footer .nav .split{
+  color: #6d6d6d;
+  margin: 0 10px;
+}
+.siteinfo p{
+  color: #6d6d6d;
 }
 /* footer */
 footer {
