@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :products do
         member do
             post :add_to_cart
+            get :serch
         end
     end
     resources :carts do
