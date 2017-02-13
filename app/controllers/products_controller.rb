@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user! , only: [:favorite]
   before_action :validate_search_key, only: [:search]
 
   def index
@@ -28,6 +29,20 @@ class ProductsController < ApplicationController
     if @query_string.present?
       search_result = Product.published.ransack(@search_criteria).result(:distinct => true)
       @products = search_result
+    end
+  end
+
+  def favorite
+    @product = Product.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorite_products << @product
+      redirect_to :back
+    elsif type == "unfavorite"
+      current_user.favorite_products.delete(@product)
+      redirect_to :back
+    else
+      redirect_to :back
     end
   end
 

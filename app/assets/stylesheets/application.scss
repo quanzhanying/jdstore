@@ -114,6 +114,9 @@
 //收藏按钮样式
 .pi-img-wrapper {
     position: relative;
+    a {
+      color: #FFF;//改变链接颜色
+    }
 }
 .pi-img-wrapper div {
     background: rgba(0,0,0,0.3);
@@ -150,10 +153,10 @@
     padding-bottom: 4px;
     text-transform: uppercase;
 }
-.product-item h3 a {
+.product-item h3 p {
     color: #3e4d5c;
 }
-.product-item h3 a:hover {
+.product-item h3 p:hover {
     color: #0D47A1;
 }
 .pi-price {

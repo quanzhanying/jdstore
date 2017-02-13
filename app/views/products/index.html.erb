@@ -75,7 +75,13 @@
 							<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
 						<% end %>
 						<div>
-							<a href="#" class="btn">收藏</a>
+							<p class="btn">
+							<% if current_user && current_user.is_favorite_of?(product) %>
+         				<%= link_to("取消收藏", favorite_product_path(product, type: "unfavorite"), method: :put) %>
+       				<% else %>
+         				<%= link_to("添加收藏", favorite_product_path(product, type: "favorite"), method: :put) %>
+        			<% end %>
+							</p>
 						</div>
 					</div>
       		<h3><%= link_to(product.title, product_path(product)) %></h3>

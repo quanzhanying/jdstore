@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :products do
+    put :favorite, on: :member
     collection do
       get :search
     end
@@ -30,6 +31,8 @@ Rails.application.routes.draw do
   resources :cart_items
 
   resources :orders
+
+  resources :favorite
 
   namespace :account do
     resources :orders
