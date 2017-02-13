@@ -20,9 +20,11 @@ products_demo = [["product1","description1"
 ]
 ]
 
+products_category = ["法拉利","保时捷","兰博基尼","布加迪威龙","其他"]
+
 create_products = for i in 1..20 do
   product_test = products_demo[rand(0..5)]
-  Product.create!([title: product_test[0], description: product_test[1], quantity: rand(0..20), price: rand(10..50)*100+99])
+  Product.create!([title: product_test[0], description: product_test[1], quantity: rand(0..20), price: rand(10..50)*100+99, category: products_category[rand(0..4)], is_hidden:"false"])
 end
 
 puts "20 products created."

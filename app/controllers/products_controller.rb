@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user! , only: [:favorite]
-  before_action :validate_search_key, only: [:search]
+  before_action :validate_search_key, only: [:search, :category]
+  before_action :validate_category_key, only: [:category]
 
   def index
     @products = Product.where(:is_hidden => false)
@@ -46,6 +47,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def category
+    if @cuery_string.present?
+      category_result = Product.published.ransack(@category_criteria).result(:distinct => true)
+      @products = category_result
+    end
+  end
+
   protected
 
   def validate_search_key
@@ -55,6 +63,15 @@ class ProductsController < ApplicationController
 
   def search_criteria(query_string)
     { :title_cont => query_string}
+  end
+
+  def validate_category_key
+    @cuery_string = params[:c].gsub(/\\|\'|\/|\?/, "") if params[:c].present?
+    @category_criteria = {category_cont: @cuery_string}
+  end
+
+  def category_criteria(cuery_string)
+    { :title_cont => cuery_string}
   end
 
   private

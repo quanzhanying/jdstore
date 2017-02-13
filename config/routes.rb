@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     put :favorite, on: :member
     collection do
       get :search
+      get :category
     end
     member do
       post :add_to_cart

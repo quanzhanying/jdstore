@@ -662,3 +662,80 @@ footer{position:absolute;bottom:0;width:120%;height:100px;}
 .hide1{
   list-style-type: none;
 }
+
+
+/*----------------------------------功能分割线----------------------------------*/
+
+
+/*首页四个分类样式*/
+.sec-emp {
+  margin: 20px 0 0;
+}
+
+.panel.panel-card {
+    position: relative;
+    height: 160px;
+    border: none;
+    overflow: hidden;
+}
+.panel.panel-card .panel-heading {
+    position: relative;
+    z-index: 2;
+    height: 120px;
+    border-bottom-color: #fff;
+    overflow: hidden;
+
+    -webkit-transition: height 600ms ease-in-out;
+            transition: height 600ms ease-in-out;
+}
+.panel.panel-card .panel-heading img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 120%;
+
+    -webkit-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);
+}
+
+.panel.panel-card .panel-figure {
+    position: absolute;
+    top: auto;
+    left: 50%;
+    z-index: 3;
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    -webkit-box-shadow: 0 0 0 3px #fff;
+            box-shadow: 0 0 0 3px #fff;
+
+    -webkit-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);
+
+    -webkit-transition: opacity 400ms ease-in-out;
+            transition: opacity 400ms ease-in-out;
+}
+
+.panel.panel-card .panel-thumbnails {
+    padding: 0 15px 20px;
+}
+
+
+.panel.panel-card:hover .panel-heading {
+    height: 55px;
+
+    -webkit-transition: height 400ms ease-in-out;
+            transition: height 400ms ease-in-out;
+}
+.panel.panel-card:hover .panel-figure {
+    opacity: 0;
+
+    -webkit-transition: opacity 400ms ease-in-out;
+            transition: opacity 400ms ease-in-out;
+}
+
+
+/*----------------------------------功能分割线----------------------------------*/
