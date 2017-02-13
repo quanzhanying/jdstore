@@ -48,15 +48,12 @@
 }
 
 
-.jumbotron{
-  background: #FCFAFA;
-}
 
-.bg-2 {
+.bg-1 {
     background: linear-gradient(180deg, #EEEEEE, white);
     color: black;
 }
-.display-text-3 {
+.display-text-1 {
     color: #444444;
     font-family: 'Roboto Slab',Arial,sans-serif;
     font-size: 30px;
@@ -65,10 +62,17 @@
     line-height: 38px;
     margin-bottom: 20px;
 }
-.body-text-2 {
+.body-text-1 {
     color: #848484;
     font-family: Roboto,Arial,sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 26px;
+}
+.price-text{
+  color: black;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
 }
