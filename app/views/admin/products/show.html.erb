@@ -1,0 +1,12 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-primary pull-right") %>
+    <br />
+  </div>
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title, disable: true %>
+    <%= f.input :description, disable: true %>
+    <%= f.input :quantity, disable: true %>
+    <%= f.input :price, disable: true %>
+  <% end %>
+</div>
