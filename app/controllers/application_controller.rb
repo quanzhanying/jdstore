@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     return cart
   end
+
+  def admin_required
+    redirect_to root_path, notice: 'You are not admin!' unless current_user.admin?
+  end
 end
