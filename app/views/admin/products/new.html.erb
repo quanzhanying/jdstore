@@ -7,5 +7,7 @@
 <%= f.input :quantity %>
 <%= f.input :price %>
 
+<%= f.input :image, as: :file %>
+
 <%= f.submit "Create Product", data:{disable_with:"Please wait...OK?!..."}%>
 <% end %>
