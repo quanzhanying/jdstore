@@ -21,9 +21,9 @@ products_description = ["裸睡享受，柔软透气有弹性", "柔软舒适深
 
 products_prices = [299, 59, 59]
 
-products_images = ["/images/bed.png", "/images/pillow.png", "/images/sitting.png"]
+products_images = ["public/images/bed.png", "public/images/pillow.png", "public/images/sitting.png"]
 
 create_jobs = for i in 1..3 do
-  Job.create!([title: products[i - 1], description: products_description[i - 1], quantity: rand(0..1), price: products_prices[i - 1], img: products_images[rand(0..2)]])
+  Product.create!([title: products[i - 1], description: products_description[i - 1], quantity: rand(0..1), price: products_prices[i - 1], image: File.open(File.join(Rails.root, products_images[rand(0..2)]))])
 end
 puts "3 products created."
