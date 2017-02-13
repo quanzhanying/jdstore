@@ -371,7 +371,7 @@ margin-bottom: 15px;
     //filter: grayscale(90%); /* make all photos black and white */
     width: 100%; /* Set width to 100% */
     margin: auto;
-    //height: 400px;
+    height: 400px;
 }
 
 .carousel-caption h3 {
@@ -385,7 +385,8 @@ margin-bottom: 15px;
   }
 
 .carousel-control.left{
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.0001) 100%);
+      //background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.0001) 100%);
+          background-image: linear-gradient(to right,rgba(0,0,0,0.0) 0,rgba(0,0,0,.0001) 100%);
   }
 
 .carousel-control.right{
