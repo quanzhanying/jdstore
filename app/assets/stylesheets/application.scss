@@ -21,8 +21,8 @@
 /* for navbar panel */
 
 .navbar-default {
-    background-color: #505050;//背景颜色
-    border-color: #505050;//边框色
+    background-color: rgb(38,43,58);//背景颜色
+    border-color: rgb(38,43,58);//边框色
     margin-bottom: 0;//底部 margin 不撑开距离
 }
 
@@ -47,8 +47,8 @@
 }
 
 .navbar-default .navbar-nav > li > a{
-   font-family:  "Geneva", "Gill Sans", serif;
-   font-size: 15px;
+   font-family:  "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+   font-size: 14px;
    color: #fff;
    background-color: transparent;
 }
