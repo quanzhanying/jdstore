@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Jdstore</title>
+        <title>爱未来-iFuture</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Orbitron" />
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Monoton' type='text/css' />
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Monoton' type='text/css' />
     </head>
 
     <body>
         <div class="container-fluid">
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
+            <div class="row">
+                <%= render "common/navbar" %>
+                <%= render "common/flashes" %>
+            </div>
             <%= yield %>
         </div>
         <%=render "common/footer" %>

@@ -18,14 +18,56 @@
  @import "bootstrap";
  @import "font-awesome";
 
+ .navbar {
+     padding-top: 5px;
+     padding-bottom: 5px;
+     border: 0;
+     border-radius: 0;
+     margin-bottom: 0;
+     font-size: 16px;
+     letter-spacing: 3px;
+     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16);
+     box-sizing: content-box;
+ }
+
+// .navbar-brand {
+//   font-family: Orbitron;
+// 	font-size: 25px;
+// 	font-style: normal;
+// 	font-variant: normal;
+// 	font-weight: bolder;
+// 	line-height: 20px;
+// }
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: -10px; //图片和链接文字拉开一点距离
+    width: 150px; //定制图片宽度
+    height: 75px; //定制图片高度
+    margin-top: -25px;
+}
+
+
 .jumbotron{
-  background: linear-gradient(180deg, #EEEEEE, white);
+  background: #FCFAFA;
 }
-.bg-1 {
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
-}
+
 .bg-2 {
     background: linear-gradient(180deg, #EEEEEE, white);
     color: black;
+}
+.display-text-3 {
+    color: #444444;
+    font-family: 'Roboto Slab',Arial,sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 38px;
+}
+.body-text-2 {
+    color: #848484;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
 }
