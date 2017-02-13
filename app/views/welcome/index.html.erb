@@ -14,8 +14,18 @@
           <li>
             <%= link_to("首页", root_path) %>
           </li>
-          <li>
-            <%= link_to("产品", products_path) %>
+          <li class="dropdown pro-drop">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= link_to("产品", products_path) %>
+              <b class="caret"></b>
+            </a>
+            <ul class="hover-pro">
+              <% Category.all.each do |category| %>
+                <li>
+                  <%= link_to(category.name, products_path(category: category.name)) %>
+                </li>
+              <% end %>
+            </ul>
           </li>
           <li>
             <%= link_to("关于我们", "#") %>
@@ -89,7 +99,7 @@
           <input type="text" id="search-bar" placeholder="产品，商铺...">
           <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
-        <h2 class="text-center">  热销商品</h2>
+        <h2 class="text-center">热销商品</h2>
         <div class="row hot-products">
 
           <div class="col-md-6 col-sm-12">
@@ -195,11 +205,11 @@
       <div class="footer-chunk">
         <h4>关于产品</h4>
         <ul>
-          <li>卧室</li>
-          <li>浴室</li>
-          <li>客厅</li>
-          <li>厨房</li>
-          <li>其他</li>
+          <% Category.all.each do |category| %>
+            <li>
+              <%= link_to(category.name, products_path(category: category.name)) %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

@@ -1,6 +1,7 @@
 <div class="col-md-4 col-md-offset-4">
   <h2 class="text-center">Create a Product</h2>
   <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :quantity %>
