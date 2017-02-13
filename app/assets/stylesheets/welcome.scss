@@ -23,28 +23,31 @@
 
 
 .lead {
-  text-align: left;
+  text-align: center;
 }
 
 .carousel-caption {
 
   margin-bottom: 160px;
   color: #fff;
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-
+  font-family: Georgia, serif;
 }
 
 .lead .btn-default {
-    color: #fff;//字体颜色
-    background-color: transparent;//背景颜色
-    border-color: #fff;//边框颜色
+  background-color: transparent;
+  border-color: #fff;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #fff;
+  margin-top: 50px;
 }
 
 
 .lead .btn-default:hover {
-  background-color: #E61C64;//背景颜色
-  border-color: #E61C64;//边框颜色
-  color: #fff;//字体颜色
+  background-color: #E61C64;
+  border-color: #E61C64;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #fff;
+  margin-top: 50px;
 }
 
 /* 以下是第二栏  */
