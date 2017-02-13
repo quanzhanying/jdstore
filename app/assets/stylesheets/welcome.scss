@@ -1,3 +1,32 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/* 以下是首屏 banner */
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #d2d2d2;
+}
+
+.carousel-indicators li {
+    border-color: #d2d2d2;
+}
+
+.carousel-indicators li.active {
+    background-color: #d2d2d2;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
