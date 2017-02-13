@@ -17,3 +17,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin-bottom: 100px;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+}
