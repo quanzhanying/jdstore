@@ -22,17 +22,35 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Google web font  -->
-<!--	<link href='http://fonts.useso.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+
+	<!-- 导航栏上移后固定-->
+	<script type="text/javascript">
+	$(function(){
+	var nav=$(".navbar-header"); //得到导航对象
+	var win=$(window); //得到窗口对象
+	var sc=$(document);//得到document文档对象。
+	win.scroll(function(){
+		if(sc.scrollTop()>=50){
+			nav.addClass("fixednav");
+		 $(".navTmp").fadeIn();
+		}else{
+		 nav.removeClass("fixednav");
+		 $(".navTmp").fadeOut();
+		}
+	})
+	})
+	</script>
+<!-- 导航栏上移后固定-->
 </head>
 
 <body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
-<div class="adcenter"><script src="http://www.cssmoban.com/include/new/ggad2_728x90.js"></script></div>-->
+<!--<div class="adcenter"><script src="http://www.cssmoban.com/include/new/ggad2_728x90.js"></script></div>-->
 
 <!-- Preloader section -->
 
-<div class="preloader">
+<!--<div class="preloader">
      <div class="sk-spinner sk-spinner-pulse"></div>
-</div>
+</div>-->
 
 <!-- Navigation section  -->
 
@@ -47,12 +65,13 @@
 					<span class="icon icon-bar"></span>
         </button>
 <a href="/" class="navbar-brand smoothScroll">Easy GuQin</a>
-<p>Simplify Guqin learning</p>
+<h4>Simplify Guqin learning</h4>
+
 
       </div>
 
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" margin-top="100px">
             <li><a href="#home" class="smoothScroll"><span>Home</span></a></li>
             <li><a href="#about" class="smoothScroll"><span>About</span></a></li>
 						<li><a href="#team-carousel" class="smoothScroll"><span>Team</span></a></li>
@@ -109,7 +128,7 @@
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_right">
                                 <h1 data-animation="animated zoomInRight">Guqin</h1>
-                                <p data-animation="animated fadeInLeft">The chinese seven-stringed zither<br/>——the most ancient instrument in China.<br/><br/>Represents the zenith of cultivated learning in ancient times.<br/><br/>Has long been a favorite of the literati.</p>
+                                <p data-animation="animated fadeInLeft">——The most ancient instrument in China.<br/><br/>Representative Work of Human Oral and Intangible Cultural Heritage.<br/><br/>Now the Guqin music "Liushui" is ringing in the Voyagers's journey .</p>
                                 <a href="/guqin" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Learn More</a>
                                 <a href="/products" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">Get Start!</a>
                             </div>
@@ -128,7 +147,7 @@
                     <div class="slide-text slide_style_center">
                         <h1 data-animation="animated flipInX">文化认同感</h1>
                         <p data-animation="animated lightSpeedIn">在全球化竞争的趋势下，不论对自己还是下一代而言，都更应该重视文化认同感。</p>
-                        <a href="/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Learn More</a>
+                        <a href="/culture" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Learn More</a>
                         <a href="/products" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">Get Start!</a>
                     </div>
                 </div>
@@ -144,7 +163,7 @@
                     <div class="slide-text slide_style_left">
                         <h1 data-animation="animated zoomInLeft">All-in-one service</h1>
                         <p data-animation="animated fadeInRight">Intrested in Guqin，but bothered by lacking of resources？——We meet all your needs，and make it easy.<br/><br/>Instruments、Books/Scores、Online／Offline Tutorials、different levels/Costumized Courses...<br/><br/>High quality guarantee——Save your time and attention</p>
-                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Learn More</a>
+                        <a href="/allinone" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Learn More</a>
                         <a href="/products" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">Get Start!</a>
                     </div>
                 </div>
@@ -423,22 +442,7 @@
 
 <!-- Javascript  -->
 
-<script type="text/javascript">
-$(function(){
-var nav=$(".navbar navbar-default navbar-fixed-top"); //得到导航对象
-var win=$(window); //得到窗口对象
-var sc=$(document);//得到document文档对象。
-win.scroll(function(){
-	if(sc.scrollTop()>=100){
-		nav.addClass("fixednav");
-	 $(".navTmp").fadeIn();
-	}else{
-	 nav.removeClass("fixednav");
-	 $(".navTmp").fadeOut();
-	}
-})
-})
-</script>
+
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

@@ -31,5 +31,6 @@ namespace :account do
 end
 
 get '/guqin', to:'pages#guqin'
-
+get '/culture', to:'pages#culture'
+get '/allinone', to:'pages#allinone'
 end

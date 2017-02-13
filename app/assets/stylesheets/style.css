@@ -167,7 +167,7 @@ a:hover, a:active, a:focus {
     Pre Loader Style
 -----------------------------------------*/
 
-.preloader {
+/*--.preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -206,14 +206,14 @@ a:hover, a:active, a:focus {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    opacity: 0; } }
+    opacity: 0; } }---*/
 
 
 
 /*---------------------------------------
     Main Navigation
 -----------------------------------------*/
-
+/*-----导航栏上移后固定---*/
 .fixednav {
     position: fixed;
     top: 0px;
@@ -221,13 +221,15 @@ a:hover, a:active, a:focus {
     width: 100%;
     z-index: 1;
 }
+/*-----导航栏上移后固定---*/
+
 
 .navbar-default {
   background: #ffffff;
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.04);
   border: none;
   margin-bottom: 0px !important;
-  
+
 }
 
 .navbar-default .navbar-brand {
@@ -508,7 +510,7 @@ a:hover, a:active, a:focus {
   background: #304352;
   color: #ffffff;
   padding: 20px;
-  height: 590px;
+  height: 620px;
 }
 
 #contact .form-control {
