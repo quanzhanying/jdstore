@@ -30,11 +30,3 @@
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
 }
-
-.navbar-brand img{
-  width:64px;height:64px;
-  transition: transform 0.4s ease-out;/*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/
-}
-.navbar-brand img:hover{
-  transform: rotateZ(360deg);/*图像旋转360度*/
-}
