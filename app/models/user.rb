@@ -7,6 +7,7 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+# is_admin 是个users里的table，呼叫admin？输出boolean值
 #    email == 'lilei@sina.com'
 
    has_many :orders
