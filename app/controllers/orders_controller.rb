@@ -1,8 +1,6 @@
 class OrdersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :admin_required
-
   def index
     @orders = Order.order("id DESC")
   end
@@ -58,7 +56,7 @@ class OrdersController < ApplicationController
     flash[:notice] = "已提交申请"
     redirect_to :back
   end
-  
+
 
 
   private
