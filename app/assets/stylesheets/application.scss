@@ -18,29 +18,58 @@
 @import "bootstrap";
 @import "font-awesome";
 
-<<<<<<< HEAD
-body {
-  position: relative;
-  min-height: 100%;
-  margin-bottom: 100px;
-}
 
-.footer {
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  bottom: 0;
-  margin-bottom: 0;
-  border-width: 1px 0 0;
-=======
 /* navbar */
 .navbar-default {
+    margin-top: 0;
     margin-bottom: 0;
     border-radius: 0;
     border: 0 none;
 }
+.navbar {
+  height: 80px;
+  padding-top:25px;
+  padding-left: 200px;
+  background-color: #FFF;
+}
+.navbar-brand {
+  font-family: "Trebuchet MS";
+  font-style: italic;
+  padding: 5px;
+font-size: 45px;
+padding-right: 50px;
 
+}
+.navbar .form-group {
+}
+.navbar .form-group .form-control {
+  border-style: none none solid none;
+  border-color: #c5b99f;
+  box-shadow: none;
+  border-radius: 0;
+  width: 300px;
+}
+.navbar .navbar-none {
+  color: #c5b99f;
+  padding: 0;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.fa-shoppingcart {
+  font-size: 25px !important;
+}
+.navbar .label-success {
+  background-color: #aa5239;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: -30px;
+  border-radius: 10px;
+
+}
 /* footer */
 footer {
     margin-right: 15px;
@@ -79,5 +108,4 @@ footer .dropdown:hover .dropdown-content {
 }
 footer .copyright {
     clear: both;
->>>>>>> 5638963520aaa479da307d2502075e12ff54fddb
 }
