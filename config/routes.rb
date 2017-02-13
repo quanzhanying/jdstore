@@ -12,4 +12,5 @@ root 'products#index'
   end
 
 root 'welcome#index'
+resources :carts
 end
