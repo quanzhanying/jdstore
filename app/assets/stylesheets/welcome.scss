@@ -19,14 +19,32 @@
     background-color: #d2d2d2;
 }
 
-.item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0;
+
+
+
+.lead {
+  text-align: left;
 }
 
-.item span {
-    font-style: normal;
+.carousel-caption {
+
+  margin-bottom: 160px;
+  color: #fff;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+
 }
+
+.lead .btn-default {
+    color: #fff;//字体颜色
+    background-color: transparent;//背景颜色
+    border-color: #fff;//边框颜色
+}
+
+
+.lead .btn-default:hover {
+  background-color: #E61C64;//背景颜色
+  border-color: #E61C64;//边框颜色
+  color: #fff;//字体颜色
+}
+
+/* 以下是第二栏  */

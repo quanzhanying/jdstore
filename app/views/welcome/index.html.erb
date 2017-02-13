@@ -7,10 +7,44 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
         <style>
 
             body {
                 background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+            }
+            #myCarousel {
+                height: 494px;
+                margin-bottom: 50px;
+            }
+
+            .btn-primary {
+                background-color: #E61C64;
+                border-color: #E61C64;
+                margin-left: 75px;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+            .btn-primary:hover {
+                background-color: #d10b51;
+                border-color: #d10b51;
+                margin-left: 75px;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+            .panel-heading {
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+                font-size: 22px;
+            }
+
+            .panel-footer {
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+                font-size: 18px;
+            }
+
+            b {
+                font-size: 30px;
             }
 
         </style>
@@ -20,7 +54,7 @@
 
         <!-- 以下是首屏 banner -->
         <div class="row">
-            <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -31,22 +65,40 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="chicago.jpg" alt="Chicago">
-                        <h4>"This company is the best. I am so happy with the result!"<br>
-                            <span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span>
-                        </h4>
+                        <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcoxw8o5bej31gs0i2tpm.jpg" alt="rose">
+                        <div class="carousel-caption">
+                            <span class="lead">
+                                <h1>送一份礼物，代我说出三个字</h1><br>
+                                <p>
+                                    <a class="btn btn-lg btn-default" href="#">马上抢购</a>
+                                </p>
+                            </span>
+                        </div>
                     </div>
+
                     <div class="item">
-                        <img src="chicago.jpg" alt="Chicago">
-                        <h4>"One word... WOW!!"<br>
-                            <span style="font-style:normal;">John Doe, Salesman, Rep Inc</span>
-                        </h4>
+                        <img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcoxwdrb8cj31gs0i2wvp.jpg" alt="chocolate">
+                        <div class="carousel-caption">
+                            <span class="lead">
+                                <h1>浪漫法宝，谁也无法抵挡</h1><br>
+                                <p>
+                                    <a class="btn btn-lg btn-default" href="#">马上抢购</a>
+                                </p>
+                            </span>
+                        </div>
                     </div>
+
                     <div class="item">
-                        <img src="chicago.jpg" alt="Chicago">
-                        <h4>"Could I... BE any more happy with this company?"<br>
-                            <span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span>
-                        </h4>
+                        <img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcoxzjeblpj31gs0i2n6h.jpg" alt="rose">
+                        <div class="carousel-caption">
+                            <span class="lead">
+                                <h1>帮你，给她最好的</h1><br>
+                                <p>
+                                    <a class="btn btn-lg btn-default" href="#">马上抢购</a>
+                                </p>
+                            </span>
+
+                        </div>
                     </div>
                 </div>
 
@@ -61,5 +113,105 @@
                 </a>
             </div>
         </div>
+
+        <!-- 以下是第二栏 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">深红玫瑰</div>
+                        <div class="panel-body"><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp50auuz6j30go0b4dju.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>99.9</b>/支，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">粉红玫瑰</div>
+                        <div class="panel-body"><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcp52j1b62j30go0b40x0.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>88.8</b>/支，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">多彩花束</div>
+                        <div class="panel-body"><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp538ldshj30go0b4n39.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>999</b>/束，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">草莓巧克力</div>
+                        <div class="panel-body"><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp2jxpc0hj30go0b4agi.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>28.8</b>/颗，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">幸福蛋糕</div>
+                        <div class="panel-body"><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp54pf6crj30go0b4q7g.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>33.4</b>/磅，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">爱你一杯子</div>
+                        <div class="panel-body"><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcp55h4iapj30go0b4jsk.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>99.9</b>/个，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">高贵郁金香</div>
+                        <div class="panel-body"><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcp56jbviuj30go0b4gqy.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>88.8</b>/支，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">情侣对戒</div>
+                        <div class="panel-body"><img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcp55enqzfj30go0b4wiq.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>999</b>/只，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">香艳百合</div>
+                        <div class="panel-body"><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcp5588s8aj30go0b4dk8.jpg" class="img-responsive" style="width:100%" alt="花好月缘"></div>
+                        <div class="panel-footer">￥<b>99.9</b>/支，送情书卡
+                            <a href="#" class="btn btn-primary">购买</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
