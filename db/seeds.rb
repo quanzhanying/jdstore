@@ -18,14 +18,14 @@ create_account =
 puts "管理员账号建立"
 
 create_jos =
-  Job.create!([
+  Product.create!([
     title: "大脸猴子",
     description: "可爱的大脸猴子，产自中国，非常可爱~~",
     quantity: 250,
     price: 2000000000,
     ])
 
-  Job.create!([
+  Product.create!([
     title: "大脸猴子的媳妇",
     description: "大脸猴子的媳妇，同样产自中国，非常凶悍！！！",
     quantity: 1,
