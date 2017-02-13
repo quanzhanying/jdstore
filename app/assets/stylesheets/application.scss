@@ -650,3 +650,12 @@ html{height:100%;}
 body{min-height:100%;margin:0;padding:0;position:relative;}
 main{padding-bottom:100px;}/* main的padding-bottom值要等于或大于footer的height值 */
 footer{position:absolute;bottom:0;width:120%;height:100px;}
+
+
+/*----------------------------------功能分割线----------------------------------*/
+
+
+/*隐藏有序列表的黑点*/
+.hide1{
+  list-style-type: none;
+}

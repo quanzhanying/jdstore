@@ -30,12 +30,21 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to edit_admin_product_path(product) do %>
-          <img src="https://ooo.0o0.ooo/2017/02/10/589d4a574ac69.png" class="highlight"></img>
-          <% end %>
-          <%= link_to admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" } do %>
-          <img src="https://ooo.0o0.ooo/2017/02/10/589d4a05a0ee8.png" class="highlight"></img>
-          <% end %>
+          <ul class="hide1">
+            <li>
+              <%= link_to edit_admin_product_path(product), class: "btn btn-lg btn-info highlight" do %><i class="fa fa-pencil-square-o"></i><% end %>
+            </li>
+            <li>
+              <%= link_to admin_product_path(product), :method => :delete, :class => "btn btn-lg btn-danger highlight", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
+            </li>
+            <li>
+              <% if product.is_hidden %>
+                <%= link_to publish_admin_product_path(product) , :method => :post, :class => "btn btn-lg btn-success highlight" do %><i class="fa fa-eye"></i><% end %>
+              <% else %>
+                <%= link_to hide_admin_product_path(product), :method => :post,  :class => "btn btn-lg btn-warning highlight" do %><i class="fa fa-eye-slash"></i><% end %>
+              <% end %>
+            </li>
+          </ul>
         </td>
       </tr>
     <% end %>

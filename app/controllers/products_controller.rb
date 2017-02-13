@@ -2,11 +2,15 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
   def index
-    @products = Product.all
+    @products = Product.where(:is_hidden => false)
   end
 
   def show
     @product = Product.find(params[:id])
+    if @product.is_hidden
+      flash[:warning] = "产品已下架"
+      redirect_to root_path
+    end
   end
 
   def add_to_cart
@@ -22,7 +26,7 @@ class ProductsController < ApplicationController
 
   def search
     if @query_string.present?
-      search_result = Product.ransack(@search_criteria).result(:distinct => true)
+      search_result = Product.published.ransack(@search_criteria).result(:distinct => true)
       @products = search_result
     end
   end
@@ -41,6 +45,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :is_hidden)
   end
 end

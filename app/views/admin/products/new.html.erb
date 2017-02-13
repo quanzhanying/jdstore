@@ -3,23 +3,32 @@
 <%= simple_form_for [:admin, @product] do |f| %>
 
   <div class="group">
-    <%= f.input :title %>
+    <%= f.input :title, :label => "产品标题" %>
   </div>
 
   <div class="group">
-    <%= f.input :description %>
+    <%= f.input :description, :label => "产品描述" %>
   </div>
 
   <div class="group">
-    <%= f.input :quantity %>
+    <%= f.input :quantity, :label => "数量" %>
   </div>
 
   <div class="group">
-    <%= f.input :price %>
+    <%= f.input :price, :label => "价格" %>
+  </div>
+
+  <% if @product.image.present? %>
+    <span>目前商品图</span> <br>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+  <div class="group">
+    <%= f.input :image, as: :file , :label => "产品图片"%>
   </div>
 
   <div class="group">
-    <%= f.input :image, as: :file %>
+    <%= f.input :is_hidden, :label => "下架产品" %>
   </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
