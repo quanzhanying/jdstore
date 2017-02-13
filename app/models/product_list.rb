@@ -1,3 +1,3 @@
 class ProductList < ApplicationRecord
-  belons_to :order
+  belongs_to :order
 end
