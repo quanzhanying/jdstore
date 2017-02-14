@@ -3,7 +3,7 @@
   <% case order.aasm_state %>
   <% when "order_placed" %>
     <%= link_to("取消订单",
-                cancel_admin_order_path(order)
+                cancel_admin_order_path(order),
                 class: "btn btn-default btn-sm", method: :post) %>
   <% when "paid" %>
     <%= link_to("取消订单",

@@ -1,8 +1,14 @@
 class Admin::OrdersController < ApplicationController
   layout "admin"
 
-  before_action :authenticate_user
+  before_action :authenticate_user!
   before_action :admin_required
+
+  def admin_required
+    if !current_user.admin?
+      redirect_to "/", alert: "You are not admin."
+    end
+  end
 
   def index
     @orders = Order.order("id DESC")
@@ -22,7 +28,7 @@ class Admin::OrdersController < ApplicationController
 
   def shipped
     @order = Order.find(params[:id])
-    @order.deliver
+    @order.deliver!
     redirect_to :back
   end
 
