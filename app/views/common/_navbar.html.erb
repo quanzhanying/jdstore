@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"> Easy GuQin</a>
+            <a class="navbar-brand" href="/">琴功简学</a>
         </div>
 
 
@@ -12,13 +12,13 @@
           <ul class="nav navbar-nav">
 
           <!-- <li class="active"> -->
-            <li>  <%= link_to("Products", products_path) %>
+            <li>  <%= link_to("选器材／选课程", products_path) %>
             </li>
           </ul>
             <ul class="nav navbar-nav navbar-right">
               <li>
                 <%= link_to carts_path do  %>
-                   My orders <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                   我的订单<i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                 <% end %>
 
              </li>
