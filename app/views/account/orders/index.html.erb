@@ -15,8 +15,8 @@
             <td><%= order.total %></td>
             <td><%= order.created_at.to_s(:long) %></td>
             <td>
-              <%= order.aasm_state %>
-              <% if order.aasm_state == "order_placed" || order.aasm_state == "paid" %>
+              <%= render_order_state(order) %>
+              <% if order.order_placed? || order.paid? %>
                 <%= link_to("申请取消订单", apply_cancel_order_path(order.token), method: :post, class: "btn btn-sm btn-default") %>
               <% end %>
             </td>

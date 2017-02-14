@@ -24,7 +24,6 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li><%= link_to 'Admin Panel', admin_products_path %></li>
-                <li><%= link_to '所有订单', admin_orders_path %></li>
               <% end %>
               <li><%= link_to '我的订单', account_orders_path %></li>
               <li><%= link_to '登出', destroy_user_session_path, method: :delete %></li>

@@ -47,7 +47,6 @@ class OrdersController < ApplicationController
 
   def apply_cancel
     @order = Order.find_by_token(params[:id])
-    @order.cancel_order!
     OrderMailer.apply_cancel_order(@order).deliver!
 
     redirect_to :back, notice: "已提交申请，请耐心等待"

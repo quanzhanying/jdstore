@@ -37,6 +37,8 @@ Rails.application.routes.draw do
       member do
         post :cancel
         post :shipping
+        post :shipped
+        post :return
       end
     end
   end

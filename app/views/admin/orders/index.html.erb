@@ -12,12 +12,12 @@
       <tbody>
         <% @orders.each do |order| %>
           <tr>
-            <td><%= link_to(order.token, order_path(order.token)) %></td>
+            <td><%= link_to(order.token, admin_order_path(order.token)) %></td>
             <td><%= order.total %></td>
             <td><%= order.created_at.to_s(:long) %></td>
             <td><%= order.user.email %></td>
             <td>
-              <%= order.aasm_state %>
+              <%= render_order_state(order) %>
               <% if order.aasm_state == "order_placed" || order.aasm_state == "paid" %>
                 <%= link_to("取消订单", cancel_admin_order_path(order.token), method: :post,  class: "btn btn-sm btn-default") %>
               <% end %>
