@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 
   resources :orders do
     member do
-      post: pay_with_alipay_order_path
-      post: pay_with_wechat_order_path
+      post :pay_with_alipay
+      post :pay_with_wechat
     end
   end
 
