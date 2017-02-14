@@ -5,11 +5,16 @@
     <%= f.input :description %>
     <%= f.input :quantity %>
     <%= f.input :price %>
-    <% if @product.image.present? %>
-      <span>Current Imge</span><br>
-      <%= image_tag(@product.image.thumb.url) %>
+    <% if @product.photos.present? %>
+      <span>目前商品圖</span> <br>
+      <% @product.photos.each do |p| %>
+        <%= image_tag p.image.thumb.url %><br>
+      <% end %>
     <% end %>
-    <%= f.input :image, as: :file %>
+
+    <div class="group">
+      <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
+    </div>
     <%= f.submit "Submit", class: "btn btn-default" %>
   <% end %>
 </div>
