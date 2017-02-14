@@ -22,6 +22,9 @@ class OrdersController < ApplicationController
       render 'carts/checkout'
     end
   end
+  current_cart.clean!
+  OrderMailer.notify_order_placed(@order).deliver!
+
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
