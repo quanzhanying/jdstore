@@ -30,8 +30,9 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
               <li> <%= link_to("Admin", admin_products_path) %></li>
-              <li class="divider"></li>
               <% end %>
+              <li> <%= link_to("我的订单", account_orders_path) %></li>
+              <li class="divider"></li>
               <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>
