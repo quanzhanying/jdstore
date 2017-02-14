@@ -40,7 +40,7 @@
    height: 670px;
    padding: 0;
    .slogan {
-     margin-left: 20px;
+     margin-left: 150px;
      margin-top: 200px;
      h2 {
        color: #fff;
@@ -56,12 +56,15 @@
    }
 
    .picture {
-     margin-top: 100px;
+     margin-top: 150px;
+
      img {
-       display: block;
-       width: 350px;
-       height: 350px;
-       opacity: 0.5;
+       border-radius: 125px;
+        -moz-border-radius: 125px;
+        -webkit-border-radius: 125px;
+        height: 250px;
+        width: 250px;
+
      }
    }
  }
@@ -117,6 +120,7 @@
     margin: 0 auto;
     .search-container{
       display: block;
+      margin-top: 30px;
       margin-bottom: 30px;
       padding-top: 20px;
       input#search-bar{
