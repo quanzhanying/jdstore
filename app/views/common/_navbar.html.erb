@@ -13,18 +13,20 @@
         <li>
           <%= link_to("首页", root_path) %>
         </li>
-        <li class="dropdown pro-drop">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <%= link_to("产品", products_path) %>
-            <b class="caret"></b>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类浏览
+            <span class="caret"></span>
           </a>
-          <ul class="hover-pro">
+          <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
               <li>
                 <%= link_to(category.name, products_path(category: category.name)) %>
               </li>
             <% end %>
           </ul>
+        </li>
+        <li>
+          <%= link_to("产品", products_path) %>
         </li>
         <li>
           <%= link_to("关于我们", "#") %>
@@ -64,14 +66,14 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li>
-                  <%= link_to(content_tag(:i, " Admin Panel", class: "fa fa-lock"), admin_products_path) %>
+                  <%= link_to(content_tag(:i, " 后台管理", class: "fa fa-lock"), admin_products_path) %>
                 </li>
               <% end %>
               <li>
-                <%= link_to(content_tag(:i, " My Orders", class: "fa fa-history"), account_orders_path) %>
+                <%= link_to(content_tag(:i, " 我的订单", class: "fa fa-history"), account_orders_path) %>
               </li>
               <li>
-                <%= link_to(content_tag(:i, " Sign Out", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
+                <%= link_to(content_tag(:i, " 账户登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
               </li>
             </ul>
           </li>
