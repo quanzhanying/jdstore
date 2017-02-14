@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>Happy Go</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  -->
   </head>
 
-  <body>
-    <%= yield %>
+  <body >
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar"%>
+        <%= render "common/flashes"%>
+
+      </div>
+
+      <%= yield %>
+
+
+      <div class="row">
+        <%= render "common/footer"%>
+      </div>
+
   </body>
 </html>

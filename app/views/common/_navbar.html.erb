@@ -1,0 +1,116 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Happy Go</a>
+     </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to("Products",products_path)%>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do  %>
+            购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <% end %>
+        </li>
+        <li>
+         <!--  <%= link_to("登录","#")%> -->
+          <% if !current_user%>
+            <li><%= link_to("注册",new_user_registration_path) %></li>
+            <li><%= link_to("登录",new_user_session_path)%></li>
+          <% else %>
+            <li class="dropdown">
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Hi!,<%= current_user.email%>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <% if current_user.admin?%>
+                <li><%= link_to("Admin Panel",admin_products_path)%></li>
+                <% end %>
+                <li>
+                  <%= link_to("My Order", account_orders_path ) %>
+                </li>
+                <li><%= link_to("Exit",destroy_user_session_path,method: :delete)%></li>
+              </ul>
+            </li>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="logobar">
+   <div class="container-fluid">
+     <div class="pull-left">
+       <a href="/">
+         <img class="logo" src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcox2bbupej307c02tq2y.jpg" alt="快乐购 www.happygo.com">
+        </a>
+     </div>
+     <div class="pull-left">
+       <a href="/" class="pull-left">
+         <img class="activity" src="https://ww1.sinaimg.cn/large/006tKfTcgy1fcix6feqx7j303b02sdfx.jpg" alt="快乐购 www.happygo.com">
+        </a>
+     </div>
+     <div class="pull-right">
+       <div class="acart">
+        <a class="btn btn-default  btn-cart" href="/carts">
+        <!--  <div class="icart">
+            <i class="fa fa-shopping-cart"> </i>
+          </div> -->
+            我的购物车 <i class="fa fa-angle-right"></i>
+            <span class="badge"><%= current_cart.products.count %></span>
+         </a>
+       </div>
+      </div>
+     <div class="pull-right searchform">
+       <form  class="form-inline" method="get">
+         <!--<div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>  -->
+
+        <div class="form-group">
+         <div class="input-group">
+            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+           <input type="text" class="form-control" name="keyword" value="" placeholder="输入商品关键词，全球商品快乐购！">
+
+           <span class="input-group-btn">
+             <button type="button" class="btn btn-default">
+               <!--<span class="glyphicon glyphicon-search"></span> -->
+               搜索
+             </button>
+           </span>
+         </div>
+       </div>
+       </form><!-- search form -->
+
+         <div class="searchstyle" >
+            <div>热门搜索：
+            </div>
+            <div>
+              <a href="#" class="highlight" target="_self">情人节</a>
+            </div>
+            <div>
+              <a href="#" class="highlight" target="_self">防晒</a>
+            </div>
+            <div>
+              <a href="#" class="highlight" target="_self">洗发水</a>
+            </div>
+            <div>
+              <a href="#" class="highlight" target="_self">纸尿裤</a>
+            </div>
+            <div>
+              <a href="#" class="highlight" target="_self">美妆</a>
+            </div>
+            <div>
+              <a href="#" class="highlight" target="_self">奶粉</a>
+            </div>
+
+         </div><!--searchstyle -->
+      </div>
+    </div>
+   </div>
+
+
+</nav>
