@@ -1,17 +1,37 @@
-<h2>Sign up</h2>
+<div style="margin-top:100px;margin-bottom:30px;line-height:275%;">
+    <h1 class="text-center", style="color:rgb(62,146,190);">用户注册</h1>
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+<%= devise_error_messages! %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+<div class="form-group">
+    <div class="col-lg-4 col-lg-offset-4">
+        <%= f.email_field :email, autofocus: true , class: "form-control" , :style => "border: solid 1px white;", placeholder: "Email Address"%>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-lg-4 col-lg-offset-4">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"%>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-lg-4 col-lg-offset-4">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Password Confirmation"%>
+    </div>
+</div>
+
+<div class="form-group">
+  <div class="col-lg-4 col-lg-offset-4">
+      <%= f.submit "注册", class: "btn btn-primary",:style => "border: none;color:white;width:100%;background-color:rgb(62,146,190);border-radius:50px;" %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+<div class="form-group">
+  <div class="col-lg-4 col-lg-offset-4">
+      <%= render "devise/shared/links" %>
   </div>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>
