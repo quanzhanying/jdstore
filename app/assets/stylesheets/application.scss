@@ -1,0 +1,191 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .navbar-default{
+   background-color: #EF6C00 ;
+   border-color: #EF6C00 ;
+   margin-bottom: 0;
+ }
+
+ .navbar-default .navbar-brand {
+   color: #ffffff;//字体颜色
+   padding: 10px 15px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+@media (min-width:768px){
+  .navbar{
+    border-radius:0;
+  }
+}
+
+//####################首页区块css设置
+.top_header{
+
+}
+.main_nav{
+
+}
+.lp-section-1 {
+    //display: block;
+  //background-color: #ffffff;
+    background-image: url('https://ww1.sinaimg.cn/large/006tNbRwgy1fch3o344x9j31hc0b415x.jpg');
+    background-repeat: no-repeat;
+    background-position: center 80%;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    width: 100%;
+    height: 400px;
+    //position: relative;
+}//banner区块
+
+.lp-section-2 {
+    display: block;
+    //background-color: #ffffff;
+    background-position: center 80%;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  //height: 500px;
+    position: relative;
+
+}//特卖、秒杀区块 产品广告区
+
+.lp-section-3 {
+
+}// 热卖产品推荐区
+
+.hotpiclink1 {
+  margin-left: 35px;
+  margin-right: 0px;
+}
+
+.hotpiclink2 {
+  margin-left: 0px;
+  margin-right: 35px;
+}
+
+.hotpic {
+
+  background-image: url('https://ww1.sinaimg.cn/large/006tNbRwgy1fch3o344x9j31hc0b415x.jpg');
+  height: 300px;
+  //margin-left: 25px;
+  //margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.lp-section-4{
+  display: block;
+  background-color: #f5f5f5;
+  background-position: center 80%;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 100%;
+  //height: 100%;
+  position: relative;
+
+}// 新品推荐
+
+.lp-section-5 {
+  display: block;
+  //background-color: #ffffff;
+  background-position: center 80%;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+//height: 500px;
+  position: relative;
+
+}// 产品分类导图
+
+.lp-section-6 {
+  display: block;
+  background-color: #f5f5f5;
+  background-position: center 80%;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    margin-bottom: 5px;
+    //height: 335px;
+}
+ .item .pic {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 10px 10px 25px;
+}
+
+.item .name {
+    overflow: hidden;
+    margin-top: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    //height: 40px;
+    color: #333;
+}
+
+.item .price {
+    margin-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    //height: 22px;
+    text-align: left;
+}
+
+.col-md-3 {
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+.footnav {
+  padding-top: 20px;
+}
