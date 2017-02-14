@@ -1,20 +1,191 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.navbar-brand img{
-  width:64px;height:64px;
-  transition: transform 0.4s ease-out;/*变化时间设置为0.4秒(变化动作即为下面的图像旋转360读）*/
+/*---------------------------navbar---------------------------*/
+.navbar-brand img {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.4s ease-out;
 }
-.navbar-brand img:hover{
-  transform: rotateZ(360deg);/*图像旋转360度*/
+.navbar-brand img:hover {
+    transform: rotateZ(360deg);
+}
+/*---------------------------banner---------------------------*/
+.banner {
+    width: 100%;
+    top: 50px;
+    overflow: hidden;
+    height: 380px;
+    position: relative;
 }
 
-.banner{width:100%;top:50px;overflow:hidden;height:380px;position:relative}
-.banList{position:absolute;left:50%;margin-left:-800px;height:470px}
-.banList li{height:470px;opacity:0;position:absolute;transform:scale(0);transition:transform 0.5s ease 0s, opacity 1.5s ease 0s;z-index:1;}
-.banList li.active{opacity:1;transform:scale(1);z-index:2;}
-.fomW{position:absolute;bottom:20px;left:50%;height:20px;z-index:9;width:1000px;margin-left:-500px}
-.jsNav{text-align:center;}
-.jsNav a{display:inline-block;background:#666;width:180px;height:5px;margin:0 5px;}
-.jsNav a.current{background:#fff;cursor:pointer}
+.banList {
+    position: absolute;
+    left: 50%;
+    margin-left: -800px;
+    height: 470px;
+}
+.banList li {
+    height: 470px;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 0.5s ease 0s, opacity 1.5s ease 0s;
+    z-index: 1;
+}
+.banList li.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.fomW {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    height: 20px;
+    z-index: 9;
+    width: 1000px;
+    margin-left: -500px;
+}
+
+.jsNav {
+    text-align: center;
+}
+.jsNav a {
+    display: inline-block;
+    background: #666;
+    width: 180px;
+    height: 5px;
+    margin: 0 5px;
+}
+.jsNav a.current {
+    background: #fff;
+    cursor: pointer;
+}
+/*---------------------------remen---------------------------*/
+.remen-title {
+    margin-top: 60px;
+    text-align: center;
+}
+.remen-title h1 {
+    font-size: 30px;
+}
+.remen-title p a {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 8px 5px;
+    padding: 2px;
+    border-radius: 3px;
+    background: #0099CC;
+    color: #fff;
+}
+.remen-title p a:hover {
+    background-color: #f00;
+}
+/*---------------------------boxlist---------------------------*/
+.boxlist {
+    text-align: center;
+}
+
+.boxlist-item {
+    width: 320px;
+    height: 485px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 30px 0 0 18px;
+}
+
+.boxlist-item-content {
+    padding: 0 19px;
+    background-position: right 96px;
+}
+
+.boxlist-item-content-text {
+    height: 139px;
+}
+.boxlist-item-content-text a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #222;
+    text-align: left;
+}
+.boxlist-item-content-text p {
+    font-size: 11px;
+    color: #888888;
+    margin-top: 6px;
+    text-align: left;
+}
+
+.boxlist-item-content-card {
+    padding: 16px 0 0;
+    border-top: 1px dashed #dcdcdc;
+}
+
+.boxlist-item-content-card-tag {
+    height: 20px;
+    text-align: left;
+}
+.boxlist-item-content-card-tag a{
+    color: #999999;
+    font-size: 11px;
+}
+
+.boxlist-item-content-card-radio {
+    height: 6px;
+    border-radius: 3px;
+    background-color: #e4e4e4;
+    margin: 10px 0px 7px 0px;
+}
+.boxlist-item-content-card-radio-in {
+    width: 24%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #50abf2;
+}
+
+.boxlist-item-content-card-datas {
+  position: relative;
+  text-align: center;
+}
+.boxlist-item-content-card-datas .money{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  text-align: left;
+}
+.boxlist-item-content-card-datas .money .num{
+  margin: 0px;
+  color: #ff5001;
+  font-weight: bold;
+}
+.boxlist-item-content-card-datas .money .text{
+  color: #999999;
+  font-size: 11px;
+}
+.boxlist-item-content-card-datas .count{
+  display: inline-block;
+}
+.boxlist-item-content-card-datas .count .num{
+  margin: 0px;
+  font-weight: bold;
+}
+.boxlist-item-content-card-datas .count .text{
+  color: #999999;
+  font-size: 11px;
+}
+.boxlist-item-content-card-datas .persent{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  text-align: right;
+}
+.boxlist-item-content-card-datas .persent .num{
+  margin: 0px;
+  font-weight: bold;
+}
+.boxlist-item-content-card-datas .persent .text{
+  color: #999999;
+  font-size: 11px;
+}
