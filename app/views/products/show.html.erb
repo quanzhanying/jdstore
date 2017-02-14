@@ -29,6 +29,17 @@
     </div>
     <div>Quantity: <%= @product.quantity %></div>
     <div>Price: ￥ <%= @product.price %></div>
+    <div>
+      <% if !current_user.is_fan_of?(@product) %>
+						   <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+						   <i class="fa fa-heart" aria-hidden="true"></i>
+							 <% end %>
+						 <% else %>
+							 <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+							 <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+							<% end %>
+						<% end %>
+    </div>
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, class: "btn btn-danger btn-lg") %>
