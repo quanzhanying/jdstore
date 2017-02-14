@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
  namespace :admin do
  resources :products do
- resources :carts
    member do
       post :add_to_cart
     end
@@ -16,4 +15,5 @@ resources :products do
    end
  end
 
+resources :carts
 end
