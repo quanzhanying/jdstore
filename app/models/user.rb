@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :orders
   has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "30x30#" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  has_many :reviews, dependent: :destroy
 end

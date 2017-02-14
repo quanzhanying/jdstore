@@ -35,3 +35,60 @@
     </div>
   </div>
 </div>
+
+
+<div class="row" style="margin-top:20;">
+  <div class="col-md-12">
+    <div class="tabbable-panel">
+ 	   <div class="tabbable-line">
+    	  <ul class="nav nav-tabs ">
+    	    <li class="active">
+    		   <a href="#tab_default_1" data-toggle="tab">Tab 1 </a>
+    	    </li>
+    		<li>
+    		  <a href="#tab_default_2" data-toggle="tab">Tab 2 </a>
+    		</li>
+    	  </ul>
+    	</div>
+    	<div class="tab-content">
+    	  <div class="tab-pane active" id="tab_default_1">
+    	    <p>I'm in Tab 1.</p>
+    	  </div>
+    	  <div class="tab-pane" id="tab_default_2">
+    	    <%= simple_form_for([@product, @review]) do |f| %>
+			   <div class="form-inputs">
+				  <%= f.input :rating %>
+				  <%= f.input :comment %>
+				</div>
+				<div class="form-actions">
+				  <%= f.button :submit %>
+				</div>
+			<% end %>
+			<% if @reviews.blank? %>
+			  <h3>这个宝贝还没有人评论，来为它添加一个吧！</h3>
+			<% else %>
+			  <% @reviews.each do |review| %>
+			    <div class="reviews">
+			      <ul class="list-group">
+			        <li class="list-group-item">
+			          <div class="row">
+			            <div class="col-md-1">
+			              <div class="round-image-50"><%= image_tag(review.user.avatar.url(:thumb))%></div>
+			              <p><%= review.user.nickname %></p>
+			            </div>
+			            <div class="col-md-8">
+			              <p><%= review.rating %></p>
+			              <p><%= review.comment %></p>
+			            </div>
+			          </div>
+			        </li>
+			      </ul>
+			    </div>
+			  <% end %>
+			<% end %>
+		  </div>
+	   </div>
+	 </div>
+  </div>
+ </div>
+</div>
