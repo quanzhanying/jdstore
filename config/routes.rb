@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         post :hidden
       end
     end
+    resources :orders
   end
 
   resources :products do
