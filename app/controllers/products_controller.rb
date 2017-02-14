@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  def index  
+  before_action :validate_search_key, only: [:search]
+
+  def index
     if params[:category].blank?
       @products = Product.all
     else
@@ -10,6 +12,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @photos = @product.photos.all
   end
 
   def add_to_cart
@@ -22,4 +25,23 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+
+  def search
+    if @query_string.present?
+      @products = search_params
+    end
+  end
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+  end
+
+  private
+
+  def search_params
+    Product.ransack({:title_or_description_cont => @query_string}).result(distinct: true)
+  end
+
 end

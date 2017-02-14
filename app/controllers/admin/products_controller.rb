@@ -9,10 +9,12 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @photos = @product.photos.all
   end
 
   def new
     @product = Product.new
+    @photo = @product.photos.build
   end
 
   def edit
@@ -22,6 +24,11 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.save!
+      if params[:photos] != nil
+        params[:photos]['image'].each do |a|
+          @photo = @product.photos.create(:image => a)
+        end
+      end
       redirect_to admin_products_path
     else
       render :new
@@ -47,6 +54,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id)
+    params.require(:product).permit(:title, :description, :quantity, :price, :category_id)
   end
 end

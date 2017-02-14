@@ -21,8 +21,9 @@
           <td><%= product.id %></td>
           <td>
             <%= link_to admin_product_path(product) do %>
-              <% if product.image.present? %>
-                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% if product.photos.present? %>
+                <%#= image_tag(product.image.url, class: "thumbnail") %>
+                <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>

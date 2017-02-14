@@ -95,104 +95,74 @@
   <div class="wrapper1">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
-        <form class="search-container">
-          <input type="text" id="search-bar" placeholder="产品，商铺...">
-          <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-        </form>
+        <!-- Search area -->
+        <%= form_tag search_products_path , :method => :get, :class => "search-container" do %>
+          <input type="text", id="search-bar", name="q" value="<%= params[:q] %>" placeholder="产品，描述...">
+          <button type="submit" class="search-icon">
+            <span class="fa fa-search fa-2x"></span>
+          </button>
+        <% end %>
+        <!-- End Search -->
+
         <h2 class="text-center">热销商品</h2>
         <div class="row hot-products">
-
+          <% Product.all.each do |product| %>
           <div class="col-md-6 col-sm-12">
             <figure class="snip1423">
-              <%= image_tag("pic7.jpg") %>
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].image.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
+              <% end %>
               <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+                <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
+                <p>
+                  已成交多少单
+                  <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
+                  <% else %>
+                    已售馨
+                  <% end %>
+                  <i class="sub">2</i>
+                  <i class="fa fa-heart-o fa-2x"><a></a></i>
+                </p>
               </figcaption>
-              <a href="#"></a>
             </figure>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <figure class="snip1423">
-              <%=  image_tag("pic5.jpg") %>
-              <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
-              </figcaption>
-              <a href="#"></a>
-            </figure>
-          </div>
+          <% end %>
         </div>
 
-        <div class="row hot-products">
-          <div class="col-md-6 col-sm-12">
-            <figure class="snip1423">
-              <%=  image_tag("pic2.jpg") %>
-              <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
-              </figcaption>
-              <a href="#"></a>
-            </figure>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <figure class="snip1423">
-              <%=  image_tag("pic1.jpg") %>
-              <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
-              </figcaption>
-              <a href="#"></a>
-            </figure>
-          </div>
-        </div>
 
         <h2 class="text-center">精选商品</h2>
         <div class="row specific-products">
-
+          <% Product.all.each do |product| %>
           <div class="col-md-6 col-sm-12">
             <figure class="snip1423">
-              <%=  image_tag("pic7.jpg") %>
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].image.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                <% end %>
+              <% end %>
               <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
+                <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
+                <p>
+                  已成交多少单
+                  <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
+                  <% else %>
+                    已售馨
+                  <% end %>
+                  <i class="sub">2</i>
+                  <i class="fa fa-heart-o fa-2x"></i>
+                </p>
               </figcaption>
-              <a href="#"></a>
             </figure>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <figure class="snip1423">
-              <%=  image_tag("pic5.jpg") %>
-              <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
-              </figcaption>
-              <a href="#"></a>
-            </figure>
-          </div>
-        </div>
-
-        <div class="row specific-products">
-          <div class="col-md-6 col-sm-12">
-            <figure class="snip1423">
-              <%=  image_tag("pic2.jpg") %>
-              <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
-              </figcaption>
-              <a href="#"></a>
-            </figure>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <figure class="snip1423">
-              <%=  image_tag("pic1.jpg") %>
-              <figcaption>
-                <h3>商品名称 <span>￥19.00</span></h3>
-                <p>已成交对少单<i class="fa fa-shopping-cart fa-2x"></i><i class="sub">2</i> <i class="fa fa-heart-o fa-2x"></i></p>
-              </figcaption>
-              <a href="#"></a>
-            </figure>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
