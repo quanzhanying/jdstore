@@ -58,7 +58,11 @@
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi!, <%= current_user.email %>
+              <% if current_user.nickname.present? %>
+                Hi, <%= current_user.nickname %>!
+              <% else %>
+                Hi, <%= current_user.email %>!
+              <% end %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -70,6 +74,7 @@
               <li>
                 <%= link_to(content_tag(:i, " My Orders", class: "fa fa-history"), account_orders_path) %>
               </li>
+              <li><%= link_to(content_tag(:i, " Edit Profile", class: "fa fa-pencil-square-o"),edit_user_registration_path) %></li>
               <li>
                 <%= link_to(content_tag(:i, " Sign Out", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
               </li>
