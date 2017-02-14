@@ -1,7 +1,7 @@
 class Admin::OrdersController < ApplicationController
   layout "admin"
 
-  before_action :authenticate_user
+  before_action :authenticate_user!
   before_action :admin_required
 
   def index
@@ -29,8 +29,8 @@ class Admin::OrdersController < ApplicationController
     def cancel
       @order = Order.find(params[:id])
       @order.cancell_order!
-      redirect_to :back
       OrderMailer.notify_cancel(@order).deliver!
+      redirect_to :back
     end
 
     def return
