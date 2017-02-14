@@ -1,43 +1,27 @@
-<div class="col-md-10 col-md-offset-1">
+<div class="render-page">
   <div class="pull-right">
-    <%= link_to("Add a Product", new_admin_product_path, class: "btn btn-default") %>
+    <%= link_to("新增商品", new_admin_product_path, class: "btn btn-default") %>
   </div>
-  <h2>Product List</h2>
-  <br>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th width="220" >Product Pic</th>
-        <th>Product Name</th>
-        <th>Product Quantity</th>
-        <th>Product Price</th>
-        <th>Options</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td><%= product.id %></td>
-          <td>
-            <%= link_to admin_product_path(product) do %>
-              <% if product.photos.present? %>
-                <%#= image_tag(product.image.url, class: "thumbnail") %>
-                <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-              <% end %>
-            <% end %>
-          </td>
-          <td><%= product.title %></td>
-          <td><%= product.quantity %></td>
-          <td><%= product.price %></td>
-          <td>
-            <%= link_to("Edit", edit_admin_product_path(product)) %> |
-            <%= link_to("Destroy", admin_product_path(product), method: :delete, data: { confirm: "Are your sure?" }) %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <h3 class="text-center">全部商品</h3>
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-md-6 product-chunk">
+      <div class="col-md-6 chunk-left">
+        <%= link_to product_path(product) do %>
+          <% if product.photos.present? %>
+            <%= image_tag(product.photos[0].image.thumb.url, class: "img-circle") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-6 chunk-right">
+        <p><%= product.title %> ￥<%= product.price %></p>
+        <p><%= product.quantity %></p>
+        <%= link_to("Edit", edit_admin_product_path(product)) %> |
+        <%= link_to("Destroy", admin_product_path(product), method: :delete, data: { confirm: "Are your sure?" }) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
