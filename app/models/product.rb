@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :photos
 
   scope :recent, -> { order("created_at DESC") }
+  has_many :reviews, dependent: :destroy
 end
