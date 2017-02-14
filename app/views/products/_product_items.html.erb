@@ -10,14 +10,22 @@
     <figcaption>
       <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
       <p>
-        已成交多少单
+        已成交4单
         <% if product.quantity.present? && product.quantity > 0 %>
           <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
         <% else %>
           已售馨
         <% end %>
-        <i class="sub">2</i>
-        <i class="fa fa-heart-o fa-2x"><a></a></i>
+        <i class="sub"><%= product.fans.count %></i>
+        <% if !current_user.is_fan_of?(product) %>
+          <%= link_to favorite_product_path(product), method: :post do %>
+            <i class="fa fa-heart-o fa-2x"></i>
+          <% end %>
+        <% else %>
+          <%= link_to unfavorite_product_path(product), method: :post do %>
+            <i class="fa fa-heart-o fa-2x"></i>
+          <% end %>
+        <% end %>
       </p>
     </figcaption>
   </figure>

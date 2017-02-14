@@ -15,6 +15,11 @@ class ProductsController < ApplicationController
     @photos = @product.photos.all
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
+    if @reviews.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
+    end
   end
 
   def add_to_cart
@@ -33,6 +38,18 @@ class ProductsController < ApplicationController
       @products = search_params
     end
   end
+
+  def favorite
+		@product = Product.find(params[:id])
+			current_user.favorite_products << @product
+			redirect_to :back
+	end
+  
+	def unfavorite
+		@product = Product.find(params[:id])
+		current_user.favorite_products.delete(@product)
+		redirect_to :back
+	end
 
   protected
 

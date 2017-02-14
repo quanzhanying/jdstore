@@ -1,10 +1,5 @@
 <div class="row">
   <div class="col-md-6">
-    <%# if @product.image.present? %>
-      <%#= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <%# else %>
-      <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <%# end %>
     <% if @photos.present? %>
       <% @photos.each_with_index do |p, index| %>
         <% if index == 0 %>
@@ -19,6 +14,9 @@
   </div>
   <div class="col-md-6">
     <h2><%= @product.title %></h2>
+    <div class="rating">
+      <div class="star-rating" data-score= <%= @avg_review %> ></div>
+    <em><%= "#{@reviews.length} reviews" %></em>
     <div style="height: 100px;">
       <p>
         <%= @product.description %>
@@ -26,6 +24,17 @@
     </div>
     <div>Quantity: <%= @product.quantity %></div>
     <div>Price: ￥ <%= @product.price %></div>
+    <div>
+      <% if !current_user.is_fan_of?(@product) %>
+				<%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+					<i class="fa fa-heart"></i>
+				<% end %>
+			<% else %>
+				<%= link_to unfavorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+					<i class="fa fa-heart" style="color:red;"></i>
+				<% end %>
+			<% end %>
+    </div>
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, class: "btn btn-danger btn-lg") %>
@@ -57,7 +66,7 @@
     	  <div class="tab-pane" id="tab_default_2">
     	    <%= simple_form_for([@product, @review]) do |f| %>
 			   <div class="form-inputs">
-				  <%= f.input :rating %>
+				  <div id="star-rating"></div>
 				  <%= f.input :comment %>
 				</div>
 				<div class="form-actions">
@@ -77,7 +86,7 @@
 			              <p><%= review.user.nickname %></p>
 			            </div>
 			            <div class="col-md-8">
-			              <p><%= review.rating %></p>
+			              <div class="star-rating" data-score= <%= review.rating %> ></div>
 			              <p><%= review.comment %></p>
 			            </div>
 			          </div>
@@ -92,3 +101,16 @@
   </div>
  </div>
 </div>
+<script>
+  $('.star-rating').raty({
+	  path: '/assets/',
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		}
+	 });
+	$('#star-rating').raty({
+		path: '/assets/',
+		scoreName: 'review[rating]'
+		});
+</script>

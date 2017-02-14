@@ -65,6 +65,9 @@
                 <li>
                   <%= link_to(content_tag(:i, " 我的订单", class: "fa fa-history"), account_orders_path) %>
                 </li>
+                <li>
+                  <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
+                </li>
                 <li><%= link_to(content_tag(:i, " 编辑账户", class: "fa fa-pencil-square-o"),edit_user_registration_path) %></li>
                 <li>
                   <%= link_to(content_tag(:i, " 账户登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %>
@@ -130,14 +133,22 @@
               <figcaption>
                 <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
                 <p>
-                  已成交多少单
+                  已成交6单
                   <% if product.quantity.present? && product.quantity > 0 %>
                     <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
                   <% else %>
                     已售馨
                   <% end %>
-                  <i class="sub">2</i>
-                  <i class="fa fa-heart-o fa-2x"><a></a></i>
+                  <i class="sub"><%= product.fans.count %></i>
+                  <% if !current_user.is_fan_of?(product) %>
+            				<%= link_to favorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% else %>
+            				<%= link_to unfavorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% end %>
                 </p>
               </figcaption>
             </figure>
@@ -148,7 +159,7 @@
 
         <h2 class="text-center">精选商品</h2>
         <div class="row specific-products">
-          <% Product.all.each do |product| %>
+          <% Product.last(4).each do |product| %>
           <div class="col-md-6 col-sm-12">
             <figure class="snip1423">
               <%= link_to product_path(product) do %>
@@ -167,8 +178,16 @@
                   <% else %>
                     已售馨
                   <% end %>
-                  <i class="sub">2</i>
-                  <i class="fa fa-heart-o fa-2x"></i>
+                  <i class="sub"><%= product.fans.count %></i>
+                  <% if !current_user.is_fan_of?(product) %>
+            				<%= link_to favorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% else %>
+            				<%= link_to unfavorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% end %>
                 </p>
               </figcaption>
             </figure>
