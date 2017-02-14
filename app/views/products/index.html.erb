@@ -1,0 +1,33 @@
+<div class="product-list">
+    <div class="container-fluid bg-2">
+        <div style="margin: 30px;">
+            <h1>
+                所有商品
+            </h1>
+        </div>
+    </div>
+
+    <% @products.each do |product| %>
+    <div class="container-fluid bg-2">
+        <div class="row product-list-1">
+            <div class="display-text-1 col-md-8">
+                <h2><%= link_to(product.title,product_path(product)) %></h2>
+                <p class="body-text-1"><%= product.description %></p>
+                <br>
+                <b class="price-text">单价：￥<%= product.price %>
+                </b>
+                <div>
+                    <%= link_to("了解详情",product_path(product), class:"btn btn-default") %>
+                </div>
+            </div>
+            <div class="col-md-4, pull-right" style="margin-top: 15px; margin-right:25px; ">
+                <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class:"thumbnail") %>
+            <% else %>
+                <%= image_tag("http://placehold.it/200x200&text= No Pic", class:"thumbnail") %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
