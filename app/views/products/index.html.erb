@@ -1,6 +1,5 @@
 
-	<br>
-	<br>
+
 	<div class="row">
 		<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
@@ -195,7 +194,11 @@
             <span class="glyphicon glyphicon-star"></span>
             <span class="glyphicon glyphicon-star-empty"></span>
           </div>
-          <span class="badge">90%</span>
+
+						<% if product.discount != 100 %>
+						<span class="badge"><%= product.discount %>%</span>
+						<% end %>
+
       		<p><%= product.description %></p>
       		<hr class="line">
       		<div class="row">
@@ -206,7 +209,9 @@
       					<div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
       				</div>
       			</div>
+						<% if product.newproduct %>
 						<div class="sticker sticker-new"></div>
+						<% end %>
     		</span>
   		</div>
 

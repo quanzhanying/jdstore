@@ -32,7 +32,15 @@
   </div>
 
   <div class="group">
+    <%= f.input :discount, :label => "折扣" %>
+  </div>
+
+  <div class="group">
     <%= f.input :is_hidden, :label => "下架产品" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :newproduct, :label => "新上市" %>
   </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
