@@ -80,6 +80,10 @@
     </div>
   </nav>
   <div class="row">
+    <div class="col-md-12">
+      <%= render "common/flashes" %>
+    </div>
+
     <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-6">
       <div class="slogan">
         <h2>
@@ -104,7 +108,7 @@
 <div id="products">
   <div class="wrapper1">
     <div class="row">
-      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+      <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
         <!-- Search area -->
         <%= form_tag search_products_path , :method => :get, :class => "search-container" do %>
           <input type="text", id="search-bar", name="q" value="<%= params[:q] %>" placeholder="产品，描述...">
@@ -129,14 +133,22 @@
               <figcaption>
                 <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
                 <p>
-                  已成交多少单
+                  已成交6单
                   <% if product.quantity.present? && product.quantity > 0 %>
                     <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
                   <% else %>
                     已售馨
                   <% end %>
-                  <i class="sub">2</i>
-                  <i class="fa fa-heart-o fa-2x"><a></a></i>
+                  <i class="sub"><%= product.fans.count %></i>
+                  <% if !current_user.is_fan_of?(product) %>
+            				<%= link_to favorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% else %>
+            				<%= link_to unfavorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% end %>
                 </p>
               </figcaption>
             </figure>
@@ -147,7 +159,7 @@
 
         <h2 class="text-center">精选商品</h2>
         <div class="row specific-products">
-          <% Product.all.each do |product| %>
+          <% Product.last(4).each do |product| %>
           <div class="col-md-6 col-sm-12">
             <figure class="snip1423">
               <%= link_to product_path(product) do %>
@@ -166,8 +178,16 @@
                   <% else %>
                     已售馨
                   <% end %>
-                  <i class="sub">2</i>
-                  <i class="fa fa-heart-o fa-2x"></i>
+                  <i class="sub"><%= product.fans.count %></i>
+                  <% if !current_user.is_fan_of?(product) %>
+            				<%= link_to favorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% else %>
+            				<%= link_to unfavorite_product_path(product), method: :post do %>
+            					<i class="fa fa-heart-o fa-2x"></i>
+            				<% end %>
+            			<% end %>
                 </p>
               </figcaption>
             </figure>
@@ -181,48 +201,50 @@
 </div>
 <div class="footer">
   <div class="row">
-    <div class="col-md-4">
-      <div class="footer-chunk">
-        <h4>关于产品</h4>
-        <ul>
-          <% Category.all.each do |category| %>
-            <li>
-              <%= link_to(category.name, products_path(category: category.name)) %>
-            </li>
-          <% end %>
-        </ul>
+    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+      <div class="col-md-4">
+        <div class="footer-chunk">
+          <h4>关于产品</h4>
+          <ul>
+            <% Category.all.each do |category| %>
+              <li>
+                <%= link_to(category.name, products_path(category: category.name)) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="footer-chunk">
-        <h4>关于我们</h4>
-        <ul>
-          <li>理念：</li>
-          <li>设计者：陈慧娟</li>
-          <li>设计者：刘慧玲</li>
-          <li>其他</li>
-          <li>其他</li>
-        </ul>
+      <div class="col-md-4">
+        <div class="footer-chunk">
+          <h4>关于我们</h4>
+          <ul>
+            <li>理念：演绎早春之美</li>
+            <li>ROR爱好者</li>
+            <li>拥有挑剔的眼光</li>
+            <li>设计者：陈慧娟</li>
+            <li>设计者：刘慧玲</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="footer-chunk">
-        <h4>售后服务</h4>
-        <ul>
-          <li>24小时热线服务</li>
-          <li>热线咨询：123456789</li>
-          <li>邮箱咨询：email</li>
-          <li>帮助</li>
-          <li>意见</li>
-        </ul>
+      <div class="col-md-4">
+        <div class="footer-chunk">
+          <h4>售后服务</h4>
+          <ul>
+            <li>24小时热线服务</li>
+            <li>热线咨询：15995693717</li>
+            <li>邮箱咨询：megy.chen203@gmail.com</li>
+            <li>帮助</li>
+            <li>意见</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
   <div class="copyright">
     <div class="design">
       <span><a href="#">Github仓库</a></span>  <span><a href="#">关于我们</a></span>  <span><a href="#">联系我们</a></span>
-      <p>This website is Designed  and Built By <span>Megy Chen</span> & <span>Chris Liu</span>, welcome to here!</p>
-      <p>@Copyright 2017</p>
+      <p>@Copyright 2017 乐活生活馆网站是由<span>陈慧娟</span> 和 <span>刘慧玲</span>共同打造</p>
+      <p>再次感谢您的光临</p>
     </div>
   </div>
 </div>
