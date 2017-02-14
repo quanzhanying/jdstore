@@ -1,24 +1,37 @@
-<h2>
-    订单列表
-</h2>
+<!DOCTYPE html>
+<html>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>生成时间</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @orders.each do |order| %>
-        <tr>
-            <td>
-                <%= link_to(order.id, order_path(order.token)) %>
-            </td>
-            <td>
-                <%= order.created_at.to_s(:long) %>
-            </td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+    <head>
+        <title>LOVE&GIFT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <h2>
+        订单列表
+    </h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>生成时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+                <td>
+                    <%= link_to(order.id, order_path(order.token)) %>
+                </td>
+                <td>
+                    <%= order.created_at.to_s(:long) %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</html>

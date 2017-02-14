@@ -1,8 +1,21 @@
-<% if flash.any? %>
-<% user_facing_flashes.each do |key, value| %>
-<div class="alert alert-dismissable alert-<%= flash_class(key) %>">
-    <button class="close" data-dismiss="alert">x</button>
-    <%= value %>
-</div>
-<% end %>
-<% end %>
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>LOVE&GIFT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <% if flash.any? %>
+    <% user_facing_flashes.each do |key, value| %>
+    <div class="alert alert-dismissable alert-<%= flash_class(key) %>">
+        <button class="close" data-dismiss="alert">x</button>
+        <%= value %>
+    </div>
+    <% end %>
+    <% end %>
+
+</html>

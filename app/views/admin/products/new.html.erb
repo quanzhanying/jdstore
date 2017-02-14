@@ -1,19 +1,32 @@
-<h2>New Product</h2>
-<%= simple_form_for [:admin, @product] do |f| %>
-<div class="group">
-    <%= f.input :title %>
-</div>
-<div class="group">
-    <%= f.input :description %>
-</div>
-<div class="group">
-    <%= f.input :quantity %>
-</div>
-<div class="group">
-    <%= f.input :price %>
-</div>
-<div class="group">
-    <%= f.input :image, as: :file %>
-</div>
-<%= f.submit "Submit", data: {disable_with: "Submitting..." } %>
-<% end %>
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>LOVE&GIFT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+
+    <h2>New Product</h2>
+    <%= simple_form_for [:admin, @product] do |f| %>
+    <div class="group">
+        <%= f.input :title %>
+    </div>
+    <div class="group">
+        <%= f.input :description %>
+    </div>
+    <div class="group">
+        <%= f.input :quantity %>
+    </div>
+    <div class="group">
+        <%= f.input :price %>
+    </div>
+    <div class="group">
+        <%= f.input :image, as: :file %>
+    </div>
+    <%= f.submit "Submit", data: {disable_with: "Submitting..." } %>
+    <% end %>
+
+</html>
