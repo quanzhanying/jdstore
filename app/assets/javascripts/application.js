@@ -17,3 +17,9 @@
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require_tree .
+//= require bootstrap/carousel
+
+$(document).ready(function() {
+  $('#myCarousel').carousel({interval: 2000});
+
+});

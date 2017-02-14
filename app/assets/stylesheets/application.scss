@@ -19,6 +19,75 @@
  @import "font-awesome";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+
+
+
+
+
+
+/*navbar样式*/
+.navbar{
+  background-color: rgba(202, 209, 166,0.4);
+  margin-left: -15px;
+  margin-right: -15px;
+  border-radius: 0px;
+
+}
+
+.navbar-nav
+{color: #AA6539;
+}
+
+.navbar-default
+{
+  border-color: transparent;//边框颜色
+}
+
+.navbar-default .navbar-brand{
+   color: #EF6c00;//字体颜色
+   padding: 10px 15px;//软垫填充上下10px,左右15px
+   line-height: 30px;//文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #6f9ac7;//鼠标放在链接上的文字颜色
+  //鼠标放置在链接上的背景颜色，这里设为透明
+   background-color: rgba(178,235,242 ,1);
+   border-radius: 5px;
+ }
+
+ .navbar-default .navbar-nav>li>a:hover,
+ .navbar-default .navbar-nav>li>a:focus {
+
+   background-color: rgba(178,235,242 ,1);//设定鼠标停留在链接时的背景色
+   border-radius:5px;//设定边框的圆角
+ }
+
+ .navbar-default .navbar-nav>li>a:active,
+ .navbar-default .navbar-nav>li>a:visited {
+    color:#6f9ac7;
+ }
+
+
+
+
+/*修改注册／登录按钮的样式*/
+ .navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;//点击注册，邮箱，登录时的背景色
+    color: #212121;
+}
+
+ /*.navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: black;
+   background-color: #FFE0B2;
+ }*/
+
+
  /****** LOGIN MODAL ******/
  .loginmodal-container {
    padding: 30px;

@@ -2,45 +2,71 @@
 
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">JDstore</a>
+      <a class="navbar-brand" href="/">Food Center</a>
 
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active">
-        <%= link_to("Products", products_path)%>
+      <li class="item">
+        <!-- <#li class="active"> -->
+
+        <!-- <#/li> -->
+        <%= link_to("食物王国", products_path)%>
       </li>
     </ul>
-
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("水果庄园", products_path)%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("蔬菜都市", products_path)%>
+      </li>
+    </ul>
       <ul class="nav navbar-nav navbar-right">
       <li>
-        <%=link_to carts_path do %>
 
+
+        <%=link_to carts_path do %>
+        <!-- #限定用户登录后才能查看“购物车” -->
+        <% if !current_user%>
+
+        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= 0 %> )
+        <% else %>
         购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+        <% end %>
         <% end %>
       </li>
     <% if !current_user %>
-    <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#signup-modal">
+      <i class="fa fa-user-plus" aria-hidden="true">注册</i>
+    </a>
+  </li>
 
 
     <li>
-      <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
+      <li><a href="#" data-toggle="modal" data-target="#login-modal">
+        <span class="fa fa-sign-out" aria-hidden="true">登入</span>
+        </a>
     </li>
     <% else %>
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      Hi,<%=current_user.email %>
+    <i class="fa fa-user-circle" aria-hidden="true">  </i>
       <b class="caret"></b>
 
       </a>
       <ul class="dropdown-menu">
         <% if current_user.admin? %>
         <li>
-          <%= link_to("Admin 选单", admin_products_path ) %>
+
+          <%= link_to(content_tag(:i , "Admin 选单", class: 'glyphicon glyphicon-ok-sign'),admin_products_path)%>
         </li>
         <% end %>
         <li>
-          <%= link_to("个人订单列表",account_orders_path)%>
+          <%=link_to(content_tag(:i , "个人订单列表", class: 'fa fa-file-text-o'),account_orders_path)%>
+
         </li>
         <li>
           <%= link_to(content_tag(:i , "登出", class: 'fa fa-sign-out'),
