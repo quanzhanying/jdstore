@@ -23,3 +23,6 @@ config/database.yml
 public/uploads
 
 # Ignore application configuration
+
+# Ignore application configuration
+/config/application.yml
