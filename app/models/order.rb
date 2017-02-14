@@ -1,4 +1,7 @@
 class Order < ApplicationRecord
+  include AASM
+
+
   before_create :generate_token
 
   belongs_to :user
@@ -19,5 +22,34 @@ class Order < ApplicationRecord
 
   def pay!
     self.update_columns(is_paid: true)
+  end
+
+  aasm do
+    state :order_placed, initial: true
+    state :paid
+    state :shipping
+    state :shipped
+    state :order_cancelled
+    state :good_returned
+
+    event :make_payment, after_commit: :pay! do
+      translations from: :order_placed, to: :paid
+    end
+
+    event :ship do
+      translations from: :paid, to: :shipping
+    end
+
+    event :deliver do
+      translations from: :shipping, to: :shipped
+    end
+
+    event :return_good do
+      translations from: :shipped, to: :good_returned
+    end
+
+    event :cancell_order do
+      translations from: :[:order_placed, :paid], to: :order_cancelled
+    end
   end
 end
