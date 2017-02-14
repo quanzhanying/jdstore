@@ -6,4 +6,6 @@ class Product < ApplicationRecord
 
   scope :recent, -> { order("created_at DESC") }
   has_many :reviews, dependent: :destroy
+  has_many :favorites
+  has_many :fans, :through => :favorites, :source => :user
 end

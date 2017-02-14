@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :favorite
+      post :unfavorite
     end
     collection do
       get :search
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
   end
 
   resources :categories
+
+  resources :favorites
 
   root "welcome#index"
 end
