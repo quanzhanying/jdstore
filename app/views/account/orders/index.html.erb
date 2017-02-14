@@ -6,6 +6,7 @@
         <th>订单编号</th>
         <th>订单金额</th>
         <th>订单日期</th>
+        <th>订单状态</th>
       </thead>
       <tbody>
         <% @orders.each do |order| %>
@@ -13,6 +14,12 @@
             <td><%= link_to(order.id, order_path(order.token)) %></td>
             <td><%= order.total %></td>
             <td><%= order.created_at.to_s(:long) %></td>
+            <td>
+              <%= order.aasm_state %>
+              <% if order.aasm_state == "order_placed" || order.aasm_state == "paid" %>
+                <%= link_to("申请取消订单", apply_cancel_order_path(order.token), method: :post, class: "btn btn-sm btn-default") %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
