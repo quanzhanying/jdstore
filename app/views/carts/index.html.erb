@@ -5,14 +5,15 @@
                                                    style: "text-decoration: underline;",
                                                    data: {confrim:"Do you really want to clean your cart?" }) %>
 
-    <h2> 购物车 </h2>
+    <h2> My carts </h2>
 
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">商品资讯</th>
-          <th>单价</th>
-          <th>数量</th>
+          <th colspan="2">Product Information</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Action </th>
         </tr>
       </thead>
       <tbody>
@@ -29,13 +30,23 @@
               <% end %>
             </td>
             <td>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <i class= "fa fa-trash"></i>
+              <%end%>
+            </td>
+            <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
               <%= cart_item.product.price %>
             </td>
             <td>
-              <%= cart_item.quantity %>
+              <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id ) %>
+
+              <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                <%= f.select :quantity, [1,2,3,4,5] %>
+                <%= f.submit "Update", data: { disable_with: "Submitting..." } %>
+              <% end %>
             </td>
           </tr>
         <% end %>
