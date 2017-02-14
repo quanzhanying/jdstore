@@ -17,7 +17,6 @@ class CartItemsController < ApplicationController
      @cart_item.update(cart_item_params)
 
      redirect_to carts_path
-   end
 
     if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
          @cart_item.update(cart_item_params)
@@ -25,6 +24,7 @@ class CartItemsController < ApplicationController
     else
       flash[:warning] = "数量不足以加入购物车"
     end
+  end
 
    private
 
