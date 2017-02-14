@@ -16,6 +16,7 @@ class Admin::OrdersController < ApplicationController
   def ship
       @order = Order.find(params[:id])
       @order.ship!
+      OrderMailer.notify_ship(@order).deliver!
       redirect_to :back
     end
 
@@ -29,6 +30,7 @@ class Admin::OrdersController < ApplicationController
       @order = Order.find(params[:id])
       @order.cancell_order!
       redirect_to :back
+      OrderMailer.notify_cancel(@order).deliver!
     end
 
     def return
@@ -36,5 +38,21 @@ class Admin::OrdersController < ApplicationController
       @order.return_good!
       redirect_to :back
     end
+
+    def notify_ship(order)
+        @order        = order
+        @user         = order.user
+        @product_lists = @order.product_lists
+
+        mail(to: @user.email, subject: "[JDStore] 您的订单 #{order.token}已发货")
+      end
+
+      def notify_cancel(order)
+        @order        = order
+        @user         = order.user
+        @product_lists = @order.product_lists
+
+        mail(to: @user.email, subject: "[JDStore] 您的订单 #{order.token}已取消")
+      end
 
 end
