@@ -28,14 +28,15 @@ body {
 }
 /* navbar */
 .navbar-default {
-    margin-top: 0;
+    padding-top: 10px;
     margin-bottom: 0;
     border-radius: 0;
     border: 0 none;
+    min-width: 1277px;
 }
 .navbar {
   height: 80px;
-  padding-top:25px;
+  padding-top:0px;
   padding-left: 200px;
   padding-right: 200px;
   background-color: #FFF;
@@ -46,7 +47,9 @@ body {
   padding: 5px;
 font-size: 45px;
 padding-right: 50px;
-
+}
+.navbar-collapse {
+  padding-top: 30px;
 }
 .navbar .form-group {
 }
