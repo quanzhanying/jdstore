@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>乐活生活馆</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,16 +13,30 @@
     <%= render "common/flashes" %>
 
     <div class="container-fluid">
-      <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked" style="max-width: 200px;">
-          <li class="active"><%= link_to("Products", admin_products_path) %></li>
-        </ul>
-      </div>
-      <div class="col-md-10">
-        <%= yield %>
+      <div class="row admin-page">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-3 sidebar">
+            <p><%= link_to("全部商品", admin_products_path) %></p>
+            <div>
+              分类:
+              <ul>
+                <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to(category.name, admin_products_path(category: category.name)) %>
+                  </li>
+                <% end %>
+              </ul>
+
+            </div>
+            <p>首页</p>
+            <p><%= link_to("返回", admin_products_path) %> | <%= link_to("新增分类", new_category_path) %></p>
+          </div>
+          <div class="col-md-8 col-md-offset-1">
+            <%= yield %>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <%= render "common/footer" %>
   </body>
 </html>
