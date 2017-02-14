@@ -23,7 +23,7 @@
 }
 
 .navbar-default .navbar-brand {
-  font-size: 59px;
+  font-size: 65px;
   font-family: "Lato HB";
   font-weight:bold;
   color:black;
@@ -44,6 +44,7 @@
 .navbar-default .navbar-nav > li > a:focus {
   color: rgb(169,169,169);
   background-color: transparent;
+  border-bottom-color: rgb(169,169,169);
 }
 .navbar-default .navbar-nav > .active > a{
   color: black;
@@ -54,6 +55,7 @@
 .navbar-default .navbar-nav > .active > a:focus {
   color: rgb(169,169,169);
   background-color: transparent;
+   border-bottom-color: rgb(169,169,169);
 }
 
 .item-number {
@@ -73,12 +75,7 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
 }
 
-.jumbotron {
-  background-image:url('https://ooo.0o0.ooo/2017/02/14/58a2d8094272a.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 480px;
-}
+
 
 .caption {
   margin: 0px;
@@ -196,4 +193,15 @@
 
 .image:hover {
   filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;
+}
+
+.jumbotron {
+  background-image:url('https://ooo.0o0.ooo/2017/02/14/58a2d8094272a.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 480px;
+}
+
+.phrase {
+  text-align: center;
 }
