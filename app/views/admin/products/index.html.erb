@@ -2,6 +2,7 @@
 
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+
 </div>
 
 <table class="table table-bordered">
@@ -17,9 +18,11 @@
   </thead>
 
   <tbody>
-    <% [:admin, @products].each do |product| %>
+    <% @products.each do |product| %>
+
       <tr>
         <td>
+            <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
         </td>
 
         <td>
@@ -30,8 +33,10 @@
 
         <td>
         </td>
-        
+
         <td>
+          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :class => "btn btn btn-danger pull-right", :data => { :confirm => "Are you sure?" }) %>
         </td>
 
 
