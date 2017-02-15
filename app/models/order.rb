@@ -29,7 +29,7 @@ include AASM
       transitions from: :paid,         to: :shipping
     end
     event :deliver do
-      transitions from: :shippping,    to: :shipped
+      transitions from: :shipping,    to: :shipped
     end
     event :return_good do
       transitions from: :shipped,      to: :good_returned
