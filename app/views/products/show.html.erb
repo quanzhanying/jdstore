@@ -6,7 +6,7 @@
   						<div class="preview-pic tab-content" >
                 <% if @product.photos.present? %>
   						  <div class="tab-pane active" id="pic-1">
-                  <%= image_tag(@product.photos[0].image.url) %>
+                  <%= image_tag(@product.photos[0].image.medium.url) %>
                 </div>
   						  <div class="tab-pane" id="pic-2"><%= image_tag(@product.photos[1].image.medium.url) %></div>
   						  <div class="tab-pane" id="pic-3"><%= image_tag(@product.photos[2].image.medium.url) %></div>
