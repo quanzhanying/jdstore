@@ -1,3 +1,6 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
@@ -13,18 +16,12 @@ CarrierWave.configure do |config|
 
 
     }
+
     config.fog_directory  = ENV["fullstack-dong"] # 你设定的 bucket name
 
 
 
   else
     config.storage :file
-  end
-
-  require 'carrierwave/storage/abstract'
-  require 'carrierwave/storage/file'
-  require 'carrierwave/storage/fog'
-
-  CarrierWave.configure do |config|
   end
 end
