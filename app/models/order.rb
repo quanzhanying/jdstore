@@ -22,6 +22,7 @@ before_create :generate_token
     self.update_columns(is_paid: true )
   end
 
+  include AASM
   aasm do
     state :order_placed, initial: true
     state :paid
