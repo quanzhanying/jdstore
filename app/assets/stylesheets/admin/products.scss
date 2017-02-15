@@ -12,8 +12,8 @@
     a {
       text-decoration: none;
     }
-    p, div, ul {
-      padding-left: 80px;
+    p, ul {
+      padding-left: 60px;
       padding-top: 10px;
       padding-bottom: 10px;
       margin-bottom: 0;
@@ -23,12 +23,10 @@
       div {
         background-color: #D3D3D3;
       }
-      ul li {
-        list-style: none;
-      }
     }
     p {
       background: #d5d5d5;
+      padding-left: 40px;
     }
   }
 }
