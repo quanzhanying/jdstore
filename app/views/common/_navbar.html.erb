@@ -65,78 +65,85 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a href="/products" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa fa-bell-o"></i>
                             PRODUCTS
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
+                                <a href="/products">
+                                    <i class="fa fa-fw fa-list-alt"></i>
+                                    <span>All Products</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
                                 <a href="#">
-                                    <i class="fa fa-fw fa-tag"></i>
+                                    <i class="fa fa-fw fa-thumbs-o-up"></i>
                                     <span class="badge">item1</span>
-                                    product1
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-fw fa-thumbs-o-up"></i>
-                                        <span class="badge">item2</span>
-                                        product2</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-fw fa-thumbs-o-up"></i>
-                                        <span class="badge">item3</span>
-                                        product3</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-fw fa-thumbs-o-up"></i>
-                                        <span class="badge">item4</span>
-                                        product4</a>
-                                </li>
-                            </ul>
-                        </li>
+                                    product1</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-fw fa-thumbs-o-up"></i>
+                                    <span class="badge">item2</span>
+                                    product2</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-fw fa-thumbs-o-up"></i>
+                                    <span class="badge">item3</span>
+                                    product3</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-fw fa-thumbs-o-up"></i>
+                                    <span class="badge">item4</span>
+                                    product4</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <%= link_to carts_path do %>
-                            CART
-                            <i class="fa fa-shopping-cart"></i>
-                            (<%= current_cart.products.count %>)
-                            <% end %>
-                        </li>
-                        <% if !current_user %>
-                        <li><%= link_to(content_tag(:i, 'Sign up' ), new_user_registration_path) %></li>
-                        <li><%= link_to(content_tag(:i, 'Login'), new_user_session_path) %></li>
-                    <% else %>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-fw fa-user-circle" aria-hidden="true"></i><%= current_user.email %>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <% if current_user.admin? %>
-                                <li>
-                                    <%= link_to("Admin Panel", admin_products_path) %>
-                                </li>
-                                <% end %>
-                                <li>
-                                    <%= link_to("My Order", account_orders_path) %>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                                </li>
-                            </ul>
-                        </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <%= link_to carts_path do %>
+                        CART
+                        <i class="fa fa-shopping-cart"></i>
+                        (<%= current_cart.products.count %>)
                         <% end %>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
+                    </li>
+                    <% if !current_user %>
+                    <li><%= link_to(content_tag(:i, 'Sign up' ), new_user_registration_path) %></li>
+                    <li><%= link_to(content_tag(:i, 'Login'), new_user_session_path) %></li>
+                <% else %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-fw fa-user-circle" aria-hidden="true"></i><%= current_user.email %>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <% if current_user.admin? %>
+                            <li>
+                                <%= link_to("Admin Panel", admin_products_path) %>
+                            </li>
+                            <% end %>
+                            <li>
+                                <%= link_to("My Order", account_orders_path) %>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                            </li>
+                        </ul>
+                    </li>
+                    <% end %>
+                </ul>
             </div>
-            <!-- /.container-fluid -->
-        </nav>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-    </html>
+</html>
