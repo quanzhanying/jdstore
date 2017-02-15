@@ -1,0 +1,109 @@
+<div class="container">
+			<div class="container-fliud">
+				<div class="row">
+					<div class="preview col-md-6">
+
+            <div class=" col-sm-4 col-xs-4">
+
+            <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+                <div class='carousel-outer'>
+                    <!-- me art lab slider -->
+                    <div class='carousel-inner'>
+                        <div class='item active'>
+                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg'/>
+                        </div>
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg'/>
+                        </div>
+                        <div class='item'>
+                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg'/>
+                        </div>
+                    </div>
+
+                    <!-- sag sol -->
+										<a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+                        <span class='glyphicon glyphicon-chevron-right'></span>
+                    </a>
+                    <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+                        <span class='glyphicon glyphicon-chevron-left'></span>
+                    </a>
+
+                </div>
+
+                <!-- thumb -->
+                <ol class='carousel-indicators mCustomScrollbar meartlab'>
+                    <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                    <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
+                </ol>
+            </div>
+
+
+            </div>
+
+					</div>
+
+					<div class="col-md-6">
+            <br>
+
+						<h3><%= @product.title %></h3>
+            <br>
+            <br>
+
+						<p><%= @product.description %></p>
+            <div> 数量 : <%= @product.quantity %> </div>
+						<div>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+						</div>
+            <br>
+						<h4>￥ <%= @product.price %></h4>
+						<div class="action">
+              <button class="add-to-cart btn btn-default">
+                <% if @product.quantity.present? && @product.quantity > 0 %>
+                  <%= link_to(content_tag(:i, '买买买', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post) %>
+                <% else %>
+                  车太帅，没货了
+                <% end %>
+              </button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart">收藏</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+  <div class="container-fluid">
+			<div class="col-md-12 product-info">
+					<ul id="myTab" class="nav nav-tabs nav_tabs">
+
+						<li class="active"><a href="#service-one" data-toggle="tab">产品详情</a></li>
+						<li><a href="#service-two" data-toggle="tab">产品参数</a></li>
+						<li><a href="#service-three" data-toggle="tab">评价</a></li>
+
+					</ul>
+				<div id="myTabContent" class="">
+						<div class="tab-pane fade in active" id="service-one">
+							<section class="container product-info">
+								嗯嗯嗯
+							</section>
+						</div>
+						<div class="tab-pane fade" id="service-two">
+
+							<section class="container">
+              	对对对
+							</section>
+
+						</div>
+						<div class="tab-pane fade" id="service-three">
+							<section class="container">
+								啊啊啊
+							</section>
+						</div>
+					</div>
+				<hr>
+			</div>
+		</div>

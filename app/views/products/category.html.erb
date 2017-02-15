@@ -1,0 +1,9 @@
+<% if @cuery_string == "法拉利" %>
+  <%= render "common/ferrari" %>
+<% elsif @cuery_string == "保时捷" %>
+  <%= render "common/porsche" %>
+<% elsif @cuery_string == "兰博基尼" %>
+  <%= render "common/lamborghini" %>
+<% elsif @cuery_string == "布加迪威龙" %>
+  <%= render "common/bugatti" %>
+<% end %>
