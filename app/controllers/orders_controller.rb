@@ -15,6 +15,9 @@ class OrdersController < ApplicationController
          product_list.quantity = cart_item.quantity
          product_list.save
        end
+            current_cart.clean!
+            OrderMailer.notify_order_placed(@order).deliver!
+
        redirect_to order_path(@order.token)
      else
        render 'carts/checkout'
@@ -41,7 +44,7 @@ class OrdersController < ApplicationController
 
     redirect_to order_path(@order.token), notice: "使用微信支付成功完成付款"
   end
-  
+
    private
 
    def order_params
