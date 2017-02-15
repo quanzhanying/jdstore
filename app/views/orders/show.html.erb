@@ -65,6 +65,12 @@
     <div class="pull-left">
       <% if @order.order_placed? || @order.paid? %>
         <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
+      <% elsif @order.shipping? || @order.shipped? %>
+          <%= link_to("申请退货", apply_to_return_order_path(@order), method: :post, class: "btn btn-info") %>
+      <% elsif "order_cancelled" %>
+          <span class="label label-default">订单已取消</span>
+      <% elsif "good_returned" %>
+          <span class="label label-default">已退货</span>
       <% end %>
     </div>
     <% if !@order.is_paid %>
