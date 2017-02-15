@@ -1,14 +1,14 @@
 <div class="row">
    <div class="col-md-12">
 
-    <h2> 购物明细 </h2>
+    <h2> Order Details </h2>
 
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="80%">商品明细</th>
-          <th>单价</th>
-          <th>数量</th>
+          <th width="80%">Product information</th>
+          <th>Unit Pirce</th>
+          <th>Quantity</th>
         </tr>
       </thead>
       <tbody>
@@ -34,13 +34,13 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= render_cart_total_price(current_cart) %> CNY
+        Sum <%= render_cart_total_price(current_cart) %> CNY
       </span>
     </div>
 
     <hr>
 
-    <h2> 订单资讯 </h2>
+    <h2> Buyer Info </h2>
 
     <div class="order-form">
 
@@ -48,7 +48,7 @@
 
 
 
-          <legend> 订购人</legend>
+          <legend> Buyer</legend>
           <div class="form-group col-lg-6">
             <%= f.input :billing_name  %>
           </div>
@@ -56,7 +56,7 @@
             <%= f.input :billing_address  %>
           </div>
 
-          <legend> 收货人</legend>
+          <legend> Recipient </legend>
           <div class="form-group col-lg-6">
            <%= f.input :shipping_name  %>
           </div>
@@ -65,7 +65,7 @@
           </div>
 
         <div class="checkout">
-          <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
+          <%= f.submit "Creating Orders", class: "btn btn-lg btn-danger pull-right",
                        data: { disable_with: "Submitting..." } %>
         </div>
       <% end %>
