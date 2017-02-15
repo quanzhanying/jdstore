@@ -27,6 +27,7 @@
           <li> <%= link_to("首页", root_path, :class => "btn btn-info fa fa-home" ) %> </li>
           <li>  </li>
           <li> <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm fa fa-plus-circle") %> </li>
+          <li> <%= link_to("Orders", admin_orders_path) %> </li>
           <li> <%= link_to("登出", destroy_user_session_path, :class => "btn btn-warning fa fa-sign-out", method: :delete) %> </li>
         </ul>
       </div>
