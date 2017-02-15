@@ -17,7 +17,7 @@ CarrierWave.configure do |config|
     }
 
     config.fog_directory  = ENV["fullstack-dong"] # 你设定的 bucket name
-    config.storage = :fog
+    config.storage :fog
 
 
 
