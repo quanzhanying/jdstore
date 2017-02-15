@@ -14,6 +14,8 @@ class OrdersController < ApplicationController
 				product_list.quantity = cart_item.quantity
 				product_list.save!
 			end
+			current_cart.clean!
+			OrderMailer.notify_order_placed(@order).deliver!
 			redirect_to order_path(@order.token)
 		else
 			render 'carts/checkout'
@@ -39,7 +41,7 @@ class OrdersController < ApplicationController
 		@order.pay!
 		redirect_to order_path(@order.token), notice:"Pay with wechat!"
 	end
-	
+
 	private
 	def order_params
 		params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)

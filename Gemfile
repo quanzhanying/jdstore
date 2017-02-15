@@ -39,6 +39,8 @@ gem 'will_paginate-bootstrap'
 gem 'ransack'
 gem 'seo_helper'
 gem 'mini_magick'
+gem 'letter_opener', group: :development
+
 group :production do
  gem 'pg'
 end
