@@ -2,6 +2,9 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
+  config.root = Rails.root.join('tmp') # adding these...
+  config.cache_dir = 'carrierwave' # ...two lines
+  
   if Rails.env.production?
     config.fog_credentials = {
       provider:              'AWS',
