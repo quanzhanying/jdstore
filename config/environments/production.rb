@@ -87,15 +87,17 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'https://radiant-meadow-38754.herokuapp.com'}
 
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    address: "smtpcloud.sohu.com",
-    port: 25,
-    domain: "heroku.com",
-    authentication: "login",
-    enable_starttls_auto: true,
-    user_name: ENV["SEND_CLOUD_USER_NAME"],    #api_user
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "heroku.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
 
-    password: ENV["SEND_CLOUD_USER_KEY"]       #api_key
-
-    }
 end
