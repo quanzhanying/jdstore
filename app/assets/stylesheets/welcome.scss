@@ -63,6 +63,86 @@
     background: #fff;
     cursor: pointer;
 }
+/*---------------------------classes---------------------------*/
+.classes {
+  height: 48px;
+  text-align: center;
+  margin-top: 30px;
+}
+.classes .child{
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: rgba(200, 200, 200, 0.7);
+}
+.button {
+	float: left;
+	display: block;
+	border: 1px solid #fff;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+.button:focus {
+	outline: none;
+}
+.button > span {
+	vertical-align: middle;
+}
+.button--size-s {
+	font-size: 14px;
+  font-weight: bold;
+}
+.button--text-upper {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.button--rayen {
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+.button--rayen.button--inverted {
+	color: #fff;
+}
+.button--rayen::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200, 200, 200, 1.0);
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(0, -100%, 0);
+}
+.button--rayen.button--inverted::before {
+	background: #fff;
+	color: #37474f;
+}
+.button--rayen > span {
+	display: block;
+}
+.button--rayen::before,
+.button--rayen > span {
+	padding: 1em 2em;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.button--rayen:hover::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.button--rayen:hover > span {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}
 /*---------------------------remen---------------------------*/
 .remen-title {
     margin-top: 60px;
@@ -204,7 +284,7 @@
 }
 /*---------------------------success---------------------------*/
 .success-background{
-  margin-top: 50px;
+  margin-top: 10px;
   height: 500px;
   background: url(http://oj8zlumqh.bkt.clouddn.com/image/success-back.jpg) #564975 no-repeat top center;
 }
@@ -233,7 +313,7 @@
   text-decoration: none;
   font-size: 12px;
   font-weight: bold;
-  margin: 30px 5px;
+  margin: 45px 5px;
   padding: 2px;
   color: #fff;
 }
@@ -289,4 +369,25 @@
   margin: 30px 5px;
   padding: 2px;
   color: #50abf2;
+}
+/*---------------------------helper---------------------------*/
+.helper {
+  height: 48px;
+  text-align: center;
+}
+.helper .child{
+  float: left;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(93, 78, 116, 0.6);
+}
+
+
+
+.helper .child:hover{
+  background-color: #fff;
+}
+.helper .child a {
+}
+.helper a:hover {
 }
