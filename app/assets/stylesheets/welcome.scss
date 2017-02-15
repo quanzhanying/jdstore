@@ -116,7 +116,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(200, 200, 200, 1.0);
+	background-color: rgba(180, 180, 180, 1.0);
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(0, -100%, 0);
 }
@@ -372,7 +372,7 @@
 }
 /*---------------------------helper---------------------------*/
 .helper {
-  height: 48px;
+  height: 78px;
   text-align: center;
 }
 .helper .child{
@@ -381,13 +381,70 @@
   height: 100%;
   background-color: rgba(93, 78, 116, 0.6);
 }
-
-
-
-.helper .child:hover{
-  background-color: #fff;
+.button-big {
+	float: left;
+	display: block;
+	border: 1px solid #fff;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
 }
-.helper .child a {
+.button-big:focus {
+	outline: none;
 }
-.helper a:hover {
+.button-big > span {
+	vertical-align: middle;
+}
+.button-big--size-s {
+	font-size: 14px;
+}
+.button-big--text-upper {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.button-big--rayen {
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+.button-big--rayen.button-big--inverted {
+	color: #fff;
+}
+.button-big--rayen::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200, 200, 200, 1.0);
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(0, -100%, 0);
+}
+.button-big--rayen.button-big--inverted::before {
+	background: #fff;
+	color: #37474f;
+}
+.button-big--rayen > span {
+	display: block;
+}
+.button-big--rayen::before,
+.button-big--rayen > span {
+	padding: 2em 2em;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.button-big--rayen:hover::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.button-big--rayen:hover > span {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
 }
