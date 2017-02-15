@@ -8,15 +8,17 @@ class OrdersController < ApplicationController
 
     if @order.save
       current_cart.cart_items.each do |cart_item|
+        if !cart_item.product.is_hidden
         product_list = ProductList.new
         product_list.order = @order
         product_list.produt_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
         product_list.save
+        end
       end
       current_cart.clean!
-      #OrderMailer.notify_order_placed(@order).deliver!
+      OrderMailer.notify_order_placed(@order).deliver!
 
       redirect_to order_path(@order.token)
     else
@@ -43,6 +45,24 @@ class OrdersController < ApplicationController
     @order.make_payment!
 
     redirect_to order_path(@order.token), notice: "使用微信支付功完成付款"
+  end
+
+  def ship
+    @order = Order.find(params[:id])
+    @order.ship!
+    redirect_to :back
+  end
+
+  def shipped
+    @order = Order.find(params[:id])
+    @order.deliver!
+    redirect_to :back
+  end
+
+  def cancel
+    @order = Order.find(params[:id])
+    @order.cancell_order!
+    redirect_to :back
   end
 
   private

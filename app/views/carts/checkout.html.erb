@@ -12,6 +12,7 @@
       </thead>
       <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
+          <% if !cart_item.product.is_hidden %>
           <tr>
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
@@ -23,6 +24,7 @@
               <%= cart_item.product.quantity  %>
             </td>
           </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
