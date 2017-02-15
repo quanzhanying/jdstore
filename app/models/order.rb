@@ -4,7 +4,14 @@ class Order < ApplicationRecord
   def generate_token
     self.token= SecureRandom.uuid
   end
-  
+
+  def set_payment_with!(method)
+    self.update_columns(payment_method: method)
+  end
+
+  def pay!
+    self.update_columns(is_paid: true)
+
 belongs_to :user
 has_many :product_lists
 validates :billing_name, presence:{message: "请填写购买人姓名"}
