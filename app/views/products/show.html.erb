@@ -37,7 +37,7 @@
   							<span class="size" data-toggle="tooltip" title="large">l</span>
   							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
   						</h4>
-  						<div class="action">
+  						<div class="action" style="margin-top:30px;">
   							<button class="add-to-cart btn btn-default" type="button"><% if @product.quantity.present? && @product.quantity > 0 %>
                   <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
                 <% else %>
@@ -59,9 +59,8 @@
   		</div>
   	</div>
 
-
-  <div  style="margin-top:20;">
-    <div class="col-md-7" style="background-color:#fff; padding-left:0;padding-right:0px; margin-right:20px;margin-left:20px;">
+  <div  style="margin-top:20px;">
+    <div class="tabs col-md-7" >
       <div class="tabbable-panel">
    	   <div class="tabbable-line">
       	  <ul class="nav nav-tabs ">
@@ -119,9 +118,8 @@
   	 </div>
     </div>
 
-
    <div class="col-md-4">
-     <div class="row specific-products"  style="background-color:#fff;padding-left:10px;padding-right:10px;">
+     <div class="row specific-products">
        <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
        <hr />
        <% Product.last(4).each do |product| %>
@@ -157,14 +155,9 @@
          </figure>
           <% end %>
        </div>
-
      </div>
-
    </div>
-
 </div>
-
-
 
 <script>
   $('.star-rating').raty({
