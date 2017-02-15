@@ -12,6 +12,7 @@ end
 
 namespace :admin do
   resources :products
+  resources :orders
 end
 
 resources :carts do
