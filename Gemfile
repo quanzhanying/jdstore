@@ -40,7 +40,7 @@ gem 'ransack'
 gem 'seo_helper'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
-
+gem 'aasm'
 group :production do
  gem 'pg'
 end
