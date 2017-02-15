@@ -17,12 +17,18 @@
           已售馨
         <% end %>
         <i class="sub"><%= product.fans.count %></i>
-        <% if !current_user.is_fan_of?(product) %>
-          <%= link_to favorite_product_path(product), method: :post do %>
-            <i class="fa fa-heart-o fa-2x"></i>
+        <% if user_signed_in? %>
+          <% if !current_user.is_fan_of?(product) %>
+            <%= link_to favorite_product_path(product), method: :post do %>
+              <i class="fa fa-heart-o fa-2x"></i>
+            <% end %>
+          <% else %>
+            <%= link_to unfavorite_product_path(product), method: :post do %>
+              <i class="fa fa-heart-o fa-2x"></i>
+            <% end %>
           <% end %>
         <% else %>
-          <%= link_to unfavorite_product_path(product), method: :post do %>
+          <%= link_to favorite_product_path(product), method: :post do %>
             <i class="fa fa-heart-o fa-2x"></i>
           <% end %>
         <% end %>

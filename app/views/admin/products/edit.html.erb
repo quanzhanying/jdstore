@@ -1,4 +1,4 @@
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-8 col-md-offset-2">
   <h2 class="text-center">Edit a Product</h2>
   <%= simple_form_for [:admin, @product] do |f| %>
     <%= f.collection_select :category_id, Category.all, :id, :name %>
@@ -13,6 +13,7 @@
        <% end %>
     <% end %>
     <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
+
     <%= f.submit "Submit", class: "btn btn-default" %>
   <% end %>
 </div>
