@@ -6,6 +6,7 @@
     <%= f.input :description %>
     <%= f.input :quantity %>
     <%= f.input :price %>
+    <%= f.input :size, placeholder: "请输入产品规格"%>
     <% if @product.photos.present? %>
       <span>目前商品图</span><br>
       <% @product.photos.each do |p| %>
