@@ -75,7 +75,12 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
 }
 
-
+.smalltitle {
+  color: rgb(105,105,105);
+  font-size: 3px;
+  margin-top: 5px;
+  font-family: inherit;
+}
 
 .caption {
   margin: 0px;
@@ -426,7 +431,7 @@
 }
 .slide-text > p {
     padding: 0;
-    color: #ffffff;
+    color: rgb(220,220,220);
     font-size: 20px;
     line-height: 24px;
     font-weight: 300;
