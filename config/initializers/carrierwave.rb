@@ -2,10 +2,10 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
-  config.root = Rails.root.join('tmp') # adding these...
-  config.cache_dir = 'carrierwave' # ...two lines
-  
   if Rails.env.production?
+    config.root = Rails.root.join('tmp') # adding these...
+    config.cache_dir = 'carrierwave' # ...two lines
+    
     config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:     ENV["AKIAJXMYA22FVX6OLASQ"],      # 你的 key
