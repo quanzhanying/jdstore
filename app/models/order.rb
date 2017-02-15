@@ -11,6 +11,7 @@ class Order < ApplicationRecord
 
   def pay!
     self.update_columns(is_paid: true)
+  end
 
 belongs_to :user
 has_many :product_lists
