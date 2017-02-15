@@ -3,7 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
   if Rails.env.production?
-    config.storage :fog
+    config.storage :foggit 
     config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:     ENV["AKIAJXMYA22FVX6OLASQ"],      # 你的 key
