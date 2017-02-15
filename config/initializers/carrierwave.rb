@@ -26,4 +26,5 @@ CarrierWave.configure do |config|
   require 'carrierwave/storage/fog'
 
   CarrierWave.configure do |config|
+  end
 end
