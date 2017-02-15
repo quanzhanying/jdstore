@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+
   layout "admin"
 
   before_action :authenticate_user!
@@ -36,9 +37,6 @@ class Admin::ProductsController < ApplicationController
      render :edit
     end
   end
-
-
-
 
   private
 
