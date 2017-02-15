@@ -1,20 +1,19 @@
 <div class="col-md-8 col-md-offset-2">
   <h2 class="text-center">Edit a Product</h2>
   <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :quantity %>
     <%= f.input :price %>
     <% if @product.photos.present? %>
-      <span>目前商品圖</span> <br>
+      <span>目前商品图</span><br>
       <% @product.photos.each do |p| %>
-        <%= image_tag p.image.thumb.url %><br>
-      <% end %>
+       <%= image_tag p.image.thumb.url %><br />
+       <% end %>
     <% end %>
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
 
-    <div class="group">
-      <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
-    </div>
     <%= f.submit "Submit", class: "btn btn-default" %>
   <% end %>
 </div>

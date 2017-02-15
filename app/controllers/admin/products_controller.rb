@@ -43,12 +43,11 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if params[:photos] != nil
-      @product.photos.destroy_all 
 
+      @product.photos.destroy_all
       params[:photos]['image'].each do |a|
         @picture = @product.photos.create(:image => a)
       end
-
       @product.update(product_params)
       redirect_to admin_products_path
 
