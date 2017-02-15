@@ -35,7 +35,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'letter_opener', group: :development
 
 
 group :development, :test do
