@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .admin-page {
+
   padding-top: 75px;
   .sidebar {
-    box-shadow: 1px 1px 2px #d5d5d5;
+    border: 1px solid #d5d5d5;
     margin-top: 27px;
     padding: 0;
     a {
@@ -33,8 +34,11 @@
 }
 
 .render-page {
+  margin-top: 26px;
+  border: 1px solid #d5d5d5;
+  padding: 15px;
   .product-chunk {
-    border-bottom: 1px solid #d5d5d5;
+    //border-bottom: 1px solid #d5d5d5;
     padding: 10px;
     .img-circle {
       width: 95px;
@@ -45,7 +49,7 @@
     margin-bottom: 30px;
   }
   .product-chunk:nth-child(2n) {
-    border-left: 1px solid #d5d5d5;
+    //border-left: 1px solid #d5d5d5;
   }
   .chunk-right {
     border-left: 2px solid #d5d5d5;
