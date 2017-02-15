@@ -7,16 +7,21 @@
                 class: "btn btn-default btn-sm", method: :post) %>
 
   <% when "paid" %>
-  <%= link_to("取消订单",
+    <%= link_to("取消订单",
               cancel_admin_order_path(order),
               class: "btn btn-default btn-sm", method: :post) %>
-  <%= link_to("出货",
+              <%= link_to("出货",
               ship_admin_order_path(order),
               class: "btn btn-default btn-sm", method: :post) %>
 
   <% when "shipping" %>
-  <%= link_to("设为已出货",
+    <%= link_to("设为已出货",
               shipped_admin_order_path(order),
+              class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "shipped" %>
+    <%= link_to("退货",
+              return_admin_order_path(order),
               class: "btn btn-default btn-sm", method: :post) %>
 
   <% when "order_cancelled" %>
@@ -24,7 +29,7 @@
 
   <% when "good_returned" %>
     <span class="label label-default">已退货</span>
-    
+
   <% end %>
 
 </div>
