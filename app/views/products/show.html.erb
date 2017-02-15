@@ -6,7 +6,7 @@
   						<div class="preview-pic tab-content" >
                 <% if @product.photos.present? %>
   						  <div class="tab-pane active" id="pic-1">
-                  <%= image_tag(@product.photos[0].image.url) %>
+                  <%= image_tag(@product.photos[0].image.medium.url) %>
                 </div>
   						  <div class="tab-pane" id="pic-2"><%= image_tag(@product.photos[1].image.medium.url) %></div>
   						  <div class="tab-pane" id="pic-3"><%= image_tag(@product.photos[2].image.medium.url) %></div>
@@ -31,12 +31,7 @@
   						<p class="product-description"><%= @product.description %></p>
   						<h4 class="price">价格: <span>￥<%= @product.price %></span></h4>
   						<h4 class="quantity">数量 : <span><%= @product.quantity %></span> </h4>
-  						<h4 class="sizes">规格:
-  							<span class="size" data-toggle="tooltip" title="small">s</span>
-  							<span class="size" data-toggle="tooltip" title="medium">m</span>
-  							<span class="size" data-toggle="tooltip" title="large">l</span>
-  							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-  						</h4>
+  						<h4 class="sizes">规格: <span><%= @product.size %></span></h4>
   						<div class="action" style="margin-top:30px;">
   							<button class="add-to-cart btn btn-default" type="button"><% if @product.quantity.present? && @product.quantity > 0 %>
                   <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
@@ -92,7 +87,7 @@
   				</div>
   			<% end %>
   			<% if @reviews.blank? %>
-  			  <h3>这个宝贝还没有人评论，来为它添加一个吧！</h3>
+  			  <h4>这个宝贝还没有人评论，来为它添加一个吧！</h4>
   			<% else %>
   			  <% @reviews.each do |review| %>
   			    <div class="reviews">
