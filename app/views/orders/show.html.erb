@@ -34,6 +34,11 @@
 			<tr><td> <%= @order.shipping_name %> - <%= @order.shipping_address %></td></tr>
 		</tbody>
 	</table>
+	<div class="pull-right">
+		<% if @order.order_placed? ||@order.paid? %>
+		<%= link_to("Apply To Cancel Order",apply_to_cancel_order_path(@order),method: :post,calss:"btn btn-info") %>
+		<% end %>
+	</div>
 	<% if !@order.is_paid? %>
 		<div class="group pull-right">
 		<%= link_to("Pay with Alipay",pay_with_alipay_order_path(@order.token),:method =>:post, :class=>"btn btn-danger") %>
