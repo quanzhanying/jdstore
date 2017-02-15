@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
+  before_create :generate_token
 
   has_many :product_lists
 
