@@ -7,31 +7,74 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <style>
+
+            body {
+                background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+            }
+
+            .btn-primary {
+                background-color: #E61C64;
+                border-color: #E61C64;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+            .btn-primary:hover {
+                background-color: #d10b51;
+                border-color: #d10b51;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+        </style>
     </head>
 
-    <h2>
-        订单列表
-    </h2>
+    <div class="container">
+        <h1>
+            My Order List
+        </h1>
+        <div class="pull-right">
+            <%= link_to("+Add New", new_admin_product_path, class: "btn btn-primary btn-md") %>
+            <%= link_to("Product List", admin_products_path, class: "btn btn-primary btn-md") %>
+        </div>
+    </div>
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>生成时间</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @orders.each do |order| %>
-            <tr>
-                <td>
-                    <%= link_to(order.id, order_path(order.token)) %>
-                </td>
-                <td>
-                    <%= order.created_at.to_s(:long) %>
-                </td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-boldered table-striped custab">
+                <thead>
+                    <tr class="row-title">
+                        <th>Order NO.</th>
+                        <!-- <th width="50">Product Pic</th>
+                        <th>Name</th>
+                        <th>Price</th> -->
+                        <th>Turnover Time</th>
+                        <th width="50px">
+                            Options
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @orders.each do |order| %>
+                    <tr class="row-data">
+                        <td width="30%">
+                            <%= link_to(order.id, order_path(order.token)) %>
+                        </td>
+                        <td>
+                            <%= order.created_at.to_s(:long) %>
+                        </td>
+                        <td width="20%">
+                            <%= link_to account_orders_path, :method => :delete, :class => "btn btn-md  btn-primary", :data => { :confirm => "Are you sure?" } do %>
+                            <i class="fa fa-trash-o"></i><% end %>
+                        </td>
 
-</html>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center">
+            <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+        </div>
+
+    </html>
