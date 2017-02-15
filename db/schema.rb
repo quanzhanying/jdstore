@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20170215011758) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
+    t.integer  "user_id"
     t.string   "nickname"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
