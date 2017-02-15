@@ -14,8 +14,8 @@ CarrierWave.configure do |config|
 
     }
     config.storage :fog
-
-    config.fog_directory  = ENV["jd-stroe"] # 你设定的 bucket name 
+    
+    config.fog_directory  = ENV["AWS_BUCKET_NAME"] # 你设定的 bucket name 
 
 
 
