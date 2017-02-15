@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag(@product.image.medium.url) %>
+		</div>
+		<div class="col-md-8">
+			<h3><%= @product.title %></h3>
+			<p style="margin-top: 10em;">库存：<%= @product.storage %></p>
+			<p>￥<%= @product.price %></p>
+			<%= link_to("加入购物车", "#", class: "btn btn-danger pull-right", style: "margin-left: 8em;") %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+body{
+	height: 100%;
+	margin-bottom: 0;
+}
+
+footer{
+	margin-top: 4em;
+	left: 46%;
+	bottom: 0;
+	position: absolue;
+}
+
+.product-panel{
+	text-align: center;
+	margin-top: 4em;
+}
+
+#table-operation{
+	text-align: center;
+	width: 140px;
+}
+
+div.image{
+	margin: 5px;
+	border: 1px solid #ccc;
+	display: inline-block;
+	width: 250px;
+}
+
+div.image:hover{
+	border: 1px solid #777;
+}
+
+div.image .image_content{
+	width: 100%;
+	height: 200px;
+}
+
+div.desc{
+	padding: 15px;
+	text-align: center;
+}
+
+.products_list{
+	width: 90%;
+	margin: auto;
+	display: block;
+	position: relative;
+	left: 5%;
+}

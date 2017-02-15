@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<ul class="nav nav-pills nav-stacked pull-right" style="margin-right: 4em;">
+		<li><%= link_to("New Product", new_admin_product_path, class: "btn btn-primary") %></li>
+	</ul>
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>品名</th>
+					<th>描述</th>
+					<th>价格</th>
+					<th>库存</th>
+					<th colspan="3" id="table-operation">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => "admin/products/admin_product_item", :collection => @products, :as => :product %>
+			</tbody>
+		</table>
+	</div>
+</div>

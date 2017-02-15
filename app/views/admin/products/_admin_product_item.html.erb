@@ -1,0 +1,23 @@
+<tr>
+	<td>#</td>
+	<td>
+		<% if !product.is_hidden %>
+			<i class="fa fa-globe" aria-hidden="true"></i>
+		<% else %>
+			<i class="fa fa-lock" aria-hidden="true"></i>
+		<% end %>
+		<%= link_to(product.title, admin_product_path(product)) %>
+	</td>
+	<td><%= product.description %></td>
+	<td><%= product.price %></td>
+	<td><%= product.storage %></td>
+	<td id="table-operation">
+		<%= link_to(edit_admin_product_path(product), class: "btn btn-primary btn-sm") do %><i class="fa fa-pencil-square-o" aria-hidden="true"></i><% end %> |
+		<%= link_to(admin_product_path(product), class: "btn btn-primary btn-sm", method: :delete, data: { confirm: "Are you sure?" }) do %><i class="fa fa-trash-o" aria-hidden="true"></i><% end %> |
+		<% if product.is_hidden %>
+			<%= link_to(publish_admin_product_path(product), class: "btn btn-primary btn-sm", method: :post) do %><i class="fa fa-eye" aria-hidden="true"></i><% end %>
+		<% else %>
+			<%= link_to(hide_admin_product_path(product), class: "btn btn-primary btn-sm", method: :post) do %><i class="fa fa-eye-slash" aria-hidden="true"></i><% end %>
+		<% end %>
+	</td>
+</tr>
