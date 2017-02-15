@@ -7,59 +7,90 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <style>
+
+            body {
+                background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+            }
+
+            .btn-primary {
+                background-color: #E61C64;
+                border-color: #E61C64;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+            .btn-primary:hover {
+                background-color: #d10b51;
+                border-color: #d10b51;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+        </style>
     </head>
 
-    <h2>
-        Product List
-    </h2>
-    <div class="pull-right" style="padding-bottom: 20px;">
-        <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
-    </div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th width="220">
-                    Product Pic
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Price
-                </th>
-                <th width="100">
-                    Options
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @products.each do |product| %>
-            <tr>
-                <td>
-                    <%= product.id %>
-                </td>
-                <td>
-                    <%= link_to product_path(product) do %>
-                    <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                    <% end %>
-                    <% end %>
-                </td>
-                <td>
-                    <%= product.title %>
-                </td>
-                <td>
-                    <%= product.price %>
-                </td>
-                <td>
-                    <%= link_to("Edit", edit_admin_product_path(product)) %>
-                </td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <body>
+        <div class="container">
+            <h1>
+                Product List
+            </h1>
+            <div class="pull-right">
+                <%= link_to("+Add New", new_admin_product_path, class: "btn btn-primary btn-md") %>
+                <%= link_to("My Order", account_orders_path, class: "btn btn-primary btn-md") %>
+            </div>
+        </div>
 
-</html>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-boldered table-striped custab">
+                    <thead>
+                        <tr class="row-title">
+                            <th>NO.</th>
+                            <th width="50">Product Pic</th>
+                            <th>Name</th>
+                            <th>Price</th>
+
+                            <th width="50px">
+                                Options
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @products.each do|product| %>
+                        <tr class="row-data">
+                            <td width="10%">
+                                <%= product.id %>
+                            </td>
+                            <td width="10%">
+                                <%= link_to product_path(product) do %>
+                                <% if product.image.present? %>
+
+                                <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                            <% else %>
+                                <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "thumbnail") %>
+                                <% end %>
+                                <% end %>
+                            </td>
+                            <td width="30%">
+                                <%= product.title%>
+                            </td>
+                            <td width="15%">
+                                <%= product.price%>
+                            </td>
+
+                            <td>
+                                <%= link_to edit_admin_product_path(product ), class: "btn btn-md btn-primary" do %>
+                                <i class="fa fa-pencil"></i><% end %>
+
+                                <%= link_to admin_product_path(product), :method => :delete, :class => "btn btn-md  btn-primary", :data => { :confirm => "Are you sure?" } do %>
+                                <i class="fa fa-trash-o"></i><% end %>
+                            </td>
+
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+
+        </body>
+
+    </html>

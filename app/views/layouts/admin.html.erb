@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>花好月缘 管理后台</title>
-        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <title>LOVE&GIFT</title>
         <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link rel="shortcut icon" href="/images/favicon.ico">
     </head>
+
     <body>
-        <div class="container">
-            <%= render "common/navbar" %>
+
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2">
-                    <ul class="nav navbar-pills nav-stacked" style="max-width:300px;">
-                        <li><%= link_to("Products", admin_products_path) %>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-10">
-                    <%= yield %>
+                <div class="row">
+                    <%= render "common/navbar" %>
+                    <%= render "common/flashes" %>
                 </div>
             </div>
+            <%= yield %>
+
         </div>
+        <%= render "common/footer" %>
     </body>
 </html>
