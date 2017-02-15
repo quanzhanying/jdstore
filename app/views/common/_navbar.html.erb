@@ -2,23 +2,23 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">POP BUY</a>
+            <a class="navbar-brand" href="/">POPBUY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <%= link_to("男装", products_path) %>
+                <li class="active", style="font-family:TrashHand; font-size:24px">
+                    <%= link_to("Men", products_path) %>
                 </li>
             </ul>
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <%= link_to("女装", products_path) %>
+                <li class="active", style="font-family:TrashHand; font-size:24px">
+                    <%= link_to("Women", products_path) %>
                 </li>
             </ul>
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <%= link_to("折扣商品", products_path) %>
+                <li class="active", style="font-family:TrashHand; font-size:24px">
+                    <%= link_to("Sale", products_path) %>
                 </li>
             </ul>
             <div class="col-sm-3 col-md-3">
@@ -34,17 +34,18 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <%= link_to(carts_path, class: "cart-button") do  %>
-                        <i class="fa fa-shopping-bag"> </i> 您的购物袋  <span class="item-number"><%= current_cart.products.count %></span>
+                        <i class="fa fa-shopping-bag"> </i> <span style="font-family:TrashHand; font-size:20px;"> Bag</span>  <span class="item-number"><%= current_cart.products.count %></span>
                     <% end %>
                 </li>
                 <li>
                     <% if !current_user %>
-                        <li><%= link_to("登录", new_user_session_path) %></li>
-                        <li><%= link_to("注册", new_user_registration_path) %> </li>
+                        <li class="login", style="font-family:TrashHand; font-size:24px">
+                            <%= link_to("Login", new_user_session_path) %></li>
+                        <li class="register", style="font-family:TrashHand; font-size:24px"><%= link_to("Register", new_user_registration_path) %> </li>
                     <% else %>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Hi!, <%= current_user.email %>
+                                <%= content_tag(:i,'',class:"fa fa-user") %>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">

@@ -23,8 +23,8 @@
 }
 
 .navbar-default .navbar-brand {
-  font-size: 65px;
-  font-family: "Lato HB";
+  font-size: 70px;
+  font-family: TrashHand;
   font-weight:bold;
   color:black;
   margin : 5px;
@@ -46,6 +46,7 @@
   background-color: transparent;
   border-bottom-color: rgb(169,169,169);
 }
+
 .navbar-default .navbar-nav > .active > a{
   color: black;
   background-color: transparent;
@@ -556,4 +557,50 @@
         display: none;
     }
 
+}
+
+ul.icon_catalog {
+   font-family: TrashHand,cursive;
+   font-size: 22px;
+   text-align: left;
+   margin: 30px 0 100px;
+ }
+ ul.icon_catalog li {
+   display: inline-block;
+  text-align: center;
+  margin: 0 15px;
+ }
+ ul.icon_catalog li img{
+   display: table;
+   transition: all 0.8s ease;
+   width: 120px;
+  height: auto;
+ }
+ ul.icon_catalog li img:hover{
+ opacity: 0.7;
+ }
+
+ @media screen and (min-width: 481px) and (max-width: 2600px) {
+ ul.icon_catalog {   font-size: 22px;    text-align: center; margin: 0}
+ ul.icon_catalog li {    display: inline-block; text-align: center;  margin: 0 15px}
+ ul.icon_catalog li img {    display: table; transition: all 0.8s ease;  width: 200px;   height: auto}
+ ul.icon_catalog li img:hover {  opacity: 0.7}
+ }
+
+ @media only screen
+ and (max-width : 480px) {
+   div.header {height: 150px;}
+   .wrapnav {display: none}
+ }
+
+ h1 {
+   font-family:TrashHand;
+ }
+
+h2 {
+  font-family:TrashHand;
+}
+
+h3 {
+  font-family:TrashHand;
 }
