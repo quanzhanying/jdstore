@@ -1,7 +1,7 @@
 class Admin::OrdersController < ApplicationController
   layout "admin"
 
-  before_cation :authenticate_user!
+  before_action :authenticate_user!
   before_action :admin_required
 
   def index
@@ -17,7 +17,7 @@ class Admin::OrdersController < ApplicationController
     @order.ship!
     redirect_to :back
   end
-  
+
   def shipped
     @order = Order.find(params[:id])
     @order.deliver!
