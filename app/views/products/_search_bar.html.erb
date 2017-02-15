@@ -1,0 +1,13 @@
+<div class="col-sm-9 col-lg-8 col-lg-offset-2">
+    <%= form_tag search_products_path, method: :get, class: 'products-search-form'  do %>
+    <div class="input-group input-group-lg">
+        <input type="text" class="form-control" name="query_string" placeholder="text here">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-danger">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+    <% end %>
+</div>
+</div>

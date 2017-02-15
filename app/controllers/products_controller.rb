@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+    before_action :validates_search_key, only: [:search]
     def index
         @products = Product.all
     end
@@ -17,4 +18,14 @@ class ProductsController < ApplicationController
       end
         redirect_to :back
     end
+
+    protected
+
+    def validates_search_key
+        @q = params[:query_string].gsub(/\\|\'|\/|\?/, '') if params[:query_string].present?
+    end
+
+    def search
+        @products = Product.ransack(title_or_description_or_price_or_quantity_image_name_cont: @q).result(distinct: true)
+end
 end
