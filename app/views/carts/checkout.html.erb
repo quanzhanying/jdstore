@@ -31,7 +31,7 @@
       </tbody>
     </table>
 
-    <div class="total cleatfix">
+    <div class="total clearfix">
       <span class="pull-right">
         总计 <%= render_cart_total_price(current_cart) %> CNY
       </span>
@@ -42,6 +42,7 @@
     <h2>订单资讯</h2>
 
     <div class="order-form">
+
       <%= simple_form_for @order do |f| %>
 
 
@@ -67,6 +68,7 @@
           <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
                        data: { disable_with: "Submitting..." } %>
         </div>
+      <% end %>
 
     </div>
   </div>
