@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 20170215053910) do
     t.string   "billing_address"
     t.string   "shipping_name"
     t.string   "shipping_address"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "token"
+    t.string   "payment_method"
+    t.boolean  "is_paid",          default: false
   end
 
   create_table "product_lists", force: :cascade do |t|
