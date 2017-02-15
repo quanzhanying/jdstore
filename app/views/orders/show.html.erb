@@ -17,10 +17,10 @@
 			<% end %>
 		</tbody>
 	</table>
-	<% if condition %>
+	<% if !@order.is_paid? %>
 		<div class="group pull-right">
-		<%= link_to("Pay with Alipay",pay_with_alipy_order_path(@order.token),:method =>:post, :class=>"btn btn-danger" %>
-		<%= link_to("Pay with WeChat Pay",pay_with_wechat_order_path(@order.token),:method =>:post, :class=>"btn btn-danger" %>
+		<%= link_to("Pay with Alipay",pay_with_alipay_order_path(@order.token),:method =>:post, :class=>"btn btn-danger") %>
+		<%= link_to("Pay with WeChat Pay",pay_with_wechat_order_path(@order.token),:method =>:post, :class=>"btn btn-danger")%>
 	</div>
 	<% else %>
 		<p class="text-center">This order has been paied</p>
