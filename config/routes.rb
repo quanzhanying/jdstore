@@ -13,4 +13,5 @@ end
      collection do
         delete :clean
      end
+   end
 end
