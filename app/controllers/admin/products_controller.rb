@@ -1,4 +1,9 @@
 class Admin::ProductsController < ApplicationController
+
+  before_action :authenticate_user! #设定必须先登录才能进入admin/prodcts
+  before_action :admin_required #设定必须有admin权限才能进入
+  layout "admin" #建立layout:admin
+
   def index
     @products = Product.all
   end
