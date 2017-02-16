@@ -27,6 +27,7 @@ before_create :generate_token
     state :order_placed, initial: true
     state :paid
     state :shipping
+    state :shipped
     state :order_cancelled
     state :good_returned
 
