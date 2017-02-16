@@ -7,6 +7,7 @@ devise_for :users
         post :add_to_cart
       end
     end
+    resources :orders
   end
 
   resources :products do
