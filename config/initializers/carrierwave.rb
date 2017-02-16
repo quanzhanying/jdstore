@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
 
       region:                 'us-west-2'
     }
-    config.fog_directory = ENV["bookstore001"]
+    config.fog_directory = ENV["AWS_BUCKET_NAME"]
 
   else
     config.storage :file
