@@ -61,11 +61,11 @@
     <div class="container">
         <div class="row">
             <% @products.each do |product| %>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
+            <div class="col-sm-3, col-sm-6, col-sm-3">
+                <div class="thumbnail" , style="width:100%">
                     <%= link_to product_path(product) do %>
                     <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url) %>
+                    <%= image_tag(product.image.thumb.url, class: thumbnail %>
                 <% else %>
                     <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
                     <% end %>
