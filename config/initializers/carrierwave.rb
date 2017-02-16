@@ -1,13 +1,18 @@
+
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
 CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_credentials = {
       provider:               'AWS',
-      aws_access_key_id:      ENV["AKIAJEMWUUAHFHYSDGPQ"],
+      aws_access_key_id:      ENV["AWS_ACCESS_KEY_ID"],
 
-      aws_secret_access_key: ENV["s9H6INADDxqln1xfKJzCyMY4E0yLux4jFAS7neiX"],
+      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
 
-      region:                 'ap-northeast-1'
+      region:                 'us-west-2'
     }
     config.fog_directory = ENV["bookstore001"]
 
@@ -15,4 +20,6 @@ CarrierWave.configure do |config|
     config.storage :file
 
   end
+
+
 end
