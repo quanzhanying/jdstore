@@ -28,3 +28,4 @@ def apply_cancel(order)
 
     mail(to: @user.email, subject: "[JDStore] 您的订单 #{order.token}已取消")
 end
+end
