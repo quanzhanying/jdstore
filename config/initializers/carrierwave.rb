@@ -1,4 +1,6 @@
-
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
   if Rails.env.production?
@@ -15,8 +17,9 @@ CarrierWave.configure do |config|
 
 
     }
-    config.fog_directory  = ENV["AWS_BUCKET_NAME"] # 你设定的 bucket name
     config.storage :fog
+    config.fog_directory  = ENV["AWS_BUCKET_NAME"] # 你设定的 bucket name
+
 
 
   else
