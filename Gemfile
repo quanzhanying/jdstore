@@ -40,6 +40,7 @@ gem 'letter_opener', group: :development
 gem 'awesome_rails_console'#让rails c 排序整齐 一目了然
 gem 'aasm'
 gem 'figaro'
+gem 'fog'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
