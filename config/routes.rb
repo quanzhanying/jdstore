@@ -18,12 +18,17 @@ end
     end
   end
 
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
 
 resources :cart_items
 
 namespace :account do
-  resources :orders 
+  resources :orders
 end
 
     root 'products#index'
