@@ -14,7 +14,6 @@
                     <%= link_to("产品", products_path) %>
                 </li>
             </ul> -->
-
             <%= form_tag( products_path, :method => "get", class: "navbar-form navbar-left", role: "search") do%>
               <div class="form-group">
                 <%= text_field_tag :search, params[:search], placeholder: "Search Product", class: "form-control" %>

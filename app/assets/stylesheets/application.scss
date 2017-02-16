@@ -28,6 +28,8 @@ body {
 }
 /* navbar */
 .navbar-default {
+    background-color: #fff !important;
+    border-style: none !important;
     padding-top: 10px;
     margin-bottom: 0;
     border-radius: 0;
@@ -35,23 +37,21 @@ body {
     min-width: 1277px;
 }
 .navbar {
-  height: 80px;
+  height: 100px;
   padding-top:0px;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: #FFF;
 }
-.navbar-brand {
-  font-family: "Trebuchet MS";
-  font-style: italic;
-  padding: 5px;
-font-size: 45px;
+.navbar-head {
 padding-right: 50px;
 }
 .navbar-collapse {
   padding-top: 30px;
 }
-.navbar .form-group {
+.navbar .navbar-form {
+  padding-left: 250px;
+  margin-top: 20px;
 }
 .navbar .form-group .form-control {
   border-style: none none solid none;
