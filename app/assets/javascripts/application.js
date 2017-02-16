@@ -15,4 +15,10 @@
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require bootstrap/carousel
 //= require_tree .
+
+// 首页轮播
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 3000})
+});
