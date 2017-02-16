@@ -44,7 +44,14 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-         <span> 总计 xxx RMB  </span>
+         <span>
+           <% sum = 0 %>
+           <% current_cart.cart_items.each do |cart_item| %>
+             <% if cart_item.product.price.present? %>
+               总计 <%= render_cart_total_price(current_cart) %> RMB
+             <% end %>
+           <% end %>
+          总计 <%= sum %> RMB  </span>
       </span>
     </div>
 
