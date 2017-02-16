@@ -24,4 +24,5 @@ resources :products do
 
  resources :cart_items
  resources :orders
+
 end
