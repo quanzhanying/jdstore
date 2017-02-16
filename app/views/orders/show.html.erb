@@ -1,0 +1,53 @@
+<div class="show">
+<div class="col-md-12">
+	<h2>Order List</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th width="80%">Product Info</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @product_lists.each do |product_list| %>
+				<tr>
+					<td><%= product_list.product_name %></td>
+					<td><%= product_list.product_price %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	
+	
+	<div class="total clearfix">
+		<span class="pull-right">
+			Total <%= @order.total %> CNY
+		</span>
+	</div>
+	<hr>
+	<h2>Shipping Info</h2>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr><td>Buyer</td></tr>
+			<tr><td><%= @order.billing_name %> - <%= @order.billing_address %></td></tr>
+			<tr><td>Receiver</td></tr>
+			<tr><td> <%= @order.shipping_name %> - <%= @order.shipping_address %></td></tr>
+		</tbody>
+	</table>
+	<div class="pull-left">
+		<% if @order.order_placed? ||@order.paid? %>
+		<%= link_to("Apply To Cancel Order",apply_to_cancel_order_path(@order),method: :post,calss:"btn  btn-info") %>
+		<% end %>
+	</div>
+
+	<% if !@order.is_paid? %>
+		<div class="group pull-right">
+		<%= link_to("Pay with Alipay",pay_with_alipay_order_path(@order.token),:method =>:post, :class=>"btn btn-danger") %>
+		<%= link_to("Pay with WeChat Pay",pay_with_wechat_order_path(@order.token),:method =>:post, :class=>"btn btn-danger")%>
+	</div>
+	<% else %>
+		<p class="text-center">This order has been paied</p>
+	<% end %>
+</div>
+	
+</div>
