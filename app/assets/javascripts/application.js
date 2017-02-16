@@ -17,3 +17,9 @@
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+  $('.carousel').carousel({
+
+  });
+});
