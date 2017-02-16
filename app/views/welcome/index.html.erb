@@ -1,1 +1,309 @@
-<h1>Hello Wrold!</h1>
+<nav class="navbar " role="navigation">
+      <!--0214pm新增色块 陈扬帆-->
+      <div class=" ">
+          <a class="navbar-brand" href="/"> 酷跑网 </a><!-- 0214pm编辑，新增active  陈扬帆-->
+      </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to carts_path do  %>
+                购物车 <i class="fa fa-shopping-cart">
+                        <% if current_cart.products.count != 0 %>
+                          <span class="label labelnumber label-danger"><%= current_cart.products.count %></span>
+                        <% end %>
+                      </i>
+              <% end %>
+            </li>
+            <% if !current_user %>
+              <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+            <% else %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  你好, <%= current_user.email %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu text-center">
+                  <% if current_user.admin? %>
+                    <li><%= link_to("管理后台", admin_products_path ) %></li>
+                  <% end %>
+                  <li>
+                    <%= link_to("个人订单列表", account_orders_path) %>
+                  </li>
+                  <li>
+                    <%= link_to("收藏", favorite_index_path) %>
+                  </li>
+                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="loginmodal-container">
+           <h2 class="text-center">登录</h2>
+           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+             <div class="form-inputs">
+               <%= f.input :email, required: false, autofocus: true , :label => "登录邮箱" %>
+               <%= f.input :password, required: false , :label => "登录密码" %>
+               <%= f.input :remember_me,  :label => "记住我", as: :boolean if devise_mapping.rememberable?  %>
+             </div>
+             <div class="form-actions">
+               <%= f.button :submit, "登录" %>
+             </div>
+           <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/58888e470ad0c.jpg" alt="">
+          </div>
+          <h2 class="text-center">注册</h2>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true , :label => "注册邮箱" %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , :label => "设置密码" %>
+              <%= f.input :password_confirmation, required: true , :label => "确认密码" %>
+            </div>
+            <div class="form-actions">
+                <%= f.button :submit, "注册" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="title">前行网</h1>
+  <p class="slogan">青春伴你行，还犹豫什么，一起来吧！
+  </p>
+  <p class="lead"><a class="btn btn-lg btn-info highlight" href="/jobs">马上应征</a></p>
+</div>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-center">About us</h1>
+      <hr>
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-3">
+        <img src='<%= image_url 'logo.png' %>' >
+      </div>
+      <div class="col-md-3">
+        <p><big>前行网</big>,专门为应届毕业生量身打造的大型求职招聘社交网站</p>
+      </div>
+      <div class="col-md-3">
+
+      </div>
+      <br><br><br>
+    </div>
+  </div>
+</div>
+</section>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-center">What we do</h1>
+      <hr>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/58888e470ad0c.jpg" alt="">
+          </div>
+          <div class="timeline-panel">
+            <div>
+              <h4>&nbsp</h4>
+              <h4>&nbsp</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+                我们聚集起一帮年轻同龄人，相信我，在这里你并不孤独。
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/588891a831b88.png">
+          </div>
+          <div class="timeline-panel">
+            <div>
+              <h4>&nbsp</h4>
+              <h4>&nbsp</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+                我们也邀请了各行各业经验丰富的师兄师姐入驻，给你提供最合适的职业发展指导。
+              </p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+        <li>
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/588893183972e.png">
+          </div>
+          <div class="timeline-panel">
+            <div>
+              <h4>&nbsp</h4>
+              <h4>&nbsp</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+                你将在这里选择你踏入社会的第一个副本，让我们一起实现梦想吧。
+              </p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+<section>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Employees said</h1>
+      <hr>
+      <div class="container">
+        <div class="row">
+             <div class="col-sm-6 col-md-3">
+                <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://unsplash.imgix.net/12/barley.jpg?q=75&fm=jpg&s=f39de5ca1970a13dbe6af6c86b3c47ec" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Mary</h4>
+                        <small>XX公司人力资源总监</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                      <div class="row">
+                        <p>前行网做的非常棒，我就是在这里找到我的第一份工作的。</p>
+                      </div>
+                    </div>
+                </div>
+    		</div>
+		    <div class="col-sm-6 col-md-3">
+        	    <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/josue/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Leon</h4>
+                        <small>XX公司工程师</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <p>我在前行网找到我现在呆的公司，发展前景和待遇我都很满意。</p>
+                        </div>
+                    </div>
+            	</div>
+    		</div>
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://ununsplash.imgix.net/19/waves.JPG?q=75&fm=jpg&s=6f316bc8e1dc9887a7cebe0841096e99" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mutlu82/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">John</h4>
+                        <small>XX公司业务代表</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                          <p>这里有热心的师兄师姐提建议，让我找到了最适合自己的职业发展道路。</p>
+                        </div>
+                    </div>
+            	</div>
+    		</div>
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://ununsplash.imgix.net/26/camera-keys.jpg?q=75&fm=jpg&s=b919d3158053cde8e9f0e37b4876c14f" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/nisaanjani/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Mike</h4>
+                        <small>XX公司总监</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <p>前行网的社区很活跃，我们很多同届的毕业生都喜欢在这里互相交流。</p>
+                        </div>
+                    </div>
+            	</div>
+    		</div>
+	    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+<section>
+  <div class="col-lg-12">
+    <h1 class="text-center">Contact us</h1>
+    <hr>
+  </div>
+  <div class = "container-fluid">
+    <div class="row">
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/58889f3c2503d.png" alt="search" class = "img-thhumbnail">
+          <div class="caption">
+            <h4>厦门思明区软件园二期</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/58889f9734b02.png" alt="bid" class = "img-thhumbnail">
+          <div class="caption">
+            <h4>qianxing@offer.com</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="https://ooo.0o0.ooo/2017/01/25/58889fffd8780.png" alt="heart" class = "img-thhumbnail">
+          <div class="caption">
+            <h4>0592-88888888</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
