@@ -41,6 +41,8 @@ gem 'seo_helper'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'figaro'
+
 group :production do
  gem 'pg'
 end
