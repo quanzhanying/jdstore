@@ -18,7 +18,7 @@ root 'products#index'
       end
 
 
-
+resources :cart_items
 
 
 end
