@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="text-center">所有订单</h2>
+    <table class="table table-bordered">
+      <thead>
+        <th>订单编号</th>
+        <th>订单金额</th>
+        <th>订单日期</th>
+        <th>下单人</th>
+        <th>订单状态</th>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= link_to(order.token, admin_order_path(order.token)) %></td>
+            <td><%= order.total %></td>
+            <td><%= order.created_at.to_s(:long) %></td>
+            <td><%= order.user.email %></td>
+            <td>
+              <%= render_order_state(order) %>
+              <% if order.aasm_state == "order_placed" || order.aasm_state == "paid" %>
+                <%= link_to("取消订单", cancel_admin_order_path(order.token), method: :post,  class: "btn btn-sm btn-default") %>
+              <% end %>
+              <% if order.aasm_state == "paid" %>
+                <%= link_to("出货", shipping_admin_order_path(order.token), method: :post, class: "btn btn-sm btn-danger") %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
