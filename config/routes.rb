@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
 resources :products
 
+resources :orders
+
 resources :products do
    member do
      post :add_to_cart
