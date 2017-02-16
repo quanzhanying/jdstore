@@ -28,7 +28,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
-    if @product.save!
+    if @product.save
       if params[:photos] != nil
         params[:photos]['image'].each do |a|
           @photo = @product.photos.create(:image => a)

@@ -29,26 +29,37 @@
                 <em><%= "#{@reviews.length} reviews" %></em>
   						</div>
   						<p class="product-description"><%= @product.description %></p>
-  						<h4 class="price">价格: <span>￥<%= @product.price %></span></h4>
-  						<h4 class="quantity">数量 : <span><%= @product.quantity %></span> </h4>
-  						<h4 class="sizes">规格: <span><%= @product.size %></span></h4>
+  						<p class="price">价格: <span>￥<%= @product.price %></span></p>
+  						<p class="quantity">数量 : <span><%= @product.quantity %></span> </p>
+  						<p class="sizes">规格: <span><%= @product.size %></span></p>
   						<div class="action" style="margin-top:30px;">
-  							<button class="add-to-cart btn btn-default" type="button"><% if @product.quantity.present? && @product.quantity > 0 %>
-                  <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post) %>
+
+                  <% if @product.quantity.present? && @product.quantity > 0 %>
+                  <%= link_to("加入购物车", add_to_cart_product_path(@product), class: "add-to-cart btn btn-default", :method => :post) %>
                 <% else %>
                   已销售一空，无法购买
                 <% end %>
-               </button>
-  						 <% if !current_user.is_fan_of?(@product) %>
-  						   <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
-  						   <i class="fa fa-heart" aria-hidden="true"></i>
-  							 <% end %>
-  						 <% else %>
-  							 <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
-  							 <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-  							<% end %>
-  						<% end %>
+
+               <% if user_signed_in? %>
+                 <% if !current_user.is_fan_of?(@product) %>
+                   <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                     <i class="fa fa-heart-o fa-lg", style="color:red;"></i>
+                   <% end %>
+                 <% else %>
+                   <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                     <i class="fa fa-heart fa-lg", style="color:red;"></i>
+                   <% end %>
+                 <% end %>
+               <% else %>
+                 <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                   <i class="fa fa-heart-o fa-lg", style="color:red;"></i>
+                 <% end %>
+               <% end %>
   					</div>
+            <div class="insurance">
+              <hr>
+               乐活生活馆担保 | 七天无理由退货 | 正品保证 | 独立品牌
+            </div>
   				</div>
   			</div>
   		</div>
@@ -136,12 +147,18 @@
                  已售馨
                <% end %>
                <i class="sub"><%= product.fans.count %></i>
-               <% if !current_user.is_fan_of?(product) %>
-                 <%= link_to favorite_product_path(product), method: :post do %>
-                   <i class="fa fa-heart-o fa-2x"></i>
+               <% if user_signed_in? %>
+                 <% if !current_user.is_fan_of?(@product) %>
+                   <%= link_to favorite_product_path(@product), method: :post do %>
+                     <i class="fa fa-heart-o fa-2x"></i>
+                   <% end %>
+                 <% else %>
+                   <%= link_to unfavorite_product_path(@product), method: :post do %>
+                     <i class="fa fa-heart-o fa-2x"></i>
+                   <% end %>
                  <% end %>
                <% else %>
-                 <%= link_to unfavorite_product_path(product), method: :post do %>
+                 <%= link_to favorite_product_path(@product), class: "btn btn-primary", method: :post do %>
                    <i class="fa fa-heart-o fa-2x"></i>
                  <% end %>
                <% end %>
@@ -153,6 +170,7 @@
      </div>
    </div>
 </div>
+
 
 <script>
   $('.star-rating').raty({

@@ -108,7 +108,7 @@
 <div id="products">
   <div class="wrapper1">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+      <div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2">
         <!-- Search area -->
         <%= form_tag search_products_path , :method => :get, :class => "search-container" do %>
           <input type="text", id="search-bar", name="q" value="<%= params[:q] %>" placeholder="产品，描述...">
@@ -147,7 +147,7 @@
             				  <% end %>
             			  <% else %>
             				  <%= link_to unfavorite_product_path(product), method: :post do %>
-            					  <i class="fa fa-heart-o fa-2x"></i>
+            					  <i class="fa fa-heart fa-2x"></i>
             				  <% end %>
             			  <% end %>
                   <% else %>

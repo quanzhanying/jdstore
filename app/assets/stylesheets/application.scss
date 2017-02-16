@@ -113,6 +113,7 @@
     }
  }
 
+
 #products {
   border: 1px solid #000;
   background: #000;
@@ -250,7 +251,7 @@
   color: #008ABF;
 }
 
-.snip1423 i.fa-heart-o {
+.snip1423 i.fa-heart-o,  .snip1423 i.fa-heart{
   position: absolute;
   right: 85px;
   color: red;
@@ -378,7 +379,7 @@
 
 .all-lists {
   background: #EBECED !important;
-  padding-top: 60px !important;
+  padding-top: 65px;
   .introduction {
     font-size: 20px;
     padding-top: 30px;
@@ -400,4 +401,15 @@
 
 .edit-profile {
   margin-top: 100px;
+}
+
+/* Media Quries */
+
+@media screen and (max-width: 1221px) {
+  .navbar-default .navbar-header {
+    margin-left: 0;
+  }
+  .navbar-right .login, #hearder .login {
+    margin-right: 0;
+  }
 }
