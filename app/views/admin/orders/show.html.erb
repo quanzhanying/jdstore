@@ -3,6 +3,8 @@
 
     <h2> Order Details (<%= render_order_paid_state(@order) %>) </h2>
 
+    <%= render "admin/orders/state_option", order: @order %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -32,13 +34,13 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-       总计 <%= @order.total %> CNY
+       Sum <%= @order.total %> Dollar
        </span>
      </div>
 
      <hr>
 
-     <h2> Mail information </h2>
+     <h2> Buyer Information </h2>
 
      <table class="table table-striped table-bordered">
       <tbody>
