@@ -10,4 +10,7 @@ root 'products#index'
         post :add_to_cart
       end
     end
+
+resources :carts
+
 end
