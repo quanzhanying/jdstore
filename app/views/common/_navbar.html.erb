@@ -2,7 +2,7 @@
 
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Food Center</a>
+      <a class="navbar-brand" href="/"><img src='<%= image_url 'tree.png' %>' > Life</a>
 
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -27,6 +27,11 @@
     <ul class="nav navbar-nav">
       <li class="item">
         <%= link_to("新品上架", '#')%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("限时特价", '#')%>
       </li>
     </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -57,9 +62,16 @@
     </li>
     <% else %>
     <li class="dropdown">
+
+
+
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <i class="fa fa-user-circle" aria-hidden="true">  </i>
-      <b class="caret"></b>
+       <span class="btn btn-info" style="padding:5px 20px;margin-top:-5px;">
+       <i class="fa fa-user-circle" aria-hidden="true">  </i>
+        <b class="caret"></b>
+       </span>
+
+     </a>
 
       </a>
       <ul class="dropdown-menu">
