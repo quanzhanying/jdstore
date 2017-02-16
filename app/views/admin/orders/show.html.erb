@@ -1,7 +1,7 @@
 <div class="admin-orders-page">
   <div class="col-md-8 col-md-offset-2">
     <h2 class="text-center"> 订单明细 (<%= render_order_paid_state(@order) %>) </h2>
-
+    <%= render "admin/orders/state_option", order: @order %>
     <table class="table table-bordered">
       <thead>
         <tr>
