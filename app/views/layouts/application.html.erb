@@ -10,19 +10,12 @@
 
   <body>
 
-    <div class="container-fluid row">
-      <%= render "common/navbar" %>
-      <%= render "common/silider" %>
-        <div class="col-md-2"></div>
-
-
-        <div class="col-md-8 main">
-            <%= render "common/flashes"%>
-            <%= yield %>
-            <%= render "common/footer" %>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
+    <div class="container-fluid">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes"%>
+        <%= yield %>
+      </div>
+    <%= render "common/footer" %>
     <%= render "common/footer1" %>
   </body>
 </html>
