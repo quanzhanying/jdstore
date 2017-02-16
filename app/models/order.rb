@@ -17,7 +17,7 @@ class Order < ApplicationRecord
  def pay!
    self.update_columns(is_paid: true )
  end
- 
+
  include AASM
 
   aasm do
@@ -29,7 +29,7 @@ class Order < ApplicationRecord
     state :good_returned
 
 
-    event :make_payment do
+    event :make_payment, after_commit: :pay! do
       transitions from: :order_placed, to: :paid
     end
 
