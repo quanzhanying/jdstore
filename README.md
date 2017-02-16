@@ -1,6 +1,6 @@
 # README
 
-第二周作业
+第三周作业、包括练习题
 application up and running.
 
 Things you may want to cover:
