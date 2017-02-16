@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*---------------------------navbar---------------------------*/
+.navbar-right {
+    padding-right: 5px;
+}
 .navbar-brand img {
     width: 64px;
     height: 64px;
@@ -13,7 +16,7 @@
 /*---------------------------banner---------------------------*/
 .banner {
     width: 100%;
-    top: 50px;
+    top: -20px;
     overflow: hidden;
     height: 380px;
     position: relative;
@@ -67,7 +70,7 @@
 .classes {
   height: 48px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: -40px;
 }
 .classes .child{
   float: left;

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img alt="一起来众筹" title="大家一起来众筹～" src="http://oj8zlumqh.bkt.clouddn.com/image/people.png"></a>
+            <a class="navbar-brand" href="/"><img style="margin-top:-20px;" alt="一起来众筹" title="大家一起来众筹～" src="http://oj8zlumqh.bkt.clouddn.com/image/people.png"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,7 +41,7 @@
                 <li>
                     <li>
                         <%= link_to carts_path do  %>
-                            管理众筹 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                            <i class="fa fa-tasks"> </i> 我的众筹 ( <%= current_cart.products.count %> )
                         <% end %>
                     </li>
                     <% if !current_user %>
