@@ -72,3 +72,5 @@ gem 'aasm'
 gem 'figaro'
 
 gem 'fog-aws'
+
+gem 'airbrake', '~> 5.4'
