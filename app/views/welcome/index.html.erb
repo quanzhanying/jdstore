@@ -57,16 +57,27 @@
       </div><!-- carousel -->
     </div>
 
-  <div class="products row">
+  <div class="products row" data-spy="scroll" data-target="#myScrollspy">
 
     <!-- scollSpy -->
-    <div class="scollspy col-xs-2"></div>
+    <div class="scollspy col-xs-2 fixed-left">
+      <nav class="col-sm-3" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#product1">居家</a></li>
+          <li><a href="#product2">餐厨</a></li>
+          <li><a href="#product3">配件</a></li>
+          <li><a href="#product4">服装</a></li>
+          <li><a href="#product5">洗护</a></li>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <!-- scollSpy -->
 
     <!-- categories -->
       <div class="categories col-xs-8">
         <!-- 居家 -->
-        <div class="name">
+        <div class="name" id="product1">
           <header>
             <div class="left">
               <a href="/products"><h3>居家</h3></a>
@@ -138,7 +149,7 @@
         <!-- 居家 -->
 
         <!-- 餐厨 -->
-          <div class="name">
+          <div class="name" id="product2">
             <header>
               <div class="left">
                 <a href="/products"><h3>餐厨</h3></a>
@@ -210,7 +221,7 @@
         <!-- 餐厨 -->
 
         <!-- 配件 -->
-        <div class="name">
+        <div class="name" id="product3">
           <header>
             <div class="left">
               <a href="/products"><h3>配件</h3></a>
@@ -282,7 +293,7 @@
         <!-- 配件 -->
 
         <!-- 服装 -->
-        <div class="name">
+        <div class="name" id="product4">
           <header>
             <div class="left">
               <a href="/products"><h3>服装</h3></a>
@@ -354,7 +365,7 @@
         <!-- 服装 -->
 
         <!-- 洗护 -->
-        <div class="name">
+        <div class="name" id="product5">
           <header>
             <div class="left">
               <a href="/products"><h3>洗护</h3></a>
