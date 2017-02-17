@@ -1,4 +1,9 @@
 class Order < ApplicationRecord
+    before_create :generate_token
+
+    def generate_token
+        self.token = SecureRandom.uuid
+    end
     alias_attribute :shipping_address, :address
     belongs_to :user
     validates :billing_name, presence: true
