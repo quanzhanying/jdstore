@@ -43,6 +43,7 @@ gem "mini_magick"
 gem 'font-awesome-rails'
 gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
+gem 'aasm'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
