@@ -16,41 +16,45 @@ u.password_confirmation = "123456"   # 最少要六码
 u.is_admin = true
 u.save
 
-products = [{title:"华为",
-	        description: "This Certified Refurbished product has been tested and certified
-	              to work and look like new, with minimal to no signs of wear, by a specialized
-	              third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty,
-	              and may arrive in a generic brown or white box. Accessories may be generic and not directly
-	              from the manufacturer.",
-	        image_path: "#{Rails.root}/app/assets/images/华为.jpg"},
+products = [{title:"Fashion Normal",
+	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/fashion-1.jpg"},
 
-	        {title:"魅族",
-	        description: "This Certified Refurbished product has been tested and certified
-	              to work and look like new, with minimal to no signs of wear, by a specialized
-	              third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty,
-	              and may arrive in a generic brown or white box. Accessories may be generic and not directly
-	              from the manufacturer.",
-	        image_path: "#{Rails.root}/app/assets/images/魅族.jpg"},
+	        {title:"Events Normal",
+	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/event-1.jpg"},
 
-          {title:"荣耀8",
-	        description: "This Certified Refurbished product has been tested and certified
-	              to work and look like new, with minimal to no signs of wear, by a specialized
-	              third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty,
-	              and may arrive in a generic brown or white box. Accessories may be generic and not directly
-	              from the manufacturer.",
-	        image_path: "#{Rails.root}/app/assets/images/荣耀8.jpg"},
+          {title:"Nature Normal",
+	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/nature-1.jpg"},
 
-          {title:"小米5",
-	        description: "This Certified Refurbished product has been tested and certified
-	              to work and look like new, with minimal to no signs of wear, by a specialized
-	              third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty,
-	              and may arrive in a generic brown or white box. Accessories may be generic and not directly
-	              from the manufacturer.",
-	        image_path: "#{Rails.root}/app/assets/images/小米5.jpg"}]
+          {title:"Model Normal",
+	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/model-1.jpg"},
 
-p1 = Product.create([title:products[0][:title],description:products[0][:description],quantity:20,price:3000,image:open(products[0][:image_path])])
-p2 = Product.create([title:products[1][:title],description:products[1][:description],quantity:20,price:3000,image:open(products[1][:image_path])])
-p3 = Product.create([title:products[2][:title],description:products[2][:description],quantity:20,price:3000,image:open(products[2][:image_path])])
-p4 = Product.create([title:products[3][:title],description:products[3][:description],quantity:20,price:3000,image:open(products[3][:image_path])])
+					{title:"Fashion Premium",
+					description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+					image_path: "#{Rails.root}/public/images/fashion-2.jpg"},
+
+					{title:"Events Premium",
+	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/event-2.jpg"},
+
+          {title:"Nature Premium",
+	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/nature-2.jpg"},
+
+          {title:"Model Premium",
+	        description: "TWe help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
+	        image_path: "#{Rails.root}/public/images/model-2.jpg"}]
+
+p1 = Product.create([title:products[0][:title],description:products[0][:description],quantity:20,price:12000,image:open(products[0][:image_path])])
+p2 = Product.create([title:products[1][:title],description:products[1][:description],quantity:20,price:10000,image:open(products[1][:image_path])])
+p3 = Product.create([title:products[2][:title],description:products[2][:description],quantity:20,price:8000,image:open(products[2][:image_path])])
+p4 = Product.create([title:products[3][:title],description:products[3][:description],quantity:20,price:15000,image:open(products[3][:image_path])])
+p5 = Product.create([title:products[4][:title],description:products[4][:description],quantity:20,price:24000,image:open(products[4][:image_path])])
+p6 = Product.create([title:products[5][:title],description:products[5][:description],quantity:20,price:18000,image:open(products[5][:image_path])])
+p7 = Product.create([title:products[6][:title],description:products[6][:description],quantity:20,price:18000,image:open(products[6][:image_path])])
+p8 = Product.create([title:products[7][:title],description:products[7][:description],quantity:20,price:32000,image:open(products[7][:image_path])])
 
 puts "create products"

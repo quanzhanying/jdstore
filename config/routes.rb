@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  root 'welcome#index'
   devise_for :users
 
   namespace :admin do
@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
-  root 'welcome#index'
+
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
