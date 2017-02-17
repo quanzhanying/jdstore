@@ -1,3 +1,4 @@
+<!---------------------------ClassesBox--------------------------->
 <div class="FilterBox">
   <div class="InnerBox">
       <label>行业筛选：</label>
@@ -27,18 +28,11 @@
       </div>
   </div>
 </div>
-
-
-<div class="col-md-12">
-  <h3 style="text-align:center;
-  background:#dddddd;
-  border:3px solid #a1a1a1;
-  padding:10px 40px;
-  border-radius:25px;">买家列表</h3>
-
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
+<!---------------------------ProductsList--------------------------->
+<div class="boxlist">
+  <% @products.each do |product| %>
+    <div class="boxlist-item">
+  		<a href="/">
         <%= link_to product_path(product) do %>
           <% if product.image.present? %>
             <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
@@ -46,9 +40,41 @@
             <%= image_tag("http://oj8zlumqh.bkt.clouddn.com/image/noimage.png", class: "thumbnail") %>
           <% end %>
         <% end %>
-        <%= product.title %> ￥ <%= product.price %>
-      </div>
-    <% end %>
-  </div>
-
+      </a>
+  		<div class="boxlist-item-content">
+  			<div class="boxlist-item-content-text">
+  				<a href="/"><%= product.title %></a>
+  				<p><%= product.description %></p>
+  			</div>
+  			<div class="boxlist-item-content-card">
+  				<div class="boxlist-item-content-card-tag">
+  					    <img src="http://oj8zlumqh.bkt.clouddn.com/image/tag.png">
+  							<a href="/">·山西</a>
+  							<a href="/">·太原</a>
+  							<a href="/">·福牌</a>
+  							<a href="/">·传统彩塑</a>
+  							<a href="/">·纯手工</a>
+  				</div>
+  				<div class="boxlist-item-content-card-radio">
+  					<div class="boxlist-item-content-card-radio-in">
+  					</div>
+  				</div>
+  				<div class="boxlist-item-content-card-datas">
+  					<div class="money">
+  						<p class="num">￥<%= product.price %></p>
+  						<p class="text">已筹款</p>
+  					</div>
+  					<div class="count">
+  						<p class="num">37</p>
+  						<p class="text">支持数</p>
+  					</div>
+  					<div class="persent">
+  						<p class="num">24%</p>
+  						<p class="text">筹款进度</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  <% end %>
 </div>
