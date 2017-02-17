@@ -17,7 +17,19 @@ class OrdersController < ApplicationController
         product_list.save
         end
       end
+
+      chef = Chef.find(current_cart.chef_id)
+      chef_shadow = ChefShadow.new
+      chef_shadow.order = @order
+      chef_shadow.name = chef.name
+      chef_shadow.chef_level_id = chef.chef_level_id
+      chef_shadow.style = chef.style
+      chef_shadow.phone = chef.phone
+
+      current_cart.chef_id = nil
+      current_cart.save
       current_cart.clean!
+
       OrderMailer.notify_order_placed(@order).deliver!
 
       redirect_to order_path(@order.token)
@@ -29,6 +41,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+    @chef_shadow = ChefShadow.find_by(order_id: @order.id)
   end
 
   def pay_with_alipay

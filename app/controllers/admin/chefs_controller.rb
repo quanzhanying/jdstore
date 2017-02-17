@@ -13,7 +13,7 @@ class Admin::ChefsController < ApplicationController
   end
 
   def create
-    @chef = Chef.create(chef_parames)
+    @chef = Chef.create(chef_params)
 
     if @chef.save
       redirect_to admin_chefs_path, notice: "Chef Created."
@@ -23,11 +23,11 @@ class Admin::ChefsController < ApplicationController
   end
 
   def edit
-    @chef = Chef.find(param[:id])
+    @chef = Chef.find(params[:id])
   end
 
-  def udpate
-    @chef = Chef.find(param[:id])
+  def update
+    @chef = Chef.find(params[:id])
     if @chef.update(chef_params)
       redirect_to admin_chefs_path, notice: "Chef Updated."
     else
@@ -36,7 +36,7 @@ class Admin::ChefsController < ApplicationController
   end
 
   def show
-    @chef = Chef.find(param[:id])
+    @chef = Chef.find(params[:id])
   end
 
   def publish
@@ -52,8 +52,8 @@ class Admin::ChefsController < ApplicationController
   end
 
   private
-  def chef_parames
-    params.request(:chef).permit(:name, :description, :level, :style, :image, :is_hidden)
+  def chef_params
+    params.require(:chef).permit(:name, :description, :chef_level_id, :style, :image, :is_hidden, :phone)
   end
 
 end

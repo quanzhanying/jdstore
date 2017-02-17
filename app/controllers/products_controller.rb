@@ -1,6 +1,11 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:add_to_cart]
+  
   def index
     @products = Product.published.where.not(:id => 9)
+    chef = Chef.find(current_cart.chef_id)
+    @chef_name = chef.name
+    @products = @products.where(style: chef.style)
   end
 
   def show
@@ -16,6 +21,6 @@ class ProductsController < ApplicationController
       flash[:warning] = "你的购物车内已有此物品"
     end
 
-    redirect_to :back
+    redirect_to products_path
   end
 end

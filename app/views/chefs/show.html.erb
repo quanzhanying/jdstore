@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @chef.image.present? %>
+      <%= image_tag(@chef.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= @chef.name %></h2>
+    <div style="height: 100px;">
+      <p>
+        <%= simple_format(@chef.description) %>
+      </p>
+    </div>
+    <div> 擅长菜系 ： <%= @chef.style %>  </div>
+
+    <div class="chef-level">
+      <% if @chef.chef_level_id == 1 %>
+        <img src='<%= image_url 'gold-medal.png' %>'>
+      <% elsif @chef.chef_level_id == 2 %>
+        <img src='<%= image_url 'silver-medal.png' %>'>
+      <% elsif @chef.chef_level_id == 3 %>
+        <img src='<%= image_url 'bronze-medal.png' %>'>
+      <% end %>
+
+    </div>
+    <div class="pull-right">
+      <% if true %>
+        <%= link_to("私厨订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        档期已满
+      <% end %>
+    </div>
+  </div>
+</div>

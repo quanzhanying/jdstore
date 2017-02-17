@@ -1,0 +1,50 @@
+<h2> 厨师列表</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新建厨师档案", new_admin_chef_path, class: "but btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Chef Pic</th>
+      <th>姓名</th>
+      <th>擅长的菜系</th>
+      <th>等级</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chefs.each do |chef| %>
+      <tr>
+        <td>
+          <%= chef.id %>
+        </td>
+        <td>
+          <%= link_to edit_admin_chef_path(chef) do %>
+            <% if chef.image.present? %>
+              <%= image_tag(chef.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= chef.name %>
+        </td>
+        <td>
+          <%= chef.style %>
+        </td>
+        <td>
+          <%= chef.chef_level_id %>
+        </td>
+        <td>
+          <% if chef.is_hidden %>
+            <%= link_to publish_admin_chef_path(chef), :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
+          <% else %>
+            <%= link_to hidden_admin_chef_path(chef), :method => :post, :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,4 +1,8 @@
 class CartsController < ApplicationController
+  def index
+    @chef = Chef.find(current_cart.chef_id)
+  end
+
   def clean
     current_cart.clean!
     flash[:warning] = "已清空购物车"

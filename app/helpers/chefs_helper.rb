@@ -1,0 +1,2 @@
+module ChefsHelper
+end
