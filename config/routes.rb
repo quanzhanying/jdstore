@@ -17,5 +17,13 @@ Rails.application.routes.draw do
         end
     end
 
+    # resouce :cart do
+    #     collection do
+    #         delete :clean
+    #         post :checkout
+    #     end
+    # end
+
     resources :cart_items
+    resources :orders
 end
