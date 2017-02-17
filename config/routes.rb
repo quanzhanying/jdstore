@@ -36,4 +36,7 @@ Rails.application.routes.draw do
       post :apply_to_cancel
     end
   end
+
+  resources :dode
+  
 end
