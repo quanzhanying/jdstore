@@ -6,15 +6,14 @@ Rails.application.routes.draw do
     resources :products
     resources :orders do
       member do
-      post :cancel
-      post :ship
-      post :shipped
-      post :return
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
       end
     end
    end
 
-  end
 
   resources :carts do
     collection do
