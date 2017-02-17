@@ -1,6 +1,26 @@
-<h2>订单列表 </h2>
 
-<table class="table table-bordered">
+<h2>订单列表 </h2>
+<p>
+  <%= form_tag admin_orders_path, :method => :get do %>
+    <!-- <%#= label_tag "Order ID" %> -->
+    <%= label_tag :ids %>
+    <%= text_field_tag :ids %>
+
+    <%= label_tag "total" %>
+    <%= text_field_tag :total %>
+    <!-- <%#= number_field_tag :amount %> -->
+
+    <%= date_field_tag :date %>
+    <%= submit_tag :submit %>
+  <% end %>
+
+  <!-- <%= link_to "order_placed", admin_orders_path( :status => "order_placed") %> -->
+  <%= link_to "all", admin_orders_path %>
+  <%= link_to "尚未處理", admin_orders_path( :status => "pending") %>
+  <%= link_to "已處理", admin_orders_path( :status => "done") %>
+</p>
+
+  <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
