@@ -11,10 +11,12 @@ class OrdersController < ApplicationController
                 product_list = ProductList.new
                 product_list.order = @order
                 product_list.product_name = cart_item.product.title
-                product_list.product_price = cart_item.product.product_price
+                product_list.product_price = cart_item.product.price
                 product_list.quantity = cart_item.quantity
                 product_list.save
             end
+            current_cart.clean!
+            OrderMailer.notify_order_placed(@order).deliver!
             redirect_to order_path(@order.token)
         else
             render 'carts/checkout'
@@ -22,8 +24,28 @@ class OrdersController < ApplicationController
     end
 
     def show
-        @order = Order.find(params[:id])
+        @order = Order.find_by_token(params[:id])
         @product_lists = @order.product_lists
+    end
+
+    def set_payment_with!(method)
+        update_columns(payment_method: method)
+    end
+
+    def pay_with_alipay
+        @order = Order.find_by_token(params[:id])
+        @order.set_payment_with!('alipay')
+        @order.pay!
+
+        redirect_to order_path(@order.token), notice: '使用支付宝成功完成付款'
+    end
+
+    def pay_with_wechat
+        @order = Order.find_by_token(params[:id])
+        @order.set_payment_with!('wechat')
+        @order.pay!
+
+        redirect_to order_path(@order.token), notice: '使用微信支付成功完成付款'
     end
 
     private
