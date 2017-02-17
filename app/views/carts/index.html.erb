@@ -31,7 +31,8 @@
             <td><%= cart_item.product.price %></td>
             <td><%= cart_item.quantity %></td>
             <td>
-                <%= link_to("删除", cart_path(cart_item), method: :delete, data: { confirm: "Are you sure?"}) %>
+                <%= link_to("删除", cart_path(cart_item), method: :delete,
+                             data: { confirm: "确定要从购物车中删除这一项吗？"}) %>
             </td>
           </tr>
         <% end %>
@@ -48,6 +49,11 @@
     </div>
 
     <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("清空购物车", empty_cart_path(current_cart), method: :post,
+                  data: { confirm: "确定要清空购物车吗？"}, class: "btn btn-lg btn-alert pull-left") %>
+    </div>
 
     <div class="checkout clearfix">
       <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>

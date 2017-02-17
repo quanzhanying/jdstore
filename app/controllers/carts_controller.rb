@@ -11,4 +11,12 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def empty
+    @cart_items = current_cart.cart_items
+
+    @cart_items.destroy_all
+    flash[:notice] = "已经清空购物车！"
+    redirect_to :back
+  end
+
 end
