@@ -24,7 +24,7 @@ html {
 }
 body {
   padding-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 440px !important;
 }
 /* navbar */
 .navbar-default {
@@ -90,14 +90,16 @@ padding-right: 50px;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 200px;
-  background-color: #414141;
+  height: 440px;
+
 }
 #footer .container {
   width: auto;
+  height: 200px;
   // max-width: 680px;
   padding: 30px 15px 0px;
   margin-bottom: 0px;
+  background-color: #414141;
 }
 #footer .g-row {
   width: auto;
@@ -161,42 +163,66 @@ padding-right: 50px;
 .siteinfo p{
   color: #6d6d6d;
 }
-/* footer */
-footer {
-    margin-right: 15px;
-    margin-left: 15px;
-    text-align: center;
-    background-color: #EFEBE9;
-}
-footer div {
-    display: inline-block;
-}
-footer .phone {
-    font-size: 22px;
-}
 
-footer .goal_detail {
-    font-size: 16px;
+#footer .footer1{
+  margin: 30px 15% 0;
+  width: auto;;
+  height: 240px;
 }
-footer img {
-    height: 32px;
-    width: 32px;
+#footer .footer1 .item {
+  display: inline-block;
+  float: left;
+  width: 33.33%;
+  height: 200px;
+  border-left-color: #e9e9e9;
+  border-left-style: solid;
+  border-left-width: 1px;
+  margin: 20px 0;
+  padding: 20px 0;
 }
-footer img.author {
-    height: 150px;
-    width: 150px;
+#footer .footer1 .item:first-child {
+  border-left-style: none;
 }
-footer .dropdown {
-    position: relative;
-    display: inline-block;
-}
-footer .dropdown-content {
-    display: none;
+/* footer */
+
+// footer1 div{
+//   display: inline-block;
+// }
+// footer {
+//     margin-right: 15px;
+//     margin-left: 15px;
+//     text-align: center;
+//     background-color: #EFEBE9;
+// }
+// footer div {
+//     display: inline-block;
+// }
+// footer .phone {
+//     font-size: 22px;
+// }
+//
+// footer .goal_detail {
+//     font-size: 16px;
+// }
+// footer img {
+//     height: 32px;
+//     width: 32px;
+// }
+// footer img.author {
+//     height: 150px;
+//     width: 150px;
+// }
+#footer .dropdown {
+     position: relative;
+     display: inline-block;
+ }
+#footer .dropdown-content {
+     display: none;
     position: absolute;
-}
-footer .dropdown:hover .dropdown-content {
+ }
+#footer .dropdown:hover .dropdown-content {
     display: block;
 }
-footer .copyright {
-    clear: both;
-}
+// footer .copyright {
+//     clear: both;
+// }
