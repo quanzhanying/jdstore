@@ -18,6 +18,7 @@ devise_for :users
   resources :carts do
     collection do
       delete :clean
+      post :checkout
     end
   end
 
