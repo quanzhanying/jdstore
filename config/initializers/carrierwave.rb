@@ -3,14 +3,14 @@ CarrierWave.configure do |config|
     config.fog_provider = 'fog'
     config.fog_credentials = {
       provider:              'AWS',
-      aws_access_key_id:     ENV["AKIAI7YGBEIBIJKWL4RQ"],
+      aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],
 
-      aws_secret_access_key: ENV["3H9qQoGTLptMMfMTZJ1CaEvpEUFVd+X62YOC70V+"],
+      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
 
-      region:                ENV["ap-northeast-1"]
+      region:                ENV["AWS_REGION"]
 
     }
-    config.fog_directory  = ENV["fullstack-kai"] 
+    config.fog_directory  = ENV["AWS_BUCKET_NAME"]
 
 
   else
