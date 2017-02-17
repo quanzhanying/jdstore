@@ -1,0 +1,30 @@
+
+
+
+
+
+<div class="row text-center">
+  <% @products.each do |product| %>
+
+<div class="col-sm-4 " >
+    <%= link_to product_path(product) do %>
+
+    <% if product.image.present?%>
+    <div class="thumbnail" >
+<%= image_tag(product.image.thumb.url, class: "thumbnail")%>
+
+
+    <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+    <% end %>
+    <% end %>
+
+    <p ><strong><%=product.title %></strong></p>
+    <p>产地：<%=product.place%></p>
+   <p>库存：<%=product.quantity%></p>
+   <p>单价：<%=product.price%></p>
+   <button class="btn">Select</button>
+  </div>
+  </div>
+  <% end %>
+</div>
