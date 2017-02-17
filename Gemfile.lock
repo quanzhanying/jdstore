@@ -51,8 +51,6 @@ GEM
       pry-rails
       railties
     bcrypt (3.1.11)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -216,10 +214,6 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    hirb (0.7.3)
-    hirb-unicode (0.0.5)
-      hirb (~> 0.5)
-      unicode-display_width (~> 0.1.1)
     i18n (0.8.0)
     inflecto (0.0.2)
     ipaddress (0.8.3)
@@ -259,14 +253,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-byebug (3.4.2)
-      byebug (~> 9.0)
-      pry (~> 0.10)
     pry-rails (0.3.5)
       pry (>= 0.9.10)
-    pry-stack_explorer (0.4.9.2)
-      binding_of_caller (>= 0.7)
-      pry (>= 0.9.11)
     public_suffix (2.0.5)
     puma (3.7.0)
     rack (2.0.1)
@@ -341,7 +329,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (0.1.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -368,16 +355,12 @@ DEPENDENCIES
   figaro
   fog
   font-awesome-rails
-  hirb
-  hirb-unicode
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
   listen (~> 3.0.5)
   mini_magick
   pg
-  pry-byebug
-  pry-stack_explorer
   puma (~> 3.0)
   rails (~> 5.0.0)
   sass-rails (~> 5.0)

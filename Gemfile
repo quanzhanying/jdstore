@@ -66,9 +66,9 @@ end
 
 # Please clean up duplicated gems if any.
 # Feel free to remove gems that you don't want to use or if they conflict with other gem dependencies. (you might need to update .pryrc also)
-group :development, :test do
-  gem 'hirb'
-  gem 'hirb-unicode'
-  gem 'pry-byebug'
-  gem 'pry-stack_explorer'
-end
+#group :development, :test do
+#  gem 'hirb'
+#  gem 'hirb-unicode'
+#  gem 'pry-byebug'
+#  gem 'pry-stack_explorer'
+#end
