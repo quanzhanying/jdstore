@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
   if Rails.env.production?
-    config.storage :fog
+
     config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:     ENV["AKIAJN2J2W3R2GXFJKEQ"],
@@ -10,6 +10,7 @@ CarrierWave.configure do |config|
       region:                ENV["Tokyo"]
 
     }
+    config.storage :fog
     config.fog_directory  = ENV["qingqing-fullstack"]
 
 
