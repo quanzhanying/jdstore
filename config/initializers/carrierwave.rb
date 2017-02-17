@@ -7,7 +7,7 @@ CarrierWave.configure do |config|
 
             aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
 
-            aws:                   ENV['AWS_REGION']
+            region:                     ENV['AWS_REGION']
 
         }
         config.fog_directory = ENV['AWS_BUCKET_NAME']
