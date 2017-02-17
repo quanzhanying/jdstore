@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :cart_items
     namespace :admin do
         resources :products
+        resources :orders
     end
 
     resources :products do
