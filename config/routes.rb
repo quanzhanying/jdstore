@@ -18,6 +18,12 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    resources :chefs do
+      member do
+        post :publish
+        post :hidden
+      end
+    end
   end
 
   resources :products do
