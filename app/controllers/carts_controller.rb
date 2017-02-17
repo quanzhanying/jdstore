@@ -24,7 +24,7 @@ class CartsController < ApplicationController
     @product = @cart_item.product
 
     if @cart_item.quantity == @product.quantity
-      flash[:warning] = "没有库存了。" 
+      flash[:warning] = "没有库存了。"
       redirect_to :back
     else
       @cart_item.quantity = @cart_item.quantity + 1
@@ -35,11 +35,13 @@ class CartsController < ApplicationController
 
   def down_quantity
     @cart_item = current_cart.cart_items.find(params[:id])
+    @product = @cart_item.product
 
-    @cart_item.quantity = @cart_item.quantity + 1
-    @cart_item.save
-
-    redirect_to :back
+    if @cart_item.quantity != 1
+      @cart_item.quantity = @cart_item.quantity - 1
+      @cart_item.save
+      redirect_to :back
+    end
   end
 
 end
