@@ -1,3 +1,0 @@
-Module Fog
-
-end
