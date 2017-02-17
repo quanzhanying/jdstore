@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
     # 首页 R
     def index
-        @products = Product.all
+        @products = Product.all.recent.paginate(:page => params[:page], :per_page =>9)
     end
 
     # 查看 R
