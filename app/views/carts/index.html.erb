@@ -28,7 +28,7 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart.item.product.price %>
+              <%= cart_item.product.price %>
             </td>
             <td>
               <%= cart_item.quantity %>
@@ -49,7 +49,7 @@
   <hr>
 
   <div class="checkout clearfix">
-    <%= link_to(“确认结账”, "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
   </div>
 </div>
 </div>
