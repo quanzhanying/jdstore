@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<title>Easy Guqin</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+  	<link rel="stylesheet" href="css/component.css">
+
+    <link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/vegas.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Google web font  -->
+
+	<!-- 导航栏上移后固定-->
+<!--	<script type="text/javascript">
+	$(function(){
+	var nav=$(".navbar-header"); //得到导航对象
+	var win=$(window); //得到窗口对象
+	var sc=$(document);//得到document文档对象。
+	win.scroll(function(){
+		if(sc.scrollTop()>=50){
+			nav.addClass("fixednav");
+		 $(".navTmp").fadeIn();
+		}else{
+		 nav.removeClass("fixednav");
+		 $(".navTmp").fadeOut();
+		}
+	})
+	})
+</script> -->
+<!-- 导航栏上移后固定-->
+</head>
+
+<body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+<!--<div class="adcenter"><script src="http://www.cssmoban.com/include/new/ggad2_728x90.js"></script></div>-->
+
+<!-- Preloader section -->
+
+<!--<div class="preloader">
+     <div class="sk-spinner sk-spinner-pulse"></div>
+</div> -->
+
+<!-- Navigation section  -->
+
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+        </button>
+         <a href="/" class="navbar-brand smoothScroll">琴功简学</a>
+
+      </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" margin-top="100px">
+            <li><a href="#home" class="smoothScroll"><span>宗旨</span></a></li>
+            <li><a href="#about" class="smoothScroll"><span>简介</span></a></li>
+						<li><a href="#team-carousel" class="smoothScroll"><span>我们的团队</span></a></li>
+            <li><a href="#gallery" class="smoothScroll"><span>我们的服务</span></a></li>
+            <li><a href="#contact" class="smoothScroll"><span>联系我们</span></a></li>
+						<li>
+							<%= link_to("我想学！", products_path) %>
+						</li>
+				  </ul>
+       </div>
+		 </div>
+
+  </div>
+
+
+<!-- Home section -->
+
+<section id="home">
+  <!--<div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Let's take a snapshot</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Snapshot website template is available for free download. Anyone can modify and use it for any site. Please tell your friends about <a rel="nofollow" href="http://www.templatemo.com">templatemo</a>. Thank you.</p>
+        <a href="#about" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">Learn more</a>
+      </div>
+
+    </div>
+  </div>-->
+  <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- First Slide -->
+                <div class="item active" margin-top="200px">
+
+                    <!-- Slide Background -->
+
+								      <img src="https://ww3.sinaimg.cn/large/006tNc79jw1fcr1hcnqytj30sz0gvafv.jpg" alt="Bootstrap Touch Slider" width="100%" />
+
+									 <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_right">
+                                <h1 data-animation="animated zoomInRight">古琴</h1>
+                                <p data-animation="animated fadeInRight">——中国最古老的传统乐器.<br/><br/>人类口头及非物资文化遗产代表作.<br/><br/>古琴曲“流水”伴随着旅行者号在宇宙中寻觅着知音.</p>
+                                <a href="/guqin" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">了解更多</a>
+                                <a href="/products" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">我想学!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Second Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://ww2.sinaimg.cn/large/006tNc79gy1fclasjhvx4j30z90rs7az.jpg" alt="Bootstrap Touch Slider"  class="slide-image" />
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation="animated flipInX">文化认同感</h1>
+                        <p data-animation="animated lightSpeedIn">在全球化竞争的趋势下，不论对自己还是下一代而言，都更应该重视文化认同感。</p>
+                        <a href="/culture" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">了解更多</a>
+                        <a href="/products" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">我想学！</a>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Third Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclqwxsecgj30ku0araag.jpg" alt="Bootstrap Touch Slider" class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_left">
+                        <h1 data-animation="animated zoomInLeft">一站式服务</h1>
+                        <p data-animation="animated fadeInLeft">——从器材到老师，我们提供一切，让古琴不再曲高和寡。<br/><br/>喜欢古琴，却找不到资源？我们来满足您的需求<br/><br/>品质保障，节省您的时间和注意力。
+													<br/><br/>注册即可试看在线课，购买任何服务赠送古琴学习高频小套路！</p>
+                        <a href="/allinone" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">了解更多</a>
+                        <a href="/products" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">我想学!</a>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+
+            </div><!-- End of Wrapper For Slides -->
+
+            <!-- Left Control -->
+            <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!-- Right Control -->
+            <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div> <!-- End  bootstrap-touch-slider Slider -->
+</section>
+
+
+
+
+<!-- About section -->
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="about-thumb">
+          <h1>简介</h1>
+          <p>在全球化竞争的时代里，每个人都需要释放压力,找回文化归属感，古琴<br/>是一个不错的媒介。因其平和高雅的意境，古琴在中国传统文化中有着重要<br/>地位，并在2013年被联合国教科文组织列为人类非物质文化遗产代表作。
+						<br/>古琴曾一度衰落，虽建国后逐渐复苏，但依然冷门,
+						最主要的原因，就是资<br/>源的匮乏——好琴难觅，良师难寻，让不爱好者甚至无法开始。为了古<br/>琴的传承和发展，我们要为古琴爱好者提供优质资源，
+						从古琴挑选，到教学，<br/>满足您在学习过程中的任何需求，让古琴学习大大简化，不再可望而不可及。</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img" data-wow-delay="0.6s">
+        <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcmrgc6xpwj30cz0k9gub.jpg" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title text-center">
+          <h1>我们的教师团队</h1>
+          <h3>每一位老师都值得信赖</h3>
+        </div>
+      </div>
+
+      <!-- team carousel -->
+      <div id="team-carousel" class="owl-carousel">
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclnml2qahj306606rtbf.jpg" class="img-responsive img-circle" alt="Mary">
+          </div>
+          <h2 class="heading">Meimei, CEO</h2>
+          <p class="description">对现代的古琴教学有着独特的想法和理念，秉持着将古琴发扬光大的信念。</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww1.sinaimg.cn/large/006y8lVagy1fclo1ot98hj3059060766.jpg" class="img-responsive img-circle" alt="Jack">
+          </div>
+          <h2 class="heading">Laotou, 首席教师</h2>
+          <p class="description">虞山派传人，曾在维摩经舍、吟一阁等处求学，对古琴文化有着深刻的理解.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+					<div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclo1x5kc7j3052058dhd.jpg" class="img-responsive img-circle" alt="Jack">
+          </div>
+          <h2 class="heading">Dashu, 教学组长</h2>
+          <p class="description">资深古琴教学老师。深受学生们喜爱。</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclo63ke7ij306f067whz.jpg" class="img-responsive img-circle" alt="Sandy">
+          </div>
+          <h2 class="heading">Laobo, 教师</h2>
+          <p class="description">丰富的教学经验，并形成自己独特的演奏风格。</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+					<div class="image-holder">
+            <img src="https://ww3.sinaimg.cn/large/006y8lVagy1fcloamh414j304904pq4d.jpg" class="img-responsive img-circle" alt="Lukia">
+          </div>
+          <h2 class="heading">Meinv, 教师</h2>
+          <p class="description">有着丰富的教学经验。得到学生们的一致好评。</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fcloeoo38cj304g056dh7.jpg" class="img-responsive img-circle" alt="George">
+          </div>
+          <h2 class="heading">Meinan, 教师</h2>
+          <p class="description">有着丰富的教学经验。</p>
+        </div>
+      </div>
+
+    <!--  <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img7.jpg" class="img-responsive img-circle" alt="Day">
+          </div>
+          <h2 class="heading">Day, Accountant</h2>
+          <p class="description">Maecenas sed diam eget risus varius blandit sit.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img8.jpg" class="img-responsive img-circle" alt="Lynn">
+          </div>
+          <h2 class="heading">Lynn, Marketing</h2>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+        </div>
+      </div> -->
+
+      </div>
+      <!-- end team carousel -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Gallery section -->
+
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title">
+          <h1>你需要的我们都有</h1>
+          <p>古琴及周边器具, 书, 琴谱, 课程.如有其他需求请告诉我们。<br/>注册可试看在线课，买任何产品即送古琴入门高小套路！</p>
+        </div>
+      </div>
+
+      <ul class="grid cs-style-4">
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww1.sinaimg.cn/large/006y8lVagy1fclqcukkq3j30i10dhnc3.jpg" alt="image 1"></div>
+            <figcaption>
+              <h1>器具</h1>
+              <small>每张琴都由老师把关音质</br>古琴——基本款和精品<br/>琴弦——钢弦和丝线<br/>琴桌、琴椅<br/>琴鉴<br/>其他相关器材.</small>
+              <a href="classify_products_path, class: "bootstrap-override-2"">开始选购</a>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww1.sinaimg.cn/large/006y8lVagy1fclqno9ra7j30go0citmz.jpg" alt="image 2"></div>
+            <figcaption>
+              <h1>古琴书籍</h1>
+              <small>古琴教材<br/>古琴指谱<br/>其他相关书籍<br/>找稀缺琴谱？请联系我们</small>
+              <a href="#">开始选购</a>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww2.sinaimg.cn/large/006y8lVagy1fclr99wzskj30h90baqat.jpg" alt="image 3"></div>
+            <figcaption>
+              <h1>在线课程</h1>
+              <small>从易到难不同等级<br/>以入门教学为主<br/>提供答疑服务<br/>包含指法、识谱、简单琴曲教学等</small>
+              <a href="#">订购课程</a>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww2.sinaimg.cn/large/006y8lVagy1fclr01bhurj30nl0f81f0.jpg" alt="image 4"></div>
+            <figcaption>
+              <h1>线下课程</h1>
+              <small>推荐您选择线下课<br/>面对面，更高效<br/>从易到难不同等级<br/>包括进阶学习和高难度琴曲<br/>不定期举行雅集活动<br/>不定期请名家现场指导</small>
+              <a href="#">订购课程</a>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact section -->
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+
+       <div class="col-md-offset-1 col-md-10 col-sm-12">
+
+        <div class="col-lg-offset-1 col-lg-10 section-title wow fadeInUp" data-wow-delay="0.4s">
+          <h2>联系我们</h2>
+          <p>您是否有疑问,是否有我们未能满足的需要? 请告诉我们.<br/>我们欢迎任何意见，以更好的为您提供服务. </p>
+        </div>
+
+        <form action="#" method="post" class="wow fadeInUp" data-wow-delay="0.8s">
+          <div class="col-md-6 col-sm-6">
+            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+          </div>
+          <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+            <input type="submit" class="form-control" value="SEND MESSAGE">
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer section -->
+
+<!--<footer>
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+
+                <ul class="social-icon">
+                    <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="0.2s"></a></li>
+                    <li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="0.4s"></a></li>
+                    <li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="0.6s"></a></li>
+                    <li><a href="#" class="fa fa-instagram wow fadeInUp" data-wow-delay="0.8s"></a></li>
+                    <li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="1.0s"></a></li>
+                </ul>
+
+				<p class="wow fadeInUp"  data-wow-delay="1s" >Copyright &copy; 2016 Snapshot Studio |
+                More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+
+			</div>
+
+		</div>
+
+	</div>
+</footer> -->
+
+<!-- Back top -->
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Javascript  -->
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vegas.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/toucheffects.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
