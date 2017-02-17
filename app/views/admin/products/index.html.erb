@@ -2,11 +2,10 @@
   <h3 style="text-align:center;
   background:#dddddd;
   border:3px solid #a1a1a1;
-  padding:10px 40px;
-  border-radius:25px;">宝贝列表</h3>
+  padding:10px 40px;">众筹列表</h3>
 
   <div class="new product">
-    <%= link_to("添加新宝贝", new_admin_product_path, class: "btn btn-primary pull-right") %>
+    <%= link_to("发起新众筹", new_admin_product_path, class: "btn btn-primary pull-right") %>
   </div>
 
   <br>
@@ -16,12 +15,12 @@
       <tr>
         <!--<td>#</td>-->
         <th>#</th>
-        <th width="220">宝贝展示</th>
+        <th width="220">发起众筹条目</th>
         <td>名称</td>
         <td>描述</td>
         <td>库存</td>
         <td>价格（￥）</td>
-        <td>创建日期</td>
+        <td>发起日期</td>
         <td>选项</td>
       </tr>
     </thead>

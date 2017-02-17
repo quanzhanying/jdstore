@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JDstore 后台</title>
+        <title>众筹网后台列表</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,12 +13,11 @@
         <div class="container-fluid">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
-            <div class="row">
+            <div class="row" style="margin-top: 40px;">
               <div class="col-md-2">
-                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px; font-size: 15px;">
-                   <li class="active"> <%= link_to("宝贝列表", admin_products_path) %> </li>
-                   <li class="active"> <%= link_to("订单列表", admin_orders_path) %> </li>
-                   <li class="active"> <%= link_to("买家列表", admin_products_path) %> </li>
+                <ul class="nav nav-pills nav-stacked" style="width: 120px; padding-top:20px; font-size: 15px;">
+                   <li class="active"> <%= link_to("发起众筹列表", admin_products_path) %> </li>
+                   <li class="active"> <%= link_to("支持众筹列表", admin_orders_path) %> </li>
                 </ul>
               </div>
 

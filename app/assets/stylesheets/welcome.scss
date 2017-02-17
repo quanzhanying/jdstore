@@ -178,6 +178,11 @@
     border-radius: 5px;
     display: inline-block;
     margin: 30px 0 0 18px;
+    overflow: hidden;
+}
+
+.boxlist-item img{
+    margin-bottom: 15px;
 }
 
 .boxlist-item-content {
@@ -186,7 +191,7 @@
 }
 
 .boxlist-item-content-text {
-    height: 139px;
+    height: 124px;
 }
 .boxlist-item-content-text a {
     font-size: 13px;
