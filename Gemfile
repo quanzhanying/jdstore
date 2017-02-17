@@ -35,6 +35,10 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

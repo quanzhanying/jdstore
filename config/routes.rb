@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  resources :categories
+  root 'welcome#index'
+
+
 
   resources :orders
-  
-  devise_for :users
+
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   namespace :admin do
     resources :products
   end
@@ -27,4 +30,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :account do
+    resources :orders
+  end
 end

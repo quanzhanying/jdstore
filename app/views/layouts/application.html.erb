@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>心得</title>
+
+    <title>有.无</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
   <body>
 
     <div class="container-fluid">
-      <%= render "common/navbar" %>
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
       <%= render "common/flashes" %>
       <%= yield %>
     </div>

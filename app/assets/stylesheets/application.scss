@@ -17,3 +17,137 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 180px;
+  text-align: left;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+
+.navbar-default {
+    background-color:#4dbffb;//背景颜色
+    border-color: white;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+    width: 2100px; //定制图片宽度
+    height: 120px; //定制图片高度
+}
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+}
+
+.navbar-default .navbar-brand {
+   color: #EF6C00;//字体颜色
+   padding: 30px 15px;//上下10px,左右15px
+   line-height: 80px;//文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #FF6F00;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #EF6C00;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FF6F00;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FF6F00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;
+    color: #212121;
+}
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+.container-fluid{
+  background-color: #B0BEC5;
+
+}
+.body {
+padding-top: 0px;
+}
+h3
+  {font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+h3.p{
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+.navbar-collapse{
+   color: #EF6C00;//字体颜色
+   padding: 30px 15px;//上下10px,左右15px
+   line-height: 80px;//文字行高
+   border-color: white;//边框色
+}
+
+a  {
+    font-size: 30px;
+  }
+
+.navbar-inverse{
+   color: #EF6C00;//字体颜色
+   padding: 30px 15px;//上下10px,左右15px
+   line-height: 80px;//文字行高
+   background-color: #B0BEC5;
+}
+.active{
+  font-size: 30px;
+}
+ .container.p{
+   font-size:25px;
+ }
