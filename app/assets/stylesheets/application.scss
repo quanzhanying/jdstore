@@ -14,6 +14,34 @@
  *= require_self
  */
 
+ .jumbotron {
+  background-image:url('https://uploads2.wikiart.org/images/vincent-van-gogh/the-starry-night-1889(1).jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: left;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: left;
+  color: white;
+}
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
