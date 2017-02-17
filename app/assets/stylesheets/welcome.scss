@@ -178,13 +178,17 @@
     overflow: hidden;
 }
 
+.boxlist-item img{
+    margin-bottom: 15px;
+}
+
 .boxlist-item-content {
     padding: 0 19px;
     background-position: right 96px;
 }
 
 .boxlist-item-content-text {
-    height: 139px;
+    height: 124px;
 }
 .boxlist-item-content-text a {
     font-size: 13px;
