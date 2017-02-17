@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214144528) do
+ActiveRecord::Schema.define(version: 20170215162015) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -23,6 +23,37 @@ ActiveRecord::Schema.define(version: 20170214144528) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "chef_id"
+    t.date     "book_date"
+  end
+
+  create_table "chef_shadows", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "name"
+    t.string   "level"
+    t.string   "style"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chef_times", force: :cascade do |t|
+    t.integer  "chef_id"
+    t.string   "day"
+    t.string   "time"
+    t.boolean  "is_available", default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "chefs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "level"
+    t.string   "style"
+    t.boolean  "is_hidden",   default: true
+    t.string   "image"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -48,6 +79,7 @@ ActiveRecord::Schema.define(version: 20170214144528) do
     t.integer  "quantity"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "style"
   end
 
   create_table "products", force: :cascade do |t|
@@ -59,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170214144528) do
     t.datetime "updated_at",                 null: false
     t.string   "image"
     t.boolean  "is_hidden",   default: true
+    t.string   "style"
   end
 
   create_table "users", force: :cascade do |t|
