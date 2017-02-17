@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_cart
 
+    def admin_required
+      if !current_user.admin?
+        redirect_to "/"
+      end
+    end
+
     def current_cart
       @current_cart ||= find_cart
     end

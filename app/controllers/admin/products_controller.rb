@@ -1,7 +1,7 @@
 class Admin::ProductsController < ApplicationController
   layout "admin"
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  before_action :require_is_admin
+  before_action :admin_required
   def index
     @products = Product.all
   end
@@ -34,12 +34,7 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def require_is_admin
-    if !current_user.admin?
-      flash[:alert] = 'You are not admin'
-      redirect_to root_path
-    end
-  end
+
 
   private
 
