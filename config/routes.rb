@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 root 'products#index'
 devise_for :users
   namespace :admin do
+    resources :orders
     resources :products do
       member do
         post :add_to_cart
@@ -34,7 +35,7 @@ devise_for :users
   end
 
   resources :cart_items
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
