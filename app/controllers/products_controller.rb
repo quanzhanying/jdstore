@@ -18,5 +18,8 @@ class ProductsController < ApplicationController
     redirect_to :back
   end 
 
+  def add
+  end
+
 
 end
