@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :carts do
     member do
       post :empty
+      post :up_quantity
     end
   end
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -29,7 +29,10 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td><%= cart_item.product.price %></td>
-            <td><%= cart_item.quantity %></td>
+            <td>
+              <%= cart_item.quantity %>
+              <%= button_to '+', up_quantity_cart_path(cart_item), method: :post %>
+            </td>
             <td>
                 <%= link_to("删除", cart_path(cart_item), method: :delete,
                              data: { confirm: "确定要从购物车中删除这一项吗？"}) %>
