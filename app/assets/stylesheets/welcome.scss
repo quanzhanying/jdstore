@@ -29,16 +29,21 @@
 .display ul {
     list-style: none;
     display: inline-block;
+    margin-right: 20px;
 }
 
 .display li {
     float: left;
     background-color: #E0F7FA;
-    margin-left: 15px;
-    margin-bottom: 15px;
+    margin: 20px 20px 30px 0;
 }
 
-.display img {
-    height: 200px;
-    width: 200px;
+.product img{
+    height: 250px;
+    width: 250px;
+}
+
+.product_sample {
+  height: auto;
+  width: auto;
 }
