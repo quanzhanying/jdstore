@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     # root 'products#index'
     root 'welcome#index'
+    get "/pages/:page" => "pages#demo"
 
     namespace :admin do
         resources :products

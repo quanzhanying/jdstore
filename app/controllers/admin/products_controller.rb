@@ -1,6 +1,4 @@
 class Admin::ProductsController < ApplicationController
-  layout "admin"
-
   before_action :authenticate_user!
   before_action :require_is_admin
 
@@ -24,6 +22,7 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       redirect_to account_products_path
     else
+      flash[:alert] = '请填写完整数据！'
       render :new
     end
   end
