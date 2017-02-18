@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>LOVE&GIFT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <style>
+
+            body {
+                background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+            }
+
+            .container {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .caption {
+                font-size: 16px;
+            }
+
+            .btn-primary {
+                background-color: #E61C64;
+                border-color: #E61C64;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+            .btn-primary:hover {
+                background-color: #d10b51;
+                border-color: #d10b51;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+            .link_to {
+                float: left;
+            }
+
+            .arrow {
+                display: inline-block;
+                padding: 5px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+
+            .link_to a {
+                display: inline-block;
+                padding: 5px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+            .link_to a:hover {
+                color: #E61C64;
+            }
+
+            .warning {
+                font-size: 30px;
+                color: #E61C64;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+            .product-description {
+                font-size: 18px;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+            .product-price {
+                font-size: 23px;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+                text-align: left;
+            }
+
+            .product-quantity {
+                font-size: 18px;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <ul style="list-style-type:none">
+                    <li class="link_to">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="link_to">
+                        <p class="arrow">></p>
+                    </li>
+                    <li class="link_to">
+                        <a href="/products">Products</a>
+                    </li>
+                    <li class="link_to">
+                        <p class="arrow">></p>
+                    </li>
+                    <li class="link_to">
+                        <a href="#"><%= @product.title %></a>
+                    </li>
+                    <li class="link_to">
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </li>
+                    <li class="link_to">
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </li>
+                    <li class="link_to">
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </li>
+
+                    <div class="searchBar">
+                        <div class="col-sm-6">
+                            <%= form_tag search_products_path, method: :get, class: 'products-search-form'  do %>
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="form-control" name="query_string" placeholder="text here">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <% if @product.image.present? %>
+                    <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+                <% else %>
+                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                    <% end %>
+                </div>
+                <div class="col-md-6">
+                    <h1>
+                        <%= @product.title %>
+                    </h1>
+                    <div class="product-description" style="height:50px;">
+                        <p>
+                            <%= @product.description %>
+                        </p>
+                    </div>
+                    <div class="well">
+                        <div class="product-price">
+                            Price： ￥
+                            <%= @product.price %>
+                        </div>
+                    </div><br/>
+                    <div class="product-quantity">
+                        Quantity：
+                        <%= @product.quantity %>
+                    </div><br/><br/><hr/>
+
+                    <div class="pull-left">
+                        <% if @product.quantity.present? && @product.quantity >0 %>
+                        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+                    <% else %>
+                        <p class="warning">
+                            <i class="fa fa-exclamation-triangle fa-fw"></i>Sorry, SALE UP<p>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </body>
+        </html>
+    </body>
+</html>

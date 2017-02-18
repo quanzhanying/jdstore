@@ -1,0 +1,55 @@
+// Place all the styles related to the admin::products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/* admin product list index */
+
+.table {
+  background-color: #ddd;
+}
+
+.table-striped .custab {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 2% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
+.custab thead {
+  background-color: #444
+}
+
+.row-title {
+  font-family: "Geneva", "Gill Sans", serif;
+  font-size:18px;
+  color: #fff
+}
+
+.row-title th {
+  text-align: center;
+}
+
+
+.row-data {
+  height: 60px;
+  font-family: "Geneva", "Gill Sans", serif;
+  font-size:16px;
+  text-align: center;
+  color: #595958
+}

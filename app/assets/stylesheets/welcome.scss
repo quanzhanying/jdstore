@@ -1,0 +1,51 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/* 以下是首屏 banner */
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #d2d2d2;
+}
+
+.carousel-indicators li {
+    border-color: #d2d2d2;
+}
+
+.carousel-indicators li.active {
+    background-color: #d2d2d2;
+}
+
+
+
+
+.lead {
+  text-align: center;
+}
+
+.carousel-caption {
+
+  margin-bottom: 160px;
+  color: #fff;
+  font-family: Georgia, serif;
+}
+
+.lead .btn-default {
+  background-color: transparent;
+  border: 3px solid #fff;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #fff;
+  margin-top: 50px;
+}
+
+
+.lead .btn-default:hover {
+  background-color: #E61C64;
+  border: 3px solid #E61C64;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #fff;
+  margin-top: 50px;
+}
