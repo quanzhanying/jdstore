@@ -35,6 +35,7 @@
               <% else %>
                 <li>
                   <%= link_to("个人订单列表", account_orders_path) %>
+                  <%= link_to("我收藏的私厨", account_favorchefs_path) %>
                 </li>
               <% end %>
               <li><%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>

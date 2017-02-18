@@ -25,7 +25,8 @@ class OrdersController < ApplicationController
       chef_shadow.chef_level_id = chef.chef_level_id
       chef_shadow.style = chef.style
       chef_shadow.phone = chef.phone
-
+      chef_shadow.save
+      
       current_cart.chef_id = nil
       current_cart.save
       current_cart.clean!

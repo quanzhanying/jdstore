@@ -52,11 +52,14 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :favorchefs
   end
 
   resources :chefs do
     member do
       post :add_to_cart
+      post :follow
+      post :unfollow
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

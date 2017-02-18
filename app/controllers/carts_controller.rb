@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
   def index
-    @chef = Chef.find(current_cart.chef_id)
+    if current_cart.present? && current_cart.chef_id != nil
+      @chef = Chef.find(current_cart.chef_id)
+    end
   end
 
   def clean
@@ -10,6 +12,7 @@ class CartsController < ApplicationController
   end
 
   def checkout
+    @chef = Chef.find(current_cart.chef_id)
     @order = Order.new
   end
 end

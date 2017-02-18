@@ -2,10 +2,16 @@
   <div class="col-md-12">
     <h2> 购物明细 </h2>
 
+    <h4> 您的私厨 <img src='<%= image_url 'chef.png' %>'> <%= link_to(@chef.name, chef_path(@chef)) %>
+        <img src='<%= image_url 'mobile-phone.png' %>'> <%= @chef.phone %>
+    </h4>
+    <div>
+
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="80%">商品明细</th>
+          <th width="80%">菜品明细</th>
           <th>单价</th>
           <th>数量</th>
         </tr>

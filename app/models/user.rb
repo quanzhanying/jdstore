@@ -9,4 +9,18 @@ class User < ApplicationRecord
   end
 
   has_many :orders
+  has_many :favor_chefs_relationships
+  has_many :favor_chefs, through: :favor_chefs_relationships, source: :chef
+
+  def has_follow?(chef)
+    favor_chefs.include?(chef)
+  end
+
+  def follow!(chef)
+    favor_chefs << chef
+  end
+
+  def unfollow!(chef)
+    favor_chefs.delete(chef)
+  end
 end

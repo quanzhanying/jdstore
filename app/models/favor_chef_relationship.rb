@@ -1,0 +1,2 @@
+class FavorChefRelationship < ApplicationRecord
+end

@@ -12,7 +12,7 @@ class ChefsController < ApplicationController
   def add_to_cart
     @chef = Chef.find(params[:id])
     if current_cart.chef_id != nil && @chef.id != current_cart.chef_id
-      flash[:alert] = "更换厨师，清空当前购物车"
+      flash[:warning] = "当前购物车已清空！请重新选择菜品！"
       current_cart.clean!
     end
     current_cart.chef_id = @chef.id
@@ -22,4 +22,18 @@ class ChefsController < ApplicationController
 
   end
 
+  def follow
+    @chef = Chef.find(params[:id])
+    current_user.follow!(@chef)
+
+    redirect_to :back
+  end
+
+  def unfollow
+    @chef = Chef.find(params[:id])
+    current_user.unfollow!(@chef)
+
+    #flash[:warning] = "Stop follow!"
+    redirect_to :back
+  end
 end

@@ -10,6 +10,7 @@ class Admin::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @chef_shadow = ChefShadow.find_by(order_id: @order.id)
     @product_lists = @order.product_lists
   end
 

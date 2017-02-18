@@ -5,7 +5,19 @@
         style: "text-decoration: underline;", data: { confirm: "你确定要清空整个购物车吗？" })%>
     <h2> 购物车 </h2>
 
-    <h4> 您的私厨 <%= link_to(@chef.name, chef_path(@chef)) %> 将为您烹饪 </h4>
+    <h4> 您的私厨
+      <% if @chef.present? %>
+        <%= link_to(@chef.name, chef_path(@chef)) %>
+        <% if @chef.chef_level_id == 1 %>
+          <img src='<%= image_url 'gold-medal.png' %>'>
+        <% elsif @chef.chef_level_id == 2 %>
+          <img src='<%= image_url 'silver-medal.png' %>'>
+        <% elsif @chef.chef_level_id == 3 %>
+          <img src='<%= image_url 'bronze-medal.png' %>'>
+        <% end %>
+        将为您烹饪
+      <% end %>
+    </h4>
     <table class="table table-bordered">
       <tr>
         <th colspan="2"> 菜品 </th>
@@ -90,7 +102,9 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right")%>
+      <% if @chef.present? && current_cart.cart_items.count > 0 %>
+        <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right")%>
+      <% end %>
     </div>
   </div>
 </div>
