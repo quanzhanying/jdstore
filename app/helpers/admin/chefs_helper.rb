@@ -1,0 +1,2 @@
+module Admin::ChefsHelper
+end

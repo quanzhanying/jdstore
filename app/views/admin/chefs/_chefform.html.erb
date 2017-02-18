@@ -1,0 +1,26 @@
+<%= simple_form_for [:admin, @chef] do |f| %>
+  <div class="group">
+    <%= f.input :name, :label => "姓名" %>
+  </div>
+  <div class="group">
+    <%= f.input :description, :label => "简介"  %>
+  </div>
+  <div class="group">
+    <%= f.input :style, :collection => ['法国风味', '意大利风味', '南洋风味', '综合'],
+                          :label => "擅长的菜系" %>
+  </div>
+  <div class="group">
+
+    <%= f.collection_radio_buttons :chef_level_id, [[1, ' 一级厨师 '] ,[2, ' 二级厨师 '], [3, ' 三级厨师 ']],
+                         :first, :last, :class => "collection_radio_buttons icon-star" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :phone, :label => "联系电话"  %>
+  </div>
+
+  <div class="group">
+    <%= f.input :image, as: :file%>
+  </div>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
+<% end %>

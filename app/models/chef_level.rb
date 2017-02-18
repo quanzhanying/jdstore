@@ -1,0 +1,2 @@
+class ChefLevel < ApplicationRecord
+end
