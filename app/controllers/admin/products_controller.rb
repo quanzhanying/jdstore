@@ -20,8 +20,9 @@ class Admin::ProductsController < ApplicationController
   end
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
-      redirect_to admin_products_path
+      redirect_to account_products_path
     else
       render :new
     end
