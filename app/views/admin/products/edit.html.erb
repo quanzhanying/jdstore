@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>LOVE&GIFT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <style>
+
+            body {
+                background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+            }
+            .jumbotron {
+                background-color: #ddd;
+                height: 700px;
+                margin: 40px;
+            }
+
+            h2 {
+                color: #E61C64;
+            }
+
+            .group {
+                font-size: 20px;
+            }
+
+            .btn-primary {
+                background-color: #E61C64;
+                border-color: #E61C64;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+            .btn-primary:hover {
+                background-color: #d10b51;
+                border-color: #d10b51;
+                font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>
+                My Order List
+            </h1>
+            <div class="pull-right">
+                <%= link_to("Product List", admin_products_path, class: "btn btn-primary btn-md") %>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+                    <fieldset class="fieldset">
+
+                        <legend>
+                            <h2>Edit Product</h2>
+                        </legend>
+
+                        <%= simple_form_for [:admin, @product] do |f| %>
+                        <div class="group">
+                            <%= f.input :title, :type => "text", :name => "fname", :placeholder => "your product name"  %>
+                        </div>
+                        <div class="group">
+                            <%= f.input :description, :type => "text", :name => "fname", :placeholder => "your product description"  %>
+                        </div>
+                        <div class="group">
+                            <%= f.input :quantity, :type => "text", :name => "fname", :placeholder => "number of your product"  %>
+                        </div>
+                        <div class="group">
+                            <%= f.input :price, :type => "text", :name => "fname", :placeholder => "how much per one" %>
+                        </div>
+                        <% if @product.image.present? %>
+                        <span>
+                            <h5>Present Pic</h5>
+                        </span>
+                        <br/>
+                        <%= image_tag(@product.image.thumb.url, class: "thumbnail") %>
+                        <% end %>
+                        <div class="group">
+                            <%= f.input :image, as: :file %>
+                        </div>
+                        <%= f.submit "Submit", :class => "btn btn-md  btn-primary",  data: { disable_with: "Submitting..." } %>
+                        <input type="reset">
+                        <% end %>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

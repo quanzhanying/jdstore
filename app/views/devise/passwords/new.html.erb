@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOVE&GIFT</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+
+            body {
+                background: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="-page">
+                <div class="-panel">
+                    <h2 class="-title">Forgot your password?</h2>
+
+                    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                    <%= f.error_notification %>
+
+                    <div class="form-inputs">
+                        <%= f.input :email, required: true, autofocus: true %>
+                    </div>
+
+                    <div class="form-actions">
+                        <%= f.button :submit, "Reset my password" %>
+                    </div>
+                    <% end %>
+
+                    <%= render "devise/shared/links" %>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

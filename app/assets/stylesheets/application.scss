@@ -1,0 +1,227 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+/* for navbar panel */
+
+.navbar-default {
+    background-color: #262b3a;//背景颜色
+    border-color: #262b3a;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+.navbar {
+        border-radius: 0; //圆角为0
+
+    }
+
+.navbar-brand > img {
+        margin-right: 0; //图片和链接文字拉开一点距离
+        width: 25px; //定制图片宽度
+        height: 25px; //定制图片高度
+        margin-bottom: 13px;
+        margin-top: 7px;
+        display: inline-block;	//图片和链接文字显示在同一行
+
+
+}
+
+.navbar-default .navbar-brand {
+   color: #fff; //字体颜色
+   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+   padding-left: 120px;
+   padding-right: 40px;
+   margin-top: -10px;
+
+
+ }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #E61C64; //鼠标放置在链接上的文字颜色
+  background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-default .navbar-right {
+  margin-right: 100px;
+}
+
+.navbar-default .navbar-nav > li > a{
+   font-family:  "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+   font-size: 14px;
+   color: #fff;
+   background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #E61C64;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #E61C64;
+
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.fa-fw {
+  margin-right: 5px;
+}
+
+.navbar-nav.navbar-toggle { background: #E61C64; border-radius: 2px; }
+.navbar-nav.navbar-toggle:hover { background: #E61C64; }
+.navbar-nav.navbar-toggle > span.icon-bar { background: #fff; }
+.navbar-nav ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+.navbar-nav ul.dropdown-menu > li > a { color: #444; }
+.navbar-nav ul.dropdown-menu > li > a:hover { background: #E61C64; color: #fff; }
+.navbar-nav span.badge { background: #E61C64; font-weight: normal; font-size: 11px; margin: 0 4px; }
+
+
+/* for footer panel */
+
+.bg-lightgray {
+    background-color: rgb(38,43,58);
+    height: 200px;
+    margin-top: 30px;
+}
+
+.footer-info {
+  margin: 60px;
+}
+
+.copyrights {
+  color: #fff
+
+}
+
+.logdown:hover,
+.logdown:focus {
+  color: #E61C64;
+  border-color: #E61C64;
+}
+
+ .fa-github-square {
+     color: #fff;
+ }
+
+ .fa-envelope-square {
+     color: #fff;
+ }
+
+ #social-gh:hover {
+     color: #E61C64;
+ }
+
+ #social-em:hover {
+     color: #E61C64;
+ }
+
+
+ /****** LOGIN Panle ******/
+
+.-page {
+  // background-image: url("https://ww4.sinaimg.cn/large/006tNc79jw1fcoiwefp5oj300o00g0c7.jpg") repeat fixed;
+  height: 650px;
+  }
+
+
+.-panel {
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 25px;
+}
+
+.-title {
+  margin-top: 25px;
+  font-size: 35px;
+  margin-bottom: 45px;
+}
+
+
+.form-inputs {
+  font-family: "Geneva", "Gill Sans", serif;
+  font-size: 16px;
+  color: #595958
+}
+
+.user_email {
+  width: 350px;
+  height: 70px;
+  text-align: left;
+  margin-left: 540px;
+}
+
+.user_password{
+  width: 350px;
+  height: 70px;
+  margin-left: 540px;
+  text-align: left;
+}
+
+.user_password_confirmation {
+  width: 350px;
+  height: 70px;
+  margin-left: 540px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.help-block {
+  font-size: 12px;
+}
+
+.user_remember_me {
+  margin-left: 540px;
+  text-align: left;
+  padding-top: -15px;
+  font-size: 14px;
+}
+
+
+.form-actions .btn-default {
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Geneva", "Gill Sans", serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fff !important;
+    background-color: rgb(230,28,100) !important;
+    border-color: rgb(230,28,100) !important;
+    text-align: center;
+
+}
+
+.form-actions :hover {
+    color: #fff !important;
+    background-color: rgb(35,66,158) !important;
+    border-color: rgb(35,66,158) !important;
+    text-align: center;
+}
+
+a {
+  font-size: 15px;
+}
