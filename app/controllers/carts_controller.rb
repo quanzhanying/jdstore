@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
   def clean
     current_cart.clean!
-    flash[:alert]="已经清空购物车。"
+    flash[:warning]="已经清空购物车。"
     redirect_to :back
   end
 
