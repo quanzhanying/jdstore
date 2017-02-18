@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'devise'
+gem 'letter_opener', group: :development
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
