@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -56,3 +56,4 @@ gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'awesome_rails_console'
 gem 'aasm'
+gem 'figaro'
