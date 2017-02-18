@@ -17,7 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
+.notice{
+ text-align:center;
+ margin-top: -20px;
+}
 .custab{
   border: 1px solid #ccc;
   padding: 5px;

@@ -2,13 +2,13 @@
   <div class="tips">
     请勿在此发起疾病救助类型的项目，一经发现将立即删除！
   </div>
-
-  <a href="/pages/demo" class="demo pull-right" target="_blank">
-    <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-    项目示例
-  </a>
-
   <div class="admin-product-info">
+    <div class="demo">
+      <a href="/pages/demo" class="pull-right" target="_blank">
+        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        项目示例
+      </a>
+    </div>
     <h2> 众筹项目信息 </h2>
     <%= simple_form_for [:admin, @product] do |f| %>
       <div class="form-group">
@@ -36,5 +36,4 @@
     </div>
     <% end %>
   </div>
-
 </div>
