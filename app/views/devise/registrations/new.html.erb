@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="container-fluid">
+  <div class="row  login-wap">
+    <div class="col-md-8 login-banner" >
+       <img src="https://www.youkastation.com/themes/new/assets/images/login/20160818001.png">
+    </div>
+    <div class="col-md-4">
+      <div class="login-user">
+        <div class="w" >
+        <h4>快乐购注册</h4>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+
+              <%= f.input :email, required: true, autofocus: true,label: "电子邮箱", placeholder: "请输入电子邮箱" %>
+                <%= f.input :password,label: "设置密码", required: true,placeholder: "密码至少6位" %>
+              <!--
+              <%= f.input :password,label: "设置密码", required: true,placeholder: "密码至少6位", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+-->
+              <%= f.input :password_confirmation, required: true ,label: "确认密码",placeholder: "请再次输入密码"%>
+            </div>
+
+
+
+            <div class="form-actions ">
+              <!--<%= f.button :submit, "登录" %> -->
+              <button class="btn btn-login" >注 册</button>
+            </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+       </div>
+     </div>
+    </div>
+  </div><!--row -->
+</div>
+</div>

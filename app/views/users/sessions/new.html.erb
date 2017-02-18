@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="container-fluid">
+    <div class="row  login-wap">
+
+      <div class="col-md-8 login-banner" >
+         <img src="https://www.youkastation.com/themes/new/assets/images/login/20160818001.png">
+      </div>
+      <div class="col-md-4">
+        <div class="login-user">
+          <div class="w" >
+              <h4>账户登录</h4>
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                  <%= f.input :email, required: false, autofocus: true ,label:"邮箱",placeholder: "请输入您的电子邮箱",type:"email"%>
+                  <%= f.input :password, required: false,label: "登录密码" ,placeholder:"请输入您的密码"%>
+                  <%= f.input :remember_me, label: '自动登录',as: :boolean if devise_mapping.rememberable? %>
+                </div>
+
+                <div class="form-actions ">
+                  <!--<%= f.button :submit, "登录" %> -->
+                  <button class="btn btn-login" >登  录 </button>
+                </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div> <!--row-->
+  </div>
+</div>

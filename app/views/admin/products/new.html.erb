@@ -1,0 +1,14 @@
+<h1 class="text-center">New Product </h1>
+<%= simple_form_for [:admin,@product] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :quantity %>
+<%= f.input :price %>
+<!--<%= f.input :image %>  -->
+<div class="group">
+  <%= f.input :image,as: :file %>
+</div>
+
+  <%= f.submit "Create Product" %>
+<% end %>
