@@ -3,6 +3,8 @@
 
     <h2> 订单明细 (<%= render_order_paid_state(@order) %>) </h2>
 
+
+    <%= render "admin/orders/state_option", order: @order %>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -12,25 +14,33 @@
         </tr>
       </thead>
       <tbody>
-        <% @product_lists.each do |product_list|%>
-        <tr>
-          <td> <%=product_list.product_name %></td>
-            <td> <%=product_list.product_price %></td>
-              <td> <%=product_list.quantity %></td>
-        </tr>
-<% end %>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
+            </td>
+          </tr>
+        <% end %>
+
       </tbody>
     </table>
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= @order.total %>CNY
-      </span>
-    </div>
+       总计 <%= @order.total %> CNY
+       </span>
+     </div>
 
-    <hr>
+     <hr>
 
-    <h2> 寄送资讯 </h2>
+     <h2> 寄送资讯 </h2>
 
      <table class="table table-striped table-bordered">
       <tbody>
