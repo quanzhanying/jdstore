@@ -22,13 +22,13 @@ class Admin::OrdersController < ApplicationController
 
   def shipped
     @order = Order.find(params[:id])
-    @order.deliver!
+    @order.delivery!
     redirect_to :back
   end
 
   def cancel
     @order = Order.find(params[:id])
-    @order.cancel_order!
+    @order.cancell_order!
     OrderMailer.notify_cancel(@order).deliver!
     redirect_to :back
   end
