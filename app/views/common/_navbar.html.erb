@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
+            <a class="navbar-brand" href="/"><i class="fa fa-diamond" aria-hidden="true"></i>VS Studio </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -15,13 +15,13 @@
             <ul class="nav navbar-nav navbar-right">
                <li>
                  <%= link_to carts_path do  %>
-                 购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                 Shopping Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                  <% end %>
                </li>
                     <% if !current_user %>
-                      <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a></li>
 
-                      <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li>
                         <% else %>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -49,7 +49,7 @@
 </nav>
 
 <!-- 以下代码添加在最后 -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade-log" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
        <h2>Log in</h2>
@@ -67,7 +67,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade-log" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
       <h2>Sign up</h2>

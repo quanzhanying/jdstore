@@ -18,35 +18,35 @@ u.save
 
 products = [{title:"Fashion Normal",
 	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/fashion-1.jpg"},
+	        image_path: "#{Rails.root}/public/images/sample-fashion-1.jpg"},
 
 	        {title:"Events Normal",
 	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/event-1.jpg"},
+	        image_path: "#{Rails.root}/public/images/sample-events-1.jpg"},
 
           {title:"Nature Normal",
 	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/nature-1.jpg"},
+	        image_path: "#{Rails.root}/public/images/sample-nature-1.jpg"},
 
           {title:"Model Normal",
 	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/model-1.jpg"},
+	        image_path: "#{Rails.root}/public/images/sample-models-1.jpg"},
 
 					{title:"Fashion Premium",
 					description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-					image_path: "#{Rails.root}/public/images/fashion-2.jpg"},
+					image_path: "#{Rails.root}/public/images/sample-fashion-2.jpg"},
 
 					{title:"Events Premium",
 	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/event-2.jpg"},
+	        image_path: "#{Rails.root}/public/images/sample-events-2.jpg"},
 
           {title:"Nature Premium",
 	        description: "We help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/nature-2.jpg"},
+	        image_path: "#{Rails.root}/public/images/sample-nature-2.jpg"},
 
           {title:"Model Premium",
 	        description: "TWe help millions of designers, writers, artists, programmers and other creators to get access to beautiful photos that they can use freely which empowers them to create amazing products, designs, stories, websites, apps, art and other work.",
-	        image_path: "#{Rails.root}/public/images/model-2.jpg"}]
+	        image_path: "#{Rails.root}/public/images/sample-models-2.jpg"}]
 
 p1 = Product.create([title:products[0][:title],description:products[0][:description],quantity:20,price:12000,image:open(products[0][:image_path])])
 p2 = Product.create([title:products[1][:title],description:products[1][:description],quantity:20,price:10000,image:open(products[1][:image_path])])
