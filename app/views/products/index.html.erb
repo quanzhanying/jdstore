@@ -1,0 +1,21 @@
+<div class="row">
+    <% @products.each do |product|%>
+    <div class="col-xs-6 col-md-3">
+        <!-- xs (phones), sm (tablets), md (desktops), and lg (larger desktops).  -->
+        <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnial")   %>
+        <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnial")   %>
+        <% end %>
+        <% end %>
+        <div class="col-md-9">
+          <%= product.title %>
+
+         <div class="col-md-6">
+         ¥<%= product.price %>
+         </div>
+        </div>
+    </div>
+    <% end %>
+</div>
