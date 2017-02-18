@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       end
       current_cart.clean!
       OrderMailer.notify_order_placed(@order).deliver!
-      
+
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
@@ -31,7 +31,8 @@ class OrdersController < ApplicationController
   def pay_with_alipay
       @order = Order.find_by_token(params[:id])
       @order.set_payment_with!("alipay")
-      @order.pay!
+      # @order.pay!
+      @order.make_payment
 
       redirect_to order_path(@order.token), notice: "使用支付宝成功完成付款"
     end
@@ -39,7 +40,7 @@ class OrdersController < ApplicationController
     def pay_with_wechat
       @order = Order.find_by_token(params[:id])
       @order.set_payment_with!("wechat")
-      @order.pay!
+      @order.make_payment!
 
       redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
     end
