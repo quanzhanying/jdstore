@@ -11,14 +11,14 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
 
-    bi=0
+    bi=false
     current_cart.cart_items.each do |cart_item|
       if cart_item.product_id == @product.id
-        bi=1
+        bi=true
       end
     end
 
-    if bi == 0
+    if bi == false
         if @product.quantity != 0
           current_cart.add_product_to_cart(@product)
           flash[:notice] = "成功加入购物车！"
