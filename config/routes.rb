@@ -11,6 +11,10 @@ namespace :admin do
   resources :products
 end
 
+namespace :account do
+  resources :orders
+end
+
 resources :carts do
   collection do
     delete :clean
