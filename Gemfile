@@ -62,4 +62,4 @@ gem 'letter_opener', group: :development
 gem 'awesome_rails_console'
 gem 'aasm'
 gem 'figaro'
-gem 'fog'
+gem 'fog-aws'
