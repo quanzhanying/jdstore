@@ -13,4 +13,4 @@ class ProductsController < ApplicationController
     flash[:notice] = "成功加入购物车"
     redirect_to :back
   end
-end
+  end
