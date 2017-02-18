@@ -3,6 +3,9 @@
 
     <h2>购物车</h2>
 
+    <%= link_to("清空购物车", empty_cart_path(current_cart), method: :post, data: { confirm: "确定要清空购物车吗？"},
+                 class: "pull-right", style: "text-decoration: underline; padding-bottom: 20px") %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -53,11 +56,6 @@
     </div>
 
     <hr>
-
-    <div class="checkout clearfix">
-      <%= link_to("清空购物车", empty_cart_path(current_cart), method: :post,
-                  data: { confirm: "确定要清空购物车吗？"}, class: "btn btn-lg btn-alert pull-left") %>
-    </div>
 
     <div class="checkout clearfix">
       <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
