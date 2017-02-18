@@ -1,26 +1,95 @@
-<div class="row">
+<!-- <div class="row">
 <div class="col-md-6">
-<% if @product.image.present? %>
-<%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-<% else %>
-<%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-<% end %>
-</div>
-<div class="col-md-6">
-<h2><%= @product.title %></h2>
-<div style="height:100px;">
-<p>
-<%= @product.description %>
-</p>
-</div>
-<div>数量 : <%= @product.quantity %> </div>
-<div class="product-price"> ¥ <%= @product.price %> </div>
-<div class="pull-right">
-  <% if @product.quantity.present? && @product.quantity > 0 %>
-  <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-  <% else %>
-  已销售一空，无法购买
+<% if @photos.present? %>
+  <% @photos.each_with_index do |p, index| %>
+    <% if index == 0 %>
+      <%= image_tag p.avatar.medium.url %>
+       <div style="letter-spacing: -8px">
+    <% else %>
+           <%= image_tag p.avatar.thumb.url %>
+    <% end %>
   <% end %>
 </div>
+<% else %>
+  <%= image_tag("http://placehold.it/450x450&text=No Pic", class:"thumbnail")%> -->
+<!-- <% end %> -->
+<div class="container">
+  <div class="col-md-12">
+<h2 class="show-title">
+    <%= link_to("iRobot", '#',style: "text-decoration: none;",class:"show-menu-logo") %>
+</h2>
+<div class="show-menu-tray">
+  <ul class="show-menu-items">
+    <li class="show-menu-item-buy" >
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+      <%= link_to("购买", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-xs pull-right") %>
+      <% else %>
+      缺货
+      <% end %>
+    </li>
+    <li class="show-menu-item">
+      <%= link_to("技术规格", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+    </li>
+    <li class="show-menu-item">
+      <%= link_to("概览", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+    </li>
+  </ul>
+  </div>
+  <br>
+  <hr style="margin-top:15px">
 </div>
 </div>
+
+<<!--
+Thumbnail link for mixer image
+NOTE: data-target is .pop-up-1 for mixer, and .pop-up-2 for lion, these
+classes must be unique
+-->
+
+<a href="#" data-toggle="modal" data-target=".pop-up-1">
+<img src="http://i.imgur.com/YZ7AGyF.jpg" width="150" class="img-responsive img-rounded center-block" alt="">
+</a>
+
+<hr>
+
+<!-- Thumbnail link for lion image -->
+<a href="#" data-toggle="modal" data-target=".pop-up-2">
+<img src="http://i.imgur.com/dtaHtds.jpg" width="150" class="img-responsive img-rounded center-block" alt="">
+</a>
+
+
+<!--  Modal content for the mixer image example -->
+  <div class="modal fade pop-up-1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myLargeModalLabel-1">Mixer Board</h4>
+        </div>
+        <div class="modal-body">
+        <img src="http://i.imgur.com/YZ7AGyF.jpg.jpg" class="img-responsive img-rounded center-block" alt="">
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal mixer image -->
+
+ <!--  Modal content for the lion image example -->
+  <div class="modal fade pop-up-2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-2" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myLargeModalLabel-2">Lion</h4>
+        </div>
+        <div class="modal-body">
+        <img src="http://i.imgur.com/kzGVqbd.jpg" class="img-responsive img-rounded center-block" alt="">
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal mixer image -->
+
+
+</div> <!-- /.row -->
+</div> <!-- /.container -->

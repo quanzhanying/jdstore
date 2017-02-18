@@ -1,3 +1,52 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*  商品展示  */
+.show-title {
+  float:left;
+  margin: 0;
+  padding: 0;
+  color:#212121
+
+}
+.show-menu-logo {
+  font-family: inherit;
+  font-weight: inherit;
+  color:#212121
+}
+
+.show-menu-item{
+  margin-top:4px;
+  padding:0;
+  font-size: 0.8em;
+  font-family: inherit;
+  font-weight: inherit;
+  float:right;
+  color:#212121
+}
+.show-menu-link{
+  color:#757575
+}
+
+
+.show-menu-items li{
+  list-style-type:none;
+  margin-left:15px
+
+}
+.show-menu-item-buy {
+  margin:0;
+  padding:0;
+  font-size: 0.8em;
+  font-family: inherit;
+  font-weight: inherit;
+  float:right;
+
+}
+
+.show-title .show-menu-logo:hover,
+.show-title .show-menu-logo:focus {
+  color: #29B6F6;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
