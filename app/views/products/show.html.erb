@@ -13,9 +13,16 @@
         <%= simple_format(@product.description) %>
       </p>
     </div>
-    <div > 菜系风格 ：  <%= @product.style %>  </div>
-    <div>数量 ： <%= @product.quantity %></div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="product-style">
+      <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>
+      <%= @product.style %>
+    </div>
+    <div class="product-qun">
+      <i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i> 库存 <%= @product.quantity %> 份
+    </div>
+    <div class="product-price">
+      <i class="fa fa-money fa-lg" aria-hidden="true"></i> ￥ <%= @product.price %>
+    </div>
     <div class="pull-right">
       <% if !current_user.admin? %>
         <% if @product.quantity.present? && @product.quantity > 0 %>
@@ -23,7 +30,7 @@
         <% else %>
           已销售一空，无法购买
         <% end %>
-        
+
       <% end %>
     </div>
   </div>

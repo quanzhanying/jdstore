@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>#</th>
+      <th>订单状态</th>
       <th>生成时间</th>
     </tr>
   </thead>
@@ -11,6 +12,7 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= link_to(order.id, order_path(order.token)) %></td>
+        <td> <%= render "admin/orders/state_option_read", order: order %></td>
         <td><%= order.created_at.to_s(:long) %></td>
       </tr>
     <% end %>

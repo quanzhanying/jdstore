@@ -21,21 +21,24 @@
         <%= simple_format(@chef.description) %>
       </p>
     </div>
-    <div> 擅长菜系 ： <%= @chef.style %>  </div>
+    <div class="style">
+      <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
+    </div>
 
     <div class="chef-follow">
       <% if current_user.has_follow?(@chef) %>
         <%= link_to unfollow_chef_path(@chef), :method => :post do %>
-          <img src='<%= image_url 'thumbs-up-hand-symbol.png' %>'>
+          <i class="fa fa-thumbs-up fa-lg" style="color:red" aria-hidden="true" ></i>
         <% end %>
       <% else %>
         <%= link_to follow_chef_path(@chef), :method => :post do %>
-          <img src='<%= image_url 'thumbs-up.png' %>'>
+            <i class="fa fa-thumbs-o-up fa-lg" style="color:red" aria-hidden="true" ></i>
         <% end %>
       <% end %>
       <%= @chef.followers.count %>
     </div>
     <div class="pull-right">
+      <% if !current_user.admin? %>
       <% if true %>
         <% if current_cart.present? && current_cart.chef_id != nil && current_cart.chef_id != @chef.id %>
           <%= link_to("私厨订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger",
@@ -45,6 +48,7 @@
         <% end %>
       <% else %>
         档期已满
+      <% end %>
       <% end %>
     </div>
   </div>

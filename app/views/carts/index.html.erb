@@ -7,7 +7,7 @@
 
     <h4> 您的私厨
       <% if @chef.present? %>
-        <%= link_to(@chef.name, chef_path(@chef)) %>
+        <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
         <% if @chef.chef_level_id == 1 %>
           <img src='<%= image_url 'gold-medal.png' %>'>
         <% elsif @chef.chef_level_id == 2 %>
@@ -21,6 +21,7 @@
     <table class="table table-bordered">
       <tr>
         <th colspan="2"> 菜品 </th>
+        <th>菜式</th>
         <th>单价</th>
         <th>数量</th>
         <th>操作选项</th>
@@ -41,6 +42,9 @@
             </td>
             <td>
                 <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.style %>
             </td>
             <td>
               <%= cart_item.product.price %>
@@ -94,7 +98,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        <span> <%= render_cart_total_price(current_cart) %> RMB
+        <span> 总计  <%= render_cart_total_price(current_cart) %> RMB
         </span>
       </span>
     </div>

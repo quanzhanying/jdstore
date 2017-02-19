@@ -14,24 +14,25 @@ class OrdersController < ApplicationController
         product_list.produt_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
+        product_list.style = cart_item.product.style
         product_list.save
         end
       end
 
       chef = Chef.find(current_cart.chef_id)
-      chef_shadow = ChefShadow.new
-      chef_shadow.order = @order
-      chef_shadow.name = chef.name
-      chef_shadow.chef_level_id = chef.chef_level_id
-      chef_shadow.style = chef.style
-      chef_shadow.phone = chef.phone
-      chef_shadow.save
-      
+      @chef_shadow = ChefShadow.new
+      @chef_shadow.order = @order
+      @chef_shadow.name = chef.name
+      @chef_shadow.chef_level_id = chef.chef_level_id
+      @chef_shadow.style = chef.style
+      @chef_shadow.phone = chef.phone
+      @chef_shadow.save
+
       current_cart.chef_id = nil
       current_cart.save
       current_cart.clean!
 
-      OrderMailer.notify_order_placed(@order).deliver!
+      OrderMailer.notify_order_placed(@order, @chef_shadow).deliver!
 
       redirect_to order_path(@order.token)
     else
@@ -63,14 +64,16 @@ class OrdersController < ApplicationController
 
   def apply_to_cancel
     @order = Order.find(params[:id])
-    OrderMailer.apply_cancel(@order).deliver!
+    @chef = ChefShadow.find_by(order_id: @order.id)
+    OrderMailer.apply_cancel(@order, @chef).deliver!
     flash[:notice] = "已提交撤销申请"
     redirect_to :back
   end
 
   def apply_to_return
     @order = Order.find(params[:id])
-    OrderMailer.apply_return(@order).deliver!
+    @chef = ChefShadow.find_by(order_id: @order.id)
+    OrderMailer.apply_return(@order, @chef).deliver!
     flash[:notice] = "已提交退货申请"
     redirect_to :back
   end
