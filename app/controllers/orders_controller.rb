@@ -14,6 +14,9 @@ class OrdersController < ApplicationController
         product_list.quantity = cart_item.quantity
         product_list.save
       end
+      current_cart.clean!
+      # 调用cart的model，清空购物车
+      OrderMailer.notify_order_placed(@order).deliver!
 
       redirect_to order_path(@order.token)
     else
