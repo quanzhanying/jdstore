@@ -17,3 +17,94 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {background-color: #D4D46A}
+
+.navbar {
+  margin-bottom: 0px;
+  background-color: #212121;
+  border-color: #D4D46A;
+  border-radius: 0px;
+  //background-color: black;
+  //border: 0px black;
+}
+
+.navbar-default .navbar-brand {
+   color: #801815;
+   padding: 10px 15px;
+   line-height: 30px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #801815;
+  background-color: #FCFCA5;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #801815;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #801815;
+  background-color: #FCFCA5;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #801815;
+  background-color: #FCFCA5;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FCFCA5;
+    color: #801815;
+}
+
+.navbar-brand > img {
+    display: inline-block;
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+}
+
+.jumbotron {
+  background-image:url("https://ww1.sinaimg.cn/large/006tNbRwgy1fcp4nh96y1j31kw0jnb29.jpg");
+  background-size: cover;
+  background-repeat:no-repeat;
+  width : 100%;
+  padding-bottom: 110px;
+  border-radius: 0px !important;
+}
+.slogan {
+  color: #FFFFAA;
+}
+.advertisement {
+  color: white;
+}
+.title {
+  color: #FFFFAA;
+  font-size: 30px;
+}
+.carousel {
+  width: 80%;
+  height: 20%;
+  margin: auto;
+}
+.desc {
+  font-weight:bolder;
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+}
+.thumbnail {
+  border: 0 none;
+  //border: 1px solid red;
+  box-shadow: none;
+  border-radius: 0px !important;
+  padding: 0px;
+}
