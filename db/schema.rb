@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170219042448) do
 
   create_table "product_lists", force: :cascade do |t|
     t.integer  "order_id"
-    t.integer  "product_name"
+    t.string   "product_name"
     t.integer  "product_price"
     t.integer  "quantity"
     t.datetime "created_at",    null: false
