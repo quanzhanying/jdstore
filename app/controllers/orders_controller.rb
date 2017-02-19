@@ -1,6 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+  def apply_to_cancel
+      @order = Order.find(params[:id])
+      OrderMailer.apply_cancel(@order).deliver!
+      flash[:notice] = "已提交申请"
+      redirect_to :back
+    end
   def pay_with_alipay
       @order = Order.find_by_token(params[:id])
       @order.set_payment_with!("alipay")
