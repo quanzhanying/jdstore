@@ -1,5 +1,11 @@
 class OrdersController < ApplicationController
+    layout 'admin'
     before_action :authenticate_user!, only: [:create]
+    before_action :admin_required
+
+    def index
+        @orders = Order.order('id DESC')
+    end
 
     def create
         @order = Order.new(order_params)
