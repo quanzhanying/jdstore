@@ -1,0 +1,42 @@
+<h1> <%= @product.title %> </h1>
+<p>
+    <%= simple_format(@product.description) %>
+</p>
+
+
+  <img src="/public/@product.image">
+
+
+
+<table class="table table-boldered">
+  <thead>
+        <tr>
+
+            <td>库存</td>
+            <td>价格</td>
+
+
+            <td>创建日期</td>
+        </tr>
+
+    </thead>
+    <tbody>
+
+  <tr>
+
+
+    <td>
+      <%= @product.quantity %></br>
+    </td>
+    <td>
+      <%= @product.price %>
+    </td>
+    <td>
+      <%= @product.created_at %>
+    </td>
+
+
+  </tr>
+
+</tbody>
+</table>
