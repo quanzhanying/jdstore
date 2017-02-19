@@ -1,5 +1,7 @@
 <h2>购买产品的订单明细(<%= render_order_paid_state(@order) %>)</h2>
 
+<%= render "admin/orders/state_option", order: @order %>
+
 <table class="table table-bordered">
   <thead>
     <tr>
