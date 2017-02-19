@@ -57,6 +57,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: $gray-lighter;
 }
 
+.bg-light-pink {
+    background-color: 	#FFE4E1;
+}
+
+
 .bg-darkest-gray {
     background-color: $gray-darker;
 }
@@ -167,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('http://farm6.staticflickr.com/5495/12321190383_e2aa4452c8_o.jpg');
+    background-image: url('https://ww2.sinaimg.cn/large/006tKfTcgy1fcw6euyajlj312w0p0apk.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -190,6 +195,8 @@ header {
             font-size: 50px;
             line-height: 50px;
             margin-bottom: 25px;
+            color: #FF0000;
+            background-color: 	#FFE4E1;
         }
     }
 }
