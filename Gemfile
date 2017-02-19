@@ -46,7 +46,7 @@ gem 'mini_magick'
 
 gem 'letter_opener', group: :development
 
-
+gem 'aasm'
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
