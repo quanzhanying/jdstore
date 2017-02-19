@@ -22,12 +22,14 @@ create_product = for i in 1..10 do
 end
 puts "10 products created."
 
+
+
 create_order = for i in 1..10 do
-  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "wechat"])
+  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "wechat", aasm_state: "paid"])
 end
-puts "10 oreders paid with wechat."
+puts "10 orders paid with wechat."
 
 create_order = for i in 11..20 do
-  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "alipay"])
+  Order.create!([user_id: rand(1..10), total: rand(50..99)*100 , billing_name: "#{i}This is billing name.", billing_address: "#{i}This is billing address.", shipping_name: "#{i}This is shipping name.", shipping_address: "#{i}This is shipping address.", is_paid: true, payment_method: "alipay", aasm_state: "paid"])
 end
 puts "10 orders paid with alipay."
