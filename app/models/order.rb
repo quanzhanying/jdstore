@@ -5,6 +5,8 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
+
+
     belongs_to :user
 
     validates :billing_name, presence: true
@@ -14,12 +16,12 @@ class Order < ApplicationRecord
 
     has_many :product_lists
 
-  def set_payment_with!(method)
-    self.update_columns(payment_method: method )
-  end
 
-  def pay!
-    self.update_columns(is_paid: true )
-  end
+    def set_payment_with!(method)
+      self.update_columns(payment_method: method )
+    end
 
+    def pay!
+      self.update_columns(is_paid: true )
+    end
 end
