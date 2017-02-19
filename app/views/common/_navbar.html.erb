@@ -1,4 +1,35 @@
+
+
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="sitenav">
+      <div class="g-row">
+        <p>品质生活，品质家居</p>
+        <div class="right">
+        <ul class="sitenav-right">
+
+            <% if !current_user %>
+                <li class="navli"><%= link_to("登入", new_user_session_path) %></li>
+                <li class="navli"><%= link_to("注册", new_user_registration_path) %></li>
+            <% else %>
+                <li class="navli">
+                      <p>  Hi!, <%= current_user.email %></p>
+                </li>
+                <% if current_user.admin? %>
+                          <li class="navli">
+                                <%= link_to("管理员选单", admin_products_path) %>
+                          </li>
+                <% end %>
+                <li class="navli">
+                      <%= link_to("个人订单列表", account_orders_path ) %>
+                </li>
+                <li class="navli"><%= link_to("登出",  destroy_user_session_path, method: :delete) %></li>
+            <% end %>
+        </ul>
+      </div>
+      </div>
+
+    </div>
+
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header" >
@@ -24,36 +55,65 @@
               <!-- <%= submit_tag "Search", :name => nil, class: "btn btn-default" %> -->
             <% end %>
 
-            <ul class="nav navbar-nav navbar-right narbar-right-new">
-                <li>
+            <div class=" narbar-right-new">
                     <%= link_to carts_path do  %>
                         <i class="fa fa-shopping-cart fa-shoppingcart"> </i> <span class="label label-success"> <%= current_cart.products.count %> </span>
                     <% end %>
-                </li>
+            </div>
+            <!-- 分类导航 -->
+            <!-- <ul class="tab-nav">
+              <li class='nav-item active first'>
+<a class="topLevel" title="首页" href='/?_stat_area=nav_1&_stat_referer=index'>首页</a>
+</li>
 
-                <% if !current_user %>
-                    <li><%= link_to(content_tag(:i, "注册", class: 'fa fa-user-o'), new_user_registration_path) %></li>
-                    <li><%= link_to(content_tag(:i, "登入", class: 'fa fa-sign-in'), new_user_session_path) %></li>
-                <% else %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hi!, <%= current_user.email %>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <% if current_user.admin? %>
-                                <li>
-                                    <%= link_to("管理员选单", admin_products_path) %>
-                                </li>
-                            <% end %>
-                            <li>
-                                <%= link_to("个人订单列表", account_orders_path ) %>
-                            </li>
-                            <li><%= link_to(content_tag(:i, "登出", class: 'fa fa-sign-out'),  destroy_user_session_path, method: :delete) %></li>
-                        </ul>
-                    </li>
-                <% end %>
-            </ul>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+居家
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+餐厨
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+配件
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+服装
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+洗护
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+婴童
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+饮食
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+杂货
+</a>
+</li>
+<li class='j-nav-item nav-item '>
+<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+其他
+</a>
+</li>
+
+
+            </ul> -->
         </div>
         <!-- /.navbar-collapse -->
     </div>

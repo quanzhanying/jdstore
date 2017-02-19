@@ -27,7 +27,7 @@ body {
   // margin-right: -15px;
   min-height: 100%;
   min-width: 1090px;
-  padding-top: 100px;
+  padding-top: 136px; //nav的高度
   margin-bottom: 460px !important;
 }
 body .container-fluid {
@@ -35,6 +35,52 @@ body .container-fluid {
   padding-right: 0px;
 }
 /* navbar */
+.sitenav{
+  background-color: #333;
+  height: 36px;
+  z-index: 1;
+}
+
+.sitenav .g-row {
+  line-height: 36px;
+}
+.sitenav .g-row p {
+  color: #ccc;
+  font-size: 12px;
+  float: left;
+}
+.sitenav .right {
+  padding: 0;
+  height: 36px !important;
+  color: #ccc;
+}
+.sitenav-right li{
+  display: block;
+  float: left;
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+}
+.sitenav-right li a{
+  display: block;
+  padding: 0 !important;
+  color: #ccc;
+}
+.sitenav-right li a i{
+  line-height: 36px;
+  color: #ccc;
+  font-size: 12px;
+  padding: 0 10px;
+}
+.sitenav-right .navli {
+  height: 36px;
+  font-size: 12px;
+  padding-top: 12px;
+  color: #ccc;
+  padding: 0 10px;
+}
+
+
 .navbar-default {
     background-color: #fff !important;
     border-style: none !important;
@@ -45,11 +91,13 @@ body .container-fluid {
     min-width: 1277px;
 }
 .navbar {
-  height: 100px;
+  height: 136px;
   padding-top:0px;
+  background-color: #FFF;
+}
+.navbar .container-fluid{
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #FFF;
 }
 .navbar-head {
 padding-right: 50px;
@@ -80,7 +128,14 @@ padding-right: 50px;
 
 .fa-shoppingcart {
   font-size: 25px !important;
+  color: #c5b99f;
+  display: block;
+  padding-top: 25px;
 }
+.navbar-right-new a:hover {
+  text-decoration: none;
+}
+
 .navbar .label-success {
   background-color: #aa5239;
   position: absolute;
@@ -91,6 +146,19 @@ padding-right: 50px;
 }
 .narbar-right-new {
 
+}
+//tab-nav
+.tab-nav {
+  display: block;
+  float: left;
+  width: 80%
+}
+.tab-nav li {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+  float: left;
+  padding: 0 30px;
 }
 /* lisuji footer */
 
