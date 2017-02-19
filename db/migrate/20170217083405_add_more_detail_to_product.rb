@@ -6,12 +6,12 @@ class AddMoreDetailToProduct < ActiveRecord::Migration[5.0]
     add_column :products, :walking, :string
     add_column :products, :playing, :string
     add_column :products, :bathing, :string
-    add_column :products, :is_clothes, :boolean, default: true
-    add_column :products, :is_living, :boolean, default: true
-    add_column :products, :is_eating, :boolean, default: true
-    add_column :products, :is_playing, :boolean, default: true
-    add_column :products, :is_bathing, :boolean, default: true
-    add_column :products, :is_walking, :boolean, default: true
-    add_column :products, :is_hidden, :boolean, default: true
+    add_column :products, :is_clothes, :boolean, default: false
+    add_column :products, :is_living, :boolean, default: false
+    add_column :products, :is_eating, :boolean, default: false
+    add_column :products, :is_playing, :boolean, default: false
+    add_column :products, :is_bathing, :boolean, default: false
+    add_column :products, :is_walking, :boolean, default: false
+    add_column :products, :is_hidden, :boolean, default: false
   end
 end
