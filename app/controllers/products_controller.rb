@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true)
   end
 
   def show
@@ -17,7 +18,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "你已成功将 #{@product.title}加入购物车"
     else
       flash[:warning] = "你的购物车内已有此物品"
-    end 
+    end
       redirect_to :back
   end
 
