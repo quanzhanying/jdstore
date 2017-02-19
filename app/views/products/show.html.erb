@@ -24,3 +24,18 @@
     </div>
   </div>
 </div>
+
+
+<div class="row comment">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="comment_title">
+      <%= @product.comments.count %> 个评价
+    </h3>
+    <hr />
+    <div id="comments">
+      <%= render @product.comments %>
+      <hr />
+      <%= render "comments/form" %>
+    </div>
+  </div>
+</div>
