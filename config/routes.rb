@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
 devise_for :users
-resources :products do
-  member do
-    post :add_to_cart
-  end
-end
+
 
 namespace :admin do
   resources :products
@@ -19,8 +15,10 @@ namespace :admin do
   end
 end
 
-namespace :account do
-  resources :orders
+resources :products do
+  member do
+    post :add_to_cart
+  end
 end
 
 resources :carts do
@@ -38,6 +36,10 @@ resources :orders do
     post :pay_with_wechat
     post :apply_to_cancel
   end
+end
+
+namespace :account do
+  resources :orders
 end
 
 root 'products#index'
