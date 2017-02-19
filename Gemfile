@@ -36,6 +36,7 @@ gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'figaro'
+gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
