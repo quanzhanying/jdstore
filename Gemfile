@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'aasm'
 gem 'devise'
 gem 'letter_opener', group: :development
 gem 'carrierwave'
