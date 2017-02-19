@@ -1,0 +1,39 @@
+<div class= "search">
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :title_cont %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<div class="dropdown clearfix pull-right">
+  <button class="btn btn-defalut dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    排序
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+    <li>
+      <%= sort_link(@q, :price, "按价格排序") %>
+    </li>
+    <li>
+      <%= sort_link(@q, :quantity, "按销量排序") %>
+    </li>
+
+  </ul>
+
+
+</div>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
