@@ -24,7 +24,7 @@ html {
 }
 body {
   padding-top: 100px;
-  margin-bottom: 440px !important;
+  margin-bottom: 460px !important;
 }
 /* navbar */
 .navbar-default {
@@ -85,12 +85,15 @@ padding-right: 50px;
 
 }
 /* lisuji footer */
+
 #footer {
+  margin-top: 20px;
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 440px;
+  border-top: solid 1px #e9e9e9 ;
 
 }
 #footer .container {
