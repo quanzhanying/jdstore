@@ -1,4 +1,6 @@
 # README
+
+20170219 JDstore 第六部分 - 部署到 Heroku
 使用者可以在/account/orders/看到过去所有的订单
 使用者在下拉式选单可以看到过去所有的订单
 
