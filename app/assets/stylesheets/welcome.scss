@@ -102,3 +102,40 @@ img {
   margin-top: 100px;
 
 }
+
+#hometitle
+{
+  text-align: center;
+  font-size: 5em;
+  margin-right: 7%;
+}
+
+#homecaption
+{
+  text-align: center;
+  color: pink;
+  font-family: cursive;
+  font-size: 3em;
+  margin-top: -2%;
+  margin-left: 7%;
+}
+
+.nav-pills
+{
+  align: center;
+  background-color: white;
+  font-size: 1.5em;
+  width:80%;
+
+}
+.types a
+{
+  background-color: white;
+  color: grey;
+}
+
+.types a:hover
+{
+  background-color: white;
+  color: black;
+}
