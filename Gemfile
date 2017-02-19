@@ -26,8 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'figaro'
-gem 'fog'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
@@ -38,12 +37,16 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
+
+
+gem 'fog'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
 end
-
+gem 'figaro'
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
