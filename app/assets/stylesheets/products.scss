@@ -13,7 +13,8 @@
 .show-menu-logo {
   font-family: inherit;
   font-weight: inherit;
-  color:#212121
+  color:#212121;
+  text-decoration:none;
 }
 
 .show-menu-item{
@@ -32,7 +33,7 @@
 
 .show-menu-items li{
   list-style-type:none;
-  margin-left:15px
+  margin-left:25px
 
 }
 .show-menu-item-buy {
@@ -49,4 +50,80 @@
 .show-title .show-menu-logo:focus {
   color: #29B6F6;//鼠标放置在链接上的文字颜色
   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.section-content2{
+  text-align:center;
+  margin-top:100px;
+  margin-bottom: 100px;
+}
+
+.eyebrow{
+  font-weight: 400;
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: .016em;
+}
+
+.hero-headline{
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: .016em;
+  text-align: center;
+  width: 617px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro{
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  text-align: center;
+  width:620px;
+  font-size: 20px;
+  font-weight:300;
+  letter-spacing: .017em;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  margin-top: .75em;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+img.washer-product-kitchen{
+  -webkit-filter:grayscale(0.5);
+      height: 100%;
+      min-width: 1024px;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+}
+
+.washer-product-profile{
+  min-width: 250px;
+  height: 400px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  display: block;
+}
+
+img.washer-product-profile2{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
 }

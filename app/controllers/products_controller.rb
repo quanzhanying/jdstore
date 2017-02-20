@@ -5,7 +5,17 @@ class ProductsController < ApplicationController
   def show
   @product = Product.find(params[:id])
   @photos = @product.photos.all
+  if @product.model == 'xx11'
+    render 'products/_productheader'
+  else
+    render 'products/apple'
   end
+
+  end
+
+
+
+
   def add_to_cart
     @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
