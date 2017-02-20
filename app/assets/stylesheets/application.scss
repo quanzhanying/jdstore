@@ -18,3 +18,34 @@
  @import "bootstrap";
 
  @import "font-awesome";
+
+
+ html {
+   height: 100%;
+ }
+
+body {
+
+  position: relative;    //相对于正常位置
+  margin-bottom: 50px;  //一定要和footer的高度一致
+  min-height: 100%;
+  background: rgb(237,237,237);
+}
+
+
+
+nav {
+  margin: 0 -15px 0 -15px;
+  border-radius: 0;
+  padding: 10px 20px 10px 20px;
+}
+
+footer {
+  position: absolute;
+
+
+  bottom:0;          // set the bottom edge of the absolute positioned element to 0px above the bottom edge of its nearest positioned ancestor。
+  width: 100%;
+  height: 50px;
+  z-index: 1000;  // z-index值越大，此元素越会保持在最前
+}

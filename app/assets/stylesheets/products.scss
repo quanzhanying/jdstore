@@ -1,3 +1,24 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.search {
+  text-align: center;
+}
+
+.search-content {
+  width: 500px;
+  height: 35px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+
+.search-icon {
+  font-size: 22px;
+  margin-left: -70px;
+  line-height: 32px;
+
+}

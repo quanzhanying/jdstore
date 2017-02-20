@@ -1,9 +1,4 @@
-<div class= "search">
-  <%= search_form_for @q do |f| %>
-    <%= f.search_field :title_cont %>
-    <%= f.submit %>
-  <% end %>
-</div>
+
 
 <div class="dropdown clearfix pull-right">
   <button class="btn btn-defalut dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -20,8 +15,20 @@
 
   </ul>
 
-
 </div>
+
+
+
+
+
+<div class= "search">
+
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :title_cont ,class:"search-content" , placeholder:"请输入商品关键词"%>
+    <%= f.submit class:"btn btn-info" %>
+  <% end %>
+</div>
+
 
 <div class="row">
   <% @products.each do |product| %>
