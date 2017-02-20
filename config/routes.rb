@@ -3,10 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :products
-    resources :orders
-  end
-
-  namespace :account do
     resources :orders do
       member do
         post :cancel
@@ -15,6 +11,10 @@ Rails.application.routes.draw do
         post :return
       end
     end
+  end
+
+  namespace :account do
+    resources :orders
   end
 
   resources :products do
