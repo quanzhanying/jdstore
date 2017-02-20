@@ -1,0 +1,57 @@
+// Place all the styles related to the admin::products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-page {
+
+  padding-top: 75px;
+  .sidebar {
+    border: 1px solid #d5d5d5;
+    margin-top: 27px;
+    padding: 0;
+    a {
+      text-decoration: none;
+    }
+    p, ul {
+      padding-left: 60px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 0;
+      ul {
+        padding-left: 25px;
+      }
+      div {
+        background-color: #D3D3D3;
+      }
+    }
+    p {
+      background: #d5d5d5;
+      padding-left: 40px;
+    }
+  }
+}
+
+.render-page {
+  margin-top: 26px;
+  border: 1px solid #d5d5d5;
+  padding: 15px;
+  .product-chunk {
+    //border-bottom: 1px solid #d5d5d5;
+    padding: 10px;
+    .img-circle {
+      width: 95px;
+      height: 95px;
+    }
+  }
+  h3 {
+    margin-bottom: 30px;
+  }
+  .product-chunk:nth-child(2n) {
+    //border-left: 1px solid #d5d5d5;
+  }
+  .chunk-right {
+    border-left: 2px solid #d5d5d5;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+}

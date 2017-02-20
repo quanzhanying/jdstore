@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);

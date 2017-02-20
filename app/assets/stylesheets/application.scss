@@ -1,0 +1,415 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+
+
+ div.alert {
+   margin-top: 52px;
+   margin-bottom: 0;
+   border-radius: 0;
+ }
+
+ body {
+   font-family: 'cwTeXHei', sans-serif;
+   background-color: #f5f5f5;
+ }
+
+/*  WELCOME PAGE */
+
+ #header {
+   margin-bottom: 0;
+   background: url("https://ww4.sinaimg.cn/large/006tNbRwgy1fcqphmyps5j31kw11xu0y.jpg") no-repeat center center;
+   background-size: cover;
+   height: 670px;
+   padding: 0;
+   .slogan {
+     margin-left: 150px;
+     margin-top: 200px;
+     h2 {
+       color: #fff;
+       font-size: 30px;
+       font-weight: normal;
+       a {
+         transition: 0.35s;
+       }
+       a:hover {
+         text-decoration: none;
+       }
+     }
+   }
+
+   .picture {
+     margin-top: 150px;
+
+     img {
+       border-radius: 125px;
+        -moz-border-radius: 125px;
+        -webkit-border-radius: 125px;
+        height: 250px;
+        width: 250px;
+
+     }
+   }
+ }
+
+ .navbar.navbar-inverse, .navbar-default {
+    margin-bottom: 0;
+    background-color: transparent;
+    box-shadow: none;
+    position: absolute;
+    border: none;
+    .navbar-header {
+      margin-left: 9%;
+      a {
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+    .navbar-nav li a {
+      color: #fff;
+      font-size: 16px;
+      transition: 0.35s;
+    }
+    .navbar-nav li a:hover {
+      color: #D0CFCE;
+      text-decoration: none
+    }
+
+    .login {
+      border: 1px solid #fff;
+      margin-top: 10px;
+      padding: 3px 17px 3px 17px;
+      margin-right: 130px;
+      border-radius: 15px;
+    }
+    .navbar-nav .dropdown-menu {
+      padding-bottom: 0;
+      padding-top: 0;
+      a {
+        text-align: center;
+        color: #000;
+      }
+      li.divider:last-child {
+        display: none;
+      }
+    }
+ }
+
+
+#products {
+  border: 1px solid #000;
+  background: #000;
+  .wrapper1 {
+    width: 80%;
+    margin: 0 auto;
+    .search-container{
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-top: 20px;
+      input#search-bar{
+        background-color: #171717;
+        color: #9aecf0;
+        margin: 0 auto;
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 20px;
+        border: 1px solid #D0CFCE;
+        border-radius: 30px;
+        outline: none;
+        &:focus{
+          border: 1px solid #008ABF;
+          transition: 0.35s ease;
+          color: #008ABF;
+          &::-webkit-input-placeholder{
+            transition: opacity 0.45s ease;
+        	  opacity: 0;
+           }
+          &::-moz-placeholder {
+            transition: opacity 0.45s ease;
+        	  opacity: 0;
+           }
+          &:-ms-placeholder {
+           transition: opacity 0.45s ease;
+        	 opacity: 0;
+           }
+         }
+       }
+
+      .search-icon{
+        position: relative;
+        float: right;
+        width: 75px;
+        height: 75px;
+        top: -62px;
+        right: -15px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        .fa-search {
+          margin-right: 15px;
+          color: #008ABF;
+        }
+      }
+      .search-icon:active, .search-icon:focus {
+        outline: none;
+      }
+    }
+
+    h2 {
+      color: #fff;
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+      border-bottom: 1px dotted #fff;
+      font-weight: normal;
+    }
+
+    .col-md-6 {
+      margin-bottom: 30px !important;
+    }
+  }
+}
+
+.snip1423 {
+  font-family: 'Oswald', Arial, sans-serif;
+  position: relative;
+  float: left;
+  //margin: 20px 1%;
+  //width: 250px;
+  //max-width: 315px;
+  width: 100%;
+  background: #ffffff;
+  text-align: center;
+  color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.35s ease-out;
+}
+.snip1423 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.35s ease-out;
+  transition: all 0.35s ease-out;
+}
+.snip1423 img {
+  width: 100%;
+  height: 300px;
+  vertical-align: top;
+  position: relative;
+}
+.snip1423 figcaption {
+  padding: 20px 15px;
+  text-align: left;
+}
+.snip1423 h3 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.snip1423 h3 span {
+  color: red;
+}
+
+.snip1423 p {
+  margin-top: 15px;
+  color: #D0CFCE;
+}
+
+.snip1423 i.fa-shopping-cart {
+  //margin-left: 250px;
+  position: absolute;
+  right: 25px;
+  color: #008ABF;
+}
+
+.snip1423 i.fa-heart-o,  .snip1423 i.fa-heart{
+  position: absolute;
+  right: 85px;
+  color: red;
+  margin-top: 3px;
+}
+
+.snip1423 i.sub {
+  position: absolute;
+  right: 73px;
+  color: red;
+  margin-top: 15px;
+}
+
+.snip1423:hover,
+.snip1423.hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.footer {
+  background-color: #28282b;
+  color: #959595;
+  .col-md-4 {
+    //padding-left: 40px;
+    .footer-chunk {
+      border-radius: 5px;
+      margin: 30px 10px;
+      padding: 20px 0 20px 70px;
+      background: rgba(0, 0, 0, 0.1);
+      h4 {
+        padding-left: 20px;
+      }
+      a {
+        color: #959595;
+        text-decoration: none;
+        transition: 0.35s;
+      }
+      a:hover {
+        color: #008ABF;
+      }
+    }
+  }
+  .copyright {
+    background: #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    .design {
+      margin-left: 20px;
+      span {
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        a {
+          text-decoration: none;
+          color: #fff;
+          margin-bottom: 20px;
+          transition: 0.35s;
+        }
+        a:hover {
+          color: #008ABF;
+        }
+      }
+      p {
+        font-size: 16px;
+        margin-top: 15px;
+        color: #959595;
+        span {
+          color: #fff;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/*  Product Lists  */
+
+.navbar-default {
+  background-color: #3e3a3c;
+  margin-bottom: 0;
+  .navbar-header {
+    a {
+      color: #fff;
+    }
+  }
+  .navbar-nav li a {
+    color: #fff;
+  }
+  .navbar-nav li a:hover {
+    color: #777;
+  }
+  .navbar-nav li.pro-drop {
+    height: 52px;
+  }
+  .navbar-nav li.pro-drop b.caret {
+    color: #000;
+  }
+  .navbar-nav li.pro-drop b.caret:hover {
+    color: #777;
+  }
+}
+
+/*  SEARCH-BAR */
+
+.products-search-form {
+  margin-top: 10px;
+  padding-left: 20px;
+  width: 290px;
+  .search-bar {
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+    padding-right: 40px;
+
+    .search-bar-input  {
+      min-width: 300px;
+      transition: 0.35s;
+    }
+  }
+}
+
+/*  PRODUCTS LIST PAGE */
+
+.all-lists {
+  background: #EBECED !important;
+  padding-top: 65px;
+  .introduction {
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: right;
+  }
+  .introduction-sub {
+    text-align: right;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+  .ending {
+    font-size: 18px;
+    color: #000;
+  }
+}
+
+/* EDIT PROFILR */
+
+.edit-profile {
+  margin-top: 100px;
+}
+
+/* Media Quries */
+
+@media screen and (max-width: 1221px) {
+  .navbar-default .navbar-header {
+    margin-left: 0;
+  }
+  .navbar-right .login, #hearder .login {
+    margin-right: 0;
+  }
+}

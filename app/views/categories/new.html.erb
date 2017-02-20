@@ -1,0 +1,7 @@
+<div class="col-md-4 col-md-offset-4", style="margin-top: 60px;">
+  <h2 class="text-center">新增分类</h2>
+  <%= simple_form_for @category do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

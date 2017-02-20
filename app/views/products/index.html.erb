@@ -1,0 +1,16 @@
+<div id="products"class="all-lists">
+  <div class="wrapper1">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2">
+        <div class="row">
+          <h3 class="introduction">新视野-新世界</h3>
+          <h4 class="introduction-sub">感谢光临乐活生活馆，美物等你来挑</h4>
+          <%= render :partial => "product_items", :collection => @products, :as => :product %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text-center ending">
+    没有更多商品了
+  </p>
+</div>

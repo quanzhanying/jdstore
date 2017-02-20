@@ -1,0 +1,187 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="card " >
+  			<div class="container-fliud">
+  				<div class="wrapper row">
+  					<div class="preview col-md-7 " style="padding:30px;">
+  						<div class="preview-pic tab-content" >
+                <% if @product.photos.present? %>
+  						  <div class="tab-pane active" id="pic-1">
+                  <%= image_tag(@product.photos[0].image.medium.url) %>
+                </div>
+  						  <div class="tab-pane" id="pic-2"><%= image_tag(@product.photos[1].image.medium.url) %></div>
+  						  <div class="tab-pane" id="pic-3"><%= image_tag(@product.photos[2].image.medium.url) %></div>
+  						  <div class="tab-pane" id="pic-4"><%= image_tag(@product.photos[3].image.medium.url) %></div>
+  						  <div class="tab-pane" id="pic-5"><%= image_tag(@product.photos[4].image.medium.url) %></div>
+  						</div>
+  						<ul class="preview-thumbnail nav nav-tabs">
+  						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><%= image_tag(@product.photos[0].image.thumb.url) %></a></li>
+  						  <li><a data-target="#pic-2" data-toggle="tab"><%= image_tag(@product.photos[1].image.thumb.url) %></a></li>
+  						  <li><a data-target="#pic-3" data-toggle="tab"><%= image_tag(@product.photos[2].image.thumb.url) %></a></li>
+  						  <li><a data-target="#pic-4" data-toggle="tab"><%= image_tag(@product.photos[3].image.thumb.url) %></a></li>
+  						  <li><a data-target="#pic-5" data-toggle="tab"><%= image_tag(@product.photos[4].image.thumb.url) %></a></li>
+  						</ul>
+              <% end %>
+  					</div>
+  					<div class="details col-md-4 " style="margin-top:50px;">
+  						<h3 class="product-title"><%= @product.title %></h3>
+  						<div class="rating">
+  							<div class="star-rating" data-score= <%= @avg_review %> ></div>
+                <em><%= "#{@reviews.length} reviews" %></em>
+  						</div>
+  						<p class="product-description"><%= @product.description %></p>
+  						<p class="price">价格: <span>￥<%= @product.price %></span></p>
+  						<p class="quantity">数量 : <span><%= @product.quantity %></span> </p>
+  						<p class="sizes">规格: <span><%= @product.size %></span></p>
+  						<div class="action" style="margin-top:30px;">
+
+                  <% if @product.quantity.present? && @product.quantity > 0 %>
+                  <%= link_to("加入购物车", add_to_cart_product_path(@product), class: "add-to-cart btn btn-default", :method => :post) %>
+                <% else %>
+                  已销售一空，无法购买
+                <% end %>
+
+               <% if user_signed_in? %>
+                 <% if !current_user.is_fan_of?(@product) %>
+                   <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                     <i class="fa fa-heart-o fa-lg", style="color:red;"></i>
+                   <% end %>
+                 <% else %>
+                   <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                     <i class="fa fa-heart fa-lg", style="color:red;"></i>
+                   <% end %>
+                 <% end %>
+               <% else %>
+                 <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                   <i class="fa fa-heart-o fa-lg", style="color:red;"></i>
+                 <% end %>
+               <% end %>
+  					</div>
+            <div class="insurance">
+              <hr>
+               乐活生活馆担保 | 七天无理由退货 | 正品保证 | 独立品牌
+            </div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+  <div  style="margin-top:20px;">
+    <div class="tabs col-md-7" >
+      <div class="tabbable-panel">
+   	   <div class="tabbable-line">
+      	  <ul class="nav nav-tabs ">
+      	    <li class="active">
+      		   <a href="#tab_default_1" data-toggle="tab">宝贝详情 </a>
+      	    </li>
+      		<li>
+      		  <a href="#tab_default_2" data-toggle="tab">宝贝评价 </a>
+      		</li>
+      	  </ul>
+      	</div>
+      	<div class="tab-content">
+      	  <div class="tab-pane active" id="tab_default_1">
+            <p class="product-description"><%= @product.description %></p>
+            <% if @product.photos.present? %>
+              <% @product.photos.each do |p| %>
+               <%= image_tag p.image.url %><br />
+               <% end %>
+            <% end %>
+      	  </div>
+      	  <div class="tab-pane" id="tab_default_2">
+      	    <%= simple_form_for([@product, @review]) do |f| %>
+  			    <div class="form-inputs">
+  				  <div id="star-rating"></div>
+  				  <%= f.input :comment %>
+  				</div>
+  				<div class="form-actions">
+  				  <%= f.button :submit %>
+  				</div>
+  			<% end %>
+  			<% if @reviews.blank? %>
+  			  <h4>这个宝贝还没有人评论，来为它添加一个吧！</h4>
+  			<% else %>
+  			  <% @reviews.each do |review| %>
+  			    <div class="reviews">
+  			      <ul class="list-group">
+  			        <li class="list-group-item" >
+  			          <div class="row">
+  			            <div class="col-md-2">
+  			              <div class="round-image-50"><%= image_tag(review.user.avatar.url(:medium))%></div>
+  			              <p><%= review.user.nickname %></p>
+  			            </div>
+  			            <div class="col-md-8">
+  			              <div class="star-rating" data-score= <%= review.rating %> ></div>
+  			              <p><%= review.comment %></p>
+  			            </div>
+  			          </div>
+  			        </li>
+  			      </ul>
+  			    </div>
+  			  <% end %>
+  			<% end %>
+  		  </div>
+  	   </div>
+  	 </div>
+    </div>
+
+   <div class="col-md-4">
+     <div class="row" style="background-color:#fff;padding-left:10px;padding-right:10px;">
+       <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
+       <hr />
+       <% Product.last(4).each do |product| %>
+         <figure class="snip1423">
+           <%= link_to product_path(product) do %>
+             <% if product.photos.present? %>
+               <%= image_tag(product.photos[0].image.url) %>
+             <% else %>
+               <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+             <% end %>
+           <% end %>
+           <figcaption>
+             <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
+             <p>
+               已成交多少单
+               <% if product.quantity.present? && product.quantity > 0 %>
+                 <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
+               <% else %>
+                 已售馨
+               <% end %>
+               <i class="sub"><%= product.fans.count %></i>
+               <% if user_signed_in? %>
+                 <% if !current_user.is_fan_of?(@product) %>
+                   <%= link_to favorite_product_path(@product), method: :post do %>
+                     <i class="fa fa-heart-o fa-2x"></i>
+                   <% end %>
+                 <% else %>
+                   <%= link_to unfavorite_product_path(@product), method: :post do %>
+                     <i class="fa fa-heart-o fa-2x"></i>
+                   <% end %>
+                 <% end %>
+               <% else %>
+                 <%= link_to favorite_product_path(@product), class: "btn btn-primary", method: :post do %>
+                   <i class="fa fa-heart-o fa-2x"></i>
+                 <% end %>
+               <% end %>
+             </p>
+           </figcaption>
+         </figure>
+          <% end %>
+       </div>
+     </div>
+   </div>
+</div>
+
+
+<script>
+  $('.star-rating').raty({
+	  path: '/assets/',
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		}
+	 });
+	$('#star-rating').raty({
+		path: '/assets/',
+		scoreName: 'review[rating]'
+		});
+</script>

@@ -1,0 +1,33 @@
+<div class="favorites-index" >
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+      <h2>收藏的宝贝~</h2>
+      <% @products.each do |product| %>
+      <div class="col-md-6 col-sm-12">
+        <figure class="snip1423">
+          <%= link_to product_path(product) do %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].image.url) %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <% end %>
+          <% end %>
+          <figcaption>
+            <h3><%= link_to(product.title, product_path(product)) %> <span>￥<%= product.price %></span></h3>
+            <p>
+              已成交多少单
+              <% if product.quantity.present? && product.quantity > 0 %>
+                <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-2x"), add_to_cart_product_path(product), :method => :post) %>
+              <% else %>
+                已售馨
+              <% end %>
+              <i class="sub">2</i>
+              <i class="fa fa-heart-o fa-2x"><a></a></i>
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

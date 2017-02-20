@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>乐活生活馆</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "common/navbar" %>
+    <%= render "common/flashes" %>
+
+    <div class="container-fluid">
+      <div class="row admin-page">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-3 sidebar">
+            <p><%= link_to("全部商品", admin_products_path) %></p>
+            <div>
+              <span style="color: #337ab7; padding-left: 40px;">商品分类:</span>
+              <ul>
+                <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to(category.name, admin_products_path(category: category.name)) %>
+                  </li>
+                <% end %>
+              </ul>
+
+            </div>
+            <p><%= link_to("订单查询", admin_orders_path) %></p>
+            <p><%= link_to("首页", products_path) %> | <%= link_to("返回", admin_products_path) %> | <%= link_to("新增分类", new_category_path) %></p>
+          </div>
+          <div class="col-md-8">
+            <%= yield %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
