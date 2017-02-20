@@ -9,15 +9,3 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-
-production:
-AWS_ACCESS_KEY_ID: "XXXX"
-AWS_SECRET_ACCESS_KEY: "XXXX"
-AWS_REGION: "XXXX"
-AWS_BUCKET_NAME: "XXXX"
-
-development:
-AWS_ACCESS_KEY_ID: "XXXX"
-AWS_SECRET_ACCESS_KEY: "XXXX"
-AWS_REGION: "XXXX"
-AWS_BUCKET_NAME: "XXXX"
