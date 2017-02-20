@@ -1,3 +1,10 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    height: 100px;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    line-height: 10;
+    margin: 0 auto;
+
+}

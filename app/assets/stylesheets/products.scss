@@ -1,3 +1,76 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
+
+  .product-nav {
+    background-color: #f7f3e7;
+    padding: 8px;
+  }
+
+  body{font-family: 'Quicksand', sans-serif;}
+     h4{
+      	font-weight: 600;
+ 	}
+ 	p{
+ 		font-size: 12px;
+ 		margin-top: 5px;
+ 	}
+ 	.price{
+ 		font-size: 30px;
+     	margin: 0 auto;
+     	color: #333;
+ 	}
+
+ 	.thumbnail{
+ 		opacity:0.70;
+ 		-webkit-transition: all 0.5s;
+ 		transition: all 0.5s;
+ 	}
+ 	.thumbnail:hover{
+ 		opacity:1.00;
+ 		box-shadow: 0px 0px 10px #e6e1cb;
+ 	}
+ 	.line{
+ 		margin-bottom: 5px;
+ 	}
+ 	@media screen and (max-width: 770px) {
+ 		.right{
+ 			float:left;
+ 			width: 100%;
+ 		}
+ 	}
+ 	span.thumbnail {
+         border: 1px solid #e6e1cb !important;
+     border-radius: 0px !important;
+     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+ 	padding: 10px;
+ }
+ .container h4{margin-top:70px; margin-bottom:30px;}
+ button {    margin-top: 6px;
+ }
+ .right {
+     float: right;
+     border-bottom: 2px solid #0a5971;
+ }
+ .btn-info {
+     color: #fff;
+     background-color: #f6ab4a !important;
+     border-color: #f6ab4a !important;
+  	font-size:13px;
+  	font-weight:600;
+  }
+
+  .sidebar {
+    background-color: #482f30;
+   color: #fff;
+   margin-top: 80px;
+    padding-bottom: 250px;
+  }
+
+  .product-content {
+    margin-top: 80px;
+ }
