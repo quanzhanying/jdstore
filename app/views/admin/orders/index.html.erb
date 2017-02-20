@@ -1,14 +1,12 @@
-<div class="col-md-12">
   <h2>订单列表</h2>
-
-  <div class="group">
 
     <table class="table table-bordered">
       <thead>
         <tr>
           <th>#</th>
-          <th>订单状态</th>
           <th>生成时间</th>
+          <th>订购者</th>
+          <th>订单状态</th>
           <th>操作选项</th>
 
         </tr>
@@ -17,9 +15,10 @@
 
         <% @orders.each do |order| %>
         <tr>
-          <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-          <td> <%= order.aasm_state %> </td>
+          <td> <%= link_to(order.id, admin_order_path(order)) %> </td>
           <td> <%= order.created_at.to_s(:long) %> </td>
+          <td> <%= order.user.email %> </td>
+          <td> <%= order.aasm_state %> </td>
           <td>
             <% if order.aasm_state == "paid" %>
             <%= link_to("出货", shipping_order_path(order.token), method: :post) %> |
@@ -33,5 +32,3 @@
 
       </tbody>
     </table>
-  </div>
-</div>
