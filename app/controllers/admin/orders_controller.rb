@@ -1,7 +1,7 @@
 class  Admin::OrdersController  <  ApplicationController
   layout  "admin"
 
-  before_action  :authenticate_user
+  before_action  :authenticate_user!
   before_action  :admin_required
 
   def  index
@@ -15,6 +15,7 @@ class  Admin::OrdersController  <  ApplicationController
   def ship
     @order = Order.find(params[:id])
     @order.ship!
+    OrderMailer.notify_ship(@order).deliver!
     redirect_to :back
   end
 
@@ -27,6 +28,7 @@ class  Admin::OrdersController  <  ApplicationController
   def cancel
     @order = Order.find(params[:id])
     @order.cancell_order!
+    OrderMailer.notify_cancel(@order).deliver!
     redirect_to :back
   end
 
@@ -35,7 +37,7 @@ class  Admin::OrdersController  <  ApplicationController
     @order.return_good!
     redirect_to :back
   end
-end
+
 def apply_to_cancel
     @order = Order.find(params[:id])
     OrderMailer.apply_cancel(@order).deliver!
