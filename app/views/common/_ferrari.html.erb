@@ -30,12 +30,15 @@
 
 
 <% @products.each do |product| %>
+<div class="row">
 
-<div class="col-md-6 col-sm-6">
-      <span class="thumbnail product-item">
+
+<div class="col-md-12 col-sm-6">
+      <div class="thumbnail product-item">
         <div class="pi-img-wrapper">
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail center-block") %>
+          <% if product.photos.present? %>
+          <img src="<%= product.photos[0].avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+
           <% else %>
             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail center-block") %>
           <% end %>
@@ -67,9 +70,9 @@
           <% if product.newproduct %>
           <div class="sticker sticker-new"></div>
           <% end %>
-      </span>
+      </div>
     </div>
 
-
+</div>
 <% end %>
     </div>

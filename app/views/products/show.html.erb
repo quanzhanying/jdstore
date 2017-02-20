@@ -15,7 +15,7 @@
 							<div class="item active">
 
 									<!-- Slide Background -->
-									<img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fclr6i3aojj31400ci43t.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<img src="<%= @photos.first.avatar.url %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
 									<div class="bs-slider-overlay"></div>
 
 									<div class="container">
@@ -53,7 +53,7 @@
 							<div class="item">
 
 									<!-- Slide Background -->
-									<img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcptbkfjm1j31400clwie.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<img src="<%= @photos.second.avatar.url %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
 									<div class="bs-slider-overlay"></div>
 									<!-- Slide Text Layer -->
 									<div class="slide-text slide_style_left">
@@ -67,12 +67,12 @@
 							<div class="item">
 
 									<!-- Slide Background -->
-									<img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fclrlt2tdgj31400ci413.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<img src="<%= @photos.third.avatar.url %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
 									<div class="bs-slider-overlay"></div>
 									<!-- Slide Text Layer -->
 									<div class="slide-text slide_style_left">
 											<h1 data-animation="animated zoomInLeft"><%= @product.title %></h1>
-											<p data-animation="animated fadeInRight">车身内饰</p>
+											<p data-animation="animated fadeInRight">背面</p>
 									</div>
 							</div>
 							<!-- End of Slide -->
@@ -95,11 +95,8 @@
 			</div> <!-- End  bootstrap-touch-slider Slider -->
 		</div>
 
+<br>
 
-  <style>
-
-
-  </style>
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
 
@@ -116,6 +113,7 @@
     <div class="col-sm-9">
       <div id="section1">
         <h1>规格参数</h1>
+				<hr>
         <p>发动机：3.9T <br>
 					变速器：双离合 <br>
 					车身结构：2门2座硬顶跑车 <br>
@@ -123,22 +121,32 @@
 					最高车速：330km/h <br>
 					0-100km/h加速：3s</p>
       </div>
+			<br>
       <div id="section2">
         <h1>设计理念</h1>
+				<hr>
+				<img src="<%= @photos.second.avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+				<br>
         <p>488 GTB这个名称代表着回归经典法拉利车型的番号。名称中的488表示引擎的统一位移，而GTB表示Gran Turismo Berlinetta。这款新车不仅具备无与伦比的性能，其强大的马力也被开发和控制到前所未有的程度，即使不太专业的车手也能驾驭。</p>
       </div>
-			<img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcptbkfjm1j31400clwie.jpg" />
+			<br>
       <div id="section3">
         <h1>车型外观</h1>
+				<hr>
+				<img src="<%= @photos.third.avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+				<br>
         <p>488 GTB由法拉利设计中心设计完成，拥有雕刻般美感的两翼，是突出其个性的关键所在。它的大型个性化进气扇形板是对首款308 GTB的致敬，此板由一个定风翼分为两个部分。 <br><br>
 					车前的特点是双开放格栅，会将空气引入进两个散热器。车子还有一个双前扰流器，仔细观看的话，很像F1单座跑车的前扰流器。在中央，两个吊架与一个导向板结合，导向板可将空气引向平坦的底盘。<br><br>
 					引擎盖中间部分突出耸起，形成两个气流通道。这两个气流通道具备双重功能：使车子更具运动感以及引导来自保险杠的两个通气口的气流。通气口巧妙地隐藏在车身正面的视野中，使汽车线条干净整洁。<br><br>
 					车尾是增压扰流器和大型通风口，增加了汽车的空气动力学效能。全新的尾气排气管被重新设计位置，以容纳扩散器所需的更多高度。整体的设计流露出一种力量与高性能之感。<br><br>
-					Rosso Corsa Metallizzato，一种全新开发的颜色，突出了此款车型极致的运动感特性，同时表现出了它独特的优雅和专属性。上百万颗微粒悬浮在车漆中，近距离观赏则会发现，这种使用三层配制的颜色有着惊人的深度和光泽度。</p><br><br>
+					Rosso Corsa Metallizzato，一种全新开发的颜色，突出了此款车型极致的运动感特性，同时表现出了它独特的优雅和专属性。上百万颗微粒悬浮在车漆中，近距离观赏则会发现，这种使用三层配制的颜色有着惊人的深度和光泽度。</p>
       </div>
-			<img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fclr6i3aojj31400ci43t.jpg" />
+			<br>
       <div id="section4">
         <h1>车型内饰</h1>
+				<hr>
+				<img src="<%= @photos.fourth.avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+				<br>
         <p>488 GTB的驾驶室设计旨在保证驾驶舒适的前提下，突显出极致的运动感。所以驾驶室会带给人一切围绕着车手需要而打造的感觉：所有指令并非堆积到方向盘上，而是分布于弧形的卫星装置，这些装置的角度直接面向车手。<br><br>
 					全新的水平点火器位于更紧凑的仪表板上，其极致的运动感通气口系受军用飞机进气口启发而制。<br><br>
 					整体的设计结果便是创新的体积容量和紧凑实用的外形无缝结合。车子的设计采用了典型的法拉利特点，比如仪表板和风洞泾渭分明、多功能的方向盘、风洞上安装控制台。一切均由手工使用材料打造和修饰，美丽迷人。优雅和运动感的设计同时异常着重创造实用的空间。<br><br>
@@ -147,7 +155,7 @@
 					488 GTB拥有全新的运动信息娱乐系统，导航简便，各种功能触手可及，同时融入到整体的美学设计中。<br><br>
 					488 GTB的钥匙由V8的进气增压室形状启发，采用无钥匙启动的特点，这是法拉利车的首例。</p>
       </div>
-			<img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fclrlt2tdgj31400ci413.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+
     </div>
   </div>
 </div>

@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
+  has_many :photos
+  accepts_nested_attributes_for :photos
   def publish!
     self.is_hidden = false
     self.save

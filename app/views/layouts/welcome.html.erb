@@ -7,6 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-        <%= yield %>
+
+
+              <%= render "common/flashes" %>
+
+            <main><div class="container-fluid">
+              <!--0214pm返回顶部 陈扬帆新增-->
+           <a id="btnTop" style="display:none;" class="btnTop highlight" href="javascript:;" title="Back to top">
+             <img src="http://ctar.bilkent.edu.tr/images/scrolltop.png" class="imageTop">
+           </a>
+              <%= yield %>
+            </div></main>
+            <div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <!-- 防止主页内容被底部栏覆盖  -->
+            <%= render "common/footer" %>
 </body>
 </html>
