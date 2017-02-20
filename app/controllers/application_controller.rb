@@ -14,9 +14,11 @@ class ApplicationController < ActionController::Base
     private
 
     def find_cart
-        cart = Cart.find_by(id: session[:cart_id])
-        cart = Cart.create if cart.blank?
-        session[:cart_id] = cart.id
-        cart
+      cart = Cart.find_by(id: session[:cart_id])
+    if cart.blank?
+      cart = Cart.create
     end
+    session[:cart_id] = cart.id
+    return cart
+  end
 end
