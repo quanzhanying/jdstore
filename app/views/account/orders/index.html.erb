@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2>我的订单</h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>订单日期</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <th><%= link_to(order.id, order_path(order.token)) %></th>
+            <th><%= order.updated_at.to_s(:long) %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
