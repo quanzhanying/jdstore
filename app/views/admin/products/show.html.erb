@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.image.present? %>
+        <!--<span> 目前商品图 </span> <br> -->
+        <%= image_tag(@product.image.thumb.url,size: "400x400")%>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <h1><%= @product.title %></h1>
+
+
+      <p>
+        <%= simple_format(@product.description)%>
+        <br>
+          <!--<li><%= @product.created_at %></li> -->
+        数量：<%= @product.quantity %>
+        <br>
+        价格：¥<%= @product.price %>
+        <br>
+        <button type="button" class="btn btn-warning"> 立即购买 </button>
+        <button type="button" class="btn btn-danger"> 加入购物车</button>
+      <!--  <li><%= @product.image %></li>
+        <imag src=/@product.image> -->
+      </p>
+    </div>
+
+  </div>
+</div>
