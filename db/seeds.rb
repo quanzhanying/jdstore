@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Add other users'
+u = User.new
+u.email = '3@test.com' # 可以改成自己的 email
+
+u.password = '111111' # 最少要六码
+
+# u.password_confirmation = '111111' # 最少要六码
+
+u.is_admin = false
+u.save
+
+puts 'Add a admin'
+User.create!(email: 'admin@test.com', password: '12345678', is_admin: true)
