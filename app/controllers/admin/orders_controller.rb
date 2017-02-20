@@ -10,7 +10,6 @@ class Admin::OrdersController < ApplicationController
         @orders = @orders.where( "total > ?", params[:total])
       end
 
-
       if params[:ids].present?
         @orders = @orders.where(:id => params[:ids].split(","))
       end
@@ -33,11 +32,11 @@ class Admin::OrdersController < ApplicationController
 
     # @orders.paginate(:page => params[:page])
     end
-    def show
+  def show
       @order = Order.find(params[:id])
       @product_lists = @order.product_lists
-    end
-    def ship
+  end
+  def ship
     @order = Order.find(params[:id])
     @order.ship!
     OrderMailer.notify_ship(@order).deliver!
@@ -62,4 +61,5 @@ class Admin::OrdersController < ApplicationController
     @order.return_good!
     redirect_to :back
   end
-  end
+
+end
