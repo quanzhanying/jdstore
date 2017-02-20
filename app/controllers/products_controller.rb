@@ -9,8 +9,11 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    current_cart.add_product_to_cart(@product)
-    flash[:notice] = "成功加入购物车"
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+    else
+    flash[:warning] = "你的购物车内已有此物品"
+    end
     redirect_to :back
 
   end
