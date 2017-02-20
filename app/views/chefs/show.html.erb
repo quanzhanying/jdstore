@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @chef.image.present? %>
+      <%= image_tag(@chef.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= @chef.name %>
+      <% if @chef.chef_level_id == 1 %>
+        <img src='<%= image_url 'gold-medal.png' %>'>
+      <% elsif @chef.chef_level_id == 2 %>
+        <img src='<%= image_url 'silver-medal.png' %>'>
+      <% elsif @chef.chef_level_id == 3 %>
+        <img src='<%= image_url 'bronze-medal.png' %>'>
+      <% end %>
+    </h2>
+    <div style="height: 100px;">
+      <p>
+        <%= simple_format(@chef.description) %>
+      </p>
+    </div>
+    <div class="style">
+      <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
+    </div>
+
+    <div class="chef-follow">
+      <% if current_user.has_follow?(@chef) %>
+        <%= link_to unfollow_chef_path(@chef), :method => :post do %>
+          <i class="fa fa-thumbs-up fa-lg" style="color:red" aria-hidden="true" ></i>
+        <% end %>
+      <% else %>
+        <%= link_to follow_chef_path(@chef), :method => :post do %>
+            <i class="fa fa-thumbs-o-up fa-lg" style="color:red" aria-hidden="true" ></i>
+        <% end %>
+      <% end %>
+      <%= @chef.followers.count %>
+    </div>
+    <div class="pull-right">
+      <% if !current_user.admin? %>
+      <% if true %>
+        <% if current_cart.present? && current_cart.chef_id != nil && current_cart.chef_id != @chef.id %>
+          <%= link_to("私厨订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger",
+                      :data => {:confirm => "更换厨师将清空当前购物车，需要重新选择菜品。确定吗?" })  %>
+        <% else %>
+          <%= link_to("私厨订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <% end %>
+      <% else %>
+        档期已满
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
