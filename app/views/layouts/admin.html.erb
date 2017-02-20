@@ -7,35 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="row">
-    <%= render "common/navbar" %>
-  </div>
-<div class="body1">
-  <div class="container">
 
+  <div class="container-fluid">
 
-      <div class="col-md-2">
-        <div class="logo">
-          <img src='https://ooo.0o0.ooo/2017/02/14/58a2fc8de7e4a.png' class="img-responsive center-block" alt="Logo">
-        </div>
-        <div id="sidebar_menu" class="sidebar-nav">
-           <div class="sidebar-brand text-center"><%= link_to("产品管理", admin_products_path) %></div>
-        </div>
-        <br>
-        <hr>
-        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-          <li> <%= link_to("首页", root_path, :class => "btn btn-info fa fa-home" ) %> </li>
-          <li>  </li>
-          <li> <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm fa fa-plus-circle") %> </li>
-          <li> <%= link_to("Orders", admin_orders_path) %> </li>
-          <li> <%= link_to("登出", destroy_user_session_path, :class => "btn btn-warning fa fa-sign-out", method: :delete) %> </li>
-        </ul>
-      </div>
-      <div class="col-md-10">
-        <%= yield %>
-      </div>
-
-  </div>
+      <%= render "common/flashes" %>
+      <%= yield %>
   </div>
 </body>
 </html>

@@ -1,4 +1,7 @@
-<h2> Edit Product </h2>
+<div class="container">
+
+
+<h2> 编辑产品 </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
@@ -46,3 +49,4 @@
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
+</div>

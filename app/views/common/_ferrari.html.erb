@@ -7,24 +7,37 @@
 
                   <!-- Slide Background -->
                   <img src="https://ooo.0o0.ooo/2017/02/14/58a317a6eca5a.png" alt="Bootstrap Touch Slider"  class="slide-image"/>
-
+                  <div class="jumbotron1 slide-text slide_style_left">
+                    <span class="logo">
+                      <img src='http://img.zcool.cn/community/0335fb8554c780f00000158fc5355c7.jpg' class="img-responsive" alt="Logo">
+                    </span>
+                      <br>
+                      <p>
+                        <strong>法拉利</strong>（Ferrari S.p.A）是一家意大利汽车生产商，主要制造一级方
+                        程式赛车、及高性能跑车，1929年由恩佐·法拉利创办。早期的法拉利赞
+                        助赛车手及生产赛车，1947年独立生产汽车，其后变成今日的规模，现在
+                        由菲亚特克莱斯勒汽车集团拥有，总部设于意大利摩德纳（Modena）附近
+                        的马拉内罗（Maranello）。
+                      </p>
+                  </div>
               </div>
             </div>
           </div>
         </div>
 
-    <h2 class="text-center"> 法拉利 </h2>
+
 <div class="container">
 
 
 <% @products.each do |product| %>
-<div class="col-md-3 col-sm-6">
+
+<div class="col-md-6 col-sm-6">
       <span class="thumbnail product-item">
         <div class="pi-img-wrapper">
           <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail center-block") %>
           <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail center-block") %>
           <% end %>
           <div>
             <a href="#" class="btn">收藏</a>

@@ -1,8 +1,4 @@
 <nav class="navbar " role="navigation">
-      <!--0214pm新增色块 陈扬帆-->
-      <div class=" ">
-          <a class="navbar-brand" href="/"> 酷跑网 </a><!-- 0214pm编辑，新增active  陈扬帆-->
-      </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -10,15 +6,6 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to carts_path do  %>
-                购物车 <i class="fa fa-shopping-cart">
-                        <% if current_cart.products.count != 0 %>
-                          <span class="label labelnumber label-danger"><%= current_cart.products.count %></span>
-                        <% end %>
-                      </i>
-              <% end %>
-            </li>
             <% if !current_user %>
               <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
               <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
@@ -89,123 +76,107 @@
 </nav>
 
 <div class="jumbotron">
-  <h1 class="title">前行网</h1>
-  <p class="slogan">青春伴你行，还犹豫什么，一起来吧！
-  </p>
-  <p class="lead"><a class="btn btn-lg btn-info highlight" href="/jobs">马上应征</a></p>
+  <h1 class="title">logo</h1>
+  <div class="sologn pull-right">
+    <span>女人逛淘宝</span>
+    <br>
+    <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp男人逛酷跑</span>
+    <br>
+    <div>&nbsp&nbsp&nbsp有不喜欢女人的男人，但绝对没有不喜欢跑车的男人</div>
+    <br>
+    <p><a href="#" data-toggle="modal" data-target="#signup-modal" class="btn btn-lg highlight">成为会员</a></p>
+  </div>
+
+
 </div>
-<section>
+
+<section class="sec-four">
+<div class="container ">
+  <h1>众多实力超跑大厂倾情入驻</h1>
+  <br>
+  <h4>各种知名大厂的超跑应有尽有，我们甚至还独家供应全球限量版的超跑。</h4>
+  <br>
+    <div class="col-lg-12 text-center">
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+            <div class="panel-heading">
+              <img src="https://ooo.0o0.ooo/2017/02/13/58a1b97f6e177.png" />
+            </div>
+            <div class="panel-body">
+              <br><br>
+              <h4 class="panel-header"><%= link_to("法拉利", category_products_path(c:"法拉利"), class: "bootstrap-override-2") %></h4>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9bb9d1c9.png" />
+          </div>
+          <div class="panel-body">
+            <br><br>
+            <h4 class="panel-header"><%= link_to("保时捷", category_products_path(c:"保时捷"), class: "bootstrap-override-2") %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9f1b18ca.png" />
+          </div>
+          <div class="panel-body">
+            <br><br>
+            <h4 class="panel-header"><%= link_to("兰博基尼", category_products_path(c:"兰博基尼"), class: "bootstrap-override-2") %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img src="http://www.kuqin.com/upimg/allimg/100709/0003350.jpg" />
+          </div>
+          <div class="panel-body">
+            <br><br>
+            <h4 class="panel-header"><%= link_to("布加迪威龙", category_products_path(c:"布加迪威龙"), class: "bootstrap-override-2") %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-video">
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="text-center">About us</h1>
-      <hr>
-      <div class="col-md-3">
-
-      </div>
-      <div class="col-md-3">
-        <img src='<%= image_url 'logo.png' %>' >
-      </div>
-      <div class="col-md-3">
-        <p><big>前行网</big>,专门为应届毕业生量身打造的大型求职招聘社交网站</p>
-      </div>
-      <div class="col-md-3">
-
-      </div>
-      <br><br><br>
+      <embed src='http://player.youku.com/player.php/sid/XMTc5NDg5MTU2/v.swf' allowFullScreen='true' quality='high' width='960' height='540' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
     </div>
   </div>
 </div>
 </section>
 <section>
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="text-center">What we do</h1>
-      <hr>
-      <ul class="timeline">
-        <li>
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/58888e470ad0c.jpg" alt="">
-          </div>
-          <div class="timeline-panel">
-            <div>
-              <h4>&nbsp</h4>
-              <h4>&nbsp</h4>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted">
-                我们聚集起一帮年轻同龄人，相信我，在这里你并不孤独。
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/588891a831b88.png">
-          </div>
-          <div class="timeline-panel">
-            <div>
-              <h4>&nbsp</h4>
-              <h4>&nbsp</h4>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted">
-                我们也邀请了各行各业经验丰富的师兄师姐入驻，给你提供最合适的职业发展指导。
-              </p>
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-        <li>
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/588893183972e.png">
-          </div>
-          <div class="timeline-panel">
-            <div>
-              <h4>&nbsp</h4>
-              <h4>&nbsp</h4>
-            </div>
-            <div class="timeline-body">
-              <p class="text-muted">
-                你将在这里选择你踏入社会的第一个副本，让我们一起实现梦想吧。
-              </p>
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
-<section>
-<div class="container text-center">
   <div class="row">
     <div class="col-lg-12">
       <h1>Employees said</h1>
       <hr>
       <div class="container">
         <div class="row">
-             <div class="col-sm-6 col-md-3">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="https://unsplash.imgix.net/12/barley.jpg?q=75&fm=jpg&s=f39de5ca1970a13dbe6af6c86b3c47ec" />
-                    </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/73.jpg" />
-                    </div>
-                    <div class="panel-body">
-                      <br><br>
-                        <h4 class="panel-header">Mary</h4>
-                        <small>XX公司人力资源总监</small>
-                    </div>
-                    <div class="panel-thumbnails">
-                      <div class="row">
-                        <p>前行网做的非常棒，我就是在这里找到我的第一份工作的。</p>
-                      </div>
-                    </div>
-                </div>
+             <div class="col-sm-6 col-md-6">
+               <div>
+                 <h1>酷跑社区</h1>
+                 <br>
+                 <h4>这里是全国最大的线上超跑俱乐部，定期举办各种各样的精彩活动，更多机会近距离触摸跑车。</h4>
+                 <br>
+                 <p>✔️ 速度与激情——跑车赛事<br><br>
+                 ✔️ 壮观的车队环城活动<br><br>
+                 ✔️ 非凡之旅——非洲跑车大冒险<br><br>
+                 ✔️ 巡游秋名山<br><br>
+                 ✔️ 酷跑老司机教你如何打造个性跑车<br><br>
+                 ✔️ 美女与跑车——上海车展<br><br>
+                 ✔️ 技术交流车友会<br><br>
+                 ✔️ 炫魅之夜狂欢派对</p>
+               </div>
     		</div>
 		    <div class="col-sm-6 col-md-3">
         	    <div class="panel panel-default panel-card">
@@ -227,6 +198,26 @@
                     </div>
             	</div>
     		</div>
+        <div class="col-sm-6 col-md-3">
+              <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/josue/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Leon</h4>
+                        <small>XX公司工程师</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <p>我在前行网找到我现在呆的公司，发展前景和待遇我都很满意。</p>
+                        </div>
+                    </div>
+              </div>
+        </div>
             <div class="col-sm-6 col-md-3">
                 <div class="panel panel-default panel-card">
                     <div class="panel-heading">

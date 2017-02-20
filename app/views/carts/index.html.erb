@@ -1,16 +1,13 @@
-<div class="row">
+<div class="">
   <% if current_cart.products.count == 0 %>
   <img src="https://ooo.0o0.ooo/2017/02/12/589f491051f06.jpg" class="center-block">
   <h1 class="text-center">购物车空空如也，购物车君表示很伤心……</h1>
   <% else %>
+  <h2> 购物车 </h2>
+  <hr>
   <div class="col-md-12">
-    <%= link_to("清空购物车", clean_carts_path ,
-                method: :delete , class: "fa fa-trash pull-right",
-                style: "text-decoration: underline;",
-                data: { confirm: "你确定要清空整个购物车吗？"} )%>
-    <h2> 购物车 </h2>
-
-    <table class="table table-striped">
+    <div class="col-md-8">
+    <table class="table table-striped panel1">
       <thead>
         <tr>
           <th colspan="2">商品资讯</th>
@@ -39,12 +36,11 @@
               <%= cart_item.product.price %>
             </td>
             <td>
-              <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>
-
-              <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-                <%= f.select :quantity, 1..cart_item.product.quantity %>
-                <span class="fa fa-refresh"><%= f.submit "更新", data: { disable_with: "Submiting..." } %></span>
-              <% end %>
+              <span class="count-input">
+                <%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), class: " btn", method: :post) %>
+                <%= cart_item.quantity %>
+                <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: " btn", method: :post) %>
+              </span>
             </td>
             <td>
               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
@@ -56,80 +52,21 @@
 
       </tbody>
     </table>
-
-    <br>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-         <span> 总计 <%= render_cart_total_price(current_cart) %> RMB  </span>
-      </span>
     </div>
 
-    <hr>
+    <div class="col-md-4 panel1">
 
-    <div class="checkout clearfix">
-      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+          <h3 class="toolbar-title">购物车总价:</h3>
+          <h4 class="amount">¥ <%= render_cart_total_price(current_cart) %></h4>
+          <p class="text-sm text-gray">* 注意:该价格不包括任何税费和邮费，此部分费用会在下单后自动计算。</p>
+
+          <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-info btn-block", data: {confirm: "这么酷的车你忍心抛弃吗?"}) %>
+
+          <%= link_to("结帐", checkout_carts_path, method: :post, class: "btn btn-danger btn-block") %>
+          <br>
     </div>
-  </div>
+    </div>
   <% end %>
 </div>
 <br>
 <br>
-<h3>猜你喜欢</h3>
-<marquee style=""  scrollamount="6" scrolldelay="90" direction="left" onmouseover="this.stop()" onmouseout="this.start()">
-
-<ul class="list-inline list-unstyled r">
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product1</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product2</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product3</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product4</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product5</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product6</div>
-</li>
-<li class=" productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product7</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product8</div>
-</li>
-<li class="productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product9</div>
-</li>
-<li class=" productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product10</div>
-</li>
-<li class=" productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product11</div>
-</li>
-<li class=" productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product12</div>
-</li>
-<li class=" productbox">
-   <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive">
-   <div class="producttitle"> product13 </div>
-</li>
-</ul></a><br>
-</marquee>

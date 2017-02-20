@@ -1,109 +1,155 @@
-<div class="container">
-			<div class="container-fliud">
-				<div class="row">
-					<div class="preview col-md-6">
+<div class="row">
+	<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
-            <div class=" col-sm-4 col-xs-4">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+							<li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+							<li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+							<li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+					</ol>
 
-            <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
-                <div class='carousel-outer'>
-                    <!-- me art lab slider -->
-                    <div class='carousel-inner'>
-                        <div class='item active'>
-                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/print/image1xxl.jpg'/>
-                        </div>
-                        <div class='item'>
-                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image2xxl.jpg'/>
-                        </div>
-                        <div class='item'>
-                            <img src='http://images.asos-media.com/inv/media/8/2/3/3/5313328/image3xxl.jpg'/>
-                        </div>
-                    </div>
+					<!-- Wrapper For Slides -->
+					<div class="carousel-inner" role="listbox">
 
-                    <!-- sag sol -->
-										<a class='right carousel-control' href='#carousel-custom' data-slide='next'>
-                        <span class='glyphicon glyphicon-chevron-right'></span>
-                    </a>
-                    <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
-                        <span class='glyphicon glyphicon-chevron-left'></span>
-                    </a>
+							<!-- Third Slide -->
+							<div class="item active">
 
-                </div>
+									<!-- Slide Background -->
+									<img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fclr6i3aojj31400ci43t.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<div class="bs-slider-overlay"></div>
 
-                <!-- thumb -->
-                <ol class='carousel-indicators mCustomScrollbar meartlab'>
-                    <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
-                    <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
-                    <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/200x200&text=No Pic' alt='' /></li>
-                </ol>
-            </div>
+									<div class="container">
+											<div class="row">
+													<!-- Slide Text Layer -->
+													<div class="slide-text slide_style_left">
+															<h1 data-animation="animated zoomInLeft"><%= @product.title %></h1>
+															<div> 数量 : <%= @product.quantity %> </div>
+															<div>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star-empty"></span>
+															</div>
+															<br>
+															<h4>￥ <%= @product.price %></h4>
+															<div class="action">
+																<button class="add-to-cart btn btn-default btn-info">
+																	<% if @product.quantity.present? && @product.quantity > 0 %>
+																		<%= link_to(content_tag(:i, '买买买', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post) %>
+																	<% else %>
+																		车太帅，没货了
+																	<% end %>
+																</button>
+																<button class="like btn btn-default btn-info" type="button"><span class="fa fa-heart">收藏</span></button>
+															</div>
+													</div>
+											</div>
+									</div>
+							</div>
+							<!-- End of Slide -->
+
+							<!-- Second Slide -->
+							<div class="item">
+
+									<!-- Slide Background -->
+									<img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcptbkfjm1j31400clwie.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<div class="bs-slider-overlay"></div>
+									<!-- Slide Text Layer -->
+									<div class="slide-text slide_style_left">
+											<h1 data-animation="animated flipInX"><%= @product.title %></h1>
+											<p data-animation="animated lightSpeedIn">侧面</p>
+									</div>
+							</div>
+							<!-- End of Slide -->
+
+							<!-- Third Slide -->
+							<div class="item">
+
+									<!-- Slide Background -->
+									<img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fclrlt2tdgj31400ci413.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<div class="bs-slider-overlay"></div>
+									<!-- Slide Text Layer -->
+									<div class="slide-text slide_style_left">
+											<h1 data-animation="animated zoomInLeft"><%= @product.title %></h1>
+											<p data-animation="animated fadeInRight">车身内饰</p>
+									</div>
+							</div>
+							<!-- End of Slide -->
 
 
-            </div>
+					</div><!-- End of Wrapper For Slides -->
 
-					</div>
+					<!-- Left Control -->
+					<a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+							<span class="fa fa-angle-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+					</a>
 
-					<div class="col-md-6">
-            <br>
+					<!-- Right Control -->
+					<a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+							<span class="fa fa-angle-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+					</a>
 
-						<h3><%= @product.title %></h3>
-            <br>
-            <br>
-
-						<p><%= @product.description %></p>
-            <div> 数量 : <%= @product.quantity %> </div>
-						<div>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star-empty"></span>
-						</div>
-            <br>
-						<h4>￥ <%= @product.price %></h4>
-						<div class="action">
-              <button class="add-to-cart btn btn-default">
-                <% if @product.quantity.present? && @product.quantity > 0 %>
-                  <%= link_to(content_tag(:i, '买买买', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post) %>
-                <% else %>
-                  车太帅，没货了
-                <% end %>
-              </button>
-							<button class="like btn btn-default" type="button"><span class="fa fa-heart">收藏</span></button>
-						</div>
-					</div>
-				</div>
-			</div>
-	</div>
-
-  <div class="container-fluid">
-			<div class="col-md-12 product-info">
-					<ul id="myTab" class="nav nav-tabs nav_tabs">
-
-						<li class="active"><a href="#service-one" data-toggle="tab">产品详情</a></li>
-						<li><a href="#service-two" data-toggle="tab">产品参数</a></li>
-						<li><a href="#service-three" data-toggle="tab">评价</a></li>
-
-					</ul>
-				<div id="myTabContent" class="">
-						<div class="tab-pane fade in active" id="service-one">
-							<section class="container product-info">
-								嗯嗯嗯
-							</section>
-						</div>
-						<div class="tab-pane fade" id="service-two">
-
-							<section class="container">
-              	对对对
-							</section>
-
-						</div>
-						<div class="tab-pane fade" id="service-three">
-							<section class="container">
-								啊啊啊
-							</section>
-						</div>
-					</div>
-				<hr>
-			</div>
+			</div> <!-- End  bootstrap-touch-slider Slider -->
 		</div>
+
+
+  <style>
+
+
+  </style>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+<div class="container">
+  <div class="row">
+    <nav class="col-sm-3" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">规格参数</a></li>
+        <li><a href="#section2">设计理念</a></li>
+        <li><a href="#section3">车型外观</a></li>
+				<li><a href="#section4">车型内饰</a></li>
+      </ul>
+    </nav>
+    <div class="col-sm-9">
+      <div id="section1">
+        <h1>规格参数</h1>
+        <p>发动机：3.9T <br>
+					变速器：双离合 <br>
+					车身结构：2门2座硬顶跑车 <br>
+					长*宽*高：4568*1952*1213 <br>
+					最高车速：330km/h <br>
+					0-100km/h加速：3s</p>
+      </div>
+      <div id="section2">
+        <h1>设计理念</h1>
+        <p>488 GTB这个名称代表着回归经典法拉利车型的番号。名称中的488表示引擎的统一位移，而GTB表示Gran Turismo Berlinetta。这款新车不仅具备无与伦比的性能，其强大的马力也被开发和控制到前所未有的程度，即使不太专业的车手也能驾驭。</p>
+      </div>
+			<img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcptbkfjm1j31400clwie.jpg" />
+      <div id="section3">
+        <h1>车型外观</h1>
+        <p>488 GTB由法拉利设计中心设计完成，拥有雕刻般美感的两翼，是突出其个性的关键所在。它的大型个性化进气扇形板是对首款308 GTB的致敬，此板由一个定风翼分为两个部分。 <br><br>
+					车前的特点是双开放格栅，会将空气引入进两个散热器。车子还有一个双前扰流器，仔细观看的话，很像F1单座跑车的前扰流器。在中央，两个吊架与一个导向板结合，导向板可将空气引向平坦的底盘。<br><br>
+					引擎盖中间部分突出耸起，形成两个气流通道。这两个气流通道具备双重功能：使车子更具运动感以及引导来自保险杠的两个通气口的气流。通气口巧妙地隐藏在车身正面的视野中，使汽车线条干净整洁。<br><br>
+					车尾是增压扰流器和大型通风口，增加了汽车的空气动力学效能。全新的尾气排气管被重新设计位置，以容纳扩散器所需的更多高度。整体的设计流露出一种力量与高性能之感。<br><br>
+					Rosso Corsa Metallizzato，一种全新开发的颜色，突出了此款车型极致的运动感特性，同时表现出了它独特的优雅和专属性。上百万颗微粒悬浮在车漆中，近距离观赏则会发现，这种使用三层配制的颜色有着惊人的深度和光泽度。</p><br><br>
+      </div>
+			<img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fclr6i3aojj31400ci43t.jpg" />
+      <div id="section4">
+        <h1>车型内饰</h1>
+        <p>488 GTB的驾驶室设计旨在保证驾驶舒适的前提下，突显出极致的运动感。所以驾驶室会带给人一切围绕着车手需要而打造的感觉：所有指令并非堆积到方向盘上，而是分布于弧形的卫星装置，这些装置的角度直接面向车手。<br><br>
+					全新的水平点火器位于更紧凑的仪表板上，其极致的运动感通气口系受军用飞机进气口启发而制。<br><br>
+					整体的设计结果便是创新的体积容量和紧凑实用的外形无缝结合。车子的设计采用了典型的法拉利特点，比如仪表板和风洞泾渭分明、多功能的方向盘、风洞上安装控制台。一切均由手工使用材料打造和修饰，美丽迷人。优雅和运动感的设计同时异常着重创造实用的空间。<br><br>
+					典型的纵向F1控制台已成为跃马家族的标志，从实用角度来看，它释放了大量存储空间，可用于存放小物件，而主要的功能键均位于更符合人体工程学的位置。各种零碎东西的隔间更是倾注了一丝不苟的专注设计，提供了相当可观的存储空间。488 GTB的全新车门安装了更舒适、符合人体工程学的扶手。设计整洁、运动感十足，按键很容易触碰。<br><br>
+					全新的座椅装有固定头垫，设计周到。座椅更轻便，具有极舒适的包裹感。<br><br>
+					488 GTB拥有全新的运动信息娱乐系统，导航简便，各种功能触手可及，同时融入到整体的美学设计中。<br><br>
+					488 GTB的钥匙由V8的进气增压室形状启发，采用无钥匙启动的特点，这是法拉利车的首例。</p>
+      </div>
+			<img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fclrlt2tdgj31400ci413.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+    </div>
+  </div>
+</div>
+
+</body>
