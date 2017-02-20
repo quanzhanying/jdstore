@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :products
+    resources :orders
   end
+
   namespace :account do
     resources :orders
   end
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       delete :clean
-      post :checkout
+      post   :checkout
     end
   end
 
@@ -26,6 +28,9 @@ Rails.application.routes.draw do
     member do
       post :pay_with_alipay
       post :pay_with_wechat
+      post :cancel_require
+      post :cancelled
+      post :shipping
     end
   end
 

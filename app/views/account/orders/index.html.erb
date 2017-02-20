@@ -5,7 +5,7 @@
     <tr>
       <th>#</th>
       <th>生成时间</th>
-
+      <th>操作选项</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +14,7 @@
     <tr>
       <td> <%= link_to(order.id, order_path(order.token)) %> </td>
       <td> <%= order.created_at.to_s(:long) %> </td>
+      <td><%= link_to("申请取消订单", cancel_require_order_path(order.token), :method => :post) %></td>
     </tr>
     <% end %>
 

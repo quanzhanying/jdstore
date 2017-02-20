@@ -46,6 +46,27 @@ class OrdersController < ApplicationController
     redirect_to order_path(@order.token), notice: "使用微信支付成功完成付款"
   end
 
+  def cancel_require
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.notify_order_cancel_require(@order).deliver!
+  end
+
+  def cancelled
+    @order = Order.find_by_token(params[:id])
+    @order.cancel_order!
+    OrderMailer.notify_order_cancelled(@order).deliver!
+
+    redirect_to :back
+  end
+
+  def shipping
+    @order = Order.find_by_token(params[:id])
+    @order.ship!
+    OrderMailer.notify_order_shipping(@order).deliver!
+
+    redirect_to :back
+  end
+
   private
 
   def order_params
