@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'figaro'
+gem 'fog'
 gem 'aasm'
 gem 'devise'
 gem 'letter_opener', group: :development
