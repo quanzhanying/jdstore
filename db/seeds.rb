@@ -6,16 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.new
-u.email = "zhongjie10@gmail.com"
-u.password = "2017febFeb"
-u.password_confirmation = "2017febFeb"
-u.is_admin = true
-u.save
+User.create!(email: "admin@test.com", password: "123456", password_confirmation: "123456", is_admin: true)
+User.create!(email: "123@gmail.com", password: "123456", password_confirmation: "123456", is_admin: false)
 
-p = Product.new
-p.title = "Mac Pro 13"
-p.description = "test description"
-p.quantity = 10
-p.price = 105
-p.save
+Product.create!(title: "Nil（原商品已不存在)", description: "Nil", quantity: 0, price: 0, is_hidden: true)

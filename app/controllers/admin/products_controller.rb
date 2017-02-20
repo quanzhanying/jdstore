@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.where.not(:id => 9)
+    @products = Product.where.not(:id => 1) #1 is a dummy product
   end
 
   def new
