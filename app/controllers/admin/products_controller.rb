@@ -7,8 +7,8 @@ class Admin::ProductsController < ApplicationController
 
   def index
     @products = Product.all
-
   end
+
   def new
     @product = Product.new
   end
@@ -25,7 +25,7 @@ class Admin::ProductsController < ApplicationController
     else
       render :edit
     end
- end
+  end
 
 
   def create
