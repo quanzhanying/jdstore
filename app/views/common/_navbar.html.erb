@@ -1,8 +1,23 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDstore</a>
-        </div>
+
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Jack Gallery</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/products">Home</a></li>
+      <!--        <li><a href="#">Page 1</a></li>
+              <li><a href="#">Page 2</a></li>
+              <li><a href="#">Page 3</a></li>  -->
+              <li class="active">
+                <%= link_to("Products", products_path) %>
+              </li>
+            </ul>
+
+
+
+
+
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -12,9 +27,7 @@
                     <% end %>
                 </li>
 
-                <li class="active">
-                  <%= link_to("Products", products_path) %>
-                </li>
+
 
                 <li>
                     <% if !current_user %>
