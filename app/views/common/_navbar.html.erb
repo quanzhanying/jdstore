@@ -4,6 +4,11 @@
       <a class="navbar-brand" href="/">JD</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to("Products", products_path) %>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if !current_user %>
         <li><%= link_to("注册",new_user_registration_path) %></li>
