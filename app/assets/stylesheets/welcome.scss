@@ -40,3 +40,14 @@
    box-shadow: none;
    margin-top: 60px;
 }
+
+.navbar-default {
+    background-color: #212121;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome"
