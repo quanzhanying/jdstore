@@ -1,29 +1,39 @@
-
-<h2> 发起众筹项目 </h2>
-
-<%= simple_form_for [:admin, @product] do |f| %>
-
-  <div class="group">
-    <%= f.input :title %>
-
+<div class="mainbody">
+  <div class="tips">
+    请勿在此发起疾病救助类型的项目，一经发现将立即删除！
   </div>
+  <div class="admin-product-info">
+    <div class="demo">
+      <a href="/pages/demo" class="pull-right" target="_blank">
+        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        项目示例
+      </a>
+    </div>
+    <h2> 众筹项目信息 </h2>
+    <%= simple_form_for [:admin, @product] do |f| %>
+      <div class="form-group">
+          <div class="form-group string optional">
+              <%= f.label "项目名称:", :class => "string optional control-label" %>
+              <%= f.text_field :title, :class => "string optional form-control" %>
+          </div>
+          <div class="form-group string optional">
+              <%= f.label "项目描述:", :class => "string optional control-label" %>
+              <%= f.text_field :description, :class => "string optional form-control" %>
+          </div>
+          <div class="form-group string optional">
+              <%= f.label "需筹款数(¥):", :class => "string optional control-label" %>
+              <%= f.text_field :price, :class => "string optional form-control" %>
+          </div>
 
-  <div class="group">
-    <%= f.input :description %>
+          </%= f.input :quantity %>
+
+          <div class="group">
+            <%= f.input :image, as: :file %>
+          </div>
+      </div>
+    <div class="create-product-btn">
+      <%= f.submit "创建众筹", class: "btn btn-primary", data: { disable_with: "提交中..." } %>
+    </div>
+    <% end %>
   </div>
-
-  <div class="group">
-    <%= f.input :quantity %>
-  </div>
-
-  <div class="group">
-    <%= f.input :price %>
-  </div>
-
-  <div class="group">
-    <%= f.input :image, as: :file %>
-  </div>
-
-  <%= f.submit "创建众筹", data: { disable_with: "提交中..." } %>
-
-<% end %>
+</div>
