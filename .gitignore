@@ -23,4 +23,5 @@ config/database.yml
 pulbic/uploads
 
 # Ignore application configuration
+
 /config/application.yml
