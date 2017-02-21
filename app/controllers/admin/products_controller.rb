@@ -21,6 +21,7 @@ class Admin::ProductsController < ApplicationController
     @product.user = current_user
     if @product.save
       redirect_to account_products_path
+      flash[:notice] = '恭喜创建众筹项目成功！'
     else
       flash[:alert] = '请填写完整数据！'
       render :new

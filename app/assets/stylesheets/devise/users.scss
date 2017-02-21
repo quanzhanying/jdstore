@@ -1,35 +1,32 @@
-// Place all the styles related to the admin::products controller here.
+// Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.newzhongchou-backimg{
+/*---------------------------navbar---------------------------*/
+.users-backimg{
   opacity: 0.9;
   background: url(http://oj8zlumqh.bkt.clouddn.com/image/users_background.jpg) no-repeat center 50%;
 }
 
-.mainbody{
+.users-mainbody{
   margin: -20px 0px 0px 0px;
   padding: 20px 0px 0 20px;
   height: 800px;
   background-size: 100% 100%;
 }
 
-.tips{
+.users-tips{
   border: 1px solid #ffbbb9;
   border-radius: 5px;
   height: 35px;
-  width: 600px;
+  width: 500px;
   line-height: 35px;
   text-align: center;
   font-size: 16px;
-  color: #ff6421;
+  color: #22bb22;
   margin: 0 auto;
 }
 
-.demo{
-  font-size: 16px;
-}
-
-.admin-product-info{
+.users-info{
   opacity: 1;
   background-color: rgba(200, 200, 200, 0.8);
   padding: 20px 30px;
@@ -38,20 +35,24 @@
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
   text-align: left;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 450px;
   margin:0 auto;
   margin-top: 20px;
 }
-.admin-product-info:hover{
+.users-info:hover{
   box-shadow: 5px 5px 5px #ccc;
   transition: 0.5s;
 }
-.admin-product-info h2{
+.users-info h2{
   text-align: center;
   margin-top: 30px;
 }
 
-.create-product-btn{
+.users-reg-btn{
+  text-align: center;
+}
+
+.users-links{
   text-align: center;
 }
