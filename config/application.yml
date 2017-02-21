@@ -22,7 +22,7 @@
  development:
    AWS_ACCESS_KEY_ID: "AKIAJGGKYVHEQESJLYGQ"  # 你的 Access key ID
 
-   AWS_SECRET_ACCESS_KEY: "R/9CwUwSfNhDv+SGs4BKnz0eLvSRTqD8Eko+NhZs"  # 你的 Secret access key
+
 
    AWS_REGION: "us-east-1"  # 你的 S3 bucket 的 Region 位置
 
