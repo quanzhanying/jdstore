@@ -4,13 +4,14 @@ class Admin::OrdersController < ApplicationController
     before_action :authenticate_user!
     before_action :admin_required
 
+
     def index
         @orders = Order.order('id DESC')
     end
 
     def show
         @order = Order.find(params[:id])
-        @product_list = @order.product_lists
+        @product_lists = @order.product_lists
     end
 
     def ship
@@ -39,10 +40,5 @@ class Admin::OrdersController < ApplicationController
         redirect_to :back
     end
 
-    def apply_to_cancel
-        @order = Order.find(params[:id])
-        OrderMailer.apply_to_cancel(@order).deliver!
-        flash[:notice] = '已提交申请'
-        redirect_to :back
-    end
+
 end

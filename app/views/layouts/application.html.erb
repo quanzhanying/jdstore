@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Jdstore</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <div class="container-fluid">
-    <%=render "common/navbar"%>
-    <%=render "common/flashes"%>
-    <%= yield %>
-  </div>
-    <%=render "common/footer"%>
-  </body>
+    <head>
+        <title>Jdstore</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <%=render "common/navbar"%>
+            <%=render "common/flashes"%>
+            <%=content_for :handwrite_javascript do %>
+                <%= yield %>
+            <%end%>
+        </div>
+        <%=render "common/footer"%>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= yield: handwrite_javascript%>
+    </body>
 </html>
