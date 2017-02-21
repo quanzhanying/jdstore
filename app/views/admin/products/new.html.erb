@@ -23,8 +23,10 @@
   </div>
 
   <div class="group">
-    <%= f.input :categories %>
+      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
   </div>
+
+  <br>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
