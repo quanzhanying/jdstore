@@ -25,4 +25,3 @@ config/database.yml
 /config/application.yml
 
 /db/seeds.rb
-/app/assets/images
