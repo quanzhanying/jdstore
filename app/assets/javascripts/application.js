@@ -19,6 +19,5 @@
 //= require bootstrap/modal
 $(document).ready(function() {
   $('#myCarousel').carousel({interval: 2000});
-
 });
 //= require_tree .

@@ -118,62 +118,23 @@
         margin: 0;
     }
 }
-html {
-  position: relative;
-  min-height: 200%;
-}
 
-body {
-  margin-bottom: 150px;
+.itemImage {
+  width: 70px;
+  height: 70px;
 }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  background-color: #111;
-  text-align: center;
-}
-
-.container{
-  margin-top: 50px;
+.carousel-inner img {
   width: 100%;
 }
-
-.fa-facebook {
-    color: #4099FF;
+.promos {
+  border-color: white;
+  margin: 2px;
 }
-
-
-.fa-skype {
-    color: #ed0707;
+.list-style {
+  list-style-type: none;
+  color: #2a6496;
+  font-family: "Sans-serif";
 }
-
-.fa-weixin {
-    color: #00a478;
-}
-
-.fa-envira {
-    color: #1ecd97;
-}
-
-.fa-slack {
-    color: #6441A5;
-}
-
-.fa-envelope-o {
-    color: #007bb6;
-}
-
-.fa {
-    opacity: 0.7;
-    transition: 1s;
-    -webkit-transition: 1s;
-}
-
-.fa:hover{
-    opacity: 1;
-    transition: 1s;
-    -webkit-transition: 1s;
+.ftitle {
+  color: #000000;
 }
