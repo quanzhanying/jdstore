@@ -28,7 +28,24 @@
       </div>
       <!-- 搜索功能 -->
 
+
       <ul class="nav navbar-nav navbar-right">
+
+        <!-- 分类浏览 -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类浏览
+            <span class="caret"></span>
+  	      </a>
+  	      <ul class="dropdown-menu">
+          <% Category.all.each do |category| %>
+  	          <li>
+  	            <%= link_to(category.name, products_path(category: category.name)) %>
+  	          </li>
+  	        <% end %>
+  	       </ul>
+  	    </li>
+        <!-- 以上为分类浏览功能 -->
+
         <li>
           <%= link_to carts_path do %>
             购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
