@@ -15,9 +15,15 @@ production:
   qiniu_secret_key: ON9pHdlw_NOXR-2YtcJ9nMyMvZIIua7ZcFA-eOve
   qiniu_bucket: jdstore-demo
   qiniu_bucket_domain: olpzrrdf6.bkt.clouddn.com
+  SEND_CLOUD_USER_NAME: "xuehua_test_ixe3kF"
+
+  SEND_CLOUD_USER_KEY: "1GgPjAzmz9FbZIJL"
 
 development:
   qiniu_access_key: dXHqVR0aaLooSUvxoT_tgHBbrgw8tmbLX383FywS
   qiniu_secret_key: ON9pHdlw_NOXR-2YtcJ9nMyMvZIIua7ZcFA-eOve
   qiniu_bucket: jdstore-demo
-  qiniu_bucket_domain: olpzrrdf6.bkt.clouddn.com
+  qiniu_bucket_domain: olpzrrdf6.bkt.clouddn.
+  SEND_CLOUD_USER_NAME: "xuehua_test_ixe3kF"
+
+  SEND_CLOUD_USER_KEY: "1GgPjAzmz9FbZIJL"
