@@ -17,7 +17,7 @@ class OrderMailer < ApplicationMailer
 
   def notify_ship(order)
     @order       = order
-    @user        = order
+    @user        = order.user
     @product_lists = @order.product_lists
 
     mail(to: @user.email, subject: "[JDstore] 您的订单 #{order.token}已经发货")
