@@ -77,7 +77,7 @@ a:focus, a:hover {
 /*-- Header --*/
 
 .agileheaderw3ls {
-	padding-bottom: 800px;
+	padding-bottom: 2px;
 }
 
 /*-- //Header --*/
@@ -1366,13 +1366,13 @@ a.to-top {
 
 @media screen and (max-width: 1920px) {
 	.agileheaderw3ls {
-		padding-bottom: 952px;
+		padding-bottom: 2px;
 	}
 }
 
 @media screen and (max-width: 1680px) {
 	.agileheaderw3ls {
-		padding-bottom: 832px;
+		padding-bottom: 2px;
 	}
 	.portfolio h3 {
 		margin-left: 225px;
@@ -1381,7 +1381,7 @@ a.to-top {
 
 @media screen and (max-width: 1600px) {
 	.agileheaderw3ls {
-		padding-bottom: 792px;
+		padding-bottom: 2px;
 	}
 	.portfolio h3 {
 		margin-left: 185px;
@@ -1390,7 +1390,7 @@ a.to-top {
 
 @media screen and (max-width: 1440px) {
 	.agileheaderw3ls {
-		padding-bottom: 712px;
+		padding-bottom: 2px;
 	}
 	.portfolio h3 {
 		margin-left: 105px;
@@ -1399,7 +1399,7 @@ a.to-top {
 
 @media screen and (max-width: 1366px) {
 	.agileheaderw3ls {
-		padding-bottom: 675px;
+		padding-bottom: 2px;
 	}
 	.portfolio h3 {
 		margin-left: 65px;
@@ -1408,13 +1408,13 @@ a.to-top {
 
 @media screen and (max-width: 1280px) {
 	.agileheaderw3ls {
-		padding-bottom: 632px;
+		padding-bottom: 2px;
 	}
 }
 
 @media screen and (max-width: 1080px) {
 	.agileheaderw3ls {
-		padding-bottom: 532px;
+		padding-bottom: 2px;
 	}
 	.gallery-top figure.effect-bubba h4 {
 		padding-top: 15%;
@@ -1438,7 +1438,7 @@ a.to-top {
 
 @media screen and (max-width: 1024px) {
 	.agileheaderw3ls {
-		padding-bottom: 504px;
+		padding-bottom: 2px;
 	}
 	.camera_caption > div {
 		padding: 35px 20px;
@@ -1488,7 +1488,7 @@ a.to-top {
 
 @media screen and (max-width: 991px) {
 	.agileheaderw3ls {
-		padding-bottom: 487px;
+		padding-bottom: 2px;
 	}
 	.container {
 		width: 100%;
@@ -1500,7 +1500,7 @@ a.to-top {
 		margin-top: 40px;
 	}
 	.agileheaderw3ls {
-		padding-bottom: 475px;
+		padding-bottom: 2px;
 	}
 	.gallery-top figure.effect-bubba h4 {
 		padding-top: 12%;
@@ -1512,7 +1512,7 @@ a.to-top {
 
 @media screen and (max-width: 900px) {
 	.agileheaderw3ls {
-		padding-bottom: 442px;
+		padding-bottom: 2px;
 	}
 	.booking-form-aits input[type="text"], .booking-form-aits input[type="email"] {
 		width: 48.8%;
@@ -1546,7 +1546,7 @@ a.to-top {
 		margin-left: 10px;
 	}
 	.agileheaderw3ls {
-		padding-bottom: 418px;
+		padding-bottom: 2px;
 	}
 	.agileaboutaits-image-1 {
 		width: 80%;
@@ -1578,7 +1578,7 @@ a.to-top {
 
 @media screen and (max-width: 800px) {
 	.agileheaderw3ls {
-		padding-bottom: 392px;
+		padding-bottom: 2px;
 	}
 	.cs-style-3 figcaption {
 		height: 80px;
@@ -1599,7 +1599,7 @@ a.to-top {
 
 @media screen and (max-width: 768px) {
 	.agileheaderw3ls {
-		padding-bottom: 376px;
+		padding-bottom: 2px;
 	}
 	.camera_caption h3 {
 		font-size: 35px;
@@ -1655,7 +1655,7 @@ a.to-top {
 
 @media screen and (max-width: 767px) {
 	.agileheaderw3ls {
-		padding-bottom: 375px;
+		padding-bottom: 2px;
 	}
 	.cd-bouncy-nav {
 		width: 100%;
@@ -1673,19 +1673,19 @@ a.to-top {
 		font-size: 13px;
 	}
 	.agileheaderw3ls {
-		padding-bottom: 389px;
+		padding-bottom: 2px;
 	}
 }
 
 @media screen and (max-width: 736px) {
 	.agileheaderw3ls {
-		padding-bottom: 360px;
+		padding-bottom: 2px;
 	}
 }
 
 @media screen and (max-width: 667px) {
 	.agileheaderw3ls {
-		padding-bottom: 325px;
+		padding-bottom: 2px;
 	}
 	.camera_caption h3 {
 		font-size: 30px;
@@ -1703,7 +1703,7 @@ a.to-top {
 
 @media screen and (max-width: 640px) {
 	.agileheaderw3ls {
-		padding-bottom: 312px;
+		padding-bottom: 2px;
 	}
 	.cd-bouncy-nav {
 		max-width: 450px;
@@ -1764,7 +1764,7 @@ a.to-top {
 
 @media screen and (max-width: 603px) {
 	.agileheaderw3ls {
-		padding-bottom: 293px;
+		padding-bottom: 2px;
 	}
 	.stats-info p {
 		font-size: 15px;
@@ -1773,13 +1773,13 @@ a.to-top {
 
 @media screen and (max-width: 600px) {
 	.agileheaderw3ls {
-		padding-bottom: 292px;
+		padding-bottom: 2px;
 	}
 }
 
 @media screen and (max-width: 568px) {
 	.agileheaderw3ls {
-		padding-bottom: 276px;
+		padding-bottom: 2px;
 	}
 	.agileaboutaitsabout, .w3threespecialityw3ls, .progressive-effects, .portfolio, .w3layoutsbooking {
 		padding: 35px 0;
@@ -1807,7 +1807,7 @@ a.to-top {
 
 @media screen and (max-width: 533px) {
 	.agileheaderw3ls {
-		padding-bottom: 258px;
+		padding-bottom: 2px;
 	}
 	.camera_caption h3 {
 		font-size: 20px;
@@ -1841,7 +1841,7 @@ a.to-top {
 
 @media screen and (max-width: 480px) {
 	.agileheaderw3ls {
-		padding-bottom: 232px;
+		padding-bottom: 2px;
 	}
 	.cd-bouncy-nav-trigger {
 		padding: 8px 30px;
@@ -1889,7 +1889,7 @@ a.to-top {
 
 @media screen and (max-width: 414px) {
 	.agileheaderw3ls {
-		padding-bottom: 200px;
+		padding-bottom: 2px;
 	}
 	.agileaboutaits h1, .w3threespecialityw3ls h2, #skills h3, .portfolio h3, .w3layoutsbooking h3, .footer h3 {
 		font-size: 25px;
@@ -1934,7 +1934,7 @@ a.to-top {
 
 @media screen and (max-width: 384px) {
 	.agileheaderw3ls {
-		padding-bottom: 200px;
+		padding-bottom: 2px;
 	}
 	.cd-bouncy-nav a {
 		padding: 70px 10px 0;
