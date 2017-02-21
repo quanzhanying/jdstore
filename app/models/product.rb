@@ -3,6 +3,7 @@ class Product < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :price, presence: true
 
   mount_uploader :image, ImageUploader
   scope :recent, -> { order("created_at DESC")}

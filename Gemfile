@@ -40,6 +40,7 @@ gem 'mini_magick'
 gem 'aasm'
 gem 'figaro'
 gem 'fog'
+gem 'devise-i18n'
 gem 'letter_opener', group: :development
 
 group :development, :test do
