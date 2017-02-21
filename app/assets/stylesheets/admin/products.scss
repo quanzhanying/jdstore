@@ -1,0 +1,46 @@
+// Place all the styles related to the admin::products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.mainbody{
+  margin: 0px 20px 50px 20px;
+  padding: 0 20px 0 20px;
+}
+
+.tips{
+  border: 1px solid #ffbbb9;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 16px;
+  color: #ff6421;
+  margin-bottom: 20px;
+}
+
+.demo{
+  font-size: 16px;
+}
+
+.admin-product-info{
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+  text-align: left;
+  width: 700px;
+  height: 900px;
+  margin:0 auto;
+}
+.admin-product-info:hover{
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+.admin-product-info h2{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.create-product-btn{
+  text-align: center;
+}

@@ -1,0 +1,84 @@
+<!---------------------------ClassesBox--------------------------->
+<div class="FilterBox">
+  <div class="InnerBox">
+      <label>行业筛选：</label>
+      <div class="ClassesBox">
+        <a class="ClassesActive" href="/">全部</a>
+        <a href="/">公益</a>
+        <a href="/">农业</a>
+        <a href="/">出版</a>
+        <a href="/">艺术</a>
+        <a href="/">其他</a>
+      </div>
+      <label>项目排序：</label>
+      <div class="ClassesBox">
+        <a class="ClassesActive" href="/">全部</a>
+        <a href="/">正在众筹</a>
+        <a href="/">将要结束</a>
+        <a href="/">成功结束</a>
+
+      </div>
+      <label>项目进程：</label>
+      <div class="ClassesBox">
+        <a class="ClassesActive" href="/">默认</a>
+        <a href="/"><i class="fa fa-arrow-down" aria-hidden="true"></i>最新上线</a>
+        <a href="/"><i class="fa fa-arrow-down" aria-hidden="true"></i>目标金额</a>
+        <a href="/"><i class="fa fa-arrow-down" aria-hidden="true"></i>支持人数</a>
+        <a href="/"><i class="fa fa-arrow-down" aria-hidden="true"></i>筹资额度</a>
+      </div>
+  </div>
+</div>
+<!---------------------------ProductsList--------------------------->
+<div class="boxlist">
+  <% @products.each do |product| %>
+    <div class="boxlist-item">
+  		<a href="/">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://oj8zlumqh.bkt.clouddn.com/image/102.jpg", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+      </a>
+  		<div class="boxlist-item-content">
+  			<div class="boxlist-item-content-text">
+  				<a href="/"><%= product.title %></a>
+  				<p><%= product.description %></p>
+  			</div>
+  			<div class="boxlist-item-content-card">
+  				<div class="boxlist-item-content-card-tag">
+  					    <img src="http://oj8zlumqh.bkt.clouddn.com/image/tag.png">
+  							<a href="/">·山西</a>
+  							<a href="/">·太原</a>
+  							<a href="/">·福牌</a>
+  							<a href="/">·传统彩塑</a>
+  							<a href="/">·纯手工</a>
+  				</div>
+  				<div class="boxlist-item-content-card-radio">
+  					<div class="boxlist-item-content-card-radio-in">
+  					</div>
+  				</div>
+  				<div class="boxlist-item-content-card-datas">
+  					<div class="money">
+  						<p class="num">￥<%= product.price %></p>
+  						<p class="text">已筹款</p>
+  					</div>
+  					<div class="count">
+  						<p class="num">37</p>
+  						<p class="text">支持数</p>
+  					</div>
+  					<div class="persent">
+  						<p class="num">24%</p>
+  						<p class="text">筹款进度</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  <% end %>
+</div>
+<!---------------------------will_paginate--------------------------->
+<div class="text-center">
+  <%= will_paginate @products %>
+</div>

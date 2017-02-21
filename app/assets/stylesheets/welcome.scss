@@ -1,0 +1,458 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*---------------------------navbar---------------------------*/
+.navbar-right {
+    padding-right: 5px;
+}
+.navbar-brand img {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.4s ease-out;
+}
+.navbar-brand img:hover {
+    transform: rotateZ(360deg);
+}
+/*---------------------------banner---------------------------*/
+.banner {
+    width: 100%;
+    top: -20px;
+    overflow: hidden;
+    height: 380px;
+    position: relative;
+}
+
+.banList {
+    position: absolute;
+    left: 50%;
+    margin-left: -800px;
+    height: 470px;
+}
+.banList li {
+    height: 470px;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 0.5s ease 0s, opacity 1.5s ease 0s;
+    z-index: 1;
+}
+.banList li.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.fomW {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    height: 20px;
+    z-index: 9;
+    width: 1000px;
+    margin-left: -500px;
+}
+
+.jsNav {
+    text-align: center;
+}
+.jsNav a {
+    display: inline-block;
+    background: #666;
+    width: 180px;
+    height: 5px;
+    margin: 0 5px;
+}
+.jsNav a.current {
+    background: #fff;
+    cursor: pointer;
+}
+/*---------------------------classes---------------------------*/
+.classes {
+  height: 48px;
+  text-align: center;
+  margin-top: -40px;
+}
+.classes .child{
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: rgba(200, 200, 200, 0.7);
+}
+.button {
+	float: left;
+	display: block;
+	border: 1px solid #fff;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+.button:focus {
+	outline: none;
+}
+.button > span {
+	vertical-align: middle;
+}
+.button--size-s {
+	font-size: 14px;
+  font-weight: bold;
+}
+.button--text-upper {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.button--rayen {
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+.button--rayen.button--inverted {
+	color: #fff;
+}
+.button--rayen::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(180, 180, 180, 1.0);
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(0, -100%, 0);
+}
+.button--rayen.button--inverted::before {
+	background: #fff;
+	color: #37474f;
+}
+.button--rayen > span {
+	display: block;
+}
+.button--rayen::before,
+.button--rayen > span {
+	padding: 1em 2em;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.button--rayen:hover::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.button--rayen:hover > span {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}
+/*---------------------------remen---------------------------*/
+.remen-title {
+    margin-top: 60px;
+    text-align: center;
+}
+.remen-title h1 {
+    font-size: 30px;
+}
+.remen-title p a {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 8px 5px;
+    padding: 2px;
+    border-radius: 3px;
+    background: #0099CC;
+    color: #fff;
+}
+.remen-title p a:hover {
+    background-color: #f00;
+}
+/*---------------------------boxlist---------------------------*/
+.boxlist {
+    text-align: center;
+}
+
+.boxlist-item {
+    width: 320px;
+    height: 485px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 30px 0 0 18px;
+    overflow: hidden;
+}
+
+.boxlist-item img{
+    margin-bottom: 15px;
+}
+
+.boxlist-item-content {
+    padding: 0 19px;
+    background-position: right 96px;
+}
+
+.boxlist-item-content-text {
+    height: 124px;
+}
+.boxlist-item-content-text a {
+    font-size: 13px;
+    font-weight: bold;
+    color: #222;
+    text-align: left;
+}
+.boxlist-item-content-text p {
+    font-size: 11px;
+    color: #888888;
+    margin-top: 6px;
+    text-align: left;
+}
+
+.boxlist-item-content-card {
+    padding: 16px 0 0;
+    border-top: 1px dashed #dcdcdc;
+}
+
+.boxlist-item-content-card-tag {
+    height: 20px;
+    text-align: left;
+}
+.boxlist-item-content-card-tag a{
+    color: #999999;
+    font-size: 11px;
+}
+
+.boxlist-item-content-card-radio {
+    height: 6px;
+    border-radius: 3px;
+    background-color: #e4e4e4;
+    margin: 10px 0px 7px 0px;
+}
+.boxlist-item-content-card-radio-in {
+    width: 24%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #50abf2;
+}
+
+.boxlist-item-content-card-datas {
+  position: relative;
+  text-align: center;
+}
+.boxlist-item-content-card-datas .money{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  text-align: left;
+}
+.boxlist-item-content-card-datas .money .num{
+  margin: 0px;
+  color: #ff5001;
+  font-weight: bold;
+}
+.boxlist-item-content-card-datas .money .text{
+  color: #999999;
+  font-size: 11px;
+}
+.boxlist-item-content-card-datas .count{
+  display: inline-block;
+}
+.boxlist-item-content-card-datas .count .num{
+  margin: 0px;
+  font-weight: bold;
+}
+.boxlist-item-content-card-datas .count .text{
+  color: #999999;
+  font-size: 11px;
+}
+.boxlist-item-content-card-datas .persent{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  text-align: right;
+}
+.boxlist-item-content-card-datas .persent .num{
+  margin: 0px;
+  font-weight: bold;
+}
+.boxlist-item-content-card-datas .persent .text{
+  color: #999999;
+  font-size: 11px;
+}
+/*---------------------------morebox---------------------------*/
+.more-box{
+  display: block;
+  height: 40px;
+  line-height: 43px;
+  background-color: #f3f3f3;
+  color: #999999;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+/*---------------------------success---------------------------*/
+.success-background{
+  margin-top: 10px;
+  height: 500px;
+  background: url(http://oj8zlumqh.bkt.clouddn.com/image/success-back.jpg) #564975 no-repeat top center;
+}
+.success-background .suc-box{
+  width: 1042px;
+  margin: 0px auto;
+}
+.success-background .suc-box .suc-title{
+  height: 120px;
+  padding: 52px 0px 13px 0px;
+  font-size: 30px;
+  color: #fff;
+}
+.success-background .suc-box .suc-title h3{
+  float: left;
+  font-size: 30px;
+  color: #fff;
+}
+.success-background .suc-box .suc-title h3 span{
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+.success-background .suc-box .suc-title p a {
+  float: right;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 45px 5px;
+  padding: 2px;
+  color: #fff;
+}
+.success-background .suc-box .suc-item{
+  height: 180px;
+  padding: 42px 0px 0px 0px;
+  border-top: 1px solid rgba(123,123,123,0.37)
+}
+.success-background .suc-box .suc-item .text{
+  float: left;
+}
+.success-background .suc-box .suc-item .text .imgbox{
+  float: left;
+}
+.success-background .suc-box .suc-item .text .imgbox img{
+  border-radius: 100%;
+  width: 72px;
+  height: 72px;
+  margin-top: 20px;
+  border: 3px solid #fff;
+  cursor: default;
+}
+.success-background .suc-box .suc-item .text .intext{
+  width: 620px;
+  float: left;
+  margin-left: 17px;
+}
+.success-background .suc-box .suc-item .text .intext h3{
+  color: #fff;
+  font-size: 20px;
+}
+.success-background .suc-box .suc-item .text .intext h3 a{
+  font-weight: bold;
+  color: #50abf2;
+  font-size: 14px;
+}
+.success-background .suc-box .suc-item .text .intext p{
+  line-height: 26px;
+  color: #fff;
+  margin-top: 8px;
+  height: 78px;
+  font-size: 12px;
+}
+.success-background .suc-box .suc-item .number{
+  float: right;
+  color: #50abf2;
+  margin-top: 28px;
+}
+.success-background .suc-box .suc-item .number p a {
+  float: right;
+  text-decoration: none;
+  font-size: 26px;
+  margin: 30px 5px;
+  padding: 2px;
+  color: #50abf2;
+}
+/*---------------------------helper---------------------------*/
+.helper {
+  height: 78px;
+  text-align: center;
+}
+.helper .child{
+  float: left;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(93, 78, 116, 0.6);
+}
+.button-big {
+	float: left;
+	display: block;
+	border: 1px solid #fff;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+.button-big:focus {
+	outline: none;
+}
+.button-big > span {
+	vertical-align: middle;
+}
+.button-big--size-s {
+	font-size: 14px;
+}
+.button-big--text-upper {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.button-big--rayen {
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+}
+.button-big--rayen.button-big--inverted {
+	color: #fff;
+}
+.button-big--rayen::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200, 200, 200, 1.0);
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(0, -100%, 0);
+}
+.button-big--rayen.button-big--inverted::before {
+	background: #fff;
+	color: #37474f;
+}
+.button-big--rayen > span {
+	display: block;
+}
+.button-big--rayen::before,
+.button-big--rayen > span {
+	padding: 2em 2em;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.button-big--rayen:hover::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.button-big--rayen:hover > span {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}

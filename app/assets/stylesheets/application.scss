@@ -12,4 +12,42 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+.notice{
+ text-align:center;
+ margin-top: -20px;
+}
+.custab{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
+#zhongchou-foot{
+  margin: 0px 0px 0px 0px;
+  padding: 30px 0px 20px 0px;
+  background: rgba(30,30,30,0.8);
+  bottom: 0px; width: 100%;
+  position: relative;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+
+#zhongchou-foot p a{
+   text-decoration: underline;
+   color: rgba(200,200,200,1);
+   margin-right: 7px;
+}
