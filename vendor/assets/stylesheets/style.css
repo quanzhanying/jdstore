@@ -66,9 +66,36 @@ a:focus, a:hover {
 
 /*-- //Reset-Code --*/
 
-
-
-
+/*-- Products-Styling --*/
+.products-content {
+	background: url("../images/slide-2.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+}
+a.products {
+	margin-left: 150px;
+	font-family: 'Francois One', sans-serif;
+	font-size: 50px;
+	color: #ee2899;
+}
+p.products {
+	color: #EEE;
+	text-align: center;
+	padding: 0 200px;
+	line-height: 30px;
+	margin-top: 50px;
+}
+h1.products {
+	font-size: 50px;
+	font-weight: 600;
+	margin-top: 50px;
+	color: #03A9F4;
+	letter-spacing: 1px;
+}
+/*-- //Products-Styling --*/
 
 /*-- Index-Page-Styling --*/
 
