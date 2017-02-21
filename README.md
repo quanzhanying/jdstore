@@ -1,6 +1,6 @@
 # 购物网站魔改大赛
 
-测试merge
+test fetch
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
