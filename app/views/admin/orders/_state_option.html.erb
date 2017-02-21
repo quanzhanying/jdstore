@@ -15,6 +15,10 @@
      <%= link_to("设置为出货",
                  shipped_admin_order_path(order),
                  class: "btn btn-default btn-sm",method: :post) %>
+  <% when "shipped" %>
+     <%= link_to("退货",
+              return_admin_order_path(order),
+              class: "btn btn-default btn-sm", method: :post) %>
   <% when "order_cancelled" %>
      <span class="label label-default">订单已取消</span>
   <% when "good_retuined" %>
