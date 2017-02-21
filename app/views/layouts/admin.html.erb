@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <title>非凡购物网-后台</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head >
+<body>
+  <div class='container' style="width:100%">
+    <%= render "common/navbar" %>
+    <div class="row">
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked" style="max-width: 150px">
+          <li> <%= link_to("后台首页", admin_products_path, :class => "btn btn-default") %> </li>
+          <li> <%= link_to("Orders", admin_orders_path, :class => "btn btn-danger") %> </li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

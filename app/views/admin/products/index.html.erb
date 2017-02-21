@@ -1,0 +1,47 @@
+<h2 align="center"> Product List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width="100">#</th>
+      <th width="220">Product Pic</th>
+      <th width="150">Name</th>
+      <th width="250">Description</th>
+      <th width="150">Price</th>
+      <th width="200"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.id %>
+        </td>
+        <td>
+          <%= link_to admin_product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= product.title %>
+        </td>
+        <td>
+        <%= product.description %>
+      </td>
+        <td>
+          <%= product.price %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-default") %>
+          <%= link_to("Destroy", admin_product_path(product), :class => "btn btn-default", :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
