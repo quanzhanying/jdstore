@@ -21,5 +21,3 @@ development:
   qiniu_secret_key: ON9pHdlw_NOXR-2YtcJ9nMyMvZIIua7ZcFA-eOve
   qiniu_bucket: jdstore-demo
   qiniu_bucket_domain: olpzrrdf6.bkt.clouddn.com
-
-production:
