@@ -1,0 +1,25 @@
+<div class="registration">
+  <div class="g-row">
+  <div class="re-page">
+    <h2>账号注册</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true,label: "邮箱账号", placeholder: "邮箱账号" %>
+      <%= f.input :password, required: true, label: "密码",placeholder: "输入密码",hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, label: "确认密码", required: true, placeholder: "确认密码" %>
+    </div>
+
+    <div class="form-actions">
+      <!-- <%= f.button :submit, "登录" %> -->
+      <input type="submit" name="commit" value="登录"
+      class="login-action" data-disable-with="登录">
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+  </div>
+</div>
