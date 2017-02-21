@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>zhongchou</title>
+    <title>易筹莫斩</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
   <body>
-    <div class="container-fluid" style="padding: 0px;">
-      <%= render "common/navbar" %>
-      <%= render "common/flashes" %>
-      <%= yield %>
-    </div>
+    <main>
+      <div class="container-fluid" style="padding: 0px;">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
+        <%= yield %>
+      </div>
+    </main>
     <%= render "common/footer" %>
   </body>
 
