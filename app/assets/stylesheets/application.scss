@@ -21,6 +21,9 @@
  @import "camera";
  @import "style";
  @import "swipebox";
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
 
  nav{
  width:auto;/*撑满*/
@@ -30,8 +33,6 @@
  margin-top:15px;/*顶部15px*/
  }
 
-
- @import url(http://fonts.googleapis.com/css?family=Roboto);
 
  /****** LOGIN MODAL ******/
  .loginmodal-container {
