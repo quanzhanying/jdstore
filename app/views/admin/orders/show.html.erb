@@ -2,6 +2,8 @@
   <div class="col-md-12">
     <h2> 订单明细 (<%= render_order_paid_state(@order) %>)</h2>
 
+    <%= render "admin/orders/state_option", order: @order %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -11,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= @product_lists.each do |product_list| %>
+        <% @product_lists.each do |product_list| %>
           <tr>
             <td>
               <%= product_list.product_name %>
