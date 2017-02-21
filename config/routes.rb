@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  # root 'products#index'
+  root 'welcome#index'
+
 
   devise_for :users
 
