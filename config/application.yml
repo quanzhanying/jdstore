@@ -9,14 +9,12 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-...(略)
-
  production:
    AWS_ACCESS_KEY_ID: "AKIAJGGKYVHEQESJLYGQ"  # 你的 Access key ID
 
    AWS_SECRET_ACCESS_KEY: "R/9CwUwSfNhDv+SGs4BKnz0eLvSRTqD8Eko+NhZs"  # 你的 Secret access key
 
-   AWS_REGION: "US Standard"  # 你的 S3 bucket 的 Region 位置
+   AWS_REGION: "us-east-1"  # 你的 S3 bucket 的 Region 位置
 
    AWS_BUCKET_NAME: "superlei"  # 你设定的 bucket name
 
@@ -26,6 +24,6 @@
 
    AWS_SECRET_ACCESS_KEY: "R/9CwUwSfNhDv+SGs4BKnz0eLvSRTqD8Eko+NhZs"  # 你的 Secret access key
 
-   AWS_REGION: "US Standard"  # 你的 S3 bucket 的 Region 位置
+   AWS_REGION: "us-east-1"  # 你的 S3 bucket 的 Region 位置
 
    AWS_BUCKET_NAME: "superlei"  # 你设定的 bucket name

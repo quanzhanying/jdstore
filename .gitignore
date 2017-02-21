@@ -20,4 +20,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/database.yml
-pulic/uploads
+pulbic/uploads
+
+# Ignore application configuration
+/config/application.yml
