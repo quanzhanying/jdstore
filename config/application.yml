@@ -9,20 +9,18 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
 production:
-  AWS_ACCESS_KEY_ID: "AKIAI25DNJZ45Q755D4A"
+  qiniu_access_key: dXHqVR0aaLooSUvxoT_tgHBbrgw8tmbLX383FywS
 
-  AWS_SECRET_ACCESS_KEY: "gc2gMgDwIZRzXUXln7cCaIQBj2nF9xlpUZGK1lDX"
+  qiniu_secret_key: ON9pHdlw_NOXR-2YtcJ9nMyMvZIIua7ZcFA-eOve
 
-  AWS_REGION: "us-west-2"
+  qiniu_bucket: jdstore-demo
 
-  AWS_BUCKET_NAME: "fullstack001"
+  qiniu_bucket_domain: olpzrrdf6.bkt.clouddn.com
 
   development:
-    AWS_ACCESS_KEY_ID: "AKIAI25DNJZ45Q755D4A"
-
-    AWS_SECRET_ACCESS_KEY: "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"
-
-    AWS_REGION: "us-west-2"
-
-    AWS_BUCKET_NAMW: "fullstack001"
+    qiniu_access_key: dXHqVR0aaLooSUvxoT_tgHBbrgw8tmbLX383FywS
+    qiniu_secret_key: ON9pHdlw_NOXR-2YtcJ9nMyMvZIIua7ZcFA-eOve
+    qiniu_bucket: jdstore-demo
+    qiniu_bucket_domain: olpzrrdf6.bkt.clouddn.com
