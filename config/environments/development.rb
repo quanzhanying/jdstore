@@ -50,7 +50,6 @@ Rails.application.configure do
     password: ENV["SEND_CLOUD_USER_KEY"]
     }
 
-
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
