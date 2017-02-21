@@ -32,13 +32,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
-gem 'carrierwave'
+
 gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'figaro'
 gem 'bullet', group: 'development'
+gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 
 group :development, :test do
