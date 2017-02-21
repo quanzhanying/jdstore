@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+body {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+// 登陆，注册界面
+.registration {
+  height: 600px;
+  width: 100%;
+  display: block;
+  background: url('http://mimg.127.net/hxm/yanxuan-web/p/20150730/style/img/login/bg-3e7f5d5d04.jpg') center no-repeat;
+}
+.g-row:before {
+  content: "";
+  display: table;
+}
+.g-row {
+
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 1090px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.re-page {
+  background-color: rgb(255,255,255);
+  display: block;
+  height: auto;
+  min-height: 460px;
+  width: 386px;
+  margin-top: 83px;
+  margin-left: 703px;
+  padding: 0 40px ;
+  border: solid 1px #e8e8e8;
+}
+.login-action {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(176,149,103);
+}
