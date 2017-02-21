@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         post :shipped
         post :return
       end
-    end 
+    end
   end
   resources :products do
     member do
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     member do
       post :pay_with_alipay
       post :pay_with_wechat
+      post :apply_to_cancel
     end
   end
   namespace :account do
