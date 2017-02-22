@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<title>Snapshot HTML CSS Web Template</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+  	<link rel="stylesheet" href="css/component.css">
+
+    <link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/vegas.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Google web font  -->
+
+	<!-- 导航栏上移后固定-->
+	<script type="text/javascript">
+	$(function(){
+	var nav=$(".navbar-header"); //得到导航对象
+	var win=$(window); //得到窗口对象
+	var sc=$(document);//得到document文档对象。
+	win.scroll(function(){
+		if(sc.scrollTop()>=50){
+			nav.addClass("fixednav");
+		 $(".navTmp").fadeIn();
+		}else{
+		 nav.removeClass("fixednav");
+		 $(".navTmp").fadeOut();
+		}
+	})
+	})
+	</script>
+<!-- 导航栏上移后固定-->
+</head>
+
+<body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+<!--<div class="adcenter"><script src="http://www.cssmoban.com/include/new/ggad2_728x90.js"></script></div>-->
+
+<!-- Preloader section -->
+
+<!--<div class="preloader">
+     <div class="sk-spinner sk-spinner-pulse"></div>
+</div>-->
+
+<!-- Navigation section  -->
+
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+        </button>
+<a href="/" class="navbar-brand smoothScroll">Easy GuQin</a>
+<h4>Simplify Guqin learning</h4>
+
+
+      </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" margin-top="100px">
+            <li><a href="#home" class="smoothScroll"><span>Home</span></a></li>
+            <li><a href="#about" class="smoothScroll"><span>About</span></a></li>
+						<li><a href="#team-carousel" class="smoothScroll"><span>Team</span></a></li>
+            <li><a href="#gallery" class="smoothScroll"><span>services</span></a></li>
+            <li><a href="#contact" class="smoothScroll"><span>Contact</span></a></li>
+						<li>
+							<%= link_to("Get Start!", products_path) %>
+						</li>
+				  </ul>
+       </div>
+		 </div>
+
+  </div>
+
+
+<!-- Home section -->
+
+<section id="home">
+  <!--<div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Let's take a snapshot</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Snapshot website template is available for free download. Anyone can modify and use it for any site. Please tell your friends about <a rel="nofollow" href="http://www.templatemo.com">templatemo</a>. Thank you.</p>
+        <a href="#about" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">Learn more</a>
+      </div>
+
+    </div>
+  </div>-->
+  <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- First Slide -->
+                <div class="item active" margin-top="200px">
+
+                    <!-- Slide Background -->
+
+								      <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclhkc8o5hj30sz0gv1kx.jpg" alt="Bootstrap Touch Slider" width="100%" />
+
+									  <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_right">
+                                <h1 data-animation="animated zoomInRight">Guqin</h1>
+                                <p data-animation="animated fadeInLeft">——The most ancient instrument in China.<br/><br/>Representative Work of Human Oral and Intangible Cultural Heritage.<br/><br/>Now the Guqin music "Liushui" is ringing in the Voyagers's journey .</p>
+                                <a href="/guqin" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Learn More</a>
+                                <a href="/products" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">Get Start!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Second Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://ww2.sinaimg.cn/large/006tNc79gy1fclasjhvx4j30z90rs7az.jpg" alt="Bootstrap Touch Slider"  class="slide-image" />
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation="animated flipInX">文化认同感</h1>
+                        <p data-animation="animated lightSpeedIn">在全球化竞争的趋势下，不论对自己还是下一代而言，都更应该重视文化认同感。</p>
+                        <a href="/culture" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">Learn More</a>
+                        <a href="/products" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">Get Start!</a>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Third Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclqwxsecgj30ku0araag.jpg" alt="Bootstrap Touch Slider" class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_left">
+                        <h1 data-animation="animated zoomInLeft">All-in-one service</h1>
+                        <p data-animation="animated fadeInRight">Intrested in Guqin，but bothered by lacking of resources？——We meet all your needs，and make it easy.<br/><br/>Instruments、Books/Scores、Online／Offline Tutorials、different levels/Costumized Courses...<br/><br/>High quality guarantee——Save your time and attention</p>
+                        <a href="/allinone" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">Learn More</a>
+                        <a href="/products" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">Get Start!</a>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+
+            </div><!-- End of Wrapper For Slides -->
+
+            <!-- Left Control -->
+            <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!-- Right Control -->
+            <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div> <!-- End  bootstrap-touch-slider Slider -->
+</section>
+
+
+
+
+<!-- About section -->
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-9 col-sm-8 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="about-thumb">
+          <h1>Introduction</h1>
+          <p>Everyone needs to relax,and to find a sense of belonging in the Global competitive trends. Guqin is a good choice,for its importance in Chinese traditional culture and the great solace it brings about.
+						After the founding of the nation,Guqin has continued marching toward anabiosis,but still kind of being left out,
+						because of the difficalties of obtaining a qualified Guqin or a professional teacher，as we have investigated.So we prived everything you might need in the process of Guqin learning,to make it easy and convinient.
+
+</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-4 wow fadeInUp about-img" data-wow-delay="0.6s">
+        <img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcmrgc6xpwj30cz0k9gub.jpg" class="img-responsive img-circle" alt="About">
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title text-center">
+          <h1>Our Team</h1>
+          <h3>Teachers you can trust.</h3>
+        </div>
+      </div>
+
+      <!-- team carousel -->
+      <div id="team-carousel" class="owl-carousel">
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclnml2qahj306606rtbf.jpg" class="img-responsive img-circle" alt="Mary">
+          </div>
+          <h2 class="heading">Meimei, CEO</h2>
+          <p class="description">10 years of teaching experience</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww1.sinaimg.cn/large/006y8lVagy1fclo1ot98hj3059060766.jpg" class="img-responsive img-circle" alt="Jack">
+          </div>
+          <h2 class="heading">Laotou, Chief teacher</h2>
+          <p class="description">Master of the field.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+					<div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclo1x5kc7j3052058dhd.jpg" class="img-responsive img-circle" alt="Jack">
+          </div>
+          <h2 class="heading">Dashu, Chief inspector</h2>
+          <p class="description">Expert,has a deep understanding of Guqin.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fclo63ke7ij306f067whz.jpg" class="img-responsive img-circle" alt="Sandy">
+          </div>
+          <h2 class="heading">Laobo, teacher</h2>
+          <p class="description">Very experienced in teaching.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+					<div class="image-holder">
+            <img src="https://ww3.sinaimg.cn/large/006y8lVagy1fcloamh414j304904pq4d.jpg" class="img-responsive img-circle" alt="Lukia">
+          </div>
+          <h2 class="heading">Meinv, theacher</h2>
+          <p class="description">Very experienced in teaching.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="https://ww4.sinaimg.cn/large/006y8lVagy1fcloeoo38cj304g056dh7.jpg" class="img-responsive img-circle" alt="George">
+          </div>
+          <h2 class="heading">Meinan, teacher</h2>
+          <p class="description">Very experienced in teaching.</p>
+        </div>
+      </div>
+
+    <!--  <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img7.jpg" class="img-responsive img-circle" alt="Day">
+          </div>
+          <h2 class="heading">Day, Accountant</h2>
+          <p class="description">Maecenas sed diam eget risus varius blandit sit.</p>
+        </div>
+      </div>
+
+      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="team-thumb">
+          <div class="image-holder">
+            <img src="images/team-img8.jpg" class="img-responsive img-circle" alt="Lynn">
+          </div>
+          <h2 class="heading">Lynn, Marketing</h2>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+        </div>
+      </div> -->
+
+      </div>
+      <!-- end team carousel -->
+
+    </div>
+  </div>
+</section>
+
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+<!-- Gallery section -->
+
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title">
+          <h1>Services</h1>
+          <p>Instrument, Book, Scores, Courses.</p>
+        </div>
+      </div>
+
+      <ul class="grid cs-style-4">
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww1.sinaimg.cn/large/006y8lVagy1fclqcukkq3j30i10dhnc3.jpg" alt="image 1"></div>
+            <figcaption>
+              <h1>Instrument</h1>
+              <small>Guqin and related tools.</small>
+              <a href="classify_products_path, class: "bootstrap-override-2"">Details</a>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww1.sinaimg.cn/large/006y8lVagy1fclqno9ra7j30go0citmz.jpg" alt="image 2"></div>
+            <figcaption>
+              <h1>Books</h1>
+              <small>Teaching Material<br/>Scores<br/>Other related books.</small>
+              <a href="#">Details</a>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww2.sinaimg.cn/large/006y8lVagy1fclr99wzskj30h90baqat.jpg" alt="image 3"></div>
+            <figcaption>
+              <h1>Online Courses</h1>
+              <small>Different levels of courses.<br/>Mainly for entry.</small>
+              <a href="#">Details</a>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="col-md-6 col-sm-6">
+          <figure>
+            <div><img src="https://ww2.sinaimg.cn/large/006y8lVagy1fclr01bhurj30nl0f81f0.jpg" alt="image 4"></div>
+            <figcaption>
+              <h1>Offline Courses</h1>
+              <small>Face to face.<br/>Different levels of courses.<br/>Including high level and costumized lessons.</small>
+              <a href="#">Details</a>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact section -->
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+
+       <div class="col-md-offset-1 col-md-10 col-sm-12">
+
+        <div class="col-lg-offset-1 col-lg-10 section-title wow fadeInUp" data-wow-delay="0.4s">
+          <h2>Send a message</h2>
+          <p>Do you have any doubt,or any demand hasn't been satisfied? Please tell us.<br/>Any advise would be welcome.Our aim is to give you the best service. </p>
+        </div>
+
+        <form action="#" method="post" class="wow fadeInUp" data-wow-delay="0.8s">
+          <div class="col-md-6 col-sm-6">
+            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+          </div>
+          <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+            <input type="submit" class="form-control" value="SEND MESSAGE">
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer section -->
+
+<!--<footer>
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+
+                <ul class="social-icon">
+                    <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="0.2s"></a></li>
+                    <li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="0.4s"></a></li>
+                    <li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="0.6s"></a></li>
+                    <li><a href="#" class="fa fa-instagram wow fadeInUp" data-wow-delay="0.8s"></a></li>
+                    <li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="1.0s"></a></li>
+                </ul>
+
+				<p class="wow fadeInUp"  data-wow-delay="1s" >Copyright &copy; 2016 Snapshot Studio |
+                More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+
+			</div>
+
+		</div>
+
+	</div>
+</footer> -->
+
+<!-- Back top -->
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Javascript  -->
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vegas.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/toucheffects.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

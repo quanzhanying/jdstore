@@ -1,0 +1,30 @@
+.welcome-left{
+    float: left;
+    width: 50%;
+    padding: 3em 5em 3em 14em;
+}
+.welcome-left h3,.about-left h3{
+	color: #5BD982;
+    font-family: 'Mandali-Regular';
+    margin: 0;
+    font-size: 3em;
+}
+.welcome-left h4,.about-left h4{
+  color: #424242;
+  font-size: 1.6em;
+  margin: 1em 0;
+  font-family: 'Mandali-Regular';
+}
+.welcome-left p,.about-left p{
+	color: #B0B0B0;
+    font-size: .9em;
+    margin: 0;
+    line-height: 2em;
+}
+.welcome-right {
+    width: 50%;
+    float: left;
+    background: url(../images/2.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    min-height: 436px;
+}
