@@ -10,6 +10,10 @@
                           :label => "擅长的菜系" %>
   </div>
   <div class="group">
+    <%= f.input :city, :collection => ['北京', '上海', '深圳', '广州', '苏州', '杭州'],
+                          :label => "城市" %>
+  </div>
+  <div class="group">
 
     <%= f.collection_radio_buttons :chef_level_id, [[1, ' 一级厨师 '] ,[2, ' 二级厨师 '], [3, ' 三级厨师 ']],
                          :first, :last, :class => "collection_radio_buttons icon-star" %>

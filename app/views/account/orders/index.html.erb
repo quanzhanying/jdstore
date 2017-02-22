@@ -12,9 +12,12 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= link_to(order.id, order_path(order.token)) %></td>
-        <td> <%= render "admin/orders/state_option_read", order: order %></td>
+        <td> <%= render "account/orders/state_option_read", order: order %></td>
         <td><%= order.created_at.to_s(:long) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class="text-center">
+  <%= will_paginate @orders %>
+</div>

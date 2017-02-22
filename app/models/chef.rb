@@ -1,4 +1,8 @@
 class Chef < ApplicationRecord
+  validates :name, presence: true
+  validates :style, presence: true
+  validates :city, presence: true
+
   mount_uploader :image, ImageUploader
 
   has_many :chef_times
@@ -18,5 +22,5 @@ class Chef < ApplicationRecord
   end
 
   scope :published, -> { where(is_hidden: false) }
-
+  scope :recent, -> { order('created_at') }
 end

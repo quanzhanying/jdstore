@@ -14,5 +14,18 @@ class CartsController < ApplicationController
   def checkout
     @chef = Chef.find(current_cart.chef_id)
     @order = Order.new
+
+  end
+
+  def update
+    @cart = Cart.find(params[:id])
+    
+    @cart.update(cart_params)
+    redirect_to :back
+  end
+
+  private
+  def cart_params
+    params.require(:cart).permit(:book_date)
   end
 end

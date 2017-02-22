@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
   <div class="col-md-6">
     <% if @chef.image.present? %>
@@ -24,7 +25,8 @@
     <div class="style">
       <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
     </div>
-
+<div class="row">
+<div class='col-sm-6'>
     <div class="chef-follow">
       <% if current_user.has_follow?(@chef) %>
         <%= link_to unfollow_chef_path(@chef), :method => :post do %>
@@ -37,19 +39,27 @@
       <% end %>
       <%= @chef.followers.count %>
     </div>
+</div>
+</div>
+
+<div>
+  <div class="row" style="margin-top: 10px;">
+          <div class='col-sm-6'>
+              <div class="form-group">
+    <%= simple_form_for  current_cart do |f| %>
+      <%= f.input :book_date, as: :date, start_year: Date.today.year,
+              end_year: Date.today.year + 1, label: false %>
+      <%= f.submit "预定", data: {disable_with: "Submiting..." } , class: "btn btn-primary btn-success"%>
+    <% end %>
+  </div>
+</div>
+
+</div>
     <div class="pull-right">
       <% if !current_user.admin? %>
-      <% if true %>
-        <% if current_cart.present? && current_cart.chef_id != nil && current_cart.chef_id != @chef.id %>
-          <%= link_to("私厨订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger",
-                      :data => {:confirm => "更换厨师将清空当前购物车，需要重新选择菜品。确定吗?" })  %>
-        <% else %>
-          <%= link_to("私厨订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-        <% end %>
-      <% else %>
-        档期已满
-      <% end %>
+        <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% end %>
     </div>
   </div>
+</div>
 </div>

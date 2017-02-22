@@ -9,11 +9,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
 
-      <!-- <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav">
         <li class="active">
-          <%#= link_to("私厨", chefs_path) %>
+          <%= link_to("北京", chefs_path) %>
         </li>
-      </ul> -->
+        <li class="active">
+          <%= link_to("上海", "#") %>
+        </li>
+        <li class="active">
+          <%= link_to("深圳", "#") %>
+        </li>
+        <li class="active">
+          <%= link_to("广州", "#") %>
+        </li>
+        <li class="active">
+          <%= link_to("苏州", "#") %>
+        </li>
+        <li class="active">
+          <%= link_to("杭州", "#") %>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>
@@ -34,7 +49,7 @@
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi! <%= current_user.email %>
+               <i class="fa fa-user-o" aria-hidden="true"></i> <%= current_user.email %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">

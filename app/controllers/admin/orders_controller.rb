@@ -6,6 +6,7 @@ class Admin::OrdersController < ApplicationController
 
   def index
     @orders = Order.order("id DESC")
+    @orders = @orders.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

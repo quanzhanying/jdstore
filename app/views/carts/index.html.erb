@@ -7,7 +7,6 @@
 
     <h4> 您的私厨
       <% if @chef.present? %>
-        <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
         <% if @chef.chef_level_id == 1 %>
           <img src='<%= image_url 'gold-medal.png' %>'>
         <% elsif @chef.chef_level_id == 2 %>
@@ -15,8 +14,11 @@
         <% elsif @chef.chef_level_id == 3 %>
           <img src='<%= image_url 'bronze-medal.png' %>'>
         <% end %>
-        将为您烹饪
+        <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
+        为您烹饪专属西餐料理
       <% end %>
+      <br>
+     预约时间 <img src='<%= image_url 'calendar.png' %>'> <%= current_cart.book_date %>
     </h4>
     <table class="table table-bordered">
       <tr>

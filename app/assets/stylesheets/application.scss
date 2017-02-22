@@ -18,9 +18,10 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+@import 'bootstrap-datetimepicker';
 
 body {
-  background-color: #ffffca
+  background-color: white;//#ffffca
   //background-image: linear-gradient(45deg, rgba(194, 233, 221, 0.5) 1%, rgba(104, 119, 132, 0.5) 100%), linear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);
 }
 
@@ -167,7 +168,7 @@ img {
   }
 
   div.fig {
-    background: #fff;
+    background: #f2efef;
     padding: 5px;
     height: 65px;
     margin-bottom: 10px;
@@ -241,7 +242,7 @@ img {
 }
 
 div.fig_p {
-  background: #fff;
+  background: #f2efef;
   padding: 5px;
   height: 85px;
   margin-bottom: 25px;
@@ -276,6 +277,50 @@ div.fig_p {
   padding: 5px;
 }
 
+// .sort {
+// 	margin-bottom: 10px;
+// }
+.sort .btn-group {
+	margin: 20px 0 20px;
+}
+.sort .btn-group .btn {
+	transition: background-color .3s ease;
+
+}
+
+.footer-bottom {
+	//background: #E3E3E3;
+	border-top: 2px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.footer-bottom p.pull-left {
+	padding-top: 6px;
+}
+// .social li:hover {
+// 	transform: scale(1.15) rotate(360deg);
+// 	-webkit-transform: scale(1.1) rotate(360deg);
+// 	-moz-transform: scale(1.1) rotate(360deg);
+// 	-ms-transform: scale(1.1) rotate(360deg);
+// 	-o-transform: scale(1.1) rotate(360deg);
+// }
+.social {
+  margin-right: 10px;
+}
+.social li a {
+	//color: #E3E3E3;
+  padding-right: 0px;
+  padding-left: 2px;
+}
+// .social li:hover {
+// 	border: 1px solid #2c3e50;
+// 	background: #2c3e50;
+// }
+.social li a i {
+	font-size: 20px;
+	margin: 0 5px 0 5px;
+	color: #878585 !important;
+}
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;

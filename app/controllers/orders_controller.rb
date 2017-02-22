@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     @order.total = current_cart.total_price
-
+    @order.book_date = current_cart.book_date
+    
     if @order.save
       current_cart.cart_items.each do |cart_item|
         if !cart_item.product.is_hidden
@@ -29,6 +30,7 @@ class OrdersController < ApplicationController
       @chef_shadow.save
 
       current_cart.chef_id = nil
+      current_cart.book_date = nil
       current_cart.save
       current_cart.clean!
 
