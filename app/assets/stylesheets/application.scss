@@ -126,10 +126,6 @@
 .carousel-inner img {
   width: 100%;
 }
-.promos {
-  border-color: white;
-  margin: 2px;
-}
 .list-style {
   list-style-type: none;
   color: #2a6496;
@@ -137,4 +133,12 @@
 }
 .ftitle {
   color: #000000;
+}
+.promos {
+  border-color: white;
+  margin: 4px;
+
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
 }
