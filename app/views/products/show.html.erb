@@ -1,10 +1,10 @@
-<body>
+<body style="background-color: #FAFAFA;">
 
 	<div class="container-fluid row">
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
-					<div class="preview col-md-6">
+					<div class="preview col-xs-3">
 
 						<div class="preview-pic tab-content">
 						  <div class="tab-pane active" id="pic-1">
@@ -14,27 +14,6 @@
                             <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                           <% end %></div>
 						  <div class="tab-pane" id="pic-2">
-                              <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                              <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                              <% end %>
-						  </div>
-						  <div class="tab-pane" id="pic-3">
-                              <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                              <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                              <% end %>
-						  </div>
-						  <div class="tab-pane" id="pic-4">
-                              <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                              <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                              <% end %>
-						  </div>
-						  <div class="tab-pane" id="pic-5">
                               <% if @product.image.present? %>
                                 <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
                               <% else %>
@@ -51,27 +30,6 @@
                               <% end %>
 						  </a></li>
 						  <li><a data-target="#pic-2" data-toggle="tab">
-                              <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                              <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                              <% end %>
-						  </a></li>
-						  <li><a data-target="#pic-3" data-toggle="tab">
-                              <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                              <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                              <% end %>
-						  </a></li>
-						  <li><a data-target="#pic-4" data-toggle="tab">
-                              <% if @product.image.present? %>
-                                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-                              <% else %>
-                                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-                              <% end %>
-						  </a></li>
-						  <li><a data-target="#pic-5" data-toggle="tab">
                               <% if @product.image.present? %>
                                 <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
                               <% else %>
