@@ -32,9 +32,9 @@
 
 
 .caption {
- margin: 30px;
+ margin: 10px;
  text-align: center;
- top: 20px;
+ top: 10px;
 }
 
 .thumbnail {
@@ -44,12 +44,13 @@
 }
 
 .navbar-default {
-    background-color: #212121;//背景颜色
-    border-color: #212121;//边框色
+    background-color: #16a085;//背景颜色
+    border-color: #34495e;//边框色
     margin-bottom: 0;//底部 margin 不撑开距离
 }
 
-.l-footer-wrap {
+.footer-wrap {
+    background-color:#363636;
     width: 100%;
     float: left;
     margin-left: 0;
