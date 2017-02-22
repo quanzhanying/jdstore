@@ -37,7 +37,7 @@ gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'figaro'
-gem 'fog'
+ggem "fog-aws"
 gem 'devise'
 
 group :development, :test do
