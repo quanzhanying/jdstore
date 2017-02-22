@@ -1,42 +1,98 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/*products.index页面物品样式*/
-.col-sm-4{
 
+.nav.nav-tabs{
+  position: relative;
+  left:30px;
+}
+
+/*products.index和search页面物品样式*/
+.product-index.search{
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0;
+    border-style: none;
+    margin-left: 35px;
+
+}
+
+.product-index.search{
+    display: block;
+    display: inline-block;
+    border: 0px;
+    border-width: 0px;
+}
+
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+
+
+
+.product-display {
+    width: 230px;
+    height: 350px;
+    background: #fff;
+    margin-right: 12px;
+    margin-bottom: 12px;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+    position: relative;
+    top: 0;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    border: 0px;
+
+}
+
+body {
+    color: #2E2E2E;
+    font-family: "Microsoft Yahei",verdana;
+
+
+}
+
+
+
+.product-display {
+  padding: 15px;
+    float: left;
+    display: inline;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-style: none;
+    border-width: 0px;
+}
+
+.thumbnail{
+  border-style: none;
+  border-width: 0px;
+}
+
+.thumbnail>p{
+  text-align: center;
+}
+
+
+.btn-default{
   margin-bottom: 10px;
-
-
-
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-bottom: -10px;
-}
-
-.thumbnail {
-    padding: 0 0 20px 0;
-    border: none;
-    border-radius: 0;
-    padding-bottom: 10px;
-    margin-top: 10px;
+  padding-right: 0px;
+   margin-left: 62px;
+   width: 60px;
+   padding: 4px;
+   border-color: white;
+   background: red;
 
 }
 
-.thumbnail p {
-    margin-top: 15px;
-    color: #555;
-    padding-bottom: 5px;
-}
+.button-select:hover, .button-select:focus {
 
-.thumbnail>button{
-  margin-bottom: 10px;
-  background-color: rgba(255,204,128 ,0.5);
-}
 
-.btn:hover, .btn:focus {
-    border: 1px solid #333;
-    background-color: #fff;
-    color: #000;
     border-radius: 3px;
   }
 

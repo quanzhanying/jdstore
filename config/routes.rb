@@ -5,6 +5,15 @@ Rails.application.routes.draw do
 root 'welcome#index'
 
 resources :products do
+
+  collection do
+    get :search
+    get :menu1
+    get :menu2
+    get :menu3
+    get :menu0
+    get :search_fruit
+  end
 resources :comments
 member do
   post :add_to_cart

@@ -11,12 +11,12 @@
         <!-- <#li class="active"> -->
 
         <!-- <#/li> -->
-        <%= link_to("食物王国", products_path)%>
+        <%= link_to("美食天地", products_path)%>
       </li>
     </ul>
     <ul class="nav navbar-nav">
       <li class="item">
-        <%= link_to("水果庄园", products_path)%>
+        <%= link_to("水果庄园", search_fruit_products_path)%>
       </li>
     </ul>
     <ul class="nav navbar-nav">
@@ -26,15 +26,18 @@
     </ul>
     <ul class="nav navbar-nav">
       <li class="item">
-        <%= link_to("新品上架", '#')%>
+        <%= link_to("所有商品", products_path)%>
       </li>
     </ul>
-    <ul class="nav navbar-nav">
-      <li class="item">
-        <%= link_to("限时特价", '#')%>
-      </li>
-    </ul>
+
+
+
       <ul class="nav navbar-nav navbar-right">
+        <li class="item">
+
+            <%= render "products/search_bar" %>
+
+        </li>
       <li>
 
 

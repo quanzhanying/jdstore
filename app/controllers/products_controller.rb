@@ -1,7 +1,45 @@
 class ProductsController < ApplicationController
+
+  before_action :validate_search_key, only: [:search]
+
   def index
     @products= Product.all
+
+
+    #@products=  case params[:order]
+  #when 'by_price'
+  #Product.all.order('price DESC')
+
+#when 'by_quantity'
+    #Product.all.order('quantity DESC')
+
+  #when'by_created_at'
+  #Product.all.order('created_at DESC')
+#else
+  #Product.all
+#end
+
   end
+
+def search_fruit
+  @products=Product.where(kind: "水果")
+end
+
+  def menu0
+    @products=Product.all
+  end
+
+def menu1
+  @products=Product.all.order('price DESC')
+end
+
+def menu2
+  @products=Product.all.order('quantity DESC')
+end
+
+def menu3
+  @products=Product.all.order('created_at DESC')
+end
 
   def show
     @product = Product.find(params[:id])
@@ -19,7 +57,24 @@ class ProductsController < ApplicationController
 
   end
 
+  def search
+    if @query_string.present?
+      search_result = Product.ransack(@search_criteria).result(:distinct => true)
+      @products = search_result
+    end
+  end
 
-  
+  protected
+
+   def validate_search_key
+     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+     @search_criteria = search_criteria(@query_string)
+   end
+
+
+   def search_criteria(query_string)
+     { :title_or_place_cont => query_string }
+   end
+
 
 end
