@@ -1,5 +1,5 @@
 /* 
- * 	Core Owl Carousel CSS File
+ ../images* 	Core Owl Carousel CSS File
  *	v1.3.2
  */
 
@@ -98,7 +98,7 @@ position:relative;
 	*display: inline;/*IE7 life-saver */
 	width: 13px;
 	height: 27px;
-	background: url("../images/img-sprite.png") no-repeat;
+	background: url("https://s3-ap-northeast-1.amazonaws.com/fullstrack/img-sprite.png") no-repeat;
 	text-indent:-1000px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
