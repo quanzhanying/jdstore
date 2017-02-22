@@ -7,8 +7,6 @@
           <th>生成时间</th>
           <th>订购者</th>
           <th>订单状态</th>
-          <th>操作选项</th>
-
         </tr>
       </thead>
       <tbody>
@@ -19,14 +17,6 @@
           <td> <%= order.created_at.to_s(:long) %> </td>
           <td> <%= order.user.email %> </td>
           <td> <%= order.aasm_state %> </td>
-          <td>
-            <% if order.aasm_state == "paid" %>
-            <%= link_to("出货", shipping_order_path(order.token), method: :post) %> |
-            <% end %>
-            <% if order.aasm_state == "paid" || order.aasm_state == "order_placed" %>
-            <%= link_to("取消订单", cancelled_order_path(order.token), method: :post) %>
-            <% end %>
-          </td>
         </tr>
         <% end %>
 
