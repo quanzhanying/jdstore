@@ -15,7 +15,7 @@
 <!-- Custom-Theme-Files -->
 	<!-- Bootstrap-Default-CSS --> <link href="assets/bootstrap.min.css" rel="stylesheet" />
 	<!-- Pages-Style-CSS --> <link rel="stylesheet" href="assets/style.css" type="text/css" media="all" />
-	<!-- Navbar-CSS -->	<link rel="stylesheet" type="text/css" href="assets/navbar.css" />
+
 	<!-- Product-Slider-CSS -->	<link rel="stylesheet" type="text/css" href="assets/product_slider.css" />
 	<!-- Supporting-JavaScript-File --> <script src="assets/modernizr.custom.63321.js"></script>
 <!-- //Custom-Theme-Files -->
@@ -30,14 +30,36 @@
 
 <body>
 
+	<!--产品首页大图，暂时取消-->
+	<!-- <div class="products-content">
+			<a href="/" class="products">ESTELLE</a>
+			<p class="products">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+			<h1 class="products">PRODUCTS</h1>
+	</div> -->
 
+	<!--挖到的google艺术家影片，暂时被下面的代替了，下面是试验简化后的代码-->
+	<!-- <div jscontroller="jVjCbf" data-youtube-id="BYWs3ZS2Vvk" jsaction="rcuQ6b:NziyQe;JZCswc:QKiGd;IBB03b:NziyQe;GvneHb:og1FDd;"><iframe jsname="uquGtd" class="mmeaZc x9Qnmf" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1228" height="691" src="https://www.youtube.com/embed/BYWs3ZS2Vvk?autoplay=1&amp;cc_load_policy=1&amp;controls=0&amp;disablekb=1&amp;loop=1&amp;playsinline=1&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.google.com&amp;widgetid=1" id="widget2" style="top: -48.5px; left: 0px;"></iframe></div> -->
 
+<!--产品影片demo，经过试验简化后的代码-->
+	<div>
+		<iframe  width="100%" height=600 src="https://www.youtube.com/embed/QM9GjVSDGDg?autoplay=1&amp;cc_load_policy=1&amp;controls=0&amp;disablekb=1&amp;loop=1&playlist=QM9GjVSDGDg;playsinline=1&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.google.com&amp;widgetid=1" style="position: relative; margin-left: auto; margin-right: auto; align: center;">
+		</iframe>
+	</div>
+
+	<!--图片特效样例-->
 	<div class="main" id="womens-wear">
 		<h2>Fashion</h2>
 		<div id="mi-slider" class="mi-slider">
 			<ul>
-				<li><img src="images/event-2.jpg" alt="Estelle"><h4>PRADA</h4></li>
-				<li><img src="images/event-2.jpg" alt="Estelle"><h4>GUCCI</h4></li>
+				<li>
+					<img src="images/event-2.jpg" alt="Estelle"><h4>PRADA</h4>
+					</a>
+				</li>
+				<li>
+					<a target="_blank" href="http://www.ibantang.com">
+					<img src="images/event-2.jpg" alt="Estelle"><h4>GUCCI</h4>
+				</a>
+				</li>
 				<li><img src="images/event-2.jpg" alt="Estelle"><h4>CHANEL</h4></li>
 				<li><img src="images/event-2.jpg" alt="Estelle"><h4>VALENTINO</h4></li>
 			</ul>
@@ -66,8 +88,8 @@
 				<a href="#">Wedding</a>
 			</nav>
 		</div>
-		<script src="js/product_jquery.min.js"></script>
-		<script src="js/jquery.catslider.js"></script>
+		<script src="assets/product_jquery.min.js"></script>
+		<script src="assets/jquery.catslider.js"></script>
 		<script>
 			$(function() {
 				$( '#mi-slider' ).catslider();
@@ -145,8 +167,8 @@
 				<a href="#">Jackets</a>
 			</nav>
 		</div>
-		<script src="js/product_jquery.min.js"></script>
-		<script src="js/jquery.catslider.js"></script>
+		<script src="assets/product_jquery.min.js"></script>
+		<script src="assets/jquery.catslider.js"></script>
 		<script>
 			$(function() {
 				$( '#mi-slider2' ).catslider();
@@ -189,8 +211,8 @@
 			</nav>
 		</div>
 
-		<script src="js/product_jquery.min.js"></script>
-		<script src="js/jquery.catslider.js"></script>
+		<script src="assets/product_jquery.min.js"></script>
+		<script src="assets/jquery.catslider.js"></script>
 		<script>
 			$(function() {
 				$( '#mi-slider3' ).catslider();
@@ -234,22 +256,20 @@
 	<!-- //Smooth-Scrolling-JavaScript -->
 
 <!-- //Custom-JavaScript-File-Links -->
-
-</body>
-</html>
-
-
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% if product.photos.present? %>
+          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail",) %>
+				<% end %>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+      <%= product.title %> ¥ <%= product.price %>
     </div>
   <% end %>
 </div>
+
+</body>
+</html>

@@ -127,3 +127,137 @@
  .login-help{
    font-size: 12px;
  }
+
+
+ /*details*/
+ .location {
+ 	line-height: 30px;
+ 	padding-bottom: 3px;
+ }
+
+ .intro-bigPic {
+ 	width: 420px;
+ 	height: 420px;
+ 	img {
+ 		width: 100%;
+ 	}
+ }
+
+ .intro-preview {
+ 	margin-top: 15px;
+ 	.intro-preview-item {
+ 		padding: 1px;
+ 		margin-right: 13px;
+ 		overflow: hidden;
+ 		img {
+ 			width: 100%;
+ 			width: 70px;
+ 			height: 70px;
+ 		}
+ 	}
+ 	.intro-preview-activeItem {
+ 		border-color: #DB3652;
+ 	}
+ }
+
+ .intro-text {
+ 	width: 744px;
+ 	h3 {
+ 		margin-top: 0;
+ 		line-height: 30px;
+ 	}
+ }
+
+ .intro-text-desc {
+ 	margin-top: 7px;
+ }
+
+ .intro-text-value {
+ 	height: 60px;
+ 	line-height: 60px;
+ }
+
+ .intro-text-service {
+ 	height: 50px;
+ 	line-height: 50px;
+ }
+
+ .intro-text-btn {
+ 	display: block;
+ 	width: 178px;
+ 	height: 48px;
+ 	line-height: 45px;
+ 	border: 1px solid #d32048;
+ 	font-family: "Microsoft Yahei",simhei;
+ 	border-radius: 50px;
+ 	&.add-cart {
+ 		color: #fff;
+ 	}
+ }
+
+ .productDetail-tabList {
+ 	border-bottom: 1px solid #D8D8D8;
+ }
+
+ .productDetail-tabList-tab {
+ 	cursor: pointer;
+ 	height: 35px;
+ 	line-height: 35px;
+ 	border-right: 1px solid #D8D8D8;
+ }
+
+ .productDetail-tabList-activeTab {
+ 	background: #fff;
+ }
+
+ .productDetail-content {
+ 	display: none;
+ }
+
+ .productDetail-content .productDetail-introImg img {
+ 	width: 700px;
+ }
+
+ .commentList-item {
+ 	width: 665px;
+ 	border-bottom: 1px solid #DDDDDD;
+ }
+
+ .commentList-item .content {
+ 	width: 400px;
+ }
+
+ .commentList-item .name {
+ 	width: 180px;
+ }
+
+ .comment-say a {
+ 	margin-right: auto;
+ 	margin-left: auto;
+ 	color: #fff;
+ 	&:hover {
+ 		color: #fff;
+ 	}
+ }
+
+ .comment-userName {
+ 	margin-top: 2px;
+ }
+
+ .comment-avatar {
+ 	width: 25px;
+ 	height: 25px;
+ 	border-radius: 50%;
+ }
+
+ .comment-image img {
+ 	width: 70px;
+ }
+
+ .comment-image-scale img {
+ 	width: 220px;
+ }
+
+ .productDetail-evaluation {
+ 	letter-spacing: 5px;
+ }
