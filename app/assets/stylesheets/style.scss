@@ -257,7 +257,7 @@ select.in-drop {
 	color:#fff;	
 }
 .nav  li  a i{
-	background: url(https://s3-ap-northeast-1.amazonaws.com/fullstrack/images/arrow.png) no-repeat 0px 4px;
+	background: url(https://s3-ap-northeast-1.amazonaws.com/fullstrack/arrow.png) no-repeat 0px 4px;
 	display: inline-block;
 	width: 13px;
 	height: 13px;
@@ -556,7 +556,7 @@ padding: 0;
   text-decoration: none;
   height: 76px;
   width: 76px;
-  background: url("../images/img-sprite.png") no-repeat -124px -76px;
+  background: url("https://s3-ap-northeast-1.amazonaws.com/fullstrack/img-sprite.png") no-repeat -124px -76px;
 }
 .callbacks_nav.next {
   left: 8%;
@@ -625,7 +625,7 @@ padding: 0;
 .eye li i{
 	height: 16px;
 	width: 16px;
-	background: url("../images/img-sprite.png") no-repeat -319px -114px ;
+	background: url("https://s3-ap-northeast-1.amazonaws.com/fullstrack/img-sprite.png") no-repeat -319px -114px ;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -942,7 +942,7 @@ a.cart:hover{
 .star ul li i{
 	height: 16px;
 	width: 16px;
-	background: url("../images/img-sprite.png") no-repeat -386px -114px ;
+	background: url("https://s3-ap-northeast-1.amazonaws.com/fullstrack/img-sprite.png") no-repeat -386px -114px ;
 	display: inline-block;
 }
 .review{
@@ -1011,7 +1011,7 @@ a.cart:hover{
 }
 .single-bottom ul li input[type="checkbox"]:checked+label span:first-child:before {
   content: "";
-  background:url(../images/11.png)no-repeat;
+  background:url(https://s3-ap-northeast-1.amazonaws.com/fullstrack/11.png)no-repeat;
   position: absolute;
   left: 2px;
   top: 2px;
@@ -1105,7 +1105,7 @@ ul.social-in li{
 	display: inline-block;	
 }
 ul.social-in li  i{
-	background:url(../images/img-sprite.png)no-repeat -16px -182px ;
+	background:url(https://s3-ap-northeast-1.amazonaws.com/fullstrack/img-sprite.png)no-repeat -16px -182px ;
 	width: 40px;
 	height: 40px;
 	display: inline-block;
@@ -1793,7 +1793,7 @@ a.elit {
 .callbacks_nav {
   height: 57px;
   width: 57px;
-  background: url("../images/img-sprite.png") no-repeat -92px -57px ;
+  background: url("https://s3-ap-northeast-1.amazonaws.com/fullstrack/img-sprite.png") no-repeat -92px -57px ;
   background-size: 400px;
 }
 .callbacks_nav.next {
