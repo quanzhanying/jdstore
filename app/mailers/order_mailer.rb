@@ -4,6 +4,6 @@ class OrderMailer < ApplicationMailer
     @user      = order.user
     @product_lists   = @order.product_lists
 
-    mail(to: @user.email , subject: "[JDstore] 感谢您完成下单，您的本次购物明细如下 #{order.roken}")
+    mail(to: @user.email , subject: "[JDstore] 感谢您完成下单，您的本次购物明细如下 #{order.token}")
   end
 end
