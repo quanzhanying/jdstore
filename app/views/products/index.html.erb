@@ -1,0 +1,21 @@
+<div class="col-md-12 row">
+  <section class="row">
+    <div>
+      <% @products.each do |product| %>
+      <ul class="hp-ul">
+          <a href="/products/<%= product.id %>">
+            <div>
+              <img src="<%= product.image %>" alt="" class="img-thumbnail">
+            </div>
+          </a>
+          <br>
+          <div>
+          <%= product.title %>
+          <%= "¥" %>
+          <%= product.price %>
+        </div>
+      </ul>
+      <% end %>
+    </div>
+  </section>
+</dvi>
