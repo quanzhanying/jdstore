@@ -10,7 +10,7 @@
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
-        <%= @product.description %>
+        <%= simple_format(@product.description) %>
       </p>
     </div>
     <div> 数量 : <%= @product.quantity %> </div>

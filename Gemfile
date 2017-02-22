@@ -38,6 +38,7 @@ gem 'mini_magick'
 gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'figaro'
 
 
 group :development, :test do
