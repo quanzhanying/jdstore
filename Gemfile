@@ -41,6 +41,9 @@ gem 'aasm'
 gem 'figaro'
 gem 'fog'
 gem 'devise-i18n'
+
+gem 'airbrake', '~> 5.4'
+
 gem 'letter_opener', group: :development
 
 group :development, :test do
