@@ -1,3 +1,54 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.main-view{
+  margin-top: -200px;
+  height: 400px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+
+}
+.title1{
+  font-size: 48px;
+  line-height:78px;
+  color: #6c5647;
+}
+
+.title2{
+  font-size: 26px;
+  line-height:56px;
+  color: #6c5647;
+}
+
+.title3{
+  font-size: 18px;
+  line-height:32px;
+  color: #6c5647;
+  margin-top: 20px;
+}
+
+.buytocart{
+  width: 400px;
+  height: 46px;
+  margin: 55px auto 0;
+  overflow: hidden;
+}
+.buytocart1{
+  float: left;
+  position: relative;
+  margin-left: 80px;
+
+}
+
+.custom1{
+  float: right;
+  position: relative;
+  margin-right: 80px;
+
+}

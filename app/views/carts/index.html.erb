@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <%= link_to("清空购物车", clean_carts_path,
                 method: :delete, class: "btn btn-danger pull-right",
@@ -41,7 +41,7 @@
 						<a href="javascript:void(0);" clstag="clickcart|keycount|xincart|cart_num_up" class="increment" id="increment_8888_3439028_1_1_0">+</a>
 					</div> -->
 
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
           <%= f.number_field :quantity, value: cart_item.quantity.to_i, class: "form-control", min: 1 %>
 
          </div>
@@ -76,4 +76,78 @@
     </div>
 
   </div>
-</div>
+</div> -->
+
+
+
+
+	<div class="container">
+
+		<section id="cart">
+      <% current_cart.cart_items.each do |cart_item| %>
+			<article class="product">
+				<header>
+					<a class="remove">
+            <%= link_to product_path(cart_item.product) do  %>
+            <% if cart_item.product.image.present? %>
+            <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail")%>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+
+            <% end %>
+
+
+						<h3><%= link_to("删除此商品", cart_item_path(cart_item.product_id),method: :delete) %></h3>
+					</a>
+				</header>
+
+				<div class="content">
+
+					<h1><%= link_to(cart_item.product.title, product_path(cart_item.product))%></h1>
+
+					<%= link_to(cart_item.product.description, product_path(cart_item.product))%>
+
+
+				</div>
+
+				<footer class="content">
+					<span class="qt-minus">-</span>
+					<span class="qt">2</span>
+					<span class="qt-plus">+</span>
+
+					<h2 class="full-price">
+						29.98￥
+					</h2>
+
+					<h2 class="price">
+						14.99￥
+					</h2>
+				</footer>
+			</article>
+      <% end %>
+
+
+
+
+
+		</section>
+
+	</div>
+
+	<footer id="site-footer">
+		<div class="container clearfix">
+
+			<div class="left">
+				<h2 class="subtotal">小计: <span>163.96</span>￥</h2>
+
+				<h3 class="shipping">邮费: <span>5.00</span>￥</h3>
+			</div>
+
+			<div class="right">
+				<h1 class="total">总计: <span>177.16</span>￥</h1>
+          <%= link_to("确认结账",checkout_carts_path, method: :post, class: "btn") %>
+			</div>
+
+		</div>
+	</footer>

@@ -16,7 +16,7 @@
     </div>
     <div>数量 : <%= @product.quantity %></div>
     <div class="product-price"> ¥ <%= @product.price %> </div>
-    <div class="pull-right">
+    <div class="pull-left">
       <% if @product.quantity > 0 %>
       <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-lg btn-danger")%>
       <% else %>

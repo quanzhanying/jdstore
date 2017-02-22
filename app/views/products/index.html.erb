@@ -1,21 +1,30 @@
-<div class="row">
-    <% @products.each do |product|%>
-    <div class="col-xs-6 col-md-3">
-        <!-- xs (phones), sm (tablets), md (desktops), and lg (larger desktops).  -->
-        <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-        <%= image_tag(product.image.thumb.url, class: "thumbnial")   %>
-        <% else %>
-        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnial")   %>
-        <% end %>
-        <% end %>
-        <div class="col-md-9">
-          <%= product.title %>
 
-         <div class="col-md-6">
-         ¥<%= product.price %>
-         </div>
-        </div>
-    </div>
+
+<div class="row">
+  <% @products.each do |product|%>
+<figure class="snip1246">
+ <div class="img-list">
+  <%= link_to product_path(product) do %>
+    <% if product.image.present? %>
+    <%= image_tag(product.image.thumb.url)   %>
+    <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic")   %>
     <% end %>
+    <% end %>
+  </div>
+  <figcaption>
+    <%= link_to product_path(product) do %>
+    <h2><%= product.title %></h2>
+    <p><%= product.description %> </p>
+    <div class="price">¥<%= product.price %></div>
+
+    <div clas="addgood">
+    <%= link_to("加入购物车", add_to_cart_product_path(product),:method => :post, :class => "add-to-cart")%>
+    <div>
+      <% end %>
+
+  </figcaption>
+
+</figure>
+  <% end %>
 </div>

@@ -1,3 +1,128 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.row{
+  margin-top: 100px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600,800);
+.snip1246 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+}
+.snip1246 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.snip1246 .img-list {
+  max-width: 100%;
+  max-height: 80%;
+  vertical-align: top;
+}
+.snip1246 img {
+  max-width: 100%;
+  vertical-align: top;
+}
+.snip1246 figcaption {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+.snip1246 h2,
+.snip1246 p {
+  margin: 0 0 5px;
+}
+.snip1246 h2 {
+  font-weight: 400;
+}
+.snip1246 p {
+  font-size: 0.8em;
+}
+.snip1246 .price {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 20px;
+  padding: 0.2em 0em;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.snip1246 .add-to-cart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+  padding: 0.2em 0.5em;
+  border: 2px solid #000000;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+}
+.snip1246 .add-to-cart:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.snip1246:after {
+  background-color: #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+.snip1246:hover figcaption,
+.snip1246.hover figcaption {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.snip1246:hover:after,
+.snip1246.hover:after {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 0.9;
+}
+/* Demo purposes only */
+body {
+  background-color: #212121;
+}
+
+/* show */
