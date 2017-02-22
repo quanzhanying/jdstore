@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .jumbotron {
-  background-image:url('https://ww2.sinaimg.cn/large/006tNc79gy1fcupdd5uzij31400miwh2.jpg');
+  background-color: #34495e;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+  padding-bottom: 50px;
 }
 
 .title {
@@ -29,6 +29,8 @@
   color: white;
 }
 
+
+
 .caption {
  margin: 30px;
  text-align: center;
@@ -46,6 +48,19 @@
     border-color: #212121;//边框色
     margin-bottom: 0;//底部 margin 不撑开距离
 }
+
+.l-footer-wrap {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+
+
+
+
 
 
 @import "bootstrap-sprockets";
