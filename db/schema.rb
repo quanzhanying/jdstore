@@ -25,12 +25,6 @@ ActiveRecord::Schema.define(version: 20170219134553) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer  "total",            default: 0
     t.integer  "user_id"
@@ -42,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170219134553) do
     t.datetime "updated_at",                       null: false
     t.string   "token"
     t.boolean  "is_paid",          default: false
-    t.string   "payment_mathod"
+    t.string   "payment_method"
   end
 
   create_table "product_lists", force: :cascade do |t|
@@ -59,8 +53,8 @@ ActiveRecord::Schema.define(version: 20170219134553) do
     t.text     "description"
     t.integer  "quantity"
     t.integer  "price"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "image"
     t.string   "clothes"
     t.string   "living"
@@ -68,13 +62,13 @@ ActiveRecord::Schema.define(version: 20170219134553) do
     t.string   "walking"
     t.string   "playing"
     t.string   "bathing"
-    t.boolean  "is_clothes",  default: true
-    t.boolean  "is_living",   default: true
-    t.boolean  "is_eating",   default: true
-    t.boolean  "is_playing",  default: true
-    t.boolean  "is_bathing",  default: true
-    t.boolean  "is_walking",  default: true
-    t.boolean  "is_hidden",   default: true
+    t.boolean  "is_clothes",  default: false
+    t.boolean  "is_living",   default: false
+    t.boolean  "is_eating",   default: false
+    t.boolean  "is_playing",  default: false
+    t.boolean  "is_bathing",  default: false
+    t.boolean  "is_walking",  default: false
+    t.boolean  "is_hidden",   default: false
   end
 
   create_table "users", force: :cascade do |t|
