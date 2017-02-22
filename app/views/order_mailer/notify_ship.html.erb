@@ -17,7 +17,7 @@
       </thead>
       <tbody>
 
-        <% @product_lists.each do |product_lis| %>
+        <% @product_lists.each do |product_list| %>
         <tr>
           <td>
             <%= product_list.product_name %>
@@ -26,7 +26,7 @@
             <%= product_list.product_price %>
           </td>
           <td>
-            <%= product.quantity %>
+            <%= product_list.quantity %>
           </td>
           <td>
             <%= product_list.quantity * product_list.product_price %>
