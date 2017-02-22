@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
        t.string :billing_address
        t.string :shipping_name
        t.string :shipping_address
-      t.timestamps
+       t.timestamps
     end
   end
 end
