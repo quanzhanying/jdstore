@@ -23,47 +23,53 @@
           </div>
         </div>
 
-<div class="container">
-<% @products.each do |product| %>
-<div class="col-md-6 col-sm-6">
-      <span class="thumbnail product-item">
-        <div class="pi-img-wrapper">
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-          <% end %>
-          <div>
-            <a href="#" class="btn">收藏</a>
-          </div>
-        </div>
-        <h3><%= link_to(product.title, product_path(product)) %></h3>
-        <div class="ratings">
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star"></span>
-          <span class="glyphicon glyphicon-star-empty"></span>
-        </div>
-        <% if product.discount != 100 %>
-        <span class="badge"><%= product.discount %>%</span>
-        <% end %>
-        <p><%= product.description %></p>
-        <hr class="line">
+        <div class="container">
+
+
+        <% @products.each do |product| %>
         <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <p class="pi-price">￥ <%= product.price %></p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
-            </div>
-          </div>
-          <% if product.newproduct %>
-          <div class="sticker sticker-new"></div>
-          <% end %>
-      </span>
-    </div>
 
-<% end %>
 
-</div>
+        <div class="col-md-12 col-sm-6">
+              <div class="thumbnail product-item">
+                <div class="pi-img-wrapper">
+                  <% if product.photos.present? %>
+                  <img src="<%= product.photos[0].avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail center-block") %>
+                  <% end %>
+                  <div>
+                    <a href="#" class="btn">收藏</a>
+                  </div>
+                </div>
+                <h3><%= link_to(product.title, product_path(product)) %></h3>
+                <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+                <% if product.discount != 100 %>
+                <span class="badge"><%= product.discount %>%</span>
+                <% end %>
+                <p><%= product.description %></p>
+                <hr class="line">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="pi-price">￥ <%= product.price %></p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
+                    </div>
+                  </div>
+                  <% if product.newproduct %>
+                  <div class="sticker sticker-new"></div>
+                  <% end %>
+              </div>
+            </div>
+
+        </div>
+        <% end %>
+            </div>
