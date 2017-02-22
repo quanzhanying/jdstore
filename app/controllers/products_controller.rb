@@ -1,11 +1,10 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_cart]
-  
+
   def index
-    @products = Product.published.where.not(:id => 9)
-    chef = Chef.find(current_cart.chef_id)
-    @chef_name = chef.name
-    @products = @products.where(style: chef.style)
+    @products = Product.published.where.not(:id => 1) #1 is a dummy product
+    @chef = Chef.find(current_cart.chef_id)
+    @products = @products.where(style: @chef.style)
   end
 
   def show

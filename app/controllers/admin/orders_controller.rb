@@ -16,8 +16,9 @@ class Admin::OrdersController < ApplicationController
 
   def ship
     @order = Order.find(params[:id])
+    @chef = ChefShadow.find_by(order_id: @order.id)
     @order.ship!
-    OrderMailer.notify_ship(@order).deliver!
+    OrderMailer.notify_ship(@order, @chef).deliver!
     redirect_to :back
   end
 
@@ -29,8 +30,9 @@ class Admin::OrdersController < ApplicationController
 
   def cancel
     @order = Order.find(params[:id])
+    @chef = ChefShadow.find_by(order_id: @order.id)
     @order.cancell_order!
-    OrderMailer.notify_cancel(@order).deliver!
+    OrderMailer.notify_cancel(@order, @chef).deliver!
     redirect_to :back
   end
 

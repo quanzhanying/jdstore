@@ -1,16 +1,13 @@
-<h2> 厨师 <%= @chef_name %> 很荣幸为您服务 </h2>
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.style %>
-      <%= product.title %> ￥ <%= product.price %>
+<div class="products">
+  <h3 class="introduction">
+    厨师 <%= link_to(@chef.name, chef_path(@chef) , :style => "color: #801815; text-decoration: underline;") %>
+                            很荣幸为您服务
+  </h3>
+  <!-- <div class="filter">
+    <span><%#= link_to("点赞数", products_path(:order => "by_followers"), style: "color: rgba(0, 0, 0, 0.5);") %><i class="fa fa-arrow-down" style="color: rgba(0, 0, 0, 0.3);"></i></span>
+  </div> -->
+
+  <div class="row">
+      <%= render :partial => "product_item", :collection => @products, :as => :product %>
     </div>
-  <% end %>
 </div>

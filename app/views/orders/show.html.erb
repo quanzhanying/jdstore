@@ -7,7 +7,8 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="80%">商品明细</th>
+          <th width="80%">菜品明细</th>
+          <th>菜式</th>
           <th>单价</th>
           <th>数量</th>
         </tr>
@@ -17,6 +18,9 @@
         <tr>
           <td>
             <%= product_list.produt_name %>
+          </td>
+          <td>
+            <%= product_list.style %>
           </td>
           <td>
             <%= product_list.product_price %>
@@ -31,7 +35,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= @order.total %> CNY
+        总计 <%= @order.total %> RMB
       </span>
     </div>
 

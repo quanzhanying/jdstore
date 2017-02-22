@@ -2,7 +2,8 @@
   <div class="col-md-12">
     <h2> 购物明细 </h2>
 
-    <h4> 您的私厨 <img src='<%= image_url 'chef.png' %>'> <%= link_to(@chef.name, chef_path(@chef)) %>
+    <h4> 您的私厨 <img src='<%= image_url 'chef.png' %>'>
+        <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
         <img src='<%= image_url 'mobile-phone.png' %>'> <%= @chef.phone %>
     </h4>
     <div>
@@ -12,6 +13,7 @@
       <thead>
         <tr>
           <th width="80%">菜品明细</th>
+          <th>菜式</th>
           <th>单价</th>
           <th>数量</th>
         </tr>
@@ -22,6 +24,9 @@
           <tr>
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.style %>
             </td>
             <td>
               <%= cart_item.product.price %>
@@ -37,7 +42,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= render_cart_total_price(current_cart) %> CNY
+        总计 <%= render_cart_total_price(current_cart) %> RMB
       </span>
     </div>
 

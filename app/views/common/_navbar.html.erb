@@ -1,9 +1,9 @@
-<nav class="navbar navbar-default" role="navigation" style="background-color: #D4D46A">
+<nav class="navbar navbar-default" role="navigation" >
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
-        <img src='<%= image_url 'mychef.png' %>'> 西厨私定</a>
+        <img src='<%= image_url 'mychef.png' %>'> 西厨私享 </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,8 +21,16 @@
           <% end %>
         </li>
         <% if !current_user %>
-          <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-          <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+          <!-- <li><%#= link_to(content_tag(:i, '注册 ', class: 'glyphicon glyphicon-user'), new_user_registration_path) %></li> -->
+          <!-- <li><%#= link_to(content_tag(:i, '登陆 ', class: 'glyphicon glyphicon-log-in'), new_user_session_path) %></li> -->
+          <li><a href="#" data-toggle="modal" data-target="#signup-modal">
+            <%= content_tag(:i, '注册 ', class: 'glyphicon glyphicon-user') %>
+            </a>
+          </li>
+          <li><a href="#" data-toggle="modal" data-target="#login-modal">
+            <%= content_tag(:i, '登陆 ', class: 'glyphicon glyphicon-log-in') %>
+          </a>
+          </li>
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -32,15 +40,15 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                <li>
-                 <%= link_to("Admin 选单", admin_products_path ) %>
+                 <%= link_to(content_tag(:i,  "Admin 选单", class: 'fa fa-cogs'), admin_products_path ) %>
                </li>
               <% else %>
                 <li>
-                  <%= link_to("个人订单列表", account_orders_path) %>
-                  <%= link_to("我收藏的私厨", account_favorchefs_path) %>
+                  <%= link_to(content_tag(:i,  "个人订单列表", class: 'fa fa-indent'), account_orders_path) %>
+                  <%= link_to(content_tag(:i,  "我收藏的私厨", class: 'fa fa-gratipay'), account_favorchefs_path) %>
                 </li>
               <% end %>
-              <li><%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
+              <li><%= link_to(content_tag(:i, '登出 ', class: 'glyphicon glyphicon-log-out'), destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
         <% end %>
@@ -50,3 +58,41 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+       <h2>Log in</h2>
+       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="form-inputs">
+           <%= f.input :email, required: false, autofocus: true %>
+           <%= f.input :password, required: false %>
+           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+         </div>
+         <div class="form-actions">
+           <%= f.button :submit, "Log in" %>
+         </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

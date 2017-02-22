@@ -6,10 +6,13 @@
         <%= link_to("订单连结", order_url(@order.token)) %>
       </small>
     </h2>
+    <h4> 私厨 <%= @chef.name %>
+         联系电话 <%= @chef.phone %>
+    </h4>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="70%">商品明细</th>
+          <th width="70%">菜品明细</th>
           <th>单价</th>
           <th>数量</th>
           <th>小记</th>
