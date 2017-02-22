@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
+  root 'welcome#index'
   namespace :admin do
 	resources :products
 	resources :orders do
@@ -38,5 +39,6 @@ Rails.application.routes.draw do
 		post :apply_to_cancel
 	end
   end
+
 
 end
