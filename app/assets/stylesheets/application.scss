@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ .thumbnail {
+   width: 250px;
+ }
+ 
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
@@ -25,7 +29,7 @@
  nav{
  width:auto;/*撑满*/
  height:35px;
- background:#CCC;/*为了便于查看区域范围大小，故而加个背景色*/
+ background:rgba(255,255,255,0);/*为了便于查看区域范围大小，故而加个背景色*/
  margin:0 auto;/*水平居中*/
  margin-top:15px;/*顶部15px*/
  }
