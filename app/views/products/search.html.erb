@@ -1,0 +1,24 @@
+<div>
+    <br>
+    <% if @jobs.blank? %>
+        <br>
+        <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+    <% else %>
+        <h2 class="search-info-title"> 有关"<%= @query_string %>"的商品信息 </h2>
+        <div class="search-result">
+            <div class="row products-show0"></div>
+            <div class="product-table">
+                <% @jobs.each do |job| %>
+                    <div class="row products-show">
+                        <div class="col-md-12 col-lg-9 col-lg-offset-1">
+                            <div class="pull-right">
+                                发布时间：<%= job.created_at.to_date %>
+                            </div>
+                            <p ><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

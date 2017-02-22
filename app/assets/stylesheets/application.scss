@@ -17,3 +17,539 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+
+ .ml40 {
+    margin-left: 300px;
+}
+.mt10 {
+    margin-top: 12px;
+}
+.fl {
+    float: left;
+    display: inline;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td{
+
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+Inherited from body
+body {
+    color: #2E2E2E;
+    font-family: "Microsoft Yahei",verdana;
+    background: #FFFFFF;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+Inherited from html
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+Pseudo ::before element
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+Pseudo ::after element
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.search {
+    width: 185px;
+}
+.pr {
+    position: relative;
+}
+.clearfix {
+    display: block;
+}
+.clearfix {
+    display: inline-block;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+Inherited from body
+body {
+    color: #2E2E2E;
+    font-family: "Microsoft Yahei",verdana;
+    background: #FFFFFF;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+Inherited from html
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+Pseudo ::before element
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+Pseudo ::after element
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+form {
+    display: block;
+    margin-top: 0em;
+}
+Inherited from body
+body {
+    color: #2E2E2E;
+    font-family: "Microsoft Yahei",verdana;
+    background: #FFFFFF;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+Inherited from html
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+Pseudo ::before element
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+Pseudo ::after element
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+input[type="hidden" i], input[type="image" i], input[type="file" i] {
+    -webkit-appearance: initial;
+    background-color: initial;
+    padding: initial;
+    border: initial;
+}
+user agent stylesheet
+input[type="hidden" i] {
+    display: none;
+}
+user agent stylesheet
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+user agent stylesheet
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 11px BlinkMacSystemFont;
+}
+user agent stylesheet
+input, textarea, keygen, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+Inherited from body
+body {
+    color: #2E2E2E;
+    font-family: "Microsoft Yahei",verdana;
+    background: #FFFFFF;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+Inherited from html
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+Pseudo ::before element
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+Pseudo ::after element
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.search-input {
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+    padding: 4px 20px;
+    margin-bottom: 4px;
+    border-width: 2px;
+    border-color: #D32048;
+    border-style: solid;
+    outline: 0;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    border-radius: 20px;
+}
+
+.search-button {
+    width: 54px;
+    height: 36px;
+    border: none;
+    line-height: 1;
+    color: #fff;
+    background: none;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    cursor: pointer;
+    top: 0;
+    right: 0px;
+}
+.pa {
+    position: absolute;
+}
+.tc {
+    text-align: center;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+user agent stylesheet
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 11px BlinkMacSystemFont;
+}
+user agent stylesheet
+input, textarea, keygen, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+user agent stylesheet
+button {
+    -webkit-appearance: button;
+}
+.col-red {
+    color: #d32048;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+.search-button {
+    width: 54px;
+    height: 36px;
+    border: none;
+    line-height: 1;
+    color: #fff;
+    background: none;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    cursor: pointer;
+    top: 0;
+    right: 0px;
+}
+
+.tc {
+    text-align: center;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+user agent stylesheet
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 11px BlinkMacSystemFont;
+}
+user agent stylesheet
+input, textarea, keygen, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+.fa-search:before {
+    content: "\f002";
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
