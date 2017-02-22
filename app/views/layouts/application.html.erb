@@ -1,22 +1,104 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Jdstore</title>
-    <%= csrf_meta_tags %>
+<html lang="cn">
+<head>
+  <title>Create A Better Life</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-  <body>
-
-      <div class="container-fluid">
-          <%= render "common/navbar" %>
-          <%= render "common/flashes" %>
-          <%= yield %>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://files.slack.com/files-pri/T1WMNE3EX-F47RUH31S/____________.jpg" alt="主动选择">
+        <div class="carousel-caption">
+          <h3>交换人生体验会是怎样的感觉</h3>
+          <p>主动选择一种你想要的生活方式,用新视角感受人生</p>
+        </div>
       </div>
 
-      <%= render "common/footer" %>
+      <div class="item">
+        <img src="http://www.japantimes.co.jp/wp-content/uploads/2017/01/p7-knue-yourname-a-20170123.jpg" alt="身份互换">
+        <div class="carousel-caption">
+          <h3>也许会有意想不到的惊喜在等你</h3>
+          <p>谁说互相交换人生的两人不能有什么新的缘分悄然发生?</p>
+        </div>
+      </div>
 
-  </body>
+      <div class="item">
+        <img src="http://images2.itechpost.com/data/images/full/48398/your-name-english-dubbed-trailer-released-for-us-uk-screenings-makoto-shinkai-awarded-hit-maker-of-the-year.jpg" alt="体验别样人生">
+        <div class="carousel-caption">
+          <h3>活在别人的人生中可以肆意一把</h3>
+          <p>反正也是临时的,是个尽情释放自己被压抑一面的好时机</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<div class="container text-center">
+  <h2>交换人生</h2>
+  <p><em>交换物资?交换金钱?</em></p>
+  <p>那些交换都太常见太无趣了 让我们来交换人生吧!</p>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p class="text-center"><strong>我是高中生</strong></p><br>
+      <a href="#demo" data-toggle="collapse">
+      <img src="http://img3.yxlady.com/mr/UploadFiles_9207/20140116/2014011615262557.jpg" class="img-circle person" alt="Random Name">
+      </a>
+      <div id="demo" class="collapse">
+        <p>我向往这所大学</p>
+        <p>但真的的去了能适应那边的生活吗?</p>
+        <p>我觉得自己喜欢这个专业</p>
+        <p>但我考上的大学提供的此专业跟我想象的一样吗?</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center"><strong>我是大学生</strong></p><br>
+      <a href="#demo2" data-toggle="collapse">
+      <img src="http://www.ucampuschannel.com/wp-content/uploads/2014/01/College-Students-Success-Secrets-300x300.jpg" class="img-circle person" alt="Random Name">
+      </a>
+      <div id="demo2" class="collapse">
+        <p>大学生时代的生活很美好</p>
+        <p>但有时又超级想念高中生活的单纯天真</p>
+        <p>想自己赚点外快</p>
+        <p>但找临时工麻烦且很难找到可灵活挑选时间段的短期工</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center"><strong>我是在职人员</strong></p><br>
+      <a href="#demo3" data-toggle="collapse">
+      <img src="http://www.training-in-business.com/wp-content/uploads/2013/03/class-300x300.jpg" class="img-circle person" alt="Random Name">
+      </a>
+      <div id="demo3" class="collapse">
+        <p>工作后生活很有规律很充实</p>
+        <p>但不时希望能再回去体验学生时代的自由自在</p>
+        <p>时常好奇如果当年去其他大学读书会是体验</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
