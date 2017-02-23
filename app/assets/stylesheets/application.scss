@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+ .ml40 {
+    margin-left: 300px;
+}
+.mt10 {
+    margin-top: 12px;
+}
+.fl {
+    float: left;
+    display: inline;
+}
+
+.search {
+    width: 350px;
+}
+.pr {
+    position: relative;
+}
+.clearfix {
+    display: block;
+}
+.clearfix {
+    display: inline-block;
+}
+
+.search-input {
+    width:350px;
+    height: 36px;
+    line-height: 36px;
+    color: #666;
+    padding: 4px 10px;
+    margin-bottom: 4px;
+    border-width: 2px;
+    border-color: #D32048;
+    border-style: solid;
+    outline: 0;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    border-radius: 20px;
+}
+
+.search-button {
+    width: 54px;
+    height: 36px;
+    border: none;
+    line-height: 1;
+    color: #fff;
+    background: none;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    cursor: pointer;
+    top: 0;
+    right: 0px;
+}
+.pa {
+    position: absolute;
+}
+.tc {
+    text-align: center;
+}
+
+.col-red {
+    color: #d32048;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 20px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tc {
+    text-align: center;
+}
+
+.fa-search:before {
+    content: "\f002";
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.navbar-default {
+    background-color: #fff!important;//背景颜色
+    border-color: #212121!important;//边框色
+    margin-bottom: 0!important;//底部 margin 不撑开距离
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0!important;//圆角为0
+    }
+}
+.navbar-default .navbar-brand {
+   color: #EF6C00!important;//字体颜色
+   padding: 10px 15px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+}
+.navcolor {
+  color:#fff;
+  background:#000;
+  margin-bottom: 0;
+  }
+.navcolor li a {color:#fff;}
+.navbar-default .navbar-nav .active>a,
+.navbar-default .navbar-nav .active>a:hover,
+.navbar-default .navbar-nav .active>a:focus {
+  color:#EF6C00!important ;
+  background: #fff!important;
+}
+
+.container1 {
+              font-size:12px;
+              background:#ccc;
+              width:100%;
+              text-align:center;
+              padding:15px 0 5px 0;
+              margin: 0!important;
+}
+.container1 a{
+              margin: 0;
+              font-size:12px;
+}
