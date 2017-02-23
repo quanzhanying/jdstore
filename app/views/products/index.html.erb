@@ -1,3 +1,32 @@
+<div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="javascript:;">
+                <img src="https://ww2.sinaimg.cn/large/006tKfTcly1fd07ungeahj312i0qkjtn.jpg">
+                <div class="carousel-caption"></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="javascript:;">
+                <img src="https://ww4.sinaimg.cn/large/006tKfTcly1fd07yrrulsj315q0sujtm.jpg">
+                <div class="carousel-caption"></div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="javascript:;">
+                <img src="https://ww1.sinaimg.cn/large/006tKfTcly1fd07ytn99pj315e0rcwg7.jpg">
+                <div class="carousel-caption"></div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
 <div class="row">
     <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
@@ -8,9 +37,9 @@
         <%= image_tag("https://ww4.sinaimg.cn/large/006y8lValy1fcgy0yxl0vj305l05lmwx.jpg", class: "thumbnail") %>
         <% end %>
         <% end %>
-        <%= product.title %>
-        ￥
-        <%= product.price %>
+        title:<%= product.title %>
+        <br>
+        price:￥<%= product.price %>
     </div>
     <% end %>
 </div>
