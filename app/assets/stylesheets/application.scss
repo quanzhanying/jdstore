@@ -27,7 +27,7 @@ body {
   // margin-right: -15px;
   min-height: 100%;
   min-width: 1090px;
-  padding-top: 136px; //nav的高度
+  // padding-top: 136px; //nav的高度
   margin-bottom: 460px !important;
 }
 body .container-fluid {
@@ -147,19 +147,55 @@ padding-right: 50px;
 .narbar-right-new {
 
 }
-//tab-nav
+//tab-nav affix-nav
+.navbar2 {
+  height: 50px;
+  font-size: 14px;
+  background-color: #fff !important;
+  text-align: center;
+  border-style: none !important;
+
+}
 .tab-nav {
   display: block;
-  float: left;
-  width: 80%
+  // float: left;
+  padding-top: 15px;
+  width: 80%;
+  margin-left: 15% !important;
+  margin-right: 15% !important;
+  text-align: center;
+  list-style-type: none;
+  min-width: 1090px; //使分类保持在一行上
 }
 .tab-nav li {
   list-style-type: none;
   list-style-image: none;
   list-style-position: outside;
   float: left;
-  padding: 0 30px;
+  padding: 0 40px;
+  display: inline-block;
+  height: 20px;
 }
+
+.tab-nav li a {
+  display: block;
+  padding: 0 0 5px !important;
+    color: #000 !important;
+}
+.tab-nav li a:hover {
+    color: #b4a078 !important;
+    border-bottom: 3px solid #b4a078;
+}
+.tab-nav .first a{
+    color: #b4a078 !important;
+    border-bottom: 3px solid #b4a078;
+}
+.affix {
+  top: 0; //固定在顶端
+  width: 100%;
+  z-index: 9999 !important; //使分类导航可以在最上面显示，不被覆盖
+}
+
 /* lisuji footer */
 
 #footer {

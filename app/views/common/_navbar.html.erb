@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
     <div class="sitenav">
       <div class="g-row">
         <p>品质生活，品质家居</p>
@@ -60,17 +60,25 @@
                         <i class="fa fa-shopping-cart fa-shoppingcart"> </i> <span class="label label-success"> <%= current_cart.products.count %> </span>
                     <% end %>
             </div>
-            <!-- 分类导航 -->
-            <!-- <ul class="tab-nav">
-              <li class='nav-item active first'>
-<a class="topLevel" title="首页" href='/?_stat_area=nav_1&_stat_referer=index'>首页</a>
-</li>
 
-<li class='j-nav-item nav-item '>
-<a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
-居家
-</a>
-</li>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<!-- 分类导航 -->
+<nav class="navbar navbar-inverse navbar2" data-spy="affix" data-offset-top="136">
+<ul class="nav navbar-nav tab-nav ">
+  <li class='j-nav-item nav-item first'>
+    <a class="topLevel" title="首页" href='/?_stat_area=nav_1&_stat_referer=index'>首页</a>
+  </li>
+
+  <li class='j-nav-item nav-item '>
+    <a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
+      居家
+    </a>
+  </li>
 <li class='j-nav-item nav-item '>
 <a class="topLevel" href='/item/list?categoryId=1005000&_stat_area=nav_2&_stat_referer=index' title="居家">
 餐厨
@@ -113,9 +121,5 @@
 </li>
 
 
-            </ul> -->
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
+</ul>
 </nav>
