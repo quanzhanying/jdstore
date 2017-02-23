@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html>
 <head>
   <title>Create A Better Life</title>
+  <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,9 +14,14 @@
 </head>
 <body>
 
+        <div class="row">
+            <%= render "common/navbar" %>
+            <%= yield %>
+        </div>
+
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <ol class="carousel-indicators bg-color1">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -56,7 +65,7 @@
     </a>
   </div>
 
-<div class="container text-center">
+<div class="container text-center bg-color4">
   <h2>交换人生</h2>
   <p><em>交换物资?交换金钱?</em></p>
   <p>那些交换都太常见太无趣了 让我们来交换人生吧!</p>
