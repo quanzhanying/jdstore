@@ -1,0 +1,11 @@
+<h2>新产品</h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+  <%= f.input :title, :label => "名称" %>
+  <%= f.input :description, :label => "简介" %>
+  <%= f.input :quantity, :label => "库存" %>
+  <%= f.input :price, :label => "单价" %>
+  <%= f.input :image, :label => "图像", as: :file%>
+  <!-- <input type="file"  file是一个属性值，定义输入字段和浏览按钮，供文件上传。> -->
+  <%= f.submit "提交信息", class: "btn btn-primary btn-lg", data: { disable_with: "Submitting..." } %>
+<% end %>

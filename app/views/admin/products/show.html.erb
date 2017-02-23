@@ -1,0 +1,9 @@
+<h1>产品详述</h1>
+<h3><%= @product.title %></h3>
+<p>
+<%= image_tag(@product.image.medium.url)%>
+<%= simple_format(@product.description)%>
+<%= @product.quantity%>
+<br>
+<%= @product.price%>
+</p>

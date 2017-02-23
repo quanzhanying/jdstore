@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2>购物明细</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="80%">商品明细</th>
+          <th>单价</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+              <%= cart_item.quantity %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        <!-- <% sum = 0%>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <% if  cart_item.product.price.present? %>
+            <% sum += cart_item.quantity * cart_item.product.price %>
+          <% end %>
+        <% end %>
+        <%= sum %> -->
+        总价<%= render_cart_total_price(current_cart)%>元
+      </span>
+    </div>
+
+    <hr>
+
+    <h2>订单资讯</h2>
+
+    <div class="oreder-form">
+      <%= simple_form_for @order do |f| %>
+
+        <legend>订购人</legend>
+        <div class="col-lg-6">
+          <%= f.input :billing_name%>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.input :billing_address  %>
+        </div>
+
+        <legend>收货人</legend>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_name, input_html: { class: "form-control"} %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_address, input_html: { class: "form-controlz"}%>
+        </div>
+
+        <%= f.submit "提交", class: "btn btn-primary btn-lg", data: { disable_with: "Submitting..."}%>
+      <% end %>
+    </div>
+
+  </div>
+</div>

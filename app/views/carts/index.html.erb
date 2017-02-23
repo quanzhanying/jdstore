@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <%= link_to("清空购物车", clean_carts_path, class: "pull-right", style: "text-decoration:underline;", method: :delete, data: { confirm: "你确定清空购物车吗？"})%>
+
+    <h2>购物车</h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan='2'>商品资讯</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>操作选项</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to product_path(cart_item.product) do %>
+                <% if cart_item.product.image.present? %>
+                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                  <!--  You can also use Bootstrap's grid system in conjunction
+                  with the .thumbnail class to create an image gallery.-->
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price%>
+            </td>
+            <td>
+              <!-- <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id)%> -->
+              <!-- 是什么意思？上面已经有 cart_item的循环了,就是把edit的action,放到views里面？, -->
+              <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+              <!-- url是什么意思？ -->
+                <!-- <%= f.text_field :quantity %> -->
+                <%= f.select :quantity, 1..cart_item.product.quantity  %>
+                <!-- 不好的用法，太不方便用户使用了 -->
+                <%= f.submit "更新", data: {disable_with: "Subimtting..."} %>
+              <% end %>
+              <%= cart_item.quantity%>
+            </td>
+            <td>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete, data: { confirm: "你要去掉这个商品吗？"} do %>
+                <i class="fa fa-trash">不买了，删除</i>
+              <% end %>
+            </td>
+
+          </tr>
+        <%end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+        总计 <%= render_cart_total_price(current_cart) %> RMB
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-danger pull-right") %>
+    </div>
+  </div>
+</div>
