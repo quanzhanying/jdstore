@@ -1,16 +1,9 @@
-<!-- copy -->
+
 <!DOCTYPE html>
 <html>
 <head>
 
 
-
-<!-- For-Mobile-Apps -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="" />
-	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //For-Mobile-Apps -->
 
 <!-- Custom-Theme-Files -->
 	<!-- Bootstrap-Default-CSS --> <link href="assets/bootstrap.min.css" rel="stylesheet" />
@@ -30,16 +23,6 @@
 
 <body>
 
-	<!--产品首页大图，暂时取消-->
-	<!-- <div class="products-content">
-			<a href="/" class="products">ESTELLE</a>
-			<p class="products">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-			<h1 class="products">PRODUCTS</h1>
-	</div> -->
-
-	<!--挖到的google艺术家影片，暂时被下面的代替了，下面是试验简化后的代码-->
-	<!-- <div jscontroller="jVjCbf" data-youtube-id="BYWs3ZS2Vvk" jsaction="rcuQ6b:NziyQe;JZCswc:QKiGd;IBB03b:NziyQe;GvneHb:og1FDd;"><iframe jsname="uquGtd" class="mmeaZc x9Qnmf" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1228" height="691" src="https://www.youtube.com/embed/BYWs3ZS2Vvk?autoplay=1&amp;cc_load_policy=1&amp;controls=0&amp;disablekb=1&amp;loop=1&amp;playsinline=1&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.google.com&amp;widgetid=1" id="widget2" style="top: -48.5px; left: 0px;"></iframe></div> -->
-
 <!--产品影片demo，经过试验简化后的代码-->
 	<div>
 		<iframe  width="100%" height=600 src="https://www.youtube.com/embed/QM9GjVSDGDg?autoplay=1&amp;cc_load_policy=1&amp;controls=0&amp;disablekb=1&amp;loop=1&playlist=QM9GjVSDGDg;playsinline=1&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.google.com&amp;widgetid=1" style="position: relative; margin-left: auto; margin-right: auto; align: center;">
@@ -47,7 +30,7 @@
 	</div>
 
 	<!--图片特效样例-->
-	<div class="main" id="womens-wear">
+	<div class="container">
 		<h2>Fashion</h2>
 		<div id="mi-slider" class="mi-slider">
 			<ul>
@@ -90,7 +73,7 @@
 		</script>
 	</div>
 
-	<div class="main main-2" id="womens-wear1">
+	<div class="container">
     <h2>Events</h2>
 		<div id="mi-slider1" class="mi-slider">
 			<ul>
@@ -126,7 +109,7 @@
 		</div>
 	</div>
 
-	<div class="main main-2" id="mens-wear">
+	<div class="container">
 		<h2>Nature</h2>
 		<div id="mi-slider2" class="mi-slider">
 			<ul>
@@ -169,7 +152,7 @@
 		</script>
 	</div>
 
-	<div class="main main-2">
+	<div class="container">
     <h2>Model</h2>
 		<div id="mi-slider3" class="mi-slider">
 			<ul>
@@ -213,10 +196,6 @@
 		</script>
 	</div>
 
-
-
-
-
 <!-- Custom-JavaScript-File-Links -->
 
 	<!-- Default-Supportive-JavaScript --> <script type="text/javascript" src="assets/jquery.min.js"></script>
@@ -251,13 +230,12 @@
 <!-- //Custom-JavaScript-File-Links -->
 
 
-<H2>VIP Service</H2>
-
-<br>
-
+<div class="container">
+	<h2>VIP service</h2>
+	<div id="mi-slider3" class="mi-slider">
 <div class="row">
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
+    <div class="col-sm-3">
       <%= link_to product_path(product) do %>
         <% if product.photos.present? %>
           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
@@ -266,9 +244,13 @@
 				<% end %>
       <% end %>
       <%= product.title %> ¥ <%= product.price %>
+				<p class="productList-item-desc mt5 f12"><%= product.description %></p>
     </div>
   <% end %>
-</div>
 
-</body>
+
+		</body>
+
+
+
 </html>

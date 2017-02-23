@@ -32,13 +32,47 @@ input[type="button"], input[type="submit"], button.btn, button.btn:hover {
 	-ms-transition: 0.5s all;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 50px
 }
+
+
+h2 {
+	margin: 15px;
+	padding: 15px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px
+}
+
+h4 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px
+}
+
+h5 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px
+}
+
 
 p {
 	margin: 0;
@@ -60,9 +94,7 @@ img {
 	width: 100%;
 }
 
-.vip service.img img {
-	width: 50%;
-}
+
 
 a:focus, a:hover {
 	text-decoration: none;
