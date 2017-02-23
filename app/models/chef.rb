@@ -11,6 +11,9 @@ class Chef < ApplicationRecord
   has_many :favor_chefs_relationships
   has_many :followers, through: :favor_chefs_relationships, source: :user
 
+  has_many :photos
+  accepts_nested_attributes_for :photos
+  
   def publish!
     self.is_hidden = false
     self.save

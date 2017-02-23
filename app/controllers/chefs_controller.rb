@@ -10,10 +10,14 @@ class ChefsController < ApplicationController
             else
               Chef.published.recent
             end
+    if params[:city].present?
+      @chefs = @chefs.where(city: params[:city])
+    end
   end
 
   def show
     @chef = Chef.find(params[:id])
+    @photos = @chef.photos.all
     if current_cart.chef_id != nil
       current_chef_in_cart = Chef.find(current_cart.chef_id)
       if @chef.style != current_chef_in_cart.style

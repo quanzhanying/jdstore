@@ -1,8 +1,21 @@
 <div class="container">
 <div class="row">
   <div class="col-md-6">
-    <% if @chef.image.present? %>
-      <%= image_tag(@chef.image.medium.url, class: "thumbnail") %>
+    <!-- <% if @chef.image.present? %>
+      <%#= image_tag(@chef.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %> -->
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+          <div style="letter-spacing: -8px">
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+      </div>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
@@ -22,6 +35,10 @@
         <%= simple_format(@chef.description) %>
       </p>
     </div>
+    <div class="style">
+      <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> <%= @chef.city %>
+    </div>
+
     <div class="style">
       <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
     </div>

@@ -61,38 +61,38 @@ body {
 
 .navbar {
   margin-bottom: 0px;
-  background-color: #321d1f;
-  border-color: #321d1f;
+  //background-color: #321d1f;
+  //border-color: #321d1f;
   border-radius: 0px;
   //background-color: black;
   //border: 0px black;
 }
 
 .navbar-default .navbar-brand {
-   color: #FFFFAA;
+   color: #231f20;
    padding: 10px 15px;
    line-height: 30px;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #FFFFAA;
+  color: #231f20;
   background-color: transparent;
 }
 
 .navbar-default .navbar-nav > li > a{
-  color: #FFFFAA;
+  color: #231f20;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #FFFFAA;
+  color: #231f20;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #FFFFAA;
+  color: #231f20;
   background-color: transparent;
 }
 
@@ -100,7 +100,7 @@ body {
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
     background-color: transparent;
-    color: #FFFFAA;
+    color: #231f20;
 }
 
 .navbar-brand > img {
@@ -119,13 +119,13 @@ body {
   border-radius: 0px !important;
 }
 .slogan {
-  color: #FFFFAA;
+  color: #231f20;
 }
 .advertisement {
   color: white;
 }
 .title {
-  color: #FFFFAA;
+  color: #231f20;
   font-size: 30px;
 }
 .carousel {
