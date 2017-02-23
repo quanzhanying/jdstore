@@ -21,9 +21,16 @@ products_description = ["裸睡享受，柔软透气有弹性", "柔软舒适深
 
 products_prices = [299, 59, 59, 59, 89, 13.99, 39, 25]
 
+products_categories = ["home", "kitchen"]
+
 products_images = ["public/images/bed.png", "public/images/pillow.png", "public/images/sitting.png", "public/images/foot.png", "public/images/knife.png", "public/images/duster.png", "public/images/bowl.png", "public/images/chopsticks.png"]
 
-create_jobs = for i in 1..8 do
-  Product.create!([title: products[i - 1], description: products_description[i - 1], quantity: rand(0..2), price: products_prices[i - 1], image: File.open(File.join(Rails.root, products_images[i - 1]))])
+create_jobs = for i in 1..4 do
+  Product.create!([title: products[i - 1], description: products_description[i - 1], quantity: rand(0..2), price: products_prices[i - 1], image: File.open(File.join(Rails.root, products_images[i - 1])), categories: products_categories[0]])
 end
-puts "8 products created."
+puts "4 home products created."
+
+create_jobs = for i in 5..8 do
+  Product.create!([title: products[i - 1], description: products_description[i - 1], quantity: rand(0..2), price: products_prices[i - 1], image: File.open(File.join(Rails.root, products_images[i - 1])), categories: products_categories[1]])
+end
+puts "4 kitchen products created."
