@@ -1,0 +1,47 @@
+
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="J3vWoUzofzxM4UfspZwa5ghytiD3siN5wDJfaH9GoxDnMiIEHPPIWwTLINGhQJcNVNNpZcjH9+wy7f15NSKOEA==">
+<!-- FORGOT PASSWORD FORM -->
+<div class="text-center" style="padding:50px 0">
+	<div class="logo">forgot password</div>
+	<!-- Main Form -->
+	<div class="login-form-1">
+
+			<div class="etc-login-form">
+				<p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
+			</div>
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+
+            <div class="form-group email required user_email"><input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" placeholder="email address" type="email" value="" name="user[email]" id="user_email"></div>
+					</div>
+				</div>
+
+        <button type="submit" name="commit" value="Send me reset password instructions" class="btn btn-default login-button" data-disable-with="Send me reset password instructions"><i class="fa fa-chevron-right"></i></button>
+
+			</div>
+			<div class="etc-login-form">
+				<p>already have an account? <%= link_to("login here", new_user_session_path, class: "btn btn-primary btn-sm") %></p>
+				<p>new user? <%= link_to("login here", new_user_registration_path, class: "btn btn-primary btn-sm") %></p>
+			</div>
+
+	</div>
+	<!-- end:Main Form -->
+</div></form>
+
+    </div>
