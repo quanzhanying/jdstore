@@ -16,3 +16,10 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+//= require bootstrap
+
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
