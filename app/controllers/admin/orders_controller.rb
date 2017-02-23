@@ -36,4 +36,11 @@ class Admin::OrdersController < ApplicationController
     @order.return_good!
     redirect_to :back
   end
+
+  def apply_to_cancel
+    @order = Order.dinf(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:nitice] = "已提交申请"
+    redirect_to :back
+  end
 end
