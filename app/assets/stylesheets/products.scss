@@ -112,7 +112,7 @@ img.washer-product-kitchen{
 
 .washer-product-profile{
   min-width: 250px;
-  height: 400px;
+  height: 100%;
   width: 100%;
   left: 0;
   right: 0;
@@ -126,4 +126,143 @@ img.washer-product-profile2{
   width: 100%;
   top: 0;
   left: 0;
+}
+
+.content{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#range{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display:none;
+}
+
+#flip{
+    padding: 5px;
+    text-align: center;
+    background-color: #FAFAFA;
+    color: #1E88E5;
+    font-size: 1.3em;
+}
+#flip:hover,
+#flip:focus{
+  background-color: #ECEFF1;
+}
+
+#kids-implement{
+  display: none;
+}
+
+
+/* 非主推广商品 */
+
+.intro-bigPic {
+	width: 420px;
+	height: 420px;
+	img {
+		width: 100%;
+	}
+}
+
+.intro-preview {
+	margin-top: 15px;
+	.intro-preview-item {
+		padding: 1px;
+		margin-right: 13px;
+		overflow: hidden;
+		img {
+      width:100%;
+			width: 70px;
+			height: 70px;
+		}
+	}
+	.intro-preview-activeItem {
+		border-color: #DB3652;
+	}
+}
+
+
+/*show页面商品信息*/
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 518px;
+}
+
+.productDetail-left {
+	float: left; /*你去左边*/
+	width: 400px;
+	height: 400px;
+}
+
+.productDetail-right {
+	float: right; /*你去右边*/
+	width: 744px;
+	height: 518px;
+}
+
+.productDetail-left-bigImage {
+	width: 400px;
+	height: 400px;
+}
+
+.productDetail-left-imageList-group {
+	margin-top: 15px;
+
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 70px;
+	height: 70px;
+	margin-right: 12px;
+  overflow: hidden;
+  img {
+    width:100%;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+.last-item {
+	margin-right: 0;
+  width: 70px;
+	height: 70px;
+  overflow: hidden;
+  img {
+    width:100%;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
 }

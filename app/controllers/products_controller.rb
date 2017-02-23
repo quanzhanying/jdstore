@@ -3,13 +3,15 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
   def show
-  @product = Product.find(params[:id])
-  @photos = @product.photos.all
-  if @product.model == 'xx11'
-    render 'products/_productheader'
-  else
-    render 'products/apple'
-  end
+     @product = Product.find(params[:id])
+     @photos = @product.photos.all
+     if @product.iwasher?
+       render 'products/iwasher'
+     elsif @product.ilife?
+       render 'products/ilife'
+     elsif @product.mi?
+       render 'products/mi'
+     end
 
   end
 

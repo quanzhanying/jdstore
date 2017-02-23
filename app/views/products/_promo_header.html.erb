@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-md-12">
+<h2 class="show-title">
+       <div class="show-menu-logo"><%= @product.title%></div>
+</h2>
+<div class="show-menu-tray">
+  <ul class="show-menu-items">
+    <li class="show-menu-item-buy" >
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+      <%= link_to("购买", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-xs pull-right") %>
+      <% else %>
+      缺货
+      <% end %>
+    </li>
+    <li class="show-menu-item">
+      <%= link_to("技术规格", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+    </li>
+    <li class="show-menu-item">
+      <%= link_to("概览", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+    </li>
+  </ul>
+  </div>
+  <br>
+  <hr style="margin-top:15px">
+</div>
+</div>

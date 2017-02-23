@@ -1,3 +1,51 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+p.list-group-item-sum{
+  padding: 10px;
+}
+p.cart-item-desc{
+  text-align: center;
+}
+
+.renew-button{
+  padding-top: 100px;
+  text-align: center;
+}
+
+.list-group{
+  padding: 30px;
+
+}
+
+.spec{
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+
+.checkout{
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  padding:20px;
+}
+.total-price{
+  float:right;
+  font-size: 1.5em;
+  margin-right:15px;
+  margin-top:10px;
+}
+.thumbnail{
+  width:200px;
+  height:200px;
+  overflow: hidden;
+  float:inherit;
+}

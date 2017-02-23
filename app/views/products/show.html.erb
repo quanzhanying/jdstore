@@ -13,70 +13,30 @@
 <% else %>
   <%= image_tag("http://placehold.it/450x450&text=No Pic", class:"thumbnail")%> -->
 <!-- <% end %> -->
-<div class="container">
-  <div class="col-md-12">
-<h2 class="show-title">
-       <div class="show-menu-logo"><%= @product.title%></div>
-</h2>
-<div class="show-menu-tray">
-  <ul class="show-menu-items">
-    <li class="show-menu-item-buy" >
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("购买", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-xs pull-right") %>
-      <% else %>
-      缺货
-      <% end %>
-    </li>
-    <li class="show-menu-item">
-      <%= link_to("技术规格", '#',style: "text-decoration: none;",class:"show-menu-link") %>
-    </li>
-    <li class="show-menu-item">
-      <%= link_to("概览", '#',style: "text-decoration: none;",class:"show-menu-link") %>
-    </li>
-  </ul>
-  </div>
-  <br>
-  <hr style="margin-top:15px">
-</div>
-</div>
 
-<div class="section-content" style="text-align:center">
-    <span class="eyebrow">
-      洗碗机
-    </span>
-      <h1 class="heo-headline">
-        告别时间遭受绑架的时代。
-      </h1>
-    <center>
-      <p class="intro">
-        随着大数据和人工智能时代的到来，工业智能化、生活便利化以及信息大爆炸的年代，市场运作将以无法预估的速度加速发展。除工作以外人们不希望注意力被过多的信息所浪费，更不愿意可支配的时间被受无谓的消耗。一台省心的洗碗机将为您每天解放出至少3%的可支配时间给到您，一年约可省下91.25个小时。
-      </p>
-    </center>
-</div>
-<div class="row">
-   <div class="washer-product-profile">
-      <center><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fcv13k1zxoj30sg0b4aba.jpg"></img></center>
-   </div>
-     <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fcv2014ccoj30sg0m0154.jpg" class="washer-product-kitchen"></img>
-
-
-     <div class="section-content2" style="text-align:center">
-         <span class="eyebrow">
-           西门子
-         </span>
-           <h1 class="heo-headline">
-             强大的智能洗涤系统。
-           </h1>
-         <center>
-           <p class="intro">
-            全自动洗碗机，轻松应对重油重垢的中式餐具，更带来前所未有的节水节电表现，及高温除菌烘干效果。只需几分钟放入碗碟，告别厨房洗碗的日子，享受用餐之后的美好时光。
-           </p>
-         </center>
-     </div>
-     <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcv23f7czzj30sg0crwfx.jpg" class="washer-product-profile2"></img>
-
-   <p>
-     johnson's dream come true
-   </p>
-
+<div class="productDetail">
+  <div class="productDetail-left bg-color1">
+     <div class="productDetail-left-bigImage bg-color3">
+        <% if @photos.present? %>
+           <img id="thumb" src="<%= @photos.first.avatar.medium.url %>"></div>
+        <% end %>
+       <div class="productDetail-left-imageList-group">
+         <% if @photos.present? %>
+          <% @photos.each_with_index do |p, index| %>
+           <% if index == 0 %>
+             <div class="productDetail-left-imageList-item productDetail-left-imageList-activeItem bg-color4">
+           <% elsif index == 4 %>
+             <div class="productDetail-left-imageList-item last-item">
+           <% else %>
+             <div class="productDetail-left-imageList-item bg-color4">
+           <% end %>
+           <% if index < 5 %>
+             <%= image_tag p.avatar.medium.url %>
+           <% end %>
+         </div>
+          <% end %>
+         <% end %>
+       </div>
+    </div>
+  <div class="productDetail-right bg-color2"></div>
 </div>

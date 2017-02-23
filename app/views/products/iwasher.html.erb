@@ -1,29 +1,5 @@
-<div class="container">
-  <div class="col-md-12">
-<h2 class="show-title">
-       <div class="show-menu-logo"><%= @product.title%></div>
-</h2>
-<div class="show-menu-tray">
-  <ul class="show-menu-items">
-    <li class="show-menu-item-buy" >
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("购买", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-xs pull-right") %>
-      <% else %>
-      缺货
-      <% end %>
-    </li>
-    <li class="show-menu-item">
-      <%= link_to("技术规格", '#',style: "text-decoration: none;",class:"show-menu-link") %>
-    </li>
-    <li class="show-menu-item">
-      <%= link_to("概览", '#',style: "text-decoration: none;",class:"show-menu-link") %>
-    </li>
-  </ul>
-  </div>
-  <br>
-  <hr style="margin-top:15px">
-</div>
-</div>
+
+<%= render :partial => 'promo_header' %>
 
 <div class="section-content" style="text-align:center">
     <span class="eyebrow">
@@ -60,8 +36,25 @@
      </div>
      <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcv23f7czzj30sg0crwfx.jpg" class="washer-product-profile2"></img>
 
-   <p>
-     johnson's dream come true
-   </p>
+     <img src="https://ww4.sinaimg.cn/large/006tNc79gy1fcxb6vi5b8j30sg05g0th.jpg" class="content">
+
+        <div id="flip">适用于</div>
+     <img id="range" src="https://ww3.sinaimg.cn/large/006tNc79gy1fcxe49o0zzj30sg0u1qat.jpg">
+
+     <img src="https://ww1.sinaimg.cn/large/006tNc79gy1fcxevxylw5j30sg0u3n7t.jpg" class="content">
+
+     <img src="https://ww4.sinaimg.cn/large/006tNc79gy1fcxukiod4lj30sg0yh79u.jpg" class="content" alt="">
+
+     <img src="https://ww1.sinaimg.cn/large/006tNc79gy1fcxun31xbuj30sg0latkm.jpg" class="content" alt="">
+
 
 </div>
+</body>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#range").slideToggle("slow");
+    });
+});
+
+</script>
