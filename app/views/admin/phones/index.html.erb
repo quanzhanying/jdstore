@@ -1,40 +1,40 @@
 <h2> 商品明细 </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("新增产品", new_admin_phone_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">Product Pic</th>
+      <th width="220">Phone Pic</th>
       <th>Name</th>
       <th>Price</th>
       <th width="100"> Options</th>
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
+    <% @phones.each do |phone| %>
       <tr>
         <td>
-          <%= product.id %>
+          <%= phone.id %>
         </td>
         <td>
-          <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <%= link_to phone_path(phone) do %>
+            <% if phone.image.present? %>
+              <%= image_tag(phone.image.thumb.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
           <% end %>
         </td>
         <td>
-          <%= product.title %>
+          <%= phone.title %>
         </td>
         <td>
-          <%= product.price %>
+          <%= phone.price %>
         </td>
         <td>
-          <%= link_to("修改", edit_admin_product_path(product)) %>
+          <%= link_to("修改", edit_admin_phone_path(phone)) %>
         </td>
       </tr>
     <% end %>
