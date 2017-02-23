@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <%= csrf_meta_tags %>
@@ -15,17 +14,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div id="wrap">
-      <div id="main" class="container-fluid">
-        <div class="row">
-          <%= render "common/navbar" %>
-        </div>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+      <div class="container">
+        <%= render "common/navbar" %>
         <%= render "common/flashes" %>
         <%= yield %>
       </div>
-    </div>
-    <%= render "common/footer" %>
+
+      <%= render "common/footer" %>
 
   </body>
 </html>
