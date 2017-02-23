@@ -147,7 +147,7 @@
 .navbar-default .navbar-nav .active>a,
 .navbar-default .navbar-nav .active>a:hover,
 .navbar-default .navbar-nav .active>a:focus {
-  color:#000!important ;
+  color:#EF6C00!important ;
   background: #fff!important;
 }
 
@@ -157,8 +157,9 @@
               width:100%;
               text-align:center;
               padding:15px 0 5px 0;
+              margin: 0!important;
 }
 .container1 a{
-              margin:0 5px;
+              margin: 0;
               font-size:12px;
 }
