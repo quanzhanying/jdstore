@@ -42,3 +42,52 @@
       height: 300px;
     }
   }
+
+//--------------------------------- navbar -------------------------------------
+
+//------- 导航栏 样式 ----------------------
+.navbar-default {
+  background-color: #272727;//背景颜色
+  border-color: #272727;//边框色
+  margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+//------- 导航栏 brand logo -------
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+//-------- 导航栏 brand字体 样式 ----------------------
+.navbar-default .navbar-brand {
+   color: #ffffff;//字体颜色
+   padding: 10px 15px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #f2f2f2;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+
+//-------- 导航栏 链接颜色 ----------------------
+.navbar-default .navbar-nav > li > a{
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+}
+//----------------------------- 以上为 navbar -------------------------------------
