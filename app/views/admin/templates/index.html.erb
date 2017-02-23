@@ -1,44 +1,54 @@
-<div class="col-md-12">
-  <h2> Template List </h2>
-  <div class="group">
-    <%= link_to("Add new template", new_admin_template_path, class: "btn btn-default pull-right") %>
-  </div>
-
-  <br><br><br>
-
-  <table class="table table-bordered">
-    <thead>
+<h2> Product List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_template_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Product Pic</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Version</th>
+      <th>Proportion</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @templates.each do |template| %>
       <tr>
-        <th>#</th>
-        <th>模板</th>
-        <th>描述</th>
-        <th>价格</th>
-        <th>版本</th>
-        <th>比例</th>
-        <th>选项</th>
-        <th>创建日期</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% i = 0 %>
-      <% @templates.each do |template| %>
-      <% i = i + 1 %>
-      <tr>
-        <td><%= i %></td>
-        <td><%= template.title %></td>
-        <td><%= template.description %></td>
-        <td><%= template.price %></td>
-        <td><%= template.version %></td>
-        <td><%= template.proportion %></td>
+        <td>
+          <%= template.id %>
+        </td>
+        <td>
+          <%= link_to template_path(template) do %>
+            <%# if template.image.present? %>
+              <%#= image_tag(template.image.thumb.url, class: "thumbnail") %>
+            <%# else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <%# end %>
+          <% end %>
+        </td>
+        <td>
+          <%= template.title %>
+        </td>
+        <td>
+          <%= template.description %>
+        </td>
+        <td>
+          <%= template.price %>
+        </td>
+        <td>
+          <%= template.version %>
+        </td>
+        <td>
+          <%= template.proportion %>
+        </td>
         <td>
           <%= link_to("Edit", edit_admin_template_path(template)) %>
-          <%= "|" %>
-          <%= link_to("Destroy", admin_template_path(template),method: :delete, data: { confirm: "Are you sure?"} )%>
         </td>
-        <td><%= template.created_at %></td>
       </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-</div>
+    <% end %>
+  </tbody>
+</table>
