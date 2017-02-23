@@ -1,21 +1,15 @@
-<div class="col-md-12 row">
-  <section class="row">
-    <div>
-      <% @products.each do |product| %>
-      <ul class="hp-ul">
-          <a href="/products/<%= product.id %>">
-            <div>
-              <img src="<%= product.image %>" alt="" class="img-thumbnail">
-            </div>
-          </a>
-          <br>
-          <div>
-          <%= product.title %>
-          <%= "¥" %>
-          <%= product.price %>
-        </div>
-      </ul>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
       <% end %>
+      <%= product.title %> ￥ <%= product.price %>
     </div>
-  </section>
-</dvi>
+  <% end %>
+</div>
