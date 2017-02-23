@@ -92,6 +92,74 @@
 }
 //----------------------------- 以上为 navbar -------------------------------------
 
+//-----------------------------   content  ------------------------
+.carousel{
+  margin-bottom: 20px;
+}
+
+.wrap{
+  padding: 30px 50px 50px 50px;
+}
+
+h2{
+  text-align: left;
+}
+
+hr{
+  border-color: #272727;
+}
+
+.thumbnail {
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: none;
+}
+
+.thumbnail .subtitle {
+  font-size: 20px;
+}
+
+.thumbnail .description {
+  font-size: 16px;
+}
+
+.team-member{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.btn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.btn:hover, .btn:focus{
+  border: 1px solid  #595959;
+  background-color:  #595959;
+  color: #ffffff;
+}
+
+.btn a{
+  color: #ffffff;
+}
+
+.btn a:hover,
+.btn a:focus {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.thumbnail img{
+  margin-bottom: 30px;
+}
+//----------------------------- 以上为 content 样式 ---------------------
+
+
+
 //-----------------------------  footer 样式 ------------------------
 
 footer {
