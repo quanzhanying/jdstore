@@ -13,4 +13,28 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap-sprockets
+//= require bootstrap/dropdown
+//= require bootstrap/modal
+
+//= require bootstrap.min
+//= require camera
+//= require cbpFWTabs
+//= require counterup.min
+//= require easing
+//= require jquery.easing.1.3
+//= require jquery.flexslider
+//= require jquery.inview.min
+//= require jquery.min
+//= require jquery.mobile.customized.min
+//= require jquery.swipebox.min
+//= require main
+//= require modernizr
+//= require mousescroll
+//= require move-top
+//= require nav
+//= require waypoints.min
+//= require wow.min
+
 //= require_tree .
