@@ -18,4 +18,8 @@ Rails.application.routes.draw do
        delete :clean
      end
    end
+
+  resources :cart_items
+
+
 end
