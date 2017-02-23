@@ -9,8 +9,48 @@ zh-CN:
         remember_me: "记住登录信息"
         reset_password_token:
         unlock_token:
+      product:
+        title: "项目名称"
+        description: "项目描述"
+        price: "需筹款总额(¥)"
+        image: "封面展示图"
+        price_re: "获得回报的支持金额下限(¥)"
+        description_re: "回报描述"
+        quantity_re: "回报人数上限"
+
     models:
       user: "用户"
+      product: "众筹项目"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "点子邮箱不能为空!"
+              taken: "此邮箱已被占用!"
+              invalid: "邮箱无效!"
+            password:
+              blank: "密码不能为空!"
+              too_short: "密码位数至少6位!"
+            password_confirmation:
+              confirmation: "请确认密码!"
+        product:
+          attributes:
+            title:
+              blank: "众筹项目名称不能为空!"
+            description:
+              blank: "众筹项目描述不能为空!"
+            price:
+              blank: "众筹项目需筹款总额不能为空!"
+            price_re:
+              blank: "获得回报的支持金额下限不能为空!"
+            description_re:
+              blank: "回报描述不能为空!"
+            quantity_re:
+              blank: "回报人数上限不能为空!"
+
+
   devise:
     confirmations:
       confirmed: "恭喜您，注册成功，现在可以登录了"
@@ -108,6 +148,8 @@ zh-CN:
       send_instructions: "几分钟后，您将收到一封解锁帐号的邮件."
       send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封解锁账号的邮件."
       unlocked: "您的帐号已成功解锁，您现在已登录."
+
+
   errors:
     messages:
       already_confirmed: "已经确认，请重新登录."
