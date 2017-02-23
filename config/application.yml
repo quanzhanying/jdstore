@@ -14,9 +14,13 @@ production:
   AWS_SECRET_ACCESS_KEY: "1FKOrMFdcIHpWSx/pHzBSrqM12CMExgG3LDzaVGH"  # 你的 Secret access key
   AWS_REGION: "ap-northeast-1"  # 你的 S3 bucket 的 Region 位置
   AWS_BUCKET_NAME: "fullstack-test"  # 你设定的 bucket name
+  SEND_CLOUD_USER_NAME: "lancaoxiangshe_test_tfd7uL"  # 你的 API_USER
+  SEND_CLOUD_USER_KEY: "umyLU5tWfeMvfvRT"  # 你的 API_KEY
 
 development:
   AWS_ACCESS_KEY_ID: "AKIAJMDVG3EV2LAXR7VA"  # 你的 Access key ID
   AWS_SECRET_ACCESS_KEY: "1FKOrMFdcIHpWSx/pHzBSrqM12CMExgG3LDzaVGH"  # 你的 Secret access key
   AWS_REGION: "ap-northeast-1"  # 你的 S3 bucket 的 Region 位置
   AWS_BUCKET_NAME: "fullstack-test"  # 你设定的 bucket name
+  SEND_CLOUD_USER_NAME: "lancaoxiangshe_test_tfd7uL"  # 你的 API_USER
+  SEND_CLOUD_USER_KEY: "umyLU5tWfeMvfvRT"  # 你的 API_KEY 
