@@ -21,9 +21,11 @@
 }
 
  .navbar-default {
-     background-color: #34495e;//背景颜色
-     border-color: #16a085;//边框色
+     background-color: 0;//背景颜色
+     border-color: 0;//边框色
      margin-bottom: 0;//底部 margin 不撑开距离
+     margin-top: inherit;
+
  }
 
  @media (min-width: 768px) {
@@ -45,13 +47,14 @@
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
    color: #FF6F00;
-   background-color: #FFE0B2;
+
+   background-color: transparent;
  }
 
  .navbar-default .navbar-nav > .open > a,
  .navbar-default .navbar-nav > .open > a:focus,
  .navbar-default .navbar-nav > .open > a:hover {
-     background-color: #FFE0B2;
+     background-color: #34495e;
      color: #212121;
  }
 
@@ -59,4 +62,32 @@
  .table-default{
    width:10cm;
    opacity: 0.8;
+}
+
+
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    padding-left: 10px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    background-color: white;
+}
+
+
+/*footer*/
+.footer {
+  background: #333333;
+  padding: 16px 10px 6px;
+  text-align: center;
+  font-size: 12px;
+  color: #C2C2C2;
+  span {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 24px;
+    line-height: 23px;
+  }
 }

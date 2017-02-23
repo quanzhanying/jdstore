@@ -38,9 +38,12 @@
 }
 
 .thumbnail {
-   border: 0 none;
-   box-shadow: none;
-   margin-top: 60px;
+  position: relative;
+  padding-top: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  background-color: white;
 }
 
 .navbar-default {
@@ -49,15 +52,28 @@
     margin-bottom: 0;//底部 margin 不撑开距离
 }
 
-.footer-wrap {
-    background-color:#363636;
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
+
+.btn-danger {
+    color: #fff;//字体颜色
+    background-color: #EF6C00;//背景颜色
+    border-color: #EF6C00;//边框颜色
 }
 
 
+.slide-text {
+    left: 0;
+    top: 25%;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    text-align: left;
+    padding: 10px 85px;
+}
+
+.slide_style_center {
+    text-align: center !important;
+}
 
 
 
