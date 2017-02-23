@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .newzhongchou-backimg{
   opacity: 0.9;
-  background: url(http://oj8zlumqh.bkt.clouddn.com/image/users_background.jpg) no-repeat center 50%;
+  background: url(http://oj8zlumqh.bkt.clouddn.com/image/users_background.jpg);
+  background-size:cover;
 }
 
 .mainbody{
