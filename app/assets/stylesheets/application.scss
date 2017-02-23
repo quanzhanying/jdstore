@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.custab td{
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+
+  transition: 0.5s;
+}
+
+.thumb {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+.medium {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #ccc;
+}
+
+.origin{
+  width: 800px;
+  height: 800px;
+  border: 1px solid #ccc;
+}
