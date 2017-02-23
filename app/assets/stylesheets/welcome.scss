@@ -2,19 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.thumbnail:hover{
+  border-color: blue;
+}
+.person2{
+  border-color: red;
+}
 .person{
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
 
 }
-.person .thumbnail>img{
+.row .thumbnail>img{
   width:15%;
   margin-left: 1100px;
 }
 
-.person-list{
 
-}
 #myCarousel{
   margin-top: -20px;
   margin-left: -15px;

@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 root 'welcome#index'
 
 resources :products do
-
+ resources :reviews
   collection do
+    get :shop1
     get :search
     get :menu1
     get :menu2

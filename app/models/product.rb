@@ -6,5 +6,6 @@ class Product < ApplicationRecord
   validates :quantity, numericality: {greater_than: -1 , message: "商品上架数量不能小于0"}
   validates :price, numericality: {greater_than: 0, message: "商品上架价格不能低于0"}
 
-  has_many :comments
+  #has_many :comments
+  has_many :reviews
 end

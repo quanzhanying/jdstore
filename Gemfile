@@ -37,6 +37,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'aasm'
 gem 'ransack'
+
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'

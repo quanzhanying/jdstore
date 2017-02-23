@@ -63,11 +63,16 @@
 </div>
 </body>
 
-<h3 class="comments_title">
-      <%= @product.comments.count %> Comments
+<div class="row review">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="reviews_title">
+      <%= @product.reviews.count %> Reviews
     </h3>
     <hr>
-    <div id="comments">
-      <%= render @product.comments%>
-      <%= render "comments/form"%>
+    <div id="reivews">
+      <%= render @product.reviews%>
+      <hr>
+      <%= render "reviews/form"%>
     </div>
+  </div>
+</div>

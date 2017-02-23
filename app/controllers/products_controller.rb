@@ -21,6 +21,12 @@ class ProductsController < ApplicationController
 
   end
 
+def shop1
+  @products1=Product.where(kind: "食品")
+  @products2=Product.where(kind: "水果")
+  @products3=Product.where(kind: "蔬菜")
+end
+
 def search_fruit
   @products=Product.where(kind: "水果")
 end
