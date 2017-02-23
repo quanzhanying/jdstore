@@ -1,0 +1,44 @@
+<div class="col-md-12">
+  <h2> Template List </h2>
+  <div class="group">
+    <%= link_to("Add new template", new_admin_template_path, class: "btn btn-default pull-right") %>
+  </div>
+
+  <br><br><br>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>模板</th>
+        <th>描述</th>
+        <th>价格</th>
+        <th>版本</th>
+        <th>比例</th>
+        <th>选项</th>
+        <th>创建日期</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% i = 0 %>
+      <% @templates.each do |template| %>
+      <% i = i + 1 %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= template.title %></td>
+        <td><%= template.description %></td>
+        <td><%= template.price %></td>
+        <td><%= template.version %></td>
+        <td><%= template.proportion %></td>
+        <td>
+          <%= link_to("Edit", edit_admin_template_path(template)) %>
+          <%= "|" %>
+          <%= link_to("Destroy", admin_template_path(template),method: :delete, data: { confirm: "Are you sure?"} )%>
+        </td>
+        <td><%= template.created_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
