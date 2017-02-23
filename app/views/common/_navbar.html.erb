@@ -9,9 +9,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active">
-                <%= link_to("宝贝", products_path) %>
+                <%= link_to("母婴全球汇", products_path) %>
               </li>
             </ul>
+            <div class="fl ml40 mt10">
+              <div class="search clearfix pr">
+
+                <form action="/products/search" accept-charset="UTF-8" method="get">
+                  <input name="utf8" type="hidden" value="&#x2713;" />
+                  <input class="search-input fl w400" type="text" class="form-control" name="query_string" value="" placeholder="输入你要搜索的商品">
+                  <button type="submit" class="search-button pa tc">
+                    <i class="fa fa-search col-red"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
             <ul class="nav navbar-nav navbar-right">
               <li>
                 <%= link_to carts_path do %>
