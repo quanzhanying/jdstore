@@ -12,33 +12,36 @@
       </div>
       <h2> 众筹项目信息 </h2>
       <%= simple_form_for [:admin, @product] do |f| %>
-        <div class="group">
-          <%= f.input :title, autofocus: true %>
+        <div class="group_zhongchou">
+          <div class="group">
+            <%= f.input :title, autofocus: true %>
+          </div>
+          <div class="group">
+            <%= f.input :description %>
+          </div>
+          <div class="group">
+            <%= f.input :price %>
+          </div>
+          <div class="group">
+            <%= f.input :image, as: :file %>
+          </div>
         </div>
-        <div class="group">
-          <%= f.input :description %>
+
+        <div class="group_zhongchou_re">
+          <div class="group">
+              <%= f.input :price_re %>
+          </div>
+          <div class="group">
+              <%= f.input :description_re %>
+          </div>
+          <div class="group">
+              <%= f.input :quantity_re %>
+          </div>
         </div>
-        <div class="group">
-          <%= f.input :price %>
-        </div>
-        <div class="group">
-          <%= f.input :image, as: :file %>
-        </div>
+
         <div class="create-product-btn">
           <%= f.submit "创建众筹", class: "btn btn-primary", data: { disable_with: "提交中..." } %>
         </div>
-
-        <div class="group">
-            <%= f.input :price_re %>
-        </div>
-        <div class="group">
-            <%= f.input :description_re %>
-        </div>
-
-        <div class="group">
-            <%= f.input :quantity_re %>
-        </div>
-
       <% end %>
     </div>
   </div>

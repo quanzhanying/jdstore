@@ -39,7 +39,7 @@
   transition: 0.5s;
   text-align: left;
   width: 900px;
-  height: 600px;
+  height: 550px;
   margin:0 auto;
   margin-top: 20px;
 }
@@ -49,9 +49,22 @@
 }
 .admin-product-info h2{
   text-align: center;
-  margin-top: 30px;
+  margin: 30px 0 20px 0;
+}
+
+.group_zhongchou{
+  float: left;
+  padding-right: 80px;
+  width: 500px;
+  border-right: 2px dashed #dcdcdc;
+}
+
+.group_zhongchou_re{
+  width: 275px;
+  float: right;
 }
 
 .create-product-btn{
   text-align: center;
+  padding: 330px 380px;
 }
