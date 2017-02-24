@@ -102,6 +102,7 @@ GEM
     mini_magick (4.6.0)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    modal (0.1.2)
     multi_json (1.12.1)
     nio4r (1.2.1)
     nokogiri (1.6.8)
@@ -214,6 +215,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   mini_magick
+  modal
   puma (~> 3.0)
   rails (~> 5.0.0)
   ransack
