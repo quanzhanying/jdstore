@@ -21,6 +21,9 @@
           <th>
             数量
           </th>
+          <th>
+            操作选项
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -41,6 +44,11 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+            </td>
+            <td>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <i class="fa fa-trash"></i>
+                <% end %>
             </td>
           </tr>
         <% end %>
