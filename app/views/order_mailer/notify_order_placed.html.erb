@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>
+      Order Details <br>
+      <small>
+        <%= link_to("Order Link", order_url(@order.token)) %>
+      </small>
+    </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="70%">Product Details</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
+            </td>
+            <td>
+              <%= product_list.quantity * product_list.product_price %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total group clearfix">
+      <h4 class="pull-right">
+        Total <%= @order.total %> Dollar
+      </h4>
+     </div>
+
+     <hr>
+
+     <h2> Mail infos </h2>
+
+     <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <td> Purchaser </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.billing_name %> - <%= @order.billing_address %>
+          </td>
+        </tr>
+        <tr>
+          <td> Address </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

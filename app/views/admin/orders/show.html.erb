@@ -1,0 +1,71 @@
+<div class="row">
+   <div class="col-md-12">
+
+    <h2> Order Details (<%= render_order_paid_state(@order) %>) </h2>
+
+    <%= render "admin/orders/state_option", order: @order %>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="80%">Product Details</th>
+          <th>Unit Pirce</th>
+          <th>quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+       Sum <%= @order.total %> Dollar
+       </span>
+     </div>
+
+     <hr>
+
+     <h2> Buyer Information </h2>
+
+     <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            Buyer
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.billing_name %> - <%= @order.billing_address %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Recipient
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
