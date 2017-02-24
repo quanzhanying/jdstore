@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.carousel {
+  width: 580px;
+  margin: 0 auto;
+}
+.carousel .item {
+  height: 400px;
+}
+
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #F25F5C;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+
+.navbar {
+  width: 100%; /*铺满*/
+  font-size: 13px;
+}
+
+#search-id{
+  width: 300px;
+  margin-top: 8px ;
+  margin-left: 30px;
+}
+
+.search-info-title{
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+.pull-right{
+  margin-right: 200px;
+
+}
