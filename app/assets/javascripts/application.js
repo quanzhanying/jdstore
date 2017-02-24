@@ -13,12 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-<<<<<<< HEAD
 //= require bootstrap
-=======
+//= require_tree .
 
->>>>>>> avatar
+
 
 $(document).ready(function () {
   $('#myCarousel').carousel({
