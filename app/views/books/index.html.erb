@@ -1,0 +1,14 @@
+<div class="row">
+  <% @books.each do |book| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to book_path(book) do %>
+        <% if book.image.present? %>
+          <%= image_tag(book.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= book.title %> ¥ <%= book.price %>
+    </div>
+  <% end %>
+</div>
