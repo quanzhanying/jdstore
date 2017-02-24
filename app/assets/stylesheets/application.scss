@@ -18,8 +18,12 @@
 @import "font-awesome";
 
 
+
 .bg-color1 {
-  background: black;
+  background-color: black;
+}
+.bg-color2 {
+  background-color: #f2f2f2;
 }
 .navbar {
   width: 100%;
@@ -36,13 +40,13 @@
   width: 187.5px;
   height: 20px;
   margin: 20px 5px;
-  color: white;
+  color: #c6c6c6;
   text-align: center;
   line-height: 20px;
 }
 .navbarContent-LastItem {
   margin-right: 0;
-  color: white;
+  color: #c6c6c6;
 
 }
 .carousel {
@@ -57,7 +61,7 @@
 }
 .showList {
   width: 100%;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 .showList-item {
   float: left;
@@ -65,13 +69,43 @@
   border-color :white;
   padding: 0;
 }
+
 .showList-item-content {
   margin-right: 1px;
   height: 100%;
-  background-image: url("/image/iWash.jpg");
 }
+.showList-item-content img {
+  height: 200px;
+  width: 100%;
+}
+
 
 .showList-item-lastContent {
   margin-right: 0;
-  background-image: url("/image/house.jpg");
 }
+.showList-item-lastContent img {
+  height: 200px;
+  width: 100%;
+}
+
+.noBullets{
+list-style:none;
+padding:auto;
+
+}
+
+#last-footer h5{
+text-align:center;
+
+}
+#last-footer {
+margin-bottom: 0;
+background-color: black;
+}
+
+.footlinks li a{
+text-align:center;
+margin-left:5px ;
+color: #c6c6c6;
+}
+.subscribe li{padding:3px;}
