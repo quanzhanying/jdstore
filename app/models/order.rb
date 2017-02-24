@@ -6,7 +6,6 @@ class Order < ApplicationRecord
   end
 
   belongs_to :user
-  has_many :posts
   has_many :product_lists
 
   validates :billing_name, presence: true
