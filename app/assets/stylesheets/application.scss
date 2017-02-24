@@ -17,3 +17,79 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+ body {
+    min-height: 100%;
+    position: relative;
+    background-color: rgb(239, 239, 239);
+  }
+
+  /* common flash */
+
+  div.alert {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 0;
+  }
+
+  /* common navbar */
+
+ .navbar-default {
+   margin-bottom: 0;
+   background: rgb(94, 136, 165);
+     .navbar-header {
+       margin-left: 9%;
+       a {
+         font-size: 20px;
+         color: #fff;
+       }
+     }
+     .navbar-nav li a {
+       color: #fff;
+       font-size: 16px;
+       transition: 0.35s;
+     }
+     .navbar-nav li a:hover {
+       color: #db8e41;
+       text-decoration: none
+     }
+
+     .navbar-nav .dropdown-menu {
+       padding-bottom: 0;
+       padding-top: 0;
+       a {
+         text-align: center;
+         color: #000;
+       }
+       li.divider:last-child {
+         display: none;
+       }
+     }
+     .login {
+       border: 1px solid #fff;
+       margin-top: 12px;
+       padding: 3px 17px 3px 17px;
+       margin-right: 130px;
+       border-radius: 15px;
+     }
+
+  }
+
+ /*  SEARCH-BAR */
+
+ .products-search-form {
+   margin-top: 10px;
+   padding-left: 20px;
+   width: 290px;
+   .search-bar {
+     position: relative;
+     margin-top: 10px;
+     display: inline-block;
+     padding-right: 40px;
+
+     .search-bar-input  {
+       min-width: 300px;
+       transition: 0.35s;
+     }
+   }
+ }
