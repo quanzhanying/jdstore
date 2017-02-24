@@ -20,11 +20,11 @@
         <% if @photos.present? %>
            <img id="thumb" src="<%= @photos.first.avatar.medium.url %>"></div>
         <% end %>
-       <div class="productDetail-left-imageList-group">
+       <div class="productDetail-left-imageList">
          <% if @photos.present? %>
           <% @photos.each_with_index do |p, index| %>
            <% if index == 0 %>
-             <div class="productDetail-left-imageList-item productDetail-left-imageList-activeItem bg-color4">
+             <div class="productDetail-left-imageList-item active bg-color4">
            <% elsif index == 4 %>
              <div class="productDetail-left-imageList-item last-item">
            <% else %>
@@ -38,5 +38,23 @@
          <% end %>
        </div>
     </div>
-  <div class="productDetail-right bg-color2"></div>
+  <div class="productDetail-right bg-color2">
+     <h3 class="product-title"><%= @product.title %></h3>
+     <p class="product-info"> <%= @product.description %></p>
+     <p class="product-model">
+       <span class="pl20">型号</span><span class="pl20"><%= @product.model %></span></p>
+     <p class="product-price bg-gray">
+       <span class="pl20">售价</span><span class="color-red pl20">￥<%= @product.price %></span>
+     </p>
+     <p class="intro-text-service">
+        <span class="pl20">运费</span><span class="pl20">满299元包邮 | 正品保证</span>
+      </p>
+     <p class="product-quantity">
+       <span class="pl20">库存</span><span class="pl20"> <%= @product.quantity %></span>
+     </p>
+     <div class="purchase" style="padding-top:30px;padding-left:20px;">
+       <%= link_to("加入购物车", add_to_cart_product_path(@product),method: :post, :class => "btn btn-lg btn-danger") %>
+     </div>
+  </div>
+
 </div>

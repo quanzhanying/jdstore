@@ -17,7 +17,6 @@
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require bootstrap/modal
-//= require bootstrap
 //= require_tree .
 
 $(document).ready(function(){
@@ -33,7 +32,7 @@ $(document).ready(function(){
   }
  })
 
-  $('.productDetail-left-imageList-item').mouseover(function(){
+   $(document).on('click','.productDetail-left-imageList-item',function(){
     var src = $(this).find('img').attr('src')
     $('.productDetail-left-bigImage').find('img').attr('src', src)
   })
