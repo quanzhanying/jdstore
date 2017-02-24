@@ -27,6 +27,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
+  end
+
   protected
 
   def validate_search_key
