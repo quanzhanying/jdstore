@@ -7,9 +7,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-left: 400px; padding-top: 0px;">
+
             <ul class="nav navbar-nav">
               <li class="active">
-                <%= link_to("Haute Couture", products_path) %>
+                <%= link_to("Haute Couture", "/") %>
               </li>
             </ul>
 
@@ -31,8 +32,6 @@
             </ul>
 
 
-
-
             <ul class="nav navbar-nav navbar-right">
               <li>
                  <%= link_to carts_path do   %>
@@ -49,24 +48,23 @@
                        Hi!, <%= current_user.email %>
                        <b class="caret"></b>
                     </a>
+
                     <ul class="dropdown-menu">
                       <% if current_user.admin? %>
-                <li>
-                  <%= link_to("Admin panel", admin_products_path ) %>
-                </li>
-              <% end %>
-              <li>
-                <%= link_to("Private Order List", account_orders_path ) %>
-              </li>
-              <li>
-                <%= link_to("Logout", destroy_user_session_path, method: :delete ) %>
-              </li>
-                    </ul>
+                        <li>
+                          <%= link_to("Admin panel", admin_products_path ) %>
+                        </li>
+                      <% end %>
+                         <li>
+                           <%= link_to("Private Order List", account_orders_path ) %>
+                         </li>
+                         <li>
+                            <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                         </li>
+                     </ul>
                   </li>
                 <% end %>
-
-
-            </ul>
+          </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
