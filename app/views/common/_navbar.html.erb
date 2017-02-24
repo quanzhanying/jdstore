@@ -14,7 +14,7 @@
         <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' > 有无 </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-middle">
         <li class="active"><a href="/products">全部爱意</a></li>
 
       </ul>
@@ -53,60 +53,41 @@
        </ul>
     </div>
 
-</nav>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="loginmodal-container">
+           <h2>Log in</h2>
+           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+             <div class="form-inputs">
+               <%= f.input :email, required: false, autofocus: true %>
+               <%= f.input :password, required: false %>
+               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+             </div>
+             <div class="form-actions">
+               <%= f.button :submit, "Log in" %>
+             </div>
+           <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h2>Sign up</h2>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+              <%= f.input :password_confirmation, required: true %>
+            </div>
+            <div class="form-actions">
+                <%= f.button :submit, "Sign up" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog" role="document">
-    <div class="loginmodal-container">
-       <h2>Log in</h2>
-       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-         <div class="form-inputs">
-           <%= f.input :email, required: false, autofocus: true %>
-           <%= f.input :password, required: false %>
-           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-         </div>
-         <div class="form-actions">
-           <%= f.button :submit, "Log in" %>
-         </div>
-       <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog" role="document">
-    <div class="loginmodal-container">
-       <h2>Log in</h2>
-       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-         <div class="form-inputs">
-           <%= f.input :email, required: false, autofocus: true %>
-           <%= f.input :password, required: false %>
-           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-         </div>
-         <div class="form-actions">
-           <%= f.button :submit, "Log in" %>
-         </div>
-       <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="loginmodal-container">
-      <h2>Sign up</h2>
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
-        </div>
-        <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>

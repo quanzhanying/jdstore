@@ -21,11 +21,12 @@
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
-  padding: 30px;
-  max-width: 350px;
+  padding: 10px;
+  max-width: 500px;
   width: 100% !important;
-  background-color: #F7F7F7;
-  margin: 0 auto;
+  height:450px;
+  background-color: #b9b9b9;
+  margin: 100px;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -168,11 +169,7 @@
    line-height: 80px;//文字行高
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #FF6F00;//鼠标放置在链接上的文字颜色
-  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
-}
+
 
 .navbar-default .navbar-nav > li > a{
   color: #EF6C00;
@@ -200,8 +197,8 @@
 .navbar-brand > img {
     display: inline-block;	//图片和链接文字显示在同一行
     margin-right: 10px; //图片和链接文字拉开一点距离
-    width: 32px; //定制图片宽度
-    height: 32px; //定制图片高度
+    width: 50px; //定制图片宽度
+    height: 50px; //定制图片高度
 }
 .container-fluid{
   background-color: #B0BEC5;
@@ -374,8 +371,50 @@ a  {
 }
 
 input[type="submit"] {
-    margin-left: -10px;
+    margin-left: 0px;
     height: 50px;
     width: 50px;
-    margin-top: -250px;
+
+}
+
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 40px;
+    line-height: 20px;
+    height: 50px;
+}
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #6b9a98;
+  cursor: pointer;
+}
+/*默认样式，主要是position:fixed实现屏幕绝对定位*/
+#gotoTop{
+  display:none;
+  position:fixed;
+  top:75%;
+  left:50%;
+  cursor:pointer;
+  margin-top:-50px;
+  margin-left:520px;
+  padding:9px 4px;
+  width:20px;
+  text-align:center;
+  border:1px solid #e0e0e0;
+  background:#fff;
+}
+/*用CSS表达式(expression)来实现ie6下position:fixed效果*/
+#gotoTop{
+  _position:absolute;
+  _top:expression(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px")}
+/*鼠标进入的反馈效果*/
+#gotoTop.hover{
+  background:#5CB542;
+  color:#fff;
+  text-decoration:none;
 }
