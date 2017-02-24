@@ -1,0 +1,24 @@
+<h3>所有订单<h3>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>订单日期</th>
+        <th>订单姓名</th>
+        <th>收货人姓名</th>
+        <th>收货地址</th>
+        <th>总价</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% @orders.each do |order|%>
+        <tr>
+            <td><%= order.created_at %></td>
+            <td><%= order.billing_name %></td>
+            <td><%= order.shipping_name%></td>
+            <td><%= order.shipping_address%></td>
+            <td><%= order.total%></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

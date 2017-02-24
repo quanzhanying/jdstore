@@ -1,0 +1,102 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">电子商城 </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <%= link_to("Products", products_path) %>
+            </li>
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li>
+                 <%= link_to carts_path do  %>
+                    购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                 <% end %>
+               </li>
+
+                <% if !current_user %>
+                    <li><%= link_to("注册", new_user_registration_path) %> </li>
+                    <!-- <li><%= link_to("登入", new_user_session_path) %></li> -->
+                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <% else %>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          你好!, <%= current_user.email %>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <% if current_user.admin? %>
+                          <li>
+                              <%= link_to("Admin 选单", admin_products_path ) %>
+                          </li>
+                        <% end %>
+                          <li><%= link_to('查看订单', account_orders_path)%></li>
+                          <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
+                          <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                      </ul>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+<div class="header">
+  <div class="headertop_desc">
+    <div class="call">
+       <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+    </div>
+    <div class="account_desc">
+      <ul>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Delivery</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#">My Account</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="header_top">
+    <div class="logo">
+      <a href="index.html"><%=image_tag("logo.png")  %></a>
+
+    </div>
+      <div class="cart">
+           <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
+            <ul class="dropdown">
+            <li>you have no items in your Shopping cart</li>
+        </ul></div></p>
+      </div>
+      <script type="text/javascript">
+    function DropDown(el) {
+      this.dd = el;
+      this.initEvents();
+    }
+    DropDown.prototype = {
+      initEvents : function() {
+        var obj = this;
+        obj.dd.on('click', function(event){
+          $(this).toggleClass('active');
+          event.stopPropagation();
+        });
+      }
+    }
+    $(function() {
+      var dd = new DropDown( $('#dd') );
+      $(document).click(function() {
+        // all dropdowns
+        $('.wrapper-dropdown-2').removeClass('active');
+      });
+    });
+  </script>
+ <div class="clear"></div>
+</div>

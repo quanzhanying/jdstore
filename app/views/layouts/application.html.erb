@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>电子商城</title>
     <%= csrf_meta_tags %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery-1.7.2.min"%>
+    <%= javascript_include_tag "move-top"%>
+    <%= javascript_include_tag "easing"%>
+    <%= javascript_include_tag "startstop-slider"%>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+        <div class="container">
+            <%= render "common/navbar" %>
+            <%= render "common/flashes" %>
+            <%= yield %>
+        </div>
+
+        <%= render "common/footer" %>
+
+    </body>
 </html>

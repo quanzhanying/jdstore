@@ -9,3 +9,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( jquery-1.7.2.min.js )
+Rails.application.config.assets.precompile += %w( move-top.js )
+Rails.application.config.assets.precompile += %w( startstop-slider.js )
+Rails.application.config.assets.precompile += %w( easing.js )
