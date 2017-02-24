@@ -1,7 +1,7 @@
 <div class="col-sm-3" style="margin-bottom: 25px;">
        <div class="responsive">
-         <div class="img">
-           <%= link_to chef_path(chef) do %>
+         <div class="image">
+           <%= link_to chef_path(chef) do %></i>
              <% if chef.photos.present? %>
                <%= image_tag(chef.photos[0].image.thumb.url, class: "thumbnail") %>
              <% else %>
@@ -10,6 +10,8 @@
            <% end %>
          </div>
        </div>
-     <div class="desc"><%= chef.name %>
-      <img src='<%= image_url 'thumbs-up-hand-symbol_1.png' %>'> <%= chef.followers.count %></div>
+     <div class="desc"><%= link_to(chef.name, chef_path(chef), :style => "color: black" ) %></div>
+     <br>
+    <div class="position"><%= chef.position %>, <%= chef.city %></div>
+      <!-- <img src='<%#= image_url 'thumbs-up-hand-symbol_1.png' %>'> <%#= chef.followers.count %> -->
 </div>

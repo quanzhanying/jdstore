@@ -32,51 +32,42 @@
     </h2>
     <div style="height: 100px;">
       <p>
+        <%= @chef.position %> <br>
         <%= simple_format(@chef.description) %>
       </p>
     </div>
-    <div class="style">
-      <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> <%= @chef.city %>
+    <div style="margin-top: 30px;">
+      <div class="style">
+        <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> <%= @chef.city %>
+        <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
+      </div>
+
+
     </div>
 
-    <div class="style">
-      <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
-    </div>
-<div class="row">
-<div class='col-sm-6'>
-    <div class="chef-follow">
-      <% if current_user.has_follow?(@chef) %>
-        <%= link_to unfollow_chef_path(@chef), :method => :post do %>
-          <i class="fa fa-thumbs-up fa-lg" style="color:red" aria-hidden="true" ></i>
-        <% end %>
-      <% else %>
-        <%= link_to follow_chef_path(@chef), :method => :post do %>
-            <i class="fa fa-thumbs-o-up fa-lg" style="color:red" aria-hidden="true" ></i>
-        <% end %>
-      <% end %>
-      <%= @chef.followers.count %>
-    </div>
-</div>
-</div>
 
-<div>
-  <div class="row" style="margin-top: 10px;">
-          <div class='col-sm-6'>
-              <div class="form-group">
-    <%= simple_form_for  current_cart do |f| %>
-      <%= f.input :book_date, as: :date, start_year: Date.today.year,
-              end_year: Date.today.year + 1, label: false %>
-      <%= f.submit "预定", data: {disable_with: "Submiting..." } , class: "btn btn-primary btn-success"%>
-    <% end %>
-  </div>
-</div>
+        <div class="row" style="margin-top: 10px;">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                <%= simple_form_for  current_cart do |f| %>
+                  <%= f.input :book_date, as: :date, start_year: Date.today.year,
+                    end_year: Date.today.year + 1, label: false %>
+                    <%= f.submit "预定私厨", data: {disable_with: "Submiting..." } ,
+                        class: "btn  btn-success"%>
+                <% end %>
+                </div>
+            </div>
+          </div>
 
-</div>
-    <div class="pull-right">
-      <% if !current_user.admin? %>
-        <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% end %>
+          <% if current_cart.book_date.present? %>
+          <div class="pull-right">
+            <% if !current_user.admin? %>
+              <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-danger") %>
+            <% end %>
+          </div>
+          <% end %>
+
+          <hr style="margin-top: 50px;">
+          <div>SHFOEISHF</div>
     </div>
-  </div>
-</div>
 </div>

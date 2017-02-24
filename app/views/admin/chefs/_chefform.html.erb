@@ -6,6 +6,9 @@
     <%= f.input :description, :label => "简介"  %>
   </div>
   <div class="group">
+    <%= f.input :position, :label => "身份／职位"  %>
+  </div>
+  <div class="group">
     <%= f.input :style, :collection => ['法国风味', '意大利风味', '南洋风味', '综合'],
                           :label => "擅长的菜系" %>
   </div>
@@ -14,7 +17,6 @@
                           :label => "城市" %>
   </div>
   <div class="group">
-
     <%= f.collection_radio_buttons :chef_level_id, [[1, ' 一级厨师 '] ,[2, ' 二级厨师 '], [3, ' 三级厨师 ']],
                          :first, :last, :class => "collection_radio_buttons icon-star" %>
   </div>

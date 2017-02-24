@@ -69,7 +69,7 @@ class Admin::ChefsController < ApplicationController
 
   private
   def chef_params
-    params.require(:chef).permit(:name, :description, :chef_level_id, :style, :image, :is_hidden, :phone, :city)
+    params.require(:chef).permit(:name, :description, :chef_level_id, :style, :image, :is_hidden, :phone, :city, :position)
   end
 
 end
