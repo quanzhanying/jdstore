@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   namespace :admin do
-    resources :products, :phones, :books, :foods
+    resources :products
+    resources :phones
+    resources :books
+    resources :foods
     resources :orders do
       member do
         post :cancel
