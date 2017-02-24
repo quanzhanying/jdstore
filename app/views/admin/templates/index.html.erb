@@ -12,7 +12,7 @@
       <th>Price</th>
       <th>Version</th>
       <th>Proportion</th>
-      <th width="100"> Options</th>
+      <th width="150"> Options</th>
     </tr>
   </thead>
   <tbody>
@@ -47,6 +47,8 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_template_path(template)) %>
+          <%= "|" %>
+          <%= link_to("Destroy", admin_template_path(template),method: :delete, data: { confirm: "Are you sure?"} )%>
         </td>
       </tr>
     <% end %>
