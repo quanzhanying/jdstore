@@ -1,6 +1,6 @@
-<h2> New Product </h2>
+<h2> Edit Template </h2>
 
-<%= simple_form_for [:admin,@product] do |f| %>
+<%= simple_form_for [:admin,@template] do |f| %>
 
   <div class="group">
     <%= f.input :title %>
@@ -11,15 +11,15 @@
   </div>
 
   <div class="group">
-    <%= f.input :quantity %>
-  </div>
-
-  <div class="group">
     <%= f.input :price %>
   </div>
 
   <div class="group">
-    <%= f.input :image, as: :file %>
+    <%= f.input :version %>
+  </div>
+
+  <div class="group">
+    <%= f.input :proportion %>
   </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>

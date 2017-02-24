@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6">
+    <%# if @template.image.present? %>
+      <%#= image_tag(@template.image.medium.url, class: "thumbnail") %>
+    <%# else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <%# end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @template.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @template.description %>
+      </p>
+    </div>
+    <div> 版本 : <%= @template.version %> </div>
+    <div> 比例 : <%= @template.proportion %> </div>
+
+    <div class="template-price"> ￥ <%= @template.price %> </div>
+    <div class="pull-right">
+      <%= link_to("加入购物车", add_to_cart_template_path(@template), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,31 @@
-<div class="col-md-4 col-md-offset-4">
-  <h2> Edit Product </h2>
+<h2> Edit Product </h2>
 
-  <%= render "form" %>
+<%= simple_form_for [:admin,@product] do |f| %>
 
-</div>
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <% if @product.image.present? %>
+   <span>目前商品图</span> <br>
+   <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+  <div class="group">
+    <%= f.input :image, as: :file %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>
