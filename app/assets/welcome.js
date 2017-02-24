@@ -16,3 +16,7 @@ Credits: Bootstrap, jQuery, TouchSwipe, Animate.css, FontAwesome
 // Curently there are no option available.
 
 $('#bootstrap-touch-slider').bsTouchSlider();
+
+$(document).on('click', '#gotop', function () {
+  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+})
