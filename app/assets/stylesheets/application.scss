@@ -20,13 +20,13 @@
   border-radius: 0;//圆角为0
 }
 
+/*header*/
  .navbar-default {
-     background-color: 0;//背景颜色
-     border-color: 0;//边框色
+     background-color: #3d3d3d;//背景颜色
+     border-color: #3d3d3d;//边框色
      margin-bottom: 0;//底部 margin 不撑开距离
-     margin-top: inherit;
-
  }
+
 
  @media (min-width: 768px) {
      .navbar {
@@ -34,30 +34,58 @@
      }
  }
 
+/*JDStore*/
+ .navbar-default .navbar-brand {
+    color: #07b5a6;//字体颜色
+    padding: 10px 15px;//上下10px,左右15px
+    line-height: 30px;//文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #ffffff;//鼠标放置在链接上的文字颜色
+   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+/*购物车*/
  .navbar-default .navbar-nav > li > a{
-   color: #EF6C00;
+   color: #07b5a6;
  }
 
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
-   color: #FF6F00;
+   color: #ffffff;
    background-color: transparent;
  }
+
+ /*product*/
+
+ .nav .navbar-nav > li > .active > a {
+   color: #07b5a6;
+   background-color: transparent;
+ }
+
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
-   color: #FF6F00;
-
+   color: #ffffff;
    background-color: transparent;
  }
 
- .navbar-default .navbar-nav > .open > a,
- .navbar-default .navbar-nav > .open > a:focus,
- .navbar-default .navbar-nav > .open > a:hover {
-     background-color: #34495e;
-     color: #212121;
+
+
+/*button*/
+ .btn-danger {
+     color: #fff;//字体颜色
+     background-color: #07b5a6;//背景颜色
+     border-color: #07b5a6;//边框颜色
  }
 
+ .btn-danger:hover {
+     color: #fff;//字体颜色
+     background-color: #058275;//背景颜色
+     border-color: #058275;//边框颜色
+ }
 
  .table-default{
    width:10cm;
