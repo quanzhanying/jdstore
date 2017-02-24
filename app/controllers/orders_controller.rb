@@ -60,7 +60,4 @@ class OrdersController < ApplicationController
 	params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
    end
 
-   def test
-   end
-	
 end
