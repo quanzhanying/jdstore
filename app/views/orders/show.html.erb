@@ -84,6 +84,26 @@
         </div>
     <% else %>
         <p class="text-center">此订单已完成付款</p>
+        <%= link_to("去评论", new_order_post_path(@order), class: "btn btn-default pull-right")%>
         <% end %>
     </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>文章内容</th>
+                <th>发表者</th>
+                <th>发表时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.content %></td>
+                <td><%= post.user.email %></td>
+                <td><%= post.created_at %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>
