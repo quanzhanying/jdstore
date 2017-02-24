@@ -84,6 +84,7 @@
         </div>
     <% else %>
         <p class="text-center">此订单已完成付款</p>
+        <%= link_to("去评论", new_order_post_path(@order), class: "btn btn-default pull-right")%>
         <% end %>
     </div>
 </div>
