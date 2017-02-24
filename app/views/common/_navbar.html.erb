@@ -1,0 +1,146 @@
+<!--<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"> JDstrore</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to("Products", products_path) %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+            购物车<i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %>)
+          <% end %>
+        </li>
+        <% if !current_user %>
+          <li><%= link_to("注册", new_user_registration_path) %> </li>
+          <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Hi!,<%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li><%= link_to("Admin 选单", admin_products_path)%></li>
+              <% end %>
+              <li>
+               <%= link_to("个人订单列表", account_orders_path ) %>
+             </li>
+              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>-->
+
+<html>
+  <head>
+
+    <style>
+      .center {
+       width: auto;
+       display: table;
+       margin-left: auto;
+       margin-right: auto;
+      }
+      .wel-bg-img{
+      background-image:url("https://ww2.sinaimg.cn/large/006tNbRwgy1fclf06qp4lj31hc0zktjj.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-style: none;
+      margin: 30px 10px 10px;
+      }
+
+
+      .move_home{
+        position:relative;
+        left:30px;
+      }
+
+      .move_tite{
+        position:fixed;/*绝对定位 居中*/
+        left:50%;
+        right:50%;
+      }
+      .move_shopping{
+        position:relative;
+        left:-30px;
+      }
+    </style>
+  </head>
+
+  <body >
+
+    <div class="container-fulid ">
+      <div class="row">
+        <div class="navbar navbar-none " role="navigation">
+
+          <div class="navbar-header navbar-left move_home" >
+            <span class="navbar-brand glyphicon glyphicon-home dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-hidden="true"></span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+             <li><%= link_to("HOME", welcome_index_path) %></li>
+             <li><%= link_to("SHOP", products_path) %></li>
+             <li><a href="#">ABOUT</a></li>
+             <li><a href="#">BLOG</a></li>
+             <li role="separator" class="divider"></li>
+             <li><a href="#">HELP</a></li>
+           </ul>
+          </div>
+
+          <div class="navbar-header move_tite">
+            <ul class="nav navbar-nav ">
+              <li >
+                <h2 class="font-family: GoodDogRegular"><%= link_to("CROWN", welcome_index_path) %></h2>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-header navbar-right move_shopping">
+            <span class="navbar-brand glyphicon glyphicon-user dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-hidden="true"></span>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+              <% if !current_user %>
+                <li><%= link_to("Sign up", new_user_registration_path) %> </li>
+                <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+              <% else %>
+                <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hi!,<%= current_user.email %>
+                  </a>
+                  <% if current_user.admin? %>
+                    <li><%= link_to("Admin 选单", admin_products_path)%></li>
+                  <% end %>
+                  <li>
+                   <%= link_to("个人订单列表", account_orders_path ) %>
+                 </li>
+                 <li>
+                 <%= link_to carts_path do %>
+                   购物车<i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %>)
+                 <% end %>
+                </li>
+                 <li role="separator" class="divider"></li>
+                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+
+                </li>
+              <% end %>
+              <li>
+
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </>
+  </body>
+</html>

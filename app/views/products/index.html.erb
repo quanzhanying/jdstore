@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      .center {  /*实现块元素的居中*/
+       width: auto;
+       display: table;
+       margin-left: auto;
+       margin-right: auto;
+      }
+
+      .shop_form_ul{
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+       text-align: center
+
+      }
+      .shop_form_li{
+       float: left;
+      }
+      .shop_form_li_a{
+       display: block;
+       color: #c0c0c0;
+       text-align: center;
+       padding: 30px;
+       text-decoration: none;
+       margin-right: 45px;
+       margin-left: 45px;
+      }
+
+
+      .div_style{
+        margin: 20px 0px 20px 106px;/*上右下左*/
+        padding: 0px 0px 0px 0px;/*上右下左*/
+        max-width:100%;
+        text-align: center
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fulid">
+    <div class="row">
+  
+          <div class="navbar navbar-none center " role="navigation">
+              <ul class="shop_form_ul">
+               <li class="shop_form_li"><a class="shop_form_li_a" href="#"><%= link_to("ALL", products_path) %></a></li>
+               <li class="shop_form_li"><a class="shop_form_li_a" href="#"><%= link_to("SHIRTS", products_path(:order => "by_shirt")) %></a></li>
+               <li class="shop_form_li"><a class="shop_form_li_a" href="#"><%= link_to("SWEATRES", products_path(:order => "by_sweatre")) %></a></li>
+               <li class="shop_form_li"><a class="shop_form_li_a" href="#"><%= link_to("JEANS", products_path(:order => "by_jean")) %></a></li>
+               <li class="shop_form_li"><a class="shop_form_li_a" href="#"><%= link_to("JACKETS", products_path(:order => "by_jacket")) %></a></li>
+             </ul>
+          </div>
+          <div class="navbar navbar-none center " role="navigation">
+          <% @products.each do |product| %>
+
+            <div class="navbar navbar-none div_style col-xs-5 col-md-5 col-lg-5 ">
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: " img-responsive") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+              <h4><%= product.title %></h4>
+               ￥<%= product.price %>
+            </div>
+
+          <% end %>
+       </div>
+
+        </div>
+    </div>
+  </body>
+</html>
