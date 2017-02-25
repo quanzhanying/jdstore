@@ -1,0 +1,144 @@
+<nav class="navbar navbar-default" role="navigation">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><img src='<%= image_url 'tree.png' %>' > Life</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <!-- <#li class="active"> -->
+
+        <!-- <#/li> -->
+        <%= link_to("美食天地", products_path)%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("水果庄园", search_fruit_products_path)%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("蔬菜都市", products_path)%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("所有商品", products_path)%>
+      </li>
+    </ul>
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="item">
+
+            <%= render "products/search_bar" %>
+
+        </li>
+      <li>
+
+
+        <%=link_to carts_path do %>
+        <!-- #限定用户登录后才能查看“购物车” -->
+        <% if !current_user%>
+
+        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= 0 %> )
+        <% else %>
+        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+        <% end %>
+        <% end %>
+      </li>
+    <% if !current_user %>
+    <li><a href="#" data-toggle="modal" data-target="#signup-modal">
+      <i class="fa fa-user-plus" aria-hidden="true">注册</i>
+    </a>
+  </li>
+
+
+    <li>
+      <li><a href="#" data-toggle="modal" data-target="#login-modal">
+        <span class="fa fa-sign-out" aria-hidden="true">登入</span>
+        </a>
+    </li>
+    <% else %>
+    <li class="dropdown">
+
+
+
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+       <span class="btn btn-info" style="padding:5px 20px;margin-top:-5px;">
+       <i class="fa fa-user-circle" aria-hidden="true">  </i>
+        <b class="caret"></b>
+       </span>
+
+     </a>
+
+      </a>
+      <ul class="dropdown-menu">
+        <% if current_user.admin? %>
+        <li>
+
+          <%= link_to(content_tag(:i , "Admin 选单", class: 'glyphicon glyphicon-ok-sign'),admin_products_path)%>
+        </li>
+        <% end %>
+        <li>
+          <%=link_to(content_tag(:i , "个人订单列表", class: 'fa fa-file-text-o'),account_orders_path)%>
+
+        </li>
+        <li>
+          <%= link_to(content_tag(:i , "登出", class: 'fa fa-sign-out'),
+          destroy_user_session_path, method: :delete)%>
+
+        </li>
+
+
+
+      </ul>
+    </li>
+    <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+       <h2>Log in</h2>
+       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="form-inputs">
+           <%= f.input :email, required: false, autofocus: true %>
+           <%= f.input :password, required: false %>
+           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+         </div>
+         <div class="form-actions">
+           <%= f.button :submit, "Log in" %>
+         </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+          <%= f.input :is_admin, hint:("如果你想成为商家，请勾选该项")%>
+        </div>
+        <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

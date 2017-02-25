@@ -1,0 +1,115 @@
+
+
+
+  <!-- <#div class="col-md-12">
+
+    <% if @products.blank?%>
+      <br>
+      <h3 class="text-center">
+        抱歉没有找到符合条件的商品，换个关键词试试
+      </h3>
+    <% else %>
+      <h3 class="text-center" style="margin-top: 30px;">共找到 <%= @products.count %> 相关商品</h3>
+      <hr />
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>
+              商品
+            </th>
+            <th>
+              信息
+            </th>
+            <th>
+              商品展示图
+            </th>
+            <th>
+              数量
+            </th>
+            <th>
+              单价
+            </th>
+            <th>
+              产地
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+        <% @products.each do |product| %>
+        <tr>
+          <td>
+            <%= link_to(product.title, product_path(product))%>
+          </td>
+          <td>
+            <%= product.description%>
+          </td>
+          <td>
+            <%= link_to product_path(product) do %>
+            <% if product.image.present?%>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+          </td>
+          <td>
+            <%= product.quantity%>
+
+          </td>
+          <td>
+              <%= product.price %>
+                  </td>
+          <td>
+            <%=product.place %>
+          </td>
+        </tr>
+        <% end %>
+        </tbody>
+       </table>
+
+
+
+    <% end %>
+  <!-- <#/div> -->
+
+  <% if @products.blank?%>
+    <br>
+    <h3 class="text-center">
+      抱歉没有找到符合条件的商品，换个关键词试试
+    </h3>
+  <% else %>
+  <h3 class="text-center" style="margin-top: 30px;">共找到 <%= @products.count %> 相关商品</h3>
+  <hr />
+  <ul class="product-index search">
+    <% @products.each do |product| %>
+
+
+  <li class="product-display search">
+      <%= link_to product_path(product) do %>
+
+      <% if product.image.present?%>
+      <div class="thumbnail" >
+  <%= image_tag(product.image.thumb.url, class: "thumbnail")%>
+
+
+      <% else %>
+      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+      <% end %>
+      <% end %>
+
+      <p ><strong><%=product.title %></strong></p>
+      <p>产地：<%=product.place%></p>
+     <p>库存：<%=product.quantity%></p>
+     <p>单价：<%=product.price%></p>
+     <div class="button-select">
+       <%=link_to("select",product_path(product),:class=> "btn btn-default")%>
+     </div>
+    </div>
+  </li>
+    <% end %>
+
+  </ul>
+  <% end %>

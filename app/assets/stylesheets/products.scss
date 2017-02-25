@@ -1,0 +1,150 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.nav.nav-tabs{
+  position: relative;
+  left:30px;
+}
+
+/*products.index和search页面物品样式*/
+.product-index.search{
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0;
+    border-style: none;
+    margin-left: 35px;
+
+}
+
+.product-index.search{
+    display: block;
+    display: inline-block;
+    border: 0px;
+    border-width: 0px;
+}
+
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+
+
+
+.product-display {
+    width: 230px;
+    height: 350px;
+    background: #fff;
+    margin-right: 12px;
+    margin-bottom: 12px;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+    position: relative;
+    top: 0;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    border: 0px;
+
+}
+
+body {
+    color: #2E2E2E;
+    font-family: "Microsoft Yahei",verdana;
+
+
+}
+
+
+
+.product-display {
+  padding: 15px;
+    float: left;
+    display: inline;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-style: none;
+    border-width: 0px;
+}
+
+.thumbnail{
+  border-style: none;
+  border-width: 0px;
+}
+
+.thumbnail>p{
+  text-align: center;
+}
+
+
+.btn-default{
+  margin-bottom: 10px;
+  padding-right: 0px;
+   margin-left: 62px;
+   width: 60px;
+   padding: 4px;
+   border-color: white;
+   background: red;
+
+}
+
+.button-select:hover, .button-select:focus {
+
+
+    border-radius: 3px;
+  }
+
+
+/* products.show页面物品信息样式*/
+.row.product-info{
+  background-color: rgba(250,250,250 ,1);
+  margin-left: 40px;
+  margin-right: 50px;
+}
+
+.product-img{
+  margin-left: 10px;
+
+  margin-right: 10px;
+
+}
+
+.context{
+
+
+ margin-top: 20px;
+  margin-left: 20px;
+
+}
+
+/*修改show页面的“加入购物车”按钮样式*/
+.pull-right1{
+margin-top: 80px;
+}
+
+/*星星样式定义*/
+
+
+.starContainer_1qk9an0-o_O-starContainer_sizeSmall_1j92z0q {
+    display: inline-block !important;
+    position: relative !important;
+    height: 12px !important;
+    width: 12px !important;
+    margin-right: 3px !important;
+}
+
+.star_15kzu1c {
+    position: absolute !important;
+}
+
+.starRatingContainer_vxbm49 {
+    vertical-align: middle !important;
+}
+
+/*心形收藏按钮样式*/
+.btn.btn-default.btn-xs:hover{
+  background-color: rgba(230,238,156 ,1);
+
+}
