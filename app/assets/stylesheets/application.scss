@@ -21,7 +21,7 @@
  body {
     min-height: 100%;
     position: relative;
-    background-color: rgb(239, 239, 239);
+    background-color: #f5f5f5;
   }
 
   /* common flash */
@@ -36,7 +36,7 @@
 
  .navbar-default {
    margin-bottom: 0;
-   background: rgb(94, 136, 165);
+   background: #0e5bb7;
      .navbar-header {
        margin-left: 9%;
        a {
@@ -50,7 +50,7 @@
        transition: 0.35s;
      }
      .navbar-nav li a:hover {
-       color: #db8e41;
+       color: #db2d0a;
        text-decoration: none
      }
 
