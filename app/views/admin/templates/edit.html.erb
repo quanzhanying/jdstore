@@ -23,10 +23,12 @@
   </div>
 
   <% if @template.templatephotos.present? %>
+  <div class="group">
     <span>目前商品图</span><br>
     <% @template.templatephotos.each do |p| %>
       <%= image_tag p.image.thumb.url %><br />
     <% end %>
+  </div>
   <% end %>
 
   <div class="group">
