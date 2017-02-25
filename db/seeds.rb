@@ -14,8 +14,3 @@ u.password_confirmation = "111111"   # 最少要六码
 
 u.is_admin = true
 u.save
-Category.create(name: "卧室")
-Category.create(name: "浴室")
-Category.create(name: "客厅")
-Category.create(name: "厨房")
-Category.create(name: "其他")
