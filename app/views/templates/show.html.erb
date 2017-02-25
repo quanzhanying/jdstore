@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container">
+  
   <div class="col-md-6">
     <%# if @template.image.present? %>
       <%#= image_tag(@template.image.medium.url, class: "thumbnail") %>
@@ -18,7 +19,7 @@
 
     <div class="template-price"> ￥ <%= @template.price %> </div>
     <div class="pull-right">
-      <%= link_to("加入购物车", add_to_cart_template_path(@template), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <%= link_to("加入购物车", add_to_cart_template_path(@template), :method => :post, :class => "btn btn-lg") %>
     </div>
   </div>
 </div>

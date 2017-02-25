@@ -18,7 +18,7 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.hp-ul {
+/*.hp-ul {
   display: inline-block;
   margin: 15px;
   padding: 0px;
@@ -41,18 +41,19 @@
       width: 300px;
       height: 300px;
     }
-  }
+  }*/
 
-//--------------------------------- navbar -------------------------------------
 
-//------- 导航栏 样式 ----------------------
+/* navbar */
+
+/* 导航栏 样式 */
 .navbar-default {
   background-color: #272727;//背景颜色
   border-color: #272727;//边框色
   margin-bottom: 0;//底部 margin 不撑开距离
 }
 
-//------- 导航栏 brand logo -------
+/* 导航栏 brand logo */
 .navbar-brand > img {
     display: inline-block;	//图片和链接文字显示在同一行
     margin-right: 10px; //图片和链接文字拉开一点距离
@@ -60,7 +61,7 @@
     height: 32px; //定制图片高度
 }
 
-//-------- 导航栏 brand字体 样式 ----------------------
+/* 导航栏 brand字体 样式 */
 .navbar-default .navbar-brand {
    color: #ffffff;//字体颜色
    padding: 10px 15px;//上下10px,左右15px
@@ -74,7 +75,7 @@
 }
 
 
-//-------- 导航栏 链接颜色 ----------------------
+/* 导航栏 链接颜色 */
 .navbar-default .navbar-nav > li > a{
   color: #ffffff;
 }
@@ -90,15 +91,10 @@
         border-radius: 0;//圆角为0
     }
 }
-//----------------------------- 以上为 navbar -------------------------------------
-
-.carousel-caption{
-  width: 10%;
-  height: 40%;
-}
+/* 以上为 navbar */
 
 
-//-----------------------------   content  ------------------------
+/* welcome body content */
 .carousel{
   margin-bottom: 20px;
 }
@@ -162,12 +158,16 @@ hr{
 .thumbnail img{
   margin-bottom: 30px;
 }
-//----------------------------- 以上为 content 样式 ---------------------
+/* 以上为 content 样式  */
+
+/* container样式 */
+.container{
+  padding: 30px 0 50px 0;
+}
+/* 以上为 container样式 */
 
 
-
-//-----------------------------  footer 样式 ------------------------
-
+/* footer 样式 */
 footer {
   background-color: #272727;
   padding: 18px;
@@ -194,3 +194,4 @@ body {
  height: 80px;
  text-align: center;
 }
+/* 以上为 footer 样式 */
