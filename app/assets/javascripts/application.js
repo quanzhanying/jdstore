@@ -15,4 +15,10 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require bootstrap/carousel
+//= require bootstrap/modal
+//= require bootstrap
+$(document).ready(function() {
+  $('#myCarousel').carousel({interval: 2000});
+});
 //= require_tree .
