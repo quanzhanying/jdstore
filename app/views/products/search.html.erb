@@ -1,6 +1,6 @@
 <div>
     <br>
-    <% if @jobs.blank? %>
+    <% if @products.blank? %>
         <br>
         <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
     <% else %>
@@ -8,7 +8,7 @@
         <div class="search-result">
             <div class="row products-show0"></div>
             <div class="product-table">
-                <% @jobs.each do |job| %>
+                <% @products.each do |product| %>
                     <div class="row products-show">
                         <div class="col-md-12 col-lg-9 col-lg-offset-1">
                             <div class="pull-right">
