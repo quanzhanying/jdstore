@@ -20,7 +20,13 @@
 
 
 body {
+  padding-top:50px;
   position: relative;
+}
+
+#section0 {
+  color: #fff;
+  background-color: #ff9800;
 }
 
 #section1 {
@@ -30,22 +36,26 @@ body {
 
 }
 
-#section2, #section3, #section41, #section42, #service
- {
+#section2, #section3, #section41, #section42, #service {
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
 }
 
-.thumbnail1 {
-  display: block;
-  padding: 4px 0 4px 0;
-  margin-top: 15px;
-  margin-bottom: 30px;
+.container {
+  padding: 80px 120px;
 }
 
-.caption1 {
-  color: #333;
+
+/* ------- Navbar CSS -------*/
+/* Add a dark background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 13px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
 }
 
 /* Add a gray color to all navbar links */
@@ -67,4 +77,21 @@ body {
 /* Remove border color from the collapsible button */
 .navbar-default .navbar-toggle {
     border-color: transparent;
+}
+
+/* ------- Footer CSS -------*/
+/* Add a dark background color to the footer */
+footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
 }

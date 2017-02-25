@@ -16,11 +16,11 @@
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-      <div class="container">
+      <div class="row">
         <%= render "common/navbar" %>
-        <%= render "common/flashes" %>
-        <%= yield %>
       </div>
+
+        <%= yield %>
 
       <%= render "common/footer" %>
 
