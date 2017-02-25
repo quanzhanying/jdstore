@@ -1,13 +1,8 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.jumbotron {
-  background-color: #34495e;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 50px;
-}
 
+/**
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
   text-align: center;
@@ -23,12 +18,12 @@
   top: 12px;
 }
 
+
 .lead {
   margin-bottom: 60px;
   text-align: center;
   color: white;
 }
-
 
 
 .caption {
@@ -37,6 +32,7 @@
  top: 10px;
 }
 
+
 .thumbnail {
   position: relative;
   padding-top: 0;
@@ -44,11 +40,6 @@
   text-align: center;
   background-color: #fff;
 }
-
-
-
-
-
 
 .slide-text {
     left: 0;
@@ -61,20 +52,19 @@
     padding: 10px 85px;
 }
 
+
 .slide_style_center {
     text-align: center !important;
 }
+**/
 
-
-
-
-
-/** banner**/
+/** middle **/
 .carousel-control.left,.carousel-control.right  {background:none;width:25px;}
 .carousel-control.left {left:-25px;}
 .carousel-control.right {right:-25px;}
 .broun-block {
-    background: url("http://myinstantcms.ru/images/bg-broun1.jpg") repeat scroll center top rgba(0, 0, 0, 0);
+    background: #fff;
+    /** background: url("http://myinstantcms.ru/images/bg-broun1.jpg") repeat scroll center top rgba(0, 0, 0, 0); **/
     padding-bottom: 34px;
 }
 .block-text {
@@ -134,7 +124,7 @@
     z-index: 2;
 }
 .person-text a {
-    color: #ffcc00;
+    color: #07b5a6;
     display: block;
     font-size: 14px;
     margin-top: 3px;
