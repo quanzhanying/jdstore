@@ -4,61 +4,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/lib/w3.css">
 <style>
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
+.mySlides {display:none;}
 </style>
 <body>
 
-<div class="w3-container">
-  <h2>Slideshow Indicators</h2>
-  <p>An example of using buttons to indicate how many slides there are in the slideshow, and which slide the user is currently viewing.</p>
-</div>
+<h2 class="w3-center">主打产品</h2>
 
-<div class="w3-content w3-display-container" style="max-width:800px">
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="https://ww4.sinaimg.cn/large/006tNc79ly1fd0mkw91w0j308c063dfu.jpg" style="width:100%">
   <img class="mySlides" src="https://ww4.sinaimg.cn/large/006tNc79ly1fcvmttk1gfj30sg0lcads.jpg" style="width:100%">
   <img class="mySlides" src="https://ww4.sinaimg.cn/large/006tNc79ly1fcvmtt8lb3j30sg0pp0v9.jpg" style="width:100%">
-  <img class="mySlides" src="https://ww1.sinaimg.cn/large/006tNc79ly1fcvmtsx3v4j308c063dfu.jpg" style="width:100%">
-  <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-padding-left w3-hover-text-khaki" onclick="plusDivs(-1)"> &#10094;</div>
-    <div class="w3-right w3-padding-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-  </div>
 </div>
 
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+var myIndex = 0;
+carousel();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-white";
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
 }
 </script>
 
 </body>
-
 
 <div class="row">
   <% @products.each do |product| %>

@@ -40,44 +40,75 @@
       <% end %>
   </li>
 <% if !current_user %>
-<li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-<li><a href="#" data-toggle="modal" data-target="#login-modal" >登入<a></li>
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog" role="document">
-    <div class="loginmodal-container">
-       <h2>Log in</h2>
-       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-         <div class="form-inputs">
-           <%= f.input :email, required: false, autofocus: true %>
-           <%= f.input :password, required: false %>
-           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-         </div>
-         <div class="form-actions">
-           <%= f.button :submit, "Log in" %>
-         </div>
-       <% end %>
+<li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;" href="#" data-toggle="modal" data-target="#signup-modal">Signup</a></li>
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
 
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="loginmodal-container">
-      <h2>Sign up</h2>
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
-        </div>
-        <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
-        </div>
-      <% end %>
-    </div>
+
+<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <input type="checkbox" checked="checked"> Remember me
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
   </div>
-</div>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
+
+
 
 <% else %>
 <li class="dropdown">
