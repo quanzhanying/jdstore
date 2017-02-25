@@ -18,51 +18,127 @@
  @import "bootstrap";
  @import "font-awesome";
 
+.all{
+  background-color: #F5F5F5;//背景颜色
+}
+
  .navbar-default {
-     background-color: #DCEDC8;//背景颜色
+     background-color: #E1F5FE;//背景颜色
      border-color: #FAFAFA;//边框色
-     margin-bottom: 2;//底部 margin 不撑开距离
+     padding-bottom: 5ex;//底部 margin 不撑开距离
  }
 
- .navbar-default .navbar-brand {
-    color: #546E7A;//字体颜色
-    padding: 25px 30px;//上下10px,左右15px
-    line-height: 40px;//文字行高
+ .sign_in{
+   list-style-type: none;
+   font-size:18px;
+   color: #FB8C00;
+   position:absolute;
+   top:35px;
+   right:20px;
+ }
+
+ .devise_for {
+   list-style-type: none;
+   font-size:18px;
+   color: #FB8C00;
+   position:absolute;
+   top:35px;
+   right:80px;
+ }
+
+ .collapse .navbar-collapse{
+   list-style-type: none;
+   margin-left:auto;
+   margin-right:auto;
+   font-size:18px;
+   //float: right;
+   //font-weight: 90
+   color: #FB8C00;
+   position:absolute;
+   //left:100px;
+   top:35px;
+   right:360px;
  }
 
  .navbar-default .navbar-brand:hover,
  .navbar-default .navbar-brand:focus {
-   color: #FF6F00;//鼠标放置在链接上的文字颜色
+   color: #212121;//鼠标放置在链接上的文字颜色
    background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
  }
 
  .navbar-default .navbar-nav > li > a{
-   color: #EF6C00;
+   font-size:38px;
+   color: #2979FF;
+   padding: 7px 50px 1px 5px;
  }
 
- .navbar-default .navbar-nav > li > a:hover,
- .navbar-default .navbar-nav > li > a:focus {
-   color: #FF6F00;
-   background-color: transparent;
- }
- .navbar-default .navbar-nav > .active > a,
- .navbar-default .navbar-nav > .active > a:hover,
- .navbar-default .navbar-nav > .active > a:focus {
-   color: #FF6F00;
-   background-color: #FFE0B2;
+ .nav.navbar-nav{
+   font-family: "Microsoft YaHei";
+   font-size:25px;
+   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+
  }
 
- .navbar-default .navbar-nav > .open > a,
- .navbar-default .navbar-nav > .open > a:focus,
- .navbar-default .navbar-nav > .open > a:hover {
-     background-color: #FFE0B2;
-     color: #212121;
+ .search {
+   width: 1500px;
+ }
+
+
+ .search-input {
+   height: 36px;
+   line-height: 60px;
+   position:absolute;
+   //left:100px;
+   top:30px;
+   left:300px;
+   color: #FF8F00;
+   padding: 8px 80px ;
+   margin-bottom: 5px;
+   border-width: 3px;
+   border-color: #FF8F00;
+   border-style: solid;
+   outline: 0;
+   font-size: 18px;
+   font-family: "microsoft yahei";
+   border-radius: 40px;
+ }
+
+ .search-button {
+   position:absolute;
+   //left:100px;
+   left:680px;
+   width: 14px;
+   height: 36px;
+   border: none;
+   line-height: 2;
+   color: #FF8F00;
+   background: none;
+   font-family: "Microsoft YaHei";
+   font-size: 16px;
+   cursor: pointer;
+   top: 30px;
+   right: 0px;
  }
 
  .btn-lg, .btn-group-lg > .btn {
-    padding: 8px 16px;//通过padding来决定btn的大小
-    font-size: 20px;//btn文字大小
-    letter-spacing: 3px;//调整文字间距
+    padding: 6px;//通过padding来决定btn的大小
+    font-size: 16px;//btn文字大小
+    letter-spacing: 1px;//调整文字间距
     border-radius: 3px;//btn圆角
-    width: 200px;//这里用指定宽度把btn拉得更长
-}
+    width: 120px;//这里用指定宽度把btn拉得更长
+    position:absolute;
+    top:200px;
+    right:50px;
+ }
+
+ .container1{
+   text-align: center
+ }
+
+ .col-xs-6 .col-md-3{
+   margin-top: 30px;
+   margin-right: 30px;
+   margin-bottom: 80px;
+   margin-left: 50px;
+   font-family: "Microsoft YaHei";
+ }
