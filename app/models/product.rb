@@ -3,6 +3,9 @@ class Product < ApplicationRecord
   validates :style, presence: true
   mount_uploader :image, ImageUploader
 
+  has_many :favor_product_relationships
+  has_many :followers, through: :favor_product_relationships, source: :user
+
   def publish!
     self.is_hidden = false
     self.save

@@ -6,10 +6,11 @@
              <%# if chef.image.present? %>
                <%#= image_tag(chef.image.thumb.url, class: "img-circle") %> -->
 
-         <div class="image">
+         <!-- <div class="image"> -->
+        <div class="image">
            <%= link_to chef_path(chef) do %></i>
              <% if chef.photos.present? %>
-               <%= image_tag(chef.photos[0].image.thumb.url, class: "thumbnail") %>
+               <%= image_tag(chef.photos[0].image.thumb.url, class: "img-circle") %>
 
              <% else %>
                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-circle") %>
@@ -17,8 +18,10 @@
            <% end %>
          </div>
        </div>
-     <div class="desc"><%= link_to(chef.name, chef_path(chef), :style => "color: black" ) %></div>
+     <div class="desc">
+       <%= link_to(chef.name, chef_path(chef), :style => "color: black" ) %>, <%= chef.city %>
+     </div>
      <br>
-    <div class="position"><%= chef.position %>, <%= chef.city %></div>
+    <!-- <div class="position"><%#= chef.position %>, <%#= chef.city %></div> -->
       <!-- <img src='<%#= image_url 'thumbs-up-hand-symbol_1.png' %>'> <%#= chef.followers.count %> -->
 </div>

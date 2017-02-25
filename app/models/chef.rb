@@ -13,7 +13,10 @@ class Chef < ApplicationRecord
 
   has_many :photos
   accepts_nested_attributes_for :photos
-  
+
+  has_many :chef_comments
+  has_many :comments_from_user, through: :chef_comments, source: :user
+
   def publish!
     self.is_hidden = false
     self.save

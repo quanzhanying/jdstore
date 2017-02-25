@@ -12,6 +12,12 @@ class User < ApplicationRecord
   has_many :favor_chefs_relationships
   has_many :favor_chefs, through: :favor_chefs_relationships, source: :chef
 
+  has_many :chef_comments
+  has_many :comments_for_chefs, through: :chef_comments, source: :chef
+
+  has_many :favor_product_relationships
+  has_many :favor_products, through: :favor_product_relationships, source: :product
+  
   def has_follow?(chef)
     favor_chefs.include?(chef)
   end
