@@ -18,6 +18,12 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.thumbnail{
+  display: inline;
+  padding: 4px;
+  transition: border 0.2s;
+}
+
 .alert{
   margin-top:80px;
 }
