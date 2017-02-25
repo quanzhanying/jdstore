@@ -28,7 +28,7 @@ class CartItemsController < ApplicationController
   def add_quantity
 		@cart_item = current_cart.cart_items.find_by_product_id(params[:id])
 		if @cart_item.quantity < @cart_item.product.quantity
-			@cart_item.quantity = 1
+			@cart_item.quantity += 1
 			@cart_item.save
 			redirect_to carts_path
 		elsif @cart_item.quantity == @cart_item.product.quantity
