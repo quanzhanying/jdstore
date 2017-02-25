@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170221161451) do
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
-    t.index [nil], name: "index_orders_on_assem_state"
+    t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
   create_table "product_lists", force: :cascade do |t|
