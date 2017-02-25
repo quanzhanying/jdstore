@@ -50,6 +50,7 @@
 .show-title .show-menu-logo:focus {
   color: #29B6F6;//鼠标放置在链接上的文字颜色
   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+  cursor: pointer;
 }
 
 .section-content2{
@@ -237,7 +238,26 @@ img.washer-product-profile2{
   }
 }
 
-
+/*主推商品头部位置*/
+.menu{
+  width:100;
+  z-index: 99;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.menuFixed{
+  position:fixed;
+  top:0;
+  left:0;
+  text-align: center;
+  width:100%;
+  background-color: white;
+  border-bottom: 1px solid #EEEEEE;
+}
+#menu_wrap{
+  height:50px;
+  width:100%;
+}
 
 
 .pl20{padding-left:20px}

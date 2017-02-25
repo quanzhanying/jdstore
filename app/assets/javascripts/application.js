@@ -37,4 +37,14 @@ $(document).ready(function(){
     $('.productDetail-left-bigImage').find('img').attr('src', src)
   })
 
+  $(window).scroll(function(){
+    var menu_top = $('#menu_wrap').offset().top;
+    if ($(window).scrollTop() >= menu_top) {
+      $('.menu').addClass('menuFixed')
+    }
+    else{
+      $('.menu').removeClass('menuFixed')
+    }
+  })
+
 })
