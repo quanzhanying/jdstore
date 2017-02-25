@@ -1,0 +1,30 @@
+<div class=" col-md-4 col-xs-6 box">
+  <div class="image">
+    <%= link_to product_path(product) do %>
+      <% if product.image.present? %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="fig">
+    <p class="actions">
+      <% if product.quantity.present? && product.quantity > 0 %>
+        <%= link_to("去看看", product_path(product), class: "see btn", :method => :get) %>
+      <% else %>
+        已售馨
+      <% end %>
+
+      <% if product.quantity.present? && product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(product), class: "add-to-cart btn ", :method => :post) %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+
+
+    </p>
+    <%= product.title %> ￥ <%= product.price %>
+  </div>
+</div>
