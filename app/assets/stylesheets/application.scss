@@ -16,10 +16,17 @@
 
  // 导航一栏
 
+// Navbar背景色
+#NavCol {
+  background-color: #2d2d30;
+}
+
+
 /* Add a dark background color with a little bit see-through */
+
+
  .navbar {
   margin-bottom: 0;
-  background-color: #2d2d30;
   border: 0;
   font-size: 11px !important;
   letter-spacing: 4px;
