@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>人生可期 换出新生</title>
+  <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+        <div class="row">
+            <%= render "common/navbar" %>
+            <%= yield %>
+        </div>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators bg-color1">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="http://ols6vd1wm.bkt.clouddn.com/your_name_21.jpg" alt="主动选择">
+        <div class="carousel-caption">
+          <h2>交换人生体验会是怎样的感觉</h2>
+          <p>主动选择一种你想要的生活方式 用另一种视角感受生活</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="http://ols6vd1wm.bkt.clouddn.com/change_id_21.jpg" alt="身份互换">
+        <div class="carousel-caption">
+          <h2>也许会有意想不到的惊喜在等你哦</h2>
+          <p>互相交换人生的两人 谁说不会有意想不到的缘分悄然发芽呢</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="http://ols6vd1wm.bkt.clouddn.com/tradition_21.jpg" alt="体验别样人生">
+        <div class="carousel-caption">
+          <h2>活在别人的人生中可以肆意一把</h2>
+          <p>反正是临时的 把握可以尽情释放被压抑一面的好时机</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<div class="container text-center bg-color4">
+  <h2>交换人生</h2>
+  <p><em>交换物资?交换金钱?</em></p>
+  <p>那些交换都太常见太无趣了! 让我们来交换人生吧!</p><br><br>
+  <p>高考后最让人闹心的不是头疼要怎么浪才爽快,而是要决定报考哪个院校以及选哪个专业</p>
+  <p>学校排名靠前,并不能保障那里的学习生活氛围就让人适应,自己是否能融入呢</p>
+  <p>某些专业听上去很棒,但也很可能不适应授课教授的上课风格</p>
+  <p></p>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <p class="text-center"><strong>我是高中生</strong></p><br>
+      <a href="#demo" data-toggle="collapse">
+      <img src="http://ols6vd1wm.bkt.clouddn.com/high_school_10.jpg" class="img-circle person" alt="Random Name">
+      </a>
+      <div id="demo" class="collapse">
+        <p>我向往某所大学</p>
+        <p>得偿所愿后能适应那边的生活吗?</p>
+        <p>我觉得自己喜欢某个专业</p>
+        <p>但我考上的大学所提供的此专业会符合我的预期吗?</p>
+        <br><br><br>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <p class="text-center"><strong>我是大学生</strong></p><br>
+      <a href="#demo2" data-toggle="collapse">
+      <img src="http://ols6vd1wm.bkt.clouddn.com/college_10.jpg" class="img-circle person" alt="Random Name">
+      </a>
+      <div id="demo2" class="collapse">
+        <p>大学生时代的生活很美好</p>
+        <p>但有时又超级想念高中生活的单纯天真</p>
+        <p>想自己赚点外快</p>
+        <p>但找临时工作不易 且很难找到时间安排灵活的短期工</p>
+        <br><br><br>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <p class="text-center"><strong>我是在职人员</strong></p><br>
+      <a href="#demo3" data-toggle="collapse">
+      <img src="http://ols6vd1wm.bkt.clouddn.com/career_10.jpg" class="img-circle person" alt="Random Name">
+      </a>
+      <div id="demo3" class="collapse">
+        <p>工作后生活很有规律很充实</p>
+        <p>但不时希望能再回去体验学生时代的自由自在</p>
+        <p>平常工作忙碌 但请假几天去尝试新事物还是可行的</p>
+        <p>时常好奇如果当年去其他大学读书会是怎样一种体验</p>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "common/footer" %>
+
+</body>
+</html>
