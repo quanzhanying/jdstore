@@ -1,3 +1,61 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* product show page right card */
+
+.details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product-title {
+  margin-top: 0;
+}
+
+a.btn:hover{
+  opacity:0.5;
+  color:#ff0000;
+}
+
+a.btn{
+height:40px;
+font-size: 18px;
+}
+
+.action {
+  margin-top:30px;
+  padding-left:0;padding-right:0px;
+  .col-md-10{
+    padding-left:0;padding-right:0px;
+  }
+  .col-md-2{
+    padding-left:10px;padding-right:0px;
+  }
+  a.buy{
+    background-color:rgb(245,190,126);color: #fff;margin-bottom:10px;
+  }
+  a.add-to-cart{
+    border-color:rgb(245,190,126);background-color:#fff;color:rgb(245,190,126);
+  }
+  a.like{
+    border-color:rgb(245,190,126);background-color:rgb(245,190,126);
+    i{
+      color:#fff;
+    }
+  }
+  a.unlike{
+    border-color:rgb(245,190,126);background-color:#fff;
+    i{
+      color:rgb(245,190,126);
+    }
+  }
+}
