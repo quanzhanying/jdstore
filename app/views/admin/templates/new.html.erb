@@ -22,5 +22,9 @@
     <%= f.input :proportion %>
   </div>
 
+  <div class="group">
+    <%= f.file_field :image, :multiple => true, name: "templatephotos[image][]" %>（"请上传5张图片"）<br>
+  </div>
+
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>

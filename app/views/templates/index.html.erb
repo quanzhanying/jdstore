@@ -5,11 +5,11 @@
   <% @templates.each do |template| %>
     <div class="col-xs-6 col-md-3" style="margin: 20px 0 20px 0;">
       <%= link_to template_path(template) do %>
-        <%# if template.image.present? %>
-          <%#= image_tag(template.image.thumb.url, class: "thumbnail") %>
-        <%# else %>
+        <% if template.templatephotos.present? %>
+          <%= image_tag(template.templatephotos[0].image.thumb.url, class: "thumbnail") %>
+        <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <%# end %>
+        <% end %>
       <% end %>
       <%= template.title %> ￥ <%= template.price %>
     </div>

@@ -10,6 +10,7 @@ class Admin::TemplatesController < ApplicationController
 
   def new
     @template = Template.new
+    @templatephoto = @template.templatephotos.build
   end
 
   def show
@@ -24,6 +25,11 @@ class Admin::TemplatesController < ApplicationController
     @template = Template.new(template_params)
 
     if @template.save
+      if params[:templatephotos] != nil
+        params[:templatephotos]['image'].each do |a|
+          @templatephoto = @template.templatephotos.create(:image => a)
+        end
+      end
       redirect_to admin_templates_path
     else
       render :new
@@ -49,6 +55,6 @@ class Admin::TemplatesController < ApplicationController
   private
 
   def template_params
-    params.require(:template).permit(:title, :description, :price, :version, :proportion)
+    params.require(:template).permit(:title, :description, :price, :version, :proportion, templatephoto_attributes: [:image, :id])
   end
 end
