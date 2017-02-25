@@ -33,7 +33,7 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'figaro'
 gem 'carrierwave'
-
+gem 'fog'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
 
