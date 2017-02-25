@@ -7,4 +7,11 @@ class User < ApplicationRecord
            is_admin
          end
          has_many :orders
+
+  has_many :favorites
+  has_many :favorite_products, through: :favorites, source: :product
+
+  def is_favorite_of?(product)
+    favorite_products.include?(product)
+  end
 end
