@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170218135011) do
+ActiveRecord::Schema.define(version: 20170224134535) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170218135011) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "chef_id"
-    t.date     "book_date"
+    t.datetime "book_date"
     t.integer  "user_id"
   end
 
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170218135011) do
     t.datetime "updated_at",    null: false
     t.integer  "chef_level_id"
     t.string   "phone"
+    t.string   "city"
   end
 
   create_table "chef_times", force: :cascade do |t|
@@ -63,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170218135011) do
     t.datetime "updated_at",                    null: false
     t.integer  "chef_level_id"
     t.string   "phone"
+    t.string   "city"
+    t.string   "position"
   end
 
   create_table "favor_chefs_relationships", force: :cascade do |t|
@@ -85,7 +88,15 @@ ActiveRecord::Schema.define(version: 20170218135011) do
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
+    t.datetime "book_date"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "chef_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_lists", force: :cascade do |t|

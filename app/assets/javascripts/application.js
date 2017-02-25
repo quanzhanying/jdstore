@@ -18,3 +18,5 @@
 //= require_tree .
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require moment
+//= require bootstrap-datetimepicker

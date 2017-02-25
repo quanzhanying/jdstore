@@ -5,6 +5,8 @@
     <h4> 您的私厨 <img src='<%= image_url 'chef.png' %>'>
         <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
         <img src='<%= image_url 'mobile-phone.png' %>'> <%= @chef.phone %>
+        <br>
+        预约时间 <img src='<%= image_url 'calendar.png' %>'> <%= current_cart.book_date %>
     </h4>
     <div>
 

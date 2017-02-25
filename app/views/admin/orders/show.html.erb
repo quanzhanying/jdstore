@@ -4,9 +4,11 @@
 
     <%= render "admin/orders/state_option", order: @order %>
 
-    <h4> 您的私厨 <img src='<%= image_url 'chef.png' %>'> <%= @chef_shadow.name %>
+    <p> 您的私厨 <img src='<%= image_url 'chef.png' %>'> <%= @chef_shadow.name %>
         <img src='<%= image_url 'mobile-phone.png' %>'> <%= @chef_shadow.phone %>
-    </h4>
+        <br>
+        预约时间 <img src='<%= image_url 'calendar.png' %>'> <%= @order.book_date %>
+    </p>
     <table class="table table-bordered">
       <thead>
         <tr>

@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  validates :title, presence: true
+  validates :style, presence: true
   mount_uploader :image, ImageUploader
 
   def publish!

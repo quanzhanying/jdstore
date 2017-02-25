@@ -6,11 +6,17 @@
     <%= f.input :description, :label => "简介"  %>
   </div>
   <div class="group">
+    <%= f.input :position, :label => "身份／职位"  %>
+  </div>
+  <div class="group">
     <%= f.input :style, :collection => ['法国风味', '意大利风味', '南洋风味', '综合'],
                           :label => "擅长的菜系" %>
   </div>
   <div class="group">
-
+    <%= f.input :city, :collection => ['北京', '上海', '深圳', '广州', '苏州', '杭州'],
+                          :label => "城市" %>
+  </div>
+  <div class="group">
     <%= f.collection_radio_buttons :chef_level_id, [[1, ' 一级厨师 '] ,[2, ' 二级厨师 '], [3, ' 三级厨师 ']],
                          :first, :last, :class => "collection_radio_buttons icon-star" %>
   </div>
@@ -20,7 +26,9 @@
   </div>
 
   <div class="group">
-    <%= f.input :image, as: :file%>
+    <%#= f.input :image, as: :file%>
+    <%= f.label :image %></br>
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
   </div>
   <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
 <% end %>
