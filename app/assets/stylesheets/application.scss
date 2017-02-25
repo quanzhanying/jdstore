@@ -27,8 +27,9 @@ body {
 .container1 {
     border: 1px solid red;
 }
+
 .chefs {
-  width: 950px;
+  width: 900px;
   padding-top: 65px;
   margin-left: auto;
   margin-right: auto;
@@ -63,8 +64,8 @@ body {
 
 .navbar {
   margin-bottom: 0px;
-  //background-color: #321d1f;
-  //border-color: #321d1f;
+  background-color: white;
+  border-color: white;
   border-radius: 0px;
 }
 
@@ -110,6 +111,13 @@ body {
     height: 32px;
 }
 
+
+.carousel {
+  width: 100%;
+  height: 20%;
+  margin: 0;
+  padding: 0;
+}
 .jumbotron {
   background-image:url("https://ww1.sinaimg.cn/large/006tNbRwgy1fcp4nh96y1j31kw0jnb29.jpg");
   background-size: cover;
@@ -121,18 +129,28 @@ body {
 .slogan {
   color: #231f20;
 }
-.advertisement {
-  color: white;
+
+.top-chef{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: -10px;
 }
+
+.top-dish{
+  text-align: center;
+  margin-top: 50px;
+  padding: -10px;
+{
 .title {
   color: #231f20;
   font-size: 30px;
 }
-.carousel {
-  width: 80%;
-  height: 20%;
-  margin: auto;
+
+section.dish {
+  display: block;
 }
+
 .desc {
   //font-weight:bolder;
   //font-size: 15px;
