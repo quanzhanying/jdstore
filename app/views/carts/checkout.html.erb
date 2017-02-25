@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 购物网站 </h2>
+    <h2> 购物明细 </h2>
 
     <table class="table table-bordered">
       <thead>
@@ -17,7 +17,7 @@
       </thead>
       <tbody>
 
-        <% current_cart.cart_items.each do |cart_tiem| %>
+        <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
@@ -48,6 +48,9 @@
     <div class="order-form">
       <%= simple_form_for @order do |f| %>
 
+
+
+
         <legend> 订购人 </legend>
         <div class="form-group col-lp-6">
           <%= f.input :billing_name %>
@@ -55,7 +58,6 @@
         <div class="form-group col-lg-6">
           <%= f.input :billing_address %>
         </div>
-
 
         <legend> 收货人 </legend>
         <div class="form-group col-lg-6">
