@@ -45,6 +45,8 @@ gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'paperclip'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
