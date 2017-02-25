@@ -19,8 +19,7 @@
 //= require bootstrap/modal
 //= require_tree .
 
-$(document).ready(function(){
-  $('#gotop').click(function(){
+$(document).on('click','#gotop',function(){
     $('body').animate({'scrollTop':0},500)
   })
 
@@ -46,5 +45,3 @@ $(document).ready(function(){
       $('.menu').removeClass('menuFixed')
     }
   })
-
-})
