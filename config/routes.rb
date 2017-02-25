@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'products#index'
+  #root 'products#index'
+
+  root 'welcome#index'
 
   resources :carts do
     collection do
