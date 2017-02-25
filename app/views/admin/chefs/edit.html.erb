@@ -1,0 +1,9 @@
+<h2>编辑厨师档案</h2>
+<% if @chef.photos.present? %>
+    <span>目前厨师图片</span> <br>
+    <% @chef.photos.each do |p| %>
+      <%= image_tag p.image.thumb.url %><br>
+    <% end %>
+  <% end %>
+
+<%= render :partial => "chefform" %>
