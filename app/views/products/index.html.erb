@@ -1,218 +1,264 @@
-	<div class="row">
-		<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+<nav class="navbar " role="navigation">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
 
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-								<li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-								<li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-								<li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-						</ol>
+          </ul>
 
-						<!-- Wrapper For Slides -->
-						<div class="carousel-inner" role="listbox">
+          <ul class="nav navbar-nav navbar-right">
+            <% if !current_user %>
+              <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+            <% else %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  你好, <%= current_user.email %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu text-center">
+                  <% if current_user.admin? %>
+                    <li><%= link_to("管理后台", admin_products_path ) %></li>
+                  <% end %>
+                  <li>
+                    <%= link_to("个人订单列表", account_orders_path) %>
+                  </li>
+                  <li>
+                    <%= link_to("收藏", favorite_index_path) %>
+                  </li>
+                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="loginmodal-container">
+           <h2 class="text-center">登录</h2>
+           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+             <div class="form-inputs">
+               <%= f.input :email, required: false, autofocus: true , :label => "登录邮箱" %>
+               <%= f.input :password, required: false , :label => "登录密码" %>
+               <%= f.input :remember_me,  :label => "记住我", as: :boolean if devise_mapping.rememberable?  %>
+             </div>
+             <div class="form-actions">
+               <%= f.button :submit, "登录" %>
+             </div>
+           <% end %>
+        </div>
+      </div>
+    </div>
 
-								<!-- Third Slide -->
-								<div class="item active">
-
-										<!-- Slide Background -->
-										<img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fclr6i3aojj31400ci43t.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-										<div class="bs-slider-overlay"></div>
-
-										<div class="container">
-												<div class="row">
-														<!-- Slide Text Layer -->
-														<div class="slide-text slide_style_left">
-																<h1 data-animation="animated zoomInLeft">从货源保证正品</h1>
-																<p style="color:black;" data-animation="animated fadeInRight">诚信老品牌童叟无欺</p>
-																<a href="#" target="_blank" class="btn btn-default" data-animation="animated zoomInRight">查看详情</a>
-														</div>
-												</div>
-										</div>
-								</div>
-								<!-- End of Slide -->
-
-								<!-- Second Slide -->
-								<div class="item">
-
-										<!-- Slide Background -->
-										<img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fcptbkfjm1j31400clwie.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-										<div class="bs-slider-overlay"></div>
-										<!-- Slide Text Layer -->
-										<div class="slide-text slide_style_left">
-												<h1 data-animation="animated flipInX">贴心客服保障售后</h1>
-												<p data-animation="animated lightSpeedIn">老司机教你如何绕过买车的那些坑</p>
-												<a href="#" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">查看详情</a>
-
-										</div>
-								</div>
-								<!-- End of Slide -->
-
-								<!-- Third Slide -->
-								<div class="item">
-
-										<!-- Slide Background -->
-										<img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fclrlt2tdgj31400ci413.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-										<div class="bs-slider-overlay"></div>
-										<!-- Slide Text Layer -->
-										<div class="slide-text slide_style_left">
-												<h1 data-animation="animated zoomInLeft">一流物流全方面服务</h1>
-												<p data-animation="animated fadeInRight">专业销售一站式提车</p>
-												<a href="" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">查看详情</a>
-
-										</div>
-								</div>
-								<!-- End of Slide -->
-
-
-						</div><!-- End of Wrapper For Slides -->
-
-						<!-- Left Control -->
-						<a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
-								<span class="fa fa-angle-left" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-						</a>
-
-						<!-- Right Control -->
-						<a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
-								<span class="fa fa-angle-right" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-						</a>
-
-				</div> <!-- End  bootstrap-touch-slider Slider -->
-			</div>
-
-			<div class="container">
-            <div class="col-sm-12">
-                <div class="bs-calltoaction bs-calltoaction-primary">
-                    <div class="row">
-                        <div class="col-md-6 cta-contents">
-                            <h1 class="cta-title">想要一辆超酷的车？</h1>
-
-                        </div>
-                        <div class="col-md-3 cta-button highlight">
-                            <a href="#" class="btn btn-default">立即选购!</a>
-                        </div>
-                     </div>
-                </div>
-              </div>
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/58888e470ad0c.jpg" alt="">
           </div>
+          <h2 class="text-center">注册</h2>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true , :label => "注册邮箱" %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , :label => "设置密码" %>
+              <%= f.input :password_confirmation, required: true , :label => "确认密码" %>
+            </div>
+            <div class="form-actions">
+                <%= f.button :submit, "注册" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="title">酷跑网</h1>
+  <div class="sologn pull-right">
+    <span>女人逛淘宝</span>
+    <br>
+    <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp男人逛酷跑</span>
+    <br>
+    <div>&nbsp&nbsp&nbsp有不喜欢女人的男人，但绝对没有不喜欢跑车的男人</div>
+    <br>
+    <p><a href="#" data-toggle="modal" data-target="#signup-modal" class="btn btn-lg highlight">成为会员</a></p>
+  </div>
 
 
-	<section class="sec-emp">
-	<div class="container text-center">
-	    <div class="col-lg-12">
-	             <div class="col-sm-6 col-md-3">
-	                <div class="panel panel-default panel-card">
-	                    <div class="panel-heading">
-	                        <img src="https://ooo.0o0.ooo/2017/02/13/58a1b97f6e177.png" />
+</div>
 
-	                    </div>
+<section class="sec-four">
+<div class="container ">
+  <h1>众多实力超跑大厂倾情入驻</h1>
+  <br>
+  <h4>各种知名大厂的超跑应有尽有，我们甚至还独家供应全球限量版的超跑。</h4>
+  <br>
+    <div class="col-lg-12 text-center">
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+            <div class="panel-heading">
+              <img src="https://ooo.0o0.ooo/2017/02/13/58a1b97f6e177.png" />
+            </div>
+            <div class="panel-body">
+              <br><br>
+              <h4 class="panel-header"><%= link_to("法拉利", category_products_path(c:"法拉利"), class: "bootstrap-override-2") %></h4>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9bb9d1c9.png" />
+          </div>
+          <div class="panel-body">
+            <br><br>
+            <h4 class="panel-header"><%= link_to("保时捷", category_products_path(c:"保时捷"), class: "bootstrap-override-2") %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9f1b18ca.png" />
+          </div>
+          <div class="panel-body">
+            <br><br>
+            <h4 class="panel-header"><%= link_to("兰博基尼", category_products_path(c:"兰博基尼"), class: "bootstrap-override-2") %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-default panel-card">
+          <div class="panel-heading">
+            <img src="http://www.kuqin.com/upimg/allimg/100709/0003350.jpg" />
+          </div>
+          <div class="panel-body">
+            <br><br>
+            <h4 class="panel-header"><%= link_to("布加迪威龙", category_products_path(c:"布加迪威龙"), class: "bootstrap-override-2") %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-	                    <div class="panel-body">
-	                      <br><br>
-	                        <h4 class="panel-header"><%= link_to("法拉利", category_products_path(c:"法拉利"), class: "bootstrap-override-2") %></h4>
-	                    </div>
-	                    <div class="panel-thumbnails">
-	                    </div>
-	                </div>
-	    		</div>
-			    <div class="col-sm-6 col-md-3">
-	        	    <div class="panel panel-default panel-card">
-	                    <div class="panel-heading">
-	                        <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9bb9d1c9.png" />
-	                    </div>
-
-	                    <div class="panel-body">
-	                      <br><br>
-	                        <h4 class="panel-header"><%= link_to("保时捷", category_products_path(c:"保时捷"), class: "bootstrap-override-2") %></h4>
-	                    </div>
-	                    <div class="panel-thumbnails">
-	                    </div>
-	            	</div>
-	    		</div>
-	            <div class="col-sm-6 col-md-3">
-	                <div class="panel panel-default panel-card">
-	                    <div class="panel-heading">
-	                        <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9f1b18ca.png" />
-	                    </div>
-	                    <div class="panel-body">
-	                      <br><br>
-	                        <h4 class="panel-header"><%= link_to("兰博基尼", category_products_path(c:"兰博基尼"), class: "bootstrap-override-2") %></h4>
-	                    </div>
-	                    <div class="panel-thumbnails">
-
-	                    </div>
-	            	</div>
-	    		</div>
-	            <div class="col-sm-6 col-md-3">
-	                <div class="panel panel-default panel-card">
-	                    <div class="panel-heading">
-	                        <img src="http://www.kuqin.com/upimg/allimg/100709/0003350.jpg" />
-	                    </div>
-	                    <div class="panel-body">
-	                      <br><br>
-	                        <h4 class="panel-header"><%= link_to("布加迪威龙", category_products_path(c:"布加迪威龙"), class: "bootstrap-override-2") %></h4>
-	                    </div>
-	                    <div class="panel-thumbnails">
-	                    </div>
-	            	</div>
-	    		</div>
-	    </div>
-	</div>
-	</section>
-
+<section class="sec-video">
 <div class="container">
-<h3>超跑列表</h3>
-					<hr>
-<div class="row">
-  <% @products.each do |product| %>
-	<div class="col-md-3 col-sm-6">
-    		<span class="thumbnail product-item">
-					<div class="pi-img-wrapper">
-						<% if product.image.present? %>
-							<%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-						<% else %>
-							<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-						<% end %>
-						<div>
-							<p class="btn">
-							<% if current_user && current_user.is_favorite_of?(product) %>
-         				<%= link_to("取消收藏", favorite_product_path(product, type: "unfavorite"), method: :put) %>
-       				<% else %>
-         				<%= link_to("添加收藏", favorite_product_path(product, type: "favorite"), method: :put) %>
-        			<% end %>
-							</p>
-						</div>
-					</div>
-      		<h3><%= link_to(product.title, product_path(product)) %></h3>
-      		<div>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-
-						<% if product.discount != 100 %>
-						<span class="badge"><%= product.discount %>%</span>
-						<% end %>
-
-      		<p><%= product.description %></p>
-      		<hr class="line">
-      		<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<p class="pi-price">￥ <%= product.price %></p>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      					<div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
-      				</div>
-      			</div>
-						<% if product.newproduct %>
-						<div class="sticker sticker-new"></div>
-						<% end %>
-    		</span>
-  		</div>
-
-  <% end %>
+  <div class="row">
+    <div class="col-lg-12">
+      <embed src='#' allowFullScreen='true' quality='high' width='960' height='540' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+    </div>
+  </div>
 </div>
+</section>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="container">
+        <div class="row">
+             <div class="col-sm-6 col-md-6">
+               <div>
+                 <h1>酷跑社区</h1>
+                 <br>
+                 <h4>这里是全国最大的线上超跑俱乐部，定期举办各种各样的精彩活动，更多机会近距离触摸跑车。</h4>
+                 <br>
+                 <p>✔️ 速度与激情——跑车赛事<br><br>
+                 ✔️ 壮观的车队环城活动<br><br>
+                 ✔️ 非凡之旅——非洲跑车大冒险<br><br>
+                 ✔️ 巡游秋名山<br><br>
+                 ✔️ 酷跑老司机教你如何打造个性跑车<br><br>
+                 ✔️ 美女与跑车——上海车展<br><br>
+                 ✔️ 技术交流车友会<br><br>
+                 ✔️ 炫魅之夜狂欢派对</p>
+               </div>
+    		</div>
+		    <div class="col-sm-6 col-md-3">
+        	    <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/josue/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Leon</h4>
+                        <small>XX公司工程师</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <p>我在前行网找到我现在呆的公司，发展前景和待遇我都很满意。</p>
+                        </div>
+                    </div>
+            	</div>
+    		</div>
+        <div class="col-sm-6 col-md-3">
+              <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/josue/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Leon</h4>
+                        <small>XX公司工程师</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <p>我在前行网找到我现在呆的公司，发展前景和待遇我都很满意。</p>
+                        </div>
+                    </div>
+              </div>
+        </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://ununsplash.imgix.net/19/waves.JPG?q=75&fm=jpg&s=6f316bc8e1dc9887a7cebe0841096e99" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mutlu82/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">John</h4>
+                        <small>XX公司业务代表</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                          <p>这里有热心的师兄师姐提建议，让我找到了最适合自己的职业发展道路。</p>
+                        </div>
+                    </div>
+            	</div>
+    		</div>
+            <div class="col-sm-6 col-md-3">
+                <div class="panel panel-default panel-card">
+                    <div class="panel-heading">
+                        <img src="https://ununsplash.imgix.net/26/camera-keys.jpg?q=75&fm=jpg&s=b919d3158053cde8e9f0e37b4876c14f" />
+                    </div>
+                    <div class="panel-figure">
+                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/nisaanjani/73.jpg" />
+                    </div>
+                    <div class="panel-body">
+                      <br><br>
+                        <h4 class="panel-header">Mike</h4>
+                        <small>XX公司总监</small>
+                    </div>
+                    <div class="panel-thumbnails">
+                        <div class="row">
+                            <p>前行网的社区很活跃，我们很多同届的毕业生都喜欢在这里互相交流。</p>
+                        </div>
+                    </div>
+            	</div>
+    		</div>
+	    </div>
+    </div>
+    </div>
+  </div>
 </div>
+</section>

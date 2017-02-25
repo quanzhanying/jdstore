@@ -286,103 +286,6 @@
 
 
 /*导航栏*/
-//0214pm导航栏全部配色改变
-.navbar-default
-{
-  z-index:9999;
-  position: relative;
-//0214上面两行解决注册登录图标放大功能被轮播图挡住的问题 陈扬帆
-  border-radius:0px;
-  margin-bottom: 0px;
-  border:0px;
-  background-color: black;
-  border-color: #000000;
-}
-.navbar-default .navbar-brand {
-  color: #e0e3e8;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-}
-.navbar-default .navbar-text {
-  color: #e0e3e8;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #e0e3e8;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: black;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #e0e3e8;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #ffffff;
-  background-color: #0c224f;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-  background-color: #0c224f;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #ffffff;
-  background-color: #0c224f;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #0c224f;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #ffffff;
-  background-color: #0c224f;
-}
-.navbar-default .navbar-toggle {
-  border-color: #0c224f;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #0c224f;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #e0e3e8;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #e0e3e8;
-}
-.navbar-default .navbar-link {
-  color: #e0e3e8;
-}
-.navbar-default .navbar-link:hover {
-  color: #ffffff;
-}
-
-@media (max-width: 767px) {
-.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: #e0e3e8;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #ffffff;
-    background-color: #0c224f;
-  }
-}
 /*导航栏注册登录按钮配色改变，0214陈扬帆新增*/
 .btn-info {
   color: #fff;
@@ -400,7 +303,7 @@
 }
 /*0214pm 将brand背景给为黑色*/
 .navbar-brand{
-  background-color: black;
+  background-color: red;
 }
 
 
@@ -662,14 +565,14 @@ footer{position:absolute;bottom:0;width:120%;height:100px;}
 
 .panel.panel-card {
     position: relative;
-    height: 300px;
+    height: 200px;
     border: none;
     overflow: hidden;
 }
 .panel.panel-card .panel-heading {
     position: relative;
     z-index: 2;
-    height: 300px;
+    height: 200px;
     border-bottom-color: #fff;
     overflow: hidden;
 
@@ -708,7 +611,7 @@ footer{position:absolute;bottom:0;width:120%;height:100px;}
 }
 
 .panel.panel-card:hover .panel-heading {
-    height: 150px;
+    height: 100px;
 
     -webkit-transition: height 400ms ease-in-out;
             transition: height 400ms ease-in-out;
@@ -1580,4 +1483,237 @@ ul.nav-pills {
 /*购物车*/
 .panel1{
   background-color:#ECEFF1;
+}
+
+
+/*----------------------------------功能分割线----------------------------------*/
+
+
+/*landing page*/
+.bg-cover{
+  background-image: url(https://ww4.sinaimg.cn/large/006tKfTcgy1fd0t1ppp5ij31400p0x6p.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.jumbotron{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.jumbotron2{
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: black;
+}
+
+/*轮播*/
+
+
+.btn-default {
+  background: transparent none repeat scroll 0 0;
+
+
+  text-shadow: 0 1px 0 #fff;
+
+}
+.glyphicon {
+    color: white;}
+    .caption-text p {
+  margin: 18px auto 13px;
+  text-align: center;
+  width: 91%;
+}
+.btn-default:focus, .btn-default:hover {
+  background-color: #cc092f;
+  background-position: 0 -15px;
+}
+
+  .cuadro_intro_hover{
+    	padding: 0px;
+		position: relative;
+		overflow: hidden;
+		height: 200px;
+	}
+	.cuadro_intro_hover:hover .caption{
+		opacity: 1;
+		transform: translateY(-150px);
+		-webkit-transform:translateY(-150px);
+		-moz-transform:translateY(-150px);
+		-ms-transform:translateY(-150px);
+		-o-transform:translateY(-150px);
+	}
+	.cuadro_intro_hover img{
+		z-index: 4;
+	}
+	.cuadro_intro_hover .caption{
+		position: absolute;
+		top:150px;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-o-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		transition:all 0.3s ease-in-out;
+		width: 100%;
+	}
+	.cuadro_intro_hover .blur{
+		background-color: rgba(0,0,0,0.7);
+		height: 300px;
+		z-index: 5;
+		position: absolute;
+		width: 100%;
+	}
+	.cuadro_intro_hover .caption-text{
+		z-index: 10;
+		color: #fff;
+		position: absolute;
+		height: 300px;
+		text-align: center;
+		top:-20px;
+		width: 100%;
+	}
+
+
+/*welcome3*/
+.lib-panel {
+    margin-bottom: 20Px;
+}
+.lib-panel img {
+    width: 100%;
+    height: 100%;
+
+
+
+}
+
+.lib-panel .row,
+.lib-panel .col-md-6 {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+
+.lib-panel .lib-row.lib-desc {
+    position: relative;
+    height: 100%;
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.row-margin-bottom {
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    border: 10px;
+    border-color: black;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+
+/*----------------------------------功能分割线----------------------------------*/
+
+
+/*导航栏*/
+.form-control {
+    background-color: #090909 !important;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 1px 1px rgba(0,  0,  0,  0.075) inset;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s,  box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    color: #inherit !important;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -ms-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+    outline: none;
+}
+
+.form-control:hover {
+    border-color: rgba(100,  00,  00,  0.50);
+    background-color: #222222 !important;
+    background-image: none;
+    color: #inherit !important;
+    color: #fff;
+    -webkit-box-shadow: 0 0 10px rgba(09,  09,  09,  0.8);
+    -moz-box-shadow: 0 0 10px rgba(09,  09,  09,  0.8);
+    box-shadow: 0 0 10px rgba(09,  09,  09,  0.8);
+}
+.form-control:focus {
+    border-color: rgba(22,  22,  22,  .75);
+    outline: 0;
+    outline: thin dotted 9;
+    background: #fff !important;
+    color: #333 !important;
+    -webkit-box-shadow: 0 0 8px rgba(22,  22,  22,  .6);
+    -moz-box-shadow: 0 0 8px rgba(22,  22,  22,  .6);
+    box-shadow: 0 0 8px rgba(22,  22,  22,  .6);
+}
+
+.mega-dropdown {
+  position: static !important;
+}
+.mega-dropdown-menu {
+    padding: 20px 0px;
+    width: 100%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+}
+.mega-dropdown-menu .dropdown-header {
+  font-size: 18px;
+  color: #ff3546;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
 }

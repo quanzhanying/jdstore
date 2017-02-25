@@ -1,264 +1,214 @@
-<nav class="navbar " role="navigation">
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
 
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <% if !current_user %>
-              <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
-            <% else %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  你好, <%= current_user.email %>
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu text-center">
-                  <% if current_user.admin? %>
-                    <li><%= link_to("管理后台", admin_products_path ) %></li>
-                  <% end %>
-                  <li>
-                    <%= link_to("个人订单列表", account_orders_path) %>
-                  </li>
-                  <li>
-                    <%= link_to("收藏", favorite_index_path) %>
-                  </li>
-                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-      <div class="modal-dialog" role="document">
-        <div class="loginmodal-container">
-           <h2 class="text-center">登录</h2>
-           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-             <div class="form-inputs">
-               <%= f.input :email, required: false, autofocus: true , :label => "登录邮箱" %>
-               <%= f.input :password, required: false , :label => "登录密码" %>
-               <%= f.input :remember_me,  :label => "记住我", as: :boolean if devise_mapping.rememberable?  %>
-             </div>
-             <div class="form-actions">
-               <%= f.button :submit, "登录" %>
-             </div>
-           <% end %>
+<div class="bg-container">
+  <div class="bg-cover jumbotron">
+      <div>
+					<h6 class="tagline" color="white" data-skrollex="" data-sk-group="">
+						一个专为热爱改装跑车人士打造的专业电商平台
+					</h6>
+					<h1 class="callout-headline" data-skrollex="" data-sk-group="">
+						<span data-skrollex="" data-sk-group="" data-delay=".5">酷</span><br/>
+          </h1>
+          <h3 class="callout-headline" data-skrollex="" data-sk-group="">
+            <span data-skrollex="" data-sk-group="" data-delay=".7">不仅仅是一辆车</span><br/>
+					</h3>
+					<a data-skrollex="" data-sk-group="" href="/" class="btn btn--light link-tracking" data-gtm-page="Homepage" data-gtm-module="Make It Rain" data-gtm-link="Shop Weatherproof">
+						点击查看详情
+					     <span class="btn-line"></span>
+          </a>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>  <br>
+            <br>
+            <br>
+            <br>  <br>
+              <br>
+              <br>
+              <br>
         </div>
       </div>
     </div>
 
-    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-      <div class="modal-dialog">
-        <div class="loginmodal-container">
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" style="width: 250px;height: 185px" src="https://ooo.0o0.ooo/2017/01/25/58888e470ad0c.jpg" alt="">
-          </div>
-          <h2 class="text-center">注册</h2>
-            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
-            <div class="form-inputs">
-              <%= f.input :email, required: true, autofocus: true , :label => "注册邮箱" %>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , :label => "设置密码" %>
-              <%= f.input :password_confirmation, required: true , :label => "确认密码" %>
-            </div>
-            <div class="form-actions">
-                <%= f.button :submit, "注册" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-</nav>
 
-<div class="jumbotron">
-  <h1 class="title">酷跑网</h1>
-  <div class="sologn pull-right">
-    <span>女人逛淘宝</span>
-    <br>
-    <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp男人逛酷跑</span>
-    <br>
-    <div>&nbsp&nbsp&nbsp有不喜欢女人的男人，但绝对没有不喜欢跑车的男人</div>
-    <br>
-    <p><a href="#" data-toggle="modal" data-target="#signup-modal" class="btn btn-lg highlight">成为会员</a></p>
+  <div class="jumbotron2">
+    <div>
+    <h1>购车, 改装 & 保养 </h1>
+      <p>一个专为热爱改装跑车人士打造的专业电商平台超过20年的跑车行业经验为您提供全方位的贴心服务</p>
   </div>
 
 
-</div>
+  <div class="container">
 
-<section class="sec-four">
-<div class="container ">
-  <h1>众多实力超跑大厂倾情入驻</h1>
-  <br>
-  <h4>各种知名大厂的超跑应有尽有，我们甚至还独家供应全球限量版的超跑。</h4>
-  <br>
-    <div class="col-lg-12 text-center">
-      <div class="col-sm-6 col-md-6">
-        <div class="panel panel-default panel-card">
-            <div class="panel-heading">
-              <img src="https://ooo.0o0.ooo/2017/02/13/58a1b97f6e177.png" />
-            </div>
-            <div class="panel-body">
-              <br><br>
-              <h4 class="panel-header"><%= link_to("法拉利", category_products_path(c:"法拉利"), class: "bootstrap-override-2") %></h4>
-            </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-6">
-        <div class="panel panel-default panel-card">
-          <div class="panel-heading">
-            <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9bb9d1c9.png" />
-          </div>
-          <div class="panel-body">
-            <br><br>
-            <h4 class="panel-header"><%= link_to("保时捷", category_products_path(c:"保时捷"), class: "bootstrap-override-2") %></h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-6">
-        <div class="panel panel-default panel-card">
-          <div class="panel-heading">
-            <img src="https://ooo.0o0.ooo/2017/02/13/58a1b9f1b18ca.png" />
-          </div>
-          <div class="panel-body">
-            <br><br>
-            <h4 class="panel-header"><%= link_to("兰博基尼", category_products_path(c:"兰博基尼"), class: "bootstrap-override-2") %></h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-6">
-        <div class="panel panel-default panel-card">
-          <div class="panel-heading">
-            <img src="http://www.kuqin.com/upimg/allimg/100709/0003350.jpg" />
-          </div>
-          <div class="panel-body">
-            <br><br>
-            <h4 class="panel-header"><%= link_to("布加迪威龙", category_products_path(c:"布加迪威龙"), class: "bootstrap-override-2") %></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="row">
+      	<div class="col-lg-4">
+      				<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+  						<p style="text-align:center;">
+  							<img style="height: 200px !important;" src="https://ww4.sinaimg.cn/large/006tKfTcgy1fd1hh4xt48j30wo0ig7wh.jpg" class="img-responsive" alt="">
+  						</p>
+  						<div class="caption">
+  							<div class="blur"></div>
+  							<div class="caption-text">
+  								<h3 style="border-top:2px solid #cc092f; border-bottom:2px solid #cc092f; padding:10px;color:">法拉利</h3>
+  								<p>只要提到汽车科技的先进水平，大家就会想到红色的法拉利。法拉利车集技术性、艺术性于一体，技艺精湛、品质上乘，是富有阶层的象征，堪称车族的稀世珍品...</p>
+  								<a class=" btn btn-default" href="https://plus.google.com/u/0/100371904807783155711/posts" target="_blank"><span class="glyphicon glyphicon-plus"> 立即浏览选购</span></a>
+  							</div>
+  						</div>
+  					</div>
 
-<section class="sec-video">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <embed src='#' allowFullScreen='true' quality='high' width='960' height='540' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
-    </div>
+  	    </div>
+          <div class="col-lg-4">
+          			<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+  						<p style="text-align:center;">
+  							<img style="height: 200px !important;" src="http://media.caranddriver.com/images/13q1/494258/2013-lamborghini-aventador-lp700-4-roadster-first-drive-review-car-and-driver-photo-500213-s-450x274.jpg" class="img-responsive" alt="">
+  						</p>
+  						<div class="caption">
+  							<div class="blur"></div>
+  							<div class="caption-text">
+  								<h3 style="border-top:2px solid #cc092f; border-bottom:2px solid #cc092f; padding:10px;">兰博基尼</h3>
+  								<p>它是举世难得的艺术品,意大利最具声望的设计大师甘迪尼为其倾注一生的心血。每一个棱角、每一道线条都是如此完美，都在默默诠释兰博基尼近乎原始的美...</p>
+  								<a class=" btn btn-default" href="https://plus.google.com/u/0/100371904807783155711/posts" target="_blank"><span class="glyphicon glyphicon-plus"> 立即浏览选购</span></a>
+  							</div>
+  						</div>
+  					</div>
+
+  	    </div>
+          <div class="col-lg-4">
+          			<div class="cuadro_intro_hover" style="background-color:#cccccc;">
+  						<p style="text-align:center;">
+  							<img style="height: 200px !important;" src="http://i7.download.fd.pchome.net/t_1024x768/g1/M00/08/0D/ooYBAFOIW-iIWkPSAAgBcBvY2PkAABkQgPntHQACAGI829.jpg" class="img-responsive" alt="">
+  						</p>
+  						<div class="caption">
+  							<div class="blur"></div>
+  							<div class="caption-text">
+  								<h3 style="border-top:2px solid #cc092f; border-bottom:2px solid #cc092f; padding:10px;">保时捷</h3>
+  								<p>从1963年第一部保时捷911的诞生到现在50多年过去了，经典的后置引擎和已经成为传奇的完美线条。当引擎轰鸣声响起，那一刻您会明白，你的世界需要怎样的跑车...</p>
+  								<a class=" btn btn-default" href="https://plus.google.com/u/0/100371904807783155711/posts" target="_blank"><span class="glyphicon glyphicon-plus"> 立即浏览选购</span></a>
+  							</div>
+  						</div>
+  					</div>
+
+  	    </div>
+
+      </div>
   </div>
 </div>
-</section>
-<section>
+
+
+
+
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="container">
-        <div class="row">
-             <div class="col-sm-6 col-md-6">
-               <div>
-                 <h1>酷跑社区</h1>
-                 <br>
-                 <h4>这里是全国最大的线上超跑俱乐部，定期举办各种各样的精彩活动，更多机会近距离触摸跑车。</h4>
-                 <br>
-                 <p>✔️ 速度与激情——跑车赛事<br><br>
-                 ✔️ 壮观的车队环城活动<br><br>
-                 ✔️ 非凡之旅——非洲跑车大冒险<br><br>
-                 ✔️ 巡游秋名山<br><br>
-                 ✔️ 酷跑老司机教你如何打造个性跑车<br><br>
-                 ✔️ 美女与跑车——上海车展<br><br>
-                 ✔️ 技术交流车友会<br><br>
-                 ✔️ 炫魅之夜狂欢派对</p>
-               </div>
-    		</div>
-		    <div class="col-sm-6 col-md-3">
-        	    <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
+
+            <div class="row row-margin-bottom">
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-panel">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <img class="lib-img-show" src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd1l1jvadgj30gb0m57kr.jpg">
+                        </div>
+
                     </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/josue/73.jpg" />
-                    </div>
-                    <div class="panel-body">
-                      <br><br>
-                        <h4 class="panel-header">Leon</h4>
-                        <small>XX公司工程师</small>
-                    </div>
-                    <div class="panel-thumbnails">
-                        <div class="row">
-                            <p>我在前行网找到我现在呆的公司，发展前景和待遇我都很满意。</p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 no-padding lib-item" data-category="ui">
+                <div class="lib-panel">
+                    <div class="row ">
+
+                        <div class="col-md-12">
+                          <span class="tagline sk-showing" data-skrollex="" data-sk-group="" style="opacity: 1;">爱车改造计划</span>
+                          <h3 class="callout-headline sk-showing" data-skrollex="" data-sk-group="" style="opacity: 1;">改装，<br>不再瞎折腾</h3>
+                          <p data-skrollex="" data-sk-group="" class="sk-showing" style="opacity: 1;">跑车下单后，我们的专业技术团队将给您提供一整套的改装计划，全方位为您解答改装的疑惑，打造出适合您个性的超级跑车</p>
+                          <a href="/" class="btn btn-alt link-tracking sk-showing" data-skrollex="" data-sk-group="" data-gtm-page="homepage" data-gtm-module="Storm Cobra 2.0" data-gtm-link="B: Shop Storm Cobra" style="opacity: 1;">查看详情<span class="btn-line"></span></a>
+
+                            <div class="lib-row lib-header">
+                                跑车改造计划
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc">
+                                跑车下单后，我们的专业技术团队将给您提供一整套的改装计划，全方位为您解答改装的疑惑，打造出适合您个性的超级跑车
+                            </div>
                         </div>
                     </div>
-            	</div>
-    		</div>
-        <div class="col-sm-6 col-md-3">
-              <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="https://unsplash.imgix.net/41/bXoAlw8gT66vBo1wcFoO_IMG_9181.jpg?q=75&fm=jpg&s=a760fd82863937c841f4b3870cdef011" />
-                    </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/josue/73.jpg" />
-                    </div>
-                    <div class="panel-body">
-                      <br><br>
-                        <h4 class="panel-header">Leon</h4>
-                        <small>XX公司工程师</small>
-                    </div>
-                    <div class="panel-thumbnails">
-                        <div class="row">
-                            <p>我在前行网找到我现在呆的公司，发展前景和待遇我都很满意。</p>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div class="jumbotron2">
+
+
+
+
+<div class="custom-callout-banner banner dark dark-texture snippet mt10 mb10 sk-showing sk-viewport-enter" data-skrollex="" data-sk-group="" data-animate-fade="" style="opacity: 1;">
+	<div class="container">
+    <div class="col-md-5 lib-item" data-category="view">
+		<div class="callout custom-callout">
+			<header class="section-header mb0">
+        <br>
+        <br>
+        <span class="tagline sk-showing sk-viewport-enter" data-skrollex="" data-sk-group="" style="opacity: 1;">线上沟通交流，上门试乘试驾</span>
+				<h3 class="callout-headline sk-showing sk-viewport-enter" data-skrollex="" data-sk-group="" style="opacity: 1;">官方授权正品<br>完美的售后保障</h3>
+				<p data-skrollex="" data-sk-group="" class="sk-showing sk-viewport-enter" style="opacity: 1;">
+          看到心水的跑车后，您只需轻轻一按”试驾“”，该跑车即刻抵达您家，让你足不出户享受4s店的尊贵服务。爱车下单后，拥有20年技术经验的售后团队将给您带来前所未有的贴心服务。
+				</p>
+				<a href="/" class="btn btn-alt sk-showing sk-viewport-enter" data-skrollex="" data-sk-group="" data-gtm-page="Homepage" data-gtm-module="Yalta 2.0 Backpack" data-gtm-link="Shop Yalta 2.0" style="opacity: 1;">Shop Yalta 2.0<span class="btn-line"></span></a>
+			</header>
+		</div>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-3 no-padding lib-item" >
+
+		<a href="/">
+			<img class="lib-img-show" src="https://ww2.sinaimg.cn/large/006tKfTcgy1fd1nyzn5enj30gb08daf5.jpg" alt="Yalta 2.0 Backpack" data-skrollex="" data-sk-group="" class="sk-showing sk-viewport-enter" style="opacity: 1;">
+		</a>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+            <div class="row row-margin-bottom">
+              <div class="col-md-5 no-padding lib-item" data-category="ui">
+                  <div class="lib-panel">
+                      <div class="row ">
+
+                          <div class="col-md-12">
+
+                              <div class="lib-row lib-header">
+                                酷跑社区
+
+                                  <div class="lib-header-seperator"></div>
+                              </div>
+                              <div class="lib-row lib-desc">
+                                交流社区，<br>
+                                一个就好<br>
+                                专业级跑车论坛，交友，交流，切磋，一切尽在其中
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-panel">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <img class="lib-img-show" src="https://ww3.sinaimg.cn/large/006tKfTcgy1fd1n2qtqunj30jb0p1e5b.jpg">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="https://ununsplash.imgix.net/19/waves.JPG?q=75&fm=jpg&s=6f316bc8e1dc9887a7cebe0841096e99" />
-                    </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mutlu82/73.jpg" />
-                    </div>
-                    <div class="panel-body">
-                      <br><br>
-                        <h4 class="panel-header">John</h4>
-                        <small>XX公司业务代表</small>
-                    </div>
-                    <div class="panel-thumbnails">
-                        <div class="row">
-                          <p>这里有热心的师兄师姐提建议，让我找到了最适合自己的职业发展道路。</p>
-                        </div>
-                    </div>
-            	</div>
-    		</div>
-            <div class="col-sm-6 col-md-3">
-                <div class="panel panel-default panel-card">
-                    <div class="panel-heading">
-                        <img src="https://ununsplash.imgix.net/26/camera-keys.jpg?q=75&fm=jpg&s=b919d3158053cde8e9f0e37b4876c14f" />
-                    </div>
-                    <div class="panel-figure">
-                        <img class="img-responsive img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/nisaanjani/73.jpg" />
-                    </div>
-                    <div class="panel-body">
-                      <br><br>
-                        <h4 class="panel-header">Mike</h4>
-                        <small>XX公司总监</small>
-                    </div>
-                    <div class="panel-thumbnails">
-                        <div class="row">
-                            <p>前行网的社区很活跃，我们很多同届的毕业生都喜欢在这里互相交流。</p>
-                        </div>
-                    </div>
-            	</div>
-    		</div>
-	    </div>
-    </div>
-    </div>
-  </div>
 </div>
-</section>
+<br>
+<br>
+<br>
