@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170222150531) do
     t.integer  "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "imager"
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|
