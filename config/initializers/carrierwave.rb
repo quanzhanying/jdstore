@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],      # 你的 secret key
 
 
-      region:                'ap-northeast-1' # 你的 S3 bucket 的 Region 位置
+      region:                ENV["AWS_REGION"] # 你的 S3 bucket 的 Region 位置
 
 
     }
