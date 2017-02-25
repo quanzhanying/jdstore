@@ -1,0 +1,13 @@
+<div class="products-1 search-page">
+  <h3 class="introduction">曾勾浮云隐青日，更添霁雾遮旧瓷。</h3>
+  <h4 class="introduction-sub">但看晓风红叶里，微朦初雨绕花枝。 </h4>
+  <hr>
+  <div class="row hot-products">
+    <% if @products.present? %>
+      <h5 class="collection">已为您找到<%= @products.count %>个宝贝</h5>
+      <%= render :partial => "product_items", :collection => @products, :as => :product %>
+    <% else %>
+      抱歉，没找到您要的商品。
+    <% end %>
+  </div>
+</div>

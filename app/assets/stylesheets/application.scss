@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ body {
+    min-height: 100%;
+    position: relative;
+    background-color: #f5f5f5;
+  }
+
+  /* common flash */
+
+  div.alert {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 0;
+  }
+
+  /* common navbar */
+
+ .navbar-default {
+   margin-bottom: 0;
+   background: #0e5bb7;
+     .navbar-header {
+       margin-left: 9%;
+       a {
+         font-size: 20px;
+         color: #fff;
+       }
+     }
+     .navbar-nav li a {
+       color: #fff;
+       font-size: 16px;
+       transition: 0.35s;
+     }
+     .navbar-nav li a:hover {
+       color: #db2d0a;
+       text-decoration: none
+     }
+
+     .navbar-nav .dropdown-menu {
+       padding-bottom: 0;
+       padding-top: 0;
+       a {
+         text-align: center;
+         color: #000;
+       }
+       li.divider:last-child {
+         display: none;
+       }
+     }
+     .login {
+       border: 1px solid #fff;
+       margin-top: 12px;
+       padding: 3px 17px 3px 17px;
+       margin-right: 130px;
+       border-radius: 15px;
+     }
+
+  }
+
+ /*  SEARCH-BAR */
+
+ .products-search-form {
+   margin-top: 10px;
+   padding-left: 20px;
+   width: 290px;
+   .search-bar {
+     position: relative;
+     margin-top: 10px;
+     display: inline-block;
+     padding-right: 40px;
+
+     .search-bar-input  {
+       min-width: 300px;
+       transition: 0.35s;
+     }
+   }
+ }
