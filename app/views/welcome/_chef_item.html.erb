@@ -1,11 +1,11 @@
-<div class="col-sm-3" style="margin-bottom: 25px;">
+<div class="col-sm-3" >
        <div class="responsive">
          <div class="img">
            <%= link_to chef_path(chef) do %>
              <% if chef.image.present? %>
-               <%= image_tag(chef.image.thumb.url, class: "thumbnail") %>
+               <%= image_tag(chef.image.thumb.url, class: "img-circle") %>
              <% else %>
-               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-circle") %>
              <% end %>
            <% end %>
          </div>

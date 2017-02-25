@@ -38,11 +38,15 @@
           <%= chef.chef_level_id %>
         </td>
         <td>
+
+
           <% if chef.is_hidden %>
             <%= link_to publish_admin_chef_path(chef), :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
           <% else %>
             <%= link_to hidden_admin_chef_path(chef), :method => :post, :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
           <% end %>
+
+
         </td>
       </tr>
     <% end %>
