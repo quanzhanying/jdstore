@@ -15,6 +15,9 @@ resources :products do
     get :menu0
     get :search_fruit
   end
+  member do
+    put "like", to: "products#upvote"
+  end
 resources :comments
 member do
   post :add_to_cart

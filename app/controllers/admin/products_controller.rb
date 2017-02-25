@@ -44,6 +44,6 @@ before_action :admin_required
 
     private
     def product_params
-      params.require(:product).permit(:title, :description, :price, :quantity, :image,:place,:kind)
+      params.require(:product).permit(:title, :description, :price, :quantity, :image,:place,:kind,:owner)
     end
 end

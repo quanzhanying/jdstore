@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user!, only:[:upvote]
 
   def index
     @products= Product.all
@@ -63,12 +64,21 @@ end
 
   end
 
+  def upvote
+    @product=Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
+  end
+
+
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
       @products = search_result
     end
   end
+
+
 
   protected
 

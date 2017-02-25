@@ -49,6 +49,14 @@
     <p>产地：<%=product.place%></p>
    <p>库存：<%=product.quantity%></p>
    <p>单价：<%=product.price%></p>
+
+   <%= link_to like_product_path(product), method: :put do %>
+<div class="pi-thumbs-up">
+<i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+<%= product.get_upvotes.size %>
+</div>
+<% end %>
+
    <div class="button-select">
      <%=link_to("select",product_path(product),:class=> "btn btn-default")%>
    </div>

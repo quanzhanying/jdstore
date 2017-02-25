@@ -20,6 +20,31 @@
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 
+/*footer固定在底部*/
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 100px;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+
+  width: 100%;
+  margin-right: -20px;
+  background-color:rgba(187,222,251 ,0.6);
+}
+
+.footerTable_1foh0d8{
+  position: relative;
+  bottom: -15px;
+}
+
 /*搜索栏样式*/
 
 .nav.nav-item{
