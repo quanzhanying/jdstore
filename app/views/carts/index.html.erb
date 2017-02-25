@@ -11,9 +11,9 @@
 					<a class="remove">
             <%= link_to product_path(cart_item.product) do  %>
             <% if cart_item.product.image.present? %>
-            <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail")%>
+            <%= image_tag(cart_item.product.image.thumb.url)%>
             <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
             <% end %>
 
             <% end %>
@@ -58,7 +58,7 @@
 		<div class="container clearfix">
 			<div class="left">
 				<h2 class="subtotal">小计: ￥<span><%= render_cart_total_price(current_cart) %></span></h2>
-				<h3 class="shipping">邮费: ￥<span>5.00</span></h3>
+				<h3 class="shipping">邮费: <span>包邮</span></h3>
 			</div>
 			<div class="right">
 				<h1 class="total">总计: ￥<span><%= render_cart_total_price(current_cart) %></span></h1>
