@@ -74,3 +74,5 @@ gem 'figaro'
 gem 'fog-aws'
 
 gem 'ransack'
+
+gem 'airbrake', '~> 5.4'
