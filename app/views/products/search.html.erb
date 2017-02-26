@@ -1,0 +1,21 @@
+<div class="row">
+  <% if @products.present? %>
+    <% @products.each do |product|%>
+    <div class="col-xs-6 col-md-3">
+        <%= link_to product_path(product) do%>
+        <% if product.image.present? %>
+        <%= image_tag(product.image.thumb.url, class:"thumbnail")%>
+        <%else%>
+        <% image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+        <% end %>
+        <% end %>
+        <%= render_highlight_content(product, @query_string)%>￥<%= product.price%>
+    </div>
+    <% end %>
+    <%else%>
+    <br>
+    <p style="text-align: center;font-size: 1.3em;">抱歉，未搜索到您需要的商品，3秒后自动为您跳转到
+首页</p>
+    <meta http-equiv="refresh" content="3; url=/">
+    <%end%>
+</div>
