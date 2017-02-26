@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require bootstrap/modal
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+
+// 首页轮播
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 3000})
+    $(window).trigger('scroll') // 一开始就触发一下滚动事件
+});
