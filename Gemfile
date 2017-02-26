@@ -43,7 +43,7 @@ gem 'figaro'
 gem 'fog'
 gem "will_paginate"
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
+# gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 gem 'ransack'
 gem 'seo_helper'
 

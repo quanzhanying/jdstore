@@ -14,9 +14,7 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/modal
 //= require_tree .
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require moment
-//= require bootstrap-datetimepicker
