@@ -19,9 +19,9 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
     @photos = @chef.photos.all
     if current_cart.chef_id != nil
-      current_chef_in_cart = Chef.find(current_cart.chef_id)
-      if @chef.style != current_chef_in_cart.style
-        flash[:warning] = "您当前选择的厨师 #{current_chef_in_cart.name} 的菜系是#{current_chef_in_cart.style}， 如果更换其他菜系厨师需要重新选择菜品！"
+      @current_chef_in_cart = Chef.find(current_cart.chef_id)
+      if @chef.style != @current_chef_in_cart.style
+        flash[:warning] = "您当前选择的厨师 #{@current_chef_in_cart.name} 的菜系是#{@current_chef_in_cart.style}， 如果更换其他菜系厨师需要重新选择菜品！"
       end
     end
     @chef_comments = ChefComment.where(chef_id: @chef.id).order("created_at DESC")

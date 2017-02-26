@@ -61,7 +61,11 @@
             <% if current_cart.book_date.present? %>
             <div class="pull-right">
               <% if !current_user.admin? %>
-                <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-danger") %>
+                <% if current_cart.chef_id != nil && @current_chef_in_cart.style != @chef.style %>
+                  <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :data => {:confirm => "更换不同菜系的厨师将清空当前购物车。确定吗？" }, :method => :post, :class => "btn btn-primary btn-danger") %>
+                <% else %>
+                  <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-danger") %>
+                <% end %>
               <% end %>
             </div>
             <% end %>
