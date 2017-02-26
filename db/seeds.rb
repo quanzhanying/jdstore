@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'json'
+
 puts 'seed 数据自动创建'
 
 User.create(email: "cw@test.com", password: "123456", password_confirmation: "123456", is_admin: 'false')
@@ -18,3 +21,5 @@ for i in 1..5 do
 end
 puts 'create product : 5'
 =end
+
+puts '从josn文件导入趣玩网商品数据'
