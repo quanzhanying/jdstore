@@ -18,23 +18,82 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.thumbnail{
+body, input, textarea {
+    font-size: 12px;
+    font-family: Arial,Verdana,"\5b8b\4f53";
+}
+
+body{
+  color: #444;
+  background: #fff;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+a{
+  color:#008842;
+  text-decoration-style: none;
+}
+.site-nav{
+  z-index: 99;
+  position: relative;
+  width: auto;
+  height: 30px;
+  background: #f7f9f8;
+  color: #008842;
+}
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+.fl{
+  float: left;
+  margin-left: -10px;
+}
+li{
+  list-style: none;
+}
+.site-nav .fl li{
+  float: left;
+  line-height: 30px;
+  margin-right: 5px;
+}
+.sity-nav .city{
+  position: relative;
+  color: #008842;
+
+}
+
+.fr{
+  float: right;
+  margin-right: 50px;
+}
+.site-nav .fr li{
+  position: relative;
+  float: right;
+  line-height: 30px;
+  padding: 0 10px;
+  text-align: center;
+}
+.site-nav .myzhenguo .dropdown-menu li{
+  text-align: left!important;
+  width: 150px;
+}
+
+.site-nav .dropdown li{
+  text-align: left;
+  width: 150px;
+}
+ul, ol{
+  list-style: none;
+  list-style-type: none;
+}
+
+.thumbnail {
   display: inline;
   padding: 4px;
   transition: border 0.2s;
 }
 
-.alert{
-  margin-top:80px;
-}
-
-.navbar {
-    margin-bottom: 0;
-    background-color: transparent;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 3px;
-    border-radius: 0;
+.alert {
+  margin-top:40px;
 }

@@ -3,8 +3,221 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
+// 头部-2
+.affix{
+  top:0;
+}
+
+.header{
+  z-index: 99;
+  background: #e0e0e0;
+  margin-left: -15px;
+  margin-right: -15px;
+
+}
+.clearfix{
+  display: block;
+}
+.header .wrap{
+  height: 58px;
+}
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+.logo{
+  float: left;
+  width: 280px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.wrap .logo .material-icons{
+  font-size: 58px;
+}
+
+.logo i{
+  vertical-align: middle;
+}
+
+.logo span{
+  display: inline-block;
+  margin-top: 5px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+
+.logo a{
+  display: block;
+  width: 145px;
+  height: 58px;
+  font-size: 20px
+}
+
+// 搜索开始
+
+.search{
+  float: left;
+  width: 528px;
+}
+
+.search .search-input {
+  float: left;
+  width: 425px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px;
+  border: 1px solid #008842;
+  background: #e0e0e0;
+  margin-top:15px;
+}
+
+input{
+  vertical-align: middle;
+}
+input, button, select,{
+  outline: none;
+}
+
+.search .search-btn {
+  float: left;
+  display: block;
+  width: 81px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  background: #008842;
+  margin-top:14px;
+}
+
+// 购物车
+
+.shopping-cart{
+  margin-top:15px;
+  z-index: 88;
+  float: right;
+  position: relative;
+  width: 170px;
+  height: 28px;
+  margin-right: 50px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #008842;
+  background: transparent;
+  cursor:pointer;
+  color: #008842;
+}
+
+.shopping-cart i{
+  vertical-align: middle;
+}
+
+.shopping-cart span{
+  vertical-align: middle;
+  display: inline-block;
+}
+.shopping-btn .cartname{
+  color: #008842;
+  vertical-align: middle;
+}
+dl{
+  display: block;
+}
+.shopping-btn{
+  width: 170px;
+  height: 28px;
+  padding: 6px 0;
+  line-height: 28px;
+  text-align: center;
+  font-size: 25px;
+  border: 1px solid #008842;
+  background: #fff;
+  cursor:pointer;
+}
+.shopping-btn a{
+  display: block;
+  color: #008842;
+}
+a{
+  text-decoration: none;
+  outline: none;
+}
+
+// 轮播广告nav
+.header-nav{
+  z-index: 7;
+  position: relative;
+}
+.wrap{
+
+  width: 1200px;
+  margin: 0 auto;
+}
+.catalogs{
+
+  float: left;
+  position: relative;
+  width: 180px;
+  height: 38px;
+  position: relative;
+  text-align: center;
+  background: #008842;
+}
+.catalogs .catalogstitle{
+
+  margin-top: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  font: bold 15px/16px "Microsoft YaHei";
+  color: #fff;
+  display: block;
+  height: 16px;
+
+}
+// 轮播广告
+.carousel-control.right, .carousel-control.left {
+    background: transparent;
+    color: #008842;
+    background-image: none;
+}
+
+.carousel-indicators li {
+    border-color: #008842;
+}
+
+.carousel-indicators li.active {
+    background-color: #008842;
+}
+
+.item  {
+   height: 500px;
+  width: 1000px;
+}
+
+#myCarousel{
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+// 这是商品显示
 .row{
-  margin-top: 100px;
+  margin-top: auto;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600,800);

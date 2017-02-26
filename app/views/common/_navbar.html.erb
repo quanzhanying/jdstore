@@ -1,18 +1,25 @@
-  <nav class="navbar navbar-default " role="navigation">
-    <div class="container-fluid">
-
-     <div class="navbar-header">
-       <a class="navbar-brand" href="/">梦想桌面</a>
-     </div>
+  <!-- <div class="headtop " role="navigation">
+    <div class="navbar-wids">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+    <p class="navbar-text"><a href="#">欢迎来到臻果园！</a></p>
 
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="customegood">
-            <%= link_to("订制系统", products_path)%>
-          </li>
-
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">配送至：
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">北京</a></li>
+          <li><a href="#">上海</a></li>
+          <li><a href="#">广州</a></li>
+          <li><a href="#">深圳</a></li>
         </ul>
-
+      </li>
+    </ul>
 
        <ul class="nav navbar-nav navbar-right">
          <li>
@@ -24,13 +31,12 @@
            <li>
              <%=  link_to("我的订单", account_orders_path)%>
            </li>
-           <!-- <%= link_to("登入","#")%> -->
+
            <% if !current_user %>
            <li><%= link_to("注册", new_user_registration_path,)%></li>
            <li><%= link_to("登入", new_user_session_path)%></li>
            <% else %>
            <li class="dropdown">
-
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                Hi!,<%= current_user.email %>
                <b class="caret"></b>
@@ -55,4 +61,57 @@
      </div>
 
     </div>
- </nav>
+ </div> -->
+<!-- 顶部工具栏 -->
+ <div class="site-nav">
+   <div class="wrap">
+  <ul class="fl">
+    <li>欢迎光临臻果园！</li>
+    <li class="dropdown city" style="color:#008842">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#008842">配送至：
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">北京</a></li>
+        <li><a href="#">上海</a></li>
+        <li><a href="#">广州</a></li>
+        <li><a href="#">深圳</a></li>
+    </ul>
+  </li>
+  </ul>
+  <ul class="fr">
+    <li class="myzhenguo" style="color:#008842">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#008842"><span class="glyphicon glyphicon-user" style="color:#008842"></span>我的臻果：
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+       <li>
+        <%=  link_to("我的订单", account_orders_path)%>
+        </li>
+        <li><a href="#">我的收藏</a></li>
+        <li><a href="#">我的退换货</a></li>
+      </ul>
+    </li>
+    <% if !current_user %>
+    <li id="_register" ><%= link_to("注册", new_user_registration_path,)%></li>
+    <li id="_login" ><%= link_to("登录", new_user_session_path)%></li>
+    <% else %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Hi!,<%= current_user.email %>
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <% if current_user.admin? %>
+        <li>
+         <%= link_to("Admin 选单", admin_products_path)%>
+       </li>
+        <% end %>
+       <li>
+         <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)%>
+       </li>
+      </ul>
+    </li>
+    <% end %>
+
+  </ul>
+   </div>
+ </div>
