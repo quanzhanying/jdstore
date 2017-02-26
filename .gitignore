@@ -22,7 +22,6 @@
 config/database.yml
 public/uploads
 config/secrets.yml
-config/initializers/carrierwave.rb
 
 # Ignore application configuration
 /config/application.yml
