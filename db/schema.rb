@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170225145103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "chef_id"
-    t.datetime "book_date"
     t.integer  "user_id"
   end
 
