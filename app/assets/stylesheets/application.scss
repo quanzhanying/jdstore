@@ -16,15 +16,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
-
-
 .bg-color1 {
   background-color: black;
 }
-.bg-color2 {
-  background-color: #f2f2f2;
-}
+
 .navbar {
   width: 100%;
   border-radius: 0;
@@ -44,11 +39,16 @@
   text-align: center;
   line-height: 20px;
 }
+.navbarContent-item a {
+  color: #c6c6c6;
+
+}
 .navbarContent-LastItem {
   margin-right: 0;
   color: #c6c6c6;
 
 }
+
 .carousel {
   width: 100%;
   margin: 0;
