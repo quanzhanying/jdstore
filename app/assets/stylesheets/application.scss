@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+.bg-color1 {
+  background-color: black;
+}
+
+.navbar {
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+}
+.navbarContent {
+  width: 1200px;
+  margin: 0 auto;
+  height: 20px;
+}
+.navbarContent-item {
+  float: left;
+  width: 187.5px;
+  height: 20px;
+  margin: 20px 5px;
+  color: #c6c6c6;
+  text-align: center;
+  line-height: 20px;
+}
+.navbarContent-item a {
+  color: #c6c6c6;
+
+}
+.navbarContent-LastItem {
+  margin-right: 0;
+  color: #c6c6c6;
+
+}
+
+.carousel {
+  width: 100%;
+  margin: 0;
+}
+.carousel .item {
+  height: 640px;
+}
+.carousel .item img {
+  width: 100%;
+}
+.showList {
+  width: 100%;
+  margin: 50px 0;
+}
+.showList-item {
+  float: left;
+  height: 200px;
+  border-color :white;
+  padding: 0;
+}
+
+.showList-item-content {
+  margin-right: 1px;
+  height: 100%;
+}
+.showList-item-content img {
+  height: 200px;
+  width: 100%;
+}
+
+
+.showList-item-lastContent {
+  margin-right: 0;
+}
+.showList-item-lastContent img {
+  height: 200px;
+  width: 100%;
+}
+
+.noBullets{
+list-style:none;
+padding:auto;
+
+}
+
+#last-footer h5{
+text-align:center;
+
+}
+#last-footer {
+margin-bottom: 0;
+background-color: black;
+}
+
+.footlinks li a{
+text-align:center;
+margin-left:5px ;
+color: #c6c6c6;
+}
+.subscribe li{padding:3px;}
