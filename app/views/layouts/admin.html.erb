@@ -16,7 +16,7 @@
           <li> <%= link_to("Products", admin_products_path) %> </li>
           <li> <%= link_to("Orders", admin_orders_path) %> </li>
           <li>
-             <span style="color: #337ab7; padding-left: 40px;">商品分类:</span>
+             <%= link_to"商品分类:"%>
 
                <ul>
                 <% Category.all.each do |category| %>
