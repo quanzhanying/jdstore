@@ -9,9 +9,20 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active">
-                <%= link_to("Products", products_path) %>
+                <%= link_to("全部商品", products_path) %>
               </li>
+              <li>
+                <%= link_to("手机／电脑", "/") %>
+              </li>
+              <li>
+                <%= link_to("图书／电影", "/") %>
+              </li>
+              <li>
+                <%= link_to("美食／电影", "/") %>
+              </li>
+
             </ul>
+            <%= render "search/search" %>
 
             <ul class="nav navbar-nav navbar-right">
               <li>

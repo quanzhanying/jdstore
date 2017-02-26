@@ -1,3 +1,11 @@
+<div class="search">
+  <%= search_form_for @search do |f| %>
+    <%= f.label :title_cont %>
+    <%= f.search_field :title_cont %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
@@ -11,4 +19,3 @@
       <%= product.title %> ¥ <%= product.price %>
     </div>
   <% end %>
-</div>

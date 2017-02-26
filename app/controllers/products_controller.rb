@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @search = Product.ransack(params[:q])
+    @products = @search.result(distinct: true)
   end
 
   def show
@@ -19,4 +20,6 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+
+
 end
