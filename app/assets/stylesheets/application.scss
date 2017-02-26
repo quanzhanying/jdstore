@@ -24,27 +24,11 @@
 
  .navbar-default {
      background-color: #E1F5FE;//背景颜色
-     border-color: #FAFAFA;//边框色
+     border-color: #FAFAFF;//边框色
      padding-bottom: 5ex;//底部 margin 不撑开距离
  }
 
- .sign_in{
-   list-style-type: none;
-   font-size:18px;
-   color: #FB8C00;
-   position:absolute;
-   top:35px;
-   right:20px;
- }
 
- .devise_for {
-   list-style-type: none;
-   font-size:18px;
-   color: #FB8C00;
-   position:absolute;
-   top:35px;
-   right:80px;
- }
 
  .collapse .navbar-collapse{
    list-style-type: none;
@@ -53,11 +37,11 @@
    font-size:18px;
    //float: right;
    //font-weight: 90
-   color: #FB8C00;
+   color: #FB8C99;
    position:absolute;
    //left:100px;
    top:35px;
-   right:360px;
+   right:160px;
  }
 
  .navbar-default .navbar-brand:hover,
