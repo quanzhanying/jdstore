@@ -13,6 +13,14 @@
 <div class="jumbotron">
 <h1>随风奔跑</h1>
 <p>每一个完整的人生，都需要一场马拉松</p>
+<form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">订阅</button>
+      </div>
+    </div>
+  </form>
 </div>
 
 </body>
@@ -21,9 +29,78 @@
 <style>
 .jumbotron {
     background-color: #34a853; /* green */
-    color: #ffffff;
+    color: #084c8d;
+    padding: 100px 25px;
+}
+
+.container-fluid {
+  padding: 60px 50px;
 }
 </style>
+
+<style>
+.bg-grey {
+    background-color: #f6f6f6;
+}
+</style>
+
+<style>
+.logo {
+    font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+    <h2> 关于我们 </h2>
+    <h4>随风奔跑是两位马拉松爱好者合作的一个网站</h4>
+    <p>在这里，不仅仅有帮助你完成马拉松的服务，更是这里是跑步爱好者聚集地</p>
+    <p>书写人生，随风奔跑 </p>
+    <button class="btn btn-default btn-lg">联系我们</button>
+</div>
+<div class="col-sm-4">
+      <img src="https://ww3.sinaimg.cn/large/006tKfTcly1fd3w4byq6dj306005i0sr.jpg">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <h2>我们的价值</h2>
+  <h4><strong>奔跑者理念:</strong> 帮助每一个人完成人生的一场马拉松！ </h4>
+  <p><strong>奔跑者信条:</strong> 人生就是一场不停歇的马拉松！
+</div>
+
+<!--这里是服务内容-->
+<div class="container-fluid text-center">
+  <h2> 我们可以提供的 </h2>
+  <h4> 您所需要的 </h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off"></span>
+      <h4>参赛无忧</h4>
+      <p>从报名到参赛的相关事宜</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart"></span>
+      <h4>跑步训练</h4>
+      <p>让你能安全的完成人生第一场马拉松</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock"></span>
+      <h4>急救训练</h4>
+      <p>提供必要的救护训练，保护自己，帮忙别人</p>
+    </div>
+    </div>
+    <br><br>
+  
 
 <div class="row">
   <% @products.each do |product| %>
