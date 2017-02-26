@@ -1,19 +1,11 @@
 CarrierWave.configure do |config|
-  if Rails.env.production?
-    config.fog_provider = 'fog'
-    config.fog_credentials = {
-      provider:              'AWS',
-      aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],
+  config.storage             = :qiniu
+  config.qiniu_access_key    = ENV["4dg8_gZJ_RwL4t847hd8NdAM0sP6ewKWoA80wtEx"]
+  config.qiniu_secret_key    = ENV["OJYnRHwHD7ndG8vwSRwEjO0weJRt-wUwHSqrLvIi"]
+  config.qiniu_bucket        = ENV["jdstore-demo"]
+  config.qiniu_bucket_domain = ENV["ols6vd1wm.bkt.clouddn.com"]
+  config.qiniu_block_size    = 4*1024*1024
+  config.qiniu_protocol      = "http"
+  config.qiniu_up_host       = "http://up.qiniug.com"  #选择不同的区域时，"up.qiniug.com" 不同
 
-      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-
-      region:                ENV["AWS_REGION"]
-
-    }
-    config.fog_directory  = ENV["AWS_BUCKET_NAME"]
-
-
-  else
-    config.storage :file
-  end
 end
