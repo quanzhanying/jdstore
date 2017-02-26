@@ -24,19 +24,29 @@ body {
   position: relative;
 }
 
-#section0 {
-  color: #fff;
-  background-color: #ff9800;
+.jumbotron {
+    background-color: #60373e;
+    color: #fffffb;
+    height: 400px;
+    padding:100px 25px;
+    margin-bottom: 0;
 }
 
-#section1 {
-  padding-top: 100px;
+#section0 {
+  color: #fff;
+  background-color: #fafcf2;
+}
+
+#section1, #section3 {
+  padding-top: 50px;
   padding-bottom: 50px;
+  margin-bottom: 0;
+  background-color: #f6f6f6;
   position: relative;
 
 }
 
-#section2, #section3, #section41, #section42, #service {
+#section2, #section41, #section42, #service {
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
@@ -51,21 +61,24 @@ body {
 /* Add a dark background color with a little bit see-through */
 .navbar {
     margin-bottom: 0;
-    background-color: #2d2d30;
+    background-color: #60373e;
+    color: #fffffb;
     border: 0;
-    font-size: 13px !important;
-    letter-spacing: 4px;
+    font-size: 13px;
+    letter-spacing: 2px;
     opacity:0.9;
 }
 
-/* Add a gray color to all navbar links */
-.navbar li a, .navbar .navbar-brand {
-    color: #d5d5d5;
+/* Add a  color to all navbar links */
+.navbar li a,{
+  color: #fffffb;
 }
 
 /* On hover, the links will turn white */
 .navbar-nav li a:hover {
-    color: #fff;
+  color: #91989f;
+
+
 }
 
 /* The active link */
@@ -79,12 +92,66 @@ body {
     border-color: transparent;
 }
 
-/* ------- Footer CSS -------*/
+
+#bs-example-navbar-collapse-1 {
+  color: #fffffb;
+
+}
+
+/* ------- Navbar End -------*/
+
+/* =========================== */
+
+/*-------Slides CSS-------*/
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3{
+    color: #60373e;
+}
+
+.carousel-caption p{
+    color: #60373e;
+}
+
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+/*-------Slides End-------*/
+
+/* ====================== */
+
+/* Add an orange color to all icons and set the font-size */
+.logo-small {
+    color: #60373e;
+    font-size: 50px;
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
+
+/* ----- Footer CSS -----*/
 /* Add a dark background color to the footer */
-footer {
-    background-color: #2d2d30;
+#service {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  color: #60373e;
+  position: relative;
+}
+
+.footer-copyright {
+    background-color: #60373e;
     color: #f5f5f5;
     padding: 32px;
+    margin-top: 0;
 }
 
 footer a {
