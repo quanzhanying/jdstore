@@ -1,6 +1,5 @@
 class Chef < ApplicationRecord
   validates :name, presence: true
-  validates :style, presence: true
   validates :city, presence: true
 
   mount_uploader :image, ImageUploader
