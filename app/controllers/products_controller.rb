@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product_photos = @product.product_photos.all
   end
 
   def add_to_cart

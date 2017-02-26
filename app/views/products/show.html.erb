@@ -2,8 +2,15 @@
   <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <% if @product.image.present? %>
-        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <!-- <% if @product.image.present? %>
+        <%#= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %> -->
+      <% if @product_photos.present? %>
+        <% @product_photos.each_with_index do |p, index| %>
+          <%= image_tag p.image.medium.url %>
+        <% end %>
       <% else %>
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>

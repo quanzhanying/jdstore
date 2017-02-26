@@ -1,9 +1,9 @@
 <div class=" col-md-3 col-xs-6 box">
   <div class="image" style="width: 200px;">
     <%= link_to product_path(product) do %>
-      <% if product.image.present? %>
+      <% if product.product_photos.present? %>
         <!-- <%#= image_tag(product.image.url, class: "thumbnail") %> -->
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <%= image_tag(product.product_photos[0].image.thumb.url, class: "thumbnail") %>
       <% else %>
         <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
       <% end %>

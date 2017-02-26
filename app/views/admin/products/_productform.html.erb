@@ -17,7 +17,12 @@
   </div>
 
   <div class="group">
-    <%= f.input :image, as: :file %>
+    <%= f.input :special, :label => "特色菜"  %>
+  </div>
+  <div class="group">
+    <%#= f.input :image, as: :file %>
+    <%= f.label :image %>
+    <%= f.file_field :image, :multiple => true, name: "product_photos[image][]" %>
   </div>
   <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
 <% end %>

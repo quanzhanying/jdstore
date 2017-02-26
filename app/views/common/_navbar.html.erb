@@ -49,12 +49,13 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                <li>
-                 <%= link_to(content_tag(:i,  "Admin 选单", class: 'fa fa-cogs'), admin_products_path ) %>
+                 <%= link_to(content_tag(:i,  "Admin 选单", class: 'fa fa-cogs'), admin_chefs_path ) %>
                </li>
               <% else %>
                 <li>
                   <%= link_to(content_tag(:i,  "个人订单列表", class: 'fa fa-indent'), account_orders_path) %>
                   <%= link_to(content_tag(:i,  "我收藏的私厨", class: 'fa fa-gratipay'), account_favorchefs_path) %>
+                  <%#= link_to(content_tag(:i,  "我喜欢的菜品", class: 'fa fa-gratipay'), account_favorproducts_path) %>
                 </li>
               <% end %>
               <li><%= link_to(content_tag(:i, '登出 ', class: 'glyphicon glyphicon-log-out'), destroy_user_session_path, method: :delete) %></li>
