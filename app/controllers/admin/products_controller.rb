@@ -7,7 +7,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @photo = @product.photos.build #for multi-pics
+    @photos = @product.photos.build #for multi-pics
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
@@ -18,7 +18,7 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       if params[:photos] != nil
         params[:photos]['avatar'].each do |a|
-          @photo = @product.photoss.create(:avatar => a)
+          @photos = @product.photos.create(:avatar => a)
         end
       end
       redirect_to admin_products_path
