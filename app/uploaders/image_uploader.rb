@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  #storage :file
   #storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -22,6 +22,13 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :medium do
     process resize_to_fit: [400, 400]
+  end
+
+  #在产品环境使用fog存储图片，在本地开发环境使用file存储图片
+  if Rails.env.production?
+    storage :fog
+  elsif Rails.env.development?
+    storage :file
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
