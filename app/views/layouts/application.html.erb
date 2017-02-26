@@ -9,6 +9,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render "common/navbar"%>
+      <%= render "common/flashes"%>
+
+<!-- 加入下拉标题栏-->
+      <%= yield %>
+    </div>
+
+      <%= render "common/footer" %>
+<!-- 加入抬尾-->
   </body>
 </html>

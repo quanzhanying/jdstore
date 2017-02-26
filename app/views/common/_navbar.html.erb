@@ -1,0 +1,131 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <!--navbar-inverse ：改变导航栏颜色   role="navigation" 后期用 -->
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">JDstore</a>
+    </div>
+    <!-- navbar-header/brand 加入导航栏抬头-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+            <%= link_to("Products", products_path )%>
+        </li>
+        <li class="active">
+            <%= link_to("Carts", carts_path )%>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+<!-- navbar-collapse加入动态画面，固定在右侧-->
+
+<div class="nav navbar-nav navbar-left">
+      <%= form_tag search_products_path , :method => :get  do %>
+      <div class="input-group" id="search-id" >
+        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品信息">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+
+
+  <li>
+    <%= link_to carts_path do %>
+      购物车 <i class="fa fa-shopping-cart"> </i>( <%= current_cart.products.count %>)
+      <% end %>
+  </li>
+<% if !current_user %>
+<li><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;" href="#" data-toggle="modal" data-target="#signup-modal">Signup</a></li>
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <input type="checkbox" checked="checked"> Remember me
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
+
+
+
+<% else %>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+Hi!, <%= current_user.email %>
+<b class="caret"></b>
+</a>
+<ul class="dropdown-menu">
+  <% if current_user.admin? %>
+  <li> <%=link_to("Admin 选单", admin_products_path ) %></li>
+  <% end %>
+  <li> <%=link_to("个人订单列表",account_orders_path) %></li>
+<li> <%= link_to(content_tag(:i,'登出',class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+</ul>
+</li>
+<% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

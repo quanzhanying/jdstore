@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/lib/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<h2 class="w3-center">主打产品</h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="https://ww4.sinaimg.cn/large/006tNc79ly1fd0mkw91w0j308c063dfu.jpg" style="width:100%">
+  <img class="mySlides" src="https://ww4.sinaimg.cn/large/006tNc79ly1fcvmttk1gfj30sg0lcads.jpg" style="width:100%">
+  <img class="mySlides" src="https://ww4.sinaimg.cn/large/006tNc79ly1fcvmtt8lb3j30sg0pp0v9.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3" >
+    <%= link_to product_path(product) do %>
+    <% if product.image.present?%>
+      <%= image_tag(product.image.thumb.url, class:"thumbnail")%>
+    <% else %>
+<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+    <% end %>
+    <% end %>
+    <%= product.title %> ￥ <%= product.price %>
+  </div>
+
+  <% end %>
+</div>
+</html>
