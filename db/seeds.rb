@@ -12,8 +12,9 @@ puts 'create user: cw@test.com,  not admin'
 
 User.create(email: "admin@test.com", password: "123456", password_confirmation: "123456", is_admin: 'true')
 puts 'create user: admin@test.com,  is admin'
-
+=begin
 for i in 1..5 do
   Product.create(title: "Product#{i}", description: "description#{i}", quantity: i*10, price: i*100)
 end
 puts 'create product : 5'
+=end

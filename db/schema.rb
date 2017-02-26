@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215122955) do
+ActiveRecord::Schema.define(version: 20170226065259) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -23,6 +23,35 @@ ActiveRecord::Schema.define(version: 20170215122955) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "goods_attrs", force: :cascade do |t|
+    t.string   "quwan_goodsid", null: false
+    t.string   "attr_name",     null: false
+    t.string   "attr_value"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["quwan_goodsid"], name: "index_goods_attrs_on_quwan_goodsid"
+  end
+
+  create_table "goods_images", force: :cascade do |t|
+    t.string   "quwan_goodsid",             null: false
+    t.string   "img_type",                  null: false
+    t.string   "url",                       null: false
+    t.integer  "idx",           default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["quwan_goodsid"], name: "index_goods_images_on_quwan_goodsid"
+  end
+
+  create_table "goods_pages", force: :cascade do |t|
+    t.string   "quwan_goodsid", null: false
+    t.string   "page_idx",      null: false
+    t.string   "page_title",    null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["page_idx"], name: "index_goods_pages_on_page_idx"
+    t.index ["quwan_goodsid"], name: "index_goods_pages_on_quwan_goodsid"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -55,9 +84,13 @@ ActiveRecord::Schema.define(version: 20170215122955) do
     t.text     "description"
     t.integer  "quantity"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "image"
+    t.string   "quwan_goodsid", default: ""
+    t.string   "page_idx"
+    t.string   "logo"
+    t.string   "brand"
   end
 
   create_table "users", force: :cascade do |t|

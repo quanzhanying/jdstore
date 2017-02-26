@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quwan_goodsid: MyString
+  img_type: MyString
+  url: MyString
+  idx: 1
+
+two:
+  quwan_goodsid: MyString
+  img_type: MyString
+  url: MyString
+  idx: 1

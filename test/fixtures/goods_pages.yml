@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quwan_goodsid: MyString
+  page_idx: MyString
+  page_title: MyString
+
+two:
+  quwan_goodsid: MyString
+  page_idx: MyString
+  page_title: MyString
