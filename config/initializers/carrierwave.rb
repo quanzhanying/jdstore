@@ -10,7 +10,11 @@ CarrierWave.configure do |config|
       region:                ENV["AWS_REGION"]
 
     }
+<<<<<<< HEAD
     config.fog_directory  = ENV["AWS_BUCKET_NAME"]
+=======
+    config.fog_directory  = ENV["AWS_BUCKET_NAME"] 
+>>>>>>> a98bfe1116d5cbaeae93ca81f392eb0ff5a694ab
 
 
   else
