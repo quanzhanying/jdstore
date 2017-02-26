@@ -9,3 +9,30 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+production:
+  AWS_ACCESS_KEY_ID: "AKIAI6QBXJEN7DYTCOUA"  # 你的 Access key ID
+
+  AWS_SECRET_ACCESS_KEY: "iXlE/vN9CEPaYBqSxrUz1CBiN7q4Id9B6H3n0uTd"  # 你的 Secret access key
+
+  AWS_REGION: "us-west-2"  # 你的 S3 bucket 的 Region 位置
+
+  AWS_BUCKET_NAME: "realanalysis"  # 你设定的 bucket name
+
+  SEND_CLOUD_USER_NAME: "RealAnalysis_test_s0JNS3"  # 你的 API_USER
+
+  SEND_CLOUD_USER_KEY: "dqG3hxEr4ME4GyXj"  # 你的 API_KEY
+
+
+development:
+  AWS_ACCESS_KEY_ID: "AKIAI6QBXJEN7DYTCOUA"  # 你的 Access key ID
+
+  AWS_SECRET_ACCESS_KEY: "iXlE/vN9CEPaYBqSxrUz1CBiN7q4Id9B6H3n0uTd"  # 你的 Secret access key
+
+  AWS_REGION: "us-west-2"  # 你的 S3 bucket 的 Region 位置
+
+  AWS_BUCKET_NAME: "realanalysis"  # 你设定的 bucket name
+
+  SEND_CLOUD_USER_NAME: "RealAnalysis_test_s0JNS3"  # 你的 API_USER
+
+  SEND_CLOUD_USER_KEY: "dqG3hxEr4ME4GyXj"  # 你的 API_KEY
