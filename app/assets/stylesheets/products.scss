@@ -97,7 +97,9 @@ input, button, select,{
 }
 
 // 购物车
-
+.header .shopping-cart{
+  float: right;
+}
 .shopping-cart{
   margin-top:15px;
   z-index: 88;
@@ -200,7 +202,11 @@ a{
 
 .item  {
    height: 500px;
-  width: 1000px;
+  max-width: 1000px;
+}
+.item img{
+  max-width: 953px;
+
 }
 
 #myCarousel{
