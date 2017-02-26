@@ -1,14 +1,66 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+<style>
+
+.thumbnail{
+opacity:0.70;
+-webkit-transition: all 0.5s;
+transition: all 0.5s;
+padding: 0 0 15px 0;
+border-radius: 0;
+}
+
+.thumbnail:hover{
+opacity:1.00;
+box-shadow: 0px 0px 10px #8000ff;
+}
+
+.line{
+margin-bottom: 5px;
+}
+
+@media screen and (max-width: 770px) {
+.right{
+  float:left;
+  width: 100%;
+}
+}
+</style>
+
+
+
+<div class="container bg-3">
+  <div class="row">
+    <!-- BEGIN PRODUCTS -->
+    <% @products.each do |product| %>
+      <div class="col-xs-6 col-sm-4 col-md-3" style="max-width:2200px;margin-top:40px">
+        <span class="thumbnail">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.medium.url) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+          <% end %>
+
         <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
-  <% end %>
+        <h2> <%= product.title %> </h2>
+          <div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+        <p> <%= product.description %> </p>
+
+        <hr class="line">
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <h1> ￥ <%= product.price %> /<small>万</small> </h1>
+          </div>
+
+        </div>
+        </span>
+      </div>
+    <% end %>
+  </div>
 </div>
