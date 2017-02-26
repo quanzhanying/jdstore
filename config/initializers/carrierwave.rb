@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
 
     }
     config.fog_directory  = ENV["AWS_BUCKET_NAME"]
-
+    
 
   else
     config.storage :file
