@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   has_many :favor_product_relationships
   has_many :favor_products, through: :favor_product_relationships, source: :product
-  
+
   def has_follow?(chef)
     favor_chefs.include?(chef)
   end
@@ -28,5 +28,17 @@ class User < ApplicationRecord
 
   def unfollow!(chef)
     favor_chefs.delete(chef)
+  end
+
+  def has_follow_dish?(product)
+    favor_products.include?(product)
+  end
+
+  def follow_dish!(product)
+    favor_products << product
+  end
+
+  def unfollow_dish!(product)
+    favor_products.delete(product)
   end
 end

@@ -349,6 +349,26 @@ div.fig_p {
 	margin: 0 5px 0 5px;
 	color: #878585 !important;
 }
+.add-to-cart, .like {
+  background: #ff9f1a;
+  padding: 1.2em 1.5em;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  -webkit-transition: background .3s ease;
+          transition: background .3s ease; }
+.add-to-cart:hover, .like:hover {
+    background: #b36800;
+    color: #fff; }
+.unlike {
+  background: transparent;
+  padding: 1.2em 1.5em;
+  border: 1px solid #ff9f1a;
+  font-weight: bold;
+  color: #ff9f1a;
+  -webkit-transition: background .3s ease;
+          transition: background .3s ease;
+}
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
