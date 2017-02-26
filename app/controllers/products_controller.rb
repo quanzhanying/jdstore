@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
-    @search = Product.ransack(params[:q])
-    @products = @search.result(distinct: true)
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true)
   end
 
   def show
