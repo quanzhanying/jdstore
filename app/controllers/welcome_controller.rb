@@ -1,8 +1,9 @@
 class WelcomeController < ApplicationController
 
   def index
-    flash[:notice] = "早安！你好！"
-  end 
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true)
+  end
 
 
 end

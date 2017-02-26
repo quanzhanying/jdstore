@@ -1,41 +1,71 @@
-<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
+<div class="gray-box clearfix">
+
+    <div class="gallery">
+      <div class="thumb">
+        <% if @product.image.present? %>
+          <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      </div>
+
   </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
+
+
+
+  <div class="banner">
+    <div class="sku-custom-title">
+      <span class="params-price highlight ng-scope">
+        <em class="ng-binding ng-scope">￥</em>
+        <i class="ng-binding"><%= @product.price %> </i>
+      </span>
+      <h4 class="ng-binding"><%= @product.title %></h4>
+      <h5 class="ng-bingding"><%= @product.description %></h5>
     </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        已销售一空，无法购买
-      <% end %>
+
+    <div class="sku-dynamic-params-panel ng-scope">
+      <div class="sku-dynamic-params clearfix ng-scope">
+        <span class="params-name ng-binding">库存:<i><%= @product.quantity %></i> </span>
+      </div>
+      <div class="sku-dynamic-params clearfix ng-scope">
+
+
+      </div>
+
+      <div class="cart-operation-wrapper clearfix ng-scope">
+        <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <% else %>
+          已销售一空，无法购买
+        <% end %>
+        <p class="tips-text">
+          *7天无理由退货，15天免费换货。
+        </p>
+      </div>
+
+      </div>
     </div>
+  </div>
+
+
   </div>
 </div>
 
 
-<div class="row comment">
-  <div class="col-sm-10 col-sm-offset-1">
-    <h3 class="comment_title">
-      <%= @product.comments.count %> 个评价
-    </h3>
-    <hr />
-    <div id="comments">
-      <%= render @product.comments %>
-      <hr />
-      <%= render "comments/form" %>
-    </div>
+
+
+  <div class="comment">
+
+      <h3 class="comment-title">
+        <%= @product.comments.count %> 个评价
+      </h3>
+
+      <div class="comment-content">
+        <%= render @product.comments %>
+      </div>
+      
+      <div class="comment-form">
+        <%= render "comments/form" %>
+      </div>
+
   </div>
-</div>
