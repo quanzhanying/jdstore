@@ -12,4 +12,23 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.alert{
+  margin-top:80px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: transparent;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 3px;
+    border-radius: 0;
+}
