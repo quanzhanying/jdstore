@@ -1,16 +1,6 @@
-<div class= "search">
-  <%= search_form_for @q do |f| %>
-    <%= f.search_field :title_cont %>
-    <%= f.submit %>
-  <% end %>
-</div>
 
-<div class="dropdown clearfix pull-right">
-  <button class="btn btn-defalut dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    排序
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+<div class="sort-option">
+  <ul class="line clearfix">
     <li>
       <%= sort_link(@q, :price, "按价格排序") %>
     </li>
@@ -20,20 +10,30 @@
 
   </ul>
 
-
 </div>
 
-<div class="row">
+
+
+<div class="item-box">
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+    <div class="item ng-scope" >
+      <div class="item-img">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+      </div>
+      <h6 class="ng-binding"><%= product.title %></h6>
+      <div class="item-price clearfix">
+        <i>￥</i>
+        <span class="ng-binding"> <%= product.price %></span>
+      </div>
+
+
+
     </div>
   <% end %>
 </div>

@@ -1,3 +1,269 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.video {
+  margin: 0 0 30px 0;
+
+}
+
+
+.page-home .hot-panel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-home .hot-panel {
+  position: relative;
+  z-index: 6;
+}
+
+.page-home .hot-panel .box {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.page-home .box {
+  background: #fff;
+  position: relative;
+  z-index: 0;
+  margin-top: 29px;
+  border: 1px solid rgba(0,0,0,.14);
+  box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
+  box-sizing: border-box;
+}
+
+.page-home .title-header {
+  background: #fafafa;
+  line-height: 60px;
+  font-size: 18px;
+  color: #666;
+  position: relative;
+  display: block;
+}
+
+.page-home .title-header::after {
+  content: " ";
+  height: 1px;
+  width: 100%;
+  background: rgba(0,0,0,.1);
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: 10;
+}
+
+.page-home .title-header .title {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.page-home .hot-panel .box .hot-wrapper {
+  position: relative;
+  height: 429px;
+  overflow: hidden;
+}
+
+.page-home .hot-panel .cell-list {
+  display: block;
+}
+
+.page-home .hot-panel .cell-list>li {
+  box-sizing: border-box;
+  float: left;
+  width: 25%;
+  height: 429px;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid rgba(0,0,0, 0.0980392);
+}
+
+
+.page-home .hot-panel .cell-list>li::before {
+  content: '';
+  width: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid rgba(0,0,0,.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.page-home .hot-panel .box .hot-cell-list.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.page-home .hot-panel .box .hot-cell-list {
+  float: left;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.page-home .hot-panel .cell-list>li.product img {
+  margin: 50px auto;
+  width:206px;
+  height: 206px;
+  display: block;
+}
+
+.page-home .hot-panel .cell-list>li.product .info {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 274px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.page-home .hot-panel .cell-list>li.product .info h6 {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #424242;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.page-home .hot-panel .cell-list>li.product .info p {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #B2B2B2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-top: 7px;
+}
+
+.page-home .hot-panel .cell-list>li.product .price {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  top: 376px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-family: Arial;
+  color: #DE4037;
+}
+
+.page-home .hot-panel .cell-list>li.product .price i {
+  font-size: 14px;
+  left: 0;
+  line-height: 1.2;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.page-home .hot-panel .cell-list>li.product .price span {
+  position: relative;
+}
+
+.page-home .hot-panel .cell-list>li.product .dot-list {
+  position: absolute;
+  width: 100%;
+  height: 18px;
+  bottom: 79px;
+  z-index: 20;
+}
+
+.page-home .dot-list {
+  text-align: center;
+}
+
+
+.page-home .cover-link {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  background: url() repeat;
+}
+
+.page-home .title-header .more {
+  position: absolute;
+  right: 14px;
+  top: 0;
+  font-size: 14px;
+}
+
+.border-top {
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+
+
+
+
+
+
+
+
+section {
+  display: block;
+}
+
+div {
+  display: block;
+}
+
+header {
+  display: block;
+}
+
+
+h5 {
+  display: block;
+  font-size: 2em;
+  padding-top: 1.67em;
+  padding-bottom: 1.67em;
+}
+
+h6 {
+  display: block;
+  font-size: 0.67em;
+  -webkit-margin-before: 2.33em;
+  -webkit-margin-after: 2.33em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+
+ul {
+  display: block;
+  list-style: none;
+}
+
+li {
+  display: list-item;
+}
+
+img {
+  border: 0;
+}

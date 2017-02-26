@@ -1,15 +1,29 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">JDStore</a>
+      <a class="navbar-brand" href="/">舌尖上的吃货</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a href="/">精选</a>
+      </li>
+      <li>
+          <a href="/">各种肉</a>
+      </li>
+      <li>
+        <a href="/">粗粮</a>
+      </li>
+      <li>
+        <a href="/">地方特色</a>
+      </li>
+      <li>
+        <a href="/products">全部美食</a>
+      </li>
+    </ul>
+
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <%= link_to("Products", products_path) %>
-        </li>
-      </ul>
+
 
       <ul class="nav navbar-nav navbar-right">
         <li>
