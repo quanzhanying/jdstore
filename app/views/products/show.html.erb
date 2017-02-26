@@ -28,11 +28,19 @@
       <div class="">
         <% if !current_user.admin? %>
           <% if @product.quantity.present? && @product.quantity > 0 %>
-            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "addcart btn btn-primary btn-danger") %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "add-to-cart btn btn-default") %>
           <% else %>
             已销售一空，无法购买
           <% end %>
-
+          <% if current_user.has_follow_dish?(@product) %>
+            <%= link_to unfollow_dish_product_path(@product), :method => :post do %>
+              <i class="like btn btn-default fa fa-heart" aria-hidden="true" ></i>
+            <% end %>
+          <% else %>
+            <%= link_to follow_dish_product_path(@product), :method => :post do %>
+                <i class="unlike btn btn-default fa fa-heart-o" aria-hidden="true" ></i>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>

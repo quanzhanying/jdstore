@@ -74,15 +74,51 @@
               </p>
             </div>
             <hr style="margin-top: 50px;">
-            <h4>精选评论</h4>
-            <div class="panel with-nav-tabs panel-default" style="height: 500px;">
+            <div class="panel with-nav-tabs panel-default" style="height: 600px;">
                 <div class="panel-heading">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1default" data-toggle="tab">Default 1</a></li>
-                            <li><a href="#tab2default" data-toggle="tab">Default 2</a></li>
-
+                            <li class="active">
+                              <a href="#viewcomments" data-toggle="tab">精选评论</a>
+                            </li>
+                            <li><a href="#wirtecomments" data-toggle="tab">
+                              <i class="fa fa-comments-o" aria-hidden="true"></i> 写评论</a>
+                            </li>
                         </ul>
                 </div>
+                        <div class="tab-content">
+                        <div class="tab-pane active" id="viewcomments">
+                          <% @chef_comments.each do |chef_comment| %>
+                            <div class="reviews">
+                              <ul class="list-group">
+                                <li class="list-group-item" >
+                                  <div class="row" >
+                                    <div class="col-md-2" style="color: #bcbaba">
+                                        <%= chef_comment.user.email %>
+                                    </div>
+                                      <br>
+                                    <div class="col-md-8">
+                                        <%= chef_comment.comment %>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                          </div>
+                          <% end %>
+                         </div>
+                        <div class="tab-pane" id="wirtecomments">
+        	                  <div >
+                              <%= simple_form_for([@chef, @chef_comment]) do |f| %>
+                              <div class="form-inputs">
+                                <%= f.input :comment, label: false, class: "form-control" %>
+                              </div>
+                              <div class="form-actions">
+                                <%= f.button :submit, value = "提交", class: "btn btn-primary" %>
+                              </div>
+                              <% end %>
+        	                  </div>
+                         </div>
+                      </div>
+            </div>
       </div>
     </div>
 </div>

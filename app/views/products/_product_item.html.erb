@@ -16,6 +16,15 @@
     <p class="actions">
       <span class="price">￥<%= product.price %></span>
       <span class="pull-right">
+        <% if current_user.has_follow_dish?(product) %>
+          <%= link_to unfollow_dish_product_path(product), :method => :post do %>
+            <i class="fa fa-heart " aria-hidden="true" style="color: red"></i>
+          <% end %>
+        <% else %>
+          <%= link_to follow_dish_product_path(product), :method => :post do %>
+              <i class="fa fa-heart-o " aria-hidden="true" style="color: red"></i>
+          <% end %>
+        <% end %>
         <% if product.quantity.present? && product.quantity > 0 %>
           <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-lg"), add_to_cart_product_path(product), :method => :post) %>
         <% else %>

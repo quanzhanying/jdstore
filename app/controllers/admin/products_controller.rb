@@ -45,7 +45,7 @@ class Admin::ProductsController < ApplicationController
     @product.destroy
 
     cart_items = CartItem.where(product_id: params[:id])
-    cart_items.update_all(product_id: 9)
+    cart_items.update_all(product_id: 1)
 
     redirect_to admin_products_path, alert: "Product deleted."
   end

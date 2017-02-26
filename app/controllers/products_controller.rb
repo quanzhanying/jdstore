@@ -22,4 +22,18 @@ class ProductsController < ApplicationController
 
     redirect_to products_path
   end
+
+  def follow_dish
+    @product = Product.find(params[:id])
+    current_user.follow_dish!(@product)
+
+    redirect_to :back
+  end
+
+  def unfollow_dish
+    @product = Product.find(params[:id])
+    current_user.unfollow_dish!(@product)
+
+    redirect_to :back
+  end
 end
