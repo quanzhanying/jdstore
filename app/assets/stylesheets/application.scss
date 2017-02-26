@@ -132,6 +132,15 @@
      padding: 0;
  }
 
+ .broun-block {
+     background: #fff;
+     padding-bottom: 0;
+ }
+
+.container {
+    width: 100%;
+}
+
  .fade-carousel .carousel-inner .item .hero {
      opacity: 0;
      -webkit-transition: 2s all ease-in-out .1s;
@@ -174,6 +183,16 @@
      outline: none;
      margin: 20px auto;
  }
+
+ .btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+  color: #f5f5f5;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  outline: none;
+  margin: 20px auto;
+}
 
  /********************************/
  /*       Slides backgrounds     */
