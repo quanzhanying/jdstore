@@ -17,6 +17,8 @@
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require bootstrap/modal
+//= require bootstrap/carousel
+//= require bootstrap
 //= require_tree .
 
 $(document).on('click','#gotop',function(){
@@ -45,3 +47,8 @@ $(document).on('click','#gotop',function(){
       $('.menu').removeClass('menuFixed')
     }
   })
+
+$(document).ready(function() {
+  $('#myCarousel').carousel({interval: 2000});
+});
+
