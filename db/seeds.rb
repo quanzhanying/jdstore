@@ -6,18 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-products =[{title:"Apple iPhone 6 64GB",
-	        description: "This Certified Refurbished.",
-	        image_path: "#{Rails.root}/app/assets/images/1.jpg"},
 
-	        {title:"A Mid-Back Mesh Chair",
-	        description: "Ergonomic office chair with.",
-	        image_path: "#{Rails.root}/app/assets/images/2.jpg"}
-]
 
 u = User.create([ email: 'admin@test.com' ,  password: '123456' ,password_confirmation:'123456',is_admin:true])
 puts "create a adminer"
-
-p1 = Product.create([title:products[0][:title],description:products[0][:description],quantity:20,price:30,image:open(products[0][:image_path])])
-p2 = Product.create([title:products[1][:title],description:products[1][:description],quantity:20,price:30,image:open(products[1][:image_path])])
-puts "create products"
