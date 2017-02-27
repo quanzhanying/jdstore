@@ -1,35 +1,39 @@
-<form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Wc51I/QRhpdHGMDPgaGJJHWRjxR3De5Aw2Lg3CST1V3ikFAqTX7AhCwzBIE/F9UBIbY3eCZrp5chDHzBwjpwAg==">
-  <!-- All the files that are required -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 <!-- REGISTRATION FORM -->
 <div class="text-center" style="padding:50px 0">
 	<div class="logo">register</div>
 	<!-- Main Form -->
 	<div class="login-form-1">
-
+		<form id="register-form" class="text-left">
 			<div class="login-form-main-message"></div>
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-
-              <div class="form-group email required user_email"><input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" type="email" value="" name="user[email]" id="user_email" placeholder="e-mail"></div>
+              <div class="form-group email required user_email">
+                <input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" placeholder="* E-mail"type="email" value="" name="user[email]" id="user_email">
+              </div>
           </div>
 					<div class="form-group">
-
-
-            <div class="form-group password required user_password"><input class="form-control password required" required="required" aria-required="true" type="password" name="user[password]" id="user_password" placeholder="Password"></div>
-					</div>
+            <div class="form-group password required user_password">
+              <input class="form-control password required" required="required" aria-required="true" type="password" name="user[password]" placeholder="* Password" id="user_password" pb-role="password">
+            </div>
+          </div>
 					<div class="form-group">
-
-            <div class="form-group password required user_password_confirmation"><input class="form-control password required" required="required" aria-required="true" type="password" name="user[password_confirmation]" id="user_password_confirmation" placeholder="password confirmation"></div>
+						<div class="form-group password required user_password_confirmation">
+              <input class="form-control password required" required="required" aria-required="true" type="password" name="user[password_confirmation]" placeholder="* Password confirmation" id="user_password_confirmation" pb-role="password">
+            </div>
 					</div>
 
 					<div class="form-group">
-
-            <div class="form-group string optional user_fullname"><input class="form-control string optional" type="text" name="user[fullname]" id="user_fullname" placeholder="Full name"></div>
+            <input class="form-control string optional" type="text" name="user[fullname]" placeholder="Full name" id="user_fullname">
 					</div>
 
 					<div class="form-group login-group-checkbox">
@@ -41,17 +45,20 @@
 					</div>
 
 					<div class="form-group login-group-checkbox">
-						<input type="checkbox" class="" id="reg_agree" name="reg_agree">
+
 						<label for="reg_agree">i agree with <a href="#">terms</a></label>
 					</div>
 				</div>
-				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i><input type="hidden" name="commit" value="Sign up" class="btn btn-default" data-disable-with="Sign up"></button>
-			</div>
+          <button type="hidden" class="login-button">
+            <i class="fa fa-chevron-right"></i>
+            <input type="hidden" name="commit" value="Sign up" class="btn btn-default" data-disable-with="Sign up">
+          </button>
+        </div>
 			<div class="etc-login-form">
-				<p>already have an account? <%= link_to("login here", new_user_session_path, class: "btn btn-primary btn-sm") %></p>
-
+				<p>already have an account? <%= link_to("login here", new_user_session_path) %></p>
 			</div>
-
+		</form>
 	</div>
+  <%end%>
 	<!-- end:Main Form -->
-</div></form>
+</div>

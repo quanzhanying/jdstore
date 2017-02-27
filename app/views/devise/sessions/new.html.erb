@@ -49,7 +49,7 @@
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-                <div class="form-group email optional user_email"><input class="form-control string email optional" autofocus="autofocus" placeholder="username" type="email" value="" name="user[email]" id="user_email"></div>
+                <div class="form-group email optional user_email"><input required="true" class="form-control string email optional" autofocus="autofocus" placeholder="username" type="email" value="" name="user[email]" id="user_email"></div>
 					</div>
 					<div class="form-group">
 
@@ -65,8 +65,8 @@
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>forgot your password? <%= link_to("click here", new_user_password_path, class: "btn btn-primary btn-sm") %></a></p>
-				<p>new user? <%= link_to("login here", new_user_registration_path, class: "btn btn-primary btn-sm") %></p>
+				<p>forgot your password? <%= link_to("click here", new_user_password_path) %></a></p>
+				<p>new user? <%= link_to("login here", new_user_registration_path) %></p>
 			</div>
 
 	</div></form>
