@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+    @template_lists = @order.template_lists
   end
 
   def create
@@ -21,6 +22,15 @@ class OrdersController < ApplicationController
         product_list.quantity = cart_item.quantity
         product_list.save
       end
+
+      current_cart.cart_template_items.each do |cart_template_item|
+        template_list = TemplateList.new
+        template_list.order = @order
+        template_list.template_name = cart_template_item.template.title
+        template_list.template_price = cart_template_item.template.price
+        template_list.save
+      end
+
       current_cart.clean!
       OrderMailer.notify_order_placed(@order).deliver!
 
