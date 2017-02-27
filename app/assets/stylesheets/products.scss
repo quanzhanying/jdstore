@@ -3,26 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.search {
-  text-align: center;
-}
 
-.search-content {
-  width: 500px;
-  height: 35px;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-bottom: 40px;
-  border-radius: 10px;
-}
-
-
-.search-icon {
-  font-size: 22px;
-  margin-left: -70px;
-  line-height: 32px;
-
-}
 
 .line li {
     float: left;
@@ -33,7 +14,7 @@
 }
 
 #first-kind {
-  padding-left: 500px;
+  padding-left: 300px;
 }
 
 .kindof {
@@ -134,6 +115,16 @@ div {
   vertical-align: middle;
   padding: 80px;
 }
+
+
+
+.pi-thumbs-up {
+  padding-left: 150px;
+  margin-bottom: -30px;
+}
+
+
+
 
 .banner {
   width: 450px;

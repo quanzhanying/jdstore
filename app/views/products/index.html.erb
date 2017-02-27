@@ -16,19 +16,9 @@
     <li class="kindof">
         <button class="btn btn-info filter-button" data-filter="someregion">地方特色</button>
     </li>
-
-
   </ul>
 
 </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -44,7 +34,17 @@
             <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
           <% end %>
         <% end %>
-      </div>
+
+
+         <div class="pi-thumbs-up">
+           <%= link_to like_product_path(product), method: :put do %>
+           <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+           <%= product.get_upvotes.size %>
+           <% end %>
+          </div>
+
+
+        </div>
       <h6 class="ng-binding"><%= product.title %></h6>
       <div class="item-price clearfix">
         <i>￥</i>
