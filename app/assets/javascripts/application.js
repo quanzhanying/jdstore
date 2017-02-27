@@ -51,4 +51,3 @@ $(document).on('click','#gotop',function(){
 $(document).ready(function() {
   $('#myCarousel').carousel({interval: 2000});
 });
-
