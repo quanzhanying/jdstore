@@ -1,0 +1,22 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增产品</h2>
+
+    <hr>
+    <%= simple_form_for [:admin,@product] do |f| %>
+
+    <%= f.input :title %>
+
+
+    <%= f.input :description %>
+
+    <%= f.input :price, :label => "价格" %>
+
+
+    <%= f.input :quantity,:label => "库存" %>
+
+    <%= f.input :image,as: :file, :label => "图片" %>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+
+</div>
