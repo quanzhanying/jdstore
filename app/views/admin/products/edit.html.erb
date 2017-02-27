@@ -19,7 +19,7 @@
   </div>
 
   <div class="group">
-    <%= f.select :category_id, @categories %>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   </div>
 
   <% if @product.photos.present? %>
