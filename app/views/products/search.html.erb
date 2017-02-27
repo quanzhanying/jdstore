@@ -1,0 +1,29 @@
+<div>
+  <br>
+  <% if @products.blank? %>
+    <br>
+    <h2 >店家正在补货，请您稍后再来搜索这个商品！</h2>
+  <% else %>
+    <h2 >有关"<%= @query_string%>"的商品信息</h2>
+    <div class="search-result">
+      <div class="row products-search"></div>
+      <div class="product-table">
+        <% @products.each do |product| %>
+        <div class="row products-show">
+
+          <div class="col-md-12 col-lg-9 col-lg-offset-1">
+
+            <div class="pull-right">
+              当下库存：<%= product.quantity %>
+            </div>
+            <p> <%= link_to(render_highlight_content(product,@query_string), product_path(product)) %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= will_paginate @products %>
+    </div>
+  <% end %>
+</div>

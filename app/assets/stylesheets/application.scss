@@ -112,3 +112,26 @@
 .login-help {
   font-size: 12px;
 }
+
+/****** SEARCH ******/
+#search-id {
+  width: 200px;
+  padding-top: 10px;
+}
+
+.product-table {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.products-search {
+  border-bottom: 1px dotted #CCC;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}
+.products-show {
+  border-bottom: 1px dotted #CCC;
+  padding: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}

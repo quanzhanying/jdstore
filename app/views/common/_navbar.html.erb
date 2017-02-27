@@ -22,7 +22,17 @@
               </li>
 
             </ul>
-            <%= render "search/search" %>
+
+            <div class="nav navbar-nav navbar-left">
+              <%= form_tag search_products_path , :method => :get do %>
+              <div class="input-group" id="search-id" >
+                  <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品名称">
+                  <div class="input-group-btn">
+                      <%= submit_tag "搜索", class: "btn btn-default" %>
+                  </div>
+              </div>
+              <% end %>
+            </div>
 
             <ul class="nav navbar-nav navbar-right">
               <li>
