@@ -42,7 +42,7 @@ gem 'figaro'
 gem 'fog'
 gem 'ransack'
 gem 'paginate'
-
+gem 'seed_dump'
 
 
 group :development, :test do
