@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+u = User.new
+u.email = "tuhwolf@gmail.com"           # 可以改成自己的 email
+
+u.password = "112233"                # 最少要六码
+
+u.password_confirmation = "112233"   # 最少要六码
+
+u.is_admin = true
+u.save
+
+Category.create(name: "仿古摆件")
+Category.create(name: "高档茶具")
+Category.create(name: "花瓶")
