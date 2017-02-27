@@ -160,6 +160,9 @@
     .navbar {
         border-radius: 0;//圆角为0
     }
+    .input-control {
+    width: auto;
+  }
 }
 
 .navbar-default .navbar-brand {
@@ -171,7 +174,7 @@
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #FF6F00;//鼠标放置在链接上的文字颜色
-  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+  background-color: #4dbffb;//鼠标放置在链接上的背景颜色，这里设为透明
 }
 
 .navbar-default .navbar-nav > li > a{
@@ -194,7 +197,6 @@
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
     background-color: #FFE0B2;
-    color: #212121;
 }
 
 .navbar-brand > img {
@@ -264,7 +266,7 @@ a  {
  body, html{
       height: 100%;
   	background-repeat: no-repeat;
-  	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+
   	font-family: 'Oxygen', sans-serif;
  	    background-size: cover;
  }
@@ -274,7 +276,7 @@ a  {
  }
 
  h1.title {
- 	font-size: 50px;
+ 	font-size: 35px;
  	font-family: 'Passion One', cursive;
  	font-weight: 400;
  }
@@ -377,4 +379,19 @@ input[type="submit"] {
     margin-left: 0px;
     height: 50px;
 
+}
+
+.h2 {
+      font-size: 50px;
+      margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  jumbotron.h1{
+      font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+      font-size: 220px;
+      text-align: center;
+      margin-top: 200px;
+      margin-bottom: 80px;
+  
 }
