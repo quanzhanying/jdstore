@@ -15,3 +15,7 @@ u.password_confirmation = "112233"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+Category.create(name: "仿古摆件")
+Category.create(name: "高档茶具")
+Category.create(name: "花瓶")
