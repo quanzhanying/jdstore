@@ -17,6 +17,19 @@
               <%= link_to("首页", root_path) %>
             </li>
 
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类浏览
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to(category.name, products_path(category: category.name)) %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+
             <li class="active">
               <%= link_to("产品", products_path) %>
             </li>
@@ -66,6 +79,9 @@
                       <% end %>
                       <li>
                         <%= link_to(content_tag(:i, " 我的订单", class: "fa fa-history"), account_orders_path) %>
+                      </li>
+                      <li>
+                        <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
                       </li>
                       <li> <%= link_to(content_tag(:i, '账户登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
