@@ -19,10 +19,24 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart_item.product.title %>
+              <%= cart_item.product.price %>
             </td>
             <td>
               <%= cart_item.quantity %>
+            </td>
+          </tr>
+        <% end %>
+
+        <% current_cart.cart_template_items.each do |cart_template_item| %>
+          <tr>
+            <td>
+              <%= link_to(cart_template_item.template.title, template_path(cart_template_item.template)) %>
+            </td>
+            <td>
+              <%= cart_template_item.template.price %>
+            </td>
+            <td>
+              <%= '1' %>
             </td>
           </tr>
         <% end %>
