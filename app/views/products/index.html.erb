@@ -1,12 +1,22 @@
 
 <div class="sort-option">
   <ul class="line clearfix">
-    <li>
-      <%= sort_link(@q, :price, "按价格排序") %>
+    <li class="sequence">
+      <button class="btn btn-link"><%= sort_link(@q, :price, "按价格排序") %></button>
     </li>
-    <li>
-      <%= sort_link(@q, :quantity, "按销量排序") %>
+    <li class="sequence">
+      <button class="btn btn-link"> <%= sort_link(@q, :quantity, "按销量排序") %></button>
     </li>
+    <li  id="first-kind"  class="kindof">
+      <button class="btn btn-info  filter-button" data-filter="meat">各种肉</button>
+    </li>
+    <li class="kindof">
+        <button class="btn btn-info filter-button" data-filter="grain">粗粮</button>
+    </li>
+    <li class="kindof">
+        <button class="btn btn-info filter-button" data-filter="someregion">地方特色</button>
+    </li>
+
 
   </ul>
 
@@ -14,9 +24,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <div class="item-box">
   <% @products.each do |product| %>
-    <div class="item ng-scope" >
+    <div class="item ng-scope  filter <%=render_special_filter_class(product)%>" >
       <div class="item-img">
         <%= link_to product_path(product) do %>
           <% if product.image.present? %>
@@ -37,3 +56,27 @@
     </div>
   <% end %>
 </div>
+
+
+<script type="text/javascript">
+        $(document).ready(function(){
+
+            $(".filter-button").click(function(){
+                var value = $(this).attr('data-filter');
+
+                if(value == "all")
+                {
+                    //$('.filter').removeClass('hidden');
+                    $('.filter').show('1000');
+                }
+                else
+                {
+
+                    $(".filter").not('.'+value).hide('3000');
+                    $('.filter').filter('.'+value).show('3000');
+
+                }
+            });
+
+        });
+</script>
