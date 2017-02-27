@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def require_is_admin
+  def admin_required
     if !current_user.admin?
-      flash[:alert] = 'You are not admin'
-      redirect_to root_path
+      redirect_to "/", alert: "You are not admin."
     end
   end
 
@@ -22,6 +21,6 @@ class ApplicationController < ActionController::Base
       cart = Cart.create
     end
     session[:cart_id] = cart.id
-    return cart 
+    return cart
   end
 end
