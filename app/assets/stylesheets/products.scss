@@ -25,13 +25,20 @@
 }
 
 .line li {
-  float: left;
-  margin: 10px 50px;
-  color: black;
+    float: left;
 }
 
+.sequence {
+  padding: 20px 30px;
+}
 
+#first-kind {
+  padding-left: 500px;
+}
 
+.kindof {
+  padding: 20px 20px;
+}
 
 .item-box {
   clear: both;
