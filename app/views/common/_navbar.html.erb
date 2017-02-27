@@ -8,20 +8,32 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li >
-                <%= link_to("今日推荐", products_path) %>
+              <li class="active">
+                <%= link_to("全部商品", products_path) %>
               </li>
               <li>
-                <%= link_to("手机电脑", phones_path) %>
+                <%= link_to("手机／电脑", "/") %>
               </li>
               <li>
-                <%= link_to("图书电影", books_path) %>
+                <%= link_to("图书／电影", "/") %>
               </li>
               <li>
-                <%= link_to("美食美景", foods_path) %>
+                <%= link_to("美食／电影", "/") %>
+
               </li>
 
             </ul>
+
+            <div class="nav navbar-nav navbar-left">
+              <%= form_tag search_products_path , :method => :get do %>
+              <div class="input-group" id="search-id" >
+                  <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品名称">
+                  <div class="input-group-btn">
+                      <%= submit_tag "搜索", class: "btn btn-default" %>
+                  </div>
+              </div>
+              <% end %>
+            </div>
 
             <ul class="nav navbar-nav navbar-right">
               <li>

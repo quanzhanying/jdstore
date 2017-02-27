@@ -43,6 +43,10 @@ gem 'qiniu-rs'
 gem 'figaro'
 gem 'rollbar'
 gem 'ransack'
+gem 'will_paginate'
+gem 'seo_helper'
+gem 'devise-i18n'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
