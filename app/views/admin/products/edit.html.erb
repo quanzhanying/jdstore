@@ -18,6 +18,12 @@
     <%= f.input :price %>
   </div>
 
+  <div class="group">
+    <%= f.input :category_id do %>
+    <%= f.select :category_id, @categories %>
+    <% end %>
+  </div>
+
     <% if @product.image.present? %>
       <span>目前商品图</span> <br>
       <%= image_tag(@product.image.thumb.url) %>
@@ -26,7 +32,6 @@
     <div class="group">
       <%= f.input :image, as: :file %>
     </div>
-
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
