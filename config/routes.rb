@@ -20,9 +20,12 @@ Rails.application.routes.draw do
  resources :products do
    member do
      post :add_to_cart
+     put "like", to:"products#upvote"
    end
    resources :comments
  end
+
+
 
  resources :carts do
    collection do
