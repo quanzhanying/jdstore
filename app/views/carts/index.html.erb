@@ -51,6 +51,35 @@
           </tr>
         <% end %>
 
+        <% current_cart.cart_template_items.each do |cart_template_item| %>
+          <tr>
+            <td>
+              <%= link_to templates_path(cart_template_item.template) do %>
+                <% if cart_template_item.template.image.present? %>
+                  <%= image_tag(cart_template_item.template.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(cart_template_item.template.title, template_path(cart_template_item.template)) %>
+            </td>
+            <td>
+              <%= cart_template_item.template.price %>
+            </td>
+            <td>
+              <%= '1' %>
+            </td>
+
+            <td>
+              <%= link_to cart_template_item_path(cart_template_item.template_id), method: :delete do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+
       </tbody>
     </table>
 

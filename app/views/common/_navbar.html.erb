@@ -12,16 +12,16 @@
           <%= link_to("首页", root_path) %>
         </li>
         <li class="Active">
-          <%= link_to("发现", products_path) %>
+          <%= link_to("模板", templates_path) %>
         </li>
         <li class="Active">
-          <%= link_to("模板", templates_path) %>
+          <%= link_to("周边", products_path) %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>
-              购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+              购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count + current_cart.templates.count %> )
           <% end %>
         </li>
         <% if !current_user %>
