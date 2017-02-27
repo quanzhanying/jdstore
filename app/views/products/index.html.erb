@@ -1,30 +1,12 @@
 <div class="menu bg-color3">
   <div class="menuList">
+    <% Category.all.each do |category| %>
     <ul class="nav navbar-nav">
         <li class="menuList-item">
-            <%= link_to("爬行", products_path) %>
+            <%= link_to category.name, products_path(category: category.name) %>
         </li>
     </ul>
-    <ul class="nav navbar-nav">
-        <li class="menuList-item">
-            <%= link_to("昆虫", products_path) %>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav">
-        <li class="menuList-item">
-            <%= link_to("水族", products_path) %>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav">
-        <li class="menuList-item">
-            <%= link_to("造景", products_path) %>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav">
-        <li class="menuList-item">
-            <%= link_to("器材", products_path) %>
-        </li>
-    </ul>
+    <% end %>
   </div>
 </div>
 
