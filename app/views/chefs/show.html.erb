@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <!-- <% if @chef.image.present? %>
+      <%#= image_tag(@chef.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %> -->
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <!-- <% if index == 0 %>
+          <%#= image_tag p.image.medium.url %>
+          <div style="letter-spacing: -8px">
+        <% else %>
+          <%#= image_tag p.image.thumb.url %>
+        <% end %> -->
+        <%= image_tag p.image.medium.url %>
+      <% end %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+
+    <div class="col-md-6">
+      <h2><%= @chef.name %>
+        <% if @chef.chef_level_id == 1 %>
+          <img src='<%= image_url 'gold-medal.png' %>'>
+        <% elsif @chef.chef_level_id == 2 %>
+          <img src='<%= image_url 'silver-medal.png' %>'>
+        <% elsif @chef.chef_level_id == 3 %>
+          <img src='<%= image_url 'bronze-medal.png' %>'>
+        <% end %>
+      </h2>
+      <!-- <div style="height: 10px;">
+        <p>
+          <%#= @chef.position %> <br>
+        </p>
+      </div> -->
+      <br>
+      <div style="margin-top: 20px;">
+        <div class="style">
+          <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> <%= @chef.city %>
+          <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i> <%= @chef.style %>
+        </div>
+      </div>
+
+
+          <div class="row" style="margin-top: 10px;">
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                  <%= simple_form_for  current_cart do |f| %>
+                    <%= f.input :book_date, as: :date, start_year: Date.today.year,
+                      end_year: Date.today.year + 1, label: false %>
+                      <%= f.submit "预定私厨", data: {disable_with: "Submiting..." } ,
+                          class: "btn  btn-success"%>
+                  <% end %>
+                  </div>
+              </div>
+            </div>
+
+            <% if current_cart.book_date.present? %>
+            <div class="pull-right">
+              <% if !current_user.admin? %>
+                <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :method => :post, :class => "btn btn-primary btn-danger") %>
+              <% end %>
+            </div>
+            <% end %>
+
+            <hr style="margin-top: 150px;">
+            <div style="height: 150px;">
+              <h4>食物回忆</h4>
+              <p>
+                <%= simple_format(@chef.description) %>
+              </p>
+            </div>
+            <hr style="margin-top: 50px;">
+            <h4>精选评论</h4>
+            <div class="panel with-nav-tabs panel-default" style="height: 500px;">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Default 1</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Default 2</a></li>
+
+                        </ul>
+                </div>
+      </div>
+    </div>
+</div>

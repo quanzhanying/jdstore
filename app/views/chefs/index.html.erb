@@ -1,0 +1,26 @@
+<div class="chefs">
+  <h3 class="introduction"> 您的私厨 </h3>
+  <h4 class="introduction-sub"> 自由选择，专属订制 </h3>
+  <!-- <div class="filter">
+    <span><%#= link_to("星级", products_path(:order => "by_level"), style: "color: rgba(0, 0, 0, 0.5);") %><i class="fa fa-arrow-down" style="color: rgba(0, 0, 0, 0.3);"></i></span>
+    <span><%#= link_to("点赞数", products_path(:order => "by_followers"), style: "color: rgba(0, 0, 0, 0.5);") %><i class="fa fa-arrow-down" style="color: rgba(0, 0, 0, 0.3);"></i></span>
+  </div> -->
+
+    <div class="sort">
+  		<div class="btn-group">
+  				<button type="button" class="btn btn-info btn-filter" >
+                <%= link_to("人气", chefs_path(:order => "by_followers"), :style => "color: white" ) %> <i class="fa fa-sort-desc" aria-hidden="true"></i>
+          </button>
+  				<button type="button" class="btn btn-info btn-filter" >
+                <%= link_to("级别", chefs_path(:order => "by_level"), :style => "color: white" ) %> <i class="fa fa-sort-desc" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="btn btn-info btn-filter" >
+                <%= link_to("经验值", chefs_path, :style => "color: white" ) %> <i class="fa fa-sort-desc" aria-hidden="true"></i>
+          </button>
+  		</div>
+  	</div>
+
+  <div class="row">
+      <%= render :partial => "chef_item", :collection => @chefs, :as => :chef %>
+    </div>
+</div>

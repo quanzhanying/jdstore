@@ -1,0 +1,13 @@
+<div class="products">
+  <h3 class="introduction">
+    <%= @chef.position %> <%= link_to(@chef.name, chef_path(@chef) , :style => "color: #801815; text-decoration: underline;") %>
+                            将为您开启美味之旅！
+  </h3>
+  <!-- <div class="filter">
+    <span><%#= link_to("点赞数", products_path(:order => "by_followers"), style: "color: rgba(0, 0, 0, 0.5);") %><i class="fa fa-arrow-down" style="color: rgba(0, 0, 0, 0.3);"></i></span>
+  </div> -->
+
+  <div class="row">
+      <%= render :partial => "product_item", :collection => @products, :as => :product %>
+    </div>
+</div>

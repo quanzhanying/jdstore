@@ -1,0 +1,27 @@
+<div class=" col-md-3 col-xs-6 box">
+  <div class="image" style="width: 200px;">
+    <%= link_to product_path(product) do %>
+      <% if product.image.present? %>
+        <!-- <%#= image_tag(product.image.url, class: "thumbnail") %> -->
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="fig_p">
+    <p class="title_1"><%= link_to(product.title, product_path(product)) %> </p>
+    <p class="style_p"><i class="fa fa-cutlery" aria-hidden="true"></i> <%= product.style %> </p>
+    <p class="actions">
+      <span class="price">￥<%= product.price %></span>
+      <span class="pull-right">
+        <% if product.quantity.present? && product.quantity > 0 %>
+          <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-lg"), add_to_cart_product_path(product), :method => :post) %>
+        <% else %>
+          已售馨
+        <% end %>
+      </span>
+    </p>
+  </div>
+</div>

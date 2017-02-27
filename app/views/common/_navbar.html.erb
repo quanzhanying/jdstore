@@ -1,0 +1,70 @@
+<nav class="navbar navbar-default" role="navigation" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <!-- <img src='<%= image_url 'mychef.png' %>'>  -->
+        <i class="fa fa-cutlery" aria-hidden="true"></i>
+        西厨私享 </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to("北京", chefs_path(city: "北京")) %>
+        </li>
+        <li class="active">
+          <%= link_to("上海", chefs_path(city: "上海")) %>
+        </li>
+        <li class="active">
+          <%= link_to("深圳", chefs_path(city: "深圳")) %>
+        </li>
+        <li class="active">
+          <%= link_to("广州", chefs_path(city: "广州")) %>
+        </li>
+        <li class="active">
+          <%= link_to("苏州", chefs_path(city: "苏州")) %>
+        </li>
+        <li class="active">
+          <%= link_to("杭州", chefs_path(city: "杭州")) %>
+        </li>
+      </ul>
+
+      <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+            购物车 <i class="fa fa-shopping-cart"></i>( <%= current_cart.products.count %> )
+          <% end %>
+        </li>
+        <% if !current_user %>
+          <li><%= link_to(content_tag(:i, '注册 ', class: 'glyphicon glyphicon-user'), new_user_registration_path) %></li>
+          <li><%= link_to(content_tag(:i, '登录 ', class: 'glyphicon glyphicon-log-in'), new_user_session_path) %></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               <i class="fa fa-user" aria-hidden="true"></i> <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+               <li>
+                 <%= link_to(content_tag(:i,  "Admin 选单", class: 'fa fa-cogs'), admin_products_path ) %>
+               </li>
+              <% else %>
+                <li>
+                  <%= link_to(content_tag(:i,  "个人订单列表", class: 'fa fa-indent'), account_orders_path) %>
+                  <%= link_to(content_tag(:i,  "我收藏的私厨", class: 'fa fa-gratipay'), account_favorchefs_path) %>
+                </li>
+              <% end %>
+              <li><%= link_to(content_tag(:i, '登出 ', class: 'glyphicon glyphicon-log-out'), destroy_user_session_path, method: :delete) %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

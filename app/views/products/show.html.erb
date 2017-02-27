@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2><%= @product.title %></h2>
+      <div style="height: 100px;">
+        <p>
+          <%= simple_format(@product.description) %>
+        </p>
+      </div>
+      <div class="product-style">
+        <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>
+        <%= @product.style %>
+      </div>
+      <div class="product-qun">
+        <i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i> 库存 <%= @product.quantity %> 份
+      </div>
+      <div class="product-price">
+        <i class="fa fa-money fa-lg" aria-hidden="true"></i> ￥ <%= @product.price %>
+      </div>
+      <div class="">
+        <% if !current_user.admin? %>
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "addcart btn btn-primary btn-danger") %>
+          <% else %>
+            已销售一空，无法购买
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
