@@ -7,6 +7,9 @@ class CartsController < ApplicationController
 
   def clean
     current_cart.clean!
+    current_cart.chef_id = nil
+    current_cart.book_date = nil
+    current_cart.save
     flash[:warning] = "已清空购物车"
     redirect_to carts_path
   end
@@ -19,7 +22,7 @@ class CartsController < ApplicationController
 
   def update
     @cart = Cart.find(params[:id])
-    
+
     @cart.update(cart_params)
     redirect_to :back
   end

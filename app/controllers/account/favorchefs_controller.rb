@@ -3,5 +3,6 @@ class Account::FavorchefsController < ApplicationController
 
   def index
     @chefs = current_user.favor_chefs
+    @products = current_user.favor_products
   end
 end

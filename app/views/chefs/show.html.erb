@@ -44,7 +44,7 @@
         </div>
       </div>
 
-
+      <% if current_user && !current_user.admin? %>
           <div class="row" style="margin-top: 10px;">
               <div class='col-sm-6'>
                   <div class="form-group">
@@ -57,10 +57,11 @@
                   </div>
               </div>
             </div>
-
+        <% end %>
+        
             <% if current_cart.book_date.present? %>
             <div class="pull-right">
-              <% if !current_user.admin? %>
+              <% if current_user && !current_user.admin? %>
                 <% if current_cart.chef_id != nil && @current_chef_in_cart.style != @chef.style %>
                   <%= link_to("菜品订制", add_to_cart_chef_path(@chef), :data => {:confirm => "更换不同菜系的厨师将清空当前购物车。确定吗？" }, :method => :post, :class => "btn btn-primary btn-danger") %>
                 <% else %>
@@ -111,7 +112,7 @@
                           <% end %>
                          </div>
                         <div class="tab-pane" id="wirtecomments">
-        	                  <div >
+        	                  <div>
                               <%= simple_form_for([@chef, @chef_comment]) do |f| %>
                               <div class="form-inputs">
                                 <%= f.input :comment, label: false, class: "form-control" %>

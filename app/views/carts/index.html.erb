@@ -14,7 +14,11 @@
         <% elsif @chef.chef_level_id == 3 %>
           <img src='<%= image_url 'bronze-medal.png' %>'>
         <% end %>
-        <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
+        <% if !@chef.is_hidden? %>
+          <%= link_to(@chef.name, chef_path(@chef), :style => "color: #801815; text-decoration: underline;") %>
+        <% else %>
+          <%= @chef.name %> (已失效)
+        <% end %>
         为您烹饪专属西餐料理
       <% end %>
       <br>
@@ -69,8 +73,8 @@
           <% else %>
           <tr>
             <td>
-                  <% if cart_item.product.image.present? %>
-                    <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail", style: "opacity:0.4;") %>
+                  <% if cart_item.product.product_photos.present? %>
+                    <%= image_tag(cart_item.product_photos[0].image.thumb.url, class: "thumbnail", style: "opacity:0.4;") %>
                   <% else %>
                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
                   <% end %>
@@ -109,7 +113,7 @@
     <hr>
 
     <div class="checkout clearfix">
-      <% if @chef.present? && current_cart.cart_items.count > 0 %>
+      <% if @chef.present? && !@chef.is_hidden? && current_cart.cart_items.count > 0 %>
         <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right")%>
       <% end %>
     </div>

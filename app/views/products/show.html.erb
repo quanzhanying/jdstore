@@ -32,21 +32,25 @@
       <div class="product-price">
         <i class="fa fa-money fa-lg" aria-hidden="true"></i> ￥ <%= @product.price %>
       </div>
-      <div class="">
-        <% if !current_user.admin? %>
-          <% if @product.quantity.present? && @product.quantity > 0 %>
-            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "add-to-cart btn btn-default") %>
-          <% else %>
-            已销售一空，无法购买
+      <div>
+        <% if current_user && !current_user.admin? %>
+        <% if current_user.has_follow_dish?(@product) %>
+          <%= link_to unfollow_dish_product_path(@product), :method => :post do %>
+            <i class="like btn btn-default fa fa-heart" aria-hidden="true" ></i>
           <% end %>
-          <% if current_user.has_follow_dish?(@product) %>
-            <%= link_to unfollow_dish_product_path(@product), :method => :post do %>
-              <i class="like btn btn-default fa fa-heart" aria-hidden="true" ></i>
+        <% else %>
+          <%= link_to follow_dish_product_path(@product), :method => :post do %>
+              <i class="unlike btn btn-default fa fa-heart-o" aria-hidden="true" ></i>
+          <% end %>
+        <% end %>
+          <% if !current_cart.chef_id.present? || Chef.find(current_cart.chef_id).style == @product.style %>
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "add-to-cart btn btn-default") %>
+            <% else %>
+              已销售一空，无法购买
             <% end %>
           <% else %>
-            <%= link_to follow_dish_product_path(@product), :method => :post do %>
-                <i class="unlike btn btn-default fa fa-heart-o" aria-hidden="true" ></i>
-            <% end %>
+            <%= link_to("选择私厨", chefs_path(style: @product.style), :class => "add-to-cart btn btn-default") %>
           <% end %>
         <% end %>
       </div>

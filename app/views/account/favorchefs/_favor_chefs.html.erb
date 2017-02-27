@@ -1,0 +1,57 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width="220">Chef Pic</th>
+      <th>姓名</th>
+      <th>擅长的菜系</th>
+      <th>等级</th>
+      <th>城市</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chefs.each do |chef| %>
+      <tr>
+        <td>
+          <% if !chef.is_hidden %>
+            <%= link_to chef_path(chef) do %>
+              <% if chef.photos.present? %>
+                <%= image_tag(chef.photos[0].image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if chef.photos.present? %>
+              <%= image_tag(chef.photos[0].image.thumb.url, class: "thumbnail", style: "opacity:0.4;") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+            <% end %>
+          <% end %>
+
+        </td>
+        <td>
+          <% if !chef.is_hidden %>
+            <%= chef.name %>
+          <% else %>
+            <%= chef.name %> （已失效）
+          <% end %>
+        </td>
+        <td>
+          <%= chef.style %>
+        </td>
+        <td>
+          <% if chef.chef_level_id == 1 %>
+            <img src='<%= image_url 'gold-medal.png' %>'>
+          <% elsif chef.chef_level_id == 2 %>
+            <img src='<%= image_url 'silver-medal.png' %>'>
+          <% elsif chef.chef_level_id == 3 %>
+            <img src='<%= image_url 'bronze-medal.png' %>'>
+          <% end %>
+        </td>
+        <td>
+          <%= chef.city %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

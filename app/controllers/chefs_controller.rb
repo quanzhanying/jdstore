@@ -13,6 +13,9 @@ class ChefsController < ApplicationController
     if params[:city].present?
       @chefs = @chefs.where(city: params[:city])
     end
+    if params[:style].present?
+      @chefs = @chefs.where(style: params[:style])
+    end
   end
 
   def show
@@ -37,8 +40,8 @@ class ChefsController < ApplicationController
         if current_cart.chef_id != nil
           current_chef_in_cart = Chef.find(current_cart.chef_id)
           if @chef.style != current_chef_in_cart.style
+            Cart.clean
             flash[:warning] = "当前购物车已清空！请重新选择菜品！"
-            current_cart.clean!
           end
         end
         current_cart.chef_id = @chef.id

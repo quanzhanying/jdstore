@@ -1,0 +1,44 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th width="220">Dish Pic</th>
+      <th>名称</th>
+      <th>菜系</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <% if !product.is_hidden %>
+            <%= link_to product_path(product) do %>
+              <% if product.product_photos.present? %>
+                <%= image_tag(product.product_photos[0].image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if product.product_photos.present? %>
+              <%= image_tag(product.product_photos[0].image.thumb.url, class: "thumbnail", style: "opacity:0.4;") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+            <% end %>
+          <% end %>
+
+        </td>
+        <td>
+          <% if !product.is_hidden %>
+            <%= product.title %>
+          <% else %>
+            <%= product.title %> （已下架）
+          <% end %>
+        </td>
+        <td>
+          <%= product.style %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

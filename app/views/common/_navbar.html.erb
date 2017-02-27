@@ -55,8 +55,7 @@
               <% else %>
                 <li>
                   <%= link_to(content_tag(:i,  "个人订单列表", class: 'fa fa-indent'), account_orders_path) %>
-                  <%= link_to(content_tag(:i,  "我收藏的私厨", class: 'fa fa-gratipay'), account_favorchefs_path) %>
-                  <%#= link_to(content_tag(:i,  "我喜欢的菜品", class: 'fa fa-gratipay'), account_favorproducts_path) %>
+                  <%= link_to(content_tag(:i,  "我的收藏夹", class: 'fa fa-gratipay'), account_favorchefs_path) %>
                 </li>
               <% end %>
               <li><%= link_to(content_tag(:i, '登出 ', class: 'glyphicon glyphicon-log-out'), destroy_user_session_path, method: :delete) %></li>
