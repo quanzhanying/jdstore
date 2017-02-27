@@ -21,7 +21,7 @@
         <%= @product.description %>
       </p>
     </div>
-    <div> 数量 : <%= @product.quantity %> </div>
+    <div> 库存 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
@@ -30,5 +30,23 @@
          已销售一空，无法购买
       <% end %>
     </div>
+    <div class="col-md-2"  >
+      <% if user_signed_in? %>
+        <% if !current_user.is_fan_of?(@product) %>
+          <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+            <i class="fa fa-heart fa-lg"></i>
+          <% end %>
+        <% else %>
+          <%= link_to unfavorite_product_path(@product), :class => "unlike btn btn-default", method: :post do %>
+            <i class="fa fa-heart fa-lg"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+          <i class="fa fa-heart fa-lg"></i>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 </div>
