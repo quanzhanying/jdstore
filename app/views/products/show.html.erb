@@ -49,4 +49,18 @@
     </div>
 
   </div>
+
+  <div class="row review">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h3 class="reviews_title">
+        <%= @product.reviews.count %> Reviews
+      </h3>
+      <hr>
+      <div id="reivews">
+        <%= render @product.reviews%>
+        <hr>
+        <%= render "reviews/form"%>
+      </div>
+    </div>
+  </div>
 </div>
