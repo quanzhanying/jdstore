@@ -1,6 +1,6 @@
 <h2> 修改商品 </h2>
 
-<%= simple_form_for [:admin, @product] do |f| %>
+<%= simple_form_for [:admin, @book] do |f| %>
 
   <div class="group">
     <%= f.input :title %>
@@ -18,9 +18,9 @@
     <%= f.input :price %>
   </div>
 
-  <% if @product.image.present? %>
+  <% if @book.image.present? %>
     <span>目前商品图</span> <br>
-    <%= image_tag(@product.image.thumb.url) %>
+    <%= image_tag(@book.image.thumb.url) %>
   <% end %>
 
   <div class="group">

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  root 'welcome#index'
   namespace :admin do
     resources :products
+    resources :phones
+    resources :books
+    resources :foods
     resources :orders do
       member do
         post :cancel
@@ -22,6 +25,23 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  resources :phones do
+    member do
+      post :add_to_cart
+    end
+  end
+
+  resources :books do
+    member do
+      post :add_to_cart
+    end
+  end
+  resources :foods do
+    member do
+      post :add_to_cart
+    end
+  end
+
   resources :carts do
     collection do
       delete :clean

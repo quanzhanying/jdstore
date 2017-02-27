@@ -1,40 +1,40 @@
 <h2> 商品明细 </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("新增产品", new_admin_book_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">推荐品图片</th>
+      <th width="220">图书样品</th>
       <th>名称</th>
       <th>价格</th>
       <th width="100"> 操作按钮</th>
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
+    <% @books.each do |book| %>
       <tr>
         <td>
-          <%= product.id %>
+          <%= book.id %>
         </td>
         <td>
-          <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <%= link_to book_path(book) do %>
+            <% if book.image.present? %>
+              <%= image_tag(book.image.thumb.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
           <% end %>
         </td>
         <td>
-          <%= product.title %>
+          <%= book.title %>
         </td>
         <td>
-          <%= product.price %>
+          <%= book.price %>
         </td>
         <td>
-          <%= link_to("修改", edit_admin_product_path(product)) %>
+          <%= link_to("修改", edit_admin_book_path(book)) %>
         </td>
       </tr>
     <% end %>
