@@ -3,15 +3,25 @@
   <hr>
 
   <% @templates.each do |template| %>
-    <div class="col-xs-6 col-md-3" style="margin: 20px 0 20px 0;">
+    <div class="col-xs-6 col-md-3" >
       <%= link_to template_path(template) do %>
         <% if template.templatephotos.present? %>
-          <%= image_tag(template.templatephotos[0].image.thumb.url, class: "thumbnail") %>
+        <div class="thumbnail thumbnail-product">
+          <%= image_tag(template.templatephotos[0].image.thumb.url) %>
+
+          <p><strong><%= template.title %></strong></p>
+          <p>¥ <%= template.price %></p>
+          </div>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <div class="thumbnail thumbnail-product">
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+
+          <p><strong><%= template.title %></strong></p>
+          <p>¥ <%= template.price %></p>
+        </div>
         <% end %>
       <% end %>
-      <%= template.title %> ￥ <%= template.price %>
+
     </div>
   <% end %>
 </div>
