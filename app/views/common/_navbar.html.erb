@@ -35,10 +35,6 @@
             </li>
 
             <li>
-              <%= link_to("关于我们", "#") %>
-            </li>
-
-            <li>
               <%= form_tag search_products_path, :class => "products-search-form", :method => :get do %>
                 <div class="input-group">
                   <input type="text" class="form-control search-bar-input" name="q" value="<%= params[:q] %>" placeholder="商品，描述...">

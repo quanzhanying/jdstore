@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @photos = @product.photos.all
+    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
+    @review = Review.new
   end
 
   def add_to_cart
