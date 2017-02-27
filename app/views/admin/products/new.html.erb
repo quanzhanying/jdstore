@@ -19,6 +19,12 @@
   </div>
 
   <div class="group">
+    <%= f.input :category_id do %>
+    <%= f.select :category_id, @categories %>
+    <% end %>
+  </div>
+
+  <div class="group">
     <%= f.input :image, as: :file %>
   </div>
 
