@@ -29,6 +29,20 @@
           </tr>
         <% end %>
 
+        <% @template_lists.each do |template_list| %>
+          <tr>
+            <td>
+              <%= template_list.template_name %>
+            </td>
+            <td>
+              <%= template_list.template_price %>
+            </td>
+            <td>
+              <%= '1' %>
+            </td>
+          </tr>
+        <% end %>
+
       </tbody>
     </table>
 
