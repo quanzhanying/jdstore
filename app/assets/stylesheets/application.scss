@@ -185,100 +185,35 @@
 /*----------------------------------功能分割线----------------------------------*/
 
 
-/*登录注册弹出页*/
-.loginmodal-container {
-  padding: 30px;
-  max-width: 350px;
-  width: 100% !important;
-  background: #90CAF9;
-  background-color: #90CAF9;
-  margin: 0 auto;
-  border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  font-family: roboto;
-}
-
-.loginmodal-container h1 {
-  text-align: center;
-  font-size: 1.8em;
-  font-family: roboto;
-}
-
-.loginmodal-container input[type=submit] {
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.loginmodal-container input[type=text], input[type=password] {
-  height: 44px;
-  font-size: 16px;
-  width: 100%;
-  margin-bottom: 10px;
-  -webkit-appearance: none;
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
-  padding: 0 8px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-.loginmodal-container input[type=text]:hover, input[type=password]:hover {
-  border: 1px solid #b9b9b9;
-  border-top: 1px solid #a0a0a0;
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-}
-
-.loginmodal {
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  height: 36px;
-  padding: 0 8px;
-  /* border-radius: 3px; */
-  /* -webkit-user-select: none;
-  user-select: none; */
-}
-
-.loginmodal-submit {
-  /* border: 1px solid #3079ed; */
-  border: 0px;
-  color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1);
-  background-color: #4d90fe;
-  padding: 17px 0px;
-  font-family: roboto;
-  font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
-}
-
-.loginmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
-  border: 0px;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
-}
-
-.loginmodal-container a {
-  text-decoration: none;
-  color: #666;
-  font-weight: 400;
-  text-align: center;
-  display: inline-block;
-  opacity: 0.6;
-  transition: opacity ease 0.5s;
-}
-
-.login-help{
-  font-size: 12px;
+/*登录注册页*/
+.login-page, .sign-up-page {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  form {
+    max-width: 480px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px #9daaaf, 0 0 8px #c1c5c1;
+    h2 {
+      margin-bottom: 30px;
+    }
+    .form-control {
+      position: relative;
+      font-size: 16px;
+      height: auto;
+      padding: 10px;
+      transition: 1s;
+        @include box-sizing(border-box);
+      &:focus {
+        box-shadow: 1px 1px #fff;
+        border-color: red;
+          z-index: 2;
+        }
+    }
+  }
 }
 
 
@@ -305,7 +240,6 @@
 .navbar-brand{
   background-color: red;
 }
-
 
 /*----------------------------------功能分割线----------------------------------*/
 
@@ -545,7 +479,7 @@ div.container {
 
 /*将页脚固定在底部*/
 html{height:100%;}
-body{min-height:100%;margin:0;padding:0;position:relative;}
+body{min-height:100%;margin:0;padding:50px 0 0;position:relative;}/*padding:50px解决了导航栏固定在顶部后的覆盖问题*/
 main{padding-bottom:100px;}/* main的padding-bottom值要等于或大于footer的height值 */
 footer{position:absolute;bottom:0;width:120%;height:100px;}
 
@@ -1166,19 +1100,6 @@ footer{position:absolute;bottom:0;width:120%;height:100px;}
 
 /*----------------------------------功能分割线----------------------------------*/
 
-/*首页第三部分播放视频*/
-.sec-video {
-  background-color: black;
-}
-embed {
-  margin: 0 17px 0;
-}
-
-
-
-
-
-
 
 
 .timeline {
@@ -1422,23 +1343,6 @@ embed {
 }
 
 
-/***Employees said***/
-
-
-
-
-
-/***Contact us***/
-
-
-.caption {
-  text-align: center;
-}
-
-.thumbnail {
-  border: 0 none;
-  box-shadow: none;
-}
 /*----------------------------------功能分割线----------------------------------*/
 
 
@@ -1716,4 +1620,10 @@ ul.nav-pills {
   color: #ff3546;
   padding: 5px 60px 5px 5px;
   line-height: 30px;
+}
+.dropdown-menu{
+  background-color: black;
+}
+.text2{
+  color: white;
 }
