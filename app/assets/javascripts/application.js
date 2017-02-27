@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require test-code.js
 //= require_tree .

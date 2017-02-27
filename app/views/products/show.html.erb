@@ -27,11 +27,8 @@
       <div class="sku-dynamic-params clearfix ng-scope">
         <span class="params-name ng-binding">库存:<i><%= @product.quantity %></i> </span>
       </div>
-      <div class="sku-dynamic-params clearfix ng-scope">
 
-
-      </div>
-
+  
       <div class="cart-operation-wrapper clearfix ng-scope">
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
@@ -63,7 +60,7 @@
       <div class="comment-content">
         <%= render @product.comments %>
       </div>
-      
+
       <div class="comment-form">
         <%= render "comments/form" %>
       </div>
