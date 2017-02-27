@@ -18,7 +18,14 @@ resources :products do
   member do
     post :add_to_cart
   end
+
+  put :favorite, on: :member
+
 end
+
+resources :favorite do
+end
+
 
 resources :carts do
   collection do

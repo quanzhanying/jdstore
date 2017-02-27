@@ -1,0 +1,41 @@
+<body data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
+ <div id="menu_wrap">
+   <div class="menu">
+    <div class="container">
+          <h2 class="show-title">
+            <div class="show-menu-logo"><%= @product.title%></div>
+          </h2>
+         <div class="show-menu-tray">
+           <ul class="show-menu-items">
+             <li class="show-menu-favorite">
+               <% if current_user && current_user.is_favorite_of?(@product) %>
+                 <%= link_to favorite_product_path(@product, type:"unfavorite"),method: :put do %>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                 <% end %>
+               <% else %>
+                 <%= link_to favorite_product_path(@product, type:"favorite"),method: :put do %>
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                 <% end %>
+               <% end %>
+             </li>
+             <li class="show-menu-item-buy" >
+             <% if @product.quantity.present? && @product.quantity > 0 %>
+             <%= link_to("购买", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-xs pull-right") %>
+             <% else %>
+               缺货
+             <% end %>
+             </li>
+             <li class="show-menu-item">
+               <%= link_to("技术规格", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+             </li>
+             <li class="show-menu-item">
+                <%= link_to("概览", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+             </li>
+           </ul>
+         </div>
+            <br>
+
+    </div>
+   </div>
+ </div>
+</body>

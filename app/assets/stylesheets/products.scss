@@ -1,3 +1,281 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*  商品展示  */
+.show-title {
+  float:left;
+  margin: 0;
+  padding: 0;
+  color:#212121
+
+}
+.show-menu-logo {
+  font-family: inherit;
+  font-weight: inherit;
+  color:#212121;
+  text-decoration:none;
+}
+
+.show-menu-item{
+  margin-top:4px;
+  padding:0;
+  font-size: 0.8em;
+  font-family: inherit;
+  font-weight: inherit;
+  float:right;
+  color:#212121
+}
+.show-menu-link{
+  color:#757575
+}
+
+
+.show-menu-items li{
+  list-style-type:none;
+  margin-left:25px
+
+}
+
+.show-menu-favorite{
+  margin:0;
+  padding:0;
+  font-size: 0.8em;
+  font-family: inherit;
+  font-weight: inherit;
+  float:right;
+  font-size:16px;
+
+}
+.show-menu-item-buy {
+  margin:0;
+  padding:0;
+  font-size: 0.8em;
+  font-family: inherit;
+  font-weight: inherit;
+  float:right;
+
+}
+
+.show-title .show-menu-logo:hover,
+.show-title .show-menu-logo:focus {
+  color: #29B6F6;//鼠标放置在链接上的文字颜色
+  background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+  cursor: pointer;
+}
+
+.section-content{
+  padding-top: 30px;
+}
+
+.section-content2{
+  text-align:center;
+  margin-top:100px;
+  margin-bottom: 100px;
+}
+
+.eyebrow{
+  font-weight: 400;
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: .016em;
+}
+
+.hero-headline{
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: .016em;
+  text-align: center;
+  width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro{
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  text-align: center;
+  width:620px;
+  font-size: 20px;
+  font-weight:300;
+  letter-spacing: .017em;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  margin-top: .75em;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+img.washer-product-kitchen{
+  -webkit-filter:grayscale(0.5);
+      height: 100%;
+      min-width: 1024px;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+}
+
+.washer-product-profile{
+  min-width: 250px;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  display: block;
+}
+
+img.washer-product-profile2{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.content{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#range{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display:none;
+}
+
+#flip{
+    padding: 5px;
+    text-align: center;
+    background-color: #FAFAFA;
+    color: #1E88E5;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+#flip:hover,
+#flip:focus{
+  background-color: #ECEFF1;
+}
+
+#kids-implement{
+  display: none;
+}
+
+
+/* 非主推广商品 */
+
+
+/*show页面商品信息*/
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 505px;
+}
+
+.productDetail-left {
+	float: left; /*你去左边*/
+	width: 400px;
+	height: 400px;
+}
+
+.productDetail-right {
+	float: right; /*你去右边*/
+	width: 744px;
+	height: 485px;
+  p{
+    padding: 5px 0px;
+    font-size: 1.1em;
+  }
+  .product-price{
+    padding: 20px 0px;
+  }
+
+}
+
+.productDetail-left-bigImage {
+	width: 400px;
+	height: 400px;
+  border: 1px solid #D8D8D8;
+  overflow: hidden;
+}
+
+.productDetail-left-imageList {
+	margin-top: 15px;
+
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 70px;
+	height: 70px;
+	margin-right: 12px;
+  overflow: hidden;
+  img {
+    width:100%;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #D8D8D8
+  }
+}
+
+.productInfo-right{
+  li{
+    list-style-type: none;
+  }
+}
+
+
+.last-item {
+	margin-right: 0;
+  width: 70px;
+	height: 70px;
+  overflow: hidden;
+  img {
+    width:100%;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/*主推商品头部位置*/
+.menu{
+  width:100;
+  z-index: 99;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.menuFixed{
+  position:fixed;
+  top:0;
+  left:0;
+  text-align: center;
+  width:100%;
+  background-color: white;
+  border-bottom: 1px solid #EEEEEE;
+}
+#menu_wrap{
+  height:50px;
+  width:100%;
+}
+
+
+.pl20{padding-left:20px}
+.bg-gray{background-color: #F5F5F5;}
+.color-red{color: red;font-size: 1.3em;}

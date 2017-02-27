@@ -16,6 +16,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+#gotop{
+  width:50px;
+  height:50px;
+  i{
+    font-size: 50px;
+  }
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  cursor: pointer;
+  display:none;
+
+}
+
 .bg-color1 {
   background-color: black;
 }
@@ -109,3 +124,4 @@ margin-left:5px ;
 color: #c6c6c6;
 }
 .subscribe li{padding:3px;}
+
