@@ -1,25 +1,58 @@
-<div class="container">
-
-  <div class="col-md-6">
-    <% if @template.templatephotos.present? %>
-      <%= image_tag(@template.templatephotos[0].image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
+<div class="show-page" style="margin:50px 150px 50px 150px;">
+  <div class="show-option">
+      <%= link_to("首页", "/") %> > <%= link_to("全部模板", url_for(:back)) %>
   </div>
-  <div class="col-md-6">
-    <h2> <%= @template.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @template.description %>
-      </p>
-    </div>
-    <div> 版本 : <%= @template.version %> </div>
-    <div> 比例 : <%= @template.proportion %> </div>
 
-    <div class="template-price"> ￥ <%= @template.price %> </div>
-    <div class="pull-right">
-      <%= link_to("加入购物车", add_to_cart_template_path(@template), :method => :post, :class => "btn btn-lg") %>
+  <h2><%= @template.title %></h2>
+  <div class="row template-show">
+    <!-- Start of template show left part -->
+    <div class="col-md-10">
+      <!-- Start of product card -->
+      <div class="row card">
+        <!-- Start of left card -->
+        <div class="preview col-md-7 " style="padding:20px 20px 20px;">
+          <div class="preview-pic tab-content" >
+            <% if @template.templatephotos.present? %>
+              <%= image_tag(@template.templatephotos[0].image.medium.url) %>
+            <% else %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+            <% end %>
+          </div>
+        </div>
+        <!-- End of left card -->
+        <!-- Start of right cart -->
+        <div class="details col-md-5" style="padding:20px 20px 20px;">
+          <div> 商品信息</div>
+          <div> 商品描述 :<%= @template.description %></div>
+          <div> 商品版本 : <%= @template.version %> </div>
+          <div> 商品比例 : <%= @template.proportion %> </div>
+          <div>￥ <%= @template.price %></div>
+
+          <div class="action">
+              <%= link_to("加入购物车", add_to_cart_template_path(@template), class: "add-to-cart btn btn-lg",:method => :post) %>
+          </div>
+        </div>
+        <!-- End of right card -->
+      </div>
+      <!-- End of product card -->
+      <!-- Start of product description & reviews -->
+      <div class="row">
+        <div class="col-md-12 product-description">
+          <% if @template.templatephotos.present? %>
+            <%= image_tag(@template.templatephotos[0].image.url) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+          <% end %>
+        </div>
+      </div>
+      <!-- End of product description & reviews -->
     </div>
-  </div>
+    <!-- End of template show left part -->
+    <!-- Start of template show right part -->
+    <div class="col-md-2 proposal-product">
+      </div>
+        热门商品
+      </div>
+    </div>
+    <!-- End of template show right part -->
 </div>
