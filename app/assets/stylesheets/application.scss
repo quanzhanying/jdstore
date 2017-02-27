@@ -70,7 +70,7 @@ background-color: #2d2d30;
 
  .carousel-inner img {
     -webkit-filter: grayscale(90%);
-    filter: grayscale(90%); /* 黑白化图片的三段语句,好像不成功?!make all photos black and white */
+    filter: grayscale(30%); /* 黑白化图片的三段语句,好像不成功?!make all photos black and white */
     width: 100%; /* 第一版设计加的 Set width to 100% */
     margin: auto;
 }
