@@ -16,21 +16,22 @@
           </ul>
             <ul class="nav navbar-nav navbar-right">
                 <% if !current_user %>
-                <li><%= link_to("注册", new_user_registration_path) %>
-                </li>
+                <li><%= link_to("注册", new_user_registration_path) %></li>
                 <li><%= link_to(content_tag(:i, '登入', class:'fa fa-sign-in'), new_user_session_path) %></li>
             <% else %>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" . Hi, <%= current_user.email %> <b class="cart"></b>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" > Hi!, <%= current_user.email %> <b class="cart"></b>
             </a>
             <ul class="dropdown-menu">
+              <% if current_user.admin? %>
                 <li>
-                <li>
-                    <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+              <%= link_to("Admin 选单", admin_products_path ) %>
                 </li>
-                :detele) %>
+                <% end %>
+                <li>
+                    <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)%>
+                </li>
             </li>
         </ul>
-    </li>
     <% end %>
 </ul>
 </div>
