@@ -1,0 +1,413 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 10px;
+  max-width: 500px;
+  width: 100% !important;
+  height:450px;
+  background-color: #b9b9b9;
+  margin: 100px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  font-size: 180px;
+  text-align: left;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+
+.navbar-default {
+    background-color:#4dbffb;//背景颜色
+    border-color: white;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+    width: 2100px; //定制图片宽度
+    height: 120px; //定制图片高度
+}
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+    .input-control {
+    width: auto;
+  }
+}
+
+.navbar-default .navbar-brand {
+   color: #EF6C00;//字体颜色
+   padding: 30px 15px;//上下10px,左右15px
+   line-height: 80px;//文字行高
+}
+
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #FF6F00;//鼠标放置在链接上的文字颜色
+  background-color: #4dbffb;//鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+
+.navbar-default .navbar-nav > li > a{
+  color: #EF6C00;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FF6F00;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FF6F00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;
+}
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 50px; //定制图片宽度
+    height: 50px; //定制图片高度
+}
+.container-fluid{
+  background-color: #B0BEC5;
+
+}
+.body {
+padding-top: 0px;
+}
+h3
+  {font-family: "Helvetica Neue";
+  font-size: 60px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  color:#6b9a98;
+}
+h3.p{
+  font-family: "Helvetica Neue";
+  font-size: 35px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+.navbar-collapse{
+   color: #EF6C00;//字体颜色
+   padding: 30px 15px;//上下10px,左右15px
+   line-height: 80px;//文字行高
+   border-color: white;//边框色
+}
+
+a  {
+    font-size: 30px;
+  }
+
+.navbar-inverse{
+   color: #EF6C00;//字体颜色
+   padding: 30px 15px;//上下10px,左右15px
+   line-height: 80px;//文字行高
+   background-color: #B0BEC5;
+}
+.active{
+  font-size: 30px;
+}
+ .container.p{
+   font-size:25px;
+ }
+
+ /*
+ /* Created by Filipe Pina
+  * Specific styles of signin, register, component
+  */
+ /*
+  * General styles
+  */
+ #playground-container {
+     height: 500px;
+     overflow: hidden !important;
+     -webkit-overflow-scrolling: touch;
+ }
+ body, html{
+      height: 100%;
+  	background-repeat: no-repeat;
+
+  	font-family: 'Oxygen', sans-serif;
+ 	    background-size: cover;
+ }
+
+ .main{
+  	margin:50px 15px;
+ }
+
+ h1.title {
+ 	font-size: 35px;
+ 	font-family: 'Passion One', cursive;
+ 	font-weight: 400;
+ }
+
+ hr{
+ 	width: 10%;
+ 	color: #fff;
+ }
+
+ .form-group{
+ 	margin-bottom: 15px;
+ }
+
+ label{
+ 	margin-bottom: 15px;
+ }
+
+ input,
+ input::-webkit-input-placeholder {
+     font-size: 11px;
+     padding-top: 3px;
+ }
+
+ .main-login{
+  	background-color: #fff;
+     /* shadows and rounded borders */
+     -moz-border-radius: 2px;
+     -webkit-border-radius: 2px;
+     border-radius: 2px;
+     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+ }
+ .form-control {
+     height: auto!important;
+ padding: 8px 12px !important;
+ }
+ .input-group {
+     -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+     -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+ }
+ #button {
+     border: 1px solid #ccc;
+     margin-top: 28px;
+     padding: 6px 12px;
+     color: #666;
+     text-shadow: 0 1px #fff;
+     cursor: pointer;
+     -moz-border-radius: 3px 3px;
+     -webkit-border-radius: 3px 3px;
+     border-radius: 3px 3px;
+     -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+     -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+     box-shadow: 0 1px #fff inset, 0 1px #ddd;
+     background: #f5f5f5;
+     background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+     background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+     background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+     background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+     background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+ }
+ .main-center{
+  	margin-top: 30px;
+  	margin: 0 auto;
+  	max-width: 400px;
+     padding: 10px 40px;
+ 	background:#009edf;
+ 	    color: #FFF;
+     text-shadow: none;
+ 	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+ -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+ box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+ }
+ span.input-group-addon i {
+     color: #009edf;
+     font-size: 17px;
+ }
+
+ .login-button{
+ 	margin-top: 5px;
+ }
+
+ .login-register{
+ 	font-size: 11px;
+ 	text-align: center;
+ }
+
+ input[type="text"] {
+    width: 2110px;
+    height: 45px;
+    padding-right: 50px;
+}
+
+input[type="submit"] {
+    margin-left: 0px;
+    height: 50px;
+
+
+}
+
+.h2 {
+      font-size: 50px;
+      margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  jumbotron.h1{
+      font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+      font-size: 220px;
+      text-align: center;
+      margin-top: 200px;
+      margin-bottom: 80px;
+ 
+   mwidth: 50px;
+
+}
+
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 40px;
+    line-height: 20px;
+    height: 50px;
+}
+
+
