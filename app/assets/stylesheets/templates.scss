@@ -1,3 +1,21 @@
 // Place all the styles related to the templates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*details*/
+
+.intro-preview {
+	margin-top: 15px;
+	.intro-preview-item {
+		padding: 1px;
+		margin-right: 13px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			width: 70px;
+			height: 70px;
+		}
+	}
+	.intro-preview-activeItem {
+		border-color: #DB3652;
+	}
+}
