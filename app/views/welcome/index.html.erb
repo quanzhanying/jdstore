@@ -379,6 +379,8 @@
       <li><a data-toggle="tab" href="#menu1">Qiaoyu</a></li>
     </ul>
 
+
+
     <div class="tab-content">
       <div id="home" class="tab-pane fade in active">
         <h2>GaiGai, 卖声音的小火柴 </h2>
@@ -390,6 +392,10 @@
       </div>
     </div>
   </div>
+
+
+  <!-- 插入音频 -->
+  <%= audio_tag "/audios/shareVoice.mp4", id: "sound", class: "audio-to-play", autoplay: true %>
 
 
   <script>
