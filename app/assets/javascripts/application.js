@@ -17,3 +17,10 @@
 //= require bootstrap/dropdown
 //= require bootstrap/carousel
 //= require_tree .
+
+// 预览图选择
+$(document).on('click', '.intro-preview-item', function () {
+	var src = $(this).find('img').attr('src')
+	$('.preview-pic img').attr('src', src)
+	$(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
+})

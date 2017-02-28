@@ -6,6 +6,7 @@ class TemplatesController < ApplicationController
 
   def show
     @template = Template.find(params[:id])
+    @photos = @template.templatephotos.all
   end
 
   def add_to_cart
