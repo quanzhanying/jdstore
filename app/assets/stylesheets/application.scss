@@ -161,6 +161,9 @@
     .navbar {
         border-radius: 0;//圆角为0
     }
+    .input-control {
+    width: auto;
+  }
 }
 
 .navbar-default .navbar-brand {
@@ -169,6 +172,12 @@
    line-height: 80px;//文字行高
 }
 
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #FF6F00;//鼠标放置在链接上的文字颜色
+  background-color: #4dbffb;//鼠标放置在链接上的背景颜色，这里设为透明
+}
 
 
 .navbar-default .navbar-nav > li > a{
@@ -191,7 +200,6 @@
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
     background-color: #FFE0B2;
-    color: #212121;
 }
 
 .navbar-brand > img {
@@ -261,7 +269,7 @@ a  {
  body, html{
       height: 100%;
   	background-repeat: no-repeat;
-  	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+
   	font-family: 'Oxygen', sans-serif;
  	    background-size: cover;
  }
@@ -271,7 +279,7 @@ a  {
  }
 
  h1.title {
- 	font-size: 50px;
+ 	font-size: 35px;
  	font-family: 'Passion One', cursive;
  	font-weight: 400;
  }
@@ -373,7 +381,24 @@ a  {
 input[type="submit"] {
     margin-left: 0px;
     height: 50px;
-    width: 50px;
+
+
+}
+
+.h2 {
+      font-size: 50px;
+      margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  jumbotron.h1{
+      font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+      font-size: 220px;
+      text-align: center;
+      margin-top: 200px;
+      margin-bottom: 80px;
+ 
+   mwidth: 50px;
 
 }
 
@@ -384,37 +409,5 @@ input[type="submit"] {
     line-height: 20px;
     height: 50px;
 }
-#gotop {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #6b9a98;
-  cursor: pointer;
-}
-/*默认样式，主要是position:fixed实现屏幕绝对定位*/
-#gotoTop{
-  display:none;
-  position:fixed;
-  top:75%;
-  left:50%;
-  cursor:pointer;
-  margin-top:-50px;
-  margin-left:520px;
-  padding:9px 4px;
-  width:20px;
-  text-align:center;
-  border:1px solid #e0e0e0;
-  background:#fff;
-}
-/*用CSS表达式(expression)来实现ie6下position:fixed效果*/
-#gotoTop{
-  _position:absolute;
-  _top:expression(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px")}
-/*鼠标进入的反馈效果*/
-#gotoTop.hover{
-  background:#5CB542;
-  color:#fff;
-  text-decoration:none;
-}
+
+

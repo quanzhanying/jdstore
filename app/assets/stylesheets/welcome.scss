@@ -16,7 +16,7 @@
     overflow: hidden;
     max-height: 1050px;
     position: relative;
-    background: #000000;
+
 }
 .bs-slider:hover {
     cursor: -moz-grab;
@@ -225,10 +225,11 @@
 
     padding: 0;
     color: #ffffff;
-    font-size: 70px;
+    font-size: 50px;
     font-style: normal;
     line-height: 84px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 250px;
     letter-spacing: 1px;
     display: inline-block;
     -webkit-animation-delay: 0.7s;
@@ -304,9 +305,10 @@
 
 @media (max-width: 991px) {
     .slide-text h1 {
-        font-size: 40px;
-        line-height: 50px;
-        margin-bottom: 20px;
+        font-size: 30px;
+        line-height: 40px;
+
+        margin-top:130px;
     }
     .slide-text > p {
 
@@ -318,17 +320,19 @@
 /*---------- MEDIA 480px ----------*/
 @media  (max-width: 768px) {
     .slide-text {
-        padding: 10px 50px;
+
+        mrgin-top:180px;
     }
     .slide-text h1 {
-        font-size: 30px;
+        font-size: 35px;
         line-height: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
+        margin-top: 180px;
     }
     .slide-text > p {
-        font-size: 14px;
+        font-size: 20px;
         line-height: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     .control-round .carousel-control{
         display: none;
@@ -343,6 +347,7 @@
         font-size: 20px;
         line-height: 25px;
         margin-bottom: 5px;
+        mrgin-top:100px
     }
     .slide-text > p {
         font-size: 12px;
@@ -364,10 +369,16 @@
 }
 
 
-h3
-  {font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  font-size: 300px;
-  text-align: left;
-  margin-top: 200px;
-  margin-bottom: 80px;
-}
+
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #b2bec4;
+  }
+
+.h2 {
+      font-size: 50px;
+      margin-top: 30px;
+    margin-bottom: 10px;
+  }

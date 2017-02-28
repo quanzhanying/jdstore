@@ -11,14 +11,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' > 有无 </a>
+        <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' > 有&无 </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+
+    
+
+
       <ul class="nav navbar-nav navbar-middle">
+
         <li class="active"><a href="/products">全部爱意</a></li>
+
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        
         <li>
            <%= link_to carts_path do %>
               购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
