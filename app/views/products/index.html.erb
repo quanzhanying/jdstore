@@ -1,0 +1,10 @@
+<h1> 所有商品</h1>
+<table class="table table-boldered">
+
+  <% @products.each do |product|%>
+    <tr>
+        <td> <%= product.title %> </td>
+        <td> <%= product.price %> </td>
+    </tr>
+  <% end %>
+</table>
