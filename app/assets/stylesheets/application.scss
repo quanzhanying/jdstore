@@ -37,22 +37,33 @@
 body {
 
   position: relative;    //相对于正常位置
-  margin-bottom: 50px;  //一定要和footer的高度一致
   min-height: 100%;
   background: rgb(237,237,237);
 }
 
 
 
-footer {
-  position: absolute;
-       // set the bottom edge of the absolute positioned element to 0px above the bottom edge of its nearest positioned ancestor。
-  margin-top: 50px;
+.footer {
+  background: #fafafa;
+  margin-top: 70px;
   width: 100%;
-  height: 50px;
-  z-index: 1000;  // z-index值越大，此元素越会保持在最前
+  height: 100%;
+  z-index: 1000;
 }
 
-footer p {
-  padding-left: 200px;
+.siteinfo {
+  margin: 50px 0 20px 0;
+}
+
+.nav-footer>li {
+  float: left;
+  margin: 0 100px 30px 100px;
+}
+
+.nav-footer>li li {
+  margin-left: -40px;
+}
+
+.nav-footer h3 {
+  font-size: 15px;
 }
