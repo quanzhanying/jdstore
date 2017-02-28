@@ -1,0 +1,41 @@
+<h2> Edit Product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <% if @product.photos.present? %>
+     <span>目前商品圖</span> <br>
+     <% @product.photos.each do |p| %>
+       <%= image_tag p.avatar.thumb.url %><br>
+     <% end %>
+   <% end %>
+
+   <div class="group">
+     <%= f.label :avatar %><br>
+     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+   </div>
+
+  <div class="group">
+      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
+  </div>
+
+  <br>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
