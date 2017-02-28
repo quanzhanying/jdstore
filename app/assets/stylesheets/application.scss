@@ -31,6 +31,7 @@ background-color: #2d2d30;
   opacity:0.65;
 }
 
+
 /* Add a gray color to all navbar links */
 .navbar li a, .navbar .navbar-brand {
     color: #d5d5d5 !important;
@@ -149,6 +150,43 @@ background-color: #2d2d30;
   background: #CFD8DC;
 }
 // 背景色
+
+
+// footer固定
+
+html{height:100%;}
+body{min-height:100%;margin:0;padding:0;position:relative;}
+main{padding-bottom:100px;}/* main的padding-bottom值要等于或大于footer的height值 */
+footer{position:absolute;bottom:0;width:100%;height:100px;}
+// 上下滚动图片,自带背景不动效果
+
+.ap-parallax-2 {
+    margin: 0 auto;
+    background: url(http://ols6vd1wm.bkt.clouddn.com/tradition_21.jpg) no-repeat;
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 170px;
+    background-size: cover;
+    background-attachment: fixed;
+    position: static;
+    min-height: 460px;
+    background-position: 50% 0%;
+}
+
+// 滚动图片的字体颜色设定
+
+.p-title {
+    color: #fff;
+    font-size: 35px;
+    letter-spacing: -3px;
+}
+
+.p-desc {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
