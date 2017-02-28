@@ -23,7 +23,7 @@
         <!-- Start of right cart -->
         <div class="details col-md-5" style="padding:20px 20px 20px;">
           <div> 商品信息</div>
-          <div> 商品描述 :<%= @template.description %></div>
+          <div> 商品描述 :<%= simple_format(@template.description) %></div>
           <div> 商品版本 : <%= @template.version %> </div>
           <div> 商品比例 : <%= @template.proportion %> </div>
           <div>￥ <%= @template.price %></div>

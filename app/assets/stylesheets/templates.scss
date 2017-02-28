@@ -1,8 +1,16 @@
 // Place all the styles related to the templates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container-template{
+  padding: 30px 100px 20px 100px;
+
 /*details*/
 
+  }
+  
+/* 参考代码 */
 .intro-preview {
 	margin-top: 15px;
 	.intro-preview-item {
@@ -18,4 +26,5 @@
 	.intro-preview-activeItem {
 		border-color: #DB3652;
 	}
-}
+
+
