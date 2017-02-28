@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> 随风奔跑 </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+<h1>随风奔跑</h1>
+<p>每一个完整的人生，都需要一场马拉松</p>
+<form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">订阅</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+
+<style>
+.jumbotron {
+    background-color: #34a853; /* green */
+    color: #084c8d;
+    padding: 100px 25px;
+}
+
+.container-fluid {
+  padding: 60px 50px;
+}
+</style>
+
+<style>
+.bg-grey {
+    background-color: #f6f6f6;
+}
+</style>
+
+<style>
+.logo {
+    font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+</style>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
+
+<!--这里是服务内容-->
+<div class="container-fluid text-center">
+  <h2> 我们可以提供的 </h2>
+  <h4> 您所需要的 </h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-edit"></span>
+      <h4>参赛无忧</h4>
+      <p>从报名到参赛的相关事宜</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-road"></span>
+      <h4>跑步训练</h4>
+      <p>让你能安全的完成人生第一场马拉松</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-plus-sign"></span>
+      <h4>急救训练</h4>
+      <p>提供必要的救护训练，保护自己，帮忙别人</p>
+    </div>
+    </div>
+    <br><br>
+
+<h2>成员心声</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"高效准确的报名与参赛服务，从此”无忧参赛"<br><span style="font-style:normal;">王石</span></h4>
+      </div>
+      <div class="item">
+        <h4>"专业的训练，让我实现全马梦想"<br><span style="font-style:normal;">和菜头</span></h4>
+      </div>
+      <div class="item">
+        <h4>"急救特训，让我在马拉松赛事中安全完赛，同时给跑步的小伙伴排除了危机"<br><span style="font-style:normal;">迪巴巴</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+    <h2>我们的价值</h2>
+    <h4><strong>奔跑者理念:</strong> 帮助每一个人完成人生的一场马拉松！ </h4>
+    <p><strong>奔跑者信条:</strong> 人生就是一场不停歇的马拉松！
+    </div>
+  </div>
+</div>
+
+    <!-- Container (Portfolio Section) -->
+    <div id="portfolio" class="container-fluid text-center bg-grey">
+      <h2>我们努力帮助每一个相信奇迹的人实现他们的梦想，也是我们的梦想</h2><br>
+      <h3>将那些曾经的不可能变成了可能</h3>
+      <h3>每一个平凡的梦想，都值得敬畏</h3>
+      <div class="row text-center slideanim">
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="https://ww2.sinaimg.cn/large/006tKfTcly1fd667jjj6uj30fr0nmwfa.jpg" style="width:400px;height=:300px;">
+            <p><strong>贺显国：小儿麻痹症患者</strong></p>
+            <p>随风奔跑的三年，全马成绩304</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="https://ww1.sinaimg.cn/large/006tKfTcly1fd44nfd6qbj30zk0qo0vj.jpg" alt="https://ww1.sinaimg.cn/large/006tKfTcly1fd44nfd6qbj30zk0qo0vj.jpg" style="width:400px;height=:300px;">
+            <p><strong>董元文：73岁高龄跑者</strong></p>
+            <p>随风奔跑的五年，港马成绩353</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <img src="https://ww2.sinaimg.cn/large/006tKfTcly1fd6680c7ofj30hc0nmq47.jpg" style="width:400px;height=:300px;">
+            <p><strong>熊军：脑瘫少年</strong></p>
+            <p>在随风奔跑的相伴下，已完成31场全马</p>
+          </div>
+        </div>
+      </div><br>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-8">
+          <h2> 关于我们 </h2>
+          <h4>随风奔跑是两位马拉松爱好者合作的一个网站</h4>
+          <p>在这里，不仅仅有帮助你完成马拉松的服务，更是这里是跑步爱好者聚集地</p>
+          <p>书写人生，随风奔跑 </p>
+          <button class="btn btn-default btn-lg">联系我们</button>
+      </div>
+      <div class="col-sm-4">
+            <img src="https://ww3.sinaimg.cn/large/006tKfTcly1fd3w4byq6dj306005i0sr.jpg">
+          </div>
+        </div>
+      </div>
