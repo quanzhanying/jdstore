@@ -17,6 +17,14 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
+    flash[:warning] = "成功将 #{@product.title} 删除!"
+    redirect_to admin_products_path
+  end
+
   def update
     @product = Product.find(params[:id])
 
