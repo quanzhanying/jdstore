@@ -40,7 +40,9 @@ class ChefsController < ApplicationController
         if current_cart.chef_id != nil
           current_chef_in_cart = Chef.find(current_cart.chef_id)
           if @chef.style != current_chef_in_cart.style
-            Cart.clean
+            current_cart.clean!
+            current_cart.chef_id = nil
+            current_cart.save
             flash[:warning] = "当前购物车已清空！请重新选择菜品！"
           end
         end
