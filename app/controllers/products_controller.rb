@@ -17,4 +17,11 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+
+  private
+
+  def product_params
+   params.require(:product).permit(:title, :description, :product, :quantity, :price, :image)
+  end
+
 end
