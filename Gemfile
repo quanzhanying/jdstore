@@ -40,6 +40,7 @@ gem 'figaro'
 gem 'fog'
 gem 'ransack'
 gem 'seo_helper'
+gem ruby '2.2.6'
 group :development, :test do
     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     gem 'byebug', platform: :mri
