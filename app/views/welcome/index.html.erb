@@ -4,8 +4,17 @@
   我们精挑细选，<br>替您省下左右为难的时间，<br>陪孩子。</h3>
 </div>
 <div>
-  <button class="btn btn-danger" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-  <input type="text" class="form-control" placeholder="为宝贝找宝贝" name="query_string">
+  <%= form_tag "#" , :method => :get  do %>
+      <div class="input-group" id="search-id" >
+        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="为宝贝找宝贝">
+        <div class="input-group-btn">
+          <button class="btn btn-danger" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+
+      </div>
+      <% end %>
 
 </div>
 <!-- Add this css File in head tag-->
