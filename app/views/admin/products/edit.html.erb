@@ -17,7 +17,7 @@
   <div class="group">
     <%= f.input :price %>
   </div>
-
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   <% if @product.image.present? %>
     <span>目前商品图</span> <br>
     <%= image_tag(@product.image.thumb.url) %>
