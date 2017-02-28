@@ -11,11 +11,8 @@
     <div style="height:100px;">
       <p>
         <%= @product.description %>
-        
+
         <br><br>
-
-        <%=audio_tag("public/plan.mp3", autoplay: true, controls: true) %>
-
 
       </p>
     </div>
@@ -30,4 +27,9 @@
       <% end %>
     </div>
   </div>
+
+  <br><br>
+
+  <%=audio_tag("public/plan.mp3", autoplay: true, controls: true) %>
+
 </div>
