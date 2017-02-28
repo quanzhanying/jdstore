@@ -67,3 +67,14 @@ body {
 .nav-footer h3 {
   font-size: 15px;
 }
+
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 5px;
+  background-image: url("https://ooo.0o0.ooo/2017/02/28/58b54fb06ad7c.png");
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
