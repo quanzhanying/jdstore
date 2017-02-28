@@ -18,7 +18,7 @@
                 <%= link_to("图书／电影", "/") %>
               </li>
               <li>
-                <%= link_to("美食／电影", "/") %>
+                <%= link_to("美食／美景", "/") %>
               </li>
 
             </ul>
@@ -51,6 +51,9 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
+                          <li>
+                            <%= link_to("我的账户", account_users_path) %>
+                          </li>
                           <% if current_user.admin? %>
                             <li>
                               <%= link_to("Admin 选单", admin_products_path) %>

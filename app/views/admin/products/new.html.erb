@@ -1,4 +1,4 @@
-<h2> New Product </h2>
+<h2> 新增商品 </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
@@ -22,6 +22,6 @@
     <%= f.input :image, as: :file %>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
+  <%= f.submit "上传", data: { disable_with: "正在上传..."} %>
 
 <% end %>
