@@ -49,6 +49,7 @@ gem 'paperclip'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+gem 'devise-i18n'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
