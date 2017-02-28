@@ -4,7 +4,7 @@
   我们精挑细选，<br>替您省下左右为难的时间，<br>陪孩子。</h3>
 </div>
 <div>
-  <%= form_tag "#" , :method => :get  do %>
+  <%= form_tag search_products_path , :method => :get  do %>
       <div class="input-group" id="search-id" >
         <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="为宝贝找宝贝">
         <div class="input-group-btn">
