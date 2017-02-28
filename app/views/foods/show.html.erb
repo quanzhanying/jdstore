@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @food.image.present? %>
+      <%= image_tag(@food.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%- image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @food.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @food.description %>
+      </p>
+    </div>
+    <div> 数量 ： <%= @food.quantity %> </div>
+    <div class="food-price"> ¥ <%= @food.price %> </div>
+    <div class="pull-right">
+      <% if @food.quantity.present? && @food.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_food_path(@food), method: :post,
+                    class: "btn btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div>

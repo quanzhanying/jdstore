@@ -1,0 +1,31 @@
+
+<h2> 上架新品 </h2>
+
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+      <%= f.input :title %>
+  </div>
+
+  <div class="group">
+      <%= f.input :description %>
+  </div>
+
+  <div class="group">
+      <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+      <%= f.input :price %>
+  </div>
+
+  <div class="group">
+    <%= f.input :image, as: :file %>
+  </div>
+
+
+  <%= f.submit "上传", data: { disable_with: "正在上传..."} %>
+
+
+<% end %>

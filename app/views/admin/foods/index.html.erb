@@ -1,0 +1,42 @@
+<h2> 商品明细 </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_food_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">美食成品图</th>
+      <th>菜名</th>
+      <th>价格</th>
+      <th width="100"> 操作按钮</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td>
+          <%= food.id %>
+        </td>
+        <td>
+          <%= link_to food_path(food) do %>
+            <% if food.image.present? %>
+              <%= image_tag(food.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= food.title %>
+        </td>
+        <td>
+          <%= food.price %>
+        </td>
+        <td>
+          <%= link_to("修改", edit_admin_food_path(food)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
