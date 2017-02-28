@@ -16,6 +16,9 @@
           <%= chef.name %> <%= chef.city %>
         <% end %>
     </p>
+    <p>
+      <i class="fa fa-cutlery" aria-hidden="true"></i> <%= chef.style %>
+    </p>
     <p class="actions">
       <span class="pull-left">
         <% if chef.chef_level_id == 1 %>
@@ -34,13 +37,15 @@
         <% end %>
       </span> -->
       <span class="pull-right">
-        <% if current_user.has_follow?(chef) %>
-          <%= link_to unfollow_chef_path(chef), :method => :post do %>
-            <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" ></i>
-          <% end %>
-        <% else %>
-          <%= link_to follow_chef_path(chef), :method => :post do %>
+        <% if current_user %>
+          <% if current_user.has_follow?(chef) %>
+            <%= link_to unfollow_chef_path(chef), :method => :post do %>
+              <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" ></i>
+            <% end %>
+          <% else %>
+            <%= link_to follow_chef_path(chef), :method => :post do %>
               <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" ></i>
+            <% end %>
           <% end %>
         <% end %>
         <%= chef.followers.count %>

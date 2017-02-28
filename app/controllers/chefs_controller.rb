@@ -2,14 +2,18 @@ class ChefsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_cart]
 
   def index
+    @chefs = Chef.published
+    if params[:order].present?
+
     @chefs = case params[:order]
             when 'by_followers'
-              Chef.published.sort_by{|chef| chef.followers.count}.reverse
+              @chefs.sort_by{|chef| chef.followers.count}.reverse
             when 'by_level'
-              Chef.published.order("chef_level_id")
+              @chefs.order("chef_level_id")
             else
-              Chef.published.recent
+              @chefs.recent
             end
+    end
     if params[:city].present?
       @chefs = @chefs.where(city: params[:city])
     end
