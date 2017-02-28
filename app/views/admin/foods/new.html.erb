@@ -1,8 +1,6 @@
-
 <h2> 上架新品 </h2>
 
-
-<%= simple_form_for [:admin, @product] do |f| %>
+<%= simple_form_for [:admin, @food] do |f| %>
 
   <div class="group">
       <%= f.input :title %>
@@ -24,8 +22,6 @@
     <%= f.input :image, as: :file %>
   </div>
 
-
-  <%= f.submit "上传", data: { disable_with: "正在上传..."} %>
-
+  <%= f.submit "更新后台", data: { disable_with: "更新中..."} %>
 
 <% end %>
