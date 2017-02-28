@@ -12,7 +12,7 @@
 
 .header{
   z-index: 99;
-  background: #e0e0e0;
+  background: white;
   margin-left: -15px;
   margin-right: -15px;
 
@@ -70,7 +70,7 @@
   line-height: 26px;
   padding: 0 10px;
   border: 1px solid #008842;
-  background: #e0e0e0;
+  background: white;
   margin-top:15px;
 }
 
@@ -154,7 +154,7 @@ a{
 
 // 轮播广告nav
 .header-nav{
-  z-index: 7;
+  // z-index: 7;
   position: relative;
 }
 .wrap{
@@ -167,7 +167,7 @@ a{
   float: left;
   position: relative;
   width: 180px;
-  height: 38px;
+  height: 35px;
   position: relative;
   text-align: center;
   background: #008842;
@@ -201,19 +201,48 @@ a{
 }
 
 .item  {
-   height: 500px;
-  max-width: 1000px;
+   height: 300px;
+  max-width: 1110px;
 }
 .item img{
-  max-width: 953px;
+  max-width: 1110px;
 
 }
 
 #myCarousel{
-  width: 100%;
+  width: 1110px;
+  height: 277px;
   z-index: -1;
-  overflow: hidden;
+  margin: 40px auto;
+
+
 }
+
+
+// 显示头
+.wrap .goodlist{
+  width: 1100px;
+}
+
+.floor_title{
+  position: relative;
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 5px;
+}
+.floor_title h3{
+  margin-left: 30px;
+  float: left;
+  height: 32px;
+  font: bold 18px "Microsoft YaHei";
+  color: #008842;
+}
+.floor_title .keyword{
+  float: right;
+  margin-right: 50px;
+}
+
+
 
 
 
@@ -223,7 +252,7 @@ a{
 
 // 这是商品显示
 .row{
-  margin-top: auto;
+  margin-top: 20px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600,800);
@@ -233,9 +262,9 @@ a{
   position: relative;
   float: left;
   overflow: hidden;
-  margin: 10px 1%;
-  min-width: 220px;
-  max-width: 310px;
+  margin: 0 5px 5px;
+  min-width: 200px;
+  max-width: 270px;
   width: 100%;
   color: #000000;
   text-align: left;
@@ -296,7 +325,7 @@ a{
   bottom: 0;
   margin: 20px;
   padding: 0.2em 0.5em;
-  border: 2px solid #000000;
+  border: 2px solid #008842;
   padding: 0.5em 1em;
   font-size: 0.8em;
   text-decoration: none;
@@ -304,7 +333,7 @@ a{
   font-weight: 600;
 }
 .snip1246 .add-to-cart:hover {
-  background-color: #000000;
+  background-color: #008842;
   color: #ffffff;
 }
 .snip1246:after {
@@ -344,4 +373,41 @@ body {
   background-color: #212121;
 }
 
-/* show */
+// footerservise
+
+.footer_service{
+  background: #e0e0e0;
+  margin-top: 50px;
+  padding: 30px 0;
+}
+.footer_service .wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.footer_service .s1{
+  background-position: 0 0;
+}
+.footer_service li{
+  margin-top: -20px;
+  float: left;
+  width: 190px;
+  height: 42px;
+  margin-left: 55px;
+  padding-left: 55px;
+  background: url(http://static01.yiguo.com/www/images/footer_service_icon.png)
+              no-repeat left top;
+}
+.footer_service li b{
+  display: block;
+  padding-left: 15px;
+  color: #007f4d;
+  font: normal 18px/25px "Microsoft Yahei";
+  border-left: 1px solid #a6a6a6;
+}
+.footer_service li span{
+  display: block;
+  padding-left: 15px;
+  border-left: 1px solid #a6a6a6;
+  font-size: 12px;
+}

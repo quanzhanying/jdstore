@@ -31,7 +31,7 @@ body{
 }
 a{
   color:#008842;
-  text-decoration-style: none;
+
 }
 .site-nav{
   z-index: 99;
@@ -99,4 +99,79 @@ ul, ol{
 
 .alert {
   margin-top:40px;
+}
+
+
+.footer{
+  zoom: 1;
+  clear: both;
+  position: relative;
+  padding-bottom: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+.footer .wrap{
+  margin: 50px auto 0;
+}
+
+.footer dl{
+  width: 190px;
+  float: left;
+  margin-left: 50px;
+  display: inline;
+}
+
+.footer .col1 dt{
+  background-position: 0 0;
+
+}
+.footer .col2 dt{
+  background-position: 0 -23px;
+}
+.footer .col3 dt{
+  background-position: 0 -46px;
+}
+.footer .col4 dt{
+  background-position: 0 -69px;
+}
+.footer .col5 dt{
+  background-position: 0 -96px;
+}
+
+
+.footer dl dt{
+  height: 23px;
+  line-height: 23px;
+  background: url(http://static01.yiguo.com/www/images/footer_icon.png) no-repeat;
+  font-size: 14px;
+  text-indent:40px;
+}
+.footer dl dd{
+  border-left: 1px dashed #A8A8A8;
+  padding-left: 20px;
+  height: 110px;
+  min-height: 110px;
+  margin: 15px 0 0 13px;
+}
+
+.footer dl dd a{
+  color: #575556;
+  line-height: 22px;
+
+}
+a{
+  text-decoration: none;
+  outline: none;
+}
+.footer .service{
+  clear: both;
+  text-align: center;
+  padding: 60px 0 20px;
+  color: #008842;
+  font-size: 14px;
+}
+.footer .copyright{
+  clear: both;
+  color: #717171;
+  text-align: center;
+  line-height: 22px;
 }
