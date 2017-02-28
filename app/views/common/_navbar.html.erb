@@ -2,16 +2,48 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+
             <a class="navbar-brand" href="/">东哥的瓷器店 </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active">
-                <%= link_to("产品", products_path) %>
-              </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to("首页", root_path) %>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类浏览
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to(category.name, products_path(category: category.name)) %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+
+            <li class="active">
+              <%= link_to("产品", products_path) %>
+            </li>
+
+            <li>
+              <%= form_tag search_products_path, :class => "products-search-form", :method => :get do %>
+                <div class="input-group">
+                  <input type="text" class="form-control search-bar-input" name="q" value="<%= params[:q] %>" placeholder="商品，描述...">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default search-bar-submit">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                </div>
+              <% end %>
+            </li>
+          </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li>
                   <%= link_to carts_path do  %>
@@ -20,8 +52,12 @@
                 </li>
 
                 <% if !current_user %>
-                  <li><%= link_to("注册", new_user_registration_path) %> </li>
-                  <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                  <li>
+                    <div class="login">
+                      <%= link_to("注册", new_user_registration_path) %> |
+                      <%= link_to("登录", new_user_session_path) %>
+                    </div>
+                  </li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -31,13 +67,16 @@
                     <ul class="dropdown-menu">
                       <% if current_user.admin? %>
                         <li>
-                          <%= link_to("Admin 选单", admin_products_path ) %>
+                          <%= link_to(content_tag(:i, " 后台管理", class: "fa fa-lock"), admin_products_path) %>
                         </li>
                       <% end %>
                       <li>
-                        <%= link_to("个人订单列表", account_orders_path ) %>
+                        <%= link_to(content_tag(:i, " 我的订单", class: "fa fa-history"), account_orders_path) %>
                       </li>
-                      <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                      <li>
+                        <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
+                      </li>
+                      <li> <%= link_to(content_tag(:i, '账户登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
                 <% end %>
