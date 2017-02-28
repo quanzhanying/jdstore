@@ -1,17 +1,73 @@
-<h2><%= t(".sign_up") %></h2>
+<div class="container common-block">
+  <div class="row">
+    <div class="registration-block">
+      <span><div class="col-sm-6 hidden-xs">
+    <div class="introduce">
+      <div class="row">
+        <div class="icon">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+        </div>
+        <div class="text">
+          <h2>原创精品PPT模板</h2>
+          <p>
+            精美.好看.专业.实用
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="icon">
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="text">
+          <h2>拒绝平庸 只做高端定制</h2>
+          <p>
+            为您度身定制PPT解决方案
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="icon">
+
+        </div>
+        <div class="text">
+          <h2>轻松学习 兴趣先行</h2>
+          <p>
+            学PPT和玩游戏一样开心
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
+  </span>
+<!-- 这是一根竖线 -->
+<!-- <div class="col-sm-2 col-offset-5">
+  <div id="Layer1" style="position:absolute; width:1px; height:335px; z-index:1; background-color: rgb(151, 151, 151);layer-background-color: #666666; border: 1px none rgb(151, 151, 151); "></div>
+</div> -->
+      <div class="right">
+        <div class="col-xs-12 col-sm-6 input">
+          <h1>注册</h1>
 
-  <div class="form-actions">
-    <%= f.button :submit, t(".sign_up") %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <!-- <%= f.error_notification %> -->
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "电子邮箱", error: '电子邮箱不能为空'%>
+              <%= f.input :password, required: true, label: false, placeholder: ("密码，至少包含#{@minimum_password_length}位英文或数字" if @minimum_password_length), error: '密码不能为空'%>
+              <%= f.input :password_confirmation, required: true , label: false, placeholder: "确认密码", error: '两次密码输入不一致'%>
+              <!-- 验证码 -->
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "注册", class: "registration-btn" %>
+            </div>
+          <% end %>
+          <hr>
+          <div class="tip">
+            已有账号？去<span id="link"><a href="/users/sign_in">登录</a></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
