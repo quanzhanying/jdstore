@@ -12,7 +12,10 @@
       <p>
         <%= @product.description %>
         <br><br>
-        <audio src="images/少女心.mp4" preload="auto" controls></audio>
+
+        <%=audio_tag("public/plan.mp3", autoplay: true, controls: true) %>
+
+
       </p>
     </div>
     <div> 数量 : <%= @product.quantity %> </div>
