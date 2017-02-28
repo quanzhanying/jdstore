@@ -11,6 +11,14 @@
   }
 
 /* 参考代码 */
+.intro-bigPic {
+	width: 420px;
+	height: 420px;
+	img {
+		width: 100%;
+	}
+}
+
 .intro-preview {
 	margin-top: 15px;
 	.intro-preview-item {
@@ -26,4 +34,15 @@
 	.intro-preview-activeItem {
 		border-color: #DB3652;
 	}
+}
+
+.fl{
+  display: inline-block;
+}
+
+.clearfix {
+    overflow: auto;
+}
+.border {
+  border: 1px solid #DDDDDD;
 }
