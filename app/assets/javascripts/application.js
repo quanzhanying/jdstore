@@ -13,13 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
-//= require bootstrap-sprockets
-//= require bootstrap/modal
 //= require bootstrap/carousel
 //= require bootstrap
 //= require_tree .
+
 
 $(document).on('click','#gotop',function(){
     $('body').animate({'scrollTop':0},500)
