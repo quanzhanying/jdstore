@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*好评和差评按钮样式*/
+.pi-thumbs-down{
+  margin-left: 100px;
+  margin-top: -19px;
+
+}
+
+.pi-thumbs-up{
+  margin-top: 30px;
+}
+
+.upvote>a:link{
+text-decoration:none;
+
+}
+.downvote>a:link{
+  text-decoration:none;
+}
+
+/**/
 .nav.nav-tabs{
   position: relative;
   left:30px;

@@ -2,8 +2,154 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*外边框*/
+.row .thumbnail{
+  border: none;
+}
+
+/*shop3样式*/
+.intro3 .email{
+  position: relative;
+  left:90px;
+  top:40px;
+}
+.intro3 .email>p{
+  margin-top: -20px;
+  position: relative;
+  right: -20px;
+}
+.intro3 .location{
+  position: relative;
+  left:90px;
+  top:30px;
+}
+.intro3 .location>p{
+  margin-top: -20px;
+  position: relative;
+  right: -20px;
+}
+
+.intro3 .phone>p{
+  margin-top: -20px;
+  position: relative;
+  right: -20px;
+}
+.intro3 .phone{
+  position: relative;
+  left:90px;
+  top:20px;
+}
+
+.row .thumbnail .shop3{
+  text-align: center;
+  float:left;
+  margin-left:-45px;
+  margin-top:45px;
+}
+.intro3>img{
+  width: 20%;
+  margin-bottom: 1px;
+}
+.intro3{
+  position: relative;
+  left:620px;
+  top:35px;
+}
+.shop3>img{
+  width: 55%;
+  margin-bottom: 15px;
+}
+.row .thumbnail .description3{
+  text-align: center;
+  position: relative;
+  right: 180px;
+  bottom: 160px;
+}
+/*shop1*样式*/
+.row .thumbnail .shop>i{
+  position: relative;
+  right: 0px;
+  top: 70px;
+  left: 1060px;
+
+
+}
+.row .thumbnail .shop .fa.fa-envelope-o{
+  position: relative;
+ top:110px;
+ margin-left: -110px;
+}
+.row .thumbnail .shop>span>i{
+  position: relative;
+bottom:0px;
+top:30px;
+right: 180px;
+float: right;
+}
+.row .thumbnail .store1>p{
+ position: relative;
+ bottom: 300px;
+left: 0px;
+  text-align: center;
+}
+.shop{
+  margin-top: 80px;
+  margin-bottom: -80px;
+
+}
+
+
+.shop img{
+  width: 20%;
+
+margin-left: 1000px;
+
+
+}
+.intro{
+    margin-top: -200px;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.intro .description{
+  margin-left: -900px;
+}
+.intro .btn{
+  margin-left: -1000px;
+  text-decoration: none;
+}
+.intro p{
+  margin-left: -1000px;
+
+}
+.intro .description{
+  margin-left: -1000px;
+}
+.intro img{
+  width: 19%;
+  margin-left: -960px;
+  margin-bottom: 20px;
+
+
+}
+.shop img:hover{
+  border-color: #f1f1f1;
+}
+/*shop2样式*/
+
+
+
+
+
+.row .thumbnail{
+  background-color: transparent;
+  height: 400px;
+}
+
+
 .thumbnail:hover{
-  border-color: blue;
+  border-color: rgba(255,138,101 ,0.8);
 }
 .person2{
   border-color: red;
@@ -79,29 +225,6 @@
 
 
 
-.col-sm-2.welcome1{
-  text-align:center;
-  margin: 30px 10px 0px 10px;
-  position: relative;
-  /*left:1140px;
-  bottom:660px;*/
-
-}
-
-.col-sm-2.welcome2{
-  text-align:center;
-  margin: 30px 10px 0px 10px;
-
-}
-
-.col-sm-2.welcome3{
-  text-align:center;
-  margin: 30px 10px 0px 10px;
-position: relative;
-/*left:920px;
-bottom: 330px;*/
-
-}
 
 h3{
   margin-top: -50px;

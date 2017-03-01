@@ -40,6 +40,29 @@
   <span class="text_1chds16-o_O-size_micro_14ukpr-o_O-inline_10f0ge3">
 </span></span></div>
 
+<div class="upvote">
+<%= link_to like_product_path(@product), method: :put do %>
+<div class="pi-thumbs-up">
+赞: <i class="fa fa-thumbs-up fa-lg" , style="color:#ff5722;"></i>
+
+<%= @product.get_upvotes.size %>
+
+</div>
+<% end %>
+</div>
+
+<div class="downvote">
+<%= link_to dislike_product_path(@product), method: :put do %>
+<div class="pi-thumbs-down">
+踩: <i class="fa fa-thumbs-down fa-lg" , style="color:#ff5722;"></i>
+    <%=@product.get_downvotes.size%>
+
+</div>
+<% end %>
+</div>
+
+
+
 
 
 

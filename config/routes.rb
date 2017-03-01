@@ -17,6 +17,7 @@ resources :products do
   end
   member do
     put "like", to: "products#upvote"
+    put "dislike", to: "products#downvote"
   end
 resources :comments
 member do

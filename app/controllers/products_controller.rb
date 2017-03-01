@@ -23,13 +23,13 @@ class ProductsController < ApplicationController
   end
 
 def shop1
-  @products1=Product.where(kind: "食品")
-  @products2=Product.where(kind: "水果")
-  @products3=Product.where(kind: "蔬菜")
+  @products1=Product.where(kind: "food")
+  @products2=Product.where(kind: "fruit",owner:"shop1")
+  @products3=Product.where(kind: "vegetalbe")
 end
 
 def search_fruit
-  @products=Product.where(kind: "水果")
+  @products=Product.where(kind: "fruit")
 end
 
   def menu0
@@ -67,6 +67,12 @@ end
   def upvote
     @product=Product.find(params[:id])
     @product.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @product=Product.find(params[:id])
+    @product.downvote_by current_user
     redirect_to :back
   end
 
