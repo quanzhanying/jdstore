@@ -1,10 +1,18 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
+    <% if @photos.present? %>
+       <% @photos.each_with_index do |p, index| %>
+         <% if index == 0 %>
+           <%= image_tag p.avatar.medium.url %>
+           <div style="letter-spacing: -8px">
+         <% else %>
+           <%= image_tag p.avatar.thumb.url %>
+         <% end %>
+       <% end %>
+       </div>
+     <% else %>
+         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+     <% end %>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <div class="content-container">
@@ -27,5 +35,6 @@
     </div>
     <%= @product.category %>
   </div>
+
 
 </div>
