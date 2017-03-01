@@ -30,3 +30,16 @@ $(window).scroll(function () {
     $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
   }
 })
+
+
+// products index页的hover出现查看详情、加入购物车
+$(document).ready(function() {
+  $(".item").hover(function(){
+    $(".item-price", this).css("visibility","hidden");
+    $(".operator", this).css("visibility","visible");
+  },
+    function() {
+    $(".item-price", this).css("visibility","visible");
+    $(".operator", this).css("visibility","hidden");
+  });
+});
