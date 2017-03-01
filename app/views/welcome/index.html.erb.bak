@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <h1 class="title">东哥的瓷器店</h1>
+  <p class="slogan">东哥的瓷器店是一家售卖精致瓷艺产品的商店
+  <br>
+  我们希望在这里能够找到满意的瓷艺产品。
+  <br>
+  这些瓷艺产品满载着中华文化，希望为你增添一份惬意。
+  </p>
+  <p class="lead"><a class="btn btn-lg btn-danger" href="/products">马上购买</a></p>
+</div>
+
+
+<section id="company">
+  <div class = "container-fluid">
+    <div class="row">
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="http://y.photo.qq.com/img?s=VfqbvmFVI&l=y.jpg" alt="search" class = "img-thumbnail">
+          <div class="caption">
+            <h3>北京朝阳建外SOHO</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="http://y.photo.qq.com/img?s=9yBkCQVj7&l=y.jpg" alt="bid" class = "img-thumbnail">
+          <div class="caption">
+            <h3>ciqi.com</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="http://y.photo.qq.com/img?s=bAQJ8dfF4&l=y.jpg" alt="heart" class = "img-thumbnail">
+          <div class="caption">
+            <h3>010-12345678</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

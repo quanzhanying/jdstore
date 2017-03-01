@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @product.photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.avatar.medium.url %>
+          <div style="letter-spacing: -8px">
+        <% else %>
+            <%= image_tag p.avatar.thumb.url %>
+        <% end %>
+      <% end %>
+      </div>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> 库存 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+         已销售一空，无法购买
+      <% end %>
+    </div>
+    <div class="col-md-2"  >
+      <% if user_signed_in? %>
+        <% if !current_user.is_fan_of?(@product) %>
+          <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+            <i class="fa fa-heart fa-lg"></i>
+          <% end %>
+        <% else %>
+          <%= link_to unfavorite_product_path(@product), :class => "unlike btn btn-default", method: :post do %>
+            <i class="fa fa-heart fa-lg"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+          <i class="fa fa-heart fa-lg"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="row review">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h3 class="reviews_title">
+        <%= @product.reviews.count %> Reviews
+      </h3>
+      <hr>
+      <div id="reivews">
+        <%= render @product.reviews%>
+        <hr>
+        <%= render "reviews/form"%>
+      </div>
+    </div>
+  </div>
+</div>
