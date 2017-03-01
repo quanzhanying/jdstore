@@ -29,7 +29,28 @@
             已销售一空，无法购买
             <% end %>
         </div>
-        <hr>
-        <%= link_to("新增评论", new_product_comment_path(@product), class: "btn btn-default pull-left")%>
+
+
     </div>
 </div>
+<hr>
+<%= link_to("新增评论", new_product_comment_path(@product), class: "btn btn-default pull-left")%>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>文章内容</th>
+            <th>发表者</th>
+            <th>发表时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @comments.each do |comment| %>
+        <tr>
+            <td><%= comment.content %></td>
+            <td><%= comment.user.email %></td>
+            <td><%= comment.created_at %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
