@@ -11,7 +11,7 @@
 
 <!-- LOGIN FORM -->
 <div class="text-center" style="padding:50px 0">
-	<div class="logo">login</div>
+	<div class="logo">登陆</div>
 	<!-- Main Form -->
   <form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Yj4gxe0dgADRFWTjP+Qv4eora+4vgVRL9yVEgRTUdE5ZmTkOjVPlNQce0u7/1eVjeu5YDAENXexYkXeCMCqG3g==">
 	<div class="login-form-1">
@@ -20,24 +20,24 @@
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-                <div class="form-group email optional user_email"><input required="true" class="form-control string email optional" autofocus="autofocus" placeholder="username" type="email" value="" name="user[email]" id="user_email"></div>
+                <div class="form-group email optional user_email"><input required="true" class="form-control string email optional" autofocus="autofocus" placeholder="邮箱地址" type="email" value="" name="user[email]" id="user_email"></div>
 					</div>
 					<div class="form-group">
 
-                <div class="form-group password optional user_password"><input class="form-control password optional" placeholder="password" type="password" name="user[password]" id="user_password"></div>
+                <div class="form-group password optional user_password"><input class="form-control password optional" placeholder="密码" type="password" name="user[password]" id="user_password"></div>
 
 					</div>
 					<div class="form-group login-group-checkbox">
 						<input type="checkbox" id="lg_remember" name="lg_remember">
 
-						<label for="lg_remember">remember</label>
+						<label for="lg_remember">没错就是我</label>
 					</div>
 				</div>
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>forgot your password? <%= link_to("click here", new_user_password_path) %></a></p>
-				<p>new user? <%= link_to("login here", new_user_registration_path) %></p>
+				<p>忘记密码？ <%= link_to("点这里", new_user_password_path) %></a></p>
+				<p>新来的？ <%= link_to("点这里", new_user_registration_path) %></p>
 			</div>
 
 	</div></form>
