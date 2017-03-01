@@ -20,6 +20,9 @@ Rails.application.routes.draw do
             get :search
         end
     end
+
+    resources :milk 
+
     resources :carts do
         collection do
             delete :clean

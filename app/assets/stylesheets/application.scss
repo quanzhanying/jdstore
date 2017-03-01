@@ -28,20 +28,18 @@
      padding-bottom: 5ex;//底部 margin 不撑开距离
  }
 
-
+ li
+ {
+ display:inline;
+ }
 
  .collapse .navbar-collapse{
    list-style-type: none;
-   margin-left:auto;
-   margin-right:auto;
    font-size:18px;
-   //float: right;
-   //font-weight: 90
    color: #FB8C99;
    position:absolute;
-   //left:100px;
    top:35px;
-   right:160px;
+   right:60px;
  }
 
  .navbar-default .navbar-brand:hover,
@@ -74,7 +72,7 @@
    position:absolute;
    //left:100px;
    top:30px;
-   left:300px;
+   left:500px;
    color: #FF8F00;
    padding: 8px 80px ;
    margin-bottom: 5px;
@@ -90,7 +88,7 @@
  .search-button {
    position:absolute;
    //left:100px;
-   left:680px;
+   left:880px;
    width: 14px;
    height: 36px;
    border: none;

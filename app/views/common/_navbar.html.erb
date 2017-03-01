@@ -42,11 +42,10 @@
                 <% end %>
 
 
-        
+
                     <% if !current_user %>
                                 <li><%= link_to("注册", new_user_registration_path) %> </li>
-                              </div>
-                              <div class="sign_in">
+
                                 <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
                               <% else %>
 
