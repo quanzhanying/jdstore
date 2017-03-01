@@ -6,7 +6,8 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th width="80%">商品明细</th>
+          <th width="30%">预览</th>
+          <th>商品明细</th>
           <th>单价</th>
           <th>数量</th>
         </tr>
@@ -15,6 +16,15 @@
 
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
+            <td>
+                <%= link_to product_path(cart_item.product) do %>
+                  <% if cart_item.product.photos.present? %>
+                    <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                  <% end %>
+                <% end %>
+            </td>
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
