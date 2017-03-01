@@ -1,5 +1,8 @@
 # README
 
+使用figaro管理密码
+修改seed档
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
