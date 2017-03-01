@@ -1,0 +1,210 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ // 导航一栏
+
+// navbar颜色问题修复
+#NavCol {
+background-color: #2d2d30;
+}
+
+/* Add a dark background color with a little bit see-through */
+ .navbar {
+  margin-bottom: 0;
+  background-color: #2d2d30;
+  border: 0;
+  font-size: 11px !important;
+  letter-spacing: 1px;
+  opacity:0.65;
+}
+
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn grey */
+.dropdown-menu li a:hover {
+    background-color: grey !important;
+}
+
+ .carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(30%); /* 黑白化图片的三段语句,好像不成功?!make all photos black and white */
+    width: 100%; /* 第一版设计加的 Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* 这三段语句,没起到黑白化图片作用?要再实验.Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
+
+ .container {
+    padding: 80px 120px;  /*第一版设计加入的功能*/
+}
+
+ .person {
+     border: 10px solid transparent;
+     margin-bottom: 50px;
+     width: 70%;  /*这两段 person开头的,是用来切换图片用的*/
+     height: 70%;
+     opacity: 0.8;
+}
+ .person:hover {
+     border-color: #f1f1f1;
+}
+
+
+ .jumbotron {
+  background-image:url('https://files.slack.com/files-pri/T1WMNE3EX-F47RUH31S/____________.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: left;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+  color: light orange;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: left;
+  color: white;
+}
+//如下 bg开头的皆为背景色而准备
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #424242;
+}
+
+.bg-color3 {
+  background: #212121;
+}
+
+.bg-color4 {
+  background: #A9A9A9;
+}
+
+.bg-color5 {
+  background: #CFD8DC;
+}
+// 背景色
+
+
+// footer固定
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -233px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+    height: 233px;
+}
+.site-footer {
+  background: #2d2d30;
+}
+
+// 上下滚动图片,自带背景不动效果
+
+.ap-parallax-2 {
+    margin: 0 auto;
+    background: url(http://ols6vd1wm.bkt.clouddn.com/tradition_21.jpg) no-repeat;
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 170px;
+    background-size: cover;
+    background-attachment: fixed;
+    position: static;
+    min-height: 460px;
+    background-position: 50% 0%;
+}
+
+// 滚动图片的字体颜色设定
+
+.p-title {
+    color: #fff;
+    font-size: 35px;
+    letter-spacing: -3px;
+}
+
+.p-desc {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
