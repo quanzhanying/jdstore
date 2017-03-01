@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     member do
       put"like",to:"products#upvote"
     end
+    resources :comments
   end
 
   resources :carts do
