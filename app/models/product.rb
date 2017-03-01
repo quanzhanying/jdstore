@@ -8,4 +8,8 @@ class Product < ApplicationRecord
   def is_quwan_goods?
     quwan_goodsid.present?
   end
+
+  def get_details_image(type)
+    goods_images
+  end
 end
