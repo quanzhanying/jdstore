@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @comments = @product.comments.recent
+    @comments = @product.comments.recent.paginate(:page => params[:page], :per_page => 5)
   end
 
   def add_to_cart
