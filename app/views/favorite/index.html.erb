@@ -1,0 +1,43 @@
+
+<div class="container" style="min-height:800px;">
+<h2> My Favorite </h2>
+<table class="table table-bordered">
+<thead>
+  <tr>
+   <th>#   </th>
+   <th width="220">Product Pic   </th>
+   <th>Name   </th>
+   <th>Model   </th>
+   <th>Price   </th>
+  </tr>
+</thead>
+<tbody>
+<% @products.each do |product| %>
+<tr>
+<td>
+<%= product.id %>
+</td>
+<td>
+<%= link_to product_path(product) do %>
+<% if product.photos.present? %>
+<%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+<% else %>
+<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+<% end %>
+<% end %>
+</td>
+<td>
+<%= product.title %>
+</td>
+<td>
+  <%= product.model %>
+</td>
+<td>
+<%= product.price%>
+</td>
+
+  </tr>
+  <% end %>
+  </tbody>
+  </table>
+</div>

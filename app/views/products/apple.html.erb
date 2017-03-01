@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="col-md-12">
+<h2 class="show-title">
+       <div class="show-menu-logo"><%= @product.title%></div>
+</h2>
+<div class="show-menu-tray">
+  <ul class="show-menu-items">
+    <li class="show-menu-item-buy" >
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+      <%= link_to("购买", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-xs pull-right") %>
+      <% else %>
+      缺货
+      <% end %>
+    </li>
+    <li class="show-menu-item">
+      <%= link_to("技术规格", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+    </li>
+    <li class="show-menu-item">
+      <%= link_to("概览", '#',style: "text-decoration: none;",class:"show-menu-link") %>
+    </li>
+  </ul>
+  </div>
+  <br>
+  <hr style="margin-top:15px">
+</div>
+</div>
+
+<div class="section-content" style="text-align:center">
+    <span class="eyebrow">
+      洗碗机
+    </span>
+      <h1 class="heo-headline">
+        告别时间遭受绑架的时代。
+      </h1>
+    <center>
+      <p class="intro">
+        随着大数据和人工智能时代的到来，工业智能化、生活便利化以及信息大爆炸的年代，市场运作将以无法预估的速度加速发展。除工作以外人们不希望注意力被过多的信息所浪费，更不愿意可支配的时间被受无谓的消耗。一台省心的洗碗机将为您每天解放出至少3%的可支配时间给到您，一年约可省下91.25个小时。
+      </p>
+    </center>
+</div>
