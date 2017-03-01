@@ -71,17 +71,26 @@
       <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
       :class => "btn btn-primary btn-danger btn-xs",style:"padding:5px ")%>
 
-     <a href="#" class="like" style="margin-left:10px;">
+     <!-- <#a href="#" class="like" style="margin-left:10px;">
       <span class="btn btn-default btn-xs"  style="padding:5px;border:none;">
       <img src='<%= image_url 'like.png' %>' >
 
       </span>
-    </a>
+    <!-- <#/a> -->
 
       <% else %>
       <label>已经销售一空，无法购买</label>
       <% end %>
     </div>
+
+    <div class="collect_or_not" style="margin-bottom:30px; margin-top:-30px;margin-left:150px;">
+     <% if current_user && current_user.has_collected?(@product) %>
+       <%= link_to("取消收藏", discollect_product_path(@product), method: :post, class: "btn btn-danger",style:"height:31px;font-size:12px;")  %>
+     <% else %>
+       <%= link_to("收藏", collect_product_path(@product), method: :post, class: "btn btn-success",style:"height:31px;font-size:12px;")  %>
+     <% end %>
+   </div>
+
   </div>
 </div>
 </body>

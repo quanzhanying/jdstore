@@ -9,4 +9,7 @@ class Product < ApplicationRecord
   #has_many :comments
   has_many :reviews
   acts_as_votable
+
+  has_many :product_relationships
+  has_many :members, through: :product_relationships, source: :user
 end

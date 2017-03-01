@@ -18,6 +18,8 @@ resources :products do
   member do
     put "like", to: "products#upvote"
     put "dislike", to: "products#downvote"
+    post :collect
+    post :discollect
   end
 resources :comments
 member do
@@ -57,6 +59,7 @@ resources :cart_items
 
 namespace :account do
     resources :orders
+    resources :collections
 
 end
 

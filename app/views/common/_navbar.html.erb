@@ -89,6 +89,9 @@
 
         </li>
         <li>
+         <%= link_to(content_tag(:i, "我的收藏", class: "fa fa-star"), account_collections_path )%>
+       </li>
+        <li>
           <%= link_to(content_tag(:i , "登出", class: 'fa fa-sign-out'),
           destroy_user_session_path, method: :delete)%>
 
