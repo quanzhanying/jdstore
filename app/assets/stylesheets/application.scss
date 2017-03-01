@@ -62,6 +62,8 @@
 /*购物车*/
  .navbar-default .navbar-nav > li > a{
    color: #07b5a6;
+
+
  }
 
  .navbar-default .navbar-nav > li > a:hover,
@@ -176,7 +178,7 @@
      height: 100%;
      z-index: 2;
      background-color: #080d15;
-     opacity: .7;
+     opacity: .2;
  }
 
  /********************************/
@@ -244,6 +246,7 @@
      background: #fff;
      /** background: url("http://myinstantcms.ru/images/bg-broun1.jpg") repeat scroll center top rgba(0, 0, 0, 0); **/
      padding-bottom: 34px;
+
  }
  .block-text {
      background-color: #fff;
@@ -267,7 +270,7 @@
  }
  .block-text p {
      color: #585858;
-     font-family: Georgia;
+     font-family: 微软雅黑;
      font-style: italic;
      line-height: 20px;
  }
@@ -319,10 +322,12 @@
 
 
 
+
 /*footer*/
 .footer {
   background: #333333;
   padding: 16px 10px 6px;
+
   text-align: center;
   font-size: 12px;
   color: #07b5a6;
