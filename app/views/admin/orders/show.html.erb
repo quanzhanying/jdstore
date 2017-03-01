@@ -4,8 +4,8 @@
     <h2> 订单明细 (<%= render_order_paid_state(@order) %>) </h2>
 
     <%= render "admin/orders/state_option", order: @order %>
-    
-    <table class="table table-bordered">
+
+    <table class="table table-bordered table-striped custab">
       <thead>
         <tr>
           <th width="80%">商品明细</th>
@@ -42,7 +42,7 @@
 
      <h2> 寄送资讯 </h2>
 
-     <table class="table table-striped table-bordered">
+     <table class="table table-striped table-bordered table-striped custab">
       <tbody>
         <tr>
           <td>

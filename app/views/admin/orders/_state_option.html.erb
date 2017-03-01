@@ -4,25 +4,25 @@
   <% when "order_placed" %>
     <%= link_to("取消订单",
                 cancel_admin_order_path(order),
-                class: "btn btn-default btn-sm", method: :post) %>
+                class: "btn btn-default btn-info", method: :post) %>
 
   <% when "paid" %>
     <%= link_to("取消订单",
                 cancel_admin_order_path(order),
-                class: "btn btn-default btn-sm", method: :post) %>
+                class: "btn btn-default btn-info", method: :post) %>
     <%= link_to("出货",
                 ship_admin_order_path(order),
-                class: "btn btn-default btn-sm", method: :post) %>
+                class: "btn btn-default btn-success", method: :post) %>
 
   <% when "shipping" %>
     <%= link_to("设为已出货",
                 shipped_admin_order_path(order),
-                class: "btn btn-default btn-sm", method: :post) %>
+                class: "btn btn-default btn-success", method: :post) %>
 
   <% when "shipped" %>
     <%= link_to("退货",
                 return_admin_order_path(order),
-                class: "btn btn-default btn-sm", method: :post) %>
+                class: "btn btn-default btn-danger", method: :post) %>
 
   <% when "order_cancelled" %>
     <span class="label label-default">订单已取消</span>
