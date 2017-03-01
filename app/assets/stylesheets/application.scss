@@ -153,6 +153,28 @@ background-color: #2d2d30;
 
 
 // footer固定
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -142px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+    height: 142px;
+}
+.site-footer {
+  background: orange;
+}
 
 // 上下滚动图片,自带背景不动效果
 
