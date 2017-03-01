@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20170227085047) do
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
-    t.string   "assm_state",       default: "order_placed"
-    t.index ["assm_state"], name: "index_orders_on_assm_state"
+    t.string   "aasm_state",       default: "order_placed"
+    t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
   create_table "product_lists", force: :cascade do |t|
