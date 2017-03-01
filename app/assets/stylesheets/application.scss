@@ -44,15 +44,10 @@
    right:160px;
  }
 
- .navbar-default .navbar-brand:hover,
- .navbar-default .navbar-brand:focus {
-   color: #212121;//鼠标放置在链接上的文字颜色
-   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
- }
-
- .navbar-default .navbar-nav > li > a{
+ 
+ .navbar-default  > li > a{
    font-size:38px;
-   color: #2979FF;
+   color: #FF8F00;
    padding: 7px 50px 1px 5px;
  }
 
@@ -61,6 +56,11 @@
    font-size:25px;
    background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
 
+ }
+
+ .nav.navbar-nav.navbar-right{
+   font-family: "Microsoft YaHei";
+   font-size:15px;
  }
 
  .search {
@@ -82,7 +82,7 @@
    border-color: #FF8F00;
    border-style: solid;
    outline: 0;
-   font-size: 18px;
+   font-size: 15px;
    font-family: "microsoft yahei";
    border-radius: 40px;
  }
@@ -90,7 +90,7 @@
  .search-button {
    position:absolute;
    //left:100px;
-   left:680px;
+   left:580px;
    width: 14px;
    height: 36px;
    border: none;
