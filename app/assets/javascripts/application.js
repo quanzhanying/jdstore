@@ -30,3 +30,16 @@ $(window).scroll(function () {
     $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
   }
 })
+
+
+
+$(document).ready(function() {
+  $(".item-box").hover(function(){
+    $(".item-price").css("visibility","hidden");
+    $(".operator").css("visibility","visible");
+  },
+    function() {
+    $(".item-price").css("visibility","visible");
+    $(".operator").css("visibility","hidden");
+  });
+});

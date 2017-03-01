@@ -43,12 +43,23 @@
            <% end %>
           </div>
 
-
         </div>
       <h6 class="ng-binding"><%= product.title %></h6>
+
+
       <div class="item-price clearfix">
         <i>￥</i>
         <span class="ng-binding"> <%= product.price %></span>
+      </div>
+
+      <div class="operator">
+        <span class="detail-btn">
+          <%= link_to("查看详情",product_path(product)) %>
+        </span>
+        <span class="cart-btn ng-scope">
+          <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :style => "color: white;") %>
+        </span>
+
       </div>
 
 
@@ -56,6 +67,14 @@
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript">
