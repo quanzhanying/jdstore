@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require_tree .
 
+
 $(document).on('click','#gotop',function(){
     $('body').animate({'scrollTop':0},500)
   })
