@@ -1,0 +1,47 @@
+<% if !@product.protect_them || @product.animal =="normal" %>
+<div class="row">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> 数量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+     <% if @product.quantity.present? && @product.quantity > 0 %>
+       <% if @product.animal =="normal"%>
+          <%= link_to("感谢你的支持！", add_to_cart_product_path(@product), method: :post,
+                   class: "btn btn-lg btn-danger") %>
+       <%else%>
+          <%= link_to("真的要买吗", add_to_cart_product_path(@product), method: :post,
+                    class: "btn btn-lg btn-danger") %>
+       <%end%>
+     <% else %>
+       已销售一空，无法购买
+     <% end %>    </div>
+     <div class="pull-right">
+        <% if @product.animal !="normal"%>
+         <%= link_to("或者你可以", protect_them_product_path(@product), method: :post,
+                     class: "btn btn-lg btn-danger") %>
+        <%end%>
+     </div>
+  </div>
+</div>
+<% else%>
+  <%= @product.animal%>
+  <%= render "animals/#{@product.animal}" %>
+  ---------------------------------
+  <br>
+  <a href="/products/1">用购买不必要动物制品的钱帮助<%"#{@product.animal}"%>营造更好的生活环境</a>
+  <% @product.protect_them = false%>
+  <% @product.save%>
+<%end%>

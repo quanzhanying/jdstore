@@ -1,0 +1,41 @@
+
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= f.error_notification %>
+
+<form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users/password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="J3vWoUzofzxM4UfspZwa5ghytiD3siN5wDJfaH9GoxDnMiIEHPPIWwTLINGhQJcNVNNpZcjH9+wy7f15NSKOEA==">
+<!-- FORGOT PASSWORD FORM -->
+<div class="text-center" style="padding:50px 0">
+	<div class="logo">忘记密码</div>
+	<!-- Main Form -->
+	<div class="login-form-1">
+
+			<div class="etc-login-form">
+				<p>输入注册时的邮箱📮地址，来找回密码</p>
+			</div>
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+          <div class="form-group">
+						<label for="fp_email" class="sr-only">邮箱地址</label>
+						<input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" placeholder="邮箱地址" type="email" value="" name="user[email]" id="user_email">					</div>
+				</div>
+
+				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+
+			</div>
+			<div class="etc-login-form">
+				<p>老主顾？ <%= link_to("在这里登陆", new_user_session_path) %></p>
+				<p>新来的？ <%= link_to("在这里注册", new_user_registration_path) %></p>
+			</div>
+
+	</div>
+	<!-- end:Main Form -->
+</div>
+<%end%>
