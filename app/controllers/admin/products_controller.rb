@@ -48,10 +48,10 @@ class Admin::ProductsController < ApplicationController
         end
 
         @product.update(product_params)
-        redirect_to admin_products_path
+        redirect_to edit_admin_product_path
 
       elsif @product.update(product_params)
-      redirect_to admin_products_path
+      redirect_to edit_admin_product_path
     else
       render :edit
     end

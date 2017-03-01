@@ -20,7 +20,7 @@ class ProductImagesController < ApplicationController
     @product_image.product = @product
     if @product_image.save
       flash[:notice] = "上传高清图片成功"
-      redirect_to admin_products_path(@product)
+      redirect_to edit_admin_product_path(@product)
 
     else
       flash[:alert] = "上传失败"
@@ -45,7 +45,7 @@ class ProductImagesController < ApplicationController
 
     if @product_image.update(product_image_params)
       flash[:notice] = "上传高清图片成功"
-      redirect_to admin_products_path(@product)
+      redirect_to edit_admin_product_path(@product)
     else
       flash[:alert] = "上传失败"
       render :edit
