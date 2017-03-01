@@ -11,8 +11,8 @@ puts "這個種子檔會自動建立一個admin帳號, 並且創建 12 個商品
 create_account =
   User.create([
     email: 'aa@aa.aa',
-    password: '123456',
-    password_confirmation: '123456',
+    password: '123456789',
+    password_confirmation: '123456789',
     is_admin: 'true'])
 
 puts "管理员账号建立"
@@ -23,7 +23,7 @@ create_jos =
     Product.create!([
       title: "捐助动物基金会",
       description: "别说话，捐钱就是了",
-      quantity: 100000,
+      quantity: 1000,
       price: 50,
       animal: "normal",
       is_hidden: 'true'
