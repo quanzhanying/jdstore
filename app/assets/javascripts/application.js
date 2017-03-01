@@ -32,14 +32,14 @@ $(window).scroll(function () {
 })
 
 
-
+// products index页的hover出现查看详情、加入购物车
 $(document).ready(function() {
-  $(".item-box").hover(function(){
-    $(".item-price").css("visibility","hidden");
-    $(".operator").css("visibility","visible");
+  $(".item").hover(function(){
+    $(".item-price", this).css("visibility","hidden");
+    $(".operator", this).css("visibility","visible");
   },
     function() {
-    $(".item-price").css("visibility","visible");
-    $(".operator").css("visibility","hidden");
+    $(".item-price", this).css("visibility","visible");
+    $(".operator", this).css("visibility","hidden");
   });
 });
