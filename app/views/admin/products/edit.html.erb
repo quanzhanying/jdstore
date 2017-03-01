@@ -39,3 +39,28 @@
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
+
+</br>
+
+<hr>
+
+<h2>超大图片</h2>
+
+<% if @product.product_images.present? %>
+
+  <% @product.product_images.each do |product_image| %>
+    <%= image_tag(product_image.big_image.url, class: "thumbnail") %>
+  <% end %>
+
+  <div class="text-left">
+    <%= link_to("更改超大图片", edit_product_product_image_path(@product), :style => "font-size: 30px")%>
+  </div>
+
+<% else %>
+
+  <div class="text-left">
+    <%= link_to("新增超大图片", new_product_product_image_path(@product), :style => "font-size: 30px")%>
+  </div>
+<% end %>
+
+<br>

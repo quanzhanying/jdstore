@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :products do
+    resources :product_images
     collection do
       get :search
     end
