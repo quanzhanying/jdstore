@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap/modal
-//= require bootstrap/alert
-//= require bootstrap/dropdown
 //= require_tree .
 
 // 首页轮播
