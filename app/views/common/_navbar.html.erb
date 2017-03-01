@@ -1,27 +1,39 @@
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="[ container ]">
         <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">JD Store</a>
+    <div class="[ navbar-header ]">
+       <button type="button" class="[ navbar-toggle ]" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="[ sr-only ]">Toggle navigation</span>
+					<span class="[ icon-bar ]"></span>
+					<span class="[ icon-bar ]"></span>
+					<span class="[ icon-bar ]"></span>
+				</button>
+        <div class="[ animbrand ]">
+          <a class="[ navbar-brand ][ animate ]" href="/">全栈装备营</a>
+        </div>
      </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active">
-              <%= link_to("Products", products_path)%>
+            <li>
+					  	<a href="#" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">所有商品 <span class="[ caret ]"></span></a>
+					  	<ul class="[ dropdown-menu ]" role="menu">
+						  	<li><a href="#" class="[ animate ]">Mac <span class="[ pull-right glyphicon glyphicon-pencil ]"></span></a></li>
+						  	<li><a href="#" class="[ animate ]">配件 <span class="[ pull-right glyphicon glyphicon-align-justify ]"></span></a></li>
+						  	<li><a href="#" class="[ animate ]">周边 <span class="[ pull-right glyphicon glyphicon-cloud-download ]"></span></a></li>
+					  	</ul>
+				  	</li>
+            <li>
+              <a href="#" class="[ animate ]">常见问题</a>
+            </li>
+            <li>
+              <a href="#" class="[ animate ]">关于我们</a>
             </li>
           </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-
-                  <li>
-                     <div class="search">
-                        <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
-                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                     </div>
-                  </li>
-
+            <ul class="[ nav navbar-nav navbar-right ]">
+              <li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a>
+              </li>
                   <li>
                     <%= link_to carts_path do %>
                     购物车  <i class="fa fa-shopping-cart"></i> <span class="badge"><%= current_cart.products.count %> </span>
@@ -52,7 +64,6 @@
                      </ul>
                    </li>
                  <% end %>
-                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
