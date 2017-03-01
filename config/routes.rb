@@ -18,10 +18,14 @@ resources :products do
   member do
     post :add_to_cart
   end
+  collection do
+    get :category
+  end
 
   put :favorite, on: :member
 
 end
+
 
 resources :favorite do
 end

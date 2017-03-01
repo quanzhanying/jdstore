@@ -3,22 +3,38 @@
   <div class="navbarContent">
     <div class="navbarContent-item bg-color1"><a href="/">iRobot</a></div>
     <div class="navbarContent-item bg-color1"><a href="/products/1">iWasher</a></div>
+    <!-- <%= link_to("iWasher", products_path, class:"navbarContent-item bg-color1") %> -->
     <div class="navbarContent-item bg-color1"><a href="/products/2">iLife</a></div>
     <div class="navbarContent-item bg-color1"><a href="/products/3">Mi</a></div>
     <div class="navbarContent-item bg-color1"><a href="/">About</a></div>
     <div class="navbarContent-LastItem bg-color1 collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
-            <li><%= link_to("注册", new_user_registration_path) %> </li> |
-            <li><%= link_to("登入", new_user_session_path) %></li>
+         <li class="dropdown">
+            <a href='#' class="dropdown-toggle" data-toggle="dropdown">
+                Signup
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li> <%= link_to("注册", new_user_registration_path)%></li>
+              <li><%= link_to("登入", new_user_session_path) %></li>
+            </ul>
+          </li>
         <% else %>
 
         <li class="dropdown">
               <a href="#" class="dropdown-toggle"  data-toggle="dropdown">
-                  Hi!, <%= current_user.email %>
+                  Welcome!
                   <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <% if current_user && current_user.admin? %>
+                  <li><%= link_to("Admin Panel", admin_products_path) %></li>
+                 <% end %>
+               <li>
+                 <%= link_to("我的收藏",favorite_index_path) %>
+                 <%= link_to("个人订单列表", account_orders_path) %>
+               </li>
                   <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
               </ul>
         </li>

@@ -1,19 +1,29 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, only: [:favorite]
+  before_action :validate_category_key, only:[:category]
+
   def index
     @products = Product.all
   end
   def show
      @product = Product.find(params[:id])
      @photos = @product.photos.all
+     @prints = @product.prints.all
      if @product.iwasher?
-       render 'products/iwasher'
+       render 'products/_iwasher'
      elsif @product.ilife?
        render 'products/ilife'
      elsif @product.mi?
        render 'products/mi'
      end
 
+  end
+
+  def category
+     if @cuery_string.present?
+       category_result = Product.ransack(@category_criteria).result(:distinct => true)
+       @products = category_result
+     end
   end
 
 
@@ -41,4 +51,23 @@ class ProductsController < ApplicationController
       redirect_to :back
     end
   end
+
+
+protected
+
+   def validate_category_key
+     @cuery_string = params[:c].gsub(/\\|\'|\/|\?/, "") if params[:c].present?
+     @category_criteria = {title_cont: @cuery_string}
+   end
+
+   def category_criteria(cuery_string)
+     {:title_cont => cuery_string}
+   end
+
+   private
+
+   def product_params
+     params.require(:product).permit(:title,:model,:quantity,:description,:price)
+   end
+
 end

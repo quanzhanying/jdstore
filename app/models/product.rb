@@ -4,6 +4,9 @@ class Product < ApplicationRecord
   has_many :photos
   accepts_nested_attributes_for :photos
 
+  has_many :prints
+  accepts_nested_attributes_for :prints
+
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
 

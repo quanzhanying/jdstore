@@ -15,10 +15,9 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
-//= require bootstrap-sprockets
 //= require bootstrap/modal
 //= require bootstrap/carousel
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require_tree .
 
 $(document).on('click','#gotop',function(){
@@ -51,3 +50,10 @@ $(document).on('click','#gotop',function(){
 $(document).ready(function() {
   $('#myCarousel').carousel({interval: 2000});
 });
+
+/* Demo purposes only */
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);

@@ -1,14 +1,37 @@
-<div class="row">
+<!-- <div class="row">
+  <div class="col-md-12">
 <% @products.each do |product| %>
-<div class="col-xs-6 col-md-3">
-<%= link_to product_path(product) do %>
-<% if product.photos.present? %>
-<%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-<% else %>
-<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+  <div class="col-md-4">
+    <%= link_to product_path(product) do %>
+      <% if product.prints.present? %>
+    <%= image_tag(product.prints[0].avatar.medium.url, class: "thumbnail") %>
+      <% else %>
+   <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+      <% end %>
+   <% end %>
+      </div>
 <% end %>
-<% end %>
-<%= product.title %> ¥ <%= product.price %>
+</div> -->
+
+
+
+<div id="wrap">
+<% @products.each do |product| %>
+<div class="products">
+  <div class="item">
+    <%= link_to product_path(product) do %>
+     <%= image_tag(product.photos[0].avatar.medium.url, class:"item-image") %>
+    <% end %>
+     <div class="item-info">
+        <div class="item-name"><h3><%= product.title %></h3></div>
+        <div class="item-price"><span class="new-price">￥<%= product.price %></span></div>
+        <div class="clear"></div>
+        <div class="item-description"><p><%= product.description %></p></div>
+
+    </div>
+  </div>
+          <div class="clear"></div>
+
 </div>
 <% end %>
 </div>

@@ -178,6 +178,120 @@ img.washer-product-profile2{
   display: none;
 }
 
+/* 主推商品首页 */
+.product-promo-list-item{
+  height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight:300;
+    margin:30px;
+}
+#wrap {
+    width:960px;
+    margin:20px auto;
+    background:#fff;
+    min-height:200px;
+    padding:20px;
+    box-sizing:border-box;
+    -webkit-box-shadow: 0px 0px 6px #ccc;
+    -moz-box-shadow:1px,bold;
+    box-shadow:1px,bold;
+}
+.products {
+    .item {
+        width:49%;
+        box-sizing:border-box;
+        margin-right:15px;
+        float:left;
+        margin-bottom:25px;
+        .item-image {
+            border:1px solid #d7d7d7;
+            margin-bottom:15px;
+            overflow:hidden;
+            height:210px;
+            background:url('http://beta.carproduct.cz/wp-content/uploads/2013/10/link.png') no-repeat center 175px;
+        }
+    }
+    .item.sec {
+        margin-right:0px;
+    }
+}
+.item-info {
+    padding:10px;
+}
+.item-image {
+    img {
+        width:430px;
+        display:block;
+        margin:0 auto;
+        -webkit-transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        -ms-transition: all 200ms ease-in-out;
+        -o-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+    }
+    img:hover {
+        position:relative;
+        margin-top:-35px;
+    }
+}
+.item-name {
+    float:left;
+
+    a {
+        text-decoration:none;
+    }
+    h3 {
+        font-size:20px;
+        line-height:26px;
+        font-weight:300;
+        color:#d35400;
+    }
+}
+.item-price {
+    float:right;
+    margin-top:6px;
+}
+.item-description {
+    margin-top:10px;
+    p {
+        color:#333;
+        font-weight:300;
+        line-height:20px;
+        font-size:14px;
+    }
+}
+.clear {
+    clear:both;
+}
+span.old-price {
+    color:#e74c3c;
+    text-decoration:line-through;
+    margin-right:15px;
+}
+span.new-price {
+    padding:5px 5px;
+    background:#27ae60;
+    color:#fff;
+    font-weight:700;
+}
+
+span.new {
+    background:#2980b9;
+    color:#fff;
+    font-size:14px;
+    padding:5px;
+    margin-left:10px;
+}
+
+
 
 /* 非主推广商品 */
 
