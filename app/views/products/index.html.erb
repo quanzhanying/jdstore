@@ -26,7 +26,6 @@
     </div>
 </div>
 
-
 <div class="row">
     <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
@@ -40,6 +39,13 @@
         title:<%= product.title %>
         <br>
         price:￥<%= product.price %>
+        <%= link_to like_product_path(product), method: :put do %>
+        <div class="pi-thumbs-up">
+            <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+            <%= product.get_upvotes.size %>
+        </div>
+        <% end %>
     </div>
+
     <% end %>
 </div>

@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comments = @product.comments.recent.paginate(:page => params[:page], :per_page => 5)
   end
 
   def add_to_cart
@@ -25,6 +26,12 @@ class ProductsController < ApplicationController
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
       @products = search_result.paginate(:page => params[:page], :per_page => 5 )
     end
+  end
+
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
   end
 
   protected
