@@ -18,8 +18,9 @@
     <%= f.input :price %>
   </div>
 
-<div class="group">
- <%= f.input :image, as: :file %>
+  <div class="group">
+    <%= f.label :"产品图" %><br>
+  <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
 </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>

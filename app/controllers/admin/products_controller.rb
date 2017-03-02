@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @photo = @product.photos.build #for multi-pics
   end
 
    def edit
@@ -26,15 +27,27 @@ class Admin::ProductsController < ApplicationController
    end
 
 
-  def create
-    @product = Product.new(product_params)
+   def create
+        @product = Product.new(product_params)
 
-    if @product.save
-      redirect_to admin_products_path
-    else
-      render :new
-    end
-  end
+        if @product.save
+        if params[:photos] != nil
+          params[:photos]['avatar'].each do |a|
+            @photo = @product.photoss.create(:avatar => a)
+          end
+         end
+          redirect_to admin_products_path
+        else
+          render :new
+        end
+      end
+  def destroy
+     @product = Product.find(params[:id])
+     @product.destroy
+     flash[:alert] = "Product Deleted"
+     redirect_to admin_products_path
+   end
+
 
   private
 
