@@ -78,3 +78,5 @@ gem 'ransack'
 gem 'airbrake', '~> 5.4'
 
 gem 'acts_as_votable', '~> 0.10.0'
+
+gem "intercom-rails"
