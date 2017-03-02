@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.carousel {
+  width: 1265px;
+  margin: 0 auto;
+}
+.carousel .item {
+  height: 375px;
+}
 
 
 
@@ -57,15 +64,14 @@
 
 
 
-
-
-.item-box {
+.product-box {
   clear: both;
   overflow: hidden;
   margin: 0 -1px -1px -1px;
 }
 
-.item {
+
+.menu {
   position: relative;
   float: left;
   border-right: 1px solid #efefef;
@@ -76,30 +82,30 @@
   box-sizing: border-box;
 }
 
-.item-img {
+.menu-img {
   text-align: center;
   margin: 50px auto;
 }
 
-.item h6 {
+.menu h6 {
   line-height: 1.2;
   font-size: 16px;
   color: #424242;
   margin: 0 auto;
 }
 
-.item h6, .item h3 {
+.menu h6, .menu h3 {
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.item-price {
-  color: #c30a18;
-  margin-top: 24px;
+.menu-price {
   text-align: center;
-  opacity: 1;
+  padding-top: 30px;
+  color: red;
+  font-size: 15px;
 }
 
 

@@ -13,10 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
+//= require bootstrap
 //= require test-code.js
 //= require_tree .
+
+//轮播大图
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
+
+
+
 
 
 $(document).on('click', '#gotop', function () {
@@ -34,12 +43,12 @@ $(window).scroll(function () {
 
 // products index页的hover出现查看详情、加入购物车
 $(document).ready(function() {
-  $(".item").hover(function(){
-    $(".item-price", this).css("visibility","hidden");
+  $(".menu").hover(function(){
+    $(".menu-price", this).css("visibility","hidden");
     $(".operator", this).css("visibility","visible");
   },
     function() {
-    $(".item-price", this).css("visibility","visible");
+    $(".menu-price", this).css("visibility","visible");
     $(".operator", this).css("visibility","hidden");
   });
 });
