@@ -2,27 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
-.line li {
-    float: left;
+.carousel {
+  width: 1265px;
+  margin: 0 auto;
 }
-
-.sequence {
-  padding: 20px 30px 20px 0;
-}
-
-.sort-option, .search {
-  display: inline-block;
-}
-
-.sort-option {
-  float: left;
-  margin-right: 150px;
+.carousel .item {
+  height: 375px;
 }
 
 
+.video {
+display: inline-block;
+float: left;
+margin: 20px 0 ;
+}
+
+.search-sort {
+  float: right;
+}
 
 
 .search {
@@ -43,29 +40,29 @@
   font-size: 22px;
   margin-left: -70px;
   line-height: 32px;
+}
 
+.sort-option {
+  background: white;
+  margin-top: 40px;
+}
+
+.sort-option li {
+  float: left;
 }
 
 
 
-.video {
-  margin: 0 0 30px 0;
-
-}
 
 
-
-
-
-
-
-.item-box {
+.product-box {
   clear: both;
   overflow: hidden;
   margin: 0 -1px -1px -1px;
 }
 
-.item {
+
+.menu {
   position: relative;
   float: left;
   border-right: 1px solid #efefef;
@@ -76,30 +73,30 @@
   box-sizing: border-box;
 }
 
-.item-img {
+.menu-img {
   text-align: center;
   margin: 50px auto;
 }
 
-.item h6 {
+.menu h6 {
   line-height: 1.2;
   font-size: 16px;
   color: #424242;
   margin: 0 auto;
 }
 
-.item h6, .item h3 {
+.menu h6, .menu h3 {
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.item-price {
-  color: #c30a18;
-  margin-top: 24px;
+.menu-price {
   text-align: center;
-  opacity: 1;
+  padding-top: 30px;
+  color: red;
+  font-size: 15px;
 }
 
 
