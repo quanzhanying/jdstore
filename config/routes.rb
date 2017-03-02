@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :carts
+
   resources :products do
     member do
       post :add_to_cart
