@@ -23,9 +23,9 @@
           <% @product_lists.each do |product_list| %>
             <tr>
               <td>
-                <%= link_to product_path(cart_item.product) do %>
-                  <% if cart_item.product.photos.present? %>
-                    <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                <%= link_to product_path(product_list.product) do %>
+                  <% if product_list.productbigimage.present? %>
+                    <%= image_tag(product_list.productbigimage.thumb.url, class: "thumbnail") %>
                   <% else %>
                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                   <% end %>
