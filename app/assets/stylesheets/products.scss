@@ -11,25 +11,15 @@
 }
 
 
-
-.line li {
-    float: left;
+.video {
+display: inline-block;
+float: left;
+margin: 20px 0 ;
 }
 
-.sequence {
-  padding: 20px 30px 20px 0;
+.search-sort {
+  float: right;
 }
-
-.sort-option, .search {
-  display: inline-block;
-}
-
-.sort-option {
-  float: left;
-  margin-right: 150px;
-}
-
-
 
 
 .search {
@@ -50,14 +40,15 @@
   font-size: 22px;
   margin-left: -70px;
   line-height: 32px;
-
 }
 
+.sort-option {
+  background: white;
+  margin-top: 40px;
+}
 
-
-.video {
-  margin: 0 0 30px 0;
-
+.sort-option li {
+  float: left;
 }
 
 
