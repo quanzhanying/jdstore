@@ -172,3 +172,30 @@
   }
 
 })(jQuery);
+
+//** 导航 **//
+
+$(document).ready(function(){
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
+});
+
+$(document).on('click', '#gotop', function () {
+  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+})
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    $('#gotop').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
+  } else {
+    $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+  }
+})

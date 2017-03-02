@@ -339,6 +339,18 @@
     line-height: 23px;
   }
 }
+
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #07b5a6;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
@@ -625,4 +637,49 @@ label:hover:before {
   font-size: 25px;
   color: #aaaaaa;
   font-weight: bold;
+}
+
+//**导航**//
+
+.navbar-brand {
+  width: 70px;
+  height: 50px;
+  background: url('https://ww1.sinaimg.cn/large/006tKfTcgy1fd8yxvbws0j304502vq2y.jpg') no-repeat center center;
+  background-size: 50px;
+}
+
+.nav-tabs {
+  display: inline-block;
+  border-bottom: none;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: none;
+  border-radius: 0;
+}
+
+.nav-list { border-bottom: 1px solid #eee; }
+.nav-list > li {
+  padding: 20px 15px 15px;
+  border-left: 1px solid #eee;
+}
+.nav-list > li:last-child { border-right: 1px solid #eee; }
+.nav-list > li > a:hover { text-decoration: none; }
+.nav-list > li > a > span {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mega-dropdown { position: static !important; }
+.mega-dropdown-menu {
+  padding: 20px 15px 15px;
+  text-align: center;
+  width: 100%;
 }
