@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :cart_items
+
   resources :carts do
     collection do
       delete :clean
