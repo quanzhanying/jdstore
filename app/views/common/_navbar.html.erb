@@ -43,7 +43,7 @@
 
 
 
-                    <% if !current_user %>
+                              <% if !current_user %>
                                 <li><%= link_to("注册", new_user_registration_path) %> </li>
 
                                 <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
@@ -54,24 +54,23 @@
                                       Hi!, <%= current_user.email %>
                                       <b class="caret"></b>
                                   </a>
-                                  <ul class="dropdown-menu">
-                                                 <% if current_user.admin? %>
+                                            <ul class="dropdown-menu">
+                                                <% if current_user.admin? %>
                                                    <li>
                                                      <%= link_to("Admin 选单", admin_products_path ) %>
                                                    </li>
-                                                 <% end %>
-                                                 <li>
+                                                <% end %>
+                                                <li>
                                                    <%= link_to("我的订单",account_orders_path ) %>
 
-                                                 </li>
-                                      <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                                  </ul>
-                                </li>
+                                                </li>
+                                                <li>
+                                                   <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                                                </li>
+                                           </ul>
+                                 </li>
                               <% end %>
-
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
-</nav>
+ </nav>
 </html>
