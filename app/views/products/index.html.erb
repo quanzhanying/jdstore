@@ -27,39 +27,36 @@
   </div>
 </div>
 
-<div class="video">  <!--加个div便于通过margin消除左右边距 -->
-  <iframe width="300px" height="150px"  src="https://www.youtube.com/embed/xJO60zX_o0w?list=PLwXMmy5fUrVzMNzQFZkg1NL36HJQWcmqU&autoplay=1" frameborder="0" allowfullscreen>  </iframe>
-</div>
 
-
-
-<div class="search-sort">
-  <div class= "search">
-    <%= search_form_for @q do |f| %>
-      <%= f.search_field :title_cont ,class:"search-content" , placeholder:"请输入商品关键词"%>
-      <%= f.submit class:"btn btn-info" %>
-    <% end %>
+<div class="three-middle">
+  <div class="video">  <!--加个div便于通过margin消除左右边距 -->
+    <iframe width="300px" height="150px"  src="https://www.youtube.com/embed/xJO60zX_o0w?list=PLwXMmy5fUrVzMNzQFZkg1NL36HJQWcmqU&autoplay=1" frameborder="0" allowfullscreen>  </iframe>
   </div>
 
-  <div class="sort-option">
-    <ul class="line clearfix">
 
-      <li class="sequence">
-        商品排序：
-        <button class="btn btn-link"><%= sort_link(@q, :price, "按价格排序") %></button>
-      </li>
-      <li class="sequence">
-        <button class="btn btn-link"> <%= sort_link(@q, :quantity, "按销量排序") %></button>
-      </li>
-    </ul>
+  <div class="search-sort">
+    <div class= "search">
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :title_cont ,class:"search-content" , placeholder:"请输入商品关键词"%>
+        <%= f.submit class:"btn btn-info" %>
+      <% end %>
+    </div>
 
+    <div class="sort-option">
+      <ul class="line clearfix">
+
+        <li class="sequence">
+          商品排序：
+          <button class="btn btn-link"><%= sort_link(@q, :price, "按价格排序") %></button>
+        </li>
+        <li class="sequence">
+          <button class="btn btn-link"> <%= sort_link(@q, :quantity, "按销量排序") %></button>
+        </li>
+      </ul>
+
+    </div>
   </div>
 </div>
-
-
-
-
-
 
 
 
