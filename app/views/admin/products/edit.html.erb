@@ -40,6 +40,7 @@
 
 <% end %>
 
+
 </br>
 
 <hr>
@@ -51,7 +52,7 @@
   <% @product.product_images.each do |product_image| %>
     <%= image_tag(product_image.big_image.url, class: "thumbnail") %>
   <% end %>
-  
+
 
   <div class="text-left">
     <%= link_to("更改超大图片", edit_product_product_image_path(@product), :style => "font-size: 30px")%>

@@ -14,9 +14,14 @@
  *= require_self
  */
 
-@import "bootstrap";
-@import "bootstrap-sprockets";
-@import "font-awesome";
+
+
+@import "font-awesome.min";
+@import "owl.carousel";
+@import "owl.theme";
+@import "owl.transitions";
+@import "style";
+
 
 
 /* 搜索功能 */

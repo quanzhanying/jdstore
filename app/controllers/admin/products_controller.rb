@@ -42,14 +42,11 @@ class Admin::ProductsController < ApplicationController
 
     if params[:photos] != nil
         @product.photos.destroy_all #need to destroy old pics first
-
         params[:photos]['avatar'].each do |a|
           @picture = @product.photos.create(:avatar => a)
         end
-
         @product.update(product_params)
         redirect_to edit_admin_product_path
-
       elsif @product.update(product_params)
       redirect_to edit_admin_product_path
     else
