@@ -6,6 +6,10 @@
     <%= f.input :title %>
   </div>
 
+  <div>
+    <%= f.input :zhonglei %>
+  </div>
+
   <div class="group" >
     <%= f.input :description %>
   </div>
@@ -17,7 +21,13 @@
   <div class="group" >
     <%= f.input :price %>
   </div>
-
+  <div class="group">
+    [动物制品暂定 穿山甲:'pangolin',海龟:'turtle',鹰隼:'hawk',环保理念页面:'normal']
+    <%= f.input :animal%>
+  </div>
+  <div class="group">
+    <%= f.input :is_hidden %>
+  </div>
    <% if @product.image.present? %>
      <span>目前商品图</span> <br>
      <%= image_tag(@product.image.thumb.url) %>
