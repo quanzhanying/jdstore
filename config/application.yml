@@ -12,19 +12,12 @@
 
 production:
   AWS_ACCESS_KEY_ID: "xxxx"  # 你的 Access key ID
-
   AWS_SECRET_ACCESS_KEY: "xxxx"  # 你的 Secret access key
-
   AWS_REGION: "xxxx"  # 你的 S3 bucket 的 Region 位置
-
   AWS_BUCKET_NAME: "xxxx"  # 你设定的 bucket name
-
 
 development:
   AWS_ACCESS_KEY_ID: "xxxx"  # 你的 Access key ID
-
   AWS_SECRET_ACCESS_KEY: "xxxx"  # 你的 Secret access key
-
   AWS_REGION: "xxxx"  # 你的 S3 bucket 的 Region 位置
-
   AWS_BUCKET_NAME: "xxxx"  # 你设定的 bucket name
