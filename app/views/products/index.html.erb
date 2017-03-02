@@ -1,0 +1,150 @@
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+
+      <img src="https://ooo.0o0.ooo/2017/03/02/58b79a63e8a34.jpeg" alt="Chania">
+
+    </div>
+
+    <div class="item">
+      <img src="https://ooo.0o0.ooo/2017/03/02/58b79a643607a.jpg" alt="Chania">
+    </div>
+
+    <div class="item">
+      <img src="https://ooo.0o0.ooo/2017/03/02/58b79a64a156f.jpg" alt="Flower">
+    </div>
+
+  </div>
+</div>
+
+
+<div class="three-middle">
+  <div class="video">  <!--加个div便于通过margin消除左右边距 -->
+    <iframe width="300px" height="150px"  src="https://www.youtube.com/embed/xJO60zX_o0w?list=PLwXMmy5fUrVzMNzQFZkg1NL36HJQWcmqU&autoplay=1" frameborder="0" allowfullscreen>  </iframe>
+  </div>
+
+
+  <div class="search-sort">
+    <div class= "search">
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :title_cont ,class:"search-content" , placeholder:"请输入商品关键词"%>
+        <%= f.submit class:"btn btn-info" %>
+      <% end %>
+    </div>
+
+    <div class="sort-option">
+      <ul class="line clearfix">
+
+        <li class="sequence">
+          商品排序：
+          <button class="btn btn-link"><%= sort_link(@q, :price, "按价格排序") %></button>
+        </li>
+        <li class="sequence">
+          <button class="btn btn-link"> <%= sort_link(@q, :quantity, "按销量排序") %></button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="product-box">
+  <% @products.each do |product| %>
+
+    <div class="menu ng-scope  filter <%=render_special_filter_class(product)%>" >
+      <div class="menu-img">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+          <% end %>
+        <% end %>
+
+
+         <div class="pi-thumbs-up">
+           <%= link_to like_product_path(product), method: :put do %>
+           <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+           <%= product.get_upvotes.size %>
+           <% end %>
+          </div>
+
+        </div>
+      <h6 class="ng-binding"><%= product.title %></h6>
+
+
+      <div class="menu-price clearfix">
+        <i>￥</i>
+        <span class="ng-binding"> <%= product.price %></span>
+      </div>
+
+      <div class="operator">
+        <span class="detail-btn">
+          <%= link_to("查看详情",product_path(product)) %>
+        </span>
+        <span class="cart-btn">
+          <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :style => "color: white;") %>
+        </span>
+
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+        $(document).ready(function(){
+
+            $(".filter-button").click(function(){
+                var value = $(this).attr('data-filter');
+
+                if(value == "all")
+                {
+                    //$('.filter').removeClass('hidden');
+                    $('.filter').show('1000');
+                }
+                else
+                {
+
+                    $(".filter").not('.'+value).hide('3000');
+                    $('.filter').filter('.'+value).show('3000');
+
+                }
+            });
+
+        });
+</script>
