@@ -2,6 +2,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where(:is_hidden =>false)
+    @products_a = Product.where(:zhonglei => 'picao', :is_hidden => false)
+    @products_b = Product.where(:zhonglei => 'meishi', :is_hidden => false)
+    @products_c = Product.where(:zhonglei => 'yaocai', :is_hidden => false)
+    @products_d = Product.where(:zhonglei => 'chongwu', :is_hidden => false)
+    @products_e = Product.where(:zhonglei => 'shechipin', :is_hidden => false)
   end
 
   def show
