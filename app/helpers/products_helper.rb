@@ -1,4 +1,5 @@
 module ProductsHelper
+  
   def render_special_filter_class(product)
     if product.category == '各种肉'
       'meat'
@@ -7,7 +8,7 @@ module ProductsHelper
     elsif product.category == '地方特色'
       'someregion'
     end
-  end 
+  end
 
 
 
