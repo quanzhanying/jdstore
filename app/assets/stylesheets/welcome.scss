@@ -49,9 +49,36 @@
 }
 
 ul.nav-pills {
-  top: 150px;
+  top: 250px;
   left: 100px;
   position: fixed;
-  background-color: #FFF8E1;
-  border: 2px solid #E3F2FD;
+
+}
+//change amdin style
+ul.nav-pills li {
+  font-size: 15px;
+  width: 150px;
+  background-color: #767087;
+  // border: 2px solid #E3F2FD;
+  border-radius: 5px;
+  text-align: center;
+
+}
+ul.nav-pills li a {
+  color: #fff;
+}
+ul.nav-pills li a:hover{
+  background-color: #433b59;
+}
+h2 {
+  color: #767087 !important;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+.btn-primary {
+  background-color: #767087 !important;
+}
+.account-order {
+  width: 60% !important;
+  margin: 0 auto;
 }

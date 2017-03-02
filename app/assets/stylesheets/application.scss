@@ -195,9 +195,15 @@ padding-left: 200px;
     border-bottom: 3px solid #b4a078;
 }
 .affix {
-  top: 0; //固定在顶端
-  width: 100%;
+   top: 0; //固定在顶端
+   width: 100%;
   z-index: 9999 !important; //使分类导航可以在最上面显示，不被覆盖
+
+}
+
+//admin page
+.col-md-2 .affix {
+  top: 150px;
 }
 
 /* lisuji footer */
