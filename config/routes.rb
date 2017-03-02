@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
+  get 'about' => 'welcome#about'
+
   namespace :admin do
     resources :products do
       member do
