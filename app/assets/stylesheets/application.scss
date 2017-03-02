@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "font-awesome";
+
+
+/* 搜索功能 */
+
+#search-id{
+  margin-left: 7px;/*左边框*/
+  width: 200px;/*搜索栏宽度*/
+  padding-top: 7px;/*内上边距*/
+}
+
+.search-info-title{
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;/*搜索页面标题字体*/
+  text-align: center;/*居中显示*/
+}
+
+/* 搜索功能 */
+
+/* 图片滑动 */
+
+
+/* 图片滑动 */

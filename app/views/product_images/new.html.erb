@@ -1,0 +1,6 @@
+<h2>New Big_image</h2>
+
+<%= simple_form_for [@product, @product_image] do |f| %>
+  <%= f.input :big_image, as: :file %>
+  <%= f.submit "送出" %>
+<% end %>

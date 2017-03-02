@@ -1,0 +1,9 @@
+<% @product.product_images.each do |product_image| %>
+
+  <% if product_image.big_image.present? %>
+    <%= image_tag(product_image.big_image.thumb.url, class: "thumbnail") %>
+  <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+  <% end %>
+
+<% end %>
