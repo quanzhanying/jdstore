@@ -15,3 +15,11 @@ u.password_confirmation = "123456"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+
+Product.create!(title: "Aeron",
+                description: "最适合程序员的椅子"，
+                price: 8000,
+                quantity: 10,
+                image: File.open(File.join("public/11315.jpg"))
+                )
