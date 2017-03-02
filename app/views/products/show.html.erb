@@ -32,6 +32,12 @@
       <% end %>
     <% end %>
 
+    <p>
+    <% @product.product_images.each do |product_image| %>
+      <%= link_to("下载高清图片", product_image.big_image.url, target: :_blank) %>
+    <% end %>
+   </p>
+
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>

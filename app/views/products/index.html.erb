@@ -1,6 +1,7 @@
 <div class="row">
   <% @products.order('created_at DESC').each do |product| %>
-    <div class="col-xs-6 col-md-3">
+    <div class="col-sm-4 col-xs-6">
+      <span class="thumbnail">
       <%= link_to product_path(product) do %>
         <% if product.photos.present? %>
           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
@@ -8,7 +9,29 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %> ¥ <%= product.price %>
+      <h4><%= product.title %></h4>
+      <h6>Category: <%= product.category %></h6>
+        <div class="rating">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+      <hr class="line">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="price">
+            $
+            <%= product.price %></p>
+        </div>
+        <div class="col-sm-6">
+          <%= link_to("But Item", product_path(product),  class:"btn btn-info right") %>
+        </div>
+      </div>
+      </span>
     </div>
   <% end %>
 </div>

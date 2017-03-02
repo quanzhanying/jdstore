@@ -24,4 +24,8 @@ public/uploads
 config/secrets.yml
 
 # Ignore application configuration
+<<<<<<< HEAD
+config/application.yml
+=======
 /config/application.yml
+>>>>>>> b9b88bb855e46e0c87adb78586107bab67e37f7c
