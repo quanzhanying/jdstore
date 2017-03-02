@@ -1,29 +1,7 @@
-<h1> 后台所有商品</h1>
+ <%= link_to("New Product",new_admin_product_path) %>
 
-<div class="pull-right">
-  <%= link_to("Add product", new_admin_product_path, class: "btn btn-md btn-default")%>
-</div>
-
-<table class="table table-boldered">
-  <th>
-    <tr>
-      <td> 商品名 </td>
-      <td> 描述</td>
-      <td> 库存</td>
-
-      <td> 价格</td>
-    </tr>
-  </th>
-
-  <tbody>
-    <% @products.each do |product|%>
-      <tr>
-          <td> <%= product.title %> </td>
-          <td> <%= product.description %> </td>
-          <td> <%= product.quantity %> </td>
-          <td> <%= product.price %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
+<ul>
+  <% @products.each do |product|%>
+        <li> <%= link_to(product.title,admin_product_path(product)) %> </li>
+  <% end %>
+</ul>
