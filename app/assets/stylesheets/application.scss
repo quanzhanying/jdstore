@@ -10,7 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
 
@@ -18,7 +20,7 @@
  @import "bootstrap";
 
  @import "font-awesome";
-
+ @import "social-share-button";
 
  html {
    min-height: 100%;
@@ -81,4 +83,15 @@ body {
   background-image: url("https://ooo.0o0.ooo/2017/02/28/58b54fb06ad7c.png");
   cursor: pointer;
   display: none; /*默认先隐藏掉*/
+}
+
+
+
+
+.social-share-button {
+  .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+  }
 }
