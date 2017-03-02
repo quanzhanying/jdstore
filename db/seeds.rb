@@ -8,6 +8,11 @@
 
 
 
+
+puts "hello world"
+
+
+
 u = User.new
 u.email = "qq@qq.com"
 
