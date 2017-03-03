@@ -1,165 +1,175 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.w3-sidenav a {font-family: "Roboto", sans-serif}
-body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-sidenav  {
+            fbackground-color:transparent;
+        }
+        .w3-sidenav a {
+            font-family: "Roboto", sans-serif;
+        }
+        .w3-wide,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif;
+        }
 
-.thumbnail{
-opacity:0.70;
--webkit-transition: all 0.5s;
-transition: all 0.5s;
-padding: 0 0 15px 0;
-border-radius: 0;
-}
+        .thumbnail {
+            opacity: 0.70;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            padding: 0 0 15px;
+            border-radius: 0;
+        }
+        .thumbnail:hover {
+            opacity: 1.00;
+            box-shadow: 0 0 10px #8000ff;
+        }
 
-.thumbnail:hover{
-opacity:1.00;
-box-shadow: 0px 0px 10px #8000ff;
-}
+        .line {
+            margin-bottom: 5px;
+        }
+        @media screen and (max-width: 770px) {
+            .right {
+                float: left;
+                width: 100%;
+            }
+        }
 
-.line{
-margin-bottom: 5px;
-}
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
 
-@media screen and (max-width: 770px) {
-.right{
-  float:left;
-  width: 100%;
-}
-}
+    </style>
 
-p{
-    overflow : hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-}
+    <body class="w3-content" style="max-width:1200px">
 
-</style>
-
-<body class="w3-content" style="max-width:1200px">
-
-<!-- Sidenav/menu -->
-<nav class="w3-sidenav w3-white w3-collapse w3-top" style="z-index:3;width:250px;margin-top:80px;margin-bottom:80px" id="mySidenav">
-  <div class="w3-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-closebtn w3-hover-text-red"></i>
-    <h3 class="w3-wide"><b>LOGO</b></h3>
-  </div>
-  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a href="#all">饕餮盛宴</a>
-    <a href="#yaocai">天地至宝</a>
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-text-black" id="myBtn">
-      集腋成裘 <i class="fa fa-caret-down"></i>
-    </a>
-    <div id="demoAcc" class="w3-hide w3-padding-large w3-medium">
-      <a href="#picao">獭</a>
-      <a href="#">狐</a>
-      <a href="#">豹</a>
-    </div>
-    <a href="#yaocai">瑶草琪花</a>
-    <a href="#shechipin">片光零羽</a>
-    <a href="#chongwu">儿怜兽扰</a>
-  </div>
-</nav>
-
-
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px">
-
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:5px"></div>
-
-
-  <!-- Image header -->
-  <div class="w3-display-container w3-container" style="margin-top:5px">
-    <img src="/images/grass-1668423_1920.jpg"  style="width:100%">
-    <div class="w3-display-topleft w3-padding-xxlarge w3-text-white">
-      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
-      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
-      <h1 class="w3-hide-small">COLLECTION 2016</h1>
-      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
-    </div>
-  </div>
-
-
-  <!-- Product grid -->
-  <div class="w3-row w3-grayscale">
-
-              <div class="content-md col-md-12">
-                <div class="row">
-                  <% @products.each do |product| %>
-                    <div class="col-xs-6 col-sm-4 col-md-4" style="margin-top:15px">
-                      <span class="thumbnail" style="">
-                      <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                          <%= image_tag(product.image.medium.url) %>
-                        <% else %>
-                          <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
-                        <% end %>
-
-                      <% end %>
-                      <h2> <%= product.title %> </h2>
-                        <div class="ratings">
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star-empty"></span>
-                        </div>
-                      <p> <%= product.description %> </p>
-
-                      </span>
-                    </div>
-                  <% end %>
+        <!-- Sidenav/menu -->
+        <nav class="w3-sidenav  w3-collapse w3-top" style="z-index:3;width:180px;margin-top:80px;margin-bottom:80px;background-color:transparent" id="mySidenav">
+            <div class="w3-container w3-padding-16">
+                <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-closebtn w3-hover-text-red"></i>
+                <h3 class="w3-wide">
+                    <b>LOGO</b>
+                </h3>
+            </div>
+            <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+                <a href="#all">饕餮盛宴</a>
+                <a href="#picao">集腋成裘</a>
+                <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-text-black" id="myBtn">
+                    天地至宝
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div id="demoAcc" class="w3-hide w3-padding-large w3-medium">
+                    <a href="#yaocai">凤毛麟角</a>
+                    <a href="#">金精玉液</a>
+                    <a href="#">龙肝豹胎</a>
                 </div>
-              </div>
+                <a href="#yaocai">瑶草琪花</a>
+                <a href="#shechipin">片光零羽</a>
+                <a href="#chongwu">儿怜兽扰</a>
+            </div>
+        </nav>
 
+        <!-- !PAGE CONTENT! -->
+        <div class="w3-main" style="margin-left:175px">
 
+            <!-- Push down content on small screens -->
+            <div class="w3-hide-large" style="margin-top:5px"></div>
 
+            <!-- Image header -->
+            <div class="w3-display-container w3-container" style="margin-top:5px">
+                <img src="/images/grass-1668423_1920.jpg" style="width:100%">
+                <div class="w3-display-topleft w3-padding-xxlarge w3-text-white">
+                    <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+                    <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+                    <h1 class="w3-hide-small">COLLECTION 2016</h1>
+                    <p>
+                        <a href="#" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a>
+                    </p>
+                </div>
+            </div>
 
-  </div>
+            <!-- Product grid -->
+            <div class="w3-row w3-grayscale">
 
+                <div class="content-md col-md-12">
+                    <div class="row">
+                        <% @products.each do |product| %>
+                        <div class="col-xs-6 col-sm-4 col-md-4" style="margin-top:15px">
+                            <span class="thumbnail" style="">
+                                <%= link_to product_path(product) do %>
+                                <% if product.image.present? %>
+                                <%= image_tag(product.image.medium.url) %>
+                            <% else %>
+                                <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+                                <% end %>
 
-  <!-- End page content -->
-</div>
+                                <% end %>
+                                <h2>
+                                    <%= product.title %>
+                                </h2>
+                                <div class="ratings">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </div>
+                                <p>
+                                    <%= product.description %>
+                                </p>
 
+                            </span>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
 
+            </div>
 
-<script>
-// Accordion
-function myAccFunc() {
-    var x = document.getElementById("demoAcc");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+            <!-- End page content -->
+        </div>
 
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+        <script>
+            // Accordion
+            function myAccFunc() {
+                var x = document.getElementById("demoAcc");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
 
+            // Click on the "Jeans" link on page load to open the accordion for demo purposes
+            document.getElementById("myBtn").click();
 
-// Script to open and close sidenav
-function w3_open() {
-    document.getElementById("mySidenav").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
+            // Script to open and close sidenav
+            function w3_open() {
+                document.getElementById("mySidenav").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
 
-function w3_close() {
-    document.getElementById("mySidenav").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
+            function w3_close() {
+                document.getElementById("mySidenav").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        </script>
 
-</body>
+    </body>
 </html>
