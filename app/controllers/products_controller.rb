@@ -19,11 +19,15 @@ before_action :validate_search_key, only: [:search]
     else
       Product.order('created_at DESC')
     end
+
+    @q = Product.ransack(params[:q])
+        @products = @q.result(distinct: true)
   end
 
 
   def show
     @product = Product.find(params[:id])
+    @photos = @product.photos.all
   end
 
   def add_to_cart
