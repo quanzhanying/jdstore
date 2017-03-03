@@ -15,10 +15,35 @@ create_account =
     password_confirmation: '123456789',
     is_admin: 'true'])
 
-puts "管理员账号建立"
+puts "管理员账号建立，aa@aa.aa,123456789"
 
 create_jos =
 
+Product.create!([
+  title: "捐助动物基金会",
+  description: "别说话，捐钱就是了",   
+  quantity: 1000,
+  price: 50,
+  animal: "normal",
+  is_hidden: 'true'
+  ])
+
+Product.create!([
+  title: "大脸猴子",
+  description: "可爱的大脸猴子，产自中国，非常可爱~~",
+  zhonglei: "chongwu",
+  quantity: 1,
+  price: 20000,
+  ])
+
+Product.create!([
+  title: "大脸猴子的媳妇",
+  description: "大脸猴子的媳妇，同样产自中国，非常凶悍！！！",
+  zhonglei: "chongwu",
+  quantity: 1,
+  price: 2,
+  animal: "turtle"
+  ])
 
 Product.create!([
   title: "藏羚羊",
@@ -124,13 +149,10 @@ Product.create!([
   price: 20000,
   ])
 
-Product.create!([
-  title: "大脸猴子",
-  description: "可爱的大脸猴子，产自中国，非常可爱~~",
-  zhonglei: "chongwu",
-  quantity: 1,
-  price: 20000,
-  ])
+
+
+
+
 
 
 
