@@ -34,129 +34,44 @@
 <!--end-->
 <div class=”container”>
   <div class="row">
-  <div class="col-md-1" style="background-color:default;"></div>
-  <div class="col-md-2 col-sm-4">
-   <span class="thumbnail">
-      <img src="http://placehold.it/500x400" alt="...">
-      <h4>Product Tittle</h4>
-      <div class="ratings">
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-      <hr class="line">
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <p class="price">$29,90</p>
+    <div class="col-md-1" style="background-color:default;"></div>
+      <% @products.each do |product| %>
+        <div class="col-md-2 col-sm-4">
+          <!--span class="thumbnail"-->
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                 <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+             <h4><%= product.title %></h4>
+             <!--评星系统div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+             </div-->
+             <!--商品介绍内容p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p-->
+             <hr class="line">
+             <div class="row">
+                <div class="col-md-6 col-sm-6">
+                   <p class="price">$29,90</p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                   <button class="btn btn-success right" href="/products">BUY ITEM</button>
+                </div>
+             </div>
+          <!--/span-->
         </div>
-        <div class="col-md-6 col-sm-6">
-          <button class="btn btn-success right" href="/products">新增至购物车</button>
-        </div>
-      </div>
-   </span>
+      <% end %>
+    <div class="col-md-1" style="background-color:default;"></div>
   </div>
-  <div class="col-md-2 col-sm-4">
-   <span class="thumbnail">
-      <img src="http://placehold.it/500x400" alt="...">
-        <h4>Product Tittle</h4>
-          <div class="ratings">
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span>
-         </div>
-         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-         <hr class="line">
-         <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <p class="price">$29,90</p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-               <button class="btn btn-success right" > BUY ITEM</button>
-            </div>
-         </div>
-   </span>
-  </div>
-  <div class="col-md-2 col-sm-4">
-    <span class="thumbnail">
-      <img src="http://placehold.it/500x400" alt="...">
-      <h4>Product Tittle</h4>
-      <div class="ratings">
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span>
-      </div>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-      <hr class="line">
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <p class="price">$29,90</p>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <button class="btn btn-success right" > BUY ITEM</button>
-        </div>
-      </div>
-   </span>
-  </div>
-  <div class="col-md-2 col-sm-4">
-    <span class="thumbnail">
-      <img src="http://placehold.it/500x400" alt="...">
-      <h4>Product Tittle</h4>
-      <div class="ratings">
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-      <hr class="line">
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <p class="price">$29,90</p>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <button class="btn btn-success right" > BUY ITEM</button>
-        </div>
-
-      </div>
-   </span>
-  </div>
-  <div class="col-md-2 col-sm-4">
-    <span class="thumbnail">
-      <img src="http://placehold.it/500x400" alt="...">
-      <h4>Product Tittle</h4>
-      <div class="ratings">
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star"></span>
-              <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-      <hr class="line">
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <p class="price">$29,90</p>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <button class="btn btn-success right" > BUY ITEM</button>
-        </div>
-      </div>
-   </span>
-  </div>
-  <div class="col-md-1" style="background-color:default;"></div>
- </div>
 </div>
 <!--end-->
 <!--作业购物栏-->
-<div class="row">
+<!--div class="row">
   <% @products.each do |product| %>
     <div class="col-md-3 col-xs-6">
       <%= link_to product_path(product) do %>
@@ -169,5 +84,5 @@
       <%= product.title %> ￥ <%= product.price %>
     </div>
   <% end %>
-</div>
+</div-->
 <!--end-->
