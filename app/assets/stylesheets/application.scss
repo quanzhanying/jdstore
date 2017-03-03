@@ -19,6 +19,34 @@
  @import "bootstrap";
  @import "font-awesome";
 
+ .jumbotron {
+   background-image:url('http://www.freshprintmagazine.com/wp-content/uploads/2014/11/3-Collective-Arts-Craft-Beer-600x258.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-bottom: 110px;
+ }
+
+ title {
+   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+   text-align: center;
+   margin-top: 200px;
+   margin-bottom: 80px;
+ }
+
+ .slogan {
+   margin-top: 10px;
+   margin-bottom: 50px;
+   text-align: center;
+   color: white;
+   top: 12px;
+ }
+
+ .lead {
+   margin-bottom: 60px;
+   text-align: center;
+   color: white;
+ }
+
  .navbar-default{
    // background-color: #EF6C00 ;
     //border-color: #EF6C00 ;
