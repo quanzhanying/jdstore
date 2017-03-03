@@ -14,3 +14,16 @@ u.password_confirmation = "123456"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+products =[{title:"Rochefort",
+	        description: "仿佛秋天枫叶的红色色泽，酒液柔滑顺畅，有着浓郁的水果味道",
+	        image_path: "#{Rails.root}/app/assets/images/Rochefort.jpg"},
+
+	        {title:"Chimay",
+	        description: "泡沫层散发出丰富的酒香及果味，少许杏味，带有些许清苦",
+	        image_path: "#{Rails.root}/app/assets/images/Chimay.jpg"}
+]
+
+p1 = Product.create([title:products[1][:title],description:products[1][:description],quantity:200,price:50,image:open(products[1][:image_path])])
+p2 = Product.create([title:products[2][:title],description:products[2][:description],quantity:200,price:40,image:open(products[2][:image_path])])
+puts "create products"
