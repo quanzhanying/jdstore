@@ -57,10 +57,16 @@
              <hr class="line">
              <div class="row">
                 <div class="col-md-6 col-sm-6">
-                   <p class="price">$29,90</p>
+                  <div class="product-price"> ￥ <%= product.price %> </div>
+
                 </div>
                 <div class="col-md-6 col-sm-6">
-                   <button class="btn btn-success right" href="/products">BUY ITEM</button>
+                   
+                   <% if product.quantity.present? && product.quantity > 0 %>
+                     <%= link_to("BUY ITEM", add_to_cart_product_path(product), :method => :post, :class => "btn btn-success right") %>
+                   <% else %>
+                     已销售一空，无法购买
+                   <% end %>
                 </div>
              </div>
           <!--/span-->
