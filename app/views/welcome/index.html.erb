@@ -12,15 +12,15 @@
   <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="http://wx4.sinaimg.cn/large/6588fa30ly1fd84a46hjaj21hc0b4qnz.jpg" alt="little beer">
+        <img src="http://wx4.sinaimg.cn/large/6588fa30ly1fd99vq2fc5j21hc0b4teu.jpg" alt="little beer">
       </div>
 
       <div class="item">
-        <img src="https://ww1.sinaimg.cn/large/006y8lVagy1fcnuvgqmp4j31hc0b47bp.jpg" alt="little beer">
+        <img src="http://wx4.sinaimg.cn/large/6588fa30ly1fd99vrltklj21hc0b478n.jpg" alt="little beer">
       </div>
 
       <div class="item">
-        <img src="https://ww3.sinaimg.cn/large/006y8lVagy1fcnuvf5949j31hc0b448z.jpg" alt="little beer">
+        <img src="http://wx4.sinaimg.cn/large/6588fa30ly1fd99von65vj21hc0b40zl.jpg" alt="little beer">
       </div>
     </div>
 
@@ -40,9 +40,9 @@
 </div>
 <div class="lp-section-2">
   <div class="ftitle">
-    <div class="mtsize"> 新特卖早8点晚10点上新 </div>
+    <div class="mtsize"> 从这里出发</div>
     <div class="stsize">
-      /大家都在买的好货
+      开始你的啤酒之旅
     </div>
   </div>
   <div class="row hotpdu">
@@ -85,40 +85,4 @@
           <%= image_tag('http://wx2.sinaimg.cn/large/6588fa30ly1fd98s07m0ij20ku0a0tc3.jpg',width: "100%",height: "100%") %>
         </div>
     </div>
-  </div>
-
-</div>
-
-<div class="lp-section-4">
-  <div class="ftitle">
-    <div class="mtsize"> 比利时 </div>
-    <div class="stsize">
-      /啤酒应该从这里出发
-    </div>
-  </div>
-  <div class="row">
-    <% @products.each do |product|%>
-      <div class="col-xs-6 col-md-3">
-        <div class="item">
-          <%= link_to product_path(product) do %>
-            <% if product.photos.present? %>
-              <div class="pic">
-                <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail", size: "250x250") %>
-              </div>
-            <% else %>
-              <div class="pic">
-                <%= image_tag("http://placehold.it/200x200&text=NoPic",class: "thumbnail",size: "200x200")%>
-              </div>
-            <% end %>
-          <% end %>
-
-          <div class="name">
-            <%= product.title %>
-          </div>
-          <div class="price">
-            ¥ <%= product.price%>
-          </div>
-        </div>
-     </div>
-    <% end %>
   </div>
