@@ -1,0 +1,9 @@
+<%= simple_form_for([@product, @product.comments.build]) do |f| %>
+
+  <div class="field">
+    <%= f.text_area :body, class: "form-control",placeholder:"请在此输入您的评论" %>
+  </div>
+
+  <%= f.submit "提交", class: "btn btn-primary" %>
+
+<% end %>

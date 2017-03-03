@@ -13,4 +13,43 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require test-code.js
+//= require social-share-button
 //= require_tree .
+//= require social-share-button/wechat 
+//轮播大图
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 3000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
+
+
+
+
+
+$(document).on('click', '#gotop', function () {
+  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+})
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    $('#gotop').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
+  } else {
+    $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+  }
+})
+
+
+// products index页的hover出现查看详情、加入购物车
+$(document).ready(function() {
+  $(".menu").hover(function(){
+    $(".menu-price", this).css("visibility","hidden");
+    $(".operator", this).css("visibility","visible");
+  },
+    function() {
+    $(".menu-price", this).css("visibility","visible");
+    $(".operator", this).css("visibility","hidden");
+  });
+});
