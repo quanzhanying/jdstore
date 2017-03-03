@@ -23,7 +23,7 @@ create_jos =
     Product.create!([
       title: "捐助动物基金会",
       description: "别说话，捐钱就是了",
-      quantity: 100000,
+      quantity: 10000,
       price: 50,
       animal: "normal",
       is_hidden: 'true'
@@ -40,7 +40,7 @@ create_jos =
       description: "大脸猴子的媳妇，同样产自中国，非常凶悍！！！",
       quantity: 1,
       price: 2,
-      animal: "pangolin"
+      animal: "turtle"
       ])
 
 puts "商品生成"

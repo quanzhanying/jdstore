@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
      @product.protect_them = true
      @product.save
      redirect_to :back
-     flash[:notice] ="test"
+     flash[:notice] ="感谢你的选择！"
 end
 
 end
