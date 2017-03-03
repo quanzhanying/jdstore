@@ -29,8 +29,8 @@
     </div>
   </div>
 
-  <% if @product.image.present? %>
-      
+  <% @product.get_details_image("img_des").each do | img | %>
+      <%= image_tag(img.url, class: "thumbnail") %>
   <% end %>
 
 </div>
