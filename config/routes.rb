@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'products#index'
+  root 'welcome#index'
   namespace :admin do
    resources :products
    resources :orders do
