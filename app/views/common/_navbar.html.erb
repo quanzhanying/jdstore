@@ -1,7 +1,142 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+<nav class="navbar navbar-default" role="navigation" >
+  <!-- <div class="container-fluid"> -->
+
+<!-- 导航 star-->
+
+
+  <div class="container1">
+  <header>
+  <nav id='cssmenu'>
+
+
+
+  <div class="logo"><a href="/"> 疯狂动物园 </a></div>
+  <div id="head-mobile"></div>
+  <div class="button"></div>
+  <ul>
+  <li class='active'><a href='/'_>首页</a></li>
+  <!-- <li><a href='/'>关于我们</a></li> -->
+  <li><a href='/products'>分类</a>
+     <ul>
+        <li><a href='#'>海</a>
+           <ul>
+              <li><a href='#'>海豚</a></li>
+              <li><a href='#'>海龟</a></li>
+           </ul>
+        </li>
+        <li><a href='#'>陆</a>
+           <ul>
+              <li><a href='#'>穿山甲</a></li>
+              <li><a href='#'>大象</a></li>
+           </ul>
+        </li>
+        <li><a href='#'>空</a>
+           <ul>
+              <li><a href='#'>鹰</a></li>
+              <li><a href='#'>灰鹦鹉</a></li>
+           </ul>
+        </li>
+     </ul>
+  </li>
+
+  <li><a href='/'>联系我们</a></li>
+  <li> </li>
+  <li> </li>
+  <li> </li>
+  <!-- <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li>
+  <li><a href='#'> </a></li> -->
+
+
+
+
+    <li>
+
+       <%= link_to carts_path do  %>
+         购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+       <% end %>
+    </li>
+
+    <% if !current_user %>
+      <li><%= link_to("注册",  new_user_registration_path)%></li>
+      <li><%= link_to(content_tag(:i, '登入',class:'fa fa-sign-in'), new_user_session_path)%></li>
+    <% else  %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Hi!,<%= current_user.email %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+         <% if current_user.admin? %>
+           <li>
+             <%= link_to("Admin 选单", admin_products_path ) %>
+           </li>
+         <% end %>
+         <li> <%= link_to("个人订单列表", account_orders_path ) %> </li>
+          <li> <%= link_to(content_tag(:i,'登出',class:'fa fa-sign-out'), destroy_user_session_path,method: :delete)%></li>
+        </ul>
+      </li>
+    <% end %>
+
+
+  </ul>
+
+</div>
+
+          <!-- <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+          </form> -->
+
+          <!-- <ul class="nav navbar-nav navbar-right"> -->
+
+           <!-- <li>
+              <%= link_to carts_path do  %>
+                购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+              <% end %>
+           </li> -->
+
+            <!-- <% if !current_user %>
+              <li><%= link_to("注册",  new_user_registration_path)%></li>
+              <li><%= link_to(content_tag(:i, '登入',class:'fa fa-sign-in'), new_user_session_path)%></li>
+            <% else  %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Hi!,<%= current_user.email %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                 <% if current_user.admin? %>
+                   <li>
+                     <%= link_to("Admin 选单", admin_products_path ) %>
+                   </li>
+                 <% end %>
+                 <li> <%= link_to("个人订单列表", account_orders_path ) %> </li>
+                  <li> <%= link_to(content_tag(:i,'登出',class:'fa fa-sign-out'), destroy_user_session_path,method: :delete)%></li>
+                </ul>
+              </li>
+            <% end %> -->
+          </ul>
+  </nav>
+  </header>
+
+  </div>
+</nav>
+</div>
+
+
+<!-- 导航end -->
+
+
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <!-- <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
             <span class="sr-only">疯狂</span>
             <span class="icon-bar"></span>
@@ -9,66 +144,22 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#"></a>
-        </div>
+        </div> -->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+    <!-- <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav">
-            <li><a href="/"> 疯狂动物园 </a></li>
+            <li><a href="/"> 疯狂动物园 </a></li> -->
             <!-- <li><a href="/products"> 飞禽走兽 </a></li> -->
-        <li class="dropdown mega-dropdown active ">
+        <!-- <li class="dropdown mega-dropdown active ">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">飞禽走兽 <span class="caret"></span></a>
         <div class="dropdown-menu mega-dropdown-menu">
-                    <div class="container-fluid">
+                    <div class="container-fluid"> -->
                 <!-- Tab panes -->
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="men">
-                            <ul class="nav-list list-inline">
-                                <li><a href="#"><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd8ygmsif8j304602a744.jpg"><span>飞禽</span></a></li>
-                                <li><a href="#"><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd8ygmsif8j304602a744.jpg"><span>走兽</span></a></li>
-                                <li><a href="#"><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd8ygmsif8j304602a744.jpg"><span>皮草</span></a></li>
-                                <li><a href="#"><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd8ygmsif8j304602a744.jpg"><span>饰品</span></a></li>
-                                <!-- <li><a href="#"><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd8ygmsif8j304602a744.jpg"><span>Men's Training</span></a></li>
-                                <li><a href="#"><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd8ygmsif8j304602a744.jpg"><span>Women's Training</span></a></li> -->
-                            </ul>
-                          </div>
-                          <!-- <div class="tab-pane" id="women">
-                            <ul class="nav-list list-inline">
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                            </ul>
-                          </div>
-                          <div class="tab-pane" id="kids">
-                            <ul class="nav-list list-inline">
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                            </ul>
-                          </div>
-                          <div class="tab-pane" id="sports">
-                            <ul class="nav-list list-inline">
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                            </ul>
-                          </div> -->
-                        </div>
-                    </div>
-                    <!-- Nav tabs -->
-                    <!-- <ul class="nav nav-tabs" role="tablist">
-                       <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
-                       <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-                       <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-                       <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-                    </ul> -->
-        </div>
+
+
+
+        <!-- </div>
       </li>
         </ul>
 
@@ -108,7 +199,7 @@
               </ul>
             </li>
           <% end %>
-        </ul>
+        </ul> -->
         <!-- <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
             <li class="dropdown">
@@ -122,9 +213,11 @@
               </ul>
             </li>
         </ul> -->
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    </nav>
+    <!-- </div> -->
+    <!-- /.navbar-collapse -->
+    <!-- </div> -->
+    <!-- /.container-fluid -->
+    <!-- </nav> -->
     <!-- <div class="container">
     <div class="well">
        <a href="https://www.twitter.com/maridlcrmn/">Code snippet inspired by the Nike website. Made with love by @maridlcrmn for @bootsnipp. Enjoy and Share!</a>
