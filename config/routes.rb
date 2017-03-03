@@ -3,6 +3,7 @@ root 'products#index'
 devise_for :users
   namespace :admin do
     resources :products
+
   end
 resources :products do
   member do
@@ -13,6 +14,7 @@ resources :carts do
   collection do
     delete :clean
   end
+  resources :cart_items
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
