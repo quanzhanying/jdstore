@@ -43,6 +43,7 @@ gem 'fog'
 gem 'ransack'
 gem 'paginate'
 gem 'seed_dump'
+gem 'pry'
 
 
 group :development, :test do

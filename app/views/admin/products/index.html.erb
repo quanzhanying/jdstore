@@ -34,7 +34,8 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-default") %>
+          <%= render_product_recommend_action(product) %>
         </td>
       </tr>
     <% end %>

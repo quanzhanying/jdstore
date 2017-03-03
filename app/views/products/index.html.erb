@@ -12,12 +12,12 @@
 
 <div id="myCarousel" class="carousel slide">
     <ol class="carousel-indicators">
-        <% @products.each_with_index do |product, i| %>
+        <% @recommended_products.each_with_index do |product, i| %>
         <li data-target="#myCarousel" data-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>"></li>
         <% end %>
     </ol>
     <div class="carousel-inner">
-        <% @products.each_with_index do |product, i| %>
+        <% @recommended_products.each_with_index do |product, i| %>
         <div class="item <%= i == 0 ? 'active' : '' %>">
             <%= link_to product_path(product) do%>
             <%= image_tag(product.image)%>

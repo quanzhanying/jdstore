@@ -1,37 +1,44 @@
-<h2> Edit Product </h2>
+<h2>
+    Edit Product
+</h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
-  <div class="group">
+<div class="group">
     <%= f.input :title %>
-  </div>
+</div>
 
-  <div class="group">
+<div class="group">
     <%= f.input :description %>
-  </div>
+</div>
 
-  <div class="group">
+<div class="group">
     <%= f.input :quantity %>
-  </div>
+</div>
 
-  <div class="group">
+<div class="group">
     <%= f.input :price %>
-  </div>
+</div>
 
-  <div class="group">
+<div class="group">
     <%= f.input :category_id do %>
     <%= f.select :category_id, @categories %>
     <% end %>
-  </div>
+</div>
 
-      <% if @product.image.present? %>
-        <span>目前商品图</span> <br>
-        <%= image_tag(@product.image.thumb.url) %>
-      <% end %>
+<% if @product.image.present? %>
+<span>目前商品图</span>
+<br>
+<%= image_tag(@product.image.thumb.url) %>
+<% end %>
 
-    <div class="group">
-      <%= f.input :image, as: :file %>
-    </div>
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<div class="group">
+    <%= f.input :image, as: :file %>
+</div>
+
+<div class="group">
+    <%= f.input :is_recommended %>
+</div>
+<%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
