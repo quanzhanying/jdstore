@@ -37,11 +37,11 @@
   </div>
 </div>
 <% else%>
-  <%= @product.animal%>
+  <%= @product.animal%>的种群现状：
   <%= render "animals/#{@product.animal}" %>
   ---------------------------------
   <br>
-  <a href="/products/1">用购买不必要动物制品的钱帮助<%"#{@product.animal}"%>营造更好的生活环境</a>
+  <a href="/products/1" style=" color:#734; font-size:35px;">点此捐助世界自然基金会，用购买不必要动物制品的钱帮助<%"#{@product.animal}"%>营造更好的生活环境</a>
   <% @product.protect_them = false%>
   <% @product.save%>
 <%end%>

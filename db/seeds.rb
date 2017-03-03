@@ -32,7 +32,7 @@ create_jos =
       title: "大脸猴子",
       description: "可爱的大脸猴子，产自中国，非常可爱~~",
       quantity: 250,
-      price: 2000000000,
+      price: 20000,
       animal: "hawk"
       ])
     Product.create!([
@@ -40,7 +40,7 @@ create_jos =
       description: "大脸猴子的媳妇，同样产自中国，非常凶悍！！！",
       quantity: 1,
       price: 2,
-      animal: "pangolin"
+      animal: "turtle"
       ])
 
 puts "商品生成"
