@@ -1,0 +1,35 @@
+<h2> 上架新产品 </h2>
+ <%= simple_form_for [:admin, @product] do |f| %>
+
+   <div class="group">
+     <%= f.input :title %>
+   </div>
+   <div class="group">
+     <%= f.input :description %>
+   </div>
+   <div class="group">
+     <%= f.input "quantity" %>
+   </div>
+   <div class="group">
+     <%= f.input :price %>
+   </div>
+
+   <div class="group">
+     <%#= f.input :image, as: :file %>
+     <%= f.label :avatar %><br>
+      <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+    </div>
+    <div class="group">
+       <%= f.input :image, as: :file, label: "详情图" %>
+     </div>
+   <div class="group">
+     <%= f.input :is_hidden %>
+     <%= f.input :is_clothes %>
+     <%= f.input :is_living %>
+     <%= f.input :is_eating %>
+     <%= f.input :is_playing %>
+     <%= f.input :is_bathing %>
+     <%= f.input :is_walking %>
+   </div>
+   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>

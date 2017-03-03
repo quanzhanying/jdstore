@@ -1,0 +1,58 @@
+<h2> 编辑商品信息 </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <% if @product.photos.present? %>
+    <span>当前商品图片</span> <br>
+    <% @product.photos.each do |p| %>
+      <%= image_tag p.avatar.thumb.url %><br>
+    <% end %>
+  <% end %>
+  <div class="group">
+       <%= f.input :image, as: :file %>
+     </div>
+  <div class="group">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+  </div>
+  <div class="group">
+<%= f.input :clothes %>
+</div>
+<div class="group">
+<%= f.input :eating %>
+</div>
+<div class="group">
+<%= f.input :walking %>
+</div>
+<div class="group">
+<%= f.input :playing %>
+</div>
+<div class="group">
+<%= f.input :bathing %>
+</div>
+<div class="group">
+<%= f.input :is_hidden %>
+<%= f.input :is_clothes %>
+<%= f.input :is_living %>
+<%= f.input :is_eating %>
+<%= f.input :is_playing %>
+<%= f.input :is_bathing %>
+<%= f.input :is_walking %>
+</div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>

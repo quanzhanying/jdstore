@@ -1,0 +1,31 @@
+<div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      更多查看方式
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+      <li><%= link_to("全部", products_path) %></li>
+      <li><%= link_to("衣", products_path(:order => "by_clothes")) %></li>
+      <li><%= link_to("食", products_path(:order => "by_eating")) %></li>
+      <li ><%= link_to("住", products_path(:order => "by_living")) %></li>
+      <li><%= link_to("行", products_path(:order => "by_walking")) %></li>
+      <li><%= link_to("浴", products_path(:order => "by_bathing")) %></li>
+      <li><%= link_to("玩", products_path(:order => "by_playing")) %></li>
+    </ul>
+</div>
+<br>
+<br>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.photos.present? %>
+          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
