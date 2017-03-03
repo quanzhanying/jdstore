@@ -1,15 +1,13 @@
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
 
-  has_many :goods_attrs, through: :goods_images, source: :goods_images
-  has_many :goods_images, through: :goods_images, source: :goods_images
-
-
   def is_quwan_goods?
     quwan_goodsid.present?
   end
 
   def get_details_image(type)
-    goods_images
+    if self.is_quwan_goods?
+        GoodsImage.where(quwan_goodsid: self.quwan_goodsid, img_type: type).order("idx ASC")
+    end
   end
 end
