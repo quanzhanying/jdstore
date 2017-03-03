@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<div class="all">
+    <nav class="navcolor" role="navigation">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav ">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="/milk">奶粉</a></li>
+                <li><a href="/paper">纸尿裤</a></li>
+                <li><a href="/wash">婴儿洗护</a></li>
+                <li><a href="/car">童车</a></li>
+                <li><a href="/evn">生活净化</a></li>
+                <li><a href="/others">其他周边</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>Bootstrap Example</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                .carousel-inner > .item > img,
+                .carousel-inner > .item > a > img {
+                width: 850%;
+                margin: auto;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <br>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <a href="/products/27"><img src="http://m1.image009.com/productimage/TEM/angelkiss2015/banner.jpg" alt="Chania" style="width:900px; height:300px"></a>
+                        </div>
+                        <div class="item">
+                            <a  href="/products/7"><img src="http://bpic.588ku.com/back_pic/02/64/81/52578607136fa70.jpg" alt="Chania" style="width:900px; height:300px"></a>
+                        </div>
+                        <div class="item">
+                            <a <a  href="/products/8"><img src="http://pic.qiantucdn.com/58pic/23/95/22/36g58PICPvz_1024.jpg" alt="Flower" style="width:900px; height:300px"></a>
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </body>
+
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+      <table border="0">
+        <% @products.each do |product| %>
+            <div class="col-xs-6 col-md-3">
+
+                <%= link_to product_path(product) do %>
+                    <% if product.photos.present? %>
+                        <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                    <% end %>
+                <% end %>
+                <%= product.title %> ￥ <%= product.price %>
+            </div>
+        <% end %>
+    </div>
+    <br/>
+    <br/>
+  </div>
+  </html>

@@ -1,0 +1,126 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+.all{
+  background-color: #F5F5F5;//背景颜色
+}
+
+ .navbar-default {
+     background-color: #E1F5FE;//背景颜色
+     border-color: #FAFAFF;//边框色
+     padding-bottom: 5ex;//底部 margin 不撑开距离
+ }
+
+ li
+ {
+ display:inline;
+ }
+
+ .collapse .navbar-collapse{
+   list-style-type: none;
+   font-size:18px;
+   color: #FB8C99;
+   position:absolute;
+   top:35px;
+   right:60px;
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #212121;//鼠标放置在链接上的文字颜色
+   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+   font-size:38px;
+   color: #2979FF;
+   padding: 7px 50px 1px 5px;
+ }
+
+ .nav.navbar-nav{
+   font-family: "Microsoft YaHei";
+   font-size:25px;
+   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+
+ }
+
+ .search {
+   width: 1500px;
+ }
+
+
+ .search-input {
+   height: 36px;
+   line-height: 60px;
+   position:absolute;
+   //left:100px;
+   top:30px;
+   left:500px;
+   color: #FF8F00;
+   padding: 8px 80px ;
+   margin-bottom: 5px;
+   border-width: 3px;
+   border-color: #FF8F00;
+   border-style: solid;
+   outline: 0;
+   font-size: 18px;
+   font-family: "microsoft yahei";
+   border-radius: 40px;
+ }
+
+ .search-button {
+   position:absolute;
+
+   left:880px;
+   width: 14px;
+   height: 36px;
+   border: none;
+   line-height: 2;
+   color: #FF8F00;
+   background: none;
+   font-family: "Microsoft YaHei";
+   font-size: 16px;
+   cursor: pointer;
+   top: 30px;
+   right: 0px;
+ }
+
+ .btn-lg, .btn-group-lg > .btn {
+    padding: 6px;//通过padding来决定btn的大小
+    font-size: 16px;//btn文字大小
+    letter-spacing: 1px;//调整文字间距
+    border-radius: 3px;//btn圆角
+    width: 120px;//这里用指定宽度把btn拉得更长
+    position:absolute;
+    top:200px;
+    right:50px;
+ }
+
+ .container1{
+   text-align: center
+ }
+
+ .col-xs-6 .col-md-3{
+   margin-top: 30px;
+   margin-right: 30px;
+   margin-bottom: 80px;
+   margin-left: 50px;
+   font-family: "Microsoft YaHei";
+ }

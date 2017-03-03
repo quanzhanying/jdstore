@@ -1,0 +1,5 @@
+<% if @product.image.present? %>
+  <%= image_tag(@product.image.medium.url) %>
+<% else %>
+  <%= image_tag("http://placehold.it/1200x600&text=No Pic") %>
+<% end %>
