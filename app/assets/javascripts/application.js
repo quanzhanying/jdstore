@@ -13,4 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
+
+//= require bootstrap.min
+//= require jquery-3.1.0.min
+//= require main
+//= require masonry.pkgd.min
+//= require owl.carousel.min
+
+
+
+
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
