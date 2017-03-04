@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+ namespace :account do # 可以查看过去的订单
+   resources :orders
+ end
+
   resources :orders #结账页
 
   resources :cart_items
