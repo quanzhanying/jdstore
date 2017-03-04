@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
-  resources :carts do
+  resources :carts do #购物车
     collection do
       delete :clean
+      post   :checkout #结账
     end
   end
 
