@@ -16,7 +16,6 @@
 //= require bootstrap
 //= require_tree .
 
-//= require bootstrap.min
 //= require jquery-3.1.0.min
 //= require main
 //= require masonry.pkgd.min
