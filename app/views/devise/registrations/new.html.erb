@@ -1,15 +1,14 @@
-
 <!-- All the files that are required -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+
 <!-- REGISTRATION FORM -->
 <div class="text-center" style="padding:50px 0">
-	<div class="logo">register</div>
+	<div class="logo">注册</div>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
 	<!-- Main Form -->
 	<div class="login-form-1">
 		<form id="register-form" class="text-left">
@@ -17,45 +16,38 @@
 			<div class="main-login-form">
 				<div class="login-group">
 					<div class="form-group">
-              <div class="form-group email required user_email">
-                <input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" placeholder="* E-mail"type="email" value="" name="user[email]" id="user_email">
-              </div>
-          </div>
+						<label for="reg_username" class="sr-only">邮箱地址</label>
+              <input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" placeholder="联系邮箱／登陆名" type="email" value="" name="user[email]" id="user_email">					</div>
 					<div class="form-group">
-            <div class="form-group password required user_password">
-              <input class="form-control password required" required="required" aria-required="true" type="password" name="user[password]" placeholder="* Password" id="user_password" pb-role="password">
-            </div>
-          </div>
+						<label for="reg_password" class="sr-only">密码</label>
+              <input class="form-control password required" required="required" aria-required="true" placeholder="6位以上密码" type="password" name="user[password]" id="user_password" pb-role="password">					</div>
 					<div class="form-group">
-						<div class="form-group password required user_password_confirmation">
-              <input class="form-control password required" required="required" aria-required="true" type="password" name="user[password_confirmation]" placeholder="* Password confirmation" id="user_password_confirmation" pb-role="password">
-            </div>
-					</div>
+						<label for="reg_password_confirm" class="sr-only">确认密码</label>
+              <input class="form-control password required" required="required" aria-required="true" placeholder="再输一次" type="password" name="user[password_confirmation]" id="user_password_confirmation" pb-role="password">					</div>
 
 					<div class="form-group">
-            <input class="form-control string optional" type="text" name="user[fullname]" placeholder="Full name" id="user_fullname">
+						<label for="reg_fullname" class="sr-only">昵称</label>
+						<input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="昵称">
 					</div>
 
 					<div class="form-group login-group-checkbox">
 						<input type="radio" class="" name="reg_gender" id="male" placeholder="username">
-						<label for="male">male</label>
+						<label for="male">男生</label>
 
 						<input type="radio" class="" name="reg_gender" id="female" placeholder="username">
-						<label for="female">female</label>
+						<label for="female">女生</label>
 					</div>
 
 					<div class="form-group login-group-checkbox">
-
-						<label for="reg_agree">i agree with <a href="#">terms</a></label>
+						<input type="checkbox" class="" id="reg_agree" name="reg_agree">
+						<label for="reg_agree">我庄严的承诺我没干 <a href="#">好事</a></label>
 					</div>
 				</div>
-          <button type="hidden" class="login-button">
-            <i class="fa fa-chevron-right"></i>
-            <input type="hidden" name="commit" value="Sign up" class="btn btn-default" data-disable-with="Sign up">
-          </button>
-        </div>
+          <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+			</div>
 			<div class="etc-login-form">
-				<p>already have an account? <%= link_to("login here", new_user_session_path) %></p>
+        <p>老主顾？ <%= link_to("点这里", new_user_session_path) %></p>
+
 			</div>
 		</form>
 	</div>

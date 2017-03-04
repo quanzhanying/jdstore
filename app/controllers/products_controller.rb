@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.where(:is_hidden =>false)
   end
 
   def show
@@ -17,5 +17,14 @@ class ProductsController < ApplicationController
      flash[:warning] = "你的购物车内已有此物品"
    end
      redirect_to :back
- end
+   end
+
+   def protect_them
+     @product = Product.find(params[:id])
+     @product.protect_them = true
+     @product.save
+     redirect_to :back
+     flash[:notice] ="感谢你的选择！"
+end
+
 end
