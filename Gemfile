@@ -37,6 +37,11 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'aasm'
 
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
+
 gem 'letter_opener', group: :development
 
 group :development, :test do

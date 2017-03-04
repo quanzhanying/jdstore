@@ -1,0 +1,48 @@
+<div class="productbg">
+   <div class="nocontent">
+   </div>
+   <div class="row container">
+     <% if @query_string.blank? %>
+     <div class="welcome-content-title">
+       Sorry, The search content cannot be blank, please type some product into to search.
+     </div>
+     <% elsif @products.blank? %>
+       <div class="welcome-content-title">
+         Sorry, we don't have product you would like to search
+       </div>
+     <% else %>
+       <div class="welcome-content-title">
+         Product info about "<%= @query_string %>"
+       </div>
+       <% @products.each do |product| %>
+       <div class="col-xs-6 col-md-4">
+         <%= link_to product_path(product) do %>
+
+           <div class="product-item">
+             <div class="pi-img-wrapper">
+               <% if product.image.present? %>
+                 <%= image_tag(product.image.medium.url, class: "img-responsive") %>
+               <% else %>
+                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive") %>
+               <% end %>
+               <div>
+                   <%#= link_to("VIEW", product_path(product), class: "btn")%>
+               </div>
+             </div>
+             <hr>
+           </div>
+         <% end %>
+       </div>
+       <% end %>
+      <% end %>
+
+   </div>
+   <% if @products.present? %>
+   <div class="text-center">
+     <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+   </div>
+   <% end %>
+   <br>
+   <br>
+ </div>
+ <br>
