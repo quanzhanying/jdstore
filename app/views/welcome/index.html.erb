@@ -39,148 +39,19 @@
 	</div>
 </div>
 
-<!-- Header container -->
-<div class="header-bg">
-	<!-- Container -->
-	<div class="container">
 
-		<div class="row flex">
-			<!-- Logo column -->
-			<div class="col-xs-12 col-sm-5 col-md-4 flex">
-				<a href="index.html">
-					<!-- Logo -->
-					<img src="images/logo.png" class="logo img-responsive" alt="PhotoMarket">
-				</a>
-			</div>
 
-			<!-- Menu column -->
-			<div class="col-xs-12 col-sm-7 col-md-8 flex flex-center">
-				<!-- Menu -->
-				<ul class="nav nav-pills">
-					<li role="presentation"><a href="#" id="cart" data-toggle="tooltip" data-placement="bottom" title="Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge">4</span></a></li>
-					<li role="presentation"><a href="#">Log out</a></li>
-					<li role="presentation"><a href="account.html">Your Account</a></li>
-					<li role="presentation"><a href="login.html"><b>Welcome,</b> <span>log in</span></a></li>
-				</ul>
-
-			</div>
-		</div>
-
-		<!-- Shopping cart -->
-		<div class="container absolute cart-container">
-			<div class="shopping-cart">
-				<!-- Shopping cart header -->
-				<div class="shopping-cart-header">
-					<!-- Total products in cart -->
-					<i class="fa fa-shopping-cart cart-icon"></i><span class="badge">4</span>
-					<!-- Total cart -->
-					<div class="shopping-cart-total">
-						<span class="lighter-text">Total:</span>
-						<span class="main-color-text">$34.98</span>
-					</div>
-				</div>
-				<!-- Shopping cart items -->
-				<ul class="shopping-cart-items">
-					<!-- Shopping cart item -->
-					<li class="clearfix">
-						<!-- Item photo -->
-						<img src="images/cart-images/1.jpg" width="70" alt="item1" />
-						<!-- Item Name -->
-						<span class="item-name">Rails</span>
-						<!-- Item Price -->
-						<span class="item-price">$19.99</span>
-						<!-- Item Quantity -->
-						<span class="item-quantity">Quantity: 01</span>
-					</li>
-					<!-- Shopping cart item -->
-					<li class="clearfix">
-						<!-- Item photo -->
-						<img src="images/cart-images/2.jpg" width="70" alt="item2" />
-						<!-- Item Name -->
-						<span class="item-name">Forest leaves</span>
-						<!-- Item Price -->
-						<span class="item-price">$9.99</span>
-						<!-- Item Quantity -->
-						<span class="item-quantity">Quantity: 01</span>
-					</li>
-					<!-- Shopping cart item -->
-					<li class="clearfix">
-						<!-- Item photo -->
-						<img src="images/cart-images/3.jpeg.jpg" width="70" alt="item3" />
-						<!-- Item Name -->
-						<span class="item-name">The tiger</span>
-						<!-- Item Price -->
-						<span class="item-price">$5.00</span>
-						<!-- Item Quantity -->
-						<span class="item-quantity">Quantity: 01</span>
-					</li>
-					<!-- Shopping cart item -->
-					<li class="clearfix">
-						<!-- Item photo -->
-						<img src="images/cart-images/4.jpeg.jpg" width="70" alt="item4" />
-						<!-- Item Name -->
-						<span class="item-name">Flowers</span>
-						<!-- Item Price -->
-						<span class="item-price">FREE</span>
-						<!-- Item Quantity -->
-						<span class="item-quantity">Quantity: 01</span>
-					</li>
-				</ul>
-				<!-- Checkout button -->
-				<a href="checkout.html" class="button">Checkout</a>
-			</div>
-		</div>
-
-	</div>
-</div>
-
-<!-- Navbar menu -->
-<nav class="navbar navbar-default nav-top">
-	<div class="container-fluid">
-		<!-- Responsive button -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-
-		<!-- Menu -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-
-				<!-- Categories dropdown -->
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="category.html">Nature</a></li>
-						<li><a href="category.html">Weddings</a></li>
-						<li><a href="category.html">Landscape</a></li>
-						<li><a href="category.html">Animals</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="all-categories.html">See all</a></li>
-					</ul>
-				</li>
-
-				<!-- Other options -->
-				<li><a href="#">Most selled</a></li>
-				<li><a href="#">Populars</a></li>
-				<li><a href="faq.html">FAQ</a></li>
-			</ul>
-
-		</div>
-	</div>
-</nav>
 
 <!-- Principal image with search -->
 <div class="full-header">
 	<div class="overlay"></div>
 	<div class="search">
-		<form action="search.html">
-			<input type="text" placeholder="Search..." class="principal-search">
-			<button type="submit" class="principal-search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-		</form>
+    <%= form_tag search_products_path, method: :get do %>
+        <input type="text" class="principal-search" name="q" value="<%= params[:q]%>" placeholder="Search...">
+          <button type="submit" class="principal-search-btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+    <% end %>
 	</div>
 	<div class="bottom-text">
 		Awesome pictures, awesome prices!

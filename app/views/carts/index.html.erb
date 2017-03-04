@@ -1,3 +1,41 @@
+
+
+
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">( <%= current_cart.products.count %> )</span>
+      <!-- Total cart -->
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text"><%= render_cart_item_total_price(current_cart) %></span>
+      </div>
+    </div>
+    <% current_cart.cart_items.each do |cart_item| %>
+    <ul class="shopping-cart-items">
+      <!-- Shopping cart item -->
+      <li class="clearfix">
+        <!-- Item photo -->
+        <%= link_to product_path(cart_item.product) do %>
+          <% if cart_item.product.photos.present? %>
+            <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+        <!-- Item Name -->
+        <span class="item-name"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></span>
+        <!-- Item Price -->
+        <span class="item-price"><%= cart_item.product.price %></span>
+        <!-- Item Quantity -->
+        <span class="item-quantity"><%= cart_item.quantity %></span>
+      </li>
+    </ul>
+    <!-- Checkout button -->
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-danger btn-lg pull-right") %>
+
+<% end %>
+
+
+
 <div class="row">
   <div class="col-md-12">
 
