@@ -1,42 +1,26 @@
-<!--
-  <div class="row">
   <% @products.each do |product| %>
+      <% if product.is_quwan_goods? %>
+          <div class="brick col1 commodity bestlikes masonry-brick" data-item-id="24">
+              <%= link_to product_path(product) do %>
+                <%= image_tag(product.logo) %>
+              <% end %>
+                <p class="bg">
+                          <%= link_to product_path(product), :class =>"name"  do %>
+                              <%= product.title %>
+                          <% end %>
+                        <span>
+                            ￥<%= product.price %>
+                        </span>
+                </p>
 
-      <div class="col-xs-6 col-md-3">
-        <%= link_to product_path(product) do %>
-            <% if product.is_quwan_goods? %>
-                <%= image_tag(product.logo, class: "brick col1 commodity bestlikes masonry-brick") %>
-                <%= product.title %> ￥ <%= product.price %>
-            <% else %>
-                <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
-                <%= product.title %> ￥ <%= product.price %>
-            <% end %>
-        <% end %>
-      </div>
-
-  <% end %>
-</div>
-
-   -->
-
-  <% @products.each do |product| %>
-      <div class="brick col1 commodity bestlikes masonry-brick" data-item-id="24">
-          <%= link_to product_path(product) do %>
-            <%= image_tag(product.logo) %>
+          </div>
+      <% else %>
+          <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
           <% end %>
-            <p class="bg">
+          <%= product.title %> ￥ <%= product.price %>
+      <% end %>
 
-                      <%= link_to product_path(product), :class =>"name"  do %>
-                          <%= product.title %>
-                      <% end %>
-                    <span>
-                        ￥<%= product.price %>
-                    </span>
-            </p>
-
-      </div>
   <% end %>
