@@ -334,11 +334,11 @@ p.description small {
 }
 
 .owl-item > #photo_1 {
-	background-image: url('../images/recent-photos/1.jpeg');
+	background-image: url('https://ww2.sinaimg.cn/large/006tKfTcgy1fd17nteudbj30zk0k078i.jpg');
 }
 
 .owl-item > #photo_2 {
-	background-image: url('../images/recent-photos/2.jpg');
+	background-image: url('https://ww3.sinaimg.cn/large/006tKfTcgy1fdaqsro9bnj30zk0vmn0r.jpg');
 }
 
 .owl-item > #photo_3 {

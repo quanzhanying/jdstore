@@ -12,7 +12,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to products_path, notice: 'create category success'
+      redirect_to admin_products_path
     else
       render :new
     end

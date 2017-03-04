@@ -28,20 +28,6 @@
 </head>
 
 <body>
-
-
-
-
-<!-- Loader -->
-<div id="loader" class="loader">
-	<div class="loader-content">
-		<img src="images/loader.png" alt="Loading...">
-	</div>
-</div>
-
-
-
-
 <!-- Principal image with search -->
 <div class="full-header">
 	<div class="overlay"></div>
@@ -139,15 +125,13 @@
 
 		<!-- Information row -->
 		<div class="row">
-
 			<!-- Discount alert -->
 			<div class="col-sm-8">
 				<div class="alert alert-warning" role="alert"><b>40%</b> of discount in <a href="#"><b>Nature</b></a> category</div>
 			</div>
-
 			<!-- Register button -->
 			<div class="col-sm-4">
-				<button type="submit" class="btn btn-block btn-success register-btn">¡REGISTER NOW!</button>
+          <%= link_to('REGISTER NOW!', new_user_session_path, :method => :post, :class => "btn btn-block btn-success register-btn") %>
 			</div>
 		</div>
 
@@ -223,33 +207,25 @@
 
 			<div class="col-sm-3">
 				<div class="category-block" id="architecture">
-					<a href="category.html">
-						<span>Architecture</span>
-					</a>
+					<%= link_to("ARCHITECTURE", products_path(category: "Architecture")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-3">
 				<div class="category-block" id="food">
-					<a href="category.html">
-						<span>Food</span>
-					</a>
+          <%= link_to("FOOD", products_path(category: "Food")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-3">
 				<div class="category-block" id="cars">
-					<a href="category.html">
-						<span>Cars</span>
-					</a>
+          <%= link_to("CARS", products_path(category: "Car")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-3">
 				<div class="category-block" id="landscapes">
-					<a href="category.html">
-						<span>Landscapes</span>
-					</a>
+          <%= link_to("LANDSCAPES", products_path(category: "Landscape")) %>
 				</div>
 			</div>
 
@@ -259,17 +235,13 @@
 
 			<div class="col-sm-6">
 				<div class="category-block" id="people">
-					<a href="category.html">
-						<span>People</span>
-					</a>
+          <%= link_to("PEOPLE", products_path(category: "People")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-6">
 				<div class="category-block" id="music">
-					<a href="category.html">
-						<span>Music</span>
-					</a>
+          <%= link_to("MUSIC", products_path(category: "Music")) %>
 				</div>
 			</div>
 
@@ -279,25 +251,19 @@
 
 			<div class="col-sm-6">
 				<div class="category-block" id="technology">
-					<a href="category.html">
-						<span>Technology</span>
-					</a>
+          <%= link_to("TECHNOLOGY", products_path(category: "Technology")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-3">
 				<div class="category-block" id="houses">
-					<a href="category.html">
-						<span>Houses</span>
-					</a>
+          <%= link_to("HOUSES", products_path(category: "House")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-3">
 				<div class="category-block" id="pets">
-					<a href="category.html">
-						<span>Pets</span>
-					</a>
+          <%= link_to("PETS", products_path(category: "Pet")) %>
 				</div>
 			</div>
 
@@ -307,25 +273,19 @@
 
 			<div class="col-sm-3">
 				<div class="category-block" id="animals">
-					<a href="category.html">
-						<span>Animals</span>
-					</a>
+          <%= link_to("ANIMALS", products_path(category: "Animal")) %>
 				</div>
 			</div>
 
 			<div class="col-sm-3">
 				<div class="category-block" id="random">
-					<a href="category.html">
-						<span>Random</span>
-					</a>
+          <%= link_to("RANDOM", products_path) %>
 				</div>
 			</div>
 
 			<div class="col-sm-6">
 				<div class="category-block" id="others">
-					<a href="category.html">
-						<span>Others</span>
-					</a>
+          <%= link_to("ANIMATIONS", products_path(category: "Animation")) %>
 				</div>
 			</div>
 
