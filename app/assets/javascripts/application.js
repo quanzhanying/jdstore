@@ -10,27 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery-3.1.0.min
+//= require jquery_ujs
+//= require bootstrap.min
 //= require turbolinks
 //= require main
 //= require masonry.pkgd.min
 //= require owl.carousel.min
-
-
-//= require bootstrap
 //= require_tree .
-
-
-
-
-
-
-
-
-
-
-$(document).ready(function () {
-  $('#myCarousel').carousel({
-    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
-  })
-})

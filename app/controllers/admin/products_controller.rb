@@ -22,13 +22,14 @@ class Admin::ProductsController < ApplicationController
         end
       end
       redirect_to admin_products_path
+
     else
       render :new
     end
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.order("created_at DESC")
   end
 
   def edit

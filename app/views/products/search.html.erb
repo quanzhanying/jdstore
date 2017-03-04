@@ -6,21 +6,35 @@
   <% else %>
   <h2 class="search-info-title"> 有关"<%= @query_string %>"的商品信息 </h2>
   <div class="row">
-    <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+    <% @products.order('created_at DESC').each do |product| %>
+      <div class="col-sm-6 col-xs-6">
+        <span class="thumbnail">
+        <%= link_to product_path(product) do %>
+          <% if product.photos.present? %>
+            <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= product.title %> ¥ <%= product.price %>
-    </div>
+        <h4><%= product.title %></h4>
+        <% if product.category.name.present? %>
+          <h5>Category: <%= product.category.name %></h5>
+        <% end %>
+
+        <hr class="line">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="price">
+              CNY
+              <%= product.price %></p>
+          </div>
+          <div class="col-sm-6">
+            <%= link_to("But Item", product_path(product),  class:"btn btn-info right") %>
+          </div>
+        </div>
+        </span>
+      </div>
     <% end %>
-  </div>
-  <div class="text-center">
-    <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
   </div>
   <% end %>
 </div>
