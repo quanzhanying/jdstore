@@ -1,55 +1,45 @@
 <div class="menu bg-color3">
-  <div class="menuList">
-    <% Category.all.each do |category| %>
-    <ul class="nav navbar-nav">
-        <li class="menuList-item">
-            <%= link_to category.name, products_path(category: category.name) %>
-        </li>
-    </ul>
-    <% end %>
-  </div>
+    <div class="menuList">
+        <% Category.all.each do |category| %>
+        <ul class="nav navbar-nav">
+            <li class="menuList-item">
+                <%= link_to category.name, products_path(category: category.name) %>
+            </li>
+        </ul>
+        <% end %>
+    </div>
 </div>
 
 <div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
- </ol>
- <div class="carousel-inner">
-    <div class="item active">
-     <a href="javascript:;">
-      <img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd3ov8yqb9j30ms0g5q50.jpg">
-      <div class="carousel-caption"></div>
-     </a>
+    <ol class="carousel-indicators">
+        <% @recommended_products.each_with_index do |product, i| %>
+        <li data-target="#myCarousel" data-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>"></li>
+        <% end %>
+    </ol>
+    <div class="carousel-inner">
+        <% @recommended_products.each_with_index do |product, i| %>
+        <div class="item <%= i == 0 ? 'active' : '' %>">
+            <%= link_to product_path(product) do%>
+            <%= image_tag(product.image)%>
+            <%end%>
+        </div>
+        <% end %>
     </div>
-    <div class="item">
-     <a href="javascript:;">
-      <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fd3ovq8d2ej30ms0g5dia.jpg">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-    <div class="item">
-     <a href="javascript:;">
-      <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fd3ow2ao46j30ms0g5abi.jpg">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-  </div>
 </div>
 
-
 <div class="productList">
-  <% @products.each do |product| %>
+    <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
+        <%= link_to product_path(product) do %>
         <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+    <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+        <% end %>
+        <%= product.title %>
+        ￥
+        <%= product.price %>
     </div>
-  <% end %>
+    <% end %>
 </div>

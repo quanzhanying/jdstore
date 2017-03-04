@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
     def index
+      @recommended_products = Product.where(is_recommended: true)
       if params['category'].blank?
         @products = Product.all
       else

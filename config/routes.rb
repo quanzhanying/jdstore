@@ -9,6 +9,12 @@ Rails.application.routes.draw do
                post :return
              end
            end
+        resources :products do
+          member do
+            post :recommend
+            post :cancel_recommend
+          end
+        end
     end
     devise_for :users
     root 'products#index'
