@@ -17,6 +17,7 @@
 //= require_tree .
 
 
+//= require jquery-3.1.0.min
 //= require main
 //= require masonry.pkgd.min
 //= require owl.carousel.min
