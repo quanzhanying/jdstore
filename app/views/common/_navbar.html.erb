@@ -34,13 +34,14 @@
 
                 <div>
               	  <div class="search ">
-              		  <form action="/products/search" accept-charset="UTF-8" method="get">
-              		  	<input name="utf8" type="hidden" value="✓">
-              		    <input class="search-input" type="text" name="query_string" value="" placeholder="serendipity">
+              		  <%= form_tag search_products_path, :method => :get do%>
+              		    <input class="search-input form-control" type="text" name="q" value="<%= params[:q] %>" placeholder="serendipity">
               		    <button class="search-button pa tc" type="submit"><i class="fa fa-search"></i></button>
-              			</form>
+              			<% end %>
               		</div>
               	</div>
+
+
 
               	<!-- <div class="cart-wrap">
               	  <div class="cart">
