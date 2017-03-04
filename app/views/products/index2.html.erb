@@ -1,0 +1,221 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">幻宠城邦</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="navbar-form navbar-right">
+                <%= form_tag search_products_path , :method => :get, :class => "products-search-form" do %>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜索关键字...">
+
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                  <% end %>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                  <li>
+                     <%= link_to carts_path do  %>
+                        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                     <% end %>
+                  </li>
+                  <li>
+                      <% if !current_user %>
+                          <li>
+                            <%= link_to new_user_registration_path do %>
+                            <i class="fa fa-user"> 注册</i>
+                            <% end %>
+                          </li>
+                          <li>
+                            <%= link_to new_user_session_path do %>
+                            <i class="fa fa-sign-in"> 登录</i>
+                            <% end %>
+                          </li>
+                      <% else %>
+                          <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                  Hi!, <%= current_user.email %>
+                                  <b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <% if current_user.admin? %>
+                                      <li>
+                                          <%= link_to("Admin 选单", admin_products_path ) %>
+                                      </li>
+                                  <% end %>
+                                                <li>
+                                                  <%= link_to("个人订单列表", account_orders_path ) %>
+                                                </li>
+
+                                  <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                              </ul>
+                          </li>
+                      <% end %>
+                  </li>
+              </ul>
+        </div>
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fdb9asx4i7j30zk0b4dmo.jpg">
+            </div>
+            <div class="item">
+                <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fdb9c7iovij30zk0b4q7y.jpg">
+            </div>
+            <div class="item">
+                <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fdb9c3tlzwj30zk0b40yb.jpg">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    幻宠排行榜
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> 安比卢贝变色龙</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>安比卢贝位于迭戈·苏亚雷斯的西南方。该区的变色龙在90后才开始引入美国，现在已成为世界各地常见的色系之一。雄性安比颜色极多样化，几乎所有颜色都有机会出现。</p>
+                        <a href="#" class="btn btn-default">了解更多</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default",color: #337ab7;>
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> 巨型环尾蜥</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>巨型环尾蜥分布在南非，栖息环境感觉和华丽王者和孔雀王者很像，都是沙漠草原区，草原岩石区，也会像王者一样是个洞穴蜥蜴，他们带刺的尾巴是很好的防御武器。</p>
+                        <a href="#" class="btn btn-default">了解更多</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> 红眼鹰蜥</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>红眼鹰蜥又叫：盔甲蜥，主要分布在新几内亚及外围岛屿潮湿森林区。红眼鹰蜥属于中小型蜥蜴 ,眼睛周围有一个橘红色的大眼圈,由正面看起来好象两个大红眼睛,颇有威吓掠食者的功用。</p>
+                        <a href="#" class="btn btn-default">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <!-- Portfolio Section -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive img-hover" src="https://ww2.sinaimg.cn/large/006tKfTcgy1fdbayrch22j30jg08cwhq.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>变色树蜥</h3>
+                <h5>热销中</h5>
+                <p>这是一只与众不同的幻宠……</p>
+                <a class="btn btn-success" href="#">查看详情</i></a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive img-hover" src="https://ww3.sinaimg.cn/large/006tKfTcgy1fdbb2ag46mj30jg08cgo8.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>安乐蜥</h3>
+                <h5>热销中</h5>
+                <p>这是一只与众不同的幻宠……</p>
+                <a class="btn btn-success" href="#">查看详情</i></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Three -->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <img class="img-responsive img-hover" src="https://ww4.sinaimg.cn/large/006tKfTcgy1fdbayqtpb4j30jg08cad8.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>蓝舌石龙子</h3>
+                <h5>热销中</h5>
+                <p>这是一只与众不同的幻宠……</p>
+                <a class="btn btn-success" href="#">查看详情</i></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>幻宠城邦现诚招2017年各大城市线下实体店加盟！</h4>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-lg btn-default btn-block" href="#">加入我们</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+
+</body>
+
+</html>
