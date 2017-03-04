@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   end
 
   resources :products do
+    collection do
+      get :search
+    end
     member do
       post :add_to_cart
       post :protect_them

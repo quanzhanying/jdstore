@@ -38,6 +38,10 @@ gem 'aasm'
 gem 'figaro'
 gem 'fog'
 
+gem 'ransack'
+gem 'will_paginate'
+gem 'seo_helper'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
