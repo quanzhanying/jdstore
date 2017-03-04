@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20170301230600) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "product_images", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "big_image"
