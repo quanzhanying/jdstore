@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+before_action :validate_search_key, only: [:search]
+
   def index
     @products = Product.where(:is_hidden =>false)
   end
@@ -25,6 +27,24 @@ class ProductsController < ApplicationController
      @product.save
      redirect_to :back
      flash[:notice] ="感谢你的选择！"
-end
+   end
+
+  def search
+    if @query_string.present?
+      search_result = Product.ransack(@search_criteria).result(:distinct => true)
+      @products = search_result.paginate(:page => params[:page], :per_page => 6 )
+    end
+  end
+
+protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria = {zhonglei_cont: @query_string}
+  end
+
+  def search_criteria(query_string)
+    { :zhonglei_cont => query_string}
+  end
 
 end
