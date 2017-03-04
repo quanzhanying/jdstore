@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :orders #结账页
+
   resources :cart_items
 
   resources :carts do #购物车
