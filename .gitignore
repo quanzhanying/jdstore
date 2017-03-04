@@ -21,7 +21,6 @@
 .byebug_history
 config/database.yml
 public/uploads
-config/secrets.yml
 
 # Ignore application configuration
 /config/application.yml
