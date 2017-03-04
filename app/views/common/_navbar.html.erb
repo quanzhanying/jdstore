@@ -1,12 +1,44 @@
 <!--导航条-->
-<nav class="navbar navbar-default" role="navigation">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">DOG</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#mypage">HOME</a></li>
+        <li><a href="#band">BAND</a></li>
+        <li><a href="#tour">TOUR</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Merchandise</a></li>
+            <li><a href="#">Extras</a></li>
+            <li><a href="#">Media</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+ </nav>
+</body>
+<!--作业导航条-->
+<!--nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="header_fixed">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" href="/">DOG books</a>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active">
@@ -47,9 +79,7 @@
 
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
       </div>
-    <!-- /.container-fluid -->
  </nav>
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
@@ -85,5 +115,5 @@
       <% end %>
     </div>
   </div>
-</div>
+</div-->
 <!--end-->
