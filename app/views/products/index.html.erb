@@ -1,5 +1,7 @@
-<div class="row">
+<!--
+  <div class="row">
   <% @products.each do |product| %>
+
       <div class="col-xs-6 col-md-3">
         <%= link_to product_path(product) do %>
             <% if product.is_quwan_goods? %>
@@ -15,5 +17,26 @@
             <% end %>
         <% end %>
       </div>
+
   <% end %>
 </div>
+
+   -->
+
+  <% @products.each do |product| %>
+      <div class="brick col1 commodity bestlikes masonry-brick" data-item-id="24">
+          <%= link_to product_path(product) do %>
+            <%= image_tag(product.logo) %>
+          <% end %>
+            <p class="bg">
+
+                      <%= link_to product_path(product), :class =>"name"  do %>
+                          <%= product.title %>
+                      <% end %>
+                    <span>
+                        ￥<%= product.price %>
+                    </span>
+            </p>
+
+      </div>
+  <% end %>
