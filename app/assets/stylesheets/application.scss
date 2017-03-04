@@ -14,16 +14,6 @@
  *= require_self
  */
 
- body {
-    font-size: 17px;
-    line-height: 1.52947;
-    font-weight: 400;
-    letter-spacing: -.021em;
-    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-    background-color: #fff;
-    color: #333;
-    font-style: normal;
-}
 
 /* Header */
 .animate {
@@ -228,7 +218,6 @@
 		padding: 0px;
 	}
 }
-
          /* Reset */
 
 *{margin:0;padding:0;}
@@ -248,7 +237,7 @@ body{
   height: 100px;
   color: #00506b;
   font-family: 'Roboto';
-    -webkit-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   -ms-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -265,12 +254,21 @@ body{
          /* main */
          /* Reset */
          a{text-decoration:none;color:inherit;}
-         html{width:100%;height:100%;}
+        //  html{width:100%;height:100%;}
 
          /* Body */
-         body{
-           background:#fff;
-         }
+
+        //  body {
+        //     font-size: 17px;
+        //     line-height: 1.52947;
+        //     font-weight: 400;
+        //     letter-spacing: -.021em;
+        //     font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+        //     background-color: #fff;
+        //     color: #333;
+        //     font-style: normal;
+        // }
+
 
          /* footer */
         //  .container {
@@ -285,11 +283,11 @@ body{
         //      position: relative;
         //      z-index: 1;
         //  }
-         //
-        //  .container a {
-        //      color: #ababab;
-        //      text-decoration: none;
-        //  }
+
+         .container a {
+             color: #ababab;
+             text-decoration: none;
+         }
 
         #gotop {
           width: 50px;

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="[ container ]">
+<nav class="[ navbar  ][ navbar-bootsnipp animate ]" role="navigation">
+  <div class="[ container ]">
         <!-- Brand and toggle get grouped for better mobile display -->
     <div class="[ navbar-header ]">
        <button type="button" class="[ navbar-toggle ]" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -14,11 +14,12 @@
      </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
+			<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
+          <ul class="[ nav navbar-nav navbar-lift ]">
             <li>
 					  	<a href="#" class="[ dropdown-toggle ][ animate ]" data-toggle="dropdown">所有商品 <span class="[ caret ]"></span></a>
 					  	<ul class="[ dropdown-menu ]" role="menu">
+                <li><a href="/products" class="[ animate ]">全部 <span class="[ pull-right glyphicon glyphicon-pencil ]"></span></a></li>
 						  	<li><a href="#" class="[ animate ]">Mac <span class="[ pull-right glyphicon glyphicon-pencil ]"></span></a></li>
 						  	<li><a href="#" class="[ animate ]">配件 <span class="[ pull-right glyphicon glyphicon-align-justify ]"></span></a></li>
 						  	<li><a href="#" class="[ animate ]">周边 <span class="[ pull-right glyphicon glyphicon-cloud-download ]"></span></a></li>
@@ -31,14 +32,25 @@
               <a href="#" class="[ animate ]">关于我们</a>
             </li>
           </ul>
-            <ul class="[ nav navbar-nav navbar-right ]">
-              <li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a>
-              </li>
-                  <li>
+			  	<ul class="[ nav navbar-nav navbar-right ]">
+              <li class="[ visible-xs ]">
+    						<form action="http://bootsnipp.com/search" method="GET" role="search">
+
+    							<div class="[ input-group ]">
+    								<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets">
+    								<span class="[ input-group-btn ]">
+    									<button class="[ btn btn-primary ]" type="submit"><span class="[ glyphicon glyphicon-search ]"></span></button>
+    									<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
+    								</span>
+    							</div>
+    						</form>
+    					</li>
+              <li class="[ hidden-xs ]"><a href="#toggle-search" class="[ animate ]"><span class="[ glyphicon glyphicon-search ]"></span></a></li>
+              <li>
                     <%= link_to carts_path do %>
                     购物车  <i class="fa fa-shopping-cart"></i> <span class="badge"><%= current_cart.products.count %> </span>
                     <% end %>
-                  </li>
+              </li>
 
                   <% if !current_user %>
                    <li><%= link_to("注册", new_user_registration_path) %> </li>
@@ -69,4 +81,16 @@
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
+    <div class="[ bootsnipp-search animate ]">
+			<div class="[ container ]">
+				<form action="http://bootsnipp.com/search" method="GET" role="search">
+					<div class="[ input-group ]">
+						<input type="text" class="[ form-control ]" name="q" placeholder="Search for snippets and hit enter">
+						<span class="[ input-group-btn ]">
+							<button class="[ btn btn-danger ]" type="reset"><span class="[ glyphicon glyphicon-remove ]"></span></button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
 </nav>
