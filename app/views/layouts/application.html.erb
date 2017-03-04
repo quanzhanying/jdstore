@@ -1,3 +1,7 @@
+<script type="text/javascript" src="assets/javascripts/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/bootstrap.min.js"></script>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +13,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield %>
+    </div>
+
+    <%= render "common/footer" %>
+
   </body>
 </html>

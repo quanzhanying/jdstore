@@ -1,0 +1,31 @@
+<div class="row">
+  <% @products.order('created_at DESC').each do |product| %>
+  <div class="col-sm-6 col-xs-6">
+    <span class="thumbnail">
+    <%= link_to product_path(product) do %>
+      <% if product.photos.present? %>
+        <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <h4><%= product.title %></h4>
+      <% if product.category.name.present? %>
+        <h5>Category: <%= product.category.name %></h5>
+      <% end %>
+
+      <hr class="line">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="price">
+            CNY
+            <%= product.price %></p>
+        </div>
+        <div class="buy-item pull-right">
+          <%= link_to("But Item", product_path(product),  class:"btn btn-info") %>
+        </div>
+      </div>
+      </span>
+    </div>
+  <% end %>
+</div>

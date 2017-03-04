@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Title -->
+<title>Home</title>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<!-- Include CSS -->
+<link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.theme.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.transitions.css">
+<link rel="stylesheet" type="text/css" href="assets/style.css">
+
+<script type="text/javascript" src="assets/javascripts/owl.carousel.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/main.js"></script>
+
+
+<!--<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,400i,700,800" rel="stylesheet">--->
+
+</head>
+
+<body>
+<!-- Principal image with search -->
+<div class="full-header">
+	<div class="overlay"></div>
+	<div class="search">
+    <%= form_tag search_products_path, method: :get do %>
+        <input type="text" class="principal-search" name="q" value="<%= params[:q]%>" placeholder="Search...">
+          <button type="submit" class="principal-search-btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+    <% end %>
+	</div>
+	<div class="bottom-text">
+		Awesome pictures, awesome prices!
+	</div>
+</div>
+
+<!-- Page container -->
+<div class="inner-content-home">
+	<div class="container">
+
+		<div class="row margin-bottom-20">
+
+			<!-- Top categories -->
+			<div class="col-sm-8">
+				<h4 class="title">Top categories</h4>
+				<div class="line-dec"></div>
+
+				<!-- Top categories slider -->
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+					<!-- Bottom indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Top categories slides -->
+					<div class="carousel-inner" role="listbox">
+
+						<!-- Top categories (item) -->
+						<div class="item active">
+							<img src="images/slider/1.jpeg.jpg" alt="Image 1">
+							<div class="carousel-caption">
+								Weddings and special events
+							</div>
+						</div>
+
+						<!-- Top categories (item) -->
+						<div class="item">
+							<img src="images/slider/2.jpg" alt="Image 2">
+							<div class="carousel-caption">
+								Landscape and nature
+							</div>
+						</div>
+
+						<!-- Top categories (item) -->
+						<div class="item">
+							<img src="images/slider/3.jpg" alt="Image 3">
+							<div class="carousel-caption">
+								Animals
+							</div>
+						</div>
+					</div>
+
+					<!-- Top categories (arrows) -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left fa fa-angle-left" aria-hidden="true"></span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right fa fa-angle-right" aria-hidden="true"></span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Tip of the day column -->
+			<div class="col-sm-4">
+				<h4 class="title">Tip of the day</h4>
+				<div class="line-dec"></div>
+
+				<!-- Tip of the day -->
+				<div class="thumbnail">
+					<img src="images/tip.jpeg.jpg" alt="Tip of the day">
+					<div class="caption">
+						<h3>How to photographing the spring?</h3>
+						<p class="sm-hide">
+              For those who are still learning new skills, you can use certain techniques to ensure you get the best images. As with any type of photography, light is very important. 
+						<p><a href="#" class="btn btn-primary" role="button">Read more</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Information row -->
+		<div class="row">
+			<!-- Discount alert -->
+			<div class="col-sm-8">
+				<div class="alert alert-warning" role="alert"><b>40%</b> of discount in <a href="#"><b>Nature</b></a> category</div>
+			</div>
+			<!-- Register button -->
+			<div class="col-sm-4">
+          <%= link_to('REGISTER NOW!', new_user_session_path, :method => :post, :class => "btn btn-block btn-success register-btn") %>
+			</div>
+		</div>
+
+		<!-- Recent photos row -->
+		<div class="row">
+			<div class="col-sm-12">
+				<h4 class="title">Recent photos</h4>
+				<div class="line-dec"></div>
+
+				<!-- Recent photos carousel -->
+				<div id="recent-photos">
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_1">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>19$</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_2">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>5$</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_3">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>9$</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_4">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>10$</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_5">
+						<div class="ribbon"><span>FREE</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_6">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>15$</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_7">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>FREE</span></div>
+					</div>
+
+					<!-- Recent photo (item) -->
+					<div class="item" id="photo_8">
+						<!-- Price ribbon -->
+						<div class="ribbon"><span>19$</span></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Categories -->
+		<div class="row">
+			<div class="col-sm-12" id="#categories">
+				<h4 class="title">Our categories <small><span class="badge">245.557</span> photos in our stock</small></h4>
+				<div class="line-dec"></div>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-3">
+				<div class="category-block" id="architecture">
+					<%= link_to("ARCHITECTURE", products_path(category: "Architecture")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="category-block" id="food">
+          <%= link_to("FOOD", products_path(category: "Food")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="category-block" id="cars">
+          <%= link_to("CARS", products_path(category: "Car")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="category-block" id="landscapes">
+          <%= link_to("LANDSCAPES", products_path(category: "Landscape")) %>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-6">
+				<div class="category-block" id="people">
+          <%= link_to("PEOPLE", products_path(category: "People")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="category-block" id="music">
+          <%= link_to("MUSIC", products_path(category: "Music")) %>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-6">
+				<div class="category-block" id="technology">
+          <%= link_to("TECHNOLOGY", products_path(category: "Technology")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="category-block" id="houses">
+          <%= link_to("HOUSES", products_path(category: "House")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="category-block" id="pets">
+          <%= link_to("PETS", products_path(category: "Pet")) %>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-3">
+				<div class="category-block" id="animals">
+          <%= link_to("ANIMALS", products_path(category: "Animal")) %>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="category-block" id="random">
+          <%= link_to("RANDOM", products_path) %>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="category-block" id="others">
+          <%= link_to("ANIMATIONS", products_path(category: "Animation")) %>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<!-- Footer -->
+<div class="container">
+	<div id="footer">
+		<div class="row">
+			<!-- Information column -->
+			<div class="col-sm-4">
+				<h4 class="footer-title">Information</h4>
+				<div class="line-dec"></div>
+				<ul>
+					<li><a href="javascript:void(0)" data-toggle="modal" data-target="#legalModal">Legal advice</a></li>
+					<li><a href="javascript:void(0)" data-toggle="modal" data-target="#termsModal">Terms and conditions</a></li>
+					<li><a href="about-us.html">About us</a></li>
+				</ul>
+			</div>
+
+			<!-- Offers column -->
+			<div class="col-sm-4">
+				<h4 class="footer-title">Our offers</h4>
+				<div class="line-dec"></div>
+				<ul>
+					<li><a href="#">New photos</a></li>
+					<li><a href="#">Top sellers</a></li>
+					<li><a href="#">Discount photos</a></li>
+				</ul>
+			</div>
+
+			<!-- Account column -->
+			<div class="col-sm-4">
+				<h4 class="footer-title">Your account</h4>
+				<div class="line-dec"></div>
+				<ul>
+					<li><a href="account.html">Your profile</a></li>
+					<li><a href="#">Personal information</a></li>
+					<li><a href="#">Shopping history</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+
+			<!-- Copyright -->
+
+	</div>
+</div>
+
+<!-- Modal Legal advice -->
+<div class="modal fade" id="legalModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h4 class="title">Legal advice</h4>
+				<div class="line-dec"></div>
+				<p class="text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+					<br><br>
+
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Terms and conditions -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h4 class="title">Terms and conditions</h4>
+				<div class="line-dec"></div>
+				<p class="text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+					<br><br>
+
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Include Scripts -->
+
+
+</body>
+</html>

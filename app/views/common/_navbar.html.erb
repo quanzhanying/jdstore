@@ -1,0 +1,99 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        PhotoStock
+      </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to("Photos", products_path) %>
+        </li>
+      </ul>
+    <!-- 搜索功能 -->
+      <div class="nav navbar-nab navbar-left">
+        <%= form_tag search_products_path, method: :get do %>
+          <div class="input-group" id="search-id">
+            <input type="text" class="form-control" name="q" value="<%= params[:q]%>" placeholder="search information">
+            <div class="input-group-btn">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- 搜索功能 -->
+
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- 分类浏览 -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+          <% Category.all.each do |category| %>
+              <li>
+                <%= link_to(category.name, products_path(category: category.name)) %>
+              </li>
+            <% end %>
+           </ul>
+        </li>
+        <!-- 以上为分类浏览功能 -->
+
+        <!-- 购物车 -->
+        <li>
+          <%= link_to carts_path do %>
+            Shopping Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <% end %>
+        </li>
+
+        <!-- 购物车 -->
+
+        <% if !current_user %>
+          <li><%= link_to("Register", new_user_registration_path) %></li>
+          <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+
+
+        <li>
+          <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :get ) %>
+        </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Hi!,<%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li>
+                  <%= link_to("Admin Panel", admin_products_path ) %>
+                </li>
+              <% end %>
+              <li>
+                <%= link_to("Personal List", account_orders_path ) %>
+              </li>
+              <li>
+                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :get ) %>
+              </li>
+
+            </ul>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
