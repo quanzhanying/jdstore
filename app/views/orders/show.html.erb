@@ -18,16 +18,23 @@
           <% @product_lists.each do |product_list| %>
             <tr>
               <td>
-                <%= product_list.product_name %>
+                <div class="pull-left">
+                  <%= product_list.product_name %>
+                </div>
               </td>
               <td>
-                <%= product_list.product_price %>
+                <div class="pull-left">
+                  <%= product_list.product_price %>
+                </div>
               </td>
               <td>
-                <%= product_list.quantity %>
+                <div class="pull-left">
+                  <%= product_list.quantity %>
+                </div>
               </td>
             </tr>
           <% end %>
+
 
         </tbody>
       </table>
@@ -49,22 +56,30 @@
       <tbody>
         <tr>
           <td>
-            订购人
+            <div class="pull-left">
+              订购人
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            <%= @order.billing_name %> - <%= @order.billing_address %>
+            <div class="pull-left">
+              <%= @order.billing_name %> - <%= @order.billing_address %>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            收件人
+            <div class="pull-left">
+              收件人
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+            <div class="pull-left">
+              <%= @order.shipping_name %> - <%= @order.shipping_address %>
+            </div>
           </td>
         </tr>
       </tbody>
