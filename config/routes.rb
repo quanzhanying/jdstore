@@ -4,7 +4,12 @@ Rails.application.routes.draw do
    resources :orders
  end
 
-  resources :orders #结账页
+  resources :orders do #结账页
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
 
   resources :cart_items
 
