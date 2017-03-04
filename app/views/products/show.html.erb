@@ -30,7 +30,7 @@
   </div>
 
   <% @product.get_details_image("img_des").each do | img | %>
-      <%= image_tag(img.url, class: "thumbnail") %>
+      <%= image_tag(img.url) %>
   <% end %>
 
 </div>
