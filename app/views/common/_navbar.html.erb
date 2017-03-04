@@ -3,7 +3,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
-        JDstore
+        PhotoStock
       </a>
     </div>
 
@@ -11,14 +11,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active">
-          <%= link_to("Products", products_path) %>
+          <%= link_to("Photos", products_path) %>
         </li>
       </ul>
     <!-- 搜索功能 -->
       <div class="nav navbar-nab navbar-left">
         <%= form_tag search_products_path, method: :get do %>
           <div class="input-group" id="search-id">
-            <input type="text" class="form-control" name="q" value="<%= params[:q]%>" placeholder="请输入搜索信息">
+            <input type="text" class="form-control" name="q" value="<%= params[:q]%>" placeholder="search information">
             <div class="input-group-btn">
               <button class="btn btn-primary" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -52,19 +52,19 @@
         <!-- 购物车 -->
         <li>
           <%= link_to carts_path do %>
-            购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+            Shopping Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
           <% end %>
         </li>
 
         <!-- 购物车 -->
 
         <% if !current_user %>
-          <li><%= link_to("注册", new_user_registration_path) %></li>
-          <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+          <li><%= link_to("Register", new_user_registration_path) %></li>
+          <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
         <% else %>
 
         <li>
-          <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :get ) %>
+          <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :get ) %>
         </li>
 
           <li class="dropdown">
@@ -75,11 +75,11 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li>
-                  <%= link_to("Admin 选单", admin_products_path ) %>
+                  <%= link_to("Admin Panel", admin_products_path ) %>
                 </li>
               <% end %>
               <li>
-                <%= link_to("个人订单列表", account_orders_path ) %>
+                <%= link_to("Personal List", account_orders_path ) %>
               </li>
 
             </ul>
