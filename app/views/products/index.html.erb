@@ -10,7 +10,9 @@
         <% end %>
       <% end %>
       <h4><%= product.title %></h4>
-      <h5>Category: <%= product.category.name %></h5>
+      <% if product.category.name.present? %>
+        <h5>Category: <%= product.category.name %></h5>
+      <% end %>
 
 
         <div class="rating">
