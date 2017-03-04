@@ -3,17 +3,17 @@
       <div class="col-xs-6 col-md-3">
         <%= link_to product_path(product) do %>
             <% if product.is_quwan_goods? %>
-                <%= image_tag(product.logo, class: "thumbnail") %>
+                <%= image_tag(product.logo, class: "brick col1 commodity bestlikes masonry-brick") %>
+                <%= product.title %> ￥ <%= product.price %>
             <% else %>
                 <% if product.image.present? %>
                     <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
                 <% else %>
                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                 <% end %>
+                <%= product.title %> ￥ <%= product.price %>
             <% end %>
-
         <% end %>
-        <%= product.title %> ￥ <%= product.price %>
       </div>
   <% end %>
 </div>
