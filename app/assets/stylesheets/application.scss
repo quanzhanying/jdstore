@@ -25,6 +25,8 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    position: relative;
+    z-index: 133;
 }
 /*header*/
 .navbar-default {
@@ -41,6 +43,8 @@
 .container1 {
     width: 100%;
     margin: 0;
+    // position: relative;
+    // z-index: 122;
 }
 
 * {
@@ -547,7 +551,7 @@ nav {
 /*       Fade Bs-carousel       */
 /********************************/
 .fade-carousel {
-    position: relative;
+    // position: relative;
     height: 100vh;
 }
 
