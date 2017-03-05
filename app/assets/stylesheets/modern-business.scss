@@ -14,7 +14,7 @@ header.carousel .item,
 header.carousel .item.active,
 header.carousel .carousel-inner {
     height: 100%;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
 }
 
 header.carousel .fill {
@@ -25,6 +25,23 @@ header.carousel .fill {
 }
 /* Footer Styles */
 
+.price {
+  color: red;
+  font-weight: bold;
+  font-size:18px;
+  margin-left: 30px;
+}
+
+.description {
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:16px;
+}
+.title {
+  font-style: italic;
+}
 footer {
     margin: 50px 0;
 }
