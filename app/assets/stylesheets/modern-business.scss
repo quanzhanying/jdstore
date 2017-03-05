@@ -1,7 +1,7 @@
 /*!
- * Start Bootstrap - Modern Business (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * Start Bootstrap  Modern Business (http://startbootstrap.com/)
+ * Copyright 20132016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/ghpages/LICENSE)
  */
 
 .img-hover:hover {
@@ -17,14 +17,12 @@ header.carousel .carousel-inner {
     margin-top: 25px;
 }
 
-.carousel .carousel-inner .item img {
-  display: block;
-  margin: auto;
-  height: 100%;
-  background-size: 100%;
+header.carousel .fill {
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
 }
-
-
 /* Footer Styles */
 
 footer {
@@ -33,16 +31,16 @@ footer {
 
 /* Responsive Styles */
 
-@media(max-width:991px) {
-    .customer-img,
-    .img-related {
-        margin-bottom: 30px;
+@media(maxwidth:991px) {
+    .customerimg,
+    .imgrelated {
+        marginbottom: 30px;
     }
 }
 
-@media(max-width:767px) {
-    .img-portfolio {
-        margin-bottom: 15px;
+@media(maxwidth:767px) {
+    .imgportfolio {
+        marginbottom: 15px;
     }
 
     header.carousel .carousel {
