@@ -1,0 +1,54 @@
+/*!
+ * Start Bootstrap  Modern Business (http://startbootstrap.com/)
+ * Copyright 20132016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/ghpages/LICENSE)
+ */
+
+ .img-portfolio {
+     margin-bottom: 30px;
+ }
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: auto;
+    margin-top: 25px;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* Footer Styles */
+
+footer {
+    margin: 50px;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customerimg,
+    .imgrelated {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .imgportfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
