@@ -17,7 +17,7 @@ Rails.application.routes.draw do
         end
     end
     devise_for :users
-    root 'products#index2'
+    root 'products#index'
 
     resources :products do
      member do
