@@ -23,13 +23,32 @@ class ProductsController < ApplicationController
   end
 
 def shop1
-  @products1=Product.where(kind: "food")
+  @products1=Product.where(kind: "salad",owner:"shop1")
   @products2=Product.where(kind: "fruit",owner:"shop1")
-  @products3=Product.where(kind: "vegetalbe")
+  @products3=Product.where(kind: "set",owner:"shop1")
+end
+
+def shop2
+  @products4=Product.where(kind: "salad",owner:"shop2")
+  @products5=Product.where(kind: "fruit",owner:"shop2")
+  @products6=Product.where(kind: "nut",owner:"shop2")
+end
+
+def shop3
+  @products7=Product.where(kind: "fruit",owner:"shop3")
+  @products8=Product.where(kind: "nut",owner:"shop3")
 end
 
 def search_fruit
   @products=Product.where(kind: "fruit")
+end
+
+def search_salad
+  @products=Product.where(kind: "salad")
+end
+
+def search_nut
+  @products=Product.where(kind: "nut")
 end
 
   def menu0

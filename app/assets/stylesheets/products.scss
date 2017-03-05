@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
 /*星级评定*/
 .rate{
   position: relative;
@@ -84,9 +87,35 @@ body {
 
 }
 
+.product-shop {
+    width: 230px;
+    height: 350px;
+    background: #fff;
+    margin-right: 12px;
+    margin-bottom: 12px;
+   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+    position: relative;
+    top: 0;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    border: 0px;
+
+}
+
 
 
 .product-display {
+  padding: 15px;
+    float: left;
+    display: inline;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-style: none;
+    border-width: 0px;
+}
+
+
+.product-shop {
   padding: 15px;
     float: left;
     display: inline;

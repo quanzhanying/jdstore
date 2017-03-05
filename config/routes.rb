@@ -9,12 +9,16 @@ resources :products do
  resources :reviews
   collection do
     get :shop1
+    get :shop2
+    get :shop3
     get :search
     get :menu1
     get :menu2
     get :menu3
     get :menu0
     get :search_fruit
+    get :search_salad
+    get :search_nut
   end
   member do
     put "like", to: "products#upvote"

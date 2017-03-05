@@ -17,8 +17,12 @@
 }
 
 
-/*shop样式*/
-.row .thumbnail .shop .phone{
+
+/*shop1样式*/
+
+
+
+/*.row .thumbnail .shop .phone{
   margin-left: 90px;
   margin-top: 20px;
 }
@@ -48,7 +52,7 @@
 .row .thumbnail .shop{
   float: right;
   position: relative;
-  left: 200px;
+ margin-left: 2000px;
 }
 
 
@@ -56,8 +60,11 @@
 .row .thumbnail .description1{
   text-align: center;
   width: 1000px;
+  position: relative;
+
  margin-left: 160px;
  margin-top: 30px;
+ margin-right: 400px;
 }
 
 
@@ -66,14 +73,16 @@
 
 }
 .row .thumbnail .shop>img{
-  width: 52%;
+width: 100%;
 }
 
 .row .thumbnail .intro{
   float:left;
   margin-left: 50px;
 
+
 }
+*/
 
 /*shop2样式*/
 
@@ -111,7 +120,7 @@
 
 .row .thumbnail .shop2 {
 float: left;
-margin-left: 40px;
+margin-left: 120px;
 /*margin-left: -10px;*/
 
 
@@ -119,11 +128,16 @@ margin-left: 40px;
 
 .row .thumbnail .intro2{
   float: right;
-  margin-right: 50px;
+  width: 420px;
+  padding-left: 50px;
 
 }
+
+.intro2>img{
+  width: 80%;
+}
 .shop2>img{
-  width: 65%;
+  width: 55%;
 
 }
 
@@ -131,7 +145,7 @@ margin-left: 40px;
 .row .thumbnail .description2{
   text-align: center;
   position: relative;
-  left: 30px;
+  left: 50px;
   bottom: 280px;
 
   width: 1000px;
@@ -144,9 +158,14 @@ margin-left: 40px;
   top:20px;
   width: 300px;
   margin-right: 0px;
-  margin-left: 35px;
+  margin-left: 110px;
   text-align: center;
 }
+
+
+
+
+
 
 /*shop3样式*/
 .intro3 .email{
