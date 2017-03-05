@@ -20,7 +20,22 @@
         <li class="Active">
           <%= link_to("课程", products_path) %>
         </li>
-      </ul>
+      <div class="t2">
+                    <!-- search start-->
+                    <%= form_tag templates_path, :method => "get" do %>
+                        <div id="imaginary_container">
+                            <div class="input-group stylish-input-group">
+                                <%= text_field_tag :search, params[:search], placeholder: "搜索", class: "form-control"%>
+                                <span class="input-group-addon">
+                                    <button type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+        </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>

@@ -66,6 +66,35 @@
         border-radius: 0;//圆角为0
     }
 }
+
+//*搜索*//
+#imaginary_container{
+    margin-top:30px; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important;
+    padding: 2.5px 4px 1.5px 4px;
+    border-color:#ccc;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+  padding: 5;
+
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    padding: 3;
+    background:transparent;
+}
+
+
+.t2 {
+  margin-top:-22px;
+  margin-left: 250px;
+    width: 200px;
+}
 /* ------------------------------------ 以上为 navbar ------------------------ */
 
 /* ------------------------------------ 主体 --------------------------------- */
