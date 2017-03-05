@@ -12,4 +12,7 @@ class Product < ApplicationRecord
 
   has_many :product_relationships
   has_many :members, through: :product_relationships, source: :user
+
+  ratyrate_rateable "smell", "appearence", "price"
+
 end

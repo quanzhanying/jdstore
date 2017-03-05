@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*星级评定*/
+.rate{
+  position: relative;
+  left:1000px;
+  bottom: 110px;
+
+}
 /*好评和差评按钮样式*/
 .pi-thumbs-down{
   margin-left: 100px;

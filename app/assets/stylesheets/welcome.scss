@@ -2,20 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-  width: 100%;
-}
+
 /*外边框*/
 .row .thumbnail{
   border: none;
 }
 
-.item>a>img{
+.carousel.slide .carousel-inner .item>a>img{
   width: 100%;
 }
 
-.item.active>a>img{
-  width: 100%;
+.carousel.slide .carousel-inner .item.active>a>img{
+
 }
 
 
