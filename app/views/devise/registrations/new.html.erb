@@ -1,0 +1,23 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container-fluid">
+  <div class="row-fluid" >
+    <div class="col-md-offset-4 col-md-4" id="box">
+<h2>Sign up</h2>
+
+
+
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+
+    <%= f.button :submit, "Sign up" %>
+
+<%= render "devise/shared/links" %>
+<br>
+    </div>
+  </div>
+</div>
+<% end %>
+<div class="col-sm-12">
+<br>
+</div>
