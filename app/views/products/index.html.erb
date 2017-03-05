@@ -1,0 +1,86 @@
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('https://ww2.sinaimg.cn/large/006tKfTcgy1fdb9asx4i7j30zk0b4dmo.jpg');"></div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('https://ww4.sinaimg.cn/large/006tKfTcgy1fdb9c7iovij30zk0b4q7y.jpg');"></div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('https://ww4.sinaimg.cn/large/006tKfTcgy1fdbvvajqduj30zk0b4afg.jpg');"></div>
+
+        </div>
+    </div>
+
+
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                新品推荐
+            </h1>
+        </div>
+        <% @recommended_products.each do |product|%>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <i class="fa fa-fw fa-check"></i>
+                        <%= product.title%></h4>
+                </div>
+                <div class="panel-body">
+                    <p><%= product.description%></p>
+                    <%= link_to("了解更多", product_path(product), class: "btn btn-default")%>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </div>
+    <!-- /.row -->
+    <hr>
+    <% @products.each do |product| %>
+    <div class="row">
+        <div class="col-md-7">
+            <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+            <%= image_tag(product.image.url, class: "img-responsive img-hover thumbnail") %>
+        <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+            <% end %>
+        </div>
+        <div class="col-md-5">
+            <h3><%= product.title %></h3>
+            <h5>热销中</h5>
+            <p class="description"><%= product.description %></p>
+            <%= link_to("我要购买", product_path(product), class:"btn btn-success")%>
+        </div>
+    </div>
+    <% end %>
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="well clearfix">
+        <div class="row">
+            <div class="col-md-8">
+                <h4>幻宠城邦现诚招2017年各大城市线下实体店加盟！</h4>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-lg btn-default btn-block" href="#">加入我们</a>
+            </div>
+        </div>
+    </div>
