@@ -1,9 +1,10 @@
 <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
 
-  <div class="field">
-      <%= f.text_area :body, class: "form-control" %>
+  <div class="field" >
+      <%= f.text_area :body, class: "form-control",style:"width:400px;
+      padding:10px 0px;height:100px;"%>
   </div>
 
-
-  <%= f.submit "Add a Review", class: "btn btn-primary" %>
+ <br />
+  <%= f.submit "发表评论", class: "btn btn-primary" %>
 <% end %>

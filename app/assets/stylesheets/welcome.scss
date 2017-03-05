@@ -2,9 +2,152 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+  width: 100%;
+}
 /*外边框*/
 .row .thumbnail{
   border: none;
+}
+
+.item>a>img{
+  width: 100%;
+}
+
+.item.active>a>img{
+  width: 100%;
+}
+
+
+/*shop样式*/
+.row .thumbnail .shop .phone{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .shop .phone>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .shop .location{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .shop .location>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .shop .email{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .shop .email>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .shop{
+  float: right;
+  position: relative;
+  left: 200px;
+}
+
+
+
+.row .thumbnail .description1{
+  text-align: center;
+  width: 1000px;
+ margin-left: 160px;
+ margin-top: 30px;
+}
+
+
+.row .thumbnail .intro>img{
+  width: 60%;
+
+}
+.row .thumbnail .shop>img{
+  width: 52%;
+}
+
+.row .thumbnail .intro{
+  float:left;
+  margin-left: 50px;
+
+}
+
+/*shop2样式*/
+
+.row .thumbnail .intro2 .phone{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .intro2 .phone>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .intro2 .location{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .intro2 .location>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .intro2 .email{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .intro2 .email>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+.row .thumbnail .selfie2{
+
+
+
+}
+
+.row .thumbnail .shop2 {
+float: left;
+margin-left: 40px;
+/*margin-left: -10px;*/
+
+
+}
+
+.row .thumbnail .intro2{
+  float: right;
+  margin-right: 50px;
+
+}
+.shop2>img{
+  width: 65%;
+
+}
+
+
+.row .thumbnail .description2{
+  text-align: center;
+  position: relative;
+  left: 30px;
+  bottom: 280px;
+
+  width: 1000px;
+
+  margin-left: 300px;
+}
+
+.row .thumbnail .info2{
+  position: relative;
+  top:20px;
+  width: 300px;
+  margin-right: 0px;
+  margin-left: 35px;
+  text-align: center;
 }
 
 /*shop3样式*/
@@ -47,12 +190,12 @@
   margin-top:45px;
 }
 .intro3>img{
-  width: 20%;
+  width: 17%;
   margin-bottom: 1px;
 }
 .intro3{
   position: relative;
-  left:620px;
+  left:870px;
   top:35px;
 }
 .shop3>img{
@@ -62,81 +205,16 @@
 .row .thumbnail .description3{
   text-align: center;
   position: relative;
-  right: 180px;
-  bottom: 160px;
-}
-/*shop1*样式*/
-.row .thumbnail .shop>i{
-  position: relative;
   right: 0px;
-  top: 70px;
-  left: 1060px;
-
-
-}
-.row .thumbnail .shop .fa.fa-envelope-o{
-  position: relative;
- top:110px;
- margin-left: -110px;
-}
-.row .thumbnail .shop>span>i{
-  position: relative;
-bottom:0px;
-top:30px;
-right: 180px;
-float: right;
-}
-.row .thumbnail .store1>p{
- position: relative;
- bottom: 300px;
-left: 0px;
-  text-align: center;
-}
-.shop{
-  margin-top: 80px;
-  margin-bottom: -80px;
-
+  bottom: 160px;
+  width: 1000px;
+  margin-right: 0px;
+  margin-left: 300px;
 }
 
 
-.shop img{
-  width: 20%;
 
-margin-left: 1000px;
-
-
-}
-.intro{
-    margin-top: -200px;
-    text-align: center;
-    margin-bottom: 20px;
-
-}
-.intro .description{
-  margin-left: -900px;
-}
-.intro .btn{
-  margin-left: -1000px;
-  text-decoration: none;
-}
-.intro p{
-  margin-left: -1000px;
-
-}
-.intro .description{
-  margin-left: -1000px;
-}
-.intro img{
-  width: 19%;
-  margin-left: -960px;
-  margin-bottom: 20px;
-
-
-}
-.shop img:hover{
-  border-color: #f1f1f1;
-}
-/*shop2样式*/
+/*shop4样式*/
 
 
 
@@ -166,8 +244,14 @@ margin-left: 1000px;
 
 #myCarousel{
   margin-top: -20px;
-  margin-left: -15px;
-  margin-right: -15px;
+
+
+
+
+}
+
+.row.welcome{
+
 }
 
 .row.image{
@@ -179,6 +263,8 @@ margin-left: 1000px;
   height: 780px;
 
 }
+
+
 
 /*修改welcome图片文字效果和背景色*/
 .carousel-caption>p
@@ -212,13 +298,60 @@ margin-left: 1000px;
   clear:both;
   margin-top: -660px;
 }
+.pic1>a>img{
+  width: 14.7%;
+  height: 70%;
+ position: relative;
+ bottom: 154px;
+}
 
+.pic2>a>img{
+  width: 14.7%;
+  height: 70%;
+  position: relative;
+  bottom: 154px;
+  margin-top: -493px;
+}
+
+.pic3 img{
+  float:right;
+}
+.pic3>a>img{
+  width: 14.7%;
+  height: 70%;
+  position: relative;
+  bottom: 152px;
+  margin-top: -329px;
+}
 .pic2 img{
   float:right;
 
 
   margin-top: -450px;
 
+}
+
+.pic4 img{
+  float:right;
+}
+.pic4>a>img{
+  width: 14.7%;
+  height: 70%;
+  position: relative;
+  bottom: 152px;
+  margin-top: -163px;
+}
+
+.pic5 img{
+  float:right;
+}
+.pic5>a>img{
+  width: 14.6%;
+  height: 70%;
+  position: relative;
+  margin-right: -247px;
+
+  margin-top: -150px;
 }
 
 
