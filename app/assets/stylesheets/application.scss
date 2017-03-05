@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+ .navbar-inverse {
+  //  background-color: #000000;//背景颜色
+  //  border-color: #000000;//边框色
+   margin-bottom: 0px;
+   margin-left:-15px;
+   margin-right:-15px;
+   padding-left:40px;
+   padding-right:40px;
+   padding-top:5px;
+   padding-bottom: 5px;
+   border-radius:0;
+   font-size: 18px;
+ }
+ .navbar-inverse .navbar-brand {
+   color: #EF6C00;//字体颜色
+   padding: 10px 15px;//上下10px,左右15px
+   line-height: 30px;//文字行高
+   font-size: 22px;
+}
+
+
+
+.navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+
+
+.search {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  width: 400px;
+  margin-left: 40px; /*右边距*/
+  margin-top: 8px; /*上边距*/
+  position: relative; /*相对定位*/
+}
+
+.search-input {
+  width: 400px;
+  height: 36px;
+  line-height: 36px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #666;
+  padding: 4px 20px; /*调一下上下左右边距*/
+  border-width: 2px; /*边框宽度为2px*/
+  border-color: #EF6C00; /*设置边框颜色为红色*/
+  border-style: solid; /*设置为实线*/
+  font-size: 14px; /*字体14px*/
+  font-family: "microsoft yahei"; /*设置成微软雅黑作品*/
+  border-radius: 20px; /*圆角20px*/
+}
+
+.search-button {
+  width: 54px;
+  height: 36px;
+  border: none; /*去掉button默认的border*/
+  background: none; /*去掉button默认的背景颜色*/
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  position: absolute; /*绝对定位*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  top: 0;
+  right: 0;
+}
+
+.search-button .fa-search {
+  color: #EF6C00; /*搜索图标的颜色*/
+}
+
+
+.fa-shopping-cart {
+  color: #EF6C00; /*红色图标*/
+  font-size: 20px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
+}
+
+
+
+
+ .footer {
+   height: 30px;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   color: #5f5f5f;
+ }
