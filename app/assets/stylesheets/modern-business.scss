@@ -4,6 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/ghpages/LICENSE)
  */
 
+ .img-portfolio {
+     margin-bottom: 30px;
+ }
+
 .img-hover:hover {
     opacity: 0.8;
 }
@@ -13,15 +17,16 @@
 header.carousel .item,
 header.carousel .item.active,
 header.carousel .carousel-inner {
-    height: 100%;
-    /*margin-top: 25px;*/
+    height: auto;
+    margin-top: 25px;
 }
 
 header.carousel .fill {
     width: 100%;
-    height: 500px;
+    height: 300px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 /* Footer Styles */
 
@@ -43,21 +48,21 @@ header.carousel .fill {
   font-style: italic;
 }
 footer {
-    margin: 50px 0;
+    margin: 50px;
 }
 
 /* Responsive Styles */
 
-@media(maxwidth:991px) {
+@media(max-width:991px) {
     .customerimg,
     .imgrelated {
-        marginbottom: 30px;
+        margin-bottom: 30px;
     }
 }
 
-@media(maxwidth:767px) {
+@media(max-width:767px) {
     .imgportfolio {
-        marginbottom: 15px;
+        margin-bottom: 15px;
     }
 
     header.carousel .carousel {
