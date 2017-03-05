@@ -84,6 +84,17 @@ nav {
     margin: 0;
 }
 
+#cssmenu > ul > li > ul >li > a:hover,
+#cssmenu ul li ul li a.active,
+#cssmenu ul li ul li a.active:hover,
+#cssmenu ul li ul li a.has-sub.active:hover {
+    background: #448D00!important;
+    -webkit-transition: background 0.3s ease;
+    -ms-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+
 #cssmenu,
 #cssmenu #head-mobile,
 #cssmenu ul,
