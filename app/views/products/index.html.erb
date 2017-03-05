@@ -1,0 +1,29 @@
+
+<div class="container-product">
+
+  <p><a href="/">首页</a>><a href="/products">周边</a></p>
+  <hr>
+
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+        <div class="thumbnail thumbnail-product">
+          <span style="margin:0;"><%= image_tag(product.image.thumb.url) %></span>
+          <br>
+          <p><strong><%= product.title %></strong></p>
+          <p>¥ <%= product.price %></p>
+        </div>
+        <% else %>
+        <div class="thumbnail thumbnail-product">
+          <span style="margin:0;"><%= image_tag("http://placehold.it/200x200&text=No Pic") %></span>
+          <br>
+          <p><strong><%= product.title %></strong></p>
+          <p>¥ <%= product.price %></p>
+        </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

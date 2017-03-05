@@ -1,0 +1,75 @@
+<div class="show-page" style="margin:50px 150px 50px 150px;">
+  <div class="show-option">
+      <%= link_to("首页", "/") %> > <%= link_to("全部模板", url_for(:back)) %>
+  </div>
+
+  <h2><%= @template.title %></h2>
+  <div class="row template-show">
+    <!-- Start of template show left part -->
+    <div class="col-md-10">
+      <!-- Start of product card -->
+      <div class="row card">
+        <!-- Start of left card -->
+        <div class="preview col-md-7 " style="padding:20px 20px 20px;">
+          <div class="preview-pic border" style="text-align: center; width: 405px;" >
+            <% if @photos.present? %>
+              <%= image_tag @photos.first.image.medium.url %>
+            <% else %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+            <% end %>
+          </div>
+          <div class="row" style="padding: 0;">
+          <ul class="intro-preview">
+           <% if @photos.present? %>
+             <% @photos.each_with_index do |p, index| %>
+               <% if index == 0 %>
+                 <li class="border intro-preview-item intro-preview-activeItem fl">
+               <% else %>
+                 <li class="border intro-preview-item fl">
+               <% end %>
+               <% if index < 5 %>
+                 <%= image_tag p.image.medium.url %>
+               <% end %>
+               </li>
+             <% end %>
+           <% end %>
+         </ul>
+       </div>
+
+        </div>
+
+
+
+        <!-- End of left card -->
+        <!-- Start of right cart -->
+        <div class="details col-md-5" style="padding:20px 20px 20px;">
+          <div> 商品信息</div>
+          <div> 商品描述 :<%= simple_format(@template.description) %></div>
+          <div> 商品版本 : <%= @template.version %> </div>
+          <div> 商品比例 : <%= @template.proportion %> </div>
+          <div>￥ <%= @template.price %></div>
+
+          <div class="action">
+              <%= link_to("加入购物车", add_to_cart_template_path(@template), class: "add-to-cart btn btn-lg",:method => :post) %>
+          </div>
+        </div>
+        <!-- End of right card -->
+      </div>
+      <!-- End of product card -->
+      <!-- Start of product description & reviews -->
+      <div class="row">
+        <div class="col-md-12 product-description">
+
+        </div>
+      </div>
+      <!-- End of product description & reviews -->
+    </div>
+    <!-- End of template show left part -->
+    <!-- Start of template show right part -->
+    <div class="col-md-2 proposal-product">
+      </div>
+        热门商品
+      </div>
+    </div>
+    <!-- End of template show right part -->
+</div>

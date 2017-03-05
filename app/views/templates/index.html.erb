@@ -1,0 +1,27 @@
+<div class="container-template">
+  <p><a href="/">首页</a>><a href="/templates">模板</a></p>
+  <hr>
+
+  <% @templates.each do |template| %>
+    <div class="col-xs-6 col-md-3" >
+      <%= link_to template_path(template) do %>
+        <% if template.templatephotos.present? %>
+        <div class="thumbnail thumbnail-product">
+          <%= image_tag(template.templatephotos[0].image.thumb.url) %>
+
+          <p><strong><%= template.title %></strong></p>
+          <p>¥ <%= template.price %></p>
+          </div>
+        <% else %>
+        <div class="thumbnail thumbnail-product">
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+
+          <p><strong><%= template.title %></strong></p>
+          <p>¥ <%= template.price %></p>
+        </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

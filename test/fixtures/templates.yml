@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  description: MyText
+  price: 1
+  version: MyString
+  proportion: MyString
+
+two:
+  title: 
+  description: MyText
+  price: 1
+  version: MyString
+  proportion: MyString

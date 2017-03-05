@@ -1,0 +1,69 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><img src='https://ww1.sinaimg.cn/large/006tNbRwgy1fd0qqa00zzj306u06imya.jpg' >一宏工作室</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="Active">
+          <%= link_to("首页", root_path) %>
+        </li>
+        <li class="Active">
+          <%= link_to("模板", templates_path) %>
+        </li>
+        <li class="Active">
+          <%= link_to("定制", customize_index_path) %>
+        </li>
+        <li class="Active">
+          <%= link_to("课程", products_path) %>
+        </li>
+      <div class="t2">
+                    <!-- search start-->
+                    <%= form_tag templates_path, :method => "get" do %>
+                        <div id="imaginary_container">
+                            <div class="input-group stylish-input-group">
+                                <%= text_field_tag :search, params[:search], placeholder: "搜索", class: "form-control"%>
+                                <span class="input-group-addon">
+                                    <button type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+        </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+              购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count + current_cart.templates.count %> )
+          <% end %>
+        </li>
+        <% if !current_user %>
+          <li><%= link_to("注册", new_user_registration_path) %> </li>
+          <li><%= link_to(content_tag(:i, "登入",class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Hi!, <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+              <li> <%= link_to("Admin后台", admin_products_path) %></li>
+              <% end %>
+              <li> <%= link_to("我的订单", account_orders_path) %></li>
+              <li class="divider"></li>
+              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
