@@ -5,19 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-u = User.new
-u.email = "1@1"           # 可以改成自己的 email
 
-u.password = "111111"                # 最少要六码
 
-u.password_confirmation = "111111"   # 最少要六码
-
-u.is_admin = true
-u.save
-
-Product.create!(title: "香蕉",
-                 description: "香脆可口",
-                 price: 3,
+ Product.create!(title: "手机",
+                 description: "超级好用",
+                 price: 2000,
                  quantity: 100,
-                 image:open("https://ooo.0o0.ooo/2017/03/05/58bbc173c549a.jpg")
+                 image:open("http://f2c.139shop.com/wareimg/0-0/res/goods/JPG/201511/20/28146.JPG")
                  )
