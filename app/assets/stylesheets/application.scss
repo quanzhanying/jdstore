@@ -39,6 +39,12 @@
         border-radius: 0; //圆角为0
     }
 }
+
+dropdown-menu{
+  color: #333;
+  background-color: #333;
+  border-color: #333;
+}
 //**导航**//
 .container1 {
     width: 100%;
@@ -207,7 +213,7 @@ nav {
     border-bottom: 1px solid rgba(150,150,150,0.15);
     padding: 11px 15px;
     width: 170px;
-    font-size: 12px;
+    font-size: 15px;
     text-decoration: none;
     color: #ddd;
     font-weight: 400;
