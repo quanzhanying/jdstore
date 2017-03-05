@@ -19,6 +19,7 @@
  @import "font-awesome";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+div.container{margin-left:auto;margin-right:auto;width:100%; }
 
 /*footer固定在底部*/
 html{
@@ -29,7 +30,7 @@ body{
   min-height: 100%;
   position: relative;
   padding-bottom: 100px;
-  
+
 }
 .footer{
   position: absolute;
