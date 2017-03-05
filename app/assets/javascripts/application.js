@@ -16,6 +16,7 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/carousel
+//= require bootstrap-sprockets
 //= require_tree .
 
 // 预览图选择
