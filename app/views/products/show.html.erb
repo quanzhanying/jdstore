@@ -1,4 +1,5 @@
 <div class="row">
+
   <div class="col-md-6">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.url, class: "thumbnail") %>
@@ -6,6 +7,7 @@
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
+
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">

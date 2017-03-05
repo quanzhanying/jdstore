@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
     def index
       @recommended_products = Product.where(is_recommended: true)
       if params['category'].blank?
-        @products = Product.all
+        @products = Product.where(is_recommended: false)
       else
         @category_id = Category.find_by_name(params[:category]).id
         @products = Product.where(category_id: @category_id)
