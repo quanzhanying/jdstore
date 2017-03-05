@@ -1,41 +1,12 @@
 <!--w3school-->
-<footer class="text-center">
+<footer class="text-center" style="margin-top: 0px">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>
+  <p>我的地址：<a href="http://liubingjie-blog.logdown.com/" data-toggle="tooltip" title="Visit w3schools">liubingjie-blog</a></p>
 </footer>
 
-<script>
-$(document).ready(function(){
-    // Initialize Tooltip
-    $('[data-toggle="tooltip"]').tooltip();
-    // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
 
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function(){
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });    
-
-})
-</script>
 <!--作业页脚-->
 <!--footer class="container" style="margin-top: 100px;">
     <p class="text-center">copyright ©2016 JDStore

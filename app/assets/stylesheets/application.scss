@@ -118,12 +118,16 @@
 .sn_section {
  margin-top: 26px;
 }
+.row {
+  margin-top: 60px;
+}
 .g-row {
  width: 1090px;
  margin-right: auto;
  margin-left: auto;
  position: relative;
 }
+
 .g-row:after,
 .g-row:before {
  content: " ";
