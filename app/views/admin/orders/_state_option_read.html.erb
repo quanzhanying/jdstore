@@ -1,0 +1,16 @@
+<div style="padding:10px; float:right">
+  <% case order.aasm_state %>
+    <% when "order_placed" %>
+      订单已提交
+    <% when "paid" %>
+      已支付
+    <% when "shipping" %>
+      已出货
+    <% when "shipped" %>
+      已到货
+    <% when "order_cancelled" %>
+      订单已取消
+    <% when "good_returned" %>
+      已退货
+  <% end %>
+</div>

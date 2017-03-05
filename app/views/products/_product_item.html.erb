@@ -1,0 +1,36 @@
+<div class=" col-md-3 col-xs-6 box">
+  <div class="image" style="width: 200px;">
+    <%= link_to product_path(product) do %>
+      <% if product.product_photos.present? %>
+        <!-- <%#= image_tag(product.image.url, class: "thumbnail") %> -->
+          <%= image_tag(product.product_photos[0].image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="fig_p">
+    <p class="title_1"><%= link_to(product.title, product_path(product)) %> </p>
+    <p class="style_p"><i class="fa fa-cutlery" aria-hidden="true"></i> <%= product.style %> </p>
+    <p class="actions">
+      <span class="price">￥<%= product.price %></span>
+      <span class="pull-right">
+        <% if current_user.has_follow_dish?(product) %>
+          <%= link_to unfollow_dish_product_path(product), :method => :post do %>
+            <i class="fa fa-heart " aria-hidden="true" style="color: red"></i>
+          <% end %>
+        <% else %>
+          <%= link_to follow_dish_product_path(product), :method => :post do %>
+              <i class="fa fa-heart-o " aria-hidden="true" style="color: red"></i>
+          <% end %>
+        <% end %>
+        <% if product.quantity.present? && product.quantity > 0 %>
+          <%= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-lg"), add_to_cart_product_path(product), :method => :post) %>
+        <% else %>
+          已售馨
+        <% end %>
+      </span>
+    </p>
+  </div>
+</div>

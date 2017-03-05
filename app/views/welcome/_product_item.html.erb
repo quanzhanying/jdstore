@@ -1,0 +1,13 @@
+<div class="col-md-4" >
+       <div class="responsive">
+         <div class="image">
+           <%= link_to product_path(product) do %>
+             <% if product.product_photos.present? %>
+               <%= image_tag(product.product_photos[0].image.rectangel.url) %>
+             <% else %>
+               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+             <% end %>
+           <% end %>
+         </div>
+       </div>
+</div>

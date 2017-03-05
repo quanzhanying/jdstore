@@ -1,0 +1,28 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="group">
+    <%= f.input :title, :label => "品名" %>
+  </div>
+  <div class="group">
+    <%= f.input :description, :label => "特色介绍" %>
+  </div>
+  <div class="group">
+    <%= f.input :style, :collection => ['法国风味', '意大利风味', '南洋风味', '综合'],
+                          :label => "所属菜系" %>
+  </div>
+  <div class="group">
+    <%= f.input :quantity , :label => "数量" %>
+  </div>
+  <div class="group">
+    <%= f.input :price, :label => "单价"  %>
+  </div>
+
+  <div class="group">
+    <%= f.input :special, :label => "特色菜"  %>
+  </div>
+  <div class="group">
+    <%#= f.input :image, as: :file %>
+    <%= f.label :image %>
+    <%= f.file_field :image, :multiple => true, name: "product_photos[image][]" %>
+  </div>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
+<% end %>

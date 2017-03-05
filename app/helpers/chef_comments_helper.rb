@@ -1,0 +1,2 @@
+module ChefCommentsHelper
+end

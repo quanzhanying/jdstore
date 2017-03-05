@@ -1,0 +1,57 @@
+<div class=" col-md-3 box">
+  <div class="image" style="width: 200px; margin-bottom: -20px;">
+    <%= link_to chef_path(chef) do %>
+      <% if chef.photos.present? %>
+        <%#= image_tag(chef.image.thumb.url) %>
+        <%= image_tag(chef.photos[0].image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="fig">
+    <p class="title_1">
+        <%= link_to chef_path(chef) do %>
+          <%= chef.name %> <%= chef.city %>
+        <% end %>
+    </p>
+    <p>
+      <i class="fa fa-cutlery" aria-hidden="true"></i> <%= chef.style %>
+    </p>
+    <p class="actions">
+      <span class="pull-left">
+        <% if chef.chef_level_id == 1 %>
+          <img src='<%= image_url 'gold-medal.png' %>'>
+        <% elsif chef.chef_level_id == 2 %>
+          <img src='<%= image_url 'silver-medal.png' %>'>
+        <% elsif chef.chef_level_id == 3 %>
+          <img src='<%= image_url 'bronze-medal.png' %>'>
+        <% end %>
+      </span>
+      <!-- <span class="pull-right">
+        <% if true %>
+          <%#= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-lg"), add_to_cart_chef_path(chef), :method => :post) %>
+        <% else %>
+          档期已满
+        <% end %>
+      </span> -->
+      <span class="pull-right">
+        <% if current_user %>
+          <% if current_user.has_follow?(chef) %>
+            <%= link_to unfollow_chef_path(chef), :method => :post do %>
+              <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" ></i>
+            <% end %>
+          <% else %>
+            <%= link_to follow_chef_path(chef), :method => :post do %>
+              <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" ></i>
+            <% end %>
+          <% end %>
+        <% else %>
+          <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" ></i>
+        <% end %>
+        <%= chef.followers.count %>
+      </span>
+    </p>
+  </div>
+</div>

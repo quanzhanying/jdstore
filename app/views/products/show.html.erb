@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <% if @product.image.present? %>
+        <%#= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %> -->
+      <% if @product_photos.present? %>
+        <% @product_photos.each_with_index do |p, index| %>
+          <%= image_tag p.image.medium.url %>
+        <% end %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2><%= @product.title %></h2>
+      <div style="height: 100px;">
+        <p>
+          <%= simple_format(@product.description) %>
+        </p>
+      </div>
+      <div class="product-style">
+        <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>
+        <%= @product.style %>
+      </div>
+      <div class="product-qun">
+        <i class="fa fa-bitbucket fa-lg" aria-hidden="true"></i> 库存 <%= @product.quantity %> 份
+      </div>
+      <div class="product-price">
+        <i class="fa fa-money fa-lg" aria-hidden="true"></i> ￥ <%= @product.price %>
+      </div>
+      <div>
+        <% if current_user && !current_user.admin? %>
+        <% if current_user.has_follow_dish?(@product) %>
+          <%= link_to unfollow_dish_product_path(@product), :method => :post do %>
+            <i class="like btn btn-default fa fa-heart" aria-hidden="true" ></i>
+          <% end %>
+        <% else %>
+          <%= link_to follow_dish_product_path(@product), :method => :post do %>
+              <i class="unlike btn btn-default fa fa-heart-o" aria-hidden="true" ></i>
+          <% end %>
+        <% end %>
+          <% if !current_cart.chef_id.present? || Chef.find(current_cart.chef_id).style == @product.style %>
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "add-to-cart btn btn-default") %>
+            <% else %>
+              已销售一空，无法购买
+            <% end %>
+          <% else %>
+            <%= link_to("选择私厨", chefs_path(style: @product.style), :class => "add-to-cart btn btn-default") %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

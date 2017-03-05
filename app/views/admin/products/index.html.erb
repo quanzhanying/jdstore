@@ -1,0 +1,61 @@
+<h2> 菜品列表 </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增菜品", new_admin_product_path, class: "but btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220"></th>
+      <th>品名</th>
+      <th>所属菜系</th>
+      <th>单价</th>
+      <th>数量</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.id %>
+        </td>
+        <td>
+          <%= link_to product_path(product) do %>
+            <% if product.product_photos.present? %>
+              <%#= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <%= image_tag(product.product_photos[0].image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= product.title %>
+        </td>
+        <td>
+          <%= product.style %>
+        </td>
+        <td>
+          <%= product.price %>
+        </td>
+        <td>
+          <%= product.quantity %>
+        </td>
+        <td>
+          <%= link_to edit_admin_product_path(product), class: 'btn btn-info btn-xs' do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+          <% if product.is_hidden %>
+            <%= link_to publish_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
+          <% else %>
+            <%= link_to hidden_admin_product_path(product), :method => :post, :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
+          <% end %>
+          <%= link_to admin_product_path(product), :method => :delete, :data => {:confirm => "Are your sure?" }, class: 'btn btn-danger btn-xs' do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
