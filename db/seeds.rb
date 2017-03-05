@@ -15,9 +15,9 @@ u.password_confirmation = "111111"   # 最少要六码
 u.is_admin = true
 u.save
 
-Product.create!(title: "苹果",
+Product.create!(title: "香蕉",
                  description: "香脆可口",
-                 price: 2,
-                 quantity: 10,
+                 price: 3,
+                 quantity: 100,
                  image:open("https://ooo.0o0.ooo/2017/03/05/58bbc173c549a.jpg")
                  )
