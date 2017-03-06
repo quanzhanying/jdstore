@@ -15,14 +15,12 @@ u.save
 
 
 
-Product.create!(title:"菠萝",quantity:100,price:5,kind:"fruit",
-owner:"shop1",place:"中国",image: open("https://ww2.sinaimg.cn/large/006tNc79gy1fdc0jy9l3dj30el09qt99.jpg"))
+
 
 Product.create!(title:"猕猴桃",quantity:100,price:5,kind:"fruit",
 owner:"shop1",place:"中国",image: open("https://ww3.sinaimg.cn/large/006tNc79gy1fdc0tkigwfj30el09qdft.jpg"))
 
-#Product.create!(title:"冰葡萄",quantity:100,price:5,kind:"fruit",
-#owner:"shop1",place:"中国海南",image: open("https://ww2.sinaimg.cn/large/006tNc79gy1fdc0uhdxzij30em09qaae.jpg"))
+
 
 Product.create!(title:"水果沙拉",quantity:100,price:10,kind:"salad",
 owner:"shop1",place:"中国",image: open("https://ww3.sinaimg.cn/large/006tNc79gy1fdc0vrd3pqj30em09qjrq.jpg"))
