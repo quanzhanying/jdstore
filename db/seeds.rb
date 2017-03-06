@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+ Product.create!(title: "手机",
+                 description: "超级好用",
+                 price: 2000,
+                 quantity: 100,
+                 image:open("http://f2c.139shop.com/wareimg/0-0/res/goods/JPG/201511/20/28146.JPG")
+                 )
+
+Product.create!(title: "电脑",
+        description: "超级好用",
+        price: 7000,
+        quantity: 50,
+        image:open("http://pic002.cnblogs.com/img/anlyren/201002/2010022311195093.jpg")
+                                  )
