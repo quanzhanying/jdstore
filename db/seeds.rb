@@ -21,7 +21,6 @@ Product.create!(title:"猕猴桃",quantity:100,price:5,kind:"fruit",
 owner:"shop1",place:"中国",image: open("http://ww3.sinaimg.cn/large/006tNc79gy1fdc0tkigwfj30el09qdft.jpg"))
 
 
-
 Product.create!(title:"水果沙拉",quantity:100,price:10,kind:"salad",
 owner:"shop1",place:"中国",image: open("http://ww3.sinaimg.cn/large/006tNc79gy1fdc0vrd3pqj30em09qjrq.jpg"))
 
