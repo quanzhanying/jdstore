@@ -93,6 +93,7 @@ Rails.application.configure do
       domain: "heroku.com",
       authentication: "login",
       enable_starttls_auto: true,
+      openssl_verify_mode:'none',
       user_name: ENV["SEND_CLOUD_USER_NAME"],
       password: ENV["SEND_CLOUD_USER_KEY"]
       }
