@@ -40,7 +40,7 @@ gem 'aasm'
 
 
 gem 'figaro'
-gem 'fog'
+gem "fog"
 gem "fog-aws"
 
 group :development, :test do
