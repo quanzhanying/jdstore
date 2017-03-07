@@ -41,11 +41,10 @@
               <%= f.select :quantity, [1,2,3,4,5] %>
               <%= f.submit "更新", data: { disable_with: "Submitting..." } %>
               <% end %>
-
             </td>
             <td>
               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-              <i.class="fa fa-trash"></i>
+              <i class="fa fa-trash"></i>
               <% end %>
             </td>
           </tr>
