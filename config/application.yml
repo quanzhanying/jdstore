@@ -1,0 +1,23 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+production:
+  AWS_ACCESS_KEY_ID: "AKIAJEOAUEO3OJ2MSBQA"  # 你的 Access key ID
+  AWS_SECRET_ACCESS_KEY: "m/WgAFnvvyNbYTPKqGatMoydqufY7r70tIeMn3BG"
+  AWS_REGION: "ap-northeast-1"  # 你的 S3 bucket 的 Region 位置
+  AWS_BUCKET_NAME: "xiaob-w"  # 你设定的 bucket name
+
+development:
+  AWS_ACCESS_KEY_ID: "AKIAJEOAUEO3OJ2MSBQA"  # 你的 Access key ID
+  AWS_SECRET_ACCESS_KEY: "m/WgAFnvvyNbYTPKqGatMoydqufY7r70tIeMn3BG"
+  AWS_REGION: "ap-northeast-1"  # 你的 S3 bucket 的 Region 位置
+  AWS_BUCKET_NAME: "xiaob-w"  # 你设定的 bucket name
