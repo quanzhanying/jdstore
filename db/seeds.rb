@@ -159,7 +159,7 @@ Huracán敞篷版的最大潜力，在“街道”模式下得以充分发挥，
 
 驾驶室内部精雕细琢，品质出众，每一细节的设计，都是为了让您的驾驶体验更加自然，更加畅快。", quantity: rand(0..10), price: 4290000, category: "兰博基尼", is_hidden:"false"])
 
-p6 = Product.create!([title: "HURACÁN SPYDER", parameter: "发动机：6.5L 770马力V12
+p6 = Product.create!([title: "CENTENARIO ROADSTER", parameter: "发动机：6.5L 770马力V12
 变速箱：7档ISR独立换挡杆变速箱
 长*宽*高：4924*2061*1158
 车身结构：2门2座敞篷超跑
