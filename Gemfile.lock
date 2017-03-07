@@ -116,6 +116,7 @@ GEM
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    pg (0.19.0)
     public_suffix (2.0.5)
     puma (3.7.1)
     qiniu (6.8.1)
@@ -224,6 +225,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   mini_magick
+  pg
   puma (~> 3.0)
   qiniu-rs
   rails (~> 5.0.0)
