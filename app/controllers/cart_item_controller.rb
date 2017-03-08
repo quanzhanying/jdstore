@@ -31,4 +31,3 @@ class CartItemsController < ApplicationController
     params.require(:cart_item).permit(:quantity)
   end
 end
-Contact GitHub API Training Shop Blog About
