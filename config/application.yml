@@ -12,13 +12,16 @@
 
 production:
   AWS_ACCESS_KEY_ID: "AKIAJEOAUEO3OJ2MSBQA"  # 你的 Access key ID
-  AWS_SECRET_ACCESS_KEY: "m/WgAFnvvyNbYTPKqGatMoydqufY7r70tIeMn3BG"  
+  AWS_SECRET_ACCESS_KEY: "m/WgAFnvvyNbYTPKqGatMoydqufY7r70tIeMn3BG"
   AWS_REGION: "ap-northeast-1"  # 你的 S3 bucket 的 Region 位置
   AWS_BUCKET_NAME: "xiaob-w"  # 你设定的 bucket name
-
+  SEND_CLOUD_USER_NAME: "songqzy_test_RPBDJF"  # 你的 API_USER
+  SEND_CLOUD_USER_KEY: "T5Kq6FS7sLzgTM45"  # 你的 API_KEY
 
 development:
   AWS_ACCESS_KEY_ID: "AKIAJEOAUEO3OJ2MSBQA"  # 你的 Access key ID
   AWS_SECRET_ACCESS_KEY: "m/WgAFnvvyNbYTPKqGatMoydqufY7r70tIeMn3BG"
   AWS_REGION: "ap-northeast-1"  # 你的 S3 bucket 的 Region 位置
   AWS_BUCKET_NAME: "xiaob-w"  # 你设定的 bucket name
+  SEND_CLOUD_USER_NAME: "songqzy_test_RPBDJF"  # 你的 API_USER
+  SEND_CLOUD_USER_KEY: "T5Kq6FS7sLzgTM45"  # 你的 API_KEY
