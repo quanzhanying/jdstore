@@ -11,21 +11,13 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 production:
-   qiniu_access_key: MFL7nG-EXPHHIhVHSFwFdLFw7AN6N7PsMrtOTNHy  # 你的 qiniu AccessKey
+  qiniu_access_key: MFL7nG-EXPHHIhVHSFwFdLFw7AN6N7PsMrtOTNHy  # 你的 qiniu AccessKey
+  qiniu_secret_key: Rod247wOchPTdkzvNd1AGZCjdMaE0tucq1j41JiH  # 你的 qiniu SecretKey
+  qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
+  qiniu_bucket_domain: omeb5cvpk.bkt.clouddn.com  # 你的 qiniu bucket domain
 
-   qiniu_secret_key: Rod247wOchPTdkzvNd1AGZCjdMaE0tucq1j41JiH  # 你的 qiniu SecretKey
-
-   qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
-
-   qiniu_bucket_domain: omeb5cvpk.bkt.clouddn.com  # 你的 qiniu bucket domain
-
-
-
- development:
-   qiniu_access_key: MFL7nG-EXPHHIhVHSFwFdLFw7AN6N7PsMrtOTNHy  # 你的 qiniu AccessKey
-
-   qiniu_secret_key: Rod247wOchPTdkzvNd1AGZCjdMaE0tucq1j41JiH  # 你的 qiniu SecretKey
-
-   qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
-
-   qiniu_bucket_domain: omeb5cvpk.bkt.clouddn.com  # 你的 qiniu bucket domain
+development:
+  qiniu_access_key: MFL7nG-EXPHHIhVHSFwFdLFw7AN6N7PsMrtOTNHy  # 你的 qiniu AccessKey
+  qiniu_secret_key: Rod247wOchPTdkzvNd1AGZCjdMaE0tucq1j41JiH  # 你的 qiniu SecretKey
+  qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
+  qiniu_bucket_domain: omeb5cvpk.bkt.clouddn.com  # 你的 qiniu bucket domain
