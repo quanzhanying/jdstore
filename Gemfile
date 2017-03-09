@@ -39,7 +39,6 @@ gem 'aasm'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
-gem 'fog'
 
 gem 'letter_opener', group: :development
 
