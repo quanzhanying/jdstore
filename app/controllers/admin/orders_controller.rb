@@ -23,7 +23,7 @@ def shipped
   redirect_to :back
 end
 
-def cancle
+def cancel
   @order =Order.find(params[:id])
   @order.cancel_order!
   redirect_to :back
