@@ -17,6 +17,9 @@ class OrdersController < ApplicationController
         product_list.save
       end
 
+      current_cart.clean!
+      OrderMailer.notify_order_placed(@order).deliver!
+
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
@@ -42,7 +45,7 @@ class OrdersController < ApplicationController
     @order.pay!
 
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
-  end 
+  end
 
   private
 
