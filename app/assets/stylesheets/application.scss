@@ -1,0 +1,177 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+body, input, textarea {
+    font-size: 12px;
+    font-family: Arial,Verdana,"\5b8b\4f53";
+}
+
+body{
+  color: #444;
+  background: #fff;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+a{
+  color:#008842;
+
+}
+.site-nav{
+  z-index: 99;
+  position: relative;
+  width: auto;
+  height: 30px;
+  background: #f7f9f8;
+  color: #008842;
+}
+.site-nav a{
+  color: #008842;
+}
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+.fl{
+  float: left;
+  margin-left: -10px;
+}
+li{
+  list-style: none;
+}
+.site-nav .fl li{
+  float: left;
+  line-height: 30px;
+  margin-right: 5px;
+}
+.sity-nav .city{
+  position: relative;
+  color: #008842;
+
+}
+
+.fr{
+  float: right;
+  margin-right: 50px;
+}
+.site-nav .fr li{
+  position: relative;
+  float: right;
+  line-height: 30px;
+  padding: 0 10px;
+  text-align: center;
+}
+.site-nav .myzhenguo .dropdown-menu li{
+  text-align: left!important;
+  width: 150px;
+}
+
+.site-nav .dropdown li{
+  text-align: left;
+  width: 150px;
+}
+ul, ol{
+  list-style: none;
+  list-style-type: none;
+}
+
+.thumbnail {
+  display: inline;
+  padding: 4px;
+  transition: border 0.2s;
+}
+
+.alert {
+  margin-top:40px;
+}
+
+
+.footer{
+  zoom: 1;
+  clear: both;
+  position: relative;
+  padding-bottom: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+.footer .wrap{
+  margin: 50px auto 0;
+}
+
+.footer dl{
+  width: 190px;
+  float: left;
+  margin-left: 50px;
+  display: inline;
+}
+
+.footer .col1 dt{
+  background-position: 0 0;
+
+}
+.footer .col2 dt{
+  background-position: 0 -23px;
+}
+.footer .col3 dt{
+  background-position: 0 -46px;
+}
+.footer .col4 dt{
+  background-position: 0 -69px;
+}
+.footer .col5 dt{
+  background-position: 0 -96px;
+}
+
+
+.footer dl dt{
+  height: 23px;
+  line-height: 23px;
+  background: url(http://static01.yiguo.com/www/images/footer_icon.png) no-repeat;
+  font-size: 14px;
+  text-indent:40px;
+}
+.footer dl dd{
+  border-left: 1px dashed #A8A8A8;
+  padding-left: 20px;
+  height: 110px;
+  min-height: 110px;
+  margin: 15px 0 0 13px;
+}
+
+.footer dl dd a{
+  color: #575556;
+  line-height: 22px;
+
+}
+a{
+  text-decoration: none;
+  outline: none;
+}
+.footer .service{
+  clear: both;
+  text-align: center;
+  padding: 60px 0 20px;
+  color: #008842;
+  font-size: 14px;
+}
+.footer .copyright{
+  clear: both;
+  color: #717171;
+  text-align: center;
+  line-height: 22px;
+}

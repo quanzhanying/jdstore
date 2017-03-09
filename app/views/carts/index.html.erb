@@ -1,0 +1,68 @@
+
+
+
+
+	<div class="container">
+
+		<section id="cart">
+      <% current_cart.cart_items.each do |cart_item| %>
+			<article class="product">
+				<header>
+					<a class="remove">
+            <%= link_to product_path(cart_item.product) do  %>
+            <% if cart_item.product.image.present? %>
+            <%= image_tag(cart_item.product.image.thumb.url)%>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <% end %>
+
+            <% end %>
+
+
+						<h3><%= link_to("删除此商品", cart_item_path(cart_item.product_id),method: :delete) %></h3>
+					</a>
+				</header>
+
+				<div class="content">
+					<h1><%= link_to(cart_item.product.title, product_path(cart_item.product))%></h1>
+					<%= link_to(cart_item.product.description, product_path(cart_item.product))%>
+				</div>
+
+				<footer class="content">
+
+
+
+      <span class="qt-minus"><%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), method: :post) %></span>
+        <span class="qt"><%= cart_item.quantity %>
+        </span>
+      <span class="qt-plus"><%= link_to("+", add_quantity_cart_item_path(cart_item.product_id),method: :post) %></span>
+
+
+					<h2 class="full-price">
+						￥<%= cart_item.product.price * cart_item.quantity  %>
+					</h2>
+
+					<h2 class="price">
+						￥<%= cart_item.product.price %>
+					</h2>
+
+				</footer>
+			</article>
+
+      <% end %>
+		</section>
+
+	</div>
+
+	<footer id="site-footer">
+		<div class="container clearfix">
+			<div class="left">
+				<h2 class="subtotal">小计: ￥<span><%= render_cart_total_price(current_cart) %></span></h2>
+				<h3 class="shipping">邮费: <span>包邮</span></h3>
+			</div>
+			<div class="right">
+				<h1 class="total">总计: ￥<span><%= render_cart_total_price(current_cart) %></span></h1>
+          <%= link_to("确认结账",checkout_carts_path, method: :post, class: "btn") %>
+			</div>
+		</div>
+	</footer>

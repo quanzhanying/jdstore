@@ -1,0 +1,413 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+// 头部-2
+.affix{
+  top:0;
+}
+
+.header{
+  z-index: 99;
+  background: white;
+  margin-left: -15px;
+  margin-right: -15px;
+
+}
+.clearfix{
+  display: block;
+}
+.header .wrap{
+  height: 58px;
+}
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+.logo{
+  float: left;
+  width: 280px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.wrap .logo .material-icons{
+  font-size: 58px;
+}
+
+.logo i{
+  vertical-align: middle;
+}
+
+.logo span{
+  display: inline-block;
+  margin-top: 5px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+
+.logo a{
+  display: block;
+  width: 145px;
+  height: 58px;
+  font-size: 20px
+}
+
+// 搜索开始
+
+.search{
+  float: left;
+  width: 528px;
+}
+
+.search .search-input {
+  float: left;
+  width: 425px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 10px;
+  border: 1px solid #008842;
+  background: white;
+  margin-top:15px;
+}
+
+input{
+  vertical-align: middle;
+}
+input, button, select,{
+  outline: none;
+}
+
+.search .search-btn {
+  float: left;
+  display: block;
+  width: 81px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  background: #008842;
+  margin-top:14px;
+}
+
+// 购物车
+.header .shopping-cart{
+  float: right;
+}
+.shopping-cart{
+  margin-top:15px;
+  z-index: 88;
+  float: right;
+  position: relative;
+  width: 170px;
+  height: 28px;
+  margin-right: 50px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #008842;
+  background: transparent;
+  cursor:pointer;
+  color: #008842;
+}
+
+.shopping-cart i{
+  vertical-align: middle;
+}
+
+.shopping-cart span{
+  vertical-align: middle;
+  display: inline-block;
+}
+.shopping-btn .cartname{
+  color: #008842;
+  vertical-align: middle;
+}
+dl{
+  display: block;
+}
+.shopping-btn{
+  width: 170px;
+  height: 28px;
+  padding: 6px 0;
+  line-height: 28px;
+  text-align: center;
+  font-size: 25px;
+  border: 1px solid #008842;
+  background: #fff;
+  cursor:pointer;
+}
+.shopping-btn a{
+  display: block;
+  color: #008842;
+}
+a{
+  text-decoration: none;
+  outline: none;
+}
+
+// 轮播广告nav
+.header-nav{
+  // z-index: 7;
+  position: relative;
+}
+.wrap{
+
+  width: 1200px;
+  margin: 0 auto;
+}
+.catalogs{
+
+  float: left;
+  position: relative;
+  width: 180px;
+  height: 35px;
+  position: relative;
+  text-align: center;
+  background: #008842;
+}
+.catalogs .catalogstitle{
+
+  margin-top: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  font: bold 15px/16px "Microsoft YaHei";
+  color: #fff;
+  display: block;
+  height: 16px;
+
+}
+// 轮播广告
+.carousel-control.right, .carousel-control.left {
+    background: transparent;
+    color: #008842;
+    background-image: none;
+}
+
+.carousel-indicators li {
+    border-color: #008842;
+}
+
+.carousel-indicators li.active {
+    background-color: #008842;
+}
+
+.item  {
+   height: 300px;
+  max-width: 1110px;
+}
+.item img{
+  max-width: 1110px;
+
+}
+
+#myCarousel{
+  width: 1110px;
+  height: 277px;
+  z-index: -1;
+  margin: 40px auto;
+
+
+}
+
+
+// 显示头
+.wrap .goodlist{
+  width: 1100px;
+}
+
+.floor_title{
+  position: relative;
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 5px;
+}
+.floor_title h3{
+  margin-left: 30px;
+  float: left;
+  height: 32px;
+  font: bold 18px "Microsoft YaHei";
+  color: #008842;
+}
+.floor_title .keyword{
+  float: right;
+  margin-right: 50px;
+}
+
+
+
+
+
+
+
+
+
+// 这是商品显示
+.row{
+  margin-top: 20px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600,800);
+.snip1246 {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 0 5px 5px;
+  min-width: 200px;
+  max-width: 270px;
+  width: 100%;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+}
+.snip1246 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.snip1246 .img-list {
+  max-width: 100%;
+  max-height: 80%;
+  vertical-align: top;
+}
+.snip1246 img {
+  max-width: 100%;
+  vertical-align: top;
+}
+.snip1246 figcaption {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+.snip1246 h2,
+.snip1246 p {
+  margin: 0 0 5px;
+}
+.snip1246 h2 {
+  font-weight: 400;
+}
+.snip1246 p {
+  font-size: 0.8em;
+}
+.snip1246 .price {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 20px;
+  padding: 0.2em 0em;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.snip1246 .add-to-cart {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+  padding: 0.2em 0.5em;
+  border: 2px solid #008842;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+}
+.snip1246 .add-to-cart:hover {
+  background-color: #008842;
+  color: #ffffff;
+}
+.snip1246:after {
+  background-color: #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+.snip1246:hover figcaption,
+.snip1246.hover figcaption {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.snip1246:hover:after,
+.snip1246.hover:after {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 0.9;
+}
+/* Demo purposes only */
+body {
+  background-color: #212121;
+}
+
+// footerservise
+
+.footer_service{
+  background: #e0e0e0;
+  margin-top: 50px;
+  padding: 30px 0;
+}
+.footer_service .wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.footer_service .s1{
+  background-position: 0 0;
+}
+.footer_service li{
+  margin-top: -20px;
+  float: left;
+  width: 190px;
+  height: 42px;
+  margin-left: 55px;
+  padding-left: 55px;
+  background: url(http://static01.yiguo.com/www/images/footer_service_icon.png)
+              no-repeat left top;
+}
+.footer_service li b{
+  display: block;
+  padding-left: 15px;
+  color: #007f4d;
+  font: normal 18px/25px "Microsoft Yahei";
+  border-left: 1px solid #a6a6a6;
+}
+.footer_service li span{
+  display: block;
+  padding-left: 15px;
+  border-left: 1px solid #a6a6a6;
+  font-size: 12px;
+}

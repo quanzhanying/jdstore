@@ -1,0 +1,187 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- <div class="headtop " role="navigation">
+    <div class="navbar-wids">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+    <p class="navbar-text"><a href="#">欢迎来到臻果园！</a></p>
+
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">配送至：
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">北京</a></li>
+          <li><a href="#">上海</a></li>
+          <li><a href="#">广州</a></li>
+          <li><a href="#">深圳</a></li>
+        </ul>
+      </li>
+    </ul>
+
+       <ul class="nav navbar-nav navbar-right">
+         <li>
+           <li>
+             <%= link_to carts_path do %>
+             购物车 <i class=" fa fa-shopping-cart"></i>( <%= current_cart.products.count %>)
+             <% end %>
+           </li>
+           <li>
+             <%=  link_to("我的订单", account_orders_path)%>
+           </li>
+
+           <% if !current_user %>
+           <li><%= link_to("注册", new_user_registration_path,)%></li>
+           <li><%= link_to("登入", new_user_session_path)%></li>
+           <% else %>
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Hi!,<%= current_user.email %>
+               <b class="caret"></b>
+             </a>
+
+             <ul class="dropdown-menu">
+               <% if current_user.admin? %>
+               <li>
+               <%= link_to("Admin 选单", admin_products_path)%>
+             </li>
+               <% end %>
+
+               <li>
+               <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)%>
+             </li>
+             </ul>
+
+           </li>
+           <% end %>
+         </li>
+       </ul>
+     </div>
+
+    </div>
+ </div> -->
+<!-- 顶部工具栏 -->
+ <div class="site-nav">
+   <div class="wrap">
+  <ul class="fl">
+    <li>
+      <a href="/">欢迎光临臻果园！</a></li>
+    <li class="dropdown city" style="color:#008842">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#008842">配送至：
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">北京</a></li>
+        <li><a href="#">上海</a></li>
+        <li><a href="#">广州</a></li>
+        <li><a href="#">深圳</a></li>
+    </ul>
+  </li>
+  </ul>
+  <ul class="fr">
+    <li class="myzhenguo" style="color:#008842">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:#008842"><span class="glyphicon glyphicon-user" style="color:#008842"></span>我的臻果：
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+       <li>
+        <%=  link_to("我的订单", account_orders_path)%>
+        </li>
+        <li><a href="#">我的收藏</a></li>
+        <li><a href="#">我的退换货</a></li>
+      </ul>
+    </li>
+    <% if !current_user %>
+    <li id="_register" ><%= link_to("注册", new_user_registration_path,)%></li>
+    <li id="_login" ><%= link_to("登录", new_user_session_path)%></li>
+    <% else %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Hi!,<%= current_user.email %>
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <% if current_user.admin? %>
+        <li>
+         <%= link_to("Admin 选单", admin_products_path)%>
+       </li>
+        <% end %>
+       <li>
+         <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete)%>
+       </li>
+      </ul>
+    </li>
+    <% end %>
+
+  </ul>
+   </div>
+ </div>
+
+ <div class="header clearfix" data-spy="affix" data-offset-top="30">
+   <div class="wrap">
+     <div class="logo">
+       <a href="/" class=“line”  style="color:#008842">
+       <i class="material-icons" style="color:#008842">store</i>
+       <span class="logotitle">臻果园</span>
+     </a>
+     </div>
+     <!-- 搜索开始 -->
+     <div class="search" style="position:relative;">
+                     <div class="search-bar clearfix">
+                         <input type="text" id="keyword" name="keyword" class="search-input" value="输入商品名／编号／拼音" onfocus=" if (this.value == '输入商品名／编号／拼音') {this.value = '';this.style.color = '#000';} " onblur=" if (this.value == '') {this.value = '输入商品名／编号／拼音';this.style.color = '#999';} " style="color: rgb(153, 153, 153);">
+                         <input class="search-btn" type="submit" value="搜索">
+                     </div>
+                     <!-- <ul class="hide" id="shelper" style="display: none;"></ul>
+                     <div class="search-keywords" id="keywords">
+                         <script id="keywordstpl" type="text/x-handlebars-template">
+                             {{#KeyWords}}
+                             {{#equal IsImportant true}}
+                             <a href="{{Link}}" class="hot" target="_blank">{{Text}}</a>
+                             {{else}}
+                             <a href="{{Link}}" target="_blank">{{Text}}</a>
+                             {{/equal}}
+                             {{/KeyWords}}
+                         </script>
+                     </div> -->
+                 </div>
+          <!-- 购物车 -->
+
+
+          <div class="shopping-cart">
+            <%= link_to carts_path class: "shopping-btn"  do %>
+            <span class="cartname" style="color:#008842">购物车</span>
+             <i class=" fa fa-shopping-cart" style="color:#008842"></i>( <%= current_cart.products.count %>)
+            <% end %>
+
+
+
+          <!-- <dl>
+            <dt class="shopping-btn">
+              <a href="http://cart.yiguo.com/">
+              <span class="totleNum"><b>0</b></span>
+              <b class="totlePrice">0.0</b>
+            </a></dt>
+              <dd class="shopping-list">
+                 <div class="spacer"></div>
+                 <div class="nogoods" style="display:none;">
+                   购物车中还没有商品，赶紧选购吧！
+                  </div>
+               <div class="goods">
+                 <p id="deliveryType" style="display:none;">满100元包邮！</p>
+                 <ul></ul>
+                 <div class="price-total">
+                     <div><span class="totleNum">共<b>0</b>件商品</span><span>共计<b class="totlePrice">¥0.00</b></span></div>
+                     <div><a href="http://cart.yiguo.com/" class="settleup">去购物车</a></div>
+                 </div>
+             </div>
+         </dd>
+     </dl> -->
+   </div>
+   </div>
+ </div>
