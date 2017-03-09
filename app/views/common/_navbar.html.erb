@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="NavCol">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+       <!-- Navbar design branchname "Navbar" -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--  -->
+            <a class="navbar-brand" href="/">Exchange Lives</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <%= link_to("可选人生", products_path) %>
+            </li>
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <%= link_to carts_path do %>
+                      你所好奇的人生 <i class="fa fa-shopping-cart"> </i> (<%= current_cart.products.count %>)
+                  <% end %>
+              </li>
+                <% if !current_user %>
+                  <li><%= link_to("注册", new_user_registration_path) %></li>
+                      <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <% else %>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          Hi!, <%= current_user.email %>
+                          <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <% if current_user.admin? %>
+                          <li>
+                            <%= link_to("为顾客编辑人生体验", admin_products_path) %>
+                          </li>
+                        <% end %>
+                        <li>
+                          <%= link_to("你预定的人生体验", account_orders_path ) %>
+                        </li>
+                          <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                      </ul>
+                  </li>
+                <% end %>
+                <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
