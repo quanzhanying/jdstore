@@ -1,6 +1,3 @@
-require 'carrierwave/storage/abstract'
-require 'carrierwave/storage/file'
-require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
   config.storage             = :qiniu
   config.qiniu_access_key    = ENV["qiniu_access_key"]
