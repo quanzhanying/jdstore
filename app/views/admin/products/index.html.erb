@@ -35,6 +35,7 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Destroy", admin_product_path(product), method: :delete, data: { confirm: "Are your sure?" }) %>
         </td>
       </tr>
     <% end %>

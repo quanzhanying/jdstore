@@ -27,6 +27,13 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product Deleted"
+    redirect_to admin_products_path
+  end
+  
   def create
     @product = Product.new(product_params)
 
