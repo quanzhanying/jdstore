@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin?
-    if current_user.email.is_admin = true
-    end
+    is_admin
+  
   end
 
 end
