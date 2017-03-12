@@ -1,0 +1,62 @@
+<div class="col-md-12">
+  <h3 style="text-align:center;
+  background:#dddddd;
+  border:3px solid #a1a1a1;
+  padding:10px 40px;">众筹列表</h3>
+
+  <div class="new product">
+    <%= link_to("发起新众筹", new_admin_product_path, class: "btn btn-primary pull-right") %>
+  </div>
+
+  <br>
+
+  <table class="table table-boldered table-striped custab" >
+    <thead>
+      <tr>
+        <!--<td>#</td>-->
+        <th>#</th>
+        <th width="220">发起众筹条目</th>
+        <td>名称</td>
+        <td>描述</td>
+        <td>库存</td>
+        <td>价格（￥）</td>
+        <td>发起日期</td>
+        <td>选项</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td>
+            <%= product.id %>
+          </td>
+
+          <td>
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+
+          <td>
+            <%= link_to(product.title, admin_product_path(product)) %>
+          </td>
+          <td><%= product.description %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.price %></td>
+          <td><%= product.created_at %></td>
+
+          <td>
+            <%= link_to edit_admin_product_path(product), class: "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
+            <%= link_to edit_admin_product_path(product), :class => "btn btn-xs  btn-danger",
+                :method => :delete, :data => { :confirm => "⚠️您确定删除吗?" } do %><i class="fa fa-trash-o"></i><% end %>
+          </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

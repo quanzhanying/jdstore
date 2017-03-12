@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>众筹网后台列表</title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="container-fluid" style="padding: 0px;">
+            <%= render "common/navbar" %>
+            <%= render "common/flashes" %>
+            <div class="row">
+              <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked" style="width: 120px; padding-top:20px; font-size: 15px;">
+                   <li class="active"> <a href="/account/products">发起众筹列表</a> </li>
+                   <li class="active"> <a href="/account/orders">支持众筹列表</a> </li>
+                </ul>
+              </div>
+
+              <div class="col-md-10">
+                <%= yield %>
+              </div>
+            </div>
+        </div>
+
+        <%= render "common/footer" %>
+    </body>
+</html>
