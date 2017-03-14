@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+    font-size: 17px;
+    line-height: 1.52947;
+    font-weight: 400;
+    letter-spacing: -.021em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    background-color: #fff;
+    color: #333;
+    font-style: normal;
+}
+
+.container {
+    font-size: 12px;
+    line-height: 1.45455;
+    font-weight: 400;
+    letter-spacing: .005em;
+    font-family: SF Pro Text,Myriad Set Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    min-width: 1024px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.container a {
+    color: #ababab;
+    text-decoration: none;
+}
+
+ .unstyled
+ {
+     list-style:none;
+ }
+
+ #search {
+     float: right;
+     margin-top: 9px;
+     width: 250px;
+ }
+
+ .search {
+     padding: 5px 0;
+     width: 230px;
+     height: 30px;
+     position: relative;
+     left: 10px;
+     float: left;
+     line-height: 22px;
+ }
+
+     .search input {
+         position: absolute;
+         width: 0px;
+         top: 9px;
+         float: Left;
+         margin-left: 210px;
+         -webkit-transition: all 0.7s ease-in-out;
+         -moz-transition: all 0.7s ease-in-out;
+         -o-transition: all 0.7s ease-in-out;
+         transition: all 0.7s ease-in-out;
+         height: 30px;
+         line-height: 18px;
+         padding: 0 2px 0 2px;
+         border-radius:6px;
+     }
+
+         .search:hover input, .search input:focus {
+             width: 200px;
+             margin-left: 0px;
+         }
+
+         .button{
+             margin: 2px 0 0 0;
+             background: none;
+             box-shadow: none;
+             border: 0;
+             color: #666666;
+             padding: 0 8px 0 1px;
+             border-left: solid 1px #ccc;
+
+         }
+
+         .button:hover{
+             border: 0;
+             box-shadow: none;
+             border-left: solid 1px #ccc;
+         }
+
+         .glyphicon-search{
+             font-size: 18px;
+         }
+
+
+ @import "font-awesome";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
