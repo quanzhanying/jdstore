@@ -1,0 +1,288 @@
+<nav class="navbar navbar-default" role="navigation">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" ><img src='<%= image_url 'grapes-3.png' %>' > 水果乡</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <!-- <#li class="active"> -->
+
+        <!-- <#/li> -->
+        <%= link_to("所有商品", products_path)%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("水果庄园", search_fruit_products_path)%>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("干果都市", search_nut_products_path)%>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav">
+      <li class="item">
+        <%= link_to("水果沙拉", search_salad_products_path)%>
+      </li>
+    </ul>
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="item">
+
+            <%= render "products/search_bar" %>
+
+        </li>
+      <li>
+
+
+        <%=link_to carts_path do %>
+        <!-- #限定用户登录后才能查看“购物车” -->
+        <% if !current_user%>
+
+        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= 0 %> )
+        <% else %>
+        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+        <% end %>
+        <% end %>
+      </li>
+    <% if !current_user %>
+    <li><a href="#" data-toggle="modal" data-target="#signup-modal">
+      <i class="fa fa-user-plus" aria-hidden="true">注册</i>
+    </a>
+  </li>
+
+
+    <li>
+      <li><a href="#" data-toggle="modal" data-target="#login-modal">
+        <span class="fa fa-sign-out" aria-hidden="true">登入</span>
+        </a>
+    </li>
+    <% else %>
+    <li class="dropdown">
+
+
+
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+       <span class="btn btn-info" style="padding:5px 20px;margin-top:-5px;">
+       <i class="fa fa-user-circle" aria-hidden="true">  </i>
+        <b class="caret"></b>
+       </span>
+
+     </a>
+
+      </a>
+      <ul class="dropdown-menu">
+        <% if current_user.admin? %>
+        <li>
+
+          <%= link_to(content_tag(:i , "Admin 选单", class: 'glyphicon glyphicon-ok-sign'),admin_products_path)%>
+        </li>
+        <% end %>
+        <li>
+          <%=link_to(content_tag(:i , "个人订单列表", class: 'fa fa-file-text-o'),account_orders_path)%>
+
+        </li>
+        <li>
+         <%= link_to(content_tag(:i, "我的收藏", class: "fa fa-star"), account_collections_path )%>
+       </li>
+        <li>
+          <%= link_to(content_tag(:i , "登出", class: 'fa fa-sign-out'),
+          destroy_user_session_path, method: :delete)%>
+
+        </li>
+
+
+
+      </ul>
+    </li>
+    <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="text-center">Sign up</h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                               :html => {:id => "sign_up_user"},
+                               :format => :json,
+                               :remote => true ) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "Email" %>
+
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, autocomplete: "off", required: true,minlength: 8, class: "form-control", placeholder: "Password(8 character minimum)" %>
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength: 8, class: "form-control", placeholder: "Repeat password" %>
+          </div>
+         <div class="input-group" style="margin-top:15px;">
+
+
+
+          <%= f.check_box :is_admin %>
+
+
+            <%= f.label :'如果想成为商家，请勾选该项' %>
+            <%= rucaptcha_image_tag(alt: 'Captcha') %>
+            <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+
+
+        </div>
+
+          <div class="form-actions">
+            <br>
+            <%= f.submit "Sign up", class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        <div class="links pull-right">
+          <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>Log in</button><br />
+          <br>
+          <div class="center-block">
+            <button class="btn btn-info btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>Forgot password?</button><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="login-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="text-center">Log in</h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                               :html => {:id => "log_in_user"},
+                               :format => :json,
+                               :remote => true ) do |f| %>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder:"Email" %>
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: "Password" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+          <div class="checkbox col-md-12" style="padding-left:1.5em;">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            <%= rucaptcha_image_tag(alt: 'Captcha') %>
+        <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+          </div>
+          <% end -%>
+
+          <div class="form-actions">
+            <br>
+            <%= f.submit "Log in", class: 'btn btn-success', id: 'login_btn' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        <div class="links pull-right">
+          <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>Sign up</button><br />
+          <br>
+          <div class="center-block">
+            <button class="btn btn-info btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>Forgot password?</button><br />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="forgot-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2>Forgot your password?</h2>
+            </div>
+            <div class="modal-body">
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name),
+                                                :html => {:id => "forgot_password_user"},
+                                                :format => :json,
+                                                :remote => true ) do |f| %>
+                    <%= devise_error_messages! %>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                      </span>
+                      <%= f.email_field :email, autofocus: true, required:true, class: "form-control", placeholder:"Email" %>
+                      <%= rucaptcha_image_tag(alt: 'Captcha') %>
+                      <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+                    </div>
+
+                  <div class="form-actions">
+                    <br>
+                    <%= f.submit "Send me reset password instructions", class: 'btn btn-success' %>
+                  </div>
+                <% end %>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <div class="links pull-right">
+                    <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>Log in</button><br />
+                    <br>
+                    <div class="center-block">
+                    <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>Sign up</button><br />
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
