@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
-
+  acts_as_list
   validates :quantity, presence: {message: "请填写商品上架数量"}
   validates :price, presence: {message: "请填写商品上架价格"}
   validates :quantity, numericality: {greater_than: -1 , message: "商品上架数量不能小于0"}

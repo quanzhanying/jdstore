@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only:[:upvote ,:collect,:discollect]
 
   def index
-    @products= Product.all
+    @products= Product.all.order('position ASC')
 
 
     #@products=  case params[:order]
