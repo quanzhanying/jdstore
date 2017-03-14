@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   resources :comments
-  devise_for :users, :controllers => { :registrations => "users/registrations" }
+  devise_for :users, :controllers => { :registrations => "users/registrations",
+  passwords: 'users/passwords' }
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root 'welcome#index'
 
@@ -68,4 +69,5 @@ namespace :account do
 
 end
 
+mount RuCaptcha::Engine => "/rucaptcha"
 end
