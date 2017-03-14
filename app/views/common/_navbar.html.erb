@@ -130,6 +130,7 @@
               <span class="glyphicon glyphicon-envelope"></span>
             </span>
             <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "Email" %>
+
           </div>
 
           <br>
@@ -157,6 +158,8 @@
 
 
             <%= f.label :'如果想成为商家，请勾选该项' %>
+            <%= rucaptcha_image_tag(alt: 'Captcha') %>
+            <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
 
 
         </div>
@@ -214,6 +217,8 @@
           <div class="checkbox col-md-12" style="padding-left:1.5em;">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
+            <%= rucaptcha_image_tag(alt: 'Captcha') %>
+        <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
           </div>
           <% end -%>
 
@@ -257,6 +262,8 @@
                         <span class="glyphicon glyphicon-envelope"></span>
                       </span>
                       <%= f.email_field :email, autofocus: true, required:true, class: "form-control", placeholder:"Email" %>
+                      <%= rucaptcha_image_tag(alt: 'Captcha') %>
+                      <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
                     </div>
 
                   <div class="form-actions">
