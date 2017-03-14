@@ -18,6 +18,7 @@
 
       </tbody>
     </table>
+
     <div class="total clearfix">
       <span class="pull-right">
       总计 <%= @order.total %> CNY</span>
@@ -44,6 +45,13 @@
         </tr>
       </tbody>
     </table>
+
+    <div class="pull-left">
+      <% if @order.order_placed? || @order.paid %>
+        <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
+      <% end %>
+    </div>
+    
     <% if !@order.is_paid? %>
     <div class="group pull-right">
       <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
