@@ -1,9 +1,13 @@
 class Admin::ProductsController < ApplicationController
   def index
      @products = Product.all
+
     end
   def new
       @product = Product.new
+   end
+    def show
+       @product = Product.find(params[:id])
     end
 
     def create
@@ -19,7 +23,13 @@ class Admin::ProductsController < ApplicationController
     def edit
        @product = Product.find(params[:id])
      end
+     def destroy
+       @product = Product.find(params[:id])
+       flash[:alert] = @product.title+" 已经被删除"
+       @product.destroy
 
+       redirect_to admin_products_path
+     end
      def update
        @product = Product.find(params[:id])
 
