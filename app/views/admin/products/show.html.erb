@@ -1,0 +1,11 @@
+<div class="col-md-12">
+  <div class="group">
+
+    <%= link_to("新产品", new_admin_product_path(@product ), class: "btn btn-default pull-right")%>
+
+  </div>
+   <h2><%= @product.title %></h2>
+   <p><%= @product.description  %></p>
+   <p><%= @product.quantity %></p>
+   <p><%= @product.price  %></p>
+</div>
