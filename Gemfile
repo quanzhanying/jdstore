@@ -46,8 +46,8 @@ gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'paperclip'
-gem 'carrierwave-qiniu'
-gem 'qiniu-rs'
+# gem 'carrierwave-qiniu'
+# gem 'qiniu-rs'
 gem 'figaro'
 gem 'devise-i18n'
 

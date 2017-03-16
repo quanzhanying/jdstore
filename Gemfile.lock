@@ -61,9 +61,6 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
-    carrierwave-qiniu (1.0.1)
-      carrierwave (~> 0)
-      qiniu (~> 6.8, >= 6.8.0)
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -84,8 +81,6 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-i18n (1.1.1)
-    domain_name (0.5.20170223)
-      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.17)
@@ -95,8 +90,6 @@ GEM
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -124,7 +117,6 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    netrc (0.11.0)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
@@ -144,15 +136,6 @@ GEM
       pry (>= 0.9.10)
     public_suffix (2.0.5)
     puma (3.7.1)
-    qiniu (6.8.1)
-      json (~> 1.8)
-      mime-types (~> 2.4, >= 2.4.0)
-      rest-client (~> 2.0, >= 2.0.0)
-      ruby-hmac (~> 0.4)
-    qiniu-rs (1.1.0)
-      json
-      mime-types
-      rest-client
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -185,11 +168,6 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rest-client (2.0.1)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    ruby-hmac (0.4.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -219,9 +197,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.2)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -242,7 +217,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave
-  carrierwave-qiniu
   coffee-rails (~> 4.2)
   devise
   devise-i18n
@@ -256,7 +230,6 @@ DEPENDENCIES
   paperclip
   pg
   puma (~> 3.0)
-  qiniu-rs
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
   simple_form
