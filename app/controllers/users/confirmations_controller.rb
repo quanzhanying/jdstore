@@ -25,7 +25,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # def after_confirmation_path_for(resource_name, resource)
   #   super(resource_name, resource)
   # end
-<<<<<<< HEAD
+
 
   prepend_before_action :valify_captcha!, only: [:create]
 
@@ -36,7 +36,6 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     end
     true
   end
-  
-=======
->>>>>>> b33bbc78e37bf4157886e848a62036337910b3dc
+
+
 end
