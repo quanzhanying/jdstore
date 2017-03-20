@@ -40,7 +40,7 @@ gem 'aasm'
 gem 'ransack'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'ratyrate'
-gem 'rucaptcha'
+
 gem 'dalli'
 gem 'acts_as_list'
 gem 'carrierwave-qiniu'
@@ -67,4 +67,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
+
 end
+gem 'rack-mini-profiler'
