@@ -39,6 +39,7 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'ransack'
 gem 'figaro'
+gem 'fog'
 
 
 group :development, :test do
