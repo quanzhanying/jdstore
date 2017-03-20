@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+ resource :topics
 root 'products#index'
+
   devise_for :users
   namespace :admin do
     resources :products
