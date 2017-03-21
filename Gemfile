@@ -32,24 +32,18 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
    # Call 'byebug' anywhere in the code to stop execution and get a debugger console
    gem 'byebug', platform: :mri
-   gem 'sqlite3','~> 1.3.11'
+   gem 'sqlite3',  group: [:development, :test]
 end
 
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
-
 gem 'carrierwave'
-
 gem 'mini_magick'
-
 gem 'letter_opener'
-
 gem 'aasm'
-
 gem 'figaro'
-
 gem 'fog'
 
 group :development do
