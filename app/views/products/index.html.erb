@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="search">
+    <%=search_form_for @search do |f|%>
+      <%=f.label "搜索商品："%>
+      <span style="line-height:25px;"><%=f.search_field :title_cont%></span>
+      <!-- <%=f.submit%> -->
+      <span class="input-group-btn" style="display:inline;">
+                <button type="submit" class="btn btn-default">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+      </span>
+    <%end%>
+    <br />
+  </div>
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
