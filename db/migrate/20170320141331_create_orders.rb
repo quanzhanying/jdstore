@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.string :billing_address
       t.string :shipping_name
       t.string :shipping_address
-      t.boolean :is_paid, default: false
+
       t.timestamps
     end
   end
