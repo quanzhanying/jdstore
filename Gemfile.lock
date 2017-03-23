@@ -52,6 +52,9 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
+    bullet (5.5.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
     carrierwave (1.0.0)
       activemodel (>= 4.0.0)
@@ -213,6 +216,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    uniform_notifier (1.10.0)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -232,6 +236,7 @@ DEPENDENCIES
   acts_as_list
   acts_as_votable (~> 0.10.0)
   bootstrap-sass
+  bullet
   byebug
   carrierwave
   carrierwave-qiniu
