@@ -9,10 +9,18 @@
 
 u = User.new
 u.email = "admin@test.com"           # 可以改成自己的 email
-
 u.password = "123456"                # 最少要六码
-
 u.password_confirmation = "123456"   # 最少要六码
-
 u.is_admin = true
 u.save
+
+u = User.new
+u.email = "cltatest@126.com"           # 可以改成自己的 email
+u.password = "123456"                # 最少要六码
+u.password_confirmation = "123456"   # 最少要六码
+u.is_admin = false
+u.save
+
+3.times do |i|
+  Product.create(title: "Product ##{i}", description: "A product.", quantity: "#{i+10}", price: "#{i*25}")
+end
