@@ -1,0 +1,14 @@
+
+  <div class="nav nav-item">
+    <%= form_tag search_products_path , :method => :get, :class => "products-search-form" do %>
+      <div class="input-group">
+        <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜索商品关键字...">
+
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    <% end %>
+  </div>
