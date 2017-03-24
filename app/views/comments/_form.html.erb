@@ -1,0 +1,7 @@
+<%= simple_form_for([@product, @product.comments.build]) do |f|%>
+
+  <div class="field">
+      <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <%= f.submit "Add a comment", class: "btn btn-primary" %>
+<% end %>

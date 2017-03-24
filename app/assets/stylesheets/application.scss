@@ -1,0 +1,387 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+div.container{margin-left:auto;margin-right:auto;width:100%; }
+
+/*footer固定在底部*/
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 100px;
+
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+
+  width: 100%;
+  margin-right: -20px;
+  background-color:rgba(187,222,251 ,0.6);
+}
+
+.footerTable_1foh0d8{
+  position: relative;
+  bottom: -15px;
+}
+
+/*搜索栏样式*/
+
+.nav.nav-item{
+  width: 450px;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+
+
+/*navbar样式*/
+.navbar-brand>img{
+  display: inline-block;
+  margin-right: 10px;
+
+}
+.navbar{
+  background-color: rgba(202, 209, 166,0.4);
+  margin-left: -15px;
+  margin-right: -15px;
+  border-radius: 0px;
+
+}
+
+.navbar-nav
+{color: #AA6539;
+}
+
+.navbar-default
+{
+  border-color: transparent;//边框颜色
+}
+
+.navbar-default .navbar-brand{
+   color: #EF6c00;//字体颜色
+   padding: 10px 15px;//软垫填充上下10px,左右15px
+   line-height: 30px;//文字行高
+   font-size: 1.6em;
+  font-family:cursive;
+
+ }
+/*navbar字体样式*/
+ .navbar-nav .item:hover,
+ .navbar-nav .item:focus{
+   font-style:normal;
+
+
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #6f9ac7;//鼠标放在链接上的文字颜色
+  //鼠标放置在链接上的背景颜色，这里设为透明
+   background-color: rgba(178,235,242 ,1);
+   border-radius: 5px;
+   color: red;
+ }
+
+ .navbar-default .navbar-nav>li>a:hover,
+ .navbar-default .navbar-nav>li>a:focus {
+
+   background-color: rgba(178,235,242 ,1);//设定鼠标停留在链接时的背景色
+   border-radius:5px;//设定边框的圆角
+
+ }
+
+ .navbar-default .navbar-nav>li>a:active,
+ .navbar-default .navbar-nav>li>a:visited {
+    color:#6f9ac7;
+ }
+
+
+
+
+
+
+/*修改注册／登录按钮的样式*/
+ .navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;//点击注册，邮箱，登录时的背景色
+    color: #212121;
+}
+
+ /*.navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: black;
+   background-color: #FFE0B2;
+ }*/
+
+
+ /****** LOGIN MODAL ******/
+ .loginmodal-container {
+   padding: 30px;
+   max-width: 350px;
+   width: 100% !important;
+   background-color: #F7F7F7;
+   margin: 0 auto;
+   border-radius: 2px;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   font-family: roboto;
+ }
+
+ .loginmodal-container h1 {
+   text-align: center;
+   font-size: 1.8em;
+   font-family: roboto;
+ }
+
+ .loginmodal-container input[type=submit] {
+   width: 100%;
+   display: block;
+   margin-bottom: 10px;
+   position: relative;
+ }
+
+ .loginmodal-container input[type=text], input[type=password] {
+   height: 44px;
+   font-size: 16px;
+   width: 100%;
+   margin-bottom: 10px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid #d9d9d9;
+   border-top: 1px solid #c0c0c0;
+   /* border-radius: 2px; */
+   padding: 0 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+ }
+
+ .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+   border: 1px solid #b9b9b9;
+   border-top: 1px solid #a0a0a0;
+   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ }
+
+ .loginmodal {
+   text-align: center;
+   font-size: 14px;
+   font-family: 'Arial', sans-serif;
+   font-weight: 700;
+   height: 36px;
+   padding: 0 8px;
+ /* border-radius: 3px; */
+ /* -webkit-user-select: none;
+   user-select: none; */
+ }
+
+ .loginmodal-submit {
+   /* border: 1px solid #3079ed; */
+   border: 0px;
+   color: #fff;
+   text-shadow: 0 1px rgba(0,0,0,0.1);
+   background-color: #4d90fe;
+   padding: 17px 0px;
+   font-family: roboto;
+   font-size: 14px;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ }
+
+ .loginmodal-submit:hover {
+   /* border: 1px solid #2f5bb7; */
+   border: 0px;
+   text-shadow: 0 1px rgba(0,0,0,0.3);
+   background-color: #357ae8;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ }
+
+ .loginmodal-container a {
+   text-decoration: none;
+   color: #666;
+   font-weight: 400;
+   text-align: center;
+   display: inline-block;
+   opacity: 0.6;
+   transition: opacity ease 0.5s;
+ }
+
+ .login-help{
+   font-size: 12px;
+ }
+
+ /*footer样式*/
+ .footerTable_1foh0d8 {
+    display: table !important;
+    width: 100% !important;
+}
+
+.alignment_hxoleu {
+    padding-top: 1px !important;
+    white-space: nowrap !important;
+}
+
+.container_a5f5px {
+    display: table !important;
+}
+
+.child_64aub5 {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+.text_1chds16-o_O-size_small_1vrq4z6-o_O-color_mutedLarge_1v78oro {
+    font-weight: normal !important;
+    color: #848484 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    margin: 0px !important;
+    word-wrap: break-word !important;
+    font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.ul_2w59sq {
+    padding-left: 0px !important;
+    list-style: none !important;
+    margin-bottom: 0px !important;
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+    vertical-align: middle !important;
+    display: table-cell !important;
+    text-align: right !important;
+}
+
+.inline_idq1nf {
+    display: inline !important;
+    padding-left: 8px !important;
+    vertical-align: middle !important;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.component_59vu4c-o_O-footer_td6kew {
+    color: #767676 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+}
+
+.inline_idq1nf-o_O-hideAtSmall_fk4i02 {
+    display: inline !important;
+    padding-left: 8px !important;
+    vertical-align: middle !important;
+
+}
+
+.socialListItems_i6qbjg {
+    white-space: nowrap !important;
+    display: inline !important;
+    vertical-align: middle !important;
+}
+
+div {
+    display: block;
+}
+
+.container_d4asko {
+    display: inline-block !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    vertical-align: middle !important;
+
+}
+
+.inline_1dokpqv-o_O-hideAtSmall_fk4i02 {
+    display: inline !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    vertical-align: middle !important;
+}
+
+
+
+
+meta {
+    display: none;
+}
+
+html|* > svg {
+    transform-origin: 50% 50% 0px;
+}
+user agent stylesheet
+svg:not(:root), symbol, image, marker, pattern, foreignObject {
+    overflow: hidden;
+}
+user agent stylesheet
+* {
+    transform-origin: 0px 0px 0px;
+}
+
+
+
+
+
+.accessible_1onqw4m {
+    position: absolute !important;
+    display: block !important;
+    border: 0px !important;
+    margin: -1px !important;
+    padding: 0px !important;
+    height: 1px !important;
+    width: 1px !important;
+    clip: rect(0, 0, 0, 0) !important;
+    overflow: hidden !important;
+}
+
+.component_59vu4c-o_O-component_button_r21s1q-o_O-footer_td6kew {
+    color: #767676 !important;
+    font: inherit !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-decoration: none !important;
+
+    background: transparent !important;
+    border: 0px !important;
+    cursor: pointer !important;
+    margin:  0px !important;
+    padding: 0px !important;
+    text-align: left !important;
+
+}
+
+.container_a5f5px {
+    display: table !important;
+}
+.child_64aub5 {
+    display: table-cell !important;
+    vertical-align: middle !important;
+
+}
