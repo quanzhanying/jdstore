@@ -1,0 +1,66 @@
+
+
+<h3 class="text-center"></h3>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a data-toggle="tab" href="/products/menu0">商品</a></li>
+ <li><a data-toggle="tab" href="/products/menu1">特价</a></li>
+  <li><a data-toggle="tab" href="/products/menu2">限量</a></li>
+  <li><a data-toggle="tab" href="/products/menu3">新品</a></li>
+</ul>
+
+<!-- <#div class="tab-content ">
+  <div id="home" class="tab-pane fade in active">
+
+
+  </div>
+  <div id="menu1" class="tab-pane fade">
+<h2>Mike Ross, Manager</h2>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+
+  </div>
+  <div id="menu3" class="tab-pane fade">
+
+  </div>
+<!-- <#/div> -->
+
+
+
+
+<ul class="product-index">
+  <% @products.each do |product| %>
+
+
+<li class="product-display">
+    <%= link_to product_path(product) do %>
+
+    <% if product.image.present?%>
+    <div class="thumbnail" >
+<%= image_tag(product.image.thumb.url, class: "thumbnail")%>
+
+
+    <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+    <% end %>
+    <% end %>
+
+    <p ><strong><%=product.title %></strong></p>
+    <p>产地：<%=product.place%></p>
+   <p>库存：<%=product.quantity%></p>
+   <p>单价：<%=product.price%></p>
+   <p>
+     <%a=product.get_upvotes.size%>
+     <%b=product.get_upvotes.size+product.get_downvotes.size%>
+     
+     好评数:<%=a%>
+   </p>
+
+   <div class="button-select">
+     <%=link_to("select",product_path(product),:class=> "btn btn-default")%>
+   </div>
+  </div>
+</li>
+  <% end %>
+
+</ul>
