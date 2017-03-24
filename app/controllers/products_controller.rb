@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only:[:upvote ,:collect,:discollect]
+  before_action :find_product, only:[:upvote,:downvote,:add_to_cart,:collect]
 
   def index
     @products= Product.all.order('position ASC')
@@ -72,7 +73,7 @@ end
   end
 
   def add_to_cart
-    @product=Product.find(params[:id])
+
     if !current_cart.products.include?(@product)
     current_cart.add_product_to_cart(@product)
     flash[:notice]="你已经成功将#{@product.title}加入购物车"
@@ -84,19 +85,19 @@ end
   end
 
   def upvote
-    @product=Product.find(params[:id])
+
     @product.upvote_by current_user
     redirect_to :back
   end
 
   def downvote
-    @product=Product.find(params[:id])
+
     @product.downvote_by current_user
     redirect_to :back
   end
 
   def collect
-    @product=Product.find(params[:id])
+
     if !current_user.has_collected?(@product)
       current_user.collect!(@product)
       flash[:notice]="You've successfully collected the item!"
@@ -141,5 +142,8 @@ end
      { :title_or_place_cont => query_string }
    end
 
+    def find_product
+      @product=Product.find(params[:id])
+    end
 
 end

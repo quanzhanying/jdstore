@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
+  before_action :find_order_by_token, only:[:pay_with_alipay, :pay_with_wechat,:show]
 
    def pay_with_alipay
-     @order=Order.find_by_token(params[:id])
+
      @order.set_payment_with!("alipay")
      @order.make_payment!
 
@@ -10,7 +11,7 @@ class OrdersController < ApplicationController
    end
 
    def pay_with_wechat
-     @order=Order.find_by_token(params[:id])
+
      @order.set_payment_with!("wechat")
      @order.make_payment!
      redirect_to order_path(@order.token), notice: "使用微信付款"
@@ -49,7 +50,7 @@ class OrdersController < ApplicationController
     end
 
     def show
-      @order=Order.find_by_token(params[:id])
+
       @product_lists=@order.product_lists
     end
 
@@ -57,5 +58,9 @@ class OrdersController < ApplicationController
 
     def order_params
       params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
+    end
+
+    def find_order_by_token
+      @order=Order.find_by_token(params[:id])
     end
 end

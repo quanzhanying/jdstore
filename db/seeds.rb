@@ -19,7 +19,7 @@ u.save
 
 
 Product.create!(title:"家庭聚会包",quantity:100,price:20,kind:"set",
-<<<<<<< HEAD
+
 owner:"shop1",place:"夏威夷",position:1,image: open("http://ww1.sinaimg.cn/large/006tNc79gy1fdc14dqrhfj307o053glo.jpg"))
 
 
@@ -72,6 +72,6 @@ owner:"shop3",place:"中国",position:14,image: open("http://ww3.sinaimg.cn/larg
 
 Product.create!(title:"开心果",quantity:100,price:20,kind:"nut",
 owner:"shop3",place:"海南",position:15,image: open("http://ww3.sinaimg.cn/large/006tNc79gy1fddacb21mpj30el09qgm4.jpg"))
-=======
+
+Product.create!(title:"开心果",quantity:100,price:20,kind:"nut",
 owner:"shop1",place:"夏威夷",image: open("https://ww1.sinaimg.cn/large/006tNc79gy1fdc14dqrhfj307o053glo.jpg"))
->>>>>>> b33bbc78e37bf4157886e848a62036337910b3dc
