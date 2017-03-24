@@ -1,0 +1,233 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*店铺样式*/
+.col-sm-4.person{
+  border-color: transparent;
+}
+.col-sm-4.person>img{
+  width:55%;
+
+}
+.col-sm-4.person>p{
+  margin-top: 15px;
+}
+
+.col-sm-4{
+  margin-top: 50px;
+}
+
+.col-sm-4.shop{
+  padding-left: 125px;
+  text-align: center;
+}
+
+.col-sm-4.tip{
+  margin-top: 80px;
+}
+
+.col-sm-4.shop .phone{
+  display:flex;
+margin-left: 150px;
+margin-top: 20px;
+}
+.col-sm-4.shop .phone>p{
+  margin-left: 8px;
+}
+
+.col-sm-4.shop .location{
+  margin-top: 5px;
+  display:flex;
+  margin-left: 150px;
+}
+
+.col-sm-4.shop .location>p{
+  margin-left: 8px;
+}
+
+.col-sm-4.shop .email{
+  display:flex;
+  margin-top: 5px;
+  margin-left: 150px;
+}
+
+.col-sm-4.shop .email>p{
+  margin-left: 8px;
+}
+/*外边框*/
+.row .thumbnail{
+  border: none;
+}
+
+.carousel.slide .carousel-inner .item>a>img{
+  width: 100%;
+}
+
+.carousel.slide .carousel-inner .item.active>a>img{
+
+}
+
+
+
+
+
+
+.row .thumbnail .intro2 .phone{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .intro2 .phone>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .intro2 .location{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .intro2 .location>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+
+.row .thumbnail .intro2 .email{
+  margin-left: 90px;
+  margin-top: 20px;
+}
+.row .thumbnail .intro2 .email>p{
+  margin-top: -20px;
+  margin-left: 20px;
+}
+.row .thumbnail .selfie2{
+
+
+
+}
+
+.row .thumbnail .shop2 {
+float: left;
+margin-left: 120px;
+/*margin-left: -10px;*/
+
+
+}
+
+
+
+
+
+
+
+
+
+/*shop4样式*/
+
+
+
+
+
+.row .thumbnail{
+  background-color: transparent;
+  height: 400px;
+}
+
+
+.thumbnail:hover{
+  border-color: rgba(255,138,101 ,0.8);
+}
+.person2{
+  border-color: red;
+}
+.person{
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+
+}
+.row .thumbnail>img{
+  width:15%;
+  margin-left: 1100px;
+}
+
+
+#myCarousel{
+  margin-top: -20px;
+padding-left: 0px;
+padding-right: 0px;
+
+
+
+
+}
+
+.row.welcome{
+
+}
+
+.row.image{
+  height: 500px;
+  background-image:url('https://ww3.sinaimg.cn/large/006tNbRwgy1fcpwhyylqgj31kw0w0b2f.jpg');
+  margin-left: -50px;
+  margin-right: -100px;
+  padding-bottom: 200px;
+  height: 780px;
+
+}
+
+
+
+/*修改welcome图片文字效果和背景色*/
+.carousel-caption>p
+{ font-size: 20px;
+
+  font-family:inherit;
+  background-color: rgba(255,255,255 ,0.3);
+  text-align: center;
+  border-radius: 3px;
+
+}
+
+
+.row.welcome .carousel.slide{
+  width:86%;
+
+
+}
+
+.row.welcome{
+
+
+}
+
+.nav.nav-tabs{
+  margin-left: -50px;
+}
+
+
+.col-sm-3.pic1{
+  float:right;
+  margin-top: -20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: inline;
+}
+
+
+.col-sm-3.pic2{
+  padding-left: 0px;
+  padding-right: 0px;
+
+}
+
+.col-sm-3.pic3{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+
+
+
+h3{
+  margin-top: -50px;
+}

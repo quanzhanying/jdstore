@@ -1,0 +1,29 @@
+<ul class="product-index">
+  <% @products.each do |product| %>
+
+
+<li class="product-display">
+    <%= link_to product_path(product) do %>
+
+    <% if product.image.present?%>
+    <div class="thumbnail" >
+<%= image_tag(product.image.thumb.url, class: "thumbnail")%>
+
+
+    <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+    <% end %>
+    <% end %>
+
+    <p ><strong><%=product.title %></strong></p>
+    <p>产地：<%=product.place%></p>
+   <p>库存：<%=product.quantity%></p>
+   <p>单价：<%=product.price%></p>
+   <div class="button-select">
+     <%=link_to("select",product_path(product),:class=> "btn btn-default")%>
+   </div>
+  </div>
+</li>
+  <% end %>
+
+</ul>

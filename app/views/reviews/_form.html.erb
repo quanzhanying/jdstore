@@ -1,0 +1,14 @@
+<%= simple_form_for([@product, @product.reviews.build]) do |f|%>
+
+  <div class="field" >
+      <%= f.text_area :body, class: "form-control",style:"width:400px;
+      padding:10px 0px;height:100px;"%>
+  </div>
+  <div class="rate">
+  味道 : <%= rating_for @product, 'smell', disable_after_rate: true %>
+   外观 : <%= rating_for @product, 'appearence', disable_after_rate: true %>
+   价格 : <%= rating_for @product, 'price', disable_after_rate: true %>
+</div>
+
+  <%= f.submit "发表评论", class: "btn btn-primary" ,style:"margin-top:-70px"%>
+<% end %>

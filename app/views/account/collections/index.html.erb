@@ -1,0 +1,62 @@
+<h2>我的收藏</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th width='220'>Product Pic
+      </th>
+
+      <th>
+        Name
+      </th>
+      <th>
+        description
+      </th>
+      <th>
+        Count
+      </th>
+      <th>
+        Price
+      </th>
+      <!-- <#th width='100'>
+      Options
+      <!-- <#/th> -->
+
+    </tr>
+
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.id %>
+      </td>
+      <td>
+        <%= link_to product_path(product) do %>
+        <% if product.image.present?%>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+      </td>
+      <td>
+        <%= product.title %>
+      </td>
+      <td>
+        <%= product.description %>
+      </td>
+      <td>
+        <%=product.quantity%>
+      </td>
+      <td>
+        <%= product.price%>
+      </td>
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>
