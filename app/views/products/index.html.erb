@@ -1,0 +1,97 @@
+<!--三张图-->
+<!--div class="sn_section">
+    <div class="g-row">
+       <div class="m-cate">
+            <div class="bd">
+                <div class="sn_list">
+                    <a class="sn_item first large" href="products/1" target="_blank">
+                        <img src="http://ojjhaj1wp.bkt.clouddn.com/2017-02-12-IMG_9045-Edit-2.jpg" data-original="" alt="" class="j-lazyload img-lazyload img img-noBgPic ">
+                    </a>
+                    <此处暂时不用a class="sn_item first large" href="products/1" target="_blank">
+                        <img src="http://ojjhaj1wp.bkt.clouddn.com/2017-02-12-IMG_9045-Edit-2.jpg" data-original="" alt="" class="j-lazyload img-lazyload img img-noBgPic img-lazyloaded">
+                    </a>
+                    <a class="sn_item small " href="products/3" target="_blank">
+                        <img src="http://ojjhaj1wp.bkt.clouddn.com/2017-02-12-IMG_9045-Edit-2.jpg" data-original="" alt="" class="j-lazyload img-lazyload img img-noBgPic img-lazyloaded">
+                    </a>
+                    <a class="sn_item small last" href="products/4" target="_blank">
+                        <img src="http://ojjhaj1wp.bkt.clouddn.com/2017-02-12-IMG_9045-Edit-2.jpg" data-original="" alt="" class="j-lazyload img-lazyload img img-noBgPic img-lazyloaded">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div-->
+<!--end-->
+<!--end-->
+<!--div class="sn_section">
+  <header class="row">
+    <div class="col-md-1" style="background-color:default;"></div>
+    <div class="left">
+        <h3 class="name">宠物行为</h3>
+    </div>
+    <div class="right">
+        <a class="moreItems" href="/products" target="_blank">全部商品 &gt;</a>
+    </div>
+    <div class="col-md-1" style="background-color:default;"></div>
+ </header-->
+</div>
+<div class=”container”>
+  <div class="row">
+    <div class="col-md-1" style="background-color:default;"></div>
+      <% @products.each do |product| %>
+        <div class="col-md-2 col-sm-4">
+          <!--span class="thumbnail"-->
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                 <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+             <h4><%= product.title %></h4>
+             <!--评星系统div class="ratings">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+             </div-->
+             <!--商品介绍内容p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p-->
+             <hr class="line">
+             <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="product-price"> ￥ <%= product.price %> </div>
+
+                </div>
+                <div class="col-md-6 col-sm-6">
+
+                   <% if product.quantity.present? && product.quantity > 0 %>
+                     <%= link_to("BUY ITEM", add_to_cart_product_path(product), :method => :post, :class => "btn btn-success right") %>
+                   <% else %>
+                     已销售一空，无法购买
+                   <% end %>
+                </div>
+             </div>
+          <!--/span-->
+        </div>
+      <% end %>
+    <div class="col-md-1" style="background-color:default;"></div>
+  </div>
+</div>
+<!--end-->
+<!--作业购物栏-->
+<!--div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-3 col-xs-6">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div-->
+<!--end-->

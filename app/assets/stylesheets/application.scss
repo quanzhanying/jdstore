@@ -1,0 +1,390 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+/*snow boots*/
+.sn_section {
+ margin-top: 26px;
+}
+.row {
+  margin-top: 60px;
+}
+.g-row {
+ width: 1090px;
+ margin-right: auto;
+ margin-left: auto;
+ position: relative;
+}
+
+.g-row:after,
+.g-row:before {
+ content: " ";
+ display: table;
+}
+.m-cates {
+ padding-top: 62px;
+ margin-bottom: 45px;
+}
+.m-cates .g-row {
+ margin-top: 92px;
+}
+.m-cates .g-row:first-child {
+ margin-top: 0;
+}
+.m-cate>.hd {
+ margin-bottom: 20px;
+ line-height: 1;
+ height: 30px;
+}
+.m-cate>.hd .left {
+ float: left;
+ padding-top: 4px;
+}
+.m-cate>.hd .right {
+ float: right;
+}
+.m-cate>.hd .name {
+ float: left;
+ margin-right: 20px;
+ font-size: 28px;
+ font-weight: 700;
+}
+.m-cate>.hd .frontName {
+ float: left;
+ padding-top: 14px;
+ font-size: 14px;
+ color: #aaa;
+}
+.m-cate>.bd {
+ width: 1090px;
+ overflow: hidden;
+}
+.m-cate>.bd .itemList {
+ margin-right: -10px;
+}
+.m-cate>.bd .itemList .item {
+ float: left;
+ margin: 0 10px 50px 0;
+}
+
+/*头图的样式*/
+.sn_section .sn_list {
+ overflow: hidden;
+}
+.sn_section .sn_list .sn_item {
+ width: 357px;
+ float: left;
+ margin-left: 10px;
+ overflow: hidden;
+ position: relative;
+ text-align: center;
+}
+.sn_section .sn_list .sn_item.first {
+ margin-left: 0;
+}
+.sn_section .sn_list .sn_item.large {
+ height: 320px;
+ width: 700px;
+}
+/*.sn_section .sn_list .sn_item.large.middle {
+ width: 357px;
+ margin-left: 9px!important;
+}*/
+.sn_section .sn_list .sn_item.small {
+ height: 155px;
+}
+.sn_section .sn_list .sn_item.small.last {
+ margin-top: 10px;
+}
+.sn_section .sn_list .sn_item.small .name {
+ font-size: 20px;
+ margin: 32px 0 10px 20px;
+ text-align: left;
+}
+.sn_section .sn_list .sn_item.small .price {
+ padding-top: 10px;
+ margin-left: 20px;
+ float: left;
+}
+.sn_section .sn_list .sn_item.small .newShelfTag {
+ margin-left: 5px;
+}
+.sn_section .sn_list .sn_item:hover>.img {
+ -moz-transform: scale(1.05);
+ -ms-transform: scale(1.05);
+ -webkit-transform: scale(1.05);
+ transform: scale(1.05);
+ transition: -webkit-transform 1s;
+ transition: transform 1s;
+ transition: transform 1s, -webkit-transform 1s;
+}
+
+.sn_section .sn_list .sn_item .img {
+ width: 100%;
+ height: 100%;
+ top: 10;
+ left: 0;
+ position: absolute;
+ text-align: center;
+ -moz-transition: -moz-transform 1s;
+ -o-transition: -o-transform 1s;
+ -webkit-transition: -webkit-transform 1s;
+ transition: -webkit-transform 1s;
+ transition: transform 1s;
+ transition: transform 1s, -webkit-transform 1s;
+ z-index: 1;
+}
+
+.sn_section .right {
+ padding-top: 18px;
+}
+.sn_section .right .moreItems {
+ font-size: 16px;
+ display: inline-block;
+ color: #000;
+}
+
+.sn_section .hd .frontName {
+ padding-top: 13px;
+}
+
+.g-hd {
+ position: relative;
+ z-index: 99;
+}
+.g-bd,
+.g-bd-list {
+ z-index: 1;
+ position: relative;
+}
+.g-bd-list {
+ padding-bottom: 70px;
+ background-color: #f5f5f5;
+}
+.g-rowdd{
+ width: 1090px;
+ margin-top: 550px;
+ margin-right: auto;
+ margin-left: auto;
+ margin-bottom: 250px;
+
+}
+
+.g-ft {
+ position:absolute;bottom:0;width:100%;
+}
+.m-ft2 {
+ height: 204px;
+ padding-top: 37px;
+ background-color: #414141;
+}
+.m-ft2 hr {
+ display: block;
+ height: 1px;
+ margin-bottom: 27px;
+ background-color: #4f4f4f;
+ border: 0;
+}
+.animated {
+ -webkit-animation-duration: 2s;
+ animation-duration: 2s;
+ -webkit-animation-fill-mode: both;
+ animation-fill-mode: both;
+ -webkit-animation-delay: .2s;
+ animation-delay: .2s;
+ -webkit-animation-timing-function: ease-out;
+ animation-timing-function: ease-out;
+}
+.m-cates {
+ padding-top: 62px;
+ margin-bottom: 45px;
+}
+.m-cates .g-row {
+ margin-top: 92px;
+}
+.m-cates .g-row:first-child {
+ margin-top: 0;
+}
+.m-cate>.hd {
+ margin-bottom: 20px;
+ line-height: 1;
+ height: 30px;
+}
+.m-cate>.hd .left {
+ float: left;
+ padding-top: 4px;
+}
+.m-cate>.hd .right {
+ float: right;
+}
+.m-cate>.hd .name {
+ float: left;
+ margin-right: 20px;
+ font-size: 28px;
+ font-weight: 700;
+}
+.m-cate>.hd .frontName {
+ float: left;
+ padding-top: 14px;
+ font-size: 14px;
+ color: #aaa;
+}
+.m-cate>.bd {
+ width: 1090px;
+ overflow: hidden;
+}
+.m-cate>.bd .itemList {
+ margin-right: -10px;
+}
+.m-cate>.bd .itemList .item {
+ float: left;
+ margin: 0 10px 50px 0;
+}
+.g-ft {
+ border-top: 0;
+}
+
+.header_fixed {
+ position: fixed;
+ z-index: 2;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 60px;
+ -webkit-animation: hdnav2-show .3s;
+ -moz-animation: hdnav2-show .3s;
+ -o-animation: hdnav2-show .3s;
+ animation: hdnav2-show .3s;
+ -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+ -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+ box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+ background: #fff;
+}
+
+/*后台表格*/
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
