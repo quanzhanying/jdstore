@@ -1,14 +1,47 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+
+<div class="clearfix">
+  <div class="column menu">
+    <div class="left-section-card announcement">
+      <div class="card-header">
+        <h2 class="title">浏览过的商品</h2>
+      </div>
+      <div class="card-body text">
+        <p>啦啦啦啦</p>
+      </div>
     </div>
-  <% end %>
+  </div>
+
+  <div class="column content">
+    <div class="dashboard-tab col-xs-12">
+        <ul class="nav nav-tabs">
+          <li class="title active"><a class="title active" href="/dashboard">全部课程</a></li>
+          <li class="title"><a class="title" href="/dashboard?category=basic">基础课程</a></li>
+          <li class="title"><a class="title" href="/dashboard?category=major">主修课程</a></li>
+          <li class="title"><a class="title" href="/dashboard?category=optional">选修课程</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="all-product">
+      <div class="product-card">
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+        <%= product.title %> ￥ <%= product.price %>
+        </div>
+      <% end %>
+
+    </div>  
+    </div>
+
+
+
+
 </div>

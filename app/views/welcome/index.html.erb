@@ -1,1 +1,128 @@
-<h1> Hello World! </h1>
+<body>
+
+<div class="container">
+<br>
+  <div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>
+   <div class="carousel-inner">
+      <div class="item active">
+       <a href="javascript:;">
+        <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcrl5afeqhj30xc0afgpx.jpg">
+        <div class="carousel-caption"></div>
+       </a>
+      </div>
+      <div class="item">
+       <a href="javascript:;">
+        <img src="https://vipweb.bs2cdn.yy.com/vipinter_de4f123bb220482e93649571a1491572.jpg">
+        <div class="carousel-caption"></div>
+       </a>
+      </div>
+      <div class="item">
+       <a href="javascript:;">
+        <img src="https://ww2.sinaimg.cn/large/006tNc79ly1fcrlcb0knhj30xc0afwib.jpg">
+        <div class="carousel-caption"></div>
+       </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">主食</div>
+        <div class="panel-body"><img src="/images/rice.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("无米不炊", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">肉食，蛋类</div>
+        <div class="panel-body"><img src="/images/meat.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("无肉不欢", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">蔬菜</div>
+        <div class="panel-body"><img src="/images/vegetables.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("与肉为伍", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">水果</div>
+        <div class="panel-body"><img src="/images/fruit.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("来点果糖", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">调味</div>
+        <div class="panel-body"><img src="/images/seasoning.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("有滋有味", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">厨具</div>
+        <div class="panel-body"><img src="/images/knife.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("变身大厨", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+
+</body>
