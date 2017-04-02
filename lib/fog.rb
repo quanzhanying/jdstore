@@ -1,0 +1,4 @@
+module fog
+  # :D
+
+end
