@@ -3,7 +3,7 @@
         <% if @product.image.present? %>
             <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
         <% else %>
-            <%= image_tag("http://placehold.it/400*400&text= NO PIC ", class: "thumbnail") %>
+            <%= image_tag("http://placehold.it/400x400&text=NO PIC ", class: "thumbnail") %>
         <% end %>
     </div>
     <div class="col-md-6">
