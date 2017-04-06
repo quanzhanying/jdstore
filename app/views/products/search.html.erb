@@ -1,0 +1,52 @@
+<div>
+    <br>
+    <% if @products.blank? %>
+    <br>
+    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+<% else %>
+    <h2 class="search-info-title">
+        有关"<%= @query_string %>"的信息
+    </h2>
+    <div class="search-result">
+
+        <div class="product-table">
+            <% @products.each do |product| %>
+            <div class="row products-show">
+
+                <div class="col-md-12 col-lg-9 col-lg-offset-1">
+
+                    <div class="pull-right">
+                      <body>
+                          <tr>
+                              <td>
+                                  <%= link_to product_path(product) do %>
+                                  <% if product.image.present? %>
+                                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                              <% else %>
+                                  <%= image_tag("https://ww1.sinaimg.cn/large/006y8lValy1fca38ugjwpj305l05kq2p.jpg", class: "thumbnail") %>
+                                  <% end %>
+                                  <% end %>
+                              </td>
+                              <td>
+                                  title:<%= product.title %>
+                              </td>
+                              <hr>
+                              <td>
+                                  price:<%= product.price %>
+                              </td>
+                          </tr>
+                      </body>
+                    </div>
+                    <p style="text-align: center;">
+                        <%= link_to(render_highlight_content(product, @query_string), product_path(product)) %>
+                    </p >
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="text-center">
+        <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+    </div>
+    <% end %>
+</div>
