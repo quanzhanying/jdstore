@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
-
     def index
-        @products  =Product.all
+        @products = Product.all
     end
 
     def show
@@ -9,9 +8,9 @@ class ProductsController < ApplicationController
     end
 
     def add_to_cart
-        @product =Product.find(params[:id])
+        @product = Product.find(params[:id])
         current_cart.add_product_to_cart(@product)
+        flash[:notice] = '成功加入购物车'
         redirect_to :back
-
     end
 end

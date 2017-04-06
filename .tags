@@ -1,0 +1,8 @@
+ApplicationController	/Users/rockyjia/fullstack/jdstore/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	class	line:1
+admin_required	/Users/rockyjia/fullstack/jdstore/app/controllers/application_controller.rb	/^    def admin_required$/;"	method	line:5	class:ApplicationController
+current_cart	/Users/rockyjia/fullstack/jdstore/app/controllers/application_controller.rb	/^    def current_cart$/;"	method	line:9	class:ApplicationController
+find_cart	/Users/rockyjia/fullstack/jdstore/app/controllers/application_controller.rb	/^    def find_cart$/;"	method	line:16	class:ApplicationController
+ProductsController	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	class	line:1
+index	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def index$/;"	method	line:2	class:ProductsController
+show	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def show$/;"	method	line:6	class:ProductsController
+add_to_cart	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def add_to_cart$/;"	method	line:10	class:ProductsController

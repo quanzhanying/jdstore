@@ -1,0 +1,10 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ProductsController	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	class	line:1
+index	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def index$/;"	method	line:2	class:ProductsController
+show	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def show$/;"	method	line:6	class:ProductsController
+add_to_cart	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def add_to_cart$/;"	method	line:10	class:ProductsController
