@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     helper_method :current_cart
@@ -12,13 +13,10 @@ class ApplicationController < ActionController::Base
 
     private
 
-
     def find_cart
         cart = Cart.find_by(id: session[:cart_id])
-        if cart.blank?
-            cart = Cart.create
-        end
+        cart = Cart.create if cart.blank?
         session[:cart_id] = cart.id
-        return cart
+        cart
     end
 end

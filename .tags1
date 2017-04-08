@@ -4,7 +4,10 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ProductsController	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	class	line:1
-index	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def index$/;"	method	line:2	class:ProductsController
-show	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def show$/;"	method	line:6	class:ProductsController
-add_to_cart	/Users/rockyjia/fullstack/jdstore/app/controllers/products_controller.rb	/^    def add_to_cart$/;"	method	line:10	class:ProductsController
+Admin	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^class Admin::ProductsController < ApplicationController$/;"	class	line:1
+index	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^    def index$/;"	method	line:5	class:Admin
+new	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^    def new$/;"	method	line:9	class:Admin
+edit	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^    def edit$/;"	method	line:13	class:Admin
+update	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^    def update$/;"	method	line:17	class:Admin
+create	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^    def create$/;"	method	line:26	class:Admin
+product_params	/Users/rockyjia/fullstack/jdstore/app/controllers/admin/products_controller.rb	/^    def product_params$/;"	method	line:37	class:Admin

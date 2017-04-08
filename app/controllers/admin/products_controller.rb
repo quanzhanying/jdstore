@@ -1,6 +1,6 @@
+# -*- encoding : utf-8 -*-
 class Admin::ProductsController < ApplicationController
-
-    layout "admin"
+    layout 'admin'
     before_action :authenticate_user!
     before_action :admin_required
     def index
@@ -13,8 +13,8 @@ class Admin::ProductsController < ApplicationController
 
     def edit
         @product = Product.find(params[:id])
-
     end
+
     def update
         @product = Product.find(params[:id])
         if @product.update(product_params)
@@ -33,12 +33,9 @@ class Admin::ProductsController < ApplicationController
         end
     end
 
-
-
     private
+
     def product_params
         params.require(:product).permit(:title, :description, :quantity, :price, :image)
     end
-
-
 end
