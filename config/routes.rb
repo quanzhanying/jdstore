@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
-
     root 'products#index'
 
     devise_for :users
@@ -14,4 +13,5 @@ Rails.application.routes.draw do
         end
     end
 
+    resources :carts
 end
