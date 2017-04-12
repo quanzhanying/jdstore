@@ -17,12 +17,20 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.carousel {
-  width: 1200px;
-  margin: 0 auto;
+.carousel-inner img {
+  width: 100%;
+  margin: auto;
+  min-height: 200px;
+
 }
+
+
 .carousel .item {
-  height: 375px;
+  height: 450px;
+}
+
+img {
+  width: 100%;
 }
 
 #catagory {
@@ -66,6 +74,8 @@
     float: left;
     padding: 15px;
 }
+
+
 .clearfix::after {
     content: "";
     clear: both;
