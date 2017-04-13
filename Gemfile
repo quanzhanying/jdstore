@@ -36,6 +36,7 @@ gem 'font-awesome-rails'
 gem 'awesome_print', require: 'ap'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem 'letter_opener', group: :development
 
 group :development, :test do
     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
