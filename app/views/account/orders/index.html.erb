@@ -4,6 +4,7 @@
         <tr>
             <th>#</th>
             <th>生成时间</th>
+            <th>订单状态</th>
         </tr>
     </thead>
     <tbody>
@@ -14,6 +15,9 @@
             </td>
             <td>
                 <%= order.created_at.to_s(:long) %>
+            </td>
+            <td>
+                <%= order.aasm_state %>
             </td>
         </tr>
         <% end %>

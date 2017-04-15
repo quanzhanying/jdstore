@@ -23,7 +23,7 @@ class OrderMailer < ApplicationMailer
         mail(to: @user.email, subject: "[JDSTORE] 您的订单 #{order.token} 已发货")
     end
 
-    def notify_ship
+    def notify_cancel(order)
         @order = order
         @user = order.user
         @product_lists = @order.product_lists
