@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.carousel-inner img {
+  width: 100%;
+  margin: auto;
+  min-height: 200px;
+
+}
+
+
+.carousel .item {
+  height: 450px;
+}
+
+img {
+  width: 100%;
+}
+
+#catagory {
+  text-align: center;
+}
+
+.catagory-name {
+  text-align: center;
+  list-style-type:none;
+  font-size: 20px;
+}
+
+
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.menu {
+  width: 25%;
+}
+
+.announcement .card-header {
+    height: 36px;
+    width: auto;
+    background-color: #E5E5E5;
+    padding-left: 20px;
+}
+
+.left-section-card .card-header h2.title {
+    font-size: 16px;
+    line-height: 36px;
+    font-weight: normal;
+    color: #4A4A4A;
+}
+
+.left-section-card .card-body {
+    padding: 15px;
+}
+
+.announcement .text {
+    float: left;
+    width: auto;
+    line-height: 22px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: justify;
+}
+
+
+.content {
+    width: 65%;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #33b5e5;
+    color: #ffffff;
+}
+.menu li:hover {
+    background-color: #0099cc;
+}
+
+.all-product {
+    margin: 25px auto;
+    text-align: center;
+    overflow: auto;
+    min-width: 200px;
+    max-width: 960px;
+    display: block;
+    list-style: none;
+}
+
+.dashboard-tab {
+    float: left;
+    margin-bottom: 30px;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0;
+    position: relative;
+    background-color: #E5E5E5;
+}
+
+.nav {
+    padding-left: 0;
+    list-style: none;
+    width: auto;
+    height: auto;
+
+}
+
+.product-card {
+    margin: 15px 30px 40px;
+}

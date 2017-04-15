@@ -1,0 +1,23 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.productList-item-cartBtn {
+	top: 168px;
+  right: 20px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #fff;
+	border-radius: 50%;
+	display: none;
+	-webkit-transition: all .1s;
+  transition: all .1s;
+}
+.productList-item-cartBtn:hover {
+	background: #D32048;
+	.fa-shopping-cart {
+		color: #fff;
+	}
+}

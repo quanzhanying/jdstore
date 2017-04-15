@@ -1,0 +1,128 @@
+<body>
+
+<div class="container">
+<br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">   
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>
+   <div class="carousel-inner" role="listbox">
+      <div class="item active">
+
+        <img src="https://s3-us-west-2.amazonaws.com/fullstack123/%E6%A8%B1%E8%8A%B1%E5%AD%A3.jpg">
+        <div class="carousel-caption"></div>
+
+      </div>
+      <div class="item">
+
+        <img src="https://s3-us-west-2.amazonaws.com/fullstack123/%E9%98%B2%E6%99%92.jpg">
+        <div class="carousel-caption"></div>
+
+      </div>
+      <div class="item">
+
+        <img src="https://s3-us-west-2.amazonaws.com/fullstack123/%E4%BA%9A%E7%B1%B3%E7%9B%92%E5%AD%90.jpg">
+        <div class="carousel-caption"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">主食</div>
+        <div class="panel-body"><img src="/images/rice.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("无米不炊", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">肉食，蛋类</div>
+        <div class="panel-body"><img src="/images/meat.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("无肉不欢", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">蔬菜</div>
+        <div class="panel-body"><img src="/images/vegetables.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("与肉为伍", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">水果</div>
+        <div class="panel-body"><img src="/images/fruit.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("来点果糖", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">调味</div>
+        <div class="panel-body"><img src="/images/seasoning.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("有滋有味", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="catagory">厨具</div>
+        <div class="panel-body"><img src="/images/knife.jpeg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">
+          <ul class="catagory-name">
+            <li class="active">
+              <%= link_to("变身大厨", products_path) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+
+</body>
