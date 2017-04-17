@@ -1,12 +1,11 @@
 # -*- encoding : utf-8 -*-
 class ImageUploader < CarrierWave::Uploader::Base
-
     # Include RMagick or MiniMagick support:
     # include CarrierWave::RMagick
     include CarrierWave::MiniMagick
 
     # Choose what kind of storage to use for this uploader:
-    storage :file
+    storage :qiniu
     # storage :fog
 
     # Override the directory where uploaded files will be stored.
@@ -18,10 +17,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [800, 800]
 
     version :thumb do
-        process resize_to_fill: [200,200]
+        process resize_to_fill: [200, 200]
     end
     version :medium do
-        process resize_to_fill: [400,400]
+        process resize_to_fill: [400, 400]
     end
     # Provide a default URL as a default if there hasn't been a file uploaded:
     # def default_url
@@ -54,5 +53,4 @@ class ImageUploader < CarrierWave::Uploader::Base
     # def filename
     #   "something.jpg" if original_filename
     # end
-
 end
