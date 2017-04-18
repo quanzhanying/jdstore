@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 %w(
   .ruby-version
   .rbenv-vars
