@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def require_is_admin
     if !current_user.admin?
       flash[:warning] = "You are not admin"
-      redirect_to products_path
+      redirect_to "/"
     end
   end
 
