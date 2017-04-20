@@ -1,5 +1,7 @@
 <h2>Product List</h2>
 
+<button class="pull-right btn btn-default"><%= link_to("Add new product", new_admin_product_path) %></button>
+
 <ul>
   <% @products.each do |product| %>
   <li><%= link_to(product.title, admin_product_path(product)) %></li>
