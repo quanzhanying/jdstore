@@ -13,13 +13,18 @@ class OrdersController < ApplicationController
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
         product_list.save
-      end      
+      end
       redirect_to order_path(@order)
     else
       render 'carts/checkout'
     end
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @product_lists = @order.product_lists
+  end
+  
   private
 
   def order_params
