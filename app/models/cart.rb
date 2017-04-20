@@ -8,7 +8,7 @@ class Cart < ApplicationRecord
     ci.quantity = 1
     ci.save
   end
-  
+
   def total_price
     sum = 0
     cart_items.each do |cart_item|
@@ -18,4 +18,8 @@ class Cart < ApplicationRecord
     end
     sum
   end
+
+  def clean!
+    cart_items.destroy_all
+  end  
 end
