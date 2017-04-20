@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'products#index'
   namespace :admin do
     resources :products
+    resources :orders
   end
   resources :products do
     member do
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
       post :pay_with_alipay
       post :pay_with_wechat
     end
-  end   
+  end
 end
