@@ -33,6 +33,9 @@
                 </li>
               <% end %>
               <li>
+                <%= link_to("个人订单列表", account_orders_path ) %>
+              </li>              
+              <li>
                 <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
               </li>
             </ul>
