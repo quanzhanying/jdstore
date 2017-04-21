@@ -10,13 +10,13 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 production:
-  AWS_ACCESS_KEY_ID:     'AKIAJBPPQLHPYULP4P5A'
-  AWS_SECRET_ACCESS_KEY: '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'
-  AWS_BUCKET_NAME:       'fullstack-hn'
-  AWS_REGION:            'ap-northeast-1'
+  qiniu_access_key: '25_4mXjGbLcBqXTDWHIRR1DGMFwSPGBUXIn9Sir6'
+  qiniu_secret_key: 'OlspJ7TSUor5gI8rn4dg7TToCdjzW6bq3JA5SewW'
+  qiniu_bucket: 'wealthfreedom'
+  qiniu_bucket_domain: 'oop8f4m3q.bkt.clouddn.com'
 
 development:
-  AWS_ACCESS_KEY_ID:     'AKIAJBPPQLHPYULP4P5A'
-  AWS_SECRET_ACCESS_KEY: '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'
-  AWS_BUCKET_NAME:       'fullstack-hn'
-  AWS_REGION:            'ap-northeast-1'
+    qiniu_access_key: '25_4mXjGbLcBqXTDWHIRR1DGMFwSPGBUXIn9Sir6'
+    qiniu_secret_key: 'OlspJ7TSUor5gI8rn4dg7TToCdjzW6bq3JA5SewW'
+    qiniu_bucket: 'wealthfreedom'
+    qiniu_bucket_domain: 'oop8f4m3q.bkt.clouddn.com'
