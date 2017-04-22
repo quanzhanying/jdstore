@@ -1,8 +1,32 @@
-<% @products.each do |product| %>
-  <div class="col-md-3">
-    <a href="/">
-      <img src="http://www.yaho.com.tw/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/e/aeron_1.jpg">
-    </a>
-    <p><%= product.title %> $<%= product.price%></p>
-  </div>
-<% end %>
+<table class="table table-boldered">
+
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>品名</td>
+      <td>叙述</td>
+      <td>库存</td>
+      <td>价格</td>
+      <td>选项</td>
+      <td>创建日期</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>xx</td>
+        <td><%= link_to(product.title, admin_product_path(product)) %></td>
+        <td><%= product.description %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.price %></td>
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(product)) %> |
+          <%= link_to("Destroy", admin_product_path(product), method: :delete, data: { confirm: "Are you sure?" }) %>
+        </td>
+        <td><%= product.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
