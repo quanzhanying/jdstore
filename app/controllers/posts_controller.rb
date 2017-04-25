@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.where(:is_hidden => false).order("created_at DESC")
+    @posts = Post.published.recent
   end
 
   def new
