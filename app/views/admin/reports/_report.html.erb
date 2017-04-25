@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="panel-title">
+                    <%= report.user.email %>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="trix-content">
+            <p> <%= simple_format(report.content) %> </p>
+        </div>
+
+        <hr>
+
+        <% if report.attachment.present? %>
+          <i class="fa fa-paperclip"> </i>
+          <%= link_to("Download report", report.attachment_url) %>
+        <% else %>
+           No Attachment
+        <% end %>
+    </div>
+
+</div>

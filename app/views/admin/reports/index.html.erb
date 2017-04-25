@@ -1,0 +1,4 @@
+<h2> <%= @post.title %> - 报告列表 </h2>
+
+<hr>
+<%= render :partial => "report", :collection => @reports, :as => :report %>

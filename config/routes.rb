@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
+    resources :reports
     end
     resources :orders do
      member do
