@@ -8,6 +8,7 @@
   <% @posts.each do |post| %>
   <tr>
     <td>
+       <%= render_post_status(post) %>
       <%= link_to(post.title, admin_post_path(post)) %>
     </td>
     <td>

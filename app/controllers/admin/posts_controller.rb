@@ -48,6 +48,6 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :contact_email)
+    params.require(:post).permit(:title, :description, :contact_email, :is_hidden)
   end
 end

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.where(:is_hidden => false).order("created_at DESC")
   end
 
   def new
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :contact_email)
+    params.require(:post).permit(:title, :description, :contact_email, :is_hidden)
   end
 
 end
