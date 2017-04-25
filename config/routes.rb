@@ -43,6 +43,8 @@ Rails.application.routes.draw do
  namespace :account do
      resources :orders
  end
- resources :posts
+ resources :posts do
+   resources :reports
+ end
  root "welcome#index"
 end

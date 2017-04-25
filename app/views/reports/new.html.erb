@@ -1,0 +1,10 @@
+<h3> 发布报告到 <%= @post.title %> </h3>
+
+<hr>
+
+<%= simple_form_for [@post, @report] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :attachment %> 
+
+  <%= f.submit "送出" %>
+<% end %>
