@@ -1,0 +1,22 @@
+<div class="pull-right">
+  <%= link_to("Add a post", new_admin_post_path, :class => "btn btn-default" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <% @posts.each do |post| %>
+  <tr>
+    <td>
+      <%= link_to(post.title, admin_post_path(post)) %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_post_path(post)) %>
+      <%= link_to("Destroy", admin_post_path(post), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= post.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
