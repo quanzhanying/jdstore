@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   def show
     @post = Post.find(params[:id])
+    if @post.is_hidden
+      flash[:warning] = "This Post already archieved"
+      redirect_to root_path
+    end
   end
 
   def index

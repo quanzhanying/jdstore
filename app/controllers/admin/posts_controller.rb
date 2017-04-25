@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-
+ layout "admin"
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :admin_required
   def show
@@ -43,6 +43,19 @@ class Admin::PostsController < ApplicationController
     @post.destroy
 
     redirect_to admin_posts_path
+  end
+
+  def publish
+    @post = Post.find(params[:id])
+     @post.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @post = Post.find(params[:id])
+    @post.hide!
+
+    redirect_to :back
   end
 
   private

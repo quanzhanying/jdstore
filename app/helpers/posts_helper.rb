@@ -1,9 +1,9 @@
 module PostsHelper
   def render_post_status(post)
     if post.is_hidden
-      "(Hidden)"
+      content_tag(:span, "", :class => "fa fa-lock")
     else
-      "(Public)"
+      content_tag(:span, "", :class => "fa fa-globe")
     end
   end
 end
