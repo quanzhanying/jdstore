@@ -1,17 +1,33 @@
-<div class="pull-right">
-  <%= link_to("Add a post", new_post_path, :class => "btn btn-default" ) %>
+<div class="category-bar">
+  <span><%= link_to("全部", products_path, class:"btn btn-secondary active")%></span>
+  <%  Category.all.each do |category| %>
+    <span><%= link_to(category.name, products_path(category: category.id), class: "btn btn-secondary") %> </span>
+  <% end %>
 </div>
  <table class="table table-boldered">
+   <thead>
+         <tr>
+             <td>
+                 标题
+             </td>
+
+             <td>
+               收到报告数量
+             </td>
+
+             <td>
+                 刊登时间
+             </td>
+         </tr>
+     </thead>
   <% @posts.each do |post| %>
   <tr>
     <td>
       <%= link_to(post.title, post_path(post)) %>
-    </td>
-    <td>
-     <%= link_to("Edit", edit_post_path(post)) %> |
-     <%= link_to("Destroy", post_path(post), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    
-    </td>
+
+    <td> <%= link_to(post.reports.count, post_reports_path(post)) %> </td>
+     </td>
+
     <td>
       <%= post.created_at %>
     </td>

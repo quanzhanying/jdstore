@@ -1,6 +1,11 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @post = Post.find(params[:post_id])
+    @reports = @post.reports.order('created_at DESC')
+  end
+  
   def new
     @post = Post.find(params[:post_id])
     @report= Report.new

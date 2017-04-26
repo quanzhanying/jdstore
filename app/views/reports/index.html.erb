@@ -1,0 +1,39 @@
+<div class="category-bar">
+  <span><%= link_to("全部", products_path, class:"btn btn-secondary active")%></span>
+  <%  Category.all.each do |category| %>
+    <span><%= link_to(category.name, products_path(category: category.id), class: "btn btn-secondary") %> </span>
+  <% end %>
+</div>
+<h2><%= @post.title %>  报告列表 </h2>
+<div class="row">
+ <% @reports.each do |report| %>
+ <div class="panel panel-default">
+     <div class="panel-heading">
+         <div class="row">
+             <div class="col-md-12">
+                 <h3 class="panel-title">
+                     <%= report.user.email %>
+                 </h3>
+             </div>
+
+         </div>
+     </div>
+     <div class="panel-body">
+         <div class="trix-content">
+             <p> <%= simple_format(report.content) %> </p>
+         </div>
+
+         <hr>
+
+         <% if report.attachment.present? %>
+           <i class="fa fa-paperclip"> </i>
+           <%= link_to("Download report", report.attachment_url) %>
+         <% else %>
+            No Attachment
+         <% end %>
+     </div>
+
+ </div>
+
+ <% end %>
+</div>

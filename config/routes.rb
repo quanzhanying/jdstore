@@ -47,5 +47,6 @@ Rails.application.routes.draw do
  resources :posts do
    resources :reports
  end
+ resources :reports
  root "welcome#index"
 end
