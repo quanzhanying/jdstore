@@ -6,6 +6,9 @@
 <%= f.input :description %>
 <%= f.input :contact_email %>
 <%= f.input :is_hidden %>
+<div class="group">
+        <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
+    </div>
 
   <%= f.submit "Submit" %>
 <% end %>

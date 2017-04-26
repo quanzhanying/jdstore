@@ -3,13 +3,18 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     if @post.is_hidden
-      flash[:warning] = "This Post already archieved"
+      flash[:warning] = "该主题还没有公开！"
       redirect_to root_path
     end
   end
 
   def index
-    @posts = Post.published.recent
+    if params[:category].present?
+        @posts = Post.published.where(category_id: params[:category]).recent
+    else
+        @posts = Post.published.recent
+    end
+
   end
 
   def new
@@ -18,7 +23,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
+    @post.category_id = params[:category_id]
     if @post.save
       redirect_to posts_path
     else
@@ -32,6 +37,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    @post.category_id = params[:category_id]
     if @post.update(post_params)
       redirect_to posts_path
     else
@@ -51,7 +57,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :description, :contact_email, :is_hidden)
+    params.require(:post).permit(:title, :description, :contact_email, :is_hidden, :category_id)
   end
 
 end

@@ -1,7 +1,7 @@
 <div class="category-bar">
-  <span><%= link_to("全部", products_path, class:"btn btn-secondary active")%></span>
+  <span><%= link_to("全部", posts_path, class:"btn btn-secondary active")%></span>
   <%  Category.all.each do |category| %>
-    <span><%= link_to(category.name, products_path(category: category.id), class: "btn btn-secondary") %> </span>
+    <span><%= link_to(category.name, posts_path(category: category.id), class: "btn btn-secondary") %> </span>
   <% end %>
 </div>
  <table class="table table-boldered">
@@ -24,9 +24,9 @@
   <tr>
     <td>
       <%= link_to(post.title, post_path(post)) %>
-
+    </td>
     <td> <%= link_to(post.reports.count, post_reports_path(post)) %> </td>
-     </td>
+
 
     <td>
       <%= post.created_at %>
