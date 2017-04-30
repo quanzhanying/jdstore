@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
           product_list.save
           @product = cart_item.product
           @product.quantity -= cart_item.quantity
-          @product.save 
+          @product.save
         end
 
         current_cart.clean!
@@ -29,7 +29,11 @@ class OrdersController < ApplicationController
 
         def show
           @order = Order.find_by_token(params[:id])
+          if @order.user != current_user
+            redirect_to products_path
+          else
           @product_lists = @order.product_lists
+          end
         end
 
         def pay_with_alipay
