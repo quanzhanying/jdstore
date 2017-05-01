@@ -1,0 +1,10 @@
+<h3> 修改 </h3>
+
+<hr>
+
+<%= simple_form_for [@post, @report] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :attachment %>
+
+  <%= f.submit "送出" %>
+<% end %>

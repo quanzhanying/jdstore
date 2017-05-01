@@ -13,11 +13,20 @@
              <div class="col-md-12">
                  <h3 class="panel-title">
                      <%= report.user.email %>
+
                  </h3>
              </div>
 
          </div>
      </div>
+     <% if current_user.email == report.user.email %>
+         <div class="panel-body">
+          <div class="trix-content">
+           <%= link_to("Edit ", edit_report_path(report)) %>|
+          <%= link_to("Destroy", report_path(report), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+         </div>
+       </div>
+    <% end %>
      <div class="panel-body">
          <div class="trix-content">
              <p> <%= simple_format(report.content) %> </p>
@@ -34,6 +43,5 @@
      </div>
 
  </div>
-
- <% end %>
+  <% end %>
 </div>
