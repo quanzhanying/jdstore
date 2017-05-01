@@ -10,7 +10,9 @@
             <td>
                 标题
             </td>
-
+            <td>
+               描述
+            </td>
             <td>
               收到报告数量
             </td>
@@ -27,6 +29,9 @@
     <td>
        <%= render_post_status(post) %>
       <%= link_to(post.title, admin_post_path(post)) %>
+    </td>
+    <td>
+      <%= post.description %>
     </td>
     <td> <%= link_to(post.reports.count, admin_post_reports_path(post)) %> </td>
     <td>

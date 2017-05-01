@@ -8,11 +8,13 @@
    <thead>
          <tr>
              <td>
-                 标题
+                 主题发布通道
              </td>
-
              <td>
-               发布信息数量
+                描述
+             </td>
+             <td>
+               查看信息通道
              </td>
 
              <td>
@@ -24,6 +26,9 @@
   <tr>
     <td>
       <%= link_to(post.title, post_path(post)) %>
+    </td>
+    <td>
+      <%= post.description %>
     </td>
     <td> <%= link_to(post.reports.count, post_reports_path(post)) %> </td>
 

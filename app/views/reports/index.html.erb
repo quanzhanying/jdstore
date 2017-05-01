@@ -4,7 +4,7 @@
     <span><%= link_to(category.name, products_path(category: category.id), class: "btn btn-secondary") %> </span>
   <% end %>
 </div>
-<h2><%= @post.title %>  报告列表 </h2>
+<h2><%= @post.title %>  列表 </h2>
 <div class="row">
  <% @reports.each do |report| %>
  <div class="panel panel-default">
@@ -27,7 +27,7 @@
 
          <% if report.attachment.present? %>
            <i class="fa fa-paperclip"> </i>
-           <%= link_to("Download report", report.attachment_url) %>
+           <%= link_to("report download", report.attachment_url) %>
          <% else %>
             No Attachment
          <% end %>
