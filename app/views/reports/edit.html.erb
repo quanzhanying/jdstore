@@ -3,7 +3,7 @@
 <hr>
 
 <%= simple_form_for [@post, @report] do |f| %>
-  <%= f.input :content %>
+  <%= f.input :content, as: :ckeditor  %>
   <%= f.input :attachment %>
 
   <%= f.submit "送出" %>

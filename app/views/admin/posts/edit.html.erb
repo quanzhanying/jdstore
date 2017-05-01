@@ -3,7 +3,7 @@
 <%= simple_form_for [:admin,@post] do |f| %>
 
 <%= f.input :title %>
-<%= f.input :description %>
+<%= f.input :description, as: :ckeditor %>
 <%= f.input :contact_email %>
 <%= f.input :is_hidden %>
 <div class="group">
