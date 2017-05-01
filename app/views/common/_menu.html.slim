@@ -1,0 +1,15 @@
+.ui.large.top.menu
+  .ui.container
+    = link_to 'JDStore', '/', class: 'header item'
+    .right.menu
+      - unless user_signed_in?
+        .item
+          = link_to 'Log in', new_user_session_path, class: 'ui button'
+        .item
+          = link_to 'Sign up', new_user_registration_path, class: 'ui button'
+      - else
+        .ui.simple.dropdown.item
+          = current_user.email
+          = semantic_icon 'dropdown'
+          .menu
+            = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'item'
