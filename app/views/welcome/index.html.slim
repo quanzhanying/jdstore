@@ -1,2 +1,77 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+.ui.inverted.vertical.masthead.center.aligned.segment
+  .ui.container
+    .ui.large.secondary.inverted.pointing.menu
+      = link_to 'JDStore', '/', class: 'header item'
+      .right.menu
+        - unless user_signed_in?
+          .item
+            = link_to 'Log in', new_user_session_path, class: 'ui inverted button'
+          .item
+            = link_to 'Sign up', new_user_registration_path, class: 'ui inverted button'
+        - else
+          .ui.simple.dropdown.item
+            = current_user.email
+            = semantic_icon 'dropdown'
+            .menu
+              = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'item'
+  .ui.text.container
+    h1.inverted.header
+      |JD Store
+.ui.hidden.divider
+.ui.text.container
+  .ui.raised.segment
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+    .ui.divider
+
+javascript:
+  $(document)
+    .ready(function() {
+      $('#header-menu').css('display', 'none')
+      .visibility({
+        once: false,
+        onBottomPassed: function() {
+          $('.fixed.menu').transition('fade in');
+        },
+        onBottomPassedReverse: function() {
+          $('.fixed.menu').transition('fade out');
+        },
+      })
+    })
+  ;

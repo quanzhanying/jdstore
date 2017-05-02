@@ -56,10 +56,16 @@ SimpleForm.setup do |config|
     b.optional :maxlength
     b.optional :pattern
     b.optional :min_max
-    b.use :label_input
+
+    b.wrapper :with_icons, class: 'ui left icon input' do |input|
+      input.use :icon
+      input.use :input
+    end
+
     b.use :hint,  wrap_with: { tag: 'div', class: 'hint' }
     b.use :error, wrap_with: { tag: 'div', class: 'ui red pointing above label error' }
   end
+
 
   config.wrappers :ui_checkbox, tag: 'div', class: "field", error_class: 'error', hint_class: 'with_hint' do |b|
     b.use :html5
@@ -96,7 +102,7 @@ SimpleForm.setup do |config|
   config.boolean_style = :inline
 
   # Default class for buttons
-  config.button_class = 'ui primary submit button'
+  config.button_class = 'ui submit button'
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.

@@ -1,0 +1,12 @@
+.ui.middle.aligned.center.aligned.grid[style='margin-top: 7em;']
+  .six.wide.column
+    h2.ui.teal.header
+      | Log in
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .ui.stacked.segment
+        = f.input :email, required: false, autofocus: true, icon: 'user', placeholder: 'E-mail address'
+        = f.input :password, required: false, icon: 'lock', placeholder: 'Password'
+        = f.input :remember_me, wrapper: :ui_slider_checkbox, as: :boolean if devise_mapping.rememberable?
+        = f.button :submit, "Log in", class: 'ui fluid large teal button'
+    .ui.message
+      = render "devise/shared/links"

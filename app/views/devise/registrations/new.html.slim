@@ -1,0 +1,14 @@
+.ui.middle.aligned.center.aligned.grid[style='margin-top: 7em;']
+  .six.wide.column
+    h2.ui.teal.header
+      | Sign up
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .ui.error.message
+        = f.error_notification
+      .ui.stacked.segment
+        = f.input :email, required: true, autofocus: true, icon: 'user', placeholder: 'E-mail address'
+        = f.input :password, required: true, icon: 'lock', placeholder: 'Password'
+        = f.input :password_confirmation, required: true, icon: 'lock', placeholder: 'Password confirmation'
+        = f.button :submit, "Sign up", class: 'ui fluid large teal button'
+    .ui.message
+      = render "devise/shared/links"
