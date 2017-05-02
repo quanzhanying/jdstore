@@ -1,0 +1,36 @@
+<h2>商品列表</h2>
+<p align="right">
+  <%= link_to "增加新商品", new_admin_product_path, class:"btn btn-danger btn-lg" %>
+</p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>品名</th>
+        <th>描述</th>
+        <th>库存</th>
+        <th>价格</th>
+        <th>选项</th>
+        <th>创建时间</th>
+      </tr>
+    </thead>
+    <hbody>
+      <% @products.each do |p| %>
+      <tr>
+        <td><%=  %></td>
+        <td><%= link_to p.title, admin_product_path(p) %></td>
+        <td><%= p.description %></td>
+        <td><%= p.quantity %></td>
+        <td><%= p.price %></td>
+        <td>
+          <%= link_to "编辑", edit_admin_product_path(p) %>
+          <%= link_to "删除", admin_product_path(p), method: :delete, :data=>{:confirm => "确定删除吗？"}  %>
+        </td>
+        <td><%= p.created_at %></td>
+      </tr>
+      <% end %>
+    </hbody>
+  </table>
+</div>
