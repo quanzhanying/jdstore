@@ -1,22 +1,14 @@
-<div class="col-md-12">
-  <table class="table table-hover table-blodered table-striped">
-    <thead>
-      <tr>
-        <th>商品名</th>
-        <th>简介</th>
-        <th>价格</th>
-        <th>库存</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td><%= link_to(product.name, product_path(product)) %></td>
-          <td><%= product.description %></td>
-          <td><%= product.price %></td>
-          <td><%= product.stock %></td>
-        </tr>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200*200&text= No Pic", class: "thumbnail")%>
+        <% end %>
       <% end %>
-    </tbody>
-  </table>
+      <%= product.name %> ￥ <%= product.price %>
+    </div>
+  <% end %>
 </div>
