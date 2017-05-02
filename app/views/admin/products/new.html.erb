@@ -4,7 +4,7 @@
 <%= p.input :description %>
 <%= p.input :quantity %>
 <%= p.input :price %>
-<%= p.input :image %>
+<%= p.input :image, as: :file %>
 <%= p.submit "添加", class:"btn btn-danger btn-lg" %>
 
 <% end %>

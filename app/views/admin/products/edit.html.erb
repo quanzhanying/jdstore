@@ -3,8 +3,15 @@
 <%= p.input :title %>
 <%= p.input :description %>
 <%= p.input :quantity %>
-<%= p.input :price %> 
-<%= p.input :image %>
-<%= p.submit "更新", class:"btn btn-danger btn-lg" %>
+<%= p.input :price %>
+
+
+<% if @product.image.present? %>
+   <span>目前商品图</span> <br>
+   <%= image_tag(@product.image.thumb.url) %>
+<% end %
+
+<%= p.input :image, as: :file %>
+<%= p.submit "更新", class:"btn btn-danger btn-lg", data: {disable_with:"提交中......"} %>
 
 <% end %>
