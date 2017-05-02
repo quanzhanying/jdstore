@@ -1,0 +1,6 @@
+<h2>Edit a job</h2>
+<% if @product.image.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image.thumb.url) %>
+<% end %>
+<%= render "form" %>
