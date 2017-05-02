@@ -1,0 +1,21 @@
+<h2>产品列表</h2>
+
+<div class="row">
+  <% @products.each do |p|%>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href=<%= product_path(p) %> target="_target">
+        <% if p.image != "" %>
+          <img src='<%= image_url p.image %>' >
+        <% else %>
+          <img src='<%= image_url 'nopic.jpg'%>' >
+        <% end %>
+
+        <div class="caption">
+          <p><%= p.title %>: $<%= p.price %></p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</div>

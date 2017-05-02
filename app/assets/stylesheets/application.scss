@@ -129,7 +129,7 @@
 
 
 footer {
-   color: #fff;
+   color: #212121;
    height: 100px;
    bottom: 0;
    width: 100%;
@@ -263,4 +263,9 @@ h2 {
   color: #303030;
   font-weight: 600;
   margin-bottom: 30px;
+}
+
+.thumbnail a > img {
+  width: 400px;
+  height: 250px;
 }
