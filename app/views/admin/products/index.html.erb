@@ -1,34 +1,43 @@
 <h1>Product List</h1>
-<div class="pull-right">
-  <%= link_to content_tag(:i, " Add new product", class: "fa fa-plus"), new_admin_product_path, class: "btn btn-primary" %>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to content_tag(:i, " 新增产品", class: "fa fa-plus"), new_admin_product_path, class: "btn btn-primary btn-sm" %>
 </div>
-<br/><br/><br/>
+
 <table class="table table-bordered">
   <tdead>
     <tr>
-      <td>#</td>
-      <td>商品名</td>
-      <td>叙述</td>
-      <td>库存</td>
-      <td>价格</td>
-      <td>选项</td>
-      <td>创建日期</td>
+      <th>#</th>
+      <th width="220">Product Pic</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th width="100">Options</th>
     </tr>
   </tdead>
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.id %></td>
-        <td><%= link_to product.title, admin_product_path(product) %></td>
-        <td><%= product.description %></td>
-        <td><%= product.quantity %></td>
-        <td><%= product.price %></td>
+        <td>
+          <%= product.id %>
+        </td>
+        <td>
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= product.title %>
+        </td>
+        <td>
+          <%= product.price %>
+        </td>
+        </td>
         <td>
           <%= link_to 'Edit', edit_admin_product_path(product) %>
-          |
-          <%= link_to 'Destroy', admin_product_path(product), method: :delete %>
         </td>
-        <td><%= product.created_at %></td>
       </tr>
     <% end %>
   </tbody>
