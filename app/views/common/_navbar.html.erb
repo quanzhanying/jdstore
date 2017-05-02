@@ -1,5 +1,5 @@
-<nav class="navbar navbar-defult" role="navigation">
-  <div class="continer-fluid">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
          <a class="navbar-brand" href="/"> JD store </a>
@@ -11,12 +11,12 @@
 
          <ul class="nav navbar-nav navbar-right">
            <li>
-        
+            <% if !current_user %>
             <li>
-              <%= link_to('<span class="fa fa-sign-in"></span>登录'.html.safe, new_user_session_path) %>
+              <%= link_to('<span class="fa fa-sign-in"></span>登录'.html_safe, new_user_session_path) %>
             </li>
             <li>
-              <%= link_to('<span class="fa fa-user-plus"></span>注册'.html.safe, new_user_registration_path) %>
+              <%= link_to('<span class="fa fa-user-plus"></span>注册'.html_safe, new_user_registration_path) %>
             </li>
             <% else %>
             <li class="dropdown">
@@ -26,16 +26,16 @@
                </a>
                <ul class="dropdown-menu">
                    <li>
-                     <%= link_to("登出",destory_user_session_path, method: :delete) %>
+                     <%= link_to("登出",destroy_user_session_path, method: :delete) %>
                    </li>
                </ul>
             </li>
-
+          <% end %>
          </li>
         </ul>
       </div>
       <!-- /.navbar-collaspse -->
   </div>
-  <!-- /.continer-fluid -->
+  <!-- /.container-fluid -->
 
 </nav>
