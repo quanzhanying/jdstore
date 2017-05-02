@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :admin_required
 
   def index
     @products = Product.all
@@ -8,7 +9,7 @@ class Admin::ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
-  
+
   def new
     @product = Product.new
   end
@@ -39,7 +40,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
-
+  
   def product_params
     params.require(:product).permit(:title, :description, :price, :quantity)
   end
