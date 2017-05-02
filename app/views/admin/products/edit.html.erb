@@ -4,5 +4,10 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  <%= f.submit "Create Product" %>
+  <% if @product.image.present? %>
+    <span>目前商品图</span><br/>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+  <%= f.input :image, as: :file %>
+  <%= f.submit "Create Product", data: { disable_with: "Submitting..."} %>
 <% end %>

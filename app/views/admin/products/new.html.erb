@@ -4,5 +4,6 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  <%= f.submit "Create Product" %>
+  <%= f.input :image, as: :file %>
+  <%= f.submit "Create Product", data: { disable_with: "Submitting..."} %>
 <% end %>
