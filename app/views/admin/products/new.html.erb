@@ -1,0 +1,11 @@
+<div>
+  <h1>添加新商品</h2>
+  <hr>
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :name, :label => "商品名", placeholder: "名称" %>
+    <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 20} %>
+    <%= f.input :price, :label => "价格", placeholder: "价格" %>
+    <%= f.input :stock, :label => "库存", placeholder: "库存" %>
+    <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交。。。"} %>
+  <% end %>
+</div>

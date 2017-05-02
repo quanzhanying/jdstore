@@ -1,0 +1,27 @@
+<div><%= link_to("添加商品", new_admin_product_path, class: "btn btn-primary btn-sm pull-right") %></div>
+<div class="col-md-12">
+  <table class="table table-hover table-blodered table-striped">
+    <thead>
+      <tr>
+        <th>商品名</th>
+        <th>描述</th>
+        <th>价格</th>
+        <th>库存</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to(product.name, product_path(product)) %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.stock %></td>
+          <td>
+            <%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-primary btn-xs") %>
+            <%= link_to("删除", admin_product_path(product), method: :delete, class: "btn btn-primary btn-xs", data: {confirm: "你确定删除商品吗？"}) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

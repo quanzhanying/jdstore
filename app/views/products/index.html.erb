@@ -1,0 +1,22 @@
+<div class="col-md-12">
+  <table class="table table-hover table-blodered table-striped">
+    <thead>
+      <tr>
+        <th>商品名</th>
+        <th>简介</th>
+        <th>价格</th>
+        <th>库存</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to(product.name, product_path(product)) %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.stock %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

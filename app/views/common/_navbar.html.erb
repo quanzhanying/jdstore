@@ -16,6 +16,11 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                <li><%= link_to("后台", admin_products_path, method: :get) %></li>
+                <% else %>
+                <li><%= link_to("已收藏的商品", "#") %></li>
+                <% end %>
                 <li><%= link_to("退出", destroy_user_session_path, method: :delete) %></li>
               </ul>
             </li>
