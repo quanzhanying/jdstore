@@ -1,0 +1,35 @@
+<!-- Header -->
+<div class="jumbotron text-center ">
+  <h1 style="text-align: center; text-shadow:5px 5px 10px grey;">九木生活</h1>
+  <h3>买得起的好生活</h3>
+  <br>
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="暗黑钢笔 纸胶带" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default">搜索</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="section2" class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-sm-4">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+
+        <%= product.title %> <br>
+        ￥ <%= product.price %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<hr>
