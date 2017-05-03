@@ -14,7 +14,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_parmas)
+    @product = Product.new(product_params)
     if @product.save
       redirect_to admin_products_path
     else
@@ -36,10 +36,11 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Prodcut.find(params[:id])
-    if @product.destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
       redirect_to admin_products_path
-    end
+
   end
 
 
