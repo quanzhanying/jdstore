@@ -2,10 +2,11 @@
 
 <%= simple_form_for [:admin, @product ] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.input :quantity %>
+<%= f.input :title, :label => "品名" %>
+<%= f.input :description, :label => "商品叙述" %>
+<%= f.input :price, :label => "价格" %>
+<%= f.input :quantity, :label => "库存" %>
+<%= f.input :is_hidden, :label => "隐藏" %>
 
   <%= f.submit "Submit" %>
 <% end %>

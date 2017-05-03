@@ -7,7 +7,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.order("created_at DESC")
   end
 
   def new
@@ -42,11 +42,11 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
-  
+
 
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity)
+    params.require(:product).permit(:title, :description, :price, :quantity, :is_hidden)
   end
 end
