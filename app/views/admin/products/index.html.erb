@@ -5,13 +5,38 @@
 <br><br>
 
 <table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>品名</td>
+      <td>叙述</td>
+      <td>价格</td>
+      <td>库存</td>
+      <td>管理</td>
+      <td>创建日期</td>
+    </tr>
+  </thead>
+  <tbody>
+
   <% @products.each do |product| %>
   <tr>
+    <td>
+      #
+    </td>
     <td>
       <%= link_to(product.title, admin_product_path(product)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %>
+      <%= product.description %>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+    <td>
+      <%= product.quantity %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_product_path(product)) %> |
       <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td>
@@ -19,4 +44,5 @@
     </td>
   </tr>
   <% end %>
+  </tbody>
 </table>
