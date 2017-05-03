@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.hp-ul {
+  display: inline-block;
+  margin: 15px;
+  padding: 0px;
+  overflow: hidden;
+  // text-align: left;
+  // overflow: hidden;
+  height: 240px;
+  width: 220px;
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  #pl {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
