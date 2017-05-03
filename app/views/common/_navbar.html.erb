@@ -1,0 +1,58 @@
+
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Jack Gallery</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/products">Home</a></li>
+      <!--        <li><a href="#">Page 1</a></li>
+              <li><a href="#">Page 2</a></li>
+              <li><a href="#">Page 3</a></li>  -->
+              <li class="active">
+                <%= link_to("Products", products_path) %>
+              </li>
+            </ul>
+
+
+
+
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <%= link_to carts_path do %>
+                        购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                    <% end %>
+                </li>
+
+
+
+                <li>
+                    <% if !current_user %>
+                        <li><%= link_to("signup", new_user_registration_path) %></li>
+                        <li><%= link_to("login", new_user_session_path) %></li>
+                    <% else %>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Hi!, <%= current_user.email %>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <% if current_user.admin? %>
+                                  <li> <%= link_to("Admin 选单", admin_products_path ) %> </li>
+                                <% end %>
+
+                                <li>
+                                  <%= link_to("个人订单列表", account_orders_path) %>
+                                </li>
+                                <li> <%= link_to("logout", destroy_user_session_path, method: :delete) %> </li>
+                            </ul>
+                        </li>
+                    <% end %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

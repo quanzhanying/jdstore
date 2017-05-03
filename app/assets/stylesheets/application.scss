@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+
+ .jumbotron {
+   background-image:url('http://www.godisreal.today/wp-content/uploads/2014/05/pictures-jesus-howard-lyon-fear-faith.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-bottom: 110px;
+ }
+
+ .title {
+   font-family: "Georgia";
+   text-align: center;
+   margin-top: 200px;
+   margin-bottom: 80px;
+ }
+
+ .slogan {
+   margin-top: 10px;
+   margin-bottom: 50px;
+   text-align: center;
+   color: black;
+   top: 12px; 
+ }
+
+ .lead {
+   margin-bottom: 60px;
+   text-align: center;
+   color: white;
+ }
