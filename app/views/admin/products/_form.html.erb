@@ -1,0 +1,15 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :quantity %>
+  <%= f.input :images, as: :file, multiple: true %>
+  <% if @product.images.present? %>
+    <div class="product-images-preview">
+      <% @product.images.each do |image| %>
+        <%= image_tag(image.thumb.url) %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.submit "保存", data: {disable_with: "正在保存..."}, class: "btn btn-default" %>
+<% end %>
