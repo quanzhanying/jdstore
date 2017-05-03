@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Use Capistrano for deployment
