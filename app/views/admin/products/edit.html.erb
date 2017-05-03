@@ -9,9 +9,11 @@
 <% if @product.image.present? %>
    <span>目前商品图</span> <br>
    <%= image_tag(@product.image.thumb.url) %>
-<% end %
+<% end %>
 
 <%= p.input :image, as: :file %>
-<%= p.submit "更新", class:"btn btn-danger btn-lg", data: {disable_with:"提交中......"} %>
+
+
+<%= p.submit "更新", class:"btn btn-danger btn-lg", data:{disable_with:"提交中......"} %>
 
 <% end %>
