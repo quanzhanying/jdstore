@@ -7,6 +7,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><%= link_to("商品列表",products_path) %></li>
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <% if !current_user %>
                   <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
@@ -21,7 +25,7 @@
                     <% if current_user.admin? %>
                     <li><%= link_to("Admin Panel", admin_products_path) %></li>
                     <% end %>
-                    <li><%= link_to("Log out", destroy_user_session_path, method: :delete) %></li>
+                    <li><%= link_to(content_tag(:i, '登出', class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
                   </ul>
                 </li>
                 <%end%>

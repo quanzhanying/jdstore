@@ -4,4 +4,4 @@
 <h4>产品描述：</h4><%= simple_format(@product.description) %>
 <h4>产品存库:</h4><%= @product.quantity %>
 <h4>产品价格:</h4><%= @product.price %>
-<h4>产品图片:</h4><img src='<%= image_url @product.image %>' > 
+<h4>产品图片:</h4><%= image_tag @product.image.thumb.url %>

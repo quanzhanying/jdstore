@@ -2,20 +2,16 @@
 
 <div class="row">
   <% @products.each do |p|%>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <a href=<%= product_path(p) %> target="_target">
-        <% if p.image != "" %>
-          <img src='<%= image_url p.image %>' >
+  <div class="col-md-3 col-xs-6">
+      <%= link_to product_path(p) do%>
+        <% if p.image.present? %>
+          <%= image_tag(p.image.thumb.url, class:"img-thumbnail") %>
         <% else %>
-          <img src='<%= image_url 'nopic.jpg'%>' >
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
         <% end %>
-
-        <div class="caption">
-          <p><%= p.title %>: $<%= p.price %></p>
-        </div>
+      <% end %>
+      <p><%= p.title %>: ￥ <%= p.price %></p>
       </a>
-    </div>
   </div>
   <% end %>
 </div>

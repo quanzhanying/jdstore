@@ -18,48 +18,6 @@
 @import "bootstrap-sprockets";
 @import "font-awesome";
 
-.navbar-default {
-    background-color: #212121;
-    border-color: #212121;
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
-.navbar-default .navbar-brand {
-    color: #EF6C00;
-    padding: 10px 15px;
-    line-height: 30px;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #FF6F00;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: #EF6C00;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #FF6F00;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #FF6F00;
-    background-color: #FFE0B2;
-}
-
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:focus,
-.navbar-default .navbar-nav > .open > a:hover {
-    background-color: #FFE0B2;
-    color: #212121;
-}
 
 .navbar-brand > img {
   display: inline-block;
@@ -266,7 +224,7 @@ h2 {
   margin-bottom: 30px;
 }
 
-.thumbnail a > img {
-  width: 400px;
-  height: 250px;
-}
+img {
+ display: block;
+ margin: auto;
+ }
