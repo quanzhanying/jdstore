@@ -1,0 +1,47 @@
+<% if @products.blank?%>
+  <br>
+  <h2 class="text-center">
+    抱歉，没有找到您想要的超跑
+  </h2>
+<% else %>
+
+<h2 class="text-center"> 总共发现 <%= @products.count %> 个"<%= @query_string %>"的相关岗位 </h2>
+<% @products.each do |product| %>
+<div class="col-md-3 col-sm-6">
+      <span class="thumbnail product-item">
+        <div class="pi-img-wrapper">
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+          <div>
+            <a href="#" class="btn">收藏</a>
+          </div>
+        </div>
+        <h3><%= link_to(product.title, product_path(product)) %></h3>
+        <div class="ratings">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        </div>
+        <span class="badge">90%</span>
+        <p><%= product.description %></p>
+        <hr class="line">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p class="pi-price">￥ <%= product.price %></p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
+            </div>
+          </div>
+          <div class="sticker sticker-new"></div>
+      </span>
+    </div>
+
+<% end %>
+
+<% end %>

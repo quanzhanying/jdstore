@@ -1,0 +1,74 @@
+<div class="row">
+  <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+          <div class="carousel-inner" role="listbox">
+
+              <!-- Third Slide -->
+              <div class="item active">
+
+                  <!-- Slide Background -->
+                  <img src="https://ooo.0o0.ooo/2017/02/14/58a319fc69942.png" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                  <div class="jumbotron1 slide-text slide_style_left">
+                    <span class="logo">
+                      <img src='http://img.cool80.com/i/logo/other/falali.jpg' class="img-responsive" alt="Logo">
+                    </span>
+                      <br>
+                      <p>
+                        <strong>保时捷</strong>（Porsche)，又叫波尔舍，是欧美汽车的主要代表，也是闻名世界的汽车公司。1931年成立于斯图加特
+                        ，以生产高级跑车闻名于世界车坛。创始人费迪南德·波尔舍（同费迪南德·保时捷）是一位享誉世界车坛的著名设计师。
+                      </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+
+
+        <% @products.each do |product| %>
+        <div class="row">
+
+
+        <div class="col-md-12 col-sm-6">
+              <div class="thumbnail product-item">
+                <div class="pi-img-wrapper">
+                  <% if product.photos.present? %>
+                  <img src="<%= product.photos[0].avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail center-block") %>
+                  <% end %>
+                  <div>
+                    <a href="#" class="btn">收藏</a>
+                  </div>
+                </div>
+                <h3><%= link_to(product.title, product_path(product)) %></h3>
+                <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+                <% if product.discount != 100 %>
+                <span class="badge"><%= product.discount %>%</span>
+                <% end %>
+                <p><%= product.description %></p>
+                <hr class="line">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="pi-price">￥ <%= product.price %></p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
+                    </div>
+                  </div>
+                  <% if product.newproduct %>
+                  <div class="sticker sticker-new"></div>
+                  <% end %>
+              </div>
+            </div>
+
+        </div>
+        <% end %>
+            </div>

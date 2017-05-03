@@ -1,0 +1,67 @@
+<div class="container">
+
+
+<h2> 编辑产品 </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+    <%= f.input :title, :label => "产品标题" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :parameter, :label => "规格参数" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description, :label => "设计理念" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :appearance, :label => "外观设计" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :interior, :label => "内饰设计" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity, :label => "数量" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price, :label => "价格" %>
+  </div>
+
+  <% if @product.photos.present? %>
+    <span>小图</span> <br>
+    <% @product.photos.each do |p| %>
+      <%= image_tag p.avatar.thumb.url %><br>
+    <% end %>
+  <% end %>
+
+ <div class="group">
+   <%= f.label :avatar %><br>
+   <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+ </div>
+
+    <div class="group">
+      <%= f.input :category, :label => "品牌商" %>
+    </div>
+
+    <div class="group">
+      <%= f.input :discount, :label => "折扣" %>
+    </div>
+
+    <div class="group">
+      <%= f.input :is_hidden, :label => "下架产品" %>
+    </div>
+
+    <div class="group">
+      <%= f.input :newproduct, :label => "新上市" %>
+    </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
+</div>

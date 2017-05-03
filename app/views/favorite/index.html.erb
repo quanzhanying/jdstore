@@ -1,0 +1,51 @@
+<div class="container">
+
+
+<h3>我的收藏</h3>
+					<hr>
+<div class="row">
+  <% @products.each do |product| %>
+	<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail product-item">
+					<div class="pi-img-wrapper">
+						<% if product.image.present? %>
+							<%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+						<% else %>
+							<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+						<% end %>
+						<div>
+							<p class="btn">
+							<% if current_user && current_user.is_favorite_of?(product) %>
+         				<%= link_to("取消收藏", favorite_product_path(product, type: "unfavorite"), method: :put) %>
+       				<% else %>
+         				<%= link_to("添加收藏", favorite_product_path(product, type: "favorite"), method: :put) %>
+        			<% end %>
+							</p>
+						</div>
+					</div>
+      		<h3><%= link_to(product.title, product_path(product)) %></h3>
+      		<div>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+          <span class="badge">90%</span>
+      		<p><%= product.description %></p>
+      		<hr class="line">
+      		<div class="row">
+      				<div class="col-md-6 col-sm-6">
+      					<p class="pi-price">￥ <%= product.price %></p>
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
+      				</div>
+      			</div>
+						<div class="sticker sticker-new"></div>
+    		</span>
+  		</div>
+
+  <% end %>
+</div>
+</div>

@@ -1,0 +1,150 @@
+<div class="row">
+	<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+							<li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+							<li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+							<li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper For Slides -->
+					<div class="carousel-inner" role="listbox">
+
+							<!-- Third Slide -->
+							<div class="item active">
+
+									<!-- Slide Background -->
+									<img src="<%= @photos.first.avatar.url %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<div class="bs-slider-overlay"></div>
+
+									<div class="container">
+											<div class="row">
+													<!-- Slide Text Layer -->
+													<div class="slide-text slide_style_left">
+															<h1 data-animation="animated zoomInLeft"><%= @product.title %></h1>
+															<div> 数量 : <%= @product.quantity %> </div>
+															<div>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star"></span>
+																<span class="glyphicon glyphicon-star-empty"></span>
+															</div>
+															<br>
+															<h4>￥ <%= @product.price %></h4>
+															<div class="action">
+																<button class="add-to-cart btn btn-default btn-info">
+																	<% if @product.quantity.present? && @product.quantity > 0 %>
+																		<%= link_to(content_tag(:i, '买买买', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post) %>
+																	<% else %>
+																		车太帅，没货了
+																	<% end %>
+																</button>
+																<button class="like btn btn-default btn-info" type="button"><span class="fa fa-heart">收藏</span></button>
+															</div>
+													</div>
+											</div>
+									</div>
+							</div>
+							<!-- End of Slide -->
+
+							<!-- Second Slide -->
+							<div class="item">
+
+									<!-- Slide Background -->
+									<img src="<%= @photos.second.avatar.url %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<div class="bs-slider-overlay"></div>
+									<!-- Slide Text Layer -->
+									<div class="slide-text slide_style_left">
+											<h1 data-animation="animated flipInX"><%= @product.title %></h1>
+											<p data-animation="animated lightSpeedIn">侧面</p>
+									</div>
+							</div>
+							<!-- End of Slide -->
+
+							<!-- Third Slide -->
+							<div class="item">
+
+									<!-- Slide Background -->
+									<img src="<%= @photos.third.avatar.url %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+									<div class="bs-slider-overlay"></div>
+									<!-- Slide Text Layer -->
+									<div class="slide-text slide_style_left">
+											<h1 data-animation="animated zoomInLeft"><%= @product.title %></h1>
+											<p data-animation="animated fadeInRight">背面</p>
+									</div>
+							</div>
+							<!-- End of Slide -->
+
+
+					</div><!-- End of Wrapper For Slides -->
+
+					<!-- Left Control -->
+					<a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+							<span class="fa fa-angle-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+					</a>
+
+					<!-- Right Control -->
+					<a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+							<span class="fa fa-angle-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+					</a>
+
+			</div> <!-- End  bootstrap-touch-slider Slider -->
+		</div>
+
+<br>
+
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+<div class="container">
+  <div class="row">
+    <nav class="col-sm-3" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked">
+				<li><br></li>
+				<li><br></li>
+        <li class="active"><a href="#section1">规格参数</a></li>
+        <li><a href="#section2">设计理念</a></li>
+        <li><a href="#section3">外观设计</a></li>
+				<li><a href="#section4">内饰设计</a></li>
+      </ul>
+    </nav>
+    <div class="col-sm-9">
+      <div id="section1">
+        <h1>规格参数</h1>
+				<hr>
+        <p><%= simple_format(@product.parameter) %></p>
+      </div>
+			<br>
+      <div id="section2">
+        <h1>设计理念</h1>
+				<hr>
+				<img src="<%= @photos.second.avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+				<br>
+        <p><%= simple_format(@product.description) %></p>
+      </div>
+			<br>
+      <div id="section3">
+        <h1>外观设计</h1>
+				<hr>
+				<img src="<%= @photos.third.avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+				<br>
+        <p><%= simple_format(@product.appearance) %></p>
+      </div>
+			<br>
+      <div id="section4">
+        <h1>内饰设计</h1>
+				<hr>
+				<img src="<%= @photos.fourth.avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+				<br>
+        <p><%= simple_format(@product.interior) %></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>

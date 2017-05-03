@@ -1,0 +1,78 @@
+<div class="row">
+  <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+          <div class="carousel-inner" role="listbox">
+
+              <!-- Third Slide -->
+              <div class="item active">
+
+                  <!-- Slide Background -->
+                  <img src="https://ooo.0o0.ooo/2017/02/14/58a317a6eca5a.png" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                  <div class="jumbotron1 slide-text slide_style_left">
+                    <span class="logo">
+                      <img src='http://img.zcool.cn/community/0335fb8554c780f00000158fc5355c7.jpg' class="img-responsive" alt="Logo">
+                    </span>
+                      <br>
+                      <p>
+                        <strong>法拉利</strong>（Ferrari S.p.A）是一家意大利汽车生产商，主要制造一级方
+                        程式赛车、及高性能跑车，1929年由恩佐·法拉利创办。早期的法拉利赞
+                        助赛车手及生产赛车，1947年独立生产汽车，其后变成今日的规模，现在
+                        由菲亚特克莱斯勒汽车集团拥有，总部设于意大利摩德纳（Modena）附近
+                        的马拉内罗（Maranello）。
+                      </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<div class="container">
+
+
+<% @products.each do |product| %>
+<div class="row">
+
+
+<div class="col-md-12 col-sm-6">
+      <div class="thumbnail product-item">
+        <div class="pi-img-wrapper">
+          <% if product.photos.present? %>
+          <img src="<%= product.photos[0].avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail center-block") %>
+          <% end %>
+          <div>
+            <a href="#" class="btn">收藏</a>
+          </div>
+        </div>
+        <h3><%= link_to(product.title, product_path(product)) %></h3>
+        <div class="ratings">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        </div>
+        <% if product.discount != 100 %>
+        <span class="badge"><%= product.discount %>%</span>
+        <% end %>
+        <p><%= product.description %></p>
+        <hr class="line">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <p class="pi-price">￥ <%= product.price %></p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
+            </div>
+          </div>
+          <% if product.newproduct %>
+          <div class="sticker sticker-new"></div>
+          <% end %>
+      </div>
+    </div>
+
+</div>
+<% end %>
+    </div>

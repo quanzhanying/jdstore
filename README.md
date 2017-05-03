@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+JDstore
 
-Things you may want to cover:
+嘉欣 2017-2-13
+19:35 增加产品上下架功能
+20:53 增加收藏功能
+22:27 增加产品分类功能
 
-* Ruby version
+陈扬帆 2017-2-14 AM
+1.取消固定宽度改为全屏宽度
+2.改变导航栏注册登录按钮配色以及其放大功能被轮播图挡住的功能
+3.改变轮播图样式 4.解决footer没有对齐问题
 
-* System dependencies
+嘉欣 2017-2-14
+1.分类页面独立定制功能
+2.后台加入了背景图片
+3.首页产品列表页可以设置打折和标记新品功能
 
-* Configuration
+陈扬帆2017-2-14 PM（搜索关键字0214pm）
+1.新增返回顶部按钮 2.新增footer样式 3.导航栏配色改变 4.更改立即选购样式
 
-* Database creation
+嘉欣 截止2017-2-20
+1.品牌分类页
+2.产品详情页
+3.购物车
+4.后台
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+嘉欣 2017-2-20 PM
+1.一个产品多个图片的功能
+2.产品详情页优化
+3.多个品牌的产品资料完善

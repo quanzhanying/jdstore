@@ -1,0 +1,75 @@
+<div class="row">
+  <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+          <div class="carousel-inner" role="listbox">
+
+              <!-- Third Slide -->
+              <div class="item active">
+
+                  <!-- Slide Background -->
+                  <img src="https://ooo.0o0.ooo/2017/02/14/58a31b3d81642.png" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                  <div class="jumbotron1 slide-text slide_style_left">
+                    <span class="logo">
+                      <img src='http://pic.qiantucdn.com/01/01/22/51bOOOPIC13.jpg' class="img-responsive" alt="Logo">
+                    </span>
+                      <br>
+                      <p>
+                        <strong>兰博基尼</strong>汽车公司（意大利语：Automobili Lamborghini S.p.A.）是一家
+                        集设计、工程、制造与销售于一身的超级跑车制造商，坐落于意大利圣亚加塔·波隆尼。1963年由费鲁齐
+                        欧·兰博基尼创立。兰博基尼的标志是一头充满力量、正向对方攻击的斗牛，与大马力高性能跑车的特性相契合，同时彰显了创始人斗牛般不甘示弱的个性。
+                      </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+
+
+        <% @products.each do |product| %>
+        <div class="row">
+
+
+        <div class="col-md-12 col-sm-6">
+              <div class="thumbnail product-item">
+                <div class="pi-img-wrapper">
+                  <% if product.photos.present? %>
+                  <img src="<%= product.photos[0].avatar.medium.url %>" alt="Bootstrap Touch Slider"  class="slide-image center-block"/>
+
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail center-block") %>
+                  <% end %>
+                  <div>
+                    <a href="#" class="btn">收藏</a>
+                  </div>
+                </div>
+                <h3><%= link_to(product.title, product_path(product)) %></h3>
+                <div class="ratings">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+                <% if product.discount != 100 %>
+                <span class="badge"><%= product.discount %>%</span>
+                <% end %>
+                <p><%= product.description %></p>
+                <hr class="line">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <p class="pi-price">￥ <%= product.price %></p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <div class="btn add2cart" > <%= link_to('Buy', product_path(product)) %></div>
+                    </div>
+                  </div>
+                  <% if product.newproduct %>
+                  <div class="sticker sticker-new"></div>
+                  <% end %>
+              </div>
+            </div>
+
+        </div>
+        <% end %>
+            </div>
