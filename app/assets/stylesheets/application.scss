@@ -18,3 +18,87 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar-default {
+  .navbar-brand {
+    color: #555;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  .navbar-collapse > ul > li {
+    a {
+      color: #555;
+      font-size: 1.1em;
+      letter-spacing: 0.1em;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    a:focus,
+    a:hover {
+      color: #757575;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+
+//---------Footer---------
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 96px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 96px;
+  margin-top: -96px;
+  font-size: 1.1em;
+  color: #555;
+  background-color: #F8F8F8;
+  padding: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+
+  a {
+    color: #555;
+  }
+  a:hover,
+  a:focus {
+    color: #757575;
+    text-decoration:none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  }
+
+  .footer_icon a {
+    color:#555;
+    font-size: 1.5em;
+    text-decoration:none;
+  }
+
+  .footer_icon a:focus,
+  .footer_icon a:hover {
+    color: #757575;
+    font-size: 1.5em;
+    text-decoration:none;
+  }
+
+  .footer_icon li {
+    display:inline;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+  }
+}

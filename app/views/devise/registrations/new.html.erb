@@ -1,17 +1,26 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="signup-header">
+      <h1 class="brand">JDstore</h1>
+    </div>
+    <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 signup-block">
+      <h2 class="signup-title">注册</h2>
+      <div class="signup-form">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: false, placeholder: "E-mail", required: false, autofocus: true, class: "form-control" %>
+            <%= f.input :password, label: false, placeholder: "登录密码", required: false, class: "form-control" %>
+            <%= f.input :password_confirmation, label: false, placeholder: "确认密码", required: true %>
+          </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+          <div class="form-actions">
+            <%= f.button :submit, "注册", class: "btn-signup" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="btn-login">
+        <%= link_to "已有账号？马上登录", new_session_path(resource_name) %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

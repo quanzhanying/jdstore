@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">JDstore</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <% unless current_user %>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-user" aria-hidden="true"></i> 注册
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in" aria-hidden="true"></i> 登录
+            <% end %>
+          </li>
+        <% else %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="fa fa-user" aria-hidden="true">
+                <% if current_user.nickname.present? %>
+                  <%= current_user.nickname %>
+                <% else %>
+                  <%= current_user.email %>
+                <% end %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to("<span class='fa fa-bars' aria-hidden='true'></span> 我的订单".html_safe, invitations_path, class: "scroll") %></li>
+              <% if current_user.admin? %>
+                <li class="divider"></li>
+                <li><%= link_to("<span class='fa fa-lock' aria-hidden='true'></span> 后台管理".html_safe, "#") %></li>
+              <% end %>
+              <li class="divider"></li>
+              <li><%= link_to("<span class='fa fa-sign-out' aria-hidden='true'></span> 退出".html_safe, destroy_user_session_path, method: :delete) %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
