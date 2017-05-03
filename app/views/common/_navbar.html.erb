@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"> </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-left: 400px; padding-top: 0px;">
+
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <%= link_to("Haute Couture", "/") %>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <%= link_to("Brand Story", products_path) %>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-center">
+              <li class="active">
+                <%= link_to("Conference", products_path) %>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-center">
+              <li class="active">
+                <%= link_to("Reservation", products_path) %>
+              </li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                 <%= link_to carts_path do   %>
+                    Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                 <% end %>
+              </li>
+
+                <% if !current_user %>
+                  <li><%= link_to("Register", new_user_registration_path) %> </li>
+                  <li><%= link_to(content_tag(:i, 'Login', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                       Hi!, <%= current_user.email %>
+                       <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <% if current_user.admin? %>
+                        <li>
+                          <%= link_to("Admin panel", admin_products_path ) %>
+                        </li>
+                      <% end %>
+                         <li>
+                           <%= link_to("Private Order List", account_orders_path ) %>
+                         </li>
+                         <li>
+                            <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                         </li>
+                     </ul>
+                  </li>
+                <% end %>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>

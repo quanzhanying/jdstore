@@ -1,0 +1,132 @@
+<!-- <div class="row">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail" ) %>
+    <% else %>
+      <%= image_tag("http://placehold.it/250x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:220px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> Quantity : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+         <%= link_to("add to", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        Sold Out
+      <% end %>
+    </div>
+  </div>
+</div> -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="w1200 bc mt20">
+     </div>
+    <div class="main-content">
+    <div class="detail mt20 w1200 bc pb50">
+    <div class="intro clearfix">
+    <div class="cover fl">
+      <div class="intro-bigPic border pr">
+          <a class="magnifier-thumb-wrapper" href="javascript:;">
+            <img
+              id="thumb"
+              src="https://ww3.sinaimg.cn/large/006tKfTcgy1fd3yfirvhrj316o1hc4fq.jpg"
+              data-large-img-wrapper="preview"
+              data-large-img-url="https://ww1.sinaimg.cn/large/006tKfTcgy1fd3y8pllpuj316o1hcnj4.jpg">
+          </a>
+      </div>
+      <br><br>
+
+      <p class="mt20 f12">
+          <i class="fa fa-star-o"></i>
+          <a rel="nofollow" data-method="put" href="/products/38/favorite?type=favorite">Favorites</a>
+        <span class="intro-favorite-count">（5 Stars）</span>
+      </p>
+    </div>
+
+    <div class="intro-text fr">
+      <h2 class="f20 ell fb">NAISHA</h2>
+      <p class="intro-text-desc"; font-family="">Crepe column dress with boat neckline and jewelled necklace back with frosted beading, in natural or ivory.</p>
+      <p class="intro-text-value bg-gray">
+        <span class="pl20 pr30">Price</span><span class="price f24 fb col-red">$ 69999</span>
+      </p>
+      <p class="intro-text-service">
+        <span class="pl20 pr30"></span><span></span>
+      </p>
+      <p class="intro-text-count">
+        <span class="pl20 pr30"></span><span></span>
+      </p>
+      <div class="pull-right">
+        <% if @product.quantity.present? && @product.quantity > 0 %>
+           <%= link_to("add to", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <% else %>
+          Sold Out
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="productDetail border mt40">
+    <ul class="productDetail-tabList bg-gray clearfix">
+      <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
+        Details
+      </li>
+      <li class="productDetail-tabList-tab fl pl50 pr50">
+        Value(5)
+      </li>
+    </ul>
+    <div class="productDetail-contentWrap">
+      <div class="productDetail-content pt20 tc pb20" style="display: block;">
+        <div class="productDetail-introImg">
+                <img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd3y871m4oj316o1hc4em.jpg" alt="Medium tb2cjawdf5n.ebjszfkxxx qvxa   725677994" style="width:700px;height:900px"/>
+                <img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fd3y8pllpuj316o1hcnj4.jpg" alt="Medium tb2a5pgdmqj.ebjy1zbxxbx8fxa   725677994" style="width:700px;height:900px"/>
+                <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fd3yfirvhrj316o1hc4fq.jpg" alt="Medium tb22r31c31j.ebjy0faxxaxevxa   725677994" style="width:700px;height:900px"/>
+        <p class="mt20 mb20"></p>
+      </div>
+      <div
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <!-- <div id="sidebar" class="sidebar f12 mt30">
+  <ul>
+    <li class="backtop"><i class="fa fa-arrow-circle-up"></i></li>
+    <li class="support">
+      <i class="fa fa-thumbs-o-up"></i>
+      <div class="ewm">
+        <p>
+          觉得不错嘛？<br>
+          来，动动小手<br>
+          <a href="https://fullstack.xinshengdaxue.com/works/201" target="_blank" class="col-red">帮我们投个票</a><br>
+          谢谢^_^
+        </p>
+      </div>
+    </li>
+  </ul>
+</div> -->
+
+
+
+
+
+  <script>
+    window.intercomSettings = {
+      app_id: "iveo0tv7"
+    };
+  </script>
+  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/iveo0tv7';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+  </body>
+    <script src="/assets/application-0c8c4e23e10253d0b5ffb3a1f447ecbd841b76c6a8f95d141ac4d84d90bfe7fb.js" data-turbolinks-track="true"></script>
+</html>

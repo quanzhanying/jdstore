@@ -23,7 +23,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -75,6 +75,9 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  config.serve_static_assets = true
+
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
@@ -83,4 +86,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+    config.action_mailer.default_url_options = { :host => 'https://git.heroku.com/obscure-depths-18619.git'}
+
+   config.action_mailer.delivery_method = :smtp
+   ActionMailer::Base.smtp_settings = {
+     address: "smtpcloud.sohu.com",
+     port: 25,
+     domain: "heroku.com",
+     authentication: "login",
+     enable_starttls_auto: true,
+     user_name: ENV["SEND_CLOUD_USER_NAME"],
+     password: ENV["SEND_CLOUD_USER_KEY"]
+     }
 end
