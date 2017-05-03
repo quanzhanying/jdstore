@@ -1,0 +1,33 @@
+<div class="container-fluid">
+	<h1>Product List</h1>
+	<%= link_to("Add new product", new_admin_product_path, class: "btn btn-default pull-right") %>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>品名</th>
+				<th>叙述</th>
+				<th>库存</th>
+				<th>价格</th>
+				<th>选项</th>
+				<th>创建日期</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @products.each do |product| %>
+				<tr>
+					<td><%= product.id %></td>
+					<td><%= product.title %></td>
+					<td><%= product.description %></td>
+					<td><%= product.quantity %></td>
+					<td><%= product.price %></td>
+					<td>
+						<%= link_to("Edit", edit_admin_product_path(product)) %> | 
+						<%= link_to("Destroy", admin_product_path(product), method: :delete) %>
+					</td>
+					<td><%= product.created_at %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

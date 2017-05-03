@@ -1,0 +1,11 @@
+<h1>Edit the Product</h1>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :quantity %>
+<%= f.input :price %>
+<%= f.submit "Update a Product" %>
+
+<% end %>
