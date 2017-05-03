@@ -1,0 +1,128 @@
+<div class="lp">
+	<div class="lp-banner">
+	  <div class="jumbotron">
+	    <div class="text-content">
+	      <h1 class="jumbotron-title">幸福终点站———关注心理成长的学校</h1>
+	      <p class="jumbotron-slogan">
+	        让你的心灵找到答案、让你的幸福找到方向，让你的人生得到进阶
+	      </p>
+	      <p class="jumbotron-lead"><a class="btn-lg lp-b-btn" href="/products">
+	      	立刻体验</a>
+	      </p>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="lp-products pt60 pb60 lp-bg-gray">
+		<h2 class="title tc f22 pb50">解决你的情绪</h2>
+		<div class="productList-wrap w1200 bc">
+    <ul class="productList clearfix pb20">
+      <% Product.all.includes(:photos).sort_by {|product| product.favorites.count}.reverse.each_with_index do |product, index| %>
+				<% if index < 10 %>
+          <%= render :partial => "product_item", locals: { product: product, index: index } %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+	</div>
+
+	<div class="lp-advantage pt60 pb60">
+		<h2 class="title tc f22 pb50">我们可以帮助您解决什么</h2>
+		<div class="container bc">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="lp-advantage-item bc pl20 pr20 tc wow fadeIn">
+						<img class="lp-advantage-img" <%= image_tag("w5.jpg") %> >
+						<p class="lp-advantage-title f18 mt20">焦虑</p>
+						<p class="lp-advantage-desc f14 pl20 pr20 mt30">给身处大海深处焦虑的你一盏明灯</br>快速找到平静的海岸</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="lp-advantage-item bc pl20 pr20 tc wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+						<img class="lp-advantage-img" <%= image_tag("w4.jpg") %> >
+						<p class="lp-advantage-title f18 mt20">迷茫</p>
+						<p class="lp-advantage-desc f14 pl20 pr20 mt30">给站立十字路口的你一个路标</br>指引正确的方向</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="lp-advantage-item bc pl20 pr20 tc wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+						<img class="lp-advantage-img" <%= image_tag("w6.jpg") %> >
+						<p class="lp-advantage-title f18 mt20">困惑</p>
+						<p class="lp-advantage-desc f14 pl20 pr20 mt30">给正在攫取知识的你一个宽阔的平台</br>找到更丰富的知识</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="lp-how pt60 pb60">
+		<h2 class="title tc f22 pb20">我们是如何快速送达商品的</h2>
+		<p class="f16 tc light">与全国180多个城市大型超市合作，每天有无数的快递员穿梭于您与超市之间。</p>
+	</div> -->
+
+	<div class="lp-feedback pt60 pb60 lp-bg-gray">
+		<h2 class="title tc f22 pb20">「幸福终点站」资深专家</h2>
+		<p class="f16 tc light pb30">看看他们怎么帮助你</p>
+    <div class="home-people container">
+    	<div class="row">
+    		<div class="item person fl col-md-4">
+	        <div class="avata-wrapper">
+	          <img class="avata" <%= image_tag("XD.jpg") %> >
+	        </div>
+	        <div class="intro clearfix">
+	          <div class="name">
+	            Xdite
+	          </div>
+	        </div>
+	        <div class="words wow fadeIn" data-wow-duration="1s">
+	          <span class="bg"></span>
+	          <span class="fa fa-quote-left quote quote-l iconfont"></span>
+	          <span class="fa fa-quote-right quote quote-r iconfont"></span>
+	          <div class="content">微信公众号：Xdite黑客成长。</br>Facebook全球Hackathon冠军，打造全栈工程师的高手，元学习创始人，极速读书会创始人</div>
+	        </div>
+	      </div>
+	      <div class="item person fl col-md-4">
+	        <div class="avata-wrapper">
+	          <img class="avata" <%= image_tag("xl.jpg") %> >
+	        </div>
+	        <div class="intro clearfix">
+	          <div class="name">
+	            李笑来
+	          </div>
+	        </div>
+	        <div class="words wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+	          <span class="bg"></span>
+	          <span class="fa fa-quote-left quote quote-l iconfont"></span>
+	          <span class="fa fa-quote-right quote quote-r iconfont"></span>
+	          <div class="content">微信公众号：学习学习再学习。</br>比特币大咖、连续创业者、天使投资人、新生大学创始人</div>
+	        </div>
+	      </div>
+	      <div class="item person fl col-md-4">
+	        <div class="avata-wrapper">
+	          <img class="avata" <%= image_tag("luo.jpg") %> >
+	        </div>
+	        <div class="intro clearfix">
+	          <div class="name">
+	            罗振宇
+	          </div>
+	        </div>
+	        <div class="words wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+	          <span class="bg"></span>
+	          <span class="fa fa-quote-left quote quote-l iconfont"></span>
+	          <span class="fa fa-quote-right quote quote-r iconfont"></span>
+	          <div class="content">微信公众号：罗辑思维。</br>得到创始人</div>
+	        </div>
+	      </div>
+    	</div>
+    </div>
+	</div>
+
+	<div class="lp-action tc pr">
+		<div class="text-content pa pt60 pb60">
+			<p class="f16 pb20">更多专业老师在这里等着你，快来吧</p>
+			<p class="wow zoomIn" data-wow-duration=".5s">
+				<a class="btn-lg lp-b-btn bc"  href="/products">立刻体验</a>
+			</p>
+		</div>
+	</div>
+</div>
