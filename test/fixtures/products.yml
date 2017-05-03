@@ -5,6 +5,8 @@ one:
   description: MyText
   price: 1
   quantity: 1
+  size: MyString
+  category_id: 1
   image: MyString
 
 two:
@@ -12,4 +14,6 @@ two:
   description: MyText
   price: 1
   quantity: 1
+  size: MyString
+  category_id: 1
   image: MyString

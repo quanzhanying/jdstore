@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+  <%= f.input :price %>
+  <%= f.input :size, placeholder: "请输入产品规格"%>
+  <%= select_tag(:category_id, :prompt => "类别") %>
+  <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>（"请上传5张图片"）<br>
+  <%= f.submit "Submit", class: "btn btn-default" %>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="admin-products-page">
+  <div class="pull-right">
+    <%= link_to("新增商品", new_admin_product_path, class: "btn btn-default") %>
+  </div>
+  <h3 class="text-center">全部商品--后台</h3>
+  <hr>
+  <div class="row">
+    <ul>
+      <% @products.each do |product| %>
+      <div class="col-md-6 chunk-right">
+        <p><%= link_to(product.title, admin_product_path(product)) %> ￥<%= product.price %></p>
+        <p><%= product.quantity %></p>
+        <%= link_to("Edit", edit_admin_product_path(product)) %> |
+        <%= link_to("Destroy", admin_product_path(product), method: :delete, data: { confirm: "Are your sure?" }) %>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+
+</div>
