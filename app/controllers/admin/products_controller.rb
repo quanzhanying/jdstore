@@ -1,4 +1,5 @@
 class Admin::ProductsController < ApplicationController
+
   def new
     @product = Product.new
   end
@@ -28,7 +29,7 @@ class Admin::ProductsController < ApplicationController
     render :edit
   end
 end
-  
+
   private
 
   def product_params
