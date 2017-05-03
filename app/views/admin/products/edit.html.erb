@@ -7,13 +7,14 @@
     <%= f.input :price %>
     <%= f.input :size, placeholder: "请输入产品规格"%>
     <%= select_tag(:category_id, :prompt => "类别") %>
-    <% if @product.photos.present? %>
+    <% if @product.image.present? %>
       <span>目前商品图</span><br>
-      <% @product.photos.each do |p| %>
-       <%= image_tag p.image.thumb.url %><br />
-       <% end %>
+      <%= image_tag(@product.image.thumb.url) %>
     <% end %>
-    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>
+
+    <div class="group">
+      <%= f.input :image, as: :file %>
+    </div>
 
     <%= f.submit "Submit", class: "btn btn-default" %>
   <% end %>
