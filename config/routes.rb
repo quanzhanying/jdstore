@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount_uploader :image, ImageUploader
   namespace :admin do
     resources :products
   end
