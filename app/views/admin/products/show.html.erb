@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-6">
+		<% if @product.image.present? %>
+		<%= image_tag(@product.image.thumb.url, class: "thumbnail")  %>
+		<% else %>
+		<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")  %>
+		<% end %>
+	</div>
+	<div class="col-md-6">
+		<h2><%= @product.title  %></h2>
+		<div style="height: 100px;">
+			<p><%=simple_format(@product.description)  %></p>
+			
+		</div>
+		<div> Quantity:<%= @product.quantity%></div>
+		<div class="product-price">￥<%= @product.price %></div>
+		<div class="pull-right">
+			<%= link_to("Add to Cart","#",:class=>"btn btn-primary btn-lg btn-danger") %>
+		</div>
+	</div>
+	
+</div>
