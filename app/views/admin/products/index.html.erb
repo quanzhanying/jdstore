@@ -1,0 +1,11 @@
+<h4>Product List</h4>
+<div class="pull-right">
+<%= link_to("Add new product", new_admin_product_path(@product), :class => "btn btn-default") %>
+</div>
+
+<ul>
+  <% @products.each do |product| %>
+
+    <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
+  <% end %>
+</ul>
