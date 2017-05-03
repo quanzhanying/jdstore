@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="form-group">
+    <%= f.input :title, :label => "商品名称" %>
+    <%= f.input :description, :label => "简述" %>
+    <%= f.input :quantity, :label => "库存" %>
+    <%= f.input :price, :label => "价格" %>
+  </div>
+  <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
+<% end %>
