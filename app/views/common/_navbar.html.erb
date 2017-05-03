@@ -5,6 +5,11 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<%= link_to("Products", products_path) %>
+				</li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<% if !current_user %>
@@ -17,7 +22,11 @@
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
+								<% if current_user.admin? %>
+									<li><%= link_to("Admin 选单", admin_products_path) %></li>
+								<% else %>
+									<li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
+								<% end %>
 							</ul>
 						</li>
 					<% end %>
