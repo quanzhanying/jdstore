@@ -1,0 +1,403 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+html {
+  position: relative; //底部固定footer
+  min-width: 1090px;
+}
+body {
+  // margin-left: -15px;
+  // margin-right: -15px;
+  min-height: 100%;
+  min-width: 1090px;
+  // padding-top: 136px; //nav的高度
+  margin-bottom: 460px !important;
+  background-color: #fff !important;
+}
+body .container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* navbar */
+.sitenav{
+  background-color: #333;
+  height: 36px;
+  z-index: 1;
+}
+
+.sitenav .g-row {
+  line-height: 36px;
+}
+.sitenav .g-row p {
+  color: #ccc;
+  font-size: 12px;
+  float: left;
+}
+.sitenav .right {
+  padding: 0;
+  height: 36px !important;
+  color: #ccc;
+}
+.sitenav-right li{
+  display: block;
+  float: left;
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+}
+.sitenav-right li a{
+  display: block;
+  padding: 0 !important;
+  color: #ccc;
+}
+.sitenav-right li a i{
+  line-height: 36px;
+  color: #ccc;
+  font-size: 12px;
+  padding: 0 10px;
+}
+.sitenav-right .navli {
+  height: 36px;
+  font-size: 12px;
+  padding-top: 12px;
+  color: #ccc;
+  padding: 0 10px;
+}
+
+
+.navbar-default {
+    background-color: #fff !important;
+    border-style: none !important;
+    padding-top: 10px;
+    margin-bottom: 0;
+    border-radius: 0;
+    border: 0 none;
+    min-width: 1277px;
+}
+.navbar {
+  height: 136px;
+  padding-top:0px;
+  background-color: #FFF;
+  margin-bottom: 20px;
+}
+.navbar .container-fluid{
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.navbar-header {
+padding-left: 200px;
+}
+.navbar-collapse {
+  padding-top: 30px;
+}
+.navbar .navbar-form {
+  padding-left: 250px;
+  margin-top: 20px;
+}
+.navbar .form-group .form-control {
+  border-style: none none solid none;
+  border-color: #c5b99f;
+  box-shadow: none;
+  border-radius: 0;
+  width: 300px;
+}
+.navbar .navbar-none {
+  color: #c5b99f;
+  padding: 0;
+  font-size: 20px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.fa-shoppingcart {
+  font-size: 25px !important;
+  color: #c5b99f;
+  display: block;
+  padding-top: 25px;
+}
+.navbar-right-new a:hover {
+  text-decoration: none;
+}
+
+.navbar .label-success {
+  background-color: #aa5239;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: -30px;
+  border-radius: 10px;
+
+}
+.narbar-right-new {
+
+}
+//tab-nav affix-nav
+.navbar2 {
+  height: 50px;
+  font-size: 14px;
+  background-color: #fff !important;
+  text-align: center;
+  border-style: none !important;
+
+
+}
+.tab-nav {
+  display: block;
+  // float: left;
+  padding-top: 15px;
+  width: 80%;
+  margin-left: 15% !important;
+  margin-right: 15% !important;
+  text-align: center;
+  list-style-type: none;
+  min-width: 1090px; //使分类保持在一行上
+}
+.tab-nav li {
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside;
+  float: left;
+  padding: 0 40px;
+  display: inline-block;
+  height: 20px;
+}
+
+.tab-nav li a {
+  display: block;
+  padding: 0 0 5px !important;
+    color: #000 !important;
+}
+.tab-nav li a:hover {
+    color: #b4a078 !important;
+    border-bottom: 3px solid #b4a078;
+}
+.tab-nav .first a{
+    color: #b4a078 !important;
+    border-bottom: 3px solid #b4a078;
+}
+.affix {
+   top: 0; //固定在顶端
+   width: 100%;
+  z-index: 9999 !important; //使分类导航可以在最上面显示，不被覆盖
+
+}
+
+//admin page
+.col-md-2 .affix {
+  top: 150px;
+}
+
+/* lisuji footer */
+
+#footer {
+  // margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 440px;
+  border-top: solid 1px #e9e9e9 ;
+
+}
+#footer .container {
+  width: auto;
+  height: 200px;
+  // max-width: 680px;
+  padding: 30px 15px 0px;
+  margin-bottom: 0px;
+  background-color: #414141;
+}
+#footer .g-row {
+  width: auto;
+}
+#footer ul {
+  width: auto;
+  height: 51px;
+  margin-bottom: 30px;
+  padding: 0;
+  display: block;
+}
+#footer .footertext {
+  display: block;
+  color: #ffffff;
+  float: right;
+  line-height: 51px;
+  text-align: left;
+  font-size: 18px;
+  padding-left: 15px;
+  font-family: "Heiti SC","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",verdana;
+}
+#footer .item  {
+  width: 33.33%;
+  text-align: center;
+  float: left;
+}
+#footer .inner  {
+  line-height: 51px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#footer .fa {
+  font-size: 60px;
+  color: #fff;
+  margin-right: 17px;
+}
+#footer hr{
+  display: block;
+  height: 1px;
+  width: 90%;
+  margin-bottom: 27px;
+  border: 0;
+  background-color: #4f4f4f;
+}
+/* footer-lisuji 第三部分 */
+#footer .nav {
+  display: inline-block;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+#footer .nav .text{
+  color: #6d6d6d;
+}
+#footer .nav .split{
+  color: #6d6d6d;
+  margin: 0 10px;
+}
+.siteinfo p{
+  color: #6d6d6d;
+}
+
+#footer .footer1{
+  margin: 30px 15% 0;
+  width: auto;;
+  height: 240px;
+}
+#footer .footer1 .item {
+  display: inline-block;
+  float: left;
+  width: 33.33%;
+  height: 200px;
+  border-left-color: #e9e9e9;
+  border-left-style: solid;
+  border-left-width: 1px;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+#footer .footer1 .item:first-child {
+  border-left-style: none;
+}
+/* footer */
+
+// footer1 div{
+//   display: inline-block;
+// }
+// footer {
+//     margin-right: 15px;
+//     margin-left: 15px;
+//     text-align: center;
+//     background-color: #EFEBE9;
+// }
+// footer div {
+//     display: inline-block;
+// }
+// footer .phone {
+//     font-size: 22px;
+// }
+//
+// footer .goal_detail {
+//     font-size: 16px;
+// }
+// footer img {
+//     height: 32px;
+//     width: 32px;
+// }
+// footer img.author {
+//     height: 150px;
+//     width: 150px;
+// }
+#footer .dropdown {
+     position: relative;
+     display: inline-block;
+ }
+#footer .dropdown-content {
+     display: none;
+    position: absolute;
+ }
+#footer .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.footer-login {
+  height: 200px !important;
+  border-style: none!important ;
+  // margin: 0;
+}
+.footer-login .container{
+}
+// footer .copyright {
+//     clear: both;
+// }
+
+//登录 注册
+.registration {
+  height: 600px;
+  width: 100%;
+  display: block;
+  background: url('https://ooo.0o0.ooo/2017/02/19/58a91f8b2455c.jpg') center no-repeat;
+}
+.g-row:before { //
+  content: "";
+  display: table;
+}
+.g-row {
+
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 1090px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.re-page {
+  background-color: rgb(255,255,255);
+  display: block;
+  height: auto;
+  min-height: 460px;
+  width: 386px;
+  margin-top: 83px;
+  margin-left: 703px;
+  padding: 0 40px ;
+  border: solid 1px #e8e8e8;
+}
+.login-action {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(176,149,103);
+}

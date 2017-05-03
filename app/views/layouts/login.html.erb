@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>宜然家居</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+ <!-- 改变body下外边距，让它等于footer高度，footer高度改变了，所以下外边距改变 -->
+  <body style="margin-bottom: 200px !important;">
+
+    <div class="container-fluid">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes"%>
+        <%= yield %>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>

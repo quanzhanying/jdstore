@@ -1,0 +1,84 @@
+/*---------- products ----------*/
+.products {
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    background-color: #FAFAFA;
+}
+
+.left {
+    float: left;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.right {
+    float: right;
+    font-size: 14px;
+    padding-top: 28px;
+    padding-right: 10px;
+}
+
+.display {
+    clear: both;
+    text-align: center;
+}
+
+.display ul {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.display li {
+    float: left;
+    background-color: #E0F7FA;
+    margin: 20px 20px 30px 0;
+}
+
+.product img{
+    height: 250px;
+    width: 250px;
+}
+
+.product_sample {
+  height: auto;
+  width: auto;
+}
+
+ul.nav-pills {
+  top: 250px;
+  left: 100px;
+  position: fixed;
+
+}
+//change amdin style
+ul.nav-pills li {
+  font-size: 15px;
+  width: 150px;
+  background-color: #767087;
+  // border: 2px solid #E3F2FD;
+  border-radius: 5px;
+  text-align: center;
+
+}
+ul.nav-pills li a {
+  color: #fff;
+}
+ul.nav-pills li a:hover{
+  background-color: #433b59;
+}
+h2 {
+  color: #767087 !important;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+.btn-primary {
+  background-color: #767087 !important;
+}
+.account-order {
+  width: 60% !important;
+  margin: 0 auto;
+}

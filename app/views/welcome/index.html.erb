@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Default contents -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="app/assets/stylesheets/welcome.scss"> -->
+    <!-- Default contents -->
+  </head>
+
+  <body>
+    <div class="row">
+      <!-- carousel-->
+      <div class="carousel slide" id="featured">
+
+        <!-- carousel-indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#featured" data-slide-to="0" class="active"></li>
+          <li data-target="#featured" data-slide-to="1"></li>
+          <li data-target="#featured" data-slide-to="2"></li>
+        </ol><!-- carousel-indicators -->
+
+        <!-- carousel-inner -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="/products">
+              <img src="/images/home1.jpg" alt="简约的家"/>
+              <div class="carousel-caption"><h2>简约</h2></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/products">
+              <img src="/images/home2.jpg" alt="温馨的家"/>
+              <div class="carousel-caption"><h2>温馨</h2></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="/products">
+              <img src="/images/home3.jpg" alt="舒适的家"/>
+              <div class="carousel-caption"><h2>舒适</h2></div>
+            </a>
+          </div>
+        </div><!-- carousel-inner -->
+
+        <!-- carousel control-->
+        <a class="left carousel-control" href="#featured" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#featured" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        <!-- carousel control-->
+
+      </div><!-- carousel -->
+    </div>
+
+  <div class="products row" data-spy="scroll" data-target=".nav-pills">
+
+    <!-- scollSpy -->
+    <div class="scollspy col-xs-2 fixed-left">
+      <nav class="col-sm-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li style="border-bottom: 1px solid #E3F2FD"><a href="#product1">居家</a></li>
+          <li style="border-bottom: 1px solid #E3F2FD"><a href="#product2">餐厨</a></li>
+          <li style="border-bottom: 1px solid #E3F2FD"><a href="#product3">配件</a></li>
+          <li style="border-bottom: 1px solid #E3F2FD"><a href="#product4">服装</a></li>
+          <li><a href="#product5">洗护</a></li>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- scollSpy -->
+
+    <!-- categories -->
+      <div class="categories col-xs-8">
+        <!-- 居家 -->
+        <div class="name" id="product1">
+          <header>
+            <div class="left">
+              <a href="/products"><h3>居家</h3></a>
+            </div>
+            <div class="right">
+              <a href="/products" tartet="_blank">更多></a>
+            </div>
+          </header>
+          <div class="display">
+            <a href="/products">
+              <img class="product_sample" src="/images/product1.jpg"  alt="product1"/>
+            </a>
+            <ul class="productList">
+              <li class="product">
+                <a href="/products/1">
+                  <img src="/images/bed.png" alt="全棉针织条纹四件套 新款" />
+                </a>
+                <div class="pName">
+                  <a href="/products/1">
+                    全棉针织条纹四件套 新款
+                  </a>
+                </div>
+                <div class="pPrice">
+                  ¥299
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/4">
+                  <img src="/images/foot.png" alt="北欧风珊瑚绒多功能暖脚套" />
+                </a>
+                <div class="Name">
+                  <a href="/products/4">
+                    北欧风珊瑚绒多功能暖脚套
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥59
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/2">
+                  <img src="/images/pillow.png" alt="可水洗舒柔丝羽绒枕" />
+                </a>
+                <div class="Name">
+                  <a href="/products/2">
+                    可水洗舒柔丝羽绒枕
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥59
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/3">
+                  <img src="/images/sitting.png" alt="日式记忆绵坐垫" />
+                </a>
+                <div class="Name">
+                  <a href="/products/3">
+                    日式记忆绵坐垫
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥59
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 居家 -->
+
+        <!-- 餐厨 -->
+          <div class="name" id="product2">
+            <header>
+              <div class="left">
+                <a href="/products"><h3>餐厨</h3></a>
+              </div>
+              <div class="right">
+                <a href="/products" tartet="_blank">更多></a>
+              </div>
+            </header>
+            <div class="display">
+              <a href="/products">
+                <img class="product_sample" src="/images/product2.jpg"  alt="product2"/>
+              </a>
+              <ul class="productList">
+                <li class="product">
+                  <a href="/products/8">
+                    <img src="/images/duster.png" alt="懒人抹布" />
+                  </a>
+                  <div class="pName">
+                    <a href="/products/8">
+                      懒人抹布
+                    </a>
+                  </div>
+                  <div class="pPrice">
+                    ¥13.99
+                  </div>
+                </li>
+                <li class="product">
+                  <a href="/products/7">
+                    <img src="/images/knife.png" alt="白色斜磨陶瓷刀" />
+                  </a>
+                  <div class="Name">
+                    <a href="/products/7">
+                      白色斜磨陶瓷刀
+                    </a>
+                  </div>
+                  <div class="Price">
+                    ¥89
+                  </div>
+                </li>
+                <li class="product">
+                  <a href="/products/9">
+                    <img src="/images/bowl.png" alt="日式酸枣木碗" />
+                  </a>
+                  <div class="Name">
+                    <a href="/products/9">
+                      日式酸枣木碗
+                    </a>
+                  </div>
+                  <div class="Price">
+                    ¥39
+                  </div>
+                </li>
+                <li class="product">
+                  <a href="/products/10">
+                    <img src="/images/chopsticks.png" alt="10双装 实木筷" />
+                  </a>
+                  <div class="Name">
+                    <a href="/products/10">
+                      10双装 实木筷
+                    </a>
+                  </div>
+                  <div class="Price">
+                    ¥25
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <!-- 餐厨 -->
+
+        <!-- 配件 -->
+        <div class="name" id="product3">
+          <header>
+            <div class="left">
+              <a href="/products"><h3>配件</h3></a>
+            </div>
+            <div class="right">
+              <a href="/products" tartet="_blank">更多></a>
+            </div>
+          </header>
+          <div class="display">
+            <a href="/products">
+              <img class="product_sample" src="/images/product3.jpg"  alt="product3"/>
+            </a>
+            <ul class="productList">
+              <li class="product">
+                <a href="/products/13">
+                  <img src="/images/tuoxie.png" alt="轻简四季居家拖鞋" />
+                </a>
+                <div class="pName">
+                  <a href="/products/13">
+                    轻简四季居家拖鞋
+                  </a>
+                </div>
+                <div class="pPrice">
+                  ¥19.9
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/14">
+                  <img src="/images/xiangzi.png" alt="20寸登机箱" />
+                </a>
+                <div class="Name">
+                  <a href="/products/14">
+                    20寸登机箱
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥349
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/15">
+                  <img src="/images/weijin.png" alt="丝薄AB面羊毛围巾" />
+                </a>
+                <div class="Name">
+                  <a href="/products/15">
+                    丝薄AB面羊毛围巾
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥99
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/16">
+                  <img src="/images/tuoxie2.png" alt="优雅格纹羊毛拖鞋" />
+                </a>
+                <div class="Name">
+                  <a href="/products/16">
+                    优雅格纹羊毛拖鞋
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥39
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 配件 -->
+
+        <!-- 服装 -->
+        <div class="name" id="product4">
+          <header>
+            <div class="left">
+              <a href="/products"><h3>服装</h3></a>
+            </div>
+            <div class="right">
+              <a href="/products" tartet="_blank">更多></a>
+            </div>
+          </header>
+          <div class="display">
+            <a href="/products">
+              <img class="product_sample" src="/images/product4.jpg"  alt="product4"/>
+            </a>
+            <ul class="productList">
+              <li class="product">
+                <a href="/products/19">
+                  <img src="/images/nanneiku.png" alt="男式丝滑莫代尔平角内裤" />
+                </a>
+                <div class="pName">
+                  <a href="/products/19">
+                    男式丝滑莫代尔平角内裤
+                  </a>
+                </div>
+                <div class="pPrice">
+                  ¥59
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/20">
+                  <img src="/images/nvneiku.png" alt="女式丝滑莫代尔三角内裤" />
+                </a>
+                <div class="Name">
+                  <a href="/products/20">
+                    女式丝滑莫代尔三角内裤
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥49
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/21">
+                  <img src="/images/nanwa.png" alt="5双装 雅灰男式全毛圈隐形袜" />
+                </a>
+                <div class="Name">
+                  <a href="/products/21">
+                    5双装 雅灰男式全毛圈隐形袜
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥59
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/22">
+                  <img src="/images/nvwa.png" alt="5双装 柔逸女式全毛圈隐形袜" />
+                </a>
+                <div class="Name">
+                  <a href="/products/22">
+                    5双装 柔逸女式全毛圈隐形袜
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥49
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 服装 -->
+
+        <!-- 洗护 -->
+        <div class="name" id="product5">
+          <header>
+            <div class="left">
+              <a href="/products"><h3>洗护</h3></a>
+            </div>
+            <div class="right">
+              <a href="/products" tartet="_blank">更多></a>
+            </div>
+          </header>
+          <div class="display">
+            <a href="/products">
+              <img class="product_sample" src="/images/product5.jpg"  alt="product5"/>
+            </a>
+            <ul class="productList">
+              <li class="product">
+                <a href="/products/25">
+                  <img src="/images/maojin.png" alt="2条装 皇室御用超柔毛巾" />
+                </a>
+                <div class="pName">
+                  <a href="/products/25">
+                    2条装 皇室御用超柔毛巾
+                  </a>
+                </div>
+                <div class="pPrice">
+                  ¥59
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/26">
+                  <img src="/images/penwu.png" alt="面包树的糖香氛喷雾" />
+                </a>
+                <div class="Name">
+                  <a href="/products/26">
+                    面包树的糖香氛喷雾
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥79
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/27">
+                  <img src="/images/huazhuangshua.png" alt="墨玉 日常妆容化妆套刷" />
+                </a>
+                <div class="Name">
+                  <a href="/products/27">
+                    墨玉 日常妆容化妆套刷
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥119
+                </div>
+              </li>
+              <li class="product">
+                <a href="/products/28">
+                  <img src="/images/jiemianyi.png" alt="声波深层洁面仪" />
+                </a>
+                <div class="Name">
+                  <a href="/products/28">
+                    声波深层洁面仪
+                  </a>
+                </div>
+                <div class="Price">
+                  ¥299
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 洗护 -->
+      </div>
+    <!-- categories -->
+  </div>
+
+    <!-- Default Contents-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <script src="app/assets/javascripts/welcome.js"></script> -->
+    <!-- Default Contents-->
+  </body>
+</html>
