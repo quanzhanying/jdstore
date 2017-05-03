@@ -1,3 +1,3 @@
 # README
 
-Homework of the first week2
+Homework of the first week3
