@@ -16,16 +16,17 @@
                  <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
             <% else %>
               <li class="dropdown">
-                <% if current_user.admin? %>
-               <li>
-                 <%= link_to("Admin 选单", admin_products_path ) %>
-               </li>
-             <% end %>
+
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     Hi!, <%= current_user.email %>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
+                  <% if current_user.admin? %>
+                     <li>
+                       <%= link_to("Admin 选单", admin_products_path ) %>
+                     </li>
+                  <% end %>
                     <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                 </ul>
               </li>
