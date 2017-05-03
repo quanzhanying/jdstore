@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :indext]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :index]
+  before_action :admin_required
 
   # ---CRUD---
 
@@ -47,6 +47,14 @@ class Admin::ProductsController < ApplicationController
   end
 
 
+
+  # ---admin权限---
+
+  def admin_required
+    if !current_user.admin?
+      redirect_to "/"
+    end
+  end
 
 
   # ---private---
