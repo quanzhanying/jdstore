@@ -1,0 +1,90 @@
+
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>'> FitStore </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+            <!-- <li class="active"> -->
+              <%= link_to("Products", products_path) %>
+            </li>
+            <li>
+              <%= link_to("Equipment")%>
+            </li>
+            <li>
+              <%= link_to("Monitoring")%>
+            </li>
+            <li>
+              <%= link_to("WeightLoss")%>
+            </li>
+            <li>
+              <%= link_to("Herbal")%>
+            </li>
+          </ul>
+
+
+
+              <!-- <div class="header "> -->
+                <!-- <div class="logo">BestValue</div> -->
+
+                <div>
+              	  <div class="search ">
+              		  <form action="/products/search" accept-charset="UTF-8" method="get">
+              		  	<input name="utf8" type="hidden" value="✓">
+              		    <input class="search-input" type="text" name="query_string" value="" placeholder="serendipity">
+              		    <button class="search-button pa tc" type="submit"><i class="fa fa-search"></i></button>
+              			</form>
+              		</div>
+              	</div>
+
+              	<!-- <div class="cart-wrap">
+              	  <div class="cart">
+              			<a href="/carts">
+              		     <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(0) &gt;
+              			</a>
+              		</div>
+              	</div> -->
+              <!-- </div> -->
+
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to carts_path do %>
+                      Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                  <% end %>
+                </li>
+
+
+
+                <% if !current_user %>
+                  <li><%= link_to("SignUp", new_user_registration_path) %> </li>
+                  <li><%= link_to(content_tag(:i, ' SignIn', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!, <%= current_user.email %>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <% if current_user.admin? %>
+                        <li>
+                          <%= link_to("Admin 选单", admin_products_path )%>
+                        </li>
+                        <%end%>
+                        <li>
+                          <%= link_to("个人订单列表", account_orders_path ) %>
+                        </li>
+                        <li> <%= link_to(content_tag(:i, 'SignOut', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                    </ul>
+                  </li>
+                <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
