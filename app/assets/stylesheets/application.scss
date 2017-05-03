@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+ /****** LOGIN MODAL ******/
+ .loginmodal-container
+ {
+     font-family: roboto;
+
+     overflow: hidden;
+
+     width: 100% !important;
+     max-width: 350px;
+     margin: 0 auto;
+     padding: 30px;
+
+     border-radius: 2px;
+     background-color: #f7f7f7;
+     box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+ }
+
+ .loginmodal-container h1
+ {
+     font-family: roboto;
+     font-size: 1.8em;
+
+     text-align: center;
+ }
+
+ .loginmodal-container input[type=submit]
+ {
+     position: relative;
+
+     display: block;
+
+     width: 100%;
+     margin-bottom: 10px;
+ }
+
+ .loginmodal-container input[type=text],
+ input[type=password]
+ {
+     font-size: 16px;
+
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+     width: 100%;
+     height: 44px;
+     margin-bottom: 10px;
+     /* border-radius: 2px; */
+     padding: 0 8px;
+
+     border: 1px solid #d9d9d9;
+     border-top: 1px solid #c0c0c0;
+     background: #fff;
+
+     -webkit-appearance: none;
+ }
+
+ .loginmodal-container input[type=text]:hover,
+ input[type=password]:hover
+ {
+     border: 1px solid #b9b9b9;
+     border-top: 1px solid #a0a0a0;
+     -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+             box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+ }
+
+ .loginmodal
+ {
+     font-family: 'Arial', sans-serif;
+     font-size: 14px;
+     font-weight: 700;
+
+     height: 36px;
+     padding: 0 8px;
+
+     text-align: center;
+     /* border-radius: 3px; */
+     /* -webkit-user-select: none;
+    user-select: none; */
+ }
+
+ .loginmodal-submit
+ {
+     font-family: roboto;
+     font-size: 14px;
+
+     padding: 17px 0;
+
+     color: #fff;
+     /* border: 1px solid #3079ed; */
+     border: 0;
+     background-color: #4d90fe;
+     text-shadow: 0 1px rgba(0,0,0,.1);
+     /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ }
+
+ .loginmodal-submit:hover
+ {
+     /* border: 1px solid #2f5bb7; */
+     border: 0;
+     background-color: #357ae8;
+     text-shadow: 0 1px rgba(0,0,0,.3);
+     /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ }
+
+ .loginmodal-container a
+ {
+     font-weight: 400;
+
+     display: inline-block;
+
+     transition: opacity ease .5s;
+     text-align: center;
+     text-decoration: none;
+
+     opacity: .6;
+     color: #666;
+ }
+
+ .login-help
+ {
+     font-size: 12px;
+ }
