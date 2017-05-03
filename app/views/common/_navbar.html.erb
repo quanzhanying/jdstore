@@ -19,16 +19,12 @@
         <% else %>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-              <span class="fa fa-user" aria-hidden="true">
-                <% if current_user.nickname.present? %>
-                  <%= current_user.nickname %>
-                <% else %>
-                  <%= current_user.email %>
-                <% end %>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <%= current_user.email %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to("<span class='fa fa-bars' aria-hidden='true'></span> 我的订单".html_safe, invitations_path, class: "scroll") %></li>
+              <li><%= link_to("<span class='fa fa-bars' aria-hidden='true'></span> 我的订单".html_safe, '#', class: "scroll") %></li>
               <% if current_user.admin? %>
                 <li class="divider"></li>
                 <li><%= link_to("<span class='fa fa-lock' aria-hidden='true'></span> 后台管理".html_safe, "#") %></li>
