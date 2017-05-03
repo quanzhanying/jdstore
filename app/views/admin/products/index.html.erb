@@ -1,0 +1,39 @@
+<h2>商品列表</h2>
+<div class="pull-right" style="padding-bottom:20px;">
+  <%= link_to "增加新商品", new_admin_product_path, class:"btn btn-primary btn-lg" %>
+</div>
+<div >
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th width="300">商品图片</th>
+        <th>名称</th>
+        <th>价格</th>
+        <th width="100">操作</th>
+      </tr>
+    </thead>
+    
+    <hbody>
+      <% @products.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td>
+          <% if p.image.present? %>
+            <%= image_tag p.image.thumb.url class:"thumbnail" %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic",:class=>"thumbnail") %>
+
+          <% end %>
+        </td>
+        <td><%= link_to p.title, admin_product_path(p) %></td>
+        <td><%= p.price %></td>
+        <td>
+          <%= link_to "编辑", edit_admin_product_path(p) %>
+          <%= link_to "删除", admin_product_path(p), method: :delete, :data=>{:confirm => "确定删除吗？"}  %>
+        </td>
+      </tr>
+      <% end %>
+    </hbody>
+  </table>
+</div>

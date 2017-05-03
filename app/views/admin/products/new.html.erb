@@ -1,0 +1,10 @@
+<h2>增加新商品</h2>
+<%= simple_form_for [:admin,@product] do |p| %>
+<%= p.input :title %>
+<%= p.input :description %>
+<%= p.input :quantity %>
+<%= p.input :price %>
+<%= p.input :image, as: :file %>
+<%= p.submit "添加", class:"btn btn-danger btn-lg" %>
+
+<% end %>

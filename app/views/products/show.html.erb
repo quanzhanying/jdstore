@@ -1,0 +1,30 @@
+<h2>商品详情:<%= @product.title %></h2>
+
+<div class="row">
+  <div class="col-md-4 center-block" >
+    <% if @product.image.present? %>
+      <%= image_tag @product.image.medium.url class:"thumbnail" %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic",class:"thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-default " >
+      <div class="panel-heading"><%= @product.title%></div>
+      <div class="panel-body">
+        <p>产品描述：<%= simple_format(@product.description) %>
+        </p>
+      </div>
+      <div class="panel-footer">
+        <p>
+          产品价格：$<%= @product.price%>
+          <br>
+          产品库存: <%= @product.quantity %>
+        </p>
+      </div>
+    </div>
+    <div class="pull-right">
+      <%= link_to(content_tag(:i,'加入购物车',class:'fa fa-cart-plus'),"#", class:"btn btn-primary btn-lg") %>
+    </div>
+  </div>
+</div>
