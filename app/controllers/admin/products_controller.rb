@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @products = Product.all
   end
@@ -17,7 +19,7 @@ class Admin::ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to admin_products_path
     else
-      render :edit  
+      render :edit
     end
   end
 
