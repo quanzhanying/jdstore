@@ -1,14 +1,14 @@
 class Admin::ProductsController < ApplicationController
-
   def index
-   @products = Product.all
- end
+      @products = Product.all
+    end
+
 
   def new
     @product = Product.new
   end
 
-  def edit
+    def edit
     @product = Product.find(params[:id])
   end
 
@@ -20,7 +20,7 @@ class Admin::ProductsController < ApplicationController
     else
       render :edit
     end
-  end 
+  end
 
   def create
     @product = Product.new(product_params)
