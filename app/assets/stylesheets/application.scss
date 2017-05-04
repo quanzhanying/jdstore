@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ body {
+    padding-top: 50px;  /* 腾出navbar的遮挡空间 */
+    font-size: 1.2em;   /* 网址所有字体字体缩小比例 */
+    a {                 /* 所有a标签统一样式 */
+      color: #333;
+      transition: 0.6s;
+    }
+    a:hover {
+      color: #666;
+      transition: 0.6s;
+      text-decoration: none;
+    }
+}
