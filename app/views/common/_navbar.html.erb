@@ -17,9 +17,10 @@
                         Hi!, <%= current_user.email %>
                         <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ol class="dropdown-menu">
                       <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                    </ul>
+                      <li class="text-center"><a href="/">welcome</a> </li>
+                    </ol>
                   </li>
                 <% end %>
             </ul>
