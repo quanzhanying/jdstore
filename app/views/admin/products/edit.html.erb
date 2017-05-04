@@ -1,19 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-8 col-md-offset-2">
-        <h2 class="text-center">编辑商品</h2>
+    <div class="col-md-8">
+      <h2 class="text-center">编辑商品</h2>
 
-        <hr>
-        <%= render "form" %>
+      <hr>
+      <%= render "form" %>
 
-        <!-- 当前商品图 -->
-        <% if @product.image.present? %>
-          <span>目前商品图</span>
-          <%= image_tag(@product.image.thumb.url) %>
-        <% end %>
+      <!-- 当前商品图 -->
+      <% if @product.image.present? %>
+        <span>目前商品图</span>
+        <%= image_tag(@product.image.thumb.url) %>
+      <% end %>
 
-      </div>
     </div>
   </div>
 </div>
