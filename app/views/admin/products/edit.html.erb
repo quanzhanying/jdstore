@@ -7,6 +7,12 @@
         <hr>
         <%= render "form" %>
 
+        <!-- 当前商品图 -->
+        <% if @product.image.present? %>
+          <span>目前商品图</span>
+          <%= image_tag(@product.image.thumb.url) %>
+        <% end %>
+
       </div>
     </div>
   </div>

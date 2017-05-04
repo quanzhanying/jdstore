@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :index]
   before_action :admin_required
+  layout "admin"
 
   # ---CRUD---
 
@@ -18,7 +19,6 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.user = current_user
 
     if @product.save
       redirect_to admin_products_path
@@ -52,7 +52,7 @@ class Admin::ProductsController < ApplicationController
 
   def admin_required
     if !current_user.admin?
-      redirect_to "/"
+      redirect_to "/", alert: "你没有管理员权限!"
     end
   end
 
@@ -62,7 +62,7 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity)
+    params.require(:product).permit(:title, :description, :price, :quantity, :image)
   end
 
 end
