@@ -3,7 +3,9 @@
 <hr>
 
 <%= simple_form_for [@post, @report] do |f| %>
-  <%= f.input :content, as: :wysihtml5  %>
+  <%= f.input :content, as:  :ckeditor  %>
+
+
   <%= f.input :attachment %>
 
   <%= f.submit "送出" %>

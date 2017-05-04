@@ -57,8 +57,6 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap-wysihtml5-rails (0.3.3.8)
-      railties (>= 3.0)
     builder (3.2.3)
     byebug (9.0.6)
     capistrano (3.8.1)
@@ -84,6 +82,12 @@ GEM
     carrierwave-qiniu (1.1.0)
       carrierwave (~> 1.0)
       qiniu (~> 6.8, >= 6.8.0)
+    ckeditor (4.2.3)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.1.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -255,7 +259,6 @@ DEPENDENCIES
   aasm
   awesome_rails_console
   bootstrap-sass
-  bootstrap-wysihtml5-rails
   byebug
   capistrano (~> 3.4)
   capistrano-passenger
@@ -263,6 +266,7 @@ DEPENDENCIES
   capistrano-rvm
   carrierwave
   carrierwave-qiniu
+  ckeditor
   coffee-rails (~> 4.2)
   devise
   figaro

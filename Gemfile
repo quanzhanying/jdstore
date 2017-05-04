@@ -41,7 +41,7 @@ gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
 gem 'awesome_rails_console'
-gem 'bootstrap-wysihtml5-rails'
+gem 'ckeditor'
 
 
 group :development, :test do
