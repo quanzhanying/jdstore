@@ -16,3 +16,291 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+// // login views
+//
+//
+//
+// .common-block {
+//     display: block;
+//     max-width: 960px;
+//     margin: 20px auto;
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//     background-color: #fff;
+//     box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.25);
+//     letter-spacing: 0;
+// }
+//
+// .container:after,
+// .container:before {
+//   content: " ";
+//   display: table;
+// }
+//
+//
+//
+// *:before, *:after {
+//     box-sizing: border-box;
+//   }
+//
+// .container:after {
+//     clear: both;
+// }
+//
+//
+//
+// .row {
+//     margin-left: -15px;
+//     margin-right: -15px;
+// }
+//
+// .row:after {
+//     clear: both;
+// }
+//
+// .row:before, .row:after {
+//     content: " ";
+//     display: table;
+// }
+//
+// *:before, *:after {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+//
+//
+//
+// .registration-block {
+//     padding: 30px;
+//     text-align: center;
+//     color: #444;
+//     min-height: 400px;
+// }
+//
+// .registration-block .introduce {
+//     float: left;
+//     text-align: left;
+//     width: 100%;
+//     border-right: 1px solid #d7d7d7;
+// }
+//
+//
+//
+// .registration-block .introduce .text {
+//     float: left;
+//     padding-left: 20px;
+//     padding-top: 10px;
+//     padding-bottom: 30px;
+//     margin-top: -12px;
+// }
+//
+// div {
+//     display: block;
+// }
+//
+//
+// .registration-block .row {
+//     margin-bottom: 12px;
+//     margin-left: 0;
+//     margin-right: 0;
+// }
+//
+// .col-sm-6 {
+//     width: 50%;
+// }
+//
+// .registration-block .introduce .icon {
+//     float: left;
+// }
+//
+//
+//
+// .registration-block .introduce .icon img {
+//     width: 42px;
+//     height: 42px;
+//     opacity: 0.7;
+//     margin-top: 12px;
+//     margin-right: 5px;
+// }
+//
+//
+// //html 样式
+// body, html {
+//     height: 100%;
+// }
+//
+// html {
+//     font-size: 10px;
+//     -webkit-tap-highlight-color: transparent;
+//     font-family: sans-serif;
+//     -ms-text-size-adjust: 100%;
+//     -webkit-text-size-adjust: 100%;
+//     -webkit-locale: "zh-cn";
+//     display: block;
+// }
+//
+// body {
+//     font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+//     background-color: #f9f9fa;
+//     color: #333;
+//     font-size: 14px;
+//     letter-spacing: 0.1em;
+//
+//
+// }
+//
+// body {
+//     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//     font-size: 14px;
+//     line-height: 1.42857143;
+//     color: #333333;
+//
+// }
+//
+//
+//
+// .registration-block .input {
+//     float: right;
+//     max-width: 360px;
+//     text-align: left;
+// }
+//
+// .registration-block h1 {
+//     text-align: left;
+//     font-size: 1.5em;
+//     margin-bottom: 20px;
+// }
+//
+// input, button, select, textarea {
+//     font-family: inherit;
+//     font-size: inherit;
+//     line-height: inherit;
+// }
+//
+// button, input, optgroup, select, textarea {
+//     color: inherit;
+//     font: inherit;
+//     margin: 0;
+// }
+//
+// .form-group {
+//     margin-bottom: 15px;
+// }
+//
+// .registration-block .input .signin .form-control {
+//     margin-bottom: 20px;
+//     border: 1px solid #d7d7d7;
+//     border-top-color: #c3c3c3;
+//     margin: 0;
+// }
+//
+// .form-control {
+//     resize: vertical;
+// }
+//
+// .form-control {
+//     display: block;
+//     width: 100%;
+//     height: 34px;
+//     padding: 6px 12px;
+//     font-size: 14px;
+//     line-height: 1.42857143;
+//     color: #555555;
+//     background-color: #fff;
+//     background-image: none;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+//     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+//     -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+//     -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+//     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+// }
+//
+// .registration-block .input #forget-password {
+//     position: relative;
+//     display: block;
+//     margin-top: -34px;
+//     margin-right: 0;
+//     margin-bottom: 20px;
+//     float: right;
+//     font-weight: 100;
+// }
+//
+//
+// .registration-block .input #blue {
+//     color: #666;
+//     font-weight: 400;
+// }
+//
+// a:active, a:hover, a:link, a:visited {
+//     text-decoration: none;
+// }
+//
+// .registration-block .input .registration-btn {
+//     background: #1ecd97;
+//     border-radius: 3px;
+//     width: 100%;
+//     color: white;
+//     height: 34px;
+//     border: none;
+//     box-shadow: none;
+//     margin-top: 10px;
+// }
+//
+// .registration-block .input .tip {
+//         margin: 10px 0;
+// }
+//
+// .registration-block .input #link {
+//     color: #007be2;
+//     font-weight: 600;
+//     font-size: 1em;
+// }
+//
+// a:active, a:hover, a:link, a:visited {
+//     text-decoration: none;
+// }
+//
+// //登录页面左边的字体部分
+// .registration-block .introduce .text h2 {
+//     font-size: 1.2857em;
+//     padding-bottom: -100px;
+//     color: #666666;
+// }
+//
+//
+// .registration-block .introduce .text p {
+//     color: #666;
+//     font-size: 1.0714em;
+// }
+//
+// p {
+//     margin: 0 0 10px;
+//     display: block;
+//     -webkit-margin-before: 1em;
+//     -webkit-margin-after: 1em;
+//     -webkit-margin-start: 0px;
+//     -webkit-margin-end: 0px;
+//
+// }
+//
+// h2{
+//     font-size: 30px;
+//     font-family: inherit;
+//     font-weight: 500;
+//     line-height: 1.1;
+//     color: inherit;
+//     margin-top: 20px;
+//     margin-bottom: 10px;
+//     display: block;
+//     font-size: 1.5em;
+//     -webkit-margin-before: 0.83em;
+//     -webkit-margin-after: 0.83em;
+//     -webkit-margin-start: 0px;
+//     -webkit-margin-end: 0px;
+//     font-weight: bold;
+// }
