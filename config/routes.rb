@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :products       #后台上架网址 admin/products
   end
 
-  root 'welcome#index'
+  root 'products#index'
+
+  resources :products
 
 
 
