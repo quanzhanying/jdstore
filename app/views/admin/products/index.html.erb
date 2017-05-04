@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <h2>Product List</h2>
+  <div class="group">
+    <%= link_to("Add new product", new_admin_product_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>品名</td>
+        <td>叙述</td>
+        <td>库存</td>
+        <td>价格</td>
+        <td>选项</td>
+        <td>创建日期</td>
+      </tr>
+    </thead>
+    <tbody>
+
+      <%= render :partial => "product_item", :collection => @products, :as => :product %>
+
+    </tbody>
+  </table>
+</div>
