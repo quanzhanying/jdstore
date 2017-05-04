@@ -6,10 +6,15 @@ class Admin::ProductsController < ApplicationController
   before_action :admin_required
 
    def index
-     @products = Product.new
+     @products = Product.all
    end
+
     def new
       @product = Product.new
+    end
+
+    def new
+     @product = Product.all
     end
 
     def edit
