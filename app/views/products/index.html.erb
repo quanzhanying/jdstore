@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= product.image %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to(product.title, product_path(product)) %>
+    </td>
+    <td>
+      <%= product.price %>
+    </td>
+  </tr>
+  <% end %>
+</table>
