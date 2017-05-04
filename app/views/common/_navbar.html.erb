@@ -23,6 +23,11 @@
               Hi!, <%= current_user.email %>
               <b class="caret"></b>
             </a>
+            <% if current_user.admin? %>
+            <li>
+              <%= link_to("Admin 选单", admin_products_path) %>
+            </li>
+            <% end %>
             <ul class="dropdown-menu">
               <li> <%= link_to(content_tag(:i, '登出',class: 'fa fa-sign-in'),destroy_user_session_path, method: :delete) %> </li>
             </ul>
