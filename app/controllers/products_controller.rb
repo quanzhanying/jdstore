@@ -3,6 +3,6 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
   def show
-    @Product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 end
