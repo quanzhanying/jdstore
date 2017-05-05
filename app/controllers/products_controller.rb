@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.where(:is_hidden => false)
+    @products = Product.recent.where(:is_hidden => false)
   end
 
   def show
