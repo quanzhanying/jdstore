@@ -1,22 +1,22 @@
-<div class="col-md-12">
-
-     <table class="table">
-       <thead>
-        <tr>
-           <th>文章内容</th>
-           <th>发表者</th>
-           <th>发表时间</th>
-         </tr>
-       </thead>
-       <tbody>
-         <% @posts.each do |post| %>
-           <tr>
-             <td><%= post.content %></td>
-             <td><%= post.user.email %></td>
-             <td><%= post.created_at %></td>
-           </tr>
-         <% end %>
-       </tbody>
-     </table>
-
+<div class="row">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> 数量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger") %>
+    </div>
+  </div>
 </div>
