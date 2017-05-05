@@ -56,16 +56,30 @@ SimpleForm.setup do |config|
     b.optional :maxlength
     b.optional :pattern
     b.optional :min_max
-
-    b.wrapper :with_icons, class: 'ui left icon input' do |input|
-      input.use :icon
-      input.use :input
-    end
+    b.use :label_input
 
     b.use :hint,  wrap_with: { tag: 'div', class: 'hint' }
     b.use :error, wrap_with: { tag: 'div', class: 'ui red pointing above label error' }
   end
 
+  config.wrappers :ui_label_input, tag: 'div', class: "field", error_class: 'error', hint_class: 'with_hint' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.wrapper tag: 'div', class: 'ui labeled input' do |input|
+      input.use :ui_label
+      input.use :input
+    end
+  end
+
+
+  config.wrappers :ui_icon_input, tag: 'div', class: "field", error_class: 'error', hint_class: 'with_hint' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.wrapper tag: 'div', class: 'ui left icon input' do |input|
+      input.use :icon
+      input.use :input
+    end
+  end
 
   config.wrappers :ui_checkbox, tag: 'div', class: "field", error_class: 'error', hint_class: 'with_hint' do |b|
     b.use :html5

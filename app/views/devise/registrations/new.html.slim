@@ -6,9 +6,9 @@
       .ui.error.message
         = f.error_notification
       .ui.stacked.segment
-        = f.input :email, required: true, autofocus: true, icon: 'user', placeholder: 'E-mail address'
-        = f.input :password, required: true, icon: 'lock', placeholder: 'Password'
-        = f.input :password_confirmation, required: true, icon: 'lock', placeholder: 'Password confirmation'
+        = f.input :email, required: true, autofocus: true, wrapper: :ui_icon_input, icon: 'user', placeholder: 'E-mail address'
+        = f.input :password, required: true, wrapper: :ui_icon_input, icon: 'lock', placeholder: 'Password'
+        = f.input :password_confirmation, required: true, wrapper: :ui_icon_input, icon: 'lock', placeholder: 'Password confirmation'
         = f.button :submit, "Sign up", class: 'ui fluid large teal button'
     .ui.message
       = render "devise/shared/links"

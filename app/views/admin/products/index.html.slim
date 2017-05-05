@@ -1,0 +1,28 @@
+.ui.container[style='margin-top: 80px;']
+  = link_to 'New Product', new_admin_product_path, class: 'ui large teal right floated button'
+  table.ui.celled.center.aligned.table
+    thead
+      tr
+        th Title
+        th Description
+        th Price
+        th Quantity
+        th Action
+        th Created at
+    tbody
+      - @products.each do |product|
+        tr
+          th
+            = link_to product.title, admin_product_path(product)
+          th
+            = product.description
+          th
+            = product.price
+          th
+            = product.quantity
+          th
+            => link_to 'Edit', edit_admin_product_path(product)
+            | |
+            =< link_to 'Destroy', admin_product_path(product), method: :delete
+          th
+            = product.created_at

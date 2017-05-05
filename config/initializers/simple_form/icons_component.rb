@@ -1,6 +1,6 @@
 module SimpleForm
   module Components
-    module Icons
+    module Icon
       def icon(wrapper_options = nil)
         @icon ||= begin
           if options[:icon].present?
@@ -16,4 +16,4 @@ module SimpleForm
   end
 end
 
-SimpleForm::Inputs::Base.send(:include, SimpleForm::Components::Icons)
+SimpleForm::Inputs::Base.send(:include, SimpleForm::Components::Icon)

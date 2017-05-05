@@ -1,0 +1,7 @@
+= simple_form_for [:admin, @product] do |f|
+  .ui.raised.segment
+    = f.input :title, wrapper: :ui_label_input, ui_label: 'Title'
+    = f.input :description, wrapper: :ui_label_input, ui_label: 'Description'
+    = f.input :price, wrapper: :ui_label_input, ui_label: 'price'
+    = f.input :quantity, wrapper: :ui_label_input, ui_label: 'quantity'
+    = f.button :submit, "Submit", class: 'ui fluid large teal button', disable_with: 'Submiting...'

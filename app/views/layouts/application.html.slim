@@ -5,10 +5,11 @@ html
       | JdStore
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body.pusher
     = render 'common/menu'
-    = semantic_flash
     #main[style='margin-top: 51px;']
+      = semantic_flash
       = yield
     = render 'common/footer'
+    .js
+      = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
