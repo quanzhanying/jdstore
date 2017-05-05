@@ -30,7 +30,7 @@
                     <tbody>
                         <% @products.each do |product| %>
                             <tr>
-                                <td>#</td>
+                                <td><%= product.id %></td>
                                 <td><%= product.title %></td>
                                 <td><%= product.description %></td>
                                 <td><%= product.quantity %></td>
