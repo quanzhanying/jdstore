@@ -25,9 +25,6 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
-  config.assets.precompile += Ckeditor.assets
-  config.assets.precompile += %w(ckeditor/* )
-  config.autoload_paths += %W(#{config.root}/app/models/ckeditor) 
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
