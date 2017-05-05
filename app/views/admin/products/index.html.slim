@@ -1,6 +1,6 @@
 .ui.container[style='margin-top: 80px;']
   = link_to 'New Product', new_admin_product_path, class: 'ui large teal right floated button'
-  table.ui.celled.center.aligned.table
+  table.ui.celled.striped.table
     thead
       tr
         th Title
@@ -15,7 +15,7 @@
           th
             = link_to product.title, admin_product_path(product)
           th
-            = product.description
+            = simple_format truncate product.description, length: 30
           th
             = product.price
           th

@@ -1,0 +1,21 @@
+.ui.middle.aligned.stackable.grid.container[style='margin-top: 80px;']
+  .row
+    .eight.wide.column
+      -if @product.image.present?
+        = image_tag @product.image.url(:medium), class: 'ui large brodered rounded image'
+    .eight.wide.column
+      .ui.container
+        h1.heading 
+          = @product.title
+        .ui.segment
+          = @product.description
+        .ui.segment
+          | 尚余：
+          = @product.quantity
+        .ui.segment
+          = semantic_icon 'yen'
+          | ：
+          = @product.price
+        .ui.red.large.right.floated.button 加入购物车
+
+

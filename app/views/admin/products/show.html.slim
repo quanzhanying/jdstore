@@ -8,6 +8,9 @@
       .ui.basic.label Description
       =< @product.description
     .ui.segment
+      .ui.basic.label Picture
+      = image_tag @product.image.url(:medium) if @product.image?
+    .ui.segment
       .ui.basic.label Price
       =< @product.price
     .ui.segment

@@ -1,0 +1,19 @@
+.ui.container[style='margin-top: 80px;']
+  .ui.four.stackable.cards
+    - @products.each do |product|
+      .card
+        = link_to (image_tag product.image.url(:thumb) if product.image.present?), product_path(product), class: 'image'
+        .content
+          = link_to product.title, product_path(product), class: 'header'
+          .meta
+            = semantic_icon 'yen'
+            = product.price
+          .description
+            = truncate product.description, length: 18
+        .extra.content
+          .ui.heart.rating[data-rating='3']
+
+javascript:
+  $(document).ready(function() {
+    $('.rating').rating();
+  });
