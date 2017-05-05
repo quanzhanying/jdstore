@@ -1,8 +1,25 @@
-<div class="col-md-4 col-md-offset-4">
-  <div class="product">
+<div class="col-md-12">
+  <div class="product" style="margin-left:1000px;">
     <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-info pull-right")%>
   </div>
+  <div style="margin-left:500px;">
+    <h3><%= @product.title %></h3>
+    <p style="line-height:50px;"><b>商品描述： </b><%= @product.description %>
+    <br/>
+    <b>商品库存： </b><%= @product.quantity %>
+    <br/>
+    <b>商品价格： </b><%= @product.price %>
+    <br/>
+    <b>创建日期： </b><%= @product.created_at %>
+  </p>
+</div>
+  <!-- <%= simple_form_for [:admin,@product] do |f| %>
+    <div class="form-product">
+      <%= f.input :title, label:'商品名称', input_html: { class: "form-control"} %>
+      <%= f.input :description, label:'商品详情', input_html: { class: "form-control"} %>
+      <%= f.input :price, label:'价格',input_html: { class: "form-control"} %>
+      <%= f.input :quantity, label:'库存', input_html: { class: "form-control"} %>
+    </div>
+  <% end %> -->
 
-  <hr>
-  <%= render "form"%>
 </div>

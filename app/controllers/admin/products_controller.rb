@@ -37,7 +37,7 @@ before_action :admin_required
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destory
+    @product.destroy
     redirect_to admin_products_path, alert: "Product deleted"
   end
 
