@@ -1,0 +1,10 @@
+<div class="col-md-2">
+  <div class="thumbnail">
+    <a href="<%= product_path(product) %>">
+      <%= image_tag product.image_url(:thumb).to_s %>
+      <div class="text-center">
+        <%= product.title %>
+      </div>
+    </a>
+  </div>
+</div>

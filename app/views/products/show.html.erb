@@ -1,0 +1,21 @@
+<div class="col-md-6">
+  <%= image_tag @product.image_url(:medium).to_s %>
+</div>
+
+<div class="col-md-6">
+<h2> <%= @product.title %> </h2>
+
+<p>
+  商品描述：<%= simple_format(@product.description) %>
+</p>
+
+<p>
+  价格：<%= @product.price %>
+</p>
+
+<p>
+  库存：<%= @product.quantity %>
+</p>
+<br />
+<%= link_to("加入购物车", "#", class: "btn btn-danger") %>
+</div>
