@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!-- <div class="col-md-12">
   <h2>Product List</h2>
   <div class="group">
     <%= link_to("Add new product", new_admin_product_path, class: "btn btn-primary pull-right") %>
@@ -21,4 +21,11 @@
 
     </tbody>
   </table>
-</div>
+</div> -->
+
+<ul>
+  <% @products.each do |product| %>
+
+    <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
+  <% end %>
+</ul>

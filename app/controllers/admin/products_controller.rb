@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  layout "admin"
+
   before_action :authenticate_user!
   before_action :admin_required
 
@@ -7,7 +9,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(parmas[:id])
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -29,6 +31,8 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
+
     if @product.update(product_params)
       redirect_to admin_products_path, notice: "更新商品成功"
     else
