@@ -8,7 +8,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">JD Store</a>
+      <a class="navbar-brand" href="/welcome">JD Store</a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,19 +20,19 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Branch Stores <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/branch/#shanghai">Shanghai</a></li>
-            <li><a href="/branch/#tokyo">Tokyo</a></li>
-            <li><a href="/branch/#taipei">Taipei</a></li>
+            <li><a href="/branch/#shanghai"><span class='fa fa-dot-circle-o'> Shanghai</span></a></li>
+            <li><a href="/branch/#tokyo"><span class='fa fa-dot-circle-o'> Tokyo</span></a></li>
+            <li><a href="/branch/#taipei"><span class='fa fa-dot-circle-o'> Taipei</span></a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/products">Online Shopping</a></li>
+            <li><a href="/products"><span class='fa fa-google-wallet'> Online Shopping</span></a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/branch/#delivery">About Delivery</a></li>
+            <li><a href="/branch/#delivery"><span class='fa fa-truck'> About Delivery</span></a></li>
           </ul>
         </li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Secret for Today">
+          <input type="text" class="form-control" placeholder="Sale of the day">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
@@ -46,10 +47,12 @@
               <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li>
-                  <%= link_to("Admin 选单", admin_products_path ) %>
+                  <%= link_to("<span class='fa fa-home fa-lg'></span>Product Panel".html_safe, admin_products_path ) %></span>
                 </li>
               <% end %>
-                <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
+                <li>
+                  <%= link_to("<span class='fa fa-sign-out fa-lg'></span>Exit".html_safe, destroy_user_session_path, method: :delete) %>
+                </li>
               </ul>
             </li>
           <% end %>
