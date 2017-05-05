@@ -6,7 +6,7 @@
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collaper-1">
-			<ul class="nav navbar-nab navbar-right">
+			<ul class="nav navbar-nav navbar-right">
 				<% if !current_user %>
                   <li><%= link_to("注册", new_user_registration_path) %> </li>
                   <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
@@ -27,3 +27,4 @@
 		</div>
 		<!-- /.container-fluid -->
 	</div>
+</nav>
