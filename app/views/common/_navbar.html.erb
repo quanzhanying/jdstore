@@ -27,7 +27,7 @@
               <li><%= link_to("<span class='fa fa-bars' aria-hidden='true'></span> 我的订单".html_safe, '#', class: "scroll") %></li>
               <% if current_user.admin? %>
                 <li class="divider"></li>
-                <li><%= link_to("<span class='fa fa-lock' aria-hidden='true'></span> 后台管理".html_safe, "#") %></li>
+                <li><%= link_to("<span class='fa fa-lock' aria-hidden='true'></span> 后台管理".html_safe, admin_products_path) %></li>
               <% end %>
               <li class="divider"></li>
               <li><%= link_to("<span class='fa fa-sign-out' aria-hidden='true'></span> 退出".html_safe, destroy_user_session_path, method: :delete) %></li>

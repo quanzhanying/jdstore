@@ -11,5 +11,6 @@
       <% end %>
     </div>
   <% end %>
-  <%= f.submit "保存", data: {disable_with: "正在保存..."}, class: "btn btn-default" %>
+  <%= link_to("取消", admin_products_path, class: "btn btn-default") %>
+  <%= f.submit "保存", data: {disable_with: "正在保存..."}, class: "btn btn-success" %>
 <% end %>
