@@ -18,87 +18,69 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.user_setup {
-	/* Font & Text */
-	font-family: "Open Sans", sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	letter-spacing: normal;
-	line-height: 20px;
-	text-decoration: none solid rgb(51, 51, 51);
-	text-align: start;
-	text-indent: 0px;
-	text-transform: none;
-	vertical-align: baseline;
-	white-space: normal;
-	word-spacing: 0px;
+/* login css */
+/*===== user ====*/
+.user_setup{
+    height: 750px;
+    background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
 
-	/* Color & Background */
-	background-attachment: scroll;
-	background-color: rgba(0, 0, 0, 0);
-	background-image: url("http://job-win.herokuapp.com/assets/user_background-51fbef32c52d0cf8f5277e6bdc417a3fe4c6f2650648b2eb4e64ee51d3d1e0bf.jpg");
-	background-position: 50% 0%;
-	background-repeat: no-repeat;
-	color: rgb(51, 51, 51);
+.user_setup_content{
+    background: #fff;
 
-	/* Box */
-	height: 750px;
-	width: 1038px;
-	border: 0px none rgb(51, 51, 51);
-	border-top: 0px none rgb(51, 51, 51);
-	border-right: 0px none rgb(51, 51, 51);
-	border-bottom: 0px none rgb(51, 51, 51);
-	border-left: 0px none rgb(51, 51, 51);
-	margin: 0px -15px;
-	padding: 0px;
-	max-height: none;
-	min-height: 0px;
-	max-width: none;
-	min-width: 0px;
+    margin-top: 55px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 1px 3px 5px #333;
 
-	/* Positioning */
-	position: static;
-	top: auto;
-	bottom: auto;
-	right: auto;
-	left: auto;
-	float: none;
-	display: block;
-	clear: none;
-	z-index: auto;
+    border: 5px solid #666;
 
-	/* List */
-	list-style-image: none;
-	list-style-type: disc;
-	list-style-position: outside;
+    border-radius: 25px;
 
-	/* Table */
-	border-collapse: separate;
-	border-spacing: 0px 0px;
-	caption-side: top;
-	empty-cells: show;
-	table-layout: auto;
+    opacity:0.95;
+    filter:alpha(opacity=95);
 
-	/* Miscellaneous */
-	overflow: visible;
-	cursor: auto;
-	visibility: visible;
+    h2{
+      text-align: center;
+    }
 
-	/* Effects */
-	transform: none;
-	transition: all 0s ease 0s;
-	outline: rgb(255, 0, 0) dashed 1px;
-	outline-offset: 0px;
-	box-sizing: border-box;
-	resize: none;
-	text-shadow: none;
-	text-overflow: clip;
-	word-wrap: normal;
-	box-shadow: none;
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-	border-bottom-right-radius: 0px;
+    .psw{
+      float: right;
+      margin-top: -33px;
+      position: relative;
+    }
+
+    .account{
+      text-align: center;
+    }
+
+    .form-inputs{
+      margin-top: 25px;
+    }
+
+    .form-actions{
+      text-align: center;
+      margin-top: 35px;
+      margin-bottom: 25px;
+
+      .button{
+        color: #fff;
+
+        background-color: #4A6BB5;
+
+        border-color: #4A6BB5;
+
+        font-size: 16px;
+        letter-spacing: 1px;
+        width: 100%;
+      }
+      .button:hover{
+          background-color: #4A99B5;
+
+          border-color: #4A99B5;
+
+          color: #fff;
+
+      }
+    }
 }
