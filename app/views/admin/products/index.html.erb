@@ -1,0 +1,40 @@
+<div class="col-md-12">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5>商品列表</h5>
+
+      <div class="dropdown clearfix pull-right" style="margin-top: -30px;">
+        <%= link_to("新建商品", new_admin_product_path, class: "btn btn-warning pull-right") %>
+        </div>
+
+    </div>
+    <div class="panel-body">
+      <table class="table table-boldered">
+        <tbody>
+          <tr>
+            <th> 商品名称 </th>
+            <th> 商品描述 </th>
+            <th> 库存 </th>
+            <th> 价格 </th>
+            <th> 选项 </th>
+            <th> 创建日期 </th>
+          </tr>
+          <% @products.each do |product| %>
+            <tr>
+              <td> <%= link_to(product.title, admin_product_path(product)) %></td>
+              <td> <%= product.description %></td>
+              <td> <%= product.quantity %></td>
+              <td> <%= product.price %></td>
+              <td>  <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>
+              |
+              <%= link_to("Delete",admin_product_path(product),:class => "btn btn-xs btn-danger",
+                          method: :delete, data: { confirm: "Are you sure?" }) %>
+              </td>
+              <td> <%= product.created_at %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
