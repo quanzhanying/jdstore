@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//footer always on the bottom
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 80px;
+}
+
+.footer {
+  color: #D84315;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+
+  padding: 5px 0;
+
+  p {
+    color: #D84315;
+    margin-top: 30px;
+  }
+}
