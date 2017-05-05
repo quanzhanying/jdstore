@@ -92,3 +92,21 @@
      width: 32px; //定制图片宽度
      height: 32px; //定制图片高度
  }
+
+/*===== carousel ====*/
+ .carousel-inner img {
+     -webkit-filter: grayscale(20%);
+     filter: grayscale(0%); /* make all photos black and white */
+     width: 100%; /* Set width to 100% */
+     margin: auto;
+ }
+
+ .carousel-caption h3 {
+     color: #fff !important;
+ }
+
+ @media (max-width: 600px) {
+     .carousel-caption {
+         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+     }
+ }
