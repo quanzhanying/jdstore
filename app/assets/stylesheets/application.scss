@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 //footer always on the bottom
 html {
@@ -40,4 +41,17 @@ body {
     color: #D84315;
     margin-top: 30px;
   }
+}
+
+// navbar
+.navbar-default {
+    background-color: #F5F5F5;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: #F5F5F5;
+    padding: 10px 15px;
+    line-height: 30px;
 }

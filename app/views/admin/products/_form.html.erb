@@ -4,6 +4,9 @@
     <%= f.input :description, label:'商品详情', input_html: { class: "form-control"} %>
     <%= f.input :price, label:'价格',input_html: { class: "form-control"} %>
     <%= f.input :quantity, label:'库存', input_html: { class: "form-control"} %>
+    <%= f.label :'图片' %>
+    <%= f.file_field :image %>
   </div>
+  <br/>
   <%= f.submit "Submit", class: "btn btn-success", data: { disable_with: "Submiting..." } %>
 <% end %>
