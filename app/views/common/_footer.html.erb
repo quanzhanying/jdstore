@@ -1,31 +1,15 @@
 <footer class="navbar-default ">
    <div class="container-fluid">
-       <div class="row footer-below">
-           <div class="col-md-offset-1 col-md-11">
-             <div class="col-md-6">
-               <div class="col-md-4">About Us<br>FAQ<br>Awards &amp; Trends</div>
-               <div class="col-md-4">Investor<br>Subscribe<br>Privacy &amp; Cookie</div>
-               <div class="col-md-4">Online Training<br>Terms of Use<br>Guidelines</div>
-             </div>
-             <div class="col-md-4 text-left">
-               <span class="fa fa-slack fa-lg"> Slack ID: timc-2 </span><br/>
-               <span class="fa fa-wechat fa-lg"> Wechat ID: yitihua1320 </span><br/>
-               <span class="fa fa-github fa-lg"> : https://github.com/nn70/jdstore</span>
-             </div>
-             <div class="col-md-offset-1 col-md-1 text-left">
-                 <%= image_tag 'https://ww4.sinaimg.cn/large/006tNbRwgy1ff83ds0fsej308c08c3zh.jpg', class: 'img-responsive' %>
-             </div>
-
-           <hr>
-           </div>
-           <p class="text-center">
-             <%= link_to "https://fullstack.xinshengdaxue.com/works/445", target: :_blank do %>
-             Copyright ©2017 JD Store
-             <br/><% end %>
-             Designed by Tim
-           </p>
-
-
+       <div class="row footer-below text-center">
+         <%= link_to "/about" do %>About Us<% end %> | Tart-Story |
+         <%= link_to "/how#delivery" do %>Delivery<% end %> | Contact Us | Cooperate Farms | Links <br>
+         Copyright ©2017 JDStore
+         Designed by Tim &amp; Who <br><br>
+         <%= link_to "https://github.com/nn70/jdstore", target: :_blank do %>
+         <span class="fa fa-github-alt fa-2x"></span><% end %>
+          | <%= link_to "https://fullstack.xinshengdaxue.com/works/445", target: :_blank do %>
+          <span class="fa fa-caret-square-o-right fa-2x"></span><% end %> <br><br>
+          .
        </div>
    </div>
 
