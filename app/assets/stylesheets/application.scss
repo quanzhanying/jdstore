@@ -111,6 +111,8 @@
 
  .carousel-caption h3 {
      color: #fff !important;
+     padding-bottom: 150px;
+     font-size: 60px;
  }
 
  @media (max-width: 600px) {
@@ -121,7 +123,7 @@
 
 /*===== background all ====*/
  body {
-    //background: url("https://ww4.sinaimg.cn/large/006tNbRwgy1ffbtqgk3kqj31hc11q7wh.jpg ");
+    background: url("https://ww4.sinaimg.cn/large/006tNbRwgy1ffbtqgk3kqj31hc11q7wh.jpg ");
     //这个设定的背景图片可以应用到除了首页这类已经专门设定背景的所有网站页面，免去重复设定背景的烦恼。
 
     background-size: cover;
