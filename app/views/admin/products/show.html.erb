@@ -1,10 +1,10 @@
 <div class="col-md-12">
-  <!-- <div class="pull-right" style="margin-left:800px;">
+  <div class="pull-right" style="margin-left:800px;">
     <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-warning")%>
 
      <%= link_to("Delete",admin_products_path,:class => "btn btn-danger",
                 method: :delete, data: { confirm: "Are you sure?" }) %>
-  </div> -->
+  </div>
   <div>
     <%= image_tag @product.image.medium.url unless @product.image.blank? %>
   </div>
@@ -27,8 +27,8 @@
       <%= f.input :quantity, label:'库存', input_html: { class: "form-control"} %>
     </div>
   <% end %> -->
-  <div>
+  <!-- <div>
     <button type="button" class="btn btn-danger pull-right" >加入购物车</button>
-  </div>
+  </div> -->
 
 </div>
