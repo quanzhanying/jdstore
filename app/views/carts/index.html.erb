@@ -31,7 +31,7 @@
           <td><%= cart_item.product.price %></td>
           <td><%= cart_item.quantity %></td>
           <td>
-            <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+            <%= link_to cart_item_path(cart_item.product_id), method: :delete, data: {confirm: "你真的忍心删除我么？"} do %>
             <i class="fa fa-trash"></i>
             <% end %>
           </td>
