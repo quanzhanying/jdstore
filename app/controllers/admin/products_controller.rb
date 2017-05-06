@@ -29,13 +29,13 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 	end
 
-	def updete
-		@product = Product.find(params[:id])
-		if @product.update(product_params)
-			redirect_to product_path
-		else
-			render_to :edit
-		end
+	def update
+	  @product = Product.find(params[:id])
+	  if @product.update(product_params)
+	    redirect_to admin_products_path
+	  else
+	    render :edit
+	  end
 	end
 
 	def destory
