@@ -40,3 +40,7 @@
     <% end %>
   </tbody>
 </table>
+
+<div class="text-center">
+  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>
