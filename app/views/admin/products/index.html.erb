@@ -12,22 +12,34 @@
       <table class="table table-boldered">
         <tbody>
           <tr>
+            <th>#</th>
+            <th> 商品图片 </th>
             <th> 商品名称 </th>
             <th> 商品描述 </th>
             <th> 库存 </th>
             <th> 价格 </th>
-            <th> 选项 </th>
+            <th width="150px;"> 选项 </th>
             <th> 创建日期 </th>
           </tr>
           <% @products.each do |product| %>
             <tr>
+              <td> <%= product.id %></td>
+              <td>
+                <%= link_to product_path(product) do %>
+                  <% if product.image.present? %>
+                    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                  <% end %>
+                <% end %>
+              </td>
               <td> <%= link_to(product.title, admin_product_path(product)) %></td>
               <td> <%= product.description %></td>
               <td> <%= product.quantity %></td>
               <td> <%= product.price %></td>
               <td>  <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>
               |
-              <%= link_to("Delete",admin_product_path(product),:class => "btn btn-xs btn-danger",
+              <%= link_to("Delete",admin_products_path,:class => "btn btn-xs btn-danger",
                           method: :delete, data: { confirm: "Are you sure?" }) %>
               </td>
               <td> <%= product.created_at %></td>
