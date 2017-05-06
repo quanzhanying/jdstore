@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+    end
+  end
 
   resources :products do
     member do
