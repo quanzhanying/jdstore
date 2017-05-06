@@ -92,10 +92,11 @@
      width: 32px; //定制图片宽度
      height: 32px; //定制图片高度
  }
+
  .navbar-default {
     background: transparent; // 透明navbar
     border-color: transparent;
-    margin-bottom: 100px;
+    margin-bottom: -10px;
     border-radius: 0;
     height: 60px;
 }
@@ -120,7 +121,7 @@
 
 /*===== background all ====*/
  body {
-    background: url("https://ww4.sinaimg.cn/large/006tNbRwgy1ffbtqgk3kqj31hc11q7wh.jpg ");
+    //background: url("https://ww4.sinaimg.cn/large/006tNbRwgy1ffbtqgk3kqj31hc11q7wh.jpg ");
     //这个设定的背景图片可以应用到除了首页这类已经专门设定背景的所有网站页面，免去重复设定背景的烦恼。
 
     background-size: cover;
@@ -129,4 +130,33 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
+}
+
+.ship-logo {
+    color: #f4511e;
+}
+
+.actiontrigger{
+display:block;
+background:linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)),
+url(http://i.imgur.com/CLNGzMr.jpg);
+background-position:center 80%;
+background-size:cover;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:20px; //跟footer留距離
+padding-top:60px; //按鈕下降
+width:100%;
+min-width:960px;
+height:200px;
+position:relative
+}
+
+.btn-actiontrigger {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
 }
