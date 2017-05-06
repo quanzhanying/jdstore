@@ -16,7 +16,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :add_quantity
+      post :delete_quantity
+    end
+  end
 
   namespace :admin do
     resources :products
