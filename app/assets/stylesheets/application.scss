@@ -92,6 +92,13 @@
      width: 32px; //定制图片宽度
      height: 32px; //定制图片高度
  }
+ .navbar-default {
+    background: transparent; // 透明navbar
+    border-color: transparent;
+    margin-bottom: 100px;
+    border-radius: 0;
+    height: 60px;
+}
 
 /*===== carousel ====*/
  .carousel-inner img {
@@ -110,3 +117,16 @@
          display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
      }
  }
+
+/*===== background all ====*/
+ body {
+    background: url("https://ww4.sinaimg.cn/large/006tNbRwgy1ffbtqgk3kqj31hc11q7wh.jpg ");
+    //这个设定的背景图片可以应用到除了首页这类已经专门设定背景的所有网站页面，免去重复设定背景的烦恼。
+
+    background-size: cover;
+    //这段代码主要实现了图片不会被拉伸变现的效果，具体细则在我发布的另一个教程中有说明
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+}
