@@ -1,4 +1,5 @@
 <h2><%= @product.title %></h2>
+<p><%= image_tag(@product.image, :alt => "No Pic") %></p>
 <p><%= simple_format(@product.description) %></p>
 <p><%= @product.quantity %></p>
 <p><%= @product.price %></p>
