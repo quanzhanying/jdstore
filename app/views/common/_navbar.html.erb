@@ -8,6 +8,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="avtice">
+                    <!-- <%= link_to("Products", products_path,class: "breadcrumb") %> -->
                     <%= link_to("Products", products_path) %>
                 </li>
             </ul>
@@ -23,6 +24,9 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
+                                <% if current_user.is_admin? %>
+                                    <li><%= link_to("Admin 菜单", admin_products_path) %> </li>
+                                <% end %>
                                 <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                             </ul>
                         </li>
