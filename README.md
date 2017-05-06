@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-* story1
+* story-1
