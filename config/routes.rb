@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
    resources :products do
-     post :publish
-     post :hide
+     member do
+       post :publish
+       post :hide
+     end
    end
   end
 

@@ -42,7 +42,7 @@
           <% if product.is_hidden %>
             <%= link_to("Publish", publish_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-success") %>
           <% else %>
-            <%= link_to("Hide", hide_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
+            <%= link_to("Hide", admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
           <% end %>
         </td>
       </tr>
