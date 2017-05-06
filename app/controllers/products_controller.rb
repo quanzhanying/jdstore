@@ -5,5 +5,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    if @product.is_hidden
+      flash[:warning] = "This Product already archived"
+      redirect_to root_path
+    end
   end
 end

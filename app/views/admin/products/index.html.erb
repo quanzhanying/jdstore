@@ -16,6 +16,7 @@
     <% @products.each do |product| %>
       <tr>
         <td>
+          <%= render_product_status(product) %>
           <%= product.id %>
         </td>
         <td>
@@ -35,6 +36,14 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <br />
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          <br />
+          <% if product.is_hidden %>
+            <%= link_to("Publish", publish_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-success") %>
+          <% else %>
+            <%= link_to("Hide", hide_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
+          <% end %>
         </td>
       </tr>
     <% end %>
