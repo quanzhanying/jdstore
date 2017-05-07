@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">JDstore</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="nav navbar-nav">
+        <li class="<%= params[:controller]=='products' ? 'active' : '' %>">
+          <%= link_to("Products", products_path) %>
+        </li>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <% unless current_user %>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-user" aria-hidden="true"></i> 注册
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-sign-in" aria-hidden="true"></i> 登录
+            <% end %>
+          </li>
+        <% else %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to("<span class='fa fa-bars' aria-hidden='true'></span> 我的订单".html_safe, '#', class: "scroll") %></li>
+              <% if current_user.admin? %>
+                <li class="divider"></li>
+                <li><%= link_to("<span class='fa fa-lock' aria-hidden='true'></span> 后台管理".html_safe, admin_products_path) %></li>
+              <% end %>
+              <li class="divider"></li>
+              <li><%= link_to("<span class='fa fa-sign-out' aria-hidden='true'></span> 退出".html_safe, destroy_user_session_path, method: :delete) %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

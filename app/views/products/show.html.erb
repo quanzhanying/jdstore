@@ -1,0 +1,20 @@
+<div class="container product-detail">
+  <div class="row">
+    <div class="col-md-6">
+      <%= render_product_detail_image(@product) %>
+    </div>
+    <div class="col-md-6 product-info">
+      <h2 class="product-title"> <%= @product.title %> </h2>
+      <div style="height:100px;">
+        <p class="product-description">
+          <%= @product.description %>
+        </p>
+      </div>
+      <div class="product-price"> ￥ <%= render_price(@product.price) %> </div>
+      <div class="product-quantity"> 库存 : <%= @product.quantity %> </div>
+      <div class="pull-right">
+        <%= link_to("加入购物车", "#", :class => "btn btn-primary btn-lg btn-danger add-to-cart") %>
+      </div>
+    </div>
+  </div>
+</div>

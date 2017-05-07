@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require font-awesome
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.navbar-default {
+  .navbar-brand {
+    color: #555;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  .navbar-brand:focus,
+  .navbar-brand:hover {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  }
+  .navbar-collapse > ul > li {
+    a {
+      color: #555;
+      font-size: 1.1em;
+      letter-spacing: 0.1em;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    a:focus,
+    a:hover {
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+  }
+}
+
+
+//---------Footer---------
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 96px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 96px;
+  margin-top: -96px;
+  font-size: 1.1em;
+  color: #555;
+  background-color: #F8F8F8;
+  padding: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+
+  a {
+    color: #555;
+  }
+  a:hover,
+  a:focus {
+    text-decoration:none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  }
+
+  .footer_icon a {
+    color:#555;
+    font-size: 1.5em;
+    text-decoration:none;
+  }
+
+  .footer_icon a:focus,
+  .footer_icon a:hover {
+    font-size: 1.5em;
+    text-decoration:none;
+  }
+
+  .footer_icon li {
+    display:inline;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+  }
+}

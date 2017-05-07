@@ -1,0 +1,41 @@
+<div class="panel panel-default admin-product-list">
+  <div class="panel-heading">
+    <h3>商品列表
+      <%= link_to(fa_icon("plus", text: " 新增"), new_admin_product_path, class: "btn btn-default pull-right") %>
+    </h3>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <th>#</th>
+      <th>图片</th>
+      <th>名称</th>
+      <th>描述</th>
+      <th>价格</th>
+      <th>库存</th>
+      <th>操作</th>
+      <th>创建时间</th>
+    </thead>
+    <tbody>
+      <% @products.each_with_index do |product, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td width="100">
+            <%= link_to product_path(product) do %>
+              <%= render_product_image(product, "admin-product-img") %>
+            <% end %>
+          </td>
+          <td><%= product.title %></td>
+          <td><%= render_text(product.description, length: 20) %></td>
+          <td><%= render_price(product.price) %></td>
+          <td><%= product.quantity %></td>
+          <td>
+            <%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-default btn-xs") %>
+            <%= link_to("删除", admin_product_path(product), class: "btn btn-danger btn-xs",
+             method: :delete, data: {confirm: "确定删除产品#{product.title}"}) %>
+          </td>
+          <td><%= render_create_time(product) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

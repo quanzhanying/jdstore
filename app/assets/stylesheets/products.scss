@@ -1,0 +1,34 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// 商品列表
+.produc-list {}
+// 每个商品
+.product {
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+// 商品详情
+.product-detail {
+  //商品图片
+  .product-img {}
+  // 商品信息
+  .product-info {
+    .product-title {
+      font-weight: 300;
+    }
+    .product-description {
+
+    }
+    .product-price {
+      font-size: 2em;
+      color: #B22222;
+      font-weight: bold;
+    }
+    .product-quantity {
+      margin-top: 20px;
+    }
+  }
+}
