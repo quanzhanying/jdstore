@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    set_page_title @product.title
+    set_page_description "#{@product.description}"
   end
 
   def add_to_cart
