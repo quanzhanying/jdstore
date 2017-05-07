@@ -1,4 +1,4 @@
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
   <thead>
     <tr>
      <td>品名</td>
@@ -28,4 +28,19 @@
     </td>
   </tr>
   <% end %>
-</table>
+</table> -->
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.name %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
