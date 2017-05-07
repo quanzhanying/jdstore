@@ -7,14 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+<body>
+  <div class="content">
     <div class="container-fluid">
-           <%= render "common/navbar" %>
-           <%= render "common/flashes" %>
-           <%= yield %>
-       </div>
+     <div class="row">
+      <%= render "common/navbar" %>
+     </div>
+     <%= render "common/flashes" %>
+     <%= yield %>
+    </div>
+ </div>
 
-       <%= render "common/footer" %>
-  </body>
+  <%= render "common/footer" %>
+</body>
 </html>
