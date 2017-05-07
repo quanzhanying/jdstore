@@ -23,7 +23,8 @@
         <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
       </li>
       <li>
-        <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
+      <a href="#" class='fa fa-sign-in' data-toggle="modal" data-target="#login-modal"> 登入</a>
+
       </li>
     <% else %>
 
@@ -37,7 +38,7 @@
         <ul class='dropdown-menu'>
 
           <li>
-            <%= link_to("登出", destroy_user_session_path, method: :delete) %>
+            <%= link_to(" 登出", destroy_user_session_path, class: 'fa fa-sign-out',method: :delete) %>
           </li>
         </ul>
 
