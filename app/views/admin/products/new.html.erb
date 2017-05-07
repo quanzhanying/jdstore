@@ -1,8 +1,19 @@
 <h2>新增产品</h2>
 <%= simple_form_for [:admin,@product] do |f| %>
+ <div class="group">
   <%= f.input :title,:label => "商品名"%>
+ </div>
+ <div class="group">
   <%= f.input :description,:label => "叙述"%>
+ </div>
+ <div class="group">
   <%= f.input :price, :label => "价格"%>
+ </div>
+ <div class="group">
   <%= f.input :quantity,:label => "库存"%>
-  <%= f.submit "提交"%>
+ </div>
+ <div class="group">
+  <%= f.input :image,:label => "图片", as: :file%>
+ </div>
+  <%= f.submit "提交", data: {disable_with: "Submitting..."}%>
 <% end %>
