@@ -1,5 +1,11 @@
 <h2><%= @product.title %></h2>
-<p><%= image_tag(@product.image, :alt => "No Pic") %></p>
+<p>
+  <% if product.image.present? %>
+  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+<% else %>
+   <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+<% end %>
+</p>
 <p><%= simple_format(@product.description) %></p>
 <p><%= @product.quantity %></p>
 <p><%= @product.price %></p>

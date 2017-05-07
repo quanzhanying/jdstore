@@ -1,0 +1,20 @@
+<div class="col-md-12">
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product|%>
+        <div class="col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+          <br><br>
+          <%= link_to(product.title, product_path(product)) %>
+          $<%= product.price %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
