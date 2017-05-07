@@ -5,5 +5,6 @@ Rails.application.routes.draw do
      resources :products
    end
 
-root 'welcome#index'
+root 'products#index'
+resources :products
 end
