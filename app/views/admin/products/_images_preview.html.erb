@@ -1,0 +1,9 @@
+<div class="product-image-preview">
+  <% if @product.images.present? %>
+    <div class="group">
+      <% @product.images.each do |image| %>
+        <%= image_tag(image.thumb.url) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

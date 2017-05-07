@@ -2,6 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_is_admin
   before_action :find_product_by_id, only: [:edit, :update, :destroy]
+  layout "admin"
 
   def index
     @products = Product.all.page(params[:page])
