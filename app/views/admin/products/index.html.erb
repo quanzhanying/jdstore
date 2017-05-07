@@ -39,7 +39,7 @@
               <td> <%= product.price %></td>
               <td>  <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>
               |
-              <%= link_to("Delete",admin_products_path,:class => "btn btn-xs btn-danger",
+              <%= link_to("Delete",admin_product_path(product),:class => "btn btn-xs btn-danger",
                           method: :delete, data: { confirm: "Are you sure?" }) %>
               </td>
               <td> <%= product.created_at %></td>
@@ -50,6 +50,6 @@
     </div>
   </div>
   <div class="text-center">
-    <%= will_paginate(@produc, renderer: BootstrapPagination::Rails) %>
+    <%= will_paginate(@product, renderer: BootstrapPagination::Rails) %>
   </div>
 </div>

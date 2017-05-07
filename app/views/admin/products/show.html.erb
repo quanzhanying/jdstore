@@ -2,13 +2,14 @@
   <div class="pull-right" style="margin-left:800px;">
     <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-warning")%>
 
-     <%= link_to("Delete",admin_products_path,:class => "btn btn-danger",
+     <%= link_to("Delete",admin_product_path(@product),:class => "btn btn-danger",
                 method: :delete, data: { confirm: "Are you sure?" }) %>
   </div>
   <div>
     <%= image_tag @product.image.medium.url unless @product.image.blank? %>
   </div>
-  <div style="margin-top:-350px;margin-left:500px;">
+  
+  <div>
     <h3><%= @product.title %></h3>
     <p style="line-height:50px;"><b>商品描述： </b><%= @product.description %>
     <br/>
@@ -17,18 +18,6 @@
     <b>商品价格： </b><%= @product.price %>
     <br/>
     <b>创建日期： </b><%= @product.created_at %>
-  </p>
-</div>
-  <!-- <%= simple_form_for [:admin,@product] do |f| %>
-    <div class="form-product">
-      <%= f.input :title, label:'商品名称', input_html: { class: "form-control"} %>
-      <%= f.input :description, label:'商品详情', input_html: { class: "form-control"} %>
-      <%= f.input :price, label:'价格',input_html: { class: "form-control"} %>
-      <%= f.input :quantity, label:'库存', input_html: { class: "form-control"} %>
-    </div>
-  <% end %> -->
-  <!-- <div>
-    <button type="button" class="btn btn-danger pull-right" >加入购物车</button>
-  </div> -->
-
+    </p>
+  </div>
 </div>
