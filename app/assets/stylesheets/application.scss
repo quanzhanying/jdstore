@@ -12,4 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+//-----------admin_product_show-----------
+.product-details {
+  margin-left: 20px;
+}
