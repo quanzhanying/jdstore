@@ -5,7 +5,6 @@
      <td>介绍</td>
      <td>价格</td>
      <td>库存</td>
-     <td>管理选项</td>
      <td>创建时间</td>
     </tr>
   </thead>
@@ -13,20 +12,16 @@
   <% @products.each do |product| %>
   <tr>
     <td>
-      <%= link_to(product.name, product_path(product)) %>
+      <%= product.name %>
     </td>
     <td>
-      <%= link_to(product.description, product_path(product)) %>
+      <%= product.description %>
     </td>
     <td>
-      <%= link_to(product.price, product_path(product)) %>
+      <%= product.price %>
     </td>
     <td>
-      <%= link_to(product.amount, product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %>
-      <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      <%= product.amount %>
     </td>
     <td>
       <%= product.created_at %>

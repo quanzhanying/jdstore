@@ -19,16 +19,16 @@
   <% @products.each do |product| %>
   <tr>
     <td>
-      <%= link_to(product.name, product_path(product)) %>
+      <%= link_to(product.name, admin_product_path(product)) %>
     </td>
     <td>
-      <%= link_to(product.description, product_path(product)) %>
+      <%= link_to(product.description, admin_product_path(product)) %>
     </td>
     <td>
-      <%= link_to(product.price, product_path(product)) %>
+      <%= link_to(product.price, admin_product_path(product)) %>
     </td>
     <td>
-      <%= link_to(product.amount, product_path(product)) %>
+      <%= link_to(product.amount, admin_product_path(product)) %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_product_path(product)) %>
