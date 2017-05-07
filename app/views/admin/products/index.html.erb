@@ -44,9 +44,9 @@
           <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
           <br />
           <% if product.is_hidden %>
-            <%= link_to("Publish", publish_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-success") %>
+            <%= link_to("上架", publish_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-success") %>
           <% else %>
-            <%= link_to("Hide", hide_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
+            <%= link_to("下架", hide_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
           <% end %>
         </td>
       </tr>

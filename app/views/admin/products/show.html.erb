@@ -20,9 +20,9 @@
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
       <% if @product.is_hidden %>
-        <%= link_to("Publish", publish_admin_product_path(@product) , :method => :post, :class => "btn btn-md btn-success") %>
+        <%= link_to("上架", publish_admin_product_path(@product) , :method => :post, :class => "btn btn-md btn-success") %>
       <% else %>
-        <%= link_to("Hide", hide_admin_product_path(@product) , :method => :post, :class => "btn btn-md btn-warning") %>
+        <%= link_to("下架", hide_admin_product_path(@product) , :method => :post, :class => "btn btn-md btn-warning") %>
       <% end %>
     </div>
   </div>
