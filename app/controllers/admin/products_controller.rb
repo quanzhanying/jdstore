@@ -43,7 +43,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def publish
-    @product = Product.find(parmas[:id])
+    @product = Product.find(params[:id])
     @product.publish!
     redirect_to :back
   end

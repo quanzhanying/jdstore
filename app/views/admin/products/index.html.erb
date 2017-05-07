@@ -8,6 +8,7 @@
       <th>#</th>
       <th width="220">Product Pic</th>
       <th>Name</th>
+      <th>Quantity</th>
       <th>Price</th>
       <th width="100"> Options</th>
     </tr>
@@ -32,6 +33,9 @@
           <%= product.title %>
         </td>
         <td>
+          <%= product.quantity %>
+        </td>
+        <td>
           <%= product.price %>
         </td>
         <td>
@@ -42,7 +46,7 @@
           <% if product.is_hidden %>
             <%= link_to("Publish", publish_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-success") %>
           <% else %>
-            <%= link_to("Hide", admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
+            <%= link_to("Hide", hide_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-warning") %>
           <% end %>
         </td>
       </tr>
