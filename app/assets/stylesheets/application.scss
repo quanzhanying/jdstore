@@ -17,3 +17,235 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+//---------Footer always on the bottom
+ html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 100px;
+  }
+
+ //---------Navbar---------
+
+ .navbar-default {
+     background-color: #424E60;
+     border-color: #424E60;
+
+     border-radius: 0;
+ }
+
+ .navbar-default .navbar-brand {
+     color: #EF6C00;
+     padding: 10px 15px;
+     line-height: 30px;
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+     color: #FF6F00;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+     color: #EF6C00;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+     color: #FF6F00;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+     color: #FF6F00;
+     background-color: #FFE0B2;
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #FFE0B2;
+     color: #212121;
+ }
+
+
+
+ //---------Content---------
+
+ .content-section-a {
+     padding: 50px 0;
+     background-color: #f8f8f8;
+ }
+
+ .content-section-b {
+     padding: 50px 0;
+     border-top: 0px solid #e7e7e7;
+     border-bottom: 0px solid #e7e7e7;
+     img { max-width:100%; }
+ }
+
+ .section-heading-spacer {
+     float: left;
+     width: 200px;
+     border-top: 0px solid #e7e7e7;
+ }
+
+ .section-heading {
+     margin-bottom: 30px;
+ }
+
+ .lead {
+     font-size: 18px;
+     font-weight: 400;
+ }
+
+
+
+//注册弹窗
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+ /****** LOGIN MODAL ******/
+ .loginmodal-container {
+   padding: 30px;
+   max-width: 350px;
+   width: 100% !important;
+   background-color: #F7F7F7;
+   margin: 0 auto;
+   border-radius: 2px;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   font-family: roboto;
+ }
+
+ .loginmodal-container h1 {
+   text-align: center;
+   font-size: 1.8em;
+   font-family: roboto;
+ }
+
+ .loginmodal-container input[type=submit] {
+   width: 100%;
+   display: block;
+   margin-bottom: 10px;
+   position: relative;
+ }
+
+ .loginmodal-container input[type=text], input[type=password] {
+   height: 44px;
+   font-size: 16px;
+   width: 100%;
+   margin-bottom: 10px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid #d9d9d9;
+   border-top: 1px solid #c0c0c0;
+   /* border-radius: 2px; */
+   padding: 0 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+ }
+
+ .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+   border: 1px solid #b9b9b9;
+   border-top: 1px solid #a0a0a0;
+   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ }
+
+ .loginmodal {
+   text-align: center;
+   font-size: 14px;
+   font-family: 'Arial', sans-serif;
+   font-weight: 700;
+   height: 36px;
+   padding: 0 8px;
+ /* border-radius: 3px; */
+ /* -webkit-user-select: none;
+   user-select: none; */
+ }
+
+ .loginmodal-submit {
+   /* border: 1px solid #3079ed; */
+   border: 0px;
+   color: #fff;
+   text-shadow: 0 1px rgba(0,0,0,0.1);
+   background-color: #4d90fe;
+   padding: 17px 0px;
+   font-family: roboto;
+   font-size: 14px;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ }
+
+ .loginmodal-submit:hover {
+   /* border: 1px solid #2f5bb7; */
+   border: 0px;
+   text-shadow: 0 1px rgba(0,0,0,0.3);
+   background-color: #357ae8;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ }
+
+ .loginmodal-container a {
+   text-decoration: none;
+   color: #666;
+   font-weight: 400;
+   text-align: center;
+   display: inline-block;
+   opacity: 0.6;
+   transition: opacity ease 0.5s;
+ }
+
+ .login-help{
+   font-size: 12px;
+ }
+ //---------Footer---------
+
+ .footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: 100px;
+   background-color: #424e60;
+
+   p {
+      color: white;
+     margin-top: 30px;
+   }
+  }
+//-------------Common--------------
+ .col-centered {
+   float: none;
+   margin: 0 auto;
+ }
+
+//------------分类----------------
+
+
+
+//-----网格列分隔线---------
+ @media ( min-width: 768px ) {
+     .grid-divider {
+         position: relative;
+         padding: 0;
+     }
+     .grid-divider>[class*='col-'] {
+         position: static;
+     }
+     .grid-divider>[class*='col-']:nth-child(n+2):before {
+         content: "";
+         border-left: 1px solid #DDD;
+         position: absolute;
+         top: 0;
+         bottom: -100px;
+     }
+     .col-padding {
+         padding: 0 15px;
+     }
+ }

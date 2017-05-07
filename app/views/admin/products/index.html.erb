@@ -9,6 +9,7 @@
       <th width="220">Product Pic</th>
       <th>Name</th>
       <th>Price</th>
+      <th>Address</th>
       <th width="100"> Options</th>
     </tr>
   </thead>
@@ -32,6 +33,9 @@
         </td>
         <td>
           <%= product.price %>
+        </td>
+        <td>
+          <%= product.address %>
         </td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
