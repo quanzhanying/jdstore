@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        <!-- <%= image_tag(@product.image) %> -->
+        <%= image_tag @product.image.medium.url if @product.image.medium.present? %>
+        <!-- <%= image_tag @product.image.thumb.url if @product.image.thumb.present? %> -->
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h1>
+        <%= @product.title %>
+      </h1>
+      <p>
+        <%= simple_format(@product.description) %>
+        <br>
+        ¥<%= @product.price %>
+        <br>
+        数量：<%= @product.quantity %>
+        <br>
+      </p>
+      <div class="pull-right">
+        <%= link_to("加入购物车", "#", :class => "btn btn-danger text-right" ) %>
+        <br><br>
+        <%= link_to("Back", admin_products_path, :class => "btn btn-default" ) %>
+      </div>
+    </div>
+  </div>
+</div>
