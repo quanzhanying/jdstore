@@ -7,6 +7,12 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav">
+             <li class="active">
+               <%= link_to("Products", products_path) %>
+             </li>
+           </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li>
                   <% if !current_user %>
@@ -23,6 +29,9 @@
                           <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu">
+                          <% if current_user.admin? %>
+                          <li><%= link_to("Admin Panel", admin_products_path) %></li>
+                          <% end %>
                           <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
                       </ul>
                     </li>
