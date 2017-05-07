@@ -4,6 +4,11 @@
       <a class="navbar-brand" href="/">JDstore</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="nav navbar-nav">
+        <li class="<%= params[:controller]=='products' ? 'active' : '' %>">
+          <%= link_to("Products", products_path) %>
+        </li>
+      </div>
       <ul class="nav navbar-nav navbar-right">
         <% unless current_user %>
           <li>
