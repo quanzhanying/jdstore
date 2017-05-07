@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-left">Product List</h1>
+      <%= link_to("Add new product", new_admin_product_path, class:"btn btn-default pull-right") %>
+      <br><br>
+      <table class="table table-bordered">
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Option</th>
+          <th>Time</th>
+        </tr>
+        <% @products.each do |product| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(product.title, admin_product_path(product)) %></td>
+          <td><%= simple_format(product.description) %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.price %></td>
+          <td><%= link_to("Edit", edit_admin_product_path(product)) %> | <%= link_to("Destroy", admin_product_path(product), method: :delete) %></td>
+          <td><%= product.created_at %></td>
+        </tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
