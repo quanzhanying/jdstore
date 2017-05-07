@@ -19,6 +19,9 @@
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
+      <%= link_to("修改", edit_admin_product_path(@product), :class => "btn btn-md btn-primary") %>
+      <br />
+      <br />
       <% if @product.is_hidden %>
         <%= link_to("上架", publish_admin_product_path(@product) , :method => :post, :class => "btn btn-md btn-success") %>
       <% else %>
