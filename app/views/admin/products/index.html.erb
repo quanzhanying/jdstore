@@ -1,32 +1,37 @@
-<div class="pull-right">
-  <%= link_to("添加商品",new_admin_product_path, :class => "btn btn-default")%>
+<h2>产品列表</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("添加商品",new_admin_product_path, :class => "btn btn-primary btn-sm")%>
 </div>
 
 <table class="table table-boldered">
   <thead>
     <tr>
       <td>#</td>
-      <td>商品名</td>
-      <td>叙述</td>
-      <td>库存</td>
+      <td width="220">商品图片</td>
+      <td>商品名称</td>
       <td>价格</td>
       <td>选项</td>
-      <td>创建日期</td>
     </tr>
   </thead>
   <tbody>
       <% @products.each do |product| %>
         <tr>
-            <td>#</td>
-            <td><%= link_to(product.title,admin_product_path(product)) %></td>
-            <td><%= product.description %></td>
-            <td><%= product.quantity %></td>
+            <td><%= product.id%></td>
+            <td>
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail")%>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td><%= product.title%></td>
             <td><%= product.price%></td>
             <td>
               <%= link_to("编辑",edit_admin_product_path(product))%>
               <%= link_to("删除",admin_product_path(product),method: :delete)%>
             </td>
-            <td><%= product.created_at%></td>
         </tr>
       <% end %>
   </tbody>
