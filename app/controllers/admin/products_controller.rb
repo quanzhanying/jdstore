@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:news, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!
   before_action :require_is_admin
   def show
     @product=Product.find(params[id])
