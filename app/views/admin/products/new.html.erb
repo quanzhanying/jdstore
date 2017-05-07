@@ -1,0 +1,8 @@
+<h2>新增产品</h2>
+<%= simple_form_for [:admin,@product] do |f| %>
+  <%= f.input :title,:label => "商品名"%>
+  <%= f.input :description,:label => "叙述"%>
+  <%= f.input :price, :label => "价格"%>
+  <%= f.input :quantity,:label => "库存"%>
+  <%= f.submit "提交"%>
+<% end %>
