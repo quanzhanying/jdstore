@@ -1,5 +1,9 @@
 <div class="row">
   <div class="col-md-12">
+    <%= link_to("Empty your shopping cart", clean_carts_path ,
+              method: :delete , class: "pull-right",
+              style: "text-decoration: underline;",
+              data: { confirm: "Are you sure to empty your shopping cart?"} )%>
 
     <h2> Shopping Cart </h2>
 
