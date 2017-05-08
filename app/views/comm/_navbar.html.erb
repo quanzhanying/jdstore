@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Rail 101</a>
+      <a class="navbar-brand" href="/">Jdstore</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,6 +16,12 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi!,<%= current_user.email %>
             <b class="caret"></b></a>
             <ul class="dropdown-menu">
+              <% if current_user.is_admin? %>
+              <li>
+                <%= link_to("管理", admin_products_path) %>
+              </li>
+
+              <% end %>
               <li>
                 <%= link_to("退出", destroy_user_session_path, method: :delete ) %>
               </li>
