@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'font-awesome-rails'
  gem 'carrierwave'
  gem 'mini_magick'
+ gem 'annotate'
 
 
 group :development, :test do
