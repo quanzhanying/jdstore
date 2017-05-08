@@ -16,6 +16,6 @@
     </p>
   </div>
   <div class="pull-right" style="margin-right:30px;">
-    <%= link_to("加入购物车", "#",:class => "btn btn-danger")%>
+    <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-primary btn-danger")%>
   </div>
 </div>
