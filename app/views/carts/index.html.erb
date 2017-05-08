@@ -43,7 +43,7 @@
     <div class="total clearfix">
       <span class="pull-right">
         <span>
-          總計<%= render_cart_total_price(current_cart) %> 元  
+          總計<%= render_cart_total_price(current_cart) %> 元
         </span>
       </span>
     </div>
@@ -52,7 +52,13 @@
 
     <div class="checkout clearfix">
       <%= link_to("確認結帳", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+
+      <%= link_to("清空購物車", clean_carts_path ,
+                              method: :delete,
+                              class: "btn btn-lg btn-warn pull-right",
+                              data: { confirm: "確定清空整個購物車？"} ) %>
     </div>
+
 
   </div>
 </div>
