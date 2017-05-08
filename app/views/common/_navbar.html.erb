@@ -2,7 +2,7 @@
   <div class="container-fluid">
 <!-- Brand and toggle get grouped for better mobile display -->
 <div class="navbar-heaber">
-  <a class="navbar-brand" href="/">little squirrel</a>
+  <a class="navbar-brand" href="/">little squirrel社区婴童二手交易网</a>
 </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -10,9 +10,24 @@
 <!-- 加上product链接 -->
       <ul class="nav navbar-nav">
        <li class="active">
-         <%= link_to("Products", products_path) %>
+         <%= link_to("*** 我想买 ***", products_path) %>
        </li>
      </ul>
+<!-- end -->
+
+<!-- 分类 -->
+<ul class="nav navbar-nav navbar-left">
+   <li class="dropdown">
+     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">童品分类<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+      <% Category.all.each do |category| %>
+        <li>
+          <%= link_to(category.name, products_path(category: category.name)) %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
 <!-- end -->
       <ul class="nav navbar-nav navbar-right">
         <li>

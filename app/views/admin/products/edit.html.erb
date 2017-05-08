@@ -32,7 +32,7 @@
      <%= f.input :image, as: :file %>
    </div>
 <!-- end -->
-
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
