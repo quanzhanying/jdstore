@@ -1,4 +1,8 @@
 class Admin::ProductsController < ApplicationController
+  layout "admin"
+  before_action :authenticate_user!
+  before_action :admin_required
+
   def index
     @products = Product.all
   end
@@ -35,7 +39,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destory
   end
-  
+
   private
   def product_params
     params.require(:product).permit(:title,:description,:quantity,:price)
