@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create]
+
 
   def create
     @order = Order.new(order_params)
-    @order.user = current_user
+    @order.user_id = current_user
     @order.total = current_cart.total_price
 
     if @order.save
