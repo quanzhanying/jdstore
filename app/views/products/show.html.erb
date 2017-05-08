@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="pull-right">
-      <%= link_to(content_tag(:i,'加入购物车',class:'fa fa-cart-plus'),"#", class:"btn btn-primary btn-lg") %>
+      <%= link_to(content_tag(:i,'加入购物车',class:'fa fa-cart-plus'),product_add_to_cart_path(@product),:method => "post", class:"btn btn-primary btn-lg") %>
     </div>
   </div>
 </div>
