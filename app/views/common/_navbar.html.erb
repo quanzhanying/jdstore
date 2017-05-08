@@ -11,8 +11,13 @@
          <li class="active">
            <%= link_to("Products", products_path) %>
          </li>
-       </ul>
+         </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li>
+              <%= link_to carts_path do  %>
+              Shopping Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+              <% end %>
+              </li>
                 <% if !current_user %>
                     <li><%= link_to("Sign up", new_user_registration_path) %> </li>
                     <li><%= link_to(content_tag(:i, 'Log in', class: 'fa fa-sign-in'), new_user_session_path) %></li>
@@ -25,9 +30,9 @@
                       <ul class="dropdown-menu">
                         <% if current_user.admin? %>
                  <li>
-                   <%= link_to("Admin 选单", admin_products_path ) %>
+                   <%= link_to("Admin", admin_products_path ) %>
                  </li>
-               <% end %>
+                <% end %>
                           <li> <%= link_to(content_tag(:i, 'Log out', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                       </ul>
                     </li>
