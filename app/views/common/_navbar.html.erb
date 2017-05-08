@@ -29,7 +29,14 @@
   </li>
 </ul>
 <!-- end -->
+<!-- 显示购物车内物品数量 -->
       <ul class="nav navbar-nav navbar-right">
+        <li>
+            <%= link_to "#" do %>
+              购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.product.count %> )
+              <% end %>
+        </li>
+<!-- end -->
         <li>
           <%  if !current_user %>
           <li><%= link_to("注册",new_user_registration_path) %> </li>
