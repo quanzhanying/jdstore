@@ -4,7 +4,13 @@ def index
 end
 
 def show
-  @Product = Product.find(params[:id])
+  @product = Product.find(params[:id])
+end
+
+def add_to_cart_product_path
+  @product = Product.find(params[:id])
+  redirect_to :back
+  flash[:notice] = "测试加入购物车"
 end
 
 end
