@@ -1,15 +1,161 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" id="nav">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="/" class="navbar-brand">JD Store</a>
+         <a class="navbar-brand" href="/" >51 Offer  <img src="<%= image_url 'logo.png'%>" alt=""></a>
+         <span>  Give you the Best</span>
     </div>
-
-    <div class="collapse navbar-collapse">
+    <div class="collapes navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <% if !current_user %>
+        <li>
+          <%= simple_form_for(resource, as: resource_name,wrapper: :inline_form, html:{ class:"form-inline"}, url: session_path(resource_name)) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, placeholder:"Email", autofocus: true %>
+              <%= f.input :password, placeholder:"Password" ,required: true %>
+              <div class="form-actions">
+                <%= f.button :submit, "登录" %>
+              </div>
+            </div>
+          <% end %>
+        </li>
+        <li><a href="#" data-toggle="modal" data-target="#signup-modal">马上加入</a></li>
+        <% else %>
           <li>
-             <%= link_to("LOG IN",'/')%>
+             <a href="/">
+               <span>
+
+                 <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="nav-icon" xmlns="http://www.w3.org/2000/svg">
+                   <g style="fill-opacity: 1">
+                     <path d="M22,8.45L12.85,2.26a1.5,1.5,0,0,0-1.69,0L2,8.45,3.06,10,4,9.37V19a1,1,0,0,0,1,1h5V15h4v5h5a1,1,0,0,0,1-1V9.37L20.94,10Z">
+                     </path>
+                   </g>
+                   <g style="fill: currentColor">
+                     <path d="M22,9.45L12.85,3.26a1.5,1.5,0,0,0-1.69,0L2,9.45,3.06,11,4,10.37V20a1,1,0,0,0,1,1h6V16h2v5h6a1,1,0,0,0,1-1V10.37L20.94,11ZM18,19H15V15a1,1,0,0,0-1-1H10a1,1,0,0,0-1,1v4H6V8.89l6-4,6,4V19Z">
+                     </path>
+                   </g>
+                 </svg>
+               </span>
+               <span>个人主页</span>ßß
+             </a>
           </li>
+          <li>
+             <a href="#">
+               <span>
+                  <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="nav-icon" xmlns="http://www.w3.org/2000/svg">
+                    <g class="active-item" style="fill-opacity: 1">
+                      <path d="M2,13H22v6a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V13ZM22,8v4H2V8A1,1,0,0,1,3,7H7V6a3,3,0,0,1,3-3h4a3,3,0,0,1,3,3V7h4A1,1,0,0,1,22,8ZM15,6a1,1,0,0,0-1-1H10A1,1,0,0,0,9,6V7h6V6Z">
+                      </path>
+                    </g>
+                    <g class="inactive-item" style="fill: currentColor">
+                      <path d="M21,7H17V6a3,3,0,0,0-3-3H10A3,3,0,0,0,7,6V7H3A1,1,0,0,0,2,8V19a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V8A1,1,0,0,0,21,7ZM9,6a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1V7H9V6ZM20,18H4V13H20v5Zm0-6H4V9H20v3Z">
+                      </path>
+                    </g>
+                  </svg>
+               </span>
+               <span>人脉</span>
+             </a>
+          </li>
+          <li>
+             <a href="#">
+                <span>
+                  <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="nav-icon" xmlns="http://www.w3.org/2000/svg">
+                    <g class="active-item" style="fill-opacity: 1">
+                      <path d="M21,9H8a1,1,0,0,0-1,1V20a1,1,0,0,0,1,1H18l4,3V10A1,1,0,0,0,21,9Zm-4,8H12V16h5v1Zm1-3H11V13h7v1ZM17,5V7H6A1,1,0,0,0,5,8v8H3a1,1,0,0,1-1-1V5A1,1,0,0,1,3,4H16A1,1,0,0,1,17,5Z">
+                      </path></g>
+                      <g class="inactive-item" style="fill: currentColor">
+                        <path d="M21,8H8A1,1,0,0,0,7,9V19a1,1,0,0,0,1,1H18l4,3V9A1,1,0,0,0,21,8ZM20,19.11L18.52,18H9V10H20v9.11ZM12,15h5v1H12V15ZM4,13H5v2H3a1,1,0,0,1-1-1V4A1,1,0,0,1,3,3H16a1,1,0,0,1,1,1V6H15V5H4v8Zm14,0H11V12h7v1Z">
+                        </path>
+                      </g>
+                    </svg>
+                </span>
+                <span>职位</span>
+             </a>
+          </li>
+          <li>
+            <a href="#">
+               <span>
+                  <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="nav-icon" xmlns="http://www.w3.org/2000/svg">
+                    <g class="active-item" style="fill-opacity: 1">
+                      <path d="M21,9H8a1,1,0,0,0-1,1V20a1,1,0,0,0,1,1H18l4,3V10A1,1,0,0,0,21,9Zm-4,8H12V16h5v1Zm1-3H11V13h7v1ZM17,5V7H6A1,1,0,0,0,5,8v8H3a1,1,0,0,1-1-1V5A1,1,0,0,1,3,4H16A1,1,0,0,1,17,5Z">
+                      </path></g><g class="inactive-item" style="fill: currentColor">
+                        <path d="M21,8H8A1,1,0,0,0,7,9V19a1,1,0,0,0,1,1H18l4,3V9A1,1,0,0,0,21,8ZM20,19.11L18.52,18H9V10H20v9.11ZM12,15h5v1H12V15ZM4,13H5v2H3a1,1,0,0,1-1-1V4A1,1,0,0,1,3,3H16a1,1,0,0,1,1,1V6H15V5H4v8Zm14,0H11V12h7v1Z">
+                        </path>
+                      </g>
+                    </svg>
+               </span>
+               <span>消息</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+               <span>
+                 <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="nav-icon" xmlns="http://www.w3.org/2000/svg">
+                   <g class="active-item" style="fill-opacity: 1">
+                     <path d="M18.94,14H5.06L5.79,8.44A6.26,6.26,0,0,1,12,3h0a6.26,6.26,0,0,1,6.21,5.44Zm2,5-1.71-4H4.78L3.06,19a0.71,0.71,0,0,0-.06.28,0.75,0.75,0,0,0,.75.76H10a2,2,0,1,0,4,0h6.27A0.74,0.74,0,0,0,20.94,19Z">
+                     </path>
+                   </g>
+                   <g class="inactive-item" style="fill: currentColor">
+                     <path d="M20.94,19L19,14.49s-0.41-3.06-.8-6.06A6.26,6.26,0,0,0,12,3h0A6.26,6.26,0,0,0,5.79,8.44L5,14.49,3.06,19a0.71,0.71,0,0,0-.06.28,0.75,0.75,0,0,0,.75.76H10a2,2,0,1,0,4,0h6.27A0.74,0.74,0,0,0,20.94,19ZM12,4.75h0a4.39,4.39,0,0,1,4.35,3.81c0.28,2.1.56,4.35,0.7,5.44H7L7.65,8.56A4.39,4.39,0,0,1,12,4.75ZM5.52,18l1.3-3H17.18l1.3,3h-13Z">
+                     </path>
+                   </g>
+                 </svg>
+               </span>
+               <span>通知</span>
+            </a>
+          </li>
+          <li>
+             <a href="/" class="dropdown" data-toggle="dropdown">
+               hi,<%= current_user.email %>!
+               <b class="caret"></b>
+             </a>
+             <ul class="dropdown-menu">
+               <% if current_user.admin? %>
+                <li><%= link_to("admin panel",admin_jobs_path)%></li>
+                <li class="divider"></li>
+               <% end %>
+
+               <li>
+                  <%= link_to("退出",destroy_user_session_path,method: :delete)%>
+               </li>
+             </ul>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
 </nav>
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+       <h2>Log in</h2>
+       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="form-inputs">
+           <%= f.input :email, required: true, autofocus: true %>
+           <%= f.input :password, required: true %>
+           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+         </div>
+         <div class="form-actions">
+           <%= f.button :submit, "Log in" %>
+         </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
