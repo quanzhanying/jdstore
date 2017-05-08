@@ -1,4 +1,21 @@
 .ui.container[style='margin-top: 80px;']
+  .ui.segment[style="display: none;"]
+    h3.header 今日推荐
+    .ui.shape
+      .ui.middle.aligned.center.aligned.sides
+        - @products.each_with_index do |product, i|
+            - unless i == 0
+              .side
+                = link_to (image_tag product.image.url(:header) if product.image.present?), product_path(product), class: 'ui rounded centered image'
+            - else
+              .active.side
+                = link_to (image_tag product.image.url(:header) if product.image.present?), product_path(product), class: 'ui rounded centered image'
+      javascript:
+        $(function() {
+          setInterval(function(){
+            $('.shape').shape('flip over');
+          }, 5000);
+        });
   .ui.four.stackable.cards
     - @products.each do |product|
       .card
