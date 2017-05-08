@@ -168,7 +168,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   devise
