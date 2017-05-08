@@ -8,6 +8,11 @@
         <li class="active"><%= link_to("Products", products_path) %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "#" do %>
+          Barket <i class="fa fa-shopping-cart"> </i> (<%= current_cart.products.count %>)
+          <% end %>
+        </li>
         <% if !current_user %>
           <li><%= link_to( new_user_session_path) do %><i class="fa fa-user" aria-hidden="true"></i> Sign In</li><% end %>
         <% else %>
