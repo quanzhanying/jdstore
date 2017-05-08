@@ -12,7 +12,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if !current_user %>
-              <li><%= link_to("注册", new_user_registration_path) %> </li>
+              <li><%= link_to(content_tag(:i, '注册', class: 'fa fa-user-plus'), new_user_registration_path) %> </li>
               <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
             <% else %>
               <li class="dropdown">
