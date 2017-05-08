@@ -12,6 +12,13 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to "#" do %>
+                  ShopCart
+                  <i class="fa fa-shopping-cart"></i>
+                  (<%= current_cart.products.count %>)
+                  <% end %>
+                </li>
                 <% if !current_user %>
                   <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
