@@ -15,4 +15,6 @@ end
     end
   end
 
+  resources :carts
+
 end
