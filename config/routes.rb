@@ -9,6 +9,6 @@ end
 
 resources :products
 
-root 'product#index'
+root 'admin/products#index'
 
 end

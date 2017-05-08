@@ -5,27 +5,39 @@
 <br><br>
 
 <table class="table table-bordered">
-  <% @products.each do |job| %>
-  <tr>
-    <td>
-      <%= link_to(product.title, admin_product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to(product.description, admin_product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to(product.quantity, admin_product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to(product.price, admin_product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %>
-      <%= link_to("Destroy", admin_product_path(job), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    </td>
-    <td>
-      <%= product.created_at %>
-    </td>
-  </tr>
-  <% end %>
+  <thead>
+    <tr>
+      <td>品名</td>
+      <td>叙述</td>
+      <td>数量</td>
+      <td>价格</td>
+      <td>编辑</td>
+      <td>创建日期</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.title %>
+      </td>
+      <td>
+        <%= product.description %>
+      </td>
+      <td>
+        <%= product.quantity %>
+      </td>
+      <td>
+        <%= product.price %>
+      </td>
+      <td>
+        <%= link_to("Edit", edit_admin_product_path(product)) %> |
+        <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+      <td>
+        <%= product.created_at %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
