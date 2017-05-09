@@ -6,8 +6,8 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  <%= f.input :image %>
+  <%= f.input :image, as: :file %>
 
-  <%= f.submit "Create Product" %>
+  <%= f.submit "Create Product", data: {disable_with: "Submitting..."} %>
 
 <% end %>

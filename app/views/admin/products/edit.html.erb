@@ -6,8 +6,14 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  <%= f.input :image %>
 
-  <%= f.submit "Update Product" %>
+  <% if @product.image.present? %>
+    <span>目前商品图</span>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+  <%= f.input :image, as: :file %>
+
+  <%= f.submit "Update Product", data: {disable_with: "Submitting..."} %>
 
 <% end %>
