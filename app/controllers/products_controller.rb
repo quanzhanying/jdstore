@@ -14,4 +14,11 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def remove_from_cart
+    @product =  Product.find(params[:product_id])
+    current_cart.remove_product_from_cart(@product)
+    flash[:notice] = "Success to remove product from shopcart"
+    redirect_to :back
+  end
+
 end

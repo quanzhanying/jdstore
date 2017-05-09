@@ -2,12 +2,21 @@
   <div class="col-md-12">
     <h2>ShopCart</h2>
 
-    <table class="table table-bordered">
+    <div class="checkout clearfix pull-right">
+      总计 <%= current_cart.total_price %> RMB
+      <%= link_to "Proceed to checkout","#", method: :post, class:"btn btn-common btn-danger" %>
+    </div>
+
+    <br>
+
+    <div class="row" style="margin-top:50px; ">
+    <table class="table table-bordered" style="width:100%; ">
       <thead>
         <tr>
           <th colspan="2">Name</th>
           <th>Price</th>
           <th>Quantity</th>
+          <th>Options</th>
         </tr>
       </thead>
 
@@ -27,18 +36,26 @@
             <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
           </td>
           <td><%= cart_item.product.price %></td>
-          <td><%= cart_item.quantity %></td>
+          <td>
+            <% simple_form_for @cart do |c| %>
+              <%= c.input :cart_item.quantity %>
+              <%= c.submit "Submit" %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(content_tag(:i,'Delete',class:'fa fa-minus-circle'),product_remove_from_cart_path(cart_item.product), :method => "post", class:"btn btn-primary btn-lg") %>
+          </td>
         </tr>
         <% end %>
       </tbody>
 
     </table>
+  </div>
 
-    <br>
+  <div class="clearfix pull-right">
+    <%= link_to("Empty Cart", cart_path(current_cart), :method=>"delete", class:"btn btn-common btn-danger") %>
+  </div>
 
-    <div class="total clearfix">
-      <%= link_to "Proceed to checkout","#", method: :post, class:"btn btn-common btn-danger pull-right" %>
-    </div>
   </div>
 
 </div>
