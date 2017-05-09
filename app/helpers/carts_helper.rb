@@ -1,3 +1,5 @@
 module CartsHelper
-  cart.total_price
+  def render_cart_total_price(cart)      #购物车合计
+    cart.total_price
+  end
 end
