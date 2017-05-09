@@ -4,6 +4,11 @@
     <%= f.input :description, input_html: { class:"form-control"} %>
     <%= f.input :quantity, input_html: { class:"form-control"} %>
     <%= f.input :price, input_html: { class:"form-control"} %>
+    <% if @product.image.present? %>
+      <span>目前商品图</span> <br/>
+      <%= image_tag(@product.image.thumb.url) %>
+    <% end %>
+    <%= f.input :image, as: :file %>
   </div>
-  <%= f.submit "Create Product", class: "btn btn-primary", data: {disable_with: "Creating..."}%>
+  <%= f.submit "Submit", class: "btn btn-primary", data: {disable_with: "Submitting..."}%>
 <% end %>
