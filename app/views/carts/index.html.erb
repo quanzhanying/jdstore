@@ -46,13 +46,19 @@
          <span>
            总计 <%= render_cart_total_price(current_cart)%> RMB
          </span>
+         <span>
+           <%= link_to("清空购物车", clean_carts_path ,
+              method: :delete , class: "pull-right",
+              class: "btn btn-lg btn-danger",
+              data: { confirm: "你确定要清空整个购物车吗？"} )%>
+          </span>
       </span>
     </div>
 
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-primary pull-right") %>
     </div>
   </div>
 </div>
