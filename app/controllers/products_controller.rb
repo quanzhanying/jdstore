@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     if !@product.blank?
+      current_cart.add_product_to_cart(@product)
+      flash[:notice] = "add cart success!"
       redirect_to :back
     else
       flash[:warning] = "Product does't exist on store."
