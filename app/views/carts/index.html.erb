@@ -10,10 +10,10 @@
         </tr>
       </thead>
       <tbody>
-        <% current_cart.cart_items.each do |cart_items| %>
+        <% current_cart.cart_items.each do |cart_item| %>
         <tr>
           <td>
-            <%= link_to product_path(cart.item.product) do %>
+            <%= link_to product_path(cart_item.product) do %>
             <% if cart_item.product.image.present? %>
                 <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
               <% else %>
@@ -30,11 +30,13 @@
     </table>
     <br>
     <div class="total clearfix">
-      <span>Subtotal $ xxx</span>
+      <span class="pull-right">
+        Subtotal $ <%= render_cart_total_price(current_cart) %>
+      </span>
     </div>
     <hr>
     <div class="checkout clearfix">
-      <%= link_to("Proceed to checkout", "#", :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("Proceed to checkout", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>
