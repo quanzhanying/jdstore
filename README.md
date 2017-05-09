@@ -1,3 +1,3 @@
 # README
 
- JD store home work in first week.
+JD Store admin part story 1
