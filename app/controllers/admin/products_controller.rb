@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  def idex
+  def index
     @products = Product.all
   end
 
