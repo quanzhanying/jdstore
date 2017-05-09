@@ -8,10 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="loggingpagebody">
     <div class="container-fluid">
       <div class="row">
-         <%= render 'common/navbar'%>
+        <%= render 'common/navbar'%>
       </div>
       <%= render 'common/flashes'%>
       <%= yield %>
