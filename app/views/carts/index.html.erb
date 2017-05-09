@@ -4,6 +4,7 @@
 
       <h2>购物车</h2>
 
+      <!-- 购物列表 -->
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -40,14 +41,16 @@
 
       <br>
 
+      <!-- 合计详情 -->
       <div class="total clearfix">
         <span class="pull-right">
-          <span>总计 xxx RMB</span>
+          总计：<%= render_cart_total_price(current_cart) %> RMB
         </span>
       </div>
 
       <hr>
 
+      <!-- 提交按钮 -->
       <div class="checkout clearfix">
         <%= link_to("确认结账", "#", method: :post, class: "btn btn-danger pull-right") %>
       </div>
