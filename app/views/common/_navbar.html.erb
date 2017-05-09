@@ -25,7 +25,7 @@
           <ul class="dropdown-menu">
             <% if current_user.admin? %>
             <li>
-              <%= limk_to("Admin 选单", admin_products_path ) %>
+              <%= link_to("Admin 选单", admin_products_path ) %>
             </li>
             <% end %>
             <li> <%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
