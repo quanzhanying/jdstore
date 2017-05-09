@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :carts
+
   # root 'welcome#index'
   root 'products#index'
 end
