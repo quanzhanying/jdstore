@@ -17,12 +17,14 @@
       <% @products.each do |product| %>
         <tr>
           <td>#</td>
-          <td><%= link_to(job.title, product_path(product)) %></td>
+          <td><%= link_to(product.title, admin_product_path(product)) %></td>
           <td><%= product.description %></td>
-          <td><%= product.wage_lower_bound %> ~ <%= product.wage_upper_bound %></td>
-          <td><%= product.contact_email %></td>
-          <td>
-          </td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
+          <td><%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", admin_product_path(product),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "确定删除此商品?" } )%></td>
+          <td><%= product.created_at %></td>
         </tr>
       <% end %>
     </tbody>
