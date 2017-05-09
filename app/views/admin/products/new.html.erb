@@ -1,0 +1,13 @@
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增讨论版</h2>
+    <hr>
+    <%= simple_form_for [:admin,@product] do |f| %>
+      <div class="form-group">
+        <%= f.input :title, input_html: { class: "form-control"}, :label => "品名" %>
+        <%= f.input :description, input_html: { class: "form-control"}, :label => "描述" %>
+        <%= f.input :price, input_html: { class: "form-control"}, :label => "价格" %>
+        <%= f.input :quantity, input_html: { class: "form-control"}, :label => "库存" %>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+    <% end %>
+</div>

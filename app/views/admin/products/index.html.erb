@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <div class="product">
+    <%= link_to("Add a product", new_admin_product_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>品名</td>
+        <td>描述</td>
+        <td>价格</td>
+        <td>库存</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(product.title, admin_product_path(product)) %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
