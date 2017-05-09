@@ -1,0 +1,10 @@
+<h1> Add a  product </h1>
+
+<%= simple_form_for [:admin,@product] do |f| %>
+<%= f.input :name  %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.input :amount %>
+<%= f.input :image, as: :file %>
+<%= f.submit "Submit" %>
+<% end %>
