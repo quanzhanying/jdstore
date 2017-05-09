@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   root 'products#index'
+  resources :cart_items
   resources :carts do
     collection do
       delete :clean
