@@ -35,6 +35,8 @@ end
     end
   end
 
+
+
   private
 
   def product_params
