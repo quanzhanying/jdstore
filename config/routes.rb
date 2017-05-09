@@ -19,6 +19,6 @@ Rails.application.routes.draw do
    end
  end
 
- resources :carts_items
+ resources :cart_items
 
 end
