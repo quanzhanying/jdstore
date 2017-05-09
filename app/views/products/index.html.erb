@@ -1,34 +1,14 @@
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <td>品名</td>
-      <td>叙述</td>
-      <td>数量</td>
-      <td>价格</td>
-      <td>创建日期</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-    <tr>
-      <td>
-        <%= link_to(product.title, product_path(product)) %>
-      </td>
-      <td>
-        <%= product.description %>
-      </td>
-      <td>
-        <%= product.quantity %>
-      </td>
-      <td>
-        <%= product.price %>
-      </td>
-
-      <td>
-        <%= product.created_at %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class:"thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>

@@ -36,6 +36,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'font-awesome-rails'
 
 
 group :development, :test do
