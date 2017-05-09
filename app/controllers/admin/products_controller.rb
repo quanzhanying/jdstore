@@ -6,7 +6,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @product = Product.all
+    @products = Product.all
   end
 
   def new
@@ -17,7 +17,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to admin_jobs_path
+      redirect_to admin_products_path
     else
       render :new
     end
@@ -25,13 +25,13 @@ class Admin::ProductsController < ApplicationController
 
 
 def edit
-  @produt = Product.find(params[:id])
+  @product = Product.find(params[:id])
 end
 
 def update
-  @produt = Product.find(params[:id])
-  if @produt.update(product_params)
-    redirect_to admin_jobs_path
+  @product = Product.find(params[:id])
+  if @product.update(product_params)
+    redirect_to admin_products_path
   else
     render :edit
   end
