@@ -18,7 +18,7 @@
             <span class="admin_product_info_title">quantity:</span> <span><%= @product.quantity %></span>
           </div>
           <div class="row">
-            <%= link_to("Add to cart", "#", class:"btn btn-lg btn-danger") %>
+            <%= link_to("Add to cart", add_to_cart_product_path(@product), :method => :post, class:"btn btn-lg btn-danger") %>
           </div>
         </div>
       </div>
