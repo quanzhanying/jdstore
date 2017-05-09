@@ -12,6 +12,7 @@
           <th colspan="2">商品资讯</th>
           <th>单价</th>
           <th>数量</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -35,8 +36,14 @@
             </td>
             <td>
               <%= cart_item.quantity %>
-              <%= link_to("删除", delete_cart_item_cart_path(cart_item), class: "btn btn-sm btn-danger",
+
+            </td>
+            <td>
+              <%# = link_to("删除", delete_cart_item_cart_path(cart_item), class: "btn btn-sm btn-danger",
                             method: :post, data: { confirm: "Are you sure?" }) %>
+              <%= link_to delete_cart_item_cart_path(cart_item), method: :post do %>
+               <i class="fa fa-trash"></i>
+              <% end %>
             </td>
           </tr>
         <% end %>
