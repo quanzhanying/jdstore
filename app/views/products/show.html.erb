@@ -22,6 +22,6 @@
     库存：<%= @product.quantity %>
   </p>
   <br />
-  <%= link_to("加入购物车", "#", class: "btn btn-danger") %>
+  <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
 </div>
 </div>
