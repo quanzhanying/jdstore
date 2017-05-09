@@ -71,3 +71,18 @@
 .body_container{
   margin-bottom: 100px;
 }
+
+.products{
+  border-top: none !important;
+}
+
+.products .table,
+.products .table th,
+.products .table tr,
+.products .table td{
+  border:none !important;
+}
+
+.product_thumbnail{
+  margin-bottom: 80px;
+}

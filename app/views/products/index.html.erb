@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <div>
+  <div class="products">
     <table class="table borderless">
       <% @products.each_with_index do |product, index|%>
-        <% if index % 4 == 0 %>
+        <% if (index % 4) == 0 %>
           <tr>
         <% end %>
           <td>
@@ -12,7 +12,7 @@
               <%= link_to(product.title, product_path(product)) %>
             </div>
           </td>
-        <% if index / 4 == 1 || index == @products.size %>
+        <% if ((index+1) % 4 )== 0 || index == (@products.size-1) %>
          </tr>
          <% end %>
       <% end %>
