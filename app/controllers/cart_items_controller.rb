@@ -1,5 +1,15 @@
 class CartItemsController < ApplicationController
-     def update
+      def destroy
+        @cart = current_cart
+        @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+        @product = @cart_item.product
+        @cart_item.destroy
+
+        flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
+        redirect_to :back
+      end
+
+      def update
         @cart = current_cart
         @cart_item = @cart.cart_items.find_by(product_id: params[:id])
         if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
@@ -11,12 +21,12 @@ class CartItemsController < ApplicationController
         end
 
         redirect_to carts_path
-     end
+      end
 
-     private
+      private
 
-     def cart_item_params
+      def cart_item_params
         params.require(:cart_item).permit(:quantity)
-     end
+      end
 
 end
