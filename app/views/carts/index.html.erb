@@ -41,7 +41,11 @@
 
   <div class="total clearfix">
     <span class="pull-right">
-      <span style="font-size:16px;"><b>总计 xxx RMB</b></span>
+      <span style="font-size:16px;">
+        <b>
+        总计 <%= render_cart_total_price(current_cart)%> RMB
+      </b>
+      </span>
     </span>
   </div>
 
