@@ -38,10 +38,11 @@
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
+      <th width="220">产品图片</th>
+      <th>产品名称</th>
+      <th>价格</th>
+      <th>库存</th>
+      <th width="100"> 操作</th>
     </tr>
   </thead>
   <tbody>
@@ -66,7 +67,10 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= product.quantity %>
+        </td>
+        <td>
+          <%= link_to("变更", edit_admin_product_path(product)) %>
         </td>
       </tr>
     <% end %>
