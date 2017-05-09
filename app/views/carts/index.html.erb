@@ -35,6 +35,8 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+              <%= link_to("删除", delete_cart_item_cart_path(cart_item), class: "btn btn-sm btn-danger",
+                            method: :post, data: { confirm: "Are you sure?" }) %>
             </td>
           </tr>
         <% end %>

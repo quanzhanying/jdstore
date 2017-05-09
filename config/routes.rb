@@ -12,7 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts
+  resources :carts do
+    member do
+      post :delete_cart_item
+    end
+  end
+
 
   # root 'welcome#index'
   root 'products#index'
