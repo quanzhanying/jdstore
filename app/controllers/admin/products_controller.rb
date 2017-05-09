@@ -1,6 +1,18 @@
 class Admin::ProductsController < ApplicationController
+  layout "admin"
+  before_action :authenticate_user!
+  before_action :admin_required
+
+  def index
+    @products = Product.all
+  end
+
   def new
     @product = Product.new
+  end
+
+  def edit
+    @product = Product.find(params[:id])
   end
 
   def create
@@ -10,13 +22,6 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
-  end
-  def index
-    @products = Product.all
-  end
-
-  def edit
-    @product = Product.find(params[:id])
   end
 
   def update
