@@ -32,8 +32,8 @@
  //---------Navbar---------
 
  .navbar-default {
-     background-color: #424E60;
-     border-color: #424E60;
+     background-color: #424e60;
+     border-color: #424e60;
      margin-bottom: 0px;
 
      border-radius: 0;
@@ -255,9 +255,10 @@
 // 背景图
 
     body {
-        margin-bottom: 100px;
+
+        margin:0;
         padding:0;
-        background: #fff url() center center fixed no-repeat;
+        background: white url() center center fixed ;
         -moz-background-size: cover;
         background-size: cover;
     }
