@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div>
+      <span class="cart_title">购物车</span><%= link_to("清空购物车", clear_cart_path(@cart), method: :post, class: "btn btn-lg btn-danger") %>
+    </div>
+
+  </div>
+  <table class="table">
+    <thead>
+      <th colspan="2">描叙</th>
+      <th>单价</th>
+      <th>数量</th>
+    </thead>
+
+    <tbody>
+      <% @cart.cart_items.each do |cart_item| %>
+      <tr>
+        <td>
+          <%= link_to product_path(cart_item.product) do %>
+            <% if cart_item.product.image.present? %>
+              <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+        </td>
+        <td>
+          <%= cart_item.product.price %>
+        </td>
+        <td>
+          <%= cart_item.quantity %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="total clearfix">
+    <span class="pull-right">
+      总计 <%= current_cart.cart_total_price %> RMB
+    </span>
+  </div>
+  <div class="">
+    <span class="pull-right">
+      <%= link_to("确认结账","#", class:"btn btn-lg btn-danger btn-confirm-buy") %>
+    </span>
+  </div>
+</div>
