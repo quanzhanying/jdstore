@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :remove_from_cart
     end
   end
 
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :carts
+  resources :cart_items
 
   root 'products#index'
 end
