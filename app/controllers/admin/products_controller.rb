@@ -16,7 +16,7 @@ class Admin::ProductsController < ApplicationController
 
     if @product.save
       flash[:notice] = "create success!"
-      redirect_to root_path
+      redirect_to admin_products_path
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Admin::ProductsController < ApplicationController
 
     if @product.update(product_params)
       flash[:notice] = "Update success!"
-      redirect_to root_path
+      redirect_to admin_products_path
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     flash[:alert] = "Product deleted!"
-    redirect_to root_path
+    redirect_to admin_products_path
   end
 
   private
