@@ -5,11 +5,13 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
-        <td>品名</td>
-        <td>描述</td>
-        <td>价格</td>
-        <td>库存</td>
+        <th>#</th>
+        <th>品名</th>
+        <th>描述</th>
+        <th>价格</th>
+        <th>库存</th>
+        <th>管理选项</th>
+        <th>创建时间</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +22,12 @@
           <td><%= product.description %></td>
           <td><%= product.price %></td>
           <td><%= product.quantity %></td>
+          <td>
+            <%= link_to('Edit',edit_admin_product_path(product), class: "btn btn-sm btn-default") %>
+            <%= link_to('Delete',admin_product_path(product), class: "btn btn-sm btn-default",
+                            method: :delete, data: { confirm: "Are you sure?"}) %>
+          </td>
+          <td><%= product.created_at %></td>
         </tr>
       <% end %>
     </tbody>
