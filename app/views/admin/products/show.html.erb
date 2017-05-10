@@ -2,8 +2,16 @@
   <div class="product">
     <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-primary pull-right")%>
   </div>
-  <h2><%= @product.title %></h2>
-  <p>描述：<%= @product.description %></p>
-  <p>价格：<%= @product.price %></p>
-  <p>库存：<%= @product.quantity %></p>
+  <br/><br/><br/>
+  <div class="col-sm-8">
+    <p><%= image_tag @product.image_url(:medium) if @product.image.present? %> </p>
+  </div>
+  <div class="col-sm-3">
+    <h2><%= @product.title %></h2>
+    <p>描述：<%= @product.description %></p>
+    <p>价格：<%= @product.price %></p>
+    <p>库存：<%= @product.quantity %></p>
+  </div>
+
+
 </div>

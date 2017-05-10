@@ -4,6 +4,8 @@
     <%= f.input :description, input_html: { class: "form-control"}, :label => "描述" %>
     <%= f.input :price, input_html: { class: "form-control"}, :label => "价格" %>
     <%= f.input :quantity, input_html: { class: "form-control"}, :label => "库存" %>
+    <%= f.input :image, as: :file %>
+    <%= image_tag @product.image if @product.image.present? %>
   </div>
   <%= f.submit "submit product", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
 <% end %>
