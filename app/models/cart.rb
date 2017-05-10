@@ -19,4 +19,8 @@ class Cart < ApplicationRecord
       return sum
   end
 
+  def clear_cart
+    cart_items.clear
+  end
+
 end

@@ -1,5 +1,10 @@
 <div class="container-fluid">
-  <h2>购物车</h2>
+  <div class="row">
+    <div>
+      <span class="cart_title">购物车</span><%= link_to("清空购物车", clear_cart_path(@cart), method: :post, class: "btn btn-lg btn-danger") %>
+    </div>
+
+  </div>
   <table class="table">
     <thead>
       <th colspan="2">描叙</th>
