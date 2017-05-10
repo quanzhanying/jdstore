@@ -1,0 +1,17 @@
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+          <% if product.image.present?%>
+            <%= image_tag(product.image.thumb.url, class:"thumbnail")%>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail")%>
+          <% end %>
+      <% end %>
+      <li>商品名：<%= product.title %></li>
+      <li>¥:<%= product.price %></li>
+      <li>库存:<%= product.quantity %></li>
+      <br/>
+    </div>
+  <% end %>
+</div>
