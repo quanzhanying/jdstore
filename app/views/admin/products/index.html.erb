@@ -13,11 +13,15 @@
         <th width="100">操作</th>
       </tr>
     </thead>
-    
+
     <hbody>
+      <% @i = 0 %>
       <% @products.each do |p| %>
       <tr>
-        <td><%= p.id %></td>
+        <td>
+          <% @i = @i + 1 %>
+          <%= @i %>
+        </td>
         <td>
           <% if p.image.present? %>
             <%= image_tag p.image.thumb.url class:"thumbnail" %>
