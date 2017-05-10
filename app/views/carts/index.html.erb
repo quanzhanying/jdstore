@@ -1,5 +1,10 @@
 <div class="row">
   <div class="col-md-12">
+    <%= link_to("清空购物车",clean_carts_path,
+                method: :delete ,
+                class: "pull-right",
+                style: "text-decoration: underline;",
+                data:{ coonfirm: "你确定要清空整个购物车吗？"}) %>
 
     <h2> 购物车 </h2>
 
@@ -11,8 +16,8 @@
           <th>数量</th>
         </tr>
       </thead>
-      <tbody>
 
+      <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
@@ -24,19 +29,23 @@
                 <% end %>
               <% end %>
             </td>
+
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
+
             <td>
               <%= cart_item.product.price %>
             </td>
+
             <td>
               <%= cart_item.quantity %>
             </td>
+
           </tr>
         <% end %>
-
       </tbody>
+
     </table>
 
     <br>
