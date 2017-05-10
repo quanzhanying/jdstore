@@ -15,6 +15,7 @@
           <th colspan="2">商品资讯</th>
           <th>單價</th>
           <th>數量</th>
+          <th>操作選項</th>
         </tr>
       </thead>
       <tbody>
@@ -38,6 +39,11 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+            </td>
+            <td>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
             </td>
           </tr>
         <% end %>
