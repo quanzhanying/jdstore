@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin,@product] do |f| %>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: "form-control"} %>
+    <%= f.input :description, input_html: { class: "form-control"} %>
+    <%= f.input :quantity, input_html: { class: "form-control"} %>
+    <%= f.input :price, input_html: { class: "form-control"} %>
+    <%= f.input :image, as: :file %>
+  </div>
+  <%= f.submit "Create Product", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+<% end %>
