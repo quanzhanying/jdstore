@@ -6,4 +6,9 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
+  def clean
+    current_cart.clean!
+    flash[:warning] = "Clear the Shopcar!"
+    redirect_to carts_path
+  end
 end

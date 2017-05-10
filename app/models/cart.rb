@@ -14,7 +14,7 @@ class Cart < ApplicationRecord
     end
 
     if !product_found
-      ci =  cart_item.build
+      ci =  cart_items.build
       ci.product = product
       ci.quantity = 1
       ci.save
@@ -38,6 +38,10 @@ class Cart < ApplicationRecord
       end
     end
 
+  end
+
+  def clean!
+    cart_items.destroy_all
   end
 
 end

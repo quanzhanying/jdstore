@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     post :remove_from_cart
   end
 
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+    end
+  end
+
+  resources :cart_items
 
   namespace :admin do
     resources :products

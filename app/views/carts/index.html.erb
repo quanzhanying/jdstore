@@ -37,13 +37,16 @@
           </td>
           <td><%= cart_item.product.price %></td>
           <td>
-            <% simple_form_for @cart do |c| %>
-              <%= c.input :cart_item.quantity %>
-              <%= c.submit "Submit" %>
+            <%= simple_form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+              <%= f.input :quantity %>
+              <%= f.submit "Submit" %>
             <% end %>
           </td>
           <td>
-            <%= link_to(content_tag(:i,'Delete',class:'fa fa-minus-circle'),product_remove_from_cart_path(cart_item.product), :method => "post", class:"btn btn-primary btn-lg") %>
+            <!--<%= link_to(content_tag(:i,'Delete',class:'fa fa-minus-circle'),product_remove_from_cart_path(cart_item.product), :method => "post", class:"btn btn-primary btn-lg") %> -->
+            <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+              <i class="fa fa-trash"></i>
+             <% end %>
           </td>
         </tr>
         <% end %>
@@ -53,7 +56,10 @@
   </div>
 
   <div class="clearfix pull-right">
-    <%= link_to("Empty Cart", cart_path(current_cart), :method=>"delete", class:"btn btn-common btn-danger") %>
+    <!--
+      <%= link_to("Empty Cart", cart_path(current_cart), :method=>"delete", class:"btn btn-common btn-danger") %>
+    -->
+    <%= link_to("Clear Cart", clean_carts_path, method: :delete, class:"pull-right", style:"text-decoration: underline;", data: {Confirm:"Are you sure clear the cart? "})    %>
   </div>
 
   </div>
