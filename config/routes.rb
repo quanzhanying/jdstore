@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts            #购物车明细
+  resources :carts do         #购物车明细
+    collection do
+      delete :clean
+    end
+  end
 
 
 

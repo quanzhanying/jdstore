@@ -41,6 +41,12 @@
 
       <br>
 
+      <!-- 清空购物车 -->
+      <%= link_to("清空购物车", clean_carts_path,
+                  method: :delete, class: "pull-left btn btn-default",
+                  data: { confirm: "你确定要清除购物车吗？"}) %>
+
+
       <!-- 合计详情 -->
       <div class="total clearfix">
         <span class="pull-right">
