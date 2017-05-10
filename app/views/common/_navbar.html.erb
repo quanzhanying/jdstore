@@ -6,7 +6,11 @@
       <!-- 爱绘本 -->
       <%= image_tag("JDStore.png") %>
     </a>
-
+    <ul class="nav navbar-nav ">
+      <li class="active">
+        <%= link_to("Products", products_path) %>
+      </li>
+    </ul>
     <!-- <button type='button' class="navbar-toggle" data-toggle='collapse' data-target='.navbar-collapse'>
         <span class='sr-only'>Toggle navigation</span>
         <span class='icon-bar'></span>
@@ -39,6 +43,11 @@
 
         <ul class='dropdown-menu'>
 
+<% if current_user.admin? %>
+                    <li>
+                      <%= link_to(" Admin", admin_products_path) %>
+                    </li>
+                    <% end%>
           <li>
             <%= link_to(" 登出", destroy_user_session_path, class: 'fa fa-sign-out',method: :delete) %>
           </li>
