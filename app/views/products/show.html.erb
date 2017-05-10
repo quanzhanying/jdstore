@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="content">
+      <div class="row">
+        <div class="col-sm-8 col-md-8">
+            <img src="<%=@product.image%>"/>
+        </div>
+        <div class="col-sm-4 col-md-4 admin_product_info">
+          <div class="row">
+            <span class="admin_product_info_title">name:</span> <span><%= @product.title %></span>
+          </div>
+          <div class="row">
+            <span class="admin_product_info_title">description:</span> <span><%= @product.description %></span>
+          </div>
+          <div class="row">
+            <span class="admin_product_info_title">price:</span> <span><%= @product.price %></span>
+          </div>
+          <div class="row">
+            <span class="admin_product_info_title">quantity:</span> <span><%= @product.quantity %></span>
+          </div>
+          <div class="row">
+            <%= link_to("Add to cart", add_to_cart_product_path(@product), :method => :post, class:"btn btn-lg btn-danger") %>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
