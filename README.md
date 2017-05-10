@@ -1,3 +1,3 @@
 # README
 
-jdstore作业2
+完成商品上架
