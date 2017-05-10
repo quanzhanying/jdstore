@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>RiRiLv - Green</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield %>
+    </div>
+    <%= render "common/footer" %>
   </body>
 </html>
