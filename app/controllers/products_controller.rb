@@ -11,12 +11,16 @@ class ProductsController < ApplicationController
   def add_to_cart
     @product = Product.find(params[:id])
     if !@product.blank?
-      current_cart.add_product_to_cart(@product)
-      flash[:notice] = "add cart success!"
-      redirect_to :back
+      if !current_cart.is_product_added?(@product)
+          current_cart.add_product_to_cart(@product)
+          flash[:notice] = "商品已添加到购物车"
+      else
+        flash[:warning] = "本商品已在购物车"
+      end
     else
-      flash[:warning] = "Product does't exist on store."
+      flash[:warning] = "商品已下架"
     end
+    redirect_to :back
   end
 
   private

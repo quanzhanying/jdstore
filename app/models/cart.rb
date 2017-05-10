@@ -3,10 +3,12 @@ class Cart < ApplicationRecord
   has_many :products , through: :cart_items, source: :product
 
   def add_product_to_cart(product)
-      ci = cart_items.build
-      ci.product = product
-      ci.quantity = 1
-      ci.save
+    ci = cart_items.build
+    ci.product = product
+    ci.quantity = 1
+    ci.save
+    product.quantity -= 1
+    product.save
   end
 
   def cart_total_price
@@ -31,7 +33,50 @@ class Cart < ApplicationRecord
             cart_items.delete(item)
         end
     end
-
   end
+
+  def get_quantity(product)
+    cart_items.each_with_index do |item , index|
+        if item.product.id == product.id
+            return item.quantity
+        end
+    end
+    return 0
+  end
+
+
+  def is_product_added?(product)
+    cart_items.each_with_index do |item , index|
+        if item.product.id == product.id
+            return true
+        end
+    end
+    return false
+  end
+
+  def increase_product(product)
+    cart_items.each do |item|
+      if item.product.id == product.id
+          item.quantity = item.quantity + 1
+          item.save
+          return true
+      end
+    end
+    return false
+  end
+
+  def decrease_product(product)
+    cart_items.each do |item|
+      if item.product.id == product.id
+          if item.quantity > 0
+              item.quantity = item.quantity - 1
+              item.save
+              return true
+          end
+      end
+    end
+    return false
+  end
+
 
 end
