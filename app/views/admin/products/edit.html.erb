@@ -1,6 +1,6 @@
-<h2> New Product </h2>
+<h2> Edit product </h2>
 
-<%= simple_form_for [:admin,@product] do |f| %>
+<%= simple_form_for [:admin, @product] do |f| %>
 
   <div class="group">
     <%= f.input :title %>
@@ -15,9 +15,9 @@
   </div>
 
   <div class="group">
-    <%= f.input :price%>
+    <%= f.input :price %>
   </div>
 
-  <%= f.submit "Submit", data: {disable_with: "Submitting..." } %>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
