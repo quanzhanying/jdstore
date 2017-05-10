@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <% if @product.image.present? %>
+          <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+        <% else %>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <div class="container">
+          <div class="row">
+            <h2><%= @product.title %></h2>
+            <p><%= @product.description %></p>
+            <p>Quantity： <%= @product.quantity %> </p>
+            <p>$<%= @product.price %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <%= link_to("Add to Basket", "#", class:"btn btn-danger") %>
+      </div>
+    </div>
+  </div>
+</div>
