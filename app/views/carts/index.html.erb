@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-         <%= link_to("清空购物车", clean_carts_path ,
+        <%= link_to("清空购物车", clean_carts_path ,
                      method: :delete , class: "pull-right",
                      style: "text-decoration: underline;",
                      data: { confirm: "你确定要清空整个购物车吗？"} )%>
@@ -15,6 +15,8 @@
                     <th colspan="2">商品资讯</th>
                     <th>单价</th>
                     <th>数量</th>
+                    <th>操作选项
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +41,11 @@
                     <td>
                         <%= cart_item.quantity %>
                     </td>
+                    <td>
+                        <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                        <i class="fa fa-trash"></i>
+                        <% end %>
+                    </td>
                 </tr>
                 <% end %>
 
@@ -50,7 +57,9 @@
         <div class="total clearfix">
             <span class="pull-right">
                 <span>
-                    总计 <%= render_cart_total_price(current_cart) %> RMB
+                    总计
+                    <%= render_cart_total_price(current_cart) %>
+                    RMB
                 </span>
             </span>
         </div>
