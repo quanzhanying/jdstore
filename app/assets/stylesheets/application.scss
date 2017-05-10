@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+.product-box{
+  margin: 15px;
+  width: 200px;
+  float: left;
+  text-align: center;
+
+  img{
+    border: 2.5px solid #ccc;
+  }
+}
+
+.input-box{
+  width: 60px;
+}
