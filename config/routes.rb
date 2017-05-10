@@ -9,6 +9,12 @@ end
 
 resources :products
 
+resources :products do
+  member do
+    post :add_to_cart
+  end
+end
+
 root 'products#index'
 
 end
