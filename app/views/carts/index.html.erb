@@ -10,6 +10,7 @@
       <th colspan="2">描叙</th>
       <th>单价</th>
       <th>数量</th>
+      <th colspan="2">编辑</th>
     </thead>
 
     <tbody>
@@ -33,6 +34,7 @@
         <td>
           <%= cart_item.quantity %>
         </td>
+        <td><%= link_to("删掉", remove_product_cart_path(cart_item.product), :method => :post,  class: "btn btn-sm btn-default") %></td>
       </tr>
       <% end %>
     </tbody>

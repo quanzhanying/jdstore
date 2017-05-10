@@ -23,4 +23,15 @@ class Cart < ApplicationRecord
     cart_items.clear
   end
 
+  def remove_product(product)
+    pos_to_deletes = []
+    cart_items.each_with_index do |item , index|
+        if item.product.id == product.id
+            # pos_to_deletes.push(index)
+            cart_items.delete(item)
+        end
+    end
+
+  end
+
 end
