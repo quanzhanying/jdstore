@@ -8,6 +8,7 @@ end
 
 
 resources :products
+resources :carts
 
 resources :products do
   member do
