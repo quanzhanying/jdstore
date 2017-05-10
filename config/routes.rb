@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   resources :carts do         #购物车明细
     collection do
-      delete :clean
+      delete :clean           #清空购物车
     end
   end
+
+  resources :cart_items
 
 
 
