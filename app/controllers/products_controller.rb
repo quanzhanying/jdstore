@@ -41,6 +41,12 @@ class ProductsController < ApplicationController
     redirect_to products_path, alert: "Product deleted."
   end
 
+  def add_to_cart
+    @product = Product.find(params[:id])
+    redirect_to :back
+    flash[:notice] = "测试加入购物车"
+  end
+
   private
 
   def product_params
