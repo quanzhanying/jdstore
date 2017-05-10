@@ -4,7 +4,7 @@
       <%= image_tag(@product.image.medium) %>
     </div>
     <div class="col-md-8">
-      <h1><%= @product.title %></h1>  <%= link_to("加入购物车", new_admin_product_path, class: "btn btn-success pull-right") %>
+      <h1><%= @product.title %></h1>  <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger pull-right") %>
       <p>数量：<%= @product.quantity %></p>
       <p>$ <%= @product.price %></p>
     </div>
