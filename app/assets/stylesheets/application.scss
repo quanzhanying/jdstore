@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.admin_proudct_table{
+  border: solid 3px #dcdcdc;
+  box-shadow: 0 0 4px 1px #f2f2f2;
+}
+
+.admin_proudct_table th{
+  background-color: #f2f2f2;
+  color: #1366af;
+  font-size: 18px;
+  font-weight: 200;
+};
+
+.admin_proudct_table td{
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.admin_btn_new{
+  margin-bottom: 40px;
+  margin-right: 100px;
+}
+
+.admin_product_info{
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.admin_product_info a{
+  width: 120px;
+  margin-top: 50px;
+}
+
+.admin_product_info .admin_product_info_title{
+  font-size: 30px;
+  margin: 10px 20px 10px 0;
+}
+
+.product_thumbnail img{
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: auto;
+  height: 100%;
+  margin: auto;
+}
+
+.product_thumbnail{
+  width: 200px;
+  height: 200px;
+}
+
+.body_container{
+  margin-bottom: 100px;
+}
+
+.products{
+  border-top: none !important;
+}
+
+.products .table,
+.products .table th,
+.products .table tr,
+.products .table td{
+  border:none !important;
+}
+
+.product_thumbnail{
+  margin-bottom: 80px;
+}
+
+.btn-confirm-buy{
+  margin: 50px 0px 100px 0;
+}
+
+.cart_title{
+  font-size: 30px;
+  margin: 10px 50px 10px 20px;
+}
+
+.btn-add-to-cart{
+  width: 150px !important;
+}
