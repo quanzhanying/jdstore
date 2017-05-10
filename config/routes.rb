@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :products
   end
 resources :products do
-  membber do
+  member do
     post :add_to_cart
   end
 end
