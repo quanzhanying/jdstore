@@ -8,6 +8,7 @@
       <%= image_tag("http://placehold.it/400x400&text=No Pic",class:"thumbnail") %>
     <% end %>
   </div>
+
   <div class="col-md-8">
     <div class="panel panel-default " >
       <div class="panel-heading"><%= @product.title%></div>
@@ -24,11 +25,12 @@
       </div>
     </div>
     <div class="pull-right">
-      <% if @product.quantity == 0 %>
-        <button type="button" class="btn btn-lg btn-grey " name="button">加入购物车</button>    
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车",    add_to_cart_product_path(@product), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% else %>
-        <%= link_to(content_tag(:i,'加入购物车',class:'fa fa-cart-plus'),product_add_to_cart_path(@product),:method => "post", class:"btn btn-primary btn-lg") %>
+        已售謦
       <% end %>
     </div>
   </div>
+
 </div>

@@ -10,21 +10,27 @@ class CartItemsController < ApplicationController
 
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
-    if @cart_item.update(cart_item_params)
-      flash[:notice] = "Update cart success"
+    if cart_item_params[:quantity].to_i >0 && @cart_item.product.quantity >= cart_item_params[:quantity].to_i
+      if @cart_item.update(cart_item_params)
+        flash[:notice] = "Update cart success"
+      else
+        flash[:warning] = "Update cart fail"
+      end
     else
-      flash[:warning] = "Update cart fail"
+      flash[:warning] = "Unreasonable quantity"
     end
     redirect_to carts_path
   end
 
   def destroy
     @cart = current_cart
-    @cart_item = @cart.find_by(product_id: params[:id])
+    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     @product = @cart_item.product
     @cart_item.destroy
 
     flash[:warning] = "Successfully delete #{@product.title}"
+    redirect_to carts_path
+    
   end
 
   private

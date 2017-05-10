@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @product =  Product.find(params[:product_id])
+    @product =  Product.find(params[:id])
     if(@product.quantity > 0 )
       current_cart.add_product_to_cart(@product)
       flash[:notice] = "Success to add product to shopcart"
@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def remove_from_cart
-    @product =  Product.find(params[:product_id])
+    @product =  Product.find(params[:id])
     current_cart.remove_product_from_cart(@product)
     flash[:notice] = "Success to remove product from shopcart"
     redirect_to :back
