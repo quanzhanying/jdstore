@@ -16,7 +16,11 @@
     <div> 數量 : <%= @product.quantity %> </div>
     <div class="product-price"> ฿ <%= @product.price %> </div>
     <div class="pull-right">
-      <%= link_to("加入購物車", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+       <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入購物車", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已銷售一空, 無法購買
+      <% end %>
     </div>
   </div>
 </div>
