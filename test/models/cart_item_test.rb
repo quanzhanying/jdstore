@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CatrItemTest < ActiveSupport::TestCase
+class CartItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
