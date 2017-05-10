@@ -26,7 +26,7 @@
           <td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
           <td><%= cart_item.product.price %></td>
           <td><%= cart_item.quantity %></td>
-          <td><%= link_to("Deleted", product_path(cart_item.product), method: :destroy, data:{confirm:"Are you sure?"}, class:"btn btn-danger") %></td>
+          <td><%= link_to( cart_item_path(cart_item.product_id) ,method: :delete, data:{confirm:"Are you sure?"} ) do %><i class="fa fa-trash"></i> <% end %></td>
         </tr>
         <% end %>
       </tbody>
