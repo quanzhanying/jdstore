@@ -1,0 +1,9 @@
+<div class="col-md-12">
+  <div class="product">
+    <%= link_to("Edit", edit_admin_product_path(@product), class: "btn btn-primary pull-right")%>
+  </div>
+  <h2><%= @product.title %></h2>
+  <p>描述：<%= @product.description %></p>
+  <p>价格：<%= @product.price %></p>
+  <p>库存：<%= @product.quantity %></p>
+</div>
