@@ -38,6 +38,9 @@
               <%= cart_item.quantity %>
             </td>
             <td>
+              <%= link_to("删除", cart_item_path(cart_item.product_id) ,
+             class: "pull-right" ,  method: :delete  )%>
+
               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
                 <i class="fa fa-trash"></i>
               <% end %>
