@@ -13,8 +13,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
+    <% @products.each_with_index do |product, index| %>
       <tr>
+        <td>
+          <%= index+1 %>
+        </td>
         <td>
           <%= product.id %>
         </td>
