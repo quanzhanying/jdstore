@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>ShoesMemo</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="footer_up">
+      <div class="container-fluid">
+        <div class="row">
+         <%= render "common/navbar" %>
+         <%= render "common/flashes" %>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  <!-- 不用container-fluid风格装饰地脚，什么也不用 -->
+  <%= render "common/footer" %>
   </body>
 </html>
