@@ -1,3 +1,3 @@
 # README
 
-JD Store admin part story 3 complete
+JD store story 4 homework
