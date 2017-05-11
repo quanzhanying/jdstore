@@ -21,11 +21,11 @@
   <% if @product.pic.present? %>
    <span>目前商品图</span> <br>
    <%= image_tag(@product.pic.thumb.url) %>
- <% end %>
+  <% end %>
 
- <div class="group">
+  <div class="group">
    <%= f.input :pic, as: :file %>
- </div>
+  </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
