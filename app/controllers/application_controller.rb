@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper _method :current_cart
+  helper_method :current_cart
 
   def current_cart
     @current_cart ||= find_cart
@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
       cart = Cart.create
     end
     session[:cart_id] = cart.id
-    return cart    
+    return cart
   end
 end
