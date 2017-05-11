@@ -30,8 +30,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-## CSS框架(元件素材多), John@2017.04.27
+## CSS框架(元件素材多), John@2017.05.11
 gem 'bootstrap-sass'
+
+## 登录系统2017-05-11
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
