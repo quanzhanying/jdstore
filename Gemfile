@@ -36,6 +36,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'better_errors'
+gem 'awesome_rails_console' 
 
 
 group :development, :test do

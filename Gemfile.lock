@@ -41,6 +41,11 @@ GEM
     arel (7.1.1)
     autoprefixer-rails (6.7.7.1)
       execjs
+    awesome_print (1.7.0)
+    awesome_rails_console (0.4.0)
+      awesome_print
+      pry-rails
+      railties
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -107,6 +112,12 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -150,6 +161,7 @@ GEM
     simple_form (3.4.0)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -187,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_rails_console
   better_errors
   bootstrap-sass
   byebug
