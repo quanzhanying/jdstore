@@ -2,6 +2,12 @@
   .ui.container
     = link_to '丁氏私房菜', '/', class: 'ui large header item'
     .right.menu
+      .item 
+        = link_to carts_path do
+          | 购物车
+          = semantic_icon 'in cart'
+          .ui.circular.label
+            = current_cart.products.count
       - unless user_signed_in?
         .item
           = link_to 'Log in', new_user_session_path, class: 'ui inverted button'

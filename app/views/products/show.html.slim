@@ -10,12 +10,14 @@
         .ui.segment
           = @product.description
         .ui.segment
-          | 尚余：
-          = @product.quantity
-        .ui.segment
           = semantic_icon 'yen'
           | ：
           = @product.price
-        .ui.red.large.right.floated.button 加入购物车
-
-
+        .ui.segment
+          | 尚余：
+          = @product.quantity
+        .right.aligned
+        - unless @product.quantity < 1
+          = link_to '加入购物车', add_to_cart_product_path(@product), method: :post, class: 'ui large red button'
+        - else
+          | 已销售一空，无法购买
