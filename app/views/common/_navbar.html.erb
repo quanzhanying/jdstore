@@ -36,7 +36,8 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to "#" do  %>Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <%= link_to carts_path do  %>
+          Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
           <% end %>
         </li>
         <!-- <li class="active"><%= link_to 'About us', about_path %><span class="sr-only">(current)</span></li> -->
