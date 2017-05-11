@@ -1,8 +1,13 @@
 <div class="col-md-4 col-md-offset-4">
     <h2>商品上架</h2>
-
-    <hr>
-
-    <%= render "form" %>
-
+    <%= simple_form_for [:admin,@product] do |f| %>
+      <div class="form-group">
+        <%= f.input :title, input_html: { class: "form-control"} %>
+        <%= f.input :description, input_html: { class: "form-control"} %>
+        <%= f.input :price, input_html: { class: "form-control"} %>
+        <%= f.input :stock, input_html: { class: "form-control"} %>
+        <%= f.input :image, as: :file %>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+    <% end %>
 </div>
