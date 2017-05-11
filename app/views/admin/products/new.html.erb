@@ -1,12 +1,24 @@
-<h1> New product </h1>
 
-<%= simple_form_for [:admin,@product] do |f| %>
+<h2> New Product </h2>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.input :quantity %>
-<%= f.input :pic%>
+<%= simple_form_for [:admin, @product] do |f| %>
 
-  <%= f.submit "Submit" %>
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
 <% end %>
