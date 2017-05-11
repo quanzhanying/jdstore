@@ -39,7 +39,7 @@
             <td>
               <%= cart_item.quantity %>
               <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-                <%= f.select :quantity, [1,2,3,4,5] %>
+                <%= f.select :quantity, 1..cart_item.product.quantity %>
                 <%= f.submit "更新", data: { disable_with: "Submiting..." } %>
               <% end %>
             </td>
