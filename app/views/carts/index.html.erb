@@ -33,7 +33,11 @@
                 <%= cart_item.product.price %>
               </td>
               <td>
-                <%= cart_item.product.quantity %>
+                <!-- 在index页面中使用update页面表单的方法，要加上对应的url，指向update的地址 -->
+                <%= simple_form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                  <%= f.select :quantity, [1,2,3,4,5] %>
+                  <%= f.submit "更新", class: "btn btn-xs btn-default", data: { disable_with: "Submiting..."} %>
+                <% end %>
               </td>
               <td>
                 <!-- 设立使用“link_to...do”的写法，可以将元素变为链接 -->
