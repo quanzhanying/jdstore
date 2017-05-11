@@ -1,0 +1,19 @@
+<h2> New Product </h2>
+<%= simple_form_for [:admin, @product] do |f| %>
+    <div class="group">
+        <%= f.input :title %>
+    </div>
+    <div class="group">
+        <%= f.input :description %>
+    </div>
+    <div class="group">
+        <%= f.input :quantity, :label => "商品库存"%>
+    </div>
+    <div class="group">
+        <%= f.input :price, :label => "商品价格" %>
+    </div>
+    <div class="group">
+        <%= f.input :image, :label => "商品图片" ,as: :file %>
+    </div>
+    <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>
