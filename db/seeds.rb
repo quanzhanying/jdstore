@@ -14,3 +14,8 @@ u.password_confirmation = "123456"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+product = Product.new
+product.title = "好饿好饿的木宝宝"
+product.price = 26
+product.save
