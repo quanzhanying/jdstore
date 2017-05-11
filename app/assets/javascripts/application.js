@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert //这个就是用来产生各种小提示的东西
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require_tree .
