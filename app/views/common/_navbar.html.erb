@@ -12,7 +12,7 @@
           <%= link_to("Products", products_path) %>
         </li>
       </ul>
-      
+
       <ul class="nav navbar-nav navbar-right">
         <li>
           <% if !current_user %>
@@ -25,9 +25,14 @@
                   <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <% if current_user.admin? %>
                   <li>
-                     <li> <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                      <%= link_to("Admin Panel", admin_products_path ) %>
                   </li>
+                <% end %>
+                <li>
+                     <li> <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                </li>
               </ul>
             </li>
           <% end %>
