@@ -4,8 +4,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = find.(params[:id])
+    @product = Product.find(params[:id])
   end
 
+  def add_to_cart
+    @product = Product.find(params[:id])
+    redirect_to :back
+    flash[:notice] = "just a test"
+end
 
 end
