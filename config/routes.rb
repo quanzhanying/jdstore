@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   resources :products do
     member do
-      post :add_to_cart_product_path
+      post :add_to_cart
     end
   end
-  
+
 end
