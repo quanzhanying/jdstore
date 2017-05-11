@@ -35,7 +35,11 @@
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><%= link_to 'About us', about_path %><span class="sr-only">(current)</span></li>
+        <li>
+          <%= link_to "#" do  %>Cart <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <% end %>
+        </li>
+        <!-- <li class="active"><%= link_to 'About us', about_path %><span class="sr-only">(current)</span></li> -->
           <% if !current_user %>
               <li><%= link_to("Register", new_user_registration_path) %> </li>
               <li><%= link_to("Login", new_user_session_path) %></li>
