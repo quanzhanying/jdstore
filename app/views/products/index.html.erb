@@ -1,32 +1,14 @@
-<div class="col-md-12">
-  <!-- <div class="product">
-    <%= link_to("New product", new_product_path, class: "btn btn-primary pull-right") %>
-  </div> -->
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>商品</td>
-        <td>描述</td>
-        <td>价格</td>
-        <td>库存</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td>#</td>
-          <td><%= link_to(product.title, product_path(product)) %></td>
-          <td><%= product.description %></td>
-          <td><%= product.price %></td>
-          <td><%= product.stock %></td>
-          <!-- <td>
-              <%= link_to("Edit", edit_product_path(product), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", product_path(product),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "你确定要移除该商品?" } )%>
-          </td> -->
-        </tr>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
       <% end %>
-    </tbody>
-  </table>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
 </div>
