@@ -21,6 +21,10 @@ class Order < ApplicationRecord
     self.update_columns(is_paid: true)
   end
 
+  def cancel!
+    self.update_columns(aasm_state: order_cancelled)
+  end
+
   include AASM
 
   aasm do

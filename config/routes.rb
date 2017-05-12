@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     member do
       post :payment_with_alipay
       post :payment_with_wechat
+      post :apply_to_cancel
     end
   end
 
