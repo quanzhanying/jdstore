@@ -20,6 +20,9 @@ resources :products do
   end
 end
 
+resources :cart_items
+
+
 root 'products#index'
 
 end
