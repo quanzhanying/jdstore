@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     resources :products       #后台上架网址 admin/products
   end
 
-  root 'products#index'
-
   resources :products do      #前台product
     member do
       post :add_to_cart
@@ -21,9 +19,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items       #购物车列表
 
-
+  root 'welcome#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

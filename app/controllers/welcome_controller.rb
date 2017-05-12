@@ -1,6 +1,8 @@
 class WelcomeController < ApplicationController
 
-def index
-end
+  # --CRUD--
+  def index
+    @products = Product.all
+  end
 
 end

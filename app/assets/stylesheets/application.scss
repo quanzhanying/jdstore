@@ -17,17 +17,135 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体 需要使用VPN才可生效
 
+
+
+ // 整体设置
  body {
-    padding-top: 50px;  /* 腾出navbar的遮挡空间 */
-    font-size: 1.2em;   /* 网址所有字体字体缩小比例 */
-    a {                 /* 所有a标签统一样式 */
-      color: #333;
-      transition: 0.6s;
+    font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+    padding-top: 50px;                                  // 腾出navbar的遮挡空间
+    color: #666;
+    font-size: 1.2em;                                   // 网址所有字体字体缩小比例
+    a {                                                 // 所有a标签统一样式
+      color: #666;                                      // 链接反转的样式
+      transition: 0.5s;                                 // 鼠标移开时 0.5秒渐变
     }
     a:hover {
-      color: #666;
-      transition: 0.6s;
-      text-decoration: none;
+      color: #7f8c8d;
+      transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+      text-decoration: none;                            // 移除下划线
     }
-}
+  }
+
+  // navbar设置
+  .navbar-style {
+    background: #f5f5f5;
+    border-color: transparent;                          //边框颜色设置为 透明
+  }
+  .navbar-brand {
+    letter-spacing: 0.1em;                              //拉开一点点字间距
+    font-weight: 300;                                   //字体粗细比默认样式缩小100磅值，让logo显得精致高级
+  }
+
+  // 中间区域介绍内容样式
+  .landing-page-mid {                                   //给图片整好形
+    height: 534px;
+    background-size: cover;                             //确保图片完全撑开
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(https://ooo.0o0.ooo/2017/05/12/59156f9f3b09c.jpg);
+  }
+  .landing-page-mid .tagline {                          //编写标题样式
+    text-align: center;
+    color: #7f8c8d;
+    letter-spacing: 0.2em;                              //把字间距撑开，视觉感更优雅
+    font-size: 1.6em;
+    margin-top: 3.2em;
+  }
+  .landing-page-mid .tagp {                             //编写内容样式
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 2.5em;
+    line-height: 2.5em;                                 //行间距也要拉开大一些
+    letter-spacing: 0.18em;                             //把字间距撑开，视觉感更优雅
+  }
+
+  // 区块分类标识样式（用于区分 商品 和 课程）
+  .topspan {
+    margin-top: 2em;
+  }
+  .titspan {
+    font-weight: 400
+  }
+  .morespan {
+    margin: 2em auto;
+  }
+
+
+  // 商品展示列表样式设置，为商品栏做好排版整形
+  .product-list-style {                                 //图片+文字 块样式整形
+    margin: 3em auto 2em;
+  }
+  .product-list-style-img {                             //文字 块样式整形
+    margin-bottom: 1.2em;
+  }
+  .all-product-box {
+    margin-bottom: 3em;
+  }
+
+  //用户评价版面样式
+  .landing-page-eva {
+    height: 400px;
+    background-color: #f5f5f5;
+  }
+  .landing-page-eva .tagline {                          //编写标题样式
+    text-align: center;
+    color: #7f8c8d;
+    letter-spacing: 0.2em;                              //把字间距撑开，视觉感更优雅
+    font-size: 1.6em;
+    margin-top: 2.8em;
+    margin-bottom: 2em;
+  }
+  .landing-page-eva-style {
+    margin-top: 2em;
+    text-align: justify;
+  }
+
+
+  //”彩蛋“”公告栏样式
+  .landing-page-adv {
+    height: 140px;
+    background-size: cover;                             //确保图片完全撑开
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("https://ooo.0o0.ooo/2017/05/13/5915dfb428d47.jpg");
+    color: #fff;
+  }
+  .landing-page-adv h4{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .landing-page-adv h5{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2em;
+  }
+
+
+  //footer样式设置
+  .footer-style {
+    background-color: #f5f5f5;
+  }
+  .footer-style h5 {
+    margin-top: 2em;
+    font-size: 1.4em;
+  }
+  .footer-style-p {
+    // padding-right: 10em;
+    text-align: justify;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+  }

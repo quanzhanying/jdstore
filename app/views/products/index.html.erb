@@ -1,16 +1,18 @@
-<div class="container">
+<div class="container all-product-box">
   <div class="row">
 
-    <br>
     <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
+      <div class="col-xs-6 col-md-3 text-center">
         <% link_to product_path(product) %>
           <% if product.image.present? %>
-            <%= link_to image_tag(product.image.thumb.url, class: "thumbnail"), product_path(product) %>
+            <%= link_to image_tag(product.image.thumb.url, class: "product-list-style"), product_path(product) %>
           <% else %>
-            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail"), product_path(product) %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "product-list-style"), product_path(product) %>
           <% end %>
-          <%= link_to(product.title, product_path(product)) %> ￥ <%= product.price %>
+        <br>
+        <%= link_to(product.title, product_path(product)) %>
+        <br>
+        <strong>￥ <%= link_to(product.price, product_path(product)) %></strong></p>
       </div>
     <% end %>
 
