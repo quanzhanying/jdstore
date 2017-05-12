@@ -8,7 +8,11 @@ end
 
 
 resources :products
-resources :carts
+resources :carts do
+  collection do
+    delete :clean
+  end
+end
 
 resources :products do
   member do
