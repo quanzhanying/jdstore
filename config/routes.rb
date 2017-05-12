@@ -11,4 +11,5 @@ resources :products do
     post :add_to_cart
   end
 end
+resources :carts
 end
