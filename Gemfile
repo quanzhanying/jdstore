@@ -35,6 +35,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'bootstrap-sass'
   gem 'devise'
+  gem 'simple_form'
 end
 
 group :development do
