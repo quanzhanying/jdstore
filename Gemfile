@@ -36,6 +36,9 @@ gem 'simple_form'
 gem 'font-awesome-rails' #awesome icon
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'awesome_rails_console' #美化console 顯示數據
+gem 'awesome_print' #美化ruby
+gem 'pry' #debug
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
