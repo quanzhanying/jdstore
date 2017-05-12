@@ -13,4 +13,5 @@ resources :products do
   end
 end
 
+resources :carts
 end
