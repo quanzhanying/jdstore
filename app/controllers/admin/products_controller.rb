@@ -36,6 +36,8 @@ before_action :admin_required
     end
   end
 
+
+
     private
 
     def product_params
