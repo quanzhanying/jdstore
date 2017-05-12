@@ -24,7 +24,6 @@ class Admin::ProductsController < ApplicationController
    end
   end
 
-
   def create
     @product = Product.new(product_params)
     if @product.save
