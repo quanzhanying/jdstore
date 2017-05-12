@@ -1,0 +1,40 @@
+<h2>商品列表</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增商品", new_admin_product_path, class: "btn btn-primary") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">商品图片</th>
+      <th>品名</th>
+      <th>价格</th>
+      <th>库存</th>
+      <th>管理选项</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td>
+          <%= link_to admin_product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.url(:thumb), class: "thumbnail") %>
+            <% else %>
+              <%= image_tag(product.image.url(:thumb), class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= link_to(product.title, admin_product_path(product)) %></td>
+        <td><%= product.price %></td>
+        <td><%= product.quantity %></td>
+        <td>
+          <%= link_to('Edit',edit_admin_product_path(product), class: "btn btn-sm btn-default") %>
+          <%= link_to('Delete',admin_product_path(product), class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?"}) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
