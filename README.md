@@ -1,3 +1,3 @@
 # README
 
-JD store story 4 homework
+Implement JD store empy cart function
