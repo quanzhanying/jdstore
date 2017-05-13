@@ -33,6 +33,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
 
+# 文本编辑器支持gem
+gem 'bootstrap-wysihtml5-rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
