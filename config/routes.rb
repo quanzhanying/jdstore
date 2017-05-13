@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 
   resources :carts
 
+  resources :cart_items
+
   root 'products#index'
 end
