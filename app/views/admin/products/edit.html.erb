@@ -1,0 +1,8 @@
+<h1>Edit a product</h1>
+<%= simple_form_for [:admin, @product] do |p| %>
+    <%= p.input :title,:label => "品名"%>
+    <%= p.input :description, :label => "叙述" %>
+    <%= p.input :quantity, :label => "库存" %>
+    <%= p.input :price, :label => "价格" %>
+    <%= p.submit "Submit" %>
+<% end %>
