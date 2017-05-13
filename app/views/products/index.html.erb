@@ -1,10 +1,12 @@
 <% @products.each do |product| %>
-</div>
+
 <!-- priductlist show -->
 <div class="productlist-right-imagelist bg-color2">
-  <%= link_to product_path(product) do %>
-  <% end %>
+
   <div class="productlist-right-item-image-a bg-color3">
+
+    <%= link_to product_path(product) do %>
+    <% end %>
     <% if product.image.present? %>
     <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
     <% else %>
