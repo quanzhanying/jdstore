@@ -16,6 +16,10 @@
     </p>
   </div>
   <div class="pull-right" style="margin-right:30px;">
-    <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-primary btn-danger")%>
+    <% if @product.quantity.present? && @product.quantity > 0 %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-primary btn-danger")%>
+    <% else %>
+    <p style="font-size:18px;color: #D84315;">对不起，商品正在补货中……</p>
+    <% end %>
   </div>
 </div>
