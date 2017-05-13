@@ -1,7 +1,5 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
-
-
    def destroy
      @cart = current_cart
      @cart_item = @cart.cart_items.find_by(product_id: params[:id])
@@ -31,4 +29,5 @@ class CartItemsController < ApplicationController
    def cart_item_params
      params.require(:cart_item).permit(:quantity)
    end
+
 end
