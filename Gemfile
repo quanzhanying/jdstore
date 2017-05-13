@@ -42,6 +42,7 @@ gem 'qiniu-rs'
 gem 'figaro'
 gem 'awesome_rails_console'
 gem 'ckeditor'
+gem 'better_errors'
 
 
 group :development, :test do
