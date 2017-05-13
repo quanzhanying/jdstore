@@ -7,13 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <div class= "container">
     <%= render "common/navbar" %>
     <div class="row">
       <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked" style="max-width: 200px;">
-          <li> <%= link_to("Admin Products", admin_products_path) %> </li>
-          <li> <%= link_to("User Products", products_path) %> </li>
+        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+          <li>
+            <%= link_to("Products", products_path) %>
+          </li>
         </ul>
       </div>
       <div class="col-md-10">
