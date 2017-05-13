@@ -11,11 +11,15 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active2">
-          <%= link_to("Ours", ours_path) %>
+        <li>
+          <%= link_to "#" do %>
+             购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <% end %>
         </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+        <li class="active2">
+          <%= link_to("关于我们", ours_path) %>
+        </li>
+
         <!-- 注册 登入 -->
          <% if !current_user %>
            <li><%= link_to("注册", new_user_registration_path) %></li>
