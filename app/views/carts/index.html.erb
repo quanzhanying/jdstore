@@ -11,6 +11,7 @@
           <th colspan="2">商品咨询</th>
           <th width="200px;">单价</th>
           <th width="200px;">数量</th>
+          <th >操作选项</th>
         </tr>
       </thead>
       <tbody>
@@ -34,6 +35,10 @@
           <td>
             <%= cart_item.quantity %>
           </td>
+          <td>
+            <%= link_to cart_item_path(cart_item.product_id), method: :delete do%>
+            <i class="fa fa-trash-o"></i>
+            <% end %>
         </tr>
       <% end %>
     </tbody>
