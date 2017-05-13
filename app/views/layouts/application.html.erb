@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <meta name="google-site-verification" content="PqTu-4MXlmAwkW8OG6Ko5CM-DKIlcuK7ggkryDm3UgA" />
+    <title>通向财富自由之路</title>
     <%= csrf_meta_tags %>
-
+  
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield %>
+     </div>
+     <%= render "common/footer" %>
   </body>
 </html>

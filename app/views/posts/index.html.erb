@@ -1,0 +1,41 @@
+<div class="category-bar">
+  <span><%= link_to("全部", posts_path, class:"btn btn-secondary active")%></span>
+  <%  Category.all.each do |category| %>
+    <span><%= link_to(category.name, posts_path(category: category.id), class: "btn btn-secondary") %> </span>
+  <% end %>
+</div>
+ <table class="table table-boldered">
+   <thead>
+         <tr>
+             <td>
+                 主题发布通道
+             </td>
+             <td>
+                描述
+             </td>
+             <td>
+               查看信息通道
+             </td>
+
+             <td>
+                 刊登时间
+             </td>
+         </tr>
+     </thead>
+  <% @posts.each do |post| %>
+  <tr>
+    <td>
+      <%= link_to(post.title, post_path(post)) %>
+    </td>
+    <td>
+      <%= post.description %>
+    </td>
+    <td> <%= link_to(post.reports.count, post_reports_path(post)) %> </td>
+
+
+    <td>
+      <%= post.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+<h1> <%= @post.title %> </h1>
+
+<p>
+  <%= simple_format(@post.description) %>
+
+</p>
+<div class="text-center">
+  <%= link_to("发布", new_post_report_path(@post), :style => "font-size: 30px; text-decoration:underline;") %>
+</div>
