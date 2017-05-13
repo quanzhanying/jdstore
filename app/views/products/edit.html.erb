@@ -3,7 +3,20 @@
 <%= simple_form_for @product do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :price %>
 <%= f.input :quantity %>
-<%= f.submit "Submit" %>
+
+<div class="group">
+  <%= f.input :price %>
+</div>
+
+<% if @product.image.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image.thumb.url) %>
+<% end %>
+
+<div class="group">
+  <%= f.input :image, as: :file %>
+</div>
+
+<%= f.submit "Submit", data: { disable_with: "Submitting"} %>
 <% end %>
