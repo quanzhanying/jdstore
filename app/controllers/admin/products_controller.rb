@@ -36,7 +36,16 @@ before_action :admin_required
     end
   end
 
+<<<<<<< HEAD
 
+=======
+  def destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
+    redirect_to admin_products_path
+  end
+>>>>>>> story3-1
 
     private
 
