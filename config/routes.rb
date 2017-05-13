@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users,controllers:{sessions:'users/sessions',registrations:'users/registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'admin/products#index'
+  root 'welcome#index'
   namespace :admin do
     resources :products
   end
