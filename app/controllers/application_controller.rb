@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
 
+
   helper_method :current_cart
 
    def current_cart
@@ -25,4 +26,5 @@ class ApplicationController < ActionController::Base
      session[:cart_id] = cart.id
      return cart
    end
+
 end

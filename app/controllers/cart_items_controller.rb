@@ -1,6 +1,7 @@
 class CartItemsController < ApplicationController
   before_action :authenticate_user!
 
+
    def destroy
      @cart = current_cart
      @cart_item = @cart.cart_items.find_by(product_id: params[:id])
@@ -23,6 +24,7 @@ class CartItemsController < ApplicationController
 
      redirect_to carts_path
    end
+
 
    private
 

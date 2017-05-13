@@ -1,18 +1,28 @@
-<h2> Product List </h2>
+<h2> Product list</h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
-
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
+      <th>
+        #
+      </th>
+      <th width="220">
+      Product Pic
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Price
+      </th>
+      <th width="100">
+        Options
+      </th>
     </tr>
   </thead>
+
   <tbody>
     <% @products.each do |product| %>
       <tr>

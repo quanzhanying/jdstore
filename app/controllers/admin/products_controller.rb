@@ -7,13 +7,18 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def new
+    @product = Product.new
+  end
+
   def index
     @products = Product.all.order("created_at DESC")
   end
 
-  def new
-    @product = Product.new
+  def edit
+    @product = Product.find(params[:id])
   end
+
 
   def create
     @product = Product.new(product_params)
@@ -21,12 +26,8 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path
     else
       render :new
-    end
   end
-
-  def edit
-    @product = Product.find(params[:id])
-  end
+end
 
   def update
     @product = Product.find(params[:id])
@@ -55,11 +56,9 @@ class Admin::ProductsController < ApplicationController
     redirect_to :back
   end
 
+ private
 
-
-  private
-
-  def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity, :is_hidden, :image)
-  end
+ def product_params
+   params.require(:product).permit(:title, :description, :quantity, :price, :is_hidden, :image)
+ end
 end

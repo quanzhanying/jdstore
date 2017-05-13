@@ -6,6 +6,7 @@
                style: "text-decoration: underline;",
                data: { confirm: "你确定要清空整个购物车吗？"} )%>
 
+
     <h2> 购物车 </h2>
 
     <table class="table table-bordered">
@@ -58,7 +59,9 @@
     <div class="total clearfix">
       <span class="pull-right">
         <span>
+
            总计 <%= render_cart_total_price(current_cart) %> RMB
+
         </span>
       </span>
     </div>
