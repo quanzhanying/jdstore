@@ -17,5 +17,7 @@ end
     collection do
       delete :clean
     end
-  end 
+  end
+
+  resources :cart_items
 end
