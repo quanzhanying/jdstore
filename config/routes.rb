@@ -17,5 +17,9 @@ Rails.application.routes.draw do
 
   resources :ours
 
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+    end
+  end
 end
