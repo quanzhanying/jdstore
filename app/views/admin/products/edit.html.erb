@@ -1,20 +1,20 @@
 <h2>Edit Product</h2>
 
-<%= simple_form_for [:admin, @product] do |f| %>
+<%= simple_form_for [:admin,@product] do |p| %>
   <div class="group">
-    <%= f.input :title %>
+    <%= p.input :title %>
   </div>
 
   <div class="group">
-    <%= f.input :description %>
+    <%= p.input :description %>
   </div>
 
   <div class="group">
-    <%= f.input :quantity %>
+    <%= p.input :quantity %>
   </div>
 
   <div class="group">
-    <%= f.input :price %>
+    <%= p.input :price %>
   </div>
 
   <% if @product.image.present? %>
@@ -23,8 +23,8 @@
   <% end %>
 
   <div>
-    <%= f.input :image, as: :file %>
+    <%= p.input :image, as: :file %>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
+  <%= p.submit "Submit", data: { disable_with: "Submitting..."} %>
 <% end %>
