@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>Jdstore - Buyst</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="<%= image_path("favicon-eject.ico") %>" rel="shortcut icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <%= yield %>
+
+        <div class="container-fluid">
+            <%= render "common/navbar" %>
+            <%= yield %>
+        </div>
+
+
+        <%= render "common/footer" %>
+
   </body>
 </html>
