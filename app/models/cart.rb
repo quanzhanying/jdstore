@@ -8,4 +8,14 @@ class Cart < ApplicationRecord
     ci.quantity = 1
     ci.save
   end
+
+  def total_price
+    sum = 0
+    cart_items.each do |c|
+      if c.product.price.present?
+        sum += c.quantity * c.product.price
+      end
+    end
+    sum
+  end
 end
