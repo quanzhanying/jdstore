@@ -1,0 +1,20 @@
+<div class="col-centered">
+  <h1 class="col-centered"> <%= @product.title %> </h1>
+  <p class="col-centered">
+    <%= simple_format(@product.description) %>
+  </p>
+  <div>
+    <td>
+      库存数量：
+      <%= @product.quantity %>
+    </td>
+
+    <td>
+      价格：
+      <%= @product.price%>
+    </td>
+
+  </div>
+
+
+</div>

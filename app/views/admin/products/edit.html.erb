@@ -1,4 +1,4 @@
-<h2>New Product</h2>
+<h2>Edit Product</h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
   <div class="group">
@@ -16,6 +16,11 @@
   <div class="group">
     <%= f.input :price %>
   </div>
+
+  <% if @product.image.present? %>
+    <span>目前商品图</span>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
 
   <div>
     <%= f.input :image, as: :file %>
