@@ -1,0 +1,2 @@
+class ClassficationPri < ApplicationRecord
+end
