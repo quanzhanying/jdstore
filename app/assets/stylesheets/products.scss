@@ -39,3 +39,18 @@
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
 }
+
+.product-show{
+  border-right: 1px solid;
+}
+
+.minimal-photos{
+  border: 1px solid;
+  padding: 2px;
+
+}
+
+.product-show ul li{
+  list-style: none;
+  display:flex;
+}
