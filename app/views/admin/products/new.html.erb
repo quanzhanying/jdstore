@@ -1,0 +1,21 @@
+<div class="col-md-8 col-centered" style="height:600px;padding-top:70px;margin-lept:100px">
+    <h1>New product</h1>
+    <%= simple_form_for [:admin, @product] do |p| %>
+        <div class="group">
+            <%= p.input :title,:label => "品名"%>
+        </div>
+        <div class="group">
+            <%= p.input :description, :label => "叙述" %>
+        </div>
+        <div class="group">
+            <%= p.input :quantity, :label => "库存" %>
+        </div>
+        <div class="group">
+            <%= p.input :price, :label => "价格" %>
+        </div>
+        <div class="group">
+            <%= p.input :image, as: :file %>
+        </div>
+        <%= p.submit "Submit" , data: { disable_with: "Submitting..." }%>
+    <% end %>
+</div>
