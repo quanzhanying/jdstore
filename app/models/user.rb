@@ -7,4 +7,7 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+  mount_uploader :image, ImageUploader
+  validates :username, presence: true
+
 end
