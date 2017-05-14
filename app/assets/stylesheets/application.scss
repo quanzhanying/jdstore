@@ -16,3 +16,13 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}

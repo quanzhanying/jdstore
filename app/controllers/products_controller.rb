@@ -17,4 +17,11 @@ class ProductsController < ApplicationController
      end
      redirect_to :back
   end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to admin_products_path
+    flash[:notice] = "商品已删除"
+  end
 end

@@ -18,6 +18,7 @@
     <%= f.input :price %>
   </div>
 
+
   <div class="group">
     <% if @product.image.present?%>
       <span>目前商品图</span> <br>
@@ -28,6 +29,10 @@
   <div class="group">
     <%= f.input :image,as: :file%>
   </div>
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+  <div class="group">
+    <%= f.input :category %>
+  </div>
+  <%= f.submit "Submit", :class=>"btn btn-default",data: { disable_with: "Submitting..." } %>
 
 <% end %>

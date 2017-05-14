@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :add_quantity  
+    end
+  end
 end

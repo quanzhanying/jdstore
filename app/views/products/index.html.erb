@@ -1,16 +1,30 @@
 <div class="row">
+  <div class="container">
     <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-        <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-    <% else %>
-        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-        <% end %>
-        <%= product.title %>
-        ￥
-        <%= product.price %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="product-items">
+            <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+            <% end %>
+            <%= product.title %>
+            ￥
+            <%= product.price %>
+
+        </div>
+        <!-- 收藏和加入购物车 -->
+        <div class="product-options">
+            <a href="/products/<%= product.id %>/join" class="add-to-whishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
+                <i class="fa fa-heart-o"></i>
+            </a>
+            <a class="add-to-cart" toggle="tooltip" placement="top" title="Add to cart" rel="nofollow" data-method="post" href="/products/2/add_to_cart">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+        </div>
     </div>
     <% end %>
+  </div>
 </div>
