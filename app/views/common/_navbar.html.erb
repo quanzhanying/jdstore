@@ -36,6 +36,7 @@
                 <%= link_to("Admin Panel", admin_products_path) %>
               </li>
             <% end %>
+            <li> <%= link_to(content_tag(:i, '信息', class: 'fa fa-user'), edit_user_registration_path(current_user) ) %> </li>
             <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
             <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
           </ul>
