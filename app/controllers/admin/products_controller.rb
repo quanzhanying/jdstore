@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
   def index
    @products = Product.all
   end
+
   def new
     @product = Product.new
   end
@@ -37,9 +38,17 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+    def add_to_cart
+      @product = Product.find(params[:id])
+      redirect_to :back
+      flash[:notice] = "测试加入购物车"
+    end
+
+
   private
 
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
+
 end
