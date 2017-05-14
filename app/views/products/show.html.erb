@@ -1,27 +1,61 @@
+
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-5 col-md-offset-1">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h2> <%= @product.title %> </h2>
+    <hr>
     <div style="height:100px;">
       <p>
         <%= @product.description %>
       </p>
     </div>
+    <hr>
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
-
-    <div class="pull-right">
+    <br>
+    <div>
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-lg btn-danger") %>
+        <%= link_to("立即购买", "#", method: :post, class: "btn btn-lg btn-danger") %>
+
       <% else %>
       已销售一空，无法购买
       <% end %>
     </div>
   </div>
 </div>
+
+
+<!--  -->
+<div class="row">
+
+</div>
+<div class="col-md-10 col-md-offset-1">
+
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, '商品详情')" id="defaultOpen">商品详情</button>
+    <button class="tablinks" onclick="openCity(event, '商品评价')">商品评价</button>
+  </div>
+
+  <div id="商品详情" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
+  </div>
+
+  <div id="商品评价" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+  </div>
+
+</div>
+</div>
+
+<script>
+  document.getElementById("defaultOpen").click();
+</script>
