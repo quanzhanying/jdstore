@@ -1,0 +1,43 @@
+.ui.container[style='marting-top: 80px;']
+  h2.header 购物车
+
+  = link_to '清空购物车', clear_carts_path, class: 'ui right floated red basic button', data: { confirm: '你确定清空整个购物车吗？' }
+
+  table.ui.celled.striped.table
+    thead
+      tr
+        th[colspan='2'] 商品资讯
+        th 单价
+        th 数量
+        th 操作
+    tbody
+      - current_cart.cart_items.each do |cart_item|
+        tr
+          td
+            = link_to product_path(cart_item.product) do
+              - if cart_item.product.image.present?
+                = image_tag cart_item.product.image.thumb.url, class: 'ui small image'
+              - else
+                = image_tag 'https://semantic-ui.com/images/wireframe/image.png', class: 'ui tiny image'
+          td
+            = link_to(cart_item.product.title, product_path(cart_item.product))
+          td
+            = cart_item.product.price
+          td 
+            => link_to semantic_icon('plus'), increase_cart_item_path(cart_item), method: :post, class: 'ui mini red icon button'
+            = cart_item.quantity
+            =< link_to semantic_icon('minus'), decrease_cart_item_path(cart_item), method: :post, class: 'ui mini red icon button'
+          td
+            = link_to semantic_icon('trash'), cart_item_path(cart_item), method: :delete, class: 'ui mini red basic icon button'
+  
+  br
+
+  .ui.right.floated.segment
+    span
+      | 总计
+      =<> render_cart_total_price(current_cart)
+      | 元
+
+  hr
+
+  = link_to "确认结账", "#", method: :post, class: 'ui large red right floated button'

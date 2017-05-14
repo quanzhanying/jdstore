@@ -1,0 +1,23 @@
+.ui.middle.aligned.stackable.grid.container[style='margin-top: 80px;']
+  .row
+    .eight.wide.column
+      -if @product.image.present?
+        = image_tag @product.image.url(:medium), class: 'ui large brodered rounded image'
+    .eight.wide.column
+      .ui.container
+        h1.heading 
+          = @product.title
+        .ui.segment
+          = @product.description
+        .ui.segment
+          = semantic_icon 'yen'
+          | ：
+          = @product.price
+        .ui.segment
+          | 尚余：
+          = @product.quantity
+        .right.aligned
+        - unless @product.quantity < 1
+          = link_to '加入购物车', add_to_cart_product_path(@product), method: :post, class: 'ui large red button'
+        - else
+          | 已销售一空，无法购买
