@@ -15,3 +15,13 @@ u.password_confirmation = "123456"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+v = User.new
+v.email = "user@gmail.com"           # 可以改成自己的 email
+
+v.password = "123456"                # 最少要六码
+
+v.password_confirmation = "123456"   # 最少要六码
+
+v.is_admin = false
+v.save
