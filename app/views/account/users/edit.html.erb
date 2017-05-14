@@ -12,7 +12,7 @@
           <span>头像</span> <br>
           <%= image_tag(@user.avatar.thumb.url) %>
         <% end %>
-        <%= f.input :image, :label => "头像", as: :file %>
+        <%= f.input :avatar, :label => "头像", as: :file %>
       </div>
       <div class="form-inputs">
         <%= f.input :username, :label => "用户名",required: true %>

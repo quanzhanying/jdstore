@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def render_user_avatar(user, size)
     if user.avatar.present?
-      user.avatar.thumb1.url
+      user.avatar.thumb2.url
     else
       avatar_url(user, size)
     end
