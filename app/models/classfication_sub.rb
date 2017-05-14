@@ -1,0 +1,2 @@
+class ClassficationSub < ApplicationRecord
+end
