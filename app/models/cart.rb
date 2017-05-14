@@ -13,7 +13,9 @@ class Cart < ApplicationRecord
     sum = 0
     cart_items.each do |cart_item|
       if cart_item.product.price.present?
-        sum += cart_item.quantity * cart_item.product.price
+        # sum = sum + cart_item.quantity * cart_item.product.price + cart_item.product.salt + cart_item.product.sugar + cart_item.product.papper + cart_item.product.sauces + cart_item.product.vinegar + cart_item.product.oil 
+         sum = sum + cart_item.quantity * cart_item.product.price + cart_item.product.salt * 0.1 + cart_item.product.sugar * 0.2 + cart_item.product.papper * 0.2 + cart_item.product.sauces * 0.1 + cart_item.product.vinegar * 0.1 + cart_item.product.oil * 0.1
+
       end
     end
     sum

@@ -12,7 +12,7 @@
       <thead>
         <tr>
           <th colspan="2">商品资讯</th>
-          <th>单价</th>
+          <th>价格</th>
           <th>数量</th>
           <th>操作选项</th>
         </tr>
@@ -33,9 +33,27 @@
 
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </br>盐
+            </br>糖
+            </br>胡椒粉
+            </br>酱油
+            </br>醋
+            </br>油
             </td>
             <td>
               <%= cart_item.product.price %>
+            </br>
+              <%= cart_item.product.salt %>
+            </br>
+              <%= cart_item.product.sugar %>
+            </br>
+              <%= cart_item.product.papper %>
+            </br>
+              <%= cart_item.product.sauces %>
+            </br>
+              <%= cart_item.product.vinegar %>
+            </br>
+              <%= cart_item.product.oil %>
             </td>
             <td>
               <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
