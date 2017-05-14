@@ -1,3 +1,3 @@
 # README
 
-Jdstore第一周作业
+Jdstore第二周购物车作业完成
