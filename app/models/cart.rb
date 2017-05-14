@@ -18,4 +18,8 @@ class Cart < ApplicationRecord
     end
     sum
   end
+
+  def clean!
+    cart_items.destory_all
+  end
 end
