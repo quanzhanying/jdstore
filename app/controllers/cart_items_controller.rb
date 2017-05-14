@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     @product = @cart_item.product
     @cart_item.destroy
-    flash[:alert] = "成功删除商品"
+    flash[:alert] = "成功将 #{@product.name} 从购物车删除！"
     redirect_to :back
   end
 end
