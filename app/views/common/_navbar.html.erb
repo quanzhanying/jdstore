@@ -23,11 +23,12 @@
                <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
              <% else %>
                <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                     Hi!, <%= current_user.email %>
-                     <b class="caret"></b>
-                 </a>
+                 <a href="#" class="dropdown-togggle avatar" data-toggle="dropdown">
+                   <img src= "<%= render_user_avatar(current_user, 30) %>">
+                   <b class="caret"></b>
+                </a>
                  <ul class="dropdown-menu">
+                   <li><%= link_to("个人中心", edit_account_user_path(current_user)) %></li>
                    <% if current_user.admin? %>
                      <li>
                        <%= link_to("Admin 选单", admin_products_path ) %>
