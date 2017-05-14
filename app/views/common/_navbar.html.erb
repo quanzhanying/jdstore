@@ -12,12 +12,26 @@
               <%= link_to("Products", products_path) %>
             </li>
           </ul>
+
           <ul class="nav navbar-nav navbar-right">
+
+            <!-- 下拉式選單 -->
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t('language_switch') %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+
+                <!-- 語系選項 -->
+            <li><%= link_to "簡中版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
+            <li><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></li>
+            </ul>
+
             <li>
               <%= link_to carts_path do  %>
                 购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
               <% end %>
             </li>
+
+
+
             <% if !current_user %>
               <li><%= link_to("注册", new_user_registration_path) %> </li>
               <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>

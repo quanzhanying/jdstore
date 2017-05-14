@@ -1,4 +1,19 @@
 class ApplicationController < ActionController::Base
+  #要加這一行
+
+  before_action :set_locale
+
+  #設定多國語系
+
+    def set_locale
+      if params[:locale] && I18n.available_locales.include?( params[:locale].to_sym )
+      session[:locale] = params[:locale]
+      end
+
+      I18n.locale = session[:locale] || I18n.default_locale
+    end
+
+
   protect_from_forgery with: :exception
   def admin_required
     if !current_user.admin?
@@ -22,4 +37,5 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     return cart
   end
+
 end
