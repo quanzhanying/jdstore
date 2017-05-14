@@ -9,5 +9,4 @@ end
       post :add_to_cart
     end
   end
-  end
 end
