@@ -5,6 +5,7 @@
           hint: 'No special character', input_html: {class: "form-control"}%>
      <%= f.input :price, label:'价格',input_html:{class:"form-control"}%>
      <%= f.input :quantity,label:'数量',input_html:{class:"form-control"}%>
+     <%= f.input :image,label:'商品图片'%>
    </div>
    <%= f.submit 'Submit', class: "btn btn-primary", data: {disable_with: "Submiting..."}%>
 <% end %>

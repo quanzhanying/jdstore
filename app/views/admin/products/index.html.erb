@@ -3,15 +3,21 @@
   <div class="pull-right">
     <%= link_to("新增商品",new_admin_product_path,class:"btn btn-primary")%>
   </div>
-  <% @products.each do |product| %>
-     <hr>
-     <div class="">
-        <p>商品名称：<%= link_to(product.title,admin_product_path(product))%></p>
-        <p>商品描述：<%= product.description%></p>
-        <p>商品价格：<%= product.price%></p>
-        <p>商品数量：<%= product.quantity%></p>
-     </div>
-     <%= link_to("编辑",edit_admin_product_path(product),class:"btn btn-default")%>
-     <%= link_to("删除该商品",admin_product_path(product),method: :delete,data:{confirm:"Are you sure?"},class:"btn btn-warning")%>
-  <% end %>
+  <div class="all-products">
+    <hr>
+    <% @products.each do |product| %>
+       <div class="each-product">
+         <div class="">
+            <%= link_to(image_tag(product.image_url(:thumb)),admin_product_path(product))%>
+            <br>
+            <p class="text-center"><%= product.title%> Price：<%= product.price%></p>
+
+         </div>
+         <div class="text-center">
+           <%= link_to("编辑",edit_admin_product_path(product),class:"btn btn-default")%>
+           <%= link_to("删除该商品",admin_product_path(product),method: :delete,data:{confirm:"Are you sure?"},class:"btn btn-warning")%>
+         </div>
+       </div>
+    <% end %>
+  </div>
 </div>

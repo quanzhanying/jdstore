@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
   layout 'loggingpage'
   def after_sign_in_path_for(resource)
      admin_products_path
-  end
+   end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
