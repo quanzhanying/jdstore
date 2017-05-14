@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
@@ -13,9 +14,19 @@
         <%= @product.description %>
       </p>
     </div>
+    <div>盐 : <%= @product.salt %> g</div>
+    <div>糖 : <%= @product.sugar %> g</div>
+    <div>胡椒粉 : <%= @product.papper %> g</div>
+    <div>酱油 : <%= @product.sauces %> ml</div>
+    <div>醋 : <%= @product.vinegar %> ml</div>
+    <div>油 : <%= @product.oil %> ml</div>
+    <br>
     <div> 数量 : <%= @product.quantity %> </div>
+
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
+      <%= link_to("厨神模式", edit_product_path(@product),
+      :class => "btn btn-primary btn-lg btn-danger") %>
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,
         :class => "btn btn-primary btn-lg btn-danger") %>

@@ -27,9 +27,9 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Porduct.find(params[:id])
+    @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to products_path, notice: "Update success."
+      redirect_to product_path, notice: "Update success."
     else
       render :edit
     end
@@ -55,6 +55,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity)
+    params.require(:product).permit(:title, :description, :price, :quantity, :salt, :sugar, :papper, :sauces, :vinegar, :oil)
   end
 end
