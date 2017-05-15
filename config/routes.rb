@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     # end
     collection do
       delete :clean
+      post :checkout
     end
   end
 
