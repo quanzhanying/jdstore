@@ -118,9 +118,9 @@
         <div class="col-xs-6 col-md-3 text-center product-list-style">
           <% link_to product_path(product) %>
             <% if product.image.present? %>
-              <%= link_to image_tag(product.image.thumb.url, class: "product-list-style-img"), product_path(product) %>
+              <%= link_to image_tag(product.image.thumb.url, class: "product-list-style-img img-responsive center-block"), product_path(product) %>
             <% else %>
-              <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img"), product_path(product) %>
+              <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img img-responsive center-block"), product_path(product) %>
             <% end %>
           <br>
           <%= link_to(product.title, product_path(product)) %>
