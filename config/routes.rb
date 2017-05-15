@@ -20,5 +20,9 @@ end
     end
   end
 
+  namespace :account do
+    resources :orders
+  end 
+
   resources :orders
 end
