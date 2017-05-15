@@ -13,7 +13,7 @@
       </thead>
       <tbody>
 
-        <% current_cart.cart_item.each do |cart_item|%>
+        <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
@@ -32,7 +32,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= render_cart_total_price(cuttent_cart) %> CNY
+        总计 <%= render_cart_total_price(current_cart) %> CNY
       </span>
     </div>
 
@@ -60,7 +60,7 @@
         </div>
 
       <div class="checkout">
-        <%= f.submit "生成订单"， class: "btn btn-lg btn-danger pull-right",
+        <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
                      data: { disable_with: "Submitting..."}%>
 
       </div>
