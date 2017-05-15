@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  root 'products#index'
+  root 'welcome#index'
 
   namespace :admin do
     resources :products
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+    end
+    collection do
+      get :search
     end
   end
 
