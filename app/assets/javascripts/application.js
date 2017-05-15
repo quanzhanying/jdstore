@@ -46,20 +46,7 @@
   </script>
 
 // 以下部分，可以对文本编辑器进行相关功能的开关设置↓↓↓
-  $('.wysihtml5').wysihtml5({'toolbar': {'blockquote': true, 'html': true, 'smallmodals': true }})
-  // toolbar: {
-  //     'font-styles': true,
-  //     'color': false,
-  //     'emphasis': {
-  //       'small': true
-  //     },
-  //     'blockquote': true,
-  //     'lists': true,
-  //     'html': false,
-  //     'link': true,
-  //     'image': true,
-  //     'smallmodals': false
-  //   }
+
 
 
   // 图片自适应大小支持代码块
