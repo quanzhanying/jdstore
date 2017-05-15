@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resources :products
   end
  resources :products do
+   put :favorite, on: :member
+
+   collection do
+      get :search
+    end
    member do
      post :add_to_cart
     end
@@ -15,4 +20,5 @@ Rails.application.routes.draw do
      end
    end
    resources :cart_items
+   resources :favorite
  end
