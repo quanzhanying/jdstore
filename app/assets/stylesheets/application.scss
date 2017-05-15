@@ -84,6 +84,25 @@
     margin: 2em auto;
   }
 
+  // 教程区域样式设置
+  .product-course-box-1 {
+    background-color: #7f8c8d;
+    padding: 30px 30px;
+    color: #fff;
+    text-align: center;
+  }
+  .product-course-box-2 {
+    background-color: #8d827f;
+    padding: 30px 30px;
+    color: #fff;
+    text-align: center;
+  }
+  .product-course-box-3 {
+    background-color: #8d7f85;
+    padding: 30px 30px;
+    color: #fff;
+    text-align: center;
+  }
 
   // 商品展示列表样式设置，为商品栏做好排版整形
   .product-list-style {                                 //图片+文字 块样式整形
@@ -112,6 +131,7 @@
   .landing-page-eva-style {
     margin-top: 2em;
     text-align: justify;
+    line-height: 1.6em;
   }
 
 

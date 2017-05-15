@@ -1,7 +1,9 @@
-<div class="container">
+<!-- 本页面对应的CSS样式表：products.scss -->
+
+<div class="container product-show">
   <div class="row">
 
-    <br>
+    <!-- 主图 -->
     <div class="col-md-5">
       <% if @product.image.present? %>
         <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
@@ -10,25 +12,105 @@
       <% end %>
     </div>
 
+    <!-- 商品信息 -->
     <div class="col-md-7">
-      <h2><%= @product.title %></h2>
-      <div style="height:100px;">
+
+      <!-- 商品标题 -->
+      <h2 class="product-title"><%= @product.title %></h2>
+
+      <!-- 商品简述 -->
+      <div class="product-description">
         <p>
           <%= simple_format(@product.description) %>
         </p>
       </div>
-      <div>
-        数量： <%= @product.quantity %>
+
+      <!-- 商品价格 -->
+      <div class="product-price-bgcolor">
+        <div class="product-price">
+          ￥ <%= @product.price %>
+        </div>
       </div>
-      <div class="producr-price"> ￥ <%= @product.price %></div>
-      <div >
-        <% if @product.quantity.present? && @product.quantity > 0 %>
-          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
-        <% else %>
-          <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
-        <% end %>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- 商品库存 -->
+          <div class="product-quantity">
+            库存量： <%= @product.quantity %>
+          </div>
+
+          <!-- 商品产地 -->
+          <div class="product-quantity">
+            生产地： 日本 (正品保障)
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <!-- 商品类别 -->
+          <div class="product-quantity">
+            类别： 收纳品
+          </div>
+
+          <!-- 商品服务 -->
+          <div class="product-quantity">
+            包邮： 99元起包邮 | 7天无忧退货
+          </div>
+        </div>
+      </div>
+
+      <!-- 按钮区域 -->
+      <div class="add_to_cart_buttom row">
+        <!-- 加入购物车按钮 -->
+        <div class="col-xs-6">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
+          <% else %>
+            <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
+          <% end %>
+        </div>
+
+        <!-- 收藏商品按钮 -->
+        <div class="col-xs-6">
+          <%= link_to "#" do%>
+            <i class="fa fa-heart-o fa-2x pull-right"></i>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 商品详情区域 + 推荐展示 -->
+    <div class="container">
+      <!-- 商品详情区域 -->
+      <div class="col-md-9 container product-particulars">
+        <div class="product-particulars-box">
+          <%= simple_format(@product.particulars) %>
+        </div>
+      </div>
+      <!-- 购物指南区 -->
+      <div class="col-md-3 container">
+        <div class="product-recommend">
+          <h5>购物指南</h5>
+          <hr>
+          <h6>配送费用</h6>
+          <p>小件商品的配送费用为20.00元/单。单笔订单消费购买小件商品满99.00元，可享受免费配送服务。</p>
+          <hr>
+          <h6>支付方式</h6>
+          <p>支付宝账户余额
+            <br>
+            网银支付（通过支付宝
+            <br>
+            信用卡支付（通过支付宝）</p>
+          <hr>
+          <h6>更换商品、退货</h6>
+          <p>如您在简屋官方网络商城购买的商品未经使用，并不影响下一位消费者的权益的情况下，可在到货起14日内进行退货服务申请。当您需要申请退货服务时请联系客服中心。</p>
+          <hr>
+          <h6>关于商品颜色</h6>
+          <p>因拍摄灯光或显示器等因素，网页商品颜色可能与实物存在一定偏差，请以实物为准，敬请谅解。</p>
+        </div>
       </div>
     </div>
+
 
   </div>
 </div>
