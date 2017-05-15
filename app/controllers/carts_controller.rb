@@ -8,6 +8,10 @@ class CartsController < ApplicationController
   end
   # 清空购物车代码结束
 
+  def checkout
+    @order = Order.new
+  end
+
   private
 
   def product_params

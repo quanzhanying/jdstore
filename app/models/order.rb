@@ -2,10 +2,20 @@
 #
 # Table name: orders
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :integer          not null, primary key
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  total            :integer          default(0)
+#  user_id          :integer
+#  billing_name     :string
+#  billing_address  :string
+#  shipping_name    :string
+#  shipping_address :string
 #
 
 class Order < ApplicationRecord
+  validates :billing_name, presence: true
+  validates :billing_address, presence: true
+  validates :shipping_name, presence: true
+  validates :shipping_address, presence: true
 end
