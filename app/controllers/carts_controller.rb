@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+  def checkout
+    @order = Order.new
+  end
 
   def destroy
     current_cart.destroy
