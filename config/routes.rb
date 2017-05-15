@@ -19,4 +19,6 @@ end
        post :checkout
     end
   end
+
+  resources :orders
 end
