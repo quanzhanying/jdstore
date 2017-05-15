@@ -23,27 +23,7 @@
 
 
 // 以下部分是文本编辑器所需的支持代码块↓↓↓
-<textarea id="some-textarea" class='wysihtml5' placeholder="Enter text ..."></textarea>
 
-  $('.wysihtml5').each(function(i, elem) {
-      $(elem).wysihtml5({
-        toolbar: {
-          "color": true,
-          "size": 'sm'
-        },
-        "locale" : 'zh-CN',
-      });
-    });
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-
-      $('.wysihtml5').each(function(i, elem) {
-        $(elem).wysihtml5();
-      });
-
-    })
-  </script>
 
 // 以下部分，可以对文本编辑器进行相关功能的开关设置↓↓↓
 
