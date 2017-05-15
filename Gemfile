@@ -36,6 +36,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'pry'
+gem 'letter_opener', group: :development
 
 
 group :development, :test do
