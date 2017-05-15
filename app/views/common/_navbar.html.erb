@@ -54,6 +54,9 @@
                 </li>
               <% end %>
                 <li>
+                  <%= link_to("个人订单列表", account_orders_path ) %>
+                </li>
+                <li>
                   <%= link_to("<span class='fa fa-sign-out fa-lg'></span>Exit".html_safe, destroy_user_session_path, method: :delete) %>
                 </li>
               </ul>
