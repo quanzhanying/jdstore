@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
   end
+  namespace :account do
+   resources :orders
+  end
   root 'products#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
