@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parametes
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:is_admin,:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:is_admin,:username])
   end
 
 end

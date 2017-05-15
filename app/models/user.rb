@@ -8,5 +8,7 @@ class User < ApplicationRecord
     is_admin
   end
   mount_uploader :avatar, ImageUploader
+  validates :username, presence: true
+
 
 end
