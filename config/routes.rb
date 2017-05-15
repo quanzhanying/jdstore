@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :carts
+  resources :carts do
+    collection do
+      post :checkout
+    end
+  end
   resources :cart_items
   resources :products do
     member do
