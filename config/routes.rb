@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'products#index'
   devise_for :users
+  resources :cart_items
   resources :carts do
     collection do
       delete :clean
