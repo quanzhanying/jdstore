@@ -22,7 +22,6 @@
 //= require_tree .
 
 
-// 以下部分是文本编辑器所需的支持代码块↓↓↓
 <textarea id="some-textarea" class='wysihtml5' placeholder="Enter text ..."></textarea>
 
   $('.wysihtml5').each(function(i, elem) {
@@ -45,26 +44,12 @@
     })
   </script>
 
-// 以下部分，可以对文本编辑器进行相关功能的开关设置↓↓↓
+
   $('.wysihtml5').wysihtml5({'toolbar': {'blockquote': false, 'html': true, 'smallmodals': true }})
-  // toolbar: {
-  //     'font-styles': true,
-  //     'color': false,
-  //     'emphasis': {
-  //       'small': true
-  //     },
-  //     'blockquote': true,
-  //     'lists': true,
-  //     'html': false,
-  //     'link': true,
-  //     'image': true,
-  //     'smallmodals': false
-  //   }
 
 
-  // 图片自适应大小支持代码块
-  // 在product/show.html.erb的页面中，对img图片用这一格式进行校正
-  // 让图片在大于div宽度时自动缩小不而溢出，确保版面的公正和美观
+
+
   function ReImgSize(){
     for (j=0;j<document.images.length;j++)
     {
