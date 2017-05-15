@@ -62,4 +62,8 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def checkout_carts
+    @cart = current_cart
+  end
+
 end

@@ -18,6 +18,10 @@ Rails.application.routes.draw do
       post :increase_product
       post :decrease_product
     end
+
+    collection do
+      post :checkout
+    end
   end
 
   root "products#index"
