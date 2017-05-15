@@ -1,4 +1,8 @@
 CarrierWave.configure do |config|
+<<<<<<< HEAD
+=======
+
+>>>>>>> c60f135578fa74fbd23afcdf9a693c19578323f6
   config.storage             = :qiniu
   config.qiniu_access_key    = ENV["qiniu_access_key"]
   config.qiniu_secret_key    = ENV["qiniu_secret_key"]

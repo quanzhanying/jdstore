@@ -64,4 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
-end 
+<<<<<<< HEAD
+end
+=======
+end
+>>>>>>> c60f135578fa74fbd23afcdf9a693c19578323f6
