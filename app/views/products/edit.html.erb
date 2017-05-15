@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+	  <div class="col-md-6">
+			<div>
+					<%= simple_form_for @product do |f| %>
+					<%= f.input :salt, :label => "盐" %>
+					<%= f.input :sugar, :label => "糖" %>
+					<%= f.input :papper, :label => "胡椒粉" %>
+					<%= f.input :sauces, :label => "酱油" %>
+					<%= f.input :vinegar, :label => "醋" %>
+					<%= f.input :oil, :label => "油" %>
+				  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+					<% end %>
+			</div>
+		</div>
+	</div>
