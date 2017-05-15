@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @comment.product_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user_id %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @comment.image %>
+</p>
+
+<p>
+  <strong>Function:</strong>
+  <%= @comment.function %>
+</p>
+
+<p>
+  <strong>Design:</strong>
+  <%= @comment.design %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @comment.experience %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

@@ -1,49 +1,157 @@
-<div class="row">
-        <div class="col-md-6 product-show">
-            <% if @photos.present? %>
-            <% @photos.each_with_index do |p, index| %>
+<div class="header_placeholder h80"></div>
+<div class="header">
+  <div class="w1200 clearfix bc mt30 pb20 header_content pr">
+    <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+    <div class="fl ml40 mt10">
+      <%= render :partial => "products/search_bar" %>
+    </div>
+    <div class="pa mt10 cart-wrap">
+      <%= render :partial => "products/cart" %>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => "products/menu" %>
+
+<div class="detail mt20 w1200 bc pb50">
+  <p class="location col-gray"><%= link_to("首页", products_path)%> >
+    <% Category.all.each do |category| %>
+          <% if @product.category.name == category.name %>
+        <%= link_to category.name, products_path(category: category.name), class: "link" %>
+    <% end %>
+    <% end %>
+    > <%= @product.title %></p>
+  <div class="intro clearfix">
+    <div class="cover fl">
+      <div class="intro-bigPic border pr">
+        <div class="magnifier-preview border" id="preview"></div>
+        <% if @photos.present? %>
+          <a class="magnifier-thumb-wrapper" href="javascript:;">
+            <img
+              id="thumb"
+              src="<%= @photos.first.avatar.medium.url %>"
+              data-large-img-wrapper="preview"
+              data-large-img-url="<%= @photos.first.avatar.medium.url %>">
+          </a>
+        <% end %>
+      </div>
+      <ul class="intro-preview clearfix">
+        <% if @photos.present? %>
+          <% @photos.each_with_index do |p, index| %>
             <% if index == 0 %>
-            <%= image_tag p.avatar.medium.url ,:class=>"pull-right"%>
-            <div style="letter-spacing: -8px">
+              <li class="border intro-preview-item intro-preview-activeItem fl">
             <% else %>
-                <ul>
-                    <li>
-                      <div class="minimal-photos pull-left">
-                        <%= image_tag p.avatar.minimal.url %>
-                      </div>
-                    </li>
-                </ul>
-                <% end %>
-                <% end %>
-            </div>
-        <% else %>
-            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <li class="border intro-preview-item fl">
             <% end %>
+            <% if index < 5 %>
+              <%= image_tag p.avatar.medium.url %>
+            <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+      <p class="mt20 f12">
+        <% if current_user && current_user.is_favorite_of?(@product) %>
+          <i class="fa fa-star col-red"></i>
+          <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put, class: "col-red") %>
+        <% else %>
+          <i class="fa fa-star-o"></i>
+
+          <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+        <% end %>
+        <span class="intro-favorite-count">（<%= @product.favorite_lists.count %>人气）</span>
+      </p>
+    </div>
+
+    <div class="intro-text fr">
+      <h3 class="f20 ell fb"><%= @product.title %></h3>
+      <p class="intro-text-desc"><%= @product.description %></p>
+      <p class="intro-text-value bg-gray">
+        <span class="pl20 pr30">售价</span><span class="price f24 fb col-red">￥<%= @product.price %></span>
+      </p>
+      <p class="intro-text-service">
+        <span class="pl20 pr30">运费</span><span>满99元包邮 | 正品保证</span>
+      </p>
+      <p class="intro-text-count">
+      <span class="pl20 pr30">库存</span><span id="quantity"><%= @product.quantity %></span>
+      </p>
+      <div class="intro-text-quantity clearfix">
+        <span class="pl20 pr30 fl">数量</span>
+        <div class="countNumber fl mt10">
+          <%= link_to("-", reduce_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :comment, remote: true) %>
+          <input class="countNumber-input" type="text" value="<%= @product.purchase_quantity %>">
+          <%= link_to("+", add_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :comment, remote: true) %>
         </div>
-        <div class="col-md-6">
-            <h2>
-                <%= @product.title %>
-            </h2>
-            <div style="height:100px;">
-                <p>
-                    <%= @product.description %>
-                </p>
-            </div>
-            <div>
-                数量 :
-                <%= @product.quantity %>
-            </div>
-            <div class="product-price">
-                ￥
-                <%= @product.price %>
-            </div>
-            <div class="pull-right">
-                <% if @product.quantity.present? && @product.quantity > 0 %>
-                <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
-                          class: "btn btn-lg btn-danger") %>
-            <% else %>
-                已销售一空，无法购买
+      </div>
+      <p class="intro-text-btnWrap">
+        <%= render :partial => "products/cart_btn"%>
+      </p>
+    </div>
+  </div>
+
+  <div class="productDetail border mt40">
+    <ul class="productDetail-tabList bg-gray clearfix">
+      <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
+        商品详情
+      </li>
+      <li class="productDetail-tabList-tab fl pl50 pr50">
+        商品评价(<%= @product.comments.count%>)
+      </li>
+    </ul>
+    <div class="productDetail-contentWrap">
+      <div class="productDetail-content pt20 tc pb20" style="display: block;">
+        <div class="productDetail-introImg">
+          <% if @prints.present? %>
+            <% @prints.each_with_index do |p, index| %>
+                <%= image_tag p.avatar.medium.url %>
+            <% end %>
+          <% else %>
+              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        </div>
+        <p class="mt20 mb20"><%= @product.description %></p>
+      </div>
+      <div class="productDetail-content pt30 tc pb20">
+        <div class="productDetail-evaluation w200 bc">
+          <div class="intro-text-count clearfix mt10">
+            <div class="fl mr10">味道: </div>
+            <div class="star-rating" data-score= <%= @avg_comment %> ></div>
+          </div>
+          <div class="intro-text-count clearfix mt10">
+            <div class="fl mr10">外观: </div>
+            <div class="star-look" data-score= <%= @avg_look %> ></div>
+          </div>
+          <div class="intro-text-count clearfix mt10">
+            <div class="fl mr10">价格: </div>
+            <div class="star-price" data-score= <%= @avg_price %> ></div>
+          </div>
+        </div>
+        <ul class="commentList mt70">
+          <% if @comments.present? %>
+          <% @comments.each do |comment| %>
+            <li class="commentList-item w700 pt10 pb10 bc clearfix">
+              <p class="fl content tl f12">
+                <%= emojify comment.content  %><br>
+                <% if comment.graphics.present? %>
+                  <% comment.graphics.each_with_index do |p, index| %>
+                      <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
+                  <% end %>
                 <% end %>
-            </div>
-        </div>
+                <br>
+                <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
+              </p>
+              <p class="fr name ell tr f12">
+                <%= comment.user.email %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+        <p class="comment-say mt20 mb20">
+          <%= link_to("增加评价", new_product_comment_path(@product),
+              :class => "g-btn pl15 pr15 mt20 ml20 tc col-red f20 bg-red bc") %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

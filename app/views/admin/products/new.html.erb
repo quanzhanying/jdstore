@@ -17,13 +17,13 @@
 </div>
 
 <div class="group">
-  <%= f.input :image,as: :file%>
+  <%#= f.input :image,as: :file%>
+  <%= f.label :avatar %><br>
+  <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
 </div>
 
 <div class="group">
-  <%#= f.input :image, as: :file %>
-  <%= f.label :avatar %><br>
-  <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+  <%= select_tag(:category_id, options_for_select(@categories)) %>
 </div>
 
 <%= f.submit "Submit",:class=>"btn btn-default",data:{disable_with: "Submitting..."}  %>

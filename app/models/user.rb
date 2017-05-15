@@ -7,4 +7,11 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
+  has_many :favorite_lists
+  has_many :favorite_products, :through => :favorite_lists, :source => :product
+  def is_favorite_of?(product)
+    favorite_products.include?(product)
+  end
+
 end
