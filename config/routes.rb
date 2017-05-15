@@ -10,9 +10,17 @@ root 'products#index'
 resources :products do
   member do
     post :add_to_cart
-end
+  end
 end
 
 
-resources :carts
+resources :carts do
+  collection do
+    delete :clean
+  end
+end
+
+
+
+
 end

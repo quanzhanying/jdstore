@@ -15,9 +15,9 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td>
-          <%= product.id %>
-        </td>
+         <td>
+           <%= product.id %>
+         </td>
         <td>
           <%= link_to product_path(product) do %>
             <% if product.image.present? %>
