@@ -3,7 +3,7 @@
 <%= simple_form_for [:admin, @product] do |f| %>
 
 <div class="group">
-<%= f.input  :title %>
+  <%= f.input  :title %>
 </div>
 
 <div class="gropu">
@@ -11,16 +11,17 @@
 </div>
 
 <div class="group">
-<%= f.input :quantity %>
+  <%= f.input :quantity %>
 </div>
+
 <div class="group">
   <%= f.input :price %>
 </div>
 
 <div class="group">
-<%= f.input :image, as: :file %>  
+  <%= f.input :image, as: :file %>
 </div>
 
-<%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
