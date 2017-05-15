@@ -6,7 +6,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">商品资讯</th>
+          <th colspan="2">全部课程</th>
           <th>单价</th>
           <th>数量</th>
         </tr>
@@ -43,7 +43,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-         <span> 总计 xxx RMB  </span>
+        总计 <%= render_cart_total_price(current_cart) %> USD
       </span>
     </div>
 
