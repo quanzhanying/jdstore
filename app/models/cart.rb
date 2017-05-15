@@ -15,7 +15,7 @@ class Cart < ApplicationRecord
     sum = 0
     cart_items.each do |cart_item|
       if cart_item.product.price.present?
-        sum += cart_item.quantity * cart_item.product.price
+        sum = cart_item.quantity * cart_item.product.price
       end
     end
     sum
@@ -26,5 +26,9 @@ class Cart < ApplicationRecord
     ci.product = product
     ci.quantity = 1
     ci.save
+  end
+
+  def clean!
+    cart_items.destroy_all
   end
 end

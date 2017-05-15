@@ -1,11 +1,10 @@
 <div class="row">
-  <div class="col-md-12">
-    <h2>购物车</h2>
-    <!-- 清空购物车方法与教材中不一致 -->
     <span class="pull-right btn btn-md btn-default">
-      <%= link_to("清空购物车", cart_path(current_cart), method: :delete, data: {confirm: "你确定要清空购物车吗？"}) %>
+      <%= link_to("清空购物车", clean_carts_path ,
+              method: :delete , class: "pull-right",
+              style: "text-decoration: underline;",
+              data: { confirm: "你确定要清空整个购物车吗？"} )%>
     </span>
-    <!-- 清空购物车代码结束 -->
 
     <table class="table table-bordered">
       <thead>
