@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <h2>订单详情</h2>
+  <table class="table table-bordered">
+    <thead>
+      <th>订单项目</th>
+      <th>订单内容</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>订单编号</td> <td><%= @order.id %></td>
+      </tr>
+      <tr>
+      <td>订单总价</td> <td><%= @order.total %></td>
+      </tr>
+      <tr>
+        <td>收件人</td> <td><%= @order.shipping_name %></td>
+      </tr>
+      <tr>
+        <td>收件人地址</td> <td><%= @order.shipping_address %></td>
+      </tr>
+      <tr>
+      <td>收件人</td> <td><%= @order.shipping_name %></td>
+      </tr>
+      <tr>
+        <td>收件人地址</td> <td><%= @order.shipping_address %></td>
+      </tr>
+      <tr>
+        <td>信用卡用户名</td> <td><%= @order.billing_name %></td>
+      </tr>
+      <tr>
+        <td>信用卡地址</td> <td><%= @order.billing_address %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
