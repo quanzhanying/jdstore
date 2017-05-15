@@ -42,14 +42,9 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.1)
-<<<<<<< HEAD
-    autoprefixer-rails (6.7.2)
-      execjs
-=======
     autoprefixer-rails (6.6.1)
       execjs
     bcrypt (3.1.11)
->>>>>>> demo
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -114,10 +109,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-<<<<<<< HEAD
-=======
     orm_adapter (0.5.0)
->>>>>>> demo
     pg (0.19.0)
     pkg-config (1.1.7)
     pry (0.10.4)
@@ -171,13 +163,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-<<<<<<< HEAD
-=======
     simple_form (3.4.0)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
->>>>>>> demo
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -211,10 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-=======
   aasm
->>>>>>> demo
   bootstrap-sass
   byebug
   carrierwave
@@ -225,21 +211,14 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.0.5)
-<<<<<<< HEAD
-  pg
-=======
   mini_magick
   pg
   pry
->>>>>>> demo
   puma (~> 3.0)
   rails (~> 5.0.0)
   rails-erd
   sass-rails (~> 5.0)
-<<<<<<< HEAD
-=======
   simple_form
->>>>>>> demo
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
