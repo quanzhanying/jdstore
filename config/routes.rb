@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :products
   end
- resources :orders
+ resources :orders do
+  member do
+    post :pay_with_alipay
+    post :pay_with_wechat
+  end
+end
  resources :carts do
    collection do
      delete :clean
