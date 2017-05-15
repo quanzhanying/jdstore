@@ -2,7 +2,7 @@
   <div class="col-md-12">
 
     <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "pull-right", style: "text-decoration: underline;", data: { confirm: "你确定要清空整个购物车吗？"} )%>
-    
+
 
     <h2> 购物车 </h2>
 
@@ -54,7 +54,7 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>
