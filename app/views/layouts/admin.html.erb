@@ -9,27 +9,29 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render "common/navbar" %>
-      <%= render "common/flashes" %>
+    <div class="conten">
+      <div class="container">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
 
-        <div class="row">
+          <div class="row">
 
-          <!-- 侧边分类选项栏 -->
-          <div class="col-md-2">
-            <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-              <li><%= link_to("商品管理", admin_products_path) %></li>
-            </ul>
+            <!-- 侧边分类选项栏 -->
+            <div class="col-md-2">
+              <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                <li><%= link_to("商品管理", admin_products_path) %></li>
+              </ul>
+            </div>
+
+            <!-- 主内容 -->
+            <div class="col-md-10">
+              <%= yield %>
+            </div>
+
           </div>
-
-          <!-- 主内容 -->
-          <div class="col-md-10">
-            <%= yield %>
-          </div>
-
-        </div>
-
+      </div>
     </div>
+
 
     <%= render "common/footer" %>
 
