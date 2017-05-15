@@ -3,6 +3,11 @@
      <div class="navbar-header">
          <%= link_to("石头记", '/', class:"navbar-brand")%>
      </div>
+     <div class="">
+         <% if current_user && current_user.admin?%>
+              <%= link_to("后台管理系统",admin_products_path,class:"navbar-brand")%>
+         <% end %>
+     </div>
      <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if !current_user %>
