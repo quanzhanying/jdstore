@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
+<<<<<<< HEAD
+=======
+
+>>>>>>> demo
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -30,6 +34,18 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
+<<<<<<< HEAD
+=======
+gem 'devise'
+gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'pry'
+gem 'rails-erd'
+gem 'letter_opener', group: :development
+gem 'aasm'
+>>>>>>> demo
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
