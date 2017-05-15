@@ -141,6 +141,7 @@
 .fchart{
   margin-top: 30px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .actiontrigger{
@@ -168,3 +169,86 @@ text-align: center;
     font-size: 20px;
     letter-spacing: 1px;
 }
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+// #shopcart{
+  .shopcartContent{
+
+    margin: 0 auto;
+    height: 360px;
+  }
+  .shopcartDes-Prod{
+    float: left; /*你去左边*/
+    width: 45%;
+    height: 180px;
+    text-align: center;
+  }
+
+  .shopcartDes-Price{
+    float: left; /*你去左边*/
+    width: 10%;
+    height: 180px;
+    text-align: center;
+  }
+
+  .shopcartDes-amount{
+    float: left; /*你去左边*/
+    width: 21%;
+    height: 180px;
+    text-align: center;
+  }
+
+  .shopcartDes-Total{
+    float: right; /*你去right*/
+    width: 24%;
+    height: 180px;
+    text-align: center;
+  }
+
+  .shopcart-Prod{
+    float: left; /*你去左边*/
+    width: 5%;
+    height: 180px;
+  }
+
+  .shopcart-Price{
+    float: left; /*你去左边*/
+    width: 10%;
+    height: 180px;
+    text-align: center;
+  }
+
+  .shopcart-amount{
+    float: left; /*你去左边*/
+    width: 21%;
+    height: 180px;
+    text-align: center;
+  }
+
+  .shopcart-Total{
+    float: right; /*你去right*/
+    width: 24%;
+    height: 180px;
+    text-align: center;
+  }
+// }

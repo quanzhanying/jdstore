@@ -30,17 +30,21 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise' #login/out
 gem 'simple_form'
-gem 'font-awesome-rails'
-gem 'annotate'
-gem 'carrierwave'
-gem 'mini_magick'
+gem 'font-awesome-rails' #awesome icon
+gem 'annotate' #加入schema
+gem 'carrierwave' #上傳檔案
+gem 'mini_magick' #一張圖做多個大小
+gem 'awesome_print' #美化ruby
+
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+
+  gem 'awesome_rails_console' #美化console 顯示數據
+  gem 'pry' # debug用
   gem 'sqlite3'
 end
 
