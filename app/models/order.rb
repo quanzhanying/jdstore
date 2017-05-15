@@ -11,6 +11,7 @@
 #  billing_address  :string
 #  shipping_name    :string
 #  shipping_address :string
+#  token            :string
 #
 
 class Order < ApplicationRecord
