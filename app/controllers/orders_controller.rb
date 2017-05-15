@@ -1,12 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
-  before_create :generate_token
-
-  def generate_token
-    self.token = SecureRandom.uuid
-  end
-
-
+  
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
