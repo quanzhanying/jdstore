@@ -27,7 +27,12 @@ Rails.application.routes.draw do
 
   resources :cart_items       #购物车列表
 
-  resources :orders           #订单
+  resources :orders do        #订单
+    member do
+      post :pay_whit_alipay   #支付宝支付
+      post :pay_whit_wechat   #微信支付
+    end
+  end
 
   namespace :account do
     resources :orders          #用户后台查看订单

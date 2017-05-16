@@ -28,6 +28,25 @@ class OrdersController < ApplicationController
   end
 
 
+  # ---付款方式 支付宝、微信---
+
+  def pay_whit_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("alipay")
+    @order.pay!
+
+    redirect_to order_path(@order.token), notice: "使用支付宝成功完成付款"
+  end
+
+  def pay_whit_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("wechat")
+    @order.pay!
+
+    redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
+  end
+
+
   # ---private---
 
   private

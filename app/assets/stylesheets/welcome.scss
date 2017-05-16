@@ -33,7 +33,7 @@
     color: #fff;
     text-align: center;
     text-transform: uppercase;                        //英文大写
-    text-shadow: 1px 1px 0 rgba(0,0,0,.75);           //文字阴影 和 动态显示时间
+    text-shadow: 2px 2px 0 rgba(0,0,0,10);           //文字阴影 和 动态显示时间
       -webkit-transform: translate3d(-50%,-50%,0);
          -moz-transform: translate3d(-50%,-50%,0);
           -ms-transform: translate3d(-50%,-50%,0);
@@ -100,13 +100,13 @@
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(https://ooo.0o0.ooo/2017/05/12/59155c0890677.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/05/16/591b0423a58dc.jpg);
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url(https://ooo.0o0.ooo/2017/05/13/5915f25769a24.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/05/16/591b0423c6dfb.jpg);
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url(https://ooo.0o0.ooo/2017/05/13/5915f2576b20a.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/05/16/591b0423c1b56.jpg);
 }
 
 /*  --- 响应式设置 ---  */
