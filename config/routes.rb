@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products do     #后台上架网址 admin/products
       member do
-        patch :move_up
-        patch :move_down
+        patch :move_up         #商品位置移动
+        patch :move_down       #商品位置移动
       end
     end
   end
@@ -27,7 +27,12 @@ Rails.application.routes.draw do
 
   resources :cart_items       #购物车列表
 
-  resources :orders
+  resources :orders           #订单
+
+  namespace :account do
+    resources :orders          #用户后台查看订单
+  end
+
 
   root 'welcome#index'
 
