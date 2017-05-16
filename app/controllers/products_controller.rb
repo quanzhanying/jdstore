@@ -1,11 +1,14 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")
   end
 
   def show
     @product = Product.find(params[:id])
   end
+
+
+
 
   def add_to_cart
     @product = Product.find(params[:id])
