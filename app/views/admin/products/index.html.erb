@@ -1,20 +1,19 @@
-<!-- <div class="col-md-12 col-centered">
+<!-- <div class="col-md-12 col-centered"> -->
 <h2> Product List </h2>
-    <div class="dropdown clearfix pull-right">
-      <%= link_to("Add New Product",new_admin_product_path, :class=>"btn btn-info")%>
+    <div class="dropdown  pull-right">
+      <%= link_to("上新品",new_admin_product_path, :class=>"btn btn-primary btn-sm")%>
       </div>
 
-      <table class="table table-boldered table-stdiped custab">
+      <table class="table table-bordered tabel-centered">
+      <!-- <table class="table table-bordered"> -->
         <thead>
             <tr>
-              <td> #  </td>
-              <td width="220">Product Pic</td>
-              <td> 商品名称  </td>
-              <td>  描述    </td>
-              <td>  价格    </td>
-              <td>  库存    </td>
-              <td>  管理选项 </td>
-              <td>  上货时间 </td>
+              <th>#</th>
+              <th width="300">Product Pic</th>
+              <th > Product Name  </th>
+              <th>  price    </th>
+              <th>  quantity    </th>
+              <th width="50">  Option</th>
             </tr>
         </thead>
 
@@ -26,67 +25,21 @@
             <% if product.image.present? %>
             <%= image_tag(product.image.thumb.url, class: "thumbnail")%>
             <% else %>
-            <%= image_tag("http://placehold.it/200*200&text=No Pic", class: "thumbnail")%>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
             <% end %>
             <% end %>
           </td>
-          <td><%= link_to(product.title,admin_product_path(product))%></td>
-          <td><%= product.description %></td>
+          <td ><%= link_to(product.title,admin_product_path(product))%></td>
           <td><%= product.price %></td>
           <td><%= product.quantity %></td>
           <td>
-            <%= link_to("Edit",edit_admin_product_path(product), :class=>"btn btn-xs btn-info")%>
-            <%= link_to("Delete",admin_product_path(product), :method => :delete, :class=>"btn btn-xs btn-danger")%>
-            <%= link_to('向上', move_up_admin_product_path(product),method: :patch)%>
-            <%= link_to('向下',move_down_admin_product_path(product),method: :patch)%>
+            <%= link_to("Edit",edit_admin_product_path(product), :class=>"btn btn-xs btn-sm")%>
+            <%= link_to('Up', move_up_admin_product_path(product),method: :patch,:class=>"btn btn-xs btn-sm")%>
+            <%= link_to('Down',move_down_admin_product_path(product),method: :patch,:class=>"btn btn-xs btn-sm")%>
+            <%= link_to("Delete",admin_product_path(product), :method => :delete, :class=>"btn btn-xs btn-sm")%>
           </td>
-          <td> <%= product.created_at %></td>
         </tr>
         <% end %>
       </table>
 
-    </div> -->
-
-
-    <h2> Product List </h2>
-<div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
-</div>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td>
-          <%= product.id %>
-        </td>
-        <td>
-          <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-            <% end %>
-          <% end %>
-        </td>
-        <td>
-          <%= product.title %>
-        </td>
-        <td>
-          <%= product.price %>
-        </td>
-        <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </div>
