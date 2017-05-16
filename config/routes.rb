@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         post :cancel
         post :ship
         post :shipped
-        post :reture
+        post :return
       end
     end
   end
