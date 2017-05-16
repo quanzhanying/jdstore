@@ -2,10 +2,7 @@ class OrdersController < ApplicationController
 
   before_action :authenticate_user!, only: [:create]
 
-  def show
-    @order = Order.find_by_token(params[:id])
-    @product_lists = @order.product_lists
-  end
+
 
   def create
     @order = Order.new(order_params)
@@ -25,6 +22,11 @@ class OrdersController < ApplicationController
     else
       render 'carts/checkout'
     end
+  end
+
+  def show
+    @order = Order.find_by_token(params[:id])
+    @product_lists = @order.product_lists
   end
 
   private
