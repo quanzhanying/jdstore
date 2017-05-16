@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parametes, if: :devise_controller?
   protect_from_forgery with: :exception
 
-  def admin_reuqired
+  def admin_required
     if !current_user.admin?
       flash[:alert] = "你没有权限"
       redirect_to root_path
