@@ -9,6 +9,7 @@ class User < ApplicationRecord
   end
   mount_uploader :avatar, ImageUploader
   validates :username, presence: true
+  has_many :orders
 
 
 end
