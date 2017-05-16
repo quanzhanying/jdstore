@@ -37,6 +37,7 @@ gem 'annotate' #加入schema
 gem 'carrierwave' #上傳檔案
 gem 'mini_magick' #一張圖做多個大小
 gem 'awesome_print' #美化ruby
+gem 'letter_opener', group: :development
 
 
 
