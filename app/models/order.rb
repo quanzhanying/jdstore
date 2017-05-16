@@ -32,7 +32,7 @@ class Order < ApplicationRecord
     state :good_returned
 
 
-    event :make_payment , after_commit: :pay! do
+    event :make_payment, after_commit: :pay! do
       transitions from: :order_placed, to: :paid
     end
 
