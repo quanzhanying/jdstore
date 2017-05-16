@@ -38,15 +38,18 @@
       <%= simple_form_for @order do |f| %>
 
       <legend> 订购人 </legend>
-      <div class="form-group col-lg-6">
+      <div class="form-group col-md-6">
         <%= f.input :billing_name %>
       </div>
-      <div class="form-group col-lg-6">
+      <div class="form-group col-md-6">
         <%=f.input :billing_address %>
       </div>
 
       <legend> 收货人</legend>
-      <div class="form-group col-lg-6">
+      <div class="form-group col-md-6">
+        <%= f.input :shipping_name %>
+      </div>
+      <div class="form-group col-md-6">
         <%= f.input :shipping_address %>
       </div>
       <div class="checkout">
