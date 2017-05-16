@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :carts do         #购物车明细
     collection do
       delete :clean           #清空购物车
+      post :checkout          #提交订单
     end
   end
 
