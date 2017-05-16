@@ -18,7 +18,7 @@
             </td>
               <%= cart_item.product.price %>
             <td>
-              <%= cart_item.quality %>
+              <%= cart_item.quantity %>
             </td>
           </tr>
         <% end %>
@@ -42,8 +42,13 @@
         <div class="form-group col-lg-6">
           <%= f.input :billing_name %>
         </div>
-
+        <div class="form-group col-lg-6">
+          <%= f.input :billing_address %>
+        </div>
         <legend>收貨人</legend>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_name %>
+        </div>
         <div class="form-group col-lg-6">
           <%= f.input :shipping_address %>
         </div>
