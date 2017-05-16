@@ -3,11 +3,15 @@
     <!--Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="/">JDSTORE </a>
-      <span class="navbar-brand"><%= link_to'PRODUCT',admin_products_path %></span>
-  </div>
+      </div>
 
   <!--Collect the new links, forms, and other conten for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <%= link_to'PRODUCT', products_path %>
+      </li>
+    </ul>
     <ul class="nav navbar-nav navbar-right">
       <!-- <li> <%= link_to("登入", '#') %>   </li> -->
       <% if !current_user %>
