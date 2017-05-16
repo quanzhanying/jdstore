@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
       @product_lists = @order.product_lists
     end
 
+
     private
 
     def order_params
