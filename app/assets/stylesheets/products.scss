@@ -1,0 +1,116 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  width: 1200px; /*宽度1200px*/
+  margin: 0 auto; /*水平居中*/
+  margin-top: 30px; /*上边距*/
+}
+
+
+.logo {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
+}
+
+.logo a {
+  font-size: 36px; /*设置字体36px*/
+  color: #C81623; /*红色*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.search {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  width: 400px;
+  margin-left: 40px; /*右边距*/
+  margin-top: 10px; /*上边距*/
+  position: relative; /*相对定位*/
+}
+
+.search-input {
+  width: 400px;
+  height: 36px;
+  line-height: 36px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #666;
+  padding: 4px 20px; /*调一下上下左右边距*/
+  border-width: 2px; /*边框宽度为2px*/
+  border-color: #D32048; /*设置边框颜色为红色*/
+  border-style: solid; /*设置为实线*/
+  font-size: 14px; /*字体14px*/
+  font-family: "microsoft yahei"; /*设置成微软雅黑字体*/
+  border-radius: 20px; /*圆角20px*/
+}
+
+.search-button {
+  width: 54px;
+  height: 36px;
+  border: none; /*去掉button默认的border*/
+  background: none; /*去掉button默认的背景颜色*/
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  position: absolute; /*绝对定位*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  top: 0;
+  right: 0;
+}
+
+.search-button .fa-search {
+  color: #d32048; /*搜索图标的颜色*/
+}
+
+.cart-wrap {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-top: 10px; /*上边距*/
+  margin-left: 238px; /*左边距*/
+}
+// 以下为购物车代码
+.cart {
+  padding: 8px 20px; /*加内边距*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  border: 1px solid #DFDFDF; /*1像素，实线，灰色*/
+  background: #F5F5F5; /*灰色背景*/
+  font-size: 12px; /*字体小一点好看*/
+}
+
+.fa-shopping-cart {
+  color: #C81623; /*红色图标*/
+  font-size: 16px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
+}
+
+.cart a {
+  color: #6D6D6D; /*灰色字体*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.cart a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+.jumbotron {
+  background-image:url('http://ww3.sinaimg.cn/large/006tNbRwgy1ffkp3r7515j31kw11xqew.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
