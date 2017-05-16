@@ -19,6 +19,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+
         <li>
           <%= link_to carts_path do %>
             购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %>)
@@ -37,6 +38,10 @@
               <li><%= link_to content_tag(:i, " Admin 选单", class: "fa fa-user-secret"), admin_products_path %></li>
               <li role="separator" class="divider"></li>
               <% end %>
+              <li>
+                <%= link_to "个人订单列表", account_orders_path %>
+              </li>
+              <li role="separator" class="divider"></li>
               <li><%= link_to content_tag(:i, " 退出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
