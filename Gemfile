@@ -33,6 +33,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'acts_as_list'
+gem 'letter_opener', group: :development
 
 # 文本编辑器支持gem
 gem 'bootstrap-wysihtml5-rails'
