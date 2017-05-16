@@ -1,30 +1,30 @@
-<div class="header_placeholder h80"></div>
+<!-- <div class="header_placeholder h80"></div>
 <div class="header">
   <div class="w1200 clearfix bc mt30 pb20 header_content pr">
-    <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+    <div class="logo fl"><%=link_to("时尚生活", products_path, class: "col-red")%></div>
     <div class="fl ml40 mt10">
-      <%= render :partial => "products/search_bar" %>
+      <%#= render :partial => "products/search_bar" %>
     </div>
     <div class="pa mt10 cart-wrap">
-      <%= render :partial => "products/cart" %>
+      <%#= render :partial => "products/cart" %>
     </div>
   </div>
-</div>
+</div> -->
 
 <%= render :partial => "products/menu" %>
 
-<div class="detail mt20 w1200 bc pb50">
-  <p class="location col-gray"><%= link_to("首页", products_path)%> >
+<div class="container">
+  <p><%= link_to("首页", products_path)%> >
     <% Category.all.each do |category| %>
           <% if @product.category.name == category.name %>
-        <%= link_to category.name, products_path(category: category.name), class: "link" %>
+        <%= link_to category.name, products_path(category: category.name) %>
     <% end %>
     <% end %>
     > <%= @product.title %></p>
-  <div class="intro clearfix">
-    <div class="cover fl">
-      <div class="intro-bigPic border pr">
-        <div class="magnifier-preview border" id="preview"></div>
+  <div class="col-md-12">
+    <div class="col-md-6">
+    <div class="show-top-left">
+      <div class="border image-medium">
         <% if @photos.present? %>
           <a class="magnifier-thumb-wrapper" href="javascript:;">
             <img
@@ -35,7 +35,7 @@
           </a>
         <% end %>
       </div>
-      <ul class="intro-preview clearfix">
+      <ul>
         <% if @photos.present? %>
           <% @photos.each_with_index do |p, index| %>
             <% if index == 0 %>
@@ -44,12 +44,16 @@
               <li class="border intro-preview-item fl">
             <% end %>
             <% if index < 5 %>
-              <%= image_tag p.avatar.medium.url %>
+              <%= image_tag p.avatar.minimal.url %>
             <% end %>
             </li>
           <% end %>
         <% end %>
       </ul>
+    </div>
+  </div>
+
+
       <p class="mt20 f12">
         <% if current_user && current_user.is_favorite_of?(@product) %>
           <i class="fa fa-star col-red"></i>
@@ -61,12 +65,11 @@
         <% end %>
         <span class="intro-favorite-count">（<%= @product.favorite_lists.count %>人气）</span>
       </p>
-    </div>
 
     <div class="intro-text fr">
       <h3 class="f20 ell fb"><%= @product.title %></h3>
       <p class="intro-text-desc"><%= @product.description %></p>
-      <p class="intro-text-value bg-gray">
+      <p class="intro-text-value">
         <span class="pl20 pr30">售价</span><span class="price f24 fb col-red">￥<%= @product.price %></span>
       </p>
       <p class="intro-text-service">
@@ -89,8 +92,8 @@
     </div>
   </div>
 
-  <div class="productDetail border mt40">
-    <ul class="productDetail-tabList bg-gray clearfix">
+  <div class="">
+    <ul class="productDetail-tabList  clearfix">
       <li class="productDetail-tabList-tab productDetail-tabList-activeTab fl pl50 pr50">
         商品详情
       </li>
@@ -134,7 +137,7 @@
                 <%= emojify comment.content  %><br>
                 <% if comment.graphics.present? %>
                   <% comment.graphics.each_with_index do |p, index| %>
-                      <%= image_tag p.avatar.medium.url, class: "commentImage border" %>
+                      <%= image_tag p.avatar.medium.url, class: "commentImage no-border" %>
                   <% end %>
                 <% end %>
                 <br>
