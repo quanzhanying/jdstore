@@ -43,6 +43,8 @@ gem 'annotate'
 gem 'font-awesome-rails'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'pry'  #执行时拦截呼叫
+gem 'awesome_rails_console' #高颜值金手指界面
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
