@@ -9,7 +9,7 @@ class CartItemsController < ApplicationController
       flash[:notice] = "成功变更数量"
     else
       flash[:warning] = "数量不足以加入购物车"
-    end    
+    end
     redirect_to carts_path
 
   end
