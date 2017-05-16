@@ -39,6 +39,7 @@ gem 'better_errors'
 gem 'annotate'
 gem 'acts_as_list'
 gem 'letter_opener', group: :development
+gem 'aasm'
 group :development, :test do
   gem 'awesome_rails_console'
   gem 'pry'
