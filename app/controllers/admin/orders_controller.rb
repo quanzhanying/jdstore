@@ -16,14 +16,12 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.cancel_order!
     redirect_to :back
-    OrderMailer.notify_cancel(@order).deliver!
   end
 
   def ship
     @order = Order.find(params[:id])
     @order.ship!
     redirect_to :back
-    OrderMailer.notify_ship(@order).deliver!
   end
 
   def shipped
