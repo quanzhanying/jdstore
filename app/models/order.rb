@@ -1,13 +1,7 @@
 class Order < ApplicationRecord
-  def change
-    create_table :orders do |t|
-      t.integer :total,default: 0
-      t.integer :user_id
-      t.string :billing_name
-      t.string :billing_address
-      t.string :shipping_name
-      t.string :shipping_address
-    t.timestamps
-  end
-end
+belongs_to :users
+validates :billing_name, persence:true
+validates :billing_address, prsence:true
+validates :shipping_name, presence:true
+validates :shipping_address, presence:true
 end
