@@ -12,9 +12,9 @@
 </div> -->
 
 <%= render :partial => "products/menu" %>
-
+<br>
 <div class="container">
-  <p><%= link_to("首页", products_path)%> >
+  <p ><%= link_to("首页", products_path)%> >
     <% Category.all.each do |category| %>
           <% if @product.category.name == category.name %>
         <%= link_to category.name, products_path(category: category.name) %>
@@ -22,9 +22,10 @@
     <% end %>
     > <%= @product.title %></p>
   <div class="col-md-12">
+    <!-- 左上角内容 -->
     <div class="col-md-6">
-    <div class="show-top-left">
-      <div class="border image-medium">
+      <div class="show-top-left">
+        <div class="border image-medium">
         <% if @photos.present? %>
           <a class="magnifier-thumb-wrapper" href="javascript:;">
             <img
@@ -34,7 +35,7 @@
               data-large-img-url="<%= @photos.first.avatar.medium.url %>">
           </a>
         <% end %>
-      </div>
+        </div>
       <ul>
         <% if @photos.present? %>
           <% @photos.each_with_index do |p, index| %>
@@ -50,40 +51,39 @@
           <% end %>
         <% end %>
       </ul>
-    </div>
-  </div>
-
-
-      <p class="mt20 f12">
+      <p>
         <% if current_user && current_user.is_favorite_of?(@product) %>
-          <i class="fa fa-star col-red"></i>
-          <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put, class: "col-red") %>
+          <i class="fa fa-star"></i>
+          <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put) %>
         <% else %>
           <i class="fa fa-star-o"></i>
 
           <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
         <% end %>
-        <span class="intro-favorite-count">（<%= @product.favorite_lists.count %>人气）</span>
+        <span>（<%= @product.favorite_lists.count %>人气）</span>
       </p>
+      </div>
+  </div>
 
-    <div class="intro-text fr">
-      <h3 class="f20 ell fb"><%= @product.title %></h3>
-      <p class="intro-text-desc"><%= @product.description %></p>
-      <p class="intro-text-value">
-        <span class="pl20 pr30">售价</span><span class="price f24 fb col-red">￥<%= @product.price %></span>
+    <!-- 右上角内容 -->
+    <div class="col-md-6">
+      <h3><%= @product.title %></h3>
+      <p><%= @product.description %></p>
+      <p>
+        <span>售价</span><span>￥<%= @product.price %></span>
       </p>
-      <p class="intro-text-service">
-        <span class="pl20 pr30">运费</span><span>满99元包邮 | 正品保证</span>
+      <p>
+        <span>运费</span><span>满99元包邮 | 正品保证</span>
       </p>
-      <p class="intro-text-count">
-      <span class="pl20 pr30">库存</span><span id="quantity"><%= @product.quantity %></span>
+      <p>
+      <span>库存</span>&nbsp;<span id="quantity"><%= @product.quantity %></span>
       </p>
       <div class="intro-text-quantity clearfix">
-        <span class="pl20 pr30 fl">数量</span>
+        <span>数量</span>
         <div class="countNumber fl mt10">
-          <%= link_to("-", reduce_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :comment, remote: true) %>
+          <%= link_to("-", reduce_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
           <input class="countNumber-input" type="text" value="<%= @product.purchase_quantity %>">
-          <%= link_to("+", add_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :comment, remote: true) %>
+          <%= link_to("+", add_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
         </div>
       </div>
       <p class="intro-text-btnWrap">

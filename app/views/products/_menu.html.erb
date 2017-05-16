@@ -1,25 +1,25 @@
 <% if params[:controller] == ('products') && params[:action] == ('show') %>
   <div class="menu-wrap">
-    <ul class="menuList col-md-12 col-sm-12 col-xs-12">
-      <li class="menuList-item ">
+    <ul class="col-md-12 col-sm-12 col-xs-12  border"> <!--border要放在这里,否则li会超出menu的边框 -->
+      <li>
         <%= link_to("首页", products_path)%>
       </li>
       <% Category.all.each do |category| %>
-        <li class="menuList-item  <%= 'menuList-activeItem' if @product.category.name == category.name %>">
-          <%= link_to category.name, products_path(category: category.name), class: "link" %>
+        <li class="<%= 'activeItem' if @product.category.name == category.name %>">
+          <%= link_to category.name, products_path(category: category.name) %>
         </li>
       <% end %>
     </ul>
   </div>
 <% else %>
   <div class="menu-wrap">
-    <ul class="menuList clearfix w1200 f16 bc">
-      <li class="menuList-item fl pl20 pr20 <%= 'menuList-activeItem' if !params[:category] %>">
+    <ul class="col-md-12 col-sm-12 col-xs-12">
+      <li class="<%= 'activeItem' if !params[:category] %>">
         <%= link_to("首页", products_path)%>
       </li>
       <% Category.all.each do |category| %>
-        <li class="menuList-item fl <%= 'menuList-activeItem' if params[:category] == category.name %>">
-          <%= link_to category.name, products_path(category: category.name), class: "link" %>
+        <li class="<%= 'activeItem' if params[:category] == category.name %>">
+          <%= link_to category.name, products_path(category: category.name) %>
         </li>
       <% end %>
     </ul>

@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.11.1)
     actioncable (5.0.0)
       actionpack (= 5.0.0)
       nio4r (~> 1.2)
@@ -199,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   awesome_rails_console
   bootstrap-sass
   byebug

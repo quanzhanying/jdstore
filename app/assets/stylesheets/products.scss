@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/** 收藏和加入购物车 **/
+/** 首页收藏和加入购物车 **/
 .product-options{
   transition: .5s ease;
   opacity: 0;
@@ -41,6 +41,22 @@
 }
 
 /*show页面*/
+/*菜单*/
+.menu-wrap {
+  height: 42px;
+  line-height: 42px;
+  ul{
+    display: flex; /*Displays an element as a block-level flex container ul本是行级元素，加上这个收藏就不会跟在它后面，而是另起一行*/
+    .activeItem{
+      background: #0e0b0c;
+    }
+  }
+  li{
+    float: left;
+    padding: 0 22px ;
+  }
+}
+
 .no-border{
   border: none;
 }
@@ -58,6 +74,7 @@
 .show-top-left{
   ul{
     margin: 10px 0 0 0;
+    display: flex; /*Displays an element as a block-level flex container ul本是行级元素，加上这个收藏就不会跟在它后面，而是另起一行*/
   }
   li{
     float: left;
@@ -65,6 +82,10 @@
     padding: 2px;
     width: 72px;
     height: 72px;
+  }
+
+  p{
+    margin: 10px 0 0 0;
   }
 }
 
