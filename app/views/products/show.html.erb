@@ -1,0 +1,29 @@
+<div class="col-md-12", style="margin-bottom: 20px;">
+  <%= link_to(products_path, class: "btn btn-default back-btn") do %>
+    <span></span>返回首页
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-5 col-md-offset-1 ">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
+    <% end %>
+  </div>
+  <div class="col-md-5 col-md-offet-1">
+    <h2> <%= @product.name %></h2>
+    <div style="height:100px;">
+      <p><%= @product.description %></p>
+    </div>
+    <div>库存: <%= @product.stock %></div>
+    <div class="product-price"> ￥ <%= @product.price %></div>
+    <div class="pull-right">
+      <% if @product.stock.present? && @product.stock > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        <%= link_to("已售罄", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger disabled") %>
+      <% end %>
+    </div>
+  </div>
+</div>
