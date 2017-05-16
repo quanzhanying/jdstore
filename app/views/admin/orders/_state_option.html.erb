@@ -21,7 +21,7 @@
 
   <% when "shipped" %>
     <%= link_to("退货",
-                return_admin_order_path(order),
+                reture_admin_order_path(order),
                 class: "btn btn-default btn-sm", method: :post) %>
 
   <% when "order_cancelled" %>
