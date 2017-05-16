@@ -48,6 +48,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'annotate'
 gem 'hirb-unicode'
+gem 'letter_opener', group: :development
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

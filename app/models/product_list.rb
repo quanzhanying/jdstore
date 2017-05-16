@@ -10,7 +10,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
-
+# ----------储存订单信息-------------
 class ProductList < ApplicationRecord
   belongs_to :order
 end
