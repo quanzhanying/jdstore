@@ -37,11 +37,14 @@ gem 'jbuilder', '~> 2.5'
  gem 'carrierwave'
  gem 'mini_magick'
  gem 'annotate'
+ gem 'acts_as_list'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  #gem 'byebug', platform: :mri
+  gem 'pry' #执行时拦截呼叫
+  gem 'awesome_rails_console' #美化Rails Console 排版
 end
 
 group :development do
