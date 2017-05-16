@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :show]
+  before_action :validate_search_key, only: [:search]
   def index
-    @products = Product.where(can_sell: true)
+    @products = Product.selling
   end
 
   def show
@@ -21,6 +22,27 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+
+  # 添加搜索功能
+  def search
+    if @query_string.present?
+      search_result = Product.selling.ransack(@search_criteria).result(:distinct => true) #只搜索销售中的商品
+      @products = search_result.paginate(:page => params[:page], :per_page => 5 )
+    end
+  end
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria = search_criteria(@query_string)
+  end
+
+
+  def search_criteria(query_string)
+    { :name_cont => query_string }
+  end
+  # 搜索功能代码结束
 
   private
   def product_params

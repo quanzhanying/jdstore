@@ -45,6 +45,10 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'pry'  #执行时拦截呼叫
 gem 'awesome_rails_console' #高颜值金手指界面
+gem 'ransack' #搜索功能
+gem 'will_paginate'  #分页显示功能
+gem 'will_paginate-bootstrap' #美化分页效果
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

@@ -17,5 +17,7 @@
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
-  
+
+  scope :selling, -> { where(can_sell: true) } #选出正在销售中的商品
+
 end
