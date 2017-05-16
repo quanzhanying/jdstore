@@ -23,4 +23,7 @@ end
 resources :cart_items
 resources :orders
 
+namespace :account do
+   resources :orders
+ end
 end
