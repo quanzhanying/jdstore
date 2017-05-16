@@ -40,4 +40,6 @@ Rails.application.routes.draw do
       post :add_quantity
     end
   end
+
+  resources :orders
 end
