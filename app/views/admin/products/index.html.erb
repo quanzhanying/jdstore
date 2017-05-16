@@ -41,6 +41,9 @@
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %> |
           <%= link_to("destroy", admin_product_path(product), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+          <br>
+          <%= link_to "向上", move_up_admin_product_path(product), method: :patch %>
+          <%= link_to "向下", move_down_admin_product_path(product), method: :patch %>
         </td>
         <td><%= product.created_at %></td>
       </tr>

@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    resources :products       #后台上架网址 admin/products
+    resources :products do     #后台上架网址 admin/products
+      member do
+        patch :move_up
+        patch :move_down
+      end
+    end
   end
 
   resources :products do      #前台product

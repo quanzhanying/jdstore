@@ -32,6 +32,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
+gem 'acts_as_list'
 
 # 文本编辑器支持gem
 gem 'bootstrap-wysihtml5-rails'
@@ -42,6 +43,8 @@ gem 'bootstrap-wysihtml5-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry'
+  gem 'awesome_rails_console'
   gem 'byebug', platform: :mri
   gem 'sqlite3'
 end

@@ -9,12 +9,24 @@
 
 # ---新增admin种子档---
 
-u = User.new
-u.email = "admin@123.com"
+if User.find_by(email: "admin@123.com").nil?
+  u = User.new
+  u.email = "admin@test.com"           # 可以改成自己的 email
+  u.password = "123456"                # 最少要六码
+  u.password_confirmation = "123456"   # 最少要六码
+  u.is_admin = true
+  u.save
+  puts "Admin 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+else
+  puts "Admin 已经建立过了，脚本跳过该步骤。"
+end
 
-u.password = "123456"
 
-u.password_confirmation = "123456"
+# Initialize Product
 
-u.is_admin = true
-u.save
+Product.create!(title: "QC-35",
+  description: "耳机",
+  price: 2800,
+  quantity: 5,
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
+  )

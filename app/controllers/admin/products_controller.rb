@@ -6,7 +6,7 @@ class Admin::ProductsController < ApplicationController
   # ---CRUD---
 
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")       # 按照制定顺序排序
   end
 
   def show
@@ -46,6 +46,20 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path
   end
 
+
+  # ---后台排序按钮功能---
+
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
+  end
 
 
   # ---admin权限---
