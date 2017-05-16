@@ -37,6 +37,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'better_errors'
 gem 'annotate'
+gem 'acts_as_list'
 group :development, :test do
   gem 'awesome_rails_console'
   gem 'pry'
