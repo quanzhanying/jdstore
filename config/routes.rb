@@ -17,7 +17,12 @@ resources :products do
     end
   end
   resources :cart_items
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end
   namespace :account do
    resources :orders
   end
