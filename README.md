@@ -1,3 +1,3 @@
 # README
 
-Homework of the first week3
+Homework of JDstore story4
