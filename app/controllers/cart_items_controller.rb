@@ -16,6 +16,8 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     @cart_item.update(cart_item_params)
 
+
+
     redirect_to carts_path
   end
 
