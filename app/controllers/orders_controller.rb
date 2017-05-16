@@ -1,6 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+  def apply_to_cancel
+    @order = Order.find(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "已提交申请"
+    redirect_to :back
+  end
+
   def create
     @order = Order.new(order_params)
     @order.user = current_user
