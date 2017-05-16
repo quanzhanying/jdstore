@@ -3,25 +3,29 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'products#index'
 
- namespace :admin do
+  namespace :admin do
    resources :products
- end
+  end
 
- resources :products do
+  resources :products do
    member do
      post :add_to_cart
    end
- end
+  end
 
- resources :carts do
+  resources :carts do
    collection do
      delete :clean
      post :checkout
    end
- end
+  end
 
- resources :cart_items
+  resources :cart_items
 
- resources :orders
+  resources :orders
+
+  namespace :account do
+   resources :orders
+  end
 
 end
