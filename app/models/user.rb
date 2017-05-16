@@ -29,6 +29,8 @@ def admin?
 end
 
 
+has_many :orders
+
 
 
 
