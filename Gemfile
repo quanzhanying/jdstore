@@ -35,8 +35,11 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
+  gem 'pry'
+  gem 'awesome_rails_console'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end

@@ -17,9 +17,9 @@
       <tr>
         <td>
           <%= product.id %>
-        </td>
+        </td>      
         <td>
-          <%= link_to product_path(product) do %>
+              <%= link_to product_path(product) do %>
             <% if product.image.present? %>
               <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
             <% else %>

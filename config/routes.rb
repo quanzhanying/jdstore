@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :products do
     member do
+      put "like",to:"products#upvote"
+    end
+    member do
       post :add_to_cart
     end
   end
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       delete :clean
+       post :checkout
     end
   end
   resources :cart_items
