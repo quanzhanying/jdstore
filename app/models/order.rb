@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id               :integer          not null, primary key
+#  total            :integer          default(0)
+#  user_id          :integer
+#  billing_name     :string
+#  billing_address  :string
+#  shipping_name    :string
+#  shipping_address :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  token            :string
+#  is_paid          :boolean          default(FALSE)
+#  payment_method   :string
+#
+
 class Order < ApplicationRecord
   before_create :generate_token
   belongs_to :user
@@ -12,5 +30,13 @@ class Order < ApplicationRecord
   def generate_token
     self.token = SecureRandom.uuid
   end
-  
+
+  def set_payment_with!(method)
+    self.update_columns(payment_method: method)
+  end
+
+  def pay!
+    self.update_columns(is_paid: true)
+  end
+
 end
