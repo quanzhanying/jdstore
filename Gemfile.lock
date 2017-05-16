@@ -45,6 +45,11 @@ GEM
     arel (7.1.1)
     autoprefixer-rails (6.7.3)
       execjs
+    awesome_print (1.7.0)
+    awesome_rails_console (0.4.0)
+      awesome_print
+      pry-rails
+      railties
     bcrypt (3.1.11)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -116,6 +121,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     public_suffix (2.0.5)
     puma (3.6.0)
     rack (2.0.1)
@@ -195,6 +202,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  awesome_rails_console
   bootstrap-sass
   byebug
   carrierwave (~> 1.0)

@@ -35,12 +35,13 @@ gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'font-awesome-rails'
-gem 'pry'
 gem 'letter_opener', group: :development
 gem 'aasm'
 
 
 group :development, :test do
+  gem 'pry'
+  gem 'awesome_rails_console'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
