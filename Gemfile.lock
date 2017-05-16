@@ -56,7 +56,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (9.0.5)
     carrierwave (1.0.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -364,7 +363,6 @@ DEPENDENCIES
   aasm
   awesome_rails_console
   bootstrap-sass
-  byebug
   carrierwave
   coffee-rails (~> 4.2)
   devise
@@ -377,6 +375,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick
   pg
+  pry
   puma (~> 3.0)
   rails (~> 5.0.0)
   rails-erd
