@@ -27,11 +27,11 @@ Rails.application.routes.draw do
     resources :cart_items
     resources :orders do
     member do
-      post :pay_with_paypal
+      post :pay_with_alipay
       post :pay_with_wechat
     end
   end
     namespace :account do
-    resources :orders //为什么这里还要一个order？
+    resources :orders
   end
 end
