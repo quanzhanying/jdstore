@@ -1,3 +1,3 @@
 # README
 
-Homework of JDstore story4-5
+Homework of JDstore story4-6
