@@ -30,6 +30,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
   has_many :orders
+  # 收藏功能商品开始
+  has_many :favorites
+  has_many :favorite_products, through: :favorites, source: :product
+  # 收藏功能商品结束
   def admin?
     is_admin
   end

@@ -28,6 +28,24 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  #收藏商品的method
+  def add_to_favorite
+    @product = Product.find(params[:id])
+    @product.fans << current_user
+    @product.save
+    redirect_to :back, notice:"成功加入收藏!"
+  end
+  #收藏商品method结束
+
+  #取消收藏的method
+  def cancel_favorite
+    @product = Product.find(params[:id])
+    @product.fans.delete(current_user)
+    @product.save
+    redirect_to :back, alert: "成功取消收藏!"
+  end
+  #取消收藏的method结束
+
   # 添加搜索功能
   def search
     if @query_string.present?

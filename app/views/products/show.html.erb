@@ -19,6 +19,13 @@
     <div>类别:<%= @product.category.name %></div>
     <div>库存: <%= @product.stock %></div>
     <div class="product-price"> ￥ <%= @product.price %></div>
+    <div>
+      <% if !@product.fans.include?(current_user) %>
+        <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart") %>
+      <% else %>
+        <%= link_to("取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+      <% end %>
+    </div>
     <div class="pull-right">
       <% if @product.stock.present? && @product.stock > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger") %>
