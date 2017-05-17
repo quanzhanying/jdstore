@@ -16,14 +16,14 @@
 //= require_tree .
 
 // 放大镜
-$(document).ready(function(){
-  $('#preview').css('visibility', 'hidden')
-  var evt = new Event(),
-      m = new Magnifier(evt);
-  m.attach({
-      thumb: '#thumb',
-      large: $('.intro-preview-activeItem img').attr('src'),
-      largeWrapper: 'preview',
-      zoom: 2
-  })
-})
+// $(document).ready(function(){
+//   $('#preview').css('visibility', 'hidden')
+//   var evt = new Event(),
+//       m = new Magnifier(evt);
+//   m.attach({
+//       thumb: '#thumb',
+//       large: $('.intro-preview-activeItem img').attr('src'),
+//       largeWrapper: 'preview',
+//       zoom: 2
+//   })
+// })

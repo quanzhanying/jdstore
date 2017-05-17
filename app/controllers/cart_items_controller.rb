@@ -1,5 +1,6 @@
 class CartItemsController < ApplicationController
-   before_action :authenticate_user!
+  before_action :find_cart_item, only: [:destroy, :update, :add_quantity, :remove_quantity]
+  respond_to :js
 
    def destroy
      @cart = current_cart
@@ -7,8 +8,13 @@ class CartItemsController < ApplicationController
      @product = @cart_item.product
      @cart_item.destroy
 
-     flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
-     redirect_to :back
+    #  flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
+    #  redirect_to :back
+    @product.quantity += @cart_item.quantity
+    @product.save
+    respond_to do |format|
+      format.js   { render :layout => false }
+    end
    end
 
    def update
@@ -33,6 +39,10 @@ class CartItemsController < ApplicationController
   #  end
 
    private
+   def find_cart_item
+     @cart = current_cart
+     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+   end
 
    def cart_item_params
      params.require(:cart_item).permit(:quantity)

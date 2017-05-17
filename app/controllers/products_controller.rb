@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  respond_to :js
+
   def index
     @products = Product.all
   end

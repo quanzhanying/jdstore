@@ -26,9 +26,12 @@
                   <a href="/products/<%= product.id %>/join" class="add-to-whishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
                       <i class="fa fa-heart-o"></i>
                   </a>
-                  <a class="add-to-cart" toggle="tooltip" placement="top" title="Add to cart" rel="nofollow" data-method="post" href="/products/<%= product.id %>/add_to_cart">
+                  <!-- <a class="add-to-cart addCartBtn" toggle="tooltip" placement="top" title="Add to cart" rel="nofollow" data-method="post" href="/products/<%#= product.id %>/add_to_cart" >
                       <i class="fa fa-shopping-cart"></i>
-                  </a>
+                  </a> -->
+                  <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn ", :remote => true do %>
+                    <i class="fa fa-shopping-cart col-red"></i>
+                  <% end %>
               </div>
           </div>
           <% end %>

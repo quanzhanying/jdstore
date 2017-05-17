@@ -28,7 +28,7 @@
 				<div class="price-and-operate">
 					<p><span>￥<%= cart_item.product.price %></span> x <span><%= cart_item.quantity %></span></p>
 
-					<%= link_to("删除", cart_item_path(cart_item.product_id), method: :delete)%>
+					<%= link_to("删除", cart_item_path(cart_item.product_id),id:"delete-#{cart_item.product_id}", class: "delete-btn fr",method: :delete,remote: true)%>
 
 				</div>
 			</div>
