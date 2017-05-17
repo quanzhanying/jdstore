@@ -5,7 +5,7 @@ layout "admin"
 
 
     def index
-     @products = Product.all
+     @products = Product.all.order("position ASC")
     end
 
     def new
@@ -34,6 +34,18 @@ layout "admin"
       else
         render :new
       end
+    end
+
+    def move_up
+      @product = Product.find(params[:id])
+      @product.move_higher
+      redirect_to :back
+    end
+
+    def move_down
+      @product = Product.find(params[:id])
+      @product.move_lower
+      redirect_to :back
     end
 
 
