@@ -58,6 +58,22 @@ class ProductsController < ApplicationController
      end
   end
 
+  def add_to_cart
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+      @product.quantity -= @product.purchase_quantity
+      @product.purchase_quantity = 1
+      @product.save
+    else
+      # flash[:warning] = "不能重复加入商品"
+      # redirect_to :back
+    end
+    respond_to do |format|
+      format.js   { render :layout => false }
+    end
+  end
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
