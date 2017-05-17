@@ -36,6 +36,12 @@ gem 'acts_as_list'
 gem 'letter_opener', group: :development
 gem 'aasm'
 
+# 分页
+gem 'will_paginate-bootstrap'
+
+# 搜索 
+gem 'ransack'
+
 # 文本编辑器支持gem
 gem 'bootstrap-wysihtml5-rails'
 

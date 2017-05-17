@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     resources :orders          #用户后台查看订单
   end
 
+  get "about/index"
 
   root 'welcome#index'
 
