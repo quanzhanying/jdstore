@@ -10,7 +10,14 @@ Rails.application.routes.draw do
         patch :move_down       #商品位置移动
       end
     end
-    resources :orders         #管理员查看订单
+    resources :orders do       #管理员查看订单
+      member do
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
+    end
   end
 
   resources :products do      #前台product
