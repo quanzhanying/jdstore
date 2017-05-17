@@ -14,4 +14,14 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
+  def set_payment_with!(method)
+    self.payment_method = method
+    self.save
+  end
+
+  def pay!
+    self.is_paid = true
+    self.save
+  end
+
 end

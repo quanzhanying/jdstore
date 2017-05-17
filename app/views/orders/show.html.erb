@@ -66,6 +66,14 @@
       </tr>
     </tbody>
     </table>
+    <div class="container">
+      <% if !@order.is_paid %>
+        <%= link_to "支付宝支付",pay_with_alipay_order_path(@order.token), method: :post, class:"btn btn-danger"%>
+        <%= link_to "微信支付",pay_with_wechat_order_path(@order.token), method: :post, class:"btn btn-danger"%>
+      <% else %>
+        此订单已完成支付
+      <% end %>
+    </div>
 
   </div>
 </div>

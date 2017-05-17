@@ -15,23 +15,34 @@ class OrdersController < ApplicationController
           product_list.product_quantity = cart_item.quantity
           product_list.save
 
-          binding.pry
-
-          @cart_item = current_cart.cart_items.find(cart_item)
-          @cart_item.destroy
-
+          cart_item.destroy
       end
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
     end
-
   end
 
 
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+  end
+
+  def pay_with_alipay
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("alipay")
+    @order.pay!
+    
+    redirect_to order_path(@order.token), notice:"使用支付宝支付成功"
+  end
+
+  def pay_with_wechat
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("wechat")
+    @order.pay!
+
+    redirect_to order_path(@order.token), notice:"使用微信支付成功"
   end
 
   private
