@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_required
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")
   end
   def edit
     @product = Product.find(params[:id])
@@ -28,6 +28,18 @@ class Admin::ProductsController < ApplicationController
       render :new
     end
   end
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
+  end
+
 
 private
   def product_params
