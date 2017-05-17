@@ -1,9 +1,10 @@
 class Order < ApplicationRecord
   belongs_to :user
 
-  validateds :billing_name, presence: true
-  validateds :billing_address, presence: true
-  validateds :shipping_name, presence: true
-  validateds :shipping_address, presence:true
-  
+  validates :billing_name, presence: true
+  validates :billing_address, presence: true
+  validates :shipping_name, presence: true
+  validates :shipping_address, presence:true
+  has_many :product_lists
+
 end
