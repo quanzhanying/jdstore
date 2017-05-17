@@ -22,7 +22,12 @@ end
 
   namespace :account do
     resources :orders
-  end 
+  end
 
-  resources :orders
+  resources :orders do
+    memeber do
+      post :pay_with_alipay
+      post :pay_with_wechat
+    end
+  end 
 end
