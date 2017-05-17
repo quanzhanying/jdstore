@@ -24,5 +24,25 @@
         总计<%= @order.total %>RMB
       </span>
     </div>
+    <hr>
+    <h2>寄送资讯</h2>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <td>
+            订购人
+          </td>
+          <td>
+            <%= @order.billing_name %> - <%= @order.billing_address%>
+          </td>
+          <td>
+            收件人
+          </td>
+          <td>
+            <%= @order.shipping_name %> - <%= @order.shipping_address%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
