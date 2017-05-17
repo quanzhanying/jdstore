@@ -5,7 +5,7 @@
     <%= link_to("删除",admin_product_path(@product), class: "btn btn-md pull-right", method: :delete, data:{confirm:"确定删除？"}) %>
   </div>
 
-  <h2><%= link_to(@product.title, admin_products_path(@product)) %></h2>
+  <h2><%= link_to(@product.title, admin_products_path) %></h2>
   <p> <%= @product.description %> </p>
   <p> 价格：<%= @product.price %> </p>
   <p> 库存：<%= @product.quantity %> </P>
