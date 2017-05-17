@@ -1,13 +1,14 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def create
     @order =  Order.new(order_params)
-    @order.user_id = current_user.id
+    @order.user = current_user
     @order.total = current_cart.cart_total_price
     if @order.save
       redirect_to order_path(@order)
     else
-      redirect_to :back
+      render 'carts/checkout'
     end
   end
 
