@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
   end
 
   def reduce_quantity
+    @product = Product.find(params[:id])
     if @product.purchase_quantity > 1
        @product.purchase_quantity -= 1
        @product.save
@@ -46,7 +47,8 @@ class ProductsController < ApplicationController
   end
 
   def add_quantity
-    if @product.purchase_quantity <= @product.quantity
+    @product = Product.find(params[:id])
+    if @product.purchase_quantity < @product.quantity
        @product.purchase_quantity +=1
        @product.save
       # redirect_to :back

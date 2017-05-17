@@ -1,35 +1,44 @@
-<div class="cart bg-gray f12 pl20 pr20 pr pa">
-	<%= link_to carts_path do %>
-    <i class="fa fa-shopping-cart cart-icon col-red f16 mr10 tc"></i>我的购物车
-    <span class="products_count"><%= current_cart.products.count %></span>
-  <% end %>
+<div class="dropbtn">
+	<%= link_to carts_path do  %>
+	购物车
+	<i class="fa fa-shopping-cart"></i>
+	(
+	<%= current_cart.products.count %>
+	)
+	<% end %>
 </div>
 
-<div class="previewProductsList pa bg-gray border">
+<div class="dropdown-content">
 	<% if current_cart.cart_items.includes(:product).present? %>
 		<% current_cart.cart_items.each do |cart_item| %>
-			<div class="previewProductsList-item clearfix pt10 pb10">
-				<%= link_to product_path(cart_item.product), class: "previewProductsList-item-image fl mr20 ml10 border" do %>
+
+			<div class="product-item">
+				<div class="product-item-image">
+				<%= link_to product_path(cart_item.product) do %>
 					<% if cart_item.product.photos[0].present? %>
 						 <%= image_tag(cart_item.product.photos[0].avatar.thumb.url) %>
 					<% else %>
 						<%= image_tag("http://placehold.it/200x200&text=No Pic") %>
 					<% end %>
 				<% end %>
-				<%= link_to(cart_item.product.title, product_path(cart_item.product), class: "previewProductsList-item-title fl f12") %>
-				<div class="previewProductsList-item-info fr f12 pr10">
-					<p class="tr"><span class="fb">￥<%= cart_item.product.price %></span> x <span class="fb"><%= cart_item.quantity %></span></p>
-					 
-					<%= link_to("删除", cart_item_path(cart_item.product_id), method: :delete, class: "delete-btn fr", remote: true)%>
+			 </div>
+			 <div class="product-item-title">
+				 <%= link_to(cart_item.product.title, product_path(cart_item.product),class: "fl") %>
+			 </div>
+				<div class="price-and-operate">
+					<p><span>￥<%= cart_item.product.price %></span> x <span><%= cart_item.quantity %></span></p>
+
+					<%= link_to("删除", cart_item_path(cart_item.product_id), method: :delete)%>
 
 				</div>
 			</div>
+			<hr>
 		<% end %>
-		<div class="bottom bg-gray p10 clearfix">
-			<p class="info fl f12 tr">合计 ￥<%= render_cart_total_price(current_cart) %></p>
-			<%= link_to("确认结账", checkout_carts_path, class: "s-btn add-cart pl15 pr15 ml20 tc col-red f12 bg-red fr") %>
+		<div class="">
+			<p class="">合计 ￥<%= render_cart_total_price(current_cart) %></p>
+			<%= link_to("确认结账", checkout_carts_path, class: "") %>
 		</div>
 	<% else %>
-		<p class="empty-message fs pt10 tc f12">购物车还没有商品，赶紧添加吧</p>
+		<p class="">购物车还没有商品，赶紧添加吧</p>
 	<% end %>
 </div>

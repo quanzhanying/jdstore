@@ -10,7 +10,9 @@
     </div>
   </div>
 </div> -->
+<br>
 
+<br>
 <%= render :partial => "products/menu" %>
 <br>
 <div class="container">
@@ -21,7 +23,7 @@
     <% end %>
     <% end %>
     > <%= @product.title %></p>
-  <div class="col-md-12">
+  <div class="col-md-12 col-container">
     <!-- 左上角内容 -->
     <div class="col-md-6">
       <div class="show-top-left">
@@ -81,9 +83,9 @@
       <div class="intro-text-quantity clearfix">
         <span>数量</span>
         <div class="countNumber fl mt10">
-          <%= link_to("-", reduce_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
-          <input class="countNumber-input" type="text" value="<%= @product.purchase_quantity %>">
-          <%= link_to("+", add_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
+          <%= link_to("-", reduce_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post,remote: true) %>
+          <input class="countNumber-input" type="text" value="<%= @product.purchase_quantity %>" readonly>
+          <%= link_to("+", add_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post,remote: true) %>
         </div>
       </div>
       <p class="intro-text-btnWrap">
