@@ -20,7 +20,7 @@
               <%= product_list.product_price %>
             </td>
           </tr>
-        <%= end  %>
+        <% end %>
       </tbody>
     </table>
 
@@ -42,7 +42,7 @@
          </tr>
          <tr>
            <td>
-             <%= @order.billing_name  %> - <%= order.billing_address %>
+             <%= @order.billing_name %> - <%= @order.billing_address %>
            </td>
          </tr>
          <tr>
@@ -52,7 +52,7 @@
          </tr>
          <tr>
            <td>
-             <%= @order.shipping_name %> - <%= @order.shipp %>
+             <%= @order.shipping_name %> - <%= @order.shipping_address %>
            </td>
          </tr>
        </tbody>
