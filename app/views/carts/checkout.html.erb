@@ -16,6 +16,9 @@
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
               <%= cart_item.product.price %>
             </td>
 
@@ -43,6 +46,9 @@
       <%= simple_form_for @order do |f| %>
 
       <legend> 订购人 </legend>
+      <div class="form-group col-lg-6">
+        <%= f.input :billing_name %>
+      </div>
       <div class="form-group col-lg-6">
         <%= f.input :billing_address %>
       </div>
