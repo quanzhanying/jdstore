@@ -19,7 +19,7 @@ class Order < ApplicationRecord
    validates :shipping_name, presence: true
    validates :shipping_address, presence: true
    has_many :product_lists
-end
+
 include AASM
 
  aasm do
@@ -50,4 +50,5 @@ include AASM
    event :cancel_order do
      transitions from: [:order_placed, :paid], to: :order_cancelled
    end
+ end
  end
