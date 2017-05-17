@@ -20,11 +20,22 @@
     <div>库存: <%= @product.stock %></div>
     <div class="product-price"> ￥ <%= @product.price %></div>
     <div>
+      <!-- 点赞的view部分 -->
+      <%= link_to like_product_path(@product), method: :put do %>
+        <div class="pi-thumbs-up">
+        <i class="fa fa-thumbs-o-up fa-x"></i>
+        <%= @product.get_upvotes.size %>
+        </div>
+      <% end %>
+      <!-- 点赞的view部分结束 -->
+
+      <!-- 收藏商品和取消商品view部分 -->
       <% if !@product.fans.include?(current_user) %>
         <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart") %>
       <% else %>
         <%= link_to("取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
       <% end %>
+      <!-- 收藏商品和取消商品view部分结束 -->
     </div>
     <div class="pull-right">
       <% if @product.stock.present? && @product.stock > 0 %>

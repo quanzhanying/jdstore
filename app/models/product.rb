@@ -24,6 +24,8 @@ class Product < ApplicationRecord
   has_many :fans, through: :favorites, source: :user
   # 收藏功能相关结束
 
+  acts_as_votable  #点赞功能
+
   scope :selling, -> { where(can_sell: true) } #选出正在销售中的商品
 
 end

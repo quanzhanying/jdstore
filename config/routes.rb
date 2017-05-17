@@ -18,8 +18,9 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
-      post :add_to_favorite
-      post :cancel_favorite
+      post :add_to_favorite  #收藏商品功能
+      post :cancel_favorite  #取消收藏功能
+      put "like", to: "products#upvote"  #点赞共呢功能
     end
     collection do
       get :search

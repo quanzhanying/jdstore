@@ -48,6 +48,7 @@ gem 'awesome_rails_console' #高颜值金手指界面
 gem 'ransack' #搜索功能
 gem 'will_paginate'  #分页显示功能
 gem 'will_paginate-bootstrap' #美化分页效果
+gem 'acts_as_votable', '~> 0.10.0' #商品点赞功能
 
 
 group :development do
