@@ -34,13 +34,14 @@ class OrdersController < ApplicationController
     @order.set_payment_with!("alipay")
     @order.make_payment!
 
+
     redirect_to order_path(@order.token), notice: "使用支付宝成功完成付款"
   end
 
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("wechat")
-    @order.make_payment
+    @order.make_payment!
 
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
   end
@@ -50,7 +51,7 @@ class OrdersController < ApplicationController
    OrderMailer.apply_cancel(@order).deliver!
    flash[:notice] = "已提交申请"
    redirect_to :back
- end 
+ end
 
   private
 
