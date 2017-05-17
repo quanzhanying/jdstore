@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  namespace :account do
+    resources :orders
+  end
+
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -22,4 +26,6 @@ Rails.application.routes.draw do
 
   resources :cart_items
   resources :orders
+
+
 end
