@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.where(:is_hidden => false).order("created_at DESC")
+    @products = Product.where(:is_hidden => false).order("position ASC")
   end
 
   def new

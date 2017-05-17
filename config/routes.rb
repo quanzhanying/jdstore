@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       member do
         post :publish
         post :hide
+        patch :move_up
+        patch :move_down 
       end
     end
   end
