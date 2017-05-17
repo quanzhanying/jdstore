@@ -42,7 +42,8 @@ class OrdersController < ApplicationController
     @order.pay!
 
     redirect_to order_path(@order.token), notice: "使用微信完成付款"
-
+  end
+  
   private
 
   def order_params
