@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   #root 'welcome#index'
   root 'products#index'
 
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
 
   namespace :admin do
     resources :products
