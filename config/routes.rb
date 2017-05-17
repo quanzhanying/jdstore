@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     member do
       post :pay_whit_alipay   #支付宝支付
       post :pay_whit_wechat   #微信支付
+      post :apply_to_cancel   #用户申请撤销订单
     end
   end
 
