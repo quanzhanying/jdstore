@@ -7,7 +7,7 @@
             data: { confirm: "你確定要清空整個購物車嗎？ "} )%>
 
 
-    <h2> 購物車 </h2>
+    <h2> 比特購物車 </h2>
 
     <table class="table table-bordered">
       <thead>
@@ -67,7 +67,7 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("確認結帳", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("確認結帳", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
 </div>
