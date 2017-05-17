@@ -14,7 +14,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def ship
-    @order = Oder.find(params[:id])
+    @order = Order.find(params[:id])
     @order.ship!
     OrderMailer.notify_ship(@order).deliver!
     redirect_to :back
@@ -27,7 +27,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def cancel
-    @order = Order.fin(params[:id])
+    @order = Order.find(params[:id])
     @order.cancel_order!
     OrderMailer.notify_cancel(@order).deliver!
     redirect_to :back
@@ -36,13 +36,6 @@ class Admin::OrdersController < ApplicationController
   def return
     @order = Order.find(params[:id])
     @order.return_good!
-    redirect_to :back
-  end
-
-  def apply_to_cancel
-    @order = Order.find(params[:id])
-    OrderMailer.apply_cancel(@order).deliver!
-    flash[:notice] = "已提交申请"
     redirect_to :back
   end
 
