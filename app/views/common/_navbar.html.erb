@@ -21,6 +21,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
+                                <% if current_user.is_admin? %>
+                                <%= link_to("Admin", admin_products_path) %>
+                                <% end %>
                                 <%= link_to("退出", destroy_user_session_path, method: :delete) %>
                             </li>
                         </ul>
