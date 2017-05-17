@@ -10,7 +10,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>
-        Cart <i class="fa fa-shopping-cart"> </i> (<%= current_cart.products.count %>)
+        Cart <i class="fa fa-shopping-cart"> </i> <span class="badge"><%= current_cart.products.count %></span>
           <% end %>
         </li>
         <% if !current_user %>
@@ -26,7 +26,7 @@
               <li><%= link_to(admin_products_path )do %><i class="fa fa-unlock" aria-hidden="true"></i> Admin Panel</li> <% end %>
               <% end %>
               <li><%= link_to( destroy_user_session_path, method: :delete) do %><i class="fa fa-sign-out" aria-hidden="true"> Log Out</i><% end %>
-</li>
+              </li>
             </ul>
           </li>
         <% end %>
