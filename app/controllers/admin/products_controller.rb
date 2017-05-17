@@ -6,6 +6,18 @@ class Admin::ProductsController < ApplicationController
     @products = Product.all.order("position ASC")
   end
 
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
+  end
+
   def new
     @product = Product.new
   end
@@ -33,18 +45,12 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def move_up
+  def destroy
     @product = Product.find(params[:id])
-    @product.move_higher
-    redirect_to :back
+    @product.destroy
+    redirect_to admin_products_path
   end
 
-  def move_down
-    @product = Product.find(params[:id])
-    @product.move_lower
-    redirect_to :back
-  end
-  
   private
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price, :image)
