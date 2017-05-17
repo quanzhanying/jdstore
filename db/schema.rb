@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515213622) do
+ActiveRecord::Schema.define(version: 20170517015818) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
     t.integer  "product_id"
     t.integer  "quantity",   default: 1
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "is_choosed", default: true
   end
 
   create_table "carts", force: :cascade do |t|
@@ -26,15 +27,15 @@ ActiveRecord::Schema.define(version: 20170515213622) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "total",            default: 0
+    t.decimal  "total",            precision: 10, scale: 2
     t.integer  "user_id"
     t.string   "shipping_name"
     t.string   "shipping_address"
     t.string   "shipping_number"
     t.string   "shipping_by"
     t.string   "paid_by"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.         "token"
   end
 

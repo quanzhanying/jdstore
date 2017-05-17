@@ -16,7 +16,7 @@
                   <%= link_to carts_path do %>
                   ShopCart
                   <i class="fa fa-shopping-cart"></i>
-                  (<%= current_cart.products.count %>)
+                  (<%= current_cart.cart_items.where(is_choosed: true).count %>)
                   <% end %>
                 </li>
                 <% if !current_user %>
@@ -32,7 +32,7 @@
                     <% if current_user.admin? %>
                     <li><%= link_to("Admin Panel", admin_products_path) %></li>
                     <% end %>
-                    <li><%= link_to "My Orders", admin_orders_path %></li>
+                    <li><%= link_to "My Orders", account_orders_path %></li>
                     <li><%= link_to(content_tag(:i, '登出', class:'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
                   </ul>
                 </li>

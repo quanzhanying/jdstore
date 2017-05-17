@@ -16,12 +16,19 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      patch :update_choose_staus
+    end
+  end
 
   resources :orders
 
   namespace :admin do
     resources :products
+  end
+
+  namespace :account do
     resources :orders
   end
 

@@ -7,13 +7,19 @@ class OrdersController < ApplicationController
     @order.total = current_cart.total_price
 
     if @order.save
-      current_cart.cart_items.each do |cart_item|
-        product_list = ProductList.new
-        product_list.order = @order
-        product_list.product_title = cart_item.product.title
-        product_list.product_price = cart_item.product.price
-        product_list.product_quantity = cart_item.quantity
-        product_list.save
+      current_cart.cart_items.where(is_choosed: true).each do |cart_item|
+          product_list = ProductList.new
+          product_list.order = @order
+          product_list.product_title = cart_item.product.title
+          product_list.product_price = cart_item.product.price
+          product_list.product_quantity = cart_item.quantity
+          product_list.save
+
+          binding.pry
+
+          @cart_item = current_cart.cart_items.find(cart_item)
+          @cart_item.destroy
+
       end
       redirect_to order_path(@order.token)
     else

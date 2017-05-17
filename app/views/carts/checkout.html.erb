@@ -12,11 +12,13 @@
 
       <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
-        <tr>
-          <td><%= link_to cart_item.product.title, product_path(cart_item.product)  %></td>
-          <td><%= cart_item.product.price %></td>
-          <td><%= cart_item.quantity %></td>
-        </tr>
+          <% if cart_item.is_choosed%>
+            <tr>
+              <td><%= link_to cart_item.product.title, product_path(cart_item.product)  %></td>
+              <td><%= cart_item.product.price %></td>
+              <td><%= cart_item.quantity %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
@@ -57,7 +59,7 @@
         <%= f.submit "CheckOut", class:"btn btn-lg btn-danger pull-right", data:{disable_with:"Submiting..."} %>
       </div>
       <% end %>
-
+      
     </div>
   </div>
 </div>
