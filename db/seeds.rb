@@ -53,7 +53,7 @@ image: open("http://jscss.hdwo.net/wp-content/uploads/2015/01/zhe-ge-sha-shou-bu
   )
   puts "Product 2 建立成功"
 
-  Product.create(
+Product.create(
   title: "阿甘正传 Forrest Gump (1994)",
   description: "阿甘（汤姆·汉克斯 饰）于二战结束后不久出生在美国南方阿拉巴马州一个闭塞的小镇，他先天弱智，智商只有75，然而他的妈妈是一个性格坚强的女性，她常常鼓励阿甘“傻人有傻福”，要他自强不息。
 　　阿甘像普通孩子一样上学，并且认识了一生的朋友和至爱珍妮（罗宾·莱特·潘 饰），在珍妮和妈妈的爱护下，阿甘凭着上帝赐予的“飞毛腿”开始了一生不停的奔跑。
