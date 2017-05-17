@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  helper_method :current_cart
 
   def admin_required
     if !current_user.admin?
@@ -7,7 +8,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_cart
 
   def current_cart
     @current_cart ||= find_cart
