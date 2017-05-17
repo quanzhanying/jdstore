@@ -12,11 +12,13 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image       :string
+#  category_id :integer
 #
 
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
+  belongs_to :category
 
   scope :selling, -> { where(can_sell: true) } #选出正在销售中的商品
 

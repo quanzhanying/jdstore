@@ -1,3 +1,36 @@
+<!-- 在商品列表中增加分类显示的按钮 -->
+
+  <div class="row">
+<% if params[:controller] == ('products') && params[:action] == ('show') %>
+  <div class="menu-wrap">
+    <ul class="menuList">
+      <li class="menuList-item">
+        <%= link_to("首页", products_path)%>
+      </li>
+      <% Category.all.each do |category| %>
+        <li class="menuList-item <%= 'menuList-activeItem' if @product.category.name == category.name %>">
+          <%= link_to category.name, products_path(category: category.name), class: "link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="menu-wrap">
+    <ul class="menuList">
+      <li class="menuList-item <%= 'menuList-activeItem' if !params[:category] %>">
+        <%= link_to("首页", products_path)%>
+      </li>
+      <% Category.all.each do |category| %>
+        <li class="menuList-item <%= 'menuList-activeItem' if params[:category] == category.name %>">
+          <%= link_to category.name, products_path(category: category.name), class: "link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  </div>
+
+<% end %>
+<!-- 分类显示按钮结束 -->
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">

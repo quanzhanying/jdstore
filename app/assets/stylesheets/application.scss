@@ -17,3 +17,50 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
  @import 'font-awesome';
+
+ // 通用的css代码
+
+// 通用的css代码结束
+
+// 导航栏
+
+// 导航栏结束
+
+ // 菜单
+.menu-wrap {
+  background: #333333;
+  color: #fff;
+  margin-top: 0;
+}
+.menuList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #333333;
+  overflow: hidden;
+  height: 42px;
+  line-height: 42px;
+  width: 1200px;
+  font-size: 16px;
+  margin-left: 50px !important;
+  margin-right: auto !important;
+}
+.menuList-item {
+  float: left;
+  a {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+  }
+  padding: 0 22px;
+  cursor: pointer;
+}
+.menuList-item:hover {
+  background-color: #434343;
+}
+.menuList-activeItem {
+  background: #D32048;
+}
+.menuList-activeItem:hover {
+  background: #D32048;
+}

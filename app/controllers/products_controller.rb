@@ -2,7 +2,12 @@ class ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :show]
   before_action :validate_search_key, only: [:search]
   def index
-    @products = Product.selling
+    if params[:category].blank?
+      @products = Product.selling
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(:category_id => @category_id)
+    end
   end
 
   def show
@@ -46,6 +51,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :stock, :price, :can_sell, :image)
+    params.require(:product).permit(:name, :description, :stock, :price, :can_sell, :image, :category_id)
   end
 end

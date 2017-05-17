@@ -16,6 +16,7 @@
     <div style="height:100px;">
       <p><%= @product.description %></p>
     </div>
+    <div>类别:<%= @product.category.name %></div>
     <div>库存: <%= @product.stock %></div>
     <div class="product-price"> ￥ <%= @product.price %></div>
     <div class="pull-right">
