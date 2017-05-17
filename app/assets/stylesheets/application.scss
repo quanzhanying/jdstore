@@ -19,22 +19,219 @@
  @import "bootstrap";
  @import "font-awesome";
  @import "cryptocoins.css";
- @import "css/cryptocoins-colors.css";
+ // @import "css/cryptocoins-colors.css";
 
  body {
    padding-top: 1px;
-   font-family: "Open Sans",serif;
    font-size: 16px;
  }
 
+ /* TOP HEADER
+-------------------------------------------------- */
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2%;
+}
+.content {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 2% 50px;
+}
+.main_header .row .content {
+  padding: 0;
+}
+
+.main_header {
+  position: fixed;
+  top: 0px;
+  max-height: auto;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  background: none;
+  transition: all 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+}
+@media only screen and (max-width: 766px) {
+  .main_header {
+    padding-top: 25px;
+  }
+}
+
+.open-nav {
+  max-height: 400px !important;
+}
+.open-nav .mobile-toggle {
+  transform: rotate(-90deg);
+}
+
+.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid silver;
+}
+
+.logo {
+  width: 50px;
+  font-size: 25px;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.logo img {
+  height: 40px;
+  color: #337ab7;
+}
+@media only screen and (max-width: 766px) {
+  .logo {
+    float: none;
+  }
+}
+
+nav {
+  float: right;
+  width: 60%;
+}
+@media only screen and (max-width: 766px) {
+  nav {
+    width: 100%;
+  }
+}
+nav ul {
+  list-style: none;
+  text-align: right;
+  float: right;
+}
+@media only screen and (max-width: 766px) {
+  nav ul {
+    padding-top: 10px;
+    margin-bottom: 22px;
+    float: left;
+    text-align: center;
+    width: 100%;
+  }
+}
+nav ul li {
+  display: inline-block;
+  margin-left: 35px;
+  line-height: 1.5;
+}
+@media only screen and (max-width: 766px) {
+  nav ul li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+  }
+}
+nav ul a {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 500ms linear;
+}
+nav ul a.active {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  transition: all 500ms 100ms linear;
+}
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  transition: all 200ms ease-in;
+}
+@media only screen and (max-width: 766px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+.mouse {
+  display: block;
+  margin: 0 auto;
+  width: 26px;
+  height: 46px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 13px;
+  border: 2px solid #ffffff;
+  position: absolute;
+  bottom: 95px;
+  position: absolute;
+  left: 51%;
+  margin-left: -24px;
+}
+.mouse span {
+  display: block;
+  margin: 6px auto;
+  width: 2px;
+  height: 2px;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid transparent;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+.scrollup {
+    color: rgba(0,0,0,0.3);
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    display: none;
+    bottom: 50px;
+    right: 100px;
+}
+
+/*-------------nav-end----------*/
+
  .jumbotron h1 {
-   font-family: "Abel", Arial, sans-serif;
+   font-family: sans-serif;
    color: #8a6d3b;
  }
 
 
  .jumbotron p {
-   font-family: "Abel", Arial, sans-serif;
+   font-family: sans-serif;
    color: #fff;
  }
 
@@ -109,7 +306,3 @@
    -o-transform: scale(1.3,1.3);
    transform: scale(1.3,1.3);
  }
-
- .fa-facebook-official { color: #3b5998; }
- .fa-twitter-square { color: #55acee;}
- .fa-github-square { color: black;}
