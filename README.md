@@ -1,3 +1,3 @@
 # README
 
-create order&ship info page
+add Order_mail function
