@@ -20,4 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    messages:
+      mini_magick_processing_error: "mini magick 处理错误"
   hello: "Hello world"
