@@ -38,13 +38,15 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
 gem 'rails-erd'
-gem 'awesome_rails_console'
+
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'awesome_rails_console'
+  gem 'pry'
 end
 
 group :development do
