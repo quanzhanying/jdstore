@@ -4,10 +4,45 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
       /* Email styles need to be inline */
+      h2  {
+        color: #ff0000;
+      }
+
+      div.mail {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+      }
+
+      div.mail-footer {
+        height: 50px;
+        background-color: #eee;
+        overflow: visible;
+        text-align: center;
+        padding: 10px;
+      }
+
+      p.small {
+        line-height: 70%;
+      }
+
+      table.mail{
+        margin:auto;
+        width: 80%;
+      }
+
+      .mail-product-lists {
+        border-top: 1px solid rgb(45,55,65);
+        text-align: right;
+        margin: 0;
+      }
+
+
     </style>
   </head>
 
   <body>
+
     <%= yield %>
   </body>
 </html>

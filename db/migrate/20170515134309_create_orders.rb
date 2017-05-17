@@ -6,8 +6,6 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.string  :shipping_name
       t.string  :shipping_address
       t.string  :shipping_number
-      t.string  :shipping_by
-      t.string  :paid_by
       t.timestamps
     end
   end

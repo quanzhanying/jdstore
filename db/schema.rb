@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 20170517090154) do
     t.string   "shipping_name"
     t.string   "shipping_address"
     t.string   "shipping_number"
-    t.string   "shipping_by"
-    t.string   "paid_by"
     t.datetime "created_at",                                                null: false
     t.datetime "updated_at",                                                null: false
     t.         "token"
