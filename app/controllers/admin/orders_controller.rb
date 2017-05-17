@@ -24,7 +24,7 @@ class Admin::OrdersController < ApplicationController
     @order.cancel_order!
     redirect_to :back
   end
-  def renturn
+  def return
     @order = Order.find(params[:id])
     @order.return_good!
     redirect_to :back
