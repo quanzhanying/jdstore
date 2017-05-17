@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   resources :orders
 
   root "products#index"
+
+  namespace :account do
+    resources :orders
+  end
 end
