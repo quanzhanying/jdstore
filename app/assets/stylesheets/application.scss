@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+//-------Footer always on the bottom----
+ html {
+    //sposition: relative;
+    min-height: 100%;
+  }
+
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 100px;
+  }
+
+
+//----------navbar---------------
+.navbar-default {
+      background-color: #212121;
+      border-color: #212121;
+      margin-bottom: 0;
+      border-radius: 0;
+  }
+
+  .navbar-default .navbar-brand {
+      color: #EF6C00;
+      padding: 10px 15px;
+      line-height: 30px;
+  }
+
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+      color: #FF6F00;
+      background-color: transparent;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+      color: #EF6C00;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a:focus {
+      color: #FF6F00;
+      background-color: transparent;
+  }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+      color: #FF6F00;
+      background-color: #FFE0B2;
+  }
+
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:focus,
+  .navbar-default .navbar-nav > .open > a:hover {
+      background-color: #FFE0B2;
+      color: #212121;
+  }
+
+  //----------Footer---------------
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+   height: 100px;
+    background-color: #233140;
+
+    p {
+      color: white;
+      margin-top: 30px;
+    }
+  }
