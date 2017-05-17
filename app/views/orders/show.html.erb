@@ -72,7 +72,9 @@
 
 
     <!-- 付款方式 以及判断是否已结账 -->
-    <% if !@order.is_paid? %>
+    <% if @order.order_cancelled? %>                        <!-- 这里解决了教程上面的一个bug，即用户未付款却要求取消订单，在订单取消后，该笔订单不能再付款，应显示为已取消状态。-->
+      <p class="text-center">此订单已取消</p>
+    <% elsif !@order.is_paid? %>
       <div class="group pull-right">
         <%= link_to("以支付宝支付", pay_whit_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
         <%= link_to("以微信支付", pay_whit_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
