@@ -19,4 +19,24 @@ before_create :generate_token
    def pay!
      self.update_columns(is_paid: true )
    end
-end
+
+   include AASM
+
+   aasm do
+     state :order_placed,initial: true
+     state :paid
+     state :shipping
+     state :shipped
+     state :order_cancelled
+     state :good_returned
+
+      event :make_payment, after_commit: :pay! do
+       transitions from: :order_placed, to: :paid
+     end
+
+     event :ship do
+       transitions from: :paid,  to: :shipping
+     end
+
+     end
+   end
