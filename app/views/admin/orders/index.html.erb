@@ -1,0 +1,41 @@
+<div>
+  <h2>My Orders</h2>
+  <table class="table table-bordered">
+    <% @orders.each do |order| %>
+      <tr>
+        <th colspan="3">
+          <span>
+            <span>Order Time</span>
+            <span><%= order.created_at %></span>
+          </span>
+          <span>
+            <span>Order_ID:</span>
+            <span><%= order.id %></span>
+          </span>
+        </th>
+
+        <tr>
+          <td>
+            <div>
+              <span></span>
+              <div>
+                <%= link_to(order.product_lists.first.product_title, admin_order_path(order.token)) %>
+              </div>
+              <div class="">
+                Package 1
+              </div>
+              <div class="">
+                <%= order.paid_by %>
+              </div>
+            </div>
+          </td>
+          <td><%= order.total %></td>
+          <td>
+            <%= link_to "Order Detail", admin_order_path(order.token) %>
+            <%= link_to "Cancel Order", "#" %>
+          </td>
+        </tr>
+      </tr>
+    <% end %>
+  </table>
+</div>
