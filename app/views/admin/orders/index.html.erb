@@ -22,17 +22,15 @@
                 <%= link_to(order.product_lists.first.product_title, admin_order_path(order.token)) %>
               </div>
               <div class="">
-                Package 1
-              </div>
-              <div class="">
-                <%= order.paid_by %>
+                订单状态：<%= order.aasm_state %>
               </div>
             </div>
           </td>
           <td><%= order.total %></td>
           <td>
-            <%= link_to "Order Detail", admin_order_path(order.token) %>
-            <%= link_to "Cancel Order", "#" %>
+            <%= link_to "查看订单", admin_order_path(order.token) %>
+            <%= link_to "取消订单", "#" %>
+            <%= link_to "出货","#" %>
           </td>
         </tr>
       </tr>

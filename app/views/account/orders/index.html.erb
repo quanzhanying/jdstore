@@ -5,6 +5,7 @@
     <tr>
       <td>#</td>
       <td>生成时间</td>
+      <td>订单管理</td>
     </tr>
   </thead>
 
@@ -13,6 +14,7 @@
     <tr>
       <td><%= link_to order.id, order_path(order.token) %></td>
       <td><%= order.created_at.to_s(:long) %></td>
+      <td><%= link_to "取消订单", %></td>
     </tr>
     <% end %>
   </tbody>
