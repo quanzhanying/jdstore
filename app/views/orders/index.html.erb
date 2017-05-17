@@ -1,3 +1,37 @@
-<div class="container-fluid">
-  <h2>订单列表</h2>
+<div class="row">
+    <div class="col-md-12">
+      <h2>订单列表</h2>
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>订单编号</th>
+              <th>收货人</th>
+              <th>收货人地址</th>
+              <th>付款人</th>
+              <th>付款地址</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.each do |order| %>
+              <tr>
+                <td>
+                  <%= order.token %>
+                </td>
+                <td>
+                  <%= order.shipping_name %>
+                </td>
+                <td>
+                  <%= order.shipping_address %>
+                </td>
+                <td>
+                  <%= order.billing_name %>
+                </td>
+                <td>
+                  <%= order.billing_address %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+    </div>
 </div>

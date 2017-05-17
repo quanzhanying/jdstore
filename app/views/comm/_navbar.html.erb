@@ -21,6 +21,9 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi!,<%= current_user.email %>
             <b class="caret"></b></a>
             <ul class="dropdown-menu">
+              <li>
+                <%= link_to("我的订单", orders_path) %>
+              </li>
               <% if current_user.is_admin? %>
               <li>
                 <%= link_to("管理", admin_products_path) %>
