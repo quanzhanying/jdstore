@@ -25,9 +25,9 @@ end
   end
 
   resources :orders do
-    memeber do
+    member do
       post :pay_with_alipay
       post :pay_with_wechat
     end
-  end 
+  end
 end
