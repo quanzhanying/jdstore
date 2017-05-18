@@ -284,13 +284,6 @@ nav ul a.active {
    padding-bottom: 50px;
  }
 
- .footer-panel {
-   background-color: rgba(0,0,0,1);
-   border: 0px;
-   padding-top: 20px;
-   padding-bottom: 30px;
- }
-
  .social li, .social img:hover {
      -webkit-transition: -webkit-transform .7s;
      -moz-transition: -moz-transform .7s;
@@ -306,3 +299,78 @@ nav ul a.active {
    -o-transform: scale(1.3,1.3);
    transform: scale(1.3,1.3);
  }
+
+ /* Footer 2 */
+footer.bg-color-2 {
+  background: #f8f8f8;
+  color: #666666;
+}
+footer.footer-2 .logo-footer {
+  margin-bottom: 35px;
+}
+footer.footer-2 .social-icons-2 {
+  margin-top: 20px;
+}
+footer.footer-2 .social-icons-2 a {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  font-size: 15px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background: transparent;
+  color: #888888;
+  margin-right: 5px;
+  border: 1px solid #e6e6e6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+footer.footer-2 .social-icons-2 a:hover {
+  background: #29b6f6;
+  border-color: #29b6f6;
+  color: #ffffff;
+}
+footer.footer-2 .social-icons-2 a.email:hover {
+  background-color: #D11516;
+  border-color: #D11516;
+}
+footer.footer-2 .social-icons-2 a.github:hover {
+  background-color: #2f2f2f;
+  border-color: #2f2f2f;
+}
+footer.footer-2 .footer-contact {
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+footer.footer-2 .footer-contact ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  max-width: 450px;
+  display: inline-block;
+}
+footer.footer-2 .footer-contact ul li {
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+footer.footer-2 .footer-contact ul li .fa {
+  margin-right: 5px;
+}
+footer.footer-2 .footer-contact ul li span {
+  display: inline-block;
+  margin-left: 15px;
+}
+footer.footer-2 .sub-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+footer .sub-footer {
+  padding: 30px 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
