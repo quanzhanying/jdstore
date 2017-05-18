@@ -119,19 +119,26 @@
           <div class="productDetail-content pt30 tc pb20">
               <div class="productDetail-evaluation w200 bc">
                   <div class="intro-text-count clearfix mt10">
-                      <div class="fl mr10">味道:
+                      <div class="fl mr10">功能:
                       </div>
                       <div class="star-rating" data-score=<%= @avg_function %>></div>
                   </div>
                   <div class="intro-text-count clearfix mt10">
-                      <div class="fl mr10">外观:
+                      <div class="fl mr10">设计:
                       </div>
                       <div class="star-look" data-score=<%= @avg_design %>></div>
                   </div>
                   <div class="intro-text-count clearfix mt10">
-                      <div class="fl mr10">价格:
+                      <div class="fl mr10">体验:
+                        <!-- <ul class="rating">
+                          <li class="star star1" data-index="1">&star;</li>
+                          <li class="star star2" data-index="2">&star;</li>
+                          <li class="star star3" data-index="3">&star;</li>
+                          <li class="star star4" data-index="4">&star;</li>
+                          <li class="star star5" data-index="5">&star;</li>
+                        </ul> -->
                       </div>
-                      <div class="star-price" data-score=<%= @avg_experience %>></div>
+                      <div class="star-experience" data-score=<%= @avg_experience %>></div>
                   </div>
               </div>
               <ul class="commentList mt70">
@@ -161,3 +168,13 @@
           </div>
         </div>
     </div>
+
+<ul class="rating">
+  <li class="star star1" data-index="1">&star;</li>
+  <li class="star star2" data-index="2">&star;</li>
+  <li class="star star3" data-index="3">&star;</li>
+  <li class="star star4" data-index="4">&star;</li>
+  <li class="star star5" data-index="5">&star;</li>
+</ul>
+
+<span class="star-info"> </span>

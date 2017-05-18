@@ -27,7 +27,11 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-
+     if params[:comment_pictures] != nil
+        params[:comment_pictures]['picture'].each do |a|
+          @comment_picture = @comment.comment_pictures.create(:picture => a)
+        end
+      end
       redirect_to product_path(@product)
     else
       render :new

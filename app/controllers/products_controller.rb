@@ -9,15 +9,15 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @photos = @product.photos.all
     @comments = @product.comments.includes(:comment_pictures).includes(:user)
-    # if @comments.blank?
+    if @comments.blank?
     #   @avg_function = 0
     #   @avg_design = 0
-    #   @avg_price = 0
-    # else
+      @avg_experience = 0
+    else
     #   @avg_function = @comments.average(:function).round(2)
     #   @avg_design = @comments.average(:design).round(2)
-    #   @avg_experience = @comments.average(:experience).round(2)
-    # end
+      @avg_experience = @comments.average(:experience).round(1).to_i
+    end
   end
 
   def add_to_cart

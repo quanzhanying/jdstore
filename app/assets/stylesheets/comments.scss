@@ -9,3 +9,29 @@
     color: #333;
   }
 }
+
+/*评星功能*/
+.rating li
+{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 100px;
+  list-style-type: none;
+}
+
+.star,
+{
+  /*
+  正常情况下全黑
+  normal state */
+  color: black;
+}
+
+.selected{
+  // 鼠标悬停在一个星星上，这个选中的星星以及前面的星星都变色。
+  color: red;
+}
+
+.test{
+  color:green;
+}
