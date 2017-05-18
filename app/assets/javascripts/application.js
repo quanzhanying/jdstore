@@ -17,6 +17,7 @@
 //= require bootstrap/dropdown
 //= require_tree .
 
+//-------float button(qq & go top)--------
 $(function() {
     $("#usr_rmenu").each(function() {
         $(this).find(".btn-top").click(function() {
@@ -43,3 +44,4 @@ $(function() {
         }
     })
 });
+//-------float button(qq & go top) end--------
