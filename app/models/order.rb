@@ -22,7 +22,7 @@ class Order < ApplicationRecord
 
    include AASM
 
-   aadm do
+   aasm do
       state :order_placed, initial: true
       state :paid
       state :shippind
