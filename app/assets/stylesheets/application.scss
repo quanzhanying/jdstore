@@ -19,8 +19,21 @@
  @import 'font-awesome';
 
  // 通用的css代码
+ body {
+   color: #2E2E2E;
+   font-family: "Microsoft Yahei",verdana;
+   background: #FFFFFF;
+ }
+ a:hover {
+   color: #C81623;
+   text-decoration: none;
+ }
+ .btn-md {
+   text-decoration: none !important;
+ }
 
 // 通用的css代码结束
+
 
 // 导航栏
 
@@ -42,7 +55,7 @@
   line-height: 42px;
   width: 1200px;
   font-size: 16px;
-  margin-left: 50px !important;
+  margin-left: auto !important;
   margin-right: auto !important;
 }
 .menuList-item {
@@ -64,3 +77,66 @@
 .menuList-activeItem:hover {
   background: #D32048;
 }
+
+// 商品排序显示
+.order {
+  background: #333;
+  height: 44px;
+  line-height: 44px;
+  margin-top:30px;
+  width:1200px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  color: #fff;
+  p.title {
+    float:left;
+    display:inline;
+    height: 44px;
+    line-height: 44px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .orderList {
+    float:left;
+    display:inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    // background: #333333;
+    overflow: hidden;
+    height: 42px;
+    line-height: 42px;
+    // width: 1200px;
+    font-size: 14px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.orderList a {
+  color: #fff;
+}
+
+.orderList-orderItem {
+  float:left;
+  display:inline;
+  padding-left:20px;
+  padding-right:20px;
+  color: #fff !important;
+  cursor: pointer;
+}
+.orderList-activeItem a {
+  color: #d32048;
+}
+
+// 点赞
+.like a {
+  color: #DD2C00;
+}
+// 点赞结束
+
+// 收藏和取消收藏
+.favorite a {
+  color: #DD2C00;
+}
+// 收藏和取消收藏结束

@@ -19,7 +19,7 @@
     <div>类别:<%= @product.category.name %></div>
     <div>库存: <%= @product.stock %></div>
     <div class="product-price"> ￥ <%= @product.price %></div>
-    <div>
+    <div class="like">
       <!-- 点赞的view部分 -->
       <%= link_to like_product_path(@product), method: :put do %>
         <div class="pi-thumbs-up">
@@ -28,7 +28,8 @@
         </div>
       <% end %>
       <!-- 点赞的view部分结束 -->
-
+    </div>
+    <div class="favorite">
       <!-- 收藏商品和取消商品view部分 -->
       <% if !@product.fans.include?(current_user) %>
         <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart") %>

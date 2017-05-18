@@ -26,6 +26,7 @@ class Product < ApplicationRecord
 
   acts_as_votable  #点赞功能
 
-  scope :selling, -> { where(can_sell: true) } #选出正在销售中的商品
+  scope :selling, -> { where(can_sell: true) } # 选出正在销售中的商品
+  scope :recent, -> { order('created_at DESC') }  #按照发布时间的顺序
 
 end

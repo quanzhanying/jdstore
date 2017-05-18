@@ -2,11 +2,26 @@ class ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :show]
   before_action :validate_search_key, only: [:search]
   def index
+    # 商品列表排序功能和不同种类分类显示功能
     if params[:category].blank?
-      @products = Product.selling
+      @products = case params[:order]
+      when 'by_product_stock'
+        Product.selling.order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+      when 'by_product_price'
+        Product.selling.order('price DESC').paginate(:page => params[:page], :per_page => 10)
+      else
+      @products = Product.selling.recent.paginate(:page => params[:page], :per_page => 10)
+      end
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(:category_id => @category_id)
+      @products = case params[:order]
+      when 'by_product_stock'
+        Product.where(:category_id => @category_id).order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+      when 'by_product_price'
+        Product.where(:category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
+      else
+      @products = Product.where(:category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 10)
+      end
     end
   end
 
