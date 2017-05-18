@@ -5,6 +5,7 @@
     <tr>
       <td>#</td>
       <td>生成时间</td>
+      <td>订单状态</td>
       <td>订单管理</td>
     </tr>
   </thead>
@@ -14,7 +15,15 @@
     <tr>
       <td><%= link_to order.id, order_path(order.token) %></td>
       <td><%= order.created_at.to_s(:long) %></td>
-      <td><%= link_to "取消订单", %></td>
+      <td><%= render_order_state(order.aasm_state )%></td>
+      <td>
+        <% if order.can_be_cancelled? %>
+          <%= link_to "取消订单",cancel_account_order_path(order.token), method: :post, class:"btn-sx btn-danger", data:{confirm: "确定要取消本订单么？"} %>
+        <% end %>
+        <% if order.can_be_returned? %>
+          <%= link_to "我要退货",return_account_order_path(order.token), method: :post, class:"btn-sx btn-danger", data:{confirm: "确定要退货么？"} %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

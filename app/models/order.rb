@@ -27,7 +27,7 @@ class Order < ApplicationRecord
     state :order_placed, initial: true
     state :paid
     state :shipping
-    state :shipeed
+    state :shipped
     state :order_cancelled
     state :good_returned
 
@@ -47,9 +47,25 @@ class Order < ApplicationRecord
       transitions from: :shipped, to: :good_returned
     end
 
-    event :cancel_order do
+    event :cancel_order  do
       transitions from: [:order_placed, :paid], to: :order_cancelled
     end
+  end
+
+  def paid
+    self.aasm_state != "order_placed"
+  end
+
+  def can_be_cancelled?
+    self.aasm_state == "order_placed" || self.aasm_state == "paid"
+  end
+
+  def can_be_returned?
+    self.aasm_state == "shipped"
+  end
+
+  def can_be_shipped?
+    self.aasm_state == "paid"
   end
 
 end

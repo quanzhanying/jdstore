@@ -19,18 +19,22 @@
             <div>
               <span></span>
               <div>
-                <%= link_to(order.product_lists.first.product_title, admin_order_path(order.token)) %>
+                <%= link_to(order.product_lists.first.product_title, admin_order_path(order)) %>
               </div>
               <div class="">
-                订单状态：<%= order.aasm_state %>
+                订单状态：<%= render_order_state(order.aasm_state) %>
               </div>
             </div>
           </td>
           <td><%= order.total %></td>
           <td>
             <%= link_to "查看订单", admin_order_path(order.token) %>
-            <%= link_to "取消订单", "#" %>
-            <%= link_to "出货","#" %>
+            <% if order.can_be_cancelled? %>
+              <%= link_to "取消订单", cancel_admin_order_path(order), method: :post, data:{confirm:"确认要取消用户的订单么？"} %>
+            <% end %>
+            <% if order.can_be_shipped? %>
+              <%= link_to "出货",ship_admin_order_path(order), method: :post, data:{confirm:"确认为本订单发货么？"} %>
+            <% end %>
           </td>
         </tr>
       </tr>
