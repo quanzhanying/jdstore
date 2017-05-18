@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :orders
+
   resources :carts do
     collection do
       delete :clean
