@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20170517035144) do
   end
 
   create_table "product_lists", force: :cascade do |t|
-    t.integer  "oder_id"
+    t.integer  "order_id"
     t.string   "product_name"
     t.integer  "product_price"
     t.integer  "quantity"
