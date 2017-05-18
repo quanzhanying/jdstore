@@ -58,6 +58,39 @@
     font-weight:lighter;                                   //字体粗细比默认样式缩小100磅值，让logo显得精致高级
   }
 
+  // 搜索栏设置
+  #custom-search-input{
+    padding: 1px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+
+  #custom-search-input input{
+      border: 0;
+      box-shadow: none;
+  }
+
+  #custom-search-input button{
+      margin: 2px 0;
+      background: none;
+      box-shadow: none;
+      border: 0;
+      color: #666666;
+      padding: 0 8px 0 10px;
+      border-left: solid 1px #ccc;
+  }
+
+  #custom-search-input button:hover{
+      border: 0;
+      box-shadow: none;
+      border-left: solid 1px #ccc;
+  }
+
+  #custom-search-input .glyphicon-search{
+      font-size: 15px;
+  }
+
   // 中间区域介绍内容样式
   .landing-page-mid {                                   //给图片整好形
     height: 534px;
@@ -177,4 +210,12 @@
     text-align: justify;
     line-height: 2em;
     letter-spacing: 0.1em;
+  }
+
+
+  //搜索页面样式 search.html.erb
+  .search-info-title {
+    font-weight: lighter;
+    color: #7f8c8d;
+    text-align: center;
   }

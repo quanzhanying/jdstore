@@ -39,7 +39,7 @@ gem 'aasm'
 # 分页
 gem 'will_paginate-bootstrap'
 
-# 搜索 
+# 搜索
 gem 'ransack'
 
 # 文本编辑器支持gem
