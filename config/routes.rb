@@ -23,4 +23,8 @@ Rails.application.routes.draw do
     resources :cart_items
     resources :orders
 
+    namespece :account do
+      resources :orders
+    end
+
 end
