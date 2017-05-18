@@ -21,16 +21,15 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
     @product = Product.find(params[:product_id])
-
+    @comment = Comment.new(comment_params)
     @comment.product = @product
     @comment.user = current_user
 
     if @comment.save
-     if params[:graphics] != nil
-        params[:graphics]['avatar'].each do |a|
-          @graphic = @comment.graphics.create(:avatar => a)
+     if params[:comment_pictures] != nil
+        params[:comment_pictures]['picture'].each do |a|
+          @comment_picture = @comment.comment_pictures.create(:picture => a)
         end
       end
       redirect_to product_path(@product)

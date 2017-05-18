@@ -97,8 +97,8 @@
     <!-- 下方内容 -->
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="tab">
-            <button class="tablinks" data-toggle="tab" data-option="商品详情" id="defaultOpen">商品详情</button>
-            <button class="tablinks" data-toggle="tab" data-option="商品评价">商品评价(<%= @product.comments.count%>)</button>
+            <button class="tablinks" data-toggle="tab" data-option="商品详情" >商品详情</button>
+            <button class="tablinks" data-toggle="tab" data-option="商品评价" id="defaultOpen">商品评价(<%= @product.comments.count%>)</button>
         </div>
         <div id="商品详情" class="tabcontent">
           <div class="productDetail-content pt20 tc pb20" style="display: block;">
@@ -121,17 +121,17 @@
                   <div class="intro-text-count clearfix mt10">
                       <div class="fl mr10">味道:
                       </div>
-                      <div class="star-rating" data-score=<%= @avg_comment %>></div>
+                      <div class="star-rating" data-score=<%= @avg_function %>></div>
                   </div>
                   <div class="intro-text-count clearfix mt10">
                       <div class="fl mr10">外观:
                       </div>
-                      <div class="star-look" data-score=<%= @avg_look %>></div>
+                      <div class="star-look" data-score=<%= @avg_design %>></div>
                   </div>
                   <div class="intro-text-count clearfix mt10">
                       <div class="fl mr10">价格:
                       </div>
-                      <div class="star-price" data-score=<%= @avg_price %>></div>
+                      <div class="star-price" data-score=<%= @avg_experience %>></div>
                   </div>
               </div>
               <ul class="commentList mt70">
