@@ -26,19 +26,19 @@ Product.create!(title: "QC-35",
   description: "耳机",
   price: 2800,
   quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
+  image: open("http://media.nintendo.com/nintendo/bin/pnQltLVy8aGp5q6xq04dWUJbygjIEuZg/VBJPUsIXYslEBuSR8-YCNYmBzvWqKRpN.jpg")
   )
 
 Product.create!(title: "Iphone7",
   description: "手机",
   price: 5000,
   quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
+  image: open("http://media.nintendo.com/nintendo/bin/asUarutBdpoEfUN9RRw62YyCHLe5bnz7/3Imp6pfRvpmw7aHawbDOew7O3QppdGMB.jpg")
   )
 
 Product.create!(title: "Cherry Keyboard",
   description: "G80-3000键盘",
   price: 2800,
   quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
+  image: open("http://media.nintendo.com/nintendo/bin/Ty3W0eXgbtDl4YutYUfJD5Yz7w7t3tGE/WbCZQBhTu-vYQxCpay3PB2HGUFVKksaI.jpg")
   )
