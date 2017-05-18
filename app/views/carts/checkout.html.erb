@@ -20,7 +20,7 @@
             <%= cart_item.product.price %>
           </td>
           <td>
-            <%= cart_item.product.quantity %>
+            <%= cart_item.quantity %>
           </td>
         </tr>
         <% end %>
@@ -54,9 +54,10 @@
             <%= f.input :billing_address %>
           </div>
 
-        <div class="checkout">
-          <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right", data: { disable_with: "Submitting..."} %>
-        </div>
+          <div class="checkout">
+            <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
+                         data: { disable_with: "Submitting..." } %>
+          </div>
       <% end %>
 
     </div>
