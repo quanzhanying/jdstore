@@ -139,10 +139,10 @@
                   <% @comments.each do |comment| %>
                   <li class="commentList-item w700 pt10 pb10 bc clearfix">
                       <p class="fl content tl f12">
-                          <%= emojify comment.content  %><br>
-                          <% if comment.graphics.present? %>
-                          <% comment.graphics.each_with_index do |p, index| %>
-                          <%= image_tag p.avatar.medium.url, class: "commentImage no-border" %>
+                          <%= comment.content  %><br>
+                          <% if comment.comment_pictures.present? %>
+                          <% comment.comment_pictures.each_with_index do |p, index| %>
+                          <%= image_tag p.picture.medium.url, class: "commentImage no-border" %>
                           <% end %>
                           <% end %>
                           <br>
