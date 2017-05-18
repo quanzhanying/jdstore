@@ -33,6 +33,7 @@ gem 'font-awesome-rails'
 gem 'will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'letter_opener', group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
