@@ -28,7 +28,7 @@
       <!-- 商品价格 -->
       <div class="product-price-bgcolor">
         <div class="product-price">
-          ￥ <%= @product.price %>
+          ￥ <%= @product.price %> <span class="RMB">RMB</span>
         </div>
       </div>
 
@@ -41,7 +41,7 @@
 
           <!-- 商品产地 -->
           <div class="product-quantity">
-            生产地： 日本 (正品保障)
+            生产地： <%= @product.yieldly %> （正品保障）
           </div>
         </div>
 
