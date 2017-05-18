@@ -1,24 +1,8 @@
 # README
+jdstore 第一周作业
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 套上 Bootstrap
+* 套上 Devise
+* 套上 SimpleForm
+* 可以登入、登出
