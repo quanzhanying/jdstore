@@ -10,12 +10,13 @@ class Admin::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @product_lists = @order.products_lists
+    @product_lists = @order.product_lists
   end
 
   def ship
     @order = Order.find(params[:id])
     @order.ship!
+    OrderMailer.notify_ship(@order).deliver!
     redirect_to :back
   end
 
@@ -26,8 +27,9 @@ class Admin::OrdersController < ApplicationController
   end
 
   def cancel
-    @order = Oeder.find(params[:id])
+    @order = Order.find(params[:id])
     @order.cancel_order!
+    OrderMailer.notify_cancel(@order).deliver
     redirect_to :back
   end
 

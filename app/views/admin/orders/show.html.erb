@@ -2,6 +2,8 @@
   <div class="col-md-12">
     <h2>订单明细 (<%= render_order_paid_state(@order) %>)</h2>
 
+    <%= render "admin/orders/state_option", order: @order %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -52,10 +54,10 @@
           <td>收件人</td>
         </tr>
         <tr>
-          <td><%= @order.shipping_name %> - <%= order.shipping_address %></td>
+          <td><%= @order.shipping_name %> - <%= @order.shipping_address %></td>
         </tr>
       </tbody>
     </table>
-    
+
   </div>
 </div>
