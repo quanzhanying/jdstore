@@ -11,7 +11,6 @@
         <%= f.input :email, :label =>"邮箱地址" , required: true, autofocus: true %>
         <%= f.input :password, :label => "登录密码",required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation,:label => "密码确认", required: true %>
-        <%= f.input :is_admin,:label => "权限", as: :radio_buttons, collection: [['买家', false],['卖家', true]], required: true %>
 
       </div>
 
