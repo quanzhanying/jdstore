@@ -55,14 +55,16 @@
 
     </table>
 
-    <% if @order.is_paid %>
-    <p class="text-center">
-      此单已完成付款
+    <% if !@order.can_pay? %>
+    <p class="text-center order_state">
+      <%= @order.pay_state_info %>
     </p>
     <% else %>
     <div class="group pull-right">
+
       <%= link_to("以支付宝支付", pay_with_ailipay_order_path(@order.token), :method => :post, class: "btn btn-lg btn-danger" ) %>
       <%= link_to("以微信支付", pay_with_wechat_order_path(@order.token), :method => :post, class: "btn btn-lg btn-danger" ) %>
+
     </div>
     <% end %>
   </div>

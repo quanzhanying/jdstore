@@ -53,10 +53,28 @@ class Order < ApplicationRecord
   end
 
   def pay_state_info
-    if self.is_paid
+    if self.aasm_state == "order_cancelled"
+      "订单已取消"
+    elsif self.aasm_state == "paid"
       "已支付"
-    else
+    elsif self.aasm_state == "shipping"
+      "出货中"
+    elsif self.aasm_state == "shipped"
+      "到货"
+    elsif self.aasm_state == "good_returned"
+      "退货"
+    elsif self.aasm_state == "order_placed"
       "未支付"
+    else
+      "未知"
+    end
+  end
+
+  def can_pay?
+    if self.aasm_state == "order_placed"
+      return true
+    else
+      return false
     end
   end
 end

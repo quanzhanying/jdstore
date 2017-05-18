@@ -1,5 +1,4 @@
-class OrderMailer < ApplicationMailer
-
+class OrderMainlerMailer < ApplicationMailer
   def notify_order_placed(order)
     @order = order
     @user = order.user
@@ -11,6 +10,7 @@ class OrderMailer < ApplicationMailer
     @order = order
     @user = order.user
     @product_lists = @order.product_lists
-    mail(to:"service@jdstore.com", subject:"[JDStore] 用户取消订单  #{order.token}")
+    mail(to:'service@jdstore.com', subject:"[JDStore] 用户订单取消 #{order.token}")
   end
+
 end

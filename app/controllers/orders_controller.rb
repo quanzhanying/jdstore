@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @orders = Order.where(:user_id => current_user.id).all
+    @orders = Order.where(:user_id => current_user.id).all.order("created_at desc")
   end
 
 
@@ -46,6 +46,19 @@ class OrdersController < ApplicationController
     @order.set_pay_method!("wechat")
     @order.make_payment!
     redirect_to order_path(@order.token), notice: "使用微信支付成功"
+  end
+
+  def cancel
+    @order = Order.find_by_token(params[:id])
+    if @order.user_id == current_user.id
+       @order.cancel_order!
+       OrderMailer.notify_order_cancel(@order).deliver!
+       flash[:notice] = "取消订单成功"
+       redirect_to :back
+    else
+      flash[:warning] = "无法取消订单"
+    end
+
   end
 
   private
