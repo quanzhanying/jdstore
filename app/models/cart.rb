@@ -17,5 +17,5 @@ class Cart < ApplicationRecord
       end
     end
     sum
-  end
+end
 end
