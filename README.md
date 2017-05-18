@@ -1,3 +1,3 @@
 # README
 
-jdstore 作业
+购物网站第一周作业
