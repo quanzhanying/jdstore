@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   root 'products#index'
   devise_for :users
+  resources :cart_items
+
   namespace :admin do
     resources :products
+    resources :orders
   end
+
   resources :products do
     member do
       post :add_to_cart
@@ -16,14 +20,16 @@ Rails.application.routes.draw do
       post :checkout
     end
   end
-  resources :cart_items
+
   resources :orders do
     member do
       post :pay_with_alipay
       post :pay_with_wechat
     end
   end
+
   namespace :account do
     resources :orders
   end
+
 end
