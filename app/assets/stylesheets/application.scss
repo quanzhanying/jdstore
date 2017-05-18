@@ -24,3 +24,60 @@
 .product-details {
   margin-left: 20px;
 }
+
+
+
+//----------浮动（在线客服和回到顶部）代码-----------
+
+.usr-rmenu {
+  position:fixed;
+  right:50px;
+  bottom:200px;
+  z-index:999;
+}
+
+.usr-rmenu .btn {
+  width:72px;
+  height:73px;
+  cursor:pointer;
+  position:relative;
+}
+
+.usr-rmenu .btn-qq {
+  background:url(../images/usr_qq.png) no-repeat;
+  background-color:#79cbf5;
+}
+
+.usr-rmenu .btn-qq:hover {
+  background-color:#488bc7;
+}
+
+.usr-rmenu a.btn-qq,.usr-rmenu a.btn-qq:visited {
+  background:url(../images/usr_qq.png) no-repeat;
+  background-color:#6da9de;
+  text-decoration:none;
+  display:block;
+}
+
+.usr-rmenu .btn-top {
+  background:url(../images/usr_top.png) no-repeat;
+  background-color:#666666;
+  display:none;
+}
+
+.usr-rmenu .btn-top:hover {
+  background-color:#444;
+}
+
+a {
+    text-decoration:none;
+    color:#333;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: auto;
+    text-decoration: underline;
+}
+
+//----------浮动（在线客服和回到顶部）代码_end-----------
