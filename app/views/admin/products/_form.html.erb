@@ -4,6 +4,7 @@
     <%= f.input :description, :label => "简述" %>
     <%= f.input :quantity, :label => "库存" %>
     <%= f.input :price, :label => "价格" %>
+    <%= f.input :category, as: :radio_buttons, collection: [['收纳品', '收纳品'], ['装饰品', '装饰品']],required: '收纳品', :label => "商品类型" %>
     <%= f.input :image, as: :file, :label => "商品主图" %>
     <%= f.input :particulars, as: :wysihtml5, :label => "商品详情" %>
   </div>

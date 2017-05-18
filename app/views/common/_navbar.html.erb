@@ -35,19 +35,29 @@
               </a>
               <ul class="dropdown-menu">
                 <% if current_user.admin? %>
-                  <li><%= link_to(content_tag(:i, "  管理员", class: "fa fa-user-circle"), admin_products_path) %></li>
+                  <li><%= link_to("管理员", admin_products_path, class: "li-style") %></li>
                 <% end %>
-                <li><%= link_to(content_tag(:i, "  我的订单", class: "fa fa-yen"), account_orders_path) %></li>
-                <li><%= link_to(content_tag(:i, "  退出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to("我的订单", account_orders_path, class: "li-style") %></li>
+                <li><%= link_to("退出", destroy_user_session_path, method: :delete, class: "li-style") %></li>
               </ul>
             </li>
           <% end %>
+
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to("商城", products_path) %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              商城
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to("全部商品", products_path, class: "li-style") %></li>
+              <li><%= link_to("收纳品", accept_products_path, class: "li-style") %></li>
+              <li><%= link_to("装饰品", decoration_products_path, class: "li-style") %></li>
+            </ul>
           </li>
+        </ul>
           <!-- <li>
             <%= link_to("课程", "#") %>
           </li>
@@ -57,7 +67,6 @@
           <li>
             <%= link_to("论坛", "#") %>
           </li> -->
-        </ul>
 
         <!-- 搜索输入框 -->
         <div class="navbar-form navbar-right">

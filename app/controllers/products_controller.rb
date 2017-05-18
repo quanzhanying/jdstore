@@ -4,7 +4,7 @@ before_action :validate_search_key, only: [:search]
 
   # --CRUD--
   def index
-    @products = Product.all.order("position ASC")
+    @products = Product.all.order("position ASC").paginate(:page => params[:page], :per_page => 20)
   end
 
   def show
@@ -20,6 +20,17 @@ before_action :validate_search_key, only: [:search]
       flash[:warning] = "你的购物车已有此商品"
     end
     redirect_to :back
+  end
+
+
+  # ---category分类---
+
+  def accept
+    @products = Product.where(:category => "收纳品").all.order("position ASC").paginate(:page => params[:page], :per_page => 20)
+  end
+
+  def decoration
+    @products = Product.where(:category => "装饰品").all.order("position ASC").paginate(:page => params[:page], :per_page => 20)
   end
 
 

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
     collection do
       get :search             #搜索功能
+      get :accept             #分类 收纳品
+      get :decoration         #分类 装饰品
     end
   end
 

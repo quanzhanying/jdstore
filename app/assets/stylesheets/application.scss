@@ -57,6 +57,19 @@
     letter-spacing: 0.1em;                              //拉开一点点字间距
     font-weight:lighter;                                   //字体粗细比默认样式缩小100磅值，让logo显得精致高级
   }
+  .li-style {
+    color: #666;                                        // 修改全站的 字体主色
+    font-size: 0.8em;
+    a {                                                 // 所有a标签统一样式
+      color: #666;                                      // 链接反转的样式
+      transition: 0.5s;                                 // 鼠标移开时 0.5秒渐变
+    }
+    a:hover {
+      color: #7f8c8d;
+      transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+      text-decoration: none;                            // 移除下划线
+    }
+  }
 
   // 搜索栏设置
   #custom-search-input{
