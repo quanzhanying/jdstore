@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
+
+
   def create
     @order = Order.new(order_params)
     @order.user = current_user
@@ -26,6 +28,10 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+  end
+
+  def index
+    @orders = Order.all
   end
 
 

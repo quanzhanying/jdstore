@@ -9,6 +9,6 @@ class Order < ApplicationRecord
   validates :shipping_address, presence: true
 
   def generate_token
-    self.token = SecureRandom.unid
-  end 
+    self.token = SecureRandom.uuid
+  end
 end
