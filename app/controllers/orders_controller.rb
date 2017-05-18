@@ -50,27 +50,11 @@ class OrdersController < ApplicationController
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
   end
 
-  def ship
-    @order = Order.find(params[:id])
-    @order.ship!
-    redirect_to :back
-  end
 
-  def shipped
+  def apply_to_cancel
     @order = Order.find(params[:id])
-    @order.deliver!
-    redirect_to :back
-  end
-
-  def cancel
-    @order = Order.find(params[:id])
-    @order.cancel_order!
-    redirect_to :back
-  end
-
-  def return
-    @order = Order.find(params[:id])
-    @order.return_good!
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "已提交申请"
     redirect_to :back
   end
 
