@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get :accept             #分类 收纳品
       get :decoration         #分类 装饰品
     end
+    resources :reviews
   end
 
   resources :carts do         #购物车明细

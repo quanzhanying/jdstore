@@ -35,24 +35,55 @@
 }
 
 // 按钮区域样式
-.add_to_cart_buttom {
+.add-to-cart-buttom {
   margin: 3em auto 1em;
+}
+
+// 收藏按钮
+.product-collection {
+  line-height: 3em;
 }
 
 //商品详情区域样式
 .product-particulars {
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  margin: 1em auto 3em;
-  padding: 30px 50px;
+  margin: 1.1em 0 3em;
 }
 .product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
   letter-spacing: 0.1em;
   text-align: center;
   line-height: 1.6em;
   img {
     max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
     }
+}
+
+// 商品品论区域样式
+.review-comment-form {
+  text-align: left;
+  padding: 2em 2em;
+}
+.review-comment-button {
+  text-align: left;
+  padding: 0 2em;
+  margin-top: -2em;
+}
+.reviews {
+  text-align: left;
+  li {
+    list-style: none;
+  }
+}
+.review-user-email {
+  font-weight: bold;
+}
+.review-comment {
+  margin: 1em auto;
+}
+.review-hr {
+  padding: 0 3em;
 }
 
 //购物指南区域样式

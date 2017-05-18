@@ -9,6 +9,8 @@ before_action :validate_search_key, only: [:search]
 
   def show
     @product = Product.find(params[:id])
+    @reviews = Review.where(product_id: @product_id).order("created_at DESC")
+    @review = Review.new
   end
 
   def add_to_cart
