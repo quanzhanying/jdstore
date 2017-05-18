@@ -8,15 +8,27 @@
 
 # Initialize Admin User
 if User.find_by(email: "admin@test.com").nil?
-  u = User.new
-  u.email = "admin@test.com"           # 可以改成自己的 email
-  u.password = "123456"                # 最少要六码
-  u.password_confirmation = "123456"   # 最少要六码
-  u.is_admin = true
-  u.save
-  puts "Admin 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+  a = User.new
+  a.email = "admin@test.com"           # 可以改成自己的 email
+  a.password = "123456"                # 最少要六码
+  a.password_confirmation = "123456"   # 最少要六码
+  a.is_admin = true
+  a.save
+  puts "Admin 已经建立好了，帐号为#{a.email}, 密码为#{a.password}"
 else
   puts "Admin 已经建立过了，脚本跳过该步骤。"
+end
+
+if User.find_by(email: "user@test.com").nil?
+  u = User.new
+  u.email = "user@test.com"           # 可以改成自己的 email
+  u.password = "123456"                # 最少要六码
+  u.password_confirmation = "123456"   # 最少要六码
+  u.is_admin = false
+  u.save
+  puts "User 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+else
+  puts "User 已经建立过了，脚本跳过该步骤。"
 end
 
 

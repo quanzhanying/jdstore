@@ -42,12 +42,12 @@ class Order < ApplicationRecord
   include AASM
 
   aasm do
-    state :order_placed, initial: true
-    state :paid
-    state :shipping
-    state :shipped
-    state :order_cancelled
-    state :good_returned
+    state :order_placed, initial: true #下单
+    state :paid #已付款
+    state :shipping #配送中
+    state :shipped  #已送达
+    state :order_cancelled  #申请取消
+    state :good_returned    #退货
 
 
     event :make_payment, after_commit: :pay! do
