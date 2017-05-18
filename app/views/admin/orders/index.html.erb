@@ -4,6 +4,7 @@
       <table class="table table-bordered">
           <thead>
             <tr>
+              <th>用户名</th>
               <th>订单编号</th>
               <th>时间</th>
               <th>状态</th>
@@ -17,7 +18,9 @@
           <tbody>
             <% @orders.each do |order| %>
               <tr>
-              
+                <td>
+                  <%= order.user.email %>
+                </td>
                 <td>
                   <%= link_to(order.token, order_path(order.token)) %>
                 </td>

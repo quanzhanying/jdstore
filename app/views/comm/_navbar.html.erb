@@ -22,7 +22,12 @@
             <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li>
-                <%= link_to("我的订单", orders_path) %>
+                <% if current_user.is_admin %>
+                  <%= link_to("所有订单", admin_orders_path) %>
+                <% else %>
+                  <%= link_to("我的订单", orders_path) %>
+                <% end %>
+
               </li>
               <% if current_user.is_admin? %>
               <li>

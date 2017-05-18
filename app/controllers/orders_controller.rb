@@ -50,15 +50,29 @@ class OrdersController < ApplicationController
 
   def cancel
     @order = Order.find_by_token(params[:id])
-    if @order.user_id == current_user.id
-       @order.cancel_order!
-       OrderMailer.notify_order_cancel(@order).deliver!
-       flash[:notice] = "取消订单成功"
-       redirect_to :back
+    if current_user.is_admin
+      @order.cancel_order!
+      OrderMailer.notify_order_cancel_by_admin(@order).deliver!
+      flash[:notice] = "取消订单成功"
+      redirect_to :back
     else
-      flash[:warning] = "无法取消订单"
+      if @order.user_id == current_user.id
+         @order.cancel_order!
+         OrderMailer.notify_order_cancel(@order).deliver!
+         flash[:notice] = "取消订单成功"
+         redirect_to :back
+      else
+        flash[:warning] = "无法取消订单"
+      end
     end
 
+  end
+
+  def ship
+    @order = Order.find_by_token(params[:id])
+    @order.ship!
+    OrderMailer.notify_order_ship(@order).deliver!
+    redirect_to orders_path, notice:"商品出货成功"
   end
 
   private

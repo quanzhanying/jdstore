@@ -77,4 +77,20 @@ class Order < ApplicationRecord
       return false
     end
   end
+
+  def can_cancel?
+    if self.aasm_state == "order_placed" || self.aasm_state == "paid"
+      return true
+    else
+      return false
+    end
+  end
+
+  def can_ship?
+    if self.aasm_state == "paid"
+      return true
+    else
+      return false
+    end
+  end
 end
