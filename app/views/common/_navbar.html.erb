@@ -26,6 +26,13 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+                 <!-- admin panel btn -->
+                       <% if current_user.admin? %>
+                         <li>
+                           <%= link_to("Admin 选单", admin_products_path ) %>
+                         </li>
+                       <% end %>
+                 <!-- /admin panel btn -->
                       <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
