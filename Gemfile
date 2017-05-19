@@ -42,6 +42,9 @@ gem 'font-awesome-rails'
 gem "carrierwave"
 gem "mini_magick"
 gem 'acts_as_list'
+gem 'letter_opener', group: :development
+gem 'aasm'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
