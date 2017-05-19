@@ -5,25 +5,39 @@ class Admin::ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def new
-    @product = Product.new
-  end
-
   def show
     @product = Product.find(params[:id])
   end
 
-  def edit
-    @product = Product.find(params[:id])
-  end
+  # def edit
+  #   @product = Product.find(params[:id])
+  # end
+  #
+  # def update
+  #   @product = Product.find(params[:id])
+  #   if @product.update(product_params)  #(product_params)在这里的作用
+  #     redirect_to admin_products_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
-  def update
-    @product = Product.find(params[:id])
-    if @product.update(product_params)  #(product_params)在这里的作用
-      redirect_to admin_products_path
-    else
-      render :edit
-    end
+  def edit
+   @product = Product.find(params[:id])
+ end
+
+ def update
+   @product = Product.find(params[:id])
+
+   if @product.update(product_params)
+     redirect_to admin_products_path
+   else
+     render :edit
+   end
+ end
+
+  def new
+    @product = Product.new
   end
 
   def create
