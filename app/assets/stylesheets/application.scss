@@ -18,19 +18,18 @@
  @import 'bootstrap';
  @import 'font-awesome';
 
- // 通用的css代码
- body {
-   color: #2E2E2E;
-   font-family: "Microsoft Yahei",verdana;
-   background: #FFFFFF;
+// 字型
+ @import url('https://fonts.googleapis.com/css?family=Molle:400i|Nunito:400,700');
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+// 字型-logo"Select."
+ .logo {
+   font-family: 'Molle', cursive;
  }
- a:hover {
-   color: #C81623;
-   text-decoration: none;
- }
- .btn-md {
-   text-decoration: none !important;
- }
+
+
+// 通用的css代码
+
 
 // 通用的css代码结束
 
