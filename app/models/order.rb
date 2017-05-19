@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
 	belongs_to :user
-	before_action :generate_token
+	before_create :generate_token
 
 	validates :billing_name, presence: true
 	validates :billing_address, presence: true
