@@ -40,8 +40,10 @@ gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem "aasm"
 group :development, :test do
+  gem 'acts_as_list'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+gem 'byebug', platform: :mri
+gem 'pry'
 end
 
 group :development do

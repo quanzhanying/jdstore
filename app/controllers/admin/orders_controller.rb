@@ -8,6 +8,7 @@ before_action :admin_required
     @orders = Order.order("id DESC")
   end
   def show
+    binding.pry
    @order = Order.find(params[:id])
    @product_lists = @order.product_lists
  end
