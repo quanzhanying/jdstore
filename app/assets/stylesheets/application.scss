@@ -29,12 +29,15 @@
 
 
 // 通用的css代码
+.col-centered {
+  float: none;
+  margin: 0 auto; //置中
+}
 
-
-// 通用的css代码结束
 body {
   overflow-x: hidden; //修正welcome页面右边有空白的问题
 }
+// 通用的css代码结束
 
 // 导航栏
 

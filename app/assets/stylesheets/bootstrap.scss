@@ -2280,12 +2280,14 @@ th {
 .table > tfoot > tr > td {
   padding: 8px;
   line-height: 1.846;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
+  vertical-align: middle;
+  text-align: center;
+  border-top: 1px solid #101846;
 }
 .table > thead > tr > th {
+  text-align: center;
   vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
+  border-bottom: 1px solid #101846;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2296,7 +2298,7 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #dddddd;
+  border-top: 1px solid #101846;
 }
 .table .table {
   background-color: #ffffff;
@@ -2310,7 +2312,7 @@ th {
   padding: 5px;
 }
 .table-bordered {
-  border: 1px solid #dddddd;
+  border-bottom: 1px solid #101846;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -2318,7 +2320,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #dddddd;
+  border-bottom: 1px solid #101846;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -5008,7 +5010,7 @@ a.badge:focus {
 .thumbnail {
   display: block;
   padding: 4px;
-  margin-bottom: 23px;
+  margin: auto;
   line-height: 1.846;
   background-color: #ffffff;
   border: 1px solid #dddddd;
