@@ -39,6 +39,7 @@ gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'annotate'
+gem "select2-rails"
 
 
 group :development, :test do
