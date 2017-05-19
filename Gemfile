@@ -34,13 +34,21 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
+# 上传
 gem 'carrierwave'
+# 图片
 gem 'mini_magick'
+# 排序
+gem 'acts_as_list'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
   gem 'sqlite3'
+  # 设置断点
+  gem 'pry'
+  # 优化 Rails Console db 数据显示
+  gem 'awesome_rails_console'
 end
 
 group :development do
