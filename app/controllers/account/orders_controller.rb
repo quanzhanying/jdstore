@@ -5,28 +5,6 @@ class Account::OrdersController < ApplicationController
     @orders = current_user.orders.order("id DESC")
   end
 
-  def ship
-    @order = Order.find(params[:id])
-    @order.ship!
-    redirect_to :back
-  end
-
-  def shipped
-    @order = Order.find(params[:id])
-    @order.deliver!
-    redirect_to :back
-  end
-
-  def cancel
-    @order = Order.find(params[:id])
-    @order.cancel_order!
-    redirect_to :back
-  end
-
-  def return
-    @order = Order.find(params[:id])
-    @order.return_good!
-    redirect_to :back
-  end
+  
 
 end
