@@ -4,3 +4,7 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+# 针对 gem 'annotate' 的设定，执行rake db:migrate 后，直接将栏位信息注释到model中
+
+Annotate.load_tasks

@@ -38,6 +38,7 @@ gem "font-awesome-rails"
 gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'annotate'
 
 
 group :development, :test do
