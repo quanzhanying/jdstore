@@ -38,6 +38,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts_as_list'
 gem 'awesome_print' #美化ruby
+gem 'letter_opener', group: :development
 
 
 group :development, :test do
