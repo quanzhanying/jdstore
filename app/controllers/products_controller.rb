@@ -36,6 +36,29 @@ before_action :validate_search_key, only: [:search]
   end
 
 
+  # ---collection 收藏商品---
+
+  def join
+    @product = Product.find(params[:id])
+
+    if !current_user.is_member_of?(@product)
+      current_user.join_collection!(@product)
+    end
+
+    redirect_to product_path(@product)
+  end
+
+  def quit
+    @product = Product.find(params[:id])
+
+    if current_user.is_member_of?(@product)
+      current_user.quit_collection!(@product)
+    end
+
+    redirect_to product_path(@product)
+  end
+
+
   # --search 商品搜索--
 
   def search

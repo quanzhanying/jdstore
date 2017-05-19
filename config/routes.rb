@@ -22,7 +22,9 @@ Rails.application.routes.draw do
 
   resources :products do      #前台product
     member do
-      post :add_to_cart
+      post :add_to_cart       #加入购物车
+      post :join              #加入收藏
+      post :quit              #取消收藏
     end
     collection do
       get :search             #搜索功能

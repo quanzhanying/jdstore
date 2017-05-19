@@ -71,7 +71,12 @@
 
         <!-- 收藏商品按钮 -->
         <div class="col-sm-6 product-collection">
-          <%= link_to("添加收藏 - 人气(26)", "#")%>
+          <!-- <%= link_to("添加收藏 - 人气(26)", "#")%> -->
+          <% if current_user && current_user.is_member_of?(@product) %>
+            <%= link_to("已收藏（点击取消收藏）", quit_product_path(@product), method: :post) %>
+          <% else %>
+            <%= link_to("收藏商品", join_product_path(@product), method: :post) %>
+          <% end %>
         </div>
       </div>
 
