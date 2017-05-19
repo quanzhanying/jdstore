@@ -37,6 +37,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'aasm'
 
 group :development, :test do
   gem 'pry'
