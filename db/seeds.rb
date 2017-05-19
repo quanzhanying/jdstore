@@ -41,7 +41,6 @@ description: "FGX830C面板为单板云杉木，背侧使用玫瑰木。该产�
 price: 3190,
 quantity: 1000,
 image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
-# image: open("https://images-cn.ssl-images-amazon.com/images/I/41S7gTyOxDL._AC_UL160_SR160,160_.jpg")
 )
 
 Product.create!(title: "Roland 罗兰 数码钢琴 RP301-SB 黑色 印尼原装进口",
@@ -78,21 +77,23 @@ description: "JBL 的 LSR308 有源音箱是预算有限的工作室的好选择
 price: 1724,
 quantity: 1000,
 image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/41SE4cSbSSL._AA160_.jpg"))
-#
+
 Product.create!(title: "YAMAHA 雅马哈 UR12 USB声卡 音频接口",
 description: "2进2出的UR12，可在面板上切换直接监听（Direct Monitor），并为用户提供基于硬件的输入零延迟，无论是与Cubase还是与其他音乐制作软件进行连接都能带给您专业〜的录音体验。UR12具有D-PRE话放，可直接连接电吉他和贝斯的Hi-Z输入，以及为家庭录音和移动录音设置的两路线路输出。同时支持PC和Mac系统，可与iPad进行连接。",
 price: 908,
 quantity: 1000,
 image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/41VnU6zlRKL._AA160_.jpg"))
-#
+
 Product.create!(title: "Evans G2 12 寸喷砂鼓皮 B12G2",
 description: "Evans G2 喷砂系列是目前市场上受欢迎的鼓皮之一，每一张鼓皮均由双层 7 密耳油皮构成，具有很高的一致性和耐用性。完美融合音色、余音以及打击三大元素，既能让小通鼓音色清脆，也能让地通鼓音色低沉。喷砂版鼓皮的音色更加温暖、集中、低沉，半透明外观十分独特。",
 price: 129,
 quantity: 1000,
 image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/41MdP1dmmwL._AA160_.jpg"))
-#
+
 Product.create!(title: "TOMBO通宝复音口琴NO.6624 TOMBO HOPE SUPER24 G调",
 description: "TOMBO HARMONICA--hope复音系列产品是TOMBO公司专门针对广大中国口琴爱好者设计和制作的，它秉承了日本TOMBO口琴的全部优点；音簧座板和盖板采用镶嵌式设计，琴格全部采用食品级ABS树脂为原料，发音灵敏、音律准确、波动均匀，外观设计也充分考虑了使用多支口琴演奏时倒换的灵活性。特别需要指出的是：它采用了从日本进口的、制作工艺精湛的音簧，不仅保持力极强，而且无论吹奏时气流强弱，都会发出美妙独特的TOMBO口琴的音色。",
 price: 198,
 quantity: 1000,
 image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/31lUvbTeWkL._AA160_.jpg"))
+
+#MiniMagick::Image.
