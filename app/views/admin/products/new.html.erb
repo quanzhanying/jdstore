@@ -17,5 +17,10 @@
     <%= f.input :price %>
   </div>
 
+  <div class="group">
+    <%= f.input :image, as: :file %>
+  </div>
+
+
   <%= f.submit "完成", data: { disable_with: "Submiting..."} %>
 <% end %>
