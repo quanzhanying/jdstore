@@ -141,3 +141,70 @@ body {
   color: #DD2C00;
 }
 // 收藏和取消收藏结束
+
+// 登入/注冊頁開始
+.devise-view img {
+  vertical-align : middle;
+  margin: auto;
+  background-color: #323232;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -5;
+}
+
+.devise-view a:link {
+  color: #fff;
+}
+
+.page-wrap {
+  min-height: 100%;
+  min-width: 100%;
+  margin-bottom: -60px;
+}
+
+.devise-view {
+  margin-bottom: -10px;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -999;
+}
+
+.devise-view .devise-sign-up {
+  margin: 80px auto;
+  color: #ffffff;
+  width: 900px;
+  height: 500px;
+}
+
+.devise-view .devise-sign-up .left {
+  padding: 0 20px 20px;
+  width: 580px;
+  height: 500px;
+  float: left;
+}
+
+.devise-view .devise-sign-up .right {
+  padding: 20px 20px 0;
+  margin: auto;
+  width: 320px;
+  height: 500px;
+  float: left;
+  color: #fff;
+}
+.devise-view .devise-sign-up .center {
+  padding: 20px 20px 0;
+  margin: auto;
+  width: 320px;
+  height: 500px;
+  float: center;
+  color: #fff;
+}
+// 登入/注冊頁結束
