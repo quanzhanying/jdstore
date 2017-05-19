@@ -53,5 +53,4 @@ class Order < ApplicationRecord
       transitions from: [:order_placed, :paid], to: :order_cancelled
     end
   end
-
 end
