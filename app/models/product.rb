@@ -14,7 +14,7 @@
 #
 
 class Product < ApplicationRecord
-  validates :title, presence: true
+  validates :category_id, presence: true
   mount_uploader :image, ImageUploader
 
   belongs_to :category
