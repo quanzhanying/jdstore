@@ -7,7 +7,7 @@ namespace :admin do
   resources :products
   resources :orders do
     member do
-      post :canel
+      post :cancel
       post :ship
       post :shipped
       post :return
