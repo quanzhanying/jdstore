@@ -5053,7 +5053,9 @@ a.thumbnail.active {
 }
 .alert-dismissable,
 .alert-dismissible {
-  padding-right: 35px;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-top: -23px;
 }
 .alert-dismissable .close,
 .alert-dismissible .close {
