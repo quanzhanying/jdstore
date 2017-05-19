@@ -11,7 +11,7 @@
 
 if User.find_by(email: "admin@123.com").nil?
   u = User.new
-  u.email = "admin@test.com"           # 可以改成自己的 email
+  u.email = "admin@123.com"           # 可以改成自己的 email
   u.password = "123456"                # 最少要六码
   u.password_confirmation = "123456"   # 最少要六码
   u.is_admin = true
@@ -24,9 +24,12 @@ end
 
 # Initialize Product
 
-Product.create!(title: "QC-35",
-  description: "耳机",
-  price: 2800,
-  quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
+Product.create!(title: "可重叠长方形藤编篮子",
+  description: "可叠放使用的藤编篮子。活用了其容易弯曲、肌肤触感光滑的长处，是温暖的手工编制商品。",
+  price: 248,
+  quantity: 30,
+  image: open("http://img.muji.com.cn/img/item/4945247381306_400.jpg"),
+  category: "收纳品",
+  yieldly: "日本",
+  particulars: "<img alt=\"\" src=\"https://ooo.0o0.ooo/2017/05/16/591a9d7354cee.jpg\">PP收纳用轮子 / 原色4个入<br>适用于PP商品的轮子。<br><img alt=\"\" src=\"https://ooo.0o0.ooo/2017/05/16/591a9d7354cee.jpg\">",
   )

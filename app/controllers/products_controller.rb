@@ -9,7 +9,7 @@ before_action :validate_search_key, only: [:search]
 
   def show
     @product = Product.find(params[:id])
-    @reviews = Review.where(product_id: @product_id).order("created_at DESC")
+    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
   end
 
