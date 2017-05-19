@@ -29,6 +29,18 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def apply_cancel_order
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.notify_apply_order_canced(@order).deliver!
+    redirect_to order_path(@order.token)
+  end
+
+  def cancel_order
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.notify_order_canced(@order).deliver!
+    redirect_to order_path(@order.token)
+  end
+
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("alipay")
