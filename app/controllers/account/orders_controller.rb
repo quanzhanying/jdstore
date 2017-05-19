@@ -2,7 +2,7 @@ class Account::OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @orders = current_user.orders("id DESC")
+    @orders = current_user.orders.order("id DESC")
   end
 
   def ship
@@ -13,7 +13,7 @@ class Account::OrdersController < ApplicationController
 
   def shipped
     @order = Order.find(params[:id])
-    @deliver!
+    @order.deliver!
     redirect_to :back
   end
 
@@ -28,6 +28,5 @@ class Account::OrdersController < ApplicationController
     @order.return_good!
     redirect_to :back
   end
-  
 
 end
