@@ -15,6 +15,13 @@
            </ul>
         <!-- /producrs btn -->
             <ul class="nav navbar-nav navbar-right">
+        <!-- cart count-->
+               <li>
+                  <%= link_to "#" do  %>
+                     购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                  <% end %>
+               </li>
+        <!-- /cart count -->
                 <li>
                   <% if !current_user %>
                     <li><%= link_to("注册", new_user_registration_path) %> </li>
