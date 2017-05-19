@@ -17,5 +17,7 @@ u.save
 
 product = Product.new
 product.title = "好饿好饿的木宝宝"
+product.description = "seed 建立"
 product.price = 26
+product.quantity = 8
 product.save
