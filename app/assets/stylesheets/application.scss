@@ -32,7 +32,9 @@
 
 
 // 通用的css代码结束
-
+body {
+  overflow-x: hidden; //修正welcome页面右边有空白的问题
+}
 
 // 导航栏
 
