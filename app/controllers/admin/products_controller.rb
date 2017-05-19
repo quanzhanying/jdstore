@@ -19,6 +19,7 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path
     else
       render :new
+    end
   end
 
   def edit
