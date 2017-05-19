@@ -1,5 +1,11 @@
 <div class="row">
   <h2>购物车</h2>
+
+  <div class="pull-right" style="padding-bottom: 20px;">
+    <%= link_to("清空购物车", clean_carts_path, method: :delete,
+          data: { confirm: "你确定清空购物车吗？"}, class: "btn btn-danger") %>
+  </div>
+
   <div class="col-md-12">
     <table class="table table-bordered">
       <thead>
@@ -23,6 +29,7 @@
           <td><%= cart_item.product.title %></td>
           <td><%= cart_item.product.price %></td>
           <td><%= cart_item.quantity %></td>
+
         </tr>
       <% end %>
       <tbody>
