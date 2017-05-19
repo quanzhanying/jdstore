@@ -1,6 +1,6 @@
 <h2>商品列表</h2>
 
-  <div class="pull-right">
+  <div class="pull-right" style="padding-bottom: 20px;">
     <%= link_to("新增商品", new_admin_product_path, class: "btn btn-default") %>
   </div>
 
@@ -8,8 +8,8 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>标题</th>
-      <th>数量</th>
+      <th width="220">Product Pic</th>
+      <th>名称</th>
       <th>价格</th>
       <th>选项</th>
     </tr>
@@ -19,8 +19,16 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.id %></td>
+        <td>
+          <%= link_to admin_product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
         <td><%= link_to(product.title, admin_product_path(product)) %></td>
-        <td><%= product.quantity %></td>
         <td><%= product.price %></td>
         <td>
           <%= link_to("修改", edit_admin_product_path(product)) %>
