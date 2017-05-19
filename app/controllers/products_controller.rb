@@ -20,7 +20,27 @@ class ProductsController < ApplicationController
       redirect_to :back
 
   end
+#-------收藏的action--------
+  def join
+    @product = Product.find(params[:id])
 
+     if !current_user.is_member_of?(@product)
+       current_user.join!(@product)
+     end
+
+     redirect_to product_path(@product)
+   end
+
+   def quit
+     @product = Product.find(params[:id])
+
+     if current_user.is_member_of?(@product)
+       current_user.quit!(@product)
+     end
+
+     redirect_to product_path(@product)
+   end
+#------搜索栏------------
   def search
       if @query_string.present?
         search_result = Product.ransack(@search_criteria).result(:distinct => true)
