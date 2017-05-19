@@ -34,7 +34,8 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
-
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 
