@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :products
     resources :orders do
       member do
-        post :cancal
+        post :cancel
         post :ship
         post :shipped
         post :return
