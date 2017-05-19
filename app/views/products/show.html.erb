@@ -18,6 +18,13 @@
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
+        <% if current_user && current_user.is_member_of?(@product) %>
+          <%= link_to quit_product_path(@product), method: :post, class: "btn btn-lg btn-danger pull-right" do%>
+          <i class="fa fa-bookmark-o"></i><% end %>
+        <% else %>
+          <%= link_to join_product_path(@product), method: :post, class: "btn btn-lg btn-success pull-right" do%>
+            <i class="fa fa-bookmark-o"></i><% end %>
+        <% end %>
       <% else %>
       已经销售一空，无法购买
       <% end %>
