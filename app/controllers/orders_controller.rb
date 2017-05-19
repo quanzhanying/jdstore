@@ -29,11 +29,12 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
-  # def apply_cancel_order
-  #   @order = Order.find_by_token(params[:id])
-  #   OrderMailer.notify_apply_order_canced(@order).deliver!
-  #   redirect_to order_path(@order.token)
-  # end
+  def apply_to_cancel
+    @order = Order.find(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "已提交申请"
+    redirect_to :back
+  end
 
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])

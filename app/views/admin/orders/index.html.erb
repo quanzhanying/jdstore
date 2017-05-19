@@ -6,7 +6,7 @@
             <th>生成时间</th>
             <th>订购者</th>
             <th>订单状态</th>
-            <th>操作选项</th>
+            <!-- <th>操作选项</th> -->
         </tr>
     </thead>
     <tbody>
@@ -16,7 +16,7 @@
                 <td><%= order.created_at.to_s(:long) %></td>
                 <td><%= order.user.email %></td>
                 <td><%= order.aasm_state %></td>
-                <td></td>
+                <!-- <td></td> -->
             </tr>
         <%  end  %>
     </tbody>
