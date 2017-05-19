@@ -2,6 +2,8 @@
   <div class="col-md-12">
     <h2>
       订单明细 (<%= render_order_paid_state(@order) %>)
+
+      <%= render "admin/orders/state_option", order: @order %>
     </h2>
 
     <table class="table table-bordered">
