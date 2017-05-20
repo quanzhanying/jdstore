@@ -43,33 +43,3 @@
 <p>立体生活， 以现代科技产品为中心，集合智能家居，视音震撼，品味生活，酷炫应用，新潮玩具等方面的立体生活理念  </p>
 <p>我们想要的生活是立体而智能的。在这里，您可以找到品牌归属感。得到生活中</p>
 <p>五维生活空间</p> -->
-
-<script type="text/javascript">
-    (function () {
-        var cart_wrap = $('.cart-wrap')
-            carLeft = cart_wrap.offset().left
-            carTop = cart_wrap.offset().top
-        $('.addCartBtn').click(function () {
-            var product = $(this).parent().parent().find('.thumbnail')
-            console.log(product)
-            productLeft = product.offset().left
-            productTop = product.offset().top
-            if (product.is(':animated')) {
-                return
-            }
-            var product_fly_image = product.clone();
-
-            $('body').append(product_fly_image);
-            product_fly_image.css({position: 'absolute', left: productLeft, top: productTop, border: '5px #f00 solid'})
-            product_fly_image.animate({
-                width: 80,
-                height: 80,
-                left: carLeft,
-                top: carTop,
-                opacity: 1
-            }, 800, function () {
-                product_fly_image.remove()
-            });
-        });
-    })();
-</script>
