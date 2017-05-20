@@ -41,8 +41,10 @@
 
 <p>改成路径时，要 去 掉 引 号 ，add_to_cart 后面还需要写明 product_path ，并且用(……)指明具体的product.
 <br>然后还需要指明method，method => 后面的方法与 routes 保持一致，并且都要接在 : 后面。
+<br>method 可以写成（ :method => :post），也可以写成 （method: :post），两个 : 之间一定要有空格，否则会报错。
 <br>show 页面 product_path之后的括号里要用@指明，连接controller里面的Product.find(params[:id]),以id为索引查找。
-<br>index 页面不需要@具体指明，估计是因为：这里面是所有product的集合，不需要用id查找。
+<br>index 页面,有的地方不需要@具体指明，比如路径后面的（ ）里面。估计是因为：这里面是所有product的集合，不需要用id查找。
+<br>index 页面,有的地方  需要@具体指明，比如表格里面的每一项。
 <p>改成路径后，点击按钮会刷新页面，应该是对应到 controller 里面def add_to_cart 里面的 redirect_to :back 和 flash 设定
 <br>所以 product_path 对应的应该是 controller 。
 

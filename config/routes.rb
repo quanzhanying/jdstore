@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :carts
+
   devise_for :users
   root 'products#index'
 end
