@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 购物车 </h2>
+    <h2>
+      购物车
+    </h2>
 
     <table class="table table-bordered">
       <thead>
@@ -14,26 +16,26 @@
       <tbody>
 
         <% current_cart.cart_items.each do |cart_item| %>
-          <tr>
-            <td>
-              <%= link_to product_path(cart_item.product) do %>
-                <% if cart_item.product.image.present? %>
-                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-            </td>
-            <td>
-              <%= cart_item.product.price %>
-            </td>
-            <td>
-              <%= cart_item.quantity %>
-            </td>
-          </tr>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+            <% if cart_item.product.image.present? %>
+            <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+          </td>
+          <td>
+            <%= cart_item.product.price %>
+          </td>
+          <td>
+            <%= cart_item.quantity %>
+          </td>
+        </tr>
         <% end %>
 
       </tbody>
@@ -43,7 +45,11 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-         <span> 总计 xxx RMB  </span>
+        <span>
+          总计
+          <%= render_cart_total_price(current_cart) %>
+          RMB
+        </span>
       </span>
     </div>
 
