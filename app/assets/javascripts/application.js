@@ -13,9 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require_tree .
 
 
@@ -40,4 +38,52 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-// ------------- end of tabs --------
+
+//  轮播时间
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
+
+// 回到顶部
+// $(document).on('click', '#gotop', function () {
+//   $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+// })
+//
+// $(window).scroll(function () {
+//   if ($(this).scrollTop() > 500) {
+//     $('#gotop').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
+//   } else {
+//     $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+//   }
+// })
+
+
+$(document).on('click', '.working', function () {
+ alert('功能暂未完成，敬请期待...')
+ // return false
+}).on('click', '.backtop', function () {
+ $('body').animate({'scrollTop': 0}, 500)
+}).on('mouseenter', '.support', function () {
+ $('.ewm').show().stop().animate({left: '-136px', opacity: 1}, 500)
+}).on('mouseleave', '.support', function () {
+ $('.ewm').stop().animate({opacity: 0}, 500, function () {
+  $(this).css('left', 0).hide()
+ })
+})
+
+$(window).scroll(function () {
+ var $navbar = $('#navbar')
+ if ($(this).scrollTop() > 100) {
+  $navbar.addClass('black').removeClass('transparent')
+ } else {
+  $navbar.removeClass('black').addClass('transparent')
+ }
+
+ if ($(this).scrollTop() > 500) {
+  $('#sidebar').fadeIn()
+ } else {
+  $('#sidebar').fadeOut()
+ }
+})

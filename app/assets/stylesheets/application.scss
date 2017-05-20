@@ -17,9 +17,8 @@
  @import "bootstrap";
  @import "font-awesome";
 
- .navbar_fix{
-   margin-top: 100px;
- }
+
+
 
 
   //------ footer -------
@@ -41,6 +40,49 @@
      margin-top: 25px;
      padding: 25px 0;
      background-color: #2d2d30;
+   }
+
+  //  to top
+
+   .sidebar {
+     display: none;
+     position: fixed;
+     z-index: 998;
+     right: 30px;
+     bottom: 30px;
+     width: 40px;
+     height: auto;
+     line-height: 20px;
+     * {
+       box-sizing: border-box;
+     }
+     ul {
+       padding: 0;
+     }
+     li {
+       position: relative;
+       display: block;
+       height: 40px;
+       border: 1px solid #ddd;
+       border-radius: 3px;
+       text-align: center;
+       cursor: pointer;
+       margin-top: 8px;
+       background: #fbfbfb;
+       line-height: 42px;
+       &:hover {
+         background: #eee;
+       }
+       &:first-child {
+         margin-top: 0;
+       }
+       &.backtop i {
+         font-size: 18px;
+       }
+       i {
+         color: #555;
+       }
+     }
    }
 
 
@@ -120,7 +162,9 @@
    //定制图片高度
   }
 
-
+  .navbar_fix{
+    margin-top: 100px;
+  }
 
   //---------Dropdown------------
   .dropdown-menu li a:hover {
