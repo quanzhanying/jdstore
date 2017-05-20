@@ -1,49 +1,57 @@
-<div class="col-md-12", style="margin-bottom: 20px;">
+<div class="col-md-9 col-centered", style="margin-bottom: 20px;">
   <%= link_to(products_path, class: "btn btn-default back-btn") do %>
     <span></span>返回首页
   <% end %>
 </div>
-<div class="row">
-  <div class="col-md-5 col-md-offset-1 ">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
-    <% end %>
-  </div>
-  <div class="col-md-5 col-md-offet-1">
-    <h2> <%= @product.name %></h2>
-    <div style="height:100px;">
-      <p><%= @product.description %></p>
+<div class="col-md-12 col-centered panel panel-default">
+  <div class="panel-body">
+    <div class="col-md-5 col-md-offset-1">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
+      <% end %>
     </div>
-    <div>类别:<%= @product.category.name %></div>
-    <div>库存: <%= @product.stock %></div>
-    <div class="product-price"> ￥ <%= @product.price %></div>
-    <div class="like">
-      <!-- 点赞的view部分 -->
-      <%= link_to like_product_path(@product), method: :put do %>
-        <div class="pi-thumbs-up">
-        <i class="fa fa-thumbs-o-up fa-x"></i>
-        <%= @product.get_upvotes.size %>
+    <div class="col-md-5 col-md-offet-1">
+      <h2> <%= @product.name %></h2>
+      <div style="height:100px;">
+        <p><%= @product.description %></p>
+      </div>
+      <div>类别:<%= @product.category.name %></div>
+      <div>库存: <%= @product.stock %></div>
+      <div class="product-price"> ￥ <%= @product.price %></div>
+
+      <br />
+      <div class="btn-group btn-group-justified">
+        <!-- 点赞的view部分 -->
+        <div class="like btn btn-default">
+          <%= link_to like_product_path(@product), method: :put do %>
+            <div class="pi-thumbs-up">
+            <i class="fa fa-thumbs-up fa-x"></i>
+            <%= @product.get_upvotes.size %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-      <!-- 点赞的view部分结束 -->
-    </div>
-    <div class="favorite">
-      <!-- 收藏商品和取消商品view部分 -->
-      <% if !@product.fans.include?(current_user) %>
-        <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart") %>
-      <% else %>
-        <%= link_to("取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
-      <% end %>
-      <!-- 收藏商品和取消商品view部分结束 -->
-    </div>
-    <div class="pull-right">
-      <% if @product.stock.present? && @product.stock > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        <%= link_to("已售罄", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger disabled") %>
-      <% end %>
+        <!-- 点赞的view部分结束 -->
+        <!-- 收藏商品和取消商品view部分 -->
+        <div class="favorite btn btn-default">
+          <% if !@product.fans.include?(current_user) %>
+            <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart-o") %>
+          <% else %>
+            <%= link_to("取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+          <% end %>
+        </div>
+        <!-- 收藏商品和取消商品view部分结束 -->
+      </div>
+
+      <hr>
+      <div class="pull-right">
+        <% if @product.stock.present? && @product.stock > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg") %>
+        <% else %>
+          <%= link_to("已售罄", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger disabled") %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
