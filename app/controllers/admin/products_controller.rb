@@ -13,6 +13,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.category_id = params[:category_id]     #这一行是实作类别选择时用
     @photo = @product.photos.build    #for multi-pics
   end
 
@@ -39,7 +40,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    # @product.category_id = params[:category_id]     #这一行是实作类别选择时用
+    @product.category_id = params[:category_id]     #这一行是实作类别选择时用
     if @product.update(product_params)
       redirect_to admin_products_path, notice: "商品修改成功！"
     else
