@@ -11,9 +11,9 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 production:
-   qiniu_access_key: yellowfitman@gmail.com  # 你的 qiniu AccessKey
+   qiniu_access_key: qRZa6nPupVfm4uvN6S5ijxW0iyY8___XZH3jyW_e  # 你的 qiniu AccessKey
 
-   qiniu_secret_key: hj439014  # 你的 qiniu SecretKey
+   qiniu_secret_key: jptGFznxuBInxtVBQmPpoV-xodNO_YwpOf248dYI  # 你的 qiniu SecretKey
 
    qiniu_bucket: jdstore  # 你的 qiniu bucket
 
@@ -22,9 +22,9 @@ production:
 
 
 development:
-   qiniu_access_key: yellowfitman@gmail.com  # 你的 qiniu AccessKey
+   qiniu_access_key: qRZa6nPupVfm4uvN6S5ijxW0iyY8___XZH3jyW_e  # 你的 qiniu AccessKey
 
-   qiniu_secret_key: hj439014  # 你的 qiniu SecretKey
+   qiniu_secret_key: jptGFznxuBInxtVBQmPpoV-xodNO_YwpOf248dYI  # 你的 qiniu SecretKey
 
    qiniu_bucket: jdstore  # 你的 qiniu bucket
 
