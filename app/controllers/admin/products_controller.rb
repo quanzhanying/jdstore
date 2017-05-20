@@ -31,7 +31,6 @@ class Admin::ProductsController < ApplicationController
           @photo = @product.photos.create(:avatar => a)
         end
       end
-
       redirect_to admin_products_path, notice: "商品新建成功！"
     else
       render :new
@@ -46,7 +45,7 @@ class Admin::ProductsController < ApplicationController
       @product.photos.destroy_all #need to destroy old pics first
 
       params[:photos]['avatar'].each do |a|
-        @picture = @product.photos.create(:avatar => a)
+        @photo = @product.photos.create(:avatar => a)
       end
 
       @product.update(product_params)
