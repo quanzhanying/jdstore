@@ -18,4 +18,7 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   belongs_to :category
+
+  has_many :groupships
+  has_many :groups, through: :groupships
 end
