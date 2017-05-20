@@ -7,7 +7,7 @@ def admin_required
   end
 end
 
-help_method :current_cart
+helper_method :current_cart
 
 def current_cart
   @current_cart ||= find_cart

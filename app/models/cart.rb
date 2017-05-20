@@ -8,4 +8,5 @@ def add_product_to_cart(product)
   ci.quantity = 1
   ci.save
 end
+
 end
