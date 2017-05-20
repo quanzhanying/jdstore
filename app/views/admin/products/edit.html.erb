@@ -16,9 +16,13 @@
 
 <!-- 简化下拉选单 -->
 <script >
-$("#product_category_id").select2();//抓元素，后面跟方法
+$("#product_category_id").select2({
+  placeholder: "Choose a category",
+});//抓元素，后面跟方法
 </script>
 
 <script >
-$("#product_group_ids").select2();
+$("#product_group_ids").select2({
+  placeholder: "Choose groups",
+});
 </script>
