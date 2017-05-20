@@ -44,7 +44,10 @@ gem "select2-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
+
+  #在controller下断点 binding.pry; 在view 中下断点 <% binding.pry %>
+  gem 'pry'
 end
 
 group :development do

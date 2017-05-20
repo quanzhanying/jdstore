@@ -232,7 +232,6 @@ DEPENDENCIES
   annotate
   awesome_rails_console
   bootstrap-sass (~> 3.3.6)
-  byebug
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
@@ -244,6 +243,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   mini_magick
+  pry
   pry-byebug
   pry-stack_explorer
   puma (~> 3.0)
