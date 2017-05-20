@@ -15,7 +15,6 @@ class CartItemsController < ApplicationController
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
 
-    binding.pry
 
     if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
       @cart_item.update(cart_item_params)
