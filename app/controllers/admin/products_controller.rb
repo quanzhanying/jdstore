@@ -41,7 +41,18 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.category_id = params[:category_id]     #这一行是实作类别选择时用
-    if @product.update(product_params)
+
+    if params[:photos] != nil
+      @product.photos.destroy_all #need to destroy old pics first
+
+      params[:photos]['avatar'].each do |a|
+        @picture = @product.photos.create(:avatar => a)
+      end
+
+      @product.update(product_params)
+      redirect_to admin_products_path
+
+    elsif @product.update(product_params)
       redirect_to admin_products_path, notice: "商品修改成功！"
     else
       render :edit
