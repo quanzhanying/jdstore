@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    # @categories = Category.all.map { |c| [c.name, c.id] }  #这一行是实作类别选择时用
+    @photo = @product.photos.build    #for multi-pics
   end
 
   def edit
@@ -23,8 +23,14 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    # @product.category_id = params[:category_id]  #这一行是实作类别选择时用
     if @product.save
+      # for multi-pics
+      if params[:photos] != nil
+        params[:photos]['avatar'].each do |a|
+          @photo = @product.photos.create(:avatar => a)
+        end
+      end
+
       redirect_to admin_products_path, notice: "商品新建成功！"
     else
       render :new

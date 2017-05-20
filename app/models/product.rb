@@ -23,4 +23,7 @@ class Product < ApplicationRecord
 
   has_many :groupships
   has_many :groups, through: :groupships
+
+  has_many :photos
+  accepts_nested_attributes_for :photos
 end

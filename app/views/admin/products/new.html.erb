@@ -4,7 +4,12 @@
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  <%= f.input :image, as: :file %>
+  <%#= f.input :image, as: :file %>
+
+  <!-- for multi-pics -->
+  <%= f.label :avatar %><br>
+  <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+  
   <%= f.association :category %>
   <%= f.association :groups %>
   <%= f.submit "Create Product", data: { disable_with: "Submitting..."} %>

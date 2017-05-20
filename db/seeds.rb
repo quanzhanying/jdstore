@@ -43,7 +43,7 @@ if Product.all.blank?
     description: "耳机",
     price: 2800,
     quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg"),
+    # image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg"),
     category_id: Category.last.id
     )
 
@@ -51,7 +51,7 @@ if Product.all.blank?
     description: "手机",
     price: 5000,
     quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg"),
+    # image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg"),
     category_id: Category.last.id
     )
 
@@ -59,7 +59,7 @@ if Product.all.blank?
     description: "G80-3000键盘",
     price: 2800,
     quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg"),
+    # image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg"),
     category_id: Category.last.id
     )
 
