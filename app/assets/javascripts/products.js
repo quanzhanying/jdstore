@@ -1,14 +1,8 @@
 //选择屏幕左上方的预览图
 $(
   function () {
-    // var to_preview_items = $('.to-preview-item')
-    // console.log(to_preview_items);
-    // $('.to-preview-item').each(function () {
-    //   $(this).removeClass('selectd-preview-item')
-    // })
     var init_preview_photo = $('.preview-photo')
     $('.to-preview-item').click(function () {
-      // console.log($('.product-modal').find('.preview-photo'));
       var selectedPreview = 'selectd-preview-item'
       $(this).siblings().removeClass('selectd-preview-item')
       //点击预览图片，被选中的图片出现红色边框
@@ -19,8 +13,6 @@ $(
     })
   }
 )
-
-
 
 //开启大图预览模式
 $(function () {
@@ -56,15 +48,6 @@ $(function () {
     dots.eq(n).addClass('active')
   }
 })
-//被选中小图片的预览大图出现在大图上面
-//点击小图片，图片上的ID被当作参数传入showCurrentImage
-//showCurrentImage函数展示当前页面
-//得到所有图片
-//
-//
-//
-//
-//
 
 //product.show页面的下方商品详情和商品评价切换按钮
 $(document).on('click.product.show.menu', '[data-toggle="tab"]', function(e) {

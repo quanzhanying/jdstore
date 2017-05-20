@@ -34,7 +34,7 @@
   </div>
 
   <div class="group">
-    <%= f.input :category %>
+    <%= select_tag(:category_id, options_for_select(@categories)) %>
   </div>
   <%= f.submit "Submit", :class=>"btn btn-default",data: { disable_with: "Submitting..." } %>
 

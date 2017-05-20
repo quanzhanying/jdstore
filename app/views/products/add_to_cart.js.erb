@@ -3,4 +3,5 @@ $('.addCartBtn').bind('ajax:success', function(e, data) {
    $('#quantity').html('<%= @product.quantity %>')
    $('.intro-text-btnWrap').html('<%= escape_javascript render(:partial => "products/cart_btn") %>')
    $('.countNumber-input').val('<%= @product.purchase_quantity %>')
+   $('#product_purchase_quantity').val('<%= @product.purchase_quantity %')
 });
