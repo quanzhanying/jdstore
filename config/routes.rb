@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  resources :products
-  
-  devise_for :users
+  resources :products do
+    member do
+      post :add_to_cart
+    end
+  end
 end
