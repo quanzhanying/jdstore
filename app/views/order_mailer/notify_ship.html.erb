@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>订单明细 <br>
+    <h2>
+      订单明细 <br>
       <small>
         <%= link_to("订单连结", order_url(@order.token)) %>
       </small>
@@ -11,7 +12,7 @@
           <th width="70%">商品明细</th>
           <th>单价</th>
           <th>数量</th>
-          <th>小计</th>
+          <th>小记</th>
         </tr>
       </thead>
 
@@ -40,7 +41,7 @@
         总计 <%= @order.total %> CNY
       </h4>
     </div>
-
+    
     <hr>
 
     <h2> 寄送资讯 </h2>
