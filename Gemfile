@@ -40,6 +40,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 # 排序
 gem 'acts_as_list'
+# 预览邮件
+gem 'letter_opener', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
