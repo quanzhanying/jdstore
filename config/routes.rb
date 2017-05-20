@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  namespace :account do
+    resources :orders
+  end
   #root 'welcome#index'
   root 'products#index'
 
@@ -20,6 +23,8 @@ Rails.application.routes.draw do
       post :checkout
     end
   end
+
+
 
   resources :cart_items
   resources :orders
