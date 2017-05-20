@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.total = current_cart.total_price
 
-    if order.save
+    if @order.save
       redirect_to order_path(@order)
     else
       render 'carts/checkout'
