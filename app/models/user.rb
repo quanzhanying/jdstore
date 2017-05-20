@@ -26,7 +26,23 @@ class User < ApplicationRecord
   has_many :orders
   has_many :comments
 
+  has_many :favours
+  has_many :collections, through: :favours, source: :product
+
   def admin?
     is_admin
   end
+
+  def is_collect_of?(product)
+    collections.include?(product)
+  end
+
+  def collect!(product)
+    collections << product
+  end
+
+  def un_collect!(product)
+    collections.delete(product)
+  end
+
 end

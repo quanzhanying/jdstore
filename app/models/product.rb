@@ -18,6 +18,9 @@ class Product < ApplicationRecord
 
   has_many :comments
 
+  has_many :favours
+  has_many :collectors, through: :favours, source: :user
+
   mount_uploader :image, ImageUploader
   acts_as_list
 end

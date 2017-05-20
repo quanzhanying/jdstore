@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :comments
     member do
       post :add_to_cart
+      post :collect
+      post :un_collect
     end
   end
 
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :products
   end
 
 end

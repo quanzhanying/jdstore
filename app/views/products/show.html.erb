@@ -23,9 +23,16 @@
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-lg btn-danger") %>
         <%= link_to("立即购买", "#", method: :post, class: "btn btn-lg btn-danger") %>
-
       <% else %>
       已销售一空，无法购买
+      <% end %>
+    </div>
+    <br>
+    <div>
+      <% if current_user && current_user.is_collect_of?(@product) %>
+        <%= link_to("取消收藏", un_collect_product_path(@product), method: :post, class: "btn btn-danger") %>
+      <% else %>
+        <%= link_to("收藏", collect_product_path(@product), method: :post, class: "btn btn-danger") %>
       <% end %>
     </div>
   </div>
