@@ -9,11 +9,13 @@
     <tr>
       <td>#</td>
       <td>品名</td>
+      <td>图片</td>
       <td>叙述</td>
       <td>价格</td>
       <td>库存</td>
       <td>选项</td>
       <td>创建日期</td>
+
     </tr>
   </thead>
   <tbody>
@@ -21,6 +23,7 @@
       <tr>
         <td>#</td>
         <td> <%= link_to(product.title, admin_product_path(product)) %> </td>
+        <td> <img src=<%= product.image %> style="width:100px; height:100px;"</img> </td>
         <td> <%= product.description %> </td>
         <td> <%= product.price %> </td>
         <td> <%= product.quantity %> </td>

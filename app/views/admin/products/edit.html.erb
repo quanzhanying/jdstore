@@ -1,4 +1,4 @@
-<h1> Add a product </h1>
+<h1> Edit product </h1>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
@@ -6,6 +6,7 @@
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :quantity %>
+  <img src=<%= @product.image %> style="width:100px; height:100px;"</img>
   <%= f.input :image %>
 
   <%= f.submit "Submit" %>
