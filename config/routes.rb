@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories
+  resources :groups
   
   root 'products#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
