@@ -1,0 +1,28 @@
+<div class="col-centered">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <h1 class="col-centered"> <%= @product.title %> </h1>
+  <p class="col-centered">
+    <%= simple_format(@product.description) %>
+  </p>
+
+  <div>
+    <td>
+      库存数量：
+      <%= @product.quantity %>
+    </td>
+
+    <td>
+      价格：
+      <%= @product.price%>
+    </td>
+
+  </div>
+
+
+</div>
