@@ -9,6 +9,7 @@ Rails.application.routes.draw do
          patch :move_down
        end
      end
+    resources :orders
   end
 
 
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
       post :pay_with_alipay
       post :pay_with_wechat
     end
-  end 
+  end
 
   resources :cart_items
 
