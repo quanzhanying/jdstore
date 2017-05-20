@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  image       :string
 #  category_id :integer
+#  position    :integer
 #
 
 class Product < ApplicationRecord

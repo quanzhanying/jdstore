@@ -40,6 +40,7 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'annotate'
 gem "select2-rails"
+gem 'acts_as_list'  #调整product顺序用
 
 
 group :development, :test do
