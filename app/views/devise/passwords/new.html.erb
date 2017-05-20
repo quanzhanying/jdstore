@@ -1,0 +1,31 @@
+<div class="row user_setup">
+  <div class="col-md-4 col-md-offset-4 user_setup_content">
+    <div class="col-md-10 col-md-offset-1">
+      <h2><span class="fa fa-share"></span>忘记密码?</h2>
+
+      <br>
+
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true, placeholder: "请输入邮箱地址", label: false, error: '请输入邮箱地址' %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "找回密码", class: "button" %>
+        </div>
+
+        <hr />
+
+        <div class="account">
+          <%= link_to "已有帐号，立即登录", new_user_session_path %>
+          <br>
+          <%= link_to "没有帐号，立即注册", new_user_registration_path %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

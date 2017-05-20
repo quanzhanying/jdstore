@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>红色主题的jQuery电子商务二级下拉菜单DEMO演示</title> -->
+
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+
+</head>
+<body>
+<div style="text-align:center;clear:both;">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+<div class="header-wrap">
+	<div class="navwrap">
+		<div id="nav">
+			<div class="navbar clearfix">
+				<a class="navbt" href="#"><span>团购地图</span></a>
+				<a class="current" href="#">首页</a>
+				<a href="#">餐饮美食</a>
+				<a href="#">休闲娱乐</a>
+				<a href="#">旅游住宿</a>
+				<a href="#">生活服务</a>
+				<a href="#">丽人</a>
+				<a href="#">商品</a>
+			</div>
+			<div class="pros subpage">
+				<h2>全部团购分类</h2>
+				<ul class="prosul clearfix" id="proinfo">
+					<li class="food">
+						<i>&gt;</i>
+						<a class="ti" href="#">美食</a>
+						<a class="hot" href="#">地方菜</a>
+						<a href="#">火锅</a>
+						<div class="prosmore hide">
+							<span><em><a href="#">全部(117)</a></em></span>
+							<span><em class="morehot"><a class="morehot" href="#">火锅(17)</a></em></span>
+							<span><em class="morehot"><a class="morehot" href="#">烧烤(16)</a></em></span>
+							<span><em><a href="#">西餐(9)</a></em></span>
+							<span><em><a href="#">海鲜(37)</a></em></span>
+							<span><em><a href="#">地方菜(5)</a></em></span>
+							<span><em><a href="#">日韩料理(2)</a></em></span>
+							<span><em><a href="#">快餐(2)</a></em></span>
+							<span><em class="morehot"><a class="morehot" href="#">蛋糕(9)</a></em></span>
+							<span><em><a href="#">其他(7)</a></em></span>
+							<span><em><a href="#">下午茶(5)</a></em></span>
+							<span><em><a href="#">咖啡(8)</a></em></span>
+						</div>
+					</li>
+					<li class="enjoy">
+						<i>&gt;</i>
+						<a class="ti" href="#">休闲</a>
+						<a class="hot" href="#">电影</a>
+						<a href="#">KTV</a>
+						<div class="prosmore hide">
+							<span><em><a href="#">全部(663)</a></em></span>
+							<span><em class="morehot"><a class="morehot" href="#">电影(18)</a></em></span>
+							<span><em class="morehot"><a class="morehot" href="#">KTV(8)</a></em></span>
+							<span><em><a href="#">运动健身(95)</a></em></span>
+							<span><em><a href="#">游乐电玩(48)</a></em></span>
+							<span><em><a href="#">展览演出(13)</a></em></span>
+							<span><em class="morehot"><a class="morehot" href="#">足疗按摩(8)</a></em></span>
+							<span><em><a href="#">洗浴(11)</a></em></span>
+							<span><em><a href="#">其他(29)</a></em></span>
+							<span><em><a href="#">采摘(2)</a></em></span>
+							<span><em><a href="#">滑雪(4)</a></em></span>
+							<span><em><a href="#">温泉(427)</a></em></span>
+						</div>
+					</li>
+
+					<li class="goods bd-solid">
+            <% @classfication_pris.each do |classfication_pri| %>
+              <li>
+                <i>></i>
+                <a class="ti" href="#"><%= classfication_pri.title %></a>
+                <div class="prosmore hide">
+                  <% classfication_subs = ClassficationSub.where( :classfication_pri_id => classfication_pri.id ) %>
+
+                  <% classfication_subs.each do |classfication_sub| %>
+                    <span><em><a href="#"><%= classfication_sub.title %></a></em></span>
+                  <% end %>
+                </div>
+
+              </li>
+            <% end %>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	(function(){
+
+		var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
+
+		$head.click(function(e){
+			e.stopPropagation();
+			if(!inter){
+				$ul.show();
+			}else{
+				$ul.hide();
+			}
+			inter=!inter;
+		});
+
+		$ul.click(function(event){
+			event.stopPropagation();
+		});
+
+		$(document).click(function(){
+			$ul.hide();
+			inter=!inter;
+		});
+
+		$lis.hover(function(){
+			if(!$(this).hasClass('nochild')){
+				$(this).addClass("prosahover");
+				$(this).find(".prosmore").removeClass('hide');
+			}
+		},function(){
+			if(!$(this).hasClass('nochild')){
+				if($(this).hasClass("prosahover")){
+					$(this).removeClass("prosahover");
+				}
+				$(this).find(".prosmore").addClass('hide');
+			}
+		});
+
+	})();
+</script>
+
+
+</body>
+</html>

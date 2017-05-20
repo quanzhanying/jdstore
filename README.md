@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+第一周作业：3-2
 
-Things you may want to cover:
+第二周作业：5-7-1 实现清空购物车功能
 
-* Ruby version
+第二周作业：5-7-2 实现可以删除购物车内某一物品
 
-* System dependencies
+第二周作业：5-7-3 已经加入购物车的物品，不能重复被加入
 
-* Configuration
+第二周作业：5-7-4 可以更改购物车内购买的数量( 原本预设数量都是1）
 
-* Database creation
+第二周作业：5-7-5 库存为 0 的货品不能购买
 
-* Database initialization
+第二周作业：5-7-6 在购物车新增数量时，不能更新超过原有库存的数量
 
-* How to run the test suite
+第三周作业：5-8-1 Story5 建立结帐页
 
-* Services (job queues, cache servers, search engines, etc.)
+第三周作业：5-8-2 使用者可以看到过去所有订单
 
-* Deployment instructions
-
-* ...
+第三周作业：5-10-2 使用者在下单后会收到一张订单确认信
