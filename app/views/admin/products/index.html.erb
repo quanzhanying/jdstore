@@ -56,8 +56,12 @@
         </td>
         <td>
           <%= link_to 'Edit', edit_admin_product_path(product) %>
-          |
+          <br>
           <%= link_to 'Destroy', admin_product_path(product), method: :delete %>
+          <br>
+          <%= link_to "向上", move_up_admin_product_path(product), method: :patch %>
+          <br>
+          <%= link_to "向下", move_down_admin_product_path(product), method: :patch %>
         </td>
       </tr>
     <% end %>

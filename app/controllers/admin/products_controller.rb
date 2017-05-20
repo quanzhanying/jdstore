@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   layout 'admin'
 
   def index
-    @products = Product.all.order("created_at desc")
+    @products = Product.all.order("position")
   end
 
   def show
@@ -46,6 +46,18 @@ class Admin::ProductsController < ApplicationController
     if @product.destroy
       redirect_to admin_products_path, alert: "商品已经删除！"
     end
+  end
+
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
   end
 
   private
