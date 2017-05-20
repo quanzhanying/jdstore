@@ -33,9 +33,7 @@
 
 
 <!--  -->
-<div class="row">
 
-</div>
 <div class="col-md-10 col-md-offset-1">
 
   <div class="tab">
@@ -44,17 +42,25 @@
   </div>
 
   <div id="商品详情" class="tabcontent">
-    <h3>London</h3>
-    <p>London is the capital city of England.</p>
+    <h3>tes</h3>
+    <p>test</p>
   </div>
 
   <div id="商品评价" class="tabcontent">
-    <h3>Paris</h3>
-    <p>Paris is the capital of France.</p>
+
+    <% @product.comments.each do |post| %>
+      <p><%= post.content %></p>
+      <p><%= post.user.email %></p>
+      <p><%= post.created_at.strftime("%Y-%m-%d") %></p>
+      <hr>
+    <% end %>
+
+    <%= link_to("添加评论", new_product_comment_path(@product), class: "btn btn-default pull-right")%>
+
   </div>
 
 </div>
-</div>
+
 
 <script>
   document.getElementById("defaultOpen").click();

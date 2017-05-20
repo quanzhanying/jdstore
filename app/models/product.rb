@@ -16,6 +16,8 @@ class Product < ApplicationRecord
   has_many :cart_items
   has_many :cart, through: :cart_items, :dependent => :destroy
 
+  has_many :comments
+
   mount_uploader :image, ImageUploader
   acts_as_list
 end
