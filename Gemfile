@@ -39,7 +39,7 @@ gem 'mini_magick'
 gem 'acts_as_list'
 gem 'awesome_print' #美化ruby
 gem 'letter_opener', group: :development
-
+gem 'aasm'
 
 group :development, :test do
   gem 'pry' #debug
