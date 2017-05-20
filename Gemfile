@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
   gem 'mini_magick'
   gem 'letter_opener' , group: :development
   gem 'acts_as_list'
+  gem 'aasm'
 group :development, :test do
   gem 'pry'
   gem 'awesome_rails_console'
