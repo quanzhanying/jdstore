@@ -1,6 +1,11 @@
 class ProductsController < ApplicationController
+
+  # before_action :fetch_home_data
+
+
   def index
-    @products = Product.all
+        @q = Product.ransack(params[:q])
+        @products = @q.result(distinct: true)
   end
 
   def show
@@ -17,4 +22,6 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+
+
 end
