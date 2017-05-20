@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>名称</th>
+    <th>详情</th>
+    <th>数量</th>
+    <th>单价</th>
+  </tr>
+  <tr>
+    <td><%= @product.title %></td>
+    <td><%= @product.description %></td>
+    <td><%= @product.quantity %> </td>
+    <td><%= @product.price %></td>
+  </tr>
+  <tr><%= link_to("删除", admin_product_path(@product), :method => :delete, :data => {:confirm => "确定删除？"})%></tr>
+</table>
