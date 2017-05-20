@@ -9,7 +9,7 @@
       <th width="220">Product Pic</th>
       <th>Name</th>
       <th>Price</th>
-      <th width="100"> Options</th>
+      <th width="120"> Options</th>
     </tr>
   </thead>
   <tbody>
@@ -34,9 +34,10 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
-          <%= link_to("向上", move_up_admin_product_path(product) , method: :patch ) %>
-          <%= link_to("向下", move_down_admin_product_path(product),method: :patch )%>
+          <%= link_to edit_admin_product_path(product), :class => "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
+          <%= link_to admin_product_path(product), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash"></i><% end %>
+          <%= link_to move_up_admin_product_path(product) , method: :patch ,:class => "btn btn-xs btn-info" do  %><i class="fa fa-arrow-up" aria-hidden="true"></i><% end %>
+          <%= link_to move_down_admin_product_path(product),method: :patch, :class => "btn btn-xs btn-info" do  %><i class="fa fa-arrow-down" aria-hidden="true"></i><% end %>
         </td>
       </tr>
     <% end %>
