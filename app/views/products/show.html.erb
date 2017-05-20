@@ -11,10 +11,14 @@
     <div style="height:100px;">
       <p><%= @product.description %></p>
     </div>
-    <div>数量：<%= @product.quantity %>  </div>
-    <div class="product-price">￥ <%= @product.price%>  </div>
-    <div class="pull-right">
-      <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-danger btn-lg")%>
-    </div>
+      <div>数量：<%= @product.quantity %>  </div>
+        <div class="product-price">￥ <%= @product.price%>  </div>
+          <div class="pull-right">
+            <% if @product.quantity.present? && @product.quantity>0 %>
+                  <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-danger btn-lg")%>
+                <% else %>
+              暂时无货， 无法购买
+            <% end %>
+          </div>
+        </div>
   </div>
-</div>
