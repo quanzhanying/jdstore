@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-before_ation :authenticate_user!, only: [:create]
+before_action :authenticate_user!, only: [:create]
 
 def create
   @order = Order.new(order_params)
