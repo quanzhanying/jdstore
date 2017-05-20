@@ -51,6 +51,8 @@ gem 'hirb-unicode'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'acts_as_list'
+gem 'awesome_rails_console'
+
 
 
 group :development do
