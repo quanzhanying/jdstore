@@ -5,8 +5,11 @@
   <%= f.input :quantity %>
   <%= f.input :price %>
   <%= f.input :image, as: :file %>
-
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
-
+  <%= f.association :category %>
   <%= f.submit "Create Product", data: { disable_with: "Submitting..."} %>
 <% end %>
+
+<!-- 简化下拉选单 -->
+<script >
+$("#product_category_id").select2();//抓元素，后面跟方法
+</script>

@@ -9,6 +9,11 @@
     <%= image_tag(@product.image.thumb.url) %>
   <% end %>
   <%= f.input :image, as: :file %>
-  <%= f.select :category_id, @categories %>
+  <%= f.association :category %>
   <%= f.submit "Create Product", data: { disable_with: "Submitting..."} %>
 <% end %>
+
+<!-- 简化下拉选单 -->
+<script >
+$("#product_category_id").select2();//抓元素，后面跟方法
+</script>

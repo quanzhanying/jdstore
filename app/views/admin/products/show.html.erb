@@ -3,6 +3,7 @@
     <h1><%= @product.title %></h1>
     <p>价格: <%= @product.price %></p>
     <p>库存: <%= @product.quantity %></p>
+    <p>类别: <%= @product.category.name %></p>
     <p><%= @product.description %></p>
     <%= link_to "Back", admin_products_path, class: "btn btn-primary" %>
   </div>

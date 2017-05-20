@@ -13,17 +13,17 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all.map { |c| [c.name, c.id] }  #这一行是实作类别选择时用
+    # @categories = Category.all.map { |c| [c.name, c.id] }  #这一行是实作类别选择时用
   end
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id] }  #这一行是实作类别选择时用
+    # @categories = Category.all.map { |c| [c.name, c.id] }  #这一行是实作类别选择时用
   end
 
   def create
     @product = Product.new(product_params)
-    @product.category_id = params[:category_id]  #这一行是实作类别选择时用
+    # @product.category_id = params[:category_id]  #这一行是实作类别选择时用
     if @product.save
       redirect_to admin_products_path, notice: "商品新建成功！"
     else
@@ -33,7 +33,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.category_id = params[:category_id]     #这一行是实作类别选择时用
+    # @product.category_id = params[:category_id]     #这一行是实作类别选择时用
     if @product.update(product_params)
       redirect_to admin_products_path, notice: "商品修改成功！"
     else
