@@ -18,7 +18,9 @@ class OrdersController < ApplicationController
       end
 
 
-      redirect_to order_path(@order)
+      # redirect_to order_path(@order)
+      redirect_to order_path(@order.token)
+
     else
       render 'carts/checkout'
     end
