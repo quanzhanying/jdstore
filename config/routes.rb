@@ -13,10 +13,10 @@ Rails.application.routes.draw do
       member do
         post :cancel
         post :ship
-        post :shiped
+        post :shipped
         post :return
       end
-    end 
+    end
   end
 
 
