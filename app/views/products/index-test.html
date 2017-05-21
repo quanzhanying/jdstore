@@ -1,4 +1,50 @@
-
+<div class="container">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-8">
+    <div class="search">
+      <div class="form-group has-warning">
+        <%#= form_tag search_jobs_path , :method => :get, :class => "form-group" do %>
+        <div class="input-group">
+          <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货请输入水果的关键词">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-search">
+              &nbsp;搜索&nbsp;
+            </button>
+            <img src="/images/space.png" width="22" height="16">
+            <img src="https:///img.alicdn.com/tfs/TB1Vx4WQFXXXXcmXFXXXXXXXXXX-492-32.png" width="246" height="16">
+          </span>
+        </div>
+        <%# end %>
+      </div>
+    </div>
+    <div class="search-hot">
+      <ul>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+        <li>
+          <a href="#">樱桃</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">

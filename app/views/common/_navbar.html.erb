@@ -1,44 +1,82 @@
 <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
-        </div>
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">JDstore </a>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <%= link_to("Products", products_path) %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to("Products", products_path) %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+          购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %>)
+          <% end %>
+        </li>
+        <% if !current_user %>
+        <li><%= link_to("注册", new_user_registration_path) %> </li>
+        <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Hi!, <%= current_user.email %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+            <li>
+              <%= link_to("Admin 选单", admin_products_path) %>
             </li>
+            <% end %>
+            <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
           </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                  <%= link_to carts_path do %>
-                  购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %>)
-                  <% end %>
-              </li>
-              <% if !current_user %>
-                   <li><%= link_to("注册", new_user_registration_path) %> </li>
-                   <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-                 <% else %>
-                   <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                         Hi!, <%= current_user.email %>
-                         <b class="caret"></b>
-                     </a>
-                     <ul class="dropdown-menu">
-                       <% if current_user.admin? %>
-                       <li>
-                         <%= link_to("Admin 选单", admin_products_path) %>
-                       </li>
-                            <% end %>
-                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                     </ul>
-                   </li>
-                 <% end %>
-        </div>
-        <!-- /.navbar-collapse -->
+        </li>
+        <% end %>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
-</nav>
+  </nav>
+  <div class="container">
+        <div class="col-md-4">
+          <div class="shoplogo">
+            <img src="/images/shoplogo4.png" width="180" height="80">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="search">
+          <div class="form-group has-warning">
+            <%#= form_tag search_jobs_path , :method => :get, :class => "form-group" do %>
+            <div class="input-group">
+              <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货你想吃什么">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-search">
+                  &nbsp;搜索&nbsp;
+                </button>
+                <img src="/images/space.png" width="22" height="16">
+                <img src="/images/top.png" width="246" height="16">
+              </span>
+            </div>
+            <%# end %>
+          </div>
+          </div>
+          <div class="search-hot">
+            <ul>
+              <li style="color: #cc8902;">热门搜索:</li>
+              <li><a href="#">樱桃</a></li>
+              <li><a href="#">榴莲</a></li>
+              <li><a href="#">樱桃</a></li>
+              <li><a href="#">樱桃</a></li>
+              <li><a href="#">樱桃</a></li>
+              <li><a href="#">樱桃</a></li>
+              <li><a href="#">樱桃</a></li>
+            </ul>
+          </div>
+
+        </div>
+  </div>
