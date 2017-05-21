@@ -1,0 +1,45 @@
+<!-- <div class="col-md-12 col-centered"> -->
+<h2> Product List </h2>
+    <div class="dropdown  pull-right">
+      <%= link_to("上新品",new_admin_product_path, :class=>"btn btn-primary btn-sm")%>
+      </div>
+
+      <table class="table table-bordered tabel-centered">
+      <!-- <table class="table table-bordered"> -->
+        <thead>
+            <tr>
+              <th>#</th>
+              <th width="300">Product Pic</th>
+              <th > Product Name  </th>
+              <th>  price    </th>
+              <th>  quantity    </th>
+              <th width="50">  Option</th>
+            </tr>
+        </thead>
+
+        <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td>
+            <%= link_to admin_product_path(product) do %>
+            <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail")%>
+            <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+            <% end %>
+            <% end %>
+          </td>
+          <td ><%= link_to(product.title,admin_product_path(product))%></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
+          <td>
+            <%= link_to("Edit",edit_admin_product_path(product), :class=>"btn btn-xs btn-sm")%>
+            <%= link_to('Up', move_up_admin_product_path(product),method: :patch,:class=>"btn btn-xs btn-sm")%>
+            <%= link_to('Down',move_down_admin_product_path(product),method: :patch,:class=>"btn btn-xs btn-sm")%>
+            <%= link_to("Delete",admin_product_path(product), :method => :delete, :class=>"btn btn-xs btn-sm")%>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+
+    </div>
