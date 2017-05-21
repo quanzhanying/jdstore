@@ -18,4 +18,10 @@ class Cart < ApplicationRecord
     end
     sum
   end
+
+  def remove_all_products
+    cart_items.each do |cart_item|
+      cart_item.delete
+    end
+  end
 end

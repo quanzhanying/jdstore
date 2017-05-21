@@ -52,6 +52,7 @@
     <hr>
 
     <div class="checkout clearfix">
+      <%= link_to("清空购物车", clear_cart_path(current_cart), method: :post, class: "btn btn-lg btn-danger pull-left") %>
       <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
   </div>
