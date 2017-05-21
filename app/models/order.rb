@@ -6,4 +6,6 @@ class Order < ApplicationRecord
   validates :shopping_name, presence: true
   validates :shopping_address, presence: true
 
+  has_many :product_lists
+
 end
