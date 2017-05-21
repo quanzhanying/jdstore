@@ -16,6 +16,7 @@
           <div class="pull-right">
             <% if @product.quantity.present? && @product.quantity>0 %>
                   <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-danger btn-lg")%>
+                   <%= link_to("立即购买", checkout_carts_path,:method => :post, :class => "btn btn-danger btn-lg")%>
                 <% else %>
               暂时无货， 无法购买
             <% end %>
