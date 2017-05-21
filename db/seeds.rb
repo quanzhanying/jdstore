@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
  u = User.new
- u.email = "davegle2@gmail.com"          # can change to own email
+ u.email = "admin@test.com"          # can change to own email
 
  u.password = "123456"                  # at least 6 digit
 
