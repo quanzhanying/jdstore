@@ -1,8 +1,7 @@
 class CartsController < ApplicationController
-  def clear
-    @cart = Cart.find(params[:id])
-    @cart.remove_all_products
+  def clean
+    current_cart.clean
     flash[:alert] = "购物车已清除"
-    redirect_to :back
+    redirect_to carts_path
   end
 end
