@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+//-----------admin_product_show-----------
+.product-details {
+  margin-left: 20px;
+}
+
+
+
+//----------浮动（在线客服和回到顶部）代码-----------
+
+.usr-rmenu {
+  position:fixed;
+  right:50px;
+  bottom:0px;
+  z-index:999;
+}
+
+.usr-rmenu .btn {
+  width:72px;
+  height:73px;
+  cursor:pointer;
+  position:relative;
+}
+
+.usr-rmenu .btn-qq {
+  background:url(../images/usr_qq.png) no-repeat;
+  background-color:#79cbf5;
+}
+
+.usr-rmenu .btn-qq:hover {
+  background-color:#488bc7;
+}
+
+.usr-rmenu a.btn-qq,.usr-rmenu a.btn-qq:visited {
+  background:url(../images/usr_qq.png) no-repeat;
+  background-color:#6da9de;
+  text-decoration:none;
+  display:block;
+}
+
+.usr-rmenu .btn-top {
+  background:url(../images/usr_top.png) no-repeat;
+  background-color:#666666;
+  display:none;
+}
+
+.usr-rmenu .btn-top:hover {
+  background-color:#444;
+}
+
+a {
+    text-decoration:none;
+    color:#333;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: auto;
+    text-decoration: underline;
+}
+
+//----------浮动（在线客服和回到顶部）代码_end-----------
