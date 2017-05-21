@@ -1,8 +1,14 @@
 <h1>  Product  List  </h1>
 
+<div  class="pull-right">
+   <%=  link_to("Add  new  product", new_admin_product_path, class: "btn  btn-lg  btn-default")   %>
+</div>
+
+
 <table  class="table  table-bordered">
   <thead>
     <tr>
+      <th>#</th>
       <th>品名</th>
       <th>叙述</th>
       <th>库存</th>
@@ -20,8 +26,8 @@
         <td><%=  product.quantity  %></td>
         <td><%=  product.price  %></td>
         <td>
-          <%=  link_to("Edit",  edit_admin_product_path) %> |
-          <%=  link_to("Destroy",  destroy_admin_product_path) %>
+          <%=  link_to("Edit",  edit_admin_product_path(product)) %> |
+          <%=  link_to("Destroy", method: :delete,  data: {  confirm: "Are  you  sure?" } ) %>
         </td>
         <td><%=  product.created_at  %></td>
       </tr>

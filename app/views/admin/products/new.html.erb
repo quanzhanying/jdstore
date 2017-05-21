@@ -1,6 +1,6 @@
 <h1>  New  Product  </h1>
 
-<%=  simple_form_for   @product   do   |f|  %>
+<%=  simple_form_for   [:admin, @product]   do   |f|  %>
 <%=  f.input  :"title"  %>
 <%=  f.input  :"description"  %>
 <%=  f.input  :"price"  %>
