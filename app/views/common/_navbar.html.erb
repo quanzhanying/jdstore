@@ -21,7 +21,11 @@
 
     <!-- <ul class='nav navbar-nav navbar-right collapse navbar-collapse'> -->
     <ul class='nav navbar-nav navbar-right '>
-
+       <li>
+          <%= link_to carts_path do  %>
+           购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <% end %>
+       </li>
       <% if !current_user %>
       <li>
         <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
