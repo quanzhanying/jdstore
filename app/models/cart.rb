@@ -11,9 +11,11 @@ class Cart < ApplicationRecord
 
 def  add_units_to_product(product)
   ci = cart_items.find_by(product_id: product.id)
-
+ if ci.quantity<ci.product.quantity
   ci.quantity = ci.quantity+1
   ci.save
+end
+
 end
   def total_price
     sum = 0
