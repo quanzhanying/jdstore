@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
 //= require bootstrap-sprockets
+//= require bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/alert
 //= require_tree .
 
 // --首頁圖片輪播--

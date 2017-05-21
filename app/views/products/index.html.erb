@@ -67,7 +67,6 @@
         <li data-target="#myCarousel_products_path" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel_products_path" data-slide-to="1"></li>
         <li data-target="#myCarousel_products_path" data-slide-to="2"></li>
-        <li data-target="#myCarousel_products_path" data-slide-to="3"></li>
       </ol>
      <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -129,34 +128,38 @@
   <!-- 区域：商品展示列表 -->
   <div class="productList-wrap">
     <ul class="productList clearfix">
-      <% @products.each do |product| %>
-        <li class="productList-item">
-          <p class="productList-item-pic">
-            <%= link_to product_path(product) do %>
-              <% if product.image.present? %>
-                <%= image_tag(product.image.thumb.url) %>
-              <% else %>
-                <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+      <div class="row">
+        <% @products.each do |product| %>
+          <div class="col-md-3 col-xs-6">
+            <li class="productList-item">
+              <p class="productList-item-pic">
+                <%= link_to product_path(product) do %>
+                  <% if product.image.present? %>
+                    <%= image_tag(product.image.thumb.url) %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                  <% end %>
+                <% end %>
+              </p>
+              <p class="productList-item-price">￥<%= product.price %></p>
+              <p class="productList-item-name ell">
+                <%= link_to product_path(product) do %>
+                   <%= product.name %>
+                <% end %>
+              </p>
+              <p class="productList-item-desc"><%= product.description %></p>
+              <% if product.stock > 0 %>
+                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
+                  <i class="fa fa-shopping-cart"></i>
+                <% end %>
               <% end %>
-            <% end %>
-          </p>
-          <p class="productList-item-price">￥<%= product.price %></p>
-          <p class="productList-item-name ell">
-            <%= link_to product_path(product) do %>
-               <%= product.name %>
-            <% end %>
-          </p>
-          <p class="productList-item-desc"><%= product.description %></p>
-          <% if product.stock > 0 %>
-            <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
-              <i class="fa fa-shopping-cart"></i>
-            <% end %>
-          <% end %>
-          <% if product.stock <= 0 %>
-            <p class="productList-item-sellout f20 tc">已售完</p>
-          <% end %>
-          </li>
-      <% end %>
+              <% if product.stock <= 0 %>
+                <p class="productList-item-sellout f20 tc">已售完</p>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
+      </div>
     </ul>
   </div>
 </div>
