@@ -35,4 +35,54 @@
       <% end %>
     </div>
   </div>
+
+  <div class="col-md-12">
+    <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#home">商品详情</a></li>
+      <li><a data-toggle="pill" href="#menu1">用户评价( <%= @comments.count %> )</a></li>
+    </ul>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Some content.</p>
+              </div>
+
+              <div id="menu1" class="tab-pane fade">
+                <div class="col-md-8 col-md-offset-2">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th width="80%">Content</th>
+                        <th>User</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @comments.each do |comment| %>
+                        <tr>
+                          <td>
+                            <%= comment.content %>
+                          </td>
+                          <td>
+                            <%= comment.user.email %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <div class="text-center">
+                    <%= link_to "评价商品", new_product_comment_path(@product), class: "btn btn-danger" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 </div>

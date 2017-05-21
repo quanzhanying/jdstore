@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">商品评价</h2>
+    <%= simple_form_for [@product, @comment] do |f| %>
+      <%= f.input :content, label: "内容" %>
+      <%= f.submit "提交", class: "btn btn-danger", data: { disable_with: "提交..." } %>
+    <% end %>
+  </div>
+</div>
