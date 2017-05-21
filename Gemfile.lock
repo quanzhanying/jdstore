@@ -95,6 +95,8 @@ GEM
       hirb (~> 0.5)
       unicode-display_width (~> 0.1.1)
     i18n (0.7.0)
+    intercom-rails (0.3.4)
+      activesupport (> 3.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -241,6 +243,7 @@ DEPENDENCIES
   font-awesome-rails
   hirb
   hirb-unicode
+  intercom-rails
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener

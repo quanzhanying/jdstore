@@ -20,10 +20,10 @@
     </tr>
   </tdead>
   <tbody>
-    <% @products.each do |product| %>
+    <% @products.each_with_index do |product,index| %>
       <tr>
         <td>
-          <%= product.id %>
+          <%= index + 1 %>  #用index做编号
         </td>
         <td>
           <%= link_to product_path(product) do %>
