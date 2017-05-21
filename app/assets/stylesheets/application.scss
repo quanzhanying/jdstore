@@ -410,7 +410,6 @@ padding: 9px 8px 0 8px;
     	background: #f5f5f5;
     	height: 100%;
     	padding-bottom: 30px;
-    	position: relative;
     	width: 100%;
     	border-bottom: 1px solid #CCCCCC;
     	border-top: 1px solid #DDDDDD;
@@ -420,6 +419,7 @@ padding: 9px 8px 0 8px;
       margin-top: 10px;
       margin-bottom: 10px;
       position: relative;
+      vertical-align: bottom;
     }
 
     .footer .container-fluid {
@@ -822,11 +822,12 @@ padding: 9px 8px 0 8px;
     width: 200px;
     z-index: 0;
     border: 1px solid #f2f2f2;
-  //  position: absolute;
+    //position: absolute;
     top: 0;
     display: inline-block;
     margin-left: 10px;
     font-size: 12px;
+    vertical-align: top;
   }
   .ald-hd{
     position: relative;
@@ -974,13 +975,14 @@ padding: 9px 8px 0 8px;
   .product-wrap{
     margin-top: 30px;
     //border:1px solid #f2f2f2;
+
   }
   .product-info{
-    width: 950px;
+    width: 940px;
     margin-left: 10px;
     //border:1px solid #f2f2f2;
     display: inline-block;
-    position: absolute;
+    //position: absolute;
   }
   .TabBarBox{
     border: 1px solid #dfdfdf;

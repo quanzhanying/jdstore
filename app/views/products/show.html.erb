@@ -71,7 +71,7 @@
                     <span class="mui-amount-increase"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
                     <span class="mui-amount-decrease"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                   </span>
-                  <input type="text" class="tb-text mui-amount-input" value="1" maxlength="8" title="请输入购买量">
+                  <input type="text" class="tb-text mui-amount-input" value="1" name="quantity">
                   <span class="mui-amount-unit">件</span>
                 </span>
                 <span id="J_StockTips"></span>
@@ -109,9 +109,9 @@
       <s></s>
       <span>看了又看</span>
     </div>
-    <div class="ald-carousel">
+    <div id="srollGoods" class="ald-carousel">
       <div class="wrapCon">
-        <ul>
+        <ul id="wrapCon">
           <li>
             <div class="img">
               <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果" href="#">
@@ -485,11 +485,76 @@
 </div>
 </div>
 <script type="text/javascript">
+//---------数量-------//
+(function ($) {
+  $.fn.changeNnmber = function () {
+      var $app = $(this);
+    //  var value = $app.find(".mui-amount-input").attr("value");
+        var value = Number($app.find(".mui-amount-input").val());
+      var $up = $app.find('.fa-angle-up');
+      var $down = $app.find('.fa-angle-down');
+      $up.on('click', function () {
+          if (value >= 1) {
+              value  += 1;
+          } else {
+              value = 1;
+          }
+          $app.find(".mui-amount-input").val(value);
+      });
+      $down.on('click', function () {
+          if (value <= 1) {
+              value = 1;
+          } else {
+              value -= 1;
+          }
+          $app.find(".mui-amount-input").val(value);
+      });
+  }
+})(jQuery);
+$(function () {
+  $('#J_Amount').changeNnmber();
+});
 
-$(".ald-switchable-trigger li").click(function(){
-$(".wrapCon ul").css("top","-1044px");
-})
 
+
+//----------看了有看
+      (function ($) {
+          $.fn.scrollGoods = function (options) {
+              var defaults = {
+                  top: 0
+              };
+              options = $.extend(defaults, options);
+              var top = options.top;
+              var $app = $(this);
+              var $panel = $app.find('.wrapCon');
+              var $ul = $app.find('#wrapCon');
+              var panelHeight = $panel.height();
+              var ulHeight = $ul.height();
+              var $up = $app.find('.ald-switchable-next-btn');
+              var $down = $app.find('.ald-switchable-prev-btn');
+              $up.on('click', function () {
+                  if ((top + ulHeight) <= panelHeight) {
+                      top = 0;
+                  } else {
+                      top -= 522;
+                  }
+                  $ul.animate({ 'top': top + 'px' });
+              });
+              $down.on('click', function () {
+                  if (top >= 0) {
+                      top = (ulHeight - panelHeight) * -1;
+                  } else {
+                      top += 522;
+                  }
+                  $ul.animate({ 'top': top + 'px' });
+              });
+          }
+      })(jQuery);
+      $(function () {
+          $('#srollGoods').scrollGoods();
+      });
+
+//------放大镜-------//
 $(".jqzoom").imagezoom();
 $("#thumblist li").hover(
 function () {
