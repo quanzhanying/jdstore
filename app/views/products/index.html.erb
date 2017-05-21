@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <div class="product">
+    <%= link_to("New product", new_product_path, class: "btn btn-primary pull-right") %>
+  </div>
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Title</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td>Quantity</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(product.title, product_path(product)) %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
+          <td>
+            <%= link_to("Edit", edit_product_path(product), class: "btn btn-sm btn-default") %>
+            <%= link_to("Delete", product_path(product), class: "btn btn-sm btn-default",
+                        method: :delete, data: {confirm: "Are you sure?"}) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,70 @@
+<!-- <div class="col-md-4 col-md-offset-4">
+  <h2>新增产品</h2>
+
+  <hr>
+  <%= form_for @product do |f| %>
+
+  名称
+  <%= f.text_field :title %>
+  <br>
+  价格
+  <br>
+  <%= f.text_area :description %>
+  <br> -->
+
+<!--
+  名称
+  <input type="text" class="form-control" placeholder="名称输入">
+  <br>
+  描述
+  <br>
+  <textarea class="form-control" rows="3"></textarea>
+  <br> -->
+  <!-- 价格
+  <input type="integer" class="form-control" placeholder="Price">
+  <br>
+  库存
+  <input type="integer" class="form-control" placeholder="Quantity">
+  <br> -->
+
+  <!-- <input class="btn btn-primary" type="submit" value="Create Product"> -->
+
+<!--
+  <div class="row">
+  <div class="col-xs-4">
+    <input type="integer" class="form-control" placeholder="价格">
+  </div>
+  <div class="col-xs-4">
+    <input type="integer" class="form-control" placeholder="库存">
+  </div>
+</div>
+
+<input class="btn btn-primary" type="submit" value="Create Product">
+<% end %>
+
+
+</div> -->
+
+
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增产品</h2>
+
+    <hr>
+    <%= form_for @product do |f| %>
+
+    名称
+    <%= f.text_field :title %>
+    <br>
+    描述
+    <br>
+    <%= f.text_area :description %>
+    <br>
+    价格
+    <br>
+    <%= f.integer_field :price %>
+    <br>
+
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+    <% end %>
+
+</div>
