@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
 //= require bootstrap-sprockets
+//= require bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/alert
 //= require_tree .
 
 // --首頁圖片輪播--
@@ -64,7 +65,6 @@ $(function(){
       $wHeight = $(window).height();
       $item.height($wHeight);
     });
-
     //輪播秒數與滑入停止
     $('.carousel').carousel({
       interval: 5000,
@@ -72,3 +72,34 @@ $(function(){
     });
 });
 // --首頁圖片輪播--
+
+// 首页和全商品页面回到顶部和点赞链接的功能
+$(document).on('click', '.working', function () {
+	alert('功能暂未完成，敬请期待...')
+	// return false
+}).on('click', '.backtop', function () {
+	$('body').animate({'scrollTop': 0}, 500)
+}).on('mouseenter', '.support', function () {
+	$('.ewm').show().stop().animate({left: '-150px', opacity: 1}, 500)
+}).on('mouseleave', '.support', function () {
+	$('.ewm').stop().animate({opacity: 0}, 500, function () {
+		$(this).css('left', 0).hide()
+	})
+})
+
+// navbar
+$(window).scroll(function () {
+	var $navbar = $('#navbar')
+	if ($(this).scrollTop() > 100) {
+		$navbar.addClass('black').removeClass('transparent')
+	} else {
+		$navbar.removeClass('black').addClass('transparent')
+	}
+
+	if ($(this).scrollTop() > 500) {
+		$('#sidebar').fadeIn()
+	} else {
+		$('#sidebar').fadeOut()
+	}
+})
+// 首页和全商品页面回到顶部和点赞链接的功能结束

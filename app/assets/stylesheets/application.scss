@@ -29,6 +29,7 @@
 
 
 // 通用的css代码
+<<<<<<< HEAD
 .col-centered {
   float: none;
   margin: 0 auto; //置中
@@ -37,12 +38,149 @@
 body {
   overflow-x: hidden; //修正welcome页面右边有空白的问题
 }
+=======
+body {
+  overflow-x: hidden; //修正welcome页面右边有空白的问题
+}
+.minHeight1000 {
+  min-height: 1000px; //页面最小高度1000px
+}
+a:hover {
+  text-decoration: none;
+}
+/*字体颜色和背景颜色*/
+.bg-gray {
+  background: #F5F5F5;
+}
+
+
+>>>>>>> zhangwei-products_index
 // 通用的css代码结束
 
 // 导航栏
 
 // 导航栏结束
 
+// 工作列表标题栏
+.header_placeholder {
+  display: none;
+  height: 80px;
+}
+.header {
+  width:1200px;
+  margin: 20px auto;
+}
+.header_content {
+  margin-left:auto !important;
+  margin-right:auto !important;
+  margin-top:10px;
+  padding-bottom:20px;
+  position:relative;
+  .logo1 {
+    float:left;
+    display:inline;
+    font-size: 36px!important;
+    width: 360px;
+    height: 60px;
+  }
+  .search_bar1 {
+    float:left;
+    display:inline;
+    width:30%;
+    margin-left:40px;
+    margin-top:10px;
+    position:relative;
+  }
+  .cart-wrap1 {
+    float:right;
+    display:inline;
+    position:relative;
+    margin-top:10px;
+    height: 40px;
+    line-height: 40px;
+    .cart {
+      background: #F5F5F5;
+      font-size:12px;
+      padding-left:20px;
+      padding-right:20px;
+      position:relative;
+      border: 1px solid!important;
+    }
+  }
+}
+// 工作列表标题栏结束
+
+
+//轮播图
+.banner {
+  text-align:center;
+  padding-top:30px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  img {
+  width: 1200px;
+  height: 360px;
+ }
+ .carousel {
+   margin: 20px auto;
+   width: 1200px;
+   height: 400px;
+ }
+ // .carousel-inner > .item > a > img {
+ //     display: block;
+ //     height: 360px;
+ //     max-width: 100%;
+ //     line-height: 1;
+ //     width: 100%;
+ //  }
+}
+.carousel-inner > .item > a > img {
+    display: block;
+    height: 360px;
+    max-width: 100%;
+    line-height: 1;
+    width: 100%;
+  }
+  // 轮播图结束
+
+//商品展示列表
+.productList-wrap {
+  width:1200px;
+  padding-top:20px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden;
+  .productList {
+    padding-bottom:20px;
+    .productList-item {
+      float:left;
+      display:inline;
+      width: 228px;
+      height: 350px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      position:relative;
+      .productList-item-pic {
+        width:200px;
+        height:200px;
+      }
+      .productList-item-price {
+        font-weight:bold;
+        color: #d32048;
+        font-size:18px;
+        margin-top:10px;
+      }
+      .productList-item-desc {
+        margin-top:5px;
+        font-size:12px;
+      }
+      .productList-item-sellout{
+        font-size:20px;
+        text-align:center;
+      }
+    }
+  }
+}
  // 菜单
 .menu-wrap {
   background: #333333;
@@ -145,6 +283,7 @@ body {
 }
 // 收藏和取消收藏结束
 
+<<<<<<< HEAD
 // 登入/注冊頁開始
 .devise-view img {
   vertical-align : middle;
@@ -211,3 +350,73 @@ body {
   color: #fff;
 }
 // 登入/注冊頁結束
+=======
+// 设置回到顶部按钮和点赞链接
+.sidebar {
+  display: none;
+  position: fixed;
+  z-index: 998;
+  right: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: auto;
+  line-height: 20px;
+  * {
+    box-sizing: border-box;
+  }
+  ul {
+    padding: 0;
+  }
+  li {
+    position: relative;
+    display: block;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 8px;
+    background: #fbfbfb;
+    line-height: 42px;
+    &:hover {
+      background: #eee;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &.backtop i {
+      font-size: 18px;
+    }
+    &.support {
+      i {
+        font-size: 20px;
+      }
+      .ewm {
+        line-height: 22px;
+        display: none;
+        left: 0px;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        display: none;
+        left: 0;
+        top: 50%;
+        margin-top: -68px;
+        width: 136px;
+        height: 136px;
+        padding-left: 20px;
+        p {
+          background: #eee;
+          border-radius: 3px;
+          padding: 12px;
+        }
+      }
+    }
+    i {
+      color: #555;
+    }
+  }
+}
+// 设置回到顶部按钮和点赞链接结束
+>>>>>>> zhangwei-products_index
