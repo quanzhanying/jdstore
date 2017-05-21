@@ -16,3 +16,60 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+ //=====================================登入弹窗
+  .loginmodal-container {
+    padding: 20px;
+    max-width: 350px;
+    width: 200% !important;
+    background-color: #e4dfb4; //整张背景颜色
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 8.6);
+    overflow: hidden;
+    font-family: roboto;
+    border-radius: 0%;      //圆角
+    border-color: #868F7D;  //框框边缘颜色
+    background: url("https://ws4.sinaimg.cn/large/006tNbRwgy1fftanqc0m6j30dx0hsaaw.jpg");
+    border-width: 8px;      //边缘宽度
+    border-style: solid;
+  }
+  .smaller2-image{
+    width: 230px;  //logo图片大小
+  }
+
+  .logo{
+   // border-color: #68AC2F;//logo边缘颜色
+   // border-width: 5px;    //圆角
+   border-style: solid;
+   // border-radius: 2%;   //圆角
+   background-position: center;
+ }
+
+ .loginmodal-container h1 {
+   text-align: center;
+   font-size: 1.8em;
+   font-family: roboto;
+ }
+
+ .loginmodal-container input[type=submit] {
+   width: 100%;
+   display: block;
+   margin-bottom: 20px;
+   position: relative;
+ }
+ .loginmodal-container input[type=text], input[type=password] {
+   height: 33px;
+   font-size: 16px;
+   width: 100%;
+   margin-bottom: 10px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid #d9d9d9;
+   border-top: 1px solid #c0c0c0;
+   /* border-radius: 2px; */
+   padding: 0 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+ }
+ //=====================================登入弹窗
