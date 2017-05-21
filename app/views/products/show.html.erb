@@ -19,7 +19,7 @@
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
      <% else %>
-      已销售一空，无法购买
+      此商品缺货
      <% end %>
     </div>
   </div>
