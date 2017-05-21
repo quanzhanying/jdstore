@@ -1,46 +1,47 @@
 <h2> Edit Product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
-
-<div class="group">
   <%= f.input :title %>
-</div>
-
-  <div class="group">
     <%= f.input :description %>
-  </div>
-
-  <div class="group">
     <%= f.input :quantity %>
-  </div>
-
-  <div class="group">
-    <%= f.input :price %>
-  </div>
+<%= f.select :product_type, :collection => ["进口水果","进口水产","进口鲜肉"], :selected => ['']%>
 
   <% if @product.image.present? %>
   <span>目前商品图</span> <br>
   <%= image_tag(@product.image.thumb.url) %>
   <% end %>
-
-  <div class="group">
     <%= f.input :image, as: :file %>
-  </div>
 
-  <% if @product.photos.present? %>
-     <span>目前商品圖</span> <br>
-     <% @product.photos.each do |p| %>
-       <%= image_tag p.avatar.thumb.url %><br>
-     <% end %>
-   <% end %>
+  <% if @product.image2.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image2.thumb.url) %>
+  <% end %>
+    <%= f.input :image2, as: :file %>
 
-   <div class="group">
-     <%#= f.label :avatar %><br>
+  <% if @product.image3.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image3.thumb.url) %>
+  <% end %>
+    <%= f.input :image3, as: :file %>
+
+  <% if @product.image4.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image5.thumb.url) %>
+  <% end %>
+    <%= f.input :image4, as: :file %>
+
+  <% if @product.image5.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image5.thumb.url) %>
+  <% end %>
+    <%= f.input :image5, as: :file %>
+
+     <%#= f.label :avatar %>
      <%#= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
-   </div>
-   <div class="group">
-       <%= f.select :category_id, @categories %>
-   </div>
+
+
+       <%#= f.select :category_id, @categories %>
+
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
