@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   root 'products#index'
   devise_for :users
   namespace :admin do
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+    end
+    member do
+      put "like", to: "products#upvote"
     end
   end
 

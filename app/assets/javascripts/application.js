@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require jquery.raty
+//= require ratyrate
 //= require_tree .

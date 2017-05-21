@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC')}
+  acts_as_votable
 
   def publish!
     self.is_hidden = false

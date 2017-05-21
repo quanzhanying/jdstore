@@ -63,7 +63,12 @@
         <% end %>
       <% end %>
         <%= product.title %> ￥ <%= product.price %>
-
+      <%= link_to like_product_path(product), method: :put do %>
+        <div class="pi-thumbs-up">
+        <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+        <%= product.get_upvotes.size %>
+        </div>
+      <% end %>
 
     </div>
   <% end %>
