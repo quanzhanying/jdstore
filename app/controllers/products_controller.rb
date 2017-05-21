@@ -1,6 +1,15 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+
+
+    @products = case params[:order]
+            when 'by_product.price'
+              Product.order('price DESC')
+
+            else
+              Product.order('created_at DESC')
+            end
+
   end
 
   def show
@@ -21,7 +30,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity, :image)
+    params.require(:product).permit(:title, :description, :price, :quantity, :image, :category)
   end
 
 

@@ -1,3 +1,16 @@
+<h1 class="text-center" style="font-family:Verdana">我们的商品</h1><br>
+
+<div class="dropdown clearfix pull-right">
+   <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">
+     排序
+     <span class="caret"></span>
+   </button>
+   <ul class="reorder dropdown-menu ">
+     <li><%= link_to("价格", products_path(:order => "by_product.price")) %></li>
+     <li><%= link_to("发表时间", products_path ) %></li>
+
+   </ul>
+</div>
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
