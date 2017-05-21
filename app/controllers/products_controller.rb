@@ -1,19 +1,17 @@
 class ProductsController < ApplicationController
   def index
-
-
     @products = case params[:order]
             when 'by_product.price'
-              Product.order('price DESC')
-
+              Product.where(:is_hidden => false).order('price DESC')
             else
-              Product.order('created_at DESC')
+              Product.where(:is_hidden => false).order('created_at DESC')
             end
-
   end
 
   def show
     @product = Product.find(params[:id])
+
+
   end
 
   def add_to_cart
@@ -30,9 +28,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity, :image, :category)
+    params.require(:product).permit(:title, :description, :price, :quantity, :image, :category, :is_hidden)
   end
-
-
 
 end
