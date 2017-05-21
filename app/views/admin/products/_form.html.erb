@@ -1,11 +1,11 @@
 <%= simple_form_for [:admin, @product] do |f| %>
-  <div class="form-job">
+  <div class="form-product">
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= f.input :category %>
     <%= f.input :quantity %>
     <%= f.input :price %>
     <%= f.input :image, as: :file %>
-    <%= f.input :category %>
     <%= f.input :is_hidden %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."} %>

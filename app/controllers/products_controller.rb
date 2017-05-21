@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   def index
     @products = case params[:order]
-            when 'by_product.price'
-              Product.where(:is_hidden => false).order('price DESC')
-            else
-              Product.where(:is_hidden => false).order('created_at DESC')
-            end
+              when 'down_product.price'
+                Product.published.order('price DESC').paginate(:page => params[:page], :per_page => 5)
+              when 'up_product.price'
+                Product.published.order('price ASC').paginate(:page => params[:page], :per_page => 5)
+              else
+                Product.published.recent.paginate(:page => params[:page], :per_page => 5)
+              end
   end
 
   def show
