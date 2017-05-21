@@ -9,6 +9,7 @@
           <th colspan="2">商品资讯</th>
           <th>单价</th>
           <th>数量</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,9 @@
             </td>
             <td>
               <%= cart_item.quantity %>
+            </td>
+            <td>
+              <%= link_to("删除", cart_item_path(cart_item.product_id), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
             </td>
           </tr>
         <% end %>
