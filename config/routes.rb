@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
-    resources :products
+    resources :products do
+      member do
+        patch :move_up
+        patch :move_down
+      end
+    end 
     resources :orders do
       member do
         post :cancel
@@ -31,7 +36,7 @@ Rails.application.routes.draw do
     member do
       post :pay_with_alipay
       post :pay_with_wechat
-      post :apply_to_cancel 
+      post :apply_to_cancel
     end
   end
 
