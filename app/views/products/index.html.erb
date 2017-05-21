@@ -110,29 +110,14 @@
   </div>
   <!-- 商品排序显示页面部分结束 -->
 
-  <!-- <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
-        <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
-          <% end %>
-        <% end %>
-        <%= product.name %> ￥ <%= product.price %>
-      </div>
-    <% end %>
-  </div> -->
-
   <!-- 区域：商品展示列表 -->
   <div class="productList-wrap">
     <ul class="productList clearfix">
       <div class="row">
         <% @products.each do |product| %>
           <div class="col-md-3 col-xs-6">
-            <li class="productList-item">
-              <p class="productList-item-pic">
+            <li class="productList-item box panel panel-default">
+              <div class="productList-item-pic">
                 <%= link_to product_path(product) do %>
                   <% if product.image.present? %>
                     <%= image_tag(product.image.thumb.url) %>
@@ -140,21 +125,21 @@
                     <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
                   <% end %>
                 <% end %>
-              </p>
-              <p class="productList-item-price">￥<%= product.price %></p>
-              <p class="productList-item-name ell">
+              </div>
+              <div class="productList-item-price">￥<%= product.price %></div>
+              <div class="productList-item-name ell">
                 <%= link_to product_path(product) do %>
                    <%= product.name %>
                 <% end %>
-              </p>
-              <p class="productList-item-desc"><%= product.description %></p>
+              </div>
+              <div class="productList-item-desc"><%= product.description %></div>
               <% if product.stock > 0 %>
-                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
+                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
                   <i class="fa fa-shopping-cart"></i>
                 <% end %>
               <% end %>
               <% if product.stock <= 0 %>
-                <p class="productList-item-sellout f20 tc">已售完</p>
+                <div class="productList-item-sellout">已售完</div>
               <% end %>
             </li>
           </div>
