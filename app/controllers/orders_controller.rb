@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.total = current_cart.total_price
 
-    if order.save
+    if @order.save
       redirect_to order_path(@order)
     else
       render 'carts/checkout'
@@ -16,6 +16,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shopping_name, :shopping_adddress)
+    params.require(:order).permit(:billing_name, :billing_address, :shopping_name, :shopping_address)
   end
 end
