@@ -1,4 +1,5 @@
-<div class="padding:10px; float:right;">
+<div style="padding:10px; float:right;">
+
   <% case order.aasm_state %>
   <% when "order_placed" %>
     <%= link_to("取消订单",
@@ -18,10 +19,11 @@
                 shipped_admin_order_path(order),
                 class: "btn btn-default btn-sm", method: :post) %>
 
+
   <% when "shipped" %>
     <%= link_to("退货",
-                renturn_admin_order_path(order),
-                class: "btn btn-default btn-sm", method: :post)%>
+                return_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
 
   <% when "order_cancelled" %>
     <span class="label label-default">订单已取消</span>
