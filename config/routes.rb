@@ -19,7 +19,12 @@ Rails.application.routes.draw do
   resources :cart_items
 
   namespace :admin do
-    resources :products
+    resources :products do
+      member do
+         patch :move_up
+         patch :move_down
+      end
+    end
     resources :orders do
       member do
         post :cancel
@@ -40,6 +45,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'products#index'
+  root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
