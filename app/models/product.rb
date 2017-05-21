@@ -17,7 +17,7 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   acts_as_list
   scope :recent, -> { order("created_at DESC")}
-
+  belongs_to :category
   has_many :product_user_relationships
   has_many :members, :through => :product_user_relationships, :source => :user
 end
