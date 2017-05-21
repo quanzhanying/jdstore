@@ -1,7 +1,7 @@
 <h1>  Product  List  </h1>
 
-<div  class="pull-right">
-   <%=  link_to("Add  new  product", new_admin_product_path, class: "btn  btn-lg  btn-default")   %>
+<div  class="pull-right"  style="padding-bottom: 20px;">
+   <%=  link_to("新增产品", new_admin_product_path, class: "btn  btn-sm  btn-primary")   %>
 </div>
 
 
@@ -9,27 +9,30 @@
   <thead>
     <tr>
       <th>#</th>
+      <th  width="220">产品图片</th>
       <th>品名</th>
-      <th>叙述</th>
-      <th>库存</th>
       <th>价格</th>
-      <th>选项</th>
-      <th>创建日期</th>
+      <th  width="100">选项</th>
     </tr>
   </thead>
   <tbody>
     <%  @products.each  do  |product|  %>
       <tr>
-        <td>#</td>
-        <td><%=  product.title  %></td>
-        <td><%=  product.description  %></td>
-        <td><%=  product.quantity  %></td>
+        <td><%=  product.id  %></td>
+        <td>
+          <%=  link_to  product_path(product)  do  %>
+            <%  if   product.image.present?  %>
+               <%=  image_tag(product.image.thumb.url,  class: "thumbnail")  %>
+            <%  else  %>
+               <%=  image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <%  end   %>
+          <%  end  %>
+        </td>
+        <td><%=  product.title %></td>
         <td><%=  product.price  %></td>
         <td>
-          <%=  link_to("Edit",  edit_admin_product_path(product)) %> |
-          <%=  link_to("Destroy", method: :delete,  data: {  confirm: "Are  you  sure?" } ) %>
+          <%=  link_to("Edit",  edit_admin_product_path(product)) %>
         </td>
-        <td><%=  product.created_at  %></td>
       </tr>
     <%  end  %>
   </tbody>
