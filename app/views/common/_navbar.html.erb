@@ -1,3 +1,38 @@
+<div class="row">
+    <nav class="navbar-custome" role="navigation">
+        <div class="margin-side">
+            <ul class="topnav" id="myTopnav">
+                <!-- <div class="topnav" id="myTopnav"> -->
+                <!-- <a href="#home">JD</a>
+                <a href="#home">JDDDD</a>
+                <a href="#home">JD</a>
+                <a href="#home">JD</a>
+                <a href="#home">JD</a>
+                <a href="javascript:void(0);" id="responsive-navbar" class="icon" onclick="myFunction()">&#9776;</a> -->
+                <li>
+                    <a href="/">JD</a>
+                </li>
+                <li>
+                    <a href="#home">JD</a>
+                </li>
+                <li>
+                    <a href="#home">JD</a>
+                </li>
+                <li>
+                    <a href="#home">JD</a>
+                </li>
+
+            </ul>
+            <ul class="fr" >
+                <li>
+                    <a href="javascript:void(0);" id="responsive-navbar" class="icon">&#9776;</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,11 +49,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <div class="cart-wrap">
-                    <%= render :partial => "products/cart" %>
-                  </div>
+                    <div class="cart-wrap">
+                        <%= render :partial => "products/cart" %>
+                    </div>
                 </li>
-            <% if !current_user %>
+                <% if !current_user %>
                 <li><%= link_to("注册", new_user_registration_path) %>
                 </li>
                 <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
