@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     devise_for :users
   namespace :admin do
     resources :products
+    resources :orders
   end
  resources :products do
    put :favorite, on: :member
@@ -29,6 +30,6 @@ Rails.application.routes.draw do
      end
    end
    namespace :account do
-    resources :orders 
+    resources :orders
   end
  end
