@@ -67,14 +67,23 @@
   <% end %>
 </div>
 
-<% if !@order.is_paid? %>
-<div class="group pull-right">
-  <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-  <%= link_to("以微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-</div>
-<% else %>
-   <p class="text-center">此订单已完成付款</p>
-<% end %>
+
+<%  if !@order.is_paid? && !@order.order_cancelled? %>
+
+    <div class="group pull-right">
+      <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+      <%= link_to("以微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+    </div>
+    <% elsif @order.paid? %>
+       <p class="text-center">此订单已完成付款</p>
+    <% else %>
+       <p class="text-center">此订单已取消</p>
+    <% end %>
+
+
+
+
+
 
   </div>
 </div>
