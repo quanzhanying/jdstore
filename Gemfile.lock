@@ -38,6 +38,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.5)
+      activerecord (>= 3.0)
     arel (7.1.1)
     autoprefixer-rails (6.7.7.2)
       execjs
@@ -51,7 +53,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (9.0.5)
     carrierwave (1.0.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -191,9 +192,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   awesome_rails_console
   bootstrap-sass
-  byebug
   carrierwave
   coffee-rails (~> 4.2)
   devise
