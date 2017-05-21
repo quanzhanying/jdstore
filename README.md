@@ -1,4 +1,5 @@
 # README
 
-di yi zhou
-di 2 zhou
+1st week
+2nd week
+3rd week
