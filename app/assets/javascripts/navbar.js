@@ -2,15 +2,12 @@
 $(
   function () {
     $('#responsive-navbar').click(function(){
-      console.log("1111");
-      var x = $('#myTopnav')
-      console.log(x);
-      if (x.hasClass('topnav')) {
-          x.addClass('responsive')
-          console.log("111");
-      } else {
-          x.addClass('topnav');
-      }
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+              x.className += " responsive";
+          } else {
+              x.className = "topnav";
+          }
     })
   }
 )
