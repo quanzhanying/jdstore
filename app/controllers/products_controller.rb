@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:new, :create, :show]
   before_action :validate_search_key, only: [:search]
+  layout "products"
   def index
     # 商品列表排序功能和不同种类分类显示功能
     if params[:category].blank?

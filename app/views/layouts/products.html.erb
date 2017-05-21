@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Select.</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  </head>
+  <body style="background-color: #fff;">  <!-- #单一商品页面的两侧的背景颜色始终去不掉，所以新建了这个页面专用的body背景颜色（白色） -->
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
+      </div>
+      <%= yield %>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>

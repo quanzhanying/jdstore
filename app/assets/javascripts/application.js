@@ -103,3 +103,11 @@ $(window).scroll(function () {
 	}
 })
 // 首页和全商品页面回到顶部和点赞链接的功能结束
+
+// 添加单一商品页面选项卡功能
+$(document).on('click', '.productDetail-tabList-tab', function () {
+  var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
+  $('.productDetail-content').hide() //所有的内容都隐藏
+  $('.productDetail-content').eq(index).show() //只显示对于index的内容
+})
+// 添加单一商品页面选项卡功能结束

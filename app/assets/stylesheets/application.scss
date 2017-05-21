@@ -33,6 +33,7 @@
 .col-centered {
   float: none;
   margin: 0 auto; //置中
+  margin-top: 50px;
 }
 
 body {
@@ -136,7 +137,6 @@ a:hover {
   padding-top:20px;
   margin-left: auto !important;
   margin-right: auto !important;
-  overflow: hidden;
   .productList {
     padding-bottom:20px;
     .productList-item {
@@ -428,3 +428,64 @@ a:hover {
   }
 }
 // 设置回到顶部按钮和点赞链接结束
+
+// product/show页面中商品详情和用户评价
+.productDetail {
+  border:1px solid #DDDDDD !important;
+  margin-top:40px auto;
+  text-align: center;
+  line-height: 30px;
+  width: 1200px;
+  background-color: #fff;
+  margin: 0 auto !important;
+}
+.productDetail-tabList {
+  background: #F5F5F5;
+  height: 35px;
+  list-style-type: none;
+  border-bottom: 1px solid #D8D8D8;
+  .productDetail-tabList-tab {
+    float:left;
+    display:inline;
+    width:175px;
+    height: 35px;
+    line-height: 35px;
+    padding-left:50px;
+    padding-right:50px;
+    cursor: pointer;
+    border-right: 1px solid #D8D8D8;
+  }
+}
+// .productDetail-tabList-activeTab {
+// 	background: #fff;
+// }
+.productDetail-contentWrap{
+  width: 750px;
+  height:500px;
+  // margin:50px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.productDetail-content {
+  display: none;
+  width: 750px;
+  height: 500px;
+  padding-top:20px;
+  padding-bottom:50px;
+  text-align:center;
+}
+.commentList {
+  margin-top: 70px;
+}
+.comment-say {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align:center;
+  font-size: 20px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
