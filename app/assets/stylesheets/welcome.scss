@@ -12,15 +12,15 @@
     height: 616px;
 }
 .fade-carousel .carousel-indicators > li {            //滚动按钮的设置
-    width: 3px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     margin: 0 2px;
     background-color: #fff;
     opacity: 0.5;
 }
 .fade-carousel .carousel-indicators > li.active {     //当前滚动按钮的设置
-    width: 30px;
-    height: 4px;
+    width: 40px;
+    height: 5px;
     opacity: 0.8;
 }
 
@@ -110,9 +110,12 @@
 }
 
 /*  --- 响应式设置 ---  */
-// @media screen and (min-width: 980px){
-//     .hero { width: 980px; }
-// }
-// @media screen and (max-width: 640px){
-//     .hero h1 { font-size: 4em; }
-// }
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 3em; }
+}
+@media screen and (max-width: 640px){
+    .hero h3 { font-size: 1.5em; }
+}
