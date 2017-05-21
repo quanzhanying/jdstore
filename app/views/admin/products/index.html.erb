@@ -1,0 +1,30 @@
+<h1>  Product  List  </h1>
+
+<table  class="table  table-bordered">
+  <thead>
+    <tr>
+      <th>品名</th>
+      <th>叙述</th>
+      <th>库存</th>
+      <th>价格</th>
+      <th>选项</th>
+      <th>创建日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @products.each  do  |product|  %>
+      <tr>
+        <td>#</td>
+        <td><%=  product.title  %></td>
+        <td><%=  product.description  %></td>
+        <td><%=  product.quantity  %></td>
+        <td><%=  product.price  %></td>
+        <td>
+          <%=  link_to("Edit",  edit_admin_product_path) %> |
+          <%=  link_to("Destroy",  destroy_admin_product_path) %>
+        </td>
+        <td><%=  product.created_at  %></td>
+      </tr>
+    <%  end  %>
+  </tbody>
+</table>
