@@ -11,7 +11,8 @@ class ProductsController < ApplicationController
 
   def show
      @product = Product.find(params[:id])
-     @photos = @product.photos.all
+     @product.show_count += 1
+     @product.save
     end
 
   def add_to_cart
