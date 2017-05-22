@@ -1,0 +1,146 @@
+<!-- <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- <div class="navbar-header">
+            <a class="navbar-brand" href="/">JDStore </a>
+        </div> -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <%= link_to("Products", products_path) %>
+            </li>
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                 <%= link_to carts_path do  %>
+                    购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                 <% end %>
+              </li>
+              <% if !current_user %>
+                  <li><%= link_to("注册", new_user_registration_path) %> </li>
+                  <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+                <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!, <%= current_user.email %>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <% if current_user.admin? %>
+                        <li>
+                          <%= link_to("Admin 选单", admin_products_path ) %>
+                        </li>
+                      <% end %>
+                      <li>
+                        <%= link_to("个人订单列表", account_orders_path ) %>
+                      </li>
+                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                    </ul>
+                  </li>
+                <% end %>
+            </ul>
+        </div> -->
+        <!-- /.navbar-collapse -->
+    <!-- </div>
+    <!-- /.container-fluid -->
+<!-- </nav> -->
+<!-- /.导航栏第一列 -->
+<div class="navbar-wrap">
+  <div class="navbar">
+    <div class="navbar-left">
+      <%=link_to("欢迎来到！", products_path)%>
+    </div>
+    <ul class="navbar-list">
+      <% if !current_user %>
+        <li class="navbar-listItem">
+          <%= link_to("注册", new_user_registration_path) %>
+        </li>
+        <li class="navbar-spacer"></li>
+        <li class="navbar-listItem">
+          <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %>
+        </li>
+      <% end %>
+      <% if current_user %>
+        <li class="navbar-listItem">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hi!, <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+                <li>
+                  <%= link_to("Admin 选单", admin_products_path ) %>
+                </li>
+              <% end %>
+                <li>
+                  <%= link_to("个人订单列表", account_orders_path ) %>
+                </li>
+                <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+            </ul>
+          </li>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- /.导航栏第二列 -->
+<div class="header">
+  <div class="headerContent">
+    <div class="headerContent-item headerContent-item1">
+      <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' >BB-Fly</a>
+    </div>
+    <div class="headerContent-item headerContent-item2">
+      <div class="nav navbar-nav navbar-center">
+          <div class="input-group" id="search-id" >
+            <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入关键字">
+            <div class="input-group-btn">
+              <button class="btn btn-info" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+          <% end %>
+        </div>
+    </div>
+    <div class="headerContent-item headerContent-item3">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+           <%= link_to carts_path do  %>
+              购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+           <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- /.导航栏第三列 -->
+<div class="menu bg-color1">
+  <div class="menuList">
+    <div class="menuList-item ">
+      <li class="active">
+        <%= link_to("首页", products_path) %>
+      </li>
+    </div>
+    <div class="menuList-item">
+      <li class="active">
+        热销
+      </li>
+    </div>
+    <div class="menuList-item">
+      <li class="active">
+        红酒
+      </li>
+    </div>
+    <div class="menuList-item">
+      <li class="active">
+        白酒
+      </li>
+    </div>
+  </div>
+</div>

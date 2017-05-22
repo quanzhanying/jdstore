@@ -1,0 +1,232 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #4fa157;
+}
+
+.bg-color2 {
+  background: #c94747;
+}
+
+.bg-color3 {
+  background: #c8e2ca;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+
+
+/*navbar导航栏*/
+.navbar-wrap {
+  width: 100%; /*铺满屏幕*/
+  background: #4fa157; /*背景颜色*/
+  font-size: 12px; /*字体12px*/
+  height: 42px; /*设置高度*/
+  line-height: 42px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #717171; /*字体颜色*/
+}
+.navbar {
+  width: 970px; /*设置导航栏宽度1200*/
+  margin: 0 auto; /*水平居中*/
+}
+
+.navbar-left {
+  float: left; /*你去左边*/
+  padding-left: 10px; /*左边加点空间，不然太挤啦*/
+}
+
+.navbar-list li {
+  float: right; /*你去右边*/
+  display: inline;/*去掉li的"."
+
+}
+
+.navbar-listItem {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  padding-left: 5px; /*左边加点空间，不然太挤啦*/
+  padding-right: 10px; /*右边加点空间，不然太挤啦*/
+}
+
+.navbar-spacer {
+  float: left; /*同样的，你也要float*/
+  width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
+  height: 12px; /*12px差不多，刚刚好*/
+  margin-top: 9px; /*调一下上边距*/
+  background: #4fa157; /*分隔符的背景颜色*/
+}
+
+.navbar-wrap a {
+  color: #717171; /*文字的颜色*/
+  text-decoration: none; /*不要下划线啦，好丑*/
+}
+.navbar-wrap a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+/*头部*/
+.header {
+  width: 970px;
+  margin: 20px auto;
+}
+
+.headerContent {
+  height: 60px;
+}
+
+.headerContent-item {
+  height: 60px;
+}
+
+.headerContent-item1 {
+  float: left;
+  width: 180px;
+  margin-right: 180px;
+}
+
+.headerContent-item2 {
+  float: left;
+  width: 400px;
+}
+
+.headerContent-item3 {
+float: right;
+width: 150px;
+}
+
+/*菜单*/
+.menu {
+  width: 100%;
+}
+
+.menuList {
+  width: 970px;
+  margin: 20px auto;
+  height: 42px;
+  line-height: 42px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  padding-left: 10px; /*左边加点空间，不然太挤啦*/
+}
+
+.menuList-item li {
+  float: left;
+  width: 108px;
+  height: 42px;
+  display: inline;
+}
+
+
+/*头图*/
+.carousel {
+  margin: 20px auto;
+  width: 970px;
+  height: 400px;
+}
+
+/*分类*/
+.orderList {
+  margin: 20px auto;
+  width: 970px;
+  overflow: hidden;
+}
+
+.orderList-item {
+  float: left;
+  width: 108px;
+  height: 42px;
+}
+
+/*商品列表*/
+.productList {
+  margin: 20px auto;
+  width: 970px;
+  overflow: hidden;
+}
+
+.productList-item {
+  float: left;
+  width: 228px;
+  height: 250px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.productList-lastItem {
+  margin-right: 0;
+}
+
+
+
+
+/* footer */
+.footer {
+  margin-top: 20px;
+  width: 100%;
+  height: 83px;
+}
+
+
+/* 搜索框 */
+
+#search-id {
+  width: 200px;
+  padding-top: 7px;
+  // margin-left: 500px
+  text-align: center;
+
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
+.search-info-title {
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+  color: #0d6ded;
+  font-size: 20px;
+  text-align: center;
+}
+
+.products-show0 {
+  border-bottom: 1px dotted #CCC;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}
+.product-table {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.products-show {
+  border-bottom: 1px dotted #CCC;
+  padding: 15px;
+  font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
+}
