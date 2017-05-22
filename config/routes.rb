@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :brands
   resources :categories
   devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :carts do

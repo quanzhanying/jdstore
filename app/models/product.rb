@@ -13,12 +13,14 @@
 #  updated_at  :datetime         not null
 #  image       :string
 #  category_id :integer
+#  brand_id    :integer
 #
 
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :user
   belongs_to :category
+  belongs_to :brand
   # 收藏功能相关开始
   has_many :favorites
   has_many :fans, through: :favorites, source: :user

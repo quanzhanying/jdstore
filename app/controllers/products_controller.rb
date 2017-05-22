@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   layout "products"
   def index
     # 商品列表排序功能和不同种类分类显示功能
-    if params[:category].blank?
+    if params[:category].blank? && params[:brand].blank?
       @products = case params[:order]
       when 'by_product_stock'
         Product.selling.order('stock DESC').paginate(:page => params[:page], :per_page => 10)
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
       else
       @products = Product.selling.recent.paginate(:page => params[:page], :per_page => 10)
       end
-    else
+    elsif !params[:category].blank? && params[:brand].blank?
       @category_id = Category.find_by(name: params[:category]).id
       @products = case params[:order]
       when 'by_product_stock'
@@ -22,6 +22,16 @@ class ProductsController < ApplicationController
         Product.where(:category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
       else
       @products = Product.where(:category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 10)
+      end
+    elsif params[:category].blank? && !params[:brand].blank?
+      @brand_id = Brand.find_by(name: params[:brand]).id
+      @products = case params[:order]
+      when 'by_product_stock'
+        Product.where(:brand_id => @brand_id).order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+      when 'by_product_price'
+        Product.where(:brand_id => @brand_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
+      else
+      @products = Product.where(:brand_id => @brand_id).recent.paginate(:page => params[:page], :per_page => 10)
       end
     end
   end
@@ -93,6 +103,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :stock, :price, :can_sell, :image, :category_id)
+    params.require(:product).permit(:name, :description, :stock, :price, :can_sell, :image, :category_id, :brand_id)
   end
 end

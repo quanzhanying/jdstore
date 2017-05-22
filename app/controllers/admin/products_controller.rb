@@ -10,6 +10,7 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
+    @brands = Brand.all.map { |b| [b.name, b.id] } #这一行为加入的代码
   end
 
   def edit
@@ -21,6 +22,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     @product.category_id = params[:category_id]
+    @product.brand_id = params[:brand_id]
     if @product.save
       redirect_to admin_products_path, alert: "添加商品成功"
     else
@@ -47,6 +49,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :stock, :can_sell, :image)
+    params.require(:product).permit(:name, :description, :price, :stock, :can_sell, :image, :category_id, :brand_id)
   end
 end
