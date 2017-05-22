@@ -32,7 +32,8 @@ class ProductsController < ApplicationController
                    :price_high => data["ticker"]["high"],
                    :trade_vol => data["ticker"]["vol"],
                    :price_last => data["ticker"]["last"],
-                   :price => data["ticker"]["last"])
+                   :price => data["ticker"]["last"],
+                   :quantity => data["ticker"]["vol"])
 
     redirect_to products_path
   end
