@@ -9,6 +9,13 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <% if !current_user.present? %>
+            <li class="upper-links"><a class="links" href=" ">注册</a ></li>
+            <li class="upper-links"><a class="links" href="/users/sign_in">登入</a ></li>
+      <% else %>
+            <li><%= link_to("我的订单", account_orders_path) %></li>
+            <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
+      <% end %>
       <li class="navbar-form navbar-left" >
         <div class="form-group">
         <%= search_form_for @q do |f| %>
