@@ -37,6 +37,7 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
