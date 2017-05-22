@@ -36,6 +36,10 @@ gem 'acts_as_list'
 gem 'letter_opener', group: :development
 gem 'aasm'
 
+# 七牛云
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+
 # 分页
 gem 'will_paginate-bootstrap'
 
