@@ -22,4 +22,34 @@ class Order < ApplicationRecord
     self.update_columns(is_paid: true)
   end
 
+  include AASM
+
+  aasm do
+    state :order_placed, initial: true
+    state :paid
+    state :shopping
+    state :shopped
+    state :order_cancelled
+    state :good_rerurned
+
+    event :make_payment, after_commit: :pay! do
+      transitions from: :order_placed, to: :paid
+    end
+
+    event :shop do
+      transitions from: :paid,          to: :shopping
+    end
+
+    event :deliver do
+      transitions from: :shopping,      to: :shopped
+    end
+
+    event :return_good do
+      transitions from: :shopped,       to: :good_returned
+    end
+
+    event :cancel_order do
+      transitions from: [:order_placed, :paid], to: :order_cancelled
+    end
+  end
 end
