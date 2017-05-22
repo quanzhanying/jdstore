@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
     end
 
     redirect_to product_path(@product)
+    flash[:notice] = "你已将 ''#{@product.title}'' 加入收藏"
   end
 
   def quit
@@ -57,6 +58,7 @@ class ProductsController < ApplicationController
     end
 
     redirect_to product_path(@product)
+    flash[:notice] = "你已将 ''#{@product.title}'' 移除收藏"
   end
 
 

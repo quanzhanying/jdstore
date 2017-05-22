@@ -33,7 +33,7 @@
      font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
      padding-top: 50px;                                  // 腾出navbar的遮挡空间
      color: #666;                                        // 修改全站的 字体主色
-     font-size: 1.2em;                                   // 网站所有字体缩小比例
+    //  font-size: 1.2em;                                   // 网站所有字体缩小比例
     .content {
       flex: 1;                                           // footer固定底部
     }
@@ -186,7 +186,7 @@
   .landing-page-eva-style {
     margin-top: 2em;
     text-align: justify;
-    line-height: 1.6em;
+    line-height: 2em;
   }
 
 
@@ -231,4 +231,17 @@
     font-weight: lighter;
     color: #7f8c8d;
     text-align: center;
+  }
+
+
+  //登录注册页面
+  .log-page-bg {
+    height: 900px;
+    background-size: cover;                             //确保图片完全撑开
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(https://ooo.0o0.ooo/2017/05/21/592135630adc6.jpg);
+  }
+  .log-page {
+    margin-top: 60px;
   }

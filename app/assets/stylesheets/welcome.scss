@@ -27,13 +27,13 @@
 /*  --- 标题文字设置 ---  */
 .hero {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     z-index: 3;                                       //元素堆叠等级3，将显示在最上层
     color: #fff;
     text-align: center;
     text-transform: uppercase;                        //英文大写
-    text-shadow: 2px 2px 0 rgba(0,0,0,10);           //文字阴影 和 动态显示时间
+    text-shadow: 0 0 5px #666;            //文字阴影 和 动态显示时间
       -webkit-transform: translate3d(-50%,-50%,0);
          -moz-transform: translate3d(-50%,-50%,0);
           -ms-transform: translate3d(-50%,-50%,0);
