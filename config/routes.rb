@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RuCaptcha::Engine => "/rucaptcha"
+
   devise_for :users
   namespace :account do
    resources :orders
@@ -12,8 +14,8 @@ Rails.application.routes.draw do
   namespace :admin do
      resources :products do
        member do
-         patch :move_up
-         patch :move_down
+         post :move_up
+         post :move_down
        end
      end
       resources :orders do

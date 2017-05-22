@@ -14,3 +14,10 @@ u.password_confirmation = "123456"   # 最少要六码
 
 u.is_admin = true
 u.save
+
+Product.create!(title: "1",
+                 description: "1",
+                 price: 1,
+                 quantity: 1,
+                 image: open("https://ws3.sinaimg.cn/large/006tNc79ly1fftx4k69qtj318y0u0u0x.jpg")
+                 )
