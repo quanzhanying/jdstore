@@ -21,3 +21,10 @@ Product.create!(title: "1",
                  quantity: 1,
                  image: open("https://ws3.sinaimg.cn/large/006tNc79ly1fftx4k69qtj318y0u0u0x.jpg")
                  )
+
+Product.create!(title: "2",
+                description: "2",
+                price: 2,
+                quantity: 2,
+                image: open("https://ws3.sinaimg.cn/large/006tNc79ly1fftx6n69exj31900u0kjl.jpg")
+                )
