@@ -420,17 +420,14 @@ footer .sub-footer {
       .button{
         color: #fff;
         background-color: #4A6BB5;
-        opacity: 0.5;
-        filter: alpha(opacity=50); /* For IE8 and earlier */
+        transition: background-color 2s;
         border-color: #4A6BB5;
         font-size: 16px;
         letter-spacing: 1px;
         width: 100%;
       }
       .button:hover{
-          background-color: #4A99B5;
-          opacity: 1.0;
-          filter: alpha(opacity=100); /* For IE8 and earlier */
+          background-color: #f44336;
           border-color: #4A99B5;
           color: #fff;
       }
