@@ -14,8 +14,12 @@ class CartItemsController < ApplicationController
   def increase
     @cart = current_cart
     @cart_item = CartItem.find(params[:id])
-    @cart_item.quantity += 1
-    @cart_item.save
+    if @cart_item.quantity < @cart_item.product.quantity
+      @cart_item.quantity += 1
+      @cart_item.save
+    else
+      flash[:warning] = "存货不足"
+    end
     redirect_to :back
   end
 
