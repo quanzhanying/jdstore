@@ -43,8 +43,9 @@ gem 'rucaptcha'
 gem 'dalli'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'figaro'
 group :development, :test do
-  gem 'acts_as_list'
+gem 'acts_as_list'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 gem 'byebug', platform: :mri
 gem 'sqlite3'
