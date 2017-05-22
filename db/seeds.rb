@@ -22,11 +22,11 @@ end
 
 # Initialize Product
 
-Product.create!(title: "QC-35",
+Product.create!(title: "City Bag",
   description: "耳机",
   price: 2800,
   quantity: 5,
-  image: open("http://media.nintendo.com/nintendo/bin/pnQltLVy8aGp5q6xq04dWUJbygjIEuZg/VBJPUsIXYslEBuSR8-YCNYmBzvWqKRpN.jpg")
+  image: open("http://www.forever21.com/images/default_750/00088847-02.jpg")
   )
 
 Product.create!(title: "Iphone7",
@@ -36,7 +36,7 @@ Product.create!(title: "Iphone7",
   image: open("http://media.nintendo.com/nintendo/bin/asUarutBdpoEfUN9RRw62YyCHLe5bnz7/3Imp6pfRvpmw7aHawbDOew7O3QppdGMB.jpg")
   )
 
-Product.create!(title: "Cherry Keyboard",
+Product.create!(title: "Dress",
   description: "G80-3000键盘",
   price: 2800,
   quantity: 5,
