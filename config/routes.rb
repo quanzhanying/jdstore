@@ -31,5 +31,7 @@ resources :orders do
     end
   end
 
+resources :orders
+
   root 'welcome#index'
 end
