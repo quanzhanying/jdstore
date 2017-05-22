@@ -8,6 +8,7 @@ namespace :admin do
       patch :move_down
     end
   end
+  resources :orders 
 end
 root 'products#index'
 resources :products do
