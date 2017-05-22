@@ -2,10 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//=============================================海报上的字体
+#zi2{
+  font-family: 'Clicker Script', cursive;
+  font-size: 100px;
+  color: #ffffff;
+  margin: 50px 0 10px;
+}
+//=============================================海报上的字体
+
+.decor-top3 {
+  height: 6em;
+  margin-top: -84px;
+  fill: #F5F5F5;
+}
+
+.decor-bottom-1 {
+  height: 7em;
+  margin-bottom: -7em;
+  fill: #634316;
+}
+
 /*===== 1.网站头贴 ====*/
 .product-intro{
-    height: 520px;
-    background-image: url('http://ww4.sinaimg.cn/large/006tNc79gy1ffsuoypc5qj31kw0vtkjl.jpg');
+    height: 700px;
+    background-image: url('https://ws4.sinaimg.cn/large/006tNc79gy1ffuahqi451j31kw0w0x6p.jpg');
     background-size: cover;
 
 .content > h1 {
