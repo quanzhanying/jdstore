@@ -11,9 +11,9 @@
 <div class="dropdown-content">
 	<% if current_cart.cart_items.includes(:product).present? %>
 		<% current_cart.cart_items.each do |cart_item| %>
-
-			<div class="product-item">
-				<div class="product-item-image">
+		 <div class="product-item-wrap">
+			 <div class="product-item">
+				<div class="product-item-partial">
 				<%= link_to product_path(cart_item.product) do %>
 					<% if cart_item.product.photos[0].present? %>
 						 <%= image_tag(cart_item.product.photos[0].avatar.thumb.url) %>
@@ -22,21 +22,20 @@
 					<% end %>
 				<% end %>
 			 </div>
-			 <div class="product-item-title">
-				 <%= link_to(cart_item.product.title, product_path(cart_item.product),class: "fl") %>
+			 <div class="product-item-partial">
+				 <h4 style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></h4>
+				 <h6><span style="color:red">￥<%= cart_item.product.price %></span> x <span id = "product_purchase_quantity" style="color:gray"><%= cart_item.product.purchase_quantity %></span></h6>
 			 </div>
-				<div class="price-and-operate">
-					<p><span>￥<%= cart_item.product.price %></span> x <span id = "product_purchase_quantity"><%= cart_item.product.purchase_quantity %></span></p>
-
-					<%= link_to("删除", cart_item_path(cart_item.product_id),id:"delete-#{cart_item.product_id}", class: "delete-btn fr",method: :delete,remote: true)%>
-
+				<div class="product-item-partial">
+					<a href="/cart_items/<%= cart_item.product_id%>" id="delete-<%= cart_item.product_id%>" class="delete-btn" data-method="delete" data-remote="true" rel="nofollow"></a>
+					<%#= link_to("删除", cart_item_path(cart_item.product_id),id:"delete-#{cart_item.product_id}", class: "delete-btn fr",method: :delete,remote: true)%>
 				</div>
 			</div>
+		</div>
 			<hr>
 		<% end %>
-		<div class="">
-			<p class="">合计 ￥<%= render_cart_total_price(current_cart) %></p>
-			<%= link_to("确认结账", checkout_carts_path, class: "") %>
+		<div class="checkout">
+			<p >合计 ￥<%= render_cart_total_price(current_cart) %></p><%= link_to("确认结账", checkout_carts_path) %>
 		</div>
 	<% else %>
 		<p class="">购物车还没有商品，赶紧添加吧</p>

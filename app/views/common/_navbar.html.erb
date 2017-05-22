@@ -1,74 +1,63 @@
-<!-- <div class="row">
-    <nav class="navbar-custome" role="navigation">
-        <div class="margin-side">
-            <ul class="topnav" id="myTopnav">
-                <li>
-                    <a href="/">JD</a>
-                </li>
-<li>
-                    <a href="#home">JD</a>
-                </li>
-                <li class="icon">
-                    <a href="javascript:void(0);" id="responsive-navbar">&#9776;</a>
-                </li>
-            </ul>
-            <ul class="fr" >
-            </ul>
+<div class="row">
+  <nav class="navbar-custome">
+    <div class="margin-side">
+      <div class="nav-links">
+        <div class="default-link">
+          <a href="/">JD</a>
         </div>
-    </nav>
-</div> -->
-
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">Jdstore</a>
+        <div class="default-link">
+          <a href="#">匠心手机</a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <%= link_to("Products", products_path) %>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <div class="cart-wrap">
-                        <%= render :partial => "products/cart" %>
-                    </div>
-                </li>
-                <% if !current_user %>
-                <li><%= link_to("注册", new_user_registration_path) %>
-                </li>
-                <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-            <% else %>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        <!-- Hi!,
-                        <%#= current_user.email %>
-                        <b class="caret"></b> -->
-                    </a>
-                    <ul class="dropdown-menu">
-                        <% if current_user.admin? %>
-                        <li>
-                            <%= link_to("Admin 选单", admin_products_path ) %>
-                        </li>
-                        <% end %>
-                        <li>
-                            <%= link_to("订单", account_orders_path ) %>
-                        </li>
-                        <li>
-                            <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                        </li>
-                    </ul>
-                </li>
-                <% end %>
-            </li>
-        </ul>
+        <div class="default-link">
+          <a href="#">智能家居</a>
+        </div>
+        <div class="default-link">
+          <a href="#">酷炫应用</a>
+        </div>
+        <div class="default-link">
+          <a href="#">视听享受</a>
+        </div>
+        <% if !current_user %>
+        <div class="default-link">
+          <%= link_to("注册", new_user_registration_path) %>
+        </div>
+        <div class="default-link">
+          <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %>
+        </div>
+        <% else %>
+        <div class="default-link">
+          <div class="account-link">
+          <a href="#" class="account-link-icon">
+          </a>
+          </div>
+          <div class="account-dropdown content-toggle">
+            <% if current_user.admin? %>
+            <div class="default-link">
+              <!-- <a href="/admin/products">
+                <i class="fa fa-history"> 后台</i>
+              </a> -->
+              <%= link_to(content_tag(:i,'   后台',class: 'fa fa-history '), admin_products_path ) %>
+            </div>
+            <% end %>
+            <div class="default-link">
+              <%= link_to(content_tag(:i, ' 我的订单', class: 'fa fa-credit-card '), account_orders_path ) %>
+            </div>
+            <div class="default-link">
+              <%= link_to(content_tag(:i, '   登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+            </div>
+            <div class="default-link">
+              <%= link_to(content_tag(:i, ' 我的收藏', class: 'fa fa-heart-o'), destroy_user_session_path, method: :delete) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <div class="cart-wrap">
+            <%= render :partial => "products/cart" %>
+        </div>
+        <div class="responsive-link">
+          <a href="javascript:void(0);" id="responsive-navbar">&#9776;</a>
+        </div>
+      </div>
     </div>
-    <!-- /.navbar-collapse -->
+  </nav>
 </div>
-<!-- /.container-fluid -->
-</nav>

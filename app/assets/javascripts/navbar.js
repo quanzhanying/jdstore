@@ -12,7 +12,14 @@ $(
   }
 )
 
-
+$(
+  function () {
+    $('.account-link a').click(function () {
+      console.log("111");
+      $('.account-dropdown').toggleClass('content-toggle')
+    })
+  }
+)
 // function myFunction() {
 //     var x = document.getElementById("myTopnav");
 //     if (x.className === "topnav") {
