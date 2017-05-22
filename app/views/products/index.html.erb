@@ -51,8 +51,8 @@
   </ul>
 </div>
 
-
 <div class="row">
+
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
@@ -73,6 +73,7 @@
     </div>
   <% end %>
 </div>
+
 
 <div class="text-center">
 
