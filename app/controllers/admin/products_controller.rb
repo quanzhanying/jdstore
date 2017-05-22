@@ -1,10 +1,20 @@
 class Admin::ProductsController < ApplicationController
+
+  layout "admin"
+
+  before_action :authenticate_user!
+  before_action :admin_required
+
   def index
     @products = Product.all
   end
 
   def new
     @product = Product.new
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   def edit
@@ -29,6 +39,13 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
+    radiract_to admin_paroducts_path, alert:'Product deleted'
   end
 
 private
