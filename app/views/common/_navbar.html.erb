@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/products" >Products Lists</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if !current_user.present? %>
+            <li class="upper-links"><a class="links" href=" ">注册</a ></li>
+            <li class="upper-links"><a class="links" href="/users/sign_in">登入</a ></li>
+      <% else %>
+            <li><%= link_to("我的订单", account_orders_path) %></li>
+            <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
+      <% end %>
+      <li class="navbar-form navbar-left" >
+        <div class="form-group">
+        <%= search_form_for @q do |f| %>
+          <%= f.search_field :title_cont, class: 'form-control input-sm', 'datepicker' => true %>
+          <%= f.submit :class => "btn btn-default" %>
+        <% end %>
+        </div>
+      </li>
+      <li>
+          <%= link_to carts_path do  %>
+              购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+        <% end %>
+      </li>
+      <% if !current_user %>
+      <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <% else %>
+        <li class="upper-links dropdown">
+          <a class="links" href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Hi!, <%= current_user.email %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+              <li>
+                <%= link_to("Admin 选单", admin_products_path) %>
+              </li>
+            <% end %>
+            <li>
+               <%= link_to("个人订单列表", account_orders_path ) %>
+            </li>
+             <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+          </ul>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
