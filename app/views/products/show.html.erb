@@ -1,55 +1,68 @@
 <div class="container">
   <div class="row">
     <div class="box">
+      <% if @product.image.present? %>
+      <%= @product.image.thumb.url %>
+      <% else %>
+      <% if @product.http_image.nil? %>
+
+      <% else %>
+      <% img430 = @product.http_image + "_430x430q90.jpg" %>
+      <% img2430 = @product.http_image2 + "_430x430q90.jpg" %>
+      <% img3430 = @product.http_image3 + "_430x430q90.jpg" %>
+      <% img4430 = @product.http_image4 + "_430x430q90.jpg" %>
+      <% img5430 = @product.http_image5 + "_430x430q90.jpg" %>
+      <% end %>
+      <% end %>
 
       <div class="wrap-left">
         <div class="tb-booth tb-s310">
-          <a href="#">
-            <img src="images/04_mid.jpg" alt="" rel="images/04.jpg" class="jqzoom" />
+          <a href="javascript:void(0);">
+            <img src="<%= img430 %>" alt="" rel="<%= @product.http_image %>" class="jqzoom" />
             <span class="zoomIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
           </a>
         </div>
         <div class="tb-thumb">
           <ul id="thumblist">
             <li class="tb-selected">
-              <div class="tb-s40"><a href="#"><img src="images/04_mid.jpg" mid="images/04_mid.jpg" big="images/04.jpg"></a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img src="<%= img430 %>" mid="<%= img430 %>" big="<%= @product.http_image %>"></a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="#"><img  src="https://img.alicdn.com/bao/uploaded/i2/TB1V5wlQVXXXXaxXVXXXXXXXXXX_!!0-item_pic.jpg_60x60q90.jpg" mid="https://img.alicdn.com/bao/uploaded/i2/TB1V5wlQVXXXXaxXVXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" big="https://img.alicdn.com/bao/uploaded/i2/TB1V5wlQVXXXXaxXVXXXXXXXXXX_!!0-item_pic.jpg_q30.jpg"</a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img2430 %>" mid="<%= img2430 %>" big="<%= @product.http_image2 %>"</a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="#"><img src="https://img.alicdn.com/imgextra/i1/2653351646/TB2eps0n9JjpuFjy0FdXXXmoFXa_!!2653351646.jpg_430x430q90.jpg" mid="https://img.alicdn.com/imgextra/i1/2653351646/TB2eps0n9JjpuFjy0FdXXXmoFXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i1/2653351646/TB2eps0n9JjpuFjy0FdXXXmoFXa_!!2653351646.jpg_q30.jpg"></a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img3430 %>" mid="<%= img3430 %>" big="<%= @product.http_image3 %>"</a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="#"><img src="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" mid="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_q30.jpg"></a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img4430 %>" mid="<%= img4430 %>" big="<%= @product.http_image4 %>"</a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="#"><img src="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" mid="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg"></a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img5430 %>" mid="<%= img5430 %>" big="<%= @product.http_image5 %>"</a></div>
             </li>
           </ul>
         </div>
 
       </div>
       <div class="wrap-right">
-        <h1>新西兰加力果8粒装 单果140-160g</h1>
+        <h1><%= @product.title %></h1>
         <div class="summary-price-wrap">
           <div class="summary-sale">
             <div>
               <div class="dt">促 销 价</div>
               <div class="dd">
                 <span style="font-size: 18px;">￥</span>
-                <span class="dr">19.90</span>
+                <span class="dr"><%= @product.promotional %></span>
               </div>
               <div class="comment text-rigth">
                 <p>累计评价</p>
-                <a href="#">1100</a>
+                <a href="javascript:void(0);">1100</a>
               </div>
             </div>
             <div class="">
               <div class="price">价 格</div>
               <div class="dd">
                 <span style="font-size: 18px;color: #999;">￥</span>
-                <span class="dr" style="color: #999;font-weight: normal;text-decoration: line-through;">19.90</span>
+                <span class="dr" style="color: #999;font-weight: normal;text-decoration: line-through;"><%= @product.price %></span>
               </div>
             </div>
           </div>
@@ -82,7 +95,7 @@
                 <a id="J_LinkBuy" href="#" rel="nofollow" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息。" class="" role="button" data-spm-anchor-id="a220o.1000855.0.0">立即购买</a>
               </div>
               <div class="tb-btn-basket">
-                <a href="#" rel="nofollow" id="J_LinkBasket" class="" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;加入购物车</a>
+                <a href="javascript:void(0);" rel="nofollow" id="J_LinkBasket" class="" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;加入购物车</a>
               </div>
             </div>
           </div>
@@ -94,11 +107,11 @@
         </dl>
         <dd>
           <ul>
-            <li><a href="#" >坏单包退</a></li>
-            <li><a href="#">满88包邮</a></li>
-            <li><a href="#">一站式购齐</a></li>
-            <li><a href="#">正品保证</a></li>
-            <li><a href="#">极速退款</a></li>
+            <li><a href="javascript:void(0);" >坏单包退</a></li>
+            <li><a href="javascript:void(0);">满88包邮</a></li>
+            <li><a href="javascript:void(0);">一站式购齐</a></li>
+            <li><a href="javascript:void(0);">正品保证</a></li>
+            <li><a href="javascript:void(0);">极速退款</a></li>
           </ul>
         </dd>
       </div>
@@ -112,162 +125,31 @@
     <div id="srollGoods" class="ald-carousel">
       <div class="wrapCon">
         <ul id="wrapCon">
+          <% @products_see.each do |product| %>
+          <% if product.image.present? %>
+          <%= product.image.thumb.url %>
+          <% else %>
+          <% if @product.http_image.nil? %>
+
+          <% else %>
+          <% img430 = product.http_image + "_430x430q90.jpg" %>
+          <% end %>
+          <% end %>
+
           <li>
             <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB12dO6RXXXXXX3aXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
+              <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
+                <img src="<%= img430 %>">
               </a>
-              <p class="look_price">¥73.80
+              <p class="look_price">¥<%= product.promotional %>
               </p>
             </div>
             <p class="look_title">
-              <a class="ALDCLS-act" href="#" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2">优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果
+              <a class="ALDCLS-act" href="<%= product_path(product) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product.title %>
               </a>
             </p>
           </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB14StvQVXXXXajaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥228.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB17_XHQVXXXXXLXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥65.80
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1kZSrQVXXXXaEXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥83.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1ppFSRXXXXXXQXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥58.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1heUOQVXXXXbgapXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥148.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1aVhqQVXXXXbwaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥78.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1Lu0LQVXXXXaVXFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥88.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1bwzHRXXXXXaoXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥88.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1j6XZQVXXXXaOXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥49.80
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB16UxKRXXXXXbxaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥10.50
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB11N.8QFXXXXa2XFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥115.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013
-              </a>
-            </p>
-          </li>
+          <% end %>
         </ul>
       </div>
       <ul class="ald-switchable-trigger">
@@ -284,168 +166,37 @@
   <div class="product-wrap">
     <div class="ald-skuRight">
       <div class="tab3">
-            <a href="#">热门关注</a>
+            <a href="javascript:void(0);">热门关注</a>
       </div>
       <div class="product-hot">
         <div class="ald-carousel">
           <div class="wrapCon">
             <ul>
+              <% @products_hot.each do |product_hot| %>
+              <% if product_hot.image.present? %>
+              <%= product_hot.image.thumb.url %>
+              <% else %>
+              <% if @product.http_image.nil? %>
+
+              <% else %>
+              <% img430 = product_hot.http_image + "_430x430q90.jpg" %>
+              <% end %>
+              <% end %>
+
               <li>
                 <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB12dO6RXXXXXX3aXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
+                  <a class="ALDCLS-act" title="<%= product_hot.title %>" href="<%= product_path(product_hot) %>">
+                    <img src="<%= img430 %>">
                   </a>
-                  <p class="look_price">¥73.80
+                  <p class="look_price">¥<%= product_hot.promotional %>
                   </p>
                 </div>
                 <p class="look_title">
-                  <a class="ALDCLS-act" href="#" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2">优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果
+                  <a class="ALDCLS-act" href="<%= product_path(product_hot) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product_hot.title %>
                   </a>
                 </p>
               </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB14StvQVXXXXajaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥228.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB17_XHQVXXXXXLXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥65.80
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1kZSrQVXXXXaEXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥83.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1ppFSRXXXXXXQXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥58.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1heUOQVXXXXbgapXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥148.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1aVhqQVXXXXbwaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥78.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1Lu0LQVXXXXaVXFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥88.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1bwzHRXXXXXaoXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥88.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1j6XZQVXXXXaOXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥49.80
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB16UxKRXXXXXbxaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥10.50
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB11N.8QFXXXXa2XFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥115.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013
-                  </a>
-                </p>
-              </li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -455,29 +206,17 @@
       <div class="TabBarBox">
         <ul>
           <li class="tab"><a href="#description">商品详情</a></li>
-          <li class="tab2"><a href="#J_Reviews">累计评价 166</a></li>
+          <li class="tab2"><a href="javascript:void(0);">累计评价 166</a></li>
         </ul>
       </div>
       <div class="description">
         <p>
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2qrIXpCJjpuFjy0FdXXXmoFXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i2/2627871549/TB2xz2iprJkpuFjy1zcXXa5FFXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i1/2627871549/TB2_i_rpuJ8puFjy1XbXXagqVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2Zey7pB0kpuFjy1zdXXXuUVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i1/2627871549/TB27zbrpuJ8puFjy1XbXXagqVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i2/2627871549/TB2RknaprFlpuFjy0FgXXbRBVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB21.n1sxlmpuFjSZPfXXc9iXXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2UfbAsstnpuFjSZFvXXbcTpXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2I6bqsypnpuFjSZFIXXXh2VXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2VivXsstnpuFjSZFKXXalFFXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2xL2CsypnpuFjSZFkXXc4ZpXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2DgHusxBmpuFjSZFDXXXD8pXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2.Ozsst0opuFjSZFxXXaDNVXa_!!2627871549.jpg" class="img-ks-lazyload">
+          <%= raw @product.description %>
         </p>
       </div>
       <div class="TabBarBox">
           <div class="tab2">
-            <a href="#">商品评价</a>
+            <a href="javascript:void(0);">商品评价</a>
           </div>
       </div>
     </div>
@@ -610,4 +349,3 @@ function () {
 </div>
 =======
 -->
->>>>>>> step2

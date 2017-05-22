@@ -1,9 +1,12 @@
 <h2> Edit Product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
-  <%= f.input :title %>
+    <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :quantity %>
+    <%= f.input :quantity, hint: '库存' %>
+    <%= f.input :price, hint: '价格' %>
+    <%= f.input :promotional, hint: '促销价' %>
+    <%= f.input :hot, hint: '是否促销，用于首页促销商品' %>
 <%= f.select :product_type, :collection => ["进口水果","进口水产","进口鲜肉"], :selected => ['']%>
 
   <% if @product.image.present? %>

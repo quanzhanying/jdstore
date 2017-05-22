@@ -2,14 +2,14 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">鲜生超市 </a>
+      <a class="navbar-brand" href="/">JDstore </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to("Products", products_path) %>
+          <%= link_to("商品列表", products_path) %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -45,14 +45,15 @@
   <div class="container">
         <div class="col-md-4">
           <div class="shoplogo">
-            <img src="/images/shoplogo5.png" height="60">
+            <img src="/images/shoplogo7.png" height="60">
           </div>
         </div>
         <div class="col-md-8">
           <div class="search">
           <div class="form-group has-warning">
-            <%#= form_tag search_jobs_path , :method => :get, :class => "form-group" do %>
+            <%= form_tag search_products_path , :method => :get, :class => "form-group" do %>
             <div class="input-group">
+
               <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货你想吃什么">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-search">
@@ -62,7 +63,7 @@
                 <img src="/images/top.png" width="246" height="16">
               </span>
             </div>
-            <%# end %>
+            <% end %>
           </div>
           </div>
           <div class="search-hot">

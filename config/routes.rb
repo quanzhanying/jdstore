@@ -2,13 +2,19 @@ Rails.application.routes.draw do
     root 'welcome#index'
     devise_for :users
   namespace :admin do
-    resources :products
+    resources :products do
+    collection do
+      post :csv_create
+      
+    end
+  end
     resources :orders do
       member do
          post :cancel
          post :ship
          post :shipped
          post :return
+
        end
     end
   end
