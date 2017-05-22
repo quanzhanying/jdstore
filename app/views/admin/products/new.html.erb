@@ -1,34 +1,28 @@
 <h2> New Product</h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
-<div class="group">
   <%= f.input :title %>
-</div>
+  <%= f.input :description %>
 
-  <div class="group">
-    <%= f.input :description %>
-  </div>
+  <%= f.input :quantity, hint: '库存' %>
 
-  <div class="group">
-    <%= f.input :quantity %>
-  </div>
+  <%= f.input :price, hint: '价格' %>
 
-  <div class="group">
-    <%= f.input :price %>
-  </div>
+  <%= f.input :promotional, hint: '促销价' %>
 
-  <div class="group">
-   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
-   </div>
+  <%= f.input :hot, hint: '是否促销，用于首页促销商品' %>
 
-  <div class="group">
-    <%= f.input :image, as: :file %>
-  </div>
+  <%= f.select :product_type, :collection => ["进口水果","进口水产","进口鲜肉"], :selected => "进口水果" %>
 
-<div class="group">
-  <%#= f.label :avatar %><br>
-  <%#= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
-  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
-</div>
+  <%= f.input :image, as: :file, hint: '商品详情图片' %>
 
+  <%= f.input :image2, as: :file, hint: '商品详情图片2' %>
+
+  <%= f.input :image3, as: :file, hint: '商品详情图片3' %>
+
+  <%= f.input :image4, as: :file, hint: '商品详情图片4' %>
+
+  <%= f.input :image5, as: :file, hint: '商品详情图片5' %>
+
+<%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
 <% end %>
