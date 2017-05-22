@@ -6,10 +6,13 @@
         <div class="row row1">
             <ul class="largenav pull-right">
                 <li class="upper-links"><a class="links" href= "/products" >产品清单</a></li>
-                <% if !current_user %>
+                <% if !current_user.present? %>
                   <li class="upper-links"><a class="links" href="/users/sign_up">注册</a></li>
                   <li class="upper-links"><a class="links" href="/users/sign_in">登入</a></li>
-                <% else %>
+               <% else %>
+                 <li><%= link_to("我的订单", account_orders_path) %></li>
+                 <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
+              
                     <li class="upper-links dropdown">
                       <a class="links" href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Hi!, <%= current_user.email %>
@@ -46,9 +49,6 @@
                   <% end %>
                   </div>
                 </li>
-
-
-
             <div class="cart largenav col-sm-2">
                 <a class="cart-button" href="/carts">
                     <svg class="cart-svg " width="16 " height="16 " viewBox="0 0 16 16 ">
@@ -58,4 +58,6 @@
                 </a>
             </div>
         </div>
+
+   </div>
 </div>
