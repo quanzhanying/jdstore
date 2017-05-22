@@ -30,7 +30,7 @@ class Order < ApplicationRecord
     state :shopping
     state :shopped
     state :order_cancelled
-    state :good_rerurned
+    state :good_returned
 
     event :make_payment, after_commit: :pay! do
       transitions from: :order_placed, to: :paid
