@@ -18,4 +18,13 @@ class Cart < ApplicationRecord
         end
         sum
     end
+
+    def clear_all_cart_items
+        # ===method 1
+        cart_items.destroy_all
+        # ===method 2
+        # cart_items.each do |cart_item|
+        #     cart_item.delete
+        # end
+    end
 end
