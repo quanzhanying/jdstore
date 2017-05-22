@@ -1,1 +1,116 @@
-<h1> Hello World! </h1>
+<div class="decor-bottom-1">
+ <svg class="decor" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" >
+   <path d="M-5 0 Q 0 80 5 0 Z M0 0 Q 5 100 10 0 M5 0 Q 10 70 15 0 M10 0 Q 15 90 20 0 M15 0 Q 20 70 25 0 M20 0 Q 25 90 30 0 M25 0 Q 30 80 35 0 M30 0 Q 35 70 40 0 M35 0 Q 40 90 45 0 M40 0 Q 45 50 50 0 M45 0 Q 50 80 55 0 M50 0 Q 55 60 60 0 M55 0 Q 60 40 65 0 M60 0 Q 65 50 70 0 M65 0 Q 70 80 75 0 M70 0 Q 75 45 80 0 M75 0 Q 80 70 85 0 M80 0 Q 85 80 90 0 M85 0 Q 90 50 95 0 M90 0 Q 95 75 100 0 M95 0 Q 100 85 105 0 Z" stroke-width="0"></path>
+ </svg>
+</div>
+
+<!--======== 1. 网站头图 =========-->
+<section id="my-page" class="intro" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-centered text-center ">
+        <div class="intro-content">
+          <h1>HOW TO brand yourself AS AN ARTIST</h1>
+          <a class="btn-lg lp-b-btn" href="/products">LET'S GO</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--======== end 1. 网站头图 =========-->
+<div class="decor-top">
+ <svg class="decor-p" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" >
+   <path d="M-5 100 Q 0 20 5 100 Z M0 100 Q 5 0 10 100 M5 100 Q 10 30 15 100 M10 100 Q 15 10 20 100 M15 100 Q 20 30 25 100 M20 100 Q 25 -10 30 100 M25 100 Q 30 10 35 100 M30 100 Q 35 30 40 100 M35 100 Q 40 10 45 100 M40 100 Q 45 50 50 100 M45 100 Q 50 20 55 100 M50 100 Q 55 40 60 100 M55 100 Q 60 60 65 100 M60 100 Q 65 50 70 100 M65 100 Q 70 20 75 100 M70 100 Q 75 45 80 100 M75 100 Q 80 30 85 100 M80 100 Q 85 20 90 100 M85 100 Q 90 50 95 100 M90 100 Q 95 25 100 100 M95 100 Q 100 15 105 100 Z" stroke-width="0"></path>
+ </svg>
+</div>
+
+<!--======== 2. 服务优势 =========-->
+<section class="our-service">
+  <div class="row">
+    <div class="col-md-4 category-content">
+      <%= link_to '#' , class: "category_1" do %>
+        <div class="category-box">
+          <%= image_tag("category_1.jpg") %>
+        </div>
+        <div>
+          <p>带你零基础学拉胚技巧，<br>培养平静的心境，<br>脱离城市工作中快节奏的压力。</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4 category-content">
+      <%= link_to '#' , class: "category_2" do %>
+        <div class="category-box">
+          <%= image_tag("category_2.jpg") %>
+        </div>
+        <div>
+          <p>帮助你发挥想象力，<br>创造出自己都不敢想象的作品。</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4 category-content">
+      <%= link_to '#' , class: "category_3" do %>
+        <div class="category-box">
+          <%= image_tag("category_3.jpg") %>
+        </div>
+        <div>
+          <p>认识工艺制作流程，<br>快速上手实用技巧提升创作能力。</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--======== end 2.服务优势 =========-->
+
+<div class="decor-bottom-1">
+ <svg class="decor" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" >
+   <path d="M-5 0 Q 0 80 5 0 Z M0 0 Q 5 100 10 0 M5 0 Q 10 70 15 0 M10 0 Q 15 90 20 0 M15 0 Q 20 70 25 0 M20 0 Q 25 90 30 0 M25 0 Q 30 80 35 0 M30 0 Q 35 70 40 0 M35 0 Q 40 90 45 0 M40 0 Q 45 50 50 0 M45 0 Q 50 80 55 0 M50 0 Q 55 60 60 0 M55 0 Q 60 40 65 0 M60 0 Q 65 50 70 0 M65 0 Q 70 80 75 0 M70 0 Q 75 45 80 0 M75 0 Q 80 70 85 0 M80 0 Q 85 80 90 0 M85 0 Q 90 50 95 0 M90 0 Q 95 75 100 0 M95 0 Q 100 85 105 0 Z" stroke-width="0"></path>
+ </svg>
+</div>
+<!--======== 3.铁粉说 =========-->
+<section id="showing" class="showing">
+  <div class="row">
+    <div class="col-md-10 col-centered text-center">
+      <h2 class="section-title">我们的铁粉说</h2>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!--===== 輪播按鈕 =====-->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol> -->
+          <!--===== 輪播內容 =====-->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src='<%= image_url 'person-2.png' %>'>
+              <div class="carousel-caption">
+                <p>我在xxx这个公司的xxx岗位里面工作了3年，这是一个挑战性很大的岗位，有时候会加班，但是学到了很多东西，让我快速成长。这三年里获得了。。。。
+                </div>
+              </div>
+              <div class="item">
+                <img src='<%= image_url 'person-3.png' %>'>
+                <div class="carousel-caption">
+                  <p>我在xxx这个公司的xxx岗位里面工作了3年，这是一个挑战性很大的岗位，有时候会加班，但是学到了很多东西，让我快速成长。这三年里获得了。。。。
+                  </div>
+                </div>
+                <div class="item">
+                  <img src='<%= image_url 'person-4.png' %>'>
+                  <div class="carousel-caption">
+                    <p>我在xxx这个公司的xxx岗位里面工作了3年，这是一个挑战性很大的岗位，有时候会加班，但是学到了很多东西，让我快速成长。这三年里获得了。。。。
+                    </div>
+                  </div>
+                </div>
+                <!--===== 換頁按鈕 =====-->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="fa fa-angle-left" aria-hidden="true"></span></a>
+                  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                  </div>
+                </div>
+              </div>
+            </section>
+<!--======== end 3.铁粉说=========-->
+<div class="decor-top">
+ <svg class="decor-p" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" >
+   <path d="M-5 100 Q 0 20 5 100 Z M0 100 Q 5 0 10 100 M5 100 Q 10 30 15 100 M10 100 Q 15 10 20 100 M15 100 Q 20 30 25 100 M20 100 Q 25 -10 30 100 M25 100 Q 30 10 35 100 M30 100 Q 35 30 40 100 M35 100 Q 40 10 45 100 M40 100 Q 45 50 50 100 M45 100 Q 50 20 55 100 M50 100 Q 55 40 60 100 M55 100 Q 60 60 65 100 M60 100 Q 65 50 70 100 M65 100 Q 70 20 75 100 M70 100 Q 75 45 80 100 M75 100 Q 80 30 85 100 M80 100 Q 85 20 90 100 M85 100 Q 90 50 95 100 M90 100 Q 95 25 100 100 M95 100 Q 100 15 105 100 Z" stroke-width="0"></path>
+ </svg>
+</div>

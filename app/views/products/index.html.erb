@@ -1,14 +1,112 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+<!--======== 1. 网站头图 =========-->
+<section id="product-page" class="product-intro" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-centered text-center ">
+        <div class="content">
+          <h1>HOW TO brand yourself AS AN ARTIST</h1>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
+</section>
+<!--======== end 1. 网站头图 =========-->
+
+<!--======== 3.产品类 =========-->
+<section id="hot-sale" class="hot-sale">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-centered text-center">
+              <h2 class="section-title">产品类</h2>
+        <% @products.each do |product| %>
+        <div class="col-xs-4 col-md-4">
+          <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+          <% end %>
+          <%= product.title %>
+          <br>￥ <%= product.price %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!--======== end 3.产品类 =========-->
+
+<!--======== 4.特殊类 =========-->
+<!-- <section id="special" class="special">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-centered text-center">
+        <h2 class="section-title">特殊类</h2>
+        <div class="container-fluid">
+          <div class="row">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
+              <!-- Indicators -->
+              <!-- <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol> -->
+              <!-- Wrapper for slides -->
+              <!-- <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src='<%= image_url 'http://ww2.sinaimg.cn/large/006tNbRwly1ffop4373gwj31kw0w0kjo.jpg' %>' >
+                </div>
+                <div class="item">
+                  <img src='<%= image_url 'http://ww4.sinaimg.cn/large/006tNbRwly1ffop5ugzarj30zk0k00tt.jpg' %>'>
+                </div>
+                <div class="item">
+                  <img src='<%= image_url 'http://ww4.sinaimg.cn/large/006tNc79gy1ffsuoypc5qj31kw0vtkjl.jpg' %>'>
+                </div>
+              </div> -->
+              <!-- Left and right controls -->
+              <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span></a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+<!--======== end 4.特殊类 =========-->
+
+<!--======== 5.我们的铁粉说 =========-->
+<section id="say" class="say">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 service col-centered text-center">
+      <h2 class="section-title">我们的铁粉说</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="do-box">
+            <%= image_tag("dingwei-1.png") %>
+            <p>根据自己的能力级别去选择岗位，拨开薪资之谜，从本质上选工作。为你缩小找工作的范围。</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="do-box">
+            <%= image_tag("dingwei-1.png") %>
+            <p>根据自己的能力级别去选择岗位，拨开薪资之谜，从本质上选工作。为你缩小找工作的范围。</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="do-box">
+            <%= image_tag("dingwei-1.png") %>
+            <p>根据自己的能力级别去选择岗位，拨开薪资之谜，从本质上选工作。为你缩小找工作的范围。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</section>
+
+<!--======== end 5.我们的铁粉说 =========-->

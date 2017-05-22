@@ -1,3 +1,155 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*===== 1.网站头贴 ====*/
+.product-intro{
+    height: 520px;
+    background-image: url('http://ww4.sinaimg.cn/large/006tNc79gy1ffsuoypc5qj31kw0vtkjl.jpg');
+    background-size: cover;
+
+.content > h1 {
+  color: #fff;
+  font-size: 55px;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  font-family: STHeiti Light;
+  font-weight: bold;
+}
+}
+
+/*===== end 1.网站头贴 ====*/
+
+/*===== 2.服务类 ====*/
+.services{
+  text-align: center;
+  background-size: cover;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .do-box{
+    img{
+      margin-top: 35px;
+      margin-bottom: -35px;
+      width: 180px;
+    }
+  }
+
+  .do-box p {
+      color: #666;
+      letter-spacing: 1px;
+      line-height: 22px;
+      margin: 25px 20px 40px 20px;
+  }
+}
+/*===== end 2.服务类 ====*/
+
+/*===== 3.产品类 ====*/
+.hot-sale{
+  background-color: #EFEFEF;
+.box{
+  text-align: center;
+  margin-top: 45px;
+  img {
+    width: 240px;
+    margin: -15px 20px 5px 20px;
+  }
+}
+.category-list{
+  text-align: center;
+  h3{
+    color: #5bb3a0;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+}
+.category-list:hover{
+  h3{
+    color: #FA9181;
+  }
+}
+}
+/*===== end 3.产品类 ====*/
+
+/*===== 4.特殊类 ====*/
+.special{
+    padding-bottom: 150px;
+    padding-top: 100px;
+
+    p{
+      color: black;
+      letter-spacing: 1px;
+      line-height: 22px;
+      margin: -10px 20px -20px 10px;
+      padding: 10px;
+    }
+
+    .carousel-control {
+      text-shadow: 0 0 0 #999;
+      width: 0;
+      height: 0;
+    }
+    .carousel-control span:hover {
+      color: #2dbe60;
+    }
+
+    #myCarousel {
+      margin: 20px auto 20px auto;
+      width: 100%;
+
+    }
+    .carousel-inner img {
+      width: 100%;
+    background-size: cover;
+    }
+    .carousel-indicators li {
+      background-color: #fa9e81;
+      border: none;
+    }
+    .carousel-indicators .active {
+      background-color: #e8e8e8;
+    }
+    .carousel-indicators {
+      bottom: -55px;
+    }
+    #myCarousel .left span {
+      position: relative;
+      top: 30px;
+      left: -50px;
+      color: #e8e8e8;
+      font-size: 7rem;
+    }
+    #myCarousel .right span {
+      position: relative;
+      top: 30px;
+      right: -20px;
+      color: #e8e8e8;
+      font-size: 7rem;
+    }
+}
+
+/*===== end 4.特殊类  ====*/
+
+
+/*===== 5.我们的铁粉说 ====*/
+.say{
+  background-color: #EFEFEF;
+  padding-bottom: -30px;
+  .do-box{
+    img{
+      margin-top: 35px;
+      margin-bottom: -35px;
+      width: 180px;
+    }
+  }
+
+  .do-box p {
+      color: #666;
+      letter-spacing: 1px;
+      line-height: 22px;
+      margin: 25px 20px 40px 20px;
+  }
+}
+/*=== end 5.铁粉说 ====*/

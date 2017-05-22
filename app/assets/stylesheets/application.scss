@@ -73,3 +73,42 @@
    -moz-box-sizing: border-box;
  }
  //=====================================登入弹窗
+
+
+ //*****navbar*****//
+ .navbar-default {
+    background-color: #F5F5F5;  //导航栏背景颜色
+    border-color: #F5F5F5; //边框色
+    margin: 0;
+ }
+
+ .footer {
+   background-color: #F5F5F5;
+   height: 6em;
+ }
+
+ //*****footer*****//
+
+
+ //*****common*****//
+ .col-centered {
+   float: none;
+   margin: 0 auto;
+ }
+
+ section{
+     padding-top: 80px;
+     padding-bottom: 80px;
+ }
+
+
+ .section-title {
+     color: #666;
+     margin-top: 35px;
+     margin-bottom: 40px;
+     letter-spacing: 3px;
+     font-size: 30px;
+     font-family: STHeiti Light;
+ }
+
+ /*===== common ====*/
