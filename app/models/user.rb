@@ -14,4 +14,12 @@ class User < ApplicationRecord
   def is_favorites?(product)
     products.include?(product)
   end
+
+  def favorites!(product)
+    products << product
+  end
+
+  def nonfavorites!(product)
+    products.delete(product)
+  end
 end
