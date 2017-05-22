@@ -1,50 +1,220 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">DaLvSe Store</a>
+<header>
+  <!-- Navigation Area -->
+  <div class="nav-top-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="top-bar-left">
+            <ul>
+              <li><i class="fa fa-globe"></i> Languages</li>
+              <li>
+                <form class="woocommerce-ordering" method="get">
+                  <select class="selectpicker">
+                    <option>CN</option>
+                    <option>TW</option>
+                    <option>EN</option>
+                  </select>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="top-bar-right">
+            <ul>
+              <li>
+                <%= link_to carts_path do %>
+                购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
+                <% end %>
+              </li>
+              <% if !current_user %>
+              <li><%= link_to("注册", new_user_registration_path) %> </li>
+              <!-- <li><%= link_to("登入", new_user_session_path) %></li> -->
+              <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+              <% else %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!-- Hi!, <%= current_user.email %> -->
+                  您好，<%= current_user.user_name %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if current_user.admin? %>
+                  <li><%= link_to("Admin Panel", admin_products_path) %></li>
+                  <li><%= link_to("个人订单列表", account_orders_path ) %></li>
+                  <% end %>
+                  <li> <%= link_to(content_tag(:i, '信息', class: 'fa fa-user'), edit_user_registration_path(current_user) ) %> </li>
+                  <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
+                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <%= link_to("Products", products_path) %>
-        </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to carts_path do %>
-            购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
-          <% end %>
-        </li>
-        <% if !current_user %>
-        <li><%= link_to("注册", new_user_registration_path) %> </li>
-        <!-- <li><%= link_to("登入", new_user_session_path) %></li> -->
-        <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-        <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <!-- Hi!, <%= current_user.email %> -->
-            您好，<%= current_user.user_name %>
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <% if current_user.admin? %>
-              <li><%= link_to("Admin Panel", admin_products_path) %></li>
-              <li><%= link_to("个人订单列表", account_orders_path ) %></li>
-            <% end %>
-            <li> <%= link_to(content_tag(:i, '信息', class: 'fa fa-user'), edit_user_registration_path(current_user) ) %> </li>
-            <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
-            <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-          </ul>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid -->
-</nav>
+
+  <!-- Navigation Area -->
+  <div class="logo-section">
+    <div class="container">
+      <div class="logo-wrap">
+        <div class="logo">
+          <a href="/"><img class="" src="/images/logo.png" alt=""></a>
+        </div>
+
+        <div class="widget_product_search">
+          <input type="text" class="form-control search-box" placeholder="搜索">
+          <button type="submit" class="submit-search"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Area -->
+  <div class="navbar-sticky">
+    <nav class="navbar navbar-index-top shadow">
+      <div class="container header-container">
+        <div id="main-menu-wrap"><a href="#" class="menu-trigger"></a></div>
+
+        <!-- Main Menu -->
+        <div id="main-menu" class="main-nav mega_menu_wrapper ">
+          <ul id="custom-menu" class="main-menu mega_menu">
+            <li class="menu-child-list">
+              <a class="menu-left-gero" href="/">首页</a>
+            </li>
+
+            <li class="menu-child-list"><a href="#">商品分类</a>
+              <ul class="sub-menu clearfix">
+                <li><a href="products">水果</a></li>
+                <li><a href="products">蔬菜</a></li>
+                <li><a href="products">干货</a></li>
+                <li><a href="#">茶饮</a></li>
+                <li><a href="#">禽类</a>
+                  <ul class="sub-menu oprn-right clearfix">
+                    <li><a href="products">鸡</a></li>
+                    <li><a href="products">鸭</a></li>
+                    <li><a href="products">蛋</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">肉类</a>
+                  <ul class="sub-menu oprn-right clearfix">
+                    <li><a href="products">牛肉</a></li>
+                    <li><a href="products">猪肉</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">粮油</a>
+                  <ul class="sub-menu oprn-right clearfix">
+                    <li><a href="products">大米</a></li>
+                    <li><a href="products">油</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-child-list">
+              <!-- <a href="about.html">关于我们</a> -->
+              <a href="#">关于我们</a>
+            </li>
+
+            <!-- <li class="menu-child-list"><a href="#">Pages</a>
+              <ul class="sub-menu clearfix">
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="services.html">Services</a></li>
+              </ul>
+            </li> -->
+
+            <!-- <li class="menu-child-list"><a href="#">Blog</a>
+              <ul class="sub-menu clearfix">
+                <li><a href="blog.html">Blog 1</a></li>
+                <li><a href="blog-standared.html">Blog 2</a></li>
+                <li><a href="blog-sidebar.html">Blog 3</a></li>
+                <li>
+                  <a href="blog-detail.html">Blog single</a>
+                  Sub Menu
+                  <ul class="sub-menu oprn-right clearfix">
+                    <li><a href="blog-single.html">Blog detail 1</a></li>
+                  </ul>
+                  List
+                </li>
+              </ul>
+            </li> -->
+
+            <!-- <li class="menu-child-list">
+              <a href="#">Shop</a>
+              <ul class="sub-menu clearfix">
+                <li><a href="shop-col-3.html">Shop col 3</a></li>
+                <li><a href="shop-without-sidebar.html">Shop col 4</a></li>
+                <li><a href="shop-with-sidebar.html">Shop with sidebar</a></li>
+                <li><a href="shop-single.html">shop single</a></li>
+                <li><a href="shop-cart.html">Cart</a></li>
+                <li><a href="shop-checkout.html">Checkout</a></li>
+              </ul>
+            </li> -->
+
+            <li class="menu-child-list">
+              <!-- <a href="contact-us.html">联系我们</a> -->
+              <a href="#">联系我们</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- start  navbar-mini-cart -->
+        <div class="pull-right nav-right-section">
+          <ul class=" navbar-mini-cart-wrapper">
+            <li>
+              热线电话：<i class="fa fa-phone" aria-hidden="true"></i>400-12345678
+            </li>
+            <!-- <li>
+              <a href="#" class="navbar-mini-cart-btn">
+                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                <span class="item-count">21</span>
+              </a>
+              <ul class="navbar-mini-cart">
+                <li class="item">
+                  <div class="product-img">
+                    <img src="/images/products/small-1.jpg" alt="">
+                  </div>
+                  <div class="product-details">
+                    <h6>Name of the product</h6>
+                    <p>$255.5</p>
+                    <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="product-img">
+                    <img src="/images/products/small-2.jpg" alt="">
+                  </div>
+                  <div class="product-details">
+                    <h6>Name of the product</h6>
+                    <p>$155.5</p>
+                    <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                  </div>
+                </li>
+                <li class="minicart-price-total">
+                  <div class="price-total">
+                    <span class="label-price-total">Subtotal</span>
+                    <div class="price-total-w">
+                      <span>$255.5</span>
+                    </div>
+                  </div>
+
+                  <div class="checkout-btn">
+                    <a href="shop-cart.html" class="btn btn-default">View Cart</a>
+                    <a href="shop-checkout.html" class="btn btn-default ml-5">checkout</a>
+                  </div>
+                </li>
+              </ul>
+            </li> -->
+          </ul>
+          <!-- end  navbar-mini-cart -->
+        </div>
+      </div>
+
+    </nav>
+  </div>
+</header>

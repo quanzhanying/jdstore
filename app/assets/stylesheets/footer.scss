@@ -1,0 +1,268 @@
+/*Footer Default
+------------------------------------*/
+.footer-default .footer {
+	color: #dadada;
+	background: #585f69;
+	padding: 20px 0 30px;
+}
+
+.footer.margin-top-0 {
+	margin-top: 0;
+}
+
+.footer-default .footer p,
+.footer-default .footer a {
+	font-size: 14px;
+}
+.footer-default .footer p {
+	color: #dadada;
+}
+
+.footer-default .footer a {
+	color: #72c02c;
+}
+.footer-default .footer a:hover {
+	color: #5fb611;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.footer-default .footer h2,
+.footer-default .footer h3,
+.footer-default .footer h4 {
+	color: #e4e4e4;
+	background: none;
+	text-shadow: none;
+}
+
+/*Footer Subsribe*/
+.footer-default .footer .footer-subsribe {
+	width: 85%;
+}
+
+/*Footer Blog Posts*/
+.footer-default .footer .blog-list {
+	margin: 0;
+	padding: 0;
+	color: #dadada;
+	list-style: none;
+}
+
+.footer-default .footer .blog-list li {
+	padding: 0 0;
+	margin-bottom: 7px;
+}
+.footer-default .footer .blog-list li span {
+	color: #818488;
+}
+
+.footer-default .footer .dl-horizontal,
+.footer-default .footer .dl-horizontal:hover {
+	border: none !important;
+	background: none !important;
+}
+.footer-default .footer .posts .dl-horizontal a {
+	color: #dadada;
+}
+.footer-default .footer .dl-horizontal a:hover {
+	color: #5fb611 !important;
+}
+.footer-default .footer .dl-horizontal img {
+	border-color: #888 !important;
+}
+
+/*Copyright*/
+.footer-default .copyright {
+	font-size: 12px;
+	padding: 11px 0 7px;
+	background: #3e4753;
+}
+
+.footer-default .copyright p {
+	color: #dadada;
+	margin-top: 12px;
+}
+
+.footer-default .copyright a {
+	margin: 0 5px;
+	color: #72c02c;
+}
+.footer-default .copyright a:hover {
+	color: #5fb611;
+}
+
+.footer-default .copyright a img {
+	margin-top: 5px;
+}
+
+
+/*Footer-v1
+------------------------------------*/
+.footer-v1 .footer {
+  padding: 40px 0;
+  background: #272727;
+}
+
+.footer-v1 .footer p {
+  color: #eee;
+}
+
+.footer-v1 .footer h2 {
+  color: #eee;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/*Link List*/
+.footer-v1 .link-list li {
+  border-top: solid 1px #353535;
+}
+
+.footer-v1 address,
+.footer-v1 .link-list a,
+.footer-v1 .link-list i {
+  color: #eee;
+}
+
+.footer-v1 address {
+  line-height: 23px;
+}
+
+/*Dotted Map*/
+.footer-v1 .footer .map-img {
+  background: url(/images/map-img.png) 5px 60px no-repeat;
+}
+
+/*Copyright*/
+.footer-v1 .copyright {
+  background: #222;
+  border-top: none;
+  padding: 10px 0 5px;
+}
+
+.footer-v1 .copyright p {
+  color: #eee;
+  margin-top: 14px;
+}
+
+.footer-v1 .copyright a {
+  margin: 0 2px;
+}
+
+.footer-v1 .footer-socials {
+  margin-top: 12px;
+  text-align: right;
+}
+
+.footer-v1 .footer-socials li a {
+  color: #777;
+  font-size: 16px;
+}
+
+@media (max-width: 991px) {
+  .footer-v1 .copyright,
+  .footer-v1 .footer-socials {
+    text-align: left;
+  }
+}
+
+
+/*Other Footer Common Classes
+------------------------------------*/
+/*Thumb Headline*/
+.thumb-headline h2 {
+	color: #eee;
+	font-size: 16px;
+}
+
+/*Footer Logo*/
+.footer-logo {
+	margin: 0px 0 0px; //17px 0 20px;
+}
+
+/*Latest List*/
+.latest-list li {
+	padding: 8px 0;
+	border-top: 1px solid #353535;
+}
+
+.latest-list li:first-child {
+	padding-top: 0;
+	border-top: none;
+}
+
+.latest-list li a {
+	color: #eee;
+}
+
+.latest-list small {
+	color: #999;
+	display: block;
+}
+
+/*Link List*/
+.link-list li {
+	border-top: solid 1px #353535;
+}
+
+.link-list li:first-child {
+	border-top: none !important;
+}
+
+.link-list a {
+	color: #eee;
+	font-size: 11px;
+	padding: 6px 0px;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+.link-list li i {
+	color: #bbb;
+	float: right;
+	margin-top: 10px;
+}
+
+/*Latest Tweets*/
+.latest-tweets .latest-tweets-inner p {
+	color: #555;
+	font-size: 13px;
+}
+
+.latest-tweets .latest-tweets-inner a {
+	/*color: #3498db;*/
+	text-decoration: none;
+}
+.latest-tweets .latest-tweets-inner a:hover {
+	text-decoration: underline;
+}
+
+.latest-tweets .latest-tweets-inner i.fa {
+	top: 2px;
+	float: left;
+	color: #bbb;
+	color: #55acee;
+	font-size: 18px;
+	margin-right: 5px;
+	position: relative;
+}
+
+.latest-tweets .latest-tweets-inner small {
+	color: #777;
+	display: block;
+}
+
+/*Social Icons*/
+.social-icons {
+	margin-top: 5px;
+}
+
+.social-icons li {
+	margin: 0;
+}
+
+.social-icons li a {
+	margin: 0 3px;
+}

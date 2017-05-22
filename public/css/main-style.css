@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/*
+	[ Shortcode Stylesheet ]
+	<?xml version="1.0" encoding="UTF-8"?>
+
+	Theme Name: Organix
+	Version: 1.0.0
+	Author: fridatheme
+	Author URI: 
+	Description:Multi-Purpose Theme by fridatheme
+*/
+
+/*
+	FONTS
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Philosopher:400,700');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+
+/*
+	CSS LINKS
+*/
+
+@import "font-awesome.min.css";
+@import "bootstrap.min.css";
+@import "menu.css";
+@import "style.css";
+@import "owl.carousel.min.css";
+@import "owl.theme.default.min.css";
+@import "animate.css";
+@import "ytplayer.css";
+

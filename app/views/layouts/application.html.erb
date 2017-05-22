@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DaLvSe - 大绿色</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="shortcut icon" href="/images/favicon.ico">
-  </head>
+<head>
+  <title>大绿色 - 大自然的颜色！</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
 
-  <body>
-    <div class="container-fluid">
+<body>
+  <!-- <div class="wrapper"> -->
+    <div>
       <%= render "common/navbar" %>
       <%= render "common/flashes" %>
       <%= yield %>
     </div>
     <%= render "common/footer" %>
-  </body>
+  <!-- </div> -->
+</body>
 </html>

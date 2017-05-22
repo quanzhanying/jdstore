@@ -2603,10 +2603,10 @@ footer{
 }
 .nav-right-section > ul > li{
   display:inline-block;
-  // font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight:600;
   color:#929292;
-  font-size: 1.2em; //font-size:18px; //热线电话
+  font-size:18px;
 }
 .nav-right-section > ul > li:first-child{
   padding-right:10px;
