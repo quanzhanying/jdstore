@@ -39,6 +39,7 @@ gem 'mini_magick'
 gem "rails-erd"
 gem "intercom-rails"
 gem 'letter_opener', group: :development
+gem 'aasm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
