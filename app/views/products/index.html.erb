@@ -29,35 +29,34 @@
                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                   <% end %>
                 <% end %>
-          </div>
+      				<div class="caption">
+      						<div class="row">
+      							<div class="col-md-6 col-xs-6">
+      								<h3><%= product.title %></h3>
+      							</div>
+      							<div class="col-md-6 col-xs-6 price">
+      								<h3>
+      								<label><%= product.price %></label></h3>
+      							</div>
+      						</div>
+      						<p>32GB, 2GB Ram, 1080HD, 5.1 inches, Android</p>
+      						<div class="row">
+      							<div class="col-md-6">
+      								<!-- <a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> -->
+                      <% if !product.users.include?(current_user) %>
+                          <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+                        <% else %>
+                          <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="#" class="btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</a>
+                    </div>
+        					</div>
+        				</div>
+            </div>
         </div>
-      					<div class="caption">
-        						<div class="row">
-        							<div class="col-md-6 col-xs-6">
-        								<h3><%= product.title %></h3>
-        							</div>
-        							<div class="col-md-6 col-xs-6 price">
-        								<h3>
-        								<label><%= product.price %></label></h3>
-        							</div>
-        						</div>
-        						<p>32GB, 2GB Ram, 1080HD, 5.1 inches, Android</p>
-        						<div class="row">
-        							<div class="col-md-6">
-        								<!-- <a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> -->
-                        <% if !product.users.include?(current_user) %>
-                            <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
-
-                          <% else %>
-                            <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
-                        <% end %>
-              
-
-
-        						</div>
-      					</div>
-  				</div>
-      <% end %>
-  </div>
-</div>
+        <% end %>
+      </div>
+    </div>
 </div>
