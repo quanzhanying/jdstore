@@ -8,10 +8,13 @@
     </head>
     <body>
         <div class="container-fluid">
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
-            <%= yield %>
+            <%= render "common/sidebar" %>
+            <div class="row">
+                <div class="container">
+                    <%= yield %>
+                </div>
+            </div>
         </div>
-        <%= render "common/footer" %>
+        <!-- <%= render "common/footer" %> -->
     </body>
 </html>

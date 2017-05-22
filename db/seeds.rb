@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([Product.create!( name: 'Star Wars' }, Product.create!( name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Initialize Admin User
 if User.find_by(email: "admin@test.com").nil?
@@ -13,7 +13,7 @@ if User.find_by(email: "admin@test.com").nil?
   u.password_confirmation = "123456"   # 最少要六码
   u.is_admin = true
   u.save
-  puts "Admin 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+  puts "Admin 已经建立好了，帐号为#Product.create!(u.email}, 密码为#Product.create!(u.password}"
 else
   puts "Admin 已经建立过了，脚本跳过该步骤。"
 end
@@ -59,3 +59,60 @@ author: "哲-Tititi",
 price: "480",
 quantity: "1",
 image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003.jpg"))
+
+Product.create!(
+title: '安睡',
+description: '静静的熟睡',
+quantity: '3',
+price: '150',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI001360.jpg"))
+
+Product.create!(
+title: '骏马',
+description: '美女与骏马',
+quantity: '2', price: '150',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI002360.jpg"))
+
+Product.create!(
+title: '小溪',
+description: '在溪水中唱歌',
+quantity: '1',
+price: '160',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
+
+Product.create!(
+  title: '花香',
+  description: '沉浸在花香中',
+  quantity: '1',
+  price: '160',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI004360.jpg"))
+
+  Product.create!(
+  title: '作画',
+  description: '大自然中尽情作画',
+  quantity: '2',
+  price: '260',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI005360.jpg"))
+
+
+  Product.create!(
+  title: '秋千',
+  description: '儿时的回忆',
+  quantity: '1',
+  price: '160',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI006360.jpg"))
+
+  Product.create!(
+  title: '嬉戏',
+  description: '与兔子在森林中嬉戏',
+  quantity: '1',
+  price: '160',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
+
+
+  Product.create!(
+  title: '酣睡',
+  description: '黎明前香甜的酣睡',
+  quantity: '1',
+  price: '160',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
