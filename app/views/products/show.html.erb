@@ -51,3 +51,10 @@
     </div>
   </div>
 </div>
+<span class="pull-right">
+  <% if current_user && current_user.is_voter_of?(@product) %>
+    <%= link_to("", downvote_product_path(@product), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+   <% else %>
+    <%= link_to("", upvote_product_path(@product), method: :post, class: "fa fa-heart-o fa-2x") %>
+  <% end %>
+</span>

@@ -43,4 +43,10 @@ Rails.application.routes.draw do
   resources :products do
   resources :reviews
   end
+  resources :products do
+    member do()
+     post :upvote
+     post :downvote
+    end
+  end
  end
