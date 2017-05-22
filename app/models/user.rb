@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :favorites
   has_many :products, through: :favorites, source: :product
+
+  def is_favorites?(product)
+    products.include?(product)
+  end
 end
