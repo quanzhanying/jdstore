@@ -1,5 +1,5 @@
 <!-- 全商品列表的的navbar -->
-<div class="header_placeholder h80"></div>
+<!-- <div class="header_placeholder h80"></div>
 <div class="header">
 <div class="header1">
   <div class="header_content clearfix">
@@ -26,12 +26,12 @@
     </div>
   </div>
 </div>
-</div>
+</div> -->
 <!-- 全商品列表的navbar结束 -->
 
 <!-- 在商品列表中增加分类显示的按钮 -->
 
-<div class="row">
+<!-- <div class="row">
   <% if params[:controller] == ('products') && params[:action] == ('show') %>
     <div class="menu-wrap">
       <ul class="menuList">
@@ -59,7 +59,7 @@
       </ul>
     </div>
   <% end %>
-</div>
+</div> -->
 <!-- 分类显示按钮结束 -->
 
 <div class="col-md-9 col-centered", style="margin-bottom: 20px;">
@@ -68,7 +68,7 @@
   <% end %>
 </div>
 <div class="col-md-12 col-centered panel panel-default">
-  <div class="panel-body">
+  <div class="panel-body", style="margin-top: -50px;">
     <div class="col-md-5 col-md-offset-1">
       <% if @product.image.present? %>
         <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
@@ -121,7 +121,7 @@
 </div>
 
 <!-- 商品详情及用户评价 -->
-<div class="productDetail">
+<!-- <div class="productDetail">
     <ul class="productDetail-tabList clearfix">
       <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
         商品详情
@@ -143,5 +143,5 @@
         </p>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- 商品详情和用户评价结束 -->

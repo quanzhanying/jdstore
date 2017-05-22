@@ -19,12 +19,13 @@
  @import 'font-awesome';
 
 // 字型
- @import url('https://fonts.googleapis.com/css?family=Molle:400i|Nunito:400,700');
+ @import url('https://fonts.googleapis.com/css?family=Yesteryear');
+ @import url('https://fonts.googleapis.com/css?family=Proza+Libre');
  @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');
  @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 // 字型-logo"Select."
  .logo {
-   font-family: 'Molle', cursive;
+   font-family: 'Yesteryear', cursive;
  }
 
 
@@ -46,8 +47,8 @@ a:hover {
   text-decoration: none;
 }
 /*字体颜色和背景颜色*/
-.bg-gray {
-  background: #F5F5F5;
+.bg-color {
+  background: #edbdb5;
 }
 
 // 通用的css代码结束
@@ -129,7 +130,7 @@ a:hover {
     line-height: 1;
     width: 100%;
   }
-  // 轮播图结束
+// 轮播图结束
 
 //商品展示列表
 .productList-wrap {
@@ -236,10 +237,11 @@ a:hover {
   height: 44px;
   line-height: 44px;
   margin-top:30px;
-  width:1200px;
   margin-left:auto !important;
   margin-right:auto !important;
   color: #fff;
+  margin-top: 0px;
+  padding-left: 60px;
   p.title {
     float:left;
     display:inline;
