@@ -19,6 +19,11 @@ class CartItemsController < ApplicationController
      flash[:warning] = "数量不足以加入购物车"
    end
 
+
+    def checkout
+      @order = Order.new
+    end
+    
     redirect_to carts_path
   end
 
