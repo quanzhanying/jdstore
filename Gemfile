@@ -50,6 +50,9 @@ gem 'ransack' #搜索功能
 gem 'will_paginate'  #分页显示功能
 gem 'will_paginate-bootstrap' #美化分页效果
 gem 'acts_as_votable', '~> 0.10.0' #商品点赞功能
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+gem 'figaro' #管理机密信息，密钥
 
 
 group :development do

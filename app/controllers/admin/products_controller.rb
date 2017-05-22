@@ -16,6 +16,7 @@ class Admin::ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
+    @brands = Brand.all.map { |b| [b.name, b.id] } #这一行为加入的代码
   end
 
   def create
@@ -33,6 +34,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.category_id = params[:category_id]
+    @product.brand_id = params[:brand_id]
     if @product.update(product_params)
       redirect_to admin_products_path, alert: "编辑商品成功"
     else

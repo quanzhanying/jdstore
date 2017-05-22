@@ -17,6 +17,14 @@
 #
 
 class Product < ApplicationRecord
+
+  validates :name, presence: { message: "請輸入商品名稱" }
+  validates :price, presence: { message: "請輸入商品售價" }
+  validates :price, numericality: { greater_than: 0, message: "請輸入商品售價，必須大於零" }
+  validates :stock, presence: { message: "請入庫存數量" }, numericality: { greater_than_or_equal: 0 }
+  validates :category_id, presence: { message: "請選擇商品分類" }
+  validates :brand_id, presence: { message: "請選擇商品品牌" }
+
   mount_uploader :image, ImageUploader
   belongs_to :user
   belongs_to :category
