@@ -22,15 +22,17 @@
               购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
         <% end %>
       </li>
-      <% if !current_user %>
-      <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <% if !current_user.present? %>
+         <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+         <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       <% else %>
-        <li class="upper-links dropdown">
-          <a class="links" href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Hi!, <%= current_user.email %>
-            <b class="caret"></b>
-          </a>
+            <li><%= link_to("我的订单", account_orders_path) %></li>
+            <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
+            <li class="upper-links dropdown">
+               <a class="links" href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Hi!, <%= current_user.email %>
+                   <b class="caret"></b>
+                </a>
           <ul class="dropdown-menu">
             <% if current_user.admin? %>
               <li>
@@ -43,6 +45,7 @@
              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
           </ul>
         </li>
+      
       <% end %>
 
     </ul>
