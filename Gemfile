@@ -41,6 +41,8 @@ gem 'letter_opener', group: :development
 gem "aasm"
 gem 'rucaptcha'
 gem 'dalli'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 group :development, :test do
   gem 'acts_as_list'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,4 +64,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
-end 
+end
