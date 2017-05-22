@@ -18,9 +18,22 @@
  @import "font-awesome";
 
 
+ // common seeting
+
+ html{height:100%;}
+ body{min-height:100%;margin:0;padding:0;position:relative;}
+
+ header{background-color: #ffe4c4;}
+ main{padding-bottom:100px;background-color: #bdb76b;}/* main的padding-bottom值要等于或大于footer的height值 */
+ footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #ffc0cb;}
+
+// navbar
  #flipkart-navbar {
-     background-color: #2874f0;
-      color: #FFFFFF;
+     background-color: #EEEEEE;
+     color: #212121;
+ }
+ .upper-links links{
+   color: blue;
  }
 
  .row1{
@@ -59,7 +72,7 @@
      font-weight: 500;
      width: 120px;
      display: inline-block;
-     color: #FFFFFF;
+     color: #212121;
      text-decoration: none;
      color: inherit;
      border: none;
@@ -188,3 +201,227 @@
          margin: 0px;
      }
  }
+
+ // 大图
+ .jumbotron {
+  background-image:url('http://ww4.sinaimg.cn/large/006tNbRwgy1fftwnf8gj6j30k00b9ajk.jpg');
+  background-repeat: no-repeat;
+  width: 1280px;
+  height: 700px;
+  background-size: cover;
+  padding-bottom: 110px;
+  margin: 0 auto 0 auto;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+
+// footer
+
+.full {
+    width: 100%;
+}
+.gap {
+	height: 30px;
+	width: 100%;
+	clear: both;
+	display: block;
+}
+.footer {
+	background: #EDEFF1;
+	height: auto;
+	padding-bottom: 30px;
+	// position: relative;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+}
+.footer p {
+	margin: 0;
+}
+.footer img {
+	max-width: 100%;
+}
+.footer h3 {
+	border-bottom: 1px solid #BAC1C8;
+	color: #54697E;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	padding: 40px 0 10px;
+	text-transform: uppercase;
+}
+.footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 15px;
+	color: #7F8C8D;
+}
+.footer ul li a {
+	padding: 0 0 5px 0;
+	display: block;
+}
+.footer a {
+	color: #78828D
+}
+.supportLi h4 {
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: normal;
+	margin-bottom: 0 !important;
+	padding-bottom: 0;
+}
+.newsletter-box input#appendedInputButton {
+	background: #FFFFFF;
+	display: inline-block;
+	float: left;
+	height: 30px;
+	clear: both;
+	width: 100%;
+}
+.newsletter-box .btn {
+	border: medium none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	height: 40px;
+	padding: 0;
+	width: 100%;
+	color: #fff;
+}
+.newsletter-box {
+	overflow: hidden;
+}
+.bg-gray {
+	background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
+	box-shadow: 0 1px 0 #B4B3B3;
+}
+.social li {
+	background: none repeat scroll 0 0 #B5B5B5;
+	border: 2px solid #B5B5B5;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 8px 0 0;
+	padding: 0;
+	text-align: center;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+.social li:hover {
+	transform: scale(1.15) rotate(360deg);
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+}
+.social li a {
+	color: #EDEFF1;
+}
+.social li:hover {
+	border: 2px solid #2c3e50;
+	background: #2c3e50;
+}
+.social li a i {
+	font-size: 16px;
+	margin: 0 0 0 5px;
+	color: #EDEFF1 !important;
+}
+.footer-bottom {
+	background: #E3E3E3;
+	border-top: 1px solid #DDDDDD;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.footer-bottom p.pull-left {
+	padding-top: 6px;
+}
+.payments {
+	font-size: 1.5em;
+}
+
+// devise
+
+/* login/sign-up */
+.facepanel {
+      background-image: image_url("big-7.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 50px;
+      background-color: grey;
+
+.login-page, .sign-up-page {
+  margin-top: 120px;
+  margin-bottom: 80px;
+  span {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  form {
+    max-width: 480px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px #9daaaf, 0 0 8px #c1c5c1;
+    h2 {
+      margin-bottom: 30px;
+    }
+    .form-control {
+      position: relative;
+      font-size: 16px;
+      height: auto;
+      padding: 10px;
+      transition: 1s;
+        @include box-sizing(border-box);
+      &:focus {
+        box-shadow: 1px 1px #fff;
+        border-color: #red;
+          z-index: 2;
+        }
+    }
+  }
+
+ }
+}
+
+//products index
+.btn-product{
+	width: 100%;
+}
+.container-latest{
+  margin: 50px;
+}
