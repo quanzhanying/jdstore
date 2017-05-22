@@ -18,10 +18,4 @@
 
 
 
-
- # Initialize product
-
-  Product.create!([title: "Aeron",
-  description: "office chair",
-  price: 8500,
-  quantity: 6])
+ 
