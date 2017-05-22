@@ -40,6 +40,8 @@ gem 'aasm'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 
+gem 'figaro'
+
 # 分页
 gem 'will_paginate-bootstrap'
 
