@@ -10,4 +10,22 @@ class CartItemsController < ApplicationController
     flash[:warning] = "已删除 #{@product.title}"
     redirect_to :back
   end
+
+  def increase
+    @cart = current_cart
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.quantity += 1
+    @cart_item.save
+    redirect_to :back
+  end
+
+  def decrease
+    @cart_item = CartItem.find(params[:id])
+    if @cart_item.quantity > 1
+      @cart_item.quantity -= 1
+      @cart_item.save
+      redirect_to :back
+    end
+  end
+
 end
