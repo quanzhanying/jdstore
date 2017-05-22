@@ -15,3 +15,7 @@
 
  u.is_admin = true
  u.save
+
+
+
+ 
