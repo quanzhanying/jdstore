@@ -9,6 +9,7 @@
         <% end %>
       <% end %>
       <%= product.title %> ￥ <%= product.price %>
+      <%= link_to "更新价格", update_price_product_path(product), :method => :post %>
     </div>
   <% end %>
 </div>

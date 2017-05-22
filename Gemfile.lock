@@ -254,6 +254,7 @@ DEPENDENCIES
   qiniu-rs
   rails (~> 5.0.0)
   rails-erd
+  rest-client
   sass-rails (~> 5.0)
   simple_form
   sqlite3

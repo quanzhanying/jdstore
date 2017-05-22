@@ -284,6 +284,13 @@ nav ul a.active {
    padding-bottom: 50px;
  }
 
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
  .social li, .social img:hover {
      -webkit-transition: -webkit-transform .7s;
      -moz-transition: -moz-transform .7s;
