@@ -11,13 +11,13 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 production:
-  qiniu_access_key: vgelc5NUnHYeVyHvHdBqjUd3Pmkak7JHrTdpN7gG  # 你的 qiniu AccessKey
-  qiniu_secret_key: qYVO3ZwpCFRLf0vwRHH57iq5NmHYV7_larf40Ang  # 你的 qiniu SecretKey
+  qiniu_access_key: r7aplsN1nks6mTtGVLoUShjXngkoUZXqwbn20ywV  # 你的 qiniu AccessKey
+  qiniu_secret_key: tJeJFU2NN_qr3U7wWVM9VZhDteLCSjNXGzgGzwUB  # 你的 qiniu SecretKey
   qiniu_bucket: select-furn  # 你的 qiniu bucket
-  qiniu_bucket_domain: oqct44ups.bkt.clouddn.com  # 你的 qiniu bucket domain
+  qiniu_bucket_domain: oqd6c7w7l.bkt.clouddn.com  # 你的 qiniu bucket domain
 
 development:
-  qiniu_access_key: vgelc5NUnHYeVyHvHdBqjUd3Pmkak7JHrTdpN7gG  # 你的 qiniu AccessKey
-  qiniu_secret_key: qYVO3ZwpCFRLf0vwRHH57iq5NmHYV7_larf40Ang  # 你的 qiniu SecretKey
+  qiniu_access_key: r7aplsN1nks6mTtGVLoUShjXngkoUZXqwbn20ywV  # 你的 qiniu AccessKey
+  qiniu_secret_key: tJeJFU2NN_qr3U7wWVM9VZhDteLCSjNXGzgGzwUB  # 你的 qiniu SecretKey
   qiniu_bucket: select-furn  # 你的 qiniu bucket
-  qiniu_bucket_domain: oqct44ups.bkt.clouddn.com  # 你的 qiniu bucket domain
+  qiniu_bucket_domain: oqd6c7w7l.bkt.clouddn.com  # 你的 qiniu bucket domain
