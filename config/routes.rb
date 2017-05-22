@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products do
-       member do
-         patch :move_up
-         patch :move_down
-       end
-     end
+      member do
+        patch :move_up
+        patch :move_down
+      end
+    end
     resources :orders do
       member do
         post :cancel
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :add_to_wish_list
+      post :delete_from_wish_list
     end
   end
 
@@ -38,7 +40,7 @@ Rails.application.routes.draw do
     member do
       post :pay_with_alipay
       post :pay_with_wechat
-      post :apply_to_cancel 
+      post :apply_to_cancel
     end
   end
 

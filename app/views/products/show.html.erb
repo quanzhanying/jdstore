@@ -21,6 +21,11 @@
     <% else %>
       已销售一空，无法购买
     <% end %>
+    <% if current_user.is_favorites?(@product) %>
+      <label class="label label-success"> 已加入心愿单 </label>
+    <% else %>
+      <%= link_to("加入心愿单", add_to_wish_list_product_path(@product), method: :post, class: "btn btn-lg btn-success") %>
+    <% end %>
     </div>
   </div>
 </div>
