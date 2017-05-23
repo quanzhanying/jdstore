@@ -44,3 +44,19 @@
 .productList-lastItem {
   margin-right: 0;
 }
+
+/*footer*/
+.footer {
+  background: #333333;
+  padding: 16px 10px 6px;
+  text-align: center;
+  font-size: 16px;
+  color: #C2C2C2;
+  span {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 24px;
+    line-height: 23px;
+  }
+}
