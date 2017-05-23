@@ -23,7 +23,7 @@
   </div>
 
   <div class="group">
-    <%= f.input :is_hidden %>  
+    <%= f.input :is_hidden ,:label => false, as: :radio_buttons, collection:  [['上架', false], ['下架', true]] %>   <!--增加下架功能-->
   </div>
 
   <%= f.submit "Submit" , data: { disable_with: "Submitting..."} %>
