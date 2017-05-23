@@ -32,7 +32,7 @@
             <div>
               <span style="color: #337ab7; padding-left: 40px;">试题属性:</span>
               <ul>
-                <% Size.all.each do |category| %>
+                <% Size.all.each do |size| %>
                   <li>
                     <%= link_to(size.name, admin_exams_path(size: size.name)) %>
                   </li>

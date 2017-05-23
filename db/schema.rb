@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170523024354) do
     t.text     "answer_5"
     t.text     "answer_6"
     t.integer  "category_id"
-    t.integer  "class_id"
+    t.integer  "size_id"
     t.string   "image"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
