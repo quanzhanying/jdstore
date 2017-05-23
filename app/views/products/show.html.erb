@@ -1,11 +1,43 @@
 <div class="row">
-  <div class="col-md-6">
-    <!-- <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %> -->
+  <div class="col-md-6 preview">
     <% if @photos.present? %>
+    <div class="tab-content preview-pic">
+      <div id="pic1" class="tab-pane fade in active">
+        <%= image_tag @photos[0].avatar.medium.url %>
+      </div>
+      <div id="pic2" class="tab-pane fade">
+        <%= image_tag @photos[1].avatar.medium.url %>
+      </div>
+      <div id="pic3" class="tab-pane fade">
+        <%= image_tag @photos[2].avatar.medium.url %>
+      </div>
+      <div id="pic4" class="tab-pane fade">
+        <%= image_tag @photos[3].avatar.medium.url %>
+      </div>
+      <div id="pic5" class="tab-pane fade">
+        <%= image_tag @photos[4].avatar.medium.url %>
+      </div>
+    </div>
+    <ul class="nav nav-pills preview-thumb">
+      <li class="active"><a data-toggle="pill" href="#pic1">
+        <%= image_tag @photos[0].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic2">
+        <%= image_tag @photos[1].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic3">
+        <%= image_tag @photos[2].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic4">
+        <%= image_tag @photos[3].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic5">
+        <%= image_tag @photos[4].avatar.thumb.url %>
+      </a></li>
+    </ul>
+    <% end %>
+
+    <!-- <% if @photos.present? %>
       <% @photos.each_with_index do |photo,index| %>
         <% if index == 0 %>
           <%= image_tag photo.avatar.medium.url %>
@@ -17,7 +49,7 @@
         </div>
     <% else%>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
+    <% end %> -->
   </div>
   <div class="col-md-6">
     <h2><%= @product.title %></h2>
