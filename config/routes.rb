@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'products#index'
 
   get '/recommend/', to:'products#recommend'
-  
+
   namespace :admin do
     resources :products
     resources :orders do
@@ -43,6 +43,10 @@ Rails.application.routes.draw do
       post :pay_with_wechat
       post :apply_to_cancel
     end
+  end
+
+  resources :categories do
+    resources :products
   end
 
 end
