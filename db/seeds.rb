@@ -20,7 +20,7 @@ products =[{title:"Logitech mouse MT630",
                         sleek, sophisticated Ultrabook computers. It features a brushed
                         metallic body with a silky-smooth touch surface, and the thin,
                         lightweight design is incredibly portable so you can take it anywhere. ",
-	        image_path: "#{Rails.root}/app/assets/images/logitech_mt630.jpg"},
+	        image_path: "http://oqecjavzf.bkt.clouddn.com/Logitech%20Ultrathin%20Touch%20Buetooth%20Mouse.jpg"},
 
 	        {title:"Bose QuietComfort 35",
 	        description: "World-class noise cancellation makes quiet sound quieter and music sound better
@@ -28,7 +28,7 @@ products =[{title:"Logitech mouse MT630",
                         Wireless convenience, with easy Bluetooth and NFC pairing aided by voice prompts
                         20-hour battery life per charge; up to 40 hours in wired mode
                         Noise-rejecting dual-microphone system for clear calls even in windy environments",
-	        image_path: "#{Rails.root}/app/assets/images/QC35.jpg"}
+	        image_path: "http://oqecjavzf.bkt.clouddn.com/QC35.jpg"}
 
 					{title:"Apple Watch",
 	        description: "Gold aluminum case
@@ -40,23 +40,21 @@ products =[{title:"Logitech mouse MT630",
 												Ceramic back
 												Digital Crown
 												Heart rate sensor, accelerometer, and gyroscope",
-	        image_path: "#{Rails.root}/app/assets/images/watch.jpg"}
+	        image_path: "http://oqecjavzf.bkt.clouddn.com/watch.jpg"}
 
 					{title:"GoPro Hero5",
 	        description: "Stunning 4K video and 12MP photos in Single, Burst and Time Lapse modes.
 												Durable by design, HERO5 Black is waterproof to 33ft (10m) without a housing
 												Additional GoPro HERO5 Black Features + Benefits below on item page.
 												Preview and playback your shots, change settings and trim your footage, all on your GoPro.",
-	        image_path: "#{Rails.root}/app/assets/images/gopro_hero5.jpg"}
+	        image_path: "http://oqecjavzf.bkt.clouddn.com/gopro_hero5.jpg"}
 
 					{title:"Vuzix M100 Smart Glasses",
 	        description: "Vuzix M100 provides the features and capabilities of a modern smartphone, without a cellular radio, in a hands-free wearable device.
 												Bluetooth 4.0 connectivity makes it easy to pair with another Android device or connect wirelessly with Wi-Fi to the Internet.
 												The M100's integrated camera captures 5 megapixel still images and 1080p high-definition video. Video and image capture can be stored directly on the M100's memory (expandable up to 32 GB) or streamed live.",
-	        image_path: "#{Rails.root}/app/assets/images/vuzix_m100.jpg"}
-
-
-]
+	        image_path: "http://oqecjavzf.bkt.clouddn.com/vuzix_m100.jpg"}
+          ]
 
 
 
