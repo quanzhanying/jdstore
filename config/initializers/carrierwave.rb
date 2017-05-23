@@ -1,6 +1,7 @@
 CarrierWave.configure do |config|
   if Rails.env.production? or Rails.env.development?
-    config.storage :fog
+
+
     config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],      # 你的 key
@@ -13,6 +14,7 @@ CarrierWave.configure do |config|
 
 
     }
+    config.storage :fog
     config.fog_directory  = ENV["AWS_BUCKET_NAME"] # 你设定的 bucket name
 
 
