@@ -28,8 +28,8 @@ products =[{title:"Logitech mouse MT630",
                         Wireless convenience, with easy Bluetooth and NFC pairing aided by voice prompts
                         20-hour battery life per charge; up to 40 hours in wired mode
                         Noise-rejecting dual-microphone system for clear calls even in windy environments",
-	        image_path: "http://oqecjavzf.bkt.clouddn.com/QC35.jpg"}
-
+	        image_path: "http://oqecjavzf.bkt.clouddn.com/QC35.jpg"},
+					
 					{title: "Apple Watch",
 	        description: "Gold aluminum case
 												S2 dual-core processor
