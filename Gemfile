@@ -41,6 +41,9 @@ gem 'awesome_print' #美化ruby
 gem 'letter_opener', group: :development
 gem 'aasm'
 
+gem "figaro" #用來管理機密資訊
+gem "fog" #Ruby cloud services library
+
 group :development, :test do
   gem 'pry' #debug
   gem 'awesome_rails_console' #美化console 顯示數據
