@@ -20,4 +20,6 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :product_user_relationships
   has_many :members, :through => :product_user_relationships, :source => :user
+
+  has_many :reviews
 end
