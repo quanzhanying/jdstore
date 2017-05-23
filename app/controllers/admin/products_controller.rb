@@ -21,7 +21,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
-      redirect_to admin_products_path
+      redirect_to admin_products_path, notict: "更新成功"
     else
       render :edit
     end
@@ -35,6 +35,13 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "商品已删除"
+    redirect_to admin_products_path
   end
 
   private
