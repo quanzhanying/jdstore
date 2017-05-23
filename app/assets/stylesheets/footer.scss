@@ -2,8 +2,8 @@
 ------------------------------------*/
 .footer-default .footer {
 	color: #dadada;
-	background: #585f69;
-	padding: 20px 0 30px;
+	background: #695858;
+	// padding: 20px 0 30px;
 }
 
 .footer.margin-top-0 {
@@ -23,10 +23,10 @@
 }
 .footer-default .footer a:hover {
 	color: #5fb611;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 }
 
 .footer-default .footer h2,
@@ -101,71 +101,73 @@
 /*Footer-v1
 ------------------------------------*/
 .footer-v1 .footer {
-  padding: 40px 0;
-  background: #272727;
+	height: 250px; //add
+	padding: 40px 0;
+	background: #272727;
 }
 
 .footer-v1 .footer p {
-  color: #eee;
+	color: #eee;
 }
 
 .footer-v1 .footer h2 {
-  color: #eee;
-  font-size: 18px;
-  font-weight: 200;
+	color: #eee;
+	font-size: 18px;
+	font-weight: 200;
 }
 
 /*Link List*/
 .footer-v1 .link-list li {
-  border-top: solid 1px #353535;
+	border-top: solid 1px #353535;
 }
 
 .footer-v1 address,
 .footer-v1 .link-list a,
 .footer-v1 .link-list i {
-  color: #eee;
+	color: #eee;
 }
 
 .footer-v1 address {
-  line-height: 23px;
+	line-height: 23px;
 }
 
 /*Dotted Map*/
 .footer-v1 .footer .map-img {
-  background: url(/images/map-img.png) 5px 60px no-repeat;
+	background: url(/images/map-img.png) 5px 60px no-repeat;
 }
 
 /*Copyright*/
 .footer-v1 .copyright {
-  background: #222;
-  border-top: none;
-  padding: 10px 0 5px;
+	background: #222;
+	border-top: none;
+	padding: 10px 0 5px;
 }
 
 .footer-v1 .copyright p {
-  color: #eee;
-  margin-top: 14px;
+	color: #eee;
+	margin-top: 14px;
+	margin-bottom: 14px;
 }
 
 .footer-v1 .copyright a {
-  margin: 0 2px;
+	margin: 0 2px;
 }
 
 .footer-v1 .footer-socials {
-  margin-top: 12px;
-  text-align: right;
+	margin-top: 12px;
+	text-align: right;
 }
 
 .footer-v1 .footer-socials li a {
-  color: #777;
-  font-size: 16px;
+	color: #777;
+	font-size: 16px;
 }
 
 @media (max-width: 991px) {
-  .footer-v1 .copyright,
-  .footer-v1 .footer-socials {
-    text-align: left;
-  }
+	.footer-v1 .copyright,
+	.footer-v1 .footer-socials {
+		text-align: left;
+	}
 }
 
 
@@ -266,3 +268,75 @@
 .social-icons li a {
 	margin: 0 3px;
 }
+
+
+/* --------------------------------------------------------
+1. Footer
+-------------------------------------------------------- */
+// footer{
+//   padding-top:120px;
+// }
+// .footer-logo{
+//   padding-bottom:30px;
+// }
+//
+// .footer-widget p{
+//   padding-bottom:10px;
+// }
+// .footer-widget ul li{
+//   display:inline-block;
+// }
+// .footer-widget ul li a img{
+//   width:80px;
+// }
+// .footer-widget address{
+//   font-family:'Libre Baskerville', serif;
+//   font-weight:400;
+//   font-size:14px;
+//   font-style:italic;
+//   color:#303030;
+//   line-height:24px;
+// }
+// .footer-widget a{
+//   font-size:12px;
+//   color:#303030;
+// }
+// .footer-widget h3{
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight:700;
+//   font-size:25px;
+//   color:#000000;
+//   line-height:30px;
+//   padding-top:45px;
+//   padding-bottom:35px;
+// }
+// .footer-widget .working-day{
+//   font-size:18px;
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight:600;
+//   color:#333333;
+//   line-height:24px;
+// }
+// .footer-widget .working-hour{
+//   font-size:16px;
+//   font-family:'Libre Baskerville', serif;
+//   font-weight:400;
+//   color:#333333;
+//   line-height:24px;
+// }
+// .footer-widget .table>tbody>tr>td{
+//   border-top:none;
+//   padding-top:0px;
+//   padding-bottom:16px;
+// }
+// .footer-copyright-content{
+//   font-size:12px;
+//   font-family:'Libre Baskerville', serif;
+//   font-weight:400;
+//   font-style:italic;
+//   color:#929292;
+//   line-height:24px;
+// }
+// .footer-copyright-content a{
+//   color:#929292;
+// }

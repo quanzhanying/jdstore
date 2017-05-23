@@ -1,5 +1,210 @@
+/* --------------------------------------------------------
+1. NAVBAR
+-------------------------------------------------------- */
+.shadow{
+	-moz-box-shadow: 2px 2px 5px rgba(240,240,240,1);
+	-webkit-box-shadow: 2px 2px 5px rgba(240,240,240,1);
+	box-shadow: 2px 2px 5px rgba(240,240,240,1);
+}
+.navbar{
+	border:none!important;
+	border-radius:0px;
+}
+.navbar-index-top {
+	margin-bottom:0px;
+	top:0;
+	width:100%;
+	z-index:999;
+	background:#fff;
+}
+.navbar-index-top .main-nav,
+.navbar-index-top .main-menu{
+	float:left;
+}
+.navbar-index-top .main-menu{
+	border-left:none!important;
+	border-right:none!important;
+}
+.navbar-index-top .navbar-brand img {
 
-/* === 主菜单 === */
+	padding-top:33px;
+	padding-bottom:31px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+	-webkit-transition: background .3s ease-in-out,padding .3s ease-in-out;
+	-moz-transition: background .3s ease-in-out,padding .3s ease-in-out;
+	transition: background .3s ease-in-out,padding .3s ease-in-out;
+}
+.sticky .navbar-index-top .navbar-brand{
+	padding-top:0px;
+}
+.sticky .navbar-index-top .navbar-brand img {
+	padding-top:24px!important;
+
+	padding-bottom:19px;
+}
+.navbar-index-top .navbar-brand{
+	padding:0px;
+}
+.sticky .navbar-ocean-white{
+	top:0;
+}
+.navbar-ocean-white .main-nav{
+	float:right;
+}
+.navbar-ocean-white .main-nav>ul>li>a{
+	color:rgba(106,175,8,1)!important;
+}
+
+.sticky .navbar-ocean-transparent{
+	top:0;
+	background-color: rgba(255,255,255,1);
+	-webkit-transition: height .5s ease-in-out;
+	-moz-transition: height .5s ease-in-out;
+	transition: height .5s ease-in-out;
+}
+.navbar-ocean-transparent .main-nav{
+	float:right;
+}
+.navbar-ocean-transparent .main-nav>ul>li>a{
+	color:rgba(51,51,51,1)!important;
+}
+/* scroll progress bar */
+.nav-top-bar{
+	background: #f6f6f6; //#22222e;
+	padding: 10px 0px 10px 0px; //14px 0px 14px 0px;
+}
+.top-bar-left ul li{
+	display:inline-block;
+}
+.top-bar-left ul li:first-child{
+	border-right:1px solid #fff;
+	padding-right:12px;
+}
+.top-bar-left ul li:last-child{
+	padding-left:12px;
+}
+.top-bar-left select{
+	background: #8fd613; //#2e2222 语言按钮颜色
+	border:none;
+	font-family: 'Poppins', sans-serif;
+	font-weight:400;
+	font-size:12px;
+	text-transform:uppercase;
+	color:#fff;
+	width: 50px; //45px;
+}
+.top-bar-left select:active, .top-bar-left select:focus{
+	outline:none;
+}
+.top-bar-right{
+	text-align:right;
+}
+.top-bar-right ul li{
+	display:inline-block;
+	border-right:1px solid #fff;
+}
+.top-bar-right ul li:last-child{
+	padding-right:0px;
+	border-right:none;
+}
+.top-bar-right ul li a{
+	padding-left:12px;
+	padding-right:12px;
+	font-family: 'Poppins', sans-serif;
+	font-weight:400;
+	font-size:12px;
+	color: gray; //#fff; 右边菜单字体颜色
+}
+/* Logo Section */
+.logo-section{
+	background: #fff; //#f6f6f6 Logo拦 背景颜色
+}
+.logo-wrap{
+	display: table;
+	float: left;
+	padding: 8px 0px 8px 0px; //10px 0px 20px 0px;
+	width: 100%;
+}
+.logo-wrap .logo{
+	float:left;
+}
+.widget_product_search .search-box {
+	border: 1px solid #6FC042; //none 较深 Logo 相同
+	border-radius:50px;
+	height: 35px; //40px
+	padding: 0px 20px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
+	width: 300px; //460px
+	font-family:'Libre Baskerville', serif;
+	font-weight:400;
+	font-size:14px;
+	font-style:italic;
+	color: #000; //#fff
+	background: #fff; //#8fd613
+}
+.widget_product_search {
+	position: relative;
+	margin-top: 15px; //25px
+	margin-left: 40%; //add
+	padding-top: 0px;
+	// float:right;
+}
+.widget_product_search .submit-search {
+	position: absolute;
+	bottom: -5px; //-2px;
+  // right: 20px;
+  // padding: 0;
+  // margin: 0;
+  margin-left: 210px; //add
+	border: 0;
+	background: none;
+	cursor: pointer;
+}
+.widget_product_search .submit-search i {
+	color: #6FC042; //color: #fff;
+  font-size: 1.5em; //14px;
+}
+/* scroll progress bar */
+#scroll-progressbar {
+	display: block;
+	position: fixed;
+	top: 0;
+	height: 2px;
+	width: 100%;
+	z-index: 99999;
+}
+#scroll-progressbar div {
+	position: relative;
+	height: 100%;
+	width: 0;
+	-webkit-transition: width 0.3s ease-out;
+	transition: width 0.3s ease-out;
+	z-index: 99999;
+}
+#scroll-progressbar .scroll-shadow {
+	position: absolute;
+	right: 0;
+	width: 100px;
+	height: 100%;
+	-webkit-transform: rotate(3deg) translate(0px, -4px);
+	-ms-transform: rotate(3deg) translate(0px, -4px);
+	transform: rotate(3deg) translate(0px, -4px);
+	z-index: 99999;
+}
+
+.scroll-progressbar div {
+	background: #eb1b34;
+
+}
+
+/* --------------------------------------------------------
+1. NAVBAR 主菜单
+-------------------------------------------------------- */
 
 .navbar-sticky{
 	z-index:999;
@@ -83,7 +288,7 @@
 		float:right;
 	}
 	.navbar-gardener .main-menu{
-		border-left: 0px solid #bde893;
+		border-left: 0px solid #e89393;
 		border-right: 0px solid #bde893;
 	}
 
@@ -696,9 +901,7 @@
 	}
 }
 
-body {
-	overflow-x: hidden!important;
-}
+
 @media (max-width:992px) {
 	.menu-upper{
 		display:none!important;

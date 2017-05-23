@@ -9,13 +9,33 @@
 </head>
 
 <body>
-  <!-- <div class="wrapper"> -->
+  <div class="wrapper">
     <div>
       <%= render "common/navbar" %>
       <%= render "common/flashes" %>
       <%= yield %>
     </div>
-    <%= render "common/footer" %>
-  <!-- </div> -->
+  </div>
+  <%= render "common/footer" %>
 </body>
+
+<!--  Js Files  -->
+<!-- Core js -->
+<!-- <script src="assets/js/jquery-3.1.1.min.js"></script> -->
+<!-- <script src="assets/js/bootstrap.min.js"></script> -->
+
+<script src="/js/menu.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.dcjqaccordion.min.js"></script>
+<script src="/js/instagram.js"></script>
+<script src="/js/appear.js"></script>
+
+<!-- Google Map -->
+<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyAvpnlHRidMIU374bKM5-sx8ruc01OvDjI"></script>
+<script src="/js/gmap3.min.js"></script>
+
+<!-- Custom Script -->
+<script src="/js/main.js"></script>
+
 </html>
