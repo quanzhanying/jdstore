@@ -1,11 +1,15 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_wish_list, :delete_from_wish_list]
   def index
-    @products = Product.all.order("position ASC")
+    @products = Product.where(:is_hidden => false).order("position ASC") #加入where(:is_hidden => false) 首页看不到下架商品
   end
 
   def show
     @product = Product.find(params[:id])
+    if @product.is_hidden
+      flash[:warning] = "此商品已下架"
+      redirect_to root_path    #限制普通用户之间输入下架的产品网址
+    end
   end
 
   def add_to_cart

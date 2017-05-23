@@ -58,7 +58,7 @@ class OrdersController < ApplicationController
     OrderMailer.apply_cancel(@order).deliver!
     flash[:notice] = "已提交申请"
     redirect_to :back
-  end 
+  end
 
 
 

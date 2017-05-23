@@ -45,9 +45,21 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def publish
+    @product = Product.find(params[:id])
+    @product.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+    @product.hide!
+    redirect_to :back
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price,:image)
+    params.require(:product).permit(:title, :description, :quantity, :price,:image,:is_hidden)
   end
 end
