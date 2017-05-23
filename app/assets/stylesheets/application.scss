@@ -16,3 +16,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.carousel {
+  width: 1200px;
+  margin: 0 auto;
+}
+.carousel .item {
+  height: 375px;
+}
