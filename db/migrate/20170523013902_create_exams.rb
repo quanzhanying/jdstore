@@ -9,8 +9,7 @@ class CreateExams < ActiveRecord::Migration[5.0]
       t.text :answer_4
       t.text :answer_5
       t.text :answer_6
-      t.integer :category_id
-      t.integer :size_id
+
       t.string :image
 
       t.timestamps

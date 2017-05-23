@@ -9,8 +9,7 @@
     <%= f.input :answer_4, placeholder: "请输入试题描述" %>
     <%= f.input :answer_5, placeholder: "请输入试题描述" %>
     <%= f.input :answer_6, placeholder: "请输入试题描述" %>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
-    <%= select_tag(:sizes_id, options_for_select(@sizes), :prompt => "属性") %>
+
     <%= f.label :image %><br>
     <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>（"这里可以上传图片"）<br>
     <%= f.submit "Submit", class: "btn btn-default" %>
