@@ -98,7 +98,23 @@
       <!-- 轮播图左右选择区域结束 -->
     <!-- </div>
   </div> -->
-<img class="background-image" src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu6l9qgvyj30yp0a07ax.jpg"  style="opacity:0.8;" alt="background image">
+<!-- 每个品牌信息展示区分区域 -->
+  <% if @brand_id == 1 %>
+    <%= render :partial => "products/HAY" %>
+  <% elsif @brand_id == 2 %>
+    <%= render :partial => "products/GUBI" %>
+  <% elsif @brand_id == 3 %>
+    <%= render :partial => "products/MENU" %>
+  <% elsif @brand_id == 4 %>
+    <%= render :partial => "products/muuto" %>
+  <% elsif @brand_id == 5 %>
+    <%= render :partial => "products/STUA" %>
+  <% elsif @brand_id == 6%>
+    <%= render :partial => "products/ferm_living" %>
+  <% else %>
+    <img class="background-image" src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu6l9qgvyj30yp0a07ax.jpg"  style="opacity:0.8;" alt="background image">
+  <% end %>
+<!-- 每个品牌信息展示区分区域结束 -->
 
 <!-- 商品排序显示页面显示部分 -->
   <div class="order clearfix">
