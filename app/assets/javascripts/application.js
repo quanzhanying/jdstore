@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+<<<<<<< HEAD
 //= require jquery.raty
 //= require ratyrate
+=======
+//= require bootstrap
+>>>>>>> decorate_index
 //= require_tree .

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
   post '/rate' => 'rater#create', :as => 'rate'
-  root 'products#index'
+
+
+  root 'welcome#index'
+
   devise_for :users
   namespace :admin do
     resources :products do
