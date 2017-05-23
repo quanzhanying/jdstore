@@ -1,11 +1,12 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="slideshow-container">
-      <%= @products.each_with_index do |product,index|%>
+    <div class="">
+      <% @products.each_with_index do |product,index|%>
       <% if product.category.name === "酷炫应用"  %>
-        <div class="mySlides fade">
-            <div class="numbertext"><%= index %> / 3</div>
-            <img src="img1.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
+        <div class="">
+            <div class=""><%= index %> / 3</div>
+            <%= image_tag(product.photos[0].avatar.medium.url, class: "thumbnail",id:"#{product.id}") %>
+            <!-- <img src="img1.jpg" style="width:100%"> -->
+            <div class="">Caption Text</div>
         </div>
         <% end %>
       <% end %>
