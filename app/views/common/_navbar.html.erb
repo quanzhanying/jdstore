@@ -38,6 +38,7 @@
                <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>
+          <li><%= link_to(account_products_path) do %><i class="fa fa-list-ul" aria-hidden="true"></i> 心愿单</li><% end %>
           <% end %>
       </ul>
     </div>
