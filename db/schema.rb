@@ -40,10 +40,11 @@ ActiveRecord::Schema.define(version: 20170523075127) do
     t.text     "answer_4"
     t.text     "answer_5"
     t.text     "answer_6"
+    t.integer  "category_id"
     t.string   "image"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "is_true",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "is_true",     default: false
   end
 
   create_table "orders", force: :cascade do |t|
