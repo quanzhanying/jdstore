@@ -1,0 +1,32 @@
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <%# if @exam.image.present? %>
+      <%#= image_tag(@exam.image.medium.url, class: "thumbnail") %>
+    <%# else %>
+      <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <%# end %>
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= @exam.question %></h2>
+    <div style="height: 100px;">
+      <p>
+        <%= @exam.answer_1 %>
+        <%= @exam.answer_1 %>
+      </p>
+    </div>
+    <div>试题类别: <%= @exam.category_id %></div>
+    <div>试题属性: ￥ <%= @exam.class_id %></div>
+  </div>
+</div>
