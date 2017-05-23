@@ -37,9 +37,16 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts_as_list'
 gem 'letter_opener', group: :development
+#
 gem 'aasm'
+
+#七牛云
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+# debug 神器
   gem 'pry'
   gem 'awesome_rails_console'
 end
