@@ -122,7 +122,7 @@
 
   //--------homePage main pic---------
   .jumbotron {
-      background-image:url('http://ww4.sinaimg.cn/large/006tKfTcgy1ffufo1056rj30qo0hstbd.jpg');
+      background-image:url('http://ww1.sinaimg.cn/large/006tNbRwgy1ffvzi1cv2ij31kw11oqv5.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       padding-bottom: 110px;
@@ -131,12 +131,10 @@
   .container-fluid .jumbotron{
       //border:solid 1px blue;
       padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-      margin: 0 -15px 0px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+      margin: 55px -15px 0px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
       border-radius: 0;//圆角为0
   }
-  .jumbotron h1, .jumbotron .h1 {
-    /* color: inherit; */
-}
+
 
   .title {
       font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
@@ -328,3 +326,7 @@
 
 /* Aviod The fixed navbar overlay other content
   body { padding-top: 70px; }*/
+//----------product-index css------
+  .product-index{
+    background-color: #efede3;
+  }
