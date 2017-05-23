@@ -18,6 +18,50 @@
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+.navbar-default {
+     background-color: #212121;  //背景颜色
+
+     border-color: #212121; //边框色
+
+     margin-bottom: 0; //底部 margin 不撑开距离
+ }
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0; //圆角为0
+   }
+ }
+.container-fluid .jumbotron{
+   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   border-radius: 0;//圆角为0
+ }
+.jumbotron {
+  background-image:url('http://ww1.sinaimg.cn/large/006tNbRwgy1ffv3u02yarj31kw11o1kz.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
