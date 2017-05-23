@@ -32,60 +32,60 @@ u.save
 
  # Initialize Product
 
-   
+
 
   Product.create!(title: "wine1",
     description: "酒1",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2011/03/25/08/27/wine-5884__340.jpg")
+    image: open("http://a3.qpic.cn/psb?/V13Obk462MXIb5/KFP4r2Inc1xsgrr12.u*3VPj63I1KpTIsrkzj3iy2SE!/b/dGoBAAAAAAAA&bo=gALgAQAAAAARAFQ!&rf=viewer_4")
     )
 
   Product.create!(title: "wine2",
     description: "酒2",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2013/07/12/16/28/bordeaux-150955__340.png")
+    image: open("http://a3.qpic.cn/psb?/V13Obk462MXIb5/P193lLp8BAu*5UO7NA9madSa1Kge8cvmXu6sNH4FOnM!/b/dGoBAAAAAAAA&bo=qgGAAgAAAAARAB4!&rf=viewer_4")
     )
 
   Product.create!(title: "wine3",
     description: "酒3",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2014/08/24/16/48/wine-426466__340.jpg")
+    image: open("http://a1.qpic.cn/psb?/V13Obk462MXIb5/C11DRgZZ2gvRga80SSOckE6sIgblvX2UAry9aFkwzm8!/b/dGsBAAAAAAAA&bo=QAGAAgAAAAADAOY!&rf=viewer_4")
     )
 
   Product.create!(title: "wine4",
     description: "酒4",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2014/08/26/19/19/wine-428313__340.jpg")
+    image: open("http://a3.qpic.cn/psb?/V13Obk462MXIb5/B3RNIVjOVS87PrIlp5TdWOQXOJd6uz4ZX2cnLy1V3UY!/b/dGoBAAAAAAAA&bo=gALgAQAAAAARAFQ!&rf=viewer_4")
     )
 
   Product.create!(title: "wine5",
     description: "酒5",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2015/03/24/06/40/bottle-687147__340.jpg")
+    image: open("http://a1.qpic.cn/psb?/V13Obk462MXIb5/Nk082NBrLnAmxChkQ4H*eWpqzHDdO0cNsosDfMurXfM!/b/dGsBAAAAAAAA&bo=4AGAAgAAAAARAFQ!&rf=viewer_4")
     )
 
   Product.create!(title: "wine6",
     description: "酒6",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2017/04/13/16/32/wine-2228066__340.jpg")
+    image: open("http://a1.qpic.cn/psb?/V13Obk462MXIb5/3XZzoQPcWEx2oFCxUrnQbOTlmLO7nnhib9*aP287uMc!/b/dGsBAAAAAAAA&bo=qwGAAgAAAAARAB8!&rf=viewer_4")
     )
 
   Product.create!(title: "wine7",
     description: "酒7",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2017/05/14/22/43/wine-2313297__340.jpg")
+    image: open("http://a1.qpic.cn/psb?/V13Obk462MXIb5/ALlE8uVSPRxmW51FwsUEnTXhNFeHI0JUzxVdJpDcUHc!/b/dGsBAAAAAAAA&bo=qQGAAgAAAAARAB0!&rf=viewer_4")
     )
 
   Product.create!(title: "wine8",
     description: "酒8",
     price: 2800,
     quantity: 5,
-    image: open("https://cdn.pixabay.com/photo/2016/02/19/11/45/wine-bottle-1209934__340.jpg")
+    image: open("http://a1.qpic.cn/psb?/V13Obk462MXIb5/3XZzoQPcWEx2oFCxUrnQbOTlmLO7nnhib9*aP287uMc!/b/dGsBAAAAAAAA&bo=qwGAAgAAAAARAB8!&rf=viewer_4")
     )
