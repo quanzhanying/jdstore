@@ -40,4 +40,35 @@ class ProductsController < ApplicationController
   end
 
 
+  def dresses
+    @products = Product.where(:category => "dresses").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def jeans
+    @products = Product.where(:category => "jeans").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def skirts
+    @products = Product.where(:category => "skirts").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def shorts
+    @products = Product.where(:category => "shorts").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def suits
+    @products = Product.where(:category => "suits").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def pay_now
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+    else
+      flash[:warning] = "购物车已有此商品!"
+    end
+    redirect_to carts_path
+  end
+
+
 end
