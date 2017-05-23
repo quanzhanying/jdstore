@@ -18,18 +18,21 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+html {
+  height: 100%;//拉高
+  // position: relative;
+  // overflow-x: hidden; overflow-y: auto;
+}
+
 //footer height
 .wrapper {
-  margin-bottom: 250px;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
 }
 
 /* ------ General resets ------------ */
-
-ul{
-  padding:0;
-  margin:0;
-  list-style:none;
-}
 
 html,
 body,
@@ -135,7 +138,8 @@ section {
 body {
   font-size: 12px;
   font-family: 'Lato', 'Raleway', 'Rokkitt', sans-serif;
-  height: auto !important;
+  // height: auto !important;
+  height: 100%; //add
 }
 /* --- typography --------------------- */
 /*headings*/
@@ -261,6 +265,12 @@ input[type="button"],
   color: #565656;
 }
 
+ul{
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
 /* --- tables --------------------- */
 table {
   border-collapse: separate;
@@ -273,10 +283,13 @@ td {
   font-weight: 400;
   vertical-align: middle;
 }
+
 /* --- images --------------------- */
 
 /* --- links --------------------- */
-a,
+a,{
+  color: #72c12c; //add
+}
 a:link,
 a:visited,
 a:active,
@@ -292,7 +305,8 @@ a:focus {
 }
 a,
 a:visited{outline: 0px;}
-a:hover {color: inherit;}
+// a:hover {color: inherit;}
+a:hover {color: yellow;}
 
 /* link */
 a.generalLink {
@@ -353,6 +367,7 @@ a.product-button {
   height:38px;
   border-radius:50px;
 }
+
 /* hr */
 hr,
 .container hr {
@@ -571,6 +586,18 @@ hr,
 // 	overflow-x: hidden!important;
 // }
 
+.headline {
+  display: block;
+  margin: 10px 0 25px 0;
+  border-bottom: 1px dotted #e4e9f0;
+}
+
+.headline h2, .headline h3, headline h4 {
+  margin: 0 0 -2px 0;
+  padding-bottom: 5px;
+  display: inline-block;
+  border-bottom: 2px solid #72c02c;
+}
 
 
 
