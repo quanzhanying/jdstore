@@ -3,16 +3,10 @@ class Cart < ApplicationRecord
   has_many :products, through: :cart_items, source: :product
 
   def add_product_to_cart(product)
-    cart_items.each do |cart_item|
-      if cart_item.product == product
-        return false
-      end
-    end
     ci = cart_items.build
     ci.product = product
     ci.quantity = 1
     ci.save
-    return true
   end
 
   def total_price
