@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
        redirect_to '/'
     end
   end
-    helper_method :current_cart
+  helper_method :current_cart
 
   def current_cart
     @current_cart ||= find_cart
