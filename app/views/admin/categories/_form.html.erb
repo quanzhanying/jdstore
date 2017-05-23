@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+   <div class="group">
+     <%= f.input :name %>
+   </div>
+
+   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
