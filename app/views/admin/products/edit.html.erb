@@ -1,0 +1,30 @@
+<h2>Edit Product</h2>
+
+<%= simple_form_for [:admin,@product] do |p| %>
+  <div class="group">
+    <%= p.input :title %>
+  </div>
+
+  <div class="group">
+    <%= p.input :description %>
+  </div>
+
+  <div class="group">
+    <%= p.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= p.input :price %>
+  </div>
+
+  <% if @product.image.present? %>
+    <span>目前商品图</span>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
+  <div>
+    <%= p.input :image, as: :file %>
+  </div>
+
+  <%= p.submit "Submit", data: { disable_with: "Submitting..."} %>
+<% end %>
