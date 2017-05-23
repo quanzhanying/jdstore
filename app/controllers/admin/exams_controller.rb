@@ -11,6 +11,7 @@ class Admin::ExamsController < ApplicationController
     @exam = Exam.new
     @categories = Category.all.map { |c| [c.name, c.id] }
 
+
   end
 
   def show
@@ -21,11 +22,13 @@ class Admin::ExamsController < ApplicationController
     @exam = Exam.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
 
+
   end
 
   def create
     @exam = Exam.create(exam_params)
     @exam.category_id = params[:category_id]
+
     if @exam.save
       redirect_to admin_exams_path,notice:"创建成功！"
     else
@@ -54,7 +57,7 @@ class Admin::ExamsController < ApplicationController
 
   def exam_params
     params.require(:exam).permit(:name, :question, :answer_1,:answer_2,:answer_3,:answer_4,:answer_5,:answer_6,:image)
-  end
+    end
 
 
 end

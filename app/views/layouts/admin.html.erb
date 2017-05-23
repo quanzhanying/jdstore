@@ -32,6 +32,13 @@
             <p><%= link_to("属性管理", admin_sizes_path) %></p>
             <div>
               <span style="color: #337ab7; padding-left: 40px;">试题属性:</span>
+              <!-- <ul>
+                <% Size.all.each do |size| %>
+                  <li>
+                    <%= link_to(size.name, admin_exams_path(size: size.name)) %>
+                  </li>
+                <% end %>
+              </ul> -->
 
             </div>
             <p><%= link_to("订单查询", admin_orders_path) %></p>

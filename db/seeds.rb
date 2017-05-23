@@ -14,3 +14,7 @@ u.save
 
 Category.create(name: "铁道部")
 Category.create(name: "运输部")
+
+# Size.create(name: "判断题")
+# Size.create(name: "选择题")
+# Size.create(name: "识图题")
