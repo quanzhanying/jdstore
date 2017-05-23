@@ -22,6 +22,12 @@ resources :products do
   member do
     post :add_to_cart
   end
+  collection do
+    get :bouquet
+    get :box_flower
+    get :ceremony
+    get :micro 
+  end
 end
   resources :carts do
     collection do

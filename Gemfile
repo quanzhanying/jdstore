@@ -33,8 +33,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry'
 gem 'acts_as_list'
-gem 'letter_opener', group: :development 
+gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'will_paginate'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 

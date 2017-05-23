@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-
     @products = Product.all.order("position ASC")
-
   end
   def show
     @product = Product.find(params[:id])
@@ -18,5 +16,20 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+    def bouquet
+      @products = Product.where(:category_id => 1).paginate(:page => params[:page], :per_page => 9)
+    end
+
+    def box_flower
+      @products = Product.where(:category_id => 2).paginate(:page => params[:page], :per_page => 9)
+    end
+
+    def ceremony
+      @products = Product.where(:category_id => 3).paginate(:page => params[:page], :per_page => 9)
+    end
+
+    def micro
+      @products = Product.where(:category_id => 4).paginate(:page => params[:page], :per_page => 9)
+    end
 
 end
