@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Jdstore</title>
+        <title>绘生活 - 漫空间</title>
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
     <body>
         <div class="container-fluid">
-            <%= render "common/sidebar" %>
             <div class="row">
-                <div class="container">
+                <%= render "common/sidebar" %>
+                <div class="container-fluid">
                     <%= yield %>
                 </div>
             </div>
