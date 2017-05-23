@@ -1,0 +1,22 @@
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+    <%= product.title %>
+<!-- 收藏商品 -->
+  <% if !product.users.include?(current_user) %>
+    <%= link_to("收藏商品",add_to_favorite_product_path(product),method: :post,class: "fa fa-heart") %>
+  <% else %>
+    <%= link_to("取消收藏",quit_favorite_product_path(product),method: :post, class: "fa fa-heart",style: "color:red;") %>
+  <% end %>
+<!-- 收藏商品 -->
+      ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
