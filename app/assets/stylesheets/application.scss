@@ -53,8 +53,8 @@
   z-index: 999;
   width: 100%;
   padding-top: 17px;
-  background: none;
-  transition: all 0.3s;
+  background: blue;
+  transition: all 1.3s;
   opacity: 0;
   top: -100px;
   padding-bottom: 6px;
@@ -72,11 +72,11 @@
   transform: rotate(-90deg);
 }
 
-.sticky {
-  background-color: rgba(255, 255, 255, 0.93);
+.sticky {                                 /* 导航页背景效果 */
+  background-color: rgba(0, 0, 0, 0.73);
   opacity: 1;
   top: 0px;
-  border-bottom: 1px solid silver;
+  border-bottom: 0px solid silver;
 }
 
 .logo {
@@ -86,12 +86,13 @@
   text-transform: uppercase;
   float: left;
   display: block;
-  margin-top: 0;
+  margin-top: 0px;
+  margin-left: -30px;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .logo img {
-  height: 40px;
+  height: 60px;
   color: #337ab7;
 }
 @media only screen and (max-width: 766px) {
@@ -124,7 +125,7 @@ nav ul {
   }
 }
 nav ul li {
-  display: inline-block;
+  float: left;
   margin-left: 35px;
   line-height: 1.5;
 }
@@ -135,19 +136,55 @@ nav ul li {
     margin: 0;
   }
 }
-nav ul a {
-  color: #888888;
+
+nav li a  {
+  color: #4A6BB5;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 20px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  transition: all 500ms linear;
+  transition: color 500ms linear;
 }
-nav ul a.active {
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-  transition: all 500ms 100ms linear;
+
+nav li a:hover {
+  color: #fff;
 }
+
+.searchbar  {
+  float: left;
+  width: 0px;
+  margin-left: -450px; /*右边距*/
+  margin-top: 15px; /*上边距*/
+  position: relative; /*相对定位*/
+  transition: all 200ms ease;
+}
+
+.search-input {
+  width: 330px;
+  color: #666;
+  padding: 4px 20px; /*调一下上下左右边距*/
+  background:lightyellow;
+  font-size: 18px; /*字体14px*/
+  font-family: "microsoft yahei"; /*设置成微软雅黑作品*/
+  border-radius: 20px; /*圆角20px*/
+
+
+}
+
+.search-input:hover {
+  width: 330px;
+}
+
+.search-button {
+  position: relative; /*相对定位*/
+}
+
+.active {
+  float: left;
+  margin-top: 15px; /*上边距*/
+
+ }
+
 .mobile-toggle {
   display: none;
   cursor: pointer;
@@ -266,6 +303,14 @@ nav ul a.active {
    padding-top: 70px;
    padding-bottom: 50px;
    border: 0px;
+ }
+
+ .lead  {
+   color: #888888;
+   text-transform: uppercase;  //字母大写
+   font-size: 20px;
+   letter-spacing:3px;  //字母间隔
+   padding-left: 20px;
  }
 
  .coffeespace-panel {
