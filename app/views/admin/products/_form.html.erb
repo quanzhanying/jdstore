@@ -1,0 +1,13 @@
+<div class="contianer-fluid">
+
+  <div>
+    <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title , lable:"name:" %>
+    <%= f.input :description , lable:"description:" %>
+    <%= f.input :price , lable:"price:" %>
+    <%= f.input :quantity , lable:"quantity:" %>
+    <%= f.input :image , lable:"picture:" %>
+    <%= f.submit "Submit", class:"btn btn-lg btn-danger", :disable_with => "Submiting..."  %>
+    <% end %>
+  </div>
+</div>

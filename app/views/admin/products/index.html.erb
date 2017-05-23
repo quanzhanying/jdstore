@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+  <h2>Product Manage</h2>
+  <div class="row text-right">
+    <%= link_to("new product", new_admin_product_path, class:"btn btn-lg btn-danger admin_btn_new")%>
+  </div>
+  <table class="table admin_proudct_table">
+
+    <thead>
+      <th>name</th>
+      <th>description</th>
+      <th>price</th>
+      <th>quantity</th>
+      <th colspan="2">edit</th>
+      <th>created</th>
+    </thead>
+
+    <tbody>
+        <%= render :partial => 'productitem', :collection => @products, as: :product %>
+    </tbody>
+
+  </table>
+
+</div>

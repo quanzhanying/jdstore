@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="cart_detail row">
+    <h2>购物明细</h2>
+    <table class="table table-bordered">
+      <thead>
+        <th>产品</th>
+        <th>单价</th>
+        <th>数量</th>
+      </thead>
+      <tbody>
+          <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td><%= cart_item.product.title %></td>
+            <td><%= cart_item.product.price %></td>
+            <td><%= cart_item.quantity %></td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <span class="pull-right">总计<%= current_cart.cart_total_price %>RMB</span>
+  </div>
+
+  <div class="oroder-form">
+
+    <%= simple_form_for @order do |f| %>
+    <h2>订单信息</h2>
+
+
+    <div class="row">
+      <h3>订购人</h3>
+      <hr />
+      <%= f.input :billing_name %>
+      <%= f.input :billing_address %>
+    </div>
+    <div class="row">
+      <h3>收货人</h3>
+      <hr />
+      <%= f.input :shipping_name %>
+      <%= f.input :shipping_address %>
+    </div>
+      <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right" %>
+    <% end %>
+
+  </div>
+
+</div>
