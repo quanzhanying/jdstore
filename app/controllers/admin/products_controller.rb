@@ -27,7 +27,7 @@ class Admin::ProductsController < ApplicationController
               redirect_to admin_products_path
 
             elsif  @product.update(product_params)
-              redirect_to admin_products_path
+              redirect_to :back
             else
               render :edit
             end
