@@ -1,0 +1,35 @@
+//--------navbar--------
+
+.navbar-wrap {
+  width: 100%; /*铺满屏幕*/
+  background: #0097C1; /*背景颜色*/
+  font-size: 12px; /*字体12px*/
+  height: 30px; /*设置高度*/
+  line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #FFFFFF; /*字体颜色*/
+}
+
+.navbar-wrap a {
+  color: #FFFFFF; /*文字的颜色*/
+  text-decoration: none; /*不要下划线啦，好丑*/
+}
+.navbar-wrap a:hover {
+  color: #000000; /*鼠标一上去的时候，字体变成黑色*/
+}
+
+.nav-item {
+  display: block;
+  float: left;
+  padding: 0;
+  position: relative;
+  margin: 0 0 0 30px;
+  font-size: 16px;
+}
+
+.dropmenu  ul {
+  background: #FFFFFF;
+}
+
+*{
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}

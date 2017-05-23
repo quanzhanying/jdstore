@@ -6,15 +6,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+
+    <!-- ctopperjs for image -->
+    <script src="/path/to/jquery.js"></script><!-- jQuery is required -->
+    <link  href="/path/to/cropper.css" rel="stylesheet">
+    <script src="/path/to/cropper.js"></script>
+
   </head>
 
-  <body>
 
-    <div class="container-fluid">
-      <%= render "common/navbar" %>
-      <%= render "common/flashes" %>
-      <%= yield %>
+  <body>
+    <div class="wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar" %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
+
 
       <%= render "common/footer" %>
 
