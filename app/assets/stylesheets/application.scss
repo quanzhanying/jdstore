@@ -148,8 +148,11 @@
  //*****footer*****//
 
  .footer {
-   background-color: #F5F5F5;
-   height: 6em;
+   background-color: black;
+   height: 20em;
+   .p {
+    color: white;
+   }
  }
 
  //*****footer*****//
@@ -161,7 +164,7 @@
    margin: 0 auto;
  }
 
- section{
+ .section{
      padding-top: 80px;
      padding-bottom: 80px;
  }

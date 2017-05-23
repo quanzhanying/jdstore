@@ -174,3 +174,69 @@
   }
 }
 /*=== end 5.铁粉说 ====*/
+
+/*=========================================== 3.铁粉说 ==========================================*/
+.showing{
+  background-image: url('http://ww1.sinaimg.cn/large/006tKfTcgy1ffu4hckrlfj30zk0k00tt.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 40em;
+    p{
+      color: black;
+      letter-spacing: 1px;
+      line-height: 22px;
+      margin: -10px 20px -20px 10px;
+      padding: 10px;
+    }
+}
+
+.carousel-caption {
+  padding: 0;
+  margin: 2px -120px 10px 0;
+}
+
+.carousel-control {
+  text-shadow: 0 0 0 #999;
+  width: 0;
+  height: 0;
+}
+.carousel-control span:hover {
+  color: #2dbe60;
+}
+
+#myCarousel {
+  margin: 20px auto 20px auto;
+  width: 100%;
+
+}
+.carousel-inner img {
+  max-height: 300px;
+  width: 180px;
+}
+.carousel-indicators li {
+  background-color: #fa9e81;
+  border: none;
+}
+.carousel-indicators .active {
+  background-color: #e8e8e8;
+}
+.carousel-indicators {
+  bottom: -55px;
+}
+#myCarousel .left span {
+  position: relative;
+  top: 30px;
+  left: -50px;
+  color: black;
+  font-size: 7rem;
+}
+#myCarousel .right span {
+  position: relative;
+  top: 30px;
+  right: -20px;
+  color: black;
+  font-size: 7rem;
+}
+
+/*=========================================== end 3.铁粉说 ==========================================*/
