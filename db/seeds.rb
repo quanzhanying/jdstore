@@ -30,7 +30,7 @@ products =[{title:"Logitech mouse MT630",
                         Noise-rejecting dual-microphone system for clear calls even in windy environments",
 	        image_path: "http://oqecjavzf.bkt.clouddn.com/QC35.jpg"}
 
-					{title:"Apple Watch",
+					{title: "Apple Watch",
 	        description: "Gold aluminum case
 												S2 dual-core processor
 												Built-in GPS and GLONASS
@@ -42,14 +42,14 @@ products =[{title:"Logitech mouse MT630",
 												Heart rate sensor, accelerometer, and gyroscope",
 	        image_path: "http://oqecjavzf.bkt.clouddn.com/watch.jpg"}
 
-					{title:"GoPro Hero5",
+					{title: "GoPro Hero5",
 	        description: "Stunning 4K video and 12MP photos in Single, Burst and Time Lapse modes.
 												Durable by design, HERO5 Black is waterproof to 33ft (10m) without a housing
 												Additional GoPro HERO5 Black Features + Benefits below on item page.
 												Preview and playback your shots, change settings and trim your footage, all on your GoPro.",
 	        image_path: "http://oqecjavzf.bkt.clouddn.com/gopro_hero5.jpg"}
 
-					{title:"Vuzix M100 Smart Glasses",
+					{title: "Vuzix M100 Smart Glasses",
 	        description: "Vuzix M100 provides the features and capabilities of a modern smartphone, without a cellular radio, in a hands-free wearable device.
 												Bluetooth 4.0 connectivity makes it easy to pair with another Android device or connect wirelessly with Wi-Fi to the Internet.
 												The M100's integrated camera captures 5 megapixel still images and 1080p high-definition video. Video and image capture can be stored directly on the M100's memory (expandable up to 32 GB) or streamed live.",
