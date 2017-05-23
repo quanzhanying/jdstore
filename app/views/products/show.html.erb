@@ -1,43 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="box">
-      <% if @product.image.present? %>
-      <%= @product.image.thumb.url %>
-      <% else %>
-      <% if @product.http_image.nil? %>
-
-      <% else %>
-      <% img430 = @product.http_image + "_430x430q90.jpg" %>
-      <% img2430 = @product.http_image2 + "_430x430q90.jpg" %>
-      <% img3430 = @product.http_image3 + "_430x430q90.jpg" %>
-      <% img4430 = @product.http_image4 + "_430x430q90.jpg" %>
-      <% img5430 = @product.http_image5 + "_430x430q90.jpg" %>
-      <% end %>
-      <% end %>
-
       <div class="wrap-left">
         <div class="tb-booth tb-s310">
           <a href="javascript:void(0);">
-            <img src="<%= img430 %>" alt="" rel="<%= @product.http_image %>" class="jqzoom" />
+            <img src="<%= img430(@product,1) %>" alt="" rel="<%= imgmax(@product,1) %>" class="jqzoom" />
             <span class="zoomIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
           </a>
         </div>
         <div class="tb-thumb">
           <ul id="thumblist">
             <li class="tb-selected">
-              <div class="tb-s40"><a href="javascript:void(0);"><img src="<%= img430 %>" mid="<%= img430 %>" big="<%= @product.http_image %>"></a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img src="<%= img430(@product,1) %>" mid="<%= img430(@product,1) %>" big="<%= imgmax(@product,1) %>"></a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img2430 %>" mid="<%= img2430 %>" big="<%= @product.http_image2 %>"</a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img430(@product,2) %>" mid="<%= img430(@product,2) %>" big="<%= imgmax(@product,2) %>"</a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img3430 %>" mid="<%= img3430 %>" big="<%= @product.http_image3 %>"</a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img430(@product,3) %>" mid="<%= img430(@product,3) %>" big="<%= imgmax(@product,3) %>"</a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img4430 %>" mid="<%= img4430 %>" big="<%= @product.http_image4 %>"</a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img430(@product,4) %>" mid="<%= img430(@product,4) %>" big="<%= imgmax(@product,4) %>"</a></div>
             </li>
             <li>
-              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img5430 %>" mid="<%= img5430 %>" big="<%= @product.http_image5 %>"</a></div>
+              <div class="tb-s40"><a href="javascript:void(0);"><img  src="<%= img430(@product,5) %>" mid="<%= img430(@product,5) %>" big="<%= imgmax(@product,5) %>"</a></div>
             </li>
           </ul>
         </div>
@@ -92,10 +78,11 @@
             </dl>
             <div class="tb-action">
               <div class="tb-btn-buy">
-                <a id="J_LinkBuy" href="#" rel="nofollow" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息。" class="" role="button" data-spm-anchor-id="a220o.1000855.0.0">立即购买</a>
+                <%= link_to("立即购买", checkout_carts_path, :method => :post , id: "J_LinkBasket") %>
+
               </div>
               <div class="tb-btn-basket">
-                <a href="javascript:void(0);" rel="nofollow" id="J_LinkBasket" class="" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;加入购物车</a>
+                <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post , id: "J_LinkBasket") %>
               </div>
             </div>
           </div>
@@ -126,20 +113,10 @@
       <div class="wrapCon">
         <ul id="wrapCon">
           <% @products_see.each do |product| %>
-          <% if product.image.present? %>
-          <%= product.image.thumb.url %>
-          <% else %>
-          <% if @product.http_image.nil? %>
-
-          <% else %>
-          <% img430 = product.http_image + "_430x430q90.jpg" %>
-          <% end %>
-          <% end %>
-
           <li>
             <div class="img">
               <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
-                <img src="<%= img430 %>">
+                <img src="<%= img430(product,1) %>">
               </a>
               <p class="look_price">¥<%= product.promotional %>
               </p>
@@ -172,27 +149,17 @@
         <div class="ald-carousel">
           <div class="wrapCon">
             <ul>
-              <% @products_hot.each do |product_hot| %>
-              <% if product_hot.image.present? %>
-              <%= product_hot.image.thumb.url %>
-              <% else %>
-              <% if @product.http_image.nil? %>
-
-              <% else %>
-              <% img430 = product_hot.http_image + "_430x430q90.jpg" %>
-              <% end %>
-              <% end %>
-
+              <% @products_hot.each do |product| %>
               <li>
                 <div class="img">
-                  <a class="ALDCLS-act" title="<%= product_hot.title %>" href="<%= product_path(product_hot) %>">
-                    <img src="<%= img430 %>">
+                  <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
+                    <img src="<%= img430(product,1) %>">
                   </a>
-                  <p class="look_price">¥<%= product_hot.promotional %>
+                  <p class="look_price">¥<%= product.promotional %>
                   </p>
                 </div>
                 <p class="look_title">
-                  <a class="ALDCLS-act" href="<%= product_path(product_hot) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product_hot.title %>
+                  <a class="ALDCLS-act" href="<%= product_path(product) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product.title %>
                   </a>
                 </p>
               </li>
@@ -204,21 +171,32 @@
     </div>
     <div class="product-info">
       <div class="TabBarBox">
-        <ul>
-          <li class="tab"><a href="#description">商品详情</a></li>
-          <li class="tab2"><a href="javascript:void(0);">累计评价 166</a></li>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active "><a href="#tab-left" role="tab" data-toggle="tab">商品详情</a></li>
+          <li><a href="#tab-right" role="tab" data-toggle="tab">累计评价 166</a></li>
         </ul>
       </div>
-      <div class="description">
-        <p>
-          <%= raw @product.description %>
-        </p>
-      </div>
-      <div class="TabBarBox">
-          <div class="tab2">
-            <a href="javascript:void(0);">商品评价</a>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab-left">
+            <div class="description">
+              <p>
+                <%= raw @product.description %>
+              </p>
+            </div>
+            <div class="TabBarBox">
+                <div class="tab2">
+                  <a href="javascript:void(0);">商品评价</a>
+                </div>
+            </div>
           </div>
-      </div>
+          <div class="tab-pane" id="tab-right">
+            <p>dhgdsghds</p>
+          </div>
+        </div>
+
+
+
     </div>
   </div>
 </div>

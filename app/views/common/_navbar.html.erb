@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -9,12 +9,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to("商品列表", products_path) %>
+          <%= link_to("全部商品", products_path) %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to carts_path do %>
+          <%= link_to carts_path do%>
+
           购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %>)
           <% end %>
         </li>
@@ -69,15 +70,28 @@
           <div class="search-hot">
             <ul>
               <li style="color: #cc8902;">热门搜索:</li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">榴莲</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
+              <li><a href="/products/search?utf8=✓&q=樱桃">樱桃</a></li>
+              <li><a href="/products/search?utf8=✓&q=榴莲">榴莲</a></li>
+              <li><a href="/products/search?utf8=✓&q=龙虾">龙虾</a></li>
+              <li><a href="/products/search?utf8=✓&q=鳕鱼">鳕鱼</a></li>
+              <li><a href="/products/search?utf8=✓&q=牛排">牛排</a></li>
+              <li><a href="/products/search?utf8=✓&q=生蚝">生蚝</a></li>
+              <li><a href="/products/search?utf8=✓&q=三文鱼">三文鱼</a></li>
             </ul>
           </div>
 
         </div>
   </div>
+
+  <div class="container">
+    <div class="product-index">
+      <ul>
+        <li class="active"><a href="/" >首页</a></li>
+        <li><a href="/products?where=进口水果" style="color: #555555">进口水果</a></li>
+        <li><a href="/products?where=进口水产" style="color: #555555">进口水产</a></li>
+        <li><a href="/products?where=进口鲜肉" style="color: #555555">进口鲜肉</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <br />

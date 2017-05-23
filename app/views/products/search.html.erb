@@ -1,18 +1,30 @@
 
+<% if @products.blank?%>
+<div class="container">
+  <div class="row">
+<br>
+<br>
+
+  <p class="text-center">抱歉！没有搜索到结果！</p>
+
+</div>
+</div>
+<% else %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="order">
         <div class="col-md-8">
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;排序</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;价格</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=hot"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;热门</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=new"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=sale"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=price"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;价格</span></a>
           <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;评价数</span></a>
         </div>
         <div class="text-right">
           <span>
-            共12.5万件商品
+            共<%= @products.count %>件商品
           </span>
         </div>
       </div>
@@ -20,12 +32,9 @@
   </div>
 </div>
 <div class="container">
-  <% if @products.blank?%>
-  <br>
-  <div>
-    抱歉！没有搜索到结果！
-  </div>
-  <% else %>
+
+
+
 
   <div class="search-result">
     <div class="product-list">
@@ -33,15 +42,8 @@
         <% @products.each do |product| %>
         <li>
           <div class="product-price">
-            <%= link_to product_path(product) do %>
-            <a href="#"><img class="product-img" src="
-              <% if product.image.present? %>
-              <%= product.image.thumb.url %>
-              <% else %>
-              http://placehold.it/200x200&text=No Pic
-              <% end %>
-              "alt=""></a>
-              <p class="price"><%= product.price %></p>
+            <%= link_to(image_tag(img430(product,1), class: 'product-img'), product_path(product)) %>
+              <p class="price">￥<%= product.promotional %></p>
               <p class="describe"><%= product.title %></p>
               <p class="evaluate">已有33条评价</p>
               <div class="cart text-center">
@@ -53,8 +55,11 @@
             </div>
           </li>
           <% end %>
-          <% end %>
-          <% end %>
         </ul>
       </div>
     </div>
+    <div class="text-center">
+      <%= will_paginate @products %>
+    </div>
+
+<% end %>

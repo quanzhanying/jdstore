@@ -18,6 +18,7 @@
  @import "font-awesome";
 body{
   font-family:simsun, STSong;
+  margin-top: 70px;
 }
 .carousel-control{
   //background-color: rgba(250, 250, 250, 0.39);
@@ -59,6 +60,9 @@ body{
   color: #999;
   text-decoration: none;
 
+}
+.product-index ul{
+  line-height: 40px;
 }
 
 .product-index li{
@@ -147,13 +151,17 @@ color: #fff;
  transition:bottom .25s ease     ///购物车////
 }
 
-.item_buy span{
-  vertical-align: middle;
-  position:relative;
-   top:25%;
-   //transform:translateY(-50%);
+.item_buy {
+  line-height: 35px;
 }
-
+.u-flyer {
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	position: fixed;
+	z-index: 9999;
+}
 .item_hover:hover .item_buy {
 	bottom:0
 }
@@ -333,7 +341,7 @@ padding: 9px 8px 0 8px;
   //border-style: groove;
   border:1px solid #fff;
   //overflow:hidden;
-  height: 317px;
+  height: 324px;
   width: 208px;
 }
 .product-price:hover{
@@ -355,28 +363,80 @@ padding: 9px 8px 0 8px;
 
 
 .product-price .cart{
-  border: 1px solid #DDD;
+  border: 1px solid #f3f3f3;
   float: left;
   width: 50%;
-  padding: 5px 0px 5px 0px;
+  //padding: 3px 0px 5px 0px;
+  line-height: 35px;
 }
 .product-price .cart a{
-  //border: 1px solid #DDD;
-  padding: 5px 6px 5px 6px;
-  //position: relative;
-  background: #fff;
+  //background: #fff;
   color: #B28435;
   text-decoration:none; //去掉超链接的下划//
-  //font-size: 14px;
-  //margin: 4px 4px;
   width: 50%;
+  line-height: 35px;
+}
+.product-price .cart a i{
+  margin-top: 2px;
 }
 .product-price .cart:hover{ ///触发 ，收藏按钮鼠标放上去显示的颜色和字体//
   color: #B28435;
   border-color: #B28435;
 }
-
-
+.contain-icon:last-of-type {
+  margin-top: 0;
+}
+.icon-hook {
+  position: relative;
+  margin-left: -10px;
+}
+.icon-hook:after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icon-hook > svg {
+  pointer-events: none;
+}
+.heart-icon {
+//  top: 75px;
+  //left: 22px;
+}
+.heart-2 {
+  -webkit-transform-origin: bottom;
+  transition: stroke 1s 1s ease;
+  stroke: #B28435;
+}
+.heart-2 {
+  -webkit-transform-origin: bottom;
+  transition: stroke 1s 1s ease;
+}
+.favor {
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin: 5px 0 -5px 5px;
+}
+.active-favor .heart-2 {
+  -webkit-animation: heart-beat 1s forwards;
+  stroke: #e4393c;
+}
+@-webkit-keyframes heart-beat {
+  25% {
+    -webkit-transform: scale(.3);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
 .product-img{
   width: 100%; //限定照片显示的大小///
 }
@@ -999,8 +1059,10 @@ padding: 9px 8px 0 8px;
     margin: 0;
     padding: 0;
     list-style: none;
+    margin-bottom: -8px;
+    border-bottom: 0;
   }
-  .TabBarBox .tab {
+  .TabBarBox .active {
     position: relative;
     border-top: 2px solid #b00000;
     height: 47px;
@@ -1022,17 +1084,7 @@ padding: 9px 8px 0 8px;
     cursor: pointer;
   }
 
-  .TabBarBox .tab a{
-    font-weight: 700;
-    display: block;
-    height: 100%;
-    line-height: 46px;
-    color: #b10000;
-    border-left: 1px solid #cfbfb1;
-    border-right: 1px solid #cfbfb1;
-    padding: 0 20px;
-    text-decoration: none;
-  }
+
   .TabBarBox .tab2 a{
     border-right: 1px dotted #d2d2d2;
     color: #333;

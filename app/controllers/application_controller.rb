@@ -16,12 +16,16 @@ class ApplicationController < ActionController::Base
     @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
         current_cart.add_product_to_cart(@product)
-      flash[:notice] = "你已成功将#{@product.title} 加入购物车"
+      #flash[:notice] = "你已成功将#{@product.title} 加入购物车"
     else
-      flash[:warning] = "你的购物车内已有此物品"
+      #flash[:warning] = "你的购物车内已有此物品"
+      ci = current_cart.cart_items.find_by(product_id: @product)
+      ci.quantity += 1
+      ci.save
     end
     redirect_to :back
   end
+
 
   def favorite
     @product = Product.find(params[:id])

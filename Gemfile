@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -46,6 +46,13 @@ gem 'letter_opener', group: :development
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+end
+
+group :development do
+  gem "capistrano", "~> 3.4"
+  gem "capistrano-rvm"
+  gem "capistrano-rails"
+  gem "capistrano-passenger"
 end
 
 group :development do
