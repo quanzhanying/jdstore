@@ -3,7 +3,9 @@
 @import "font-awesome";
 @import "login-modal";
 @import "new-age";
+@import "footer";
 @import "moving-box";
+@import "responsive";
 
 //----------box-------------------
 
@@ -407,10 +409,11 @@ h3{
 
 footer {
     color: white;
+    margin-top: -50px;
  }
 
 footer .footer-below {
-     padding: 25px 0;
+     padding: 0px 0;
      background-color: #233140;
  }
 
