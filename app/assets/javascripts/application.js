@@ -15,7 +15,11 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+<<<<<<< HEAD
 //= require bootstrap-sprockets
+=======
+//= require bootstrap/modal
+>>>>>>> story7
 //= require_tree .
 (function($) {
     $.fn.imagezoom = function(options) {
