@@ -1,54 +1,55 @@
-class Admin::ExamsController < ApplicationController
+class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_required
   layout "admin"
 
   def index
-    @exams = Exam.all
+    @products = Product.all
   end
 
   def new
-    @exam = Exam.new
+    @product = Product.new
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def show
-    @exam = Exam.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def edit
-    @exam = Exam.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
-    @exam = Exam.find(params[:id])
+    @product = Product.find(params[:id])
 
-    if @exam.update(exam_params)
-      redirect_to admin_exams_path
+    if @product.update(product_params)
+      redirect_to admin_products_path
     else
       render :edit
     end
   end
 
   def create
-    @exam = Exam.new(exam_params)
+    @product = Product.new(product_params)
 
-    if @exam.save
-      redirect_to admin_exams_path
+    if @product.save
+      redirect_to admin_products_path
     else
       render :new
     end
   end
 
   def destroy
-    @exam = Exam.find(params[:id])
-    @exam.destroy
-    flash[:alert] = "exam Deleted"
-    redirect_to admin_exams_path
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product Deleted"
+    redirect_to admin_products_path
   end
   private
 
-  def exam_params
-    params.require(:exam).permit(:title, :description, :quantity, :price, :image)
+  def product_params
+    params.require(:product).permit(:title, :description, :quantity, :price, :image)
   end
 
 

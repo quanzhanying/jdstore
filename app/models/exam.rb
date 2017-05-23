@@ -1,5 +1,6 @@
 class Exam < ApplicationRecord
   belongs_to :category
+  belongs_to :size
   has_many :photos
   accepts_nested_attributes_for :photos
 
