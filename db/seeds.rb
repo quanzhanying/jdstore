@@ -88,3 +88,4 @@ u.save
     price: 2800,
     quantity: 5,
     image: open("https://cdn.pixabay.com/photo/2016/02/19/11/45/wine-bottle-1209934__340.jpg")
+    )
