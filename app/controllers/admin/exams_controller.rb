@@ -19,6 +19,7 @@ class Admin::ExamsController < ApplicationController
 
   def edit
     @exam = Exam.find(params[:id])
+    @categories = Category.all.map { |c| [c.name, c.id] }
 
   end
 

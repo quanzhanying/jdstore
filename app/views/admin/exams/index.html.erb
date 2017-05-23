@@ -6,9 +6,8 @@
   <thead>
     <tr>
       <th>#</th>
-      <th width="220"> exam Pic </th>
-      <th>Name</th>
       <th>question</th>
+      <th>answer</th>
       <th width="100"> Options </th>
     </tr>
   </thead>
@@ -18,27 +17,19 @@
       <td>
         <%= exam.id %>
       </td>
-      <td>
-        <%= link_to exam_path(exam) do %>
-         <% if exam.image.present? %>
-          <%= image_tag(exam.image.thumb.url, class: "thumbnail") %>
-         <% else %>
-           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-         <% end %>
-       </td>
        <td>
          <%= exam.question %>
        </td>
        <td>
          <%= exam.answer_1 %>
-
+       </br>
+         <%= exam.answer_2 %>
        </td>
        <td>
          <%= link_to("Edit", edit_admin_exam_path(exam)) %> |
          <%= link_to("Delete", admin_exam_path(exam), method: :delete, data: { confirm: "Are your sure?" }) %>
        </td>
      </tr>
-     <% end %>
      <% end %>
    </tbody>
  </table>
