@@ -26,10 +26,10 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+
                         <li> <%= link_to("商品管理", admin_products_path) %> </li>
-                        <li>
-                          <%= link_to("个人订单列表", account_orders_path ) %>
-                        </li>
+                        <li><%= link_to("个人订单列表", account_orders_path ) %></li>
+                        <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li> 
                         <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
