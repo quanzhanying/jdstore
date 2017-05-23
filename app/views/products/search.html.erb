@@ -1,3 +1,4 @@
+<img class="background-image" src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu6l9qgvyj30yp0a07ax.jpg"
 <div>
   <br>
     <% if @query_string.blank? %>
@@ -9,7 +10,46 @@
       <h2 class="search-info-title">没有找到"<%= @query_string %>"的商品信息，请输入关键字搜索</h2>
     <% else %>
       <h2 class="search-info-title"> 有关"<%= @query_string %>"的商品信息 </h2>
-      <div class="search-result">
+      <!-- 区域：商品展示列表 -->
+      <div class="productList-wrap" style="margin: 0 auto;">
+        <ul class="productList clearfix">
+          <div class="row">
+            <% @products.each do |product| %>
+              <div class="col-md-3 col-xs-6">
+                <li class="productList-item box panel panel-default">
+                  <div class="productList-item-pic">
+                    <%= link_to product_path(product) do %>
+                      <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="productList-item-price">￥<%= product.price %></div>
+                  <div class="productList-item-name ell">
+                    <%= link_to product_path(product) do %>
+                       <%= product.name %>
+                    <% end %>
+                  </div>
+                  <div class="productList-item-desc"><%= product.description %></div>
+                  <% if product.stock > 0 %>
+                    <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+                      <i class="fa fa-shopping-cart"></i>
+                    <% end %>
+                  <% end %>
+                  <% if product.stock <= 0 %>
+                    <div class="productList-item-sellout">已售完</div>
+                  <% end %>
+                </li>
+              </div>
+            <% end %>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <!-- 商品展示列表结束 -->
+      <!-- <div class="search-result">
         <div class="row products-show0"></div>
         <div class="product-table">
           <div class="row">
@@ -23,11 +63,11 @@
                   <% end %>
                 <% end %>
                 <%= render_highlight_content(product, @query_string) %> ￥ <%= product.price %> <!-- 搜索关键字黄色背景显示 -->
-              </div>
+              <!-- </div>
             <% end %>
           </div>
         </div>
-      </div>
+      </div> --> -->
       <div class="text-center">
         <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
       </div>
