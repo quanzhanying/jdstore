@@ -32,6 +32,8 @@ class User < ApplicationRecord
   mount_uploader :avatar, ImageUploader
   validates :username, presence: true
   has_many :orders
+
+  has_many :reviews
 #--------收藏------
   has_many :product_user_relationships
   has_many :participated_products, :through => :product_user_relationships, :source => :product

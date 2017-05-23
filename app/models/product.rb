@@ -20,6 +20,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :product_user_relationships
   has_many :members, :through => :product_user_relationships, :source => :user
-
   acts_as_votable    # 点赞
+  has_many :reviews
+
 end
