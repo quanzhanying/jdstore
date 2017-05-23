@@ -24,6 +24,7 @@
  body {
    padding-top: 1px;
    font-size: 16px;
+   color: #c0b099
  }
 
  /* TOP HEADER
@@ -236,7 +237,7 @@ nav ul a.active {
  }
 
  .jumbo-background {
-  background:url('http://res.cloudinary.com/remirol/image/upload/c_scale,w_1440/v1444604093/photo-1429051883746-afd9d56fbdaf_wqbynm.jpg') no-repeat center fixed;
+  background:url('https://bitse.com/wp-content/uploads/2016/03/blockchaintech2.jpg') no-repeat center fixed;
    background-size: 100%;
  }
 
@@ -268,7 +269,7 @@ nav ul a.active {
  }
 
  .coffeespace-panel {
-   background:url('https://www.geckogovernance.com/wp-content/uploads/2016/11/blockchain-GECKO.jpg') no-repeat center center fixed;
+   background:url('http://www.memoori.com/wp-content/uploads/2017/01/Blockchain.jpg') no-repeat center center fixed;
    background-size: 100%;
    background-color: rgba(250,250,250,1);
    padding-top: 100px;
@@ -289,6 +290,14 @@ nav ul a.active {
     margin-left: auto;
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: rgba(245, 245, 245, 0.44);
+    border: 1px solid rgba(227, 227, 227, 0.24);
 }
 
  .social li, .social img:hover {
@@ -380,4 +389,32 @@ footer.footer-2 .sub-footer {
 footer .sub-footer {
   padding: 30px 0px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/*-------products--Index----*/
+
+div.pd__warpper {
+    background: url(http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz_jpg/S3um6bPib6kJYJxSkDwiadZM6TJ8EGWLQMxqH2osne70CQGT5IpsngtO8xDgn1rgmYFEP4pnAERYRS4To4bR8GNg/0?wx_fmt=jpeg) center center no-repeat #102026;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+    z-index: 40;
+}
+
+/*-------products-item-show----*/
+
+div.pd-s__item {
+    background: url(https://www.hyperledger.org/wp-content/uploads/sites/7/2016/10/hl_healthcare.jpg) center center no-repeat #102026;
+    background-size: cover;
+    padding-top: 50px;
+    height: 900px;
+}
+
+/*-------cart-main-wapper----*/
+
+div.cart__main__wapper {
+    background: url(https://tctechcrunch2011.files.wordpress.com/2016/12/electron-blockchain.jpg) center center no-repeat #102026;
+    background-size: cover;
+    padding-top: 50px;
+    height: 900px;
 }

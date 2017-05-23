@@ -1,15 +1,21 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-      <%= link_to "更新价格", update_price_product_path(product), :method => :post %>
+<div class="pd__warpper">
+    <div class="panel-body">
+        <div class="row">
+         <% @products.each do |product| %>
+           <div class="col-xs-6 col-md-3">
+            <div class="panel-body">
+             <%= link_to product_path(product) do %>
+               <% if product.image.present? %>
+                 <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+               <% else %>
+                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+               <% end %>
+             <% end %>
+             <%= product.title %> ￥ <%= product.price %>
+             <%= link_to "更新价格", update_price_product_path(product), :method => :post %>
+           </div>
+           </div>
+         <% end %>
+        </div>
     </div>
-  <% end %>
 </div>
