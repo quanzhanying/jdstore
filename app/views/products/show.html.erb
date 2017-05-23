@@ -14,7 +14,9 @@
       </p>
     </div>
     <div> 数量 : <%= @product.quantity %> </div>
+    
     <div class="product-price"> ￥ <%= @product.price %> </div>
+
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
@@ -28,6 +30,16 @@
       <% else %>
       已经销售一空，无法购买
       <% end %>
+
+      <!--  点赞 -->
+      <%= link_to like_product_path(@product), method: :put do %>
+        <div class="pi-thumbs-up">
+          <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+          <%= @product.get_upvotes.size %>
+        </div>
+      <% end %>
+
+
     </div>
   </div>
 
