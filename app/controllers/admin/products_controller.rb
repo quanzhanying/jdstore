@@ -16,22 +16,12 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.category_id = params[:category_id]
-    if params[:photos] != nil
-      @product.photos.destroy_all #need to destroy old pics first
-
-      params[:photos]['avatar'].each do |a|
-        @picture = @product.photos.create(:avatar => a)
-      end
-
-      @product.update(product_params)
-              redirect_to admin_products_path
-
-            elsif  @product.update(product_params)
-              redirect_to :back
-            else
-              render :edit
-            end
-          end
+    if @product.update(product_params)
+      redirect_to admin_products_path 
+    else
+      render :edit
+    end
+  end
 
   def edit
     @product = Product.find(params[:id])
@@ -43,18 +33,13 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
     if @product.save
-    if params[:photos] != nil
-     params[:photos]['avatar'].each do |a|
-       @photo = @product.photos.create(:avatar => a)
-     end
-   end
       redirect_to admin_products_path
     else
       render :new
     end
   end
 
-    require 'csv'
+  require 'csv'
   def csv_create        #从csv文件导入商品
 
     csv_text = params[:data_file].tempfile
