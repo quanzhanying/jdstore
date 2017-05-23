@@ -27,6 +27,26 @@ class ProductsController < ApplicationController
     end
   end
 
+
+
+  def category1
+    @products = Product.where(:category => "category1").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def category2
+    @products = Product.where(:category => "category2").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def category3
+    @products = Product.where(:category => "category3").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def category4
+    @products = Product.where(:category => "category4").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  
+
   protected
 
   def validate_search_key
