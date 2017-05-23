@@ -20,10 +20,8 @@ class CartItemsController < ApplicationController
    end
 
 
-    def checkout
-      @order = Order.new
-    end
-    
+
+
     redirect_to carts_path
   end
 
