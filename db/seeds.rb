@@ -11,3 +11,6 @@ u.password = "123456"
 u.password_confirmation = "123456"
 u.is_admin = true
 u.save
+
+Category.create(name: "铁道部")
+Category.create(name: "运输部")

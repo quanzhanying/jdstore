@@ -5,19 +5,6 @@ class Admin::ExamsController < ApplicationController
 
   def index
     @exams = Exam.all
-    # if params[:category].blank?
-    #
-    # else
-    #   @category_id = Category.find_by(name: params[:category]).id
-    #
-    # end
-    #
-    # if params[:size].blank?
-    #
-    # else
-    #   @size_id = Size.find_by(name: params[:size]).id
-    #
-    # end
   end
 
   def new
@@ -63,7 +50,7 @@ class Admin::ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:name, :question, :answer_1, :image)
+    params.require(:exam).permit(:name, :question, :answer_1,:answer_2,:answer_3,:answer_4,:answer_5,:answer_6,:image)
   end
 
 
