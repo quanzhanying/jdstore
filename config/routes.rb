@@ -24,6 +24,11 @@ resources :products do
   end
   collection do
       get :search
+      get :category1
+      get :category2
+      get :category3
+      get :category4
+      get :category5
   end
 end
 

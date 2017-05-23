@@ -29,26 +29,62 @@ u.save
     puts "Admin 已经建立过了，脚本跳过该步骤。"
   end
 
-  
+
  # Initialize Product
 
-  Product.create!(title: "QC-35",
-    description: "耳机",
+  
+
+  Product.create!(title: "wine1",
+    description: "酒1",
     price: 2800,
     quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
+    image: open("https://cdn.pixabay.com/photo/2011/03/25/08/27/wine-5884__340.jpg")
     )
 
-  Product.create!(title: "Iphone7",
-    description: "手机",
-    price: 5000,
-    quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
-    )
-
-  Product.create!(title: "Cherry Keyboard",
-    description: "G80-3000键盘",
+  Product.create!(title: "wine2",
+    description: "酒2",
     price: 2800,
     quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
+    image: open("https://cdn.pixabay.com/photo/2013/07/12/16/28/bordeaux-150955__340.png")
     )
+
+  Product.create!(title: "wine3",
+    description: "酒3",
+    price: 2800,
+    quantity: 5,
+    image: open("https://cdn.pixabay.com/photo/2014/08/24/16/48/wine-426466__340.jpg")
+    )
+
+  Product.create!(title: "wine4",
+    description: "酒4",
+    price: 2800,
+    quantity: 5,
+    image: open("https://cdn.pixabay.com/photo/2014/08/26/19/19/wine-428313__340.jpg")
+    )
+
+  Product.create!(title: "wine5",
+    description: "酒5",
+    price: 2800,
+    quantity: 5,
+    image: open("https://cdn.pixabay.com/photo/2015/03/24/06/40/bottle-687147__340.jpg")
+    )
+
+  Product.create!(title: "wine6",
+    description: "酒6",
+    price: 2800,
+    quantity: 5,
+    image: open("https://cdn.pixabay.com/photo/2017/04/13/16/32/wine-2228066__340.jpg")
+    )
+
+  Product.create!(title: "wine7",
+    description: "酒7",
+    price: 2800,
+    quantity: 5,
+    image: open("https://cdn.pixabay.com/photo/2017/05/14/22/43/wine-2313297__340.jpg")
+    )
+
+  Product.create!(title: "wine8",
+    description: "酒8",
+    price: 2800,
+    quantity: 5,
+    image: open("hhttps://cdn.pixabay.com/photo/2016/02/19/11/45/wine-bottle-1209934__340.jpg")
