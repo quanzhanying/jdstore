@@ -24,3 +24,43 @@
 .carousel .item {
   height: 375px;
 }
+
+/*商品列表*/
+.productList {
+  margin: 20px auto;
+  width: 1200px;
+  overflow: hidden;
+}
+
+.productList-item {
+  float: left;
+  width: 200px;
+  height: 250px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.productList-lastItem {
+  margin-right: 0;
+}
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
