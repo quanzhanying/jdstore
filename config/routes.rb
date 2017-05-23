@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       post :add_to_cart
       post :join
       post :quit
+      put "like", to: "products#upvote"
     end
   end
 

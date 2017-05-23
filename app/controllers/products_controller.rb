@@ -49,6 +49,14 @@ class ProductsController < ApplicationController
     end
 
 
+#-------点赞功能-----------
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
+  end
+
+
     protected
 
     def validate_search_key
