@@ -1,14 +1,50 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+<section id="shop-without-sidebar" class="ptb-100">
+<!-- <section id="shop-without-sidebar" style="margin: 100px auto 200px;"> -->
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product-style-1 text-center">
+          <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "img-responsive", alt: product.name) %>
+          <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive", alt: "None") %>
+          <% end %>
+          <% end %>
+          <div class="product-detail-content">
+            <h6><%= product.name %><h6>
+              <div class="product-rating-with-border">
+                <div class="background-border"></div>
+                <ul>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                </ul>
+              </div>
+              <h5>￥<%= product.price %></h5>
+              <!-- <a class="btn cart-button" href="#"> 加入购物车 </a> -->
+            </div>
+          </div>
+        </div>
         <% end %>
-      <% end %>
-      <%= product.name %> ￥ <%= product.price %>
+      </div>
     </div>
+  </section>
+
+  <!-- <div class="row">
+  <% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3">
+  <%= link_to product_path(product) do %>
+  <% if product.image.present? %>
+  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+  <% else %>
+  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
   <% end %>
+  <% end %>
+  <%= product.name %> ￥ <%= product.price %>
 </div>
+<% end %>
+</div> -->

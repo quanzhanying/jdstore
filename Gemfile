@@ -34,12 +34,19 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'font-awesome-rails'
+# 分页
+gem 'will_paginate-bootstrap'
 # 上传
 gem 'carrierwave'
 # 图片
 gem 'mini_magick'
+# 七牛云
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 # 排序
 gem 'acts_as_list'
+# 搜索
+gem 'ransack'
 # 预览邮件
 gem 'letter_opener', group: :development
 # 状体
