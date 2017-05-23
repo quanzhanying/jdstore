@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.org/
   specs:
     aasm (4.12.0)
       concurrent-ruby (~> 1.0)
@@ -240,4 +240,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.7
+   1.14.6
