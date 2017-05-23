@@ -42,7 +42,7 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 
 gem "figaro" #用來管理機密資訊
-gem "fog" #Ruby cloud services library
+gem "fog-aws" #Ruby cloud services library
 
 group :development, :test do
   gem 'pry' #debug
