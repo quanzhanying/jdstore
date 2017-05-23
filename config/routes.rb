@@ -22,10 +22,17 @@ Rails.application.routes.draw do
   resources :products do
     member do
         post :add_to_cart
+        post :pay_now
         post :add_to_favorite
         post :quit_favorite
     end
-
+      collection do
+         get :dresses
+         get :jeans
+         get :skirts
+         get :shorts
+         get :suits
+    end
   end
 
   resources :carts do
