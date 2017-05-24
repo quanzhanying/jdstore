@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 module Jdstore
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
