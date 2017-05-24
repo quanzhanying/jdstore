@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_wish_list, :delete_from_wish_list]
   def index
-    @products = Product.where(:is_hidden => false).order("position ASC") #加入where(:is_hidden => false) 首页看不到下架商品
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true).where(:is_hidden => false).order("position ASC") #加入where(:is_hidden => false) 首页看不到下架商品
   end
 
   def show
@@ -47,4 +48,6 @@ class ProductsController < ApplicationController
     end
     redirect_to :back
   end
+
+
 end

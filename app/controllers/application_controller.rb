@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :set_search
 
   def admin_required
     if !current_user.admin?
@@ -22,5 +23,9 @@ class ApplicationController < ActionController::Base
     end
     session[:cart_id] = cart.id
     return cart
+  end
+
+  def set_search
+    @q = Product.search(params[:q])
   end
 end
