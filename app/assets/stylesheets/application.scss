@@ -129,7 +129,6 @@
   }
 
   .container-fluid .jumbotron{
-      //border:solid 1px blue;
       padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
       margin: 55px -15px 0px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
       border-radius: 0;//圆角为0
@@ -163,8 +162,6 @@
   }
 
   .picPosition2 img{
-      //border: 1px solid #ddd;
-      //border-radius: 6px;
       padding: 5px;
       width: 500px;
       border-radius: 50%;
@@ -221,9 +218,6 @@
         position: relative;
         padding: 45px 15px 30px;
         margin: 0 -15px 0px;
-        //border: solid 1px red;
-        //padding-bottom: 10px
-        //margin-bottom: 30px;
     }
 
   div {
@@ -251,20 +245,17 @@
     }
 
   .courses-img{
-      //border:solid 1px blue;
       width:  75%;
       height: 180px;
       display:block
   }
 
   .courses-block{
-      //border:solid 1px green;
       padding: 0px 0px 0px;
       margin-top: 3px;
   }
 
   .courses-main{
-      //border:solid 1px red;
       background-color: #efede3;
   }
 
@@ -299,7 +290,6 @@
     background-color:#e8244f;
     text-align:center;
     color: #FAFAFA;
-    //border: solid 1px blue;
   }
   //----------Footer---------------
   footer {
@@ -326,7 +316,60 @@
 
 /* Aviod The fixed navbar overlay other content
   body { padding-top: 70px; }*/
-//----------product-index css------
-  .product-index{
-    background-color: #efede3;
+//----------product-list css------
+.product-backgroud-img{
+  width: 100%;
+  height: 250px;
+}
+  .all-product-box{
+    margin-bottom: 3em;
+    margin-top: 55px;
+    min-height: 550px;
+  }
+
+  .product-list{
+    margin: 3em 0em 2em;
+    color: #212121;
+  }
+
+  .product-list-img{
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: black;
+
+  }
+  .product-list-title{
+    width: 100%;
+    font-family: sans-serif;
+    font-style: normal;
+    text-align: center;
+
+  }
+
+  .product-list-price{
+
+    color: inherit;
+  }
+
+  @media (min-width: 992px){}
+  .container {
+    width: 970px;
+  }
+
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+   }
+
+   @media(min-width: 992px){}
+
+
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
