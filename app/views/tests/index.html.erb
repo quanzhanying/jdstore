@@ -8,5 +8,10 @@
   </tr>
   <% end %>
 
-<%= link_to "Create a New test", new_test_path %>
+
+<% if current_user %>
+<%= link_to "Click here to make a new test", new_test_path %>
+<% else %>
+<h3><%= link_to("登录后，可以添加考卷", new_user_session_path) %></h3>
+<% end %>
 </table>

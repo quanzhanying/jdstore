@@ -1,32 +1,22 @@
 class TestsController < ApplicationController
-    def new
-        @test = Test.new
-     end
+    load_and_authorize_resource
+    def new; end
 
     def create
-        @test = Test.new(test_params)
         redirect_to @test if @test.save
     end
 
-    def index
-        @tests = Test.all
-    end
+    def index; end
 
-    def show
-        @test = Test.find(params[:id])
-    end
+    def show; end
 
-    def edit
-        @test = Test.find(params[:id])
-    end
+    def edit; end
 
     def update
-        @test = Test.find(params[:id])
         redirect_to @test if @test.update(test_params)
     end
 
     def destroy
-        @test = Test.find(params[:id])
         @test.destroy
         redirect_to tests_path
     end
