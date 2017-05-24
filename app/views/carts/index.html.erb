@@ -20,7 +20,7 @@
         </thead>
         <tbody>
 
-<<<<<<< HEAD
+
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
@@ -29,17 +29,9 @@
                   <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
                 <% else %>
                   <%= image_tag("http://placehold.it/125x75&text=No Pic", class: "thumbnail") %>
-=======
-          <% current_cart.cart_items.each do |cart_item| %>
-            <tr>
-              <td>
-                <%= link_to product_path(cart_item.product) do %>
-                  <% if cart_item.product.image.present? %>
-                    <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-                  <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+
                   <% end %>
->>>>>>> 248c45d84cc4cab7f330e8ae0a22be9541e94545
+
                 <% end %>
               </td>
               <td>
@@ -93,11 +85,7 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-</div>
 
-=======
->>>>>>> 248c45d84cc4cab7f330e8ae0a22be9541e94545
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
