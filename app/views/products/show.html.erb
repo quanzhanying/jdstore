@@ -54,11 +54,18 @@
           <div class="row">
             <div class="col-md-5 col-sm-5">
               <div class="product-image">
-                <% if @product.image.present? %>
+                <!-- <% if @product.image.present? %>
                 <%= image_tag(@product.image.medium.url, class: "img-responsive", alt: "") %>
                 <% else %>
                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "img-responsive", alt: "") %>
+                <% end %> -->
+
+                <% if @product.img_url.present? %>
+                  <%= image_tag(@product.img_url, size: "320x320", class: "", alt: @product.name) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/320x320&text=No Pic", class: "", alt: "None") %>
                 <% end %>
+
               </div>
             </div>
             <div class="col-md-7 col-sm-7">

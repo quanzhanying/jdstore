@@ -25,12 +25,19 @@
       <% @products.each do |product| %>
       <div class="col-md-3 col-sm-6 col-xs-6">
         <div class="product-style-1 text-center">
-          <%= link_to product_path(product) do %>
+          <!-- <%= link_to product_path(product) do %>
           <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "img-responsive", alt: product.name) %>
           <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive", alt: "None") %>
           <% end %>
+          <% end %> -->
+          <%= link_to product_path(product) do %>
+            <% if product.img_url.present? %>
+              <%= image_tag(product.img_url, size: "200x200", class: "", alt: product.name) %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "", alt: "None") %>
+            <% end %>
           <% end %>
           <div class="product-detail-content">
             <h6><%= product.name %><h6>
@@ -55,41 +62,6 @@
           </div>
         </div>
         <% end %>
-
-
-        <% @products.each do |product| %>
-        <div class="col-md-3 col-sm-6 col-xs-6">
-          <div class="product-style-1 text-center">
-            <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "img-responsive", alt: product.name) %>
-            <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive", alt: "None") %>
-            <% end %>
-            <% end %>
-            <div class="product-detail-content">
-              <h6><%= product.name %><h6>
-                <div class="product-rating-with-border">
-                  <div class="background-border"></div>
-                  <ul>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                  </ul>
-                </div>
-                <h5>￥<%= product.price %></h5>
-                <!-- <a class="btn cart-button" href="#"> 加入购物车 </a> -->
-                <% if product.quantity.present? && product.quantity > 0 %>
-                  <%= link_to("加入购物车", add_to_cart_product_path(product), method: :post, class: "btn cart-button") %>
-                <% else %>
-                  已销售一空，无法购买！
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <% end %>
 
       </div>
     </div>

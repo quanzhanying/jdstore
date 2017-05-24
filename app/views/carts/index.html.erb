@@ -41,14 +41,22 @@
                 <tr class="cart_item">
                   <td class="cart-detail">
                     <div class="cart-image">
-                      <!-- <img class="" src="images/products/cart-1.jpg" alt=""> -->
-                      <%= link_to product_path(cart_item.product) do %>
+                      <!-- <%= link_to product_path(cart_item.product) do %>
                         <% if cart_item.product.image.present? %>
                           <%= image_tag(cart_item.product.image.thumb.url, class: "") %>
                         <% else %>
                           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                         <% end %>
+                      <% end %> -->
+
+                      <%= link_to product_path(cart_item.product) do %>
+                        <% if cart_item.product.img_url.present? %>
+                          <%= image_tag(cart_item.product.img_url, size: "120x120", class: "", alt: cart_item.product.name) %>
+                        <% else %>
+                          <%= image_tag("http://placehold.it/120x120&text=No Pic", class: "", alt: "None") %>
+                        <% end %>
                       <% end %>
+
                     </div>
                   </td>
                   <td class="cart-detail">
