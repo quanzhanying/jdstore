@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    if params[:searcher]
+      @products = Product.search(params[:searcher])
+    end
   end
 
   def show
