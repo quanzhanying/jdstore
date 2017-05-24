@@ -22,23 +22,43 @@ end
 
 # Initialize Product
 
-Product.create!(title: "City Bag",
-  description: "耳机",
-  price: 2800,
+Product.create!(title: "印第安风格耳坠",
+  description: "耳坠",
+  price: 340,
   quantity: 5,
-  image: open("http://www.forever21.com/images/default_750/00088847-02.jpg")
+  image: open("http://ww4.sinaimg.cn/large/006tKfTcgy1ffw2p230haj30u00u077i.jpg")
   )
 
-Product.create!(title: "Iphone7",
-  description: "手机",
-  price: 5000,
+Product.create!(title: "Twice同款耳环",
+  description: "耳环",
+  price: 460,
   quantity: 5,
-  image: open("http://media.nintendo.com/nintendo/bin/asUarutBdpoEfUN9RRw62YyCHLe5bnz7/3Imp6pfRvpmw7aHawbDOew7O3QppdGMB.jpg")
+  image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mfzxinj30u00u0gne.jpg")
   )
 
-Product.create!(title: "Dress",
-  description: "G80-3000键盘",
-  price: 2800,
+Product.create!(title: "Girl's Day同款戒指",
+  description: "戒指",
+  price: 280,
   quantity: 5,
-  image: open("http://media.nintendo.com/nintendo/bin/Ty3W0eXgbtDl4YutYUfJD5Yz7w7t3tGE/WbCZQBhTu-vYQxCpay3PB2HGUFVKksaI.jpg")
+  image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mjknvlj30u00u0wfi.jpg")
   )
+  Product.create!(title: "肉粉色板鞋",
+    description: "板鞋",
+    price: 680,
+    quantity: 5,
+    image: open("http://ww4.sinaimg.cn/large/006tKfTcgy1ffw2p230haj30u00u077i.jpg")
+    )
+
+  Product.create!(title: "白色板鞋",
+    description: "板鞋",
+    price: 680,
+    quantity: 5,
+    image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mfzxinj30u00u0gne.jpg")
+    )
+
+  Product.create!(title: "黑色板鞋",
+    description: "板鞋",
+    price: 680,
+    quantity: 5,
+    image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mjknvlj30u00u0wfi.jpg")
+    )
