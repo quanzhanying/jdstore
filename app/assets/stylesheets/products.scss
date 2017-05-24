@@ -24,21 +24,67 @@
 }
 
 /*===== 1.网站头贴 ====*/
-.product-intro{
-    height: 700px;
-    background-image: url('https://ws3.sinaimg.cn/large/006tKfTcgy1ffvrqa3h6wj31kw0w012m.jpg');
-    background-size: cover;
+// .content > h1 {
+//   color: #fff;
+//   font-size: 55px;
+//   letter-spacing: 2px;
+//   word-spacing: 6px;
+//   font-family: STHeiti Light;
+//   font-weight: bold;
+// }
 
-.content > h1 {
-  color: #fff;
-  font-size: 55px;
-  letter-spacing: 2px;
-  word-spacing: 6px;
-  font-family: STHeiti Light;
-  font-weight: bold;
-}
+
+.welcome-top{
+    background-color: #E7E5DA;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -1.5em;
+    margin-bottom: -1em;
 }
 
+.carousel-caption {
+  padding: 0;
+  margin: 2px -120px 10px 0;
+}
+
+.carousel-control {
+  text-shadow: 0 0 0 #999;
+  width: 0;
+  height: 0;
+}
+.carousel-control span:hover {
+  color: #2dbe60;
+}
+#myCarousel {
+  margin: 20px auto 20px auto;
+  width: 100%;
+}
+.carousel-inner img {
+  background: cover;
+  position: center;
+}
+.carousel-indicators li {
+  background-color: #fa9e81;
+  border: none;
+}
+.carousel-indicators .active {
+  background-color: #e8e8e8;
+}
+.carousel-indicators {
+  bottom: 2em;
+}
+// #myCarousel .left span {
+//   position: relative;
+//   color: #e8e8e8;
+//   font-size: 7em;
+//   top: 1.7em;
+// }
+// #myCarousel .right span {
+//   position: relative;
+//   color: #e8e8e8;
+//   font-size: 7em;
+//   top: 1.7em;
+// }
 /*============================= end 1.网站头贴 ============================*/
 
 
