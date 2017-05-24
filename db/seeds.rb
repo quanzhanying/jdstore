@@ -7,15 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-u = User.new
-u.email = "nihao@163.com"           # 可以改成自己的 email
 
-u.password = "123456"                # 最少要六码
-
-u.password_confirmation = "123456"   # 最少要六码
-
-u.is_admin = true
-u.save
  # Initialize Admin User
   if User.find_by(email: "nihao@163.com").nil?
     u = User.new
