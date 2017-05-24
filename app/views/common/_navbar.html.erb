@@ -52,6 +52,9 @@
                       <%= link_to(" Admin", admin_products_path) %>
                     </li>
                     <% end%>
+                    <li>
+               <%= link_to("我的订单", account_orders_path ) %>
+             </li>
           <li>
             <%= link_to(" 登出", destroy_user_session_path, class: 'fa fa-sign-out',method: :delete) %>
           </li>
