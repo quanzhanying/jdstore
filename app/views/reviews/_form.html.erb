@@ -1,5 +1,9 @@
 <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
 
+  新鲜：  <div id="star-freshness"></div>
+  外观：  <div id="star-look"></div>
+  价格：  <div id="star-price"></div>
+
   <div class="field">
       <%= f.text_area :body, class: "form-control" %>
   </div>

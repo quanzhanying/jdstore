@@ -1,5 +1,10 @@
 <div class="reviews_wrapper clearfix">
     <div class="pull-left">
+      <% @reviews.each do |review| %>
+        新鲜： <div class="star-taste" data-score= <%= review.freshness %> ></div>
+        外观： <div class="star-look" data-score= <%= review.look %> ></div>
+        价格： <div class="star-price" data-score= <%= review.price %> ></div>
+
         <p class="lead"><%= review.body %></p>
         <p>
             <small>Submitted
@@ -7,6 +12,7 @@
                     ago</strong>
                 by <%= review.user.email %></small>
         </p>
+        <% end %>
     </div>
 
     <div>
