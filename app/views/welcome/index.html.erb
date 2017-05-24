@@ -164,6 +164,11 @@ ulputate velit esse molestie.
             <h5>￥<%= product.price %></h5>
             <h6>产地直供</h6>
             <!-- <a class="btn cart-button" href="#"> 放入购物车 </a> -->
+            <% if product.quantity.present? && product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(product), method: :post, class: "btn cart-button") %>
+            <% else %>
+              已销售一空，无法购买！
+            <% end %>
           </div>
         </div>
       </div>
@@ -709,7 +714,8 @@ ulputate velit esse molestie.
 <!-- Partners Area -->
 <section>
   <!-- style="margin-top:-250px;" -->
-  <div class="background-grey ptb-60" style="margin-bottom:250px;">
+  <!-- <div class="background-grey ptb-60" style="margin-bottom:250px;"> -->
+  <div class="background-grey ptb-60" style="margin-bottom: 0px;">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
