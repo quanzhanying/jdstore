@@ -2,6 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.decor-bottom-1 {
+  height: 7em;
+  margin-bottom: -7em;
+  fill: #d7dbcc;
+}
+
+.decor-top3 {
+  height: 6em;
+  margin-top: -84px;
+  fill: #d7dbcc;
+}
+
+.decor-bottom-3 {
+  height: 7em;
+  margin-bottom: -7em;
+  fill: #ffffff;
+}
+
+
+.decor-top4 {
+  height: 6em;
+  margin-top: -84px;
+  fill: #ffffff;
+}
+
+
+
 //=============================================海报上的字体
 #zi2{
   font-family: 'Clicker Script', cursive;
@@ -11,17 +38,6 @@
 }
 //=============================================海报上的字体
 
-.decor-top3 {
-  height: 6em;
-  margin-top: -84px;
-  fill: #F5F5F5;
-}
-
-.decor-bottom-1 {
-  height: 7em;
-  margin-bottom: -7em;
-  fill: #634316;
-}
 
 /*===== 1.网站头贴 ====*/
 // .content > h1 {
@@ -35,7 +51,7 @@
 
 
 .welcome-top{
-    background-color: #E7E5DA;
+    background-color: #d7dbcc;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: -1.5em;
@@ -90,7 +106,7 @@
 
 /*============================= 2.服务块 ============================*/
 .fw{
-  background-color: #E7E5DA;
+  background-color: #d7dbcc;
   height: 700px;
 }
 .polaroid2 {
@@ -112,16 +128,12 @@
 /*=============================  end 2. 服务块  ============================*/
 
 /*========================================= 波浪分割线 ====*/
-.decor-top4 {
-  height: 6em;
-  margin-top: -84px;
-  fill: #ffffff;
-}
+
 /*========================================= 波浪分割线 ====*/
 
 /*==================================== 3.产品块 ======================================*/
 .pr{
-  // background-color: #E7E5DA;
+  // background-color: #d7dbcc;
 }
 .boxx {
   background:#fff;
@@ -172,11 +184,7 @@
     background-position: center;
   }
 
-  .decor-bottom-3 {
-    height: 7em;
-    margin-bottom: -7em;
-    fill: #ffffff;
-  }
+
   /*============波浪分割线====*/
 /*=========================================== 分割图 =====================================*/
 
@@ -197,7 +205,7 @@ body{
 // 	text-shadow: 0 1px white, 0 2px black;
 // }
 .ph{
-  background-color: #E7E5DA;
+  background-color: #d7dbcc;
 }
 .container1{
 	margin: 8% auto;
@@ -259,7 +267,7 @@ img{
 
 /*=================================== 5.铁粉说 ==================================*/
 .say{
-  background-color: #E7E5DA;
+  background-color: #d7dbcc;
   padding-bottom: 0px;
   .do-box{
     img{
@@ -271,7 +279,7 @@ img{
 
   .say{
     text-align: center;
-    background-color: #E7E5DA;
+    background-color: #d7dbcc;
     background-size: cover;
     padding-left: 50px;
     padding-right: 50px;

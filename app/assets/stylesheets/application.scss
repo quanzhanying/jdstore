@@ -17,6 +17,22 @@
  @import "bootstrap";
  @import "font-awesome";
 
+
+ /*====================================波浪分割线============================*/
+ .decor-bottom {
+   height: 6em;
+   margin-top: -84px;
+   fill: #ecf0e0;
+ }
+
+ .decor-top {
+   height: 7em;
+   margin-bottom: -7em;
+   fill: #ecf0e0;
+ }
+ /*============波浪分割线====*/
+
+ 
  //=====================================登入弹窗
   .loginmodal-container {
     padding: 20px;
@@ -75,20 +91,10 @@
  //=====================================登入弹窗
 
 
- //*****navbar*****//
- // .navbar-default {
- //    background-color: #634316;  //导航栏背景颜色
- //    border-color: #634316; //边框色
- //    margin: 0;
- // }
-  //*****navbar*****//
-
  //=====================================navbar
  .navbar-default {
-    background-color: #37250a;  //navbar背景颜色
-
-    border-color: #37250a; //边框色
-
+    background-color: #2B322F;  //navbar背景颜色
+    border-color: #2B322F; //边框色
     margin-bottom: 0; //底部 margin 不撑开距离
 }
 
@@ -105,7 +111,7 @@
 }
 }
 .navbar-default .navbar-brand {
-  color: #FFD900; //标题字体颜色
+  color: #e2e5d8; //标题字体颜色
 
   padding: 10px 15px; //上下10px，左右15px
   line-height: 30px; //文字行高
@@ -118,7 +124,7 @@
 }
 
  .navbar-default .navbar-nav > li > a{
-  color: #FFD900; //注册登录（显示的颜色）-yellow
+  color: #e2e5d8; //注册登录（显示的颜色）-yellow
 
 }
 
@@ -146,22 +152,26 @@
  //=====================================navbar
 
  //*****footer*****//
-
- .footer {
-   background-color: black;
-   height: 20em;
-   .p {
-    color: white;
-   }
- }
- .text2-center{
-   text-align: center;
-   padding: 20px 20px;
-   height: 10em;
- }
- .wetch{
-   border-radius: 50%;
-   width: 3%;
+ .footer-default {
+    background-color: #2B322F;
+    height: 400px;
+    p {
+      color: #fff;
+      margin-top: 40px;
+      letter-spacing: 2px;
+    }
+    .logo {
+      margin-top: 150px;
+      margin-bottom: 40px;
+      img{
+      margin-left: 25px ;
+      width: 55px;
+      }
+    }
+    .glyphicon-chevron-up {
+      margin-bottom: -60px;
+      color: #fff;
+    }
  }
 
  //*****footer*****//
@@ -175,7 +185,7 @@
 
  .section{
      padding-top: 80px;
-     padding-bottom: 80px;
+     padding-bottom: 90px;
  }
 
 

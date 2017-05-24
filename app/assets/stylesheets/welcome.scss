@@ -2,31 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*====================================波浪分割线============================*/
-.decor-top1 {
-  height: 6em;
-  margin-top: -84px;
-  fill: #E7E5DA;
-}
-
-.decor-bottom-1 {
-  height: 7em;
-  margin-bottom: -7em;
-  fill: #E7E5DA;
-}
-
-.decor-top2 {
-  height: 6em;
-  margin-top: -84px;
-  fill: #E7E5DA;
-}
-
-.decor-bottom-2 {
-  height: 7em;
-  margin-bottom: -7em;
-  fill: #E7E5DA;
-}
-/*============波浪分割线====*/
 
 /*=========================================== 1.网站头贴 ======================================*/
 .intro{
@@ -100,10 +75,9 @@
 /*=========================================== 2.服务优势 ==========================================*/
 .service{
   text-align: center;
-  background-color: #E7E5DA;
+  background-color: #ecf0e0;
   background-size: cover;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 4em 0 4em 0;
 }
 
 .service p{
@@ -179,13 +153,12 @@
 
 /*=================================== 关于我们 2 ====================================*/
 .wm{
-  background-color: #E7E5DA;
+  background-color: #ecf0e0;
+  padding: 4em 0 4em 0;
 }
 
 .timeline {
     position: relative;
-    padding:4px 0 0 0;
-    margin-top:22px;
     list-style: none;
 }
 
