@@ -53,9 +53,69 @@ a:hover {
 
 // 通用的css代码结束
 
-// 导航栏
+// landing page页面导航栏
 
-// 导航栏结束
+.navbar-default {
+  z-index: 10;
+  border-bottom-style: none;
+  transition: background-color .6s;
+  &.transparent {
+    background: transparent;
+    border: none!important;
+
+  .navbar-brand {
+    color: #101846;
+    font-weight: 700;
+  }
+
+  .navbar-nav > li > a{
+    color: #101846;
+    transition: 0.15s linear;
+    letter-spacing: 4px;
+  }
+  .navbar-nav li a:hover{
+    color: #101846;
+    border-color: #146eb4;
+    background-color: #edbdb5;
+  }
+ }
+ &.black {
+    background-color: #edbdb5;
+    border-bottom: 1px solid #e0dfdf;
+    .navbar-nav li a:hover, .navbar-nav li.active a{
+    color: #101846 !important;
+    background-color: #fff !important;
+}
+    .navbar-nav > li > a{
+      color: #101846;
+      transition: 0.15s linear;
+      letter-spacing: 4px;
+    }
+    .navbar-nav > li > i{
+      display: inline-block; //图片和链接文字显示在同一行
+      width: 32px; //定制图片宽度
+      height: 32px; //定制图片高度
+    }
+    .navbar-brand {
+      color: #101846;
+      font-weight: 700;
+    }
+  }
+}
+// landing page导航栏结束
+
+// 其他页面navbar
+#Navbar {
+  .navbar-nav li a:hover, .navbar-nav li.active a{
+  color: #101846 !important;
+  background-color: #fff !important;
+  }
+  .navbar-nav > li > a{
+    color: #101846;
+    transition: 0.15s linear;
+    letter-spacing: 4px;
+  }
+}
 
 // 工作列表标题栏
 .header_placeholder {

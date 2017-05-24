@@ -33,6 +33,17 @@ class ProductsController < ApplicationController
       else
       @products = Product.where(:brand_id => @brand_id).recent.paginate(:page => params[:page], :per_page => 10)
       end
+    elsif !params[:category].blank? && !params[:brand].blank?
+      @category_id = Category.find_by(name: params[:category]).id
+      @brand_id = Brand.find_by(name: params[:brand]).id
+      @products = case params[:order]
+      when 'by_product_stock'
+        Product.where(:brand_id => @brand_id, :category_id => @category_id).order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+      when 'by_product_price'
+        Product.where(:brand_id => @brand_id, :category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
+      else
+      @products = Product.where(:brand_id => @brand_id, :category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 10)
+      end
     end
   end
 
