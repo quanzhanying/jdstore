@@ -41,7 +41,8 @@ gem 'will_paginate'
 gem 'ransack'
 gem 'seo_helper','~> 1.0'
 gem 'letter_opener', group: :development
- gem 'aasm'
+gem 'aasm'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
