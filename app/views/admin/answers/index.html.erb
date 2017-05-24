@@ -15,7 +15,7 @@
     <% @answers.each do |answer| %>
     <tr>
       <td>
-        <%= answer.id %>
+        <%= link_to answer.id, admin_answer_path(answer) %>
       </td>
        <td>
          <%= answer.true_answer%>
