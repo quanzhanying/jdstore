@@ -5,7 +5,7 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-  def checkcout
+  def checkout
     @order = Order.new
   end
 end

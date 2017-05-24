@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-md-12">
+   <div class="col-md-12">
 
-    <h2>Shopping Details</h2>
+    <h2> Shopping Details </h2>
 
     <table class="table table-bordered">
       <thead>
@@ -21,9 +21,11 @@
             <td>
               <%= cart_item.product.price %>
             </td>
+
             <td>
               <%= cart_item.quantity %>
             </td>
+
           </tr>
         <% end %>
 
@@ -38,29 +40,30 @@
 
     <hr>
 
-    <h2>Order Information</h2>
+    <h2> Order Information </h2>
+
     <div class="order-form">
 
       <%= simple_form_for @order do |f| %>
 
         <legend> Ordered by </legend>
-        <div class="form-group col-lg-6">
-          <%= f.input :billing_name %>
-        </div>
-        <div class="form-group col-lg-6">
-          <%= f.input :billing_address %>
-        </div>
+          <div class="form-group col-lg-6">
+            <%= f.input :billing_name  %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= f.input :billing_address  %>
+          </div>
 
-        <legend> Consignee </legend>
-        <div class="form-group col-lg-6">
-          <%= f.input :shipping_name %>
-        </div>
-        <div class="form-group col-lg-6">
-          <%= f.input :shipping_address %>
-        </div>
+          <legend> Consignee </legend>
+          <div class="form-group col-lg-6">
+           <%= f.input :shipping_name  %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= f.input :shipping_address  %>
+          </div>
 
-        <div class="checkcout">
-          <%= f.submit "Generate an order", class:"btn btn-lg btn-danger pull-right", data: {disable_with: "Submitting..."} %>
+        <div class="checkout">
+          <%= f.submit "Generate an order", class: "btn btn-lg btn-danger pull-right",data: { disable_with: "Submitting..." } %>
         </div>
       <% end %>
 
