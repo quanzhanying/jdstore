@@ -1,7 +1,7 @@
 <div class="reviews_wrapper clearfix">
     <div class="pull-left">
       <% @reviews.each do |review| %>
-        新鲜： <div class="star-taste" data-score= <%= review.freshness %> ></div>
+        新鲜： <div class="star-freshness" data-score= <%= review.freshness %> ></div>
         外观： <div class="star-look" data-score= <%= review.look %> ></div>
         价格： <div class="star-price" data-score= <%= review.price %> ></div>
 
@@ -21,3 +21,47 @@
 <% end %>
   </div>
 </div>
+
+<script>
+  $('.star-freshness').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-look').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-price').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+
+  $('#star-freshness').raty({
+  path: '/assets/',
+  scoreName: 'review[freshness]'
+  });
+
+  $('#star-look').raty({
+  path: '/assets/',
+  scoreName: 'review[look]'
+  });
+
+  $('#star-price').raty({
+      path: '/assets/',
+      scoreName: 'review[price]'
+  });
+
+  $('#star-freshness img').eq(0).trigger('click')
+  $('#star-look img').eq(0).trigger('click')
+  $('#star-price img').eq(0).trigger('click')
+
+</script>

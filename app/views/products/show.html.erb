@@ -55,7 +55,7 @@
       <div id="reivews">
         <%= render @product.reviews%>
         <hr>
-        <%= render "reviews/form"%>
+        <%= link_to("评价",new_product_review_path(@product), :class => "btn btn-lg btn-info") %>
       </div>
     </div>
   </div>
