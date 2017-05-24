@@ -98,7 +98,7 @@
 /*=========================================== end 1.网站头贴 ==========================================*/
 
 /*=========================================== 2.服务优势 ==========================================*/
-.what-we-do{
+.service{
   text-align: center;
   background-color: #E7E5DA;
   background-size: cover;
@@ -109,33 +109,33 @@
 .service p{
     color: #666;
     letter-spacing: 2px;
+
 }
 
-.service p-2{
-    color: #f4511e;
+.service hr {
+  height: 1.5px;
+  background-color: #999;
 }
 
-.what-we-do .do-box{
+.service .do-box{
     img{
       margin-top: 35px;
       margin-bottom: -35px;
       width: 180px;
     }
-}
-
-.do-box h3{
-    color: #f4511e;
-    margin-top: 65px;
-    margin-bottom: 8px;
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.do-box p {
-    color: #666;
-    letter-spacing: 1px;
-    line-height: 22px;
-    margin: 25px 20px 40px 20px;
+    h3{
+        color: #f4511e;
+        margin-top: 65px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    p {
+        color: #666;
+        letter-spacing: 1px;
+        line-height: 22px;
+        margin: 25px 20px 40px 20px;
+    }
 }
 
 /*=========================================== end 2.服务优势 ==========================================*/
