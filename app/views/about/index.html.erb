@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html style="-webkit-text-size-adjust: 100%; line-height: 1.60">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+
+        <script nonce="1982117201" type="text/javascript">
+            window.logs = {
+                pagetime: {}
+            };
+            window.logs.pagetime['html_begin'] = (+new Date());
+        </script>
+
+<script nonce="1982117201" type="text/javascript">
+    var biz = "MzA3MTM3OTQ5Nw=="||"";
+    var sn = "58d54aede968ff353718d18c771b9477" || ""|| "";
+    var mid = "2651010470" || ""|| "";
+    var idx = "1" || "" || "";
+    window.__allowLoadResFromMp = true;
+
+</script>
+<script nonce="1982117201" type="text/javascript">
+var page_begintime=+new Date,is_rumor="",norumor="";
+1*is_rumor&&!(1*norumor)&&biz&&mid&&(document.referrer&&-1!=document.referrer.indexOf("mp.weixin.qq.com/mp/rumor")||(location.href="http://mp.weixin.qq.com/mp/rumor?action=info&__biz="+biz+"&mid="+mid+"&idx="+idx+"&sn="+sn+"#wechat_redirect")),
+document.domain="qq.com";
+</script>
+<script nonce="1982117201" type="text/javascript">
+var MutationObserver=window.WebKitMutationObserver||window.MutationObserver||window.MozMutationObserver,isDangerSrc=function(t){
+if(t){
+var e=t.match(/http(?:s)?:\/\/([^\/]+?)(\/|$)/);
+if(e&&!/qq\.com(\:8080)?$/.test(e[1])&&!/weishi\.com$/.test(e[1]))return!0;
+}
+return!1;
+},ishttp=0==location.href.indexOf("http://");
+-1==location.href.indexOf("safe=0")&&ishttp&&"function"==typeof MutationObserver&&"mp.weixin.qq.com"==location.host&&(window.__observer_data={
+count:0,
+exec_time:0,
+list:[]
+},window.__observer=new MutationObserver(function(t){
+window.__observer_data.count++;
+var e=new Date,r=[];
+t.forEach(function(t){
+for(var e=t.addedNodes,o=0;o<e.length;o++){
+var n=e[o];
+if("SCRIPT"===n.tagName){
+var i=n.src;
+isDangerSrc(i)&&(window.__observer_data.list.push(i),r.push(n)),!i&&window.__nonce_str&&n.getAttribute("nonce")!=window.__nonce_str&&(window.__observer_data.list.push("inlinescript_without_nonce"),
+r.push(n));
+}
+}
+});
+for(var o=0;o<r.length;o++){
+var n=r[o];
+n.parentNode&&n.parentNode.removeChild(n);
+}
+window.__observer_data.exec_time+=new Date-e;
+}),window.__observer.observe(document,{
+subtree:!0,
+childList:!0
+})),function(){
+if(-1==location.href.indexOf("safe=0")&&Math.random()<.01&&ishttp&&HTMLScriptElement.prototype.__lookupSetter__&&"undefined"!=typeof Object.defineProperty){
+window.__danger_src={
+xmlhttprequest:[],
+script_src:[],
+script_setAttribute:[]
+};
+var t="$"+Math.random();
+HTMLScriptElement.prototype.__old_method_script_src=HTMLScriptElement.prototype.__lookupSetter__("src"),
+HTMLScriptElement.prototype.__defineSetter__("src",function(t){
+t&&isDangerSrc(t)&&window.__danger_src.script_src.push(t),this.__old_method_script_src(t);
+});
+var e="element_setAttribute"+t;
+Object.defineProperty(Element.prototype,e,{
+value:Element.prototype.setAttribute,
+enumerable:!1
+}),Element.prototype.setAttribute=function(t,r){
+"SCRIPT"==this.tagName&&"src"==t&&isDangerSrc(r)&&window.__danger_src.script_setAttribute.push(r),
+this[e](t,r);
+};
+}
+}();
+</script>
+
+        <link rel="dns-prefetch" href="//res.wx.qq.com">
+<link rel="dns-prefetch" href="//mmbiz.qpic.cn">
+<link rel="shortcut icon" type="image/x-icon" href="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/favicon22c41b.ico">
+<script nonce="1982117201" type="text/javascript">
+    String.prototype.html = function(encode) {
+        var replace =["&#39;", "'", "&quot;", '"', "&nbsp;", " ", "&gt;", ">", "&lt;", "<", "&amp;", "&", "&yen;", "¥"];
+        if (encode) {
+            replace.reverse();
+        }
+        for (var i=0,str=this;i< replace.length;i+= 2) {
+             str=str.replace(new RegExp(replace[i],'g'),replace[i+1]);
+        }
+        return str;
+    };
+
+    window.isInWeixinApp = function() {
+        return /MicroMessenger/.test(navigator.userAgent);
+    };
+
+    window.getQueryFromURL = function(url) {
+        url = url || 'http://qq.com/s?a=b#rd';
+        var tmp = url.split('?'),
+            query = (tmp[1] || "").split('#')[0].split('&'),
+            params = {};
+        for (var i=0; i<query.length; i++) {
+            var arg = query[i].split('=');
+            params[arg[0]] = arg[1];
+        }
+        if (params['pass_ticket']) {
+        	params['pass_ticket'] = encodeURIComponent(params['pass_ticket'].html(false).html(false).replace(/\s/g,"+"));
+        }
+        return params;
+    };
+
+    (function() {
+	    var params = getQueryFromURL(location.href);
+        window.uin = params['uin'] || "MjIxNTIyNjU1" || '';
+        window.key = params['key'] || "259f15f8468d6f81a943bda5020a268be0868352bb7c80908445c3e860b27d12b6b064f3d9699bdeef6ed2df1179ea9fd5853555c9cadeab5b567d521d684f6685bc26bb471f3b2fb4e71430f3ad088e" || '';
+        window.wxtoken = params['wxtoken'] || '';
+        window.pass_ticket = params['pass_ticket'] || '';
+    })();
+
+    function wx_loaderror() {
+        if (location.pathname === '/bizmall/reward') {
+            new Image().src = '/mp/jsreport?key=96&content=reward_res_load_err&r=' + Math.random();
+        }
+    }
+
+</script>
+
+        <title>它不止是中国第一家无麸质外卖</title>
+
+<style>html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;line-height:1.6}body{-webkit-touch-callout:none;font-family:-apple-system-font,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background-color:#f3f3f3;line-height:inherit}body.rich_media_empty_extra{background-color:#fff}body.rich_media_empty_extra .rich_media_area_primary:before{display:none}h1,h2,h3,h4,h5,h6{font-weight:400;font-size:16px}*{margin:0;padding:0}a{color:#607fa6;text-decoration:none}.rich_media_inner{font-size:16px;word-wrap:break-word;-webkit-hyphens:auto;-ms-hyphens:auto;hyphens:auto}.rich_media_area_primary{position:relative;padding:20px 15px 15px;background-color:#fff}.rich_media_area_primary:before{content:" ";position:absolute;left:0;top:0;width:100%;height:1px;border-top:1px solid #e5e5e5;-webkit-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleY(0.5);transform:scaleY(0.5);top:auto;bottom:-2px}.rich_media_area_primary .original_img_wrp{display:inline-block;font-size:0}.rich_media_area_primary .original_img_wrp .tips_global{display:block;margin-top:.5em;font-size:14px;text-align:right;width:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal}.rich_media_area_extra{padding:0 15px 0}.rich_media_title{margin-bottom:10px;line-height:1.4;font-weight:400;font-size:24px}.rich_media_meta_list{margin-bottom:18px;line-height:20px;font-size:0}.rich_media_meta_list em{font-style:normal}.rich_media_meta{display:inline-block;vertical-align:middle;margin-right:8px;margin-bottom:10px;font-size:16px}.meta_original_tag{display:inline-block;vertical-align:middle;padding:1px .5em;border:1px solid #9e9e9e;color:#8c8c8c;border-top-left-radius:20% 50%;-moz-border-radius-topleft:20% 50%;-webkit-border-top-left-radius:20% 50%;border-top-right-radius:20% 50%;-moz-border-radius-topright:20% 50%;-webkit-border-top-right-radius:20% 50%;border-bottom-left-radius:20% 50%;-moz-border-radius-bottomleft:20% 50%;-webkit-border-bottom-left-radius:20% 50%;border-bottom-right-radius:20% 50%;-moz-border-radius-bottomright:20% 50%;-webkit-border-bottom-right-radius:20% 50%;font-size:15px;line-height:1.1}.meta_enterprise_tag img{width:30px;height:30px!important;display:block;position:relative;margin-top:-3px;border:0}.rich_media_meta_text{color:#8c8c8c}span.rich_media_meta_nickname{display:none}.rich_media_thumb_wrp{margin-bottom:6px}.rich_media_thumb_wrp .original_img_wrp{display:block}.rich_media_thumb{display:block;width:100%}.rich_media_content{overflow:hidden;color:#3e3e3e}.rich_media_content *{max-width:100%!important;box-sizing:border-box!important;-webkit-box-sizing:border-box!important;word-wrap:break-word!important}.rich_media_content p{clear:both;min-height:1em}.rich_media_content em{font-style:italic}.rich_media_content fieldset{min-width:0}.rich_media_content .list-paddingleft-2{padding-left:30px}.rich_media_content blockquote{margin:0;padding-left:10px;border-left:3px solid #dbdbdb}img{height:auto!important}@media screen and (device-aspect-ratio:2/3),screen and (device-aspect-ratio:40/71){.meta_original_tag{padding-top:0}}@media(min-device-width:375px) and (max-device-width:667px) and (-webkit-min-device-pixel-ratio:2){.mm_appmsg .rich_media_inner,.mm_appmsg .rich_media_meta,.mm_appmsg .discuss_list,.mm_appmsg .rich_media_extra,.mm_appmsg .title_tips .tips{font-size:17px}.mm_appmsg .meta_original_tag{font-size:15px}}@media(min-device-width:414px) and (max-device-width:736px) and (-webkit-min-device-pixel-ratio:3){.mm_appmsg .rich_media_title{font-size:25px}}@media screen and (min-width:1024px){.rich_media{width:740px;margin-left:auto;margin-right:auto}.rich_media_inner{padding:20px}body{background-color:#fff}}@media screen and (min-width:1025px){body{font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif}.rich_media{position:relative}.rich_media_inner{background-color:#fff;padding-bottom:100px}}.radius_avatar{display:inline-block;background-color:#fff;padding:3px;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;overflow:hidden;vertical-align:middle}.radius_avatar img{display:block;width:100%;height:100%;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;background-color:#eee}.cell{padding:.8em 0;display:block;position:relative}.cell_hd,.cell_bd,.cell_ft{display:table-cell;vertical-align:middle;word-wrap:break-word;word-break:break-all;white-space:nowrap}.cell_primary{width:2000px;white-space:normal}.flex_cell{padding:10px 0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.flex_cell_primary{width:100%;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;box-flex:1;flex:1}.original_tool_area{display:block;padding:.75em 1em 0;-webkit-tap-highlight-color:rgba(0,0,0,0);color:#3e3e3e;border:1px solid #eaeaea;margin:20px 0}.original_tool_area .tips_global{position:relative;padding-bottom:.5em;font-size:15px}.original_tool_area .tips_global:after{content:" ";position:absolute;left:0;bottom:0;right:0;height:1px;border-bottom:1px solid #dbdbdb;-webkit-transform-origin:0 100%;transform-origin:0 100%;-webkit-transform:scaleY(0.5);transform:scaleY(0.5)}.original_tool_area .radius_avatar{width:27px;height:27px;padding:0;margin-right:.5em}.original_tool_area .radius_avatar img{height:100%!important}.original_tool_area .flex_cell_bd{width:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal}.original_tool_area .flex_cell_ft{font-size:14px;color:#8c8c8c;padding-left:1em;white-space:nowrap}.original_tool_area .icon_access:after{content:" ";display:inline-block;height:8px;width:8px;border-width:1px 1px 0 0;border-color:#cbcad0;border-style:solid;transform:matrix(0.71,0.71,-0.71,0.71,0,0);-ms-transform:matrix(0.71,0.71,-0.71,0.71,0,0);-webkit-transform:matrix(0.71,0.71,-0.71,0.71,0,0);position:relative;top:-2px;top:-1px}.weui_loading{width:20px;height:20px;display:inline-block;vertical-align:middle;-webkit-animation:weuiLoading 1s steps(12,end) infinite;animation:weuiLoading 1s steps(12,end) infinite;background:transparent url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iciIgd2lkdGg9JzEyMHB4JyBoZWlnaHQ9JzEyMHB4JyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiBjbGFzcz0iYmsiPjwvcmVjdD4KICAgIDxyZWN0IHg9JzQ2LjUnIHk9JzQwJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgcng9JzUnIHJ5PSc1JyBmaWxsPScjRTlFOUU5JwogICAgICAgICAgdHJhbnNmb3JtPSdyb3RhdGUoMCA1MCA1MCkgdHJhbnNsYXRlKDAgLTMwKSc+CiAgICA8L3JlY3Q+CiAgICA8cmVjdCB4PSc0Ni41JyB5PSc0MCcgd2lkdGg9JzcnIGhlaWdodD0nMjAnIHJ4PSc1JyByeT0nNScgZmlsbD0nIzk4OTY5NycKICAgICAgICAgIHRyYW5zZm9ybT0ncm90YXRlKDMwIDUwIDUwKSB0cmFuc2xhdGUoMCAtMzApJz4KICAgICAgICAgICAgICAgICByZXBlYXRDb3VudD0naW5kZWZpbml0ZScvPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyM5Qjk5OUEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSg2MCA1MCA1MCkgdHJhbnNsYXRlKDAgLTMwKSc+CiAgICAgICAgICAgICAgICAgcmVwZWF0Q291bnQ9J2luZGVmaW5pdGUnLz4KICAgIDwvcmVjdD4KICAgIDxyZWN0IHg9JzQ2LjUnIHk9JzQwJyB3aWR0aD0nNycgaGVpZ2h0PScyMCcgcng9JzUnIHJ5PSc1JyBmaWxsPScjQTNBMUEyJwogICAgICAgICAgdHJhbnNmb3JtPSdyb3RhdGUoOTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNBQkE5QUEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxMjAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNCMkIyQjInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxNTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNCQUI4QjknCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgxODAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNDMkMwQzEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyMTAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNDQkNCQ0InCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyNDAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNEMkQyRDInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgyNzAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNEQURBREEnCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgzMDAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0PgogICAgPHJlY3QgeD0nNDYuNScgeT0nNDAnIHdpZHRoPSc3JyBoZWlnaHQ9JzIwJyByeD0nNScgcnk9JzUnIGZpbGw9JyNFMkUyRTInCiAgICAgICAgICB0cmFuc2Zvcm09J3JvdGF0ZSgzMzAgNTAgNTApIHRyYW5zbGF0ZSgwIC0zMCknPgogICAgPC9yZWN0Pgo8L3N2Zz4=) no-repeat;-webkit-background-size:100%;background-size:100%}@-webkit-keyframes weuiLoading{0%{-webkit-transform:rotate3d(0,0,1,0deg)}100%{-webkit-transform:rotate3d(0,0,1,360deg)}}@keyframes weuiLoading{0%{-webkit-transform:rotate3d(0,0,1,0deg)}100%{-webkit-transform:rotate3d(0,0,1,360deg)}}.gif_img_wrp{display:inline-block;font-size:0;position:relative;font-weight:400;font-style:normal;text-indent:0;text-shadow:none 1px 1px rgba(0,0,0,0.5)}.gif_img_wrp img{vertical-align:top}.gif_img_tips{background:rgba(0,0,0,0.6)!important;filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#99000000',endcolorstr = '#99000000');border-top-left-radius:1.2em 50%;-moz-border-radius-topleft:1.2em 50%;-webkit-border-top-left-radius:1.2em 50%;border-top-right-radius:1.2em 50%;-moz-border-radius-topright:1.2em 50%;-webkit-border-top-right-radius:1.2em 50%;border-bottom-left-radius:1.2em 50%;-moz-border-radius-bottomleft:1.2em 50%;-webkit-border-bottom-left-radius:1.2em 50%;border-bottom-right-radius:1.2em 50%;-moz-border-radius-bottomright:1.2em 50%;-webkit-border-bottom-right-radius:1.2em 50%;line-height:2.3;font-size:11px;color:#fff;text-align:center;position:absolute;bottom:10px;left:10px;min-width:65px}.gif_img_tips.loading{min-width:75px}.gif_img_tips i{vertical-align:middle;margin:-0.2em .73em 0 -2px}.gif_img_play_arrow{display:inline-block;width:0;height:0;border-width:8px;border-style:dashed;border-color:transparent;border-right-width:0;border-left-color:#fff;border-left-style:solid;border-width:5px 0 5px 8px}.gif_img_loading{width:14px;height:14px}i.gif_img_loading{margin-left:-4px}.gif_bg_tips_wrp{position:relative;height:0;line-height:0;margin:0;padding:0}.gif_bg_tips_wrp .gif_img_tips_group{position:absolute;top:0;left:0;z-index:9999}.gif_bg_tips_wrp .gif_img_tips_group .gif_img_tips{top:0;left:0;bottom:auto}.rich_media_global_msg{position:fixed;top:0;left:0;right:0;padding:1em 35px 1em 15px;z-index:2;background-color:#c6e0f8;color:#8c8c8c;font-size:13px}.rich_media_global_msg .icon_closed{position:absolute;right:15px;top:50%;margin-top:-5px;line-height:300px;overflow:hidden;-webkit-tap-highlight-color:rgba(0,0,0,0);background:transparent url(//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_appmsg_msg_closed_sprite.2x2eb52b.png) no-repeat 0 0;width:11px;height:11px;vertical-align:middle;display:inline-block;-webkit-background-size:100% auto;background-size:100% auto}.rich_media_global_msg .icon_closed:active{background-position:0 -17px}.preview_appmsg .rich_media_title{margin-top:1.9em}@media screen and (min-width:1024px){.rich_media_global_msg{position:relative;margin:0 20px}.preview_appmsg .rich_media_title{margin-top:0}}.weapp_element,.weapp_display_element,.mp-miniprogram{display:block;margin:1em 0}.share_audio_context{margin:16px 0}</style>
+<style>
+        </style>
+<!--[if lt IE 9]>
+<link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_pc2c9cd6.css">
+<![endif]-->
+
+    </head>
+    <body id="activity-detail" class="zh_CN mm_appmsg">
+
+<script nonce="1982117201" type="text/javascript">
+    var write_sceen_time = (+new Date());
+</script>
+
+<div id="js_article" class="rich_media">
+
+    <div id="js_top_ad_area" class="top_banner"></div>
+
+
+    <div class="rich_media_inner">
+
+        <div id="page-content" class="rich_media_area_primary">
+
+                        <div id="img-content">
+
+                <h2 class="rich_media_title" id="activity-name">
+                    无麸才是王道，吃肉才最健康               </h2>
+                <div class="rich_media_content " id="js_content">
+
+                    <p style="line-height: 1.75em;"><span style="color: rgb(0, 122, 170);"><strong><span style="font-size: 20px;"><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwlYWxKyBuIU9lt9NcebE86n9xOkibuvVeYrlkdevMmzKjSibmS6NTkCOrzJdxwypPLs5v3KWUGvT10g/0?wx_fmt=png" data-ratio="0.5557553956834532" data-w=""  /><br  />小麦并不适合人类食用</span></strong></span></p><p style="margin-top: 5px; line-height: 1.75em;">在340万年前的南猿时代，人类的老祖宗就已经学会了用石器餐具吃肉。</p><p style="line-height: 1.75em;">而在250万年前，我们的采集者祖先选择了以肉为主食。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">肉类不仅给人类提供了更多的热量，还带来了丰富的维生素和矿物质，这对大脑的神经元发育至关重要。</p><p style="line-height: 1.75em;">更大的脑容量赋予了人类更高的智力。于是，人类从各类古猿中脱颖而出，逐渐孕育出了兴盛的文明。</p><p style="line-height: 1.75em;">——是的，肉造就了人类。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">而小麦，这个今天的所谓「主食」，在一万多年前才真正开始进入到人类的膳食中。</p><p style="line-height: 1.75em;"><strong><span style="color: rgb(171, 25, 66);">一万年的时间，在人类的进化史上并不值得一提。</span></strong>而当一种新的食物大量地引入，问题往往会发生。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">事实上，在出土的8000年前的人骨中，由小麦麸质引起的<a href="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=2651010388&amp;idx=1&amp;sn=894615c063c849145f990eab7b5c9578&amp;scene=21#wechat_redirect" target="_blank" data_ue_src="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=2651010388&amp;idx=1&amp;sn=894615c063c849145f990eab7b5c9578&amp;scene=21#wechat_redirect">乳糜泻</a>所造成的严重骨质流失就已经被观测到。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">正如《人类简史》中所说：</p><blockquote style="white-space: normal;"><p style="line-height: 1.75em;">确实，农业革命让人类的食物总量增加，但量的增加并不代表吃得更好、过得更悠闲，反而只是造成人口爆炸。……</p><p style="line-height: 1.75em;">其实不是我们驯化了小麦，而是小麦驯化了我们。……</p><p style="line-height: 1.75em;">这正是农业革命真正的本质：<span style="color: rgb(171, 25, 66);"><strong>让更多的人以更糟的状况活下去。</strong></span></p></blockquote><p style="line-height: 1.75em;"><br  /></p><p style="margin-top: 10px; line-height: 1.75em;"><strong><span style="color: rgb(0, 122, 170); font-size: 20px;">现代的加工方式，更大的灾难</span></strong></p><p style="margin-top: 5px; line-height: 1.75em;">在古代，人们虽然吃小麦，但更多的是吃精心处理过的麦子。</p><p style="line-height: 1.75em;">按照《圣经》的描述，希伯来人会先让小麦粒发芽，再将它们制成面包。</p><p style="line-height: 1.75em;">这种出芽的方式可以激活小麦中的酶，使得麸质得到一定程度的降解。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">而到了工业时代，为了提高效率，面包和馒头都开始用快速发酵粉。</p><p style="line-height: 1.75em;">面条、披萨、饼干、曲奇更是含大量麸质的复合物。</p><p style="line-height: 1.75em;">所以，不难预见，麸质会在今天造成严重的问题。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">目前，<a href="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=2651010388&amp;idx=1&amp;sn=894615c063c849145f990eab7b5c9578&amp;scene=21#wechat_redirect" target="_blank" data_ue_src="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=2651010388&amp;idx=1&amp;sn=894615c063c849145f990eab7b5c9578&amp;scene=21#wechat_redirect">中国估计有1%的人患有乳糜泻</a>，还有更多的人受到<a href="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=2651010330&amp;idx=1&amp;sn=e57065906e56732b82d46e75d9513e6f&amp;scene=21#wechat_redirect" target="_blank" data_ue_src="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=2651010330&amp;idx=1&amp;sn=e57065906e56732b82d46e75d9513e6f&amp;scene=21#wechat_redirect">非乳糜泻的麸质敏感</a>的影响。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">为了健康而有质量的生活，他们需要不含小麦的食物——在家做饭会是很好的选择。</p><p style="line-height: 1.75em;">但在这个小麦已渗透进文化深处的国家，如何外食终究是一个问题。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">但，总有一群有志向的人试图作出某些改变。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">所以，今天，我们有了<strong><span style="color: rgb(171, 25, 66);">「野兽生活」</span></strong>。</p><p style="line-height: 1.75em;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwnmiaZQ8oCGAUKelDSjv9IBEOPlBcNOafibG4GANJN6qtHib8QozDXnFdnS9ib3icLxMdFmgbNxckOgtGg/0?wx_fmt=jpeg" data-ratio="0.6187050359712231" data-w=""  /><br  /><strong style="color: rgb(0, 122, 170);"><span style="font-size: 20px;">中国第一家保证不含麸质的外卖</span></strong></p><p style="margin-top: 5px; line-height: 1.75em;">在美国，超过30000家餐饮企业可提供无麸质食品。</p><p style="line-height: 1.75em;">然而，很多所谓的「无麸质食品」并不是真正的无麸质。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">在一项调查中显示，在提供无麸质食品的餐饮企业中，<strong><span style="color: rgb(171, 25, 66);">只有4%的厨师真正了解无麸质的要求</span></strong>：</p><ul class=" list-paddingleft-2" style="list-style-type: square;"><li><p style="line-height: 1.75em;">食物原料不含小麦。</p></li><li><p style="line-height: 1.75em;">所用调料需要满足无麸质标准。</p></li><li><p style="line-height: 1.75em;">厨房不能加工含麸质的食物 / 含麸质食物与不含麸质食物严格分离。</p></li></ul><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">所以，在那些所谓提供无麸质披萨的披萨店里，只要店里还在卖用小麦做的披萨，那些所谓的「无麸质披萨」依然是不安全的。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">「野兽生活」与它们不同。</p><p style="line-height: 1.75em;">「野兽生活」<strong><span style="color: rgb(171, 25, 66);">选用的食材全部不含谷物，所以不需要担心交叉污染的问题。</span></strong></p><p style="line-height: 1.75em;">「野兽生活」的调料保证无麸质，绝对不会用含有小麦成分的酱油或醋。</p><p style="line-height: 1.75em;">至于勾芡，野兽生活只用木薯粉和太白粉等安全淀粉。</p><p style="line-height: 1.75em;"><br  /></p><p style="margin-top: 10px; line-height: 1.75em;"><span style="color: rgb(0, 122, 170);"><strong><span style="font-size: 20px;">不仅是无麸质</span></strong></span></p><blockquote style="white-space: normal;"><p style="margin-top: 5px; line-height: 1.75em;"><strong><span style="color: rgb(0, 122, 170);">拒绝添加糖</span></strong></p></blockquote><p style="margin-top: 5px; line-height: 1.75em;">人类和小麦好歹相处了10000年的时间，而精炼的糖却是在工业革命后才「飞入寻常百姓家」的。</p><p style="line-height: 1.75em;">随着肥胖在世界范围内的流行 以及糖尿病、脂肪肝、心脏病等文明疾病的飙升，人们也逐渐意识到了添加糖的危害。</p><p style="line-height: 1.75em;"><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwnvwFcg913QkD4ia4aLkMPicicWANfcib6RSTBOJHxOib3xnVS2cKkQGVOPqIiaCdEnBICvJxgwrEGMj1Ow/0?wx_fmt=png" data-ratio="0.5557553956834532" data-w=""  /><br  /><strong><span style="color: rgb(171, 25, 66);">添加了糖的食物导致全球每年18万人的死亡。</span></strong></p><p style="line-height: 1.75em;">添加的糖会破坏矿物元素的平衡、升高血糖、造成肠漏症、侵害人的免疫系统并会干扰人体对蛋白质的消化和吸收。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">所以，作为一家有责任的餐饮企业，为了顾客的健康，定然是需要把糖排除在外的。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">「野兽生活」从创立的开始，就坚持着无糖的标准。</p><p style="line-height: 1.75em;"><br  /></p><blockquote style="white-space: normal;"><p style="margin-top: 5px; line-height: 1.75em;"><span style="color: rgb(0, 122, 170);"><strong>拒绝种子植物油</strong></span></p></blockquote><p style="margin-top: 5px; line-height: 1.75em;">不像传统的油脂（黄油、牛油、猪油、橄榄油、椰子油、坚果油等），工业生产的植物油（玉米油、大豆油等）是新加入「食物」世界的品种。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">事实上，<span style="color: rgb(171, 25, 66);"><strong>这种经过压榨、萃取、精炼、洗涤、过滤、除臭等复杂加工的廉价油料在20世纪之前是基本不存在的。</strong></span></p><p style="line-height: 1.75em;"><span style="color: rgb(171, 25, 66);"><strong><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwn41HmKNkO655vibUPjMbH9tUicH5VTREyjicTARiaXPB8I3hA45mQp5BX6ofv5ccvudeBV33UqfvicMNw/0?wx_fmt=png" data-ratio="0.6510791366906474" data-w=""  /><br  /></strong></span>像玉米油、棉籽油、大豆油这类植物油包含大量的亚油酸。当亚油酸被加热时——这在加工或烹饪食物中是无法避免的——被称为氧化亚油酸代谢分子（OXLAMs）的物质就会形成。</p><p style="line-height: 1.75em;">OXLAMs会造成一种叫做「氧化应激」的细胞损伤，并且和许多炎症疾病相关，其中包括：老年痴呆症、纤维肌痛、非酒精性脂肪肝。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">「野兽生活」只使用动物油和冷压初榨的果实油（橄榄油、椰子油），这进一步地保证了食物的上乘品质。</p><p style="line-height: 1.75em;"><br  /></p><blockquote style="white-space: normal;"><p style="margin-top: 5px; line-height: 1.75em;"><strong><span style="color: rgb(0, 122, 170);">拒绝人工添加剂</span></strong></p></blockquote><p style="margin-top: 5px; line-height: 1.75em;">各种增鲜剂中往往<a href="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=400103237&amp;idx=1&amp;sn=3e577aff552dc8df512e35fcdca14546&amp;scene=21#wechat_redirect" target="_blank" data_ue_src="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=400103237&amp;idx=1&amp;sn=3e577aff552dc8df512e35fcdca14546&amp;scene=21#wechat_redirect">存在麸质的污染。</a></p><p style="line-height: 1.75em;">再看那些甜味剂——<strong><span style="color: rgb(171, 25, 66);">阿斯巴甜会造成葡萄糖不耐受，糖精钠更是会破坏你的肠道菌群；至于添加的果糖，更是造成脂肪肝的重要因素。</span></strong></p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">防腐剂、保鲜剂、着色剂、漂白剂、增稠剂、乳化剂、膨松剂、消泡剂……它们究竟会对身体和肠道菌群造成怎样的影响？</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;"><a href="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=403315021&amp;idx=1&amp;sn=c96d1803e9d57478c2da4fb8131e3599&amp;scene=21#wechat_redirect" target="_blank" data_ue_src="http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==&amp;mid=403315021&amp;idx=1&amp;sn=c96d1803e9d57478c2da4fb8131e3599&amp;scene=21#wechat_redirect"><strong><span style="color: rgb(171, 25, 66);">人类应该吃真正的食物。</span></strong></a></p><p style="line-height: 1.75em;">正是有这种理念，「野兽生活」拒绝所有的人工添加剂，只用葱、姜、蒜、黑胡椒、百里香等天然调料来为食物调味。</p><p style="line-height: 1.75em;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwlUDiceTq5JERBpIicbJdKq0zXdCC3wlDMONgSbxerIVot316njWOLZgf1Le3QLgNKxxTWRhcxZfJgQ/0?wx_fmt=jpeg" data-ratio="0.8003597122302158" data-w=""  /><br  /></p><p style="margin-top: 10px; line-height: 1.75em;"><span style="color: rgb(0, 122, 170);"><strong><span style="font-size: 20px;">健康依然可以美味——Paleo Lunch</span></strong></span></p><blockquote style="white-space: normal;"><p style="margin-top: 5px; line-height: 1.75em;"><span style="color:#007aaa"><strong>①充足的蛋白质</strong></span></p></blockquote><p style="line-height: 1.75em; margin-top: 5px;">蛋白质是人体的物质基础，我们所有的细胞和组织都需要蛋白质参与组成。</p><p style="line-height: 1.75em; margin-top: 5px;">许多激素、酶和神经递质也是由蛋白质构成的，这些物质维持着我们免疫系统、消化系统以及神经系统的正常运行。</p><p style="line-height: 1.75em; margin-top: 5px;">因此，摄入充足的优质蛋白质对健康至关重要。</p><p style="line-height: 1.75em; margin-top: 5px;"><br  /></p><p style="line-height: 1.75em;"><strong><span style="color: rgb(171, 25, 66);">动物中含有的蛋白质能够为我们提供所有的必需氨基酸，并且比例也恰当。</span></strong></p><p style="line-height: 1.75em;">而植物来源的蛋白质（豆类、种子等）赖氨酸普遍偏低，其中含有的植酸、外源凝集素、酶抑制剂也会影响人体对蛋白质的吸收。<strong style="color: rgb(171, 25, 66);">补充蛋白质，还是需要吃肉。</strong></p><p style="line-height: 1.75em;"><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLu3LDZBiavpDPpVbaouWb5iaWbVGGY1kuEgyEr9ibGcGWfXiapA3ibN2YPJg/0?wx_fmt=gif" data-ratio="1" data-w=""  /><br  /></p><p style="line-height: 1.75em;">事实上，<strong><span style="color: rgb(171, 25, 66);">大多数中国人的蛋白质摄入是不足的。</span></strong></p><p style="line-height: 1.75em;">光吃沙拉不吃肉很难让你变健康，反而可能会加速衰老。只有摄入足量的优质蛋白质才会让你精神充沛、充满活力。</p><p style="line-height: 1.75em;">如果你需要减重，永远要记得——<strong><span style="color: rgb(171, 25, 66);">只有健康的机体、健康的代谢才会有健康的体重。</span></strong><br  /></p><p style="line-height: 1.75em;"><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLyvR1q0coicH12Fer7Eyjx4DbPzlXID0KG3ziaMPeQaLBVJTShXehLRqA/0?wx_fmt=gif" data-ratio="1" data-w=""  /><br  /></p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">市面上最流行的「轻体餐」往往用成本极低的蔬菜沙拉来糊弄。</p><p style="line-height: 1.75em;">而野兽生活的 Paleo Lunch 用到了大量的羊排、猪排、大虾等高品质的肉食，光是食材成本就是所谓「轻体餐」的3-4倍。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">诚意满满的蛋白质午餐，只为让你获得真正的健康。</p><p style="line-height: 1.75em;">每份午餐精选两种优质肉食，全面地为营养考虑。</p><p style="line-height: 1.75em;"><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLPBGXv0fjpq7RrXRwX7szAicfavzSVZOIYPPA1YbBgzT0UHljicH2oic2A/0?wx_fmt=gif" data-ratio="1" data-w=""  /><br  /></p><p style="line-height: 1.75em;"><br  /></p><blockquote style="white-space: normal;"><p style="line-height: 1.75em;"><strong><span style="color: rgb(0, 122, 170);">②谁说吃肉不吃菜？</span></strong></p></blockquote><p style="line-height: 1.75em; margin-top: 5px;"><strong><span style="color: rgb(171, 25, 66);">素食主义者不吃肉，但肉食主义者要吃菜啊。</span></strong></p><p style="line-height: 1.75em; margin-top: 5px;">追求全面的营养才是我们真正所追求的。</p><p style="line-height: 1.75em;">每份 Paleo Lunch 都会配有一份由新鲜蔬菜和低糖水果组成的沙拉，全面满足身体对膳食纤维、无机盐和维生素的需求。<img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLB1PiaGynwrEv9lcq4xvWwsAQJ2eCxnqvTyt0YxibzNxs7FR4zNib7Kohw/0?wx_fmt=gif" data-ratio="1" data-w=""  /><br  /><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLANMAZsKMP69X2fKkJPjBa1N4aTUzwmCPicic60DgHYp7iaT7Px1DPRdbg/0?wx_fmt=gif" data-ratio="0.75" data-w=""  /><br  /></p><p style="line-height: 1.75em;"><br  /></p><blockquote style="white-space: normal;"><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><strong><span style="line-height: 1.6; color: rgb(0, 122, 170); max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">③发酵美味，滋养肠道菌群</span></strong></p></blockquote><p style="line-height: 1.75em; margin-top: 5px;">我们的肠道中生活着数以「兆」记的微生物，它们构成了我们的肠道菌群。</p><p style="line-height: 1.75em;">健康的肠道菌群能够维持正常的免疫反应、减轻炎症反应并帮助我们<span style="white-space: pre-wrap;">控制食欲和体重</span>。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">而发酵食物能为我们提供丰富的益生菌，从而起到滋养肠道菌群的作用。<img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLeg9kJ8fDwWOHtTbAoSEvP7y8kWJj5zuxupkPIpoDeWiaS0icUicIjb8iaA/0?wx_fmt=jpeg" data-ratio="0.5179856115107914" data-w=""  /></p><p style="line-height: 1.75em;">事实上，发酵食物是我们的祖先留给我们的一笔巨大财富。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">除了提供益生菌，因为发酵的原因，发酵食物拥有更丰富的营养（更多的维生素K，更易吸收的氨基酸）。与此同时，发酵食物中含有的酶和辅酶因子也能帮助我们更好地消化和吸收食物。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">每份Paleo Lunch都会提供一份新鲜的发酵蔬菜。它为你的肠道健康增添活力。<br  /><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLw242IQH2cpjd5SK9PDne0CTxqQ2jxX15iaBAMicWno94caCybrAgfpCw/0?wx_fmt=gif" data-ratio="1.0053956834532374" data-w=""  /><br  /></p><blockquote><p style="line-height: 1.75em; margin-top: 10px;"><span style="color:#007aaa"><strong>④负担得起的健康餐</strong></span></p></blockquote><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwnmiaZQ8oCGAUKelDSjv9IBElK36znUYV933w5z0NtiaL0iaJagYM4eykQgHXInUeVT8J83dEwuZ2oNA/0?wx_fmt=jpeg" data-ratio="1.253787878787879" data-w="528"  /><br  />无谷物、无种子植物油、无奶制品、无人工添加剂的高标准。</span></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">充足的蛋白质、新鲜的沙拉、精心制作的发酵蔬菜。</span></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">资深大厨的人工费用、烹饪投入的时间精力、包装的成本……这似乎要让「野兽生活」成为一个高端小众的品牌。</span></p><p style="min-height: 1em; color: rgb(62, 62, 62); max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; line-height: 1.75em; margin-top: 5px;"><br  /></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">但这并非「野兽生活」建立的初衷。</p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><br  /></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">为了能让更多的人能负担得起真正健康的午餐，并将这种健康饮食的理念传播开来，「野兽生活」在流程上作出了一系列的优化。</p><p style="min-height: 1em; color: rgb(62, 62, 62); max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; line-height: 1.75em; margin-top: 5px;"><br  /></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">「野兽生活」采取了「中央厨房+配送」的模式，每天仅提供一种套餐，并需要提前一日下单。<span style="color: rgb(171, 25, 66);"><strong>这将人均三四百元的消费降到了能让大众负担得起的水平。</strong></span></p><p style="min-height: 1em; color: rgb(62, 62, 62); max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; line-height: 1.75em; margin-top: 5px;"><br  /></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">每份套餐49元，加上9元配送费，一共是<span style="color: rgb(62, 62, 62); white-space: pre-wrap; line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">58元 。<span style="color: rgb(171, 25, 66); white-space: pre-wrap; line-height: 1.6; max-width: 100% !important;"><strong>和好朋友一起预订，满两份，免配送费，每份仅需49元。</strong></span></span></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(62, 62, 62); white-space: pre-wrap; line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><br  /></span></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(62, 62, 62); white-space: pre-wrap; line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">整周预订：订周一到周五连续5天，每天中午送到手中，5天一共270元。和好朋友一起预订，满2份免配送费，每天仅需46元。</span></p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(62, 62, 62); white-space: pre-wrap; line-height: 1.6; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);"></span></p><p style="line-height: 1.75em;"><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLMDnic1nHFFa8nsgm0dH9I3qj7CgKHnAvyhcZj5oadG52fedobkuI1bA/0?wx_fmt=gif" style="" data-ratio="1" data-w=""  /></p><p><br  /></p><p style="min-height: 1em; color: rgb(62, 62, 62); max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important; line-height: 1.75em;"><br  /></p><blockquote><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color: rgb(0, 122, 170);"><strong>⑤每天都有新鲜</strong></span></p></blockquote><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">既要健康，更要满足味蕾。</p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">为了舌尖上的极致美味，「野兽生活」从300多份试验餐中精选了5份经典。</p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; margin-top: 5px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwkNP9JGIOIJoV7xxPgFfVQaYSPEYYhSGSUOwtI5FyrSRP6ENIdGCsXZjhx5L0Zh26Xa2emWXJvkbQ/0?wx_fmt=png" data-ratio="2.147482014388489" data-w=""  /><br  />为了保证食物的质量，Paleo Lunch 每日限量售卖，订晚了可能就已经售罄了。</p><p style="min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">&nbsp;</p><blockquote style="white-space: normal;"><p style="min-height: 1em; line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="color:#007aaa"><strong>⑥现在只限北京，但「Paleo Lunch」会来的</strong></span></p></blockquote><p style="margin-top: 5px; min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="line-height: 25.6px; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">「野兽生活」</span>目前仅面向北京以下地区配送。</p><p style="margin-top: 5px; min-height: 1em; color: rgb(62, 62, 62); line-height: 1.75em; max-width: 100% !important; box-sizing: border-box !important; word-wrap: break-word !important;">但我相信，真正用心的健康食物会得到大家的认可。它早晚会来到你的城市。</p><p style="line-height: 1.75em;"><img data-s="300,640" data-type="png" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwnmiaZQ8oCGAUKelDSjv9IBEHGRGIMN7qGCYJtg7mqYULPCUD1oTRhA9piceYHRl56nbK9aLvI3ZZIA/0?wx_fmt=png" data-ratio="1.1546762589928057" data-w=""  /></p><p style="line-height: 1.75em;">如果不清楚自己所在位置是否能送达，可以联系客服电话：010-53603719。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;"><br  /></p><blockquote><p style="line-height: 1.75em;"><strong><span style="color: rgb(0, 122, 170); background-color: rgb(255, 255, 255);">⑦「木森说」的订阅福利</span></strong></p></blockquote><p style="line-height: 1.75em; margin-top: 5px;">这是「野兽生活」提供给「木森说」订户的专有福利。</p><p style="line-height: 1.75em; margin-top: 5px;">首次下单时，输入<strong>musenshuo</strong>，即可立减10元。（每人限用一次）</p><p style="line-height: 1.75em; margin-top: 5px;"><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLG0TslLaPxTTC4kFwYyLBmLhygviaaQJk2Qvns7NOIfMWR47DIhY4RVw/0?wx_fmt=gif" data-ratio="0.8615107913669064" data-w=""  /><br  /></p><p style="line-height: 1.75em; margin-top: 5px;"><br  /></p><blockquote style="white-space: normal;"><p style="line-height: 1.75em;"><strong><span style="color: rgb(0, 122, 170);">⑧健康午餐，可以从今天开始</span></strong></p></blockquote><p style="line-height: 1.75em; margin-top: 5px;">不用担心麸质的困扰，不用担心不健康的植物油（更不用提地沟油了），更不用担心高碳水的饮食让你的血糖飙升。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">充足的蛋白质让你充满能量，新鲜的沙拉让你神志清爽，发酵的蔬菜更为健康的肠道菌群增添活力。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">一份优质的营养午餐不仅为上午的辛勤补充能量，更为下午的努力提供充足的准备。</p><p style="line-height: 1.75em;"><br  /></p><p style="line-height: 1.75em;">在这一餐，你可能有很多选择——但最终只能选一样。<strong><span style="color: rgb(171, 25, 66);">你值得选择最好的。</span></strong></p><p style="line-height: 1.75em;"><strong><span style="color: rgb(178, 178, 178); font-size: 14px;">（识别下列二维码即可预定，首次订购，输入musenshuo可立减10元）</span></strong></p><p style="line-height: 1.75em;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwk3HNbSdmVKIF1tL8ZlIVpLib6OfkpfShM4fCQiaaib5XeeBlel7vHnWamictuiaQTFKTeYQn6Dg9pPNUQ/0?wx_fmt=jpeg" data-ratio="1" data-w=""  /></p><p style="line-height: 1.75em; margin-top: 5px;"><span style="font-size: 14px; color: rgb(178, 178, 178);">感谢你对「木森说」和「野兽生活」的支持。</span></p><p style="line-height: 1.75em; margin-top: 5px;"><span style="font-size: 14px; color: rgb(178, 178, 178);">阅读原文可直达「野兽生活」。</span></p>
+                </div>
+                <script nonce="1982117201" type="text/javascript">
+                    var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+                </script>
+
+
+
+                <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;"></div>
+
+
+                                <div class="reward_area tc" id="js_preview_reward" style="display:none;">
+                    <p id="js_preview_reward_wording" class="tips_global reward_tips" style="display:none;"></p>
+                    <p>
+                        <a class="reward_access" id='js_preview_reward_link' href="##">赞赏</a>
+                    </p>
+                </div>
+                <div class="reward_qrcode_area reward_area tc" id="js_preview_reward_qrcode" style="display:none;">
+                    <p class="tips_global">长按二维码向我转账</p>
+                    <p id="js_preview_reward_ios_wording" class="reward_tips" style="display:none;"></p>
+                    <span class="reward_qrcode_img_wrp"><img class="reward_qrcode_img" src="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/pic/appmsg/pic_reward_qrcode.2x3534dd.png"></span>
+                    <p class="tips_global">受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。</p>
+                </div>
+                            </div>
+
+                        <div class="rich_media_tool" id="js_toobar3">
+                                            <a class="media_tool_meta meta_primary" id="js_view_source" href="##">阅读原文</a>
+                                <div id="js_read_area3" class="media_tool_meta tips_global meta_primary" style="display:none;">阅读 <span id="readNum3"></span></div>
+
+                <span style="display:none;" class="media_tool_meta meta_primary tips_global meta_praise" id="like3">
+                    <i class="icon_praise_gray"></i><span class="praise_num" id="likeNum3"></span>
+                </span>
+
+                <a id="js_report_article3" style="display:none;" class="media_tool_meta tips_global meta_extra" href="##">投诉</a>
+
+            </div>
+
+
+                    </div>
+
+        <div class="rich_media_area_primary sougou" id="sg_tj" style="display:none"></div>
+
+
+        <div class="rich_media_area_extra">
+
+
+                        <div class="mpda_bottom_container" id="js_bottom_ad_area"></div>
+
+            <div id="js_iframetest" style="display:none;"></div>
+
+                        <div class="rich_media_extra" id="js_cmt_area" style="display:none">
+            </div>
+                    </div>
+
+
+        <div id="js_pc_qr_code" class="qr_code_pc_outer" style="display:none;">
+            <div class="qr_code_pc_inner">
+                <div class="qr_code_pc">
+                    <img id="js_pc_qr_code_img" class="qr_code_pc_img">
+                    <p>微信扫一扫<br>关注该公众号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <script nonce="1982117201">
+    var __DEBUGINFO = {
+        debug_js : "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/debug/console34c264.js",
+        safe_js : "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/safe/moonsafe34c264.js",
+        res_list: []
+    };
+</script>
+
+<script nonce="1982117201">
+(function() {
+	function _addVConsole(uri) {
+		var url = '//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/' + uri;
+		document.write('<script nonce="1982117201" type="text/javascript" src="' + url + '"><\/script>');
+	}
+	if (
+		(document.cookie && document.cookie.indexOf('vconsole_open=1') > -1)
+		|| location.href.indexOf('vconsole=1') > -1
+	) {
+		_addVConsole('2.5.1/vconsole.min.js');
+		_addVConsole('plugin/vconsole-elements/1.0.2/vconsole-elements.min.js');
+		_addVConsole('plugin/vconsole-sources/1.0.1/vconsole-sources.min.js');
+		_addVConsole('plugin/vconsole-resources/1.0.0/vconsole-resources.min.js');
+		_addVConsole('plugin/vconsole-mpopt/1.0.0/vconsole-mpopt.js');
+	}
+})();
+</script>
+
+<script nonce="1982117201" type="text/javascript">
+
+    if (!window.console) window.console = { log: function() {} };
+
+    if (typeof getComputedStyle == 'undefined') {
+        if (document.body.currentStyle) {
+            window.getComputedStyle = function(el) {
+                return el.currentStyle;
+            }
+        } else {
+            window.getComputedStyle = {};
+        }
+    }
+    var occupyImg = function() {
+        var images = document.getElementsByTagName('img');
+        var length = images.length;
+        var container = document.getElementById('img-content');
+        var max_width = container.offsetWidth;
+        var container_padding = 0;
+        var container_style = getComputedStyle(container);
+        container_padding = parseFloat(container_style.paddingLeft) + parseFloat(container_style.paddingRight);
+        max_width -= container_padding;
+        var ua = navigator.userAgent.toLowerCase();
+        var re = new RegExp("msie ([0-9]+[\.0-9]*)");
+        var version;
+        if (re.exec(ua) != null) {
+            version = parseInt(RegExp.$1);
+        }
+        var isIE = false;
+        if (typeof version != 'undefined' && version >= 6 && version <= 9) {
+            isIE = true;
+        }
+        if (!max_width) {
+            max_width = window.innerWidth - 30;
+        }
+        for (var i = 0; i < length; ++i) {
+            var src_ = images[i].getAttribute('data-src');
+            var realSrc = images[i].getAttribute('src');
+            if (!src_ || realSrc) continue;
+            var width_ = 1 * images[i].getAttribute('data-w') || max_width;
+            var ratio_ = 1 * images[i].getAttribute('data-ratio');
+            var height = 100;
+            if (ratio_ && ratio_ > 0) {
+                var img_style = getComputedStyle(images[i]);
+                var init_width = images[i].style.width;
+
+                if (init_width) {
+                    images[i].setAttribute('_width', init_width);
+                    if (init_width != 'auto') width_ = parseFloat(img_style.width);
+                }
+                var parent_width = 0;
+                var parent = images[i].parentNode;
+                var outerWidth = 0;
+                while (true) {
+                    var parent_style = getComputedStyle(parent);
+                    if (!parent || !parent_style) break;
+                    parent_width = parent.clientWidth - parseFloat(parent_style.paddingLeft) - parseFloat(parent_style.paddingRight) - outerWidth;
+                    if (parent_width > 0) break;
+                    outerWidth += parseFloat(parent_style.paddingLeft) + parseFloat(parent_style.paddingRight) + parseFloat(parent_style.marginLeft) + parseFloat(parent_style.marginRight) + parseFloat(parent_style.borderLeftWidth) + parseFloat(parent_style.borderRightWidth);
+                    parent = parent.parentNode;
+                }
+                parent_width = parent_width || max_width;
+                var width = width_ > parent_width ? parent_width : width_;
+                var img_padding_border = parseFloat(img_style.paddingLeft) + parseFloat(img_style.paddingRight) + parseFloat(img_style.borderLeftWidth) + parseFloat(img_style.borderRightWidth);
+                var img_padding_border_top_bottom = parseFloat(img_style.paddingTop) + parseFloat(img_style.paddingBottom) + parseFloat(img_style.borderTopWidth) + parseFloat(img_style.borderBottomWidth);
+                img_padding_border = img_padding_border || 0;
+                img_padding_border_top_bottom = img_padding_border_top_bottom || 0;
+                height = (width - img_padding_border) * ratio_ + img_padding_border_top_bottom;
+                images[i].style.cssText += ";width: " + width + "px !important;";
+                if (isIE) {
+                    var url = images[i].getAttribute('data-src');
+                    images[i].src = url;
+                } else {
+                    if(width > 40 && height > 40){
+                        images[i].className += ' img_loading';
+                    }
+                    images[i].src = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==";
+                }
+            } else {
+                images[i].style.cssText += ";visibility: hidden !important;";
+            }
+            images[i].style.cssText += ";height: " + height + "px !important;";
+        }
+    }
+    occupyImg();
+</script>
+<script nonce="1982117201" type="text/javascript">
+
+    var not_in_mm_css = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/not_in_mm322696.css";
+    var windowwx_css = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+    var article_improve_combo_css = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo35a5aa.css";
+    var tid = "";
+    var aid = "";
+    var clientversion = "12020610";
+    var appuin = "MzA3MTM3OTQ5Nw=="||"";
+
+    var source = "1";
+    var abtest_cookie = "";
+
+    var scene = 75;
+
+    var itemidx = "";
+
+    var _copyright_stat = "0";
+    var _ori_article_type = "";
+
+    var nickname = "木森说";
+    var appmsg_type = "9";
+    var ct = "1470877800";
+    var publish_time = "2016-08-11" || "";
+    var user_name = "gh_2cc2dd57cc85";
+    var user_name_new = "";
+    var fakeid   = "";
+    var version   = "";
+    var is_limit_user   = "0";
+    var round_head_img = "http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwm6FJdwpMEibaesysrkom7IN9MgFOmjDgCD5QYtwr4sTibDaXmtib60kP3PMjy3pIFOtRb6KmicdgZjqw/0?wx_fmt=png";
+    var ori_head_img_url = "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5LIml5xWicUYNiaibuB4kMxSp6g4ngJxrKd1gOwsWbic7oibQ/132";
+    var msg_title = "它不止是中国第一家无麸质外卖（文末有福利）";
+    var msg_desc = "这里只提供适合人类吃的食物。";
+    var msg_cdn_url = "http://mmbiz.qpic.cn/mmbiz/0FTkgeSnBwnmiaZQ8oCGAUKelDSjv9IBEOPlBcNOafibG4GANJN6qtHib8QozDXnFdnS9ib3icLxMdFmgbNxckOgtGg/0?wx_fmt=jpeg";
+    var msg_link = "http://mp.weixin.qq.com/s?__biz=MzA3MTM3OTQ5Nw==\x26amp;mid=2651010470\x26amp;idx=1\x26amp;sn=58d54aede968ff353718d18c771b9477#rd";
+    var user_uin = "0"*1;
+    var msg_source_url = 'https://kdt.im/Wpc0gr';
+    var img_format = 'jpeg';
+    var srcid = '0811FcGufIsEvhDbtMnvw9nP';
+    var req_id = '23138mcwUn1tJPW4Axtlqars';
+    var networkType;
+    var appmsgid = '' || '2651010470'|| "";
+    var comment_id = "3002264953" * 1;
+    var comment_enabled = "" * 1;
+    var is_need_reward = "0" * 1;
+    var is_https_res = ("" * 1) && (location.protocol == "https:");
+    var msg_daily_idx = "0" || "";
+    var profileReportInfo = "" || "";
+
+    var devicetype = "iMac\x26nbsp;MacBookPro12,1\x26nbsp;OSX\x26nbsp;OSX\x26nbsp;10.12.4\x26nbsp;build(16E195)";
+    var source_encode_biz = "";
+    var source_username = "";
+
+    var reprint_ticket = "";
+    var source_mid = "";
+    var source_idx = "";
+
+    var show_comment = "";
+    var __appmsgCgiData = {
+        can_use_page : "0"*1,
+        is_wxg_stuff_uin : "0"*1,
+        card_pos : "",
+        copyright_stat : "0",
+        source_biz : "",
+        hd_head_img : "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5LIml5xWicUYNiaibuB4kMxSp6g4ngJxrKd1gOwsWbic7oibQ/0"||(window.location.protocol+"//"+window.location.host + "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/pic/appmsg/pic_rumor_link.2x264e76.jpg")
+    };
+    var _empty_v = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/pic/pages/voice/empty26f1f1.mp3";
+
+    var copyright_stat = "0" * 1;
+
+    var pay_fee = "" * 1;
+    var pay_timestamp = "";
+    var need_pay = "" * 1;
+
+    var need_report_cost = "0" * 1;
+    var use_tx_video_player = "0" * 1;
+    var appmsg_fe_filter = "contenteditable";
+
+    var friend_read_source = "" || "";
+    var friend_read_version = "" || "";
+    var friend_read_class_id = "" || "";
+
+    var is_only_read = "1" * 1;
+    var read_num = "" * 1;
+    var like_num = "" * 1;
+    var liked = "" == 'true' ? true : false;
+    var is_temp_url = "" ? 1 : 0;
+    var send_time = "";
+    var icon_emotion_switch = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/emotion/icon_emotion_switch.2x2f1273.png";
+    var icon_emotion_switch_active = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/emotion/icon_emotion_switch_active.2x2f1273.png";
+    var icon_loading_white = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/icon_loading_white2805ea.gif";
+    var icon_audio_unread = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/audio/icon_audio_unread26f1f1.png";
+    var icon_qqmusic_default = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/qqmusic/icon_qqmusic_default.2x26f1f1.png";
+    var icon_qqmusic_source = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/qqmusic/icon_qqmusic_source263724.png";
+
+    var topic_default_img = '//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/topic/pic_book_thumb.2x2e4987.png';
+    var comment_edit_icon = '//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/appmsg/icon_edit25ded2.png';
+    var comment_loading_img = '//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/icon_loading_white2805ea.gif';
+    var voice_in_appmsg = {
+        "1":"1"
+            };
+
+
+
+
+
+
+
+    var weapp_sn_arr_json = "" || "";
+
+
+    var ban_scene = "0" * 1;
+
+    var svr_time = "1495516318" * 1;
+
+    var is_transfer_msg = ""*1||0;
+
+        window.wxtoken = "";
+
+
+
+
+
+    window.is_login = '0' * 1;
+
+    window.__moon_initcallback = function(){
+        if(!!window.__initCatch){
+            window.__initCatch({
+                idkey : 27611+2,
+                startKey : 0,
+                limit : 128,
+                badjsId: 43,
+                reportOpt : {
+                    uin : uin,
+                    biz : biz,
+                    mid : mid,
+                    idx : idx,
+                    sn  : sn
+                },
+                extInfo : {
+                    network_rate : 0.01,
+                    badjs_rate: 0.1
+                }
+            });
+        }
+    }
+    </script>
+
+        <script nonce="1982117201">window.__moon_host = 'res.wx.qq.com';window.__moon_mainjs = 'appmsg/index.js';window.moon_map = {"a/appdialog_confirm.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/appdialog_confirm.html34f0d8.js","widget/wx_profile_dialog_primary.css":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/widget/wx_profile_dialog_primary.css34f0d8.js","appmsg/emotion/caret.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/caret278965.js","a/appdialog_confirm.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/appdialog_confirm34c32a.js","biz_wap/jsapi/cardticket.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/jsapi/cardticket34c264.js","biz_common/utils/emoji_panel_data.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/emoji_panel_data3518c6.js","biz_common/utils/emoji_data.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/emoji_data3518c6.js","appmsg/emotion/textarea.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/textarea353f34.js","appmsg/emotion/nav.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/nav278965.js","appmsg/emotion/common.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/common3518c6.js","appmsg/emotion/slide.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/slide2a9cd9.js","pages/report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/report358df0.js","pages/music_player.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/music_player3592c8.js","pages/loadscript.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/loadscript30203e.js","appmsg/emotion/dom.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/dom31ff31.js","appmsg/comment_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/comment_tpl.html35899f.js","biz_wap/utils/fakehash.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/fakehash34c264.js","biz_common/utils/wxgspeedsdk.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/wxgspeedsdk3518c6.js","a/sponsor.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/sponsor3189b5.js","a/app_card.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/app_card35b454.js","a/ios.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/ios333f3d.js","a/android.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/android2c5484.js","a/profile.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/profile31ff31.js","a/sponsor_a_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/sponsor_a_tpl.html32c414.js","a/a_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/a_tpl.html35b454.js","a/mpshop.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/mpshop311179.js","a/card.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/card311179.js","biz_wap/utils/position.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/position34c264.js","a/a_report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/a_report32e586.js","appmsg/my_comment_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/my_comment_tpl.html35899f.js","appmsg/cmt_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/cmt_tpl.html348fa1.js","sougou/a_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/sougou/a_tpl.html2c6e7c.js","appmsg/emotion/emotion.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/emotion/emotion353f34.js","biz_wap/utils/wapsdk.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/wapsdk34c264.js","biz_common/utils/monitor.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/monitor3518c6.js","biz_common/utils/report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/report3518c6.js","appmsg/open_url_with_webview.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/open_url_with_webview3145f0.js","biz_common/utils/http.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/http3518c6.js","biz_common/utils/cookie.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/cookie3518c6.js","appmsg/topic_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/topic_tpl.html31ff31.js","pages/weapp_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/weapp_tpl.html354755.js","pages/voice_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/voice_tpl.html35899f.js","pages/voice_component.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/voice_component358df0.js","pages/qqmusic_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/qqmusic_tpl.html32c414.js","new_video/ctl.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/new_video/ctl2d441f.js","a/testdata.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/testdata34c32a.js","appmsg/reward_entry.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/reward_entry3534dd.js","appmsg/comment.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/comment35899f.js","appmsg/like.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/like2eb52b.js","pages/version4video.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/version4video358f7a.js","a/a.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/a/a35d6d5.js","rt/appmsg/getappmsgext.rt.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/rt/appmsg/getappmsgext.rt2c21f6.js","biz_wap/utils/storage.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/storage34c264.js","biz_common/tmpl.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/tmpl3518c6.js","appmsg/img_copyright_tpl.html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/img_copyright_tpl.html2a2c13.js","pages/video_ctrl.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/pages/video_ctrl35899f.js","biz_common/ui/imgonepx.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/ui/imgonepx3518c6.js","biz_common/utils/respTypes.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/respTypes3518c6.js","biz_wap/utils/log.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/log34c264.js","sougou/index.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/sougou/index355c4d.js","biz_wap/safe/mutation_observer_report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/safe/mutation_observer_report34c264.js","appmsg/fereport.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/fereport33a3b2.js","appmsg/report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/report3404b3.js","appmsg/report_and_source.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/report_and_source34c49d.js","appmsg/page_pos.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/page_pos356b2e.js","appmsg/cdn_speed_report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/cdn_speed_report3097b2.js","appmsg/wxtopic.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/wxtopic31a3be.js","appmsg/weapp.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/weapp35a5aa.js","appmsg/voice.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/voice358df0.js","appmsg/qqmusic.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/qqmusic35899f.js","appmsg/iframe.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/iframe35899f.js","appmsg/review_image.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/review_image355a40.js","appmsg/outer_link.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/outer_link275627.js","appmsg/copyright_report.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/copyright_report2ec4b2.js","appmsg/async.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/async35899f.js","biz_wap/ui/lazyload_img.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/ui/lazyload_img35a497.js","biz_common/log/jserr.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/log/jserr3518c6.js","appmsg/share.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/share355afb.js","appmsg/cdn_img_lib.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/cdn_img_lib35b454.js","biz_common/utils/url/parse.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/url/parse3518c6.js","page/appmsg/not_in_mm.css":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/not_in_mm.css32c99a.js","page/appmsg/page_mp_article_improve_combo.css":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_combo.css35a5aa.js","biz_wap/jsapi/core.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/jsapi/core34c264.js","biz_common/dom/event.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/dom/event3518c6.js","appmsg/test.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/test354009.js","biz_wap/utils/mmversion.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/mmversion34c264.js","appmsg/max_age.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/max_age2fdd28.js","biz_common/dom/attr.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/dom/attr3518c6.js","biz_wap/utils/ajax.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/ajax34c264.js","appmsg/log.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/log300330.js","biz_common/dom/class.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/dom/class3518c6.js","biz_wap/utils/device.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/utils/device34c264.js","biz_wap/jsapi/a8key.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/jsapi/a8key34c264.js","biz_common/utils/string/html.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_common/utils/string/html3518c6.js","appmsg/index.js":"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/appmsg/index35d6d5.js"};</script><script nonce="1982117201" type="text/javascript">(function(){function d(a){window.__wxgspeeds.moonls_loadjs_begin=+new Date;var c=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(c);c.type="text/javascript";c.async="async";;c.setAttribute('onerror', 'wx_loaderror');c.onload=function(){a&&f()};c.src=b;window.__wxgspeeds.moonls_loadjs_end=+new Date}function f(){window.__wxgspeeds.moonls_save_begin=+new Date;localStorage.setItem("__WXLS__moon",String(__moonf__));localStorage.setItem("__WXLS__moonarg",JSON.stringify({version:b,method:""}));window.__wxgspeeds.moonls_save_end=+new Date}var a=!!top&&!!top.window&&top.window.user_uin||0,e=0!==a&&1>Math.floor(a/100)%100;if(2876363900==a||1506075==a||942807682==a)e=!0;var b="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/biz_wap/moon352e30.js";window.__loadAllResFromMp&&(b=b.replace("res.wx.qq.com","mp.weixin.qq.com"),(new Image).src=location.protocol+"//mp.weixin.qq.com/mp/jsmonitor?idkey=27613_12_1");window.__wxgspeeds||(window.__wxgspeeds={});if("function"==typeof __moonf__)__moonf__(),e&&localStorage&&f();else if(window.__wxgspeeds.moonloadtime=+new Date,e&&localStorage)try{var g=JSON.parse(localStorage.getItem("__WXLS__moonarg"))||{};if(g&&g.version==b){var h=localStorage.getItem("__WXLS__moon");localStorage.setItem("__WXLS__moonarg",JSON.stringify({version:b,method:"fromls"}));window.__moonls_fromls=!0;window.__wxgspeeds.moonls_loadls_end=+new Date;eval(h);__moonf__()}else d(!0)}catch(k){window.__moonls_fail=!0,d(!0)}else d(!1)})();</script>
+
+<script nonce="1982117201" type="text/javascript">
+    var real_show_page_time = +new Date();
+    if (!!window.addEventListener){
+        window.addEventListener("load", function(){
+            window.onload_endtime = +new Date();
+        });
+    }
+
+</script>
+
+    </body>
+    <script nonce="1982117201" type="text/javascript">document.addEventListener("touchstart", function() {},false);</script>
+</html>
+<!--tailTrap<body></body><head></head><html></html>-->
