@@ -37,6 +37,7 @@
   text-align: center;
   position: relative;
   padding-top: 10px;
+  background-position: center center;
 }
 
 
@@ -68,6 +69,20 @@
   width: 600px;
 }
 
+/*----- slogan -----*/
+.slogan {
+  height: 250px;
+  text-align: center;
+  text-shadow: 2px;
+}
+
+.slogan-ad {
+  padding-top: 60px;
+  padding-bottom: 2em;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 
 
@@ -115,7 +130,7 @@ body {
 .main {
   padding-top: 80px;
   /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
-  padding-bottom: 120px;
+  padding-bottom: 80px;
     /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
 }
 
