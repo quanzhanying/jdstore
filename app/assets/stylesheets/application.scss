@@ -48,7 +48,7 @@
   background: #f7f7f7;
   /*----- 距离footer的margin -----*/
   margin-bottom: 20px;
-  height: 400px;
+  height: relative;
 }
 
 .intro-link {
@@ -59,14 +59,12 @@
 .product-intro-list-img-left {
     /*----- 左图片靠中间 -----*/
   margin-right: 0;
-  margin-left: 220px;
   width: 600px;
 }
 
 .product-intro-list-img-right {
    /*----- 右图片靠中间 -----*/
   margin-left: 0;
-  margin-right: 220px;
   width: 600px;
 }
 
@@ -117,7 +115,7 @@ body {
 .main {
   padding-top: 80px;
   /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
-  padding-bottom: 20px;
+  padding-bottom: 120px;
     /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
 }
 
@@ -129,7 +127,7 @@ body {
   /*----- footer上半部padding高度 -----*/
   padding-top: 40px;
  /*----- foorter 上半部高度  -----*/
-  height: 220px;
+  height: relative;
   display: inline-block;
   text-align: center;
     /*----- footer loga 颜色 -----*/
