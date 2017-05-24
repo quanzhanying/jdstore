@@ -1,0 +1,12 @@
+
+<h3>这个仅仅是测试</h3>
+
+<table>
+  <% @tests.each do |test| %>
+  <tr>
+    <td><%=link_to(test.body, test) %></td>
+  </tr>
+  <% end %>
+
+<%= link_to "Create a New test", new_test_path %>
+</table>
