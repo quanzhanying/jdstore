@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524030233) do
+ActiveRecord::Schema.define(version: 20170524101429) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "true_answer"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170524030233) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "is_true",     default: false
+    t.string   "countdown"
   end
 
   create_table "orders", force: :cascade do |t|

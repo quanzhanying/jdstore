@@ -10,8 +10,6 @@ class Admin::ExamsController < ApplicationController
   def new
     @exam = Exam.new
     @categories = Category.all.map { |c| [c.name, c.id] }
-
-
   end
 
   def show
@@ -22,8 +20,6 @@ class Admin::ExamsController < ApplicationController
   def edit
     @exam = Exam.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
-
-
   end
 
   def create
@@ -57,7 +53,7 @@ class Admin::ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:name, :question, :answer_1,:answer_2,:answer_3,:answer_4,:answer_5,:answer_6,:image)
+    params.require(:exam).permit(:name, :question, :answer_1,:answer_2,:answer_3,:answer_4,:answer_5,:answer_6,:image, :countdown)
   end
 
 
