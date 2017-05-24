@@ -20,12 +20,145 @@
 
 @import "font-awesome";
 
+/*----- navbar -----*/
+.nav {
+  height: 80px;
+}
 
 
- /*----- recommend page -----*/
+/*----- 首页大图 -----*/
+
+.mainCampaign {
+  z-index: 1;
+  height: auto;
+  width: 100%;
+  background: #f7f7f7;
+   /*------ 图片置中 -----*/
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+  background-position: center center;
+}
 
 
+
+/*----- 首页产品系列连结图 -----*/
+.product-intro {
+  z-index: 1;
+  width: 100%;
+  background: #f7f7f7;
+  /*----- 距离footer的margin -----*/
+  margin-bottom: 20px;
+  /*----- 包围图片的框随browser变换大小 -----*/
+  height: relative;
+}
+
+.intro-link {
+  display: inline-block;
+}
+
+/*----- 连结图 -----*/
+.product-intro-list-img-left {
+    /*----- 左图片靠中间 -----*/
+  margin-right: 0;
+  width: 600px;
+}
+
+.product-intro-list-img-right {
+   /*----- 右图片靠中间 -----*/
+  margin-left: 0;
+  width: 600px;
+}
+
+/*----- slogan -----*/
+.slogan {
+  height: 250px;
+  text-align: center;
+  text-shadow: 2px;
+}
+
+.slogan-ad {
+  padding-top: 60px;
+  padding-bottom: 2em;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+/*----- recommend page -----*/
+.recommend-page {
+  padding-top: 50px;
+ /*----- recommend页面与navbar间隔 -----*/
+}
+
+
+
+
+
+/*----- admin/products 与 orders 页面 -----*/
+.backend-main {
+  padding-top: 80px;
+  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 20px;
+    /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+}
+
+
+/*----- account/orders 页面 -----*/
+.order-main {
+  padding-top: 80px;
+  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 20px;
+    /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+}
+
+
+/*----- footer -----*/
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative;
+}
 
 .main {
-  margin-top: 80px
+  padding-top: 80px;
+  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 80px;
+    /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+}
+
+.footer-style {
+  z-index: 1;
+  width: 100%;
+  background: #f7f7f7;
+  position: absolute;
+  /*----- footer上半部padding高度 -----*/
+  padding-top: 40px;
+ /*----- foorter 上半部高度,背景随browser变动  -----*/
+  height: relative;
+  display: inline-block;
+  text-align: center;
+    /*----- footer loga 颜色 -----*/
+  .fa {
+    color: #e66c36;
+}
+}
+
+.footer {
+  /*----- footer 下半部高度 -----*/
+  height: 120px;
+  border-top: #25292e 1px solid;
+  background: #25292e;
+  color: #5c5c5c;
+  /*------ footer置底 -----*/
+  bottom: 0;
+  width: 100%;
 }

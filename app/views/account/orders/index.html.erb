@@ -1,21 +1,29 @@
-<h2>订单列表 </h2>
+<div class="container">
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>生成时间</th>
+      <div class="backend-main">
+        <div class="col-md-12">
 
-    </tr>
-  </thead>
-  <tbody>
+          <h2>订单列表 </h2>
 
-    <% @orders.each do |order| %>
-    <tr>
-      <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-      <td> <%= order.created_at.to_s(:long) %> </td>
-    </tr>
-    <% end %>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>生成时间</th>
 
-  </tbody>
-</table>
+              </tr>
+            </thead>
+            <tbody>
+
+              <% @orders.each do |order| %>
+              <tr>
+                <td> <%= link_to(order.id, order_path(order.token)) %> </td>
+                <td> <%= order.created_at.to_s(:long) %> </td>
+              </tr>
+              <% end %>
+
+            </tbody>
+        </table>
+  </div>
+</div>
+</div>

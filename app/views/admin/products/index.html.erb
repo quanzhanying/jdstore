@@ -1,4 +1,9 @@
-<h2 style="margin-top: 80px;">Products</h2>
+
+<div class="backend-main">
+
+<h2> Product List </h2>
+
+
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
@@ -35,9 +40,14 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
-          <%= link_to("Delete", admin_product_path(product), method: :delete, data: { confirm: "Are you sure? "} ) %>
+          <%= link_to("Delete", admin_product_path(product), method: :delete, data: {
+  confirm: "Are you sure? "
+} ) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+</div>

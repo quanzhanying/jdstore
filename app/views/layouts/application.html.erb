@@ -10,11 +10,10 @@
 
   <body>
 
-    <div class="main" style="margin-bottom: 50px;">
+    <div class="main">
+        <%= render "common/navbar" %>
       <div class="container-fluid">
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
-            <%= yield %>
+        <%= yield %>
       </div>
     </div>
 
