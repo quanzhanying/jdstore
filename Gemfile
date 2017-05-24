@@ -39,6 +39,7 @@ gem 'mini_magick'
 gem 'better_errors'
 gem 'annotate'
 gem 'binding_of_caller'
+gem 'letter_opener', group: :development
 
 
 group :development, :test do
