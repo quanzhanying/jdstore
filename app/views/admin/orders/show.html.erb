@@ -1,0 +1,58 @@
+<h2>订单详情</h2>
+
+<%= render "admin/orders/state_option", order: @order %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>商品名称</td>
+      <td>单价</td>
+      <td>数量</td>
+      <td>小计</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_lists.each do |product_list| %>
+    <tr>
+      <td></td>
+      <td><%= product_list.product_title %></td>
+      <td><%= product_list.product_price %></td>
+      <td><%= product_list.product_quantity %></td>
+      <td><%= product_list.product_price * product_list.product_quantity %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="container">
+  <p text-align=“center”>
+    总价：<%= @order.total %> CNY
+  </p>
+</div>
+
+<h2>订单信息</h2>
+<table class="table table-bordered">
+  <tr>
+  <th width="30%">收货人:</th><td><%= @order.shipping_name %></td>
+  </tr>
+
+  <tr>
+  <th>收货地址:</th><td><%= @order.shipping_address %></td>
+  </tr>
+
+  <tr>
+    <th>收货电话:</th><td><%= @order.shipping_number %></td>
+  </tr>
+
+  <tr>
+    <th>支付状态:</th><td><%= render_order_state(@order.aasm_state) %></td>
+  </tr>
+
+  <% if !@order.paid %>
+  <tr>
+    <th>支付方式:</th><td><%= @order.payment_method %></td>
+  </tr>
+  <% end %>
+</table>

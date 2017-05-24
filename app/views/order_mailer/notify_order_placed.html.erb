@@ -1,0 +1,82 @@
+<div class="mail">
+  <div class="col-md-12">
+    <h2>你好,<%= @order.user.email %></h2>
+    <p class="small">感谢您的订购！</p>
+    <hr >
+    <h2>订单详情
+      <br>
+      <small>
+        <%= link_to "订单链接",order_url(@order.token) %>
+      </small>
+    </h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th width="70%">商品明细</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>小计</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @order.product_lists.each do |product_list| %>
+        <tr>
+          <td><%= product_list.product_title %></td>
+          <td><%= product_list.product_price %></td>
+          <td><%= product_list.product_quantity %></td>
+          <td><%= product_list.product_price * product_list.product_quantity %></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+      <tfoot class="mail-product-lists">
+        <tr style="border-top: 1px solid rgb(45,55,65);">
+          <td colspan="4">
+            <h4>
+              订单总计 <%= @order.total %> CNY
+            </h4>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <hr>
+
+    <h2>
+      寄送信息
+    </h2>
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>订购人</th>
+        <td><%= @order.shipping_name %></td>
+      </tr>
+
+      <tr>
+        <th>运货地址：</th>
+        <td><%= @order.shipping_address%></td>
+      </tr>
+
+      <tr>
+        <th>联系电话：</th>
+        <td><%= @order.shipping_number %></td>
+      </tr>
+
+      <tr>
+        <th>付款状态：</th>
+        <td>
+          <% if @order.is_paid %>
+          已付款,付款方式-<%= @order.payment_method %>
+          <% else %>
+          <%= link_to "去付款", order_url(@order.token) %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+
+    <div class="mail-footer">
+      <p>请注意: 此邮件发送地址仅用于发送订单信息，不能够接收邮件，请不要直接回复。</p>
+    </div>
+  </div>
+</div>
