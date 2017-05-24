@@ -1,5 +1,25 @@
-<section id="shop-without-sidebar" class="ptb-100">
-<!-- <section id="shop-without-sidebar" style="margin: 100px auto 200px;"> -->
+<section>
+  <div class="breadcrumps-back">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumps-heading">
+            <h3>商品展示</h3>
+            <div class="breadcrumps-border"></div>
+            <ul>
+              <li><a href="/"> 首页</a> /</li>
+              <li><a href="#"> 商品展示</a></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="shop-without-sidebar" class="ptb-100"> -->
+<section id="shop-without-sidebar" style="margin: 20px auto 100px;">
   <div class="container">
     <div class="row">
       <% @products.each do |product| %>
@@ -35,6 +55,7 @@
           </div>
         </div>
         <% end %>
+
 
         <% @products.each do |product| %>
         <div class="col-md-3 col-sm-6 col-xs-6">

@@ -539,16 +539,16 @@ hr,
 }
 /* --- Breadcrumps --------------------- */
 .breadcrumps-back{
-  background-image:url(/images/breadcrumps-back.jpg);
+  // background-image:url(/images/breadcrumps-back.jpg);
   background-position:center 0%;
   background-size:cover;
   vertical-align:middle;
-  padding-top:80px;
-  padding-bottom:130px;
+  padding-top: 20px; //80px
+  padding-bottom: 20px; // 130px
 }
 .breadcrumps-border{
   width:208px;
-  height:3px;
+  height: 1px; //3px
   background:#8fd613;
 }
 .text-right .breadcrumps-border{
@@ -558,15 +558,15 @@ hr,
   margin:0 auto;
 }
 .breadcrumps-heading ul{
-  padding-top:30px;
+  padding-top: 10px; //30px;
 }
 .breadcrumps-heading ul li{
   display:inline-block;
-  color:#565656;
+  color:#555555;
   padding-right:10px;
 }
 .breadcrumps-heading ul li a{
-  font-size:20px;
+  font-size: 1.2em; //20px;
   font-family:'Libre Baskerville', serif;
   font-weight:400;
   font-style:italic;
@@ -1695,6 +1695,25 @@ hr,
 .coupon-button:hover{
   color: #fff;
 }
+//add
+.warning-button{
+  display: inline-block;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  background: #d69a13;
+  border: 1px solid #d69a13;
+  padding: 14px 50px;
+  border-radius: 50px;
+  height: 46px;
+}
+.warning-button:hover{
+  color: #fff;
+}
+
 .cart-coupon .col-md-6{
   padding-left:0px;
 }
@@ -1707,7 +1726,7 @@ hr,
 .billing-info ul li {
   font-size: 15px;
   font-weight: 700;
-  color: #929292;
+  color: #939393;
   font-family:'Libre Baskerville', serif;
   line-height: 26px;
   padding: 20px 60px 20px 20px;
