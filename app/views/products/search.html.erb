@@ -50,7 +50,7 @@
                 <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
               </div>
               <div class="cart text-center">
-                <%= link_to(content_tag(:i, '加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post) %>
+                <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
               </div>
             </div>
           </li>

@@ -82,7 +82,7 @@
 
               </div>
               <div class="tb-btn-basket">
-                <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post , id: "J_LinkBasket") %>
+                <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post ,:remote => true, class: "J_LinkBasket", mid: img430(@product,1)) %>
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@
       <div class="TabBarBox">
         <ul class="nav nav-tabs" role="tablist">
           <li class="active "><a href="#tab-left" role="tab" data-toggle="tab">商品详情</a></li>
-          <li><a href="#tab-right" role="tab" data-toggle="tab">累计评价 166</a></li>
+          <li><a href="#tab-right" role="tab" data-toggle="tab">累计评价 <%= @product.reviews.count %></a></li>
         </ul>
       </div>
 
@@ -191,16 +191,31 @@
             </div>
           </div>
           <div class="tab-pane" id="tab-right">
-            <p>dhgdsghds</p>
+            <div class="row review">
+              <div class="col-sm-10 col-sm-offset-1">
+                <hr>
+                <div id="reivews">
+                  <%= render @product.reviews%>
+                  <hr>
+                  <%= render "reviews/form"%>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-
-
     </div>
   </div>
 </div>
 </div>
+<!--
+<span class="pull-right">
+  <% if current_user && current_user.is_voter_of?(@product) %>
+    <%= link_to("", downvote_product_path(@product), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+   <% else %>
+    <%= link_to("", upvote_product_path(@product), method: :post, class: "fa fa-heart-o fa-2x") %>
+  <% end %>
+</span>
+-->
 <script type="text/javascript">
 //---------数量-------//
 (function ($) {
@@ -281,49 +296,5 @@ function () {
 },
 );
 
+
 </script>
-
-
-<!--<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-     <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-    <% if @photos.present? %>
-         <% @photos.each_with_index do |p, index| %>
-           <% if index == 0 %>
-             <%= image_tag p.avatar.medium.url %>
-             <div style="letter-spacing: -8px">
-           <% else %>
-             <%= image_tag p.avatar.thumb.url %>
-           <% end %>
-         <% end %>
-         </div>
-       <% else %>
-           <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-       <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-         <%= @product.description %>
-      </p>
-
-    <div 数量 : <%= @product.quantity %>  </div>
-    <div class="product-price"> $ <%= @product.price %> </div>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        已销售一空，无法购买
-      <% end %>
-      </div>
-  </div>
-</div>
-<<<<<<< HEAD
-</div>
-=======
--->

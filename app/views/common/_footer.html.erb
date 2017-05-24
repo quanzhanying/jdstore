@@ -72,3 +72,27 @@
     <br>
     Design by 廖晓华 & 韦月炎
   </section>
+<script type="text/javascript">
+//----飞---//
+$('.item_buy,.J_LinkBasket').on('click', addProduct);
+function addProduct(event) {
+  var offset = $('.fa-shopping-cart').offset(), flyer = $('<img class="u-flyer" src="' + $(this).attr("mid") +'"/>');
+  flyer.fly({
+    start: {
+      left: event.pageX,
+      top: event.pageY
+    },
+    end: {
+      left: offset.left,
+      top: offset.top,
+      width: 40,
+      height: 40
+    }
+  });
+
+  flyer.fadeOut(2000,function(){
+    flyer.remove();
+  });
+
+}
+</script>
