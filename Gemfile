@@ -40,6 +40,7 @@ gem 'better_errors'
 gem 'annotate'
 gem 'binding_of_caller'
 gem 'letter_opener', group: :development
+gem 'aasm'
 
 
 group :development, :test do
