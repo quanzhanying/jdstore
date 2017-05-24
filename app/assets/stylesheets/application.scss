@@ -49,6 +49,7 @@
   background: #f7f7f7;
   /*----- 距离footer的margin -----*/
   margin-bottom: 20px;
+  /*----- 包围图片的框随browser变换大小 -----*/
   height: relative;
 }
 
@@ -141,7 +142,7 @@ body {
   position: absolute;
   /*----- footer上半部padding高度 -----*/
   padding-top: 40px;
- /*----- foorter 上半部高度  -----*/
+ /*----- foorter 上半部高度,背景随browser变动  -----*/
   height: relative;
   display: inline-block;
   text-align: center;
