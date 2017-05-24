@@ -36,7 +36,7 @@ gem 'simple_form'
 gem 'font-awesome-rails' #awesome icon
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'acts_as_list'
+gem 'acts_as_list'  #商品定
 gem 'awesome_print' #美化ruby
 gem 'letter_opener', group: :development
 gem 'aasm'

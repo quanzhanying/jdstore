@@ -34,7 +34,9 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Edit", edit_admin_product_path(product)) %><br>
+          <%= link_to("上移", move_up_admin_product_path(product), :method => :post) %><br>
+          <%= link_to("下移", move_down_admin_product_path(product), :method => :post) %>
         </td>
       </tr>
     <% end %>
