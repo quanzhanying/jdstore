@@ -35,9 +35,10 @@
         <%= product.price %>
       </td>
       <td>
-         <%= link_to("Edit", edit_admin_product_path(product)) %> |
-         <%= link_to "向上", move_up_admin_product_path(product), method: :patch %>|
-         <%= link_to "向下", move_down_admin_product_path(product), method: :patch %>|
+         <%= link_to("Edit", edit_admin_product_path(product),:class => "btn btn-xs btn-default") %> |
+         <%= link_to("delete", admin_product_path(product),method: :delete, data: { confirm: "确定删除商品吗?" },:class => "btn btn-xs btn-default") %> |
+         <%= link_to "向上", move_up_admin_product_path(product), method: :patch ,:class => "btn btn-xs btn-default"%>|
+         <%= link_to "向下", move_down_admin_product_path(product), method: :patch ,:class => "btn btn-xs btn-default"%>|
 
         <% if product.is_hidden %>
          <%= link_to("上架", publish_admin_product_path(product) , :method => :post,  :class => "btn btn-xs btn-default") %>
