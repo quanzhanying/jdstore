@@ -14,51 +14,74 @@
         <li class="navlist">
           <%= link_to("推荐", recommend_path) %>
         </li>
-        <li class="navlist">
-          <%= link_to("餐具系列", products_path) %>
-        </li>
-        <li class="navlist">
-          <%= link_to("设计师系列", "#") %>
-        </li>
 
+        <% Category.all.each do |category| %>
+        <li>
+          <%= link_to category.name, products_path(category: category.name) %>
+        </li>
+        <% end %>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to carts_path do  %>
-            购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
-          <% end %>
-        </li>
-
-        <li>
-          <% if !current_user %>
-            <li> <%= link_to("Signup", new_user_registration_path) %></li>
-            <li> <%= link_to(content_tag(:i, "Login", class: 'fa fa-sign-in'), new_user_session_path) %> </li>
-          <% else %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Hi!, <%= current_user.email %>
-                  <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <% if current_user.admin? %>
-                  <li>
-                      <%= link_to("Admin Panel", admin_products_path ) %>
-                  </li>
-                <% end %>
-                <li>
-                   <%= link_to("Personal order list", account_orders_path ) %>
-                </li>
-                <li>
-                     <li> <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                </li>
-              </ul>
+        <!-- for more category aggregation>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类浏览
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% Category.all.each do |category| %>
+            <li>
+              <%= link_to(category.name, products_path(category: category.name)) %>
             </li>
-          <% end %>
+            <% end %>
+          </ul>
+        </li> -->
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to carts_path do  %>
+            购物车
+            <i class="fa fa-shopping-cart"></i>
+            (
+            <%= current_cart.products.count %>
+            )
+            <% end %>
+          </li>
+
+          <li>
+            <% if !current_user %>
+          <li>
+            <%= link_to("Signup", new_user_registration_path) %></li>
+          <li>
+            <%= link_to(content_tag(:i, "Login", class: 'fa fa-sign-in'), new_user_session_path) %>
+          </li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Hi!,
+              <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+              <li>
+                <%= link_to("Admin Panel", admin_products_path ) %>
+              </li>
+              <% end %>
+              <li>
+                <%= link_to("Personal order list", account_orders_path ) %>
+              </li>
+              <li>
+              <li>
+                <%= link_to(content_tag(:i, 'Logout', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+              </li>
+            </li>
+          </ul>
         </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
+        <% end %>
+      </li>
+    </ul>
   </div>
-  <!-- /.container-fluid -->
+  <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
 </nav>
