@@ -132,7 +132,7 @@
 .widget_product_search .search-box {
 	border: 1px solid #8fd613; //none 较深 Logo(#6FC042)
 	border-radius:50px;
-	height: 35px; //40px
+	height: 38px; //40px
 	padding: 0px 20px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -142,7 +142,7 @@
 	width: 300px; //460px
 	font-family:'Libre Baskerville', serif;
 	font-weight:400;
-	font-size:14px;
+	font-size: 1.2em; //14px
 	font-style:italic;
 	color: #000; //#fff
 	background: #fff; //#8fd613
@@ -156,18 +156,18 @@
 }
 .widget_product_search .submit-search {
 	position: absolute;
-	bottom: -5px; //-2px;
+	bottom: 0px; //-2px;
   // right: 20px;
   // padding: 0;
   // margin: 0;
-  margin-left: 210px; //add
+  margin-left: 230px; //add
 	border: 0;
 	background: none;
 	cursor: pointer;
 }
 .widget_product_search .submit-search i {
 	color: #6FC042; //color: #fff;
-  font-size: 1.5em; //14px;
+  font-size: 1.2em; //14px;
 }
 /* scroll progress bar */
 #scroll-progressbar {
