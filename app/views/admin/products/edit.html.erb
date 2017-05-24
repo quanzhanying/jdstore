@@ -1,3 +1,6 @@
+<div class="backend-main">
+
+
 <h2> Edit Product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
@@ -22,6 +25,10 @@
     <%= f.input :image, as: :file %>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <%= f.submit "Submit", data: {
+  disable_with: "Submitting..."
+} %>
 
-<% end %>
+<%end %>
+
+</div>
