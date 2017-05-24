@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_filter :authenticate_user! , only: [:new, :edit, :create, :update, :destroy, :favorite]
-
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :downvote, :upvote]
 
 
   def index
@@ -25,6 +25,25 @@ class ProductsController < ApplicationController
   end
 
 
+
+def upvote
+   @product = Product.find(params[:id])
+
+    if !current_user.is_voter_of?(@product)
+      current_user.upvote!(@product)
+    end
+
+    redirect_to :back
+  end
+
+  def downvote
+    @product = Product.find(params[:id])
+
+    if current_user.is_voter_of?(@product)
+      current_user.downvote!(@product)
+    end
+    redirect_to :back
+  end
 
 
   protected

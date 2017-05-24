@@ -347,5 +347,31 @@ function () {
 </div>
 <<<<<<< HEAD
 </div>
+<<<<<<< HEAD
 =======
 -->
+<<<<<<< HEAD
+=======
+
+<!--<div class="row review">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="reviews_title">
+      <%= @product.reviews.count %> Reviews
+    </h3>
+    <hr>
+    <div id="reivews">
+      <%= render @product.reviews%>
+      <hr>
+      <%= render "reviews/form"%>
+    </div>
+  </div>
+</div>
+<span class="pull-right">
+  <% if current_user && current_user.is_voter_of?(@product) %>
+    <%= link_to("", downvote_product_path(@product), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+   <% else %>
+    <%= link_to("", upvote_product_path(@product), method: :post, class: "fa fa-heart-o fa-2x") %>
+  <% end %>
+</span>
+-->
+>>>>>>> 6ee750f570b6adfe89ad59d8e60093b4fec22a71

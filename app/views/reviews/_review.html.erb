@@ -1,0 +1,18 @@
+<div class="reviews_wrapper clearfix">
+    <div class="pull-left">
+        <p class="lead"><%= review.body %></p>
+        <p>
+            <small>Submitted
+                <strong><%= time_ago_in_words(review.created_at) %>
+                    ago</strong>
+                by
+                <%= review.user.email %></small>
+        </p>
+    </div>
+
+    <div>
+<% if review.user == current_user %>
+   <%= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+<% end %>
+  </div>
+</div>
