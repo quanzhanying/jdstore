@@ -1,0 +1,29 @@
+<h2> 考生考试题 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>question</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exams.each do |exam| %>
+    <tr>
+      <td>
+        <%= exam.id %>
+      </td>
+       <td>
+         <%= exam.question %>
+       </td>
+       <td>
+         <%= exam.answer_1 %>
+       </br>
+         <%= exam.answer_2 %>
+       </td>
+     </tr>
+
+     <% end %>
+   </tbody>
+ </table>
