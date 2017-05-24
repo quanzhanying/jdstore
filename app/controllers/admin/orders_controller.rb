@@ -15,6 +15,7 @@ def show
  def ship
    @order = Order.find(params[:id])
    @order.ship!
+   OrderMailer.notify_ship(@order).deliver!
    redirect_to :back
  end
 
@@ -27,6 +28,7 @@ def show
  def cancel
    @order = Order.find(params[:id])
    @order.cancel_order!
+   OrderMailer.notify_ship(@order).deliver!
    redirect_to :back
  end
 
