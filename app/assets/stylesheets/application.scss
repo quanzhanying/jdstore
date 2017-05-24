@@ -16,17 +16,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import url(http://fonts.googleapis.com/css?family=Roboto); //----------navbar----------
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+//----------navbar----------
 
 .navbar-default {
-  background-color: #EEEEEE; //背景颜色
-  border-color    : #EEEEEE; //边框色
+  background-color: #607D8B; //背景颜色
+  border-color    : #607D8B; //边框色
   margin-bottom   : 0; //底部 margin 不撑开距离
   border-radius   : 0; //园角为0
 }
 
 .navbar-default .navbar-brand {
-  color      : #212121; //字体颜色
+  color      : #F5F5F5; //字体颜色
   padding    : 10px 15px; //上下10px，左右15px
   line-height: 30px; //文字行高
 }
@@ -1841,3 +1843,16 @@ h1[id] {
   margin       : 0;
   border-radius: 0;
 }
+
+//----------footer---------
+
+footer {
+  color: white;
+}
+footer .footer-below {
+  padding: 25px 0;
+  background-color: #607D8B;
+}
+html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
