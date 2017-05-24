@@ -22,17 +22,17 @@
  .decor-bottom {
    height: 6em;
    margin-top: -84px;
-   fill: #ecf0e0;
+   fill: #d7dbcc;
  }
 
  .decor-top {
    height: 7em;
    margin-bottom: -7em;
-   fill: #ecf0e0;
+   fill: #d7dbcc;
  }
  /*============波浪分割线====*/
 
- 
+
  //=====================================登入弹窗
   .loginmodal-container {
     padding: 20px;
@@ -191,11 +191,32 @@
 
  .section-title {
      color: #666;
-     margin-top: 35px;
-     margin-bottom: 40px;
+     margin-top: 1.2em;
+     margin-bottom: 3em;
      letter-spacing: 3px;
      font-size: 30px;
      font-family: STHeiti Light;
  }
+
+ .section-title-2 {
+     color: #666;
+     margin-top: 1em;
+     margin-bottom: 1em;
+     letter-spacing: 0.1em;
+     font-size: 1.7em;
+ }
+
+ .fenge {
+   height: 1.5px;
+   background-color: #999;
+ }
+
+ p {
+   color: #666;
+   letter-spacing: 1px;
+   line-height: 22px;
+   margin: 25px 20px 40px 20px;
+ }
+
 
  /*===== common ====*/

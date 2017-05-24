@@ -2,60 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.decor-bottom-1 {
-  height: 7em;
-  margin-bottom: -7em;
+
+
+/*============波浪分割线====*/
+.decor-top2 {
+  height: 6em;
+  margin-bottom: -84px;
   fill: #d7dbcc;
 }
 
-.decor-top3 {
-  height: 6em;
-  margin-top: -84px;
+.decor-bottom2 {
+  height: 7em;
+  margin-top: -7em;
   fill: #d7dbcc;
 }
 
-.decor-bottom-3 {
+.decor-bottom1 {
   height: 7em;
-  margin-bottom: -7em;
-  fill: #ffffff;
+  margin-top: -20em;
+  fill: black;
 }
-
-
-.decor-top4 {
-  height: 6em;
-  margin-top: -84px;
-  fill: #ffffff;
-}
+/*================波浪分割线==============*/
 
 
 
 //=============================================海报上的字体
-#zi2{
-  font-family: 'Clicker Script', cursive;
-  font-size: 100px;
-  color: #ffffff;
-  margin: 50px 0 10px;
-}
+// #zi2{
+//   font-family: 'Clicker Script', cursive;
+//   font-size: 100px;
+//   color: #ffffff;
+//   margin: 50px 0 10px;
+// }
 //=============================================海报上的字体
 
 
 /*===== 1.网站头贴 ====*/
-// .content > h1 {
-//   color: #fff;
-//   font-size: 55px;
-//   letter-spacing: 2px;
-//   word-spacing: 6px;
-//   font-family: STHeiti Light;
-//   font-weight: bold;
-// }
-
 
 .welcome-top{
     background-color: #d7dbcc;
     padding-top: 0;
     padding-bottom: 0;
-    margin-top: -1.5em;
-    margin-bottom: -1em;
+    margin-top: -1.4em;
 }
 
 .carousel-caption {
@@ -107,33 +94,30 @@
 /*============================= 2.服务块 ============================*/
 .fw{
   background-color: #d7dbcc;
-  height: 700px;
+  padding: 4em;
 }
 .polaroid2 {
   width: 100%;
-  height: 500px;
-  padding: 10px;
+  height: 40em;
+  padding: 1.8em 1.4em;
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
 }
 .container12 {
   text-align: center;
   padding: 10px 20px;
+  position: relative;
 }
 .small3{
-  width: 330px
+  width: 22em;
 }
 
 /*=============================  end 2. 服务块  ============================*/
 
-/*========================================= 波浪分割线 ====*/
-
-/*========================================= 波浪分割线 ====*/
-
 /*==================================== 3.产品块 ======================================*/
 .pr{
-  // background-color: #d7dbcc;
+  background-color: #d7dbcc;
+  padding: 4em;
 }
 .boxx {
   background:#fff;
@@ -164,10 +148,7 @@
   background-clip: padding-box;
   box-sizing: border-box;
 }
-.boxx .boxx-contentx p {
-  color:#515c66;
-  text-transform:none;
-}
+
 .boxx .small{
   width: 400px;
   // cursor: pointer;
@@ -189,9 +170,7 @@
 /*=========================================== 分割图 =====================================*/
 
 /*=========================================  4.摄影区  ========================================*/
-body{
-	min-height: 100%;
-}
+
 // body{
 // 	background-image: radial-gradient(mintcream 0%, lightgray 100%);
 // }
@@ -206,13 +185,14 @@ body{
 // }
 .ph{
   background-color: #d7dbcc;
+  padding: 4em;
 }
 .container1{
-	margin: 8% auto;
-	width: 300px;  //图片大小&图片间隔宽度
-	height: 160px;  //视角
+	margin: 10% auto;
+	width: 24em;  //图片大小&图片间隔宽度
+	height: 13em;  //视角
 	position: relative;
-	perspective: 600px;
+	perspective: 55em;
 }
 #carousel1{
 	width: 100%;
@@ -268,7 +248,7 @@ img{
 /*=================================== 5.铁粉说 ==================================*/
 .say{
   background-color: #d7dbcc;
-  padding-bottom: 0px;
+  padding: 4em;
   .do-box{
     img{
       margin-top: 35px;
@@ -285,11 +265,5 @@ img{
     padding-right: 50px;
   }
 
-  .do-box p {
-      color: #666;
-      letter-spacing: 1px;
-      line-height: 22px;
-      margin: 25px 20px 40px 20px;
-  }
 }
 /*================================= end 5.铁粉说 ==================================*/
