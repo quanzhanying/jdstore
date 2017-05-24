@@ -46,17 +46,21 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  process resize_to_fit: [800, 800]
-
-  version :thumb do
-    process resize_to_fill: [200,200]
-  end
-
-  version :minimal do
-    process resize_to_fill: [66,66]
-  end
-
-  version :medium do
-    process resize_to_fill: [400,400]
-  end
+  # process resize_to_fit: [800, 800]
+  #
+  # version :thumb do
+  #   process resize_to_fill: [200,200]
+  # end
+  #
+  # version :minimal do
+  #   process resize_to_fill: [66,66]
+  # end
+  #
+  # version :medium do
+  #   process resize_to_fill: [400,400]
+  # end
+  #
+  # version :large do
+  #   process resize_to_fill: [1400,600]
+  # end
 end

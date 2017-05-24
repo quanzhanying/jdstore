@@ -73,14 +73,14 @@
             z-index: 1;
         }
 
-        .account-dropdown::before{
-          position: absolute;
-          left: 44%;
-          top: -8%;
-          content: "";
-          border-width: 7px;
-          border-style: solid;
-          border-color: transparent transparent #fff transparent;
+        .account-dropdown::before {
+            position: absolute;
+            left: 44%;
+            top: -8%;
+            content: "";
+            border-width: 7px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
         }
 
         .account-dropdown .default-link {
@@ -141,29 +141,39 @@
                             color: black;
                             padding: 0;
                         }
-                        h4{
-                          margin-top: -10px;
-                          margin-left: 10px;
+
+                        h4 {
+                            margin-top: -10px;
+                            margin-left: 10px;
                         }
-                        h6{
-                          margin-top: -10px;
-                          margin-left: 5px;
+
+                        h6 {
+                            margin-top: -10px;
+                            margin-left: 5px;
                         }
-                        a.delete-btn{
-                          background-image: url("/images/delete-btn.png");
-                          background-repeat: no-repeat;
-                          background-size: 20px 20px;
-                          background-position: center;
-                          padding: 20px;//因为上面设置了a的padding为0，这里的背景图片显示需要设置一个数值，
-                          position: absolute;
-                          top: 25px;
-                          right: 0%;
+
+                        a.delete-btn {
+                            background-image: url("/images/delete-btn.png");
+                            background-repeat: no-repeat;
+                            background-size: 20px 20px;
+                            background-position: center;
+                            padding: 20px; //因为上面设置了a的padding为0，这里的背景图片显示需要设置一个数值，
+                            position: absolute;
+                            top: 25px;
+                            right: 0;
                         }
                     }
+
                     .product-item-partial:nth-of-type(1) {
                         -webkit-flex-shrink: 3;
                         /* Safari 6.1+ */
                         flex-shrink: 3;
+                        img {
+                            border: 1px solid gray;
+                            border-radius: 2px;
+                            width: 60px;
+                            height: 60px;
+                        }
                     }
 
                     .product-item-partial:nth-of-type(3) {
@@ -172,28 +182,24 @@
                         flex-shrink: 5;
                     }
 
-                    img {
-                        border: 1px solid gray;
-                        border-radius: 2px;
-                        width: 60px;
-                        height: 60px;
-                    }
 
                 }
             }
             /*product-item-wrap*/
-            .checkout{
-              position: relative;
-              a {
-                  color: gray;
-                  padding: 0;
-                  position: absolute;
-                  top: -80%;
-                  right: 10%;
-              }
-              p{
-                margin: 5px 0 5px 5px;
-              }
+            .checkout {
+                position: relative;
+
+                a {
+                    color: gray;
+                    padding: 0;
+                    position: absolute;
+                    top: -80%;
+                    right: 10%;
+                }
+
+                p {
+                    margin: 5px 0 5px 5px;
+                }
             }
         }
 
@@ -213,6 +219,7 @@
         }
     }
 }
+
 /*响应式navbar，浏览器缩小自动调整样式*/
 /* Add a black background color to the top navigation */
 .topnav {

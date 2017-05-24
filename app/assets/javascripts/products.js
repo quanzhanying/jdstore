@@ -14,42 +14,46 @@ $(
   }
 )
 
-//开启大图预览模式
-$(function () {
-  $('.close-Magnifier').click(function () {
-    $('#product-Magnifier').css('display','none')
-  })
-
-  $('.product-modal').click(function () {
-    $('#product-Magnifier').css('display','block')
-    $('.mySlides').each(function () {
-      var data_index = $(this).attr('data-index')
-      if (data_index == 0) {
-        $(this).css('display','block')
-      }
-    })
-  })
-
-  $('.demo').click(function () {
-    var id = $(this).attr('id')
-    showSlides(id);
-  })
-
-  function showSlides(n) {
-    var slides = $(".mySlides");
-    var dots = $('.demo')
-    $(".mySlides").each(function (){
-      $(this).css('display','none')
-    })
-    $('.demo').each(function (){
-      $(this).toggleClass("active")
-    })
-    slides.eq(n).css('display','block')
-    dots.eq(n).addClass('active')
-  }
-})
+// //开启大图预览模式
+// $(function () {
+//   $('.close-Magnifier').click(function () {
+//     $('#product-Magnifier').css('display','none')
+//   })
+//
+//   $('.product-modal').click(function () {
+//     $('#product-Magnifier').css('display','block')
+//     $('.mySlides').each(function () {
+//       var data_index = $(this).attr('data-index')
+//       if (data_index == 0) {
+//         $(this).css('display','block')
+//       }
+//     })
+//   })
+//
+//   $('.demo').click(function () {
+//     var id = $(this).attr('id')
+//     showSlides(id);
+//   })
+//
+//   function showSlides(n) {
+//     var slides = $(".mySlides");
+//     var dots = $('.demo')
+//     $(".mySlides").each(function (){
+//       $(this).css('display','none')
+//     })
+//     $('.demo').each(function (){
+//       $(this).toggleClass("active")
+//     })
+//     slides.eq(n).css('display','block')
+//     dots.eq(n).addClass('active')
+//   }
+// })
 
 //product.show页面的下方商品详情和商品评价切换按钮
+$(function () {
+    document.getElementById("defaultOpen").click();
+});
+
 $(document).on('click.product.show.menu', '[data-toggle="tab"]', function(e) {
     //得到被点击的元素，并取出它的option，看是“商品详情”还是“商品评论”
     var $this = $(this);

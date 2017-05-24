@@ -2,7 +2,7 @@
     <%= link_to("加入购物车", add_to_cart_product_path(@product),
         :method => :post,
         :remote => true,
-        :class => "addCartBtn btn btn-default") %>
+        :class => "addCartBtn blue-large-btn pull-left") %>
 <% else %>
-  <a href="javascript:;" class="btn btn-default">已售完</a>
+  <a href="javascript:;" class="btn blue-large-btn pull-left">已售完</a>
 <% end %>

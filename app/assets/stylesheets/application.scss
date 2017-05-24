@@ -17,6 +17,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "navbar";
+@import "products";
 body, html {
     height: 100%;
     margin: 0;
@@ -39,20 +40,52 @@ a {
     text-decoration: none;
   }
 }
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
 /*边框*/
 .border{
-  border: 1px solid gray;
+  border: 1px solid #cccccc;
+}
+
+.no-left-border{
+  border-width: 1px;
+  border-color: #cccccc;
+  border-style: solid;
+  border-left-width: 0;
 }
 
 .no-padding{
   padding: 0;
 }
 
-/*背景*/
-.bg-gray{
-  background: gray;
+.border-radius{
+  border-radius: 8px;
+}
+/*margin*/
+.margin-top-40{
+  margin-top: 40px;
 }
 
+/*padding*/
+.padding-40{
+  padding: 40px
+}
+/*背景*/
+.bg-gray{
+  background: #ededed;
+}
+
+.bg-white{
+  background: #ffffff;
+}
 /*浮动*/
 .fl{
   float: left;
@@ -60,4 +93,9 @@ a {
 
 .fr{
   float: right;
+}
+
+/*显示*/
+.display-none{
+  display: none;
 }

@@ -23,7 +23,7 @@
     <% if @product.photos.present? %>
     <span>目前商品圖</span> <br>
     <% @product.photos.each do |p| %>
-      <%= image_tag p.avatar.thumb.url %><br>
+      <%= image_tag p.avatar.url ,size:"200"%><br>
     <% end %>
   <% end %>
   </div>
@@ -32,6 +32,19 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
+
+  <% if @product.introduce_pictures.present? %>
+    <span>详情图</span> <br>
+    <% @product.introduce_pictures.each do |p| %>
+      <%= image_tag p.avatar.url ,size:"200"%><br>
+    <% end %>
+<% end %>
+
+  <div class="group">
+    <%#= f.label :"商品详情" %><br>
+    <%= f.file_field :avatar, :multiple => true, name: "introduce_pictures[avatar][]" %>
+  </div>
+
 
   <div class="group">
     <%= select_tag(:category_id, options_for_select(@categories)) %>

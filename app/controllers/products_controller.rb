@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @photos = @product.photos.all
     @comments = @product.comments.includes(:comment_pictures).includes(:user)
+    @introduce_pictures = @product.introduce_pictures.all
     if @comments.blank?
     #   @avg_function = 0
     #   @avg_design = 0

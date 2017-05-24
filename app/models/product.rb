@@ -7,4 +7,5 @@ class Product < ApplicationRecord
 
   has_many :favorite_lists
   has_many :comments
+  has_many :introduce_pictures
 end

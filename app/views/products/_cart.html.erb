@@ -16,7 +16,7 @@
 				<div class="product-item-partial">
 				<%= link_to product_path(cart_item.product) do %>
 					<% if cart_item.product.photos[0].present? %>
-						 <%= image_tag(cart_item.product.photos[0].avatar.thumb.url) %>
+						 <%= image_tag(cart_item.product.photos[0].avatar.url) %>
 					<% else %>
 						<%= image_tag("http://placehold.it/200x200&text=No Pic") %>
 					<% end %>
