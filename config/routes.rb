@@ -27,11 +27,8 @@ Rails.application.routes.draw do
         post :quit_favorite
     end
       collection do
-         get :dresses
-         get :jeans
-         get :skirts
-         get :shorts
-         get :suits
+         get :accessory
+         get :shoes
     end
   end
 
