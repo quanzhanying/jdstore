@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       ci.quantity += 1
       ci.save
     end
-    redirect_to :back
+    #redirect_to :back
   end
 
 

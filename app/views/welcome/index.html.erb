@@ -87,7 +87,9 @@
                   <span class="text_point"><%= product.title %></span>
                   <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
                 </div>
-                <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post, class: 'item_buy' , mid: img430(product,1)) %>
+                <span id="add-cart-<%= product.id %>">
+                  <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
+                </span>
               </div>
             </div>
           </div>
@@ -136,7 +138,9 @@
                   <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
 
                 </div>
-                <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post, class: 'item_buy') %>
+                <span id="add-cart-<%= product.id %>">
+                  <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
+                </span>
               </div>
             </div>
           </div>
@@ -182,7 +186,9 @@
                     <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
 
                   </div>
-                <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post,:remote => true, class: 'item_buy') %>
+                  <span id="add-cart-<%= product.id %>">
+                    <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
+                  </span>
                 </div>
               </div>
             </div>

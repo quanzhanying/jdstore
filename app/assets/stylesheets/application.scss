@@ -138,7 +138,8 @@ h3{
 text-decoration: none;
 color: #fff;
 }
-.item_buy {
+
+.product .item_buy {
  position:absolute;
  bottom:-40px;
  left:0;
@@ -151,7 +152,7 @@ color: #fff;
  transition:bottom .25s ease     ///购物车////
 }
 
-.item_buy {
+.product .item_buy {
   line-height: 35px;
 }
 .u-flyer {
