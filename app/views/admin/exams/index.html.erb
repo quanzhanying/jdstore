@@ -1,0 +1,35 @@
+<h2> 考试题 </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增试题", new_admin_exam_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>question</th>
+      <th>answer</th>
+      <th width="100"> Options </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exams.each do |exam| %>
+    <tr>
+      <td>
+        <%= link_to exam.id, admin_exam_path(exam) %>
+      </td>
+       <td>
+         <%= exam.question %>
+       </td>
+       <td>
+         <%= exam.answer_1 %>
+       </br>
+         <%= exam.answer_2 %>
+       </td>
+       <td>
+         <%= link_to("Edit", edit_admin_exam_path(exam)) %> |
+         <%= link_to("Delete", admin_exam_path(exam), method: :delete, data: { confirm: "Are your sure?" }) %>
+       </td>
+      <% end %>
+     </tr>
+   </tbody>
+ </table>

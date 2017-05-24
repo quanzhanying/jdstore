@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>考试</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://ww4.sinaimg.cn/large/006tNc79ly1fdcy9li35hg302s02sa9u.gif"/>
+
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "common/navbar" %>
+    <%= render "common/flashes" %>
+    <div class="container-fluid">
+      <div class="row admin-page">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-3 sidebar">
+            <p><%= link_to("全部试题", admin_exams_path) %></p>
+            <p><%= link_to("全部答案", admin_answers_path) %></p>
+            <p><%= link_to("类别管理", admin_categories_path) %></p>
+            <div>
+              <span style="color: #337ab7; padding-left: 40px;">试题分类:</span>
+              <ul>
+                <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to(category.name, admin_exams_path(category: category.name)) %>
+                  </li>
+                <% end %>
+              </ul>
+
+            </div>
+            <p><%= link_to("属性管理", admin_sizes_path) %></p>
+            <div>
+              <span style="color: #337ab7; padding-left: 40px;">试题属性:</span>
+              <!-- <ul>
+                <% Size.all.each do |size| %>
+                  <li>
+                    <%= link_to(size.name, admin_exams_path(size: size.name)) %>
+                  </li>
+                <% end %>
+              </ul> -->
+
+            </div>
+            <p><%= link_to("订单查询", admin_orders_path) %></p>
+            <p><%= link_to("首页", exams_path) %></p>
+          </div>
+          <div class="col-md-8">
+            <%= yield %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
