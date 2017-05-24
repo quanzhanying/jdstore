@@ -118,8 +118,6 @@
             color: #fff;
             background: linear-gradient(#6f97e5,#527ed9);
         }
-
-        .form-actions {}
     }
 }
 
@@ -151,5 +149,70 @@
         width: 80%;
         margin: 10% auto;
         font-size: 100%;
+
+        .form-group{
+          position: relative;
+          .icon {
+              display: inline;
+              line-height: 46px;
+              height: 46px;
+              border-radius: 6px 0 0 6px;
+              border-right: solid 1px #ccc;
+              box-shadow: 1px 0 3px -1px rgba(0,0,0,.1);
+              float: left;
+              height: 46px;
+              width: 46px;
+              overflow: hidden;
+              padding: 8px;
+
+              img {
+                  width: 30px;
+                  height: 30px;
+                  vertical-align: baseline;
+              }
+          }
+        }
+
+        .form-control {
+          position: absolute;
+            display: inline;
+            width: 80%;
+            height: 44px;/*为了使input居中*/
+            /*input 输入框透明*/
+            background: rgba(255,255,255,0);
+            border: 1px solid transparent;
+            box-shadow: none;
+            border: none;
+            -webkit-box-shadow: 0 0 0 1000px white inset;
+        }
+
+        .user_email,
+        .user_password,
+        .user_password_confirmation {
+            border: #ccc solid 1px;
+            box-shadow: 0 3px 5px -4px rgba(0,0,0,.4) inset, -1px 0 3px -2px rgba(0,0,0,.1) inset;
+            border-radius: 6px;
+            font-size: 18px;
+            height: 46px;
+            line-height: 46px;
+        }
+
+        .test{
+          border-color: #66afe9!important;
+          outline: 0;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+
+        }
+
+        .btn-signUp{
+          width: 100%;
+          color: #fff;
+          background: linear-gradient(#6f97e5,#527ed9);
+        }
+        // .form-control:focus {
+        //     .form-group {
+        //     }
+        // }
     }
 }
