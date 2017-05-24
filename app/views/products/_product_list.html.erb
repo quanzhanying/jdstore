@@ -1,0 +1,5 @@
+<ul class="productList clearfix pb20">
+  <% @products.each_with_index do |product, index| %>
+    <%= render :partial => "product_item", locals: { product: product, index: index } %>
+  <% end %>
+</ul>
