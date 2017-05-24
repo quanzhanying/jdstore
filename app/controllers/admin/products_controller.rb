@@ -52,6 +52,6 @@ layout "admin"
     private
 
     def product_params
-      params.require(:product).permit(:title, :description, :quantity, :price, :image, :category，:sale_count)
+      params.require(:product).permit(:title, :description, :quantity, :price, :image, :category, :sale_count)
     end
   end

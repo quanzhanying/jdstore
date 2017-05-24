@@ -21,11 +21,11 @@
 
 /*5种背景颜色*/
 .bg-color1 {
-  background: #4fa157;
+  background: #651d1c;
 }
 
 .bg-color2 {
-  background: #c94747;
+  background: #edece8;
 }
 
 .bg-color3 {
@@ -34,6 +34,10 @@
 
 .bg-color4 {
   background: #247BA0;
+}
+
+.bg-color4 {
+  background: #ffffff;
 }
 
 .bg-color5 {
@@ -45,11 +49,11 @@
 /*navbar导航栏*/
 .navbar-wrap {
   width: 100%; /*铺满屏幕*/
-  background: #4fa157; /*背景颜色*/
+  background: #edece8; /*背景颜色*/
   font-size: 12px; /*字体12px*/
   height: 42px; /*设置高度*/
   line-height: 42px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
-  color: #717171; /*字体颜色*/
+  color: #651d1c; /*字体颜色*/
 }
 .navbar {
   width: 970px; /*设置导航栏宽度1200*/
@@ -78,7 +82,7 @@
   width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
   height: 12px; /*12px差不多，刚刚好*/
   margin-top: 9px; /*调一下上边距*/
-  background: #4fa157; /*分隔符的背景颜色*/
+  background: #ffffff; /*分隔符的背景颜色*/
 }
 
 .navbar-wrap a {
@@ -142,7 +146,7 @@ width: 150px;
 
 /*头图*/
 .carousel {
-  background-image:url('header.jpg');
+  // background-image:url('header.jpg');
   margin: 20px auto;
   width: 970px;
   height: 400px;
