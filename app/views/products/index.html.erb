@@ -10,6 +10,7 @@
       <!-- <div id="zi2">
         <strong><p>Hot Sell</p></strong>
       </div> -->
+
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!--===== 輪播按鈕 =====-->
         <ol class="carousel-indicators">
@@ -20,16 +21,26 @@
         <!--===== 輪播內容 =====-->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
+
             <img src='<%= image_url 'https://ws3.sinaimg.cn/large/006tKfTcgy1ffvrqa3h6wj31kw0w012m.jpg' %>' >
-            <div class="carousel-caption"></div>
+            <div class="carousel-caption intro-content">
+              <h1>How to brand yourself as an artist</h1>
+            <p>试着放慢脚步，写下自己的故事，用陶艺来表达，用照片来演绎。 </p>
+            </div>
           </div>
           <div class="item">
             <img src='<%= image_url 'http://ww4.sinaimg.cn/large/006tNc79gy1ffsuoypc5qj31kw0vtkjl.jpg' %>'>
-            <div class="carousel-caption"></div>
+            <div class="carousel-caption intro-content">
+              <h1>How to brand yourself as an artist</h1>
+            <p>试着放慢脚步，写下自己的故事，用陶艺来表达，用照片来演绎。 </p>
+            </div>
           </div>
           <div class="item">
-            <img src='<%= image_url 'http://ww4.sinaimg.cn/large/006tNc79gy1ffsuoypc5qj31kw0vtkjl.jpg' %>'>
-            <div class="carousel-caption"></div>
+            <img src='<%= image_url 'http://ww1.sinaimg.cn/large/006tKfTcgy1ffu4hckrlfj30zk0k00tt.jpg' %>'>
+            <div class="carousel-caption intro-content">
+              <h1>How to brand yourself as an artist</h1>
+            <p>试着放慢脚步，写下自己的故事，用陶艺来表达，用照片来演绎。 </p>
+            </div>
           </div>
         </div>
         <!--===== 換頁按鈕 =====-->
@@ -132,7 +143,7 @@
                           <div class="container11">
                             <%= product.title %> ￥ <%= product.price %>
                           </div>
-                          <a href=product_path(product) class="btn btn-block btn-warning">了解更多</a>
+                          <a href="product_path(product)" class="btn btn-block btn-warning">了解更多</a>
                       </div>
                   </div>å
             </div>
@@ -190,20 +201,20 @@
       <div class="row">
         <div class="col-md-4">
           <div class="do-box">
-            <%= image_tag("dingwei-1.png") %>
-            <p>根据自己的能力级别去选择岗位，拨开薪资之谜，从本质上选工作。为你缩小找工作的范围。</p>
+            <%= image_tag("girl.png") %>
+            <p>做陶艺是一个锻炼耐心，培养心境事情，学会了道，也学会了术。更陶冶了情操！</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="do-box">
-            <%= image_tag("dingwei-1.png") %>
-            <p>根据自己的能力级别去选择岗位，拨开薪资之谜，从本质上选工作。为你缩小找工作的范围。</p>
+            <%= image_tag("boy.png") %>
+            <p>想玩陶艺很久了，发现你们家可以玩，还可以卖自己作品！太好了！</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="do-box">
-            <%= image_tag("dingwei-1.png") %>
-            <p>根据自己的能力级别去选择岗位，拨开薪资之谜，从本质上选工作。为你缩小找工作的范围。</p>
+            <%= image_tag("girl2.png") %>
+            <p>没想到自己变成了女1号收获了属于自己的创意摄影作品！</p>
           </div>
         </div>
       </div>

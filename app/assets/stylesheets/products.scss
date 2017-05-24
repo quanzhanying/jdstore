@@ -26,14 +26,6 @@
 
 
 
-//=============================================海报上的字体
-// #zi2{
-//   font-family: 'Clicker Script', cursive;
-//   font-size: 100px;
-//   color: #ffffff;
-//   margin: 50px 0 10px;
-// }
-//=============================================海报上的字体
 
 
 /*===== 1.网站头贴 ====*/
@@ -122,13 +114,11 @@
 .boxx {
   background:#fff;
   transition:all 0.2s ease;
-  border:2px dashed #dadada;
-  margin-top: 10px;
+  border:0.1em dashed #dadada;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 0.5em;
   background-clip: padding-box;
-  padding:0 10px 10px 10px;
-  min-height:340px;
+  padding: 1.5em;
 }
 
 .boxx:hover {
@@ -251,9 +241,8 @@ img{
   padding: 4em;
   .do-box{
     img{
-      margin-top: 35px;
-      margin-bottom: -35px;
-      width: 180px;
+      margin-bottom: 2em;
+      width: 10em;
     }
   }
 
