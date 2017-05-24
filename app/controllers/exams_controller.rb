@@ -1,9 +1,5 @@
 class ExamsController < ApplicationController
-
-  def index
-    @exams = Exam.all
-  end
-
+  before_action :authenticate_user!
 
   def show
     @exam = Exam.find(params[:id])

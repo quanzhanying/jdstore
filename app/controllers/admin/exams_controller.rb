@@ -16,6 +16,7 @@ class Admin::ExamsController < ApplicationController
 
   def show
     @exam = Exam.find(params[:id])
+    @exam.category_id = params[:category_id]
   end
 
   def edit

@@ -15,7 +15,7 @@
     <% @exams.each do |exam| %>
     <tr>
       <td>
-        <%= exam.id %>
+        <%= link_to exam.id, admin_exam_path(exam) %>
       </td>
        <td>
          <%= exam.question %>
