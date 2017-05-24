@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     resources :categories
     resources :sizes
     resources :exams
-    resources :posts
+    resources :answers do
+      post :ture_answer
+    end
     resources :orders do
       member do
         post :cancel

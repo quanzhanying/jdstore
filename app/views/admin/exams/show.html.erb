@@ -23,10 +23,41 @@
     <div style="height: 100px;">
       <p>
         <%= @exam.answer_1 %>
-        <%= @exam.answer_1 %>
+        <br>
+        <%= @exam.answer_2 %>
       </p>
     </div>
     <div>试题类别: <%= @exam.category_id %></div>
     <div>试题属性: ￥ <%= @exam.class_id %></div>
   </div>
 </div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>正确答案</th>
+      <th>答案解析</th>
+      <th width="100"> Options </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @answers.each do |answer| %>
+    <tr>
+      <td>
+        <%= answer.id %>
+      </td>
+       <td>
+         <%= answer.ture_answer%>
+       </td>
+       <td>
+         <%= answer.description %>
+       </td>
+       <td>
+         <%= link_to("Edit", edit_admin_answer_path(answer)) %> |
+         <%= link_to("Delete", admin_answer_path(answer), method: :delete, data: { confirm: "Are your sure?" }) %>
+       </td>
+     </tr>
+     <% end %>
+   </tbody>
+ </table>
