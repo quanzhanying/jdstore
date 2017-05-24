@@ -26,7 +26,7 @@ resources :products do
     get :bouquet
     get :box_flower
     get :ceremony
-    get :micro 
+    get :micro
   end
 end
   resources :carts do
@@ -47,4 +47,5 @@ end
   namespace :account do
     resources :orders
   end
+  resources :news
 end
