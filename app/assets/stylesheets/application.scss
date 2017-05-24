@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'masonry/transitions'
  */
 
  @import "bootstrap-sprockets";
@@ -369,5 +370,164 @@
 
  }
 
+<<<<<<< HEAD
+ .categories-box a {
+     text-decoration: none;
+     color: #002E2E;
+ }
 
+ a {
+    color: #18bc9c;
+    text-decoration: none;
+}
+
+
+#brand-section {
+
+
+  .story-box {
+      text-align: center;
+      padding: 25px 62.5px 50px 62.5px;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+      display: block;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+      display: block;
+  }
+
+  * {
+      /* -webkit-box-sizing: border-box; */
+      -moz-box-sizing: border-box;
+      /* box-sizing: border-box; */
+  }
+
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  user agent stylesheet
+  article, aside, footer, header, hgroup, main, nav, section {
+      display: block;
+  }
+  Inherited from body
+
+  body {
+      overflow-x: hidden;
+      letter-spacing: 1px;
+      font-size: 14px;
+      position: relative;
+  }
+
+  body {
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.42857143;
+      color: #2c3e50;
+      background-color: #ffffff;
+  }
+
+  body {
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.42857143;
+      color: #2c3e50;
+      background-color: #ffffff;
+  }
+  Inherited from html
+
+  html {
+      font-size: 10px;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+      font-size: 10px;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+  }
+  Pseudo ::before element
+
+  *:before, *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+  *:before, *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  Pseudo ::after element
+
+  *:before, *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+  *:before, *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+}
+
+#body-section   {
+
+<<<<<<< HEAD
  
+=======
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+  .story-box {
+    text-align: center;
+    padding: 25px 62.5px 50px 62.5px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+}
+
+#pins {
+  margin: 0 auto;
+  width: 100%;
+  .box {
+   margin: 10px;
+   width: 225px;
+   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+   text-align: center;
+   padding: 0px;
+   img {
+     max-width: 100%;
+     height: auto;
+   }
+ }
+>>>>>>> 9e6b3124f1c3e653903f81d4c31fe27d6c143054
