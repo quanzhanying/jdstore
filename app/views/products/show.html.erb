@@ -81,7 +81,7 @@
                 <%= link_to("立即购买", checkout_carts_path, :method => :post , id: "J_LinkBasket") %>
 
               </div>
-              <div class="tb-btn-basket">
+              <div class="shopCart tb-btn-basket">
                 <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post ,:remote => true, class: "J_LinkBasket", mid: img430(@product,1)) %>
               </div>
             </div>

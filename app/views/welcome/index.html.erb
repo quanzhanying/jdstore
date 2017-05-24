@@ -87,7 +87,7 @@
                   <span class="text_point"><%= product.title %></span>
                   <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
                 </div>
-                <span id="add-cart-<%= product.id %>">
+                <span class="shopCart">
                   <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
                 </span>
               </div>
@@ -138,7 +138,7 @@
                   <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
 
                 </div>
-                <span id="add-cart-<%= product.id %>">
+                <span class="shopCart">
                   <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
                 </span>
               </div>
@@ -186,7 +186,7 @@
                     <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
 
                   </div>
-                  <span id="add-cart-<%= product.id %>">
+                  <span class="shopCart">
                     <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
                   </span>
                 </div>

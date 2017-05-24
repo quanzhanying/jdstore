@@ -127,6 +127,11 @@ h3{
 .sort-img{
   width: 100%;
 }
+
+
+.fly_item{border:1px solid #000;width:38px;height:38px;overflow:hidden;position:absolute;visibility:hidden;opacity:.5;filter:alpha(opacity=50);z-index: 9999;}
+
+
 .item_hover{
   position:relative;
   float:left;
