@@ -5,9 +5,17 @@
 <!-- /.排序 -->
 <div class="orderList bg-color1">
   <div class="orderList-item bg-color2"></div>
-  <div class="orderList-item bg-color3"></div>
-  <div class="orderList-item bg-color4"></div>
-  <div class="orderList-item bg-color5"></div>
+  <div class="orderList-item bg-color3">
+    <li><%= link_to(content_tag(:i, '价格', class: ' fa fa-arrow-up'), products_path(:order => "by_upper_price")) %>
+    </li>
+  </div>
+  <div class="orderList-item bg-color4">
+    <li><%= link_to(content_tag(:i, '价格', class: ' fa fa-arrow-down'), products_path(:order => "by_down_price")) %>
+    </li>
+  </div>
+  <div class="orderList-item bg-color5">
+    <%= link_to("销量", products_path(:order => "by_down_sale_count")) %>
+  </div>
 </div>
 
 <!-- /.商品列表 -->
