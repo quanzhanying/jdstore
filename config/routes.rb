@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   resources :comments
   resources :favorite_lists
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: {
+  passwords: 'users/passwords',
+  registrations: 'users/registrations',
+  sessions: 'users/sessions'
+}
+
 
   root 'products#index'
 

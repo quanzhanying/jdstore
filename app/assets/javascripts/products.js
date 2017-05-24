@@ -50,9 +50,9 @@ $(
 // })
 
 //product.show页面的下方商品详情和商品评价切换按钮
-$(function () {
-    document.getElementById("defaultOpen").click();
-});
+// $(function () {
+//     document.getElementById("defaultOpen").click();
+// });
 
 $(document).on('click.product.show.menu', '[data-toggle="tab"]', function(e) {
     //得到被点击的元素，并取出它的option，看是“商品详情”还是“商品评论”
