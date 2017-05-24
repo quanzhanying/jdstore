@@ -50,7 +50,7 @@
 /*footer*/
 .footer {
   background: #212121;
-  padding: 16px 10px 6px;
+  padding: 20px 10px 6px 10px;
   text-align: center;
   font-size: 14px;
   color: #C2C2C2;
@@ -115,3 +115,21 @@
   width: 200px;
   padding-top: 7px;
 }
+
+
+//-------footer-------
+
+ .footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: 100px;
+   background-color: #222222;
+   margin: 0 -15px;
+
+   p {
+      color: white;
+     margin-top: 30px;
+   }
+  }
