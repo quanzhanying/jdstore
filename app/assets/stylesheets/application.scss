@@ -16,9 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-
-//----------navbar----------
+@import url(http://fonts.googleapis.com/css?family=Roboto); //----------navbar----------
 
 .navbar-default {
   background-color: #607D8B; //背景颜色
@@ -213,8 +211,8 @@ h4 code {
 /* Inverted outline button (white on dark) */
 .btn-outline-inverse {
   color           : #06087a;
-  background-color: transparent;
-  border-color    : #cdbfe3;
+  background-color: #e01300;
+  // border-color    : #cdbfe3;
 }
 
 .btn-outline-inverse:active,
@@ -257,7 +255,7 @@ h4 code {
 
 .bs-docs-booticon-outline {
   background-color: transparent;
-  border          : 1px solid #cdbfe3;
+  // border          : 1px solid #cdbfe3;
 }
 /*
  * Fancy skip link
@@ -378,7 +376,7 @@ h4 code {
   background-image : -webkit-gradient(linear, left top, left bottom, from(#d88208), to(#d88208));
   background-image : -webkit-linear-gradient(top, #d88208 0%, #d88208 100%);
   background-image : -o-linear-gradient(top, #d88208 0%, #d88208 100%);
-  background-image : linear-gradient(to bottom, #d88208 0%, #d88208 100%);
+  background-image : linear-gradient(to bottom, #d88208 0%, #ffa42f 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#d88208', endColorstr='#d88208', GradientType=0);
   background-repeat: repeat-x;
 }
@@ -1843,16 +1841,27 @@ h1[id] {
   margin       : 0;
   border-radius: 0;
 }
-
 //----------footer---------
 
 footer {
   color: white;
 }
+
 footer .footer-below {
-  padding: 25px 0;
+  padding         : 25px 0;
   background-color: #607D8B;
 }
-html { height: 100%;}
-  body { min-height: 100%; display: flex; flex-direction: column;}
-  .content { flex: 1;}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height    : 100%;
+  display       : flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
