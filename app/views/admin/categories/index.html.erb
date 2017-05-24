@@ -1,0 +1,29 @@
+<h2 style="margin-top: 80px;">Categories</h2>
+<div class="pull-right">
+  <%= link_to '新增分类', new_admin_category_path, class: "btn btn-primary btn-sm"%>
+</div>
+<br><br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Category Name</th>
+      <th colspan=2 width="100">Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td>
+          <%= category.id %>
+        </td>
+        <td><%= category.name %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_category_path(category) %>
+          <%= link_to 'Destroy', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
