@@ -37,7 +37,7 @@ class Order < ApplicationRecord
     end
 
     event :ship do
-      transtitions from: :paid,       to: :shipping
+      transitions from: :paid,       to: :shipping
     end
 
     event :deliver do
