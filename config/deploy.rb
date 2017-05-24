@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.8.1"
 
-set :application, "JDstore-mogai"
+set :application, "JDstore-mogai2"
 set :repo_url, "git@github.com:liaoxh1981/jdstore.git"
 
 # Default branch is :master
