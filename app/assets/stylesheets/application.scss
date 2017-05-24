@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//---------navbar search------------//
+
+ #search-id {
+ width: 200px;
+ padding-top: 7px;
+ }
