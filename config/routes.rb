@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
     resources :products
+    resources :users #加入这一行，新增用户中心的相关路径
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
