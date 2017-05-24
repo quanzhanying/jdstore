@@ -28,6 +28,9 @@ resources :products do
     get :ceremony
     get :micro
   end
+  collection do
+      get :search
+    end
 end
   resources :carts do
     collection do
