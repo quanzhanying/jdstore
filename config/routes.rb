@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #   :registrations => "users/registrations",
   #   :passwords     => "users/passwords",
   # }
-  resources :exams do
+  resources :products do
     member do
       post :add_to_cart
       post :favorite
@@ -59,6 +59,8 @@ Rails.application.routes.draw do
   end
 
   resources :favorites
+
+  resources :exams
 
   root "welcome#index"
 

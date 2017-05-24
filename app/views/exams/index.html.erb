@@ -1,29 +1,10 @@
-<h2> 考生考试题 </h2>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>question</th>
-      <th>Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @exams.each do |exam| %>
-    <tr>
-      <td>
-        <%= exam.id %>
-      </td>
-       <td>
-         <%= exam.question %>
-       </td>
-       <td>
-         <%= exam.answer_1 %>
-       </br>
-         <%= exam.answer_2 %>
-       </td>
-     </tr>
-
-     <% end %>
-   </tbody>
- </table>
+<div class="row">
+  <div class="col-md-6">
+    <li>
+      <% @exams.each do |exam| %>
+        <%= link_to(exam.id, exam_path(exam)) %>
+        <% end %>
+    </li>
+  </div>
+</div>
