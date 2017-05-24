@@ -60,7 +60,13 @@ Rails.application.routes.draw do
 
   resources :favorites
 
-  resources :exams
+  resources :exams do
+    member do
+      post :check_answer
+    end
+  end
+
+  resources :answers
 
   root "welcome#index"
 

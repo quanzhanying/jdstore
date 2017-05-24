@@ -3,11 +3,18 @@ class ExamsController < ApplicationController
 
   def index
     @exams = Exam.all
+
   end
 
   def show
     @exam = Exam.find(params[:id])
   end
+
+  def check_answer
+   @exam = Exam.find(params[:id])
+   redirect_to answers_path
+  end
+
 
 
 end

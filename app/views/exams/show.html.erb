@@ -19,16 +19,18 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th><%= @exam.id %></th>
-        <th><%= @exam.question%></th>
+        <th>第<%= @exam.id %>题</th>
+        <th>题目：<%= @exam.question%></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          #
+          <%= @exam.name %>
         </td>
          <td>
+           选项：
+           <br>
            <%= @exam.answer_1 %>
            <br>
            <%= @exam.answer_2 %>
@@ -36,3 +38,7 @@
        </tr>
      </tbody>
    </table>
+
+   <div class="button">
+        <%= link_to("查看答案", check_answer_exam_path(@exam), class: "buy btn btn-block ",  :method => :post) %>
+   </div>
