@@ -1,3 +1,43 @@
 // Place all the styles related to the Brands controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// /products?brand 品牌简介頁
+.panel-body_brand_img {
+  height: 450px;
+  margin: 0 -10px;
+}
+.brand_img_HAY {
+  background: url(https://ws3.sinaimg.cn/large/006tNc79gy1ffwrb4d9kej31g40u0jxm.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.brand_img_GUBI {
+  background: url(https://ws2.sinaimg.cn/large/006tNc79gy1ffwrc16wyaj30zk0p8e1m.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.brand_img_MENU {
+  background: url(https://ws2.sinaimg.cn/large/006tNc79gy1ffwrbv1zbsj30mi0u0e7h.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.brand_img_muuto {
+  background: url(https://ws3.sinaimg.cn/large/006tNc79gy1ffwrcozy84j30mi0u0n50.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.brand_img_STUA{
+  background: url(https://ws3.sinaimg.cn/large/006tNc79gy1ffwrbhawezj31410u0wzn.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.brand_img_ferm_living {
+  background: url(https://ws1.sinaimg.cn/large/006tNc79gy1ffwrci67sij315z0u0qsr.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+
+.panel-body_brand_name {
+  height: 75px;
+  margin: 0 -10px;
+  padding: 15px;
+}
+.panel-body_brand_text {
+  height: 365.5px;
+  margin: -15px 0px 0px;
+}
+.brand_text {
+  padding: 15px 30px 15px 45px;
+  text-align: left;
+  line-height: 250%;
+  color: #3c3d42
+}
