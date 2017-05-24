@@ -19,12 +19,15 @@
  @import "bootstrap";
  @import "font-awesome";
  @import "cryptocoins.css";
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
  // @import "css/cryptocoins-colors.css";
 
  body {
    padding-top: 1px;
-   font-size: 16px;
-   color: #c0b099
+   font-size: 14px;
+   color: #c0b099;
+   background-color: #f9f9fa;
+   letter-spacing: 0.1em;
  }
 
  /* TOP HEADER
@@ -479,12 +482,206 @@ footer .sub-footer {
 
 /*-------products--Index----*/
 
-div.pd__warpper {
-    background: url(http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz_jpg/S3um6bPib6kJYJxSkDwiadZM6TJ8EGWLQMxqH2osne70CQGT5IpsngtO8xDgn1rgmYFEP4pnAERYRS4To4bR8GNg/0?wx_fmt=jpeg) center center no-repeat #102026;
+#pd__warpper {
+    // background: url(http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz_jpg/S3um6bPib6kJYJxSkDwiadZM6TJ8EGWLQMxqH2osne70CQGT5IpsngtO8xDgn1rgmYFEP4pnAERYRS4To4bR8GNg/0?wx_fmt=jpeg) center center no-repeat #102026;
+    min-height: 100%;
     overflow: hidden;
     background-size: cover;
     position: relative;
     z-index: 40;
+}
+
+.dashboard-header {
+
+    height: 400px;
+    background: linear-gradient(rgba(32,39,64,0.82), rgba(32,39,64,0.52)), url('assets/background.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+.dashboard-header .header-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1240px;
+    height: 250px;
+}
+
+.pd-header-panel {
+  background:url('http://www.btcside.com/Tutorial/img/imgbox1_2.jpg') repeat center center scroll;
+  background-color: rgba(250,250,250,1);
+  margin-top: -5px;
+  padding-top: 90px;
+  padding-bottom: 150px;
+  border: 0px;
+  font-size: 2em;
+}
+
+.pd-container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container-fluid:after {
+    clear: both;
+}
+
+.container-fluid:before, .container-fluid:after {
+    content: " ";
+    display: table;
+}
+
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.pd-mian {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.dashboard-content {
+    padding: 0 15px;
+   }
+
+.dashboard-content {
+    margin: 25px auto;
+    max-width: 1240px;
+    min-height: 100%;
+}
+
+.left-section-card {
+    width: 300px;
+    min-height: 180px;
+    height: auto;
+    margin-bottom: 25px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(155,154,155,0.51);
+}
+
+.announcement {
+    min-height: 174px;
+    background-color: #fff;
+    width: 100%;
+    display: table;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.25);
+}
+
+.left-section-card .card-header {
+    height: 36px;
+    width: auto;
+    background-color: #E5E5E5;
+    padding-left: 10px;
+}
+
+.left-section {
+    float: left;
+    width: 300px;
+    color: #666;
+}
+
+.left-section-card .card-header h2.title {
+    font-size: 16px;
+    line-height: 36px;
+    font-weight: normal;
+    color: #4A4A4A;
+    margin-top: -10px;
+}
+
+.right-section {
+    float: right;
+    width: calc(100% - 340px);
+}
+
+.dashboard-content .course-content {
+    margin: 0 auto 40px;
+    width: 100%;
+    background-color: #fff;
+    padding: 0 0 30px;
+    min-height: 970px;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.25);
+    display: table;
+}
+
+.dashboard-tab {
+    float: left;
+    margin-bottom: 30px;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0;
+    position: relative;
+    background-color: #E5E5E5;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+
+.nav:before, .nav:after {
+    content: " ";
+    display: table;
+}
+
+.nav:after {
+    clear: both;
+}
+
+.dashboard-tab .nav-tabs>li {
+    float: left;
+}
+
+.dashboard-tab .nav>li {
+    position: relative;
+    display: block;
+    margin-bottom: 0;
+}
+
+.dashboard-tab .nav-tabs>li.active>a, .dashboard-tab .nav-tabs>li.active>a:focus, .dashboard-tab .nav-tabs>li.active>a:hover {
+    cursor: default;
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    background-color: #337ab7;
+    color: #fff;
+}
+
+.dashboard-tab .nav-tabs>li>a {
+    line-height: 1.42857143;
+    border: 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 1.142em;
+    letter-spacing: 0.1em;
+    padding: 14px 25px;
+    margin: 0;
+}
+
+.dashboard-tab .nav>li>a {
+    position: relative;
+    display: block;
+}
+
+a:active, a:hover, a:link, a:visited {
+    text-decoration: none;
 }
 
 /*-------products-item-show----*/
@@ -496,6 +693,132 @@ div.pd-s__item {
     height: 900px;
 }
 
+.col-item {
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+  margin-bottom:12px;
+}
+.col-item .options {
+  position:absolute;
+  top:6px;
+  right:22px;
+}
+.col-item .photo {
+  overflow: hidden;
+}
+.col-item .photo .options {
+  display:none;
+}
+.col-item .photo img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.col-item .options-cart {
+  position:absolute;
+  left:22px;
+  top:6px;
+  display:none;
+}
+.col-item .photo:hover .options,
+.col-item .photo:hover .options-cart {
+  display:block;
+  -webkit-animation: fadeIn .5s ease;
+  -moz-animation: fadeIn .5s ease;
+  -ms-animation: fadeIn .5s ease;
+  -o-animation: fadeIn .5s ease;
+  animation: fadeIn .5s ease;
+}
+.col-item .options-cart-round {
+  position:absolute;
+  left:42%;
+  top:22%;
+  display:none;
+}
+.col-item .options-cart-round button {
+  border-radius: 50%;
+  padding:14px 16px;
+
+}
+.col-item .options-cart-round button .fa {
+  font-size:22px;
+}
+.col-item .photo:hover .options-cart-round {
+  display:block;
+  -webkit-animation: fadeInDown .5s ease;
+  -moz-animation: fadeInDown .5s ease;
+  -ms-animation: fadeInDown .5s ease;
+  -o-animation: fadeInDown .5s ease;
+  animation: fadeInDown .5s ease;
+}
+.col-item .info {
+  padding: 10px;
+  margin-top: 1px;
+}
+.col-item .price-details {
+  width: 100%;
+  margin-top: 5px;
+}
+.col-item .price-details h1 {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  float:left;
+}
+.col-item .price-details .details {
+  margin-bottom: 0px;
+  font-size:14px;
+}
+.col-item .price-details span {
+  float:right;
+}
+.col-item .price-details .price-new {
+  font-size:16px;
+}
+.col-item .price-details .price-old {
+  font-size:18px;
+  text-decoration:line-through;
+}
+.col-item .separator {
+  border-top: 1px solid #E1E1E1;
+}
+
+.col-item .clear-left {
+  clear: left;
+}
+.col-item .separator a {
+  text-decoration:none;
+}
+.col-item .separator p {
+  margin-bottom: 0;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.col-item .separator p i {
+  margin-right: 5px;
+}
+.col-item .btn-add {
+  width: 60%;
+  float: left;
+}
+.col-item .btn-add a {
+  display:inline-block !important;
+}
+.col-item .btn-add {
+  border-right: 1px solid #E1E1E1;
+}
+.col-item .btn-details {
+  width: 40%;
+  float: left;
+  padding-left: 10px;
+}
+.col-item .btn-details a {
+  display:inline-block !important;
+}
+.col-item .btn-details a:first-child {
+  margin-right:12px;
+}
 /*-------cart-main-wapper----*/
 
 div.cart__main__wapper {

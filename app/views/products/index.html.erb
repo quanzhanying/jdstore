@@ -1,43 +1,101 @@
-<div class="pd__warpper">
-    <div class="panel-body">
-        <div class="row">
-         <% @products.each do |product| %>
-           <div class="col-xs-6 col-md-3">
-            <div class="panel-body">
-             <%= link_to product_path(product) do %>
-               <% if product.image.present? %>
-                 <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-               <% else %>
-                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-               <% end %>
-             <% end %>
-             <%= product.title %> ￥ <%= product.price %>
-             <%= link_to "更新价格", update_price_product_path(product), :method => :post %>
+<div id="pd__warpper">
+  <div id="pd_content">
+    <div class="dashboard-heaher">
+      <div class="header-content">
+        <div class="row pd-header-panel">
+           <div class="panel-body">
+             <h2>数字资产，你未来资产的一部分！</h2>
            </div>
-           </div>
-         <% end %>
         </div>
+      </div>
     </div>
+    <div class="container-fluid pd-container-fluid">
+      <div class="row pd-mian">
+        <div class="dashboard-content">
+          <div class="left-section">
+            <div class="left-section-card announcement">
+              <div class="card-header">
+                <p>
+                  <h2 class="title">投资须知</h2>
+                  项目有风险，投资需谨慎！
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="course-content">
+              <div class="dashboard-tab col-xs-12">
+                <ul class="nav nav-tabs">
+                  <li class="title active">
+                    <a class="title active" href="#">全部币种</a>
+                  </li>
+                </ul>
+              </div>
+              <% @products.each do |product| %>
+                <div class="col-md-4">
+                  <article class="col-item">
+                     <div class="photo">
+                        <div class="options-cart-round">
+                          <button class="btn btn-default" title="Add to cart">
+
+                          <% if product.quantity.present? && product.quantity > 0 %>
+                          <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-shopping-cart") %>
+                          <% else %>
+                          售罄
+                          <% end %>
+
+                          </button>
+                        </div>
+                        <%= link_to product_path(product) do %>
+                          <% if product.image.present? %>
+                            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                          <% else %>
+                            <%= image_tag("http://placehold.it/250x150&text=No Pic", class: "thumbnail") %>
+                          <% end %>
+                        <% end %>
+                  </div>
+                  <div class="info">
+                    <div class="row">
+                      <div class="price-details col-sm-3">
+                        <p class="details">
+                        ￥ <%= product.price %>
+                        </p>
+                        <span class="price-new"><%= product.title %></span>
+
+                        <button class="btn btn-default"><%= link_to "更新价格", update_price_product_path(product), :method => :post %></button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
-    (function(m, ei, q, i, a, j, s) {
-        m[i] = m[i] || function() {
-            (m[i].a = m[i].a || []).push(arguments)
-        };
-        j = ei.createElement(q),
-            s = ei.getElementsByTagName(q)[0];
-        j.async = true;
-        j.charset = 'UTF-8';
-        j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
-        s.parentNode.insertBefore(j, s);
-    })(window, document, 'script', '_MEIQIA');
-    _MEIQIA('entId', 50521);
+  (function(m, ei, q, i, a, j, s) {
+    m[i] = m[i] || function() {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    j = ei.createElement(q),
+    s = ei.getElementsByTagName(q)[0];
+    j.async = true;
+    j.charset = 'UTF-8';
+    j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
+    s.parentNode.insertBefore(j, s);
+  })(window, document, 'script', '_MEIQIA');
+  _MEIQIA('entId', 50521);
 </script>
 <!-- 这是你自己的 JavaScript 代码 -->
 <script>
     // 你可以自己的代码中选择合适的时机来调用手动初始化
     _MEIQIA('init');
-</script>
-<!-- 美洽客服 -->
+  </script>
+  <!-- 美洽客服 -->
