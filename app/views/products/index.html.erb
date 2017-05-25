@@ -1,17 +1,17 @@
 <div class="row bg-gray">
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-top-40">
-        <div class="container">
+        <div class="container no-padding">
 
             <div class="slideshow-container">
                 <% @products.each_with_index do |product,index|%>
                 <% if product.category.name === "酷炫应用"  %>
                 <div class="mySlides">
-                  <% if product.photos.present? %>
-                  <%= image_tag(product.photos[0].avatar.url,id:"#{product.id}") %>
-              <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
-                  <% end %>
+                    <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].avatar.url,id:"#{product.id}") %>
+                <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                    <% end %>
                 </div>
                 <div class="dots">
                     <span class="dot"></span>
@@ -21,40 +21,40 @@
                 <% end %>
                 <% end %>
             </div>
-            <hr>
-            <h3>精品推荐</h3>
-            <div class="cool-applications">
-                <% @products.each_with_index do |product,index|%>
-                <% if product.category.name === "智能家居"  %>
-                <div class="col-xs-12 col-sm-6 col-md-3 no-padding ">
-                  <!-- <div class="deal-img-margin"> -->
-                    <div class="cool-application  " data-id="<%=product.id%>">
-                        <%= link_to product_path(product) do %>
-                        <% if product.photos.present? %>
-                        <%= image_tag(product.photos[0].avatar.url,id:"#{product.id}") %>
-                    <% else %>
-                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                        <% end %>
-                        <% end %>
-                        <div class="info">
-                            <span style="text-align:center;"><%= product.title %></span>
-                            <p style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><%= product.description%></p>
-                        </div>
-                        <div class="product-options">
-                            <a href="/products/<%= product.id %>/join" class="add-to-whishlist button btn-custom-color" data-toggle="tooltip" data-placement="top" title="Wishlist">
-                                加入收藏
-                            </a>
-                            <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn button btn-custom-color", id:"#{product.id}",:remote => true do %>
-                                加入购物车
-                            <% end %>
-                            <%#= button_to '加入购物车', add_to_cart_product_path(product),class: "addCartBtn ", id:"#{product.id}",:method => :post %>
-                        </div>
+        </div>
+        <hr>
+        <h3 style="text-align:center;">精品推荐</h3>
+        <div class="container no-padding margin-bottom-40">
+            <% @products.each_with_index do |product,index|%>
+            <% if product.category.name === "智能家居"  %>
+            <div class="col-xs-12 col-sm-6 col-md-3 no-padding border product-item">
+                <!-- <div class="deal-img-margin"> -->
+                <div class="cool-application  " data-id="<%=product.id%>">
+                    <%= link_to product_path(product) do %>
+                    <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].avatar.url,id:"#{product.id}") %>
+                <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                    <% end %>
+                    <% end %>
+                    <div class="info">
+                        <span style="text-align:center;"><%= product.title %></span>
+                        <p style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><%= product.description%></p>
                     </div>
-                    <!-- </div> -->
+                    <div class="product-options">
+                        <a href="/products/<%= product.id %>/join" class="add-to-whishlist button btn-custom-color" data-toggle="tooltip" data-placement="top" title="Wishlist">
+                            加入收藏
+                        </a>
+                        <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn button btn-custom-color", id:"#{product.id}",:remote => true do %>
+                        加入购物车
+                        <% end %>
+                        <%#= button_to '加入购物车', add_to_cart_product_path(product),class: "addCartBtn ", id:"#{product.id}",:method => :post %>
+                    </div>
                 </div>
-                <% end %>
-                <% end %>
+                <!-- </div> -->
             </div>
+            <% end %>
+            <% end %>
         </div>
 
     </div>
@@ -105,14 +105,18 @@
 <p>立体生活， 以现代科技产品为中心，集合智能家居，视音震撼，品味生活，酷炫应用，新潮玩具等方面的立体生活理念  </p>
 <p>我们想要的生活是立体而智能的。在这里，您可以找到品牌归属感。得到生活中</p>
 <p>五维生活空间</p> -->
+<hr>
 
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h1>追求更好的生活品质</h1>
-        <p>唯有不将就，才能不断提升个人品味和生活质量</p>
-        <p>生活本应该丰富多彩</p>
-        <p>我们提供了以现代科技产品手机为中心，集合智能家居，酷炫应用，视听享受三个方面的选择</p>
-        <p>如果您有更棒的想法和品味，请与我们联系</p>
-    </div>
+  <h3 style="text-align:center;">追求更好的生活品质</h3>
+        <div class="container no-padding aboutUs">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <br>
+                <p>唯有不将就，才能不断提升个人品味和生活质量</p>
+                <p>生活本应该丰富多彩</p>
+                <p>我们提供了以现代科技产品手机为中心，集合智能家居，酷炫应用，视听享受三个方面的选择</p>
+                <p>如果您有更棒的想法和品味，请与我们联系</p>
+            </div>
+        </div>
 </div>
 
 <script>

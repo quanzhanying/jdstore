@@ -116,6 +116,7 @@
 
             .product-item-wrap {
                 display: inline-block;
+                overflow: hidden;
 
                 .product-item {
                     display: -webkit-flex;
