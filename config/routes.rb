@@ -17,8 +17,9 @@ namespace :admin do
     end
   end
 end
-root 'before_index#index'
-resources :welcome
+
+root 'welcome#index'
+
 resources :products do
   member do
     post :add_to_cart
@@ -29,6 +30,9 @@ resources :products do
     get :ceremony
     get :micro
   end
+  collection do
+      get :search
+    end
 end
   resources :carts do
     collection do
