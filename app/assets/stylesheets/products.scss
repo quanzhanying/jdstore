@@ -14,13 +14,24 @@
 .decor-bottom2 {
   height: 7em;
   margin-top: -7em;
-  fill: #d7dbcc;
+  fill: #f6f3e1;
 }
 
 .decor-bottom1 {
   height: 7em;
   margin-top: -20em;
   fill: black;
+}
+
+.decor-top8{
+  height: 6em;
+  margin-bottom: -84px;
+  fill: #ffffff;
+}
+.decor-top5{
+  height: 6em;
+  margin-bottom: -84px;
+  fill: #f6f3e1;
 }
 /*================波浪分割线==============*/
 
@@ -31,7 +42,7 @@
 /*===== 1.网站头贴 ====*/
 
 .welcome-top{
-    background-color: #d7dbcc;
+    background-color: #f6f3e1;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: -1.4em;
@@ -39,7 +50,7 @@
 
 .carousel-caption {
   padding: 0;
-  margin: 2px -120px 10px 0;
+  // margin: 2px -120px 10px 0;
 }
 
 .carousel-control {
@@ -80,13 +91,63 @@
 //   font-size: 7em;
 //   top: 1.7em;
 // }
+.intro-content02 > h1 {                     //海报01字体
+    color: white;
+    font-size: 85px;
+    letter-spacing: 1px;
+    font-family: 'Clicker Script', cursive;
+    color: #ffffff;
+    margin: 1em 0 1em 0;
+}
+
+.intro-content02 > p {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.intro-content03 > h1 {                     //海报02字体
+    color: white;
+    font-size: 85px;
+    letter-spacing: 1px;
+    font-family: 'Clicker Script', cursive;
+    color: #ffffff;
+    margin: 1em 0 1em 0;
+}
+
+.intro-content03 > p {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 0em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.intro-content04 > h1 {                     //海报01字体
+    color: white;
+    font-size: 65px;
+    letter-spacing: 1px;
+    font-family: 'Clicker Script', cursive;
+    color: #ffffff;
+    margin: 1em 0 1em 0;
+}
+
+.intro-content04 > p {
+    color: #fff;
+    font-size: 1.5em;
+//     letter-spacing: 0.5em;
+    margin-top: 1em;
+//     text-align: center;
+}
 /*============================= end 1.网站头贴 ============================*/
 
 
 /*============================= 2.服务块 ============================*/
 .fw{
-  background-color: #d7dbcc;
-  padding: 4em;
+  background-color: #f6f3e1;
+
 }
 .polaroid2 {
   width: 100%;
@@ -95,6 +156,7 @@
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .container12 {
   text-align: center;
   padding: 10px 20px;
@@ -105,20 +167,27 @@
 }
 
 /*=============================  end 2. 服务块  ============================*/
-
+.decor-top3 {
+  height: 6em;
+  margin-top: -6px;
+  fill: #ffffff;
+}
 /*==================================== 3.产品块 ======================================*/
 .pr{
-  background-color: #d7dbcc;
-  padding: 4em;
+  // background-color: #d7dbcc;
+  padding: 2em;
+  // margin: 10em;
 }
 .boxx {
   background:#fff;
   transition:all 0.2s ease;
-  border:0.1em dashed #dadada;
+  border:2px dashed #dadada;
+  margin-top: 10px;
   box-sizing: border-box;
-  border-radius: 0.5em;
+  border-radius: 5px;
   background-clip: padding-box;
-  padding: 1.5em;
+  padding:0 10px 10px 10px;
+  min-height:340px;
 }
 
 .boxx:hover {
@@ -138,11 +207,15 @@
   background-clip: padding-box;
   box-sizing: border-box;
 }
-
+.boxx .boxx-contentx p {
+  color:#515c66;
+  text-transform:none;
+}
 .boxx .small{
   width: 400px;
   // cursor: pointer;
 }
+
 /*======================================= end 3.产品块 =====================================*/
 
 /*=========================================== 分割图 =====================================*/
@@ -174,11 +247,12 @@
 // 	text-shadow: 0 1px white, 0 2px black;
 // }
 .ph{
-  background-color: #d7dbcc;
-  padding: 4em;
+  // background-image: url('http://ww2.sinaimg.cn/large/006tNbRwly1ffop4373gwj31kw0w0kjo.jpg');
+  background-color: #f6f3e1;
+  padding: 0.1em;
 }
 .container1{
-	margin: 10% auto;
+	margin: 6% auto;
 	width: 24em;  //图片大小&图片间隔宽度
 	height: 13em;  //视角
 	position: relative;
@@ -238,7 +312,7 @@ img{
 /*=================================== 5.铁粉说 ==================================*/
 .say{
   background-color: #d7dbcc;
-  padding: 4em;
+  // padding: 1em;
   .do-box{
     img{
       margin-bottom: 2em;

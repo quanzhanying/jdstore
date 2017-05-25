@@ -22,10 +22,22 @@
  .decor-bottom {
    height: 6em;
    margin-top: -84px;
-   fill: #d7dbcc;
+   fill: #f6f3e1;
  }
 
  .decor-top {
+   height: 7em;
+   margin-bottom: -7em;
+   fill: #f6f3e1;
+ }
+
+ .decor-bottom9 {
+   height: 6em;
+   margin-top: -84px;
+   fill: #d7dbcc;
+ }
+
+ .decor-top9 {
    height: 7em;
    margin-bottom: -7em;
    fill: #d7dbcc;
@@ -45,9 +57,10 @@
 
  .intro-content > p {
      color: #fff;
-     font-size: 1.5em;
+     font-size: 2.5em;
      letter-spacing: 0.1em;
      margin-top: 1em;
+     text-align: center;
  }
  //=============================================海报上的字体
 
@@ -181,7 +194,7 @@
       letter-spacing: 2px;
     }
     .logo {
-      margin-top: 150px;
+      margin-top: 180px;
       margin-bottom: 40px;
       img{
       margin-left: 25px ;
@@ -211,8 +224,8 @@
 
  .section-title {
      color: #666;
-     margin-top: 1.2em;
-     margin-bottom: 3em;
+     margin-top: 1em;
+     margin-bottom: 1em;
      letter-spacing: 3px;
      font-size: 30px;
      font-family: STHeiti Light;
