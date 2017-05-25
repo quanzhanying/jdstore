@@ -2,7 +2,17 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
   def index
-    @products = Product.all.order("position ASC")
+    if params[:category].present?
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(category_id: @category_id).recent
+    # else
+    #   @products = case params[:order]
+    #   when 'by_price'
+    #       Product.all.order("price DESC")
+    #   else
+    #     Product.all.recent
+    #   end
+    end
   end
 
   def show
