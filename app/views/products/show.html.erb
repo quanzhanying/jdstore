@@ -81,12 +81,8 @@
                     </li>
                   </ul>
                 </div>
-
-                <h5>￥<%= @product.price %></h5>
-
-                <p>
-                  产地直接发货
-                </p>
+                <h5>￥<%= @product.price %><% @product.price_unit %></h5>
+                <h6><%= @product.content %></h6>
               </div>
 
               <div class="product-quantity">

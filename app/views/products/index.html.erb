@@ -51,7 +51,8 @@
                   <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                 </ul>
               </div>
-              <h5>￥<%= product.price %></h5>
+              <h5>￥<%= product.price %><% product.price_unit %></h5>
+              <h6><%= product.content %></h6>
               <!-- <a class="btn cart-button" href="#"> 加入购物车 </a> -->
               <% if product.quantity.present? && product.quantity > 0 %>
                 <%= link_to("加入购物车", add_to_cart_product_path(product), method: :post, class: "btn cart-button") %>

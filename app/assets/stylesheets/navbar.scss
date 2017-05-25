@@ -139,7 +139,7 @@
 	-webkit-transition: none;
 	-o-transition: none;
 	transition: none;
-	width: 300px; //460px
+	width: 100%; //460px
 	font-family:'Libre Baskerville', serif;
 	font-weight:400;
 	font-size: 1.2em; //14px
@@ -149,18 +149,21 @@
 }
 .widget_product_search {
 	position: relative;
-	margin-top: 15px; //25px
-	margin-left: 40%; //add
-	padding-top: 0px;
-	// float:right;
+	margin: 18px 80px 2px 80px; //25px
+	// margin-left: 40%; //add
+	// text-align: center;
+	// padding-top: 0px;
+	// padding: 0px 80px;
 }
+
 .widget_product_search .submit-search {
 	position: absolute;
 	bottom: 0px; //-2px;
-  // right: 20px;
+  right: 0px;
   // padding: 0;
   // margin: 0;
-  margin-left: 230px; //add
+  // margin-left: 230px; //add
+	// float:right;
 	border: 0;
 	background: none;
 	cursor: pointer;
@@ -169,6 +172,25 @@
 	color: #6FC042; //color: #fff;
   font-size: 1.2em; //14px;
 }
+
+//add
+.search-hot ul{
+  list-style: none;
+	text-align: center;
+  // padding-left: 38%;
+
+}
+.search-hot li{
+  display: inline-block;
+  //margin-right: 12px;
+  margin: 5px;
+
+}
+.search-hot li a{
+  color: #999;
+  text-decoration: none;
+}
+
 /* scroll progress bar */
 #scroll-progressbar {
 	display: block;

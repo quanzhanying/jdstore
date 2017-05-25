@@ -61,17 +61,42 @@
   <div class="logo-section">
     <div class="container">
       <div class="row">
-        <div class="logo-wrap">
-          <div class="logo">
-            <a href="/"><img class="" src="/images/logo.png" alt=""></a>
+
+        <div class="col-md-3 col-xd6" > <!-- style="background-color: green;" -->
+          <div class="logo-wrap">
+            <div class="logo">
+              <a href="/"><img class="" src="/images/logo.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xd6" > <!-- style="background-color: blue;" -->
+          <div class="widget_product_search">
+            <%= form_tag search_products_path, :method => :get do %>
+            <!-- <input type="text" class="form-control search-box" placeholder="搜索"> -->
+            <input type="text" class="form-control search-box" name="q" value="<%= params[:q] %>" placeholder="搜索">
+            <button type="submit" class="submit-search"><i class="fa fa-search"></i></button>
+            <% end %>
           </div>
 
-          <div class="widget_product_search">
-            <input type="text" class="form-control search-box" placeholder="搜索">
-            <button type="submit" class="submit-search"><i class="fa fa-search"></i></button>
+          <div class="search-hot">
+            <ul>
+              <li style="color: orange;">热门搜索:</li>
+              <li><a href="/products/search?utf8=✓&q=真实">真实</a></li>
+              <li><a href="/products/search?utf8=✓&q=进口">进口</a></li>
+              <li><a href="/products/search?utf8=✓&q=水果">水果</a></li>
+              <li><a href="/products/search?utf8=✓&q=蔬菜">蔬菜</a></li>
+              <li><a href="/products/search?utf8=✓&q=樱桃">樱桃</a></li>
+              <li><a href="/products/search?utf8=✓&q=黄杏">黄杏</a></li>
+              <li><a href="/products/search?utf8=✓&q=芒果">芒果</a></li>
+              <li><a href="/products/search?utf8=✓&q=香瓜">香瓜</a></li>
+            </ul>
           </div>
         </div>
+        <div class="col-md-3">
+
         </div>
+      </div>
     </div>
   </div>
 
@@ -122,101 +147,101 @@
             </li>
 
             <!-- <li class="menu-child-list"><a href="#">Pages</a>
-              <ul class="sub-menu clearfix">
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="services.html">Services</a></li>
-              </ul>
-            </li> -->
-
-            <!-- <li class="menu-child-list"><a href="#">Blog</a>
-              <ul class="sub-menu clearfix">
-                <li><a href="blog.html">Blog 1</a></li>
-                <li><a href="blog-standared.html">Blog 2</a></li>
-                <li><a href="blog-sidebar.html">Blog 3</a></li>
-                <li>
-                  <a href="blog-detail.html">Blog single</a>
-                  Sub Menu
-                  <ul class="sub-menu oprn-right clearfix">
-                    <li><a href="blog-single.html">Blog detail 1</a></li>
-                  </ul>
-                  List
-                </li>
-              </ul>
-            </li> -->
-
-            <!-- <li class="menu-child-list">
-              <a href="#">Shop</a>
-              <ul class="sub-menu clearfix">
-                <li><a href="shop-col-3.html">Shop col 3</a></li>
-                <li><a href="shop-without-sidebar.html">Shop col 4</a></li>
-                <li><a href="shop-with-sidebar.html">Shop with sidebar</a></li>
-                <li><a href="shop-single.html">shop single</a></li>
-                <li><a href="shop-cart.html">Cart</a></li>
-                <li><a href="shop-checkout.html">Checkout</a></li>
-              </ul>
-            </li> -->
-
-            <li class="menu-child-list">
-              <!-- <a href="contact-us.html">联系我们</a> -->
-              <a href="#">联系我们</a>
-            </li>
-
+            <ul class="sub-menu clearfix">
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="services.html">Services</a></li>
           </ul>
-        </div>
+        </li> -->
 
-        <!-- start  navbar-mini-cart -->
-        <div class="pull-right nav-right-section">
-          <ul class="navbar-mini-cart-wrapper">
-            <li>
-              热线电话：<i class="fa fa-phone" aria-hidden="true"></i>400-12345678
-            </li>
-            <!-- <li>
-              <a href="#" class="navbar-mini-cart-btn">
-                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                <span class="item-count">21</span>
-              </a>
-              <ul class="navbar-mini-cart">
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/images/products/small-1.jpg" alt="">
-                  </div>
-                  <div class="product-details">
-                    <h6>Name of the product</h6>
-                    <p>$255.5</p>
-                    <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/images/products/small-2.jpg" alt="">
-                  </div>
-                  <div class="product-details">
-                    <h6>Name of the product</h6>
-                    <p>$155.5</p>
-                    <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                  </div>
-                </li>
-                <li class="minicart-price-total">
-                  <div class="price-total">
-                    <span class="label-price-total">Subtotal</span>
-                    <div class="price-total-w">
-                      <span>$255.5</span>
-                    </div>
-                  </div>
+        <!-- <li class="menu-child-list"><a href="#">Blog</a>
+        <ul class="sub-menu clearfix">
+        <li><a href="blog.html">Blog 1</a></li>
+        <li><a href="blog-standared.html">Blog 2</a></li>
+        <li><a href="blog-sidebar.html">Blog 3</a></li>
+        <li>
+        <a href="blog-detail.html">Blog single</a>
+        Sub Menu
+        <ul class="sub-menu oprn-right clearfix">
+        <li><a href="blog-single.html">Blog detail 1</a></li>
+      </ul>
+      List
+    </li>
+  </ul>
+</li> -->
 
-                  <div class="checkout-btn">
-                    <a href="shop-cart.html" class="btn btn-default">View Cart</a>
-                    <a href="shop-checkout.html" class="btn btn-default ml-5">checkout</a>
-                  </div>
-                </li>
-              </ul>
-            </li> -->
-          </ul>
-          <!-- end  navbar-mini-cart -->
-        </div>
-      </div>
+<!-- <li class="menu-child-list">
+<a href="#">Shop</a>
+<ul class="sub-menu clearfix">
+<li><a href="shop-col-3.html">Shop col 3</a></li>
+<li><a href="shop-without-sidebar.html">Shop col 4</a></li>
+<li><a href="shop-with-sidebar.html">Shop with sidebar</a></li>
+<li><a href="shop-single.html">shop single</a></li>
+<li><a href="shop-cart.html">Cart</a></li>
+<li><a href="shop-checkout.html">Checkout</a></li>
+</ul>
+</li> -->
 
-    </nav>
-  </div>
+<li class="menu-child-list">
+  <!-- <a href="contact-us.html">联系我们</a> -->
+  <a href="#">联系我们</a>
+</li>
+
+</ul>
+</div>
+
+<!-- start  navbar-mini-cart -->
+<div class="pull-right nav-right-section">
+  <ul class="navbar-mini-cart-wrapper">
+    <li>
+      热线电话：<i class="fa fa-phone" aria-hidden="true"></i>400-12345678
+    </li>
+    <!-- <li>
+    <a href="#" class="navbar-mini-cart-btn">
+    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+    <span class="item-count">21</span>
+  </a>
+  <ul class="navbar-mini-cart">
+  <li class="item">
+  <div class="product-img">
+  <img src="/images/products/small-1.jpg" alt="">
+</div>
+<div class="product-details">
+<h6>Name of the product</h6>
+<p>$255.5</p>
+<a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+</div>
+</li>
+<li class="item">
+<div class="product-img">
+<img src="/images/products/small-2.jpg" alt="">
+</div>
+<div class="product-details">
+<h6>Name of the product</h6>
+<p>$155.5</p>
+<a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+</div>
+</li>
+<li class="minicart-price-total">
+<div class="price-total">
+<span class="label-price-total">Subtotal</span>
+<div class="price-total-w">
+<span>$255.5</span>
+</div>
+</div>
+
+<div class="checkout-btn">
+<a href="shop-cart.html" class="btn btn-default">View Cart</a>
+<a href="shop-checkout.html" class="btn btn-default ml-5">checkout</a>
+</div>
+</li>
+</ul>
+</li> -->
+</ul>
+<!-- end  navbar-mini-cart -->
+</div>
+</div>
+
+</nav>
+</div>
 </header>

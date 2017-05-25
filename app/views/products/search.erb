@@ -1,0 +1,76 @@
+<section>
+  <div class="breadcrumps-back">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumps-heading">
+            <h3>搜索结果</h3>
+            <div class="breadcrumps-border"></div>
+            <ul>
+              <li><a href="/"> 首页</a> /</li>
+              <li><a href="#"> 搜索商品</a></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="shop-without-sidebar" class="ptb-100"> -->
+<section id="shop-without-sidebar" style="margin: 20px auto 100px;">
+  <div class="container">
+    <div class="row">
+      <% if @products.blank? %>
+      <div class="text-center">
+        没有符合搜索条件的商品哦！<br>
+        <%= link_to("查看所有商品", products_path, class: "btn btn-sm btn-success") %>
+      </div>
+      <% else %>
+        <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="product-style-1 text-center">
+            <!-- <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "img-responsive", alt: product.name) %>
+            <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive", alt: "None") %>
+            <% end %>
+            <% end %> -->
+            <%= link_to product_path(product) do %>
+            <% if product.img_url.present? %>
+            <%= image_tag(product.img_url, size: "200x200", class: "", alt: product.name) %>
+            <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "", alt: "None") %>
+            <% end %>
+            <% end %>
+            <div class="product-detail-content">
+              <h6><%= product.name %><h6>
+                <div class="product-rating-with-border">
+                  <div class="background-border"></div>
+                  <ul>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  </ul>
+                </div>
+                <h5>￥<%= product.price %><% product.price_unit %></h5>
+                <h6><%= product.content %></h6>
+                <!-- <a class="btn cart-button" href="#"> 加入购物车 </a> -->
+                <% if product.quantity.present? && product.quantity > 0 %>
+                <%= link_to("加入购物车", add_to_cart_product_path(product), method: :post, class: "btn cart-button") %>
+                <% else %>
+                已销售一空，无法购买！
+                <% end %>
+                <br><br><br>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
