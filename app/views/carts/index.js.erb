@@ -1,0 +1,12 @@
+<% @carts.each do |cart| %>
+  $("#mcart-sigle").append("<%=j render :partial => "cart", :locals => { :cart => cart } %>");
+<% end %>
+$(".p-total b").html("<%= current_cart.products.count %>" );
+$(".cw-icon span").html("(<%= current_cart.products.count %>)" );
+
+$(".p-total strong").html("￥ <%= render_cart_total_price(current_cart) %>" );
+
+<% if @carts.any? %>
+
+var cart_item_id = <%= @carts.last.id %>;
+<% end %>

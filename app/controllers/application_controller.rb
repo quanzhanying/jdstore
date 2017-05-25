@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   def current_cart
     @current_cart ||= find_cart
+    
   end
 
   def add_to_cart

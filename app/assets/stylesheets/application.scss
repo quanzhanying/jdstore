@@ -129,7 +129,17 @@ h3{
 }
 
 
-.fly_item{border:1px solid #000;width:38px;height:38px;overflow:hidden;position:absolute;visibility:hidden;opacity:.5;filter:alpha(opacity=50);z-index: 9999;}
+.fly_item{
+  //border:1px solid #fe575f;
+  width:40px;
+  height:40px;
+  overflow:hidden;
+  position:absolute;
+  visibility:hidden;
+  opacity:.5;
+  filter:alpha(opacity=50);
+  z-index: 9999;
+}
 
 
 .item_hover{
@@ -446,36 +456,8 @@ padding: 9px 8px 0 8px;
   }
 }
 .product-img{
-  width: 100%; //限定照片显示的大小///
-}
-
-//京东footer//
-/*.footer {
-
-    background-color: #c4b7a4;
-    //padding: 16px 10px 6px;
-    text-align: center;
-    font-size: 12px;
-    color: #fff;
-}
-.footer .mod_help_nav{
-  display: inline-block;
-  //display: inline;
-
-  margin-right:  0;
-  text-align: left;
-}
-.footer  ul{
   width: 100%;
-  height: 160px;
 }
-.footer  ul,.footer li{
-      list-style: none;
-      margin-right: 30px;
-      padding: 0;
-
-    }
-    */
 
     .footer {
       display: block;
@@ -1236,4 +1218,234 @@ overflow: hidden;
 
 .modal-dialog {
   margin-top: 500px;
+}
+///----新购物车----
+.dorpdown {
+  position: relative;
+}
+.dorpdown-layer {
+  display: none;
+  position: absolute;
+  padding: 10px;
+}
+.dorpdown:hover .dorpdown-layer,
+.hover .dorpdown-layer {
+  display: block;
+}
+.dorpdown-layer {
+  display: none;
+  position: absolute;
+}
+
+#settleup-2014 {
+  float: left;
+  z-index: 11;
+  height: 45px;
+  //margin-top: 27px;
+}
+#settleup-2014 ul,li{
+  list-style: none;
+  padding: 0;
+}
+#settleup-2014 li{
+  display: inline-block;
+}
+
+#settleup-2014 .cw-icon {
+  width: 160px;
+  height: 45px;
+  border: 1px solid #DFDFDF;
+  padding: 0 28px 0 19px;
+  background: #F9F9F9;
+  line-height: 45px;
+  text-align: center;
+}
+#settleup-2014 .cw-icon a {
+  color: #B28435;
+  text-decoration: none;
+}
+#settleup-2014 .iconfont {
+  left: 90px;
+  color: #f30213;
+  font-size: 16px;
+}
+#settleup-2014 .arrow {
+  display: none;
+  left: 118px;
+  color: #666;
+  font-size: 12px;
+}
+#settleup-2014 .ci-left {
+  top: 9px;
+  left: 90px;
+  width: 16px;
+  height: 16px;
+  background: url("//misc.360buyimg.com/jdf/1.0.0/unit/shoppingcart/5.0.0/i/settleup-@1x.png") no-repeat;
+  background-size: 16px 16px;
+  overflow: hidden;
+}
+@media only screen and (-Webkit-min-device-pixel-ratio:1.5),only screen and (-moz-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3 / 2),only screen and (min-device-pixel-ratio:1.5) {
+  #settleup-2014 .ci-left {
+    background-image: url("//misc.360buyimg.com/jdf/1.0.0/unit/shoppingcart/5.0.0/i/settleup-@2x.png");
+  }
+}
+#settleup-2014 .ci-right {
+  display: none;
+  top: 13px;
+  right: 12px;
+  height: 10px;
+  width: 10px;
+  background: url("//misc.360buyimg.com/jdf/1.0.0/unit/shoppingcart/5.0.0/i/right-@1x.png") no-repeat;
+  background-size: 10px 10px;
+  overflow: hidden;
+}
+#settleup-2014 .ci-count {
+  position: absolute;
+  top: 7px;
+  left: 105px;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  padding: 1px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -1px;
+  color: #fff;
+  background-color: #da1026;
+  border-radius: 7px;
+  width: 14px;
+  font-family: tahoma,arial;
+  text-align: center;
+
+}
+#settleup-2014.hover .cw-icon,
+#settleup-2014.hover .dorpdown-layer,
+#settleup-2014:hover .cw-icon,
+#settleup-2014:hover .dorpdown-layer {
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+#settleup-2014.hover .dorpdown-layer,
+#settleup-2014:hover .dorpdown-layer {
+  display: block;
+  right: 0;
+  _right: -1px;
+  width: 420px;
+}
+#settleup-2014.hover .spacer,
+#settleup-2014:hover .spacer {
+  position: absolute;
+  right: 0;
+  top: -7px;
+  width: 157px;
+  height: 12px;
+  background: #fff;
+}
+#settleup-2014 .prompt {
+  padding: 10px 15px;
+}
+#settleup-2014 .nogoods {
+  padding-left: 30px;
+  height: 49px;
+  line-height: 49px;
+  overflow: hidden;
+  color: #999;
+}
+#settleup-2014 .nogoods b {
+  float: left;
+  width: 56px;
+  height: 49px;
+  background-image: url("//misc.360buyimg.com/jdf/1.0.0/unit/shoppingcart/5.0.0/i/settleup-nogoods.png");
+}
+#settleup-2014 .dt-mz {
+  color: #999;
+  width: 310px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#settleup-2014 .dt-mz a {
+  color: #999;
+}
+#settleup-2014 .dt-mz:hover {
+  background: #fff;
+}
+
+#settleup-2014 .p-img {
+  float:left;
+  //display: inline-block;
+  width:80px;
+  height:80px;
+  //border:1px solid #f2f2f2;
+  padding:0;
+  margin-right:10px;
+  font-size:0
+}
+#settleup-2014 .p-name {
+  float:left;
+  display: flex;
+  width:220px;
+  height:80px;
+  padding: 0 20px 0 20px ;
+  overflow:hidden;
+}
+#settleup-2014 .p-name a{
+  margin: auto;
+  //display: table-cell;
+  //vertical-align: middle; //垂直居中
+  //padding: 10px 10px;
+  color: #666;
+
+}
+#settleup-2014 .p-detail {
+  height: 80px;
+  float:right;
+  text-align:center;
+  padding-top: 20px;
+// display: inline-block;
+width: 80px;
+}
+
+hover
+#settleup-content {
+  position: relative;
+    z-index: 2;
+    width: 100%;
+    background: #fff;
+
+}
+#settleup-content .smb {
+  background-color: #e7e7e7;
+  height: 30px;
+  width: 100%;
+  //float: left;
+}
+#settleup-content .smb .p-total {
+float:left;
+line-height:29px;
+padding-left: 10px;
+}
+#settleup-content .smb span {
+color:#c81623
+}
+#settleup-content .smb a {
+float:right;
+height:29px;
+padding:0 10px;
+background:#E4393C;
+color:#fff;
+text-align:center;
+font-weight:700;
+line-height:29px;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px
+}
+
+#settleup-content a{
+  text-decoration: none;
+}
+#settleup-content li.hover,#settleup-content li:hover {
+background:#F5F5F5
 }
