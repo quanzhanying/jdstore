@@ -21,14 +21,31 @@
  // common seeting
 
  html{height:100%;}
- body{min-height:100%;margin:0;padding:0;position:relative;}
+ body{
+   min-height:100%;margin:0;padding:0;position:relative;
+   font-size: 12px;
+ }
 
  header{background-color: #ffe4c4;}
  main{padding-bottom:100px;background-color: #bdb76b;}/* main的padding-bottom值要等于或大于footer的height值 */
  footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #ffc0cb;}
 
-// navbar
+// devise signup
+.login_bg{
+  height: 850px;
+  background: url('http://ww3.sinaimg.cn/large/006tNc79gy1ffxwktfqh4j31kw11xty6.jpg') center center no-repeat scroll;
+}
 
+.login_inter{
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 5px;
+
+}
+
+head {
+  display: block;
+}
 
  // 大图
  .box{
