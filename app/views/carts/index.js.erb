@@ -1,6 +1,7 @@
 <% sum = 0 %>
+<% pa = params[:max_id].to_i %>
 <% @carts.each do |cart| %>
-<% if cart.id > params[:max_id].to_i %>
+<% if cart.id > pa %>
     $("#mcart-sigle").append("<%=j render :partial => "cart", :locals => { :cart => cart } %>");
 <% else  %>
   $("#cart-item-<%= cart.product_id %> .p-price").html("×<%= cart.quantity %>" );
