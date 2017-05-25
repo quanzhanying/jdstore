@@ -34,5 +34,5 @@ Rails.application.routes.draw do
     namespace :account do
       resources :orders
     end
-    get 'about/index'
+    resources :about
  end

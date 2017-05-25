@@ -24,6 +24,8 @@
      max-height: 700px;
      position: relative;
      background: #000000;
+     margin-top: -20px
+
  }
  .bs-slider:hover {
      cursor: -moz-grab;
@@ -43,7 +45,7 @@
  }
  .bs-slider > .carousel-inner > .item > img,
  .bs-slider > .carousel-inner > .item > a > img {
-     margin: auto;
+
      width: 100% !important;
  }
 
