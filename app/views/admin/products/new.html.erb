@@ -1,7 +1,7 @@
 <div class="backend-main">
 
 
-<h2 style="margin-top: 80px;">New Product</h2>
+<h2>New Product</h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
@@ -30,7 +30,9 @@
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <%= f.submit "Submit", data: {
+  disable_with: "Submitting..."
+} %>
 
-
+<%end %>
 </div>
