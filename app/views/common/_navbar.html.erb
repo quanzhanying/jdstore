@@ -3,10 +3,10 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="col-md-3">
           <div class="navbar-header">
-              <a class="navbar-brand" href="/">JDStore </a>
+              <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' >森生活 </a>
               <ul class="nav navbar-nav">
                 <li class="active">
-                  <%= link_to("Products", products_path) %>
+                  <%= link_to("全部商品", products_path) %>
                 </li>
               </ul>
           </div>
@@ -31,7 +31,7 @@
         <div class="col-md-3">
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right log-word">
                 <li>
                   <%= link_to carts_path do %>
                     购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %>)
