@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def current_cart
     @current_cart ||= find_cart
-    
+
   end
 
   def add_to_cart
@@ -21,8 +21,11 @@ class ApplicationController < ActionController::Base
     else
       #flash[:warning] = "你的购物车内已有此物品"
       ci = current_cart.cart_items.find_by(product_id: @product)
-      ci.quantity += 1
-      ci.save
+      if ci.quantity < @product.quantity
+        ci.quantity += 1
+      else
+        render :js => "alert('已经超过最大可购买数量');"
+      end
     end
     #redirect_to :back
   end

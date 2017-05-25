@@ -6,11 +6,16 @@ class CartItemsController < ApplicationController
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     @product = @cart_item.product
-    @cart_item.destroy
+    if @cart_item.destroy
+      render :js =>  '$("#cart-item-' + params[:id] + '").remove();'
+      
+    else
+      render :js =>  '$("#cart-item-' + params[:id] + '").remove();'
+    end
+
 
     #flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
     #redirect_to :back
-    render :js =>  '$("#cart-item-' + params[:id] + '").remove();'
 
   end
 

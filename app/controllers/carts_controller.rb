@@ -9,7 +9,7 @@ class CartsController < ApplicationController
     end
 
     def index
-      @carts = current_cart.cart_items.where( "id > ?", params[:max_id])
+      @carts = current_cart.cart_items #.where( "id > ?", params[:max_id])
       respond_to do |format|
     format.html  # 如果客户端要求 HTML，则回传 index.html.erb
     format.js    # 如果客户端要求 JavaScript，回传 index.js.erb
