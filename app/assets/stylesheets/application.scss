@@ -509,22 +509,22 @@ hr,
   font-style:italic;
   color:#303030;
   line-height:30px;
-  margin-top:30px;
+  margin-top: 5px; //30px; 生效
 }
 .dalvse-header{
-  padding-bottom:80px;
+  padding-bottom: 40px; //80px; 生效
   position:relative;
 }
 .heading-border{
-  width:80px;
-  height:3px;
-  background:#39b54a;
+  width: 120px; //80px
+  height: 1px; //3px
+  background: #8fd613; //39b54a
 }
 .text-right .heading-border{
   float:right;
 }
 .text-center .heading-border{
-  margin:0 auto;
+  margin: 0 auto;
 }
 .small-header h2{
   font-family: 'Montserrat', sans-serif;
@@ -2657,7 +2657,7 @@ hr,
     padding-bottom:5px;
   }
   .welcome-content .dalvse-header p{
-    margin-top:15px;
+    margin-top: 5px; //margin-top:15px;
   }
   .welcome-content .dalvse-header h1{
     margin-bottom:15px;
@@ -2945,7 +2945,7 @@ hr,
     line-height: 34px;
   }
   .dalvse-header p{
-    margin-top:20px;
+    margin-top: 5px; //margin-top:20px;
   }
   p{
     font-size:12px;

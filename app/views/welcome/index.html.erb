@@ -10,18 +10,8 @@
           <ul class="sidebar-ul">
             <li>商品分类</li>
             <li class="menu-child-list menu-item-mega-parent">
-              <a href="#">蔬菜水果</a> <span class="down"></span>
+              <a href="#">新鲜水果</a> <span class="down"></span>
               <ul class="mega-menu-container row">
-                <!-- Mega Menu Sub Menu -->
-                <li class="menu-child-list active col-md-3">
-                  <a href="#" class=" zn_mega_title ">蔬菜</a> <span class="down"></span>
-                  <ul class="clearfix">
-                    <li><a href="#">菜心</a></li>
-                    <li><a href="#">生菜</a></li>
-                    <li><a href="#">通心菜</a></li>
-                    <li><a href="#">小白菜</a></li>
-                  </ul>
-                </li>
                 <!-- Mega Menu Sub Menu -->
                 <li class="menu-child-list col-md-3">
                   <a href="#" class=" zn_mega_title ">水果</a> <span class="down"></span>
@@ -36,6 +26,25 @@
               </ul>
               <!-- End Mega Menu List -->
             </li>
+
+            <li class="menu-child-list menu-item-mega-parent">
+              <a href="#">新鲜蔬菜</a> <span class="down"></span>
+              <ul class="mega-menu-container row">
+                <!-- Mega Menu Sub Menu -->
+                <li class="menu-child-list active col-md-3">
+                  <a href="#" class=" zn_mega_title ">蔬菜</a> <span class="down"></span>
+                  <ul class="clearfix">
+                    <li><a href="#">菜心</a></li>
+                    <li><a href="#">生菜</a></li>
+                    <li><a href="#">通心菜</a></li>
+                    <li><a href="#">小白菜</a></li>
+                  </ul>
+                </li>
+                <!-- End Sub Menu -->
+              </ul>
+              <!-- End Mega Menu List -->
+            </li>
+
             <li>
               <a href="#">零食干货</a>
             </li>
@@ -124,7 +133,7 @@ ulputate velit esse molestie.
 
 <!-- Navigation Area
 ===================================== -->
-<section id="featured-product" class="ptb-60">
+<section id="featured-product" class="pt-60 pb-20">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -171,135 +180,25 @@ ulputate velit esse molestie.
                 <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
               </ul>
             </div>
-            <h5>￥<%= product.price %></h5>
-            <h6>产地直供</h6>
+            <h5>￥<%= product.price %><% product.price_unit %></h5>
+            <h6><%= product.content %></h6>
             <!-- <a class="btn cart-button" href="#"> 放入购物车 </a> -->
             <% if product.quantity.present? && product.quantity > 0 %>
               <%= link_to("加入购物车", add_to_cart_product_path(product), method: :post, class: "btn cart-button") %>
             <% else %>
               已销售一空，无法购买！
             <% end %>
+            <br><br><br>
           </div>
         </div>
       </div>
       <% end %>
+
     </div>
 
   </div>
 </section>
 
-<!-- Navigation Area
-===================================== -->
-<section id="featured-product" class="ptb-60">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="dalvse-header text-center">
-          <h2>特价促销</h2>
-          <div class="heading-border"></div>
-          <p>产地直供 新鲜直达<br>
-            以下为真实商品，已开始销售，欢迎咨询选购！微信：lyyest
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-6">
-        <div class="product-style-1 text-center">
-          <!-- <img class="img-responsive" src="https://ws2.sinaimg.cn/large/006tKfTcgy1ffu5kdid1nj30i20hrgo2.jpg" alt=""> -->
-
-          <div class="product-detail-content">
-            <h6>山东烟露天红灯樱桃</h6>
-            <div class="product-rating-with-border">
-              <div class="background-border"></div>
-              <ul>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <h5>¥75/3斤，¥115/5斤</h5>
-            <h6>空运包邮，25号发货</h6>
-            <!-- <a class="btn cart-button" href="#"> 放入购物车 </a> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 col-xs-6">
-        <div class="product-style-1 text-center">
-          <!-- <img class="img-responsive" src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffu5y5eizej30ly0lln1e.jpg" alt=""> -->
-
-          <div class="product-detail-content">
-            <h6>陕西金太阳大黄杏</h6>
-            <div class="product-rating-with-border">
-              <div class="background-border"></div>
-              <ul>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <h5>¥30/5斤</h5>
-            <h6>包邮，26号发货</h6>
-            <!-- <a class="btn cart-button" href="#"> 放入购物车 </a> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 col-xs-6">
-        <div class="product-style-1 text-center">
-          <!-- <img class="img-responsive" src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffu66id6c2j30ly0m1taw.jpg" alt=""> -->
-
-          <div class="product-detail-content">
-            <h6>缅甸香芒</h6>
-            <div class="product-rating-with-border">
-              <div class="background-border"></div>
-              <ul>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <h5>¥38/8斤</h5>
-            <h6>包邮</h6>
-            <!-- <a class="btn cart-button" href="#"> 放入购物车 </a> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 col-xs-6">
-        <div class="product-style-1 text-center">
-          <!-- <img class="img-responsive" src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffu6dpk0g0j30zk0zk7di.jpg" alt=""> -->
-
-          <div class="product-detail-content">
-            <h6>山东玉菇香瓜</h6>
-            <div class="product-rating-with-border">
-              <div class="background-border"></div>
-              <ul>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <h5>¥30/5斤</h5>
-            <h6>包邮</h6>
-            <!-- <a class="btn cart-button" href="#"> 放入购物车 </a> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Section Image Content  -->
 
 <!-- Navigation Area -->
 <!-- <section id="clients-say" class="parallax-1 ptb-100">
