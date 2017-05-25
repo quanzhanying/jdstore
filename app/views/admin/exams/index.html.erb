@@ -8,6 +8,7 @@
       <th>#</th>
       <th>question</th>
       <th>answer</th>
+      <th>true_answer</th>
       <th width="100"> Options </th>
     </tr>
   </thead>
@@ -24,6 +25,12 @@
          <%= exam.answer_1 %>
        </br>
          <%= exam.answer_2 %>
+       </td>
+       <td>
+         <%= exam.A %>
+         <br>
+         <%= exam.B %>
+
        </td>
        <td>
          <%= link_to("Edit", edit_admin_exam_path(exam)) %> |

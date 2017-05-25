@@ -12,6 +12,13 @@ class CreateExams < ActiveRecord::Migration[5.0]
       t.integer :category_id
 
       t.string :image
+      t.boolean :A, defaut: false
+      t.boolean :B, defaut: false
+      t.boolean :C, defaut: false
+      t.boolean :D, defaut: false
+      t.boolean :E, defaut: false
+      t.boolean :F, defaut: false
+
 
       t.timestamps
     end

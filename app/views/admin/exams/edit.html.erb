@@ -3,12 +3,12 @@
   <%= simple_form_for [:admin, @exam] do |f| %>
     <%= f.input :name, placeholder: "请输入试题xxx"%>
     <%= f.input :question, placeholder: "请输入试题题干" %>
-    <%= f.input :answer_1, placeholder: "请输入试题描述" %>
-    <%= f.input :answer_2, placeholder: "请输入试题描述" %>
-    <%= f.input :answer_3, placeholder: "请输入试题描述" %>
-    <%= f.input :answer_4, placeholder: "请输入试题描述" %>
-    <%= f.input :answer_5, placeholder: "请输入试题描述" %>
-    <%= f.input :answer_6, placeholder: "请输入试题描述" %>
+    <%= f.input :answer_1, placeholder: "请输入试题描述" %><%= f.input :A, :label => "A" %>
+    <%= f.input :answer_2, placeholder: "请输入试题描述" %><%= f.input :B, :label => "B" %>
+    <%= f.input :answer_3, placeholder: "请输入试题描述" %><%= f.input :C, :label => "C" %>
+    <%= f.input :answer_4, placeholder: "请输入试题描述" %><%= f.input :D, :label => "D" %>
+    <%= f.input :answer_5, placeholder: "请输入试题描述" %><%= f.input :E, :label => "E" %>
+    <%= f.input :answer_6, placeholder: "请输入试题描述" %><%= f.input :F, :label => "F" %>
     <%= f.select :category_id, @categories %>
 
 

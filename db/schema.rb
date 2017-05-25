@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 20170524030233) do
     t.text     "answer_6"
     t.integer  "category_id"
     t.string   "image"
+    t.boolean  "A"
+    t.boolean  "B"
+    t.boolean  "C"
+    t.boolean  "D"
+    t.boolean  "E"
+    t.boolean  "F"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "is_true",     default: false
