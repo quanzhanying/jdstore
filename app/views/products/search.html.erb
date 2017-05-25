@@ -1,0 +1,23 @@
+<div id="search-page" class="container-fluid jobs-show-page">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <br>
+    <div class="pull-right">
+      <%= link_to(content_tag(:i, " Check All Products", class: "fa fa-reply-all"), products_path) %> |
+      <%= link_to(content_tag(:i, " Back", class: "fa fa-arrow-left"), url_for(:back)) %>
+    </div>
+
+    <% if @products.blank?%>
+      <br>
+      <div>
+        Opps! No any results matched, please try again.
+      </div>
+    <% else %>
+      <h3>Total find <%= @products.count %> products</h3>
+      <div class="divider"></div>
+      <%= render :partial => "products_item", :collection => @products, :as => :product %>
+      <div class="text-center">
+        <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+      </div>
+    <% end %>
+  </div>
+</div>

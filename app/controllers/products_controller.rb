@@ -93,5 +93,4 @@ class ProductsController < ApplicationController
     redirect_to admin_products_path
     flash[:notice] = "商品已删除"
   end
-
 end
