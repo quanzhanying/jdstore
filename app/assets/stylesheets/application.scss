@@ -47,22 +47,6 @@
   margin-right: 0;
 }
 
-/*footer*/
-.footer {
-  background: #212121;
-  padding: 20px 10px 6px 10px;
-  text-align: center;
-  font-size: 14px;
-  color: #C2C2C2;
-}
-  span {
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
-    height: 24px;
-    line-height: 23px;
-  }
-
 //---------Navbar---------
 
 .navbar-default {
@@ -119,18 +103,22 @@
 
 //-------footer-------
 
- .footer {
-   position: absolute;
-   padding: 16px 6px 10px;
-   bottom: 0;
-   width: 100%;
-   /* Set the fixed height of the footer here */
-   height: 100px;
-   background-color: #222222;
-   margin: 0 -15px;
+.footer {
+ background: #333333;
+ padding: 16px 10px 6px;
+ text-align: center;
+ font-size: 12px;
+ color: #C2C2C2;
+ bottom: 0;
+ span {
+   display: inline-block;
+   margin-left: 5px;
+   margin-right: 5px;
+   height: 24px;
+   line-height: 23px;
+ }
+}
 
-   p {
-      color: white;
-     margin-top: 30px;
-   }
-  }
+html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
