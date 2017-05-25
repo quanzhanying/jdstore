@@ -40,25 +40,14 @@ class ProductsController < ApplicationController
   end
 
 
-  def dresses
-    @products = Product.where(:category => "dresses").paginate(:page => params[:page], :per_page => 5)
+  def accessory
+    @products = Product.where(:category => "accessory").paginate(:page => params[:page], :per_page => 5)
   end
 
-  def jeans
-    @products = Product.where(:category => "jeans").paginate(:page => params[:page], :per_page => 5)
+  def shoes
+    @products = Product.where(:category => "shoes").paginate(:page => params[:page], :per_page => 5)
   end
 
-  def skirts
-    @products = Product.where(:category => "skirts").paginate(:page => params[:page], :per_page => 5)
-  end
-
-  def shorts
-    @products = Product.where(:category => "shorts").paginate(:page => params[:page], :per_page => 5)
-  end
-
-  def suits
-    @products = Product.where(:category => "suits").paginate(:page => params[:page], :per_page => 5)
-  end
 
   def pay_now
     @product = Product.find(params[:id])
