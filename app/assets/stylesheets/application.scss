@@ -56,7 +56,7 @@
   z-index: 999;
   width: 100%;
   padding-top: 17px;
-  background: blue;
+  background: #337ab7;
   transition: all 1.3s;
   opacity: 0;
   top: -100px;
@@ -140,7 +140,7 @@ nav ul li {
 }
 
 nav li a  {
-  color: #4A6BB5;
+  color: #337ab7;
   text-transform: uppercase;
   font-size: 20px;
   border-top: 1px solid transparent;
@@ -184,7 +184,7 @@ nav li a:hover {
  	margin: 4px 0px 0px 0px;
  	padding: 0px 9px 0px 9px;
  	border: 2px solid #bdc3c7;
-  border-color: #4A6BB5;
+  border-color: #337ab7;
  	border-radius: 20px;
  	transition: all 1000ms ease;
  	cursor: text;
@@ -196,7 +196,7 @@ nav li a:hover {
  		height: 12px;
  		right: -3px;
  		top: 16px;
-    background: #4A6BB5;
+    background: #337ab7;
  		border-radius: 3px;
  		transform: rotate(-45deg);
  		transition: all 500ms ease;
@@ -323,7 +323,7 @@ nav li a:hover {
  }
 
  .blue-color {
-   background-color: blue;
+   background-color: #337ab7;
  }
 
  .black-color {
@@ -818,6 +818,72 @@ div.pd-s__item {
 }
 .col-item .btn-details a:first-child {
   margin-right:12px;
+}
+
+/*--product--show--*/
+
+.pd-show-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 310px;
+    margin: auto;
+    text-align: center;
+}
+
+.pd-show-container {
+    padding: 0 16px;
+}
+
+.pd-show-container-title {
+    color: grey;
+    font-size: 18px;
+}
+
+.pd-show-container button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.pd-show-container a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #c0b099;
+}
+
+.pd-show-container button:hover, a:hover {
+    opacity: 0.6;
+}
+
+.pd-info-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 310px;
+    margin: auto;
+    text-align: left;
+}
+
+.pd-info-container {
+    padding: 10px 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pd-info-add-cart-btn {
+    padding: 0 16px;
+    margin-top: -85px;
+}
+
+.pd-show-button {
+  color: #337ab7;
+  border-color:rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15)
 }
 /*-------cart-main-wapper----*/
 

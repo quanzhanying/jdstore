@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
                    :price => data["ticker"]["last"],
                    :quantity => data["ticker"]["vol"])
 
-    redirect_to products_path
+    redirect_to :back
   end
 
 end

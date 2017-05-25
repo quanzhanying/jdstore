@@ -1,30 +1,54 @@
 <div class="pd-s__item ">
    <div class="row">
-     <div class="col-md-6">
-       <% if @product.image.present? %>
-         <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-       <% else %>
-         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-       <% end %>
-     </div>
-     <div class="col-md-6">
-       <h2> <%= @product.title %> </h2>
-       <div style="height:100px;">
-         <p>
-           <%= @product.description %>
-         </p>
+     <div class="col-md-4">
+       <div class="pd-show-card">
+          <div class="pd--show-card-img">
+          <% if @product.image.present? %>
+            <%= image_tag(@product.image.medium.url, class: "thumbnail", style:"width:100%") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/300x180&text=No Pic", class: "thumbnail") %>
+          <% end %>
+          </div>
+          <div class="pd-show-container">
+            <h2>市场数据</h2>
+            <p class="pd-show-container-title"><%= @product.title %></p>
+            <p>时间戳：<%= @product.timestamp_at %></p>
+            <p>最高购买报价：<%= @product.price_buy %></p>
+            <p>最低出售报价：<%= @product.price_sell %></p>
+            <p>最低成交价：<%= @product.price_low %></p>
+            <p>最高成交价：<%= @product.price_high %></p>
+            <p>最后成交价：<%= @product.price_last %></p>
+            <p>总交易币量：<%= @product.trade_vol %></p>
+            <p><button><%= link_to "更新数据", update_price_product_path(@product), :method => :post %></button></p>
+          </div>
        </div>
-       <div> 数量 : <%= @product.quantity %> </div>
-       <div class="product-price"> ￥ <%= @product.price %> </div>
-       <div class="pull-right">
-         <% if @product.quantity.present? && @product.quantity > 0 %>
-           <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
-               class: "btn btn-lg btn-danger") %>
-         <% else %>
-           已销售一空，无法购买
-         <% end %>
+       <div class="pd-info-card">
+         <div class="pd-info-container">
+            <p> 数量 : <%= @product.quantity %> </p>
+            <p>  价格 :￥ <%= @product.price %> </p>
+          </div>
+          <div class="pd-info-add-cart-btn pull-right">
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+               <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
+               class: "btn btn-lg btn-primary pd-show-button") %>
+            <% else %>
+               已售罄
+            <% end %>
+          </div>
        </div>
+
      </div>
+     <div class="col-md-8 pull-right">
+       <div class="pd-des-card">
+          <div class="pd-des-title">
+          <h2> <%= @product.title %> </h2>
+          </div>
+           <div class="pd-des-container">
+           <p>
+             <%= @product.description %>
+           </p>
+       </div>
+      </div>
    </div>
 </div>
 
