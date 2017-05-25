@@ -1,8 +1,70 @@
-<%= simple_form_for([@product, @product.reviews.build]) do |f|%>
 
-  <div class="field">
-      <%= f.text_area :body, class: "form-control" %>
-  </div>
+<div class="col-md-4 col-md-offset-4">
+  <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
+    <div class="productDetail-evaluation w200 bc mt20 mb20">
+      <div class="intro-text-count clearfix mt10">
+        <div class="fl mr10">新鲜: </div>
+        <div id="star-freshness"></div>
+      </div>
+      <div class="intro-text-count clearfix mt10">
+        <div class="fl mr10">外观: </div>
+        <div id="star-look"></div>
+      </div>
+      <div class="intro-text-count clearfix mt10">
+        <div class="fl mr10">价格: </div>
+        <div id="star-price"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.input :body, label: "内容", input_html: { class: "form-control"} %>
+    </div>
 
-  <%= f.submit "Add a Review", class: "btn btn-primary" %>
-<% end %>
+    <div class="form-actions">
+      <%= f.submit "提交", disable_with: "Submiting...", class: "g-btn pl15 pr15 mt20 ml20 tc col-red f20 bg-red bc"%>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $('.star-freshness').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-look').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-price').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+
+  $('#star-freshness').raty({
+  path: '/assets/',
+  scoreName: 'review[freshness]'
+  });
+
+  $('#star-look').raty({
+  path: '/assets/',
+  scoreName: 'review[look]'
+  });
+
+  $('#star-price').raty({
+      path: '/assets/',
+      scoreName: 'review[price]'
+  });
+
+  $('#star-freshness img').eq(0).trigger('click')
+  $('#star-look img').eq(0).trigger('click')
+  $('#star-price img').eq(0).trigger('click')
+
+</script>
