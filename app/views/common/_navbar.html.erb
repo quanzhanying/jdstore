@@ -68,6 +68,7 @@
                      <li><%= link_to("个人中心", edit_account_user_path(current_user)) %></li>
                      <li><%= link_to("个人订单列表" , account_orders_path)%></li>
                      <li><%= link_to("个人收藏商品" , account_products_path)%></li>
+                     <li class="divider"><li>
                      <% if current_user.admin? %>
                        <li>
                          <%= link_to("Admin 选单", admin_products_path ) %>
