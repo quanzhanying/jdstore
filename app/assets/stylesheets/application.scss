@@ -72,7 +72,7 @@
 
 /*----- slogan -----*/
 .slogan {
-  height: 250px;
+  height: 300px;
   text-align: center;
   text-shadow: 2px;
 }
@@ -123,31 +123,28 @@ html {
 
 body {
   min-height: 100%;
-  margin-bottom: 0px;
+  margin: 0;
   padding: 0;
   position: relative;
 }
 
 .main {
   padding-top: 80px;
-  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
-  padding-bottom: 80px;
-    /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+    /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 220px;
+      /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
 }
 
 .footer-style {
-  z-index: 1;
   width: 100%;
-  background: #f7f7f7;
   position: absolute;
-  /*----- footer上半部padding高度 -----*/
+  height: 220px;
+  bottom: 0;
+  background: #f7f7f7;
   padding-top: 40px;
- /*----- foorter 上半部高度,背景随browser变动  -----*/
-  height: relative;
   display: inline-block;
   text-align: center;
-  /*----- footer 置底 -----*/
-  margin-top: 10px;
+    /*----- footer 置底 -----*/
     /*----- footer loga 颜色 -----*/
   .fa {
     color: #e66c36;
@@ -155,7 +152,7 @@ body {
 }
 
 .footer {
-  /*----- footer 下半部高度 -----*/
+    /*----- footer 下半部高度 -----*/
   height: 120px;
   border-top: #25292e 1px solid;
   background: #25292e;
