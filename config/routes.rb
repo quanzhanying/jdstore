@@ -23,7 +23,27 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :sizes
-    resources :exams
+    resources :exams do
+      member do
+          post :a
+          post :a1
+
+          post :b
+          post :b1
+
+          post :c
+          post :c1
+
+          post :d
+          post :d1
+
+          post :e
+          post :e1
+
+          post :f
+          post :f1
+      end
+    end
     resources :answers do
       post :ture_answer
     end

@@ -23,13 +23,66 @@
        </td>
        <td>
          <%= exam.answer_1 %>
-       </br>
+       </br><br>
          <%= exam.answer_2 %>
+         <br><br>
+         <%= exam.answer_3 %>
+       </br><br>
+         <%= exam.answer_4 %>
+       <br><br>
+         <%= exam.answer_5 %>
+       </br><br>
+         <%= exam.answer_6 %>
        </td>
        <td>
-         <%= exam.A %>
-         <br>
-         <%= exam.B %>
+
+         <% if exam.is_a1en %>
+         <%= link_to a_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-eye"></i><% end %>
+         <% else %>
+         <%= link_to a1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
+        <br><br>
+         <% if exam.is_b1en %>
+         <%= link_to b_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-eye"></i><% end %>
+         <% else %>
+         <%= link_to b1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
+          <br><br>
+         <% if exam.is_c1en %>
+         <%= link_to c_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-eye"></i><% end %>
+         <% else %>
+         <%= link_to c1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
+          <br><br>
+         <% if exam.is_d1en %>
+         <%= link_to d_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-eye"></i><% end %>
+         <% else %>
+         <%= link_to d1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
+         <br><br>
+         <% if exam.is_e1en %>
+         <%= link_to e_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-eye"></i><% end %>
+         <% else %>
+         <%= link_to e1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
+        <br><br>
+         <% if exam.is_f1en %>
+         <%= link_to f_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-eye"></i><% end %>
+         <% else %>
+         <%= link_to f1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-eye-slash"></i><% end %>
+         <% end %>
 
        </td>
        <td>

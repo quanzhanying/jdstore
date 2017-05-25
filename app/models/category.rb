@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :exam
+  has_many :exams
   validates :name, presence: true
 
 end

@@ -61,16 +61,16 @@ ActiveRecord::Schema.define(version: 20170525035803) do
     t.text     "answer_6"
     t.integer  "category_id"
     t.string   "image"
-    t.boolean  "A"
-    t.boolean  "B"
-    t.boolean  "C"
-    t.boolean  "D"
-    t.boolean  "E"
-    t.boolean  "F"
+    t.boolean  "is_a1en"
+    t.boolean  "is_b1en"
+    t.boolean  "is_c1en"
+    t.boolean  "is_d1en"
+    t.boolean  "is_e1en"
+    t.boolean  "is_f1en"
+    t.string   "countdown"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "is_true",     default: false
-    t.string   "countdown"
   end
 
   create_table "orders", force: :cascade do |t|
