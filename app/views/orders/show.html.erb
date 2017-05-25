@@ -3,6 +3,8 @@
 
     <h2> Order Information </h2>
 
+    <%= render "admin/orders/state_option", order: @order %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -73,6 +75,6 @@
     <% else %>
     <p class="text-center"> You have already paid!</p>
     <% end %>
-    
+
   </div>
 </div>
