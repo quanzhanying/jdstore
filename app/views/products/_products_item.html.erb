@@ -1,0 +1,17 @@
+<div class="row products-show">
+  <div class="col-md-12 col-lg-10 col-lg-offset-1">
+    <div class="pull-right">
+      <% if user_signed_in? && !current_user.admin? %>
+        <% if current_user && current_user.has_applied?(product) %>
+          <%= link_to("Has Bought", new_product_path(product), class: "btn btn-info btn-sm disabled", method: :get) %>
+        <% else %>
+          <%= link_to("Quick buy", new_product_path(product), class: "btn btn-info btn-sm", method: :get) %>
+        <% end%>
+      <% else %>
+        <%= link_to("Quick buy", new_product_path(product), class: "btn btn-info btn-sm", method: :get) %>
+      <% end %>
+    </div>
+    <p><%= link_to(product.title, product_path(product)) %></p>
+  </div>
+ </div>
+</div>

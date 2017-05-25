@@ -17,6 +17,13 @@
         <div class="default-link">
           <a href="#">视听享受</a>
         </div>
+        <div class="nav navbar-nav">
+          <li>
+            <div class="form-group form-inline search-bar">
+              <%= render :partial => "products/search_bar" %>
+            </div>
+          </li>
+        </div>
         <% if !current_user %>
         <div class="default-link">
           <%= link_to("注册", new_user_registration_path) %>
