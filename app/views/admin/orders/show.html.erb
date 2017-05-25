@@ -3,6 +3,9 @@
 
     <h2> 订单明细 (<%= render_order_paid_state(@order) %>) </h2>
 
+    <%= render "admin/orders/state_option", order: @order %>
+
+
     <table class="table table-bordered">
       <thead>
         <tr>
