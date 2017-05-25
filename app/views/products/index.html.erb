@@ -9,6 +9,7 @@
         <% end %>
       <% end %>
       <%= product.title %> ￥ <%= product.price %>
+      
       <!--  点赞 -->
       <%= link_to like_product_path(product), method: :put do %>
         <div class="pi-thumbs-up">

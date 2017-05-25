@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :reviews
-    
+
     collection do
       get :search
     end
@@ -55,5 +55,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :products
   end
+
+  get 'about' => 'welcome#about'
 
 end
