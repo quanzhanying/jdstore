@@ -150,6 +150,7 @@ width: 150px;
   margin: 20px auto;
   width: 970px;
   height: 400px;
+  overflow: hidden;
 }
 
 /*分类*/
@@ -163,6 +164,8 @@ width: 150px;
   float: left;
   width: 108px;
   height: 42px;
+  line-height: 42px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+
 }
 
 /*商品列表*/

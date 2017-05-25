@@ -1,11 +1,13 @@
 <!-- /.头图 -->
 <div class="carousel">
-  <img src="http://a2.qpic.cn/psb?/V13Obk462MXIb5/tuF4eLuhmZBZUKKfOGAK6IxSLEtehh5ZF*biiypTUiA!/b/dBgBAAAAAAAA&bo=wAOAAgAAAAARB3E!&rf=viewer_4" alt="search" class="img-responsive" width="304" height="236">
+  <img src="http://a2.qpic.cn/psb?/V13Obk462MXIb5/tuF4eLuhmZBZUKKfOGAK6IxSLEtehh5ZF*biiypTUiA!/b/dBgBAAAAAAAA&bo=wAOAAgAAAAARB3E!&rf=viewer_4" alt="search" class="img-responsive" width="970" height="4">
 </div>
 
 <!-- /.排序 -->
 <div class="orderList bg-color1">
-  <div class="orderList-item bg-color2"></div>
+  <div class="orderList-item bg-color2">
+    <%= link_to("新品",products_path) %>
+  </div>
   <div class="orderList-item bg-color3">
     <li><%= link_to(content_tag(:i, '价格', class: ' fa fa-arrow-up'), products_path(:order => "by_upper_price")) %>
     </li>
@@ -31,7 +33,18 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+      <p>
+        <div class="row">
+          <div class="col-md-6">
+          ￥<%= product.price %>
+          </div>
+          <div class="col-md-6">
+          <%= product.sale_count %>人购买
+          </div>
+        </div>
+      </p>
+      <p>描述: <%= product.description %></p>
     </div>
   <% end %>
+</div>
 </div>
