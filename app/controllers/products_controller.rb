@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  layout "applicationnav"
+  
   def index
    @products = Product.all.order("position ASC")
  end

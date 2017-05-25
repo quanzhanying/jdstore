@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+    layout "applicationnav"
   before_action :authenticate_user!, only: [:create]
 
   def create
