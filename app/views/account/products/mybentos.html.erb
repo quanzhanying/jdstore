@@ -1,0 +1,16 @@
+<table class = "table">
+  <thead>
+    <tr>
+      <th><h1>我的思想便当</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <% order.product_lists.each do |product_list| %>
+      <tr>
+        <td><%= product_list.product_name %></td>
+      </tr>
+      <% end %>
+      <% end %>
+  </tbody>
+</table>
