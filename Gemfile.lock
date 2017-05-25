@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: 437a578bb42d05fb188632f2c61032f21f5672ed
+  specs:
+    ransack (1.8.2)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -117,6 +128,8 @@ GEM
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -200,6 +213,9 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.5)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -221,6 +237,7 @@ DEPENDENCIES
   pry
   puma (~> 3.0)
   rails (~> 5.0.0)
+  ransack!
   sass-rails (~> 5.0)
   simple_form
   spring
@@ -230,6 +247,8 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
+  will_paginate
+  will_paginate-bootstrap
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
