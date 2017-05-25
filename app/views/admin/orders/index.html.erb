@@ -10,6 +10,7 @@
     </tr>
   </thead>
   <tbody>
+    
     <% @orders.each do |order| %>
     <tr>
       <td> <%= link_to(order.id, admin_order_path(order) ) %> </td>
