@@ -58,7 +58,7 @@
             <%= f.input :shipping_address , placeholder:'请输入收货人收件地址', input_html:{value: current_user.address}, :label => '地址'%>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :phone ,placeholder: '请输入收货人电话号码'%>
+            <%= f.input :phone ,placeholder: '请输入收货人电话号码', input_html:{value: current_user.phone},:label => '电话'%>
           </div>
 
         <div class="checkout">

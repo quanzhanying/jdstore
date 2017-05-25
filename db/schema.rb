@@ -33,19 +33,19 @@ ActiveRecord::Schema.define(version: 20170525161229) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "total",            default: 0
+    t.integer  "total",                      default: 0
     t.integer  "user_id"
     t.string   "billing_name"
     t.string   "billing_address"
     t.string   "shipping_name"
     t.string   "shipping_address"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.string   "token"
-    t.boolean  "is_paid",          default: false
+    t.boolean  "is_paid",                    default: false
     t.string   "payment_method"
-    t.string   "aasm_state",       default: "order_placed"
-    t.integer  "phone"
+    t.string   "aasm_state",                 default: "order_placed"
+    t.integer  "phone",            limit: 8
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
@@ -71,21 +71,22 @@ ActiveRecord::Schema.define(version: 20170525161229) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                            default: "",    null: false
+    t.string   "encrypted_password",               default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                    default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "is_admin",               default: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.boolean  "is_admin",                         default: false
     t.string   "name"
     t.string   "address"
+    t.integer  "phone",                  limit: 8
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
