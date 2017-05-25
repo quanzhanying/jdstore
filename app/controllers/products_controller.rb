@@ -1,9 +1,20 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
+
   def index
-    @products = Product.all.order("position ASC")
+    @products = case params[:order]
+      when 'by_upper_price'
+        Product.all.order('price ASC')
+      when 'by_down_price'
+        Product.all.order('price DESC')
+      when 'by_down_sale_count'
+        Product.all.order('sale_count DESC')
+     else
+        Product.all.order("position ASC")
+     end
   end
+
 
   def show
     @product = Product.find(params[:id])
@@ -45,7 +56,7 @@ class ProductsController < ApplicationController
     @products = Product.where(:category => "category4").paginate(:page => params[:page], :per_page => 5)
   end
 
-  
+
 
   protected
 

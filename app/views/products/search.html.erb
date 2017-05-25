@@ -15,7 +15,25 @@
       <div class="row products-show0"></div>
       <div class="product-table">
         <% @products.each do |product| %>
-        <div class="row products-show">
+        <p ><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+          <p>
+            <div class="row">
+              <div class="col-md-6">
+              ￥<%= product.price %>
+              </div>
+              <div class="col-md-6">
+              <%= product.sale_count %>人购买
+              </div>
+            </div>
+          </p>
+          <p>描述: <%= product.description %></p>
+
+        <!-- <div class="row products-show">
 
           <div class="col-md-12 col-lg-9 col-lg-offset-1">
 
@@ -25,7 +43,7 @@
             <p ><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
 
           </div>
-        </div>
+        </div> -->
         <% end %>
       </div>
     </div>
