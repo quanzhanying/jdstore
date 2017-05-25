@@ -68,6 +68,8 @@ Rails.application.routes.draw do
 
   resources :answers
 
+  resources :choices
+
   root "welcome#index"
 
   get 'about' => 'welcome#about'

@@ -8,6 +8,7 @@ class ExamsController < ApplicationController
 
   def show
     @exam = Exam.find(params[:id])
+    @choice = Choice.new
   end
 
   def check_answer
