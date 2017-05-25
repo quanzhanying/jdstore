@@ -1,0 +1,10 @@
+<h2>添加商品</h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="group"> <%= f.input :title, label: '商品名称', hint: '栏位下方文字', placeholder: '栏位内部文字' %> </div>
+  <div class="group"> <%= f.input :description, label: '商品简介' %> </div>
+  <div class="group"> <%= f.input :price, label: '商品价格' %> </div>
+  <div class="group"> <%= f.input :quantity, label: '剩余数量' %> </div>
+  <div class="group"> <%= f.input :image, label: '商品图', as: :file %> </div>
+  <%= f.submit "提交", data: {disable_with: "提交中..."} %>
+<% end %>

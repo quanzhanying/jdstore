@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @product.image.present?%>
+      <%= image_tag(@product.image.thumb.url, class: "thumbnail") %>
+    <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p> <%= @product.description %> </P>
+    </div>
+    <div> 数量：<%= @product.quantity %> </div>
+    <div class="product-price"> ¥ <%= @product.price %> </div>
+
+    <div class="pull-right">
+      <% if @product.quantity > 0 %>
+      <%= link_to("加入购物车",add_to_cart_product_path(@product), :method => :post,:class => "btn btn-danger btn-lg") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>"加入购物车"后面的"#"会在地址栏显示，删除并不会产生错误,但是删除""会导致“加入购物车”按钮的格式失效。两个,,连一起会报错。
+
+<p>改成路径时，要 去 掉 引 号 ，add_to_cart 后面还需要写明 product_path ，并且用(……)指明具体的product.
+<br>然后还需要指明method，method => 后面的方法与 routes 保持一致，并且都要接在 : 后面。
+<br>method 可以写成（ :method => :post），也可以写成 （method: :post），两个 : 之间一定要有空格，否则会报错。
+<br>show 页面 product_path之后的括号里要用@指明，连接controller里面的Product.find(params[:id]),以id为索引查找。
+<br>index 页面,有的地方不需要@具体指明，比如路径后面的（ ）里面。估计是因为：这里面是所有product的集合，不需要用id查找。
+<br>index 页面,有的地方  需要@具体指明，比如表格里面的每一项。
+<p>改成路径后，点击按钮会刷新页面，应该是对应到 controller 里面def add_to_cart 里面的 redirect_to :back 和 flash 设定
+<br>所以 product_path 对应的应该是 controller 。
+
+<p>p 和 br 的区别是什么？
+<br>p是分段，br是段内分行，段后距小于行高。
+<br>p出现就可以分段，并且形成段后距。即段落结尾处没有 /p 说明段落结束，也能形成段落视觉。
+<br>br 则只需要在行首表明即可,如果前一段有 p 开斗，那么后一段落第一行可以不写br，写了会加宽段前距。
+<br>即：如果只需要从视觉上来看的话，p 只需要写在每段文字的开头即可（段后距）。如果想要段间距更宽，则可以配合 br 使用（如同段前距）。
+</p>
+字体加粗怎么处理？

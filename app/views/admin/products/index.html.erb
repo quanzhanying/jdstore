@@ -1,0 +1,56 @@
+<h2> 商品列表（后台）</h2>
+
+  <div class="pull-right" style="padding-bottom: 20px;" >
+    <%= link_to("添加商品",new_admin_product_path, class: "btn btn-primary btn-sm")%>
+  </div>
+
+  <table class="table table-bordered">
+
+    <thead>
+        <tr>
+          <th width="70">商品id</th>
+          <th width="220"> 商品图 </th>
+          <th width="70">名称</th>
+          <th width="300">简介</th>
+          <th width="70">价格</th>
+          <th width="70">库存</th>
+<!-- 管理员本人才可见操作选项 -->
+          <th width="100">操作选项</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td>
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= product.title %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= product.quantity %></td>
+<!-- 管理员本人才可见操作选项 -->
+          <td>
+              <%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-sm btn-primary btn-default") %>
+              <p><%= link_to("删除", admin_product_path(product),class: "btn btn-sm btn-default", method: :delete, data: {confirm: "确定删除商品？"} )%></P>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
+
+<p>padding-bottom: 20px;表格向下移动</p>
+<p>table-bordered: 表格有外边框和内边框</P>
+<p>th: 字体加粗</p>
+<p>width: 单元格宽度</p>
+<p>去掉 class="col-md-12" 表格会撑开一点点,可能跟 width 有关 </p>
