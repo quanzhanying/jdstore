@@ -19,6 +19,14 @@
  @import "bootstrap";
  @import "font-awesome";
 
+ //  navbar delete the conner
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0
+   }
+ }
+
+
  .bs-slider{
      overflow: hidden;
      max-height: 700px;
