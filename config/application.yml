@@ -11,21 +11,21 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 production:
-   qiniu_access_key: LCY53YM0I0x6F8Aud6BZr5Q1zVFQmCP5blkUSmna  # 你的 qiniu AccessKey
+  qiniu_access_key: LCY53YM0I0x6F8Aud6BZr5Q1zVFQmCP5blkUSmna  # 你的 qiniu AccessKey
 
-   qiniu_secret_key: IFROgnJw4gvxMDg_kLg83jcj-dyGWkogdDEPKvhC  # 你的 qiniu SecretKey
+  qiniu_secret_key: IFROgnJw4gvxMDg_kLg83jcj-dyGWkogdDEPKvhC  # 你的 qiniu SecretKey
 
-   qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
+  qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
 
-   qiniu_bucket_domain: oqdv4main.bkt.clouddn.com  # 你的 qiniu bucket domain
+  qiniu_bucket_domain: oqdv4main.bkt.clouddn.com  # 你的 qiniu bucket domain
 
 
 
- development:
-   qiniu_access_key: LCY53YM0I0x6F8Aud6BZr5Q1zVFQmCP5blkUSmna  # 你的 qiniu AccessKey
+development:
+  qiniu_access_key: LCY53YM0I0x6F8Aud6BZr5Q1zVFQmCP5blkUSmna  # 你的 qiniu AccessKey
 
-   qiniu_secret_key: IFROgnJw4gvxMDg_kLg83jcj-dyGWkogdDEPKvhC  # 你的 qiniu SecretKey
+  qiniu_secret_key: IFROgnJw4gvxMDg_kLg83jcj-dyGWkogdDEPKvhC  # 你的 qiniu SecretKey
 
-   qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
+  qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
 
-   qiniu_bucket_domain: oqdv4main.bkt.clouddn.com  # 你的 qiniu bucket domain
+  qiniu_bucket_domain: oqdv4main.bkt.clouddn.com  # 你的 qiniu bucket domain

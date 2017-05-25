@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :validate_search_key, only:[:search]
   def index
     @products = Product.all.order("position ASC")
   end
@@ -18,5 +19,21 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def search
+      if @query_string.present?
+        search_result = Product.ransack(@search_criteria).result(:distinct => true)
+        @products = search_result
+      end
+  end
 
+  protected
+  #去除特殊字符
+  def validate_search_key
+    @query_string = params[:keyword].gsub(/\\|\'|\/|\?/, "") if params[:keyword].present?
+    @search_criteria = search_criteria(@query_string)
+  end
+  #查询标准（可选多个查询字段）
+  def search_criteria(query_string)
+    { :title_or_description_cont => query_string }
+  end
 end
