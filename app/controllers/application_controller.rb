@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
       ci = current_cart.cart_items.find_by(product_id: @product)
       if ci.quantity < @product.quantity
         ci.quantity += 1
+        ci.save
       else
         render :js => "alert('已经超过最大可购买数量');"
       end
