@@ -141,6 +141,7 @@ body {
   font-family: 'Lato', 'Raleway', 'Rokkitt', sans-serif;
   // height: auto !important;
   height: 100%; //add
+  // background-color: green;
 }
 /* --- typography --------------------- */
 /*headings*/
@@ -2035,20 +2036,21 @@ hr,
 .sidebar-menu li{
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
-  color:#000000;
+  color: #8fd613; //#000000 下级菜单箭头颜色
   font-size:18px;
   padding:10px 20px;
-  background:#f8f8f8;
+  background: #fff; //#f8f8f8 子菜单背景颜色
   border-bottom:1px solid #ebebeb;
 }
 .sidebar-menu li a{
   font-family:'Libre Baskerville', serif;
   font-weight:400;
-  color:#565656;
+  color: gray; //#565656 子菜单字体颜色
   font-size:13px;
 }
 .sidebar-menu > ul > li:first-child{
-  background:#ebebeb;
+  background: #fff; //#ebebeb 主菜单背景颜色
+  color: orange; //add 主菜单字体颜色
   padding:15px 20px;
 }
 .sidebar-menu li:last-child{
