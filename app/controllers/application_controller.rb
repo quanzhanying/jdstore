@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
       cart = Cart.create
     end
     session[:cart_id] = cart.id
-    returen cart
+    return cart
   end
 end
