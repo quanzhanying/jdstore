@@ -73,25 +73,25 @@
     Design by 廖晓华 & 韦月炎
   </section>
 <div id="flyItem" class="fly_item"><img src="https://img.alicdn.com/bao/uploaded/i4/TB1VAYpKFXXXXcnXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" width="40" height="40"></div>
+<script type="text/javascript">
 
+var cart_item_id = 0;
+
+$("#settleup-2014").hover(function(){
+
+var url = "/carts?max_id=" + cart_item_id + '&v=' + Math.random();
+if (url) {
+  $.ajax({
+    method: "GET",
+    url: url,
+    dataType: "script"
+  })
+} else {
+  console.log("data ended")
+}
+})
+</script>
   <script type="text/javascript">
-    var cart_item_id = 0;
-  $("#settleup-2014").hover(function(){
-    var url = "/carts?max_id=" + cart_item_id;
-    if (url) {
-      $.ajax({
-        method: "GET",
-        url: url,
-        dataType: "script"
-      })
-    } else {
-      console.log("data ended")
-    }
-    })
-
-
-
-
   // 元素以及其他一些变量
   var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector("#cart_items");
   var numberItem = 0;
@@ -126,29 +126,3 @@
   	});
   }
   </script>
-
-<script type="text/javascript">
-/*----飞-
-$('.item_buy,.J_LinkBasket').on('click', addProduct);
-function addProduct(event) {
-  var offset = $('.fa-shopping-cart').offset(), flyer = $('<img class="u-flyer" src="' + $(this).attr("mid") +'"/>');
-  flyer.fly({
-    start: {
-      left: event.pageX,
-      top: event.pageY
-    },
-    end: {
-      left: offset.left,
-      top: offset.top,
-      width: 40,
-      height: 40
-    }
-  });
-
-  flyer.fadeOut(2000,function(){
-    flyer.remove();
-  });
-
-}
---*/
-</script>
