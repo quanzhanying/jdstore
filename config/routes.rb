@@ -17,7 +17,8 @@ namespace :admin do
     end
   end
 end
-root 'products#index'
+root 'before_index#index'
+resources :welcome
 resources :products do
   member do
     post :add_to_cart
@@ -47,5 +48,7 @@ end
   namespace :account do
     resources :orders
   end
+  resources :contact
+  resources :about
   resources :news
 end

@@ -1,0 +1,2 @@
+module BeforeIndexHelper
+end
