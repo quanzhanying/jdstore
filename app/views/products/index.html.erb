@@ -43,7 +43,21 @@
           </div>
         </div>
       </p>
-      <p>描述: <%= product.description %></p>
+      <p>
+        <div class="row">
+          <div class="col-md-6">
+            描述: <%= product.description %>
+          </div>
+          <div class="col-md-6">
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+            <% else %>
+              <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+            <% end %>
+          </div>
+        </div>
+
+      </p>
     </div>
   <% end %>
 </div>
