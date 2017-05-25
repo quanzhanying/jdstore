@@ -21,8 +21,28 @@
 @import "font-awesome";
 
 /*----- navbar -----*/
-.nav {
+#nav-height {
+  padding-top: 15px;
   height: 80px;
+}
+
+.navbar-nav .input-group {
+  margin-top: 10px;
+}
+
+.navbar-default {
+  background-color:#25292e;
+  //背景颜色
+
+     border-color: #212121;
+  //边框色
+
+     margin-bottom: 0;
+  //底部 margin 不撑开距离
+}
+/*----- search bar at navbar -----*/
+#search-id {
+  width: 250px;
 }
 
 
@@ -37,6 +57,7 @@
   text-align: center;
   position: relative;
   padding-top: 10px;
+ /*----- 距离navbar -----*/
   background-position: center center;
 }
 

@@ -39,6 +39,10 @@ gem 'annotate'
 gem 'awesome_rails_console'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'   #美化分页效果
+gem 'seo_helper'
 gem 'figaro'
 
 group :development, :test do
