@@ -2,7 +2,9 @@ class ExamsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @exams = Exam.all
+
+    @exams = Exam.all.paginate(:page => params[:page], :per_page => 1)
+    @choice = Choice.new
 
   end
 

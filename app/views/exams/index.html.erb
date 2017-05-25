@@ -6,7 +6,71 @@
       <br>
        <% @exams.each do |exam| %>
         <%= link_to(exam.name, exam_path(exam)) %>
+
+        <table class="table table-bordered">
+
+          <thead>
+            <tr>
+              <th>
+                <%= exam.id %>
+              </th>
+
+              <th>
+                选项
+              </th>
+
+              <th>
+                <%= exam.question %>
+              </th>
+
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+            <td>
+              <%= exam.name %>
+            </td>
+
+            <td>
+              <%= simple_form_for @choice do |f| %>
+              <%= f.input :A, label: "A." %>
+
+              <%= f.input :B, label: "B." %>
+
+              <%= f.input :C, label: "C." %>
+              
+              <%= f.input :D, label: "D." %>
+
+             <% end %>
+
+            </td>
+
+            <td>
+              <%= exam.answer_1 %>
+              <br><br>
+              <%= exam.answer_2 %>
+              <br><br>
+              <%= exam.answer_3 %>
+              <br><br>
+              <%= exam.answer_4 %>
+            </td>
+            </tr>
+
+          </tbody>
+
+
+      </table>
         <% end %>
     </li>
   </div>
+
+
+
+
 </div>
+<div class="text-center">
+      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+ </div>
