@@ -1,0 +1,55 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* our service */
+
+#service {
+ padding-bottom: 50px;
+ background-color:#fff;
+ padding-top: 20px;
+ .col-md-4 {
+   padding: 15px 10px;
+ }
+}
+.service-item-img{
+   img { width: 100%;
+     margin:1px auto;
+     z-index: 15;}
+   .round-image-160 {
+     background-color: white;
+     border: 1px solid  #faf6ec;
+     border-radius: 80px;
+     -moz-border-radius: 80px;
+     -webkit-border-radius: 80px;
+     height: 160px;
+     width: 160px;
+     overflow: hidden;
+     text-align: center;
+   }
+
+}
+.service-info{
+  padding-top:45px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*	-----------------------------------
+	Carousel - Game Platforms
+	----------------------------------- */
+
+  .container-fluid h2 {
+    padding: 30px;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Lucida Console", Verdana, Monospace;
+  }
+  .container-fluid img {
+    padding: 0 0 10px 0;
+
+  }
