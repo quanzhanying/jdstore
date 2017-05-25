@@ -118,6 +118,50 @@
     line-height: 1;
 }
 
+//----------- 热门商品 -------------//
+section {
+    padding: 100px 0;
+    // background: #E0E0E0;//背景颜色
+    // box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#portfolio * {
+    z-index: 2;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 2em;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+#portfolio .portfolio-item .portfolio-link .caption .caption-content i {
+    margin-top: -12px;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption .caption-content {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    top: 50%;
+    margin-top: -12px;
+    color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 
 
 //---------Footer---------
