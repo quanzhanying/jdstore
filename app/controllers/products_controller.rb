@@ -20,4 +20,8 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def mybentos
+    @orders =current_user.orders
+  end
+
 end
