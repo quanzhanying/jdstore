@@ -5,20 +5,52 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-# Initialize Boss User
-if User.find_by(email: "boss@jdstore.com").nil?
-  puts "boss@jdstore.com的管理员账号不存在，现在为您注册……"
+User.delete_all
+puts "原有用户已全部删除，正在重新创建新用户......"
+# Initialize Boss User 1
   u = User.new
-  u.email = "boss@jdstore.com" #可以改成自己的email
+  u.email = "boss-cj@success.com" #可以改成自己的email
   u.password = "666666"
   u.password_confirmation = "666666"
   u.is_admin = true
   u.save
-  puts "账号注册成功！"
-else
-  puts "账号为boss@jdstore.com的管理员账户已存在，无需重新注册。"
-end
+  puts "老板账号#{u.email}注册成功！密码#{u.password}"
+
+# Initialize Boss User 2
+  u = User.new
+  u.email = "boss-lhj@success.com" #可以改成自己的email
+  u.password = "666666"
+  u.password_confirmation = "666666"
+  u.is_admin = true
+  u.save
+  puts "老板账号#{u.email}注册成功！密码#{u.password}"
+
+# Initialize Customer User 1
+  u = User.new
+  u.email = "cj@success.com" #可以改成自己的email
+  u.password = "666666"
+  u.password_confirmation = "666666"
+  u.is_admin = false
+  u.save
+  puts "买家账号#{u.email}注册成功！密码#{u.password}"
+
+# Initialize Customer User 2
+  u = User.new
+  u.email = "lhj@success.com" #可以改成自己的email
+  u.password = "666666"
+  u.password_confirmation = "666666"
+  u.is_admin = false
+  u.save
+  puts "买家账号#{u.email}注册成功！密码#{u.password}"
+
+  # Initialize Customer User 2
+    u = User.new
+    u.email = "nice@success.com" #可以改成自己的email
+    u.password = "666666"
+    u.password_confirmation = "666666"
+    u.is_admin = false
+    u.save
+    puts "买家账号#{u.email}注册成功！密码#{u.password}"
 
 Product.delete_all
 puts "原有商品已全部删除，正在重新创建新商品......"
