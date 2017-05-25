@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
@@ -21,11 +22,11 @@
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, :class => "btn btn-primary btn-lg btn-danger") %>
         <% if current_user && current_user.is_member_of?(@product) %>
-          <%= link_to quit_product_path(@product), method: :post, class: "btn btn-lg btn-danger pull-right" do%>
-          <i class="fa fa-bookmark-o"></i><% end %>
+          <%= link_to quit_product_path(@product), method: :post, class: " btn btn-lg btn-default pull-right" do%>
+          <i class="fa fa-heart fa-lg"></i><% end %>
         <% else %>
-          <%= link_to join_product_path(@product), method: :post, class: "btn btn-lg btn-success pull-right" do%>
-            <i class="fa fa-bookmark-o"></i><% end %>
+          <%= link_to join_product_path(@product), method: :post, class: " btn btn-lg btn-danger pull-right" do%>
+            <i class="fa fa-heart fa-lg"></i><% end %>
         <% end %>
       <% else %>
       已经销售一空，无法购买
@@ -47,13 +48,16 @@
 
   <!--对商品评论以及评星-->
   <div class="row review">
-    <div class="col-sm-10 col-sm-offset-1">
+    <div class="col-sm-12 col-md-12">
       <h3 class="reviews_title">
         <%= @product.reviews.count %> Reviews
         <hr>
-        新鲜： <div class="star-freshness" data-score= <%= @avg_review %> ></div>
-        外观： <div class="star-look" data-score= <%= @avg_look %> ></div>
-        价格： <div class="star-price" data-score= <%= @avg_price %> ></div>
+        <div class="text-center">
+          <h3>综合评价</h3>
+          新鲜： <div class="star-freshness" data-score= <%= @avg_review %> ></div>
+          外观： <div class="star-look" data-score= <%= @avg_look %> ></div>
+          价格： <div class="star-price" data-score= <%= @avg_price %> ></div>
+        </div>
       </h3>
       <hr>
       <div id="reivews">
@@ -82,6 +86,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

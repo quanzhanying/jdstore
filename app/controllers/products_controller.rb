@@ -2,7 +2,19 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
   def index
-    @products = Product.all.order("position ASC")
+    if params[:category].present?
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(category_id: @category_id).recent
+    else
+      @products = case params[:order]
+      when 'by_price'
+          Product.all.order("price DESC")
+      when 'by_like'
+        Product.all.sort_by {|product| product.get_upvotes.size}.reverse
+      else
+        Product.all.recent
+      end
+    end
   end
 
   def show
@@ -30,12 +42,21 @@ class ProductsController < ApplicationController
       redirect_to :back
 
   end
+
+#-------点赞功能-----------
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
+  end
+
 #-------收藏的action--------
   def join
     @product = Product.find(params[:id])
 
      if !current_user.is_member_of?(@product)
        current_user.join!(@product)
+       @product.upvote_by current_user
      end
 
      redirect_to product_path(@product)
@@ -57,14 +78,6 @@ class ProductsController < ApplicationController
         @products = search_result.paginate(:page => params[:page], :per_page => 10 )
       end
     end
-
-
-#-------点赞功能-----------
-  def upvote
-    @product = Product.find(params[:id])
-    @product.upvote_by current_user
-    redirect_to :back
-  end
 
 
     protected
