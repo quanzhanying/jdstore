@@ -34,7 +34,7 @@
             <img class="product-img" src="<%= img430(product,1) %>" alt=""></a>
           <p class="price">￥<%= product.promotional %></p>
           <p class="describe"><%= product.title %></p>
-          <p class="evaluate">已有33条评价</p>
+          <p class="evaluate">已有<%= product.reviews.count%>条评价</p>
           <div class="cart">
             <a href="#" class="contain-icon icon-hook">
               <div class="favor">

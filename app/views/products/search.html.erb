@@ -45,7 +45,7 @@
             <%= link_to(image_tag(img430(product,1), class: 'product-img'), product_path(product)) %>
               <p class="price">￥<%= product.promotional %></p>
               <p class="describe"><%= product.title %></p>
-              <p class="evaluate">已有33条评价</p>
+              <p class="evaluate">已有<%= product.reviews.count%>条评价</p>
               <div class="cart text-center">
                 <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
               </div>
