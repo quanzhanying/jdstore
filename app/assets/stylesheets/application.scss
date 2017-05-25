@@ -1,0 +1,255 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+ /*====================================波浪分割线============================*/
+ .decor-bottom {
+   height: 6em;
+   margin-top: -84px;
+   fill: #f6f3e1;
+ }
+
+ .decor-top {
+   height: 7em;
+   margin-bottom: -7em;
+   fill: #f6f3e1;
+ }
+
+ .decor-bottom9 {
+   height: 6em;
+   margin-top: -84px;
+   fill: #d7dbcc;
+ }
+
+ .decor-top9 {
+   height: 7em;
+   margin-bottom: -7em;
+   fill: #d7dbcc;
+ }
+ /*============波浪分割线====*/
+
+
+ //=============================================海报上的字体
+ .intro-content > h1 {
+     color: white;
+     font-size: 85px;
+     letter-spacing: 2px;
+     font-family: 'Clicker Script', cursive;
+     color: #ffffff;
+     margin: 2.6em 0 0.2em 0;
+ }
+
+ .intro-content > p {
+     color: #fff;
+     font-size: 2.5em;
+     letter-spacing: 0.1em;
+     margin-top: 1em;
+     text-align: center;
+ }
+ //=============================================海报上的字体
+
+
+
+ //=====================================登入弹窗
+  .loginmodal-container {
+    padding: 20px;
+    max-width: 350px;
+    width: 200% !important;
+    background-color: #e4dfb4; //整张背景颜色
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 8.6);
+    overflow: hidden;
+    font-family: roboto;
+    border-radius: 0%;      //圆角
+    border-color: #868F7D;  //框框边缘颜色
+    background: url("https://ws3.sinaimg.cn/large/006tNc79gy1fftzbo1k5kj30dx0hstap.jpg"); //登陆弹窗背景图
+    border-width: 8px;      //边缘宽度
+    border-style: solid;
+  }
+  .smaller2-image{
+    width: 230px;  //logo图片大小
+  }
+
+  .logo{
+   // border-color: #68AC2F;//logo边缘颜色
+   // border-width: 5px;    //圆角
+   border-style: solid;
+   // border-radius: 2%;   //圆角
+   background-position: center;
+ }
+
+ .loginmodal-container h1 {
+   text-align: center;
+   font-size: 1.8em;
+   font-family: roboto;
+ }
+
+ .loginmodal-container input[type=submit] {
+   width: 100%;
+   display: block;
+   margin-bottom: 20px;
+   position: relative;
+ }
+ .loginmodal-container input[type=text], input[type=password] {
+   height: 33px;
+   font-size: 16px;
+   width: 100%;
+   margin-bottom: 10px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid #d9d9d9;
+   border-top: 1px solid #c0c0c0;
+   /* border-radius: 2px; */
+   padding: 0 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+ }
+ //=====================================登入弹窗
+
+
+ //=====================================navbar
+ .navbar-default {
+    background-color: #2B322F;  //navbar背景颜色
+    border-color: #2B322F; //边框色
+    margin-bottom: 0; //底部 margin 不撑开距离
+}
+
+.navbar-brand > img {
+    display: inline-block; //图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+@media (min-width: 768px) {
+.navbar {
+  border-radius: 0; //圆角为0
+}
+}
+.navbar-default .navbar-brand {
+  color: #e2e5d8; //标题字体颜色
+
+  padding: 10px 15px; //上下10px，左右15px
+  line-height: 30px; //文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #F82060; //鼠标放置在链接上的文字颜色
+  background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+ .navbar-default .navbar-nav > li > a{
+  color: #e2e5d8; //注册登录（显示的颜色）-yellow
+
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #F82060; //注册登录（隐藏的颜色）-暗蓝
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #1fe9ec;
+  background-color: #FFE0B2;
+
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  background-color: #000000; // email-注册-登陆的位置点击为黑色块
+  color: #ff79ab; //email点击后的颜色显示-桃红色
+
+}
+
+ //=====================================navbar
+
+ //*****footer*****//
+ .footer-default {
+    background-color: #2B322F;
+    height: 400px;
+    p {
+      color: #fff;
+      margin-top: 40px;
+      letter-spacing: 2px;
+    }
+    .logo {
+      margin-top: 180px;
+      margin-bottom: 40px;
+      img{
+      margin-left: 25px ;
+      width: 55px;
+      }
+    }
+    .glyphicon-chevron-up {
+      margin-bottom: -60px;
+      color: #fff;
+    }
+ }
+
+ //*****footer*****//
+
+
+ //*****common*****//
+ .col-centered {
+   float: none;
+   margin: 0 auto;
+ }
+
+ .section{
+     padding-top: 80px;
+     padding-bottom: 90px;
+ }
+
+
+ .section-title {
+     color: #666;
+     margin-top: 1em;
+     margin-bottom: 1em;
+     letter-spacing: 3px;
+     font-size: 30px;
+     font-family: STHeiti Light;
+ }
+
+ .section-title-2 {
+     color: #666;
+     margin-top: 1em;
+     margin-bottom: 1em;
+     letter-spacing: 0.1em;
+     font-size: 1.7em;
+ }
+
+ .fenge {
+   height: 1.5px;
+   background-color: #999;
+ }
+
+ p {
+   color: #666;
+   letter-spacing: 1px;
+   line-height: 22px;
+   margin: 25px 20px 40px 20px;
+ }
+
+
+ /*===== common ====*/

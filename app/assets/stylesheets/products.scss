@@ -1,0 +1,332 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/*============波浪分割线====*/
+.decor-top2 {
+  height: 6em;
+  margin-bottom: -84px;
+  fill: #d7dbcc;
+}
+
+.decor-bottom2 {
+  height: 7em;
+  margin-top: -7em;
+  fill: #f6f3e1;
+}
+
+.decor-bottom1 {
+  height: 7em;
+  margin-top: -20em;
+  fill: black;
+}
+
+.decor-top8{
+  height: 6em;
+  margin-bottom: -84px;
+  fill: #ffffff;
+}
+.decor-top5{
+  height: 6em;
+  margin-bottom: -84px;
+  fill: #f6f3e1;
+}
+/*================波浪分割线==============*/
+
+
+
+
+
+/*===== 1.网站头贴 ====*/
+
+.welcome-top{
+    background-color: #f6f3e1;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -1.4em;
+}
+
+.carousel-caption {
+  padding: 0;
+  // margin: 2px -120px 10px 0;
+}
+
+.carousel-control {
+  text-shadow: 0 0 0 #999;
+  width: 0;
+  height: 0;
+}
+.carousel-control span:hover {
+  color: #2dbe60;
+}
+#myCarousel {
+  margin: 20px auto 20px auto;
+  width: 100%;
+}
+.carousel-inner img {
+  background: cover;
+  position: center;
+}
+.carousel-indicators li {
+  background-color: #fa9e81;
+  border: none;
+}
+.carousel-indicators .active {
+  background-color: #e8e8e8;
+}
+.carousel-indicators {
+  bottom: 2em;
+}
+// #myCarousel .left span {
+//   position: relative;
+//   color: #e8e8e8;
+//   font-size: 7em;
+//   top: 1.7em;
+// }
+// #myCarousel .right span {
+//   position: relative;
+//   color: #e8e8e8;
+//   font-size: 7em;
+//   top: 1.7em;
+// }
+.intro-content02 > h1 {                     //海报01字体
+    color: white;
+    font-size: 85px;
+    letter-spacing: 1px;
+    font-family: 'Clicker Script', cursive;
+    color: #ffffff;
+    margin: 1em 0 1em 0;
+}
+
+.intro-content02 > p {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.intro-content03 > h1 {                     //海报02字体
+    color: white;
+    font-size: 85px;
+    letter-spacing: 1px;
+    font-family: 'Clicker Script', cursive;
+    color: #ffffff;
+    margin: 1em 0 1em 0;
+}
+
+.intro-content03 > p {
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: 0em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.intro-content04 > h1 {                     //海报01字体
+    color: white;
+    font-size: 65px;
+    letter-spacing: 1px;
+    font-family: 'Clicker Script', cursive;
+    color: #ffffff;
+    margin: 1em 0 1em 0;
+}
+
+.intro-content04 > p {
+    color: #fff;
+    font-size: 1.5em;
+//     letter-spacing: 0.5em;
+    margin-top: 1em;
+//     text-align: center;
+}
+/*============================= end 1.网站头贴 ============================*/
+
+
+/*============================= 2.服务块 ============================*/
+.fw{
+  background-color: #f6f3e1;
+
+}
+.polaroid2 {
+  width: 100%;
+  height: 40em;
+  padding: 1.8em 1.4em;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container12 {
+  text-align: center;
+  padding: 10px 20px;
+  position: relative;
+}
+.small3{
+  width: 22em;
+}
+
+/*=============================  end 2. 服务块  ============================*/
+.decor-top3 {
+  height: 6em;
+  margin-top: -6px;
+  fill: #ffffff;
+}
+/*==================================== 3.产品块 ======================================*/
+.pr{
+  // background-color: #d7dbcc;
+  padding: 2em;
+  // margin: 10em;
+}
+.boxx {
+  background:#fff;
+  transition:all 0.2s ease;
+  border:2px dashed #dadada;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding:0 10px 10px 10px;
+  min-height:340px;
+}
+
+.boxx:hover {
+  border:6px solid #525C7A;
+}
+
+.boxx span.boxx-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.boxx .boxx-contentx {
+  padding: 5px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.boxx .boxx-contentx p {
+  color:#515c66;
+  text-transform:none;
+}
+.boxx .small{
+  width: 400px;
+  // cursor: pointer;
+}
+
+/*======================================= end 3.产品块 =====================================*/
+
+/*=========================================== 分割图 =====================================*/
+.middle-photo2{
+    height: 16em;
+    background-image: url('https://ws2.sinaimg.cn/large/006tKfTcgy1ffvpt7lggmj31kw0cfwk6.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+  /*============波浪分割线====*/
+/*=========================================== 分割图 =====================================*/
+
+/*=========================================  4.摄影区  ========================================*/
+
+// body{
+// 	background-image: radial-gradient(mintcream 0%, lightgray 100%);
+// }
+// h1{
+// 	display: table;
+// 	margin: 5% auto 0;
+// 	text-transform: uppercase;
+// 	font-family: 'Anaheim', sans-serif;
+// 	font-size: 4em;
+// 	font-weight: 400;
+// 	text-shadow: 0 1px white, 0 2px black;
+// }
+.ph{
+  // background-image: url('http://ww2.sinaimg.cn/large/006tNbRwly1ffop4373gwj31kw0w0kjo.jpg');
+  background-color: #f6f3e1;
+  padding: 0.1em;
+}
+.container1{
+	margin: 6% auto;
+	width: 24em;  //图片大小&图片间隔宽度
+	height: 13em;  //视角
+	position: relative;
+	perspective: 55em;
+}
+#carousel1{
+	width: 100%;
+	height: 200%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: rotation 20s infinite linear;
+}
+#carousel1:hover{
+	animation-play-state: paused;
+}
+#carousel1 figure{
+	display: block;
+	position: absolute;
+	width: 90%;
+	height: 50%;
+	left: 10px;
+	top: 10px;
+	background: #ffffff;
+	overflow: hidden;
+	border: solid 8px #ffffff;
+}
+#carousel1 figure:nth-child(1) {transform: rotateY(0deg) translateZ(288px);}
+#carousel1 figure:nth-child(2) { transform: rotateY(60deg) translateZ(288px);}
+#carousel1 figure:nth-child(3) { transform: rotateY(120deg) translateZ(288px);}
+#carousel1 figure:nth-child(4) { transform: rotateY(180deg) translateZ(288px);}
+#carousel1 figure:nth-child(5) { transform: rotateY(240deg) translateZ(288px);}
+#carousel1 figure:nth-child(6) { transform: rotateY(300deg) translateZ(288px);}
+// #carousel1 figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+// #carousel1 figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+// #carousel1 figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+img{
+	// -webkit-filter: grayscale(1);  //会变成黑白的
+	cursor: pointer;
+	transition: all .5s ease;
+}
+// img:hover{
+// 	// -webkit-filter: grayscale(0);
+//   // transform: scale(1.2,1.2);        //动态效果
+// }
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
+/*=================================== end 4.摄影区 =====================================*/
+
+/*=================================== 5.铁粉说 ==================================*/
+.say{
+  background-color: #d7dbcc;
+  // padding: 1em;
+  .do-box{
+    img{
+      margin-bottom: 2em;
+      width: 10em;
+    }
+  }
+
+  .say{
+    text-align: center;
+    background-color: #d7dbcc;
+    background-size: cover;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+}
+/*================================= end 5.铁粉说 ==================================*/
