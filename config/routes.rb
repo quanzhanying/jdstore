@@ -5,7 +5,7 @@ Rails.application.routes.draw do
      member do
        patch :move_up
        patch :move_down
-     end     
+     end
    end
  end
 
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :carts do
       collection do
         delete :clean
+         post :checkout
       end
     end
 
