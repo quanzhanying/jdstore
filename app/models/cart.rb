@@ -10,6 +10,10 @@ class Cart < ApplicationRecord
   end
 end
 
+def clean!
+  cart_items.destory_all
+end
+
 def total_price
     sum = 0
     cart_items.each do |cart_item|
@@ -19,4 +23,3 @@ def total_price
     end
     sum
   end
-end
