@@ -23,7 +23,7 @@
         <% current_cart.cart_items.each do |cart_item| %>
 
 
-          <tr id="cart-item-<%= cart_item.product_id%>">
+          <tr class="cart-item-<%= cart_item.product_id%>">
             <td>
               <%= link_to product_path(cart_item.product) do %>
                   <%= image_tag(img430(cart_item.product,1), style: "width: 200px;") %>
@@ -64,9 +64,15 @@
           </span>
       </span>
     </div>
-
+    <% if !current_user %>
+    <div class="checkout clearfix"><a class="btn btn-lg btn-danger pull-right" href="#" data-toggle="modal" data-target="#login-modal">确认结账</a></li>
+      </div>
+    <% else %>
     <div class="checkout clearfix">
-<%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>    </div>
+<%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+</div>
+      <% end %>
+
   </div>
 </div>
 

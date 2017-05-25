@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :store_current_location, :unless => :devise_controller?
   protect_from_forgery with: :exception
   def admin_required
     if !current_user.admin?
@@ -58,4 +59,15 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     return cart
   end
+
+  def store_current_location
+    if request.format == "text/html" || request.content_type == "text/html"
+      store_location_for(:user, request.url)
+      end
+    end
+    def after_sign_out_path_for(resource)
+    request.referrer || root_path
+  end
+
+
 end

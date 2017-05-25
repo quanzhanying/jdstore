@@ -71,15 +71,11 @@
           <%= f.input :shipping_address  %>
         </div>
 
-        <% if !current_user %>
-        <div class="checkout"><a class="btn btn-lg btn-danger pull-right" href="#" data-toggle="modal" data-target="#login-modal">生成订单</a></li>
-          </div>
-        <% else %>
         <div class="checkout">
           <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
           data: { disable_with: "Submitting..." } %>
         </div>
-          <% end %>
+
         <% end %>
 
       </div>

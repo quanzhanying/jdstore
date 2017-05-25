@@ -3,7 +3,7 @@
 <% if cart.id > @max_id %>
     $("#mcart-sigle").append("<%=j render :partial => "cart", :locals => { :cart => cart } %>");
 <% else  %>
-  $("#cart-item-<%= cart.product_id %> .p-price").html("×<%= cart.quantity %>" );
+  $("cart-item-<%= cart.product_id %> .p-price").html("×<%= cart.quantity %>" );
 <% end %>
 <% sum += cart.quantity %>
 
