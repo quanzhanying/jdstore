@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-    layout "applicationnav"
+    layout "navbarview"
   def clean
     current_cart.clean!
     flash[:warning] = "已清空购物车"

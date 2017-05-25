@@ -11,158 +11,52 @@
         <script type="text/javascript" src="js/buttons.js"></script>
         <style>
             .row.content {height: 550px}
-
-
-                                    @media screen and (max-width: 767px) {
-                                      .row.content {height: auto;}
-                                    }
+                                                                                                                                                                                                                                                                                                            @media screen and (max-width: 767px) {
+                                                                                                                                                                                                                                                                                                              .row.content {height: auto;}
+                                                                                                                                                                                                                                                                                                            }
         </style>
     </head>
     <body>
-        <!-- <nav class="navbar navbar-inverse ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar">1</span>
-        <span class="icon-bar">2</span>
-        <span class="icon-bar">3</span>
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dashboard</a></li>
-        <li><a href="#">Age</a></li>
-        <li><a href="#">Gender</a></li>
-        <li><a href="#">Geo</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
         <div class="container-fluid">
             <div class="row content">
-                <!-- <div class="col-sm-2 sidenav">
-      <img src="https://ooo.0o0.ooo/2017/05/21/592187f12feac.png" alt="logo.png" title="logo.png" class="img-responsive" />
-
-        <div class="panel-group text-center">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a href="#">首页</a>
-              </h4>
-            </div>
-          </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a class="text-center" data-toggle="collapse" href="#collapse1" >作品集
-                  <span class="caret"></span>
-                </a>
-              </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse">
-              <div class="panel-body">
-                <%= link_to("手绘本", products_path) %>
-              </div>
-              <div class="panel-body">手绘滑板</div>
-              <div class="panel-body">手绘酒瓶</div>
-            </div>
-          </div>
-
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a href="#">注册</a>
-
-            </div>
-          </div>
-
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a href="#">登陆</a>
-              </h4>
-            </div>
-          </div>
-
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-
-                <%= link_to carts_path do %>
-                  购物车<i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %>)
-                <% end %>
-              </h4>
-            </div>
-          </div>
-
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a href="#">ABOUT US</a>
-              </h4>
-            </div>
-          </div>
-
-        </div>
-        <div>
-
-            <p>每个人都缺乏点什么，我们才会瞬间就不快乐……</p><hr>
-            <p>单纯很难，包袱很多......</p><br>
-            <p>已经很勇敢，还是会难过......</p>
-
-            <p>在这里，通过手绘作品的天真和纯净，您可以用另一种方式去看世界，如茶香，如诗行。</p>
-
-            <p>今天【绘生活】就这么成立了，与您的每一次遇见，都是缘。无论缘分深浅，我们会做得更好！</p>
-
-        </div>
-
-  </div> -->
                 <br>
+                <!-- 推荐商品，加入链接 -->
                 <div class="col-sm-10">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI001360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/1' do %><%= image_tag("p1.jpg", class: "thumbnail") %><% end %>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI002360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/2' do %><%= image_tag("p2.jpg", class: "thumbnail") %><% end %>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
-                        </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI004360.jpg" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/3' do %><%= image_tag("p3.jpg", class: "thumbnail") %><% end %>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI005360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/4' do %><%= image_tag("p4.jpg", class: "thumbnail") %><% end %>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI006360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/5' do %><%= image_tag("p5.jpg", class: "thumbnail") %><% end %>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI007360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
-                        </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI008360.jpg" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/6' do %><%= image_tag("p6.jpg", class: "thumbnail") %><% end %>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI009360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/7' do %><%= image_tag("p7.jpg", class: "thumbnail") %><% end %>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI010360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/8' do %><%= image_tag("p8.jpg", class: "thumbnail") %><% end %>
                         </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI011360.jpg" alt="哲 – T i t i t i 作 品" class="img-responsive">
-                        </div>
-                        <div class="col-sm-3">
-                            <img src="http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI012360.jpg" class="img-responsive">
+                        <div class="col-sm-4">
+                            <%= link_to 'https://evening-wildwood-86059.herokuapp.com/products/9' do %><%= image_tag("p9.jpg", class: "thumbnail") %><% end %>
                         </div>
                     </div>
                 </div>
+                <!-- 推荐商品，加入链接 -->
             </div>
         </div>
     </body>

@@ -5,12 +5,11 @@
         </div> -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <!-- 添加按钮-回首页 -->
                 <li class="avtice">
-                    <i class="fa fa-home fa-2x" href="root_path"></i>
+                    <%= link_to(content_tag(:i,' Home', class: 'fa fa-home fa-lg'), root_path) %>
                 </li>
-                <li class="avtice">
-                    <%= link_to("首页", root_path) %>
-                </li>
+                <!-- 添加按钮-回首页 -->
                 <li class="avtice">
                     <%= link_to("Products", products_path) %>
                 </li>

@@ -1,3 +1,3 @@
 class BigviewController < ApplicationController
-    layout "applicationnav"
+    layout "navbarview"
 end

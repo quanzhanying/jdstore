@@ -23,17 +23,9 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="text-center" data-toggle="collapse" href="#collapse1" >作品集
-                            <span class="caret"></span>
+                        <a class="text-center" href="/products" >作品集
                         </a>
                     </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <%= link_to("手绘本", products_path) %>
-                    </div>
-                    <div class="panel-body">手绘滑板</div>
-                    <div class="panel-body">手绘酒瓶</div>
                 </div>
             </div>
             <!-- 购物车 -->
@@ -52,58 +44,48 @@
                 <% if !current_user %>
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a class="text-center" data-toggle="collapse" href="#collapse2" >SignUp | LogIn
+                            <div class="dropdown1">
+                                注册|登陆
                                 <span class="caret"></span>
-                            </a>
+                                <div class="dropdown-content1">
+                                    <%= link_to("注册", new_user_registration_path) %>
+                                    <%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path) %>
+                                </div>
+                            </div>
                         </h4>
-                    </div>
-                    <div id="collapse2" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <%= link_to("注册", new_user_registration_path) %>
-                        </div>
-                        <div class="panel-body">
-                            <%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path) %>
-                        </div>
                     </div>
                 <% else %>
                     <% if current_user.is_admin? %>
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="text-center" data-toggle="collapse" href="#collapse3" > Hi!, <%= current_user.email %>
+                                <div class="dropdown1">
+                                    Hi!, <%= current_user.email %>
                                     <span class="caret"></span>
-                                </a>
+                                    <div class="dropdown-content1">
+                                        <%= link_to("My orders", account_orders_path ) %>
+                                        <%= link_to("Admin 菜单", admin_products_path) %>
+                                        <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                                    </div>
+                                </h4>
+                            </div>
+                        <% else %>
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <div class="dropdown1">
+                                        Hi!, <%= current_user.email %>
+                                        <span class="caret"></span>
+                                        <div class="dropdown-content1">
+                                            <%= link_to("My orders", account_orders_path ) %>
+                                            <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                                        </div>
+                                    </div>
+                                </div>
                             </h4>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <%= link_to("My orders", account_orders_path ) %>
-                            </div>
-                            <div class="panel-body">
-                                <%= link_to("Admin 菜单", admin_products_path) %>
-                            </div>
-                            <div class="panel-body">
-                                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                            </div>
-                        </div>
-                    <% else %>
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="text-center" data-toggle="collapse" href="#collapse4" > Hi!, <%= current_user.email %>
-                                    <span class="caret"></span>
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse4" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <%= link_to("My orders", account_orders_path ) %>
-                            </div>
-                            <div class="panel-body">
-                                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                            </div>
                         </div>
                     <% end %>
                 <% end %>
             </div>
+            <!-- 注册，登录，Admin选项 -->
         </div>
         <br>
         <div>

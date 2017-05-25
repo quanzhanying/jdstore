@@ -20,13 +20,89 @@ end
 
 
 # Initialize Product
+# product1
+Product.create!(
+title: '秋千',
+description: '儿时的回忆',
+quantity: '1',
+price: '160',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI006360.jpg"))
+
+# product2
+Product.create!(
+title: '安睡',
+description: '静静的熟睡',
+quantity: '3',
+price: '150',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI001360.jpg"))
+
+# product3
+Product.create!(
+title: '骏马',
+description: '美女与骏马',
+quantity: '2', price: '150',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI002360.jpg"))
+
+# product4
+Product.create!(
+title: '小溪',
+description: '在溪水中唱歌',
+quantity: '1',
+price: '160',
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
+
+# product5
+Product.create!(
+  title: '花香',
+  description: '沉浸在花香中',
+  quantity: '1',
+  price: '160',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI004360.jpg"))
+
+# product6
+  Product.create!(
+  title: '作画',
+  description: '大自然中尽情作画',
+  quantity: '2',
+  price: '260',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI005360.jpg"))
+
+# product7
+Product.create!(
+title: "梦中甘露",
+description: "哲-Tititi作 品，Posted in 作品集, 张王哲。",
+author: "哲-Tititi",
+price: "480",
+quantity: "1",
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003.jpg"))
+
+# product8
+  Product.create!(
+  title: '狐狸',
+  description: '与兔子在森林中嬉戏',
+  quantity: '1',
+  price: '160',
+  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI011.jpg"))
+
+# product9
+
 Product.create!(
 title: "手绘酒瓶-执子子手",
 description: "TWELVE MOONS 团队手绘酒瓶--执子之手，以酒瓶作画布，采用多种颜料绘制，只此一件。",
 author: "TWELVE MOONS 团队",
 price: "2600",
 quantity: "1",
-image: open("https://gd3.alicdn.com/imgextra/i4/0/T1n.DvFmddXXXXXXXX_!!0-item_pic.jpg"))
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2014/04/%E6%89%A7%E5%AD%90%E4%B9%8B%E6%89%8B717.jpg"))
+
+
+# product10
+Product.create!(
+title: "手绘酒瓶-执子子手",
+description: "TWELVE MOONS 团队手绘酒瓶--执子之手，以酒瓶作画布，采用多种颜料绘制，只此一件。",
+author: "TWELVE MOONS 团队",
+price: "2600",
+quantity: "1",
+image: open("http://twelvemoons.com.cn/wp-content/uploads/2014/04/%E6%BB%91%E6%9D%BF04800.jpg"))
 
 Product.create!(
 title: "小风琴折页本",
@@ -51,68 +127,3 @@ author: "肖躍青大師",
 price: "38800",
 quantity: "1",
 image: open("https://img.alicdn.com/imgextra/i3/1109693099/TB2yYKea4vzQeBjSZFMXXcVfFXa_!!1109693099.jpg"))
-
-Product.create!(
-title: "梦中甘露",
-description: "哲-Tititi作 品，Posted in 作品集, 张王哲。",
-author: "哲-Tititi",
-price: "480",
-quantity: "1",
-image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003.jpg"))
-
-Product.create!(
-title: '安睡',
-description: '静静的熟睡',
-quantity: '3',
-price: '150',
-image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI001360.jpg"))
-
-Product.create!(
-title: '骏马',
-description: '美女与骏马',
-quantity: '2', price: '150',
-image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI002360.jpg"))
-
-Product.create!(
-title: '小溪',
-description: '在溪水中唱歌',
-quantity: '1',
-price: '160',
-image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
-
-Product.create!(
-  title: '花香',
-  description: '沉浸在花香中',
-  quantity: '1',
-  price: '160',
-  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI004360.jpg"))
-
-  Product.create!(
-  title: '作画',
-  description: '大自然中尽情作画',
-  quantity: '2',
-  price: '260',
-  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI005360.jpg"))
-
-
-  Product.create!(
-  title: '秋千',
-  description: '儿时的回忆',
-  quantity: '1',
-  price: '160',
-  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI006360.jpg"))
-
-  Product.create!(
-  title: '嬉戏',
-  description: '与兔子在森林中嬉戏',
-  quantity: '1',
-  price: '160',
-  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
-
-
-  Product.create!(
-  title: '酣睡',
-  description: '黎明前香甜的酣睡',
-  quantity: '1',
-  price: '160',
-  image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg"))
