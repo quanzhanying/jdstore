@@ -4,6 +4,19 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def  index
+    @products  =  case params[:order]
+            when  'high_to_low'
+              Product.order('price DESC')
+            when  'low_to_high'
+              Product.order('price ASC')
+            else
+              Product.order('created_at DESC')
+            end
+  end
+
+
+
   def show
     @product = Product.find(params[:id])
   end

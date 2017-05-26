@@ -1,32 +1,23 @@
-<!--
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
- </ol>
- <div class="carousel-inner">
-    <div class="item active">
-     <a href="javascript:;">
-      <img src="http://i.imgur.com/zwYoT3d.jpg?1">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-    <div class="item">
-     <a href="javascript:;">
-      <img src="http://i.imgur.com/ZECaYML.jpg?1">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-    <div class="item">
-     <a href="javascript:;">
-      <img src="http://i.imgur.com/85JqWC3.jpg?2">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-  </div>
+<div  class= "dropdown clearfix pull-right" >
+    <button  class= "btn btn-default dropdown-toggle"  type= "button"  id= "dropdownMenuDivider"  data-toggle= "dropdown"  aria-haspopup= "true"  aria -expanded= "true" >
+      排序
+        <span  class= "caret" ></span>
+    </button>
+    <ul  class= "dropdown-menu"  aria-labelledby= "dropdownMenuDivider" >
+        <li>
+          <%=  link_to("按價格排序：高至低", products_path(:order => "high_to_low"))  %>
+        </li>
+        <li>
+          <%= link_to("按價格排序：低至高", products_path(:order => "low_to_high"))  %>
+
+        </li>
+        <li>
+          <%=  link_to("依上架時間" ,  products_path)  %>
+
+        </li>
+    </ul>
 </div>
--->
+
 <div class="productList-wrap w1200 pt20 bc">
   <%= render :partial => "products/product_list"%>
 </div>
