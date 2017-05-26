@@ -36,4 +36,11 @@ class Admin::OrdersController < ApplicationController
     @order.return_good!
     redirect_to :back
   end
+
+  def apply_to_cancel
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.apply_cantel(@order),deliver!
+    flash[:notice] = "Have applied to Cancel"
+    redirect_to :back
+  end
 end
