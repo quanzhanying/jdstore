@@ -21,14 +21,11 @@
  // common seeting
 
  html{height:100%;}
- body{
-   min-height:100%;margin:0;padding:0;position:relative;
-   font-size: 12px;
- }
+ body{min-height:100%;margin:0;padding:0;position:relative;}
 
  header{background-color: #ffe4c4;}
- main{padding-bottom:100px;background-color: #bdb76b;}/* main的padding-bottom值要等于或大于footer的height值 */
- footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #ffc0cb;}
+ .main{margin-bottom:100px;}/* main的padding-bottom值要等于或大于footer的height值 */
+ footer{bottom:0;width:100%;height:100px;background-color: rgb(231,231,231);}
 
 // devise signup
 .login_bg{
