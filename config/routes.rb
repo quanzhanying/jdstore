@@ -10,7 +10,8 @@ Rails.application.routes.draw do
       end
     end
   end
-devise_for :users
+
+  devise_for :users
   root 'products#index'
 
   resources :products do
