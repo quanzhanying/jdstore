@@ -5,18 +5,18 @@
 
 <!-- /.排序 -->
 <div class="orderList bg-color1">
-  <div class="orderList-item bg-color2">
+  <div class="orderList-item">
     <%= link_to("新品",products_path) %>
   </div>
-  <div class="orderList-item bg-color3">
+  <div class="orderList-item">
     <li><%= link_to(content_tag(:i, '价格', class: ' fa fa-arrow-up'), products_path(:order => "by_upper_price")) %>
     </li>
   </div>
-  <div class="orderList-item bg-color4">
+  <div class="orderList-item">
     <li><%= link_to(content_tag(:i, '价格', class: ' fa fa-arrow-down'), products_path(:order => "by_down_price")) %>
     </li>
   </div>
-  <div class="orderList-item bg-color5">
+  <div class="orderList-item">
     <%= link_to("销量", products_path(:order => "by_down_sale_count")) %>
   </div>
 </div>
@@ -49,10 +49,10 @@
             描述: <%= product.description %>
           </div>
           <div class="col-md-6">
-            <% if !product.users.include?(current_user) %>
-              <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+            <% if current_user && current_user.is_favorite_of?(product) %>
+              <%= link_to('取消收藏'.html_safe, favorite_product_path(product, type: "unfavorite"), method: :put, class: "fa fa-heart") %>
             <% else %>
-              <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+              <%= link_to('添加收藏'.html_safe, favorite_product_path(product, type: "favorite"), method: :put, class: "fa fa-heart", style: "color:red;") %>
             <% end %>
           </div>
         </div>

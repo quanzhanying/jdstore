@@ -21,8 +21,7 @@ end
 resources :products do
   member do
     post :add_to_cart
-    post :add_to_favorite
-    post :quit_favorite
+    put :favorite
 
   end
   collection do
@@ -34,6 +33,7 @@ resources :products do
       get :category5
   end
 end
+resources :favorite
 
 resources :carts do
   collection do

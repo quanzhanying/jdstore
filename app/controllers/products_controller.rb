@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user! , only: [:add_to_cart, :favorite]
+
+
   before_action :validate_search_key, only: [:search]
 
 
@@ -57,20 +60,24 @@ class ProductsController < ApplicationController
   end
 
 
-  def add_to_favorite
-    @product = Product.find(params[:id])
-    @product.users << current_user
-    @product.save
-    redirect_to :back, notice:"成功加入收藏!"
-  end
-  
-  def quit_favorite
-    @product = Product.find(params[:id])
-    @product.users.delete(current_user)
-    @product.save
-    redirect_to :back, alert: "成功取消收藏!"
-  end
 
+
+
+  def favorite
+    @product = product.find(params[:id])
+      type = params[:type]
+    if type == "favorite"
+      current_user.favorite_products << @product
+      redirect_to :back
+
+    elsif type == "unfavorite"
+      current_user.favorite_products.delete(@product)
+      redirect_to :back
+
+    else
+      redirect_to :back
+    end
+  end
 
 
   protected
