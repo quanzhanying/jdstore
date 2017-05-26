@@ -11,7 +11,7 @@
 
       <div class="row">
         <% @products.each do |product| %>
-          <div class="col-xs-6 col-md-3">
+          <div class="col-xs-6 col-md-3  product-list-style">
             <%= link_to product_path(product) do %>
               <% if product.image.present? %>
                 <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
@@ -19,17 +19,20 @@
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
             <% end %>
-              <%= product.title %> ￥ <%= product.price %>
-
-            <!--  点赞 -->
-              <%= link_to like_product_path(product), method: :put do %>
-                <div class="pi-thumbs-up">
-                  <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
-                  <%= product.get_upvotes.size %>
-                </div>
-              <% end %>
-
-
+            <div class="row">
+              <div class="col-xs-8">
+                <%= product.title %> ￥ <%= product.price %>
+              </div>
+              <div class="col-xs-4">
+                <!--  点赞 -->
+                <%= link_to like_product_path(product), method: :put do %>
+                  <div class="pi-thumbs-up">
+                    <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+                    <%= product.get_upvotes.size %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
