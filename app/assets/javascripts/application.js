@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require autosize.min 
 //= require_tree .
