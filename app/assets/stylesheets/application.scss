@@ -37,7 +37,6 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 0 2%;
 }
 .content {
   max-width: 1600px;
@@ -537,7 +536,7 @@ footer .sub-footer {
 }
 
 .pd-header-panel {
-  background:url('http://www.btcside.com/Tutorial/img/imgbox1_2.jpg') repeat center center scroll;
+  background:url('http://www.btcside.com/Tutorial/img/imgbox1_2.jpg') repeat center scroll;
   background-color: rgba(250,250,250,1);
   margin-top: -5px;
   padding-top: 90px;
@@ -985,3 +984,37 @@ div.cart__main__wapper {
     .account{
       text-align: center;
     }
+
+
+/* -------order------- */
+
+div.odhead {
+  background:url('http://www.btcside.com/Tutorial/img/imgbox2.jpg') no-repeat center scroll;
+  background-size: 100%;
+  margin-top: -2px;
+  margin-bottom: -20px;
+  padding-top: 110px;
+  padding-bottom: 150px;
+  border: 0px;
+  font-size: 2em;
+}
+
+div.odsection{
+  background: lightgreen;
+  // background: #f9f9fa;
+  height:500px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.odsection1{
+  background: black;
+  color: white;
+  // height:50px;
+}
+
+div.odsection2{
+  background: black;
+  height:300px;
+}
