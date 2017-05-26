@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>后台</title>
+    <title>个人中心</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,15 +17,20 @@
           <div class="row">
 
             <!-- 侧边分类选项栏 -->
-            <div class="col-md-2 nav-left-style">
+            <div class="col-xs-2 nav-left-style">
+              <hr>
+              <h5>我的账号</h5>
+              <p><%= current_user.email %></p>
+              <hr>
               <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                <li><%= link_to("商品管理", admin_products_path) %></li>
-                <li><%= link_to("订单管理", admin_orders_path) %></li>
+                <li><%= link_to("我的订单", account_orders_path) %></li>
+                <li><%= link_to("收藏商品", admin_orders_path) %></li>
               </ul>
+              <hr>
             </div>
 
             <!-- 主内容 -->
-            <div class="col-md-10">
+            <div class="col-xs-10">
               <%= yield %>
             </div>
 

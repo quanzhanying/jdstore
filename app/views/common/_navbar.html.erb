@@ -40,7 +40,7 @@
                 <% if current_user.admin? %>
                   <li><%= link_to("管理员", admin_products_path, class: "li-style") %></li>
                 <% end %>
-                <li><%= link_to("我的订单", account_orders_path, class: "li-style") %></li>
+                <li><%= link_to("个人中心", account_orders_path, class: "li-style") %></li>
                 <li><%= link_to("退出", destroy_user_session_path, method: :delete, class: "li-style") %></li>
               </ul>
             </li>
