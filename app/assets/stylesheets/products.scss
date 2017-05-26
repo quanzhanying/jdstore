@@ -1,0 +1,74 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.show-action{
+  padding-top:30px;
+
+  .a1{
+    width:200px;
+    color:white;
+    weight:10;
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 10px;
+    background:rgba(215,40,45,1);
+  }
+  .a1:hover{
+    background: rgba(210,38,40 ,1);
+  }
+  .a2{
+    width:200px;
+    color:#3a2f2d;
+    weight:10;
+    border:1px solid #3a2f2d;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    float:left;
+  }
+}
+
+  .show-quantity{
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666;
+  p.quantity{
+    span.quantity{
+      margin-left: 20px;
+    }
+  }
+  p.sizes{
+    span.sizes{
+      margin-left: 20px;
+    }
+  }
+  p.delivery{
+    span.delivery{
+      margin-left: 20px;
+    }
+  }
+}
+
+.show-service{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #666;
+  border-top: 1px dotted #dedede;
+  border-bottom: 1px dotted #dedede;
+  p.price{
+    span.rmb{
+      color: #d7282d;
+      margin-left: 20px;
+    }
+    span.price{
+      color: #d7282d;
+      font-size: 30px;
+    }
+  }
+  p.service{
+    span.service-detail{
+      margin-left: 20px;
+    }
+  }
+}
