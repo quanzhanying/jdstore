@@ -25,32 +25,15 @@ end
 
 # Initialize Product
 
-Product.create!(
- id: 1, # 第二個商品id:2, Product_id:2, 以此類推
-
-  title: "品名1",
-  :timestamp_at => data["at"],
-  :price_buy => data["ticker"]["buy"],
-  :price_sell => data["ticker"]["sell"],
-  :price_low => data["ticker"]["low"],
-  :price_high => data["ticker"]["high"],
-  :price_last => data["ticker"]["last"],
-  :trade_vol => data["ticker"]["vol"],
-  :quantity => data["ticker"]["vol"]),
-  :price => data["ticker"]["last"],
-
-
-
- )
 # Initialize Product Photos
 
 #下面兩個方法2選1
 
 #方法1.先將照片上傳到iPic或其他位置，建議用這個方法
 
-Photo.create!(product_id:1,avatar: open('https://ws3.sinaimg.cn/large/006tNbRwgy1ffy02ugmsuj30eg0egq3q.jpg'))
-Photo.create!(product_id:1,avatar: open('https://ws3.sinaimg.cn/large/006tNbRwgy1ffy0524rsfj30eg0egmyp.jpg'))
-Photo.create!(product_id:1,avatar: open('https://ws2.sinaimg.cn/large/006tNbRwgy1ffy05lzf92j30eg0eg74k.jpg'))
+# Photo.create!(product_id:1,avatar: open('https://ws3.sinaimg.cn/large/006tNbRwgy1ffy02ugmsuj30eg0egq3q.jpg'))
+# Photo.create!(product_id:1,avatar: open('https://ws3.sinaimg.cn/large/006tNbRwgy1ffy0524rsfj30eg0egmyp.jpg'))
+# Photo.create!(product_id:1,avatar: open('https://ws2.sinaimg.cn/large/006tNbRwgy1ffy05lzf92j30eg0eg74k.jpg'))
 
 #方法2.照片在本地，先把照片放在 /app/assets/images/products 裡面一起推到heroku
 
