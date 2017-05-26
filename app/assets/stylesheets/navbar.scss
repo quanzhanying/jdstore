@@ -145,7 +145,7 @@
 	font-size: 1.2em; //14px
 	font-style:italic;
 	color: #000; //#fff
-	background: #fff; //#8fd613
+	background: #fff; //#8fd613 搜索框背景颜色
 }
 .widget_product_search {
 	position: relative;
@@ -357,7 +357,7 @@
 		transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
 	}
 	.mega-menu-container .menu-child-list a:hover {
-		color:#fff!important;
+		color:#fff!important; //没反应
 		padding-left:10px;
 	}
 	.main-nav>ul>li:not(.menu-item-mega-parent),
@@ -369,8 +369,9 @@
 	}
 	.main-nav {
 		display: block;
-		font-size: 14px;
+		font-size: 1.2em; //14px 主菜单字体大小
 		float:left;
+		color: gray; //add 不起作用
 	}
 	.main-nav ul {
 		list-style: none;
@@ -404,11 +405,11 @@
 		margin-left: 0;
 	}
 	.main-nav>ul>li>a {
-		padding: 26px 18px;
+		padding: 26px 10px; //26px 18px;高度改了会影响热线电话位置，宽度可改
 		z-index: 1;
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
-		color: rgba(34,34,34,1);
+		color: gray; //rgba(34,34,34,1); 主菜单颜色
 		font-size: 1.2em; //14px 主菜单字体大小
 		font-family: 'Montserrat', sans-serif;
 		text-transform:uppercase;
@@ -463,7 +464,7 @@
 		transition: background .3s ease-in-out,color .3s ease-in-out;
 	}
 	.main-nav ul ul.sub-menu li a:hover{
-		color: #8fd613;
+		color: #8fd613; //#8fd613 主菜单的下拉菜单，鼠标停留颜色
 	}
 	.main-nav .mega-menu-container,
 	.main-nav ul ul.sub-menu {
@@ -495,12 +496,12 @@
 	}
 	.main-nav .mega-menu-container li a {
 		padding: 10px 0;
-		font-size: 12px;
+		font-size: 12px; // 没反应
 		font-family:'Open Sans', sans-serif;
 		font-weight:600;
 		line-height:14px;
 		text-transform:uppercase;
-		color: #333333;
+		color: gray; //#333333 没反应
 		position: relative;
 	}
 
@@ -530,7 +531,7 @@
 	}
 	.main-nav .mega-menu-container li a.zn_mega_title:hover{
 		background:transparent;
-		color:#333!important;
+		color: gray!important; //#333 没反应
 	}
 	.main-nav .mega-menu-container .zn_mega_row_start {
 		margin-top: 20px;
@@ -719,7 +720,7 @@
 .main-menu-wrap {
 	float: right;
 	display: block;
-	margin-top: 42px;
+	margin-top: 42px; //42px 不起作用
 }
 .menu-trigger {
 	vertical-align: middle;

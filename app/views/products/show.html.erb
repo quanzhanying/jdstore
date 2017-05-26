@@ -28,11 +28,11 @@
           <div class="widget mt-30">
             <h2 class="widget-title">商品分类</h2>
             <ul>
-              <li class="cat-item"><a href="/products">蔬菜水果</a></li>
-              <li class="cat-item"><a href="/products">零食干货</a></li>
-              <li class="cat-item"><a href="/products">鲜肉蛋禽</a></li>
-              <li class="cat-item"><a href="/products">茶水饮品</a></li>
+              <li class="cat-item"><a href="/products">新鲜果蔬</a></li>
+              <li class="cat-item"><a href="/products">肉类蛋禽</a></li>
               <li class="cat-item"><a href="/products">粮油米面</a></li>
+              <li class="cat-item"><a href="/products">干货零食</a></li>
+              <li class="cat-item"><a href="/products">茶水饮品</a></li>
             </ul>
           </div>
 
@@ -66,7 +66,38 @@
                   <%= image_tag("http://placehold.it/320x320&text=No Pic", class: "", alt: "None") %>
                 <% end %>
 
+                <% if @product.img_url.present? %>
+                  <%= image_tag(@product.img1_url, size: "60x60", class: "", alt: @product.name) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
+                <% end %>
+
+                <% if @product.img_url.present? %>
+                  <%= image_tag(@product.img2_url, size: "60x60", class: "", alt: @product.name) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
+                <% end %>
+
+                <% if @product.img_url.present? %>
+                  <%= image_tag(@product.img3_url, size: "60x60", class: "", alt: @product.name) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
+                <% end %>
+
+                <% if @product.img_url.present? %>
+                  <%= image_tag(@product.img4_url, size: "60x60", class: "", alt: @product.name) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
+                <% end %>
+
+                <% if @product.img_url.present? %>
+                  <%= image_tag(@product.img5_url, size: "60x60", class: "", alt: @product.name) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
+                <% end %>
+
               </div>
+
             </div>
             <div class="col-md-7 col-sm-7">
               <div class="product-content-right">

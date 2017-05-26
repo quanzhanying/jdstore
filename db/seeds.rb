@@ -34,7 +34,7 @@ end
 # 模板(水果)
 # Product.create!(
 #   name: "",
-#   category: "生鲜",
+#   category: "新鲜果蔬",
 #   category1: "水果",
 #   category2: "",
 #   location: "",
@@ -55,7 +55,7 @@ end
 
 Product.create!(
   name: "山东烟台大红灯樱桃",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "樱桃",
   location: "中国山东烟台",
@@ -76,7 +76,7 @@ Product.create!(
 
 Product.create!(
   name: "陕西金太阳大黄杏",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "黄杏",
   location: "中国陕西",
@@ -97,7 +97,7 @@ Product.create!(
 
 Product.create!(
   name: "缅甸圣德龙芒果",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "芒果",
   location: "缅甸进口",
@@ -118,7 +118,7 @@ Product.create!(
 
 Product.create!(
   name: "山东玉菇甜瓜/香瓜/蜜瓜",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "甜瓜 香瓜 蜜瓜",
   location: "中国山东",
@@ -139,7 +139,7 @@ Product.create!(
 
 Product.create!(
   name: "越南进口红心火龙果",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "火龙果",
   location: "越南进口",
@@ -160,7 +160,7 @@ Product.create!(
 
 Product.create!(
   name: "广西百香果西番莲",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "百香果",
   location: "中国广西",
@@ -181,7 +181,7 @@ Product.create!(
 
 Product.create!(
   name: "泰国进口椰青",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "椰青",
   location: "泰国进口",
@@ -202,7 +202,7 @@ Product.create!(
 
 Product.create!(
   name: "泰国进口山竹",
-  category: "生鲜",
+  category: "新鲜果蔬",
   category1: "水果",
   category2: "山竹",
   location: "泰国进口",
@@ -219,6 +219,222 @@ Product.create!(
   img3_url: "https://img14.360buyimg.com/n1/jfs/t4072/179/2391145445/1389007/e2eaae53/58a8f34dN5e9e33e4.jpg",
   img4_url: "https://img14.360buyimg.com/n1/jfs/t3217/53/6633716909/1401120/127903e7/58a8f355N0ce7f7a2.jpg",
   img5_url: "https://img14.360buyimg.com/n1/jfs/t3292/84/6488317818/1359000/23e915b6/58a8f35cN2a94640d.jpg"
+)
+
+# ---------------------------------------------- #
+
+Product.create!(
+  name: "小油菜",
+  category: "新鲜果蔬",
+  category1: "蔬菜",
+  category2: "小油菜",
+  location: "中国北京",
+  keyword: "",
+  content: "约400g",
+  description: "小油菜 约400g 新鲜蔬菜",
+  remark: "",
+  price: 7.9,
+  price_unit: "元/400g",
+  quantity: 99,
+  img_url: "https://img14.360buyimg.com/n1/jfs/t4297/120/375562832/241785/c162c78b/58b3c779Na1ec50a0.jpg",
+  img1_url: "https://img14.360buyimg.com/n1/jfs/t4297/120/375562832/241785/c162c78b/58b3c779Na1ec50a0.jpg",
+  img2_url: "https://img14.360buyimg.com/n1/jfs/t3526/125/1983385612/102665/8f77dcf5/583aa053N7a853f98.jpg",
+  img3_url: "https://img14.360buyimg.com/n1/jfs/t3532/144/1935108946/106039/c7463907/583aa059N896a9852.jpg",
+  img4_url: "https://img14.360buyimg.com/n1/jfs/t3577/144/1924685625/173278/8842502/583aa05cNd3762e87.jpg",
+  img5_url: "https://img14.360buyimg.com/n1/jfs/t4084/361/61477247/117741/e10093a2/583aa05fN22dcfab8.jpg"
+)
+
+Product.create!(
+  name: "西兰花",
+  category: "新鲜果蔬",
+  category1: "蔬菜",
+  category2: "西兰花",
+  location: "中国北京",
+  keyword: "",
+  content: "约300g",
+  description: "西兰花 约300g 新鲜蔬菜",
+  remark: "",
+  price: 8.8,
+  price_unit: "元/300g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t3526/310/2014375487/500788/99978c40/583d31d0N4b3c83e0.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t3526/310/2014375487/500788/99978c40/583d31d0N4b3c83e0.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t3979/204/64149849/159095/ca5674a4/583a9721N4798e3bc.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/jfs/t3604/6/1990235018/103314/2563dcc6/583a971dNef4b5a63.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t3106/134/4243076371/102319/398a1d26/583a9725Na33728f3.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t3253/313/4272697987/77967/4d139380/583a9729N49f8244c.jpg"
+)
+
+Product.create!(
+  name: "西红柿",
+  category: "新鲜果蔬",
+  category1: "蔬菜",
+  category2: "西红柿",
+  location: "中国北京",
+  keyword: "",
+  content: "约300g",
+  description: "西红柿 约1100g 新鲜蔬菜",
+  remark: "",
+  price: 14.8,
+  price_unit: "元/1100g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t4237/72/338884735/326271/fabe0f8d/58b3c666N4d3ff37e.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t4237/72/338884735/326271/fabe0f8d/58b3c666N4d3ff37e.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t3457/273/1892117287/100700/7958c17c/583a96ceN97a7032c.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/jfs/t3604/6/1990235018/103314/2563dcc6/583a971dNef4b5a63.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t3670/288/1996603874/363349/65f0b4cf/583a96d8N3895a0d1.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t3769/13/2004822490/278265/a3ca3ede/583a96dbN7c72024e.jpg"
+)
+
+Product.create!(
+  name: "玉米",
+  category: "新鲜果蔬",
+  category1: "蔬菜",
+  category2: "玉米",
+  location: "中国云南玉溪",
+  keyword: "",
+  content: "约1000g",
+  description: "玉米 约1000g 新鲜蔬菜",
+  remark: "",
+  price: 19.9,
+  price_unit: "元/1000g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t4246/289/2634715009/258129/57262707/58d4d4a3Nc17334a0.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t4246/289/2634715009/258129/57262707/58d4d4a3Nc17334a0.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t4597/116/781049534/427715/3248dbbb/58d4d4aaN738cb50e.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/jfs/t3256/155/8985042448/386987/42f9ffa3/58d4d4adN50e4c5da.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t4636/150/779913328/406706/5c28894a/58d4cd14Nfd6beb47.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t4684/141/804199507/463121/78fc9c7e/58d4cd18N27437994.jpg"
+)
+
+# ---------------------------------------------- #
+
+Product.create!(
+  name: "澳洲家庭牛排套餐",
+  category: "肉类蛋禽",
+  category1: "肉",
+  category2: "牛肉",
+  location: "澳洲 进口",
+  keyword: "",
+  content: "约400g",
+  description: "腌制系列 澳洲家庭牛排套餐 10单片 新鲜牛肉黑椒菲力西冷刀叉",
+  remark: "",
+  price: 108,
+  price_unit: "元/1.6kg",
+  quantity: 99,
+  img_url: "https://img11.360buyimg.com/n1/jfs/t2446/19/2787779510/257805/1bf07374/571888c6N83029e68.jpg",
+  img1_url: "https://img11.360buyimg.com/n1/jfs/t2446/19/2787779510/257805/1bf07374/571888c6N83029e68.jpg",
+  img2_url: "https://img11.360buyimg.com/n1/jfs/t4690/85/2939616358/185983/4d1015c6/58f464dbNe42264c8.jpg",
+  img3_url: "https://img11.360buyimg.com/n1/jfs/t4387/288/2879800343/268511/da856553/58f464e0Nf4cc7b07.jpg",
+  img4_url: "https://img11.360buyimg.com/n1/jfs/t5074/100/1797000643/244289/ed6d475e/58f46550N3f7e7106.jpg",
+  img5_url: "https://img11.360buyimg.com/n1/jfs/t4750/191/1774558285/299930/f47d2834/58f4654cN23494ff4.jpg"
+)
+
+Product.create!(
+  name: "奥尔良烤翅免腌制",
+  category: "肉类蛋禽",
+  category1: "肉",
+  category2: "鸡肉 鸡翅",
+  location: "中国浙江杭州市",
+  keyword: "",
+  content: "200g两对",
+  description: "奥尔良烤翅免腌制200g两对",
+  remark: "",
+  price: 108,
+  price_unit: "元/200g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t4975/89/1771973093/376398/d2ce4547/58f465beNe98736f9.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t4975/89/1771973093/376398/d2ce4547/58f465beNe98736f9.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t3199/317/2255042339/123191/a419a56a/57df5788N94a33fa7.jpg",
+  img3_url: "https://img13.360buyimg.com/n5/jfs/t4495/71/2889630763/361665/3bd08bd1/58f465c0Nc6c62421.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t3229/111/2276465149/96729/3e20ba93/57df57b1N486f12dd.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t4441/227/2883509009/403664/649e5774/58f465c2N4802a354.jpg"
+)
+
+Product.create!(
+  name: "大西洋冰鲜三文鱼腩刺身",
+  category: "肉类蛋禽",
+  category1: "肉",
+  category2: "三文鱼",
+  location: "进口",
+  keyword: "",
+  content: "400g 袋装",
+  description: "大西洋冰鲜三文鱼腩刺身 400g 袋装 海鲜水产",
+  remark: "",
+  price: 118,
+  price_unit: "元/400g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t2734/206/124295504/183884/8e6232fd/5703d77aN38971990.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t2734/206/124295504/183884/8e6232fd/5703d77aN38971990.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t3136/249/8228157200/162512/f03edb1e/58c22592N7ad9e19f.jpg",
+  img3_url: "https://img11.360buyimg.com/n1/jfs/t1846/340/1232417826/311157/3e57e4d1/564b78d6N99247f43.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t3286/182/8483040083/180656/9f5d9288/58c22598N246b3c3b.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t4129/48/1452381826/175786/927df76c/58c2259bN0d6ce866.jpg"
+)
+
+Product.create!(
+  name: "大西洋冰鲜三文鱼腩刺身",
+  category: "肉类蛋禽",
+  category1: "肉",
+  category2: "三文鱼",
+  location: "进口",
+  keyword: "",
+  content: "20枚 1kg",
+  description: "洞庭湖咸蛋 真空包装咸鸭蛋 20枚 1kg",
+  remark: "",
+  price: 118,
+  price_unit: "元/400g",
+  quantity: 99,
+  img_url: "https://img11.360buyimg.com/n1/jfs/t3307/306/5572513062/178654/5c32f07/587af203N585e0505.jpg",
+  img1_url: "https://img11.360buyimg.com/n1/jfs/t3307/306/5572513062/178654/5c32f07/587af203N585e0505.jpg",
+  img2_url: "https://img11.360buyimg.com/n1/jfs/t3364/308/448368738/351118/206c65b6/5809bc55N30c13548.jpg",
+  img3_url: "https://img11.360buyimg.com/n1/jfs/t3430/306/434704275/227125/8c4047ee/5809bc54N130e6486.jpg",
+  img4_url: "https://img11.360buyimg.com/n1/jfs/t4003/233/1510761628/62049/c657c18a/587af21eNa25cf809.jpg",
+  img5_url: "https://img11.360buyimg.com/n1/jfs/t3916/323/1473440519/79783/f9ae89c7/587af21eN09be1c7b.jpg"
+)
+
+# ---------------------------------------------- #
+
+Product.create!(
+  name: "东北五常生态稻花香大米",
+  category: "粮油米面",
+  category1: "米",
+  category2: "大米",
+  location: "中国 东北",
+  keyword: "",
+  content: "15斤 包邮",
+  description: "东北五常生态稻花香大米 新米现磨 15斤 包邮",
+  remark: "",
+  price: 185,
+  price_unit: "元/12.5kg",
+  quantity: 99,
+  img_url: "https://img11.360buyimg.com/n1/jfs/t3046/149/4860842224/962683/4ce8ca14/585b8360N26256228.jpg",
+  img1_url: "https://img11.360buyimg.com/n1/jfs/t3046/149/4860842224/962683/4ce8ca14/585b8360N26256228.jpg",
+  img2_url: "https://img11.360buyimg.com/n1/jfs/t3088/16/4986947252/928046/7c32afa/585b835aNd6ef4c49.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/jfs/t3835/198/2219284238/395042/7840cb1e/5853bf8aN77eaa559.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t3997/301/124273683/223461/4051ff95/583e4fffNeb109f69.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t3433/115/2045919669/252126/fb7cb5e7/583e5004N30ecaed4.jpg"
+)
+
+Product.create!(
+  name: "东北杂粮大米精选十谷米",
+  category: "粮油米面",
+  category1: "米",
+  category2: "大米 杂粮",
+  location: "中国 东北",
+  keyword: "",
+  content: "400g",
+  description: "东北杂粮大米精选十谷米 400g",
+  remark: "",
+  price: 14.8,
+  price_unit: "元/400g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t4501/10/2558929760/118631/53ad0fbf/58f0987cNf84226d2.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t4501/10/2558929760/118631/53ad0fbf/58f0987cNf84226d2.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t4759/53/1459688475/1185986/d543cd87/58f0987dNca1b6c8c.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/jfs/t4699/74/2597020611/1238489/a5e4b41b/58f0987eN5ed5399a.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t5047/164/1478452012/1201077/2c2dd812/58f0987fN4da8ec1b.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t4627/90/2552916437/1608995/eb0320e1/58f09881N4c3f9667.jpg"
 )
 
 

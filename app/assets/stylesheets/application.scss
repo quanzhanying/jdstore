@@ -2036,17 +2036,17 @@ hr,
 .sidebar-menu li{
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
-  color: #8fd613; //#000000 下级菜单箭头颜色
-  font-size:18px;
+  color: #aaa; //#000000 侧边栏主菜单字体颜色，及下级菜单箭头颜色 #8fd613
+  font-size: 1.3em; //18px 侧边栏主菜单字体大小
   padding:10px 20px;
   background: #fff; //#f8f8f8 子菜单背景颜色
-  border-bottom:1px solid #ebebeb;
+  border-bottom: 1px solid #eee; //1px solid #ebebeb;
 }
 .sidebar-menu li a{
   font-family:'Libre Baskerville', serif;
   font-weight:400;
-  color: gray; //#565656 子菜单字体颜色
-  font-size:13px;
+  color: #aaa; //#565656 子菜单字体颜色
+  font-size: 13px; //13px 一级子菜单字体大小
 }
 .sidebar-menu > ul > li:first-child{
   background: #fff; //#ebebeb 主菜单背景颜色
@@ -2158,7 +2158,7 @@ hr,
     font-weight:600;
     line-height:14px;
     text-transform:uppercase;
-    color: #333333;
+    color: gray; //#333333 没反应
     position: relative;
     background: rgba(255, 255, 255, 1);
     -webkit-transition: background .3s ease-in-out,color .3s ease-in-out;
@@ -2166,7 +2166,7 @@ hr,
     transition: background .3s ease-in-out,color .3s ease-in-out;
   }
   .sidebar-menu ul ul.sub-menu li a:hover{
-    color: #8fd613;
+    color: gray; //#8fd613 没反应
   }
   .sidebar-menu .mega-menu-container,
   .sidebar-menu ul ul.sub-menu {
@@ -2198,7 +2198,7 @@ hr,
     padding-left:0px;
   }
   .sidebar-menu .mega-menu-container .menu-child-list a:hover{
-    color:#8fd613!important;
+    color: gray!important; //8fd613 没反应
   }
   .sidebar-menu .mega-menu-container li a:not(.zn_mega_title):hover:before,
   .sidebar-menu .mega-menu-container li.active>a:not(.zn_mega_title):before {
@@ -2210,14 +2210,14 @@ hr,
   .sidebar-menu .mega-menu-container li a.zn_mega_title,
   .sidebar-menu div.mega-menu-container ul li:last-child>a.zn_mega_title {
     font-weight:700;
-    color:#000;
+    color: gray; //#000 侧边栏 子菜单字体颜色
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
   }
   .sidebar-menu .mega-menu-container li a.zn_mega_title:hover{
     background:transparent;
-    color:#333!important;
+    color: #8fd613!important; //#333 侧边栏 子菜单停留字体颜色
     padding-left:0px;
   }
   .sidebar-menu .mega-menu-container .zn_mega_row_start {

@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="breadcrumps-heading">
-            <h3>搜索结果</h3>
+            <h3><%= params[:q] %></h3>
             <div class="breadcrumps-border"></div>
             <ul>
               <li><a href="/"> 首页</a> /</li>
-              <li><a href="#"> 搜索商品</a></li>
+              <li><a href="#"> <%= params[:q] %></a></li>
               <li></li>
             </ul>
           </div>
@@ -24,8 +24,8 @@
     <div class="row">
       <% if @products.blank? %>
       <div class="text-center">
-        没有符合搜索条件的商品哦！<br>
-        <%= link_to("查看所有商品", products_path, class: "btn btn-sm btn-success") %>
+        <h3>没货哦！</h3><br>
+        <%= link_to("查看所有商品", products_path, class: "btn btn-default") %>
       </div>
       <% else %>
         <% @products.each do |product| %>
