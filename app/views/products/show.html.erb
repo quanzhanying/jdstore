@@ -79,7 +79,7 @@
                     <div class="tb-sku">
                       <dl class="tb-amount tm-clear">
                         <dt class="tb-metatit">数量</dt>
-                        <dd id="J_Amount">
+                        <dd id="J_Amount" onselectstart="return false">
                           <span class="tb-amount-widget mui-amount-wrap">
                             <span class="mui-amount-btn">
                               <span class="mui-amount-increase">
@@ -89,10 +89,9 @@
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                               </span>
                             </span>
-                            <input type="text" class="tb-text mui-amount-input" value="1" name="quantity">
-                            <span class="mui-amount-unit">件</span>
+                            <input type="text" class="tb-text mui-amount-input" value="1" max="<%= @product.quantity %>" url="<%= add_to_cart_product_path(@product)  %>?num=">
+                            <span>库存 <i style="color:#c40000;"><%= @product.quantity %></i> 件</span>
                           </span>
-                          <span id="J_StockTips"></span>
                         </dd>
                       </dl>
                       <div class="tb-action">
@@ -251,35 +250,69 @@
 </span>
 -->
         <script type="text/javascript">
-          //---------数量-------//
+        /*
+        // 这会绑 click 事件到所有有 `.delete-post` class 的元素上，也就是所有的删除按钮
+        $("#J_LinkBasket11").on('click', function(evt){
+          // `evt` 是浏览器的事件物件，evt.preventDefault(); 会终止这个元素的默认行为：
+          // 超连结 a 的默认行为是跳到下一页，如果没有这行的话，送出 ajax 后会跳去 show page
+          evt.preventDefault();
+          // this 是个特别的变量，代表触发事件的元素。使用 attr 可以读取元素的属性，这里要拿到超连结的网址
+          var url = $(this).attr("href");
+          var that = this;
+
+          // 送出 Ajax
+          $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: 'script',
+               success: function(data){
+                 $(that).closest(".panel").remove();     //closest 往上找元素，找一个停止
+               }
+          })
+        })
+*/
+          //---------数量-------///
           (function ($) {
             $.fn.changeNnmber = function () {
-              var $app = $(this);
+              var $app = $(this).find(".mui-amount-input");
               //  var value = $app.find(".mui-amount-input").attr("value");
-              var value = Number($app.find(".mui-amount-input").val());
-              var $up = $app.find('.fa-angle-up');
-              var $down = $app.find('.fa-angle-down');
+              var value = Number($app.val());
+              var $up = $(this).find('.fa-angle-up');
+              var $down = $(this).find('.fa-angle-down');
+              var numMax = Number($app.attr("max"));
+              var url = $app.attr("url")
               $up.on('click', function () {
-                if (value >= 1) {
-                  value += 1;
-                } else {
-                  value = 1;
+                if (value < numMax ) {
+              $app.val(value += 1);
+              $(".J_LinkBasket").attr("href", url + value);
                 }
-                $app.find(".mui-amount-input").val(value);
               });
               $down.on('click', function () {
-                if (value <= 1) {
-                  value = 1;
-                } else {
-                  value -= 1;
+                if (value > 1) {
+                  $app.val(value -= 1);
+                  $(".J_LinkBasket").attr("href", url + value);
                 }
-                $app.find(".mui-amount-input").val(value);
               });
+
+              $app.blur(function() {
+                value = Number($app.val());
+                if (value > numMax) {
+                  value = numMax;
+                }
+                if (value < 1) {
+                  value = 1;
+                }
+                $app.val(value);
+                $(".J_LinkBasket").attr("href", url + value);
+              });
+
             }
           })(jQuery);
           $(function () {
             $('#J_Amount').changeNnmber();
           });
+
+
 
           //----------看了有看
           (function ($) {

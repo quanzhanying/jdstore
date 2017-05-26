@@ -124,8 +124,8 @@ if (url) {
   var numberItem = 0;
   // 抛物线运动
   var myParabola = funParabola(eleFlyElement, eleShopCart, {
-  	speed: 300, //抛物线速度
-  	curvature: 0.0008, //控制抛物线弧度
+  	speed: 400, //抛物线速度
+  	curvature: 0.001, //控制抛物线弧度
   	complete: function() {
   		eleFlyElement.style.visibility = "hidden";
   		//eleShopCart.querySelector("span").innerHTML = ++numberItem; //修改元素值

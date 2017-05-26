@@ -11,22 +11,42 @@ class ApplicationController < ActionController::Base
 
   def current_cart
     @current_cart ||= find_cart
-
   end
 
   def add_to_cart
     @product = Product.find(params[:id])
-    if !current_cart.products.include?(@product)
-        current_cart.add_product_to_cart(@product)
-      #flash[:notice] = "你已成功将#{@product.title} 加入购物车"
-    else
-      #flash[:warning] = "你的购物车内已有此物品"
-      ci = current_cart.cart_items.find_by(product_id: @product)
-      if ci.quantity < @product.quantity
-        ci.quantity += 1
-        ci.save
+    num = params[:num].to_i
+    if !num.blank?
+      num = 1
+      if !current_cart.products.include?(@product)
+        current_cart.add_product_to_cart(@product,num)
+        #flash[:notice] = "你已成功将#{@product.title} 加入购物车"
       else
-        render :js => "alert('已经超过最大可购买数量');"
+        #flash[:warning] = "你的购物车内已有此物品"
+        ci = current_cart.cart_items.find_by(product_id: @product)
+        if ci.quantity < @product.quantity
+          ci.quantity += num
+          ci.save
+        else
+          render :js => "alert('已经超过最大可购买数量');"
+        end
+      end
+    elsif num <= @product.quantity
+      if !current_cart.products.include?(@product)
+        current_cart.add_product_to_cart(@product,num)
+      else
+        ci = current_cart.cart_items.find_by(product_id: @product)
+        if ci.quantity < @product.quantity
+          if (ci.quantity + num) < @product.quantity
+            ci.quantity += num
+            ci.save
+          else
+            ci.quantity = @product.quantity
+            ci.save
+          end
+        else
+          render :js => "alert('已经超过最大可购买数量');"
+        end
       end
     end
     #redirect_to :back
@@ -63,9 +83,9 @@ class ApplicationController < ActionController::Base
   def store_current_location
     if request.format == "text/html" || request.content_type == "text/html"
       store_location_for(:user, request.url)
-      end
     end
-    def after_sign_out_path_for(resource)
+  end
+  def after_sign_out_path_for(resource)
     request.referrer || root_path
   end
 

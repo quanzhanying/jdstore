@@ -22,6 +22,10 @@ body {
   font-family: simsun, STSong;
   //margin-top: 70px;
 }
+input , button{
+  outline: none !important;
+}
+
 
 #nav-fixed .col-md-5{
   padding-left: 22px;

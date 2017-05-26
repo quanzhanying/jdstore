@@ -6,10 +6,10 @@ class Cart < ApplicationRecord
     cart_items.destroy_all
   end
 
-  def add_product_to_cart(product)
+  def add_product_to_cart(product,num)
     ci = cart_items.build
     ci.product = product
-    ci.quantity = 1
+    ci.quantity = num
     ci.save
   end
 
