@@ -53,6 +53,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders          #用户后台查看订单
+    resources :collections     #用户收藏
   end
 
   get "about/index"

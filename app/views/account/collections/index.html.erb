@@ -1,0 +1,27 @@
+<div class="account-box">
+
+  <h3 class="text-center">我收藏的商品（My Collections）</h3>
+  <br>
+
+  <table class="table table">
+    <thead>
+      <tr>
+        <th>商品名称</th>
+        <th>价格</th>
+        <th>类型</th>
+        <th>产地</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @collections.each do |collection| %>
+        <tr>
+          <td><%= link_to(collection.title, product_path(collection)) %></td>
+          <td><%= collection.price %></td>
+          <td><%= collection.category %></td>
+          <td><%= collection.yieldly %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
