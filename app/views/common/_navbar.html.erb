@@ -15,14 +15,6 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to carts_path ,id: "cart_items" do%>
-            购物车
-            <i class="fa fa-shopping-cart"></i>
-            <span>(
-              <%= current_cart.cart_items.sum("quantity") %>)</span>
-            <% end %>
-          </li>
           <% if !current_user %>
           <li>
             <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
