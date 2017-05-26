@@ -1,4 +1,4 @@
-  <div class="container-fluid" style="background-color:#eee;">
+  <div class="container-fluid" style="background-color:#F2F2F2;">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -48,9 +48,8 @@
     &nbsp;收藏
         </a>
           </div>
-          <div class="shopCart cart text-center">
-            <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
-          </div>
+            <a class="item_buy" mid="<%= img430(product,1) %>" data-remote="true" rel="nofollow" data-method="post" href="<%= add_to_cart_product_path(product)%>"><div class="shopCart cart text-center"><i class="fa fa-cart-arrow-down"> 加入购物车</i></div></a>
+            <%#= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post,:remote => true,class: 'item_buy' , mid: img430(product,1)) %>
         </div>
       </li>
       <% end %>

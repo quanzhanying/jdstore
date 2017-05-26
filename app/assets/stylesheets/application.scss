@@ -136,6 +136,10 @@ body {
   background-color: rgb(0, 42, 55);
 }
 
+.carousel-indicators li,.carousel-indicators .active{
+  margin-left: 10px;
+}
+
 h3 {
   color: #B28435;
   margin-bottom: -15px;
@@ -206,6 +210,8 @@ hr {
 .item_hover:hover .item_buy {
   bottom: 0;
 }
+
+
 
 .item_hover .sort-img {
   vertical-align: middle;
@@ -324,7 +330,7 @@ hr {
 }
 //product.index///
 .order {
-  background-color: #eee;
+  background-color: #F2F2F2;
   height: 38px;
   padding: 9px 8px 0; //display: inline;
 }
@@ -356,13 +362,13 @@ hr {
   //margin-left: -20px; //商品列表顶格对齐//
   //margin-top: 20px;
   list-style: none;
-  padding: 0 2px;
+  padding: 0;
 }
 
 .product-list li {
   margin-top: 20px;
   padding: 0;
-  width: 224px;
+  width: 222px;
   height: 340px;
   //margin-right: 10px;
   //float: left;
@@ -429,7 +435,11 @@ hr {
   line-height: 35px;
 }
 
-.product-price .cart a i {
+.product-price .item_buy {
+  color: #B28435;
+}
+
+.product-price .cart i {
   margin-top: 2px;
 }
 
@@ -511,7 +521,7 @@ hr {
 
 .footer {
   display: block;
-  background: #f5f5f5;
+  background: #F2F2F2;
   height: 100%;
   padding-bottom: 30px;
   width: 100%;

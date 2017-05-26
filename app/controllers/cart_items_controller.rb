@@ -8,7 +8,6 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     if @cart_item.nil?
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
-      '$(".p-total b").html("' + current_cart.cart_items.sum("quantity").to_s + '");' +
       '$(".cw-icon span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
       '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );'
       render :js =>  jq
@@ -16,20 +15,13 @@ class CartItemsController < ApplicationController
       @product = @cart_item.product
       @cart_item.destroy
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
-      '$(".p-total b").html("' + current_cart.cart_items.sum("quantity").to_s + '");' +
       '$(".cw-icon span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
       '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );'
       render :js =>  jq
     end
 
-
-
-
-
-
     #flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
     #redirect_to :back
-
   end
 
   def update
