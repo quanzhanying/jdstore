@@ -1,3 +1,32 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.shoping-cart hr{
+  border-top: 2px solid #d9d9d9;
+}
+
+
+// 列表表头样式
+.cart-column-head {
+  background: #f5f5f5;
+  padding: 20px 0 20px 0;
+  margin-bottom: 20px;
+  color: #7f8c8d;
+  label {
+    text-align: center;
+    line-height: 4px;
+  }
+}
+
+// 购物车商品
+.product-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 提交按钮样式
+.cart-buying-buttom {
+  margin: 1.2em auto 3em;
+}

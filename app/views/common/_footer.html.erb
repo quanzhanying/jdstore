@@ -81,15 +81,13 @@ $(window).scroll(function () {
   if ($(this).scrollTop() > 200) {
     $('.row1').css({'display':'none'})
     $('.row2').css({'display':'block'})
-  $('.settleup-2014').css({'top':20})
-
+  $('.settleup-2014').css({'top':20,'position':'fixed','z-index':'9999'})
   } else {
     $('.row1').css({'display':'block'})
     $('.row2').css({'display':'none'})
-    $('.settleup-2014').css({'top':180})
+    $('.settleup-2014').css({'top':0,'position':'absolute','z-index':'1'})
     //$('.row3 .cw-icon').addClass('fly')
     //$('.row2 .cw-icon').removeClass('fly')
-
   }
 })
 
