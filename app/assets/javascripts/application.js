@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
-//= require autosize.min 
+//= require autosize.min
+//= require wow.min
 //= require_tree .
+
+$(document).ready(function(){
+  new WOW().init();
+})
