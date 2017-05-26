@@ -1,4 +1,3 @@
-
 <div class="col-md-4 col-md-offset-4">
   <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
     <div class="productDetail-evaluation w200 bc mt20 mb20">
@@ -62,7 +61,7 @@
       path: '/assets/',
       scoreName: 'review[price]'
   });
-
+<!-- 必须要选一颗星 -->
   $('#star-freshness img').eq(0).trigger('click')
   $('#star-look img').eq(0).trigger('click')
   $('#star-price img').eq(0).trigger('click')
