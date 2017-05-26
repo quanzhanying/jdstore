@@ -333,7 +333,7 @@ Product.create!(
 Product.create!(
   name: "奥尔良烤翅免腌制",
   category: "肉类蛋禽",
-  category1: "肉",
+  category1: "禽",
   category2: "鸡肉 鸡翅",
   location: "中国浙江杭州市",
   keyword: "",
@@ -373,10 +373,10 @@ Product.create!(
 )
 
 Product.create!(
-  name: "大西洋冰鲜三文鱼腩刺身",
+  name: "洞庭湖咸蛋",
   category: "肉类蛋禽",
-  category1: "肉",
-  category2: "三文鱼",
+  category1: "蛋",
+  category2: "咸蛋 咸鸭蛋",
   location: "进口",
   keyword: "",
   content: "20枚 1kg",

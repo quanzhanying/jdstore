@@ -31,8 +31,10 @@ Rails.application.routes.draw do
 
     collection do
       get :search
+      get :search1
+      get :search2
     end
-    
+
   end
 
   resources :carts do

@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
 
   before_action :validate_search_key, only: [:search]
+  before_action :validate_search_key1, only: [:search1]
+  before_action :validate_search_key2, only: [:search2]
 
   def index
     @products = Product.all.order("position ASC")
@@ -28,7 +30,21 @@ class ProductsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
-      @products = search_result.paginate(:page => params[:page], :per_page => 8 )
+      @products = search_result.paginate(:page => params[:page], :per_page => 20 )
+    end
+  end
+
+  def search1
+    if @query_string1.present?
+      search_result = Product.ransack(@search_criteria1).result(:distinct => true)
+      @products = search_result.paginate(:page => params[:page], :per_page => 20 )
+    end
+  end
+
+  def search2
+    if @query_string2.present?
+      search_result = Product.ransack(@search_criteria2).result(:distinct => true)
+      @products = search_result.paginate(:page => params[:page], :per_page => 20 )
     end
   end
 
@@ -37,8 +53,26 @@ class ProductsController < ApplicationController
     @search_criteria = search_criteria(@query_string)
   end
 
+  def validate_search_key1
+    @query_string1 = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria1 = search_criteria1(@query_string1)
+  end
+
+  def validate_search_key2
+    @query_string2 = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+    @search_criteria2 = search_criteria2(@query_string2)
+  end
+
   def search_criteria(query_string)
     { :name_or_category_or_category1_or_category2_or_keyword_or_location_cont => query_string }
+  end
+
+  def search_criteria1(query_string1)
+    { :category1_cont => query_string1 }
+  end
+
+  def search_criteria2(query_string2)
+    { :category2_cont => query_string2 }
   end
 
   private
