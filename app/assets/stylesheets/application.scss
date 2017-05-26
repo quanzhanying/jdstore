@@ -17,3 +17,40 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+//------------navbar------------
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div {
+    display: block;
+}
+
+.navbar {
+    width: 100%;
+    position: relative;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+.navbar-default {
+    background-color: #030001;
+    border-color: transparent;
+}
+
+.navbar-brand{
+    color: #FEFFFF;
+    font-size: 24px;
+    float: left;
+}
+
+a {
+  color: #FEFFFF;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: auto;
+}
