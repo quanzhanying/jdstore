@@ -1,12 +1,13 @@
 class CreateChoices < ActiveRecord::Migration[5.0]
   def change
     create_table :choices do |t|
-      t.boolean :is_a1en, defaut: false
-      t.boolean :is_b1en, defaut: false
-      t.boolean :is_c1en, defaut: false
-      t.boolean :is_d1en, defaut: false
-      t.boolean :is_e1en, defaut: false
-      t.boolean :is_f1en, defaut: false
+      t.integer :user_id
+      t.boolean :is_aa1en, defaut: false
+      t.boolean :is_bb1en, defaut: false
+      t.boolean :is_cc1en, defaut: false
+      t.boolean :is_dd1en, defaut: false
+      t.boolean :is_ee1en, defaut: false
+      t.boolean :is_ff1en, defaut: false
 
       t.timestamps
     end

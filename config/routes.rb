@@ -81,14 +81,35 @@ Rails.application.routes.draw do
   resources :favorites
 
   resources :exams do
-    member do
+    collection do
+      post :option
       post :check_answer
     end
   end
 
   resources :answers
 
-  resources :choices
+  resources :choices do
+    member do
+        post :aa
+        post :aa1
+
+        post :bb
+        post :bb1
+
+        post :cc
+        post :cc1
+
+        post :dd
+        post :dd1
+
+        post :ee
+        post :ee1
+
+        post :ff
+        post :ff1
+      end
+  end
 
   root "welcome#index"
 

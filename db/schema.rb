@@ -40,12 +40,13 @@ ActiveRecord::Schema.define(version: 20170525035803) do
   end
 
   create_table "choices", force: :cascade do |t|
-    t.boolean  "is_a1en"
-    t.boolean  "is_b1en"
-    t.boolean  "is_c1en"
-    t.boolean  "is_d1en"
-    t.boolean  "is_e1en"
-    t.boolean  "is_f1en"
+    t.integer  "user_id"
+    t.boolean  "is_aa1en"
+    t.boolean  "is_bb1en"
+    t.boolean  "is_cc1en"
+    t.boolean  "is_dd1en"
+    t.boolean  "is_ee1en"
+    t.boolean  "is_ff1en"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -2,18 +2,20 @@
 
 <div class="row">
   <div class="col-md-6">
+
     <li>
       题：
       <br>
        <% @exams.each do |exam| %>
-        <%= link_to(exam.name, exam_path(exam)) %>
+        <!-- <%= link_to exam.name, exam_path(exam) %>
+        <%= link_to("开始答题", exam_path(exam), method: :post, class: "option-btn") %> -->
 
         <table class="table table-bordered">
 
           <thead>
             <tr>
               <th>
-                <%= exam.id %>
+                <%= exam.name %>
               </th>
 
               <th>
@@ -32,37 +34,17 @@
 
             <td>
               <%= simple_form_for @choice do |f| %>
-              <% if exam.is_a1en %>
-              <%= link_to a_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %>
-              <% else %>
-              <%= link_to a1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-square-o"></i><% end %> A. <%= exam.answer_1 %>
-              <% end %>
-              <br><br>
-              <% if exam.is_b1en %>
-              <%= link_to b_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-check"></i><% end %> B. <%= exam.answer_2 %>
-              <% else %>
-              <%= link_to b1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-square-o"></i><% end %> B. <%= exam.answer_2 %>
-              <% end %>
-               <br><br>
-              <% if exam.is_c1en %>
-              <%= link_to c_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-check"></i><% end %> C. <%= exam.answer_3 %>
-              <% else %>
-              <%= link_to c1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-square-o"></i><% end %> C. <%= exam.answer_3 %>
-              <% end %>
-               <br><br>
-              <% if exam.is_d1en %>
-              <%= link_to d_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-check"></i><% end %> D. <%= exam.answer_4 %>
-              <% else %>
-              <%= link_to d1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
-              <i class="fa fa-square-o"></i><% end %> D. <%= exam.answer_4 %>
-              <% end %>
+              <%= f.input :is_aa1en, :label => "A." %><%= exam.answer_1 %>
+              <br>
+              <%= f.input :is_bb1en, :label => "B." %><%= exam.answer_2 %>
+              <br>
+              <%= f.input :is_cc1en, :label => "C." %><%= exam.answer_3 %>
+              <br>
+              <%= f.input :is_dd1en, :label => "D." %><%= exam.answer_4 %>
+
+
+
+
               <tr>
               <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
               </tr>

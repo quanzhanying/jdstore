@@ -1,55 +1,56 @@
 class Choice < ApplicationRecord
-  def a!
-    self.is_a1en = false
+  belongs_to :user
+  def aa!
+    self.is_aa1en = false
     self.save
   end
-  def a1!
-    self.is_a1en = true
-    self.save
-  end
-
-  def b!
-    self.is_b1en = false
-    self.save
-  end
-  def b1!
-    self.is_b1en = true
+  def aa1!
+    self.is_aa1en = true
     self.save
   end
 
-  def c!
-    self.is_c1en = false
+  def bb!
+    self.is_bb1en = false
     self.save
   end
-  def c1!
-    self.is_c1en = true
-    self.save
-  end
-
-  def d!
-    self.is_d1en = false
-    self.save
-  end
-  def d1!
-    self.is_d1en = true
+  def bb1!
+    self.is_bb1en = true
     self.save
   end
 
-  def e!
-    self.is_e1en = false
+  def cc!
+    self.is_cc1en = false
     self.save
   end
-  def e1!
-    self.is_e1en = true
+  def cc1!
+    self.is_cc1en = true
     self.save
   end
 
-  def f!
-    self.is_f1en = false
+  def dd!
+    self.is_dd1en = false
     self.save
   end
-  def f1!
-    self.is_f1en = true
+  def dd1!
+    self.is_dd1en = true
+    self.save
+  end
+
+  def ee!
+    self.is_ee1en = false
+    self.save
+  end
+  def ee1!
+    self.is_ee1en = true
+    self.save
+  end
+
+  def ff!
+    self.is_ff1en = false
+    self.save
+  end
+  def ff1!
+    self.is_ff1en = true
     self.save
   end
 end
