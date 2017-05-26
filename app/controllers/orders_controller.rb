@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
     @order.set_payment_with!("alipay")
     @order.make_payment!
 
-    redirect_to order_path(@order.token),notice: "Succeeded to pay by paypal"
+    redirect_to order_path(@order.token),notice: "Succeeded to pay by alipay"
   end
 
   def pay_with_wechat
@@ -45,6 +45,13 @@ class OrdersController < ApplicationController
     @order.make_payment!
 
     redirect_to order_path(@order.token),notice: "Succeeded to pay by wechat"
+  end
+
+  def apply_to_cancel
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "Have applied"
+    redirect_to :back
   end
 
   private

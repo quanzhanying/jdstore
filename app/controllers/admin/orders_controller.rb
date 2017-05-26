@@ -14,7 +14,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def ship
-    @orer = Order.find(params[:id])
+    @order = Order.find(params[:id])
     @order.ship!
     OrderMailer.notify_ship(@order).deliver!
     redirect_to :back
@@ -39,10 +39,4 @@ class Admin::OrdersController < ApplicationController
     redirect_to :back
   end
 
-  def apply_to_cancel
-    @order = Order.find_by_token(params[:id])
-    OrderMailer.apply_cantel(@order),deliver!
-    flash[:notice] = "Have applied to Cancel"
-    redirect_to :back
-  end
 end

@@ -29,7 +29,7 @@
     </table>
 
     <div class="group pull-right">
-      <%= link_to("use paypal", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+      <%= link_to("use alipay", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
       <%= link_to("use wechat", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
     </div>
 

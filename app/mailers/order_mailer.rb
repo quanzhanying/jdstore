@@ -29,4 +29,5 @@ class OrderMailer < ApplicationMailer
     @product_lists = @order.product_lists
 
     mail(to: @user.email, subject: "[JDStore] Your order #{order.token} have canceled")
+  end
 end
