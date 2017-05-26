@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :authenticate_user!, except:[:index, :show,:add_to_cart]
+  before_action :authenticate_user!, except:[:index, :show,:add_to_cart, :accessory, :shoes]
 
   def index
         @q = Product.ransack(params[:q])
