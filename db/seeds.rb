@@ -94,16 +94,6 @@ price: "2600",
 quantity: "1",
 image: open("http://twelvemoons.com.cn/wp-content/uploads/2014/04/%E6%89%A7%E5%AD%90%E4%B9%8B%E6%89%8B717.jpg"))
 
-
-# product10
-Product.create!(
-title: "手绘酒瓶-执子子手",
-description: "TWELVE MOONS 团队手绘酒瓶--执子之手，以酒瓶作画布，采用多种颜料绘制，只此一件。",
-author: "TWELVE MOONS 团队",
-price: "2600",
-quantity: "1",
-image: open("http://twelvemoons.com.cn/wp-content/uploads/2014/04/%E6%BB%91%E6%9D%BF04800.jpg"))
-
 Product.create!(
 title: "小风琴折页本",
 description: "封面封底为哲-Tititi的原创插画作品；全特种纸风琴折内页，竖条纹肌理；使用前和使用后都会保持整体平整；内页可以用水彩及多种画材绘画。",
