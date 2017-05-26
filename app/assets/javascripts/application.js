@@ -16,6 +16,7 @@
 //= require bootstrap/alert
 //= require autosize.min
 //= require wow.min
+//= require jquery.countdown.min
 //= require_tree .
 
 $(document).ready(function(){
