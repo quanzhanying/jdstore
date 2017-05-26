@@ -26,39 +26,46 @@ Product.create!(title: "印第安风格耳坠",
   description: "耳坠",
   price: 340,
   quantity: 5,
-  image: open("http://ww4.sinaimg.cn/large/006tKfTcgy1ffw2p230haj30u00u077i.jpg")
+  image: open("http://ww4.sinaimg.cn/large/006tKfTcgy1ffw2p230haj30u00u077i.jpg"),
+  :category => "accessory"
   )
 
 Product.create!(title: "Twice同款耳环",
   description: "耳环",
   price: 460,
   quantity: 5,
-  image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mfzxinj30u00u0gne.jpg")
+  image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mfzxinj30u00u0gne.jpg"),
+  :category => "accessory"
   )
 
 Product.create!(title: "Girl's Day同款戒指",
   description: "戒指",
   price: 280,
   quantity: 5,
-  image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mjknvlj30u00u0wfi.jpg")
+  image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mjknvlj30u00u0wfi.jpg"),
+  :category => "accessory"
   )
-  Product.create!(title: "肉粉色板鞋",
+
+Product.create!(title: "肉粉色板鞋",
     description: "板鞋",
     price: 680,
     quantity: 5,
-    image: open("http://ww4.sinaimg.cn/large/006tKfTcgy1ffw2p230haj30u00u077i.jpg")
+    image: open("http://ww1.sinaimg.cn/large/006tNc79gy1ffwp0o1o5fj30rs112t9x.jpg"),
+    :category => "shoes"
     )
 
-  Product.create!(title: "白色板鞋",
+Product.create!(title: "白色板鞋",
     description: "板鞋",
     price: 680,
     quantity: 5,
-    image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mfzxinj30u00u0gne.jpg")
+    image: open("http://ww1.sinaimg.cn/large/006tNc79gy1ffwp4c5lh2j30rs112dgt.jpg"),
+    :category => "shoes"
     )
 
-  Product.create!(title: "黑色板鞋",
+Product.create!(title: "黑色板鞋",
     description: "板鞋",
     price: 680,
     quantity: 5,
-    image: open("http://ww1.sinaimg.cn/large/006tKfTcgy1ffw2mjknvlj30u00u0wfi.jpg")
+    image: open("http://ww3.sinaimg.cn/large/006tNc79gy1ffwp0denaij30rs112abd.jpg"),
+    :category => "shoes"
     )
