@@ -42,21 +42,17 @@
               <br>
               <%= f.input :is_dd1en, :label => "D." %><%= exam.answer_4 %>
 
-
-
-
               <tr>
-              <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
+
               </tr>
-             <% end %>
 
             </td>
             </tr>
 
           </tbody>
-
-      </table>
-
+        </table>
+        <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
+        <% end %>
         <% end %>
 
     </li>
