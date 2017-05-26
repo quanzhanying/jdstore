@@ -76,11 +76,26 @@
 
 <script type="text/javascript">
 
+$(window).scroll(function () {
 
+  if ($(this).scrollTop() > 200) {
+    $('.row1').css({'display':'none'})
+    $('.row2').css({'display':'block'})
+  $('.settleup-2014').css({'top':20})
+
+  } else {
+    $('.row1').css({'display':'block'})
+    $('.row2').css({'display':'none'})
+    $('.settleup-2014').css({'top':180})
+    //$('.row3 .cw-icon').addClass('fly')
+    //$('.row2 .cw-icon').removeClass('fly')
+
+  }
+})
 
 var cart_item_id = 0;
 
-$("#settleup-2014").hover(function(){
+$(".settleup-2014").hover(function(){
   var url = "/carts?max_id=" + cart_item_id + '&v=' + Math.random();
 
 if (url) {
@@ -97,11 +112,9 @@ if (url) {
 },function(){
 })
 
-</script>
 
-  <script type="text/javascript">
   // 元素以及其他一些变量
-  var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector("#cart_items");
+  var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector(".settleup-2014");
   var numberItem = 0;
   // 抛物线运动
   var myParabola = funParabola(eleFlyElement, eleShopCart, {

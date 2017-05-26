@@ -20,7 +20,22 @@
 
 body {
   font-family: simsun, STSong;
-  margin-top: 70px;
+  //margin-top: 70px;
+}
+
+#nav-fixed .col-md-5{
+  padding-left: 22px;
+}
+.row2 {
+  display: none;
+  margin-top: 20px;
+}
+.row2_fixed {
+  //width: 100%;
+  position: fixed;
+  top: 0;
+  padding-top: 10px;
+  z-index: 100;
 }
 
 .carousel-control {
@@ -1317,6 +1332,7 @@ input[type=password]:hover {
 
 .dorpdown {
   position: relative;
+  padding-left: 5px;
 }
 
 .dorpdown-layer {
@@ -1335,24 +1351,26 @@ input[type=password]:hover {
   position: absolute;
 }
 
-#settleup-2014 {
-  float: left;
+.settleup-2014 {
+  float: right;
   z-index: 11;
   height: 45px;
   //margin-top: 27px;
+z-index: 9999;
+position: fixed;
 }
 
-#settleup-2014 ul,
+.settleup-2014 ul,
 li {
   list-style: none;
   padding: 0;
 }
 
-#settleup-2014 li {
+.settleup-2014 li {
   display: inline-block;
 }
 
-#settleup-2014 .cw-icon {
+.settleup-2014 .cw-icon {
   width: 160px;
   height: 45px;
   border: 1px solid #DFDFDF;
@@ -1362,25 +1380,25 @@ li {
   text-align: center;
 }
 
-#settleup-2014 .cw-icon a {
+.settleup-2014 .cw-icon a {
   color: #B28435;
   text-decoration: none;
 }
 
-#settleup-2014 .iconfont {
+.settleup-2014 .iconfont {
   left: 90px;
   color: #f30213;
   font-size: 16px;
 }
 
-#settleup-2014 .arrow {
+.settleup-2014 .arrow {
   display: none;
   left: 118px;
   color: #666;
   font-size: 12px;
 }
 
-#settleup-2014 .ci-left {
+.settleup-2014 .ci-left {
   top: 9px;
   left: 90px;
   width: 16px;
@@ -1390,12 +1408,12 @@ li {
   overflow: hidden;
 }
 @media only screen and (-Webkit-min-device-pixel-ratio:1.5),only screen and (-moz-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3 / 2),only screen and (min-device-pixel-ratio:1.5) {
-  #settleup-2014 .ci-left {
+  .settleup-2014 .ci-left {
     background-image: url("//misc.360buyimg.com/jdf/1.0.0/unit/shoppingcart/5.0.0/i/settleup-@2x.png");
   }
 }
 
-#settleup-2014 .ci-right {
+.settleup-2014 .ci-right {
   display: none;
   top: 13px;
   right: 12px;
@@ -1406,7 +1424,7 @@ li {
   overflow: hidden;
 }
 
-#settleup-2014 .ci-count {
+.settleup-2014 .ci-count {
   position: absolute;
   top: 7px;
   left: 105px;
@@ -1425,25 +1443,25 @@ li {
   text-align: center;
 }
 
-#settleup-2014.hover .cw-icon,
-#settleup-2014.hover .dorpdown-layer,
-#settleup-2014:hover .cw-icon,
-#settleup-2014:hover .dorpdown-layer {
+.settleup-2014.hover .cw-icon,
+.settleup-2014.hover .dorpdown-layer,
+.settleup-2014:hover .cw-icon,
+.settleup-2014:hover .dorpdown-layer {
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 0 5px rgba(0,0,0,.2);
 }
 
-#settleup-2014.hover .dorpdown-layer,
-#settleup-2014:hover .dorpdown-layer {
+.settleup-2014.hover .dorpdown-layer,
+.settleup-2014:hover .dorpdown-layer {
   display: block;
   right: 0;
   _right: -1px;
   width: 420px;
 }
 
-#settleup-2014.hover .spacer,
-#settleup-2014:hover .spacer {
+.settleup-2014.hover .spacer,
+.settleup-2014:hover .spacer {
   position: absolute;
   right: 0;
   top: -7px;
@@ -1452,11 +1470,11 @@ li {
   background: #fff;
 }
 
-#settleup-2014 .prompt {
+.settleup-2014 .prompt {
   padding: 10px 15px;
 }
 
-#settleup-2014 .nogoods {
+.settleup-2014 .nogoods {
   padding-left: 30px;
   height: 49px;
   line-height: 49px;
@@ -1464,14 +1482,14 @@ li {
   color: #999;
 }
 
-#settleup-2014 .nogoods b {
+.settleup-2014 .nogoods b {
   float: left;
   width: 56px;
   height: 49px;
   background-image: url("//misc.360buyimg.com/jdf/1.0.0/unit/shoppingcart/5.0.0/i/settleup-nogoods.png");
 }
 
-#settleup-2014 .dt-mz {
+.settleup-2014 .dt-mz {
   color: #999;
   width: 310px;
   overflow: hidden;
@@ -1479,15 +1497,15 @@ li {
   white-space: nowrap;
 }
 
-#settleup-2014 .dt-mz a {
+.settleup-2014 .dt-mz a {
   color: #999;
 }
 
-#settleup-2014 .dt-mz:hover {
+.settleup-2014 .dt-mz:hover {
   background: #fff;
 }
 
-#settleup-2014 .p-img {
+.settleup-2014 .p-img {
   float: left;
   //display: inline-block;
   width: 80px;
@@ -1498,7 +1516,7 @@ li {
   font-size: 0;
 }
 
-#settleup-2014 .p-name {
+.settleup-2014 .p-name {
   float: left;
   display: flex;
   width: 220px;
@@ -1507,7 +1525,7 @@ li {
   overflow: hidden;
 }
 
-#settleup-2014 .p-name a {
+.settleup-2014 .p-name a {
   margin: auto;
   //display: table-cell;
   //vertical-align: middle; //垂直居中
@@ -1515,7 +1533,7 @@ li {
   color: #666;
 }
 
-#settleup-2014 .p-detail {
+.settleup-2014 .p-detail {
   height: 80px;
   float: right;
   text-align: center;

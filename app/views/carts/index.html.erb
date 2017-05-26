@@ -8,7 +8,6 @@
               data: { confirm: "你确定要清空整个购物车吗？"} )%>
 
     <h2> 购物车 </h2>
-
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -19,10 +18,7 @@
         </tr>
       </thead>
       <tbody>
-
         <% current_cart.cart_items.each do |cart_item| %>
-
-
           <tr class="cart-item-<%= cart_item.product_id%>">
             <td>
               <%= link_to product_path(cart_item.product) do %>
