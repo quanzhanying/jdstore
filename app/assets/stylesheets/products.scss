@@ -3,9 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // 全商品頁頭圖開始
-.background-image {
-    width: 100%;
-    margin-bottom: 0px;
-    margin-top: -23px;
-  }
+// .background-image {
+//     width: 100%;
+//     margin-bottom: 0px;
+//     margin-top: -23px;
+//   }
 // 全商品頁頭圖結束
+
+// 全商品頁活動廣告區域開始
+.panel-body_products_img {
+  height: 210px;
+  margin: 0 0px;
+}
+.products_img {
+  background-color: #edbdb5
+}
+.products_ad_1_img {
+  height: 160px;
+  width: 100%;
+  background: url(http://i.imgur.com/LCJQ13h.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.products_ad_2_img {
+  height: 160px;
+  width: 100%;
+  background: url(http://i.imgur.com/Ska7z8A.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+// 全商品頁活動廣告區域結束

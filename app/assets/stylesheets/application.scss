@@ -216,10 +216,10 @@ a:hover {
     .productList-item {
       float:left;
       display:inline;
-      width: 228px;
+      width: 263px;
       height: 350px;
-      margin-right: 15px;
-      margin-bottom: 15px;
+      margin-right: auto;
+      margin-bottom: 1px;
       position:relative;
       .box {
         padding-left: 0px;
@@ -233,33 +233,37 @@ a:hover {
       .productList-item-pic {
         width:200px;
         height:200px;
-        margin-top: 15px;
+        margin-top: 30px;
         margin-left: auto !important;
         margin-right: auto !important;
       }
       .productList-item-price {
         font-weight:bold;
-        color: #d32048;
+        color: #edbdb5;
         font-size:18px;
         margin-top:5px !important;
-        margin-left: 10px;
+        margin-right: 70px;
+        text-align: right;
       }
       .productList-item-name{
         margin-top:2px !important;
-        margin-left: 10px;
+        margin-left: 35px;
+        margin-right: 35px;
       }
       .productList-item-desc {
         margin-top:2px !important;
-        margin-left: 10px;
+        margin-left: 35px;
         font-size:12px;
       }
       .productList-item-sellout{
-        font-size:20px;
-        text-align:center;
+        position:absolute;
+        right: 40px;
+        font-size:18px;
+        color: #101846;
       }
       .productList-item-cartBtn {
         position:absolute;
-        left: 200px;
+        right: 40px;
         font-size:18px;
       }
     }
@@ -306,15 +310,14 @@ a:hover {
 
 // 商品排序显示
 .order {
-  background: #333;
+  background: #101846;
   height: 44px;
   line-height: 44px;
-  margin-top:30px;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  color: #fff;
+  margin-left: 0px;
+  margin-right: 0px;
+  color: #aaaaaa;
   margin-top: 0px;
-  padding-left: 60px;
+  padding-left: 30px;
   p.title {
     float:left;
     display:inline;
@@ -334,14 +337,14 @@ a:hover {
     height: 42px;
     line-height: 42px;
     // width: 1200px;
-    font-size: 14px;
+    // font-size: 14px;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 }
 
 .orderList a {
-  color: #fff;
+  color: #aaaaaa;
 }
 
 .orderList-orderItem {
@@ -353,7 +356,7 @@ a:hover {
   cursor: pointer;
 }
 .orderList-activeItem a {
-  color: #d32048;
+  color: #edbdb5;
 }
 
 // 点赞
