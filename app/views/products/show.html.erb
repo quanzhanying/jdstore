@@ -61,7 +61,7 @@
                 <% end %> -->
 
                 <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img_url, size: "320x320", class: "", alt: @product.name) %>
+                  <%= image_tag(@product.img_url, size: "320x320", class: "wow zoomIn", data: {wow_delay: "1s"} , alt: @product.name) %>
                 <% else %>
                   <%= image_tag("http://placehold.it/320x320&text=No Pic", class: "", alt: "None") %>
                 <% end %>
@@ -118,7 +118,8 @@
 
               <div class="product-quantity">
                 <ul>
-                  <li> 剩余数量 : <%= @product.quantity %> </li>
+                  <li> 剩余数量 : <%= @product.quantity %> </li><br>
+                  <li> 剩余时间 : <span id="getting-started"></span></li>
                   <br><br>
                   <li>
                     <% if @product.quantity.present? && @product.quantity > 0 %>
@@ -153,6 +154,8 @@
               </li>
             </ul> -->
           </div>
+
+
         </div>
 
         <!-- Product Row Two -->
@@ -342,3 +345,13 @@
     </div>
   </div>
 </div> -->
+
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+
+</script>
