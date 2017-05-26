@@ -9,7 +9,7 @@ class ChoicesController < ApplicationController
 
     if @choice.save
 
-      redirect_to choices_path
+      redirect_to exams_path
     else
       render "exams/show"
     end

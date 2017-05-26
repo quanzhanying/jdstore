@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 20170525035803) do
   end
 
   create_table "choices", force: :cascade do |t|
-    t.boolean  "A",          default: false
-    t.boolean  "B",          default: false
-    t.boolean  "C",          default: false
-    t.boolean  "D",          default: false
-    t.boolean  "E",          default: false
-    t.boolean  "F",          default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "is_a1en"
+    t.boolean  "is_b1en"
+    t.boolean  "is_c1en"
+    t.boolean  "is_d1en"
+    t.boolean  "is_e1en"
+    t.boolean  "is_f1en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "exams", force: :cascade do |t|
