@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-   resources :products do
-     member do
-       patch :move_up
-       patch :move_down
-     end
+  resources :orders do
+   member do
+     post :pay_with_alipay
+     post :pay_with_wechat
    end
  end
 
-  devise_for :users
-  root 'products#index'
+ namespace :account do
+   resources :orders
+ end
+
+ resources :carts do
+     collection do
+       delete :clean
+        post :checkout
+     end
+  end
+
+  resources :cart_items
 
   resources :products do
     member do
@@ -18,24 +26,21 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :carts do
-      collection do
-        delete :clean
-         post :checkout
-      end
-    end
-
-  resources :cart_items
-  
-
-  namespace :account do
-    resources :orders
+  namespace :admin do
+   resources :products
+   resources :orders
+     member do
+       patch :move_up
+       patch :move_down
+     end
+   end
  end
 
-   resources :orders do
-    member do
-      post :pay_with_alipay
-      post :pay_with_wechat
-    end
-  end
+ devise_for :users
+ root 'products#index'
+
+
+
+
+
 end
