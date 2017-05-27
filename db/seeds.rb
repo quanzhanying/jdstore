@@ -20,7 +20,7 @@ else
 end
 
 # Intialize Product
- 
+
  Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
     price: 298,
