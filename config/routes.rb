@@ -18,6 +18,12 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    resources :courses do        #后台上架课程 admin/courses
+      member do
+        patch :move_up           #课程位置移动
+        patch :move_down         #课程位置移动
+      end
+    end
   end
 
   resources :products do      #前台product
@@ -33,6 +39,8 @@ Rails.application.routes.draw do
     end
     resources :reviews
   end
+
+  resources :courses          #前台显示课程
 
   resources :carts do         #购物车明细
     collection do
