@@ -5,11 +5,14 @@ class Admin::ExamsController < ApplicationController
 
   def index
     @exams = Exam.all
+    @choice = Choice.new
+    @choices = Choice.all
   end
 
   def new
     @exam = Exam.new
     @categories = Category.all.map { |c| [c.name, c.id] }
+    @choice = Choice.new
   end
 
   def show
@@ -20,6 +23,7 @@ class Admin::ExamsController < ApplicationController
   def edit
     @exam = Exam.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
+    @choice = Choice.new
   end
 
   def create

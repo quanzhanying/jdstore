@@ -1,0 +1,13 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center">添写答案信息</h2>
+  <%= simple_form_for [@choice] do |f| %>
+    <%= f.input :name, placeholder: "请输入与试题相同的名字"%>
+    <%= f.input :is_aa1en, :label => "A" %>
+    <%= f.input :is_bb1en, :label => "B" %>
+    <%= f.input :is_cc1en, :label => "C" %>
+    <%= f.input :is_dd1en, :label => "D" %>
+    <%= f.input :is_ee1en, :label => "E" %>
+    <%= f.input :is_ff1en, :label => "F" %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

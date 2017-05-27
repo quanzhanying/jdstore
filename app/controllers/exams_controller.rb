@@ -3,16 +3,16 @@ class ExamsController < ApplicationController
 
   def index
 
-    @exams = Exam.all.paginate(:page => params[:page], :per_page => 1)
+    @exams = Exam.all.paginate(:page => params[:page], :per_page => 5)
     @choice = Choice.new
-
-
+    @choices = Choice.all
   end
 
 
   def show
     @exam = Exam.find(params[:id])
-   @choice = Choice.new
+    @choice = Choice.new
+    @choice.name = @exam.name
   end
 
   def check_answer

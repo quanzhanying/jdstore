@@ -21,8 +21,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categories
-    resources :sizes
     resources :exams do
       member do
           post :a
@@ -44,9 +42,9 @@ Rails.application.routes.draw do
           post :f1
       end
     end
-    resources :answers do
-      post :ture_answer
-    end
+    resources :categories
+    resources :products
+    resources :posts
     resources :orders do
       member do
         post :cancel
@@ -56,6 +54,19 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :answers do
+  post :ture_answer
+end
+
+resources :answers
+
+resources :exams do
+  collection do
+    post :option
+    post :check_answer
+  end
+end
 
   resources :carts do
     collection do
@@ -79,15 +90,6 @@ Rails.application.routes.draw do
   end
 
   resources :favorites
-
-  resources :exams do
-    collection do
-      post :option
-      post :check_answer
-    end
-  end
-
-  resources :answers
 
   resources :choices do
     member do

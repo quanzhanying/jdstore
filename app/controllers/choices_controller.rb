@@ -1,6 +1,26 @@
 class ChoicesController < ApplicationController
     before_action :authenticate_user!, only: [:create]
 
+    def index
+      @choices = Choice.all
+
+      @exams = Exam.all
+    end
+
+    def show
+      @choice= Choice.find(params[:id])
+      @exams = Exam.all
+    end
+
+    def new
+      @choice = Choice.new
+    end
+
+    def edit
+      @choice = Choice.find(params[:id])
+      @exams = Exam.all
+    end
+
     def create
       @choice = Choice.new(choice_params)
       @choice.user = current_user
@@ -11,10 +31,6 @@ class ChoicesController < ApplicationController
         render 'exams/option'
       end
 
-    end
-
-    def edit
-      @choice = Choice.find(params[:id])
     end
 
     def update
@@ -28,11 +44,14 @@ class ChoicesController < ApplicationController
       end
     end
 
-    def show
-      @choice= Choice.find(params[:id])
-      @exams = Exam.all
-
+    def destroy
+      @choice = Choice.find(params[:id])
+      @choice.destroy
+      flash[:alert] = "exam Deleted"
+      redirect_to choices_path
     end
+
+
 
 
   def aa
@@ -102,7 +121,7 @@ class ChoicesController < ApplicationController
   end
 
   def choice_params
-    params.require(:choice).permit(:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en)
+    params.require(:choice).permit(:name,:is_aa1en,:is_bb1en,:is_cc1en,:is_dd1en,:is_ee1en,:is_ff1en)
   end
 
 

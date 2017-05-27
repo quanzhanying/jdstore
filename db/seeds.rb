@@ -23,5 +23,5 @@ create_exams =
     category_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false,countdown:"2017-05-31T00:30"])
 
   create_exams =
-    Exam.create!([name: "1", question: "中国有多少个省份？",answer_1:"36", answer_2:"35",answer_3:"34",answer_4:"33",
-      category_id: 1, is_a1en: true ,is_b1en: false,is_c1en: false,is_d1en: false,countdown:"2017-05-31T00:30"])
+    Exam.create!([name: "2", question: "中国有多少个民族？",answer_1:"48", answer_2:"35",answer_3:"34",answer_4:"56",
+      category_id: 2, is_a1en: false ,is_b1en: false,is_c1en: false,is_d1en: true,countdown:"2017-05-31T00:30"])

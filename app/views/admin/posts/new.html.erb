@@ -1,0 +1,13 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center">Create a Post</h2>
+  <%= simple_form_for [:admin, @post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :author, placeholder: "请输入原创作者" %>
+    <%= f.input :source, placeholder: "请输入作品出处"%>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+    <%= f.input :image, as: :file %>
+    
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

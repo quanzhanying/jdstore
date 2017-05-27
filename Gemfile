@@ -30,12 +30,24 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
-gem 'devise'
 gem 'simple_form'
-gem 'font-awesome-rails'
+gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'font-awesome-rails'
+gem 'awesome_rails_console'
+gem 'ransack'
+gem 'seo_helper'
+gem 'paperclip'
+gem 'letter_opener', group: :development
+gem 'aasm'
+gem 'figaro'
+gem 'ratyrate'
+gem 'masonry-rails'
+gem 'social-share-button'
+gem 'fog'
+gem "intercom-rails"
+gem 'will_paginate-bootstrap'
 gem 'devise-i18n'
 
 gem 'will_paginate-bootstrap'

@@ -1,6 +1,7 @@
 <h2> 考试题 </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增试题", new_admin_exam_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("新增答案代号", new_choice_path, class: "btn btn-primary btn-sm") %>
 </div>
 
 <table class="table table-bordered">
@@ -11,6 +12,9 @@
       <th>answer</th>
       <th>true_answer</th>
       <th width="100"> Options </th>
+      <td>试题代号 </td>
+      <th>填写答案代号</th>
+      <th>已填答案代号</th>
     </tr>
   </thead>
   <tbody>
@@ -90,6 +94,31 @@
          <%= link_to("Edit", edit_admin_exam_path(exam)) %> |
          <%= link_to("Delete", admin_exam_path(exam), method: :delete, data: { confirm: "Are your sure?" }) %>
        </td>
+
+       <td>
+         <%= exam.name %>
+       </td>
+
+       <td>
+           <%= simple_form_for @choice do |f| %>
+           <%= f.input :name, placeholder: "请输入与试题相同的代号"%>
+           <%= f.input :is_aa1en, :label => "A." %>
+           <br>
+           <%= f.input :is_bb1en, :label => "B." %>
+           <br>
+           <%= f.input :is_cc1en, :label => "C." %>
+           <br>
+           <%= f.input :is_dd1en, :label => "D." %>
+           <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
+           <% end %>
+
+       </td>
+       <td>
+         <% @choices.each do |choice| %>
+         <%= choice.name %>
+         <% end %>
+       </td>
+
       <% end %>
      </tr>
    </tbody>
