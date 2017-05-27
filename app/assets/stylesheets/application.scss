@@ -180,8 +180,79 @@
 /*----- recommend page -----*/
 .recommend-page {
   padding-top: 50px;
+
+.image {
+
+}
   /*----- recommend页面与navbar间隔 -----*/
 }
+
+.product-main{
+  padding-top: 30px;
+}
+
+
+
+
+/*----- products 页面 -----*/
+.product-list {
+
+  margin-bottom: 100px;
+
+
+}
+
+
+
+
+/*----- product show 页面 --*/
+
+.display {
+  margin-top: 40px;
+  display: inblock;
+  height: 500px;
+
+}
+
+.image {
+  width: 400px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+.descrip {
+  width: 470px;
+  height: 400px;
+}
+
+.display2 {
+    margin-top: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*----- admin/products 与 orders 与 category 页面 -----*/
 .backend-main {
   padding-top: 80px;
@@ -216,7 +287,7 @@ body {
 }
 
 .footer-style {
-  top: 100%;
+
   width: 100%;
   position: absolute;
   height: 220px;
