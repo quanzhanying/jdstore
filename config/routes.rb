@@ -43,7 +43,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      # 购物车中使用 ＋和－按钮改变购物数量 ＃
+      post :add_quantity
+      post :remove_quantity
+    end
+  end
 
   resources :orders do
     member do
