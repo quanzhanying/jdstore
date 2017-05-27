@@ -5,6 +5,8 @@ class Admin::ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @products = Product.all.order("position ASC")
+    @products = @products.paginate(:page => params[:page], :per_page => 8)
   end
 
   def new
@@ -48,6 +50,20 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
+  end
+
+
+  
     private
 
     def product_params

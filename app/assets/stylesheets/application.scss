@@ -74,6 +74,17 @@
 #search-id {
   width: 250px;
 }
+
+/*----- alert setting -----*/
+// 固定位置的消息通知
+.alert {
+  position: fixed; // 这个属性防止将内容挤下去
+  top: 80px; // 让消息在导航条下面，不挡住导航，根据自己导航navbar的高度调整
+  left: 0px;
+  width: 100%;
+  z-index: 10; // 让消息显示在最上面
+  border-radius: 0px;
+}
 /*----- login/sign-up ------*/
 .facepanel {
   background-image: image_url("login.jpg");
@@ -181,34 +192,37 @@
 .recommend-page {
   padding-top: 50px;
 
-.image {
+  .image {
 
-}
-  /*----- recommend页面与navbar间隔 -----*/
+  }
 }
 
-.product-main{
-  padding-top: 30px;
+
+/*----- product show 页面 -----*/
+.box {
+  margin-top: 60px; /*----- 不被alert阻挡 -----*/
 }
 
 
 
 
 /*----- products 页面 -----*/
+
+.product-main{
+  padding-top: 60px;
+}
+
 .product-list {
-
   margin-bottom: 100px;
-
-
 }
 
 
 
 
-/*----- product show 页面 --*/
+/*----- recommend页面与navbar间隔 --*/
 
 .display {
-  margin-top: 40px;
+  margin-top: 60px;
   display: inblock;
   height: 500px;
 

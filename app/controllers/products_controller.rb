@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(category_id: @category_id)
     else
-      @products = Product.all
+      @products = Product.all.order("position ASC")
     end
   end
 
