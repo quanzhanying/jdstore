@@ -21,6 +21,32 @@
     }
   }
 }
+//-----图片向上滑动------
+body {
+  background: #F5F5F5;
+}
+
+.box {
+  width: 200px;
+  padding: 15px;
+  margin: 20px auto;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.box img {
+  width: 200px;
+}
+
+.box:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
+}
 
 /* 商品详情页CSS样式表 */
 // 页面头部微调
