@@ -1,0 +1,41 @@
+
+
+<hr>
+
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <h4>＃</h4>
+    <% end %>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>正确答案</th>
+        <th>答案解析</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          第<%= @answer.id %>题
+        </td>
+         <td>
+           <%= @answer.true_answer%>
+         </td>
+         <td>
+           <%= @answer.description %>
+         </td>
+       </tr>
+     </tbody>
+   </table>

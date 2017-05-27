@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #   :registrations => "users/registrations",
   #   :passwords     => "users/passwords",
   # }
-  resources :exams do
+  resources :products do
     member do
       post :add_to_cart
       post :favorite
@@ -23,8 +23,30 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :sizes
-    resources :exams
-    resources :posts
+    resources :exams do
+      member do
+          post :a
+          post :a1
+
+          post :b
+          post :b1
+
+          post :c
+          post :c1
+
+          post :d
+          post :d1
+
+          post :e
+          post :e1
+
+          post :f
+          post :f1
+      end
+    end
+    resources :answers do
+      post :ture_answer
+    end
     resources :orders do
       member do
         post :cancel
@@ -57,6 +79,37 @@ Rails.application.routes.draw do
   end
 
   resources :favorites
+
+  resources :exams do
+    collection do
+      post :option
+      post :check_answer
+    end
+  end
+
+  resources :answers
+
+  resources :choices do
+    member do
+        post :aa
+        post :aa1
+
+        post :bb
+        post :bb1
+
+        post :cc
+        post :cc1
+
+        post :dd
+        post :dd1
+
+        post :ee
+        post :ee1
+
+        post :ff
+        post :ff1
+      end
+  end
 
   root "welcome#index"
 

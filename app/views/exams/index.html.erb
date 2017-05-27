@@ -1,29 +1,65 @@
-<h2> 考生考试题 </h2>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>question</th>
-      <th>Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @exams.each do |exam| %>
-    <tr>
-      <td>
-        <%= exam.id %>
-      </td>
-       <td>
-         <%= exam.question %>
-       </td>
-       <td>
-         <%= exam.answer_1 %>
-       </br>
-         <%= exam.answer_2 %>
-       </td>
-     </tr>
 
-     <% end %>
-   </tbody>
- </table>
+<div class="row">
+  <div class="col-md-6">
+
+    <li>
+      题：
+      <br>
+       <% @exams.each do |exam| %>
+        <!-- <%= link_to exam.name, exam_path(exam) %>
+        <%= link_to("开始答题", exam_path(exam), method: :post, class: "option-btn") %> -->
+
+        <table class="table table-bordered">
+
+          <thead>
+            <tr>
+              <th>
+                <%= exam.name %>
+              </th>
+
+              <th>
+                <%= exam.question %>
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+            <td>
+              <%= exam.name %>
+            </td>
+
+            <td>
+              <%= simple_form_for @choice do |f| %>
+              <%= f.input :is_aa1en, :label => "A." %><%= exam.answer_1 %>
+              <br>
+              <%= f.input :is_bb1en, :label => "B." %><%= exam.answer_2 %>
+              <br>
+              <%= f.input :is_cc1en, :label => "C." %><%= exam.answer_3 %>
+              <br>
+              <%= f.input :is_dd1en, :label => "D." %><%= exam.answer_4 %>
+
+              <tr>
+
+              </tr>
+
+            </td>
+            </tr>
+
+          </tbody>
+        </table>
+        <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
+        <% end %>
+        <% end %>
+
+    </li>
+  </div>
+
+
+</div>
+<div class="text-center">
+      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+ </div>

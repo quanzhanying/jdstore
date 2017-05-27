@@ -17,6 +17,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 
@@ -554,3 +555,17 @@ ol, ul {
    max-height: 40px;
    margin: 15px auto 15px;
 }
+
+
+ timer{
+
+ text-align: center;
+
+ font-size: 30px;
+
+ color: white;
+
+ background-color:black; 
+
+ }
+

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523102444) do
+ActiveRecord::Schema.define(version: 20170525035803) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "true_answer"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -31,6 +39,18 @@ ActiveRecord::Schema.define(version: 20170523102444) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "choices", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "is_aa1en"
+    t.boolean  "is_bb1en"
+    t.boolean  "is_cc1en"
+    t.boolean  "is_dd1en"
+    t.boolean  "is_ee1en"
+    t.boolean  "is_ff1en"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "exams", force: :cascade do |t|
     t.string   "name"
     t.string   "question"
@@ -42,6 +62,13 @@ ActiveRecord::Schema.define(version: 20170523102444) do
     t.text     "answer_6"
     t.integer  "category_id"
     t.string   "image"
+    t.boolean  "is_a1en"
+    t.boolean  "is_b1en"
+    t.boolean  "is_c1en"
+    t.boolean  "is_d1en"
+    t.boolean  "is_e1en"
+    t.boolean  "is_f1en"
+    t.string   "countdown"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "is_true",     default: false

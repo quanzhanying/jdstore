@@ -2,12 +2,14 @@
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增试题", new_admin_exam_path, class: "btn btn-primary btn-sm") %>
 </div>
+
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>#</th>
       <th>question</th>
       <th>answer</th>
+      <th>true_answer</th>
       <th width="100"> Options </th>
     </tr>
   </thead>
@@ -15,21 +17,80 @@
     <% @exams.each do |exam| %>
     <tr>
       <td>
-        <%= exam.id %>
+        <%= link_to exam.id, admin_exam_path(exam) %>
       </td>
        <td>
          <%= exam.question %>
        </td>
        <td>
          <%= exam.answer_1 %>
-       </br>
+       </br><br>
          <%= exam.answer_2 %>
+         <br><br>
+         <%= exam.answer_3 %>
+       </br><br>
+         <%= exam.answer_4 %>
+       <br><br>
+         <%= exam.answer_5 %>
+       </br><br>
+         <%= exam.answer_6 %>
+       </td>
+       <td>
+
+         <% if exam.is_a1en %>
+         <%= link_to a_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %>
+         <% else %>
+         <%= link_to a1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-square-o"></i><% end %> A. <%= exam.answer_1 %>
+         <% end %>
+         <br><br>
+         <% if exam.is_b1en %>
+         <%= link_to b_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-check"></i><% end %> B. <%= exam.answer_2 %>
+         <% else %>
+         <%= link_to b1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-square-o"></i><% end %> B. <%= exam.answer_2 %>
+         <% end %>
+          <br><br>
+         <% if exam.is_c1en %>
+         <%= link_to c_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-check"></i><% end %> C. <%= exam.answer_3 %>
+         <% else %>
+         <%= link_to c1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-square-o"></i><% end %> C. <%= exam.answer_3 %>
+         <% end %>
+          <br><br>
+         <% if exam.is_d1en %>
+         <%= link_to d_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+         <i class="fa fa-check"></i><% end %> D. <%= exam.answer_4 %>
+         <% else %>
+         <%= link_to d1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+         <i class="fa fa-square-o"></i><% end %> D. <%= exam.answer_4 %>
+         <% end %>
+         <br><br>
+        <% if exam.is_e1en %>
+        <%= link_to e_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+        <i class="fa fa-check"></i><% end %> E. <%= exam.answer_5 %>
+        <% else %>
+        <%= link_to e1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+        <i class="fa fa-square-o"></i><% end %> E. <%= exam.answer_5 %>
+        <% end %>
+         <br><br>
+        <% if exam.is_f1en %>
+        <%= link_to f_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-success" do %>
+        <i class="fa fa-check"></i><% end %> F. <%= exam.answer_6 %>
+        <% else %>
+        <%= link_to f1_admin_exam_path(exam), method: :post, class: "btn btn-xs btn-warning" do %>
+        <i class="fa fa-square-o"></i><% end %> F. <%= exam.answer_6 %>
+        <% end %>
+
        </td>
        <td>
          <%= link_to("Edit", edit_admin_exam_path(exam)) %> |
          <%= link_to("Delete", admin_exam_path(exam), method: :delete, data: { confirm: "Are your sure?" }) %>
        </td>
+      <% end %>
      </tr>
-     <% end %>
    </tbody>
  </table>
