@@ -15,43 +15,45 @@ class ApplicationController < ActionController::Base
 
   def add_to_cart
     @product = Product.find(params[:id])
-    num = params[:num].to_i
-    if !num.blank?
-      num = 1
-      if !current_cart.products.include?(@product)
-        current_cart.add_product_to_cart(@product,num)
-        #flash[:notice] = "你已成功将#{@product.title} 加入购物车"
-      else
-        #flash[:warning] = "你的购物车内已有此物品"
-        ci = current_cart.cart_items.find_by(product_id: @product)
-        if ci.quantity < @product.quantity
-          ci.quantity += num
-          ci.save
+    if  params[:num].blank?
+        num = 1
+        #render :js => num.to_s
+        if !current_cart.products.include?(@product)
+          current_cart.add_product_to_cart(@product,num)
+          #flash[:notice] = "你已成功将#{@product.title} 加入购物车"
         else
-          render :js => "alert('已经超过最大可购买数量');"
+            #flash[:warning] = "你的购物车内已有此物品"
+            ci = current_cart.cart_items.find_by(product_id: @product)
+            if ci.quantity < @product.quantity
+              ci.quantity += num
+              ci.save
+            else
+              render :js => "alert('已经超过最大可购买数量');"
+            end
         end
-      end
-    elsif num <= @product.quantity
-      if !current_cart.products.include?(@product)
-        current_cart.add_product_to_cart(@product,num)
-      else
-        ci = current_cart.cart_items.find_by(product_id: @product)
-        if ci.quantity < @product.quantity
-          if (ci.quantity + num) < @product.quantity
-            ci.quantity += num
-            ci.save
+    else
+      num = params[:num].to_i
+      if  num <= @product.quantity
+          if !current_cart.products.include?(@product)
+              current_cart.add_product_to_cart(@product,num)
           else
-            ci.quantity = @product.quantity
-            ci.save
+              ci = current_cart.cart_items.find_by(product_id: @product)
+              if ci.quantity < @product.quantity
+                  if (ci.quantity + num) < @product.quantity
+                    ci.quantity += num
+                    ci.save
+                  else
+                    ci.quantity = @product.quantity
+                    ci.save
+                  end
+              else
+                  render :js => "alert('已经超过最大可购买数量');"
+              end
           end
-        else
-          render :js => "alert('已经超过最大可购买数量');"
-        end
       end
+      #redirect_to :back
     end
-    #redirect_to :back
   end
-
 
   def favorite
     @product = Product.find(params[:id])
