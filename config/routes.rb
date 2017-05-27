@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   namespace :admin do
     resources :products
     resources :orders do
@@ -40,6 +41,12 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+    :passwords     => "users/passwords",
+  }
+
+
   root 'products#index'
 end

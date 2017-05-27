@@ -1,6 +1,8 @@
 <h2> Product List </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("新增类别", categories_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("订单页面", admin_orders_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
   <thead>
@@ -9,7 +11,9 @@
       <th width="220">Product Pic</th>
       <th>Name</th>
       <th>Price</th>
+      <th>category</th>
       <th width="100"> Options</th>
+      <th>timestamp</th>
     </tr>
   </thead>
   <tbody>
@@ -33,8 +37,16 @@
         <td>
           <%= product.price %>
         </td>
+
+        <td>
+          <%= product.category.name %>
+        </td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        </td>
+        <td>
+
         </td>
       </tr>
     <% end %>
