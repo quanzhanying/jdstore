@@ -56,65 +56,58 @@
 
 // 放大镜开始
 /*放大镜*/
-.magnifier-thumb-wrapper {
-    position: relative;
-    display: block;
-    top: 0;
-    left: 0
-}
-
-.magnifier-lens {
-    position: absolute;
-    border: solid 1px #ccc;
-    z-index: 1000;
-    top: 0;
-    left: 0
-}
-
-.magnifier-loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: solid 1px #ccc;
-    color: #fff;
-    text-align: center;
-    background: transparent;
-    background: rgba(50, 50, 50, 0.5);
-    z-index: 1000;
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)
-}
-
-.magnifier-loader-text {
-    font: 13px Arial;
-    margin-top: 10px
-}
-
-.magnifier-preview {
-    position: absolute;
-    width: 418px;
-    height: 420px;
-    left: 418px;
-    top: -1px;
-    padding: 0;
-    z-index: 1000;
-    overflow: hidden;
-    visibility: hidden;
-}
-
-.magnifier-preview img {
-    position: absolute;
-    top: 0;
-    left: 0
-}
-
-.opaque {
-    opacity: .5;
-    filter: alpha(opacity=50);
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)
-}
-
-.hidden {
-    display: none
-}
 // 放大镜结束
+
+// 评论开始
+
+.commentList-item {
+	width: 670px;
+	border-bottom: 1px solid #DDDDDD;
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-left:auto !important;margin-right:auto !important;
+}
+
+.commentList-item .content {
+  float:left;
+  display:inline;
+  text-align:left;
+	width: 420px;
+  font-size:12px;
+}
+
+.commentList-item .name {
+  float:right;
+  display:inline;
+	width: 180px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  word-wrap:normal;
+  text-align:right;
+  font-size:12px;
+}
+
+.commentList {
+  list-style-type: none;
+  margin-top: 70px;
+}
+
+.comment-say {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align:center;
+  font-size: 20px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.comment-say a {
+	margin-right: auto;
+	margin-left: auto;
+}
+// 评论结束

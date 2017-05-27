@@ -510,7 +510,7 @@ a:hover {
 }
 // 设置回到顶部按钮和点赞链接结束
 
-// product/show页面中商品详情和用户评价
+// product/show页面中商品详情
 .productDetail {
   border:1px solid #DDDDDD !important;
   margin-top:40px auto;
@@ -528,22 +528,20 @@ a:hover {
   .productDetail-tabList-tab {
     float:left;
     display:inline;
-    width:175px;
+    width:275px;
     height: 35px;
     line-height: 35px;
     padding-left:50px;
     padding-right:50px;
     cursor: pointer;
     border-right: 1px solid #D8D8D8;
+    text-align:center !important;
   }
 }
-// .productDetail-tabList-activeTab {
-// 	background: #fff;
-// }
+
 .productDetail-contentWrap{
   width: 750px;
   height:500px;
-  // margin:50px;
   margin-left:auto !important;
   margin-right:auto !important;
 }
@@ -555,18 +553,4 @@ a:hover {
   padding-bottom:50px;
   text-align:center;
 }
-.commentList {
-  margin-top: 70px;
-}
-.comment-say {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align:center;
-  font-size: 20px;
-  margin-left:auto !important;
-  margin-right:auto !important;
-}
+// product/show页面中商品详情结束

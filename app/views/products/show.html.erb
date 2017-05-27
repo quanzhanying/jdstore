@@ -155,13 +155,13 @@
 </div>
 
 <!-- 商品详情及用户评价 -->
-<!-- <div class="productDetail">
+<div class="productDetail">
     <ul class="productDetail-tabList clearfix">
       <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
         商品详情
       </li>
       <li class="productDetail-tabList-tab">
-        商品评价
+        商品评价(共<%= @product.comments.count %>条)
       </li>
     </ul>
     <div class="productDetail-contentWrap">
@@ -171,11 +171,22 @@
       </div>
       <div class="productDetail-content">
         <ul class="commentList">
+          <% @comments.each do |comment| %>
+            <li class="commentList-item clearfix">
+              <p class="content">
+                <%= comment.body  %>
+                <br>
+              </p>
+              <p class="name">
+                <%= comment.user.email %>
+              </p>
+            </li>
+          <% end %>
         </ul>
         <p class="comment-say">
-          <%= link_to("评论和评星功能正在开发中，即将更新", "#", :class => "btn bc") %>
+          <%= link_to("发表评论", new_product_comment_path(@product), :class => "btn bc") %>
         </p>
       </div>
     </div>
-  </div> -->
+  </div>
   <!-- 商品详情和用户评价结束 -->
