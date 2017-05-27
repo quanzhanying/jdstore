@@ -12,14 +12,32 @@
   span.price{
     color: rgb(245,190,126);
   }
-  span{
-    a.like{
-      color:#eee;
-    }
-    a.unlike{
-      color: rgb(245,190,126);
-    }
-  }
+}
+//-----图片向上滑动------
+body {
+  background: #F5F5F5;
+}
+
+.product-box {
+  width: 200px;
+  padding: 15px;
+  margin: 20px auto;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.product-box img {
+  width: 200px;
+}
+
+.product-box:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
 }
 
 /* 商品详情页CSS样式表 */
@@ -31,6 +49,38 @@
 // 商品标题样式
 .product-title {
   color: #7f8c8d;
+}
+
+/*商品多个图片信息*/
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 518px;
+}
+
+.productDetail img {
+  width: 100%;
+  height: 100%;
+}
+
+.productDetail-left-bigImage {
+	width: 420px;
+	height: 420px;
+}
+
+.productDetail-left-imageList {
+	margin-top: 15px;
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 92px;
+	height: 92px;
+	margin-right: 15px;
+}
+
+.productDetail-left-imageList-lastItem {
+	margin-right: 0;
 }
 
 // 商品简述样式
@@ -65,7 +115,12 @@
 .product-collection {
 
 }
-
+//点赞
+.product-zan {
+  a:hover{
+    text-decoration: none;
+  }
+}
 //商品详情区域样式
 .product-particulars {
   margin: 1.1em 0 3em;
