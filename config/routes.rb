@@ -40,7 +40,12 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :courses          #前台显示课程
+  resources :courses do         #前台显示课程
+    member do
+      post :add_to_cart
+      post :instant_buy
+    end
+  end
 
   resources :carts do         #购物车明细
     collection do
