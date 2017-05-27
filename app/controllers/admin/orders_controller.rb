@@ -13,5 +13,23 @@ class Admin::OrdersController < ApplicationController
       @product_lists = @order.product_lists
    end
 
+   def ship
+      @order = Order.find(params[:id])
+      @order.ship!
+      redirect_to :back
+   end
+
+   def shipped
+      @order = Order.find(params[:id])
+      @order.deliver!
+      redirect_to :back
+   end
+
+   def cancel
+      @order = Order.find(params[:id])
+      @order.cancel_order!
+      redirect_to :back
+
+   end
 
 end
