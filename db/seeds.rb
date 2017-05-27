@@ -28,6 +28,7 @@ c.save
 
 # Initialize Product
 
+
 Product.create!(title: "爱在墨西哥",
   description: "花束",
   price: 210,
@@ -51,3 +52,4 @@ Product.create!(title: "夏日倾情",
   category_id: 1,
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffzpu05r6ij30l00swjvd.jpg")
   )
+

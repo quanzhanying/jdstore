@@ -4,11 +4,28 @@
 
     <!-- 主图 -->
     <div class="col-md-5">
-      <% if @product.image.present? %>
-        <%= image_tag(@product.image.medium.url, class: "thumbnail img-responsive") %>
-      <% else %>
-        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail img-responsive") %>
-      <% end %>
+        <div class="productDetail">
+          <div class="productDetail-left">
+            <div class="productDetail-left-bigImage">
+              <%= image_tag(@product.photos[0].image.thumb.url) %>
+            </div>
+
+            <div class="productDetail-left-imageList ">
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag @product.photos[0].image.thumb.url  %>
+              </div>
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag @product.photos[1].image.thumb.url  %>
+              </div>
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag @product.photos[2].image.thumb.url  %>
+              </div>
+              <div class="productDetail-left-imageList-item">
+                <%= image_tag @product.photos[3].image.thumb.url  %>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <!-- 商品信息 -->
@@ -78,7 +95,7 @@
         </div>
 
         <!--  点赞 -->
-        <div class="col-sm-4 product-collection">
+        <div class="col-sm-4 product-zan">
         <%= link_to like_product_path(@product), method: :put do %>
           <div class="pi-thumbs-up">
             <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
@@ -108,7 +125,9 @@
         <div class="tab-content">
           <!-- 商品详情区域 -->
           <div class="product-particulars-box row tab-pane active" id="tab_default_1">
-            <%= image_tag(@product.image.medium.url, class: "thumbnail img-responsive") %>
+            <% @product.photos.each do |p| %>
+              <%= image_tag p.image.thumb.url  , class: "thumbnail img-responsive col-md-5" %>
+            <% end %>
           </div>
           <!-- 商品评论区域 --><!--对商品评论以及评星-->
           <div class="product-particulars-box row tab-pane" id="tab_default_2">
