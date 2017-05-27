@@ -1,0 +1,36 @@
+<h1> <%= @product.title %> </h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>品名</td>
+            <td>商品图片</td>
+            <td>商品描述</td>
+            <td>库存</td>
+            <td>价格</td>
+            <td>创建日期</td>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    <%= link_to(@product.title, admin_product_path(@product)) %>
+                </td>
+                <td>
+                    <%= image_tag(@product.image.thumb.url) %>
+                </td>
+                <td>
+                    <%= link_to(@product.description, admin_product_path(@product)) %>
+                </td>
+                <td>
+                    <%= link_to(@product.quantity, admin_product_path(@product)) %>
+                </td>
+                <td>
+                    <%= link_to(@product.price, admin_product_path(@product)) %>
+                </td>
+                <td>
+                    <%= @product.created_at %>
+                </td>
+            </tr>
+    </tbody>
+</table>
