@@ -33,4 +33,5 @@ Product.create!(title: "Cherry Keyboard",
      Category.create(name: "纸质书")
      Category.create(name: "电子读物")
      Category.create(name: "好物精选")
+     Category.create(name: "电子读物1")
      Category.create(name: "好物精选1")
