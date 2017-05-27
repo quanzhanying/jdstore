@@ -29,22 +29,36 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bootstrap-sass'
+
+#账号系统
 gem 'devise'
+
+#前端框架
+gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'font-awesome-rails'
+
+#记录schema for model
 gem 'annotate'
+
+#图片功能
 gem 'carrierwave'
 gem 'mini_magick'
+
+#订单信息提醒
 gem 'letter_opener', group: :development
+
+#订单状态
 gem 'aasm'
-#客服ggem
+#客服系统
 gem "intercom-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  #debug
   gem 'pry'
+  #美化rails c界面
   gem 'awesome_rails_console'
   gem 'sqlite3'
 end
