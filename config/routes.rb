@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   get '/recommend/', to:'products#recommend'
 
   namespace :admin do
-    resources :products
+    resources :products do
+      member do
+        post :move_up
+        post :move_down
+      end
+    end
     resources :categories
     resources :orders do
     member do

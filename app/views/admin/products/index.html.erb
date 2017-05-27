@@ -39,15 +39,18 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
-          <%= link_to("Delete", admin_product_path(product), method: :delete, data: {
-  confirm: "Are you sure? "
-} ) %>
+          <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-sm btn-primary") %>
+          <%= link_to("Delete", admin_product_path(product), method: :delete, data: { confirm: "Are you sure? "}, :class => "btn btn-sm btn-primary" ) %>
+          <%= link_to("上移", move_up_admin_product_path(product), :method => :post, :class => "btn btn-sm btn-primary") %>
+          <%= link_to("下移", move_down_admin_product_path(product), :method => :post, :class => "btn btn-sm btn-primary") %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<div class="text-center col-md-12 pagination">
+<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>
 
 </div>
