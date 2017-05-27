@@ -1,16 +1,20 @@
-<h2 class="text-center">已收藏的商品</h2>
-<hr>
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
-        <% end %>
-      <% end %>
-      <%= product.name %> ￥ <%= product.price %>
-    </div>
-  <% end %>
+<!-- 所處位置導航列開始 -->
+<ul class="breadcrumb">
+  <li><a href="/">首页</a></li>
+  <li><a href="/products">全品项商品首页</li>
+</ul>
+<!-- 所處位置導航列結束 -->
+<%= render :partial => "products/ad" %>
+
+<div class="row", style="margin-left: -21px;">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel-favorite">
+    <!-- <div class="well well-lg", style="text-align: center; font-size: 1.2em;"> -->
+      <p>已收藏的商品</p>
+    <!-- </div> -->
+  </div>
+  </div>
 </div>
+<!-- 区域：商品展示列表 -->
+<%= render :partial => "products/list" %>
+<!-- 商品展示列表结束 -->
