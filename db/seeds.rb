@@ -29,3 +29,8 @@ Product.create!(title: "Cherry Keyboard",
      quantity: 5,
      image: open("https://images-cn.ssl-images-amazon.com/images/I/510riktx0yL.jpg")
      )
+
+     Category.create(name: "纸质书")
+     Category.create(name: "电子读物")
+     Category.create(name: "好物精选")
+  
