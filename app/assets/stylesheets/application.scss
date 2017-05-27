@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css'); //引入google思源黑简在线字体 需要使用VPN才可生效
 
 .avatar > img{
   border-radius: 50%;
@@ -114,9 +115,15 @@
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 5;
     line-height: 1;
 }
+
+//----------- 首页滚动大图字体 -------------//
+body {
+     font-family: 'Noto Sans SC', sans-serif; // google思源黑简作为主字体
+     color: #666;                             // 修改全站的字体主色 压低亮度
+     }
 
 //----------- 热门商品 -------------//
 section {
