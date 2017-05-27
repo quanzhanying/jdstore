@@ -29,3 +29,92 @@
   background: url(http://i.imgur.com/Ska7z8A.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
 }
 // 全商品頁活動廣告區域結束
+
+// 多图显示开始
+.show-picture {
+  margin-top:30px;
+}
+.show-photo-xsmall-box{
+  height:80px;
+  width:400px;
+}
+.show-photo-xsmall-box.nav-tabs {
+  margin-top: 15px; }
+
+.show-photo-xsmall-box.nav-tabs li {
+  width: 18%;
+  margin-right: 2.5%;
+}
+.show-photo-xsmall-box.nav-tabs li a {
+  padding: 0;
+  margin: 0;
+}
+.show-photo-xsmall-box.nav-tabs li:last-of-type {
+  margin-right: 0;
+}
+// 多图显示结束
+
+// 放大镜开始
+/*放大镜*/
+.magnifier-thumb-wrapper {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0
+}
+
+.magnifier-lens {
+    position: absolute;
+    border: solid 1px #ccc;
+    z-index: 1000;
+    top: 0;
+    left: 0
+}
+
+.magnifier-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px #ccc;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    background: rgba(50, 50, 50, 0.5);
+    z-index: 1000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)
+}
+
+.magnifier-loader-text {
+    font: 13px Arial;
+    margin-top: 10px
+}
+
+.magnifier-preview {
+    position: absolute;
+    width: 418px;
+    height: 420px;
+    left: 418px;
+    top: -1px;
+    padding: 0;
+    z-index: 1000;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.magnifier-preview img {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.opaque {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)
+}
+
+.hidden {
+    display: none
+}
+// 放大镜结束

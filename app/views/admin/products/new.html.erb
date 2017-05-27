@@ -6,7 +6,12 @@
     <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 5} %>
     <%= f.input :price, :label => "价格", placeholder: "价格" %>
     <%= f.input :stock, :label => "库存", placeholder: "库存" %>
-    <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %>
+    <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
+    <div class="group">
+      <%#= f.input :image, as: :file %>
+      <%= f.label :avatar %><br>
+      <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+    </div>
     <%= select_tag(:brand_id, options_for_select(@brands), :prompt => "品牌") %>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
     <%= f.input :can_sell, :label => "上线", as: :radio_buttons, collection: [['上线', true], ['隐藏', false]], required: true %>

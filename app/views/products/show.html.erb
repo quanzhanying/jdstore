@@ -70,11 +70,45 @@
 <div class="col-md-12 col-centered panel panel-default">
   <div class="panel-body", style="margin-top: -50px;">
     <div class="col-md-5 col-md-offset-1">
-      <% if @product.image.present? %>
-        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-      <% else %>
-        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
-      <% end %>
+      <!-- 第一张大图显示 -->
+      <!-- <div class="intro-bigPic">
+      <div class="magnifier-preview border" id="preview"></div>
+        <% if @photos.present? %>
+          <a class="magnifier-thumb-wrapper" href="javascript:;">
+            <img
+              id="thumb"
+              src="<%= @photos.first.avatar.medium.url %>"
+              data-large-img-wrapper="preview"
+              data-large-img-url="<%= @photos.first.avatar.medium.url %>">
+          </a>
+        <% end %>
+      </div> -->
+      <!-- 第一张大图显示结束 -->
+      <!-- 第一张图显示大图，其余的都显示小图 -->
+
+      <!-- 多图显示功能：实现点击小图，大图跟着改变 -->
+       <% if @photos.present? %>
+         <div class="tab-content show-picture">
+           <% @photos.each_with_index do |p,index| %>
+             <% if index <5 %>
+              <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>"><%= image_tag(p.avatar.medium.url) %>
+              </div>
+             <% end %>
+           <% end %>
+         </div>
+
+         <ul class="show-photo-xsmall-box nav nav-tabs">
+           <% @photos.each_with_index do |p,index| %>
+             <% if index <5 %>
+               <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag(p.avatar.small.url)%></a></li>
+             <% end %>
+           <% end %>
+         </ul>
+      <!-- 多图显示功能结束 -->
+       <% else %>
+           <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+       <% end %>
+     <!-- </ul> -->
     </div>
     <div class="col-md-5 col-md-offet-1">
       <h2> <%= @product.name %></h2>

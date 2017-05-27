@@ -49,6 +49,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @photos = @product.photos.all
     if @product.can_sell = false
       redirect_to root_path
     end
