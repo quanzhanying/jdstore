@@ -15,9 +15,15 @@
 
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
+
+  has_many :photos
+  accepts_nested_attributes_for :photos
+
   acts_as_list
   scope :recent, -> { order("created_at DESC")}
+  
   belongs_to :category
+
   has_many :product_user_relationships
   has_many :members, :through => :product_user_relationships, :source => :user
   acts_as_votable    # 点赞
