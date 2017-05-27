@@ -1,0 +1,117 @@
+<div class="container">
+
+
+    <br>
+    <h3>订单明细</h3>
+
+    <div class="shoping-cart">
+
+      <!-- 列表头部 -->
+      <div class="cart-column-head center-block">
+        <label class="col-xs-3 product-title-cart">名称</label>
+        <label class="col-xs-3 product-price-cart">单价</label>
+        <label class="col-xs-3 product-price-cart">数量</label>
+        <label class="col-xs-3 product-line-price-cart">小计</label>
+      </div>
+
+      <!-- 列表购物车商品 -->
+      <% @course_lists.each do |course_list| %>
+
+        <div class="product-list row text-center">
+
+          <!-- 商品名称 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= course_list.course_name %>
+          </div>
+
+          <!-- 商品单价 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= course_list.course_price %> RMB
+          </div>
+
+          <!-- 商品数量 -->
+          <div class="col-xs-3 product-title-cart">
+            <!-- 在index页面中使用update页面表单的方法，要加上对应的url，指向update的地址 -->
+            <%= course_list.quantity %>
+          </div>
+
+          <!-- 商品总价 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= course_list.course_price * course_list.quantity %> RMB
+          </div>
+        </div>
+        <hr>
+
+      <% end %>
+    </div>
+
+    <div class="row">
+
+      <!-- 合计详情 -->
+      <div class="container">
+        <span class="pull-right text-center product-price-totle">
+          总计：<%= @course_order.total %> RMB
+        </span>
+      </div>
+
+    </div>
+
+
+
+    <!-- 寄送商品确认表 -->
+
+    <div class="row  order-form-group">
+
+          <div class="col-md-6 col-md-offset-3">
+            <h3 class="text-center">寄送确认</h3>
+            <hr>
+
+            <div class="order-form">
+              <%= simple_form_for @course_order do |f| %>
+
+                <h4>购货联络人</h4>
+                <div class="form-group">
+                  <br>
+                  <p><strong> 联络人名称：</strong><%= @course_order.billing_name %></p>
+                  <p><strong> 联络人地址：</strong><%= @course_order.billing_address %></p>
+                </div>
+
+                <br>
+                <h4>寄送资讯</h4>
+                <div class="form-group">
+                  <br>
+                  <p><strong> 收货人名称：</strong><%= @course_order.shipping_name %></p>
+                  <p><strong> 收货人地址：</strong><%= @course_order.shipping_address %></p>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-md-offset-3">
+            <hr>
+
+            <!-- 付款方式 以及判断是否已结账 -->
+            <div>
+                <div class="group pull-right">
+                  <%= link_to("以支付宝支付", pay_whit_alipay_course_order_path(@course_order.token), :method => :post, :class => "btn btn-danger") %>
+                  <%= link_to("以微信支付", pay_whit_wechat_course_order_path(@course_order.token), :method => :post, :class => "btn btn-danger") %>
+                </div>
+            </div>
+
+            <!-- 用户申请撤销订单 -->
+            <div>
+                <%= link_to("申请取消订单", apply_to_cancel_order_path(@course_order), method: :post, class: "btn btn-info") %>
+            
+            </div>
+
+
+
+          </div>
+    </div>
+
+
+
+
+</div>

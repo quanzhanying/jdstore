@@ -71,7 +71,7 @@
 
 
 <!-- 教程按钮区域 -->
-<!-- <div class="container">
+<div class="container">
 
   <div class="row">
     <div class="container topspan">
@@ -80,23 +80,23 @@
           <h3 class="titspan">教程</h3>
         </div>
         <div class="col-xs-6">
-          <%= link_to("more >", products_path, class: "pull-right morespan") %>
+          <%= link_to("more >", courses_path, class: "pull-right morespan") %>
         </div>
       </div>
     </div>
   </div>
 
     <div class="col-sm-4 col-xs-12 container product-course-box-1">
-      <h3>持有艺术</h3>
+      <h3><%= link_to("持有艺术", course_path(1)) %></h3>
     </div>
     <div class="col-sm-4 col-xs-12 container product-course-box-2">
-      <h3>收纳艺术</h3>
+      <h3><%= link_to("收纳艺术", course_path(2)) %></h3>
     </div>
     <div class="col-sm-4 col-xs-12 container product-course-box-3">
-      <h3>装饰艺术</h3>
+      <h3><%= link_to("装饰艺术", course_path(3)) %></h3>
     </div>
 
-</div> -->
+</div>
 
 
 <!-- 首页精选商品列表 -->

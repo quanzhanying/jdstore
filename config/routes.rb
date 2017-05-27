@@ -56,7 +56,15 @@ Rails.application.routes.draw do
 
   resources :cart_items       #购物车列表
 
-  resources :orders do        #订单
+  resources :orders do        #商品订单
+    member do
+      post :pay_whit_alipay   #支付宝支付
+      post :pay_whit_wechat   #微信支付
+      post :apply_to_cancel   #用户申请撤销订单
+    end
+  end
+
+  resources :course_orders do        #课程订单
     member do
       post :pay_whit_alipay   #支付宝支付
       post :pay_whit_wechat   #微信支付

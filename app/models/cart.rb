@@ -19,15 +19,24 @@ class Cart < ApplicationRecord
   end
 
 
-  # --计算总价--
+  # --商品计算总价--
   def total_price
+    sum = 0
+    cart_items.each do |cart_item|
+      if cart_item.product.price.present?
+        sum += cart_item.quantity * cart_item.product.price
+      end
+    end
+    sum
+  end
+
+  # --课程计算总价
+  def total_course_price
     sum = 0
     cart_items.each do |cart_item|
 
       if cart_item.course.price.present?
         sum +=  cart_item.course.price
-      else cart_item.product.price.present?
-        sum += cart_item.quantity * cart_item.product.price
       end
     end
     sum

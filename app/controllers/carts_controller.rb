@@ -14,7 +14,7 @@ class CartsController < ApplicationController
   end
 
   def show
-    @order = Order.new
+    @course_order = CourseOrder.new
   end
 
 end

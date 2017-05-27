@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
     else
       flash[:warning] = "你的购物车已有此商品"
     end
-    redirect_to checkout_carts_path
+    redirect_to cart_path(@course)
   end
 
 end

@@ -29,6 +29,7 @@ class User < ApplicationRecord
   # ---与order订单关系---
 
   has_many :orders
+  has_many :course_orders
 
 
   # ---is_admin判断式---
