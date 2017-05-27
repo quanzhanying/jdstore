@@ -109,39 +109,12 @@
             </div>
           </div>
           <div class="col-md-3">
-            <!--
-            <div class="settleup-2014 dorpdown">
-              <div class="cw-icon fly">
-                <a href="/carts">
-                  我的购物车
-                  <i class="fa fa-shopping-cart"></i>
-                  <span>(<%#= current_cart.cart_items.sum("quantity") %>)</span>
-                </a>
-              </div>
-              <div class="dorpdown-layer">
-                <div class="spacer"></div>
-                <div id="settleup-content">
-                  <div class="smc">
-                    <ul class="mcart-sigle"></ul>
-                  </div>
-                  <div class="smb">
-                    <div class="p-total">共<b>0</b>件商品 共计<strong>￥ 0</strong>
-                    </div>
-                    <a href="/carts" >去购物车</a>
-                  </div>
-                  <div style="clear:both;"></div>
-                </div>
-              </div>
-            </div>
-            -->
           </div>
         </div>
       </div>
     </div>
     <!-- /.container-fluid -->
   </nav>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -226,7 +199,7 @@
           <a href="/carts">
             我的购物车
             <i class="fa fa-shopping-cart"></i>
-            <span>(<%= current_cart.cart_items.sum("quantity") %>)</span>
+            (<span><%= current_cart.cart_items.sum("quantity") %></span>)
           </a>
         </div>
         <div class="dorpdown-layer">

@@ -8,7 +8,7 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     if @cart_item.nil?
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
-      '$(".cw-icon span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
+      '$(".cw-icon span").html("' + current_cart.cart_items.sum("quantity").to_s + '" );' +
       '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );'
       render :js =>  jq
     else
@@ -21,7 +21,7 @@ class CartItemsController < ApplicationController
         end
       end
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
-      '$(".cw-icon span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
+      '$(".cw-icon span").html("' + current_cart.cart_items.sum("quantity").to_s + '" );' +
       '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
       '$(".product-price-totle").html("总计：' + sum.to_s + ' RMB" );'
       render :js =>  jq
@@ -52,7 +52,7 @@ def up
           quantity += cart_item.quantity
         end
       end
-      jq ='$(".cw-icon span").html("(' + quantity.to_s + ')" );' +
+      jq ='$(".cw-icon span").html("' + quantity.to_s + '" );' +
       '$(".cart-item-' + params[:cart_item_id].to_s + ' .quantity-price").html("' + (@product.promotional * ci.quantity).to_s + ' RMB" );' +
       '$(".product-price-totle").html("总计：' + sum.to_s + ' RMB" );'
       render :js =>  jq
