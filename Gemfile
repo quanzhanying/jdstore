@@ -48,9 +48,7 @@ gem 'social-share-button'
 gem 'fog'
 gem "intercom-rails"
 gem 'will_paginate-bootstrap'
-gem 'devise-i18n'
 
-gem 'will_paginate-bootstrap'
 
 
 group :development, :test do
