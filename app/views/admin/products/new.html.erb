@@ -1,6 +1,12 @@
 <h2> New Product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
+  <!--分类 -->
+  <div class="group">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
+  </div>
+
+  <br>
 
   <div class="group">
     <%= f.input :title %>

@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
-
+  #---管理员专区---#
   namespace :admin do
+    # 产品 ＃
     resources :products do
       member do
         patch :move_up
         patch :move_down
       end
     end
+
+    #订单管理 #
     resources :orders do
       member do
         post :cancel
@@ -16,6 +19,10 @@ Rails.application.routes.draw do
         post :shipped
         post :return
       end
+    end
+
+    #分类＃
+    resources :categories do
     end
   end
 

@@ -42,6 +42,19 @@
           </li>
         <% end %>
       </ul>
+      <!-- 分类栏 -->
+
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">分类浏览
+          <span class="caret"></span>
+          <!-- 这里代表下拉菜单的倒三角 -->
+        </a>
+        <ul class="dropdown-menu">
+          <% Category.all.each do |category| %>
+            <li>
+              <%= link_to(category.name, products_path(category: category.name)) %>
+            </li>
+          <% end %>
+        </ul>
 
       <!-- 搜索栏 -->
         <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
