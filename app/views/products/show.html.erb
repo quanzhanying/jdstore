@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class:"thumbnail") %>
+      <%= image_tag(@product.image.medium.url, class:"thumbnail wow bounce", data: {wow_delay:"1.5s"} )%> <!-- 加入show下图片效果 效果网站 https://daneden.github.io/animate.css/ -->
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail")%>
     <% end %>
@@ -29,3 +29,13 @@
     </div>
   </div>
 </div>
+<div id="getting-started"></div>
+
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+</script>  <!--用户没回进入都会倒计时两天-->
