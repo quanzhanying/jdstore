@@ -1,9 +1,28 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 商品indexCSS样式表 */
+.panel-body{
+  padding: 5px;
+  font-size: 12px;
+  a:hover{
+    text-decoration: none;
+  }
+  span.price{
+    color: rgb(245,190,126);
+  }
+  span{
+    a.like{
+      color:#eee;
+    }
+    a.unlike{
+      color: rgb(245,190,126);
+    }
+  }
+}
+
 /* 商品详情页CSS样式表 */
-
-
 // 页面头部微调
 .product-show {
   margin-top: 2em;
@@ -44,7 +63,7 @@
 
 // 收藏按钮
 .product-collection {
-  
+
 }
 
 //商品详情区域样式
