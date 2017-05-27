@@ -1,58 +1,60 @@
 Rails.application.routes.draw do
-    root 'welcome#index'
-    devise_for :users
+  root 'welcome#index'
+  devise_for :users
   namespace :admin do
     resources :products do
-    collection do
-      post :csv_create
-      
+      collection do
+        post :csv_create
+
+      end
     end
-  end
     resources :orders do
       member do
-         post :cancel
-         post :ship
-         post :shipped
-         post :return
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
 
-       end
+      end
     end
   end
- resources :products do
-   put :favorite, on: :member
+  resources :products do
+    put :favorite, on: :member
 
-   collection do
+    collection do
       get :search
     end
-   member do
-     post :add_to_cart
+    member do
+      post :add_to_cart
     end
-   end
-   resources :carts do
-     collection do
-       delete :clean
-       post :checkout
-     end
-   end
-   resources :cart_items
-   resources :favorite
-   resources :orders do
-     member do
-       post :pay_with_alipay
-       post :pay_with_wechat
-       post :apply_to_cancel
-     end
-   end
-   namespace :account do
+  end
+  resources :carts do
+    collection do
+      delete :clean
+      post :checkout
+    end
+  end
+  resources :cart_items do
+    get :up
+  end
+  resources :favorite
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_wechat
+      post :apply_to_cancel
+    end
+  end
+  namespace :account do
     resources :orders
   end
   resources :products do
-  resources :reviews
+    resources :reviews
   end
   resources :products do
     member do()
-     post :upvote
-     post :downvote
+      post :upvote
+      post :downvote
     end
   end
- end
+end

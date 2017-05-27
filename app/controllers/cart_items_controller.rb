@@ -14,15 +14,50 @@ class CartItemsController < ApplicationController
     else
       @product = @cart_item.product
       @cart_item.destroy
+      sum = 0
+      @cart.cart_items.each do |cart_item|
+        if cart_item.product.price.present?
+          sum += cart_item.quantity * cart_item.product.price
+        end
+      end
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
       '$(".cw-icon span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
-      '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );'
+      '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
+      '$(".product-price-totle").html("总计：' + sum.to_s + ' RMB" );'
       render :js =>  jq
     end
 
     #flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
     #redirect_to :back
   end
+
+def up
+  if  !params[:value].blank?
+    @product = Product.find(params[:cart_item_id])
+    @cart = current_cart
+    num = params[:value].to_i
+    ci = @cart.cart_items.find_by(product_id: @product)
+      if  num > 0 and num <= @product.quantity
+          ci.quantity = num
+          ci.save
+      elsif num > @product.quantity
+          ci.quantity = @product.quantity
+          ci.save
+      end
+      sum = 0
+      quantity = 0
+      @cart.cart_items.each do |cart_item|
+        if cart_item.product.price.present?
+          sum += cart_item.quantity * cart_item.product.price
+          quantity += cart_item.quantity
+        end
+      end
+      jq ='$(".cw-icon span").html("(' + quantity.to_s + ')" );' +
+      '$(".cart-item-' + params[:cart_item_id].to_s + ' .quantity-price").html("' + (@product.promotional * ci.quantity).to_s + ' RMB" );' +
+      '$(".product-price-totle").html("总计：' + sum.to_s + ' RMB" );'
+      render :js =>  jq
+  end
+end
 
   def update
     @cart = current_cart

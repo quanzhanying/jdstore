@@ -20,7 +20,7 @@
 }
 
 // 购物车商品
-.product-list {
+.cart-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,3 +30,31 @@
 .cart-buying-buttom {
   margin: 1.2em auto 3em;
 }
+
+.quantity-box{
+  display: inline-block;
+}
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+    float: left;
+  }
+
+ .quantity-actions {
+      padding: 1px 10px 1px 10px;
+      border: 1px solid #ccc;
+      border-radius: 2.5px;
+      float: left;
+  }
+
+.quantity-box .disabled {
+     pointer-events: none;
+     background-color: #e5e5e5;
+ }
+
+  .quantity-box a:hover {
+       border: 1px solid #fe575f;
+       color: #fe575f;
+   }
