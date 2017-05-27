@@ -11,7 +11,7 @@
 
       <div class="row">
         <% @products.each do |product| %>
-          <div class="col-xs-6 col-md-3 box panel panel-default">
+          <div class="col-xs-6 col-md-3 product-box panel panel-default">
             <%= link_to product_path(product) do %>
               <% if product.photos.present? %>
                 <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>

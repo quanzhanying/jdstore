@@ -26,7 +26,7 @@ body {
   background: #F5F5F5;
 }
 
-.box {
+.product-box {
   width: 200px;
   padding: 15px;
   margin: 20px auto;
@@ -40,11 +40,11 @@ body {
   -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
 }
 
-.box img {
+.product-box img {
   width: 200px;
 }
 
-.box:hover {
+.product-box:hover {
   top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
 }
 
