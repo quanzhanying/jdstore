@@ -14,7 +14,7 @@ Rails.application.routes.draw do
  resources :carts do
      collection do
        delete :clean
-        post :checkout
+       post :checkout
      end
   end
 
@@ -26,21 +26,28 @@ Rails.application.routes.draw do
     end
   end
 
+
   namespace :admin do
-   resources :products
-   resources :orders
+
+   resources :products do
      member do
        patch :move_up
        patch :move_down
      end
    end
+
+   resources :orders do
+     member do
+       post :cancel
+       post :ship
+       post :shipped
+       post :return
+     end
+   end
  end
+
 
  devise_for :users
  root 'products#index'
-
-
-
-
 
 end
