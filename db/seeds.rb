@@ -28,26 +28,26 @@ c.save
 
 # Initialize Product
 
-Product.create!(title: "QC-35",
-  description: "耳机",
-  price: 2800,
-  quantity: 5,
-  category_id: 1,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
-  )
-
-Product.create!(title: "Iphone7",
-  description: "手机",
-  price: 5000,
-  quantity: 5,
-  category_id: 1,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
-  )
-
-Product.create!(title: "Cherry Keyboard",
-  description: "G80-3000键盘",
-  price: 2800,
-  quantity: 5,
-  category_id: 1,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
-  )
+# Product.create!(title: "QC-35",
+#   description: "耳机",
+#   price: 2800,
+#   quantity: 5,
+#   category_id: 1,
+#   image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
+#   )
+#
+# Product.create!(title: "Iphone7",
+#   description: "手机",
+#   price: 5000,
+#   quantity: 5,
+#   category_id: 1,
+#   image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
+#   )
+#
+# Product.create!(title: "Cherry Keyboard",
+#   description: "G80-3000键盘",
+#   price: 2800,
+#   quantity: 5,
+#   category_id: 1,
+#   image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
+#   )

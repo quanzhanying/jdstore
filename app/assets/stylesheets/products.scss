@@ -33,6 +33,38 @@
   color: #7f8c8d;
 }
 
+/*商品多个图片信息*/
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 518px;
+}
+
+.productDetail img {
+  width: 100%;
+  height: 100%;
+}
+
+.productDetail-left-bigImage {
+	width: 420px;
+	height: 420px;
+}
+
+.productDetail-left-imageList {
+	margin-top: 15px;
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 92px;
+	height: 92px;
+	margin-right: 15px;
+}
+
+.productDetail-left-imageList-lastItem {
+	margin-right: 0;
+}
+
 // 商品简述样式
 .product-description {
   margin: 1.5em auto 2em;

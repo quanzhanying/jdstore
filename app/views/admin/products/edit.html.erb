@@ -30,7 +30,7 @@
   <% if @product.photos.present? %>
     <span>目前商品图</span><br>
       <% @product.photos.each do |p| %>
-        <%= image_tag(p.image.thumb.url) ,class: "thumbnail" %><br/>
+        <%= image_tag p.image.thumb.url ,class: "thumbnail col-md-3" %>
       <% end %>
   <% else %>
     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
