@@ -1,54 +1,77 @@
-<img class="background-image" src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu6l9qgvyj30yp0a07ax.jpg"
 <div>
-  <br>
-    <% if @query_string.blank? %>
-      <div class="search-info-title">
-        <h2>搜索信息不能为空，请您输入相关信息进行搜索</h2>
-      </div>
-    <% elsif @products.blank? %>
-      <br>
-      <h2 class="search-info-title">没有找到"<%= @query_string %>"的商品信息，请输入关键字搜索</h2>
-    <% else %>
-      <h2 class="search-info-title"> 有关"<%= @query_string %>"的商品信息 </h2>
-      <!-- 区域：商品展示列表 -->
-      <div class="productList-wrap" style="margin: 0 auto;">
-        <ul class="productList clearfix">
-          <div class="row">
-            <% @products.each do |product| %>
-              <div class="col-md-3 col-xs-6">
-                <li class="productList-item box panel panel-default">
-                  <div class="productList-item-pic">
-                    <%= link_to product_path(product) do %>
-                      <% if product.image.present? %>
-                        <%= image_tag(product.image.thumb.url) %>
-                      <% else %>
-                        <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <div class="productList-item-price">￥<%= product.price %></div>
-                  <div class="productList-item-name ell">
-                    <%= link_to product_path(product) do %>
-                       <%= product.name %>
-                    <% end %>
-                  </div>
-                  <div class="productList-item-desc"><%= product.description %></div>
-                  <% if product.stock > 0 %>
-                    <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
-                      <i class="fa fa-shopping-cart"></i>
-                    <% end %>
-                  <% end %>
-                  <% if product.stock <= 0 %>
-                    <div class="productList-item-sellout">已售完</div>
-                  <% end %>
-                </li>
-              </div>
-            <% end %>
+  <ul class="breadcrumb">
+    <li><a href="/products">全品项商品首页</a></li>
+    <li class="active">搜索结果</li>
+  </ul>
+  <!-- 商品排序显示页面显示部分 -->
+  <div class="row", style="margin-left: -21px;">
+    <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
+      <!-- 搜索結果提示開始 -->
+      <div class="well well-lg", style="text-align: center; font-size: 1.2em;">
+        <% if @query_string.blank? %>
+          <div class="search-info-title">
+            <p style="margin-bottom: 0px;">搜索信息不能为空，请您输入相关信息进行搜索。</p>
           </div>
+        <% elsif @products.blank? %>
+          <p class="search-info-title", style="margin-bottom: 0px;">没有找到「<%= @query_string %>」的商品信息，请输入关键字搜索。</p>
+        <% else %>
+          <p class="search-info-title", style="margin-bottom: 0px;"> 有关「<%= @query_string %>」的商品信息。</p>
+      </div>
+      <!-- 搜索結果提示結束 -->
+      <div class="order clearfix">
+        <p class="title">商品排序 | </p>
+        <ul class="orderList">
+          <li class="orderList-orderItem <%= 'orderList-activeItem' if !params[:order] %>"><%= link_to("新品", products_path) %></li>
+          <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_stock' %>"><%= link_to("销量", products_path(:order => "by_product_stock")) %></li>
+          <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
         </ul>
       </div>
     </div>
-    <!-- 商品展示列表结束 -->
+  </div>
+  <!-- 商品排序显示页面部分结束 -->
+  <!-- 区域：商品展示列表 -->
+  <div class="productList-wrap", style="margin: -15px auto;">
+    <ul class="productList clearfix">
+      <div class="row", style="margin-left: -21px;">
+        <% @products.each do |product| %>
+          <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
+            <li class="productList-item box panel panel-default">
+              <div class="productList-item-pic">
+                <%= link_to product_path(product) do %>
+                  <% if product.image.present? %>
+                    <%= image_tag(product.image.thumb.url) %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="productList-item-price">￥<%= product.price %>
+                <% if product.stock > 0 %>
+                  <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+                    <i class="fa fa-shopping-cart"></i>
+                  <% end %>
+                <% end %>
+                <!-- 待加入預購功能 -->
+                <% if product.stock <= 0 %>
+                  <div class="productList-item-sellout", style="margin-top: -33px;">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                  </div>
+                <% end %>
+                <!-- 待加入預購功能 -->
+              </div>
+              <div class="productList-item-name ell">
+                <%= link_to product_path(product) do %>
+                   <%= product.name %>
+                <% end %>
+              </div>
+              <!-- <div class="productList-item-desc"><%= product.description %></div> -->
+            </li>
+          </div>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+  <!-- 商品展示列表结束 -->
       <!-- <div class="search-result">
         <div class="row products-show0"></div>
         <div class="product-table">
@@ -67,7 +90,7 @@
             <% end %>
           </div>
         </div>
-      </div> --> -->
+      </div> -->
       <div class="text-center">
         <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
       </div>
