@@ -1,3 +1,57 @@
+<!-- ↓↓↓ 大图滚动banner 代码块↓↓↓ -->
+  <div class="row">
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <div class="overlay"></div>
+
+      <!-- 默认三张图列表 -->
+      <div class="banner">
+        <ul class="carousel-indicators ">
+          <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#bs-carousel" data-slide-to="1"></li>
+          <li data-target="#bs-carousel" data-slide-to="2"></li>
+        </ul>
+      </div>
+
+      <!-- 文案部分 -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero row">
+            <hgroup>
+                <h1>森生活</h1>
+                <h3>把大自然搬回家</h3>
+                <h3>让我们为您打造一个童话世界</h3>  <!--//h3文案部分需要调整两行间的行距 -->
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>你为爱情做过最勇敢的事情，是什么？</h1>
+                <h3>让鲜花替你去表白吧，现在就开启你的幸福之旅</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>幸福，从一朵花开始</h1>
+                <h3>也许世界上也有五千朵和你一模一样的花</h3>
+                <h3>但只有你是我独一无二的玫瑰</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- ↑↑↑ 大图滚动banner 代码块 ↑↑↑ -->
+
 <div class="col-md-12">
   <div class="row box">
     <!-- carousel begain -->
@@ -8,29 +62,31 @@
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
        </ol>
-       <!--图片需要替换-->
-       <div class="carousel-inner">
+
+       <!--首页滚动图片放在了stylesheets/admin/welcome.scss-->
+       <!-- <div class="carousel-inner">
           <div class="item active">
            <a href="/">
-            <img src="https://ws4.sinaimg.cn/large/006tNc79gy1ffrq9gmgo4j31hc0exmyv.jpg">
+            <img src="https://static.pexels.com/photos/34806/summer-still-life-garden-outdoors-flowers-in-pot.jpg">
             <div class="carousel-caption"></div>
            </a>
           </div>
           <div class="item">
            <a href="/">
-            <img src="https://ws1.sinaimg.cn/large/006tNbRwgy1ffuhf1owwjj31hc0ez792.jpg">
+            <img src="https://static.pexels.com/photos/48706/pexels-photo-48706.jpeg">
             <div class="carousel-caption"></div>
            </a>
           </div>
           <div class="item">
            <a href="/">
-            <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1ffula3nsuxj31hc0exn1m.jpg">
+            <img src="https://static.pexels.com/photos/112324/pexels-photo-112324.jpeg">
             <div class="carousel-caption"></div>
            </a>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
     <!-- carousel end -->
     <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
@@ -55,41 +111,39 @@
               <div class="col-sm-4 portfolio-item">
                   <a href="/products" class="portfolio-link" data-toggle="modal">
 
-                      <img src="https://ws4.sinaimg.cn/large/006tNc79gy1ffs0mxbb4aj30m80m8gnd.jpg" class="img-responsive" alt="Cabin">
+                      <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffzpjbccmvj30kx0t0n1c.jpg" class="img-responsive" alt="Cabin">
                   </a>
               </div>
               <div class="col-sm-4 portfolio-item">
                   <a href="/products" class="portfolio-link" data-toggle="modal">
 
-                      <img src="http://ww2.sinaimg.cn/large/006tKfTcgy1ffn9ln4bxnj30m80m8aly.jpg" class="img-responsive" alt="Slice of cake">
+                      <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffzplgopdbj30m60sgq7a.jpg" class="img-responsive" alt="Slice of cake">
                   </a>
               </div>
               <div class="col-sm-4 portfolio-item">
                   <a href="/products" class="portfolio-link" data-toggle="modal">
 
-                      <img src="https://ws1.sinaimg.cn/large/006tNc79gy1ffs0mg45e4j30m80m846y.jpg" class="img-responsive" alt="Circus tent">
+                      <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffzpo4l3srj30lh0sg0wn.jpg" class="img-responsive" alt="Circus tent">
                   </a>
               </div>
               <div class="col-sm-4 portfolio-item">
                   <a href="/products" class="portfolio-link" data-toggle="modal">
 
-                      <img src="https://ws2.sinaimg.cn/large/006tNc79gy1ffs0m9zqnxj30m80m8qaf.jpg" class="img-responsive" alt="Game controller">
+                      <img src="https://ws2.sinaimg.cn/large/006tKfTcgy1ffzpu05r6ij30l00swjvd.jpg" class="img-responsive" alt="Game controller">
                   </a>
               </div>
               <div class="col-sm-4 portfolio-item">
                   <a href="/products" class="portfolio-link" data-toggle="modal">
 
-                      <img src="https://ws3.sinaimg.cn/large/006tNc79gy1ffs0ryu9f2j30m80m8qb9.jpg" class="img-responsive" alt="Safe">
+                      <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffzpsc9wdoj30ml0sgq69.jpg" class="img-responsive" alt="Safe">
                   </a>
               </div>
               <div class="col-sm-4 portfolio-item">
                   <a href="/products" class="portfolio-link" data-toggle="modal">
 
-                      <img src="https://ws3.sinaimg.cn/large/006tNc79gy1ffs0ss97cdj30m80m87cy.jpg" class="img-responsive" alt="Submarine">
+                      <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffzpekwuwyj30l00svjup.jpg" class="img-responsive" alt="Submarine">
                   </a>
               </div>
           </div>
       </div>
   </section>
-
-  
