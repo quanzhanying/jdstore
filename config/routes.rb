@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :brands
   resources :categories
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers:
+   { sessions: 'users/sessions',
+     registrations: "users/registrations", #客服系统相关
+     passwords: "users/passwords", } #客服系统相关
   resources :carts do
     collection do
       delete :clean

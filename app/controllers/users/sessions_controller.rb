@@ -22,4 +22,11 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  #客服相关开始
+    after_action :prepare_intercom_shutdown, only: [:destroy]
+    protected
+    def prepare_intercom_shutdown
+      IntercomRails::ShutdownHelper.prepare_intercom_shutdown(session)
+    end
+  #客服相关结束
 end
