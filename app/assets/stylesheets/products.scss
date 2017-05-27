@@ -12,14 +12,6 @@
   span.price{
     color: rgb(245,190,126);
   }
-  span{
-    a.like{
-      color:#eee;
-    }
-    a.unlike{
-      color: rgb(245,190,126);
-    }
-  }
 }
 //-----图片向上滑动------
 body {
@@ -123,7 +115,12 @@ body {
 .product-collection {
 
 }
-
+//点赞
+.product-zan {
+  a:hover{
+    text-decoration: none;
+  }
+}
 //商品详情区域样式
 .product-particulars {
   margin: 1.1em 0 3em;
