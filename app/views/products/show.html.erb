@@ -133,9 +133,9 @@
           <div class="product-particulars-box row tab-pane" id="tab_default_2">
             <div class="text-center">
               <h3>综合评价</h3>
-              新鲜： <div class="star-freshness" data-score= <%= @avg_review %> ></div>
-              外观： <div class="star-look" data-score= <%= @avg_look %> ></div>
-              价格： <div class="star-price" data-score= <%= @avg_price %> ></div>
+              <div class="star-freshness" data-score= <%= @avg_review %> >新鲜： </div>
+              <div class="star-look" data-score= <%= @avg_look %> >外观： </div>
+              <div class="star-price" data-score= <%= @avg_price %> >价格： </div>
             </div>
             <%= link_to("评价",new_product_review_path(@product), :class => "btn btn-lg btn-info") %>
 
