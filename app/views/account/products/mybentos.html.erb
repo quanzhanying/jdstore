@@ -1,0 +1,23 @@
+<table class = "table">
+  <thead>
+    <tr>
+      <th><h1>我的思想便当</h1></th>
+      <th><h1>购买时间</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <% @orders.each do |order| %>
+        <% if order.is_paid? %>
+          <% order.product_lists.each do |product_list| %>
+          <tr>
+            <td><a href=<%= product_list.product_link %> target="_blank"><%= product_list.product_name %> </a></td>
+            <td><%= order.created_at.to_s(:db) %></td>
+          </tr>
+          <% end %>
+        <% else %>
+        <% end %>           
+      <% end %>
+
+  </tbody>
+</table>
