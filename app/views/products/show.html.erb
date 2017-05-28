@@ -62,13 +62,18 @@
 </div> -->
 <!-- 分类显示按钮结束 -->
 
-<div class="col-md-9 col-centered", style="margin-bottom: 20px;">
-  <%= link_to(products_path, class: "btn btn-default back-btn") do %>
-    <span></span>返回首页
-  <% end %>
-</div>
-<div class="col-md-12 col-centered panel panel-default">
-  <div class="panel-body", style="margin-top: -50px;">
+<ul class="breadcrumb">
+  <li><a href="/products">全品项商品</a> /
+      <a href="/products?category=<%= @product.category.name %>"><%= @product.category.name %></a></li>
+  <li><a href="/products?brand=<%= @product.brand.name %>"><%= @product.brand.name %></a> /
+      <a href="/products?brand=<%= @product.brand.name %>&category=<%= @product.category.name %>"><%= @product.category.name %></a></li>
+</ul>
+
+<div class="row", style="margin-left: -21px;">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+<!-- <div class="col-md-12 col-centered panel panel-default"> -->
+  <div class="panel-body", style="padding: 45px 0px;">
     <div class="col-md-5 col-md-offset-1">
       <!-- 第一张大图显示 -->
       <!-- <div class="intro-bigPic">
@@ -111,18 +116,44 @@
      <!-- </ul> -->
     </div>
     <div class="col-md-5 col-md-offet-1">
-      <h2> <%= @product.name %></h2>
-      <div style="height:100px;">
-        <p><%= @product.description %></p>
+      <div style="height: 169px;">
+        <h3> <%= @product.name %></h3>
       </div>
-      <div>类别:<%= @product.category.name %></div>
-      <div>库存: <%= @product.stock %></div>
-      <div class="product-price"> ￥ <%= @product.price %></div>
+      <!-- <div style="height:100px;">
+        <p><%= @product.description %></p>
+      </div> -->
 
-      <br />
-      <div class="btn-group btn-group-justified">
+      <div>
+
+      <div style="text-align: left;">现有库存量:<%= @product.stock %></div>
+      <hr>
+      <div class="well well-lg", style="text-align: right; padding-right: 30px; margin-bottom: 0px;">
+        <h4 style="color: #edbdb5;"> ￥ <%= @product.price %></h4>
+      </div>
+
+
+
+
+
+
+      <div class="btn-group btn-group-justified", style="height: 60px;">
+        <div class="btn btn-primary btn-lg", style="background-color: #474c6b;">
+          立即购买
+        </div>
+        <% if @product.stock.present? && @product.stock > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg") %>
+        <% else %>
+          <%= link_to("已售罄", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger disabled") %>
+        <% end %>
+      </div>
+      <hr>
+
+      <div class="btn-group btn-group-justified", style="height: 45px;">
+        <div class="btn btn-default">
+          <span class="badge"><%= @product.comments.count %></span>查看评价
+        </div>
         <!-- 点赞的view部分 -->
-        <div class="like btn btn-default">
+        <div class="btn btn-default">
           <%= link_to like_product_path(@product), method: :put do %>
             <div class="pi-thumbs-up">
             <i class="fa fa-thumbs-up fa-x"></i>
@@ -132,44 +163,45 @@
         </div>
         <!-- 点赞的view部分结束 -->
         <!-- 收藏商品和取消商品view部分 -->
-        <div class="favorite btn btn-default">
+        <div class="btn btn-default">
           <% if !@product.fans.include?(current_user) %>
             <%= link_to("收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart-o") %>
           <% else %>
-            <%= link_to("取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+            <%= link_to("取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart") %>
           <% end %>
         </div>
         <!-- 收藏商品和取消商品view部分结束 -->
       </div>
-
-      <hr>
-      <div class="pull-right">
-        <% if @product.stock.present? && @product.stock > 0 %>
-          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg") %>
-        <% else %>
-          <%= link_to("已售罄", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger disabled") %>
-        <% end %>
-      </div>
+    </div>
     </div>
   </div>
 </div>
+</div>
+</div>
 
 <!-- 商品详情及用户评价 -->
+<div class="row", style="margin-left: -21px;">
+  <div class="col-md-10 col-md-offset-1">
+
+
+
 <div class="productDetail">
     <ul class="productDetail-tabList clearfix">
       <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
         商品详情
       </li>
       <li class="productDetail-tabList-tab">
-        商品评价(共<%= @product.comments.count %>条)
+        商品评价<span class="badge"><%= @product.comments.count %></span>
       </li>
     </ul>
+
     <div class="productDetail-contentWrap">
-      <div class="productDetail-content" style="display: block;">
+      <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
+        <p><%= @product.description %></p>
         <div class="productDetail-introImg">
         </div>
       </div>
-      <div class="productDetail-content">
+      <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
         <ul class="commentList">
           <% @comments.each do |comment| %>
             <li class="commentList-item clearfix">
@@ -188,5 +220,7 @@
         </p>
       </div>
     </div>
+  </div>
+  </div>
   </div>
   <!-- 商品详情和用户评价结束 -->

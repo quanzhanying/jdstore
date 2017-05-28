@@ -61,7 +61,7 @@
 // 评论开始
 
 .commentList-item {
-	width: 670px;
+	// width: 670px;
 	border-bottom: 1px solid #DDDDDD;
   padding-top:10px;
   padding-bottom:10px;
@@ -90,7 +90,8 @@
 
 .commentList {
   list-style-type: none;
-  margin-top: 70px;
+  margin-top: 0px;
+  padding: 0px;
 }
 
 .comment-say {
