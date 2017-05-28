@@ -20,8 +20,8 @@
        <% if @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-danger btn-lg") %>
        <% else %>
-       <!-- <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-danger btn-lg") %> -->
         <%= link_to("暂时缺货", "#", class: "btn btn-default btn-lg disabled") %>
+        <!-- 已销售一空，无法购买 -->
        <% end %>
      </div>
   </div>
