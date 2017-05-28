@@ -159,12 +159,12 @@ margin-bottom: 4px;
 
 .carousel-BC4 {
   //height: 111px;
-  background-color: rgb(63, 223, 234);
+  background-color: rgb(54, 58, 16);
 }
 
 .carousel-BC5 {
   //height: 111px;
-  background-color: rgb(0, 42, 55);
+  background-color: rgb(0, 229, 236);
 }
 
 .carousel-indicators li,.carousel-indicators .active{
@@ -1371,8 +1371,12 @@ input[type=password]:hover {
 }
 
 #login-modal,#signup-modal {
-  margin-top: 400px;
+  //margin-top: 400px;
+  position: relative;
 }
+#login-modal .modal-dialog ,#signup-modal .modal-dialog{
+    width: 400px;
+  }
 ///----新购物车----
 
 .dorpdown {
@@ -1631,4 +1635,213 @@ hover #settleup-content {
 #settleup-content li.hover,
 #settleup-content li:hover {
   background: #F5F5F5;
+}
+
+
+.reviews_wrapper {
+  border-top: 1px solid #f2f2f2;
+  margin-top: 30px;
+}
+.reviews_wrapper .pull-right {
+  position: relative;
+      bottom: -35px;
+      font-size: 12px;
+}
+
+.reviews_wrapper .up{
+  //margin-top: 90%;
+}
+.reviews_wrapper .down{
+margin-top: 0;
+}
+//------login------
+#container-login {
+  width: 1140px;
+  margin: 0 auto;
+  clear: both;
+  padding-top: 1px;
+  text-align: left;
+
+}
+.accountbox {
+  padding: 24px 24px 0;
+  border: 0;
+  box-shadow: 1px 0 0 0 #d2d2d2, -1px 0 0 0 #d2d2d2, 0 1px 0 0 #b6b6b6, 0 2px 0 0 #d2d2d2, 2px 0 0 0 #e6e6e6, -2px 0 0 0 #e6e6e6, 0 3px 0 0 #e6e6e6, 0 -1px 0 0 #e6e6e6;
+  background: white;
+  border-radius: 4px;
+  margin: 0;
+  position: relative;
+
+}
+#account-page-header {
+  color: #000;
+  background: 0;
+  padding-bottom: 14px;
+  font-size: 24px;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 15px;
+  height: 18px;
+}
+#account-page-header h1 {
+  background: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  height: 18px;
+  width: 630px;
+  font-weight: normal;
+  font-size: 1em;
+}
+#sign-in-content {
+  outline: 0;
+}
+.from {
+  float: left;
+  width: 467px;
+  padding-top: 35px;
+}
+#forgot-password-content h3,
+#sign-in-content h2 {
+  padding-bottom: 18px;
+  padding-left: 69px;
+  font-size: 18px;
+  white-space: normal;
+  color: #000;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0;
+}
+#iforgot-link {
+  font-size: 12px;
+  margin-top: -33px;
+  line-height: 1.5em;
+  padding-left: 69px;
+  width: 43%;
+}
+.login .sign-in legend {
+  margin: 0;
+  padding-bottom: 18px;
+  padding-left: 69px;
+  font-size: 18px;
+  white-space: normal;
+  color: #000;
+  display: inline-block;
+}
+.login .sign-in p {
+  margin: 0;
+}
+span.field-with-placeholder {
+  display: block;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+span.field-with-placeholder label.placeholder {
+  color: #999;
+  cursor: text;
+  pointer-events: none;
+}
+#login-JDstoreId,
+#login-password {
+  margin: 0 0 14px 69px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 327px;
+  height: 37px;
+  line-height: 24px;
+  padding: 7px 2px 7px 10px;
+  outline: none !important;
+}
+.login .sign-in p {
+  margin: 0;
+}
+/*span.field-with-placeholder label.placeholder span {
+  position: absolute;
+  z-index: 2;
+  user-select: none;
+}*/
+#login-JDstoreId,
+#login-password {
+  box-shadow: inset 0 1px 4px #AAA;
+  border: 1px solid #d6d6d6;
+  padding-left: 7px;
+}
+.contact-us {
+  background: url("https://store.storeimages.cdn-apple.com/8750/store.apple.com/shop/rs/src/features/signin/css/bg/bg-signin-divider.png") no-repeat;
+  float: right;
+  padding: 35px 0 0 57px;
+  width: 342px;
+  min-height: 327px;
+  margin-right: 66px;
+  line-height: 24px;
+
+}
+.contact-us p {
+  font-size: 18px;
+}
+.contact-us ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-top: 13px;
+  padding-left: 12px;
+  padding-bottom: 15px;
+  color: #666;
+  font-size: 26px;
+  font-style: normal;
+}
+.contact-us ul li{
+  margin-bottom: 15px;
+  list-style-type: disc;
+  list-style-position: inside;
+  //font-size:26px !important;
+}
+.cart-navigation{
+  background: linear-gradient(#fff,#ebebeb) repeat scroll 0 0 transparent;
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #d6d6d6;
+  padding: 15px 24px;
+  margin: 0 -24px;
+  height: 37px;
+  box-sizing:content-box;
+}
+.cart-navigation .details {
+  color: hsl(0,0,40%);
+  float: right;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.cart-navigation .contact-phone {
+  background: url("https://store.storeimages.cdn-apple.com/8750/store.apple.com/shop/rs/rel/oocss/common/objects/img/glyphs/phone.png") no-repeat 0 0 transparent;
+  background-size: auto 100%;
+  padding-left: 18px;
+}
+.button.product,.button.secondary, .button.rect.secondary {
+background: linear-gradient(#fff,#ebebeb);
+  border: 1px solid #b5b5b5;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+cursor: pointer;
+}
+.sign-in .actions {
+  text-align: right;
+  margin: 0 71px 0 0;
+
+}
+
+
+.login.button{
+border-radius: 4px;
+}
+.button.rect>span, .login.button>span {
+  font-size: 13px;
+  line-height: 15px;
+  padding: 9px 28px;
+  text-align: center;
+  display: inline-block;
+}
+//-------
+.JDstoreTab{
+  position: relative;
+  float: left;
+  font-size: 14px;
+  top: -24px;
 }

@@ -218,7 +218,6 @@
                     </li>
                   </ul>
                 </div>
-
                 <div class="tab-content">
                   <div class="tab-pane active" id="tab-left">
                     <div class="description">
@@ -226,21 +225,20 @@
                         <%= raw @product.description %>
                       </p>
                     </div>
-                    <div class="TabBarBox">
+                    <!-- <div class="TabBarBox">
                       <div class="tab2">
                         <a href="#">商品评价</a>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="tab-pane" id="tab-right">
                     <div class="row review">
-                      <div class="col-sm-10 col-sm-offset-1">
-                        <hr>
-                        <div id="reivews">
-                          <%= render @product.reviews%>
-                          <hr>
+                      <div class="col-md-10 col-md-offset-1">
+                        <div>
                           <%= render "reviews/form"%>
+
                         </div>
+                        <%= render "/reviews/review"%>
                       </div>
                     </div>
                   </div>
@@ -249,6 +247,7 @@
             </div>
           </div>
         </div>
+
         <!--
 <span class="pull-right">
   <% if current_user && current_user.is_voter_of?(@product) %>

@@ -16,9 +16,9 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if !current_user %>
-          <li>
+          <!-- <li>
             <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
-          </li>
+          </li> -->
           <li>
             <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
           </li>
@@ -222,7 +222,101 @@
 <br/>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog" role="document">
+
+  <div class="container">
+    <div id="container-login">
+      <div class="accountbox">
+        <div id="account-page-header">
+          <ul id="JDstoreTab" class="nav nav-tabs JDstoreTab" role="tablist">
+              <li class="active"><a href="#sign-in-Tab" role="tab" data-toggle="tab">登录</a></li>
+              <li><a href="#sign-up-Tab" role="tab" data-toggle="tab">注册</a></li>
+          </ul>
+        </div>
+        <div class="content clearfix">
+          <div class="login">
+            <div id="sign-in-content">
+              <div id="myTabContent" class="tab-content">
+              	<div class="tab-pane active" id="sign-in-Tab">
+                  <div class="from sign-in">
+                    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <h2>欢迎登陆 JDtore</h2>
+                      <fieldset>
+                        <p>
+                          <span class="field-with-placeholder">
+                              <input name="user[email]" size="30" type="email" class="login" id="login-JDstoreId" autofocus="autofocus" placeholder="邮箱*">
+                          </span>
+                          <span class="field-with-placeholder">
+                            <input name="user[password]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="密码*">
+                          </span>
+
+                        </p>
+                      </fieldset>
+                      <div class="actions">
+                        <button type="submit" class="button rect" id="sign-in">
+                            <span>登录</span>
+                        </button>
+                      </div>
+
+                      <p id="iforgot-link">
+                        <a target="browser" id="go-iforgot" href="#">忘了自己的 Email 或密码？</a>
+                      </p>
+                    <% end %>
+                  </div>
+                </div>
+              	<div class="tab-pane" id="sign-up-Tab">
+                  <div class="from sign-in">
+                  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <h2>欢迎注册 JDtore</h2>
+                      <fieldset>
+                        <p>
+                          <span class="field-with-placeholder">
+                              <input name="user[email]" size="30" type="email" class="login" id="login-JDstoreId" autofocus="autofocus" placeholder="邮箱*">
+                          </span>
+                          <span class="field-with-placeholder">
+                            <input name="user[password]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="密码*">
+                          </span>
+                          <span class="field-with-placeholder">
+                            <input name="user[password_confirmation]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="确认密码*">
+                          </span>
+                        </p>
+                      </fieldset>
+                      <div class="actions">
+                        <button type="submit" class="button rect" id="sign-in">
+                            <span>注册</span>
+                        </button>
+                      </div>
+
+                      <p id="iforgot-link">
+                        <a target="browser" id="go-iforgot" href="#">忘了自己的 Email 或密码？</a>
+                      </p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="contact-us">
+            <p>你还可以使用以下服务进行登录JDstore</p>
+            <ul>
+              <li>Google</li>
+              <li>FaceBook</li>
+              <li>Github</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cart-navigation">
+          <button id="cancel-button" class="button rect secondary" data-dismiss="modal">
+            <span>取消</span>
+          </button>
+          <p class="details">如果您有问题， 欢迎随时提问。<span class="contact-phone">400-0000-0001</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
       <h2 class="text-center">欢迎登陆</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -237,7 +331,7 @@
       <%= render "devise/shared/links" %>
       <% end %>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
