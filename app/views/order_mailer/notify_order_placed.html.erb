@@ -9,7 +9,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="70%">商品明细</th>
+          <th>商品明细</th>
           <th>单价</th>
           <th>数量</th>
           <th>小记</th>
@@ -53,17 +53,16 @@
           <td> 订购人 </td>
         </tr>
         <tr>
-          <td>
-            <%= @order.billing_name %> - <%= @order.billing_address %>
-          </td>
+          <td>订购人姓名：<%= @order.billing_name %></td>
+
+          <td>订购人地址<%= @order.billing_address %></td>
         </tr>
         <tr>
           <td> 收件者 </td>
         </tr>
         <tr>
-          <td>
-            <%= @order.shipping_name %> - <%= @order.shipping_address %>
-          </td>
+          <td>收货人姓名：<%= @order.shipping_name %></td>
+          <td>收货人地址：<%= @order.shipping_address %></td>
         </tr>
       </tbody>
     </table>
