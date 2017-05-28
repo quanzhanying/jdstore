@@ -2,6 +2,9 @@ IntercomRails.config do |config|
   # == Intercom app_id
   #
   config.app_id = ENV["INTERCOM_APP_ID"] || "zn7yc49e"
+  config.include_for_logged_out_users = true
+  config.user.current = Proc.new { current_user_object }
+  config.api_secret = Rails.application.secrets.intercom_secure_mode_secret_key
 
   # == Intercom session_duration
   #
@@ -28,6 +31,8 @@ IntercomRails.config do |config|
   # If set to true, include the Intercom messenger on all pages, regardless of whether
   # The user model class (set below) is present. Only available for Apps on the Acquire plan.
   # config.include_for_logged_out_users = true
+
+
 
   # == User model class
   # The class which defines your user model

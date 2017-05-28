@@ -438,6 +438,40 @@ a:hover {
 }
 // 登入/注冊頁結束
 
+// 我的账户中心开始
+
+.account-view a:link {
+  color: #fff;
+}
+
+.page-wrap {
+  min-height: 100%;
+  min-width: 100%;
+  margin-bottom: -60px;
+}
+
+.account-view {
+  margin-bottom: -10px;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.account-view .account-detail {
+  margin: 10px auto;
+  color: #ffffff;
+  width: 900px;
+  height: 500px;
+}
+
+.account-view .account-detail .title {
+  margin-bottom: 50px;
+}
+
+// 我的账户中心結束
+
 // 设置回到顶部按钮和点赞链接
 .sidebar {
   display: none;

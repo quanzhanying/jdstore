@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522085437) do
+ActiveRecord::Schema.define(version: 20170528062701) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20170522085437) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer  "product_id"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_comments_on_product_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
@@ -46,19 +56,26 @@ ActiveRecord::Schema.define(version: 20170522085437) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.integer  "total",            default: 0
     t.integer  "user_id"
     t.string   "billing_name"
     t.string   "billing_address"
     t.string   "shipping_name"
     t.string   "shipping_address"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_lists", force: :cascade do |t|
@@ -98,6 +115,10 @@ ActiveRecord::Schema.define(version: 20170522085437) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
+    t.string   "username"
+    t.string   "name"
+    t.integer  "phonenumber"
+    t.string   "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
