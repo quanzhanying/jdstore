@@ -34,11 +34,12 @@ gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'carrierwave'
-gem 'qiniu-rs'
 gem 'figaro'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
