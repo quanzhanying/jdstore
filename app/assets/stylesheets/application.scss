@@ -256,7 +256,7 @@ nav li a:hover {
     text-align:left;
  	}
  }
- /*** search ***/
+ /* --search-end-- */
 
 .mobile-toggle {
   display: none;
@@ -1011,14 +1011,14 @@ h2.odfont{
   padding: 0px;
 }
 
-div.odsection1{
+div.odsection.odsection1{
   background: linear-gradient(to right, #37474F, #607D8B, #37474F);
   color: white;
   margin: 50px;
   padding: 10px;
 }
 
-div.odsection2{
+div.odsection .odsection2{
   background: #795548;
   height:300px;
   margin-top: 0px;
