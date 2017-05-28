@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'qiniu-rs'
+gem 'figaro'
 gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
