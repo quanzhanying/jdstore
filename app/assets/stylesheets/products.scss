@@ -1,3 +1,63 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*----- products common -----*/
+
+// .product-main{
+//   padding-top: 60px;
+// }
+//
+// .product-list {
+//   margin-bottom: 100px;
+//   height: 250px;
+//   width: 285px;
+//   line-height: 20px;
+// }
+/*---- list page -----*/
+
+.product-item {
+    padding: 10px;
+    background: #fff;
+    margin-top: 20px;
+    position: relative;
+}
+
+.product-price h4{
+    color: #808080;
+}
+
+.product-title h4{
+    color: #808080;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.img-wrapper div {
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.product-item .product-price {
+  padding-right: 180px;
+}
+
+.product-item .product-
+/*-----show page left card ----*/
+.preview-pic {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 500px;
+  img{
+    width: 100%;
+  }
+}
