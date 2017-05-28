@@ -42,6 +42,10 @@
                <%= f.submit "更新", data: { disable_with: "Submiting..." } %>
               <% end %>
             </td>
+
+
+<!-- add + and - button -->
+
               <td>
                <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
                  <i class="fa fa-trash"></i>
