@@ -1,0 +1,359 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+/*----- navbar -----*/
+#nav-height {
+  padding-top: 15px;
+  height: 80px;
+}
+
+.navbar-nav .input-group {
+  margin-top: 10px;
+}
+
+.navbar-default {
+  background-color: #323232;
+  //背景颜色
+  border-color: #323232;
+  //边框色
+  margin-bottom: 0;
+  //底部 margin 不撑开距离
+}
+
+   .navbar-default .navbar-brand {  //logo字体样式
+      color: #FFFFFF; //字体颜色
+      padding: 10px 15px; //上下10px 左右15px
+      line-height: 30px; //文字行高
+  }
+
+  .navbar-default .navbar-brand:hover,
+  .navbar-default  .navbar-brand:focus {
+      color: #f77f2f; //鼠标放置在链接上的文字颜色
+      background-color: transparent; //鼠标放置在链接上的背景颜色
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover, //导航栏链接颜色样式
+.navbar-default .navbar-nav > li > a:focus {
+    color: #f77f2f;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #f77f2f;
+    background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #212121;
+    color: #f77f2f;
+}
+
+/*----- search bar at navbar -----*/
+#search-id {
+  width: 250px;
+}
+
+/*----- alert setting -----*/
+// 固定位置的消息通知
+.alert {
+  position: fixed; // 这个属性防止将内容挤下去
+  top: 80px; // 让消息在导航条下面，不挡住导航，根据自己导航navbar的高度调整
+  left: 0px;
+  width: 100%;
+  z-index: 10; // 让消息显示在最上面
+  border-radius: 0px;
+}
+
+
+
+/*----- login/sign-up ------*/
+.facepanel {
+  background-image: image_url("login.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-bottom: 50px;
+  margin-top: 20px;
+
+  .login-page,
+  .sign-up-page {
+
+    margin-top: 25px;
+    margin-bottom: 80px;
+
+    span {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    form {
+      max-width: 480px;
+      padding: 15px 35px 45px;
+      margin: 0 auto;
+      background-color: #fff;
+      opacity: 0.9;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 5px;
+      box-shadow: inset 0 1px 1px #9daaaf, 0 0 8px #c1c5c1;
+
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+        transition: 1s;
+        @include box-sizing(border-box);
+
+        &:focus {
+          box-shadow: 1px 1px #fff;
+          border-color: #red;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+/*----- 首页大图 -----*/
+.mainCampaign {
+  z-index: 1;
+  height: auto;
+  width: 100%;
+  background: #f7f7f7;
+  /*------ 图片置中 -----*/
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+  /*----- 距离navbar -----*/
+  background-position: center center;
+
+
+}
+
+/*----- 首页产品系列连结图 -----*/
+.product-intro {
+  z-index: 1;
+  width: 100%;
+  background: #f7f7f7;
+  /*----- 距离footer的margin -----*/
+  margin-bottom: 20px;
+  /*----- 包围图片的框随browser变换大小 -----*/
+  height: relative;
+}
+
+.intro-link {
+  display: inline-block;
+}
+/*----- 连结图 -----*/
+.product-intro-list-img-left {
+  /*----- 左图片靠中间 -----*/
+  margin-right: 0;
+  width: 600px;
+}
+
+.product-intro-list-img-right {
+  /*----- 右图片靠中间 -----*/
+  margin-left: 0;
+  width: 600px;
+}
+/*----- slogan -----*/
+.slogan {
+  height: 300px;
+  text-align: center;
+  text-shadow: 2px;
+}
+
+.slogan-ad {
+  padding-top: 60px;
+  padding-bottom: 2em;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*----- recommend page -----*/
+.recommend-page {
+  padding-top: 50px;
+
+  .image {
+
+  }
+}
+
+
+/*----- product show 页面 -----*/
+.box {
+  margin-top: 60px; /*----- 不被alert阻挡 -----*/
+}
+
+
+
+
+/*----- products 页面 -----*/
+
+.product-main{
+  padding-top: 60px;
+}
+
+.product-list {
+  margin-bottom: 100px;
+}
+
+
+
+
+/*----- recommend页面与navbar间隔 --*/
+
+.display {
+  margin-top: 60px;
+  display: inblock;
+  height: 500px;
+
+}
+
+.image {
+  width: 400px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+.descrip {
+  width: 470px;
+  height: 400px;
+}
+
+.display2 {
+    margin-top: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----- admin/products 与 orders 与 category 页面 -----*/
+.backend-main {
+  padding-top: 80px;
+  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 120px;
+  /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+}
+/*----- account/orders 页面 -----*/
+.order-main {
+  padding-top: 80px;
+  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 120px;
+  /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+}
+/*----- footer -----*/
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.main {
+  padding-top: 80px;
+  /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
+  padding-bottom: 300px;
+  /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+}
+
+.footer-style {
+
+  width: 100%;
+  position: absolute;
+  height: 220px;
+  bottom: 0;
+  background: #f7f7f7;
+  padding-top: 40px;
+  display: inline-block;
+  text-align: center;
+  /*----- footer 置底 -----*/
+
+  /*----- footer loga 颜色 -----*/
+  .fa {
+    color: #e66c36;
+  }
+}
+
+.footer {
+  /*----- footer 下半部高度 -----*/
+  height: 120px;
+  border-top: #25292e 1px solid;
+  background: #25292e;
+  color: #5c5c5c;
+  width: 100%;
+}
+
+//----------button-------
+  .btn-danger {
+      color: #fff;//字体颜色
+
+      background-color: #f77f2f;//背景颜色
+
+      border-color: #f77f2f;//边框颜色
+
+  }
+
+  .btn-danger:hover {
+      background-color: #FFFFFF;//鼠标放置在btn上的背景颜色
+      color: #000000;
+      border-color: #f77f2f;//鼠标放置在btn上的边框颜色
+
+  }
+
+    .btn-lg, .btn-group-lg > .btn {
+        padding: 8px 16px;//通过padding来决定btn的大小
+        font-size: 20px;//btn文字大小
+        letter-spacing: 3px;//调整文字间距
+        border-radius: 3px;//btn圆角
+        width: 200px;//这里用指定宽度把btn拉得更长
+    }

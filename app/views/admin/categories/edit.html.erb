@@ -1,0 +1,12 @@
+<h2 style="margin-top: 80px;">Categories</h2>
+
+<%= simple_form_for [:admin, @category] do |f| %>
+
+<div class="group">
+  <%= f.input :name %>
+</div>
+
+<div class="group">
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+</div>
+<% end %>
