@@ -44,6 +44,7 @@ class OrdersController < ApplicationController
 
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
   end
+
   def apply_to_cancel
     @order = Order.find_by_token(params[:id])
     OrderMailer.apply_cancel(@order).deliver!
