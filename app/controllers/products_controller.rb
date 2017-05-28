@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite]
 
   def index
     if params[:category].present?
@@ -61,6 +62,19 @@ class ProductsController < ApplicationController
       redirect_to :back
   end
 
+  def favorite
+    @product = Product.find(params[:id])
+    current_user.favorite_products << @product
+    flash[:notice] = "收藏成功"
+    redirect_to :back
+  end
+
+  def unfavorite
+    @product = Product.find(params[:id])
+    current_user.favorite_products.delete(@product)
+    flash[:notice] = "已取消收藏"
+    redirect_to :back
+  end
 
   def search
     if @query_string.present?
@@ -79,7 +93,6 @@ class ProductsController < ApplicationController
   def search_criteria(query_string)
     { :title_cont => query_string }
   end
-
 
   private
 
