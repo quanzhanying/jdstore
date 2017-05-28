@@ -1,0 +1,29 @@
+<div class="log">
+  <div class="login-container">
+    <h2><%= t("forget_password") %></h2>
+
+    <hr>
+
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Send me reset password instructions" , class: "btn btn-danger"%>
+      </div>
+    <% end %>
+
+    <hr>
+
+    <div class="have-account pull-left">
+      <%= link_to "已有账号？请登录", new_session_path(resource_name) %><br />
+    </div>
+
+    <div class="regis-link pull-right">
+      <%= link_to "立即注册", new_registration_path(resource_name) %><br />
+    </div>
+  </div>
+</div>

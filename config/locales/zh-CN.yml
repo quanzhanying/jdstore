@@ -1,4 +1,7 @@
 "zh-CN":
+  sign_up: 创建账号
+  sign_in: 账号登录
+  forget_password: 忘记密码？
   hello: "亲～ %{email} 你好："
   admin:
     product_list: 商品列表
