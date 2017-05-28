@@ -85,6 +85,9 @@
   z-index: 10; // 让消息显示在最上面
   border-radius: 0px;
 }
+
+
+
 /*----- login/sign-up ------*/
 .facepanel {
   background-image: image_url("login.jpg");
@@ -147,7 +150,10 @@
   padding-top: 10px;
   /*----- 距离navbar -----*/
   background-position: center center;
+
+
 }
+
 /*----- 首页产品系列连结图 -----*/
 .product-intro {
   z-index: 1;
