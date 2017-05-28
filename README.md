@@ -1,3 +1,3 @@
 # README
 
-Homework of JDstore story5-3
+Homework of JDstore qiniu
