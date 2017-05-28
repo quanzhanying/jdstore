@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+	mount ChinaCity::Engine => '/china_city'
+
+
 	  namespace :account do
     resources :orders
   end

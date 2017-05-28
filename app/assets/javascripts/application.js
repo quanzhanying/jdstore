@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+//= require 'china_city/jquery.china_city'
+
 //= require turbolinks
-//= require_tree .
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require_tree .

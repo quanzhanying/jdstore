@@ -35,6 +35,8 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'china_city'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
