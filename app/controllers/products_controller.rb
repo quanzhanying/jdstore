@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite]
 
   def index
+    @suggests = Product.random
     if params[:category].present?
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(category_id: @category_id)
@@ -12,6 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @product = Product.find(params[:id])
   end
 
