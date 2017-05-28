@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")
   end
 
   def show

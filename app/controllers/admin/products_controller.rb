@@ -11,7 +11,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")
   end
 
   def new
@@ -44,6 +44,19 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+#后台商品排序功能
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
   end
 
   private
