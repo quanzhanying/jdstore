@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     else
       flash[:warning] = "购物车中已经有该商品"
     end
-    redirect_to :back
+    redirect_back fallback_location: product_path(@product)
   end
 
 end
