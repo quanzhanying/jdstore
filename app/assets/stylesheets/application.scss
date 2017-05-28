@@ -160,16 +160,20 @@ body {
         -o-transition-duration: 0.5s;
 }
 /*
-    Only Needed in Multi-Coloured Variation
-                                               */
+    Only Needed in Multi-Coloured Variation*/
+
+
 .social-fb:hover {
 	color: #3B5998;
+}
+.social-wx:hover {
+	color: #8BC34A;
 }
 .social-tw:hover {
 	color: #4099FF;
 }
-.social-gp:hover {
-	color: #d34836;
+.social-wb:hover {
+	color: #d32f2f;
 }
 .social-em:hover {
 	color: #f39c12;
@@ -196,4 +200,32 @@ body {
 }
 .design a {
     color: #fff;
+}
+
+.thumbnail{
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+.thumbnail:hover{
+		opacity:1.00;
+		box-shadow: 0px 0px 10px #4bc6ff;
+}
+.thumbnail .price{
+  color: #d32f2f;
+}
+.thumbnail .love{
+  color: #e53935;
+}
+.thumbnail .nolove{
+  color: #BDBDBD;
+}
+.thumbnail .btn-product{
+	width: 100%;
+}
+.thumbnail .description{
+  color: #BDBDBD;
+}
+.search{
+  width: 100%;
+  margin-bottom: 20px;
 }
