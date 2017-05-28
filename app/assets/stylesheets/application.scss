@@ -26,6 +26,7 @@
 // 字型-logo"Select."
  .logo {
    font-family: 'Yesteryear', cursive;
+   text-transform: capitalize;
  }
 
 
@@ -49,6 +50,10 @@ a:hover {
 /*字体颜色和背景颜色*/
 .bg-color {
   background: #edbdb5;
+}
+
+.png div {
+  position:relative;
 }
 
 // 通用的css代码结束

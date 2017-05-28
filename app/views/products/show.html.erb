@@ -182,6 +182,24 @@
 
       </div>
     </div>
+    <!-- 品牌簡短介紹開始 -->
+    <div>
+      <% if @product.brand_id == 1 %>
+        <%= render :partial => "products/short_HAY" %>
+      <% elsif @product.brand_id == 2 %>
+        <%= render :partial => "products/short_GUBI" %>
+      <% elsif @product.brand_id == 3 %>
+        <%= render :partial => "products/short_MENU" %>
+      <% elsif @product.brand_id == 4 %>
+        <%= render :partial => "products/short_muuto" %>
+      <% elsif @product.brand_id == 5 %>
+        <%= render :partial => "products/short_STUA" %>
+      <% elsif @product.brand_id == 6%>
+        <%= render :partial => "products/short_ferm_living" %>
+      <% end %>
+    </div>
+    <!-- 品牌簡短介紹結束 -->
+    </div>
   </div>
 </div>
 
