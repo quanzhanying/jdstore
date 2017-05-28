@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'serbvice.jdstore.com'
+  default from: "service@jdstore.com"
   layout 'mailer'
 end
