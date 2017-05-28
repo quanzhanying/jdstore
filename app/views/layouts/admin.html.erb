@@ -14,14 +14,19 @@
       <div class="row">
         <div class="col-md-2">
           <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-            <li><%= link_to("Products", admin_products_path) %></li>
-            <li><%= link_to("Orders", admin_orders_path) %></li>
+            <li><%= link_to(t("admin.products"), admin_products_path) %></li>
+            <li><%= link_to(t("admin.orders"), admin_orders_path) %></li>
           </ul>
         </div>
         <div class="col-md-10">
           <%= yield %>
+          <div class="pull-right">
+            <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+            <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+          </div>
         </div>
       </div>
+      <%= render "common/footer" %>
     </div>
   </body>
 </html>
