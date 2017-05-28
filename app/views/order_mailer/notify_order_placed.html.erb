@@ -63,6 +63,14 @@
             <%=  @order.shipping_name  %>  -  <%=  @order.shipping_address  %>
           </td>
         </tr>
+        <tr>
+          <td>  收件人联系方式：</td>
+        </tr>
+        <tr>
+          <td>
+            <%= @order.shipping_phone   %>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

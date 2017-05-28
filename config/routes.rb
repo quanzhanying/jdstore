@@ -40,6 +40,7 @@ Rails.application.routes.draw do
  end
 
  namespace  :account   do
+   resources   :users   #  新增［用户中心］的相关路径
    resources   :orders
  end
 
