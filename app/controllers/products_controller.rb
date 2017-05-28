@@ -86,7 +86,13 @@ class ProductsController < ApplicationController
     end
   end
 
-
+  def checkout
+   @order = Order.new
+   #render :js =>  params[:num]
+   @num = params[:num].to_i
+   @product = Product.find(params[:id])
+   
+  end
 
   def upvote
     @product = Product.find(params[:id])

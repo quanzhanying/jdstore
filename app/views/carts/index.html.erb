@@ -29,7 +29,7 @@
               <div class="quantity-box" onselectstart="return false">
                 <a class="quantity-actions quantity-down<%= if cart_item.quantity == 1 then " disabled" end%>" href="">-</a>
                 <input type="text" name="quantity" value="<%= cart_item.quantity%>" max="<%= cart_item.product.quantity %>" class="quantity-input" url="<%= cart_item_path(cart_item.product)%>">
-                <a class="quantity-actions quantity-up <%= if cart_item.quantity == cart_item.product.quantity or cart_item.product.quantity == 1 then " disabled" end%>" href="">+</a>
+                <a class="quantity-actions quantity-up<%= if cart_item.quantity == cart_item.product.quantity or cart_item.product.quantity == 1 then " disabled" end%>" href="">+</a>
               </div>
             </div>
             <div class="col-md-2">

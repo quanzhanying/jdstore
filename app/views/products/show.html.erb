@@ -75,7 +75,8 @@
                     </li>
                   </ul>
                 </div>
-
+                <form novalidate="novalidate" id="new_order" action="<%= checkout_product_path%>" accept-charset="UTF-8" method="post">
+                  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
                 <div class="tb-key">
                   <div class="tb-skin">
                     <div class="tb-sku">
@@ -87,18 +88,23 @@
                               <span class="mui-amount-increase">
                                 <i class="fa fa-angle-up" aria-hidden="true"></i>
                               </span>
-                              <span class="mui-amount-decrease">
+                              <span class="mui-amount-decrease disabled">
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                               </span>
                             </span>
-                            <input type="text" class="tb-text mui-amount-input" value="1" max="<%= @product.quantity %>" url="<%= add_to_cart_product_path(@product)  %>?num=">
+                            <input name="num" type="text" class="tb-text mui-amount-input" value="1" max="<%= @product.quantity %>" url="<%= add_to_cart_product_path(@product)  %>?num=">
                             <span>库存 <i style="color:#c40000;"><%= @product.quantity %></i> 件</span>
                           </span>
                         </dd>
                       </dl>
                       <div class="tb-action">
                         <div class="tb-btn-buy">
-                          <%= link_to("立即购买", checkout_carts_path, :method => :post , id: "J_LinkBasket") %>
+                          <%#= link_to("立即购买", checkout_carts_path, :method => :post , id: "J_LinkBasket") %>
+                          <% if !current_user %>
+                          <a href="#" data-toggle="modal" data-target="#login-modal">立即购买</a>
+                        <% else %>
+                          <a href="javascript:document:new_order.submit();">立即购买</a>
+                          <% end %>
 
                         </div>
                         <div class="shopCart tb-btn-basket">
@@ -108,6 +114,7 @@
                     </div>
                   </div>
                 </div>
+                </form>
                 <div class="tm-ser">
                   <dl>
                     <dt>服务承诺</dt>
@@ -252,59 +259,58 @@
 </span>
 -->
         <script type="text/javascript">
-        /*
-        // 这会绑 click 事件到所有有 `.delete-post` class 的元素上，也就是所有的删除按钮
-        $("#J_LinkBasket11").on('click', function(evt){
-          // `evt` 是浏览器的事件物件，evt.preventDefault(); 会终止这个元素的默认行为：
-          // 超连结 a 的默认行为是跳到下一页，如果没有这行的话，送出 ajax 后会跳去 show page
-          evt.preventDefault();
-          // this 是个特别的变量，代表触发事件的元素。使用 attr 可以读取元素的属性，这里要拿到超连结的网址
-          var url = $(this).attr("href");
-          var that = this;
-
-          // 送出 Ajax
-          $.ajax({
-            url: url,
-            method: 'POST',
-            dataType: 'script',
-               success: function(data){
-                 $(that).closest(".panel").remove();     //closest 往上找元素，找一个停止
-               }
-          })
-        })
-*/
           //---------数量-------///
           (function ($) {
             $.fn.changeNnmber = function () {
               var $app = $(this).find(".mui-amount-input");
               //  var value = $app.find(".mui-amount-input").attr("value");
               var value = Number($app.val());
-              var $up = $(this).find('.fa-angle-up');
-              var $down = $(this).find('.fa-angle-down');
+              var $up = $(this).find('.mui-amount-increase');
+              var $down = $(this).find('.mui-amount-decrease');
               var numMax = Number($app.attr("max"));
               var url = $app.attr("url")
               $up.on('click', function () {
-                if (value < numMax ) {
-              $app.val(value += 1);
-              $(".J_LinkBasket").attr("href", url + value);
+                if (value < numMax) {
+                  $app.val(value += 1);
+                  $(".J_LinkBasket").attr("href", url + value);
+                  if (value == numMax) {
+                    $(this).addClass("disabled")
+                  } else if (value == 2) {
+                    $(this).siblings('.mui-amount-decrease').removeClass("disabled");
+                  }
                 }
               });
               $down.on('click', function () {
                 if (value > 1) {
                   $app.val(value -= 1);
                   $(".J_LinkBasket").attr("href", url + value);
+                  if (value == 1) {
+                    $(this).addClass("disabled")
+                  } else if (value == (numMax - 1)) {
+                    $(this).siblings('.mui-amount-increase').removeClass("disabled");
+                  }
                 }
               });
 
               $app.blur(function() {
-                value = Number($app.val());
-                if (value > numMax) {
+                value = Number($(this).val());
+                if (value >= numMax) {
                   value = numMax;
-                }
-                if (value < 1) {
+                  if (numMax != 1) {
+                    $up.addClass("disabled");
+                    $down.removeClass("disabled");
+                  }
+                } else if (value <= 1) {
                   value = 1;
+                  if (numMax != 1) {
+                    $up.removeClass("disabled");
+                    $down.addClass("disabled");
+                  }
+                } else {
+                  $up.removeClass("disabled");
+                  $down.removeClass("disabled");
                 }
-                $app.val(value);
+                $(this).val(value);
                 $(".J_LinkBasket").attr("href", url + value);
               });
 

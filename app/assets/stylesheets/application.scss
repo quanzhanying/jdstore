@@ -30,6 +30,11 @@ a {
   text-decoration: none !important;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: #e5e5e5;
+}
+
 #nav-fixed .col-md-5{
   padding-left: 22px;
 }
@@ -554,7 +559,7 @@ hr {
   border-bottom: 1px solid #CCCCCC;
   border-top: 1px solid #DDDDDD;
   background-position: center 80%;
-  margin: 50px auto 10px;
+  margin: 50px 0 10px 0;
   position: relative;
   vertical-align: bottom;
 }

@@ -16,8 +16,8 @@ class CartItemsController < ApplicationController
       @cart_item.destroy
       sum = 0
       @cart.cart_items.each do |cart_item|
-        if cart_item.product.price.present?
-          sum += cart_item.quantity * cart_item.product.price
+        if cart_item.product.promotional.present?
+          sum += cart_item.quantity * cart_item.product.promotional
         end
       end
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
@@ -47,8 +47,8 @@ def up
       sum = 0
       quantity = 0
       @cart.cart_items.each do |cart_item|
-        if cart_item.product.price.present?
-          sum += cart_item.quantity * cart_item.product.price
+        if cart_item.product.promotional.present?
+          sum += cart_item.quantity * cart_item.product.promotional
           quantity += cart_item.quantity
         end
       end
