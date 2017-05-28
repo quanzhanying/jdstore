@@ -21,4 +21,4 @@
 
 $(document).ready(function(){
   new WOW().init();
-})
+})  //图片效果动画的js代码
