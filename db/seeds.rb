@@ -21,7 +21,9 @@ end
 
 # Intialize Product
 
- Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
+if Product.count == 0
+  puts "Creating product"
+  Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
     price: 298,
     quantity: 5,
@@ -52,3 +54,15 @@ end
     image: open("https://ws3.sinaimg.cn/large/006tNc79gy1ffvr0obs1nj30m80m83yt.jpg"),
     category_id: 2
     )
+  else
+    puts "Product created already"
+  end
+
+  # Intialize category
+  if Category.count == 0
+    puts "Creating category"
+    Category.create!(name: "饮食餐具")
+    Category.create!(name: "烹饪工具")
+  else
+    puts "Category created already"
+  end

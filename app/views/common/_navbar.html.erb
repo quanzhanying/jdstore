@@ -79,7 +79,10 @@
                   </li>
                 <% end %>
                   <li>
-                    <%= link_to("订单列表", account_orders_path ) %>
+                    <%= link_to("我的订单", account_orders_path ) %>
+                  </li>
+                  <li>
+                    <%= link_to("我的收藏", favorites_path ) %>
                   </li>
                   <li>
                     <%= link_to('注销', destroy_user_session_path, method: :delete) %>

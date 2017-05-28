@@ -1,25 +1,59 @@
-<div class="container-fluid">
-        <div class="row product-main">
-            <div class="product-list">
-              
-              <div class="container">
-                  <%@products.each do |product| %>
-                    <div class="col-xs-6 col-md-3 product-list">
-                      <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                        <% else %>
-                          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                        <% end %>
-                      <% end %>
-                      <%= product.title %> ￥ <%= product.price %>
-                    </div>
-                  <% end %>
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+    <%= link_to product_path(product) do %>
+    <div class="col-md-4 col-xs-6">
+      <div class="product-item" style="width: 400px">
+        <div class="img-wrapper">
+          <% if product.image.present? %>
+          <%= image_tag(product.image.medium.url, class: "image-responsive") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        </div>
+        <hr>
+        <table>
+          <tr>
+            <td colspan="3" width="100%">
+              <div class="product-title">
+                <h4><%= product.title %></h4>
               </div>
-            </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-price">
+                <h4>$<%= product.price %></h4>
+              </div>
+            </td>
+            <td width="100" style="width:50px">
+              <% if !current_user.is_favorite_of?(product) %>
+                <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                <% end %>
+              <% else %>
+                <%= link_to unfavorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                  <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <% if product.quantity.present? && product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+            <% else %>
+              已销售一空，无法购买
+              <% end %>
+            </td>
+          </tr>
+        </table>
       </div>
-</div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 
+</div>
+<!-- </div> -->
 
 <!-- <div class="container all-product-box">
   <div class="row">
