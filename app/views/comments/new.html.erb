@@ -1,5 +1,10 @@
-<div class="col-md-9 col-centered">
-  <h3>商品评价</h3>
-  <%= render 'form', comment: @comment %>
-  <%= link_to '返回', product_path(@product) %>
+<div class="col-md-6 col-centered">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <p style="font-size: 1.2em; text-align: center; margin-bottom: 0px;">为<strong>「 <%= @product.name %> 」</strong>填写评价</p>
+    </div>
+      <div class="panel-body">
+        <%= render 'form', comment: @comment %>
+      </div>
+  </div>
 </div>
