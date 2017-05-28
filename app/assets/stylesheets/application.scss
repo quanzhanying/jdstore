@@ -148,3 +148,55 @@
 .cart a:hover {
   color: #C81623; /*鼠标一上去的时候，字体变成红色*/
 }
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+
+/*菜单*/
+.menu {
+  width: 100%;
+}
+
+.menuList{
+  width: 1200px;
+  margin: 130px auto;
+  height: 45px;
+
+}
+
+.menuList-item {
+  float: left;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 45px;
+
+}
+
+.menuList-item:hover {
+  background-color: #434343;
+}
+.menuList-activeItem {
+  background: #D32048;
+}
+.menuList-activeItem:hover {
+  background: #D32048;
+}
