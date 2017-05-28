@@ -1,0 +1,9 @@
+"zh-CN":
+  hello: "亲～ %{email} 你好："
+  admin:
+    product_list: 商品列表
+    order_list: 订单列表
+    products: 商品
+    orders: 订单
+    new_product: 新增商品
+    edit_product: 编辑商品

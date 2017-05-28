@@ -19,5 +19,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+"en":
+  hello: "Hi %{email},"
+  admin:
+    product_list: Product List
+    order_list: Order List
+    products: Products
+    orders: Orders
+    new_product: New Product
+    edit_product: Edit Product
