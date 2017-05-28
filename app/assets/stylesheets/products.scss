@@ -95,3 +95,34 @@
   line-height: 1.6em;
   text-align: justify;
 }
+
+// 课程show页样式
+.course-box {
+  margin: 20px auto;
+}
+.course-particulars {
+  margin-top: 40px;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}
+
+// 课程教练照片
+.course-author-img {
+  margin: 30px auto;
+}
+.course-author-name {
+  margin: 20px auto;
+}
+
+// 课程价格
+.course-price {
+  margin: 20px auto;
+  background-color: #f5f5f5;
+  font-size: 4em;
+  color: #7f8c8d;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}

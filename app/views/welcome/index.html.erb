@@ -71,32 +71,38 @@
 
 
 <!-- 教程按钮区域 -->
-<!-- <div class="container">
+<div class="container">
 
   <div class="row">
     <div class="container topspan">
       <div class="row">
         <div class="col-xs-6">
-          <h3 class="titspan">教程</h3>
+          <h3 class="titspan">课程</h3>
         </div>
         <div class="col-xs-6">
-          <%= link_to("more >", products_path, class: "pull-right morespan") %>
+          <%= link_to("more >", course_products_path, class: "pull-right morespan") %>
         </div>
       </div>
     </div>
   </div>
 
-    <div class="col-sm-4 col-xs-12 container product-course-box-1">
-      <h3>持有艺术</h3>
-    </div>
-    <div class="col-sm-4 col-xs-12 container product-course-box-2">
-      <h3>收纳艺术</h3>
-    </div>
-    <div class="col-sm-4 col-xs-12 container product-course-box-3">
-      <h3>装饰艺术</h3>
-    </div>
+  <div class="row">
+    <% @courses.each do |course| %>
+      <div class="col-xs-12 col-md-4 text-center product-list-style">
+        <% link_to product_path(course) %>
+          <% if course.image.present? %>
+            <%= link_to image_tag(course.image.medium.url, class: "product-list-style-img img-responsive center-block"), product_path(course) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img img-responsive center-block"), product_path(course) %>
+          <% end %>
+        <!-- <%= link_to(course.title, product_path(course)) %>
+        <br>
+        <strong>￥ <%= link_to(course.price, product_path(course)) %></strong></p> -->
+      </div>
+    <% end %>
+  </div>
 
-</div> -->
+</div>
 
 
 <!-- 首页精选商品列表 -->

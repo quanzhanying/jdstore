@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524162912) do
+ActiveRecord::Schema.define(version: 20170528094836) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170524162912) do
     t.integer  "quantity",   default: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "course_id"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -30,6 +31,42 @@ ActiveRecord::Schema.define(version: 20170524162912) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "course_lists", force: :cascade do |t|
+    t.integer  "course_order_id"
+    t.string   "course_name"
+    t.integer  "course_price"
+    t.integer  "quantity"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "course_orders", force: :cascade do |t|
+    t.integer  "total",            default: 0
+    t.integer  "user_id"
+    t.string   "billing_name"
+    t.string   "billing_address"
+    t.string   "shipping_name"
+    t.string   "shipping_address"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "token"
+    t.string   "payment_method"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "price"
+    t.string   "image"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "position"
+    t.string   "course_banner"
+    t.string   "author_img"
+    t.string   "author_title"
+    t.text     "author_description"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -70,6 +107,7 @@ ActiveRecord::Schema.define(version: 20170524162912) do
     t.integer  "position"
     t.string   "category"
     t.string   "yieldly"
+    t.string   "courseimg"
   end
 
   create_table "reviews", force: :cascade do |t|

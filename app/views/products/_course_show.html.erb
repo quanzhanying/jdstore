@@ -1,0 +1,42 @@
+<div class="container">
+  <%= image_tag(@product.courseimg.courseimgbanner.url, class: "img-responsive") %>
+
+  <div class="course-box row">
+    <div class="container">
+      <div class="col-md-9">
+        <!-- 课程标题 -->
+        <h2 class="product-title"><%= @product.title %></h2>
+        <div class="course-particulars">
+          <%= simple_format(@product.particulars) %>
+        </div>
+      </div>
+
+      <!-- 课程作者 -->
+      <div class="col-md-3 course-author-img text-center">
+        <%= image_tag("about1.jpg", class: "img-circle img-responsive img-center center-block") %>
+        <div class="course-author-name">
+          <h5>闭欣欣</h5>
+          <p>收纳达人、软装设计师</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 课程价格 -->
+  <div class="course-price text-center">
+    ￥ <%= @product.price %>
+  </div>
+
+  <!-- 报名按钮 -->
+  <div class="text-center">
+    <% if @product.quantity.present? && @product.quantity > 0 %>
+      <%= link_to("我要报名", add_to_cart_product_path(@product), method: :post, class: "btn btn-lg btn-danger") %>
+    <% else %>
+      <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
+    <% end %>
+  </div>
+
+  <hr>
+
+
+</div>

@@ -5,9 +5,12 @@
     <%= f.input :quantity, :label => "库存" %>
     <%= f.input :price, :label => "价格" %>
     <%= f.input :yieldly, :label => "生产地" %>
-    <%= f.input :category, as: :radio_buttons, collection: [['收纳品', '收纳品'], ['装饰品', '装饰品']],required: '收纳品', :label => "商品类型" %>
+    <%= f.input :category, as: :radio_buttons, collection: [['收纳品', '收纳品'], ['装饰品', '装饰品'], ['课程', '课程']],required: '收纳品', :label => "商品类型" %>
     <%= f.input :image, as: :file, :label => "商品主图" %>
+    <%= f.input :courseimg, as: :file, :label => "课程banner图（只需新增或编辑课程时上传）" %>
     <%= f.input :particulars, as: :wysihtml5, :label => "商品详情" %>
+    <hr>
+
   </div>
   <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
 <% end %>

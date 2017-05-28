@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       get :search             #搜索功能
       get :accept             #分类 收纳品
       get :decoration         #分类 装饰品
+      get :course             #分类 课程
     end
     resources :reviews
   end
