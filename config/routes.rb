@@ -28,12 +28,7 @@ Rails.application.routes.draw do
    end
   end
 
-  resources :cart_items do
-    member do
-      post :add_quantity
-      post :remove_quantity
-    end
-  end
+  resources :cart_items
 
   resources :orders do
     member do
@@ -45,11 +40,6 @@ Rails.application.routes.draw do
 
   namespace :account do
    resources :orders
-   resources :products do
-     collection do
-       get "mybentos"
-     end
-   end
   end
 
 end
