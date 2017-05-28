@@ -33,12 +33,16 @@ gem 'jbuilder', '~> 2.5'
 gem  'bootstrap-sass'
 gem  'devise'
 gem  'simple_form'
-gem  'carrierwave'
+gem  'carrierwave'       
 gem  'mini_magick'
 gem  'font-awesome-rails'
-gem  'letter_opener',  group: :development
-gem  'aasm'
-gem  'intercom-rails'
+gem  'letter_opener',  group: :development  #  寄送资讯
+gem  'aasm'            #  订单系统
+gem  'intercom-rails'  #  客服系统
+gem  'ransack'         #  搜索
+gem  'will_paginate'   #  分页
+gem  'will_paginate-bootstrap'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
