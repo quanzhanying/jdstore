@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :brands
   resources :categories
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers:
+   { sessions: 'users/sessions',
+     registrations: 'users/registrations', :passwords => "users/passwords" } #客服系统相关
   resources :carts do
     collection do
       delete :clean
@@ -39,6 +41,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :account do
+   resources :users #新增“我的账户”的相关路径
    resources :orders
    resources :products
   end

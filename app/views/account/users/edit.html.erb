@@ -1,0 +1,21 @@
+<div class="container page-wrap ">
+  <div class="account-view">
+    <!-- <img src="http://ww4.sinaimg.cn/large/006tKfTcgy1ffr161honcj30xg0n0am7.jpg" style="opacity:0.6;" alt="background image"> -->
+    <div class="account-detail">
+      <h3 class="title">我的账户</h3>
+      <div class="input-block">
+        <%= simple_form_for [:account, @user] do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :username, autofocus: true, label: "用户名", placeholder: "请输入用户名" %>
+            <%= f.input :name, label: "姓名", placeholder: "请输入您的姓名" %>
+            <%= f.input :phonenumber, label: "联系电话", placeholder: "请输入您的联系电话" %>
+            <%= f.input :address, label: "地址", placeholder: "请输入您的地址" %>
+            <%= f.button :submit, '更新', class: 'button' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
