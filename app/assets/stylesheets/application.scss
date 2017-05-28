@@ -15,4 +15,50 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- @import "font-awesome"
+ @import "font-awesome";
+
+.navbar-inverse {
+  margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-brand {
+  padding: 10px 15px;
+  line-height: 30px;
+}
+
+.navbar-brand > img {
+  display: inline-block;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+@media (min-width:78px){
+  .navbar {
+    border-radius: 0;
+  }
+}
+.navbar-default .navbar-brand {
+  padding: 10px 15px;
+  line-height: 30px;
+}
+nav.navbar-default { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
+nav.navbar-default a { color: #f14444; }
+nav.navbar-default ul.navbar-nav a { color: #f14444; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-default ul.navbar-nav a:hover,
+nav.navbar-default ul.navbar-nav a:visited,
+nav.navbar-default ul.navbar-nav a:focus,
+nav.navbar-default ul.navbar-nav a:active { background: #fff; }
+nav.navbar-default ul.navbar-nav a:hover { border-color: #f14444; }
+nav.navbar-default li.divider { background: #ccc; }
+nav.navbar-default button.navbar-toggle { background: #f14444; border-radius: 2px; }
+nav.navbar-default button.navbar-toggle:hover { background: #999; }
+nav.navbar-default button.navbar-toggle > span.icon-bar { background: #fff; }
+nav.navbar-default ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+nav.navbar-default ul.dropdown-menu > li > a { color: #444; }
+nav.navbar-default ul.dropdown-menu > li > a:hover { background: #f14444; color: #fff; }
+
+
+body {
+  padding-top: 70px;
+}
