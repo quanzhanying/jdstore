@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+
+    <% @courses.each do |course| %>
+      <div class="col-xs-12 col-md-4 course-list-style">
+        <% link_to course_path(course) %>
+          <% if course.image.present? %>
+            <%= link_to image_tag(course.image.course_img.url, class: "img-responsive center-block"), course_path(course) %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive center-block"), course_path(course) %>
+          <% end %>
+          <hr>
+          <div class="text-center">
+            <%= link_to(course.title, course_path(course)) %> -
+            <strong> <%= link_to(course.price) %> RMB</strong>
+          </div>
+
+      </div>
+    <% end %>
+
+
+  </div>
+</div>

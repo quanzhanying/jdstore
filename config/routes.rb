@@ -18,6 +18,12 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    resources :courses do        #后台上架课程 admin/courses
+      member do
+        patch :move_up           #课程位置移动
+        patch :move_down         #课程位置移动
+      end
+    end
   end
 
   resources :products do      #前台product
@@ -35,6 +41,13 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :courses do         #前台显示课程
+    member do
+      post :add_to_cart
+      post :instant_buy
+    end
+  end
+
   resources :carts do         #购物车明细
     collection do
       delete :clean           #清空购物车
@@ -44,7 +57,15 @@ Rails.application.routes.draw do
 
   resources :cart_items       #购物车列表
 
-  resources :orders do        #订单
+  resources :orders do        #商品订单
+    member do
+      post :pay_whit_alipay   #支付宝支付
+      post :pay_whit_wechat   #微信支付
+      post :apply_to_cancel   #用户申请撤销订单
+    end
+  end
+
+  resources :course_orders do        #课程订单
     member do
       post :pay_whit_alipay   #支付宝支付
       post :pay_whit_wechat   #微信支付

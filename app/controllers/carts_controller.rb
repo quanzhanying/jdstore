@@ -13,4 +13,8 @@ class CartsController < ApplicationController
     @order = Order.new
   end
 
+  def show
+    @course_order = CourseOrder.new
+  end
+
 end

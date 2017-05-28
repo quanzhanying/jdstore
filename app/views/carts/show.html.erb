@@ -1,0 +1,90 @@
+<div class="container">
+
+    <br>
+    <h3>购物清单</h3>
+
+    <div class="shoping-cart">
+
+      <!-- 列表头部 -->
+      <div class="cart-column-head center-block">
+        <label class="col-xs-3 product-image-cart">商品</label>
+        <label class="col-xs-3 product-title-cart">名称</label>
+        <label class="col-xs-3 product-price-cart">单价</label>
+        <label class="col-xs-3 product-line-price-cart">小计</label>
+      </div>
+
+      <!-- 列表购物车商品 -->
+      <% current_cart.cart_items.each do |cart_item| %>
+
+        <div class="product-list row text-center">
+
+
+          <!-- 商品图片 -->
+          <div class="col-xs-3 product-image-cart">
+            <%= link_to course_path(cart_item.course) do%>
+              <% if cart_item.course.image.present? %>
+                <%= image_tag(cart_item.course.image.thumb.url, class: "img-responsive center-block") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive center-block") %>
+              <% end %>
+            <% end %>
+          </div>
+
+          <!-- 商品名称 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= link_to(cart_item.course.title, course_path(cart_item.course)) %>
+          </div>
+
+          <!-- 商品单价 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= cart_item.course.price %> RMB
+          </div>
+
+          <!-- 商品总价 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= cart_item.course.price %> RMB
+          </div>
+        </div>
+        <hr>
+
+      <% end %>
+    </div>
+
+
+
+
+    <!-- 寄送信息表单填写 -->
+
+    <div class="col-md-6 col-md-offset-3 order-form-group">
+      <h3 class="text-center">订单资讯</h3>
+      <hr>
+
+      <div class="order-form">
+        <%= simple_form_for @course_order do |f| %>
+
+          <h4>购货联络人</h4>
+          <div class="form-group">
+            <%= f.input :billing_name, :label => "购货人姓名" %>
+            <%= f.input :billing_address, :label => "购货人地址" %>
+          </div>
+
+          <br>
+          <h4>寄送资讯</h4>
+          <div class="form-group">
+            <%= f.input :shipping_name, :label => "收货人名称" %>
+            <%= f.input :shipping_address, :label => "收货人地址" %>
+          </div>
+
+          <div class="checkout">
+            <%= f.submit "生成订单", class: "btn btn-danger" ,
+            data: { disable_with: "Submitting..." } %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+</div>

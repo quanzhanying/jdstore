@@ -26,8 +26,13 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [400, 400]
   end
 
+<<<<<<< HEAD
   version :courseimgbanner do
     process resize_to_fit: [2000, 400]
+=======
+  version :course_img do
+    process resize_to_fit: [1500, 400]
+>>>>>>> 469cb1bec4f50a4e5f2236f1d42ca410b17b5871
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
