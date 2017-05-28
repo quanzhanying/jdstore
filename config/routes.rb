@@ -40,6 +40,11 @@ Rails.application.routes.draw do
 
   namespace :account do
    resources :orders
+   resources :products do
+     collection do
+       get "mybentos"
+     end
+   end
   end
 
 end
