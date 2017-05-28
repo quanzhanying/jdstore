@@ -1,0 +1,13 @@
+current directory: /Users/zhangruilan/jdstore/vendor/cache/gems/json-2.1.0/ext/json
+/Users/zhangruilan/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20170528-1031-119sj6i.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zhangruilan/jdstore/vendor/cache/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/zhangruilan/jdstore/vendor/cache/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/zhangruilan/jdstore/vendor/cache/gems/json-2.1.0/ext/json
+make "DESTDIR=" install
