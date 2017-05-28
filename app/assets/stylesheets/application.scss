@@ -170,17 +170,6 @@ section h2 {
 }
 
 
-// 商品展示列表样式设置，为商品栏做好排版整形
-  .product-list-style {                                 //图片+文字 块样式整形
-    margin: 3em auto 2em;
-  }
-  .product-list-style-img {                             //文字 块样式整形
-    margin-bottom: 1.2em;
-  }
-  .all-product-box {
-    margin-bottom: 3em;
-  }
-
 
 //---------Footer---------
 
@@ -212,4 +201,21 @@ html { height: 100%;}
 .custab:hover{
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
+}
+
+//---------回到顶部-------------
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #fff;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+.fa-arrow-up {
+  color: #F25F5C;
+  // margin-left: 10px;
+  line-height: 50px;
 }

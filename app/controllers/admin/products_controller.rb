@@ -10,6 +10,12 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all.map { |c| [c.name, c.id] }
+    @photo = @product.photos.build
+  end
+
+  def show
+    @product = Product.find(params[:id])
+    @photos = @product.photos.all
   end
 
   def create
@@ -17,6 +23,11 @@ class Admin::ProductsController < ApplicationController
     @product.category_id = params[:category_id]
 
     if @product.save
+      if params[:photos] != nil
+        params[:photos]['image'].each do |a|
+          @photo = @product.photos.create(:image => a)
+        end
+      end
       redirect_to admin_products_path
     else
       render :new
@@ -33,9 +44,16 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.category_id = params[:category_id]
 
+    if params[:photos] != nil
+      @product.photos.destroy_all
+      params[:photos]['image'].each do |a|
+        @picture = @product.photos.create(:image => a)
+      end
+      @product.update(product_params)
+      redirect_to admin_products_path
 
-    if @product.update(product_params)
-      redirect_to admin_products_path , notice: "upadte success"
+    elsif @product.update(product_params)
+      redirect_to admin_products_path
     else
       render :edit
     end
