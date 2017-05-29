@@ -18,6 +18,12 @@
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css'); //引入google思源黑简在线字体 需要使用VPN才可生效
 
+//---------flashes----------
+.alert {
+  margin-top: -20px;
+  border-radius: 0;
+}
+//------用户头像-------
 .avatar > img{
   border-radius: 50%;
 }
