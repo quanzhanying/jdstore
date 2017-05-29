@@ -211,12 +211,22 @@ a:hover {
 // 轮播图结束
 
 // 热卖商品轮播图
+.hot-products-title {
+  text-align: center;
+  margin: 40px auto;
+  font-size: 30px;
+  margin-bottom: -110px;
+}
+.hot-productslist {
+  margin-left: -37px !important;
+}
 .hot-productList-wrap {
   // width:1200px;
   padding-top:20px;
   margin-left: auto !important;
   margin-right: auto !important;
-  .productList {
+  .hot-productList {
+    list-style-type: none;
     padding-bottom:20px;
     .productList-item {
       float:left;
@@ -239,7 +249,7 @@ a:hover {
         width:200px;
         height:200px;
         margin-top: 30px;
-        margin-left: auto !important;
+        margin-left: 13px;
         margin-right: auto !important;
       }
       .productList-item-price {
@@ -268,11 +278,31 @@ a:hover {
       }
       .productList-item-cartBtn {
         position:absolute;
-        right: 40px;
+        right: 20px;
+        bottom: 72px;
         font-size:18px;
       }
     }
   }
+}
+a.left1.carousel-control{
+background: none;
+position: absolute;
+top: 40%;
+left: -5%;
+font-size: 40px;
+color: #fff;
+opacity: 1;
+}
+a.right1.carousel-control{
+background: none;
+position: absolute;
+top: 40%;
+left: auto;
+right: -120px;
+font-size: 40px;
+color: #fff;
+opacity: 1;
 }
 // 热卖商品轮播图结束
 //商品展示列表
@@ -339,6 +369,7 @@ a:hover {
     }
   }
 }
+
  // 菜单
 .menu-wrap {
   background: #333333;

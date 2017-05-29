@@ -43,26 +43,29 @@
 <!-- 區塊：圖片輪播 -->
 
 <!-- 热卖商品轮播区域 -->
-<!-- <div class="row" id="hot-products">
+<div class="row" id="hot-products">
 	<ul class="breadcrumb", style="margin-top: 0px;">
     <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
 	  <li><a href="/products">进入商城首页</a></li>
 		<br />
 		<li class="active">热卖商品 <i class="fa fa-angle-down" aria-hidden="true"></i></li>
   </ul>
-  <div class="container" style="margin-bottom:60px;">
+	<div class="hot-products-title ">
+    <span>热卖商品</span>
+  </div>
+  <div class="container hot-productslist" style="margin-bottom:-60px; margin-top:-60px;">
       <div class="col-md-offset-1 col-md-10">
-              <div id="myCarousel" class="carousel slide"> -->
+              <div id="myCarousel" class="carousel1 slide" data-ride="carousel">
 
                   <!-- 轮播的第一个页面 -->
-                  <!-- <div class="carousel-inner">
+                  <div class="carousel-inner">
                       <div class="item active">
-												<div class="hot-productList-wrap", style="margin: -15px auto;">
-													<ul class="productList clearfix">
+												<div class="hot-productList-wrap">
+													<ul class="hot-productList">
 														<div class="row", style="margin-left: -21px;">
-														<% @suggests.each do |product| %> -->
+														<% @suggests.each do |product| %>
 														<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
-														<!-- <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
+														<div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -50px;">
 															<li class="productList-item box panel panel-default">
 																<div class="productList-item-pic">
 																	<%= link_to product_path(product) do %>
@@ -78,36 +81,36 @@
 																		<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
 																			<i class="fa fa-shopping-cart"></i>
 																		<% end %>
-																	<% end %> -->
+																	<% end %>
 																	<!-- 待加入預購功能 -->
-																	<!-- <% if product.stock <= 0 %>
+																	<% if product.stock <= 0 %>
 																		<div class="productList-item-sellout", style="margin-top: -33px;">
 																			<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 																		</div>
-																	<% end %> -->
+																	<% end %>
 																	<!-- 待加入預購功能 -->
-																<!-- </div>
+																</div>
 																<div class="productList-item-name ell">
 																	<%= link_to product_path(product) do %>
 																		 <%= product.name %>
 																	<% end %>
-																</div> -->
+																</div>
 																<!-- <div class="productList-item-desc"><%= product.description %></div> -->
-															<!-- </li>
+															</li>
 														</div>
 														<% end %>
                                 </div>
 															</ul>
                               </div>
-														</div> -->
+														</div>
 												<!-- 轮播第二个画面 -->
-			                      <!-- <div class="item">
+			                      <div class="item">
 															<div class="productList-wrap", style="margin: -15px auto;">
 																<ul class="productList clearfix">
 																	<div class="row", style="margin-left: -21px;">
-																	<% @suggests.each do |product| %> -->
+																	<% @suggests.each do |product| %>
 																	<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
-																	<!-- <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
+																	<div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
 																		<li class="productList-item box panel panel-default">
 																			<div class="productList-item-pic">
 																				<%= link_to product_path(product) do %>
@@ -123,39 +126,39 @@
 																					<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
 																						<i class="fa fa-shopping-cart"></i>
 																					<% end %>
-																				<% end %> -->
+																				<% end %>
 																				<!-- 待加入預購功能 -->
-																				<!-- <% if product.stock <= 0 %>
+																				<% if product.stock <= 0 %>
 																					<div class="productList-item-sellout", style="margin-top: -33px;">
 																						<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 																					</div>
-																				<% end %> -->
+																				<% end %>
 																				<!-- 待加入預購功能 -->
-																			<!-- </div>
+																			</div>
 																			<div class="productList-item-name ell">
 																				<%= link_to product_path(product) do %>
 																					 <%= product.name %>
 																				<% end %>
-																			</div> -->
+																			</div>
 																			<!-- <div class="productList-item-desc"><%= product.description %></div> -->
-																		<!-- </li>
-																	</div> -->
+																		</li>
+																	</div>
 																	<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容结束，保持全网站风格的一致 -->
-																	<!-- <% end %>
+																	<% end %>
 			                                </div>
 																		</ul>
 			                              </div>
-																	</div> -->
+																	</div>
 						<!-- 轮播第三个画面 -->
-                <!-- <div class="item">
+                <div class="item">
 									<div class="productList-wrap", style="margin: -15px auto;">
 										<ul class="productList clearfix">
 											<div class="row", style="margin-left: -21px;">
-											<% @suggests.each do |product| %> -->
+											<% @suggests.each do |product| %>
 											<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
-											<!-- <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
-												<li class="productList-item box panel panel-default">
-													<div class="productList-item-pic">
+											<div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
+												<li class="hot-productList-item box panel panel-default">
+													<div class="hot-productList-item-pic">
 														<%= link_to product_path(product) do %>
 															<% if product.image.present? %>
 																<%= image_tag(product.image.thumb.url) %>
@@ -164,42 +167,42 @@
 															<% end %>
 														<% end %>
 													</div>
-													<div class="productList-item-price">￥<%= product.price %>
+													<div class="hot-productList-item-price">￥<%= product.price %>
 														<% if product.stock > 0 %>
-															<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+															<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn hot-productList-item-cartBtn", :remote => true do %>
 																<i class="fa fa-shopping-cart"></i>
 															<% end %>
-														<% end %> -->
+														<% end %>
 														<!-- 待加入預購功能 -->
-														<!-- <% if product.stock <= 0 %>
-															<div class="productList-item-sellout", style="margin-top: -33px;">
+														<% if product.stock <= 0 %>
+															<div class="hot-productList-item-sellout", style="margin-top: -33px;">
 																<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 															</div>
-														<% end %> -->
+														<% end %>
 														<!-- 待加入預購功能 -->
-													<!-- </div>
-													<div class="productList-item-name ell">
+													</div>
+													<div class="hot-productList-item-name ell">
 														<%= link_to product_path(product) do %>
 															 <%= product.name %>
 														<% end %>
-													</div> -->
+													</div>
 													<!-- <div class="productList-item-desc"><%= product.description %></div> -->
-												<!-- </li>
-											</div> -->
+												</li>
+											</div>
 											<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容结束，保持全网站风格的一致 -->
-											<!-- <% end %>
+											<% end %>
                           </div>
 												</ul>
                         </div>
 											</div>
-										</div> -->
+										</div>
 								<!--/carousel-inner-->
-								<!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-								<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-						</div> -->
-<!-- </div>
+								<a class="left1 carousel-control" href="#myCarousel" role="button" data-slide="prev">‹</a>
+								<a class="right1 carousel-control" href="#myCarousel" role="button" data-slide="next">›</a>
+						</div>
 </div>
-</div> -->
+</div>
+</div>
 <!-- 热卖商品轮播区域结束 -->
 
 <!-- 區塊：服務介紹＋產品分類 -->
