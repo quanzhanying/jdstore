@@ -25,14 +25,20 @@
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Hi!,
-              <%= current_user.email %>
+              Hi!, <%= if current_user.image.nil? then current_user.email else image_tag(current_user.image,size: "16x16" ,alt: current_user.email) end%>
+              <%= if !current_user.username.nil? then current_user.username end%>
+              <%#= current_user.email %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
               <li>
                 <%= link_to("Admin 选单", admin_products_path) %>
+              </li>
+              <% end %>
+              <% if !current_user.image.nil? %>
+              <li>
+                <%= link_to(current_user.email, "javascript:void(0);") %>
               </li>
               <% end %>
               <li>
@@ -287,21 +293,20 @@
                       </div>
 
                       <p id="iforgot-link">
-                        <a target="browser" id="go-iforgot" href="#">忘了自己的 Email 或密码？</a>
+                        <a target="browser" id="go-iforgot" href="javascript:void(0);">忘了自己的 Email 或密码？</a>
                       </p>
                     <% end %>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="contact-us">
-            <p>你还可以使用以下服务进行登录JDstore</p>
+            <p>您还可以使用以下方式进行登录</p>
             <ul>
-              <li>Google</li>
-              <li>FaceBook</li>
-              <li>Github</li>
+              <li><%= link_to "Google 登录", user_google_oauth2_omniauth_authorize_path %></li>
+              <li><%= link_to "Github 登录", user_github_omniauth_authorize_path %></li>
+              <li><%= link_to "Facebook登录", user_facebook_omniauth_authorize_path %></li>
             </ul>
           </div>
         </div>
@@ -313,7 +318,6 @@
           </p>
         </div>
       </div>
-
     </div>
   </div>
   <!-- <div class="modal-dialog" role="document">
