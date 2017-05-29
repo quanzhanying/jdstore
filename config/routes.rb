@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         patch :move_up
         patch :move_down
       end
-    end 
+    end
     resources :orders do
       member do
         post :cancel
@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+    end
+
+    collection do
+      get :search
     end
   end
 

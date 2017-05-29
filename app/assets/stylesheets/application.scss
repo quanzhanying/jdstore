@@ -121,4 +121,18 @@
 .login-help{
   font-size: 12px;
 }
+
 /****** 登录系统界面结束 ******/
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+#search-id {
+    width: 200px;
+    padding-top: 7px;
+}
+
+/****** 搜索框 ******/
