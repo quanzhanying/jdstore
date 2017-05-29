@@ -17,9 +17,9 @@
           <div class="text-center product-box panel panel-default col-md-3" style=" padding:0px">
             <%= link_to product_path(product) do %>
               <% if product.photos.present? %>
-                <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail", class: "product-list-style-img img-responsive center-block") %>
+                <%= image_tag(product.photos[0].image.main.url, class: "thumbnail", class: " img-responsive center-block") %>
               <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: "product-list-style-img img-responsive center-block") %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: " img-responsive center-block") %>
               <% end %>
             <% end %>
             <div class="panel-body" style="padding:5px;">
