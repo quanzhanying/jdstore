@@ -20,6 +20,13 @@ v.password_confirmation = "123456"   # 最少要六码
 v.is_admin = false
 v.save
 
+u = User.new
+u.email = "cltatest@126.com"           # 可以改成自己的 email
+u.password = "12345687"                # 最少要六码
+u.password_confirmation = "12345687"   # 最少要六码
+u.is_admin = true
+u.save
+
 #
 # Product.create!(title: "MacBook Pro",
 #   description: "电脑",
