@@ -111,3 +111,15 @@ $(document).on('click', '.productDetail-tabList-tab', function () {
   $('.productDetail-content').eq(index).show() //只显示对于index的内容
 })
 // 添加单一商品页面选项卡功能结束
+
+// 放大镜开始
+$('#preview').css('visibility', 'hidden')
+var evt = new Event(),
+    m = new Magnifier(evt);
+m.attach({
+    thumb: '#thumb',
+    large: $('.intro-preview-activeItem img').attr('src'),
+    largeWrapper: 'preview',
+    zoom: 2
+})
+// 放大镜结束

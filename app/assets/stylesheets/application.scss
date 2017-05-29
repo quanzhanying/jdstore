@@ -26,6 +26,7 @@
 // 字型-logo"Select."
  .logo {
    font-family: 'Yesteryear', cursive;
+   text-transform: capitalize;
  }
 
 
@@ -49,6 +50,10 @@ a:hover {
 /*字体颜色和背景颜色*/
 .bg-color {
   background: #edbdb5;
+}
+
+.png div {
+  position:relative;
 }
 
 // 通用的css代码结束
@@ -609,63 +614,52 @@ a:hover {
 }
 // 设置回到顶部按钮和点赞链接结束
 
-// product/show页面中商品详情和用户评价
+// product/show页面中商品详情
 .productDetail {
-  border:1px solid #DDDDDD !important;
-  margin-top:40px auto;
+  border:1px solid #101846 !important;
+  margin-top: 0px auto;
   text-align: center;
-  line-height: 30px;
-  width: 1200px;
+  line-height: 3em;
   background-color: #fff;
   margin: 0 auto !important;
 }
 .productDetail-tabList {
   background: #F5F5F5;
-  height: 35px;
+  height: 60px;
+  padding-left: 0px;
   list-style-type: none;
-  border-bottom: 1px solid #D8D8D8;
+  border-bottom: 1px solid #101846;
   .productDetail-tabList-tab {
     float:left;
     display:inline;
-    width:175px;
-    height: 35px;
-    line-height: 35px;
-    padding-left:50px;
-    padding-right:50px;
+    width: 33.3333%;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 0px;
+    padding-right: 0px;
     cursor: pointer;
-    border-right: 1px solid #D8D8D8;
+    border-right: 1px solid #101846;
+    text-align:center !important;
+  }
+  .productDetail-tabList-tab:hover,
+  a.productDetail-tabList-tab:active {   //已選擇的語法如何寫？
+    color: #edbdb5;
+    background: #101846;
   }
 }
-// .productDetail-tabList-activeTab {
-// 	background: #fff;
-// }
+
 .productDetail-contentWrap{
-  width: 750px;
-  height:500px;
-  // margin:50px;
+  // width: 750px;
+  height: auto;
   margin-left:auto !important;
   margin-right:auto !important;
 }
 .productDetail-content {
   display: none;
-  width: 750px;
-  height: 500px;
-  padding-top:20px;
-  padding-bottom:50px;
-  text-align:center;
+  // width: 750px;
+  height: auto;
+  padding: 60px 45px;
+  text-align:left;
+  margin-bottom: 75px;
 }
-.commentList {
-  margin-top: 70px;
-}
-.comment-say {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align:center;
-  font-size: 20px;
-  margin-left:auto !important;
-  margin-right:auto !important;
-}
+// product/show页面中商品详情结束

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # resources :comments
   resources :brands
   resources :categories
   devise_for :users, controllers:
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :products do
+    resources :comments #商品评论的路径
     member do
       post :add_to_cart
       post :add_to_favorite  #收藏商品功能

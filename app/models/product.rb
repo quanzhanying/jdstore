@@ -29,10 +29,20 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
   belongs_to :brand
+
   # 收藏功能相关开始
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
   # 收藏功能相关结束
+
+  # 多图上传与photos的关系
+  has_many :photos
+  accepts_nested_attributes_for :photos
+  # 多图上传与photos的关系结束
+
+  # 评论相关
+  has_many :comments
+  # 评论相关结束
 
   acts_as_votable  #点赞功能
 
