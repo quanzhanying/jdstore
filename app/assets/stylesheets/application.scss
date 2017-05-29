@@ -40,6 +40,15 @@ body {
 
     background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
   }
+  //---------navbar動態---------
+  .navbar-default {
+   background-color: rgba(0,0,0,0.1);
+
+   &.show_bgcolor {
+     background-color: rgba(0,0,0,0.5);
+   }
+ }
+ //---------navbar動態---------
 
   //---------navbarLogo---------
   .navbar-brand > img {
@@ -52,6 +61,7 @@ body {
   }
 
   //---------navbarLogo---------
+
    .navbar-default {
 
        border-color: rgba(0,0,0,0.3); //边框色
@@ -97,15 +107,7 @@ body {
 
    }
  //---------navbar字體---------
- //---------navbar動態---------
- .navbar-default {
-  background: rgba(0,0,0,0.3);
 
-  &.show_bgcolor {
-    background-color: rgba(0,0,0,0.3);
-  }
-}
-//---------navbar動態---------
 //---------navbar------------------navbar------------------navbar------------------navbar------------------navbar---------
 
 
@@ -139,7 +141,7 @@ body {
   text-align: center;
   margin-top: 100px;
   margin-left: 30px;
-  margin-bottom: 300px;
+  margin-bottom: 280px;
 }
 
 .slogan {
