@@ -130,7 +130,7 @@ body {
 
 
 .jumbotron {
-  background-image:url('https://ww3.sinaimg.cn/large/006tNc79gy1fg08427lr1j31kw11xqv6.jpg');
+  background-image:url('https://pixabay.com/get/ed3cb90b2ff71c3e95594506e549449efe76e6dc1fb1184092f8c3/freerider-498473.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 200px;
@@ -144,19 +144,6 @@ body {
   margin-bottom: 280px;
 }
 
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
-}
-
-.lead {
-  margin-bottom: 600px;
-  text-align: center;
-  color: white;
-}
 
  .container-fluid .jumbotron{
    padding-bottom: 700px;//内部的底部边距，这样按钮不会很靠近底部了
@@ -166,21 +153,6 @@ body {
 //---------landingpage---------
 
 
- //---------信息筐---------
- .caption {
-   margin: 30px;
-   text-align: center;
-   top: 20px;
- }
-
- .thumbnail {
-     border: 0 none;
-     box-shadow: none;
-     margin-top: -400px;
-     width: 600px; //定制图片宽度
-     height: 310px; //定制图片高度
- }
- //---------信息筐---------
 
 
   //---------Background---------
@@ -195,3 +167,43 @@ body {
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
 }
+
+
+  .panel-body {
+      position: absolute;
+      left: -17px;
+      top: 0%;
+      width: 106%;
+      text-align: center;
+      margin-top: -900px;
+    }
+
+  .center {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      color: white;
+
+  }
+
+  .panel-body2 {
+      position: absolute;
+      left: -2px;
+      top: 0%;
+      width: 106%;
+      text-align: center;
+      margin-top: -534px;
+    }
+
+    .center2 {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+  }
