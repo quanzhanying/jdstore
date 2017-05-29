@@ -201,7 +201,7 @@ letter-spacing:   5px;//调整文字间距
     //这段代码主要实现了图片不会被拉伸变现的效果
 
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -243,3 +243,13 @@ letter-spacing:   5px;//调整文字间距
           font-size: 20px;
           color: white;
     }
+
+
+        .panel-body3 {
+            position: absolute;
+            left: -2px;
+            top: 0%;
+            text-align: center;
+            margin-top: 73px;
+            margin-bottom: 300px;
+          }
