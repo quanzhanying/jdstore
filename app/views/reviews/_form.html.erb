@@ -1,0 +1,11 @@
+<%= simple_form_for([@product,Review.new]) do |f|%>
+<div class="form-group">
+  <%= f.input :body, label: "评论内容", input_html: { class: "form-control" ,style: "border: 1px solid #ccc;"} %>
+</div>
+<% if !current_user %>
+<a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-default">发表评论</a>
+<% else %>
+<%= f.submit "发表评论", class: "btn btn-default" %>
+<% end %>
+
+<% end %>

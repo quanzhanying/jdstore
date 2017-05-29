@@ -1,0 +1,161 @@
+///购物车、、///
+<div class="container">
+  <div class="row">
+  <div class="col-md-12">
+
+    <%= link_to("清空购物车", clean_carts_path ,
+              method: :delete , class: "pull-right",
+              style: "text-decoration: underline;",
+              data: { confirm: "你确定要清空整个购物车吗？"} )%>
+
+    <h2> 购物车 </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">商品资讯</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>操作选项 </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr class="cart-item-<%= cart_item.product_id%>">
+            <td>
+              <%= link_to product_path(cart_item.product) do %>
+                  <%= image_tag(img430(cart_item.product,1), style: "width: 200px;") %>
+                  <% end %>
+            </td>
+            <td>
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+
+             <%# cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id) %>
+
+             <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+               <%= f.select :quantity, 1..cart_item.product.quantity %>
+               <%= f.submit "更新", data: { disable_with: "Submiting..." } %>
+             <% end %>
+            </td>
+            <td>
+              <%= link_to "Delete", cart_item_path(cart_item.product_id), :method => :delete, :remote => true, :class => "btn btn-danger" %>
+
+           </td>
+          </tr>
+
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span>
+           总计 <%= render_cart_total_price(current_cart) %> RMB
+          </span>
+      </span>
+    </div>
+    <% if !current_user %>
+    <div class="checkout clearfix"><a class="btn btn-lg btn-danger pull-right" href="#" data-toggle="modal" data-target="#login-modal">确认结账</a></li>
+      </div>
+    <% else %>
+    <div class="checkout clearfix">
+<%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+</div>
+      <% end %>
+
+  </div>
+</div>
+
+</div>
+///购物车////
+
+
+
+
+
+
+
+
+<div class="mxs-style-item item-cate-50050695 item-cate-123220002">
+  <a class="item-mask-href" href="//detail.tmall.com/item.htm?spm=a2160.7230761.1997224510.1.WUVuwz&amp;id=538854639613" data-spm-anchor-id="a2160.7230761.1997224510.1"></a>
+  <div class="item-img-wrapper img-wrapper">
+    <img src="//img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_250x250Q50s50.jpg_.webp?fromModName=tm/miao-m/bizs/fp-pc/floor/index" alt="">
+    <div class="item-img-tag-wrapper tag-rate-good">
+    </div>
+  </div>
+  <div class="item-info-wrapper">
+    <div class="item-title-single" style="background-image:url(//g.alicdn.com/mui/flag-img/circle@2x/EC.png)">厄瓜多尔白虾50/60
+    </div>
+    <div class="desc-whyme">Ecuador White Shrimp</div>
+    <ul class="item-specs">
+      <li>
+        <div class="item-spec-title">50-60只/kg</div>
+        <div class="item-spec-desc">规格</div>
+      </li>
+      <li>
+        <div class="item-spec-title">直降¥40</div>
+        <div class="item-spec-desc">促销</div>
+      </li>
+    </ul>
+    <div class="desc-subtitle">原装进口 单条气冻 肉质紧实 鲜嫩甘甜</div>
+    <div class="polymerize-skus">
+      <div class="sku">
+        <a href="//detail.tmall.com/item.htm?id=538854639613" data-spm="d1_1" data-spm-anchor-id="a2160.7230761.1997224510.d1_1">
+          <div class="item-spec">1.8kg</div>
+          <div class="mui-price">
+            <i class="mui-price-rmb">¥</i>
+            <span class="mui-price-integer">138</span>
+          </div>
+          <button class="miao-item-cart" data-id="538854639613" data-pic="//img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_350x350q75.jpg" data-spm-click="gostr=/tmalldqc;locaid=d0_0">
+          </button>
+        </a>
+      </div>
+      <div class="hidden-skus none">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="product">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="shangpin-1">
+        <a class="item-mask-href" href=""></a>
+        <div class="col-md-5">
+          <img class="sort-img" src="https://img.alicdn.com/imgextra/i1/2653351646/TB20Y9.nC8mpuFjSZFMXXaxpVXa_!!2653351646.jpg_430x430q90.jpg" alt="" />
+        </div>
+        <div class="col-md-7" id="shangpin-2">
+          <p>新西兰佳沛阳光金奇异果王4粒 单果200-230g</p>
+          <p>规格</p>
+          <p class="price">价格
+            <span class="rmb">￥</span>
+            <span class="price">168</span></p>
+            <p class="service">服务
+              <span class="service-detail">7天无忧退货 | 48小时快速退款 | 正品保证</span>
+              <hr>
+            </p>
+            <p>促销价555</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="col-md-5">
+            <img class="sort-img" src="https://img.alicdn.com/imgextra/i1/2653351646/TB20Y9.nC8mpuFjSZFMXXaxpVXa_!!2653351646.jpg_430x430q90.jpg" alt="" />
+          </div>
+          <div class="col-md-7">
+
+
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
