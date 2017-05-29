@@ -7,21 +7,21 @@
         <div class="productDetail">
           <div class="productDetail-left">
             <div class="productDetail-left-bigImage">
-              <%= image_tag(@product.photos[0].image.thumb.url) %>
+              <%= image_tag(@product.photos[0].image.main.url) %>
             </div>
 
             <div class="productDetail-left-imageList ">
               <div class="productDetail-left-imageList-item">
-                <%= image_tag @product.photos[0].image.thumb.url  %>
+                <%= image_tag @product.photos[0].image.main.url  %>
               </div>
               <div class="productDetail-left-imageList-item">
-                <%= image_tag @product.photos[1].image.thumb.url  %>
+                <%= image_tag @product.photos[1].image.main.url  %>
               </div>
               <div class="productDetail-left-imageList-item">
-                <%= image_tag @product.photos[2].image.thumb.url  %>
+                <%= image_tag @product.photos[2].image.main.url  %>
               </div>
               <div class="productDetail-left-imageList-item">
-                <%= image_tag @product.photos[3].image.thumb.url  %>
+                <%= image_tag @product.photos[3].image.main.url  %>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@
             <%= link_to join_product_path(@product), method: :post, class: " btn btn-lg btn-danger pull-right" do%>
               <i class="fa fa-heart fa-lg"></i><% end %>
           <% end %>
-        </div> --> 
+        </div> -->
 
         <!--  点赞 -->
         <!-- <div class="col-sm-4 product-zan">
@@ -126,7 +126,7 @@
           <!-- 商品详情区域 -->
           <div class="product-particulars-box row tab-pane active" id="tab_default_1">
             <% @product.photos.each do |p| %>
-              <%= image_tag p.image.thumb.url  , class: "thumbnail img-responsive col-md-5" %>
+              <%= image_tag p.image.main.url  , class: "thumbnail img-responsive col-md-5" %>
             <% end %>
           </div>
           <!-- 商品评论区域 --><!--对商品评论以及评星-->
