@@ -1,5 +1,7 @@
 class Account::OrdersController < ApplicationController
-  def show
+  before_action :authenticate_user!
+
+  def index
     @orders = current_user.orders
   end
 end

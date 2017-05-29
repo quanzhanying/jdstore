@@ -2,24 +2,21 @@
 
 <hr>
 
-<% current_user.orders.recent.each do |order| %>
-
-  <%= order.created_at %> 收货人 <%=order.shipping_name%> 总额 ￥<%=order.total%>
-  <table class="table table-bordered">
+<table class="table table-bordered">
     <thead>
-      <tr>
-        <th>商品</th>
-        <th>数量</th>
-      </tr>
+        <tr>
+            <th>#</th>
+            <th>下单时间</th>
+        </tr>
     </thead>
 
     <tbody>
-      <% order.product_lists.each do |product_list| %>
+        <% @orders.recent.each do |order| %>
         <tr>
-          <td><%= product_list.product_name %></td>
-          <td><%= product_list.quantity %></td>
+            <td><%= link_to(order.id, order_path(order.token)) %></td>
+            <td><%= order.created_at.to_s(:long) %></td>
         </tr>
-      <% end %>
+        <% end %>
     </tbody>
-  </table>
-<% end %>
+
+</table>
