@@ -83,26 +83,26 @@
         </div>
 
         <!-- 收藏商品按钮 -->
-        <div class="col-sm-4 product-collection">
+        <!-- <div class="col-sm-4 product-collection">
           <!-- <%= link_to("添加收藏 - 人气(26)", "#")%> -->
-          <% if current_user && current_user.is_member_of?(@product) %>
+          <!-- <% if current_user && current_user.is_member_of?(@product) %>
             <%= link_to quit_product_path(@product), method: :post, class: " btn btn-lg btn-default pull-right" do%>
             <i class="fa fa-heart fa-lg"></i><% end %>
           <% else %>
             <%= link_to join_product_path(@product), method: :post, class: " btn btn-lg btn-danger pull-right" do%>
               <i class="fa fa-heart fa-lg"></i><% end %>
           <% end %>
-        </div>
+        </div> --> 
 
         <!--  点赞 -->
-        <div class="col-sm-4 product-zan">
+        <!-- <div class="col-sm-4 product-zan">
         <%= link_to like_product_path(@product), method: :put do %>
           <div class="pi-thumbs-up">
             <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
             <a>人气（<%= @product.get_upvotes.size %>）</a>
           </div>
         <% end %>
-        </div>
+        </div> -->
       </div>
     </div>
 

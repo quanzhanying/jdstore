@@ -52,4 +52,3 @@ Product.create!(title: "夏日倾情",
   category_id: 1,
   image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffzpu05r6ij30l00swjvd.jpg")
   )
-
