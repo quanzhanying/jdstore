@@ -1881,3 +1881,30 @@ a:hover {
   color          : #FF6F00;
   text-decoration: none;
 }
+
+/*字体颜色和背景颜色*/  //copy from zhengzhi//
+.bg-gray {
+  background: #F5F5F5
+}
+.bg-red {
+  background: #D32048
+}
+.col-gray {
+  color: #808080;
+}
+.col-black {
+  color: #333333;
+}
+.col-red {
+  color: #d32048;
+}
+.col-blue {
+  color: #005AA0;
+}
+
+
+/*边框*/
+.border {
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+}

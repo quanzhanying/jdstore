@@ -1,0 +1,34 @@
+<div class="cartProducts-list">
+    <% current_cart.cart_items.includes(:product).each do |cart_item| %>
+      <div class="cartProducts-listItem clearfix pt20 pb20 mb10 border">
+        <div class="item-pic fl border ml30">
+          <%= link_to product_path(cart_item.product) do %>
+            <% if cart_item.product.image.present? %>
+               <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="item-msg fl">
+          <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+        </div>
+        <div class="item-price fl tc"><%= cart_item.product.price %></div>
+        <div class="item-quantity fl tc">
+          <div class="countNumber">
+            <%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
+            <input class="countNumber-input" type="text" value="<%= cart_item.quantity %>">
+            <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
+          </div>
+
+        </div>
+        <div class="item-total fl tc"><%= cart_item.product.price * cart_item.quantity  %></div>
+        <div class="item-operation fl tc"><%= link_to("删除", cart_item_path(cart_item.product_id), method: :delete, class: "delete-btn", remote: true)%></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="account border clearfix mt30 p20 mb20 bg-gray">
+    <%= link_to("确认结账", checkout_carts_path, class: "intro-text-btn add-cart pl15 pr15 ml20 tc col-red f20 bg-red fr") %>
+    <p class="fr mt10 mr20">合计: <strong class="col-red f18">￥<%= render_cart_total_price(current_cart) %></strong></p>
+  </div>
