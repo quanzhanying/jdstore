@@ -1,0 +1,25 @@
+<h1> 我的订单  </h1>
+
+<hr>
+
+<% current_user.orders.recent.each do |order| %>
+
+  <%= order.created_at %> 收货人 <%=order.shipping_name%> 总额 ￥<%=order.total%>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>商品</th>
+        <th>数量</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% order.product_lists.each do |product_list| %>
+        <tr>
+          <td><%= product_list.product_name %></td>
+          <td><%= product_list.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
