@@ -11,16 +11,9 @@
   <% else %>
     <h2 class="search-info-title"> 搜索到以下商品 </h2>
     <div class="search-result">
-
-      <div class="row products-show0"></div>
-      <div class="product-table">
+      <div class="row">
         <% @products.each do |product| %>
-
-        <tr>
-          <td>
-            <%= product.id %>
-          </td>
-          <td>
+          <div class="col-xs-6 col-md-3">
             <%= link_to product_path(product) do %>
               <% if product.image.present? %>
                 <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
@@ -28,30 +21,13 @@
                 <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
               <% end %>
             <% end %>
-          </td>
-          <td>
-            <%= product.title %>
-          </td>
-          <td>
-            <%= product.price %>
-          </td>
-
-
-        <div class="row products-show">
-
-          <div class="col-md-12 col-lg-9 col-lg-offset-1">
-
-            <div class="pull-right">
-              发布时间：<%= product.created_at.to_date %>
-            </div>
-
+            <%= product.title %> ￥ <%= product.price %>
           </div>
-        </div>
         <% end %>
       </div>
-    </div>
-    <div class="text-center">
-      <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+      <div class="text-center">
+        <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+      </div>
     </div>
   <% end %>
 </div>
