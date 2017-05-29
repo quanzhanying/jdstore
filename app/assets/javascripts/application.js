@@ -73,6 +73,50 @@ $(function(){
 });
 // --首頁圖片輪播--
 
+// 推荐商品轮播图
+$(document).ready(function() {
+	$('#myCarousel').carousel1({
+	interval: 5000
+	})
+
+    $('#myCarousel').on('slid.bs.carousel1', function() {
+    	//alert("slid");
+	});
+});
+
+/* carousel effect  */
+
+// $('.carousel').carousel()
+
+/* scroll effect  */
+(function ($) {
+  $(document).ready(function(){
+    $('.index').hide();
+    $(function () {
+        $(window).scroll(function () {
+
+            if ($(this).scrollTop() > 1000) {
+                $('.index').fadeIn();
+            } else {
+                $('.index').fadeOut();
+            }
+        });
+    });
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.animated').fadeOut();
+            } else {
+                $('.animated').fadeIn();
+            }
+        });
+    });
+
+});
+  }(jQuery));
+// 推荐商品轮播图结束
+
 // 首页和全商品页面回到顶部和点赞链接的功能
 $(document).on('click', '.working', function () {
 	alert('功能暂未完成，敬请期待...')
