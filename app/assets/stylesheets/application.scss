@@ -28,6 +28,7 @@ input , button{
 
 a {
   text-decoration: none !important;
+  color: #555555;
 }
 
 .disabled {
@@ -1766,7 +1767,7 @@ span.field-with-placeholder label.placeholder {
   padding-left: 7px;
 }
 .contact-us {
-  background: url("https://store.storeimages.cdn-apple.com/8750/store.apple.com/shop/rs/src/features/signin/css/bg/bg-signin-divider.png") no-repeat;
+  background: url("/images/bg-signin-divider.png") no-repeat;
   float: right;
   padding: 35px 0 0 57px;
   width: 342px;
@@ -1810,7 +1811,7 @@ span.field-with-placeholder label.placeholder {
   padding-top: 10px;
 }
 .cart-navigation .contact-phone {
-  background: url("https://store.storeimages.cdn-apple.com/8750/store.apple.com/shop/rs/rel/oocss/common/objects/img/glyphs/phone.png") no-repeat 0 0 transparent;
+  background: url("/images/phone.png") no-repeat 0 0 transparent;
   background-size: auto 100%;
   padding-left: 18px;
 }
@@ -1844,4 +1845,7 @@ border-radius: 4px;
   float: left;
   font-size: 14px;
   top: -24px;
+}
+.JDstoreTab a{
+ color: #555555;
 }
