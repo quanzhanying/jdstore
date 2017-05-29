@@ -16,19 +16,130 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体 需要使用VPN才可生效
+
+body {
+     font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+     color: #666;                                        // 修改全站的字体主色 压低亮度
+     }
+
+
+  //---------navbar------------------navbar------------------navbar------------------navbar------------------navbar---------
+
+  .navbar-default .navbar-brand {
+    color: #EEEEEE; //字体颜色
+    padding: 10px 15px; //上下10px，左右15px
+    line-height: 58px; //文字行高
+    letter-spacing: 2px;//调整文字间距
+    margin:0 auto;
+  }
+
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+    color: #9E9E9E; //鼠标放置在链接上的文字颜色
+
+    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+  }
+
+  //---------navbarLogo---------
+  .navbar-brand > img {
+      display: inline-block; //图片和链接文字显示在同一行
+      margin-right: 15px; //图片和链接文字拉开一点距离
+      margin-bottom: 3px;
+      width: 100px; //定制图片宽度
+      height: 50px; //定制图片高度
+
+  }
+
+  //---------navbarLogo---------
+   .navbar-default {
+
+       border-color: rgba(0,0,0,0.3); //边框色
+
+       margin-bottom: 0px; //底部 margin 不撑开距离
+
+       height: 80px;
+   }
+    @media (min-width: 768px) {
+    .navbar {
+      border-radius: 0; //圆角为0
+    }
+  }
+
+  //---------navbar字體---------
+    .navbar-default .navbar-nav > li > a{
+     color: #EEEEEE;
+       line-height: 50px; //文字行高
+
+   }
+
+   .navbar-default .navbar-nav > li > a:hover,
+   .navbar-default .navbar-nav > li > a:focus {
+     color: #9E9E9E;
+
+     background-color: transparent;
+   }
+   .navbar-default .navbar-nav > .active > a,
+   .navbar-default .navbar-nav > .active > a:hover,
+   .navbar-default .navbar-nav > .active > a:focus {
+     color: #9E9E9E;
+
+     background-color: #424242;
+
+   }
+
+   .navbar-default .navbar-nav > .open > a,
+   .navbar-default .navbar-nav > .open > a:focus,
+   .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #9E9E9E;
+
+     color: #212121;
+
+   }
+ //---------navbar字體---------
+ //---------navbar動態---------
+ .navbar-default {
+  background: rgba(0,0,0,0.3);
+
+  &.show_bgcolor {
+    background-color: rgba(0,0,0,0.3);
+  }
+}
+//---------navbar動態---------
+//---------navbar------------------navbar------------------navbar------------------navbar------------------navbar---------
+
+
+//---------landingpage---------
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    background-position: bottom center;
+    overflow: hidden;
+    margin-top: -250px;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+        line-height: 800px; //文字行高
+        letter-spacing: 20px;//调整文字间距
+    }
+}
+
 
 .jumbotron {
   background-image:url('https://ww3.sinaimg.cn/large/006tNc79gy1fg08427lr1j31kw11xqv6.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+  padding-bottom: 200px;
 }
 
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
   text-align: center;
-  margin-top: 200px;
-  margin-bottom: 80px;
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-bottom: 300px;
 }
 
 .slogan {
@@ -40,24 +151,45 @@
 }
 
 .lead {
-  margin-bottom: 60px;
+  margin-bottom: 600px;
   text-align: center;
   color: white;
 }
-.caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
-}
-
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
-}
 
  .container-fluid .jumbotron{
-   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   padding-bottom: 700px;//内部的底部边距，这样按钮不会很靠近底部了
    margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
    border-radius: 0;//圆角为0
  }
+//---------landingpage---------
+
+
+ //---------信息筐---------
+ .caption {
+   margin: 30px;
+   text-align: center;
+   top: 20px;
+ }
+
+ .thumbnail {
+     border: 0 none;
+     box-shadow: none;
+     margin-top: -400px;
+     width: 600px; //定制图片宽度
+     height: 310px; //定制图片高度
+ }
+ //---------信息筐---------
+
+
+  //---------Background---------
+ body {
+    background: url("http://i.imgur.com/5wDbcx9.jpg");
+    //这个设定的背景图片可以应用到除了首页这类已经专门设定背景的所有网站页面，免去重复设定背景的烦恼。
+
+    background-size: cover;
+    //这段代码主要实现了图片不会被拉伸变现的效果
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+}
