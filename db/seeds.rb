@@ -24,31 +24,3 @@ c = Category.new
 c.name = "鲜花"
 c.description = "鲜花"
 c.save
-
-
-# Initialize Product
-
-
-Product.create!(title: "爱在墨西哥",
-  description: "花束",
-  price: 210,
-  quantity: 10,
-  category_id: 1,
-  image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1ffzpjbccmvj30kx0t0n1c.jpg")
-  )
-
-Product.create!(title: "繁星",
-  description: "花束",
-  price: 180,
-  quantity: 5,
-  category_id: 1,
-  image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1ffzpo4l3srj30lh0sg0wn.jpg")
-  )
-
-Product.create!(title: "夏日倾情",
-  description: "花束",
-  price: 180,
-  quantity: 5,
-  category_id: 1,
-  image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1ffzpu05r6ij30l00swjvd.jpg")
-  )
