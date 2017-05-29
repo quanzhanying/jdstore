@@ -138,10 +138,14 @@ body {
 
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 100px;
-  margin-left: 30px;
-  margin-bottom: 280px;
+
+  padding: 10px 15px; //上下10px，左右15px
+  line-height: 58px; //文字行高
+}
+
+.slogan {
+
+  padding: 10px 15px; //上下10px，左右15px
 }
 
 
@@ -175,7 +179,7 @@ body {
       top: 0%;
       width: 106%;
       text-align: center;
-      margin-top: -900px;
+      margin-top: -650px;
     }
 
   .center {
@@ -189,21 +193,20 @@ body {
 
   }
 
-  .panel-body2 {
-      position: absolute;
-      left: -2px;
-      top: 0%;
-      width: 106%;
-      text-align: center;
-      margin-top: -534px;
-    }
-
-    .center2 {
+    .panel-body2 {
         position: absolute;
-        left: 0;
-        top: 50%;
-        width: 100%;
+        left: -2px;
+        top: 0%;
         text-align: center;
-        font-size: 20px;
-        color: white;
-  }
+        margin-top: -284px;
+      }
+
+      .center2 {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+          font-size: 20px;
+          color: white;
+    }
