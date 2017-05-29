@@ -12,4 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+ #search-id {
+   width: 200px;
+   padding-top: 7px;
+   padding-left: 10px;
+
+ }
