@@ -27,7 +27,6 @@ class CartItemsController < ApplicationController
       render :js =>  jq
     end
 
-    #flash[:warning] = "成功将 #{@product.title} 从购物车删除!"
     #redirect_to :back
   end
 
