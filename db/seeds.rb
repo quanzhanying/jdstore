@@ -46,22 +46,22 @@ v.save
 
 
 Product.create!(title: "MacBook Pro",
-  description: "电脑",
+  description: "Apple电脑",
   price: 14888,
   quantity: 30,
-  image: open("http://img14.360buyimg.com/n1/s546x546_jfs/t2518/52/10378951/105842/413f9b3d/5631d2b6N8fa76f15.jpg")
+  image: open("https://ws3.sinaimg.cn/large/006tNbRwgy1fg2fstpmgyj30m80jh40j.jpg")
 )
 
 Product.create!(title: "坚果Pro",
   description: "手机",
   price: 1799,
   quantity: 50,
-  image: open("https://img14.360buyimg.com/n1/s546x546_jfs/t5335/39/1553366100/209772/32105f74/5911bac3N5d51d2aa.jpg")
+  image: open("https://ws1.sinaimg.cn/large/006tNbRwgy1fg2ftgnwzdj30m80m87cp.jpg")
 )
 
 Product.create!(title: "大疆（DJI） 精灵3 标准版",
   description: "无人机",
   price: 2969,
   quantity: 10,
-  image: open("http://img14.360buyimg.com/n1/s546x546_jfs/t3232/65/6215650755/81612/3a052265/58a27e59N05fb5fc2.jpg")
+  image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fg2fu068i8j30m80m8q5k.jpg")
 )
