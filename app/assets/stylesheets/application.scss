@@ -115,7 +115,8 @@ body {
 
 //----三大圖的內文----
 .title1 {
-margin-bottom: 280px;
+margin-bottom: 295px;
+letter-spacing:   5px;//调整文字间距
 }
 //----三大圖的內文----
 
@@ -137,27 +138,49 @@ margin-bottom: 280px;
 
 
 .jumbotron {
-  background-image:url('https://pixabay.com/get/eb34b90a28fc073ed1534705fb094596e074e7d711ac10459cf6c170a1e5bdbd/surfing-2185086_1920.jpg');
+  background-image:url('http://i.imgur.com/wzzgFqx.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   padding-bottom: 500px;
 }
 
 
 .title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-
+  color:#000000;
   padding: 30px 15px; //上下30px，左右15px
   line-height: 58px; //文字行高
+  color: #F5F5F5;
 }
 
 .slogan {
   padding: 10px 15px; //上下10px，左右15px
+  color: #F5F5F5;
 }
 
 .lead {
   padding: 10px 15px; //上下10px，左右15px
+  color: #F5F5F5;
 }
+  .btn-danger {
+    text-align: center;
+      color: #424242;//字体颜色
+
+      letter-spacing: 4px;//调整文字间距
+
+
+
+      background-color: #FAFAFA;//背景颜色
+
+      border-color: #FAFAFA;//边框颜色
+
+  }
+
+  .btn-danger:hover {
+      background-color: #BDBDBD;//鼠标放置在btn上的背景颜色
+
+      border-color: #BDBDBD;//鼠标放置在btn上的边框颜色
+
+  }
 
  .container-fluid .jumbotron{
    padding-bottom: 700px;//内部的底部边距，这样按钮不会很靠近底部了
