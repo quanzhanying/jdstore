@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+//----------主页logo居中
+.navbar-brand-centered {
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: 160px;
+        text-align: center;
+        background-color: transparent;
+    }
+    .navbar>.container .navbar-brand-centered,
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+//------------导航栏改成透明色
+    .navbar-default {
+        background: transparent;
+        border-color: transparent;
+        margin-bottom: 100px;
+        border-radius: 0;
+        height: 60px;
+    }
+  
