@@ -46,29 +46,29 @@
 
       <%= simple_form_for @order do |f| %>
 
-
-
           <legend> 订购人</legend>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_name  %>
+            <%= f.input :billing_name, :label => '姓名' %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_address  %>
+            <%= f.input :billing_address, :label => '地址' %>
           </div>
 
           <legend> 收货人</legend>
           <div class="form-group col-lg-6">
-           <%= f.input :shipping_name  %>
+           <%= f.input :shipping_name, :label => '姓名'   %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :shipping_address  %>
+            <%= f.input :shipping_address, :label => '地址'   %>
           </div>
 
-        <div class="checkout">
+
+        <div class="checkout col-lg-12">
           <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
                        data: { disable_with: "Submitting..." } %>
         </div>
       <% end %>
+
 
     </div>
   </div>
