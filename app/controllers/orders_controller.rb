@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  # binding.pry
   def apply_to_cancel
     @order = Order.find_by_token(params[:id])
     OrderMailer.apply_cancel(@order).deliver!
