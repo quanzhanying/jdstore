@@ -1,0 +1,62 @@
+<!--滚轮图必备的javascript命令，不然图片动不起来-->
+<head>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- 區塊：圖片輪播 -->
+<div class="container-carousel">
+ <div id="mycarousel" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators"> <!--下面这些是那些切换的圆点点 -->
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+	<!-- 廣告輪播列表 -->
+      <div class="carousel-inner" role="listbox">
+
+        <div class="item active"> <!--active表示显示的第一张是什么-->
+            <img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fg0zni8jz6j31hc0zjtc7.jpg" data-color="#eee">
+            <div class="carousel-caption">
+                <h3>禅</h3>
+								<p>素食为媒 品味禅境安宁</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fg0znlgl5lj31hc0zjq96.jpg" data-color="#eee">
+            <div class="carousel-caption">
+              <h3>悦</h3>
+              <p>缤纷果脯 感受多彩喜悦</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fg0znnwpkbj31hc0zjahd.jpg" data-color="#eee">
+            <div class="carousel-caption">
+                <h3>为</h3>
+								<p>至诚服务 只为您的满意</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fg0znr1nvij31hc0zjk1i.jpg" data-color="#eee">
+            <div class="carousel-caption">
+                <h3>食</h3>
+								<p>食以为天 满足均衡营养</p>
+            </div>
+        </div>
+
+      </div>
+
+      <!-- 轮转图控制 Controls -->
+      <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+        <span class="sr-only">上一則</span>
+      </a>
+      <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+        <span class="sr-only">下一則</span>
+      </a>
+  </div>
+</div>
+<!-- 區塊：圖片輪播 -->
