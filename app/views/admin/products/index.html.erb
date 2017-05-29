@@ -34,7 +34,7 @@
         <td>
           <%= product.price %>
         </td>
-        <td><%= product.category.name %></td>
+        <%= product.category.name if product.category %>
         <td>
           <%= link_to edit_admin_product_path(product), :class => "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
           <%= link_to admin_product_path(product), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash"></i><% end %>
