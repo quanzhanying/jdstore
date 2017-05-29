@@ -13,4 +13,6 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
+  scope :recent, -> { order("created_at DESC") }
+
 end

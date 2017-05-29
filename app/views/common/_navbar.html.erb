@@ -34,6 +34,7 @@
                               <% if current_user.is_admin? %>
                               <%= link_to("Admin", admin_products_path) %>
                               <% end %>
+                              <%= link_to("我的订单", account_orders_path) %>
                               <%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
                           </li>
                       </ul>
