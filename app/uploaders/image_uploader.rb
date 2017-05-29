@@ -22,7 +22,8 @@ end
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # process resize_to_fit: [800, 800]
+  process resize_to_fit: [1200, 1200]
+
   version :main do
     process resize_to_fill: [800,800]
   end
