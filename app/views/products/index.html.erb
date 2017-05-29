@@ -161,7 +161,7 @@
             <div class="productList-item-pic">
               <%= link_to product_path(product) do %>
                 <% if product.photos.present? %>
-                  <%= image_tag(product.photos[0].avatar.thumb.url) %> #把第一张图作为展示图
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
                 <% else %>
                   <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
                 <% end %>
