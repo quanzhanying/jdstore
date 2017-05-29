@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem  'bootstrap-sass'
 gem  'devise'
 gem  'simple_form'
-gem  'carrierwave'       
+gem  'carrierwave'
 gem  'mini_magick'
 gem  'font-awesome-rails'
 gem  'letter_opener',  group: :development  #  寄送资讯
@@ -41,7 +41,7 @@ gem  'aasm'            #  订单系统
 gem  'intercom-rails'  #  客服系统
 gem  'ransack'         #  搜索
 gem  'will_paginate'   #  分页
-gem  'will_paginate-bootstrap'
+gem  'will_paginate-bootstrap'  # 美化分页效果
 
 
 group :development, :test do

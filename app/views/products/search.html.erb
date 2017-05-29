@@ -1,0 +1,20 @@
+<div class="content">
+
+  <% if @products.blank? %>
+    <div class="text-center">
+      没有符合搜索条件的商品哦！<br>
+      <%= link_to("立即查看产品", products_path, class: "btn btn-sm btn-success") %>
+    </div>
+  <% else %>
+    <div class="table">
+      <tbody>
+        <% @products.each do |product| %>
+        <div><%= link_to("product.title", product_path(product) ) %></div>
+        <% end %>
+      </tbody>
+    </div>
+    <div class="text-center">
+      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+    </div>
+  <% end %>
+</div>
