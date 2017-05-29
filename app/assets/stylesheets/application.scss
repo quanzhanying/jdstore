@@ -112,6 +112,13 @@ body {
 
 
 //---------landingpage---------
+
+//----三大圖的內文----
+.title1 {
+margin-bottom: 280px;
+}
+//----三大圖的內文----
+
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
@@ -130,24 +137,27 @@ body {
 
 
 .jumbotron {
-  background-image:url('https://pixabay.com/get/ed3cb90b2ff71c3e95594506e549449efe76e6dc1fb1184092f8c3/freerider-498473.jpg');
+  background-image:url('https://pixabay.com/get/eb34b90a28fc073ed1534705fb094596e074e7d711ac10459cf6c170a1e5bdbd/surfing-2185086_1920.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 200px;
+  padding-bottom: 500px;
 }
+
 
 .title {
   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
 
-  padding: 10px 15px; //上下10px，左右15px
+  padding: 30px 15px; //上下30px，左右15px
   line-height: 58px; //文字行高
 }
 
 .slogan {
-
   padding: 10px 15px; //上下10px，左右15px
 }
 
+.lead {
+  padding: 10px 15px; //上下10px，左右15px
+}
 
  .container-fluid .jumbotron{
    padding-bottom: 700px;//内部的底部边距，这样按钮不会很靠近底部了
