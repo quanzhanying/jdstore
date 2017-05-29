@@ -13,6 +13,15 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid
   end
 
+  def set_payment_with!(method)
+    self.update_columns(payment_method: method)
+  end
+
+  def pay!
+    # But nothing is paid
+    self.update_columns(is_paid: true)
+  end
+
   scope :recent, -> { order("created_at DESC") }
 
 end
