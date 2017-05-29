@@ -38,5 +38,6 @@ class Product < ApplicationRecord
 
   scope :selling, -> { where(can_sell: true) } # 选出正在销售中的商品
   scope :recent, -> { order('created_at DESC') }  #按照发布时间的顺序
+  scope :random4, -> { limit(4).order('RANDOM()') } #随机选出5个样品
 
 end

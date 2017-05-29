@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user! , only: [:new, :create, :show]
+  before_action :authenticate_user! , only: [:new, :create]
   before_action :validate_search_key, only: [:search]
   layout "products"
   def index
@@ -49,6 +49,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @suggests = Product.selling.random4 #选出4个随机商品
     if @product.can_sell = false
       redirect_to root_path
     end

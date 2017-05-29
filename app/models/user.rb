@@ -33,12 +33,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   # 我的账户修改栏位限制信息
-  validates :name, presence: true
-  validates :username, presence: true
-  validates :phonenumber, presence: true
-  validates :address, presence: true
+  # validates :name, presence: true
+  # validates :username, presence: true
+  # validates :phonenumber, presence: true
+  # validates :address, presence: true
   # 我的账户修改栏位限制信息结束
-  
+
   has_many :products
   has_many :orders
   # 收藏功能商品开始
