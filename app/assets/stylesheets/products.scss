@@ -81,3 +81,21 @@
   border-radius   : 50%;
   color           : #fff;
 }
+
+
+.intro-text-btn {
+	display: block;
+	width: 178px;
+	height: 48px;
+	line-height: 45px;
+	border: 1px solid #d32048;
+	font-family: "Microsoft Yahei",simhei;
+	border-radius: 50px;
+	&.add-cart {
+		color: #fff;
+	}
+	&.btn-disabled {
+		background: #aaa;
+    border-color: #fff;
+	}
+}

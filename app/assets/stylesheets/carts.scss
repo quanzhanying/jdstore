@@ -44,3 +44,105 @@
   right: auto;
   left : 0;
 }
+
+//-----copy from zhengzhi github-----//
+.cartProducts-title {
+	height: 50px;
+	line-height: 50px;
+}
+.cartProducts-title-msg {
+	width: 425px;
+}
+.cartProducts-title-price {
+	width: 143px;
+}
+.cartProducts-title-quantity {
+	width: 280px;
+}
+.cartProducts-title-total {
+	width: 200px;
+}
+.cartProducts-title-operation {
+	width: 150px;
+}
+
+.cartProducts-listItem {
+	background: #e6f0fd;
+	.item-pic {
+		img {
+			width: 72px;
+			height: 72px;
+		}
+	}
+	.item-msg {
+		padding-left: 20px;
+    padding-top: 10px;
+    width: 321px;
+    color: #808080;
+    font-size: 14px;
+		a {
+			color: #39f;
+		}
+	}
+	.item-price {
+		padding-top: 26px;
+    width: 143px;
+    color: #808080;
+    font-size: 14px;
+	}
+	.item-quantity {
+		padding-top: 22px;
+		width: 280px;
+	}
+	.item-total {
+		padding-top: 26px;
+    width: 200px;
+    color: #db3852;
+	}
+	.item-operation {
+		padding-top: 28px;
+		width: 150px;
+	}
+}
+
+.countNumber {
+  padding: 0 24px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  .countNumber-btn-disabled {
+  	color: #dfdfdf;
+  }
+  .countNumber-btn {
+  	font-size: 22px;
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    overflow: hidden;
+    background: #fff;
+    color: #999;
+    border: 1px solid #e0e0e0;
+  }
+  .countNumber-input {
+   	font-size: 16px;
+    text-align: center;
+    width: 74px;
+    border: 1px solid #e0e0e0;
+    height: 26px;
+    padding: 14px 4px;
+    outline: none;
+   }
+   .countNumber-btn-plus {
+   	  right: 0;
+    	top: 0;
+   }
+   .countNumber-btn-sub {
+  	right: auto;
+    left: 0;
+    top: 0;
+  }
+}
