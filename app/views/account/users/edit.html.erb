@@ -1,0 +1,10 @@
+<h2> 修改个人资料 </h2>
+<%= simple_form_for [:account, @user ] do  |f|%>
+   <div>
+      <%= f.input :username, :label => "用户名" %>
+      <%= f.input :email, :label => "邮箱地址" %>
+      <%= f.input :gender, :label => "性别"%>
+      <%= link_to("放弃更新", account_users_path, class: "btn btn-sm btn defaule")%>
+      <%= f.submit "提交", class: "btn btn-sm btn-default"%>
+   </div>
+<% end %>
