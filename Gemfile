@@ -43,6 +43,12 @@ gem 'seo_helper','~> 1.0'
 gem 'letter_opener', group: :development
 gem 'aasm'
 
+=======
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+gem 'figaro'
+
+
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
