@@ -154,7 +154,7 @@
           <!-- 商品評論＋點讚＋收藏集合鈕開始 -->
           <div class="btn-group btn-group-justified", style="height: 45px;">
             <div class="btn btn-default">
-              <a href="#p_comments"><span class="badge"><%= @product.comments.count %></span>查看评价</a>
+              <a href="#product_comments"><span class="badge"><%= @product.comments.count %></span>查看评价</a>
             </div>
             <!-- 点赞的view部分 -->
             <div class="btn btn-default">
@@ -221,28 +221,32 @@
 
         <div class="productDetail-contentWrap">
           <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
-            <p><%= @product.description %></p>
+            <p><%= simple_format(@product.description) %></p>
             <div class="productDetail-introImg">
             </div>
           </div>
           <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
-            <div id="p_comments">
-            <ul class="commentList">
-              <% @comments.each do |comment| %>
-                <li class="commentList-item clearfix">
-                  <p class="content">
-                    <%= comment.body  %>
-                    <br>
-                  </p>
-                  <p class="name">
-                    <%= comment.user.email %>
-                  </p>
-                </li>
-              <% end %>
-            </ul>
-            <p class="comment-say">
-              <%= link_to("发表评论", new_product_comment_path(@product), :class => "btn btn-primary") %>
-            </p>
+            <div id="product_comments">
+              <ul class="commentList">
+                <p style="border-top-style:solid; border-bottom-style:dotted; border-width:1.2px; text-align: center;">
+                来自我们顾客的宝贵评价</p>
+                <% @comments.each do |comment| %>
+                  <li class="commentList-item clearfix">
+                    <p class="content">
+                      <%= simple_format(comment.body)  %>
+                    </p>
+                    <p class="name">
+                      <%= comment.user.email %>
+                    </p>
+                  </li>
+                <% end %>
+              </ul>
+              <p style="border-bottom-style:solid; border-width:1.2px; text-align: center; color: #3c3d42">
+                想提供您的心得吗？欢迎留言！
+                <span class="comment-say">
+                  <%= link_to("发表评价", new_product_comment_path(@product), :class => "btn btn-primary btn-sm") %>
+                </span>
+              </p>
             </div>
           </div>
         </div>
