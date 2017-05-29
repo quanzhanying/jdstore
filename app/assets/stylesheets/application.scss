@@ -1865,3 +1865,19 @@ body {
 .content {
   flex: 1;
 }
+// copy from https://github.com/zhengzhi2936/Jdstore-Demo
+
+a {
+  color: #6D6D6D;
+}
+
+a:hover {
+  color          : #C81623;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color          : #FF6F00;
+  text-decoration: none;
+}

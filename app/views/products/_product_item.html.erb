@@ -1,0 +1,26 @@
+<li class="fl productList-item p15 pr <%= last_item(index) %>">
+  <p class="productList-item-pic w200 h200">
+    <%= link_to product_path(product) do %>
+      <% if product.image.present? %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+      <% end %>
+    <% end %>
+  </p>
+  <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
+  <p class="productList-item-name fb col-red f18 mt10">
+    <%= link_to product_path(product) do %>
+       <%= product.title %>
+    <% end %>
+  </p>
+  <p class="productList-item-desc mt5 f12"><%= product.description %></p>
+  <% if product.quantity > 0 %>
+    <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
+      <i class="fa fa-shopping-cart col-red"></i>
+    <% end %>
+  <% end %>
+  <% if product.quantity <= 0 %>
+    <p class="productList-item-sellout f20 tc">已售完</p>
+  <% end %>
+</li>
