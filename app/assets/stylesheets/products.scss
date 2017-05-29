@@ -20,8 +20,10 @@ body {
 
 .product-box {
   width: 200px;
-  padding: 15px;
-  margin: 20px auto;
+  padding-left: 15px;
+  margin: 20px;
+  margin-left: 50px;
+  margin-right:40px ;
   background: #fff;
   position: relative;
   top: 0;
@@ -33,7 +35,7 @@ body {
 }
 
 .product-box img {
-  width: 200px;
+  width: 300px;
 }
 
 .product-box:hover {
