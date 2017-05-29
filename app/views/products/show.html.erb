@@ -1,527 +1,331 @@
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="box">
-
       <div class="wrap-left">
         <div class="tb-booth tb-s310">
           <a href="#">
-            <img src="images/04_mid.jpg" alt="" rel="images/04.jpg" class="jqzoom" />
-            <span class="zoomIcon"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <img src="<%= img430(@product,1) %>" alt="" rel="<%= imgmax(@product,1) %>" class="jqzoom"/>
+            <span class="zoomIcon">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
           </a>
         </div>
         <div class="tb-thumb">
           <ul id="thumblist">
             <li class="tb-selected">
-              <div class="tb-s40"><a href="#"><img src="images/04_mid.jpg" mid="images/04_mid.jpg" big="images/04.jpg"></a></div>
-            </li>
-            <li>
-              <div class="tb-s40"><a href="#"><img  src="https://img.alicdn.com/bao/uploaded/i2/TB1V5wlQVXXXXaxXVXXXXXXXXXX_!!0-item_pic.jpg_60x60q90.jpg" mid="https://img.alicdn.com/bao/uploaded/i2/TB1V5wlQVXXXXaxXVXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" big="https://img.alicdn.com/bao/uploaded/i2/TB1V5wlQVXXXXaxXVXXXXXXXXXX_!!0-item_pic.jpg_q30.jpg"</a></div>
-            </li>
-            <li>
-              <div class="tb-s40"><a href="#"><img src="https://img.alicdn.com/imgextra/i1/2653351646/TB2eps0n9JjpuFjy0FdXXXmoFXa_!!2653351646.jpg_430x430q90.jpg" mid="https://img.alicdn.com/imgextra/i1/2653351646/TB2eps0n9JjpuFjy0FdXXXmoFXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i1/2653351646/TB2eps0n9JjpuFjy0FdXXXmoFXa_!!2653351646.jpg_q30.jpg"></a></div>
-            </li>
-            <li>
-              <div class="tb-s40"><a href="#"><img src="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" mid="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_q30.jpg"></a></div>
-            </li>
-            <li>
-              <div class="tb-s40"><a href="#"><img src="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" mid="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i2/2653351646/TB2pVhdoShlpuFjSspkXXa1ApXa_!!2653351646.jpg"></a></div>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="wrap-right">
-        <h1>新西兰加力果8粒装 单果140-160g</h1>
-        <div class="summary-price-wrap">
-          <div class="summary-sale">
-            <div>
-              <div class="dt">促 销 价</div>
-              <div class="dd">
-                <span style="font-size: 18px;">￥</span>
-                <span class="dr">19.90</span>
+              <div class="tb-s40">
+                <a href="#"><img src="<%= img430(@product,1) %>" mid="<%= img430(@product,1) %>" big="<%= imgmax(@product,1) %>">
+                </a>
               </div>
-              <div class="comment text-rigth">
-                <p>累计评价</p>
-                <a href="#">1100</a>
+            </li>
+            <li>
+              <div class="tb-s40">
+                <a href="#">
+                  <img src="<%= img430(@product,2) %>" mid="<%= img430(@product,2) %>" big="<%= imgmax(@product,2) %>">
+                </a>
+              </div>
+              </li>
+              <li>
+                <div class="tb-s40">
+                  <a href="#"><img src="<%= img430(@product,3) %>" mid="<%= img430(@product,3) %>" big="<%= imgmax(@product,3) %>">
+                  </a>
+                </div>
+                </li>
+                <li>
+                  <div class="tb-s40">
+                    <a href="#"><img src="<%= img430(@product,4) %>" mid="<%= img430(@product,4) %>" big="<%= imgmax(@product,4) %>"></a>
+                  </div>
+                  </li>
+                  <li>
+                    <div class="tb-s40">
+                      <a href="#"><img src="<%= img430(@product,5) %>" mid="<%= img430(@product,5) %>" big="<%= imgmax(@product,5) %>"></a>
+                    </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="wrap-right">
+                <h1><%= @product.title %></h1>
+                <div class="summary-price-wrap">
+                  <div class="summary-sale">
+                    <div class="dt">
+                      <span>促 销 价</span>
+                        <span style="font-size: 18px;">&nbsp;&nbsp;￥&nbsp;</span>
+                        <span class="price"><%= @product.promotional %></span>
+                    </div>
+                    <div class="dd">
+                      <span>价 格</span>
+                        <span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥&nbsp;</span>
+                        <span class="price-o"><%= @product.price %></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="tm-ind-panel">
+                  <ul>
+                    <li>
+                      <span class="tm-label">月销量</span>
+                      <span class="tm-count">394</span>
+                    </li>
+                    <li>
+                      <span class="tm-label">累计评价</span>
+                      <span class="tm-count"><%= @product.reviews.count %></span>
+                    </li>
+                  </ul>
+                </div>
+                <form novalidate="novalidate" id="new_order" action="<%= checkout_product_path%>" accept-charset="UTF-8" method="post">
+                  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                <div class="tb-key">
+                  <div class="tb-skin">
+                    <div class="tb-sku">
+                      <dl class="tb-amount tm-clear">
+                        <dt class="tb-metatit">数量</dt>
+                        <dd id="J_Amount" onselectstart="return false">
+                          <span class="tb-amount-widget mui-amount-wrap">
+                            <span class="mui-amount-btn">
+                              <span class="mui-amount-increase">
+                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                              </span>
+                              <span class="mui-amount-decrease disabled">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                              </span>
+                            </span>
+                            <input name="num" type="text" class="tb-text mui-amount-input" value="1" max="<%= @product.quantity %>" url="<%= add_to_cart_product_path(@product)  %>?num=">
+                            <span>库存 <i style="color:#c40000;"><%= @product.quantity %></i> 件</span>
+                          </span>
+                        </dd>
+                      </dl>
+                      <div class="tb-action">
+                        <div class="tb-btn-buy">
+                          <%#= link_to("立即购买", checkout_carts_path, :method => :post , id: "J_LinkBasket") %>
+                          <% if !current_user %>
+                          <a href="#" data-toggle="modal" data-target="#login-modal">立即购买</a>
+                        <% else %>
+                          <a href="javascript:document:new_order.submit();">立即购买</a>
+                          <% end %>
+
+                        </div>
+                        <div class="shopCart tb-btn-basket">
+                          <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post ,:remote => true, class: "J_LinkBasket item_buy", mid: img430(@product,1)) %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+                <div class="tm-ser">
+                  <dl>
+                    <dt>服务承诺</dt>
+                  </dl>
+                  <dd>
+                    <ul>
+                      <li>
+                        <a href="#">坏单包退</a>
+                      </li>
+                      <li>
+                        <a href="#">满88包邮</a>
+                      </li>
+                      <li>
+                        <a href="#">一站式购齐</a>
+                      </li>
+                      <li>
+                        <a href="#">正品保证</a>
+                      </li>
+                      <li>
+                        <a href="#">极速退款</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
               </div>
             </div>
-            <div class="">
-              <div class="price">价 格</div>
-              <div class="dd">
-                <span style="font-size: 18px;color: #999;">￥</span>
-                <span class="dr" style="color: #999;font-weight: normal;text-decoration: line-through;">19.90</span>
+            <div class="ald-skuRight">
+              <div class="ald-hd">
+                <s></s>
+                <span>看了又看</span>
+              </div>
+              <div id="srollGoods" class="ald-carousel">
+                <div class="wrapCon">
+                  <ul id="wrapCon">
+                    <% @products_see.each do |product| %>
+                    <li>
+                      <div class="img">
+                        <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
+                          <img src="<%= img430(product,1) %>">
+                        </a>
+                        <p class="look_price">¥<%= product.promotional %>
+                        </p>
+                      </div>
+                      <p class="look_title">
+                        <a class="ALDCLS-act" href="<%= product_path(product) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product.title %>
+                        </a>
+                      </p>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div>
+                <ul class="ald-switchable-trigger">
+                  <li class="ald-switchable-prev-btn">上一个</li>
+                  <li class="ald-switchable-next-btn">下一个</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="tm-ind-panel">
-          <ul>
-            <li><span class="tm-label">月销量</span><span class="tm-count">394</span></li>
-            <li><span class="tm-label">累计评价</span><span class="tm-count">2014</span></li>
-          </ul>
-        </div>
 
-        <div class="tb-key">
-          <div class="tb-skin">
-            <div class="tb-sku">
-              <dl class="tb-amount tm-clear">
-                <dt class="tb-metatit">数量</dt>
-                <dd id="J_Amount"><span class="tb-amount-widget mui-amount-wrap">
-                  <span class="mui-amount-btn">
-                    <span class="mui-amount-increase"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
-                    <span class="mui-amount-decrease"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                  </span>
-                  <input type="text" class="tb-text mui-amount-input" value="1" name="quantity">
-                  <span class="mui-amount-unit">件</span>
-                </span>
-                <span id="J_StockTips"></span>
-              </dd>
-            </dl>
-            <div class="tb-action">
-              <div class="tb-btn-buy">
-                <a id="J_LinkBuy" href="#" rel="nofollow" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息。" class="" role="button" data-spm-anchor-id="a220o.1000855.0.0">立即购买</a>
+        <div class="container">
+          <div class="row">
+            <div class="product-wrap">
+              <div class="ald-skuRight">
+                <div class="tab3">
+                  <a href="#">热门关注</a>
+                </div>
+                <div class="product-hot">
+                  <div class="ald-carousel">
+                    <div class="wrapCon">
+                      <ul>
+                        <% @products_hot.each do |product| %>
+                        <li>
+                          <div class="img">
+                            <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
+                              <img src="<%= img430(product,1) %>">
+                            </a>
+                            <p class="look_price">¥<%= product.promotional %>
+                            </p>
+                          </div>
+                          <p class="look_title">
+                            <a class="ALDCLS-act" href="<%= product_path(product) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product.title %>
+                            </a>
+                          </p>
+                        </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="tb-btn-basket">
-                <a href="#" rel="nofollow" id="J_LinkBasket" class="" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;加入购物车</a>
+              <div class="product-info">
+                <div class="TabBarBox">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="active ">
+                      <a href="#tab-left" role="tab" data-toggle="tab">商品详情</a>
+                    </li>
+                    <li>
+                      <a href="#tab-right" role="tab" data-toggle="tab">累计评价
+                        <%= @product.reviews.count %></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab-left">
+                    <div class="description">
+                      <p>
+                        <%= raw @product.description %>
+                      </p>
+                    </div>
+                    <!-- <div class="TabBarBox">
+                      <div class="tab2">
+                        <a href="#">商品评价</a>
+                      </div>
+                    </div> -->
+                  </div>
+                  <div class="tab-pane" id="tab-right">
+                    <div class="row review">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div>
+                          <%= render "reviews/form"%>
+
+                        </div>
+                        <%= render "/reviews/review"%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="tm-ser">
-        <dl>
-          <dt>服务承诺</dt>
-        </dl>
-        <dd>
-          <ul>
-            <li><a href="#" >坏单包退</a></li>
-            <li><a href="#">满88包邮</a></li>
-            <li><a href="#">一站式购齐</a></li>
-            <li><a href="#">正品保证</a></li>
-            <li><a href="#">极速退款</a></li>
-          </ul>
-        </dd>
-      </div>
-    </div>
-  </div>
-  <div class="ald-skuRight">
-    <div class="ald-hd">
-      <s></s>
-      <span>看了又看</span>
-    </div>
-    <div id="srollGoods" class="ald-carousel">
-      <div class="wrapCon">
-        <ul id="wrapCon">
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB12dO6RXXXXXX3aXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥73.80
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2">优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB14StvQVXXXXajaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥228.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB17_XHQVXXXXXLXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥65.80
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1kZSrQVXXXXaEXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥83.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1ppFSRXXXXXXQXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥58.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1heUOQVXXXXbgapXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥148.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1aVhqQVXXXXbwaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥78.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1Lu0LQVXXXXaVXFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥88.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1bwzHRXXXXXaoXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥88.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1j6XZQVXXXXaOXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥49.80
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB16UxKRXXXXXbxaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥10.50
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发
-              </a>
-            </p>
-          </li>
-          <li>
-            <div class="img">
-              <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013" href="#">
-                <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB11N.8QFXXXXa2XFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-              </a>
-              <p class="look_price">¥115.00
-              </p>
-            </div>
-            <p class="look_title">
-              <a class="ALDCLS-act" href="#">优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013
-              </a>
-            </p>
-          </li>
-        </ul>
-      </div>
-      <ul class="ald-switchable-trigger">
-        <li class="ald-switchable-prev-btn">上一个</li>
-        <li class="ald-switchable-next-btn">下一个</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
 
-<div class="container">
-<div class="row">
-  <div class="product-wrap">
-    <div class="ald-skuRight">
-      <div class="tab3">
-            <a href="#">热门关注</a>
-      </div>
-      <div class="product-hot">
-        <div class="ald-carousel">
-          <div class="wrapCon">
-            <ul>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB12dO6RXXXXXX3aXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥73.80
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2">优霸 新西兰佳沛绿奇异果 16个 进口绿心绿肉猕猴桃新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB14StvQVXXXXajaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥228.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果25个原箱巨无霸黄心金果进口猕猴桃
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB17_XHQVXXXXXLXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥65.80
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 南非西柚葡萄柚 8个 红心进口西柚当季新鲜水果包邮坏包赔
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1kZSrQVXXXXaEXVXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥83.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">上海南汇玉菇甜瓜10斤 3-6个原箱青皮绿肉蜜瓜香瓜哈密瓜新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1ppFSRXXXXXXQXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥58.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 美国新奇士黑标脐橙 12个进口橙子 sunkist鲜橙甜橙新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1heUOQVXXXXbgapXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥148.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">现货 空运美国车厘子 2斤 顺丰冷链进口加州大樱桃新鲜水果坏包赔
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1aVhqQVXXXXbwaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥78.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">【优霸】越南红心火龙果 5斤进口水果 红肉火龙果 新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1Lu0LQVXXXXaVXFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥88.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 泰国红毛丹 3斤 顺丰空运冷链 新鲜毛荔枝 进口新鲜水果
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1bwzHRXXXXXaoXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥88.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 新西兰佳沛阳光金奇异果8个 巨无霸猕猴桃黄心金果进口
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB1j6XZQVXXXXaOXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥49.80
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 屏东金钻凤梨 2个 无刺凤梨 新鲜水果 单果重约1000g
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB16UxKRXXXXXbxaXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥10.50
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 海南小青桔 1斤 青桔小金桔青橘小青金橘青柠檬新鲜水果批发
-                  </a>
-                </p>
-              </li>
-              <li>
-                <div class="img">
-                  <a class="ALDCLS-act" tabindex="-1" title="优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013" href="#">
-                    <img src="https://img-tmdetail.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/TB11N.8QFXXXXa2XFXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg">
-                  </a>
-                  <p class="look_price">¥115.00
-                  </p>
-                </div>
-                <p class="look_title">
-                  <a class="ALDCLS-act" href="#">优霸 美国新奇士脐橙 24个进口橙子 sunkist鲜橙甜橙新鲜水果4013
-                  </a>
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="product-info">
-      <div class="TabBarBox">
-        <ul>
-          <li class="tab"><a href="#description">商品详情</a></li>
-          <li class="tab2"><a href="#J_Reviews">累计评价 166</a></li>
-        </ul>
-      </div>
-      <div class="description">
-        <p>
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2qrIXpCJjpuFjy0FdXXXmoFXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i2/2627871549/TB2xz2iprJkpuFjy1zcXXa5FFXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i1/2627871549/TB2_i_rpuJ8puFjy1XbXXagqVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2Zey7pB0kpuFjy1zdXXXuUVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i1/2627871549/TB27zbrpuJ8puFjy1XbXXagqVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i2/2627871549/TB2RknaprFlpuFjy0FgXXbRBVXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB21.n1sxlmpuFjSZPfXXc9iXXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2UfbAsstnpuFjSZFvXXbcTpXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2I6bqsypnpuFjSZFIXXXh2VXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2VivXsstnpuFjSZFKXXalFFXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2xL2CsypnpuFjSZFkXXc4ZpXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i3/2627871549/TB2DgHusxBmpuFjSZFDXXXD8pXa_!!2627871549.jpg" class="img-ks-lazyload">
-          <img align="absmiddle" src="https://img.alicdn.com/imgextra/i4/2627871549/TB2.Ozsst0opuFjSZFxXXaDNVXa_!!2627871549.jpg" class="img-ks-lazyload">
-        </p>
-      </div>
-      <div class="TabBarBox">
-          <div class="tab2">
-            <a href="#">商品评价</a>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<script type="text/javascript">
-//---------数量-------//
-(function ($) {
-  $.fn.changeNnmber = function () {
-      var $app = $(this);
-    //  var value = $app.find(".mui-amount-input").attr("value");
-        var value = Number($app.find(".mui-amount-input").val());
-      var $up = $app.find('.fa-angle-up');
-      var $down = $app.find('.fa-angle-down');
-      $up.on('click', function () {
-          if (value >= 1) {
-              value  += 1;
-          } else {
-              value = 1;
-          }
-          $app.find(".mui-amount-input").val(value);
-      });
-      $down.on('click', function () {
-          if (value <= 1) {
-              value = 1;
-          } else {
-              value -= 1;
-          }
-          $app.find(".mui-amount-input").val(value);
-      });
-  }
-})(jQuery);
-$(function () {
-  $('#J_Amount').changeNnmber();
-});
+        <!--
+<span class="pull-right">
+  <% if current_user && current_user.is_voter_of?(@product) %>
+    <%= link_to("", downvote_product_path(@product), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+   <% else %>
+    <%= link_to("", upvote_product_path(@product), method: :post, class: "fa fa-heart-o fa-2x") %>
+  <% end %>
+</span>
+-->
+        <script type="text/javascript">
+          //---------数量-------///
+          (function ($) {
+            $.fn.changeNnmber = function () {
+              var $app = $(this).find(".mui-amount-input");
+              //  var value = $app.find(".mui-amount-input").attr("value");
+              var value = Number($app.val());
+              var $up = $(this).find('.mui-amount-increase');
+              var $down = $(this).find('.mui-amount-decrease');
+              var numMax = Number($app.attr("max"));
+              var url = $app.attr("url")
+              $up.on('click', function () {
+                if (value < numMax) {
+                  $app.val(value += 1);
+                  $(".J_LinkBasket").attr("href", url + value);
+                  if (value == numMax) {
+                    $(this).addClass("disabled")
+                  } else if (value == 2) {
+                    $(this).siblings('.mui-amount-decrease').removeClass("disabled");
+                  }
+                }
+              });
+              $down.on('click', function () {
+                if (value > 1) {
+                  $app.val(value -= 1);
+                  $(".J_LinkBasket").attr("href", url + value);
+                  if (value == 1) {
+                    $(this).addClass("disabled")
+                  } else if (value == (numMax - 1)) {
+                    $(this).siblings('.mui-amount-increase').removeClass("disabled");
+                  }
+                }
+              });
+
+              $app.blur(function() {
+                value = Number($(this).val());
+                if (value >= numMax) {
+                  value = numMax;
+                  if (numMax != 1) {
+                    $up.addClass("disabled");
+                    $down.removeClass("disabled");
+                  }
+                } else if (value <= 1) {
+                  value = 1;
+                  if (numMax != 1) {
+                    $up.removeClass("disabled");
+                    $down.addClass("disabled");
+                  }
+                } else {
+                  $up.removeClass("disabled");
+                  $down.removeClass("disabled");
+                }
+                $(this).val(value);
+                $(".J_LinkBasket").attr("href", url + value);
+              });
+
+            }
+          })(jQuery);
+          $(function () {
+            $('#J_Amount').changeNnmber();
+          });
 
 
 
-//----------看了有看
-      (function ($) {
-          $.fn.scrollGoods = function (options) {
+          //----------看了有看
+          (function ($) {
+            $.fn.scrollGoods = function (options) {
               var defaults = {
-                  top: 0
+                top: 0
               };
               options = $.extend(defaults, options);
               var top = options.top;
@@ -533,103 +337,36 @@ $(function () {
               var $up = $app.find('.ald-switchable-next-btn');
               var $down = $app.find('.ald-switchable-prev-btn');
               $up.on('click', function () {
-                  if ((top + ulHeight) <= panelHeight) {
-                      top = 0;
-                  } else {
-                      top -= 522;
-                  }
-                  $ul.animate({ 'top': top + 'px' });
+                if ((top + ulHeight) <= panelHeight) {
+                  top = 0;
+                } else {
+                  top -= 522;
+                }
+                $ul.animate({
+                  'top': top + 'px'
+                });
               });
               $down.on('click', function () {
-                  if (top >= 0) {
-                      top = (ulHeight - panelHeight) * -1;
-                  } else {
-                      top += 522;
-                  }
-                  $ul.animate({ 'top': top + 'px' });
+                if (top >= 0) {
+                  top = (ulHeight - panelHeight) * -1;
+                } else {
+                  top += 522;
+                }
+                $ul.animate({
+                  'top': top + 'px'
+                });
               });
-          }
-      })(jQuery);
-      $(function () {
-          $('#srollGoods').scrollGoods();
-      });
+            }
+          })(jQuery);
+          $(function () {
+            $('#srollGoods').scrollGoods();
+          });
 
-//------放大镜-------//
-$(".jqzoom").imagezoom();
-$("#thumblist li").hover(
-function () {
-  $(this).addClass("tb-selected").siblings().removeClass("tb-selected");
-  $(".jqzoom").attr('src',$(this).find("img").attr("mid"));
-  $(".jqzoom").attr('rel',$(this).find("img").attr("big"));
-},
-);
-
-</script>
-
-
-<!--<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-     <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-    <% if @photos.present? %>
-         <% @photos.each_with_index do |p, index| %>
-           <% if index == 0 %>
-             <%= image_tag p.avatar.medium.url %>
-             <div style="letter-spacing: -8px">
-           <% else %>
-             <%= image_tag p.avatar.thumb.url %>
-           <% end %>
-         <% end %>
-         </div>
-       <% else %>
-           <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-       <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-         <%= @product.description %>
-      </p>
-
-    <div 数量 : <%= @product.quantity %>  </div>
-    <div class="product-price"> $ <%= @product.price %> </div>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        已销售一空，无法购买
-      <% end %>
-      </div>
-  </div>
-</div>
-<<<<<<< HEAD
-</div>
-<<<<<<< HEAD
-=======
--->
-
-<!--<div class="row review">
-  <div class="col-sm-10 col-sm-offset-1">
-    <h3 class="reviews_title">
-      <%= @product.reviews.count %> Reviews
-    </h3>
-    <hr>
-    <div id="reivews">
-      <%= render @product.reviews%>
-      <hr>
-      <%= render "reviews/form"%>
-    </div>
-  </div>
-</div>
-<span class="pull-right">
-  <% if current_user && current_user.is_voter_of?(@product) %>
-    <%= link_to("", downvote_product_path(@product), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
-   <% else %>
-    <%= link_to("", upvote_product_path(@product), method: :post, class: "fa fa-heart-o fa-2x") %>
-  <% end %>
-</span>
--->
+          //------放大镜-------//
+          $(".jqzoom").imagezoom();
+          $("#thumblist li").hover(function () {
+            $(this).addClass("tb-selected").siblings().removeClass("tb-selected");
+            $(".jqzoom").attr('src', $(this).find("img").attr("mid"));
+            $(".jqzoom").attr('rel', $(this).find("img").attr("big"));
+          },);
+        </script>

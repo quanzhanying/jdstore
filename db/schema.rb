@@ -10,6 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20170528203210) do
+=======
 
 ActiveRecord::Schema.define(version: 20170521231204) do
 
@@ -38,6 +40,14 @@ ActiveRecord::Schema.define(version: 20170522145906) do
   create_table "favorites", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "identifies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,8 +106,8 @@ ActiveRecord::Schema.define(version: 20170522145906) do
     t.text     "description"
     t.integer  "quantity"
     t.integer  "price"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "image"
     t.integer  "user_id"
     t.integer  "category_id"
@@ -105,14 +115,18 @@ ActiveRecord::Schema.define(version: 20170522145906) do
     t.string   "image3"
     t.string   "image4"
     t.string   "image5"
-    t.boolean  "hot",          default: false
+    t.boolean  "hot",               default: false
     t.integer  "sale"
-    t.integer  "tm_id"
+    t.string   "tm_id"
     t.integer  "promotional"
     t.string   "product_type"
-    t.integer  "show_count",   default: 0
-<<<<<<< HEAD
-=======
+    t.integer  "show_count",        default: 0
+    t.text     "product_parameter"
+    t.string   "http_image"
+    t.string   "http_image2"
+    t.string   "http_image3"
+    t.string   "http_image4"
+    t.string   "http_image5"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -121,7 +135,6 @@ ActiveRecord::Schema.define(version: 20170522145906) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> story7
   end
 
   create_table "users", force: :cascade do |t|
@@ -138,8 +151,11 @@ ActiveRecord::Schema.define(version: 20170522145906) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
+    t.string   "username"
+    t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   create_table "votes", force: :cascade do |t|

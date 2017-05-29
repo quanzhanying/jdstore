@@ -1,0 +1,14 @@
+<li class="cart-item-<%= cart.product_id %>">
+  <div class="p-img">
+    <a href="#" target="_blank"><img src="<%= img430(cart.product,1) %>" width="80" height="80" alt=""></a>
+  </div>
+  <div class="p-name">
+    <a href="#"><%= cart.product.title %></a>
+  </div>
+  <div class="p-detail">
+      <span class="p-price">
+        <strong>￥<%= cart.product.promotional %></strong>×<%= cart.quantity %></span>
+      <br>
+      <%= link_to "删除", cart_item_path(cart.product_id), :method => :delete, :remote => true, style: "color:#7f8c8d;"%>
+  </div>
+</li>

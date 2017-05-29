@@ -1,15 +1,4 @@
 
-<div class="container">
-  <div class="product-index">
-    <ul>
-      <li class="active"><a href="#tab-quanbu" >首页</a></li>
-      <li><a href="#tab-shuiguo" style="color: #555555">进口水果</a></li>
-      <li><a href="#tab-shuichan" style="color: #555555">进口水产</a></li>
-      <li><a href="#tab-xianrou" style="color: #555555">进口鲜肉</a></li>
-    </ul>
-  </div>
-</div>
-
 
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -18,42 +7,54 @@
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
   </ol>
   <div id="hover" class="carousel-inner" role="listbox">
-    <div class="item active">
+    <div class="item active" data-slide-to="0">
       <div class="carousel-BC1">
         <div class="container">
-          <img src="https://img.alicdn.com/tps/i4/TB1RI32QVXXXXbCapXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
+          <img src="http://img.alicdn.com/tps/i4/TB1jD2fRXXXXXbJXVXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
           <div class="carousel-caption">
             <p></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="item">
+    <div class="item" data-slide-to="1">
       <div class="carousel-BC2">
         <div class="container">
-          <img src="https://img.alicdn.com/tps/i4/TB1uJyMRXXXXXaHXpXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
-          <div class="carousel-caption">
-            <p></p>
-          </div>
-        </div>
-      </div>
-      </div>
-    <div class="item">
-      <div class="carousel-BC3">
-        <div class="container">
-          <img src="https://img.alicdn.com/tps/i4/TB1jD2fRXXXXXbJXVXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
+          <img src="http://img.alicdn.com/tps/i4/TB1uJyMRXXXXXaHXpXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
           <div class="carousel-caption">
             <p></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="item">
+    <div class="item" data-slide-to="2">
+      <div class="carousel-BC3">
+        <div class="container">
+          <img src="http://img.alicdn.com/tps/i4/TB1RI32QVXXXXbCapXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
+          <div class="carousel-caption">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item" data-slide-to="3">
       <div class="carousel-BC4">
         <div class="container">
-          <img src="https://img.alicdn.com/tps/i4/TB1RziHQVXXXXXmXVXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
+          <img src="https://img.alicdn.com/tps/i4/TB1GTvjRpXXXXawXVXXSutbFXXX.jpg_q90.jpg
+          " width="1140" alt="...">
+          <div class="carousel-caption">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item" data-slide-to="4">
+      <div class="carousel-BC5">
+        <div class="container">
+          <img src="http://img.alicdn.com/tps/i4/TB1Nlc8RXXXXXXpXFXXSutbFXXX.jpg_q90.jpg" width="1140" alt="...">
           <div class="carousel-caption">
             <p></p>
           </div>
@@ -62,23 +63,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<!--
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  -->
-
 
 
 <div class="container">
@@ -86,396 +70,200 @@
   <h3 class="text-left"><img src="http://img.alicdn.com/tfs/TB1jGR.QFXXXXaEXpXXXXXXXXXX-58-54.png" height="24" alt="">&nbsp;进口水果</h3>
   <hr>
 </div>
-
+<br />
 <div class="product">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-          <img class="sort-img" src="http://004.sfimg.cn/web/7079ec6e/7079ec6e684e7d133fd5d3be39e5c6be.jpg" alt="" />
+        <img class="sort-img" src="http://004.sfimg.cn/web/7079ec6e/7079ec6e684e7d133fd5d3be39e5c6be.jpg" alt="" />
+        <!--
+        <img class="sort-img" src="/images/jinkoushuiguoleft.jpg" alt="" />
+        -->
       </div>
       <div class="col-md-6">
+        <% @products_fruit.each do |product| %>
         <div class="col-md-4">
           <div class="row">
             <div class="item_hover">
-              <a href="#"><img class="sort-img" src="https://img.alicdn.com/imgextra/i2/2653351646/TB2SHm.aR6xQeBjSsziXXXxVVXa_!!2653351646.jpg_430x430q90.jpg" alt="" /></a>
-              <div class="floor_goods">
-                <span class="text_point">新西兰佳沛金奇异果王新西兰佳沛金奇异果王</span>
-                <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
+              <a href="<%= product_path(product) %>"><img class="sort-img" src="<%= img430(product,1) %>
+                " alt="" /></a>
+                <div class="floor_goods">
+                  <span class="text_point"><%= product.title %></span>
+                  <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
+                </div>
+                <span class="shopCart">
+                  <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
+                </span>
               </div>
-              <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-              </a>
             </div>
           </div>
+          <% end %>
         </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="item_hover">
-              <a href="#"><img class="sort-img" src="https://img.alicdn.com/imgextra/i2/2653351646/TB2SHm.aR6xQeBjSsziXXXxVVXa_!!2653351646.jpg_430x430q90.jpg" alt="" /></a>
-              <div class="floor_goods">
-                <span class="text_point">新西兰佳沛金奇异果王</span>
-                <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-              </div>
-              <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-              </a>
-            </div>
+
+        <div class="col-md-3">
+          <div class="redge">
+            <ul class="rHot ">
+              <li><a href="/products/search?utf8=✓&q=樱桃">樱桃</a></li>
+              <li><a href="/products/search?utf8=✓&q=奇异果">奇异果</a></li>
+              <li><a href="/products/search?utf8=✓&q=榴莲">榴莲</a></li>
+              <li><a href="/products/search?utf8=✓&q=椰子">椰子</a></li>
+              <li><a href="/products/search?utf8=✓&q=脐橙">脐橙</a></li>
+              <li><a href="/products/search?utf8=✓&q=火龙果">火龙果</a></li>
+
+            </ul>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="item_hover">
-              <a href="#"><img class="sort-img" src="https://img.alicdn.com/imgextra/i2/2653351646/TB2SHm.aR6xQeBjSsziXXXxVVXa_!!2653351646.jpg_430x430q90.jpg" alt="" /></a>
-              <div class="floor_goods">
-                <span class="text_point">新西兰佳沛金奇异果王</span>
-                <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-              </div>
-              <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="item_hover">
-              <a href="#"><img class="sort-img" src="https://img.alicdn.com/imgextra/i2/2653351646/TB2SHm.aR6xQeBjSsziXXXxVVXa_!!2653351646.jpg_430x430q90.jpg" alt="" /></a>
-              <div class="floor_goods">
-                <span class="text_point">新西兰佳沛金奇异果王</span>
-                <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-              </div>
-              <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="item_hover">
-              <a href="#"><img class="sort-img" src="https://img.alicdn.com/imgextra/i2/2653351646/TB2SHm.aR6xQeBjSsziXXXxVVXa_!!2653351646.jpg_430x430q90.jpg" alt="" /></a>
-              <div class="floor_goods">
-                <span class="text_point">新西兰佳沛金奇异果王</span>
-                <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-              </div>
-              <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="item_hover">
-              <a href="#"><img class="sort-img" src="https://img.alicdn.com/imgextra/i2/2653351646/TB2SHm.aR6xQeBjSsziXXXxVVXa_!!2653351646.jpg_430x430q90.jpg" alt="" /></a>
-              <div class="floor_goods">
-                <span class="text_point">新西兰佳沛金奇异果王</span>
-                <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-              </div>
-              <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-              </a>
-            </div>
-          </div>
+          <img class="sort-img" src="http://004.sfimg.cn/web/02426cdb/02426cdbff93e28447742ba00a29b217.jpg" alt="" />
         </div>
       </div>
-
-          <div class="col-md-3">
-              <div class="redge">
-                <ul class="rHot ">
-                  <li><a href="#">牛肉</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords2" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%8C%AA%E8%82%89" target="_blank">猪肉</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords3" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E8%82%8B%E6%8E%92" target="_blank">肋排</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords4" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%BE%8A%E8%82%89#trackref" target="_blank">羊肉</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords5" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%A6%BD%E7%B1%BB" target="_blank">禽类</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords6" class="trackref" href="/productlist/search/?categoryId=312&amp;keyword=%E9%B3%95%E9%B1%BC&amp;o=saleNum%3Adesc" target="_blank">鳕鱼</a></li>
-                 </ul>
-              </div>
-                            <img class="sort-img" src="http://002.sfimg.cn/web/03eb26d1/03eb26d1a40f79a6a20a9c1be0d2d681.jpg" alt="" />
-            </div>
-          </div>
-        </div>
+    </div>
   </div>
 
   <div class="container">
     <h3 class="text-left"><img src="http://img.alicdn.com/tfs/TB1S.X8QFXXXXXCXVXXXXXXXXXX-68-44.png" height="24" alt="">&nbsp;进口水产</h3>
     <hr>
   </div>
-
+  <br />
   <div class="product">
     <div class="container">
       <div class="row">
         <div class="col-md-3" id="shangpin-1">
           <a class="item-mask-href" href=""></a>
-            <img class="sort-img" src="http://003.sfimg.cn/web/11cd6689/11cd66892de0ac6a0286befbb2ce313f.jpg" alt="" />
+          <img class="sort-img" src="http://003.sfimg.cn/web/11cd6689/11cd66892de0ac6a0286befbb2ce313f.jpg" alt="" />
+        </div>
+
+        <div class="col-md-6">
+          <% @products_seafood.each do |product| %>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="item_hover">
+                <a href="<%= product_path(product) %>"><img class="sort-img" src="<%= img430(product,1) %>" alt="" /></a>
+                <div class="floor_goods">
+                  <span class="text_point"><%= product.title %></span>
+                  <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
+
+                </div>
+                <span class="shopCart">
+                  <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
+                </span>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+        <div class="col-md-3">
+          <div class="redge">
+            <ul class="rHot ">
+              <li><a href="/products/search?utf8=✓&q=鳕鱼">鳕鱼</a></li>
+              <li><a href="/products/search?utf8=✓&q=龙虾">龙虾</a></li>
+              <li><a href="/products/search?utf8=✓&q=生蚝">生蚝</a></li>
+              <li><a href="/products/search?utf8=✓&q=沙鱼">沙鱼</a></li>
+              <li><a href="/products/search?utf8=✓&q=海参">海参</a></li>
+              <li><a href="/products/search?utf8=✓&q=三文鱼">三文鱼</a></li>
+            </ul>
+          </div>
+          <img class="sort-img" src="http://003.sfimg.cn/web/5269c534/5269c534a3be31ed2e4776ee7d2ed59c.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h3 class="text-left"><img src="http://img.alicdn.com/tfs/TB1aWR1QFXXXXcoXVXXXXXXXXXX-60-40.png" height="24" alt="">&nbsp;进口鲜肉</h3>
+      <hr>
+    </div>
+    <br />
+    <div class="product">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a class="item-mask-href" href=""></a>
+            <img class="sort-img" src="http://001.sfimg.cn/web/38d28a79/38d28a79f2529ec7c4f8870929f23f04.jpg" alt="" />
           </div>
 
           <div class="col-md-6">
+            <% @products_meat.each do |product| %>
             <div class="col-md-4">
               <div class="row">
                 <div class="item_hover">
-                  <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
+                  <a href="<%= product_path(product) %>"><img class="sort-img" src="<%= img430(product,1) %>" alt="" /></a>
                   <div class="floor_goods">
-                    <span class="text_point">新西兰佳沛金奇异果王</span>
-                    <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
+                    <span class="text_point"><%= product.title %></span>
+                    <span class="tm-price">￥<%= product.price %></span> <span>促销价</span> <span style="color:#c00">￥<%= product.promotional %></span>
+
                   </div>
-                  <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                    <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                  </a>
+                  <span class="shopCart">
+                    <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
+                  </span>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="row">
-                <div class="item_hover">
-                  <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                  <div class="floor_goods">
-                    <span class="text_point">新西兰佳沛金奇异果王</span>
-                    <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                  </div>
-                  <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                    <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row">
-                <div class="item_hover">
-                  <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                  <div class="floor_goods">
-                    <span class="text_point">新西兰佳沛金奇异果王</span>
-                    <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                  </div>
-                  <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                    <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row">
-                <div class="item_hover">
-                  <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                  <div class="floor_goods">
-                    <span class="text_point">新西兰佳沛金奇异果王</span>
-                    <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                  </div>
-                  <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                    <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row">
-                <div class="item_hover">
-                  <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                  <div class="floor_goods">
-                    <span class="text_point">新西兰佳沛金奇异果王</span>
-                    <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                  </div>
-                  <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                    <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row">
-                <div class="item_hover">
-                  <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1AoOFNpXXXXXjaFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                  <div class="floor_goods">
-                    <span class="text_point">新西兰佳沛金奇异果王</span>
-                    <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                  </div>
-                  <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                    <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <% end %>
           </div>
 
-            <div class="col-md-3" id="shangpin-1">
-              <div class="redge">
-                <ul class="rHot ">
-                  <li><a href="#">牛肉</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords2" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%8C%AA%E8%82%89" target="_blank">猪肉</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords3" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E8%82%8B%E6%8E%92" target="_blank">肋排</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords4" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%BE%8A%E8%82%89#trackref" target="_blank">羊肉</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords5" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%A6%BD%E7%B1%BB" target="_blank">禽类</a></li>
-                   <li><a name="sfbest_hp_hp_floor2_Keywords6" class="trackref" href="/productlist/search/?categoryId=312&amp;keyword=%E9%B3%95%E9%B1%BC&amp;o=saleNum%3Adesc" target="_blank">鳕鱼</a></li>
-                 </ul>
-              </div>
-                <img class="sort-img" src="http://003.sfimg.cn/web/5269c534/5269c534a3be31ed2e4776ee7d2ed59c.jpg" alt="" />
-              </div>
+          <div class="col-md-3">
+            <div class="redge">
+              <ul class="rHot ">
+                <li><a href="/products/search?utf8=✓&q=牛肉">牛肉</a></li>
+                <li><a href="/products/search?utf8=✓&q=猪肉">猪肉</a></li>
+                <li><a href="/products/search?utf8=✓&q=肋排">肋排</a></li>
+                <li><a href="/products/search?utf8=✓&q=羊肉">羊肉</a></li>
+                <li><a href="/products/search?utf8=✓&q=肉丸">肉丸</a></li>
+                <li><a href="/products/search?utf8=✓&q=蹄筋">蹄筋</a></li>
+              </ul>
             </div>
+            <img class="sort-img" src="http://001.sfimg.cn/web/2e565f07/2e565f0745e0591ddba793a18ff498b0.jpg" alt="" />
+
           </div>
-          <div class="container" id="tuijian">
-            <h3 class="text-left"><img src="http://img.alicdn.com/tfs/TB1aWR1QFXXXXcoXVXXXXXXXXXX-60-40.png" height="24" alt="">&nbsp;进口鲜肉</h3>
-            <hr>
-          </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="product">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3" id="shangpin-1">
-                  <a class="item-mask-href" href=""></a>
-                    <img class="sort-img" src="http://001.sfimg.cn/web/38d28a79/38d28a79f2529ec7c4f8870929f23f04.jpg" alt="" />
-                  </div>
+    <div class="container">
+      <h3 class="text-center" style="margin-top: 50px;">我们的服务</h3>
+      <hr>
+    </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <ul class="list-unstyled da-thumbs">
+          <li>
+            <ul class="da-thumbs-2">
+              <li class="li-left"><img src="/images/aeroplane4.png" width="50" alt=""></li>
+              <li class="li-rigth">
+                <h4 class="">全球美食</h4>
+                <p class="text">世界美味  优质有家</p>
+              </li>
+            </ul>
+          </li>
 
-                  <div class="col-md-6">
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="item_hover">
-                          <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1a52vNXXXXXc4XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                          <div class="floor_goods">
-                            <span class="text_point">新西兰佳沛金奇异果王</span>
-                            <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                          </div>
-                          <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                            <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="item_hover">
-                          <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1a52vNXXXXXc4XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                          <div class="floor_goods">
-                            <span class="text_point">新西兰佳沛金奇异果王</span>
-                            <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                          </div>
-                          <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                            <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="item_hover">
-                          <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1a52vNXXXXXc4XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                          <div class="floor_goods">
-                            <span class="text_point">新西兰佳沛金奇异果王</span>
-                            <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                          </div>
-                          <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                            <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="item_hover">
-                          <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1a52vNXXXXXc4XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                          <div class="floor_goods">
-                            <span class="text_point">新西兰佳沛金奇异果王</span>
-                            <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                          </div>
-                          <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                            <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="item_hover">
-                          <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1a52vNXXXXXc4XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                          <div class="floor_goods">
-                            <span class="text_point">新西兰佳沛金奇异果王</span>
-                            <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                          </div>
-                          <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                            <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="row">
-                        <div class="item_hover">
-                          <a href="#"><img class="sort-img" src="https://img.alicdn.com/bao/uploaded/i1/TB1a52vNXXXXXc4XpXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" alt="" /></a>
-                          <div class="floor_goods">
-                            <span class="text_point">新西兰佳沛金奇异果王</span>
-                            <span class="tm-price">￥888</span> <span>促销价</span> <span style="color:#c00">￥688</span>
-                          </div>
-                          <a target="_blank" href="https://gate.jd.com/InitCart.aspx?pid=10108886864&amp;pcount=1&amp;ptype=1" class="item_buy">
-                            <span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;加入购物车</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <li>
+            <ul class="da-thumbs-2">
+              <li class="li-left"><img src="/images/earth-globe.png" width="50" alt=""></li>
+              <li class="li-rigth">
+                <h4 class="">产地直供</h4>
+                <p class="text">原汁原味  新鲜直达</p>
+              </li>
+            </ul>
+          </li>
 
-                    <div class="col-md-3" id="shangpin-1">
-                      <div class="redge">
-                        <ul class="rHot ">
-                          <li><a href="#">牛肉</a></li>
-                           <li><a name="sfbest_hp_hp_floor2_Keywords2" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%8C%AA%E8%82%89" target="_blank">猪肉</a></li>
-                           <li><a name="sfbest_hp_hp_floor2_Keywords3" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E8%82%8B%E6%8E%92" target="_blank">肋排</a></li>
-                           <li><a name="sfbest_hp_hp_floor2_Keywords4" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%BE%8A%E8%82%89#trackref" target="_blank">羊肉</a></li>
-                           <li><a name="sfbest_hp_hp_floor2_Keywords5" class="trackref" href="/productlist/search?inputBox=1&amp;categoryId=0&amp;keyword=%E7%A6%BD%E7%B1%BB" target="_blank">禽类</a></li>
-                           <li><a name="sfbest_hp_hp_floor2_Keywords6" class="trackref" href="/productlist/search/?categoryId=312&amp;keyword=%E9%B3%95%E9%B1%BC&amp;o=saleNum%3Adesc" target="_blank">鳕鱼</a></li>
-                         </ul>
-                      </div>
-                        <img class="sort-img" src="http://001.sfimg.cn/web/2e565f07/2e565f0745e0591ddba793a18ff498b0.jpg" alt="" />
+          <li>
+            <ul class="da-thumbs-2">
+              <li class="li-left"><img src="/images/snowflake.png" width="50" alt=""></li>
+              <li class="li-rigth">
+                <h4 class="">全程冷链</h4>
+                <p class="text">智能控温  冷箱护送</p>
+              </li>
+            </ul>
+          </li>
 
-                      </div>
-                    </div>
-                  </div>
-</div>
-
-<div class="container">
-  <h3 class="text-center" style="margin-top: 50px;">我们的服务</h3>
-  <hr>
-</div>
-<div class="container">
-  <div class="row">
-    <ul class="list-unstyled da-thumbs">
-      <li>
-        <ul class="da-thumbs-2">
-          <li class="li-left"><img src="/images/aeroplane4.png" width="50" alt=""></li>
-          <li class="li-rigth">
-            <h4 class="">全球美食</h4>
-            <p class="text">世界美味  优质有家</p>
+          <li>
+            <ul class="da-thumbs-2">
+              <li class="li-left"><img src="/images/express.png" width="50" alt=""></li>
+              <li class="li-rigth">
+                <h4 class="">顺丰直达</h4>
+                <p class="text">领先物流  极速送达</p>
+              </li>
+            </ul>
           </li>
         </ul>
-      </li>
-
-      <li>
-        <ul class="da-thumbs-2">
-          <li class="li-left"><img src="/images/earth-globe.png" width="50" alt=""></li>
-          <li class="li-rigth">
-            <h4 class="">产地直供</h4>
-            <p class="text">原汁原味  新鲜直达</p>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <ul class="da-thumbs-2">
-          <li class="li-left"><img src="/images/snowflake.png" width="50" alt=""></li>
-          <li class="li-rigth">
-            <h4 class="">全程冷链</h4>
-            <p class="text">智能控温  冷箱护送</p>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <ul class="da-thumbs-2">
-          <li class="li-left"><img src="/images/express.png" width="50" alt=""></li>
-          <li class="li-rigth">
-            <h4 class="">顺丰直达</h4>
-            <p class="text">领先物流  极速送达</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
+      </div>
+    </div>

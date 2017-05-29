@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="row">
+      <h2> 购物明细 </h2>
+      <%= simple_form_for @order do |f| %>
+      <div class="shoping-cart">
+        <div class="cart-column-head center-block">
+          <label class="col-md-2 ">商品</label>
+          <label class="col-md-2 ">名称</label>
+          <label class="col-md-2 ">单价</label>
+          <label class="col-md-2 ">数量</label>
+          <label class="col-md-2 ">小计</label>
+          <label class="col-md-2 ">操作</label>
+        </div>
+
+        <div class="cart-item-<%= @product.id %>">
+          <div class="cart-list text-center">
+            <div class="col-md-2 ">
+              <%= link_to product_path(@product) do %>
+              <%= image_tag(img430(@product,1), style: "width: 160px;") %>
+              <% end %>
+            </div>
+            <div class="col-md-2 text-left">
+              <%= link_to(@product.title, product_path(@product)) %>
+            </div>
+            <div class="col-md-2"><span id="product-promotional"><%= @product.promotional %></span>&nbsp;RMB
+            </div>
+            <div class="col-md-2">
+              <div class="quantity-box" onselectstart="return false">
+                  <a class="quantity-actions quantity-down<%= if @num == 1 then " disabled" end%>" href="">-</a>
+                <input type="text" name="num" value="<%= @num %>" max="<%= @product.quantity %>" class="quantity-input">
+                <a class="quantity-actions quantity-up<%= if @num == @product.quantity or @product.quantity == 1 then " disabled" end%>" href="">+</a>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <span class="quantity-price"><%= @product.promotional * @num %></span>&nbsp;RMB
+            </div>
+            <div class="col-md-2">
+              <a href="#">加入收藏</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+
+
+      <!-- <h2> 订单资讯 </h2> -->
+
+      <div class="order-form">
+
+
+<br><br>
+<input type="hidden" name="product" value="<%= @product.id %>">
+        <legend> 订购人</legend>
+        <div class="form-group col-lg-6">
+          <%= f.input :billing_name  %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.input :billing_address  %>
+        </div>
+
+        <legend> 收货人</legend>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_name  %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_address  %>
+        </div>
+
+        <div class="checkout">
+          <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
+          data: { disable_with: "Submitting..." } %>
+        </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+$(".shoping-cart").on('click', ".quantity-up", function (evt) {
+  evt.preventDefault();
+  var price = Number($("#product-promotional").text());
+  var $app = $(this).siblings('.quantity-input');
+  var value = Number($app.val());
+  var numMax = Number($app.attr("max"));
+  var url = $app.attr("url") + "/up?value="
+  if (value < numMax) {
+    $app.val(value += 1);
+    $(".quantity-price").text(value * price);
+    //alert('' + url+ String(value) + '')
+    if (value == numMax) {
+      $(this).addClass("disabled")
+    } else if (value == 2) {
+      $(this).siblings('.quantity-down').removeClass("disabled");
+    }
+  }
+})
+$(".shoping-cart").on('click', ".quantity-down", function (evt) {
+  evt.preventDefault();
+  var price = Number($("#product-promotional").text());
+  var $app = $(this).siblings('.quantity-input');
+  var value = Number($app.val());
+  var numMax = Number($app.attr("max"));
+  var url = $app.attr("url") + "/up?value="
+  if (value > 1) {
+    $app.val(value -= 1);
+    $(".quantity-price").text(value * price);
+    if (value == 1) {
+      $(this).addClass("disabled")
+    } else if (value == (numMax - 1)) {
+      $(this).siblings('.quantity-up').removeClass("disabled");
+    }
+  }
+})
+$(".shoping-cart").on('blur', ".quantity-input", function (evt) {
+  evt.preventDefault();
+  var price = Number($("#product-promotional").text());
+  var value = Number($(this).val());
+  var numMax = Number($(this).attr("max"));
+  var url = $(this).attr("url") + "/up?value="
+  if (value >= numMax) {
+    value = numMax;
+    if (numMax != 1) {
+      $(this).siblings('.quantity-up').addClass("disabled");
+      $(this).siblings('.quantity-down').removeClass("disabled");
+    }
+  } else if (value <= 1) {
+    value = 1;
+    if (numMax != 1) {
+      $(this).siblings('.quantity-up').removeClass("disabled");
+      $(this).siblings('.quantity-down').addClass("disabled");
+    }
+  } else {
+    $(this).siblings('.quantity-up').removeClass("disabled");
+    $(this).siblings('.quantity-down').removeClass("disabled");
+  }
+  $(this).val(value);
+  $(".quantity-price").text(value * price);
+})
+</script>

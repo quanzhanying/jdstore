@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   before_action :admin_required
 
   def index
-    @products = Product.all
+    @products = Product.all.paginate(:page => params[:page], :per_page =>20)
   end
 
   def new
@@ -16,22 +16,12 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.category_id = params[:category_id]
-    if params[:photos] != nil
-      @product.photos.destroy_all #need to destroy old pics first
-
-      params[:photos]['avatar'].each do |a|
-        @picture = @product.photos.create(:avatar => a)
-      end
-
-      @product.update(product_params)
-              redirect_to admin_products_path
-
-            elsif  @product.update(product_params)
-              redirect_to admin_products_path
-            else
-              render :edit
-            end
-          end
+    if @product.update(product_params)
+      redirect_to admin_products_path 
+    else
+      render :edit
+    end
+  end
 
   def edit
     @product = Product.find(params[:id])
@@ -43,20 +33,37 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
     if @product.save
-    if params[:photos] != nil
-     params[:photos]['avatar'].each do |a|
-       @photo = @product.photos.create(:avatar => a)
-     end
-   end
       redirect_to admin_products_path
     else
       render :new
     end
   end
 
+  require 'csv'
+  def csv_create        #从csv文件导入商品
+
+    csv_text = params[:data_file].tempfile
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |item|
+      exp = Product.new
+      exp.tm_id = item[1]
+      exp.title = item[2]
+      exp.product_parameter = item[3]
+      exp.promotional = item[4]
+      exp.price = item[5]
+      exp.quantity = item[6]
+      exp.image = item[7]
+      exp.image2 = item[8]
+      exp.image3 = item[9]
+      exp.image4 = item[10]
+      exp.image5 = item[11]
+      exp.description = item[12]
+      exp.save!
+    end
+  end
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price,:promotional,:hot, :image, :image2, :image3,:image4,:image5, :des_image, :app_image, :category_id, :product_type)
+    params.require(:product).permit(:title, :description, :quantity, :price,:promotional,:hot, :image, :image2, :image3,:image4,:image5, :des_image, :app_image, :category_id, :product_type,:data_file)
   end
 end

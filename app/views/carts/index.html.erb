@@ -1,199 +1,147 @@
-
-<<<<<<< HEAD
-    <%= link_to("清空购物车", clean_carts_path ,method: :delete , class:"pull_right",
-    style: "text-decoration: underline;", data: { confirm: "你确定要清空整个购物车吗？"}) %>
-
-    <h2> 购物车</h2>
-
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th colspan="2">商品资讯</th>
-          <th>单价</th>
-          <th>数量</th>
-          <th>操作选项</th>
-        </tr>
-      </thead>
-<tbody>
-
-  <% current_cart.cart_items.each do |cart_item| %>
-  <tr>
-    <td>
-        <%= link_to product_path(cart_item.product) do %>
-      <% if cart_item.product.photos[0].present? %>
-         <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-        <% end %>
-    </td>
-    <td>
-          <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-              </td>
-              <td>
-          <%= cart_item.product.price %>
-              </td>
-              <td>
-        <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-        <%= f.select :quantity, 1..cart_item.product.quantity %>
-        <%= f.submit "更新", data: { disable_with: "Submitting..." } %>
-        <% end %>
-    </td>
-    <td>
-          <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-           <i class="fa fa-trash"></i>
-          <% end %>
-    </td>
-  </tr>
-
-  <% end %>
-
-</tbody>
-    </table>
-    <br>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-    <span>
-             总计 <%= render_cart_total_price(current_cart) %> RMB
-      </span>
-    </span>
-=======
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <%= link_to("清空购物车", clean_carts_path ,method: :delete , class:"pull_right",
-      style: "text-decoration: underline;", data: { confirm: "你确定要清空整个购物车吗？"}) %>
-      <h2> 购物车</h2>
-    </div>
-</div>
-    <div class="panel panel-default">
-    <div class="panel-heading">
-    <div class="panel-title">
-      <div class="row">
-        <div class="col-md-5 col-xs-5">
-          商品资讯
+      <h2>购物车</h2>
+      <div class="shoping-cart">
+        <div class="cart-column-head center-block">
+          <label class="col-md-2 ">商品</label>
+          <label class="col-md-2 ">名称</label>
+          <label class="col-md-2 ">单价</label>
+          <label class="col-md-2 ">数量</label>
+          <label class="col-md-2 ">小计</label>
+          <label class="col-md-2 ">操作</label>
         </div>
-        <div class="col-md-2 col-xs-2 ">
-          单价
-        </div>
-        <div class="col-md-3 col-xs-3 ">
-          数量
-        </div>
-        <div class="col-md-2 col-xs-2 ">
-          操作选项
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-xs-2">
-          <a href="#"><img src="http://placehold.it/200x200&text=No Pic" alt=""></a>
-        </div>
-        <div class="col-xs-3">
-          <div class="product-name-cart">
-            <a href="#">超级无敌大的榴莲</a>
-          </div>
-        </div>
-        <div class="col-xs-2">
-          $9000
-        </div>
-        <div class="col-xs-3">
-              10 更新
-        </div>
-        <div class="col-xs-2 ">
-          删除
-        </div>
-      </div>
->>>>>>> step2
-
-    </div>
-    <div class="panel-footer">
-      <div class="row">
-        <div class="text-right">
-          <div class="col-xs-12 total-size">
-            总计：$8888
-          </div>
-        </div>
-        <div class="col-xs-12">
-          <div class="checkout clearfix">
-            <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-<!--div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <%= link_to("清空购物车", clean_carts_path ,method: :delete , class:"pull_right",
-      style: "text-decoration: underline;", data: { confirm: "你确定要清空整个购物车吗？"}) %>
-      <h2> 购物车</h2>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th colspan="2">商品资讯</th>
-            <th>单价</th>
-            <th>数量</th>
-            <th>操作选项</th>
-          </tr>
-        </thead>
-        <tbody>
-
-<<<<<<< HEAD
-    <div class="checkout clearfix">
-      <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
-=======
-          <% current_cart.cart_items.each do |cart_item| %>
-          <tr>
-            <td>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <div class="cart-item-<%= cart_item.product_id%>">
+          <div class="cart-list text-center">
+            <div class="col-md-2 ">
               <%= link_to product_path(cart_item.product) do %>
-              <% if cart_item.product.image.present? %>
-              <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-              <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <%= image_tag(img430(cart_item.product,1), style: "width: 160px;") %>
               <% end %>
-              <% end %>
-            </td>
-            <td>
+            </div>
+            <div class="col-md-2 text-left">
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-            </td>
-            <td>
-              <%= cart_item.product.price %>
-            </td>
-            <td>
-              <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-              <%= f.select :quantity, 1..cart_item.product.quantity %>
-              <%= f.submit "更新", data: { disable_with: "Submitting..." } %>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-              <i class="fa fa-trash"></i>
-              <% end %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <br>
->>>>>>> step2
-
-      <div class="total clearfix">
-        <span class="pull-right">
-          <span>
-            总计 <%= render_cart_total_price(current_cart) %> usd
-          </span>
-        </span>
+            </div>
+            <div class="col-md-2">
+              <%= cart_item.product.promotional %>
+              RMB
+            </div>
+            <div class="col-md-2">
+              <div class="quantity-box" onselectstart="return false">
+                <a class="quantity-actions quantity-down<%= if cart_item.quantity == 1 then " disabled" end%>" href="">-</a>
+                <input type="text" name="quantity" value="<%= cart_item.quantity%>" max="<%= cart_item.product.quantity %>" class="quantity-input" url="<%= cart_item_path(cart_item.product)%>">
+                <a class="quantity-actions quantity-up<%= if cart_item.quantity == cart_item.product.quantity or cart_item.product.quantity == 1 then " disabled" end%>" href="">+</a>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <span class="quantity-price"><%= cart_item.product.promotional * cart_item.quantity %>
+                RMB</span>
+            </div>
+            <div class="col-md-2">
+              <%= link_to "删除", cart_item_path(cart_item.product_id), :method => :delete, :remote => true %>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <% end %>
       </div>
-      <hr>
-      <div class="checkout clearfix">
-        <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+
+      <div class="container cart-buying-buttom">
+        <div class="row">
+          <div class="carts-clean">
+            <span>
+              <%= link_to("清空购物车", clean_carts_path ,
+                method: :delete ,
+                data: { confirm: "你确定要清空整个购物车吗？"}, style: "color:#7f8c8d")%>
+            </span>
+          </div>
+          <div class="carts-bth">
+            <% if !current_user %>
+            <a class="btn btn-lg btn-danger" href="#" data-toggle="modal" data-target="#login-modal">确认结账</a>
+          <% else %>
+            <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger") %>
+            <% end %>
+          </div>
+          <div class="carts-count">
+            <p class="cw-icon">已选商品&nbsp;<span style="color:#da1026;font-size:16px;"> <%= current_cart.cart_items.sum("quantity") %></span>&nbsp;件</p>
+            <span class="text-center product-price-totle">
+              总计：<%= render_cart_total_price(current_cart) %>
+              RMB
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
--->
+
+<script type="text/javascript">
+  $(".shoping-cart").on('click', ".quantity-up", function (evt) {
+    evt.preventDefault();
+    var $app = $(this).siblings('.quantity-input');
+    var value = Number($app.val());
+    var numMax = Number($app.attr("max"));
+    var url = $app.attr("url") + "/up?value="
+    if (value < numMax) {
+      $app.val(value += 1);
+      //alert('' + url+ String(value) + '')
+      $.ajax({
+        method: "GET",
+        url: url + String(value),
+        dataType: "script"
+      })
+      if (value == numMax) {
+        $(this).addClass("disabled")
+      } else if (value == 2) {
+        $(this).siblings('.quantity-down').removeClass("disabled");
+      }
+    }
+  })
+  $(".shoping-cart").on('click', ".quantity-down", function (evt) {
+    evt.preventDefault();
+    var $app = $(this).siblings('.quantity-input');
+    var value = Number($app.val());
+    var numMax = Number($app.attr("max"));
+    var url = $app.attr("url") + "/up?value="
+    if (value > 1) {
+      $app.val(value -= 1);
+      $.ajax({
+        method: "GET",
+        url: url + String(value),
+        dataType: "script"
+      })
+      if (value == 1) {
+        $(this).addClass("disabled")
+      } else if (value == (numMax - 1)) {
+        $(this).siblings('.quantity-up').removeClass("disabled");
+      }
+    }
+  })
+  $(".shoping-cart").on('blur', ".quantity-input", function (evt) {
+    evt.preventDefault();
+    var value = Number($(this).val());
+    var numMax = Number($(this).attr("max"));
+    var url = $(this).attr("url") + "/up?value="
+    if (value >= numMax) {
+      value = numMax;
+      if (numMax != 1) {
+        $(this).siblings('.quantity-up').addClass("disabled");
+        $(this).siblings('.quantity-down').removeClass("disabled");
+      }
+    } else if (value <= 1) {
+      value = 1;
+      if (numMax != 1) {
+        $(this).siblings('.quantity-up').removeClass("disabled");
+        $(this).siblings('.quantity-down').addClass("disabled");
+      }
+    } else {
+      $(this).siblings('.quantity-up').removeClass("disabled");
+      $(this).siblings('.quantity-down').removeClass("disabled");
+    }
+    $(this).val(value);
+
+    $.ajax({
+      method: "GET",
+      url: url + String(value),
+      dataType: "script"
+    })
+  })
+</script>

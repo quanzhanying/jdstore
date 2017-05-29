@@ -1,120 +1,359 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">鲜生超市 </a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <%#= link_to("Products", products_path) %>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to carts_path do %>
-          购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %>)
-          <% end %>
-        </li>
-        <% if !current_user %>
-        <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+    <div class="row row1">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">JDstore
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <%= link_to("全部商品", products_path) %>
+            <%#= link_to("Products", products_path) %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if !current_user %>
+          <!-- <li>
+            <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
+          </li> -->
+          <li>
+            <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
+          </li>
         <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Hi!, <%= current_user.email %>
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <% if current_user.admin? %>
-            <li>
-              <%= link_to("Admin 选单", admin_products_path) %>
-            </li>
-            <% end %>
-            <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-          </ul>
-
-        </li>
-        <% end %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Hi!, <%= if current_user.image.nil? then current_user.email else image_tag(current_user.image,size: "16x16" ,alt: current_user.email) end%>
+              <%= if !current_user.username.nil? then current_user.username end%>
+              <%#= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+              <li>
+                <%= link_to("Admin 选单", admin_products_path) %>
+              </li>
+              <% end %>
+              <% if !current_user.image.nil? %>
+              <li>
+                <%= link_to(current_user.email, "javascript:void(0);") %>
+              </li>
+              <% end %>
+              <li>
+                <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+              </li>
+            </ul>
+          </li>
+          <% end %>
+        </div>
       </div>
       <!-- /.navbar-collapse -->
+      <div class="row row2">
+        <div id="nav-fixed">
+          <div class="col-md-4">
+            <div class="product-index">
+              <ul>
+                <li class="active">
+                  <a href="/">首页</a>
+                </li>
+                <li>
+                  <a href="/products?where=进口水果" style="color: #555555">进口水果</a>
+                </li>
+                <li>
+                  <a href="/products?where=进口水产" style="color: #555555">进口水产</a>
+                </li>
+                <li>
+                  <a href="/products?where=进口鲜肉" style="color: #555555">进口鲜肉</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col-md-5">
+            <div class="search">
+              <div class="form-group has-warning">
+                <%= form_tag search_products_path , :method => :get, :class => "form-group" do %>
+                <div class="input-group">
+
+                  <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货你想吃什么">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-search">
+                      &nbsp;搜索&nbsp;
+                    </button>
+                  </span>
+                </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="search-hot">
+              <ul>
+                <li style="color: #cc8902;">热门搜索:</li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=樱桃">樱桃</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=榴莲">榴莲</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=龙虾">龙虾</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=鳕鱼">鳕鱼</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=牛排">牛排</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=生蚝">生蚝</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=三文鱼">三文鱼</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /.container-fluid -->
   </nav>
+<br>
+<br>
+<br>
+
   <div class="container">
-        <div class="col-md-4">
-          <div class="shoplogo">
-            <img src="/images/shoplogo5.png" height="60">
+    <div class="col-md-4">
+      <div class="shoplogo">
+        <img src="/images/shoplogo7.png" height="60">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="search">
+        <div class="form-group has-warning">
+          <%= form_tag search_products_path , :method => :get, :class => "form-group" do %>
+          <div class="input-group">
+
+            <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货你想吃什么">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-search">
+                &nbsp;搜索&nbsp;
+              </button>
+              <img src="/images/space.png" width="30" height="16">
+              <img src="/images/top.png" width="246" height="16">
+            </span>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="search-hot">
+        <ul>
+          <li style="color: #cc8902;">热门搜索:</li>
+          <li>
+            <a href="/products/search?utf8=✓&q=樱桃">樱桃</a>
+          </li>
+          <li>
+            <a href="/products/search?utf8=✓&q=榴莲">榴莲</a>
+          </li>
+          <li>
+            <a href="/products/search?utf8=✓&q=龙虾">龙虾</a>
+          </li>
+          <li>
+            <a href="/products/search?utf8=✓&q=鳕鱼">鳕鱼</a>
+          </li>
+          <li>
+            <a href="/products/search?utf8=✓&q=牛排">牛排</a>
+          </li>
+          <li>
+            <a href="/products/search?utf8=✓&q=生蚝">生蚝</a>
+          </li>
+          <li>
+            <a href="/products/search?utf8=✓&q=三文鱼">三文鱼</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+<div class="container">
+  <div class="row row3">
+    <div class="col-md-10">
+      <div class="product-index">
+        <ul>
+          <li class="active">
+            <a href="/">首页</a>
+          </li>
+          <li>
+            <a href="/products?where=进口水果" style="color: #555555">进口水果</a>
+          </li>
+          <li>
+            <a href="/products?where=进口水产" style="color: #555555">进口水产</a>
+          </li>
+          <li>
+            <a href="/products?where=进口鲜肉" style="color: #555555">进口鲜肉</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="settleup-2014 dorpdown">
+        <div class="cw-icon">
+          <a href="/carts">
+            我的购物车
+            <i class="fa fa-shopping-cart"></i>
+            (<span><%= current_cart.cart_items.sum("quantity") %></span>)
+          </a>
+        </div>
+        <div class="dorpdown-layer">
+          <div class="spacer"></div>
+          <div id="settleup-content">
+            <div class="smc">
+              <ul class="mcart-sigle"></ul>
+            </div>
+            <div class="smb">
+              <div class="p-total">共<b>0</b>件商品 共计<strong>￥ 0</strong>
+              </div>
+              <a href="/carts" >去购物车</a>
+            </div>
+            <div style="clear:both;"></div>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="search">
-          <div class="form-group has-warning">
-            <%#= form_tag search_jobs_path , :method => :get, :class => "form-group" do %>
-            <div class="input-group">
-              <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货你想吃什么">
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-search">
-                  &nbsp;搜索&nbsp;
-                </button>
-                <img src="/images/space.png" width="22" height="16">
-                <img src="/images/top.png" width="246" height="16">
-              </span>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+
+  <div class="container">
+    <div id="container-login">
+      <div class="accountbox">
+        <div id="account-page-header">
+          <ul id="JDstoreTab" class="nav nav-tabs JDstoreTab" role="tablist">
+              <li class="active"><a href="#sign-in-Tab" role="tab" data-toggle="tab">登录</a></li>
+              <li><a href="#sign-up-Tab" role="tab" data-toggle="tab">注册</a></li>
+          </ul>
+        </div>
+        <div class="content clearfix">
+          <div class="login">
+            <div id="sign-in-content">
+              <div id="myTabContent" class="tab-content">
+              	<div class="tab-pane active" id="sign-in-Tab">
+                  <div class="from sign-in">
+                    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <h2>欢迎登陆 JDtore</h2>
+                      <fieldset>
+                        <p>
+                          <span class="field-with-placeholder">
+                              <input name="user[email]" size="30" type="email" class="login" id="login-JDstoreId" autofocus="autofocus" placeholder="邮箱*">
+                          </span>
+                          <span class="field-with-placeholder">
+                            <input name="user[password]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="密码*">
+                          </span>
+
+                        </p>
+                      </fieldset>
+                      <div class="actions">
+                        <button type="submit" class="button rect" id="sign-in">
+                            <span>登录</span>
+                        </button>
+                      </div>
+
+                      <p id="iforgot-link">
+                        <a target="browser" id="go-iforgot" href="#">忘了自己的 Email 或密码？</a>
+                      </p>
+                    <% end %>
+                  </div>
+                </div>
+              	<div class="tab-pane" id="sign-up-Tab">
+                  <div class="from sign-in">
+                  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <h2>欢迎注册 JDtore</h2>
+                      <fieldset>
+                        <p>
+                          <span class="field-with-placeholder">
+                              <input name="user[email]" size="30" type="email" class="login" id="login-JDstoreId" autofocus="autofocus" placeholder="邮箱*">
+                          </span>
+                          <span class="field-with-placeholder">
+                            <input name="user[password]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="密码*">
+                          </span>
+                          <span class="field-with-placeholder">
+                            <input name="user[password_confirmation]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="确认密码*">
+                          </span>
+                        </p>
+                      </fieldset>
+                      <div class="actions">
+                        <button type="submit" class="button rect" id="sign-in">
+                            <span>注册</span>
+                        </button>
+                      </div>
+
+                      <p id="iforgot-link">
+                        <a target="browser" id="go-iforgot" href="javascript:void(0);">忘了自己的 Email 或密码？</a>
+                      </p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
             </div>
-            <%# end %>
           </div>
-          </div>
-          <div class="search-hot">
+          <div class="contact-us">
+            <p>您还可以使用以下方式进行登录</p>
             <ul>
-              <li style="color: #cc8902;">热门搜索:</li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">榴莲</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
-              <li><a href="#">樱桃</a></li>
+              <li><%= link_to "Google 登录", user_google_oauth2_omniauth_authorize_path %></li>
+              <li><%= link_to "Github 登录", user_github_omniauth_authorize_path %></li>
+              <li><%= link_to "Facebook登录", user_facebook_omniauth_authorize_path %></li>
             </ul>
           </div>
-
         </div>
-  </div>
-<!--  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog" role="document">
-      <div class="loginmodal-container">
-         <h2>Log in</h2>
-         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-           <div class="form-inputs">
-             <%= f.input :email, required: false, autofocus: true %>
-             <%= f.input :password, required: false %>
-             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-           </div>
-           <div class="form-actions">
-             <%= f.button :submit, "Log in" %>
-           </div>
-         <% end %>
+        <div class="cart-navigation">
+          <button id="cancel-button" class="button rect secondary" data-dismiss="modal">
+            <span>取消</span>
+          </button>
+          <p class="details">如果您有问题， 欢迎随时提问。<span class="contact-phone">400-0000-0001</span>
+          </p>
+        </div>
       </div>
     </div>
   </div>
+  <!-- <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+      <h2 class="text-center">欢迎登陆</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email, required: false, autofocus: true %>
+        <%= f.input :password, required: false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "登陆" %>
+      </div>
+      <%= render "devise/shared/links" %>
+      <% end %>
+    </div>
+  </div> -->
+</div>
 
-  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-      <div class="loginmodal-container">
-        <h2>Sign up</h2>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-          <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true %>
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-            <%= f.input :password_confirmation, required: true %>
-          </div>
-          <div class="form-actions">
-              <%= f.button :submit, "Sign up" %>
-          </div>
-        <% end %>
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2 class="text-center">欢迎注册</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, required: true %>
       </div>
+      <div class="form-actions">
+        <%= f.button :submit, "注册" %>
+      </div>
+      <%= render "devise/shared/links" %>
+      <% end %>
     </div>
   </div>
--->
+</div>

@@ -1,0 +1,2 @@
+$("#cart_items span").html("(<%= current_cart.cart_items.sum("quantity") %>)" );
+$(".cw-icon span").html("<%= current_cart.cart_items.sum("quantity") %>" );

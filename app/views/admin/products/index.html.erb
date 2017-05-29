@@ -9,6 +9,8 @@
       <th width="220">Product Pic</th>
       <th>Name</th>
       <th>Price</th>
+        <th>促销价</th>
+        <th>hot</th>
       <th width="100">Options</th>
     </tr>
   </thead>
@@ -21,10 +23,14 @@
     <td>
        <%= link_to product_path(product) do %>
         <% if product.image.present? %>
-       <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+       <%= image_tag(product.image.thumb.url ,style: "width: 200px;") %>
        <% else %>
-       <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% if product.http_image.nil? %>
+       <%= image_tag("http://placehold.it/200x200&text=No Pic", style: "width: 200px;") %>
+       <% else %>
+        <%= image_tag(product.http_image ,style: "width: 200px;") %>
        <% end %>
+      <% end %>
       <% end %>
     </td>
     <td>
@@ -33,6 +39,16 @@
     <td>
       <%= product.price %>
     </td>
+    <td style="
+    <% if product.promotional < product.price %>
+    <%= "color:red;" %>
+    <% end %>
+    ">
+      <%= product.promotional %>
+    </td>
+    <td>
+      <%= product.hot %>
+    </td>
     <td>
       <%= link_to("Edit", edit_admin_product_path(product)) %>
     </td>
@@ -40,3 +56,6 @@
   <% end %>
 </tbody>
 </table>
+<div class="text-center">
+  <%= will_paginate @products %>
+</div>
