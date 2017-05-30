@@ -15,6 +15,6 @@ u.password_confirmation = "123456" #最少6位
 u.is_admin = true
 u.save
 
-Category.create!(:name => "男性健康餐")
-Category.create!(:name => "女性健康餐")
-Category.create!(:name => "随心健康餐")
+Category.create(:name => "男性健康餐")
+Category.create(:name => "女性健康餐")
+Category.create(:name => "随心健康餐")

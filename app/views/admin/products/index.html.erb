@@ -10,7 +10,7 @@
       <th>Name</th>
       <th>Price</th>
       <th>Category</th>
-      <th width="100"> Options</th>
+      <th width="100" colspan="2"> Options</th>
     </tr>
   </thead>
   <tbody>
@@ -36,13 +36,16 @@
         </td>
 
         <td>
-          <%= product.category_id %>
+          <%= product.category_name %>
         </td>
 
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
         </td>
 
+        <td>
+          <%= link_to("Delete", admin_product_path(product), :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
