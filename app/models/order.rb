@@ -42,7 +42,7 @@ class Order < ApplicationRecord
       transitions from: :paid, to: :shipping
     end
 
-    event :devliver do
+    event :deliver do
       transitions from: :shipping, to: :shipped
     end
 
