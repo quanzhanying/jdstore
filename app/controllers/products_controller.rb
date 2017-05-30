@@ -68,6 +68,15 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  #立即购买的method，目前是立即购买的话会删除之前购物车中所有商品，这个后期还得再修改
+  def buy_now
+    @product = Product.find(params[:id])
+    current_cart.cart_items.delete_all
+    current_cart.add_product_to_cart(@product)
+    redirect_to carts_path
+  end
+  #立即购买的method结束
+
   # 收藏商品的method
   def add_to_favorite
     @product = Product.find(params[:id])

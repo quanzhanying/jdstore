@@ -139,9 +139,11 @@
           </div>
           <!-- 商品購買集合鈕開始 -->
           <div class="btn-group btn-group-justified", style="height: 60px;">
-            <div class="btn btn-primary btn-lg", style="background-color: #474c6b;">
-              立即购买
+            <!-- 实做立即购买按钮 -->
+            <div class="btn btn-primary btn-lg buy_now", style="background-color: #474c6b;">
+              <%= link_to("立即购买", buy_now_product_path, :method => :post) %>
             </div>
+            <!-- 实做立即购买按钮结束 -->
             <% if @product.stock.present? && @product.stock > 0 %>
               <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg") %>
             <% else %>
