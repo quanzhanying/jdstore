@@ -18,6 +18,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+    font-size: 13px;
+    line-height: 1.846;
+    color: #223B47;
+    background-color: #D5EAEF;
+    display: block;
+}
+
 //------------navbar------------
 .container-fluid {
     margin-right: auto;

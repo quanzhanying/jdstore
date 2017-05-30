@@ -13,13 +13,14 @@
 </head>
 
 <body>
-  <%= render "common/navbar" %> 
+  <%= render "common/navbar" %>
+
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-xs-2 nav-left-style">
           <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-            <li> <%= link_to("Products", admin_products_path) %> </li>
-            <li> <%= link_to("Orders", admin_orders_path) %> </li>
+            <li> <%= link_to("我的商品", admin_products_path) %> </li>
+            <li> <%= link_to("我的订单", admin_orders_path) %> </li>
           </ul>
         </div>
         <div class="col-md-10">

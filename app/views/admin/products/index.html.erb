@@ -1,18 +1,38 @@
-<h2> Product List </h2>
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>穿梭市集</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+  </head>
+
+  <body style="background-color: #fff">
+    <div class="container">
+      <div class="row">
+<div class="col-xs-10">
+<h2>我的商品</h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
 
-<table class="table table-bordered">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
+      <th>商品编号</th>
+      <th width="220">商品</th>
+      <th>名称</th>
+      <th>价格</th>
+      <th width="100">管理</th>
     </tr>
-  </thead>
+  </thead
+
   <tbody>
     <% @products.each do |product| %>
       <tr>
@@ -35,10 +55,14 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
-          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          <%= link_to("编辑", edit_admin_product_path(product), class: "btn btn-default btn-xs") %>
+          <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }, class: "btn btn-default btn-xs") %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+</div>
+</div>
+</body>

@@ -7,16 +7,6 @@ html{
   min-height: 100%;
 }
 
-body {
-    font-family: 'Proza Libre', 'Noto Sans SC', 'Noto Sans TC', sans-serif;
-    font-size: 13px;
-    line-height: 1.846;
-    color: #f5f5f5;
-    background-color: #D5EAEF;
-    display: block;
-}
-
-
 //文字介绍
 .logo {
     font-family: 'Yesteryear', cursive;
@@ -59,7 +49,6 @@ hr {
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 body {
-    padding-top: 15px;
     background-color: #f9f9f9;
 }
 

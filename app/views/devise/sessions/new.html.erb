@@ -10,19 +10,19 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color: #F5DD47">
     <div class="container">
       <div class="row">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
-            <h2 >Please log in</h2>
+            <h2 align="center">登陆</h2>
             <%= f.input :email, required: false, autofocus: true %>
             <%= f.input :password, required: false %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Log in" %>
+          <div class="form-actions" style="margin: 0px auto;display: table;">
+            <%= f.button :submit, "马上登陆" %>
           </div>
           <% end %>
           <%= render "devise/shared/links" %>
