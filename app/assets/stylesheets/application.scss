@@ -67,7 +67,7 @@
 .header {
   width: 1200px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
-  margin-top: 30px; /*上边距*/
+  margin-top: 15px; /*上边距*/
 }
 
 .logo {
@@ -149,6 +149,7 @@
   color: #C81623; /*鼠标一上去的时候，字体变成红色*/
 }
 
+
 /*5种背景颜色*/
 .bg-color1 {
   background: #50514F;
@@ -169,6 +170,21 @@
 .bg-color5 {
   background: #70C1B3;
 }
+
+
+/*字母*/
+.title {
+  width: 520px; /*宽度1200px*/
+  margin: 0 auto; /*水平居中*/
+  margin-top: 100px; /*上边距*/
+}
+.title-1 {
+  font-size: 50px; /*设置字体36px*/
+  //float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+//  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
+}
+
+
 
 
 /*菜单*/
