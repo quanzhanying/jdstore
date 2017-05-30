@@ -20,14 +20,15 @@ class CartsController < ApplicationController
 
      redirect_to carts_path
    end
-
+   def checkout
+     @order = Order.new
+   end
    private
 
    def cart_item_params
      params.require(:cart_item).permit(:quantity)
    end
-     def checkout
-       @order = Order.new
-     end
+
+
 
 end

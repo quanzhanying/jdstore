@@ -12,7 +12,6 @@
         </tr>
       </thead>
       <tbody>
-
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
@@ -45,9 +44,6 @@
     <div class="order-form">
 
       <%= simple_form_for @order do |f| %>
-
-
-
           <legend> 订购人</legend>
           <div class="form-group col-lg-6">
             <%= f.input :billing_name  %>
