@@ -1,7 +1,7 @@
 class Admin::MenusController < ApplicationController
 
    def index
-      @menu = Menu.all
+      @menus = Menu.all
    end
 
    def new
