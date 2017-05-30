@@ -1,0 +1,24 @@
+<h2>产品分类</h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+    <%= link_to("New Category", admin_category_index_path, class: "btn btn-primary") %>
+</div>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <!-- <th colspan="2">设置</th> -->
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <!-- <td><%= link_to 'Destroy', admin_category_index_path, method: :delete, data: { confirm: 'Are you sure?' }  %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

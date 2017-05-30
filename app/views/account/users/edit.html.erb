@@ -1,0 +1,25 @@
+<h2> 修改个人资料 </h2>
+<%= simple_form_for [:account, @user] do |f| %>
+<div>
+  <%= f.input :username, :label =>"用户名" %>
+  <%= f.input :email, :label =>"邮箱地址" %>
+  <%= f.input :gender, as: :radio_buttons, collection:  [['男', false], ['女', true]], required: true %>
+  <%= f.input :is_fitting, as: :radio_buttons, collection:  [['正在健身', false], ['不在健身', true]], required: true %>
+   <!-- 以下代码也是用来显示性别“男”“女”选项的。从网站直接抄过来。但最好使用上面代码
+      <div class="form-group radio_buttons required user_gender">
+         <input type="hidden" name="user[gender]" value>
+            <span class="radio">
+               <label for="user_gender">
+                  <input class="radio_buttons required" required="required" aria-required="true" type="radio" value="男" name="user[gender]" id="user_gender_"> 男
+               </label>
+
+               <label for="user_gender">
+                  <input class="radio_buttons required" required="required" aria-required="true" type="radio" value="女" name="user[gender]" id="user_gender_"> 女
+               </label>
+            </span>
+      </div> -->
+
+      <%= link_to("放弃更新", root_path, class: "btn btn-sm btn-default" ) %>
+<%= f.submit "提交", class: "btn btn-sm btn-default" %>
+</div>
+<% end %>
