@@ -13,4 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap-sprockets
 //= require_tree .
+//------首页轮播--------
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 4000})
+    $(window).trigger('scroll') // 一开始就触发一下滚动事件
+});
+
+//-------回到顶部--------
+$(document).on('click', '#gotop', function () {
+  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+})
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    $('#gotop').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
+  } else {
+    $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+  }
+})
+
+// 商品详情页面的图片切换
+$(document).on('mouseover', '.productDetail-left-imageList-item', function () {
+  var src = $(this).find('img').attr('src') //从被鼠标选中的图片的src里面拿到图片链接
+  $('.productDetail-left-bigImage').find('img').attr('src', src) //把图片链接设置到大图的src里面
+})

@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row product-width" >
+    <div class="col-md-12 " >
+      <div class="filter">
+          <span><%= link_to("价钱", products_path(:order => "by_price")) %><i class="fa fa-arrow-down" ></i></span>
+          <span><%= link_to("受欢迎程度", products_path(:order => "by_like")) %><i class="fa fa-arrow-down"></i></span>
+          <span><%= link_to("上架时间", products_path) %><i class="fa fa-arrow-down"></i></span>
+      </div>
+
+      <hr>
+    </div>
+
+        <div >
+
+
+        <% @products.each do |product| %>
+          <div class="text-center product-box panel panel-default col-md-3" style=" padding:0px">
+            <%= link_to product_path(product) do %>
+              <% if product.photos.present? %>
+                <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail", class: "product-list-style-img img-responsive center-block") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: "product-list-style-img img-responsive center-block") %>
+              <% end %>
+            <% end %>
+            <div class="panel-body" style="padding:5px;">
+              <p>
+                <span class="pull-center price">
+                  <%= product.title %> ￥ <%= product.price %>
+                </span>
+
+                <!--  点赞 -->
+                <!-- <span class="pull-right">
+                  <%= link_to like_product_path(product), method: :put do %>
+                    <div class="pi-thumbs-up">
+                      <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+                      <%= product.get_upvotes.size %>
+                    </div>
+                  <% end %>
+                </span>  -->
+              </p>
+            </div>
+          </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>
