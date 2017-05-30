@@ -16,7 +16,6 @@ Rails.application.routes.draw do
    end
 
    resources :products do
-      resources :elements
       member do
          post :add_to_cart
       end
@@ -31,7 +30,6 @@ Rails.application.routes.draw do
 
    resources :cart_items
    resources :category
-   resources :elements
    resources :orders do
       member do
          post :pay_with_alipay
