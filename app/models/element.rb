@@ -1,0 +1,2 @@
+class Element < ApplicationRecord
+end
