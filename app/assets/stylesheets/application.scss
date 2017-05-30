@@ -19,6 +19,16 @@
  @import "font-awesome";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
  /****** 导航栏 ******/
  @media (min-width: 768px) {
    .navbar {
@@ -282,4 +292,19 @@
     width: 200px;
     padding-top: 7px;
     margin-left: 30px;
+}
+
+//---------Footer---------
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #E0E0E0;
+
+  p {
+    color: #666;
+    margin-top: 30px;
+  }
 }
