@@ -27,7 +27,10 @@
   admin:
     product_list: Product List
     order_list: Order List
+    category_list : Category List
     products: Products
     orders: Orders
+    categories: Categories
     new_product: New Product
     edit_product: Edit Product
+    new_category: New Category

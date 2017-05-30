@@ -6,7 +6,10 @@
   admin:
     product_list: 商品列表
     order_list: 订单列表
+    category_list : 类别列表
     products: 商品
     orders: 订单
+    categories: 类别
     new_product: 新增商品
+    new_category: 新增类别
     edit_product: 编辑商品
