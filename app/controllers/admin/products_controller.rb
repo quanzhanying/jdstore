@@ -11,6 +11,7 @@ class Admin::ProductsController < ApplicationController
       @categories = Category.all.map { |c| [c.name, c.id]}
    end
 
+
    def edit
       @product = Product.find(params[:id])
       @categories = Category.all.map { |c| [c.name, c.id]}

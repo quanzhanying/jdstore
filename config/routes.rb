@@ -16,10 +16,10 @@ Rails.application.routes.draw do
    end
 
    resources :products do
-         member do
-            post :add_to_cart
-         end
-
+      resources :elements
+      member do
+         post :add_to_cart
+      end
    end
 
    resources :carts do
@@ -30,9 +30,8 @@ Rails.application.routes.draw do
    end
 
    resources :cart_items
-
    resources :category
-
+   resources :elements
    resources :orders do
       member do
          post :pay_with_alipay

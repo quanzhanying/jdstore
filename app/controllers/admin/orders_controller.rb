@@ -12,6 +12,7 @@ class Admin::OrdersController < ApplicationController
       @product_lists = @order.product_lists
    end
 
+
    def ship
       @order = Order.find(params[:id])
       @order.ship!
