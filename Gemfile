@@ -40,7 +40,7 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
-gem 'airbrake', '~> 5.4'
+# gem 'airbrake', '~> 5.4'
 gem 'select2-rails'
 group :development, :test do
 

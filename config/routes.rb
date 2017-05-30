@@ -3,8 +3,8 @@ Rails.application.routes.draw do
    devise_for :users
    namespace :admin do
       resources :products
+      resources :menus
       resources :category
-      resources :elements
       resources :orders do
          member do
             post :cancel
