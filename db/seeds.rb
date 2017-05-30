@@ -15,23 +15,58 @@ u.save
 
 # Initialize Product
 
-Product.create!(title: "Aeron",
-  description: "座椅",
-  price: 9000,
+Product.create!(title: "恋情的终结",
+  description: "书",
+  price: 39.2,
   quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/71UMci7bysL._SL1384_.jpg")
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51hYTActU4L._SX357_BO1,204,203,200_.jpg")
   )
 
-Product.create!(title: "Iphone7",
-  description: "手机",
-  price: 5000,
+Product.create!(title: "浮生六记",
+  description: "书",
+  price: 33.75,
   quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51v7artv36L._SX384_BO1,204,203,200_.jpg")
   )
 
-Product.create!(title: "Cherry Keyboard",
-  description: "G80-3000键盘",
-  price: 2800,
+Product.create!(title: "步履不停",
+  description: "书",
+  price: 26.2,
   quantity: 5,
-  image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51MJN%2BwqDTL._SX366_BO1,204,203,200_.jpg")
+  )
+
+Product.create!(title: "这么慢，那么美",
+  description: "书",
+  price: 26.2,
+  quantity: 5,
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/510im9j53mL._SX357_BO1,204,203,200_.jpg")
+  )
+
+Product.create!(title: "我这一辈子",
+  description: "书",
+  price: 23.3,
+  quantity: 5,
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51ni-h62dOL._SX320_BO1,204,203,200_.jpg")
+  )
+
+Product.create!(title: "时间简史",
+  description: "书",
+  price: 31.1,
+  quantity: 5,
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51ewBewBwIL._SX390_BO1,204,203,200_.jpg")
+  )
+
+Product.create!(title: "皮特猫",
+  description: "书",
+  price: 62.8,
+  quantity: 5,
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51VECKzx4fL._SX395_BO1,204,203,200_.jpg")
+  )
+
+Product.create!(title: "摩尔人的最后叹息",
+  description: "书",
+  price: 39.2,
+  quantity: 5,
+  image: open("https://images-cn.ssl-images-amazon.com/images/I/51qzGyYrHbL._SX380_BO1,204,203,200_.jpg")
   )
