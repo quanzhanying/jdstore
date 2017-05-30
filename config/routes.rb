@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
+    collection do
+      get :search
+    end
   end
 
   namespace :admin do
@@ -31,5 +34,6 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
