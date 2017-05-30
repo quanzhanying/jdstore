@@ -19,13 +19,17 @@
  @import "bootstrap";
  @import "font-awesome";
 
- //  navbar delete the conner
+ //  ---Navbar---
  @media (min-width: 768px) {
    .navbar {
-     border-radius: 0 ;
+     border-radius: 0 !important;
    }
  }
 
+ body {
+     margin-bottom: 150px;
+     padding-top: 65px;
+   }
 
  .bs-slider{
      overflow: hidden;
@@ -538,3 +542,29 @@
    }
  }
  }
+
+
+// ------Footer------
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    margin-bottom: 150px;
+  }
+
+ .footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 100px;
+   background-color: #222222;
+   margin: auto;
+
+   p {
+      color: white;
+     margin-top: 30px;
+   }
+  }
