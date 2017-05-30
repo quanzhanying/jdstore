@@ -12,7 +12,18 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to("Products", products_path) %></li>
+        <li><%= link_to("首页", href="/") %></li>
+        <li class="active"><%= link_to("图书", products_path) %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类浏览 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">文学</a></li>
+            <li><a href="#">历史</a></li>
+            <li><a href="#">科技</a></li>
+            <li><a href="#">人文</a></li>
+            <li><a href="#">艺术</a></li>
+          </ul>
+        </li>
       </ul>
 
         <!-- search -->
