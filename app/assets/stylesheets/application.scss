@@ -104,9 +104,11 @@
   color: #FFC107;
 }
 
-#company{
+#company, #famous, #buy,{
   margin-top: 80px;
+  background-color: #fff;
 }
+
 
 .caption {
   margin: 30px;
@@ -136,8 +138,9 @@
  }
 
  #portfolio{
-   margin: 0 -15px 20px;
-   padding-bottom: 60px;
+   margin: 0 -15px 60px;
+   padding-bottom: 50px;
+   padding-top: 30px;
  }
 
  .carousel-control.right, .carousel-control.left {
@@ -153,6 +156,16 @@
     background-color: #f4511e;
 }
 
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 70%;
+    height: 70%;
+    opacity: 0.9;
+}
+.person:hover {
+    border-color: #FFC107;
+}
 
 /****** 登录系统界面开始 ******/
 .log {
