@@ -20,21 +20,24 @@
 	</div>
 </div>
 
+
  <div class="title">
 <div class="title-1">
    INTERESTING FINDS
  </div>
-
  </div>
 
 
 
 <%= render :partial => "products/menu" %>
 
-<div class="carousel bg-color1"></div>
 
 
-<div class="row">
+
+<div class="productList-wrap w1200 pt20 bc">
+  <ul class="productList clearfix pb20">
+
+
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
@@ -47,4 +50,7 @@
       <%= product.title %> ￥ <%= product.price %>
     </div>
   <% end %>
+
+
+</ul>
 </div>

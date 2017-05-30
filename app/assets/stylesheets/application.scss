@@ -25,8 +25,8 @@
   font-size: 12px; /*字体12px*/
   height: 30px;
   line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
-  color: #717171; /*字体颜色*/
-  background: #F5F5F5; /*背景颜色*/
+  color: #FFFFFF; /*字体颜色*/
+  background: #2c3e50; /*背景颜色*/
   //width: 1300px; /*设置导航栏宽度1200*/
   margin: 0 auto; /*水平居中*/
 }
@@ -47,24 +47,24 @@
   padding-right: 10px; /*右边加点空间，不然太挤啦*/
 }
 
- .jh_navbar-spacer {
- float: left; /*同样的，你也要float*/
- width: 1px; /*宽度为1，就可以拿到当分隔符用了，哈哈*/
- height: 12px; /*12px差不多，刚刚好*/
- margin-top: 9px; /*调一下上边距*/
- background: #ddd; /*分隔符的背景颜色*/
- }
+
+
 
 .navbar-wrap a {
 
   text-decoration: none; /*不要下划线啦，好丑*/
 }
-.navbar-wrap a:hover {
-  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
-}
+//.navbar-wrap a:hover {
+  //color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+//}
+
+
+
+
 
 //logo+search+购物车
 .header {
+  background: #2c3e50; /*背景颜色*/
   width: 1200px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
   margin-top: 15px; /*上边距*/
@@ -152,7 +152,7 @@
 
 /*5种背景颜色*/
 .bg-color1 {
-  background: #50514F;
+  background: #FFFFFF; /*白色*/
 }
 
 .bg-color2 {
@@ -172,7 +172,7 @@
 }
 
 
-/*字母*/
+/*字幕*/
 .title {
   width: 520px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
@@ -193,26 +193,26 @@
 }
 
 .menuList{
-  width: 1200px;
-  margin: 130px auto;
-  height: 45px;
+  width: 1100px;
+  margin: 70px auto;
+  height: 100px;
 
 }
 
 .menuList-item {
   float: left;
-  padding: 0 20px;
+  padding: 0 60px;
   font-size: 18px;
-  line-height: 45px;
+  line-height: 100px;
 
 }
 
 .menuList-item:hover {
-  background-color: #434343;
+  background-color: #DCDCDC;
 }
 .menuList-activeItem {
-  background: #D32048;
+  background: #DCDCDC;
 }
 .menuList-activeItem:hover {
-  background: #D32048;
+  background: #DCDCDC;
 }

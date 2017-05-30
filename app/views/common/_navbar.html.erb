@@ -1,5 +1,6 @@
 
-<div class="navbar-wrap ">
+<div class="navbar-wrap">
+
   <div class="navbar">
 
     <div class="jh_navbar-left ">
@@ -8,12 +9,9 @@
 
     <ul class="jh_navbar-right ">
                 <% if !current_user %>
-                <li class="jh_navbar-listItem">
+               <li class="jh_navbar-listItem">
                     <%= link_to("注册", new_user_registration_path) %>
                </li>
-
-               <li class="jh_navbar-spacer"></li>
-
                <li class="jh_navbar-listItem">
                     <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-out'), new_user_session_path) %>
                </li>
