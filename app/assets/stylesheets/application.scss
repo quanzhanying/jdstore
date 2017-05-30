@@ -108,3 +108,67 @@
 #btn-cancel-order{
   margin-right: 20px;
 }
+
+// comm
+.image-with-title > img{
+  display: inline-block;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.image-with-title > p {
+      display: inline-block;
+      font-size: 18px;
+}
+
+
+
+.list-inline > li {
+  width: 30%;
+}
+
+.footer {
+  background: #414141;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.footer > hr {
+  color: #999999;
+}
+
+.site-info {
+  color: white;
+}
+.site-info .split{
+  margin: auto 10px;
+}
+
+.site-info .text{
+  color: #999999;
+}
+
+.site-info .copyright{
+      font-size: 18px;
+      color: #999999;
+      margin-top: 4px;
+}
+
+// navbar
+.navbar-default {
+    background-color: #414141;
+    border-color: #414141;
+    margin-bottom: 0;
+    height: 40px;
+    vertical-align: middle;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
