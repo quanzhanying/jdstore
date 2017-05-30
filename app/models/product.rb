@@ -17,4 +17,8 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   belongs_to :category
   validates :category_id, presence: true
+
+  
+  has_many :product_images, dependent: :destroy
+  accepts_nested_attributes_for :product_images
 end
