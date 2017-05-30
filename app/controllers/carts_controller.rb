@@ -26,5 +26,8 @@ class CartsController < ApplicationController
    def cart_item_params
      params.require(:cart_item).permit(:quantity)
    end
+     def checkout
+       @order = Order.new
+     end
 
 end
