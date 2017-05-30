@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    namespace :admin do
       resources :products
       resources :category
+      resources :elements
       resources :orders do
          member do
             post :cancel
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
 
    resources :cart_items
 
-   resources :category 
+   resources :category
 
    resources :orders do
       member do
