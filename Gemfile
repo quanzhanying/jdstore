@@ -62,6 +62,9 @@ gem 'seo_helper'
 #后台商品排序
 gem 'acts_as_list'
 
+#七牛图片存储
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
