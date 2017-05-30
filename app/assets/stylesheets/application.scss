@@ -555,17 +555,13 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-/*----- recommend page -----*/
-.recommend-page {
-  padding-top: 50px;
 
-  .image {
-
-  }
-}
 
 /*----- products 页面 -----*/
 
+.product-tab {
+  margin-top: 50px;
+}
 
 
 
@@ -575,43 +571,24 @@
   margin-top: 60px; /*----- 不被alert阻挡 -----*/
 }
 
-/*----- recommend页面与navbar间隔 --*/
 
-.display {
-  margin-top: 60px;
-  display: inblock;
-  height: 500px;
+
+/*----- recommend page -----*/
+
+
+.recommend-page {
+  padding-top: 60px;    /*-- recommend 照片 --*/
+  padding-bottom: 60px;
 
 }
 
 .image {
-  width: 400px;
-  height: 400px;
-  margin-left: 100px;
-}
+  width: 350px;
+  height: 350px;
+  border-radius: 2%;
 
-.descrip {
-  width: 470px;
-  height: 400px;
-}
-
-.display2 {
-    margin-top: 40px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -654,6 +631,7 @@ body {
   /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
   padding-bottom: 300px;
   /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+
 }
 
 .footer-style {
