@@ -126,7 +126,7 @@
 }
 
 .bg-grey {
-    background-color: #FAFAFA;
+    background-color: #ECEFF1;
 }
 
  .container-fluid .jumbotron{
@@ -137,7 +137,21 @@
 
  #portfolio{
    margin: 0 -15px 20px;
+   padding-bottom: 60px;
  }
+
+ .carousel-control.right, .carousel-control.left {
+    background-image: none; //carousel 后面的阴影部分去掉
+    color: #f4511e;
+}
+
+.carousel-indicators li {
+    border-color: #f4511e;
+}
+
+.carousel-indicators li.active {
+    background-color: #f4511e;
+}
 
 
 /****** 登录系统界面开始 ******/

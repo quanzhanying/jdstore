@@ -50,107 +50,50 @@
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <div class="row">
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/21">
-                      <img class="thumbnail" src="/uploads/product/image/21/thumb_open-uri20170530-4646-1go3h5r" alt="Thumb open uri20170530 4646 1go3h5r">
-                    </a>
-                  </div>
-                  <div class="info-block">
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/22">
-                      <img class="thumbnail" src="/uploads/product/image/22/thumb_open-uri20170530-4646-1eethoj" alt="Thumb open uri20170530 4646 1eethoj">
-                  </div>
-                  <div class="info-block">
+              <% @products.each do |product| %>
+                <div class="col-md-3">
+                  <div class="product-card-block">
+                    <%= link_to product_path(product) do %>
+                      <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                      <% end %>
+                    <% end %>
+                    <span class="price">￥ <%= product.price %></span>
+                    <span class="like"><%= link_to(content_tag(:i, '点赞人数', class: 'fa fa-thumbs-up'), "#") %></span>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/23">
-                      <img class="thumbnail" src="/uploads/product/image/23/thumb_open-uri20170530-4646-l3u4qx" alt="Thumb open uri20170530 4646 l3u4qx">
-                    </a>
-                  </div>
-                  <div class="info-block">
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/24">
-                      <img class="thumbnail" src="/uploads/product/image/24/thumb_open-uri20170530-4646-7gjn3q" alt="Thumb open uri20170530 4646 7gjn3q">
-                    </a>
-                  </div>
-                  <div class="info-block">
-                  </div>
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
           <div class="item">
             <div class="row">
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/25">
-                      <img class="thumbnail" src="/uploads/product/image/25/thumb_open-uri20170530-4646-1n0rf4" alt="Thumb open uri20170530 4646 1n0rf4">
-                    </a>
-                  </div>
-                  <div class="info-block">
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/26">
-                      <img class="thumbnail" src="/uploads/product/image/26/thumb_open-uri20170530-4646-1biqp7p" alt="Thumb open uri20170530 4646 1biqp7p">
-                    </a>
-                  </div>
-                  <div class="info-block">
+              <% @products2.each do |product| %>
+                <div class="col-md-3">
+                  <div class="product-card-block">
+                    <%= link_to product_path(product) do %>
+                      <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                      <% end %>
+                    <% end %>
+                    <span class="price">￥ <%= product.price %></span>
+                    <span class="like"><%= link_to(content_tag(:i, '点赞人数', class: 'fa fa-thumbs-up'), "#") %></span>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/27">
-                      <img class="thumbnail" src="/uploads/product/image/27/thumb_open-uri20170530-4646-ecxd96" alt="Thumb open uri20170530 4646 ecxd96">
-                    </a>
-                  </div>
-                  <div class="info-block">
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="product-card-block">
-                  <div class="image-block">
-                    <a href="/products/28">
-                      <img class="thumbnail" src="/uploads/product/image/28/thumb_open-uri20170530-4646-18c24gl" alt="Thumb open uri20170530 4646 18c24gl">
-                    </a>
-                  </div>
-                  <div class="info-block">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              <% end %>
+           </div>
+         </div>
+       </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic"  data-slide="prev">
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
