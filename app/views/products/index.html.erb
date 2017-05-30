@@ -1,6 +1,7 @@
+
+
 <div class="header">
   <div class="logo"><a href="/products">小小食杂铺</a></div>
-
   <div>
 	  <div class="search">
 		  <form action="/products/search" accept-charset="UTF-8" method="get">
@@ -10,8 +11,7 @@
 			</form>
 		</div>
 	</div>
-
-	<div class="cart-wrap">
+ <div class="cart-wrap">
 	  <div class="cart">
 		     <%= link_to carts_path do %>
          我的购物车<i class="fa fa-shopping-cart cart-icon "></i>(<%= current_cart.products.count %>)
@@ -35,7 +35,7 @@
 
 
 <div class="productList-wrap w1200 pt20 bc">
-  <ul class="productList clearfix pb20">
+   <ul class="productList clearfix pb20">
 
 
   <% @products.each do |product| %>
