@@ -192,6 +192,10 @@
       <% end %>
     </div>
   </ul>
+  <div class="text-center">
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+  </div>
+
 </div>
 
 <!-- 商品展示列表结束 -->

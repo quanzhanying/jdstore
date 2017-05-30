@@ -7,42 +7,42 @@ class ProductsController < ApplicationController
     if params[:category].blank? && params[:brand].blank?
       @products = case params[:order]
       when 'by_product_stock'
-        Product.selling.order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.selling.order('stock DESC').paginate(:page => params[:page], :per_page => 8)
       when 'by_product_price'
-        Product.selling.order('price DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.selling.order('price DESC').paginate(:page => params[:page], :per_page => 8)
       else
-      @products = Product.selling.recent.paginate(:page => params[:page], :per_page => 10)
+      @products = Product.selling.recent.paginate(:page => params[:page], :per_page => 8)
       end
     elsif !params[:category].blank? && params[:brand].blank?
       @category_id = Category.find_by(name: params[:category]).id
       @products = case params[:order]
       when 'by_product_stock'
-        Product.where(:category_id => @category_id).order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.where(:category_id => @category_id).order('stock DESC').paginate(:page => params[:page], :per_page => 8)
       when 'by_product_price'
-        Product.where(:category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.where(:category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 8)
       else
-      @products = Product.where(:category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 10)
+      @products = Product.where(:category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 8)
       end
     elsif params[:category].blank? && !params[:brand].blank?
       @brand_id = Brand.find_by(name: params[:brand]).id
       @products = case params[:order]
       when 'by_product_stock'
-        Product.where(:brand_id => @brand_id).order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.where(:brand_id => @brand_id).order('stock DESC').paginate(:page => params[:page], :per_page => 8)
       when 'by_product_price'
-        Product.where(:brand_id => @brand_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.where(:brand_id => @brand_id).order('price DESC').paginate(:page => params[:page], :per_page => 8)
       else
-      @products = Product.where(:brand_id => @brand_id).recent.paginate(:page => params[:page], :per_page => 10)
+      @products = Product.where(:brand_id => @brand_id).recent.paginate(:page => params[:page], :per_page => 8)
       end
     elsif !params[:category].blank? && !params[:brand].blank?
       @category_id = Category.find_by(name: params[:category]).id
       @brand_id = Brand.find_by(name: params[:brand]).id
       @products = case params[:order]
       when 'by_product_stock'
-        Product.where(:brand_id => @brand_id, :category_id => @category_id).order('stock DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.where(:brand_id => @brand_id, :category_id => @category_id).order('stock DESC').paginate(:page => params[:page], :per_page => 8)
       when 'by_product_price'
-        Product.where(:brand_id => @brand_id, :category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 10)
+        Product.where(:brand_id => @brand_id, :category_id => @category_id).order('price DESC').paginate(:page => params[:page], :per_page => 8)
       else
-      @products = Product.where(:brand_id => @brand_id, :category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 10)
+      @products = Product.where(:brand_id => @brand_id, :category_id => @category_id).recent.paginate(:page => params[:page], :per_page => 8)
       end
     end
   end
@@ -107,7 +107,7 @@ class ProductsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Product.selling.ransack(@search_criteria).result(:distinct => true) #只搜索销售中的商品
-      @products = search_result.paginate(:page => params[:page], :per_page => 5 )
+      @products = search_result.paginate(:page => params[:page], :per_page => 8 )
     end
   end
 
