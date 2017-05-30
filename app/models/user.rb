@@ -7,4 +7,6 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
+  has_many :order
 end
