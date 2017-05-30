@@ -1,14 +1,32 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
+<div class="container-fluid" id="products">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-xs-10">
+      <div class="filter">
+        <div class="btn-group btn-group-lg" role="group" aria-label="order">
+          <button type="button" class="btn btn-warning">
+            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), '#') %>
+          </button>
+          <button type="button" class="btn btn-warning">
+            <%= link_to(content_tag(:i, '点赞数量', class: 'fa fa-arrow-down'), '#') %>
+          </button>
+          <button type="button" class="btn btn-warning">
+            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), '#') %>
+          </button>
+        </div>
+      </div>
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail product-image") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+          <span class="price">￥ <%= product.price %></span>
+          <span class="like"><%= link_to(content_tag(:i, '点赞人数', class: 'fa fa-thumbs-up'), "#") %></span>
+        </div>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
     </div>
-  <% end %>
+  </div>
 </div>
