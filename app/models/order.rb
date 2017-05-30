@@ -5,4 +5,5 @@ class Order < ApplicationRecord
   validates :billing_address, presence: true
   validates :shiping_name, presence: true
   validates :shiping_address, presence: true
+  has_many :product_lists
 end
