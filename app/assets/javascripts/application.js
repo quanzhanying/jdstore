@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require bootstrap/collapse
+//= require bootstrap/transition
+//= require bootstrap/carousel
 //= require autosize.min
 //= require wow.min
 //= require jquery.countdown.min

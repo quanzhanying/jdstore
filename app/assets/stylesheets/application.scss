@@ -19,6 +19,127 @@
  @import "font-awesome";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+ /****** 导航栏 ******/
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0; //导航栏的圆角为0
+   }
+ }
+
+
+ .navbar-default {
+     background-color: #FFC107;  //背景颜色
+     border-color: #FF9800; //边框色
+     margin-bottom: 0; //底部 margin 不撑开距离
+ }
+
+ .navbar-default .navbar-brand {
+   font-size: 30px;
+   color: #ffffff; //字体颜色
+   padding: 10px 15px; //上下10px，左右15px
+   line-height: 30px; //文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #E0E0E0; //鼠标放置在链接上的文字颜色
+   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+   font-size: 20px;
+   color: #ffffff;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+   color: #E0E0E0;
+   background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: #ffffff;
+   background-color: #FFA000;
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+   background-color: #FFE0B2;
+   color: #212121;
+ }
+
+// langing page 相关 scss 代码
+ .jumbotron {
+  background-image:url('jumbotron.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 70px;
+}
+
+.title {
+  font-family: "Microsoft Yahei", 微软雅黑, "Helvetica Neue";
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 30px;
+  color: #FAFAFA !important;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding-bottom: 80px;
+  text-align: center;
+  color: white;
+  top: 12px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #FFC107;
+}
+
+#company{
+  margin-top: 80px;
+}
+
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.logo {
+    color: #FFC107; //logo的颜色为
+    font-size: 200px;
+}
+
+.bg-grey {
+    background-color: #FAFAFA;
+}
+
+ .container-fluid .jumbotron{
+   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   border-radius: 0;//圆角为0
+ }
+
+ #portfolio{
+   margin: 0 -15px 20px;
+ }
+
+
 /****** 登录系统界面开始 ******/
 .log {
   background-image:url('login.jpg');
@@ -122,7 +243,7 @@
   font-size: 12px;
 }
 
-/****** 登录系统界面结束 ******/
+/****** 搜索框 ******/
 
 .input-group {
     position: relative;
@@ -133,6 +254,5 @@
 #search-id {
     width: 200px;
     padding-top: 7px;
+    margin-left: 450px;
 }
-
-/****** 搜索框 ******/
