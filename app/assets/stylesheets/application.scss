@@ -151,6 +151,13 @@ body {
    margin: 0 -15px 60px;
    padding-bottom: 50px;
    padding-top: 30px;
+   .price {
+     margin-right: 10px;
+   }
+   .like > a,
+   .like > a:hover{
+     color: #FF9800;
+   }
  }
 
  .carousel-control.right, .carousel-control.left {
@@ -306,5 +313,26 @@ body {
   p {
     color: #666;
     margin-top: 30px;
+  }
+}
+
+//--------前台商品浏览页面--------
+#products{
+  background-color: #FFF8E1;
+  margin: 0 -15px auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .product-image{
+    border: 2px solid transparent // 商品图片的边框
+  }
+  .product-image:hover{
+    border-color: #FF9800; //指向该图片时，边框的颜色显示为橙色
+  }
+  .price{
+    margin-right: 30px; // 价格和点赞人数之间有一定的间隔
+  }
+  .like > a,
+  .like > a:hover{
+    color: #FF9800; // 点赞人数的链接颜色改为橙色
   }
 }
