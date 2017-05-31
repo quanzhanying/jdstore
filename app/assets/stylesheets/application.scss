@@ -53,7 +53,7 @@
 
 .navbar-default .navbar-nav > li > a:hover, //导航栏链接颜色样式
 .navbar-default .navbar-nav > li > a:focus {
-    color: #f77f2f;
+    color: #2f85f7;
     background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -563,6 +563,17 @@
   margin-top: 50px;
 }
 
+.product {
+  display: block;
+}
+
+.show {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 100%;
+  border-style: solid;
+}
+
 
 
 
@@ -593,7 +604,9 @@
 
 
 
-
+.quantity {
+  width: 20px;
+}
 
 
 
