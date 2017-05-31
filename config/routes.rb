@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'products#index'
+  root 'welcome#index'
   #---管理员专区---#
   namespace :admin do
     # 产品 ＃
