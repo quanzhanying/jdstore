@@ -9,3 +9,6 @@ CarrierWave.configure do |config|
   config.qiniu_up_host       = "http://up-z2.qiniu.com"  #华南
 
 end
+
+
+# AWS::S3::Base.establish_connection!(:access_key_id   => ENV['qiniu_key'],:secret_access_key => ENV['qiniu_secret'])
