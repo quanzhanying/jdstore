@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -12,7 +12,7 @@
       <!--=== Website Logo/Name ===-->
       <a class="navbar-brand logo-box scroll title" href="/">
         <!-- <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg3iv0og2wj30ha0g2wh8.jpg" alt="Logo"> -->
-        真读
+        真读  Real Read
       </a>
     </div>
 
@@ -25,7 +25,7 @@
       </ul>
 
       <!-- Search Bar -->
-      <!-- <form class="navbar-form center" action="/products/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+      <form class="navbar-form center" action="/products/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
         <div class="input-group search-box">
           <input type="text" class="form-control" name="keyword" placeholder="搜索商品" value="">
           <div class="input-group-btn">
@@ -36,7 +36,15 @@
             </button>
           </div>
         </div>
-      </form> -->
+      </form>
+
+<!-- <div class="">
+  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
+  <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div> -->
+
 
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -59,12 +67,12 @@
           <ul class="dropdown-menu">
             <% if current_user.admin? %>
             <li>
-              <%= link_to("Admin 选单", admin_products_path ) %>
+              <%= link_to("管理员选项", admin_products_path ) %>
             </li>
             <% end %>
 
             <li>
-              <%= link_to("个人订单列表", account_orders_path ) %>
+              <%= link_to("我的订单", account_orders_path ) %>
             </li>
 
             <li>
