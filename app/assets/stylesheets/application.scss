@@ -17,6 +17,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import "select2";
+ @import "select2-bootstrap";
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 html {
@@ -319,9 +321,9 @@ body {
 //--------前台商品浏览页面--------
 #products{
   background-color: #FFF8E1;
-  margin: 0 -15px auto;
+  margin: 0 -15px 0 -15px;
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 200px;
   .product-image{
     border: 2px solid transparent // 商品图片的边框
   }

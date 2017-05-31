@@ -44,6 +44,7 @@ gem 'qiniu-rs'
 gem 'figaro'
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'select2-rails'
 
 gem 'ransack'
 gem 'will_paginate'

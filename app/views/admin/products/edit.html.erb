@@ -9,6 +9,10 @@
 </div>
 
 <div class="group">
+  <%= f.association :category %>
+</div>
+
+<div class="group">
   <%= f.input :quantity %>
 </div>
 
@@ -25,13 +29,13 @@
   <%= f.input :image, as: :file %>
 </div>
 
-<div>
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
-</div>
-
 <%= f.submit "Update Product", data: {disable_with: "Submiting..."} %>
 <% end %>
 
 <script>
   autosize($('#product_description'))
+</script>
+
+<script>
+  $("#product_category_id").select2( { theme: "bootstrap"} );
 </script>
