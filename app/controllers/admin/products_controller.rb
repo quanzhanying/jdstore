@@ -40,8 +40,8 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     @product.destroy
-    redirect_to admin_products_path
     flash[:alert] = '产品已删除！'
+    redirect_to admin_products_path
   end
 
   private

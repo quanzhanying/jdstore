@@ -12,7 +12,6 @@
         </tr>
       </thead>
       <tbody>
-
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
             <td>
@@ -25,16 +24,14 @@
             <td>
               <%= cart_item.quantity %>
             </td>
-
           </tr>
         <% end %>
-
       </tbody>
     </table>
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= render_cart_total_price(current_cart) %> CNY
+        总计 <%= render_cart_total_price(current_cart) %> 元
       </span>
     </div>
 
@@ -43,30 +40,26 @@
     <h2> 订单资讯 </h2>
 
     <div class="order-form">
-
       <%= simple_form_for @order do |f| %>
-
-
-
           <legend> 订购人</legend>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_name  %>
+            <%= f.input :billing_name, :label => "姓名" %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_address  %>
+            <%= f.input :billing_address, :label => "订单地址" %>
           </div>
 
           <legend> 收货人</legend>
           <div class="form-group col-lg-6">
-           <%= f.input :shipping_name  %>
+           <%= f.input :shipping_name, :label => "姓名"  %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :shipping_address  %>
+            <%= f.input :shipping_address, :label => "邮寄地址" %>
           </div>
 
         <div class="checkout">
-          <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
-                       data: { disable_with: "Submitting..." } %>
+          <%= f.submit "生成订单", class: "btn btn-lg btn-success pull-right",
+                       data: { disable_with: "正在生成..." } %>
         </div>
       <% end %>
 
