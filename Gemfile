@@ -28,6 +28,7 @@ gem 'simple_form'
 gem "carrierwave"
 gem "mini_magick"
 gem 'font-awesome-rails'
+gem 'letter_opener', group: :development
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
