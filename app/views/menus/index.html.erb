@@ -1,0 +1,15 @@
+<div class="row">
+   <% @menus.each do |menu| %>
+   <div class="col-xs-6 col-md-3">
+      <%= link_to menu_path(menu) do %>
+         <% if menu.image.present? %>
+            <%= image_tag(menu.image.thumb.url, class: "thumbnail")%>
+         <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+         <% end %>
+      <% end %>
+      <%= menu.title %> ¥ <%= menu.price %>
+
+   </div>
+   <% end %>
+</div>

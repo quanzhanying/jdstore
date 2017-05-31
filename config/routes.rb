@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       end
    end
 
+   resources :elements
    resources :cart_items
    resources :category
    resources :orders do

@@ -1,4 +1,4 @@
-<h2> menu List </h2>
+<h2> Menu List </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_menu_path, class: "btn btn-primary btn-sm") %>
 </div>
@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">menu Pic</th>
+      <th width="220">Menu Pic</th>
       <th>Name</th>
+      <th>Price</th>
       <th width="100" colspan="2"> Options</th>
     </tr>
   </thead>
@@ -18,18 +19,19 @@
           <%= menu.id %>
         </td>
         <td>
-          <%= link_to menu_path(menu) do %>
             <% if menu.image.present? %>
               <%= image_tag(menu.image.thumb.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
-          <% end %>
         </td>
         <td>
           <%= menu.title %>
         </td>
-       
+        <td>
+          <%= menu.price %>
+        </td>
+
         <td>
           <%= link_to("Edit", edit_admin_menu_path(menu)) %>
         </td>
