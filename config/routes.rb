@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   end
 
   resources  :cart_items
+  resources :categories
 
   resources  :orders  do
       member  do

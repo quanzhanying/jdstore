@@ -1,8 +1,5 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-  def index
-    @products = Product.all
-  end
 
   def  index
     @products  =  case params[:order]
@@ -13,6 +10,12 @@ class ProductsController < ApplicationController
             else
               Product.order('created_at DESC')
             end
+    if params[:category].blank?
+      @product = Product.all
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(:category_id => @category_id)
+    end
   end
 
 
@@ -59,5 +62,11 @@ class ProductsController < ApplicationController
  def search_criteria(query_string)
    { :title_cont => query_string }
  end
+
+ private
+
+  def product_params
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id)
+  end
 
 end
