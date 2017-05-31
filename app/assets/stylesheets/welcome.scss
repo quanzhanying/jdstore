@@ -10,10 +10,10 @@
 /*  --- 大图高度 和 滚动按钮 ---  */
 .fade-carousel {                                      //滚动大图的相框高
     position: relative;
-    height: 616px;
+    height: 900px;
 }
 .fade-carousel .carousel-inner .item {                //图片截取的宽度，这里与相框高度一致
-    height: 616px;
+    height: 900px;
 }
 .fade-carousel .carousel-indicators > li {            //滚动按钮的设置
     width: 5px;
@@ -98,7 +98,7 @@
 .fade-carousel .slides .slide-1,
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
-  height: 616px;
+  height: 900px;
   background-size: cover;                             //确保图片完全撑开
   background-position: center;
   background-repeat: no-repeat;
