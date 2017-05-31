@@ -1,7 +1,107 @@
+<!-- carousel js 移动 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+<!-- carousel js 移动 end -->
+
+
+<!--
+        If you want to change #bootstrap-touch-slider id then you have to change Carousel-indicators and Carousel-Control  #bootstrap-touch-slider slide as well
+        Slide effect: slide, fade
+        Text Align: slide_style_center, slide_style_left, slide_style_right
+        Add Text Animation: https://daneden.github.io/animate.css/
+        -->
+
+
+        <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+                <div class="item active">
+
+                    <!-- Slide Background -->
+                    <img src="https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_left">
+                                <h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
+                                <p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
+                                <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                                <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Second Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_center">
+                        <h1 data-animation="animated flipInX">Bootstrap touch slider</h1>
+                        <p data-animation="animated lightSpeedIn">Make Bootstrap Better together.</p>
+                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+                        <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+                <!-- Third Slide -->
+                <div class="item">
+
+                    <!-- Slide Background -->
+                    <img src="https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+                    <!-- Slide Text Layer -->
+                    <div class="slide-text slide_style_right">
+                        <h1 data-animation="animated zoomInLeft">Beautiful Animations</h1>
+                        <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
+                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+                        <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+
+
+            </div><!-- End of Wrapper For Slides -->
+
+            <!-- Left Control -->
+            <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!-- Right Control -->
+            <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div> <!-- End  bootstrap-touch-slider Slider -->
+
+
+
+
+
+
+
 <div class="mainCampaign">
-    <figure style="margin-bottom: 20px;">
-			<img src="https://www.surlatable.com/images/homepage//01_hero_2017/hero_grilling_sale.jpg" alt="" style="visibility: visible;" >
-		</figure>
+    
     <!-- <a href="http://www.muji.us/store/furniture-interior-electronics/bed-furniture/sofas-living/bfc.html">more</a> -->
 
 
@@ -26,15 +126,15 @@
 
       <div class="container product-intro">
 
-      	<div class="col-xs-6 col-md-6 text-center">
+      	<div class="col-xs-12 col-md-6 text-center">
       	  	 <a href="/products.html" target=_blank><img class="product-intro-list-img-left img-responsive center-block" src="http://demandware.edgesuite.net/aaci_prd/on/demandware.static/-/Sites-Pfaltzgraff-Library/default/dw09c11be6/images/slots/categorylanding/lowerbanners/091015_cat_dinnerware_plates.jpg" title=""></a>
              <br />
              <p style= "font-size: 20px;"><a href="products?category=饮食餐具" target=_blank >饮食餐具系列</a></p>
         </div>
-        <div class="col-xs-6 col-md-6 text-center">
+        <div class="col-xs-12 col-md-6 text-center">
            	 <a href="products.html" target=_blank><img class="product-intro-list-img-right img-responsive center-block" src="http://demandware.edgesuite.net/aaci_prd/on/demandware.static/-/Sites-Pfaltzgraff-Library/default/dwf12dfb0d/images/slots/categorylanding/lowerbanners/092216_CP_PFZ2494_Kitchenware-Bakeware_vf-cut.jpg" title="" alt=""></a>
              <br />
-              <p style= "font-size: 20px;"> <a href="products?category=烹饪工具" target=_blank> 烹饪工具系列</p>
+              <p style= "font-size: 20px;"> <a href="products?category=烹饪工具" target=_blank> 烹饪工具系列</a></p>
       	</div>
     </div>
 
@@ -45,6 +145,16 @@
               <span> <h1> 家 是幸福的源泉 <h1></span>
                     <h3> 身边的你 值得珍惜</h3>
                     <h3> 开味陪伴 安心常在</h3>
-
         </div>
+      </div>
+
+      <div class="media">
+          <div class="clo-md-8 col-md-offset-2">
+            <div class="announce">
+                <div class="col-md-4">
+                  <h3> </h3>
+                </div>
+            </div>
+          </div>
+
       </div>

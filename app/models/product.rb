@@ -18,4 +18,6 @@ class Product < ApplicationRecord
   has_many :favorites
   has_many :users, through: :favorites, source: :user
   acts_as_list
+
+  scope :random, -> { limit(3).order("RANDOM()") }     ## limit是随机的数目
 end
