@@ -11,10 +11,14 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
 
-  def add_product_to_cart(product)
-    ci = cart_items.build
+  def add_product_to_cart(product, quantity)
+    if products.include?(product)
+      ci = cart_items.find_by_product_id(product.id)
+    else
+      ci = cart_items.build
+    end
     ci.product = product
-    ci.quantity = 1
+    ci.quantity += quantity
     ci.save
   end
 

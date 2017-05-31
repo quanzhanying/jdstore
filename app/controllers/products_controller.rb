@@ -33,13 +33,14 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    if !current_cart.products.include?(@product)
-      current_cart.add_product_to_cart(@product)
-      flash[:notice] = "已成功将#{@product.title}加入购物车"
-    else
-      flash[:warning] = "购物车内已有此物品"
+    @quantity = params[:quantity].to_i
+
+    if @quantity > @product.quantity
+      @quantity = @product.quantity
+      flash[:warning] = "您选择的商品数量超过库存，实际加入购物车的商品为#{@quantity}件。"
     end
-      redirect_to :back
+    current_cart.add_product_to_cart(@product, @quantity)
+    redirect_to :back
 
   end
 
