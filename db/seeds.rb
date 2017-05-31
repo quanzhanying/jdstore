@@ -40,7 +40,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
   price: 56,
   quantity: 100,
   category_id: 1,
-   Photo.create!(product_id:1,avatar: open("https://ws1.sinaimg.cn/large/006tKfTcgy1fg4ln2k9qpj30fo0lmtbl.jpg"))
+  image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1fg4ln2k9qpj30fo0lmtbl.jpg")
   )
 
   Product.create!(title: "烟熏三文鱼",
@@ -50,7 +50,8 @@ Product.create!(title: "澳洲羊排素材沙拉",
     price: 56,
     quantity: 100,
     category_id: 1,
-     Photo.create!(product_id:2,avatar: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lo9pamaj30fo0lm0up.jpg"))
+    image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lo9pamaj30fo0lm0up.jpg")
+    )
 
     Product.create!(title: "新西兰黑椒牛排",
       description: "
@@ -59,7 +60,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
       price: 56,
       quantity: 100,
       category_id: 1,
-       Photo.create!(product_id:3,avatar: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lpjjl2vj30fo0lmtb7.jpg"))
+      image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lpjjl2vj30fo0lmtb7.jpg")
       )
 
       Product.create!(title: "野兽生活 防弹咖啡 中度烘焙 低霉菌咖啡豆227g2袋 生酮饮食 包邮",
@@ -69,7 +70,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
         price: 380,
         quantity: 100,
         category_id: 2,
-         Photo.create!(product_id:4,avatar: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lrf6f1vj30m80m8gnx.jpg"))
+        image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lrf6f1vj30m80m8gnx.jpg")
         )
 
         Product.create!(title: "防弹咖啡必备套装 野兽生活咖啡豆227g椰子油450ml黄油2块 包邮",
@@ -79,8 +80,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
           price: 369,
           quantity: 100,
           category_id: 2,
-           Photo.create!(product_id:5,avatar: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lsrpbl9j30m80m8dhf.jpg"))
-
+          image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lsrpbl9j30m80m8dhf.jpg")
           )
 
           Product.create!(title: "防弹咖啡 六合一制作套装 手冲器具 生酮减脂 野兽生活 全国包邮
@@ -89,7 +89,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
             price: 899,
             quantity: 100,
             category_id: 2,
-             Photo.create!(product_id:6,avatar: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lu78en8j30m80m8jte.jpg"))
+            image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4lu78en8j30m80m8jte.jpg")
             )
 
             Product.create!(title: "野兽生活 防弹咖啡 中度烘焙 低霉菌咖啡豆227g2袋 生酮饮食 包邮
@@ -98,7 +98,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
               price: 380,
               quantity: 100,
               category_id: 3,
-               Photo.create!(product_id:7,avatar: open("https://ws4.sinaimg.cn/large/006tKfTcgy1fg4lwcjs32g30ku0kujzu.gif"))
+              image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1fg4lwcjs32g30ku0kujzu.gif")
               )
 
               Product.create!(title: "防弹咖啡专用 金凯利草饲无盐黄油爱尔兰200g1块 野兽生活包邮
@@ -107,7 +107,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
                 price: 36,
                 quantity: 100,
                 category_id: 4,
-                 Photo.create!(product_id:8,avatar: open("https://ws4.sinaimg.cn/large/006tKfTcgy1fg4lxwlqklj30ku0kujsw.jpg"))
+                image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1fg4lxwlqklj30ku0kujsw.jpg")
                 )
 
                 Product.create!(title: "防弹咖啡专用 泰国进口椰子油 gre3n天然初榨冷压 生酮 野兽生活
@@ -116,7 +116,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
                   price: 168,
                   quantity: 100,
                   category_id: 4,
-                   Photo.create!(product_id:9,avatar: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg4lyzimv0j30b40b4gmu.jpg"))
+                  image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg4lyzimv0j30b40b4gmu.jpg")
                   )
 
                   Product.create!(title: "防弹咖啡 HARIO磨豆机 手动手摇 日本原装进口 野兽生活
@@ -125,7 +125,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
                     price: 188,
                     quantity: 100,
                     category_id: 5,
-                     Photo.create!(product_id:10,avatar: open("https://ws1.sinaimg.cn/large/006tKfTcgy1fg4m0bno2yj30m80m8jsc.jpg"))
+                    image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1fg4m0bno2yj30m80m8jsc.jpg")
                     )
 
                     Product.create!(title: "泰摩小黑3.0法压壶 防弹咖啡冲泡家用小型350ml 野兽生活包邮
@@ -134,7 +134,7 @@ Product.create!(title: "澳洲羊排素材沙拉",
                       price: 69,
                       quantity: 100,
                       category_id: 5,
-                       Photo.create!(product_id:11,avatar: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4m1hcxe2j30m80m8gn0.jpg"))
+                      image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg4m1hcxe2j30m80m8gn0.jpg")
                       )
 
                       Product.create!(title: "野兽生活 防弹咖啡 OSTER/奥士达 BLSTPB-WGN-073 搅拌机家用自动
@@ -143,5 +143,5 @@ Product.create!(title: "澳洲羊排素材沙拉",
                         price: 299,
                         quantity: 100,
                         category_id: 5,
-                         Photo.create!(product_id:12,avatar: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg4m2a8pssj30m80m83zm.jpg"))
+                        image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg4m2a8pssj30m80m83zm.jpg")
                         )
