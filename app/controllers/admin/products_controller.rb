@@ -1,6 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  layout "admin"
-
+  layout 'admin'
 
   before_action :authenticate_user!
   before_action :admin_required
@@ -35,6 +34,14 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+
+    @product.destroy
+    redirect_to admin_products_path
+    flash[:alert] = '产品已删除！'
   end
 
   private
