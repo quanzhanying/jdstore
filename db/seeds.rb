@@ -12,23 +12,44 @@
  end
  # Initialize Product
 
- Product.create!(title: "QC-35",
-   description: "耳机",
-   price: 2800,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/41bVSMLUllL._AC_UL320_SR320,320_.jpg")
+ Product.create!(title: "放学托管",
+   description: "适合工作繁忙的家庭，保证小孩有人照顾",
+   price: 100,
+   quantity: 50,
+   image: open("http://oqr2tkodq.bkt.clouddn.com/%E6%94%BE%E5%AD%A6%E6%89%98%E7%AE%A1.jpg")
    )
 
- Product.create!(title: "Iphone7",
-   description: "手机",
-   price: 5000,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/51q3gdJGenL._SL800_.jpg")
+ Product.create!(title: "包子／饺子",
+   description: "自家手工无添加包子饺子，食材健康安全",
+   price: 10,
+   quantity: 500,
+   image: open("http://oqr2tkodq.bkt.clouddn.com/%E5%8C%85%E5%AD%90%E9%A5%BA%E5%AD%90.jpg")
    )
 
- Product.create!(title: "Cherry Keyboard",
-   description: "G80-3000键盘",
-   price: 2800,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
+ Product.create!(title: "脐橙",
+   description: "正宗赣南脐橙，绿色种植无农药",
+   price: 30,
+   quantity: 100,
+   image: open("http://oqr2tkodq.bkt.clouddn.com/%E8%84%90%E6%A9%99.jpg")
+   )
+
+ Product.create!(title: "樱桃采摘",
+   description: "绿色无污染，享受丰收喜悦",
+   price: 100,
+   quantity: 90,
+   image: open("http://oqr2tkodq.bkt.clouddn.com/%E6%A8%B1%E6%A1%83%E9%87%87%E6%91%98.jpg")
+   )
+
+ Product.create!(title: "做饭阿姨",
+   description: "熟悉各种家常菜，给你家的味道",
+   price: 100,
+   quantity: 80,
+   image: open("http://oqr2tkodq.bkt.clouddn.com/%E9%98%BF%E5%A7%A8%E5%81%9A%E6%99%9A%E9%A5%AD.jpg")
+   )
+
+ Product.create!(title: "清洁阿姨",
+   description: "打扫卫生多快好省，给你一个整洁的家",
+   price: 100,
+   quantity: 88,
+   image: open("http://oqr2tkodq.bkt.clouddn.com/%E9%98%BF%E5%A7%A8%E6%89%93%E6%89%AB%E5%8D%AB%E7%94%9F.jpg")
    )
