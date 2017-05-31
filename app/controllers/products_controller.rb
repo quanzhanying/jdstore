@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   def show
     @product =Product.find(params[:id])
     @photos = @product.photos.all
+    @qr = RQRCode::QRCode.new(product_url(@product).to_s, :size => 6, :level => :h)
   end
 
   def add_to_cart

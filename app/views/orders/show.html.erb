@@ -37,7 +37,26 @@
       <div class="group pull-right">
         <%= link_to("以支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
         <%= link_to("以微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+        <!-- qrcode二维码 -->
+        <div id="overlay" onclick="off()">
+          <div id="text">二维码支付
+            <%= raw @qr.as_html %>
+          </div>
+        </div>
+        <div style="padding:25px">
+          <button onclick="on()">点击生成当前网页二维码</button>
+        </div>
+        <script>
+          function on() {
+            document.getElementById("overlay").style.height = "100%";
+          }
+          function off() {
+            document.getElementById("overlay").style.height = "0";
+          }
+        </script>
+
       </div>
+
     <% else %>
       <p class="text-center">此订单已完成付款</p>
     <% end %>

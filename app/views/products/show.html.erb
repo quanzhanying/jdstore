@@ -60,6 +60,24 @@
    </div>
 </div>
 
+<!-- qrcode二维码 -->
+<div id="overlay" onclick="off()">
+  <div id="text">手机扫一扫，分享给好友~
+    <%= raw @qr.as_html %>
+  </div>
+</div>
+<div style="padding:20px">
+  <button onclick="on()">点击生成当前网页二维码</button>
+</div>
+<script>
+  function on() {
+    document.getElementById("overlay").style.height = "100%";
+  }
+  function off() {
+    document.getElementById("overlay").style.height = "0";
+  }
+</script>
+
 
 
 <!-- 美洽客服 -->

@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
+    @qr = RQRCode::QRCode.new(order_url(@order).to_s, :size => 6, :level => :h)
   end
 
   def pay_with_alipay
