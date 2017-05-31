@@ -128,10 +128,15 @@
 }
 
 .footer {
-  background: #414141;
   color: white;
   padding-top: 20px;
   padding-bottom: 10px;
+  position: absolute;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background-color: #414141;
+ text-align: center;
 }
 
 .footer > hr {
