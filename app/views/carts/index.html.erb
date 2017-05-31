@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-      <h2>购物车</h2>
+      <h3 style="color:#7f8c8d;">购物车</h3>
       <div class="shoping-cart">
         <div class="cart-column-head center-block">
           <label class="col-md-2 ">商品</label>
@@ -37,6 +37,17 @@
                 RMB</span>
             </div>
             <div class="col-md-2">
+              <p>
+              <% if current_user %>
+              <% if current_user.is_favorite_of?(cart_item.product) %>
+                <%= link_to("已收藏", favorite_product_path(cart_item.product)+"?fa=unfavorite-c", :method => :post,:remote => true,id:  "favorite-item-"+cart_item.product_id.to_s,class: "cart-list-fa") %>
+                 <% else %>
+                <%= link_to("加入收藏", favorite_product_path(cart_item.product)+"?fa=favorite-c", :method => :post,:remote => true,id:  "favorite-item-"+cart_item.product_id.to_s) %>
+                <% end %>
+                <% else %>
+                <a href="#" data-toggle="modal" data-target="#login-modal">加入收藏</i></a>
+                <% end %>
+                </p>
               <%= link_to "删除", cart_item_path(cart_item.product_id), :method => :delete, :remote => true %>
             </div>
           </div>

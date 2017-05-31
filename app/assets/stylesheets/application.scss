@@ -25,7 +25,10 @@ body {
 input , button{
   outline: none !important;
 }
-
+h3{
+  font-weight: bolder;
+    font-family: Arial;
+}
 a {
   text-decoration: none !important;
   color: #555555;
@@ -126,7 +129,8 @@ margin-bottom: 4px;
 }
 
 .product-index a {
-  text-decoration: none; //去掉超链接的下划线、、、//
+  color: #7f8c8d;
+
 }
 
 .product-index li:hover {
@@ -172,7 +176,7 @@ margin-bottom: 4px;
   margin-left: 10px;
 }
 
-h3 {
+h3.text-left {
   color: #B28435;
   margin-bottom: -15px;
 }
@@ -463,8 +467,10 @@ hr {
   //background: #fff;
   color: #B28435;
   text-decoration: none; //去掉超链接的下划//
-  width: 50%;
+  width: 100%;
   line-height: 35px;
+  display: block;
+  height: 100%;
 }
 
 .product-price .item_buy {
@@ -752,6 +758,11 @@ div.zoomMask {
   display: flex;
   padding-left: 15px;
 }
+.summary-sale .fa {
+  float: right;
+  margin-right: 10px;
+
+}
 
 .summary-sale .price {
   color: #c40000;
@@ -815,7 +826,7 @@ div.zoomMask {
   color: #999;
 }
 
-.tm-ind-panel .tm-count {
+ .tm-count {
   display: inline-block;
   line-height: 16px;
   height: 16px;
@@ -1172,6 +1183,7 @@ div.zoomMask {
 /*-------------商品详细----------*/
 .product-wrap {
   margin-top: 30px;
+  width: 1170px;
   //border:1px solid #f2f2f2;
 }
 

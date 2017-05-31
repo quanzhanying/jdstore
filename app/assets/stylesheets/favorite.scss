@@ -1,3 +1,109 @@
 // Place all the styles related to the favorite controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.favorite-top{
+}
+.favorite-top h3 {
+  float: left;
+  margin-top: 10px;
+  color: #7f8c8d;
+}
+.favorite-top-count{
+  float: right;
+  margin-top: 20px;
+}
+
+.favorite-list .favorite-li{
+  display: inline-block;
+  padding: 0;
+  position:relative;
+  margin: 30px 0 0 0;
+  width: 221px;
+  border:1px solid #f2f2f2;
+}
+.favorite-cart{
+  position:absolute; top: 5px; right:10px;
+}
+.favorite-cart i{
+  color: #c40000;
+  padding: 2px 5px 3px 5px;
+  //border:1px solid #fff;
+}
+.favorite-cart:hover i{
+  //color: #7f8c8d;
+  //border:1px solid #e4393c;
+  background-color: #f2f2f2;
+
+}
+.fa-delete{
+  position:absolute; top: 5px; left: 10px;
+  //border:1px solid #fff;
+}
+.fa-delete:hover {
+  //border:1px solid #e4393c;
+  background-color: #f2f2f2;
+}
+.fa-delete i{
+  color: #c40000;
+  padding: 1px 5px 1px 5px;
+}
+
+.favorite-main{
+  width: 218px;
+}
+.favorite-main img{
+  width: 100%;
+}
+.favorite-img ul{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.favorite-img li{
+  display: inline-block;
+  //float: left;
+  margin: 2px 0 0 0;
+  padding: 0;
+  border:1px solid #f2f2f2;
+}
+.fa-s40{
+  float: left;
+  border:1px solid #fff;
+}
+.fa-s40:hover {
+  border:1px solid #e4393c;
+}
+
+.fa-s40 img{
+  width: 37px;
+  height: 37px;
+}
+
+.favorite-list .price {
+  color: #e4393c;
+  font-size: 20px;
+  float: left;
+}
+.favorite-list .favorite-count{
+  color: #666;
+  font-size: 12px;
+  margin: 10px 10px 0 0;
+  float: right;
+
+}
+.favorite-list .popularity {
+  color: #666;
+  font-size: 12px;
+  margin: 10px 10px 0 0;
+  float: right;
+}
+.favorite-list .describe {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding: 0 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}

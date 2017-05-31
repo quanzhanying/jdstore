@@ -42,6 +42,9 @@
               </li>
               <% end %>
               <li>
+                <%= link_to(content_tag(:i, ' 我的收藏', class: 'fa fa-heart'), account_favorites_path) %>
+              </li>
+              <li>
                 <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
               </li>
             </ul>
@@ -59,13 +62,13 @@
                   <a href="/">首页</a>
                 </li>
                 <li>
-                  <a href="/products?where=进口水果" style="color: #555555">进口水果</a>
+                  <a href="/products?where=fruits">进口水果</a>
                 </li>
                 <li>
-                  <a href="/products?where=进口水产" style="color: #555555">进口水产</a>
+                  <a href="/products?where=aquatic">进口水产</a>
                 </li>
                 <li>
-                  <a href="/products?where=进口鲜肉" style="color: #555555">进口鲜肉</a>
+                  <a href="/products?where=meat">进口鲜肉</a>
                 </li>
               </ul>
             </div>
@@ -187,13 +190,13 @@
             <a href="/">首页</a>
           </li>
           <li>
-            <a href="/products?where=进口水果" style="color: #555555">进口水果</a>
+            <a href="/products?where=fruits">进口水果</a>
           </li>
           <li>
-            <a href="/products?where=进口水产" style="color: #555555">进口水产</a>
+            <a href="/products?where=aquatic">进口水产</a>
           </li>
           <li>
-            <a href="/products?where=进口鲜肉" style="color: #555555">进口鲜肉</a>
+            <a href="/products?where=meat">进口鲜肉</a>
           </li>
         </ul>
       </div>

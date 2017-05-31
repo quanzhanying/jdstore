@@ -4,56 +4,23 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :downvote, :upvote]
 
   def index
-    case params[:where]
-    when "进口水果"
-      case params[:order]
-      when "hot"
-        @products = Product.where(:product_type => "进口水果").order("show_count desc").paginate(:page => params[:page], :per_page =>100)
-      when "new"
-        @products = Product.where(:product_type => "进口水果").order("created_at desc").paginate(:page => params[:page], :per_page =>100)
-      when "sale"
-        @products = Product.where(:product_type => "进口水果").order("sale desc").paginate(:page => params[:page], :per_page =>100)
-      when "price"
-        @products = Product.where(:product_type => "进口水果").order("promotional").paginate(:page => params[:page], :per_page =>100)
-      else
-        @products = Product.where(:product_type => "进口水果").paginate(:page => params[:page], :per_page =>100)
-      end
-    when "进口水产"
-      case params[:order]
-      when "hot"
-        @products = Product.where(:product_type => "进口水产").order("show_count desc").paginate(:page => params[:page], :per_page =>100)
-      when "new"
-        @products = Product.where(:product_type => "进口水产").order("created_at desc").paginate(:page => params[:page], :per_page =>100)
-      when "sale"
-        @products = Product.where(:product_type => "进口水产").order("sale desc").paginate(:page => params[:page], :per_page =>100)
-      when "price"
-        @products = Product.where(:product_type => "进口水产").order("promotional").paginate(:page => params[:page], :per_page =>100)
-      else
-        @products = Product.where(:product_type => "进口水产").paginate(:page => params[:page], :per_page =>100)
-      end
-    when "进口鲜肉"
-      case params[:order]
-      when "hot"
-        @products = Product.where(:product_type => "进口鲜肉").order("show_count desc").paginate(:page => params[:page], :per_page =>100)
-      when "new"
-        @products = Product.where(:product_type => "进口鲜肉").order("created_at desc").paginate(:page => params[:page], :per_page =>100)
-      when "sale"
-        @products = Product.where(:product_type => "进口鲜肉").order("sale desc").paginate(:page => params[:page], :per_page =>100)
-      when "price"
-        @products = Product.where(:product_type => "进口鲜肉").order("promotional").paginate(:page => params[:page], :per_page =>100)
-      else
-        @products = Product.where(:product_type => "进口鲜肉").paginate(:page => params[:page], :per_page =>100)
-      end
+    @arraywhere = Array[["fruits","进口水果"],["aquatic","进口水产"],["meat","进口鲜肉"]]
+    @arrayorder = Array[["hot","show_count desc"],["new","created_at desc"],["sale","sale desc"],["price","promotional"],["price-down","promotional  desc"]]
+    if !params[:where].blank? && !@arraywhere.assoc(params[:where]).blank?
+        where = params[:where]
+        @w = @arraywhere.assoc(where)
+        if !params[:order].blank? && !@arrayorder.assoc(params[:order]).blank?
+          order = params[:order]
+          @o = @arrayorder.assoc(order)
+          @products = Product.where(:product_type => @w[1]).order(@o[1]).paginate(:page => params[:page], :per_page =>100)
+        else
+          @products = Product.where(:product_type => @w[1]).paginate(:page => params[:page], :per_page =>100)
+        end
     else
-      case params[:order]
-      when "hot"
-        @products = Product.all.order("show_count desc").paginate(:page => params[:page], :per_page =>100)
-      when "new"
-        @products = Product.all.order("created_at desc").paginate(:page => params[:page], :per_page =>100)
-      when "sale"
-        @products = Product.all.order("sale desc").paginate(:page => params[:page], :per_page =>100)
-      when "price"
-        @products = Product.all.order("promotional").paginate(:page => params[:page], :per_page =>100)
+      if !params[:order].blank? && !@arrayorder.assoc(params[:order]).blank?
+        order = params[:order]
+        @o = @arrayorder.assoc(order)
+        @products = Product.order(@o[1]).paginate(:page => params[:page], :per_page =>100)
       else
         @products = Product.all.paginate(:page => params[:page], :per_page =>100)
       end
@@ -94,25 +61,73 @@ class ProductsController < ApplicationController
 
   end
 
-  def upvote
+  def favorite
     @product = Product.find(params[:id])
+    if !params[:fa].blank?
+      favorite = params[:fa]
+      case favorite
+      when "favorite-p"
+        if !current_user.is_favorite_of?(@product)
+           current_user.favorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart-o').addClass('fa-heart').html(' 已收藏');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-p');"
+          render :js => jq
+      when "unfavorite-p"
+        if current_user.is_favorite_of?(@product)
+           current_user.unfavorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart').addClass('fa-heart-o').html(' 收藏');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-p');"
+          render :js => jq
+      when "favorite-f"
+        if !current_user.is_favorite_of?(@product)
+           current_user.favorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart-o').addClass('fa-heart');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-f');"
+          render :js => jq
+      when "unfavorite-f"
+        if current_user.is_favorite_of?(@product)
+           current_user.unfavorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart').addClass('fa-heart-o');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-f');"
+          render :js => jq
+      when "favorite-s"
+        if !current_user.is_favorite_of?(@product)
+           current_user.favorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').html('已收藏');" +
+              "$('#tm-count.tm-count').html('"+@product.favorite_products.count.to_s+"');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-s');"
+          render :js => jq
+      when "unfavorite-s"
+        if current_user.is_favorite_of?(@product)
+           current_user.unfavorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').html('加入收藏');" +
+              "$('#tm-count.tm-count').html('"+@product.favorite_products.count.to_s+"');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-s');"
+          render :js => jq
+      when "favorite-c"
+        if !current_user.is_favorite_of?(@product)
+           current_user.favorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').addClass('cart-list-fa').html('已收藏');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-c');"
+          render :js => jq
+      when "unfavorite-c"
+        if current_user.is_favorite_of?(@product)
+           current_user.unfavorite!(@product)
+        end
+          jq= "$('#favorite-item-"+@product.id.to_s+"').removeClass('cart-list-fa').html('加入收藏');" +
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-c');"
+          render :js => jq
+      end
 
-    if !current_user.is_voter_of?(@product)
-      current_user.upvote!(@product)
     end
-
-    redirect_to :back
   end
-
-  def downvote
-    @product = Product.find(params[:id])
-
-    if current_user.is_voter_of?(@product)
-      current_user.downvote!(@product)
-    end
-    redirect_to :back
-  end
-
 
   protected
 

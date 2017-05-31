@@ -11,8 +11,6 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_products, :through => :favorites, :source => :product
   has_many :reviews
-  has_many :votes
-  has_many :voted_products, :through => :votes, :source => :product
   has_many :identifies
   def admin?
     is_admin
@@ -20,16 +18,12 @@ class User < ApplicationRecord
   def is_favorite_of?(product)
     favorite_products.include?(product)
   end
-
-  def is_voter_of?(product)
-    voted_products.include?(product)
-  end
-  def upvote!(product)
-    voted_products << product
+  def favorite!(product)
+    favorite_products << product
   end
 
-  def downvote!(product)
-    voted_products.delete(product)
+  def unfavorite!(product)
+    favorite_products.delete(product)
   end
 
   def self.from_google(access_token, signed_in_resource=nil)

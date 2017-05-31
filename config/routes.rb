@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :products do
       collection do
         post :csv_create
-
       end
     end
     resources :orders do
@@ -14,21 +13,23 @@ Rails.application.routes.draw do
         post :ship
         post :shipped
         post :return
-
       end
     end
   end
-  resources :products do
-    put :favorite, on: :member
 
+  resources :products do
+    resources :reviews
     collection do
       get :search
     end
     member do
+      post :favorite
+      post :unfavorite
       post :add_to_cart
       post :checkout
     end
   end
+
   resources :carts do
     collection do
       delete :clean
@@ -38,24 +39,17 @@ Rails.application.routes.draw do
   resources :cart_items do
     get :up
   end
-  resources :favorite
-  resources :orders do
-    member do
-      post :pay_with_alipay
-      post :pay_with_wechat
-      post :apply_to_cancel
-    end
-  end
+  resources :orders
   namespace :account do
-    resources :orders
-  end
-  resources :products do
-    resources :reviews
-  end
-  resources :products do
-    member do()
-      post :upvote
-      post :downvote
+    resources :favorites
+    resources :orders do
+      member do
+        post :pay_with_alipay
+        post :pay_with_wechat
+        post :apply_to_cancel
+      end
     end
   end
+
+
 end

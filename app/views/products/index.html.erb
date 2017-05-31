@@ -4,11 +4,13 @@
         <div class="col-md-12">
           <div class="order">
             <div class="col-md-8">
-              <a href="<%= if params[:where].nil? then "?order=hot" else "?where=" + params[:where] +"&order=hot" end %>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;热门</span></a>
-              <a href="<%= if params[:where].nil? then "?order=new" else "?where=" + params[:where] +"&order=new" end %>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
-              <a href="<%= if params[:where].nil? then "?order=sale" else "?where=" + params[:where] +"&order=sale" end %>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
-              <a href="<%= if params[:where].nil? then "?order=price" else "?where=" + params[:where] +"&order=price" end %>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;价格</span></a>
+
+              <a href="?where=<%= if !@w.blank? then @w[0] end%>&order=hot"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;热门</span></a>
+              <a href="?where=<%= if !@w.blank? then @w[0] end%>&order=new"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
+              <a href="?where=<%= if !@w.blank? then @w[0] end%>&order=sale"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
+              <a href="?where=<%= if !@w.blank? then @w[0] end%>&order=<%= if !@o.blank? && @o[0]=="price" then "price-down" else "price" end%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;价格</span></a>
               <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;评价数</span></a>
+
             </div>
             <div class="text-right">
               <span>
@@ -20,9 +22,6 @@
       </div>
     </div>
   </div>
-
-
-
 <div class="container">
   <div class="product-list">
     <ul>
@@ -35,18 +34,16 @@
           <p class="price">￥<%= product.promotional %></p>
           <p class="describe"><%= product.title %></p>
           <p class="evaluate">已有<%= product.reviews.count%>条评价</p>
-          <div class="cart">
-            <a href="#" class="contain-icon icon-hook">
-              <div class="favor">
-                <svg class="heart-icon heart-icon-2" version="1.1" height="16px" viewBox="0 0 90.65 85.04">
-                  <path class="heart-2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-                  M45.137,23.041c4.912-24.596,40.457-27.775,42.128-0.435c1.398,22.88-21.333,40.717-42.128,50.522 M45.137,23.041
-                  C40.225-1.555,5.057-4.734,3.387,22.606c-1.398,22.88,20.955,40.717,41.75,50.522"></path>
-                </svg>
-            </div>
-
-    &nbsp;收藏
-        </a>
+          <div class="cart text-center">
+            <% if current_user %>
+              <% if current_user.is_favorite_of?(product) %>
+            <%= link_to(content_tag(:i,' 已收藏', class: 'fa fa-heart'), favorite_product_path(product)+"?fa=unfavorite-p", :method => :post,:remote => true,id:  "favorite-item-"+product.id.to_s) %>
+             <% else %>
+            <%= link_to(content_tag(:i,' 收藏', class: 'fa fa-heart-o'), favorite_product_path(product)+"?fa=favorite-p", :method => :post,:remote => true,id:  "favorite-item-"+product.id.to_s) %>
+              <% end %>
+            <% else %>
+              <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-heart-o"> 收藏</i></a>
+            <% end %>
           </div>
             <a class="item_buy" mid="<%= img430(product,1) %>" data-remote="true" rel="nofollow" data-method="post" href="<%= add_to_cart_product_path(product)%>"><div class="shopCart cart text-center"><i class="fa fa-cart-arrow-down"> 加入购物车</i></div></a>
             <%#= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post,:remote => true,class: 'item_buy' , mid: img430(product,1)) %>

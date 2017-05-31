@@ -1,7 +1,7 @@
 <br>
 <br>
 <div class="container">
-  <div class="row">
+  <div class="row" style="width:1170px;">
     <div class="box">
       <div class="wrap-left">
         <div class="tb-booth tb-s310">
@@ -51,6 +51,18 @@
                 <h1><%= @product.title %></h1>
                 <div class="summary-price-wrap">
                   <div class="summary-sale">
+                    <div class="fa">
+                      <span>  <% if current_user %>
+                        <% if current_user.is_favorite_of?(@product) %>
+                        <%= link_to("已收藏", favorite_product_path(@product)+"?fa=unfavorite-s", :method => :post,:remote => true,id:  "favorite-item-"+@product.id.to_s) %>
+                         <% else %>
+                        <%= link_to("加入收藏", favorite_product_path(@product)+"?fa=favorite-s", :method => :post,:remote => true,id:  "favorite-item-"+@product.id.to_s) %>
+                        <% end %>
+                        <% else %>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">加入收藏</i></a>
+                        <% end %></span>
+                      <span id="tm-count" class="tm-count"><%= @product.favorite_products.count %></span>
+                    </div>
                     <div class="dt">
                       <span>促 销 价</span>
                         <span style="font-size: 18px;">&nbsp;&nbsp;￥&nbsp;</span>
@@ -248,15 +260,15 @@
           </div>
         </div>
 
-        <!--
+
 <span class="pull-right">
-  <% if current_user && current_user.is_voter_of?(@product) %>
-    <%= link_to("", downvote_product_path(@product), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+  <% if current_user && current_user.is_favorite_of?(@product) %>
+  <%= link_to(content_tag(:i,'', class: 'fa fa-heart'), favorite_product_path(@product)+"?fa=unfavorite", :method => :post,:remote => true,id:  "favorite-item-"+@product.id.to_s, style: "color:red;") %>
    <% else %>
-    <%= link_to("", upvote_product_path(@product), method: :post, class: "fa fa-heart-o fa-2x") %>
+  <%= link_to(content_tag(:i,'', class: 'fa fa-heart-o'), favorite_product_path(@product)+"?fa=favorite", :method => :post,:remote => true,id:  "favorite-item-"+@product.id.to_s, style: "color:red;") %>
   <% end %>
 </span>
--->
+
         <script type="text/javascript">
           //---------数量-------///
           (function ($) {
