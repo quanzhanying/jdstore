@@ -62,20 +62,20 @@
         <div class="content">
 
           <a class="logo" href="/"><img src="https://bucket.mlcdn.com/a/536/536349/images/bdaa22bc236c5b0810ebe8e41397e88b6dabe914.png"></a>
-          <!-- <div class="mobile-toggle">
+          <div class="mobile-toggle">
               <li class="dropdown">
                   <%= link_to("Products", products_path) %>
               </li>
               <span>B</span>
               <span>C</span>
-          </div> -->
+          </div>
 
            <ul class="navright">
              <!-- 搜索栏 -->
-             <li class="act col-sm">
+             <li class="act">
                <%= form_tag(products_path, :method => "get") do %>
                 <div class="cntr">
-                 <!-- <i class="fa fa-line-chart fa-2x text-danger"></i> -->
+                 <i class="fa fa-line-chart fa-2x text-danger"></i>
                  <div class="cntr-innr" >
                    <label class="search">
                      <input type="text"  name="searcher" value="<%= params[:searcher] %>" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请 输 入 搜 索 信 息">
