@@ -11,15 +11,16 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
 
-  def add_product_to_cart(product, quantity)
+  def add(product, quantity)
+    # 商品已经在购物车中，增加商品的数量
     if products.include?(product)
-      ci = cart_items.find_by_product_id(product.id)
+      cart_item = cart_items.find_by_product_id(product.id)
     else
-      ci = cart_items.build
+      cart_item = cart_items.build
     end
-    ci.product = product
-    ci.quantity += quantity
-    ci.save
+    cart_item.product = product
+    cart_item.quantity += quantity
+    cart_item.save
   end
 
   def total_price
