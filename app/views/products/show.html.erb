@@ -73,6 +73,11 @@
 
       <!-- 按钮区域 -->
       <div class="add-to-cart-buttom row">
+        <!--选择商品数量-->
+        <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
+        <input type="text" name="quantity" value="1" id="quantity-input" class="quantity-input">
+        <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
+
         <!-- 加入购物车按钮 -->
         <div class="col-sm-4">
           <% if @product.quantity.present? && @product.quantity > 0 %>

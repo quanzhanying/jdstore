@@ -124,6 +124,16 @@ body {
     text-decoration: none;
   }
 }
+// 数量输入框
+.quantity-input {
+  color: #333;
+  text-align: center;
+  width: 60px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+}
+
 //商品详情区域样式
 .product-particulars {
   margin: 1.1em 0 3em;

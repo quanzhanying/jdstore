@@ -48,6 +48,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+gem 'jquery-turbolinks'
 group :development, :test do
   gem 'awesome_rails_console'
   gem 'pry'
