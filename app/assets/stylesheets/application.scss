@@ -122,10 +122,27 @@
 
   //--------homePage main pic---------
   .jumbotron {
-      background-image:url('http://ww3.sinaimg.cn/large/006tNc79gy1fg1u7fak0wj31kw11xe82.jpg');
+      background-image:url('http://ww4.sinaimg.cn/large/006tNc79gy1fg57r8j0thj31kw0vmu0x.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       padding-bottom: 110px;
+  }
+
+
+    .jumbotron p{
+        margin: 0;
+        padding: 0;
+    }
+
+    .jumbotron h1{
+        color: #ffffff;
+    }
+
+  .container{
+      margin: 0;
+      padding: 0;
+      height: 300px;
+      margin-top: 50px;
   }
 
   .container-fluid .jumbotron{
@@ -138,13 +155,15 @@
   .title {
       font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
       text-align: center;
-      margin-top: 100px;
-      margin-bottom: 80px;
+      //margin-top: 80px;
+      //margin-bottom: 80px;
   }
 
   .slogan {
-      margin-top: 10px;
-      margin-bottom: 50px;
+      width: 800px;
+      height: 300px;
+      margin-top: 20px;
+      //margin-bottom: 50px;
       text-align: center;
       color: #FAFAFA;
       top: 12px;
