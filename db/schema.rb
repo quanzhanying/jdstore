@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528135759) do
+ActiveRecord::Schema.define(version: 20170529133242) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20170528135759) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "total",            default: 0
     t.integer  "user_id"
@@ -32,17 +38,15 @@ ActiveRecord::Schema.define(version: 20170528135759) do
     t.string   "billing_address"
     t.string   "shipping_name"
     t.string   "shipping_address"
+    t.string   "shipping_phone"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
     t.string   "token"
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
-    t.string   "shipping_phone"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
-
-
 
   create_table "product_lists", force: :cascade do |t|
     t.integer  "order_id"
@@ -58,9 +62,11 @@ ActiveRecord::Schema.define(version: 20170528135759) do
     t.text     "description"
     t.integer  "price"
     t.integer  "quantity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "image"
+    t.integer  "category_id"
+    t.boolean  "is_hidden",   default: true
   end
 
   create_table "users", force: :cascade do |t|

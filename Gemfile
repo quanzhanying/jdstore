@@ -31,8 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem  'bootstrap-sass'
-gem  'devise'
-gem  'simple_form'
+gem  'devise'          # 登录系统
+gem  'simple_form'     # bootstrap表单样式
 gem  'carrierwave'
 gem  'mini_magick'
 gem  'font-awesome-rails'
@@ -43,10 +43,12 @@ gem  'ransack'         #  搜索
 gem  'will_paginate'   #  分页
 gem  'will_paginate-bootstrap'  # 美化分页效果
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem  'awesome_rails_console'
+  gem  'pry'
+
 end
 
 group :development do

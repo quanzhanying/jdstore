@@ -2,12 +2,12 @@ class ProductsController < ApplicationController
   before_action  :validate_search_key,  only: [:search]   #  验证搜索关键字
 
   def  index
-    @products  =  Product.all
+      @products  =  Product.where(is_hidden: false).order("created_at  DESC")
   end
 
   def  show
     @product  =  Product.find(params[:id])
-  
+
   end
 
   def  add_to_cart
