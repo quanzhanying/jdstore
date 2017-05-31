@@ -1,0 +1,227 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css'); //引入google思源黑简在线字体 需要使用VPN才可生效
+
+//---------flashes----------
+.alert {
+  margin-top: -20px;
+  border-radius: 0;
+}
+//------用户头像-------
+.avatar > img{
+  border-radius: 50%;
+}
+
+.navbar-default {
+    background-color: #ECEFF1;
+    border-color: #FAFAFA;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: #3E2723; //字体颜色
+    font-size:  28px; //字体大小
+    padding: 10px 15px;
+    height: 30px;
+    line-height: 30px; //文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #3E2723; //鼠标放置在链接上的文字颜色
+    background-color: transparent; //鼠标防止在链接上的背景颜色，这里设置为透明
+
+}
+
+//------搜索栏-------
+*#search-id {
+  margin-top: 8px;
+}
+//-------图标---------
+.navbar-brand > img{
+     display: inline-block; //图片和链接文字显示在同一行
+     margin-bottom: 5px;
+     margin-right: 10px; //图片和链接文字拉开一点距离
+     width: 32px; //定制图片宽度
+     height: 32px; //定制图片高度
+     line-height: 32px;
+}
+
+//-----链接区域字-------
+.navbar-left {
+  color: #717171; /*文字的颜色*/
+  text-decoration: none; /*不要下划线啦，好丑*/
+
+}
+
+
+//-----登录区域字-------
+.navbar-listItem {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  padding-left: 10px; /*左边加点空间，不然太挤啦*/
+  padding-right: 10px; /*右边加点空间，不然太挤啦*/
+}
+
+.log-word {
+  font-size: 14px;
+}
+
+
+//-----导航栏链接的颜色-------
+.navbar-default .navbar-nav > li > a {
+    color: #212121;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #212121;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #212121;
+    background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;
+    color: #212121;
+}
+
+//---------Box 滚动图---------
+
+.box {
+  margin-bottom: 50px;
+  margin-top: -20px;
+}
+.bg-gray {
+    background: #F5F5F5;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: 5;
+    line-height: 1;
+}
+
+//----------- 首页滚动大图字体 -------------//
+body {
+     font-family: 'Noto Sans SC', sans-serif; // google思源黑简作为主字体
+     color: #666;                             // 修改全站的字体主色 压低亮度
+     }
+
+//----------- 热门商品 -------------//
+section {
+    padding: 100px 0;
+    // background: #E0E0E0;//背景颜色
+    // box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#portfolio * {
+    z-index: 2;
+}
+
+section h2 {
+    margin: 0;
+    font-size: 2em;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+#portfolio .portfolio-item .portfolio-link .caption .caption-content i {
+    margin-top: -12px;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption .caption-content {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    top: 50%;
+    margin-top: -12px;
+    color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+
+//---------Footer---------
+
+footer {
+    color: #233140;
+}
+
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #ECEFF1;
+}
+
+//--------footer-bottom------
+
+html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
+//---------table---------
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+
+//---------回到顶部-------------
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #fff;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+.fa-arrow-up {
+  color: #F25F5C;
+  // margin-left: 10px;
+  line-height: 50px;
+}

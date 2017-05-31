@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 ">
+    <div class="col-md-10 col-md-offset-1">
+    <h2>修改信息</h2>
+
+    <%= simple_form_for [:account, @user] do |f| %>
+
+
+
+      <div class="form-inputs">
+        <% if @user.avatar.present? %>
+          <span>头像</span> <br>
+          <%= image_tag(@user.avatar.thumb.url) %>
+        <% end %>
+        <%= f.input :avatar, :label => "头像", as: :file %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :username, :label => "用户名",required: true %>
+        <%= f.input :email, :label =>"邮箱地址" , required: true, autofocus: true %>
+        <%= f.input :current_password, :label => "当前密码", required: true %>
+        <%= f.input :password, autocomplete: "off", :label => "新密码", required: false %>
+        <%= f.input :password_confirmation, :label => "确认新密码",required: false %>
+      </div>
+      <hr>
+
+      <div class="form-actions">
+        <%= f.button :submit, "更新" %>
+      </div>
+    <% end %>
+
+  </div>
+  </div>
+</div>

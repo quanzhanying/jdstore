@@ -1,0 +1,49 @@
+<h2> Product List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Product Pic</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th width="120"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.id %>
+        </td>
+        <td>
+          <%= link_to product_path(product) do %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= product.title %>
+        </td>
+        <td>
+          <%= product.price %>
+        </td>
+        <td>
+          <%= product.category.name if product.category %>
+        </td>
+        <td>
+          <%= link_to edit_admin_product_path(product), :class => "btn btn-xs btn-info" do %><i class="fa fa-pencil"></i><% end %>
+          <%= link_to admin_product_path(product), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash"></i><% end %>
+          <%= link_to move_up_admin_product_path(product) , method: :patch ,:class => "btn btn-xs btn-info" do  %><i class="fa fa-arrow-up" aria-hidden="true"></i><% end %>
+          <%= link_to move_down_admin_product_path(product),method: :patch, :class => "btn btn-xs btn-info" do  %><i class="fa fa-arrow-down" aria-hidden="true"></i><% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

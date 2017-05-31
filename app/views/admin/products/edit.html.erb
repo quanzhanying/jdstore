@@ -1,0 +1,46 @@
+<h2> Edit Product </h2>
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <% if @product.category_id.present? %>
+    <span>当前商品类别:
+      <%= @product.category.name %>
+    </span><br>
+  <% end %>
+  <div class="group">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+  </div>
+
+
+  <% if @product.photos.present? %>
+    <span>目前商品图</span><br>
+      <% @product.photos.each do |p| %>
+        <%= image_tag p.image.thumb.url ,class: "thumbnail col-md-3" %>
+      <% end %>
+  <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+  <% end %>
+
+  <div class="group">
+
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>（"请上传4张图片"）<br>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
