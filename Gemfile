@@ -45,7 +45,7 @@ gem 'qiniu-rs'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry' #debug 用
-  gem 'awesome_rails_console' #使rails console好看
+  # gem 'awesome_rails_console' #使rails console好看
   gem 'sqlite3'
 end
 
