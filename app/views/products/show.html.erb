@@ -8,13 +8,16 @@
   </div>
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
+    <div style="height:150px;">
       <p>
         <%= @product.description %>
       </p>
     </div>
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div>
+      <%= link_to("原文链接", @product.link_address) %>
+    </div>
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger btn-lg") %>

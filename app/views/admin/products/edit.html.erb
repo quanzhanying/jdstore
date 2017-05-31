@@ -1,4 +1,4 @@
-<h2> Edit Product </h2>
+<h2> 编辑专利 </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
@@ -15,11 +15,15 @@
   </div>
 
   <div class="group">
+    <%= f.input :link_address %>
+  </div>
+
+  <div class="group">
     <%= f.input :price %>
   </div>
 
   <% if @product.image.present? %>
-    <span>目前商品图</span> <br>
+    <span>目前专利图</span> <br>
     <%= image_tag(@product.image.thumb.url) %>
   <% end %>
 
