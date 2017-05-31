@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title title="你未来资产的一部分">数字资产--你未来资产的一部分</title>
+        <%= csrf_meta_tags %>
+
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+
+    <body>
+
+        <div>
+            <%= render "common/flashes" %>
+            <%= yield %>
+        </div>
+
+
+    </body>
+
+</html>

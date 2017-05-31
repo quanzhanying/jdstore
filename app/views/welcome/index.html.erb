@@ -1,153 +1,392 @@
-<link href='http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600' rel='stylesheet'>
-<div class="container-fluid">
-  <div class="row">
-    <h1 class="text-center"><span class="text-primary"><strong>BLOCK CHAIN</strong> </span><span class="fa fa-cog fa-spin text-warning"></span> 区块链<small><span class="text-warning"> 新一代云计算开始了</span></small></h1>
-  </div>
-</div>
-<div class="jumbo-background jumbotron">
-  <div class="container">
-    <h1>数字资产</h1>
-    <p>你未来资产的一部分！<br>未来已经来临，只是尚未流行！</p>
-    <p><a class="btn btn-primary btn-lg" href="#about" role="button">了解区块链</a>
-      <a class="btn btn-warning btn-lg" href="/products" role="button">购买船票</a></p>
-  </div>
-  <div class="container-fluid socialmediapanel" style="margin-top:30px">
-    <div class="row">
-      <div class="col-sm-2 col-sm-offset-2 text-center">
-        <a class="social" href="#" target="_blank">
-          <i class="fa fa-btc fa-5x" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="col-sm-2 text-center">
-        <a class="social" href="/" target="_blank">
-          <i class="cc ETH fa-5x" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="col-sm-2 text-center">
-        <a class="social" href="/" target="_blank">
-          <i class="cc XRP-alt fa-5x" aria-hidden="hidden"></i>
-        </a>
-      </div>
-      <div class="col-sm-2 text-center">
-        <a class="social" href="#" target="_blank">
-          <i class="cc DGD fa-5x" aria-hidden="hidden"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Block Chain</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 
-<div class="container-fluid">
-  <div class="row about-panel">
-    <div class="col-sm-2 col-sm-offset-3 text-center">
-      <img class="img-rounded" width="200px" id="about" src="https://bucket.mlcdn.com/a/536/536349/images/bdaa22bc236c5b0810ebe8e41397e88b6dabe914.png">
-    </div>
-    <div class="col-sm-4">
-      <p class="lead">区块链是以比特币为代表的数字加密货币体系的核心支撑技术. 区块链技术的核心优势是去中心化, 能够通过运用数据加密、时间戳、分布式共识和经济激励等手段, 在节点无需互相信任的分布式系统中实现基于去中心化信用的点对点交易、协调与协作, 从而为解决中心化机构普遍存在的高成本、低效率和数据存储不安全等问题提供了解决方案. </p>
-    </div>
-  </div>
-</div>
+ <body id="page-top" data-spy="scroll" data-target="nav">
 
-<div class="container-fluid">
-  <div class="row coffeespace-panel">
-    <p></p>
-    <div class="row">
-      <div class="col-md-12 text-center species well">
-        <i class="cc BTC fa-5x text-info"></i>
-        <i class="cc BTS-alt fa-5x text-info"></i>
-        <i class="cc SIA fa-5x text-info"></i>
-        <i class="cc ETC fa-5x text-info"></i>
+    <!-- Top Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="nav">
+      <div class="container-fluid">
+
+        <!-- Progress Animation On Scroll -->
+
+        <div class="progressContainer">
+            <div id="progress" class="progress"></div>
+        </div>
+
+        <!-- Progress Animation On Scroll End -->
+
+        <div class="navbar-header">
+
+          <!-- Toggle button -->
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navigation" aria-expanded="false">
+            <span class="sr-only">Block Chain</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Toggle button -->
+
+          <!-- Brand -->
+
+          <a class="navbar-brand logo" id="navbar-logo" href="#section1">
+            <img src="assets/blockchain-logo.png" alt="" />
+          </a>
+
+          <!-- Brand End -->
+
+        </div>
+        <div class="collapse navbar-collapse" id="top-navigation">
+
+          <!-- Top Navigation Links -->
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#section2">首页</a></li>
+            <li><%= link_to("交易币种", products_path) %></li>
+
+            <!-- 购物车按钮-->
+            <li class="landing-page-navbar__item__cart">
+                <%= link_to carts_path do  %>
+                   购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+                <% end %>
+            </li>
+
+            <!-- 用户按钮 -->
+            <% if !current_user %>
+            <li class="landing-page-navbar__item__signup"><%= link_to(content_tag(:i, "注册", class: 'fa fa-user-plus'), new_user_registration_path) %> </li>
+            <li class="landing-page-navbar__item__signin"><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+            <% else %>
+            <li class="dropdown user-list">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hi!, <%= current_user.nickname %>
+                    <b class="caret"></b>
+                </a>
+                <ul class="user-list__item dropdown-menu" id="user-list__item">
+                    <% if current_user.admin? %>
+                    <li>
+                        <%= link_to("Admin 选单", admin_products_path ) %>
+                    </li>
+                    <% end %>
+
+                    <li>
+                        <%= link_to("个人订单列表", account_orders_path ) %>
+                    </li>
+                    <li>
+                        <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                    </li>
+                </ul>
+            </li>
+            <% end %>
+          </ul>
+
+          <!-- Top Navigation Links End -->
+
+        </div>
       </div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row portfolio-panel" id="portfolio">
-    <div class="col-md-4 col-sm-6">
-             <div class="card-container manual-flip">
-                <div class="card">
-                    <div class="front">
-                        <div class="cover">
-                            <img src="http://www.gongxiangcj.com/uploadfile/2016/0523/20160523062241481.jpg"/>
-                        </div>
-                        <div class="user">
-                            <img class="img-circle" src="http://ru.bitcoinwiki.org/images/8/88/888.PNG"/>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h3 class="name">中本聪</h3>
-                                <p class="profession">比特币之父</p>
-                                <p class="text-center">"比特币：一种点对点式的电子现金系统<br>（Bitcoin: A Peer-to-Peer Electronic Cash System）"</p>
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                </div> <!-- end card -->
-            </div> <!-- end card-container -->
-        </div> <!-- end col sm 3 -->
-    <div class="col-md-4 col-sm-6">
-             <div class="card-container manual-flip">
-                <div class="card">
-                    <div class="front">
-                        <div class="cover">
-                            <img src="http://www.gongxiangcj.com/uploadfile/2016/0523/20160523062241481.jpg"/>
-                        </div>
-                        <div class="user">
-                            <img class="img-circle" src="https://augur.net/img/vitalik.jpg"/>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h3 class="name">Vitalik Buterin</h3>
-                                <p class="profession">以太坊创始人</p>
-                                <p class="text-center">"以太坊（Ethereum）是一个开源的有智能合约功能的公共区块链平台。<br>通过其专用加密货币以太币（Ether）提供去中心化的虚拟机来处理点对点合约"</p>
-                            </div>
-                        </div>
-                    </div> <!-- end front panel -->
-                </div> <!-- end card -->
-            </div> <!-- end card-container -->
-        </div> <!-- end col sm 3 -->
-        <div class="col-md-4 col-sm-6">
-                 <div class="card-container manual-flip">
-                    <div class="card">
-                        <div class="front">
-                            <div class="cover">
-                                <img src="http://www.gongxiangcj.com/uploadfile/2016/0523/20160523062241481.jpg"/>
-                            </div>
-                            <div class="user">
-                                <img class="img-circle" src="http://cn.technode.com/files/2013/12/Li-Xiaolai-Mug-Shot.png"/>
-                            </div>
-                            <div class="content">
-                                <div class="main">
-                                    <h3 class="name">李笑来</h3>
-                                    <p class="profession">中国比特币首富</p>
-                                    <p class="text-center">"此物一出天下反：话说BitCoin"</p>
-                                </div>
-                            </div>
-                        </div> <!-- end front panel -->
-                    </div> <!-- end card -->
-                </div> <!-- end card-container -->
-            </div> <!-- end col sm 3 -->
-  </div>
-</div>
+    </nav>
+
+    <!-- Top Navigation End -->
+
+    <!-- Sections -->
+
+    <!-- Section 1 -->
+
+    <section class="section1" id="section1">
+      <div class="BC-page-table">
+        <div class="container">
+          <div class="BC-themeWord">
+            <h2>更专业的数字资产交易平台</h2>
+            <p>安全运营、多重技术安全防护、7×24小时服务支持</p>
+          </div>
+          <div class="actionBtn">
+            <button type="进入交易" class="btn btn-primary"><%= link_to("进入交易", products_path) %></button>
+          </div>
+
+            <a href="#section2"><span></span><span></span><span></span></a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1 End -->
+
+    <!-- Section 2 -->
+
+    <section class="section2" id="section2">
+      <div class="page2-table" id="page2-table">
+        <div class="page2__header" id="page2__header">
+          <h2>区块链数字货币，让资产能存在脑中</h2>
+        </div>
+        <div class="page2__content row" id="page2__content">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 post">
+              <a href="#" class="img-thumbnail"><img src="assets/further-img1.jpg" alt="" /></a>
+              <h4>节约&快捷</h4>
+              <p>它可以跨区域、跨平台，在任意一台接入互联网终端以低廉甚至零成本进行交易或转账</p>
+            </div>
+            <div class="col-md-4 col-sm-6 post">
+              <a href="#" class="img-thumbnail"><img src="assets/further-img2.jpg" alt="" /></a>
+              <h4>隐私&安全</h4>
+              <p>它是基于密码学、智能合约、去中心化分布式账本，强大的算力充分保障了拥有者的个人隐私以及资金安全</p>
+            </div>
+            <div class="col-md-4 col-sm-6 post">
+              <a href="#" class="img-thumbnail"><img src="assets/further-img3.jpg" alt="" /></a>
+              <h4>流行&未来</h4>
+              <p>区块链数字货币是一种趋势，可实现了全球无障碍流通</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 End -->
+
+    <!-- Section 3 -->
+
+    <section class="section3" id="section3">
+      <div class="section3-table" id="section3-table">
+        <div class="section3-content">
+          <!-- SOSOBTC Widget Begin -->
+          <script type="text/javascript"
+              src="//static2.sosobtc.com/sb.js"
+          ></script>
+          <script type="text/javascript">
+              new SOSOBTC.widget({
+                  "symbol": "BTC:YUNBI",
+                  "default_theme": "light",
+                  "disable_theme_change": true,
+                  "hide_logo": true,
+                  "hide_market_name": true,
+                  "container": "kline_container"
+              })
+          </script>
+          <!-- SOSOBTC Widget End -->
+        </div>
+        <h3>BTC/CNY当前行情</h3>
+      </div>
+    </section>
+
+    <!-- Section 3 End -->
+
+    <!-- Section 4 -->
+
+    <section class="section4" id="section4">
+      <div class="section4-table" id="section4-table">
+        <div class="section4__header">
+          <h2>已经参与区块链的世界各大公司</h2>
+        </div>
+        <div class="section4__content" id="section4__content">
+          <ul class="clearfix">
+            <li>
+              <a href="https://www.google.com/"><img src="assets/sup-google-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.zynga.com/"><img src="assets/sup-zynga-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.wikimedia.org/"><img src="assets/sup-wikimedia-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.virginaustralia.com"><img src="assets/sup-virgin-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.timeinc.com/"><img src="assets/sup-timeinc-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="http://m.tigerdirect.com/"><img src="assets/sup-tigerdirect-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.takeaway.com/"><img src="assets/sup-takeaway-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.shopify.com/"><img src="assets/sup-shopify-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="http://www.savethechildren.org/"><img src="assets/sup-save-the-children-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="http://revelsystems.com/"><img src="assets/sup-revel-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="http://www.rakuten.co.jp/"><img src="assets/sup-rakuten-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.paypal-biz.com/"><img src="assets/sup-paypal-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="http://www.newegg.cn/"><img src="assets/sup-newegg-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.neteller.com/"><img src="assets/sup-neteller-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.namecheap.com/"><img src="assets/sup-namecheap-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.mozilla.org/"><img src="assets/sup-mozilla-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.gyft.com/"><img src="assets/sup-gyft-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="http://www1.ap.dell.com/"><img src="assets/sup-dell-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.microsoft.com/"><img src="assets/sup-microsoft-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.globalpaymentsinc.com/"><img src="assets/sup-global-payments-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.airbaltic.com/"><img src="assets/sup-airbaltic-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.adyen.com/"><img src="assets/sup-adyen-b.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="https://www.ibm.com/"><img src="assets/IBM.PNG" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 End -->
+
+    <!-- Section 5 -->
+
+    <section class="section5" id="section5">
+      <div class="section5-table" id="section5-table">
+        <div class="section5-table__header">
+          <h2>为改变世界而生</h2>
+        </div>
+        <div class="section5-table__content">
+          <p>区块链数字货币——颠覆现实、引发技术革命，即将渗透至你我生活的方方面面</p>
+          <div class="actionBtn">
+            <button type="马上配置" class="btn btn-primary"><%= link_to("马上配置", products_path) %></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 5 End -->
+
+    <!-- Section 6 -->
+
+    <footer class="footer-2 bg-color-2" id="landing-page__footer">
+
+        <!-- sub footer begin -->
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                      <div class="social-icons-2 clearfix">
+                        <p>Copyright © <img src="assets/blockchain-logo.png" alt="" /> 2017. All rights reserved.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 text-center pull-right">
+                      <div class="social-icons-2 clearfix">
+                          <p> Designed by Lichen & Antarts.
+                            <a href="mailto:blackchain@sever.com" title="联系我们" class="email"><i title="联系我们" class="fa fa-envelope-o"></i></a>
+                            <a href="https://github.com/lichen19844/jdstore" title="查看源码" class="github"><i title="查看源码" class="fa fa-github"></i></a>
+                          </p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sub footer close -->
+
+    </footer>
+
+    <!-- Section 6 End -->
+
+    <!-- Sections End -->
+
+</body>
+</html>
+
+<script type="text/javascript">
+  /* Toggle Navigation Close On Click */
+
+$('.navbar-collapse').click(function() {
+  $('.navbar-collapse').collapse('hide');
+});
+
+/* Toggle Navigation Close On Click End */
+
+/* Top Navigation Shrink On Scroll */
+
+function collapseNavbar() {
+  if ($('.navbar').offset().top > 250) {
+    $('.navbar-fixed-top').addClass('top-collapse');
+  } else {
+    $('.navbar-fixed-top').removeClass('top-collapse');
+  }
+}
+
+$(window).scroll(collapseNavbar);
+$(document).ready(collapseNavbar);
+
+/* Top Navigation Shrink On Scroll End */
+
+/* Progress Animation On Scroll */
+
+function updateProgress(num1, num2){
+    var percent = Math.ceil( num1 / num2 * 100 ) + '%';
+    document.getElementById('progress').style.width = percent;
+}
+
+window.addEventListener('scroll', function(){
+    var top = window.scrollY;
+    var height = document.body.getBoundingClientRect().height - window.innerHeight;
+    updateProgress(top, height);
+});
+
+/* Progress Animation On Scroll End */
+
+/* Smooth Scrolling on Click */
+
+$('#nav .navbar-nav li>a, .navbar-header>a, .fa-caret-up').click(function(){
+  var link = $(this).attr('href');
+    var position = $(link).offset().top;
+    $('body,html').animate({
+      scrollTop: position
+    }, 1000);
+});
+</script>
 
 
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
-    (function(m, ei, q, i, a, j, s) {
-        m[i] = m[i] || function() {
-            (m[i].a = m[i].a || []).push(arguments)
-        };
-        j = ei.createElement(q),
-            s = ei.getElementsByTagName(q)[0];
-        j.async = true;
-        j.charset = 'UTF-8';
-        j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
-        s.parentNode.insertBefore(j, s);
-    })(window, document, 'script', '_MEIQIA');
-    _MEIQIA('entId', 50521);
+  (function(m, ei, q, i, a, j, s) {
+    m[i] = m[i] || function() {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    j = ei.createElement(q),
+    s = ei.getElementsByTagName(q)[0];
+    j.async = true;
+    j.charset = 'UTF-8';
+    j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
+    s.parentNode.insertBefore(j, s);
+  })(window, document, 'script', '_MEIQIA');
+  _MEIQIA('entId', 50521);
 </script>
 <!-- 这是你自己的 JavaScript 代码 -->
 <script>
     // 你可以自己的代码中选择合适的时机来调用手动初始化
     _MEIQIA('init');
-</script>
-<!-- 美洽客服 -->
+  </script>
+  <!-- 美洽客服 -->
