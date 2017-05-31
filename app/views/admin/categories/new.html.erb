@@ -1,0 +1,5 @@
+<h2><%= t("admin.new_category") %></h2>
+<%= simple_form_for [:admin, @category] do |f| %>
+    <%= f.input :name %>
+  <%= f.submit "Submit" %>
+<% end %>
