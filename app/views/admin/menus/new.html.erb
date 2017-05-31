@@ -18,6 +18,10 @@
     <%= f.input :price %>
   </div>
 
+  <div class="group">
+      <%= f.association :category %>  <!--simple_form_for格式 -->
+  </div>
+
   <div>
      <%= f.input :image, as: :file%>
   </div>
