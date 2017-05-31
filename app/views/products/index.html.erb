@@ -1,0 +1,34 @@
+<div class="container-fluid">
+      <div class="row">
+        <div class="all-product-box">
+          <div class="container">
+              <img class="product-backgroud-img" src="http://ww1.sinaimg.cn/large/006tKfTcgy1ffx7sri7x3j31kw0etx6p.jpg" alt="">
+              <div class="row">
+                        <% @products.each do |product| %>
+                          <div class="col-xs-6 col-md-3 product-list">
+                                <%= link_to product_path(product) do %>
+                                  <% if product.image.present? %>
+                                  <a target="_blank" href="#">
+                                    <%= image_tag(product.image.thumb.url, class:"thumbnail product-list-img") %>
+
+                                  </a>
+                                  <% else %>
+                                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail")%>
+                                  <% end %>
+                                <% end %>
+                                <div class="col-xs-6 col-md-3 product-list-title">
+                                      <a target="_blank"href="#">
+                                        <%= product.title %>
+                                      </a>
+                                      <div class="product-list-price">
+                                        <strong> ￥<%= product.price %>
+                                      </div>
+                                      </strong>
+                                </div>
+                          </div>
+                       <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
