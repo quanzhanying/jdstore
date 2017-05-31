@@ -1,149 +1,85 @@
 <div class="pd-s__item ">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="pd-show-card">
-        <div class="pd--show-card-img">
-          <% if @photos.present? %>
-          <% @photos.each_with_index do |p, index| %>
-          <% if index == 0 %>
-          <%= image_tag p.avatar.medium.url %>
-          <div style="letter-spacing: -8px">
-          <% else %>
-            <%= image_tag p.avatar.thumb.url %>
-            <% end %>
-            <% end %>
-          </div>
-        <% else %>
-          <%= image_tag("http://placehold.it/500x300&text=No Pic", class: "thumbnail") %>
-          <% end %>
-        </div>
-
-        <div class="pd-show-container">
-          <h2>市场数据</h2>
-          <p class="pd-show-container-title"><%= @product.title %></p>
-          <p>时间戳：<%= @product.timestamp_at %></p>
-          <p>最高购买报价：<%= @product.price_buy %></p>
-          <p>最低出售报价：<%= @product.price_sell %></p>
-          <p>最低成交价：<%= @product.price_low %></p>
-          <p>最高成交价：<%= @product.price_high %></p>
-          <p>最后成交价：<%= @product.price_last %></p>
-          <p>总交易币量：<%= @product.trade_vol %></p>
-          <p>
-            <button><%= link_to "更新数据", update_price_product_path(@product), :method => :post %></button>
-          </p>
-        </div>
-      </div>
-
-      <div class="pd-info-card">
-        <div class="pd-info-container">
-          <p>
-            数量 :
-            <%= @product.quantity %>
-          </p>
-          <p>
-            价格 :￥
-            <%= @product.price %>
-          </p>
-        </div>
-        <div class="pd-info-add-cart-btn pull-right">
-          <% if @product.quantity.present? && @product.quantity > 0 %>
-          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
-              class: "btn btn-lg btn-primary pd-show-button") %>
-        <% else %>
-          已售罄
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-8 pull-right">
-      <div class="pd-des-card">
-        <div class="pd-des-title">
-          <h2>
-            <%= @product.title %>
-          </h2>
-        </div>
-        <div class="pd-des-container">
-          <p>
-            <%= @product.description %>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 评星评论 start -->
-<div class="row review">
-  <div class="col-sm-12 col-md-12">
-    <h3 class="reviews_title">
-      <%= @product.reviews.count %>
-      Reviews
-    </h3>
-    <hr>
-    <div id="reivews">
-      <div class="reviews_wrapper clearfix">
-        <div class="pull-left">
-          <% @product.reviews.each do |review| %>
-          <!-- 这行的写法和别人的教程不一样 -->
-          价值指数:
-          <div class="star-value" data-score=<%= review.value %>></div>
-          风险指数:
-          <div class="star-risk" data-score=<%= review.risk %>></div>
-          未来指数:
-          <div class="star-furtue" data-score=<%= review.furtue %>></div>
-          <p>
-            <small>Submitted
-              <strong><%= time_ago_in_words(review.created_at) %>
-                ago</strong>
-              by
-              <%= review.user.email %></small>
-          </p>
-          <div>
-            <% if review.user == current_user %>
-            <%= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+   <div class="row">
+     <div class="col-md-4">
+       <div class="pd-show-card">
+          <div class="pd--show-card-img">
+            <% if @photos.present? %>
+              <% @photos.each_with_index do |p, index| %>
+                <% if index == 0 %>
+                  <%= image_tag p.avatar.medium.url %>
+                  <div style="letter-spacing: -8px">
+                <% else %>
+                  <%= image_tag p.avatar.thumb.url %>
+                <% end %>
+              <% end %>
+              </div>
+            <% else %>
+                <%= image_tag("http://placehold.it/500x300&text=No Pic", class: "thumbnail") %>
             <% end %>
           </div>
-          <% end %>
-        </div>
+          <div class="pd-show-container">
+            <h2>市场数据</h2>
+            <p class="pd-show-container-title"><%= @product.title %></p>
+            <p>时间戳：<%= @product.timestamp_at %></p>
+            <p>最高购买报价：<%= @product.price_buy %></p>
+            <p>最低出售报价：<%= @product.price_sell %></p>
+            <p>最低成交价：<%= @product.price_low %></p>
+            <p>最高成交价：<%= @product.price_high %></p>
+            <p>最后成交价：<%= @product.price_last %></p>
+            <p>总交易币量：<%= @product.trade_vol %></p>
+            <p><button><%= link_to "更新数据", update_price_product_path(@product), :method => :post %></button></p>
+          </div>
+       </div>
+       <div class="pd-info-card">
+         <div class="pd-info-container">
+            <p> 数量 : <%= @product.quantity %> </p>
+            <p>  价格 :￥ <%= @product.price %> </p>
+          </div>
+          <div class="pd-info-add-cart-btn pull-right">
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+               <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
+               class: "btn btn-lg btn-primary pd-show-button") %>
+            <% else %>
+               已售罄
+            <% end %>
+          </div>
+       </div>
+
+     </div>
+     <div class="col-md-8 pull-right">
+       <div class="pd-des-card">
+          <div class="pd-des-title">
+          <h2> <%= @product.title %> </h2>
+          </div>
+           <div class="pd-des-container">
+           <p>
+             <%= @product.description %>
+           </p>
+       </div>
       </div>
-      <hr>
-      <%= link_to("评价",new_product_review_path(@product), :class => "btn btn-lg btn-info") %>
-    </div>
-  </div>
-</div>
-<!-- 评星评论 end -->
-
-<div class="text-center">
-  <h3>综合评价</h3>
-  价值指数:
-  <div class="star-value" data-score=<%= @avg_review %>></div>
-  风险指数:
-  <div class="star-risk" data-score=<%= @avg_risk %>></div>
-  未来指数:
-  <div class="star-furtue" data-score=<%= @avg_furtue %>></div>
+   </div>
 </div>
 
-<script src="/assets/application.js"></script>
 
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
-  (function (m, ei, q, i, a, j, s) {
-    m[i] = m[i] || function () {
-      (m[i].a = m[i].a || []).push(arguments)
-    };
-    j = ei.createElement(q),
-    s = ei.getElementsByTagName(q)[0];
-    j.async = true;
-    j.charset = 'UTF-8';
-    j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
-    s.parentNode.insertBefore(j, s);
-  })(window, document, 'script', '_MEIQIA');
-  _MEIQIA('entId', 50521);
+    (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = '//static.meiqia.com/dist/meiqia.js?_=t';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 50521);
 </script>
 <!-- 这是你自己的 JavaScript 代码 -->
 <script>
-  // 你可以自己的代码中选择合适的时机来调用手动初始化
-  _MEIQIA('init');
+    // 你可以自己的代码中选择合适的时机来调用手动初始化
+    _MEIQIA('init');
 </script>
 <!-- 美洽客服 -->
