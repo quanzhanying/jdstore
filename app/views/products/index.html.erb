@@ -1,15 +1,26 @@
-<div class="row">
-    <% @products.each do |product| %>
-        <div class="col-xs-6 col-md-3">
-            <%= link_to product_path(product) do %>
-                <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
-            <% end %>
-            <div> 作者 : <%= product.author %> </div>
-            <%= product.title %> ￥ <%= product.price %>
-        </div>
-    <% end %>
+<div class="container-fluid dzl-pd-container">
+  <div class="row">
+
+      <% @products.each do |product| %>
+              <div class="col-sm-2 dzl-product-index">
+              <%= link_to product_path(product) do %>
+                  <% if product.image.present? %>
+                      <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
+                  <% else %>
+                      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
+                  <% end %>
+              <% end %>
+              <div class="price-index">&nbsp;&nbsp;￥ <strong><%= product.price %></strong></div>
+              <%= product.title %>
+              <div> 作者 : <%= product.author %> </div>
+
+            </div>
+      <% end %>
+
+  </div>
+
+  <div class="text-center">
+    <%= will_paginate @products, :previous_label => '上一页', :next_label => '下一页', :class => "flickr_pagination" %>
+  </div>
+
 </div>

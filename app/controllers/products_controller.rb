@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
    @products = Product.all.order("position ASC")
+   @products = @products.paginate(:page => params[:page], :per_page=> 10)
  end
 
  def show
