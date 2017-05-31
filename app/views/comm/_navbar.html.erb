@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"> 小脚丫 </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path  do %>
+          购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+          <% end %>
+        </li>
+        <% if !current_user %>
+          <li><%= link_to("注册",new_user_registration_path) %></li>
+          <li><%= link_to("登录",new_user_session_path) %></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi!,<%= current_user.email %>
+            <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <% if current_user.is_admin %>
+                  <%= link_to("所有订单", admin_orders_path) %>
+                  <%= link_to("产品分类", admin_product_categories_path) %>
+                <% else %>
+                  <%= link_to("我的订单", orders_path) %>
+                <% end %>
+
+              </li>
+              <% if current_user.is_admin? %>
+              <li>
+                <%= link_to("所有商品", admin_products_path) %>
+              </li>
+
+              <% end %>
+              <li>
+                <%= link_to("退出", destroy_user_session_path, method: :delete ) %>
+              </li>
+            </ul>
+          </li>
+
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
