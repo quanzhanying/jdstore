@@ -15,3 +15,14 @@ Credits: Bootstrap, jQuery, TouchSwipe, Animate.css, FontAwesome
 // Curently there are no option available.
 
 $('#bootstrap-touch-slider').bsTouchSlider();
+
+$(function(){
+    var $pins = $('#pins');
+    $pins.imagesLoaded(function(){
+      // $box.fadeIn();
+      $pins.masonry({
+        itemSelector : '.box',
+        isFitWidth: true,
+      });
+    });
+  });
