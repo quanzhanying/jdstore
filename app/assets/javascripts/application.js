@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require_tree .
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 125) {
+        $('#navbar').addClass('show_bgcolor')
+    } else {
+        $('#navbar').removeClass('show_bgcolor')
+    }
+})
