@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user! , only: [:new, :create]
+  before_action :authenticate_user! , only: [:new, :create, :add_to_favorite, :cancel_favorite]
   before_action :validate_search_key, only: [:search]
   layout "products"
   def index
