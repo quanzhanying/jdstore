@@ -18,6 +18,10 @@
     <%= f.input :price %>
   </div>
 
+  <div class="group">
+      <%= f.select :category_id, @categories %>
+  </div>
+
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
