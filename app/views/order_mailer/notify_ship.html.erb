@@ -48,22 +48,24 @@
      <h2> 寄送资讯 </h2>
 
      <table class="table table-striped table-bordered">
+       <thead>
+         <tr>
+           <th>订购人</th>
+           <th>收货人</th>
+         </tr>
+       </thead>
       <tbody>
         <tr>
-          <td> 订购人 </td>
-        </tr>
-        <tr>
-          <td>订购人姓名: <%= @order.billing_name %></td>
-          <td>订购人地址: <%= @order.billing_address %></td>
-          <td>订购人电话: <%= @order.billing_phone %></td>
-        </tr>
-        <tr>
-          <td> 收件者 </td>
-        </tr>
-        <tr>
-          <td>收货人姓名: <%= @order.shipping_name %></td>
-          <td>收货人地址: <%= @order.shipping_address %></td>
-          <td>收货人电话: <%= @order.shipping_phone %></td>
+          <td>
+            <li>姓名：<%= @order.billing_name %></li>
+            <li>地址：<%= @order.billing_address %></li>
+            <li>电话：<%= @order.billing_phone %></li>
+          </td>
+          <td>
+            <li>姓名：<%= @order.shipping_name %></li>
+            <li>地址：<%= @order.shipping_address %></li>
+            <li>电话：<%= @order.shipping_phone %></li>
+          </td>
         </tr>
       </tbody>
     </table>
