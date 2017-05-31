@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+#loggingpagebody{
+  background-color: #212121;
+  color:#fff;
+}
+.all-products{
+  margin-top: 50px;
+  .each-product{
+    float: left;
+    margin-right: 50px;
+    border: 1px solid #212221;
+  }
+}
+ .product-image{
+   width: 404px;
+   height: 404px;
+   border: 2px #881f1f solid;
+   float: left;
+   img{
+     width: 400px;
+     height: 400px;
+   }
+ }
+ .product-details{
+   margin-left: 20px;
+   float:left;
+ }

@@ -1,0 +1,15 @@
+<div class="">
+  <h2 class="text-center">商品详情</h2>
+  <div class="">
+     <div class="product-image">
+        <%= image_tag(@product.image_url(:medium))%>
+     </div>
+     <div class="product-details">
+       <p>商品名称：<%= @product.title%></p>
+       <p>商品描述：<%= @product.description%></p>
+       <p>商品价格：<%= @product.price%>RMB</p>
+       <p>商品数量：<%= @product.quantity%></p>
+       <%= link_to("更新商品信息",edit_admin_product_path(@product),class:"btn btn-success")%>
+     </div>
+  </div>
+</div>
