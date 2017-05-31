@@ -7,6 +7,7 @@
     <%= f.input :price , lable:"price:" %>
     <%= f.input :quantity , lable:"quantity:" %>
     <%= f.input :image , lable:"picture:" %>
+    <%= f.input :category , collection: @categoies, :value_method => :name, prompt:"选择商品分类",selected: @product.category%>
     <%= f.submit "Submit", class:"btn btn-lg btn-danger", :disable_with => "Submiting..."  %>
     <% end %>
   </div>

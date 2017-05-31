@@ -24,6 +24,7 @@
               <li>
                 <% if current_user.is_admin %>
                   <%= link_to("所有订单", admin_orders_path) %>
+                  <%= link_to("产品分类", admin_product_categories_path) %>
                 <% else %>
                   <%= link_to("我的订单", orders_path) %>
                 <% end %>
@@ -31,7 +32,7 @@
               </li>
               <% if current_user.is_admin? %>
               <li>
-                <%= link_to("管理", admin_products_path) %>
+                <%= link_to("所有商品", admin_products_path) %>
               </li>
 
               <% end %>

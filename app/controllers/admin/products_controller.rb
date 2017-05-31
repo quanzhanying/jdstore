@@ -5,10 +5,12 @@ class Admin::ProductsController < ApplicationController
 
  def index
    @products = Product.all
+   @categoies = ProductCategory.all
  end
 
  def new
    @product = Product.new
+   @categoies = ProductCategory.all
  end
 
  def create
@@ -24,17 +26,19 @@ class Admin::ProductsController < ApplicationController
 
  def update
    @product = Product.find(params[:id])
+   @categoies = ProductCategory.all
    if @product.update(product_params)
      flash[:notice] = "update product success!"
-     redirect_to admin_product_path(@product)
+     render :edit
    else
-     flash[:error] = "failed to update product!"
-     render :new;
+     flash[:alert] = "更新商品信息失败" + @product.errors.full_messages.to_s
+     redirect_to admin_product_path(@product)
    end
  end
 
  def edit
    @product = Product.find(params[:id])
+   @categoies = ProductCategory.all
  end
 
  def show
@@ -51,10 +55,16 @@ class Admin::ProductsController < ApplicationController
    end
  end
 
+ def filter_by_category
+   @category = ProductCategory.find(params[:id])
+   @products = Product.where(:category => @category.name).all
+   @categoies = ProductCategory.all
+ end
+
  private
 
  def product_params
-   params.require(:product).permit(:title, :description, :price, :quantity, :image)
+   params.require(:product).permit(:title, :description, :price, :quantity, :image, :category)
  end
 
 
