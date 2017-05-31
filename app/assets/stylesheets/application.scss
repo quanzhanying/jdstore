@@ -1,0 +1,182 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.admin_proudct_table{
+  border: solid 3px #dcdcdc;
+  box-shadow: 0 0 4px 1px #f2f2f2;
+}
+
+.admin_proudct_table th{
+  background-color: #f2f2f2;
+  color: #1366af;
+  font-size: 18px;
+  font-weight: 200;
+};
+
+.admin_proudct_table td{
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.admin_btn_new{
+  margin-bottom: 40px;
+  margin-right: 100px;
+}
+
+.admin_product_info{
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.admin_product_info a{
+  width: 120px;
+  margin-top: 50px;
+}
+
+.admin_product_info .admin_product_info_title{
+  font-size: 30px;
+  margin: 10px 20px 10px 0;
+}
+
+.product_thumbnail img{
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: auto;
+  height: 100%;
+  margin: auto;
+}
+
+.product_thumbnail{
+  width: 200px;
+  height: 200px;
+}
+
+.body_container{
+  margin-bottom: 100px;
+}
+
+.products{
+  border-top: none !important;
+}
+
+.products .table,
+.products .table th,
+.products .table tr,
+.products .table td{
+  border:none !important;
+}
+
+.product_thumbnail{
+  margin-bottom: 80px;
+}
+
+.btn-confirm-buy{
+  margin: 50px 0px 100px 0;
+}
+
+.cart_title{
+  font-size: 30px;
+  margin: 10px 50px 10px 20px;
+}
+
+.btn-add-to-cart{
+  width: 150px !important;
+}
+
+.order_state{
+  font-size: 30px;
+  color:red;
+}
+
+#btn-cancel-order{
+  margin-right: 20px;
+}
+
+// comm
+.image-with-title > img{
+  display: inline-block;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.image-with-title > p {
+      display: inline-block;
+      font-size: 18px;
+}
+
+
+
+.list-inline > li {
+  width: 30%;
+}
+
+.footer {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  position: absolute;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ background-color: #414141;
+ text-align: center;
+}
+
+.footer > hr {
+  color: #999999;
+}
+
+.site-info {
+  color: white;
+}
+.site-info .split{
+  margin: auto 10px;
+}
+
+.site-info .text{
+  color: #999999;
+}
+
+.site-info .copyright{
+      font-size: 18px;
+      color: #999999;
+      margin-top: 4px;
+}
+
+// navbar
+.navbar-default {
+    background-color: #414141;
+    border-color: #414141;
+    margin-bottom: 0;
+    height: 40px;
+    vertical-align: middle;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.alert{
+  margin-top: 10px;
+}

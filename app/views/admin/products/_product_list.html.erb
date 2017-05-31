@@ -1,0 +1,25 @@
+<div class="category-list">
+  <%= link_to("所有分类", admin_products_path) %>
+  <b>|</b>
+  <% @categoies.each do |cate| %>
+      <%= link_to(cate.name, filter_by_category_admin_product_path(cate)) %>
+      <b>|</b>
+  <% end %>
+</div>
+<br />
+<table class="table admin_proudct_table">
+
+  <thead>
+    <th>name</th>
+    <th>description</th>
+    <th>price</th>
+    <th>quantity</th>
+    <th colspan="2">edit</th>
+    <th>created</th>
+  </thead>
+
+  <tbody>
+      <%= render :partial => 'productitem', :collection => @products, as: :product %>
+  </tbody>
+
+</table>
