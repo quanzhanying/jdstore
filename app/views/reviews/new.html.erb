@@ -1,5 +1,6 @@
 <div class="col-md-4 col-md-offset-4">
-  <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
+  <%= simple_form_for [@product, @product.reviews.build] do |f| %>
+
     <div class="productDetail-evaluation ">
       <div class="intro-text-count clearfix ">
         <div >价值指数: </div>
@@ -14,58 +15,16 @@
         <div id="star-furtue"></div>
       </div>
     </div>
-    <div class="form-group">
+
+    <div class="group">
       <%= f.input :body, label: "内容", input_html: { class: "form-control"} %>
     </div>
 
-    <div class="form-actions">
-      <%= f.submit "提交", disable_with: "Submiting..." %>
+    <div class="group">
+      <%= f.submit "提交", data: { disable_with: "Submitting..." } %>
     </div>
+
   <% end %>
 </div>
 
-<script>
-  $('.star-value').raty({
-        path: '/assets/',
-            readOnly: true,
-            score: function() {
-          return $(this).attr('data-score');
-        }
-  });
-  $('.star-risk').raty({
-        path: '/assets/',
-            readOnly: true,
-            score: function() {
-          return $(this).attr('data-score');
-        }
-  });
-  $('.star-furtue').raty({
-        path: '/assets/',
-            readOnly: true,
-            score: function() {
-          return $(this).attr('data-score');
-        }
-  });
-
-  $('#star-value').raty({
-  path: '/assets/',
-  scoreName: 'review[value]'
-  });
-
-  $('#star-risk').raty({
-  path: '/assets/',
-  scoreName: 'review[risk]'
-  });
-
-  $('#star-furtue').raty({
-      path: '/assets/',
-      scoreName: 'review[furtue]'
-  });
-
-
-<!-- 必须要选一颗星 -->
-  $('#star-value img').eq(0).trigger('click')
-  $('#star-risk img').eq(0).trigger('click')
-  $('#star-furtue img').eq(0).trigger('click')
-
-</script>
+<script src="/assets/application.js"></script>
