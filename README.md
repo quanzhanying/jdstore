@@ -1,3 +1,3 @@
 # README
 
-landing page first version
+add gem figaro;
