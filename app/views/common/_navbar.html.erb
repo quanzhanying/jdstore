@@ -70,29 +70,33 @@
               <span>C</span>
           </div>
 
-           <ul>
+           <ul class="navright">
              <!-- 搜索栏 -->
-             <li>
+             <li class="act">
                <%= form_tag(products_path, :method => "get") do %>
                 <div class="cntr">
+                 <i class="fa fa-line-chart fa-2x text-danger"></i>
                  <div class="cntr-innr" >
                    <label class="search">
-                     <input type="text"  name="searcher" value="<%= params[:searcher] %>" placeholder="&nbsp;&nbsp;请 输 入 搜 索 信 息">
+                     <input type="text"  name="searcher" value="<%= params[:searcher] %>" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请 输 入 搜 索 信 息">
                    </label>
-                   </div>
                  </div>
+                </div>
                <% end %>
              </li>
 
               <!-- 商品页按钮 -->
               <li class="act">
-                  <%= link_to("Products", products_path) %>
+                  <%= link_to products_path do  %>
+                     <i class="cc BTC-alt fa-1x text-warning"></i>货币专区
+                  <% end %>
               </li>
 
               <!-- 购物车按钮-->
-              <li class="act">
+              <li class="act actcart">
                   <%= link_to carts_path do  %>
-                     购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+                     <i class="fa fa-shopping-cart fa-2x"></i>
+                     (<%= current_cart.products.count %>)
                   <% end %>
               </li>
 
@@ -103,23 +107,28 @@
               <% else %>
               <li class="dropdown act">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      Hi!, <%= current_user.nickname %>
+                      <i class="fa fa-smile-o fa-1x"></i>Hi!, <%= current_user.nickname %>
                       <b class="caret"></b>
-                  </a>
-                  <ul class="dropdown-menu">
-                      <% if current_user.admin? %>
-                      <li>
-                          <%= link_to("Admin 选单", admin_products_path ) %>
-                      </li>
-                      <% end %>
+                      <ul class="dropdown-menu">
+                          <% if current_user.admin? %>
+                          <li>
+                              <%= link_to(content_tag(:i, 'Admin 选单', class: 'cc BTC fa-1x droplist'), admin_products_path, method: :get) %>
+                          </li>
+                          <% end %>
 
-                      <li>
-                          <%= link_to("个人订单列表", account_orders_path ) %>
-                      </li>
-                      <li>
-                          <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
-                      </li>
-                  </ul>
+                          <li>
+                              <!-- <%= link_to account_orders_path do  %>
+                                 <i class="fa fa-home fa-1x"></i>个人订单列表
+                              <% end %> -->           <!-- 另一种实现方式 -->
+                              <%= link_to(content_tag(:i, '个人订单列表', class: 'fa fa-home fa-1x droplist'), account_orders_path, method: :get) %>
+                          </li>
+
+                          <li>
+                              <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out droplist'), destroy_user_session_path, method: :delete) %>
+                          </li>
+                      </ul>
+                  </a>
+
               </li>
               <% end %>
           </ul>

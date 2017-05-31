@@ -626,11 +626,21 @@ nav ul {
     width: 100%;
   }
 }
-nav ul li {
+nav .navright .act  {
   float: left;
   margin-left: 60px;
   line-height: 1.5;
+  & .droplist {
+    color: #337ab7;
+    transition: color 500ms linear;
+
+    &:hover{
+      color: #000;
+    }
+  }
 }
+
+
 @media only screen and (max-width: 766px) {
   nav ul li {
     width: 100%;
@@ -641,7 +651,7 @@ nav ul li {
 
 nav li a  {
   color: #337ab7;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 20px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -652,12 +662,34 @@ nav li a:hover {
   color: #fff;
 }
 
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 1000;
+    float: right;
+    width: 200px;
+    padding: 5px 0px;
+    list-style: none;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.73);
+    border: 0px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.475);
+    clear: both;
+}
+
+.navright {               /*导航栏右侧区域*/
+  margin-right: 160px;
+}
+
 .act {
   float: left;
   margin-top: 15px; /*上边距*/
-
+  &.actcart{   /*购物车图标的上边距*/
+    margin-top: 8px;
+  }
  }
-
 
  /*** search ***/
 
@@ -665,7 +697,7 @@ nav li a:hover {
    display:table;
    width:100%;
    height:100%;
-   margin-top: 12px;
+   margin-top: -5px;
    margin-right: -10px;
 
    .cntr-innr{
@@ -726,8 +758,6 @@ nav li a:hover {
  	}
  }
  /*** search ***/
-
-
 
 .mobile-toggle {
   display: none;

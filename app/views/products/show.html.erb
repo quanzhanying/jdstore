@@ -3,11 +3,19 @@
      <div class="col-md-4">
        <div class="pd-show-card">
           <div class="pd--show-card-img">
-          <% if @product.image.present? %>
-            <%= image_tag(@product.image.medium.url, class: "thumbnail", style:"width:100%") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/300x180&text=No Pic", class: "thumbnail") %>
-          <% end %>
+            <% if @photos.present? %>
+              <% @photos.each_with_index do |p, index| %>
+                <% if index == 0 %>
+                  <%= image_tag p.avatar.medium.url %>
+                  <div style="letter-spacing: -8px">
+                <% else %>
+                  <%= image_tag p.avatar.thumb.url %>
+                <% end %>
+              <% end %>
+              </div>
+            <% else %>
+                <%= image_tag("http://placehold.it/500x300&text=No Pic", class: "thumbnail") %>
+            <% end %>
           </div>
           <div class="pd-show-container">
             <h2>市场数据</h2>
