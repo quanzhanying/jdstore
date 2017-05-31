@@ -37,7 +37,6 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 0 2%;
 }
 .content {
   max-width: 1600px;
@@ -128,7 +127,7 @@ nav ul {
 }
 nav .navright .act  {
   float: left;
-  margin-left: 60px;
+  margin-left: 55px;
   line-height: 1.5;
   & .droplist {
     color: #337ab7;
@@ -168,7 +167,7 @@ nav li a:hover {
     left: 0px;
     z-index: 1000;
     float: right;
-    width: 200px;
+    width: 185px;
     padding: 5px 0px;
     list-style: none;
     font-size: 14px;
@@ -180,7 +179,7 @@ nav li a:hover {
 }
 
 .navright {               /*导航栏右侧区域*/
-  margin-right: 160px;
+  margin-right: 120px;
 }
 
 .act {
@@ -257,7 +256,7 @@ nav li a:hover {
     text-align:left;
  	}
  }
- /*** search ***/
+ /* --search-end-- */
 
 .mobile-toggle {
   display: none;
@@ -537,7 +536,7 @@ footer .sub-footer {
 }
 
 .pd-header-panel {
-  background:url('http://www.btcside.com/Tutorial/img/imgbox1_2.jpg') repeat center center scroll;
+  background:url('http://www.btcside.com/Tutorial/img/imgbox1_2.jpg') repeat center scroll;
   background-color: rgba(250,250,250,1);
   margin-top: -5px;
   padding-top: 90px;
@@ -985,3 +984,44 @@ div.cart__main__wapper {
     .account{
       text-align: center;
     }
+
+
+/* -------order------- */
+
+div.odhead {
+  background:url('http://www.btcside.com/Tutorial/img/imgbox2.jpg') no-repeat center scroll;
+  background-size: 100%;
+  margin-top: -2px;
+  padding-top: 110px;
+  padding-bottom: 155px;
+  border: 0px;
+}
+
+div.odsection{
+  background: linear-gradient(#37474F, #607D8B, #37474F);
+  // background: #f9f9fa;
+  height:500px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h2.odfont{
+  padding: 0px;
+}
+
+div.odsection.odsection1{
+  background: linear-gradient(to right, #37474F, #607D8B, #37474F);
+  color: white;
+  margin: 50px;
+  padding: 10px;
+}
+
+div.odsection .odsection2{
+  background: #795548;
+  height:300px;
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+}

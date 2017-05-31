@@ -12,7 +12,51 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require jquery.raty
+
 //= require_tree .
+
+
+  $('.star-value').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-risk').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-furtue').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+
+  $('#star-value').raty({
+  path: '/assets/',
+  scoreName: 'review[value]'
+  });
+
+  $('#star-risk').raty({
+  path: '/assets/',
+  scoreName: 'review[risk]'
+  });
+
+  $('#star-furtue').raty({
+      path: '/assets/',
+      scoreName: 'review[furtue]'
+  });
+
+  $('#star-value img').eq(0).trigger('click')
+  $('#star-risk img').eq(0).trigger('click')
+  $('#star-furtue img').eq(0).trigger('click')
