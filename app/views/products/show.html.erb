@@ -3,13 +3,13 @@
   <div class="row">
 
     <!-- 主图 -->
-    <div class="col-md-5">
+    <div class="col-md-7">
         <div class="productDetail">
           <div class="productDetail-left">
             <div class="productDetail-left-bigImage">
               <%= image_tag(@product.photos[0].image.main.url) %>
             </div>
-
+            <!-- 下方小图-->
             <div class="productDetail-left-imageList ">
               <div class="productDetail-left-imageList-item">
                 <%= image_tag @product.photos[0].image.main.url  %>
@@ -29,7 +29,7 @@
     </div>
 
     <!-- 商品信息 -->
-    <div class="col-md-7">
+    <div class="col-md-5">
 
       <!-- 商品标题 -->
       <h2 class="product-title"><%= @product.title %></h2>
