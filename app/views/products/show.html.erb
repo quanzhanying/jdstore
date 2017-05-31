@@ -14,9 +14,10 @@
               <% end %>
               </div>
             <% else %>
-                <%= image_tag("http://placehold.it/500x300&text=No Pic", class: "thumbnail") %>
+              <%= image_tag("http://placehold.it/500x300&text=No Pic", class: "thumbnail") %>
             <% end %>
           </div>
+
           <div class="pd-show-container">
             <h2>市场数据</h2>
             <p class="pd-show-container-title"><%= @product.title %></p>
@@ -30,37 +31,124 @@
             <p><button><%= link_to "更新数据", update_price_product_path(@product), :method => :post %></button></p>
           </div>
        </div>
+
        <div class="pd-info-card">
          <div class="pd-info-container">
             <p> 数量 : <%= @product.quantity %> </p>
             <p>  价格 :￥ <%= @product.price %> </p>
-          </div>
-          <div class="pd-info-add-cart-btn pull-right">
+         </div>
+         <div class="pd-info-add-cart-btn pull-right">
             <% if @product.quantity.present? && @product.quantity > 0 %>
-               <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
-               class: "btn btn-lg btn-primary pd-show-button") %>
+              <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
+              class: "btn btn-lg btn-primary pd-show-button") %>
             <% else %>
-               已售罄
+              已售罄
             <% end %>
-          </div>
-       </div>
-
-     </div>
+         </div>
+      </div>
+    </div>
      <div class="col-md-8 pull-right">
        <div class="pd-des-card">
-          <div class="pd-des-title">
-          <h2> <%= @product.title %> </h2>
-          </div>
-           <div class="pd-des-container">
+         <div class="pd-des-title">
+           <h2> <%= @product.title %> </h2>
+         </div>
+         <div class="pd-des-container">
            <p>
              <%= @product.description %>
            </p>
-       </div>
+         </div>
       </div>
-   </div>
+    </div>
+  </div>
 </div>
 
+<!-- 评星评论 start -->
+<div class="row review">
+  <div class="col-sm-12 col-md-12">
+    <h3 class="reviews_title">
+      <%= @product.reviews.count %> Reviews
+    </h3>
+    <hr>
+    <div id="reivews">
+      <div class="reviews_wrapper clearfix">
+        <div class="pull-left">
+          <% @product.reviews.each do |review| %> <!-- @product.reviews这行的写法和别人的教程不一样 -->
+            价值指数: <div class="star-value" data-score= <%= review.value %> ></div>
+            风险指数: <div class="star-risk" data-score= <%= review.risk %> ></div>
+            未来指数: <div class="star-furtue" data-score= <%= review.furtue %> ></div>
+            <p>
+                <small>Submitted
+                    <strong><%= time_ago_in_words(review.created_at) %>
+                        ago</strong>
+                    by <%= review.user.email %></small>
+            </p>
+            <div>
+              <% if review.user == current_user %>
+                 <%= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+      <%= link_to("评价",new_product_review_path(@product), :class => "btn btn-lg btn-info") %>
+    </div>
+  </div>
+</div>
+<!-- 评星评论 end -->
 
+<div class="text-center">
+  <h3>综合评价</h3>
+  价值指数: <div class="star-value" data-score= <%= @avg_review %> ></div>
+  风险指数: <div class="star-risk" data-score= <%= @avg_risk %> ></div>
+  未来指数: <div class="star-furtue" data-score= <%= @avg_furtue %> ></div>
+</div>
+
+<script>
+  $('.star-value').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-risk').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+  $('.star-furtue').raty({
+        path: '/assets/',
+            readOnly: true,
+            score: function() {
+          return $(this).attr('data-score');
+        }
+  });
+
+  $('#star-value').raty({
+  path: '/assets/',
+  scoreName: 'review[value]'
+  });
+
+  $('#star-risk').raty({
+  path: '/assets/',
+  scoreName: 'review[risk]'
+  });
+
+  $('#star-furtue').raty({
+      path: '/assets/',
+      scoreName: 'review[furtue]'
+  });
+
+
+<!-- 必须要选一颗星 -->
+  $('#star-value img').eq(0).trigger('click')
+  $('#star-risk img').eq(0).trigger('click')
+  $('#star-furtue img').eq(0).trigger('click')
+
+</script>
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
