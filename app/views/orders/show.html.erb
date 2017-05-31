@@ -9,7 +9,7 @@
           <th>商品名称</th>
           <th>单价</th>
           <th>数量</th>
-          <th>小记</th>
+          <th>小计</th>
         </tr>
       </thead>
       <tbody>
@@ -56,10 +56,12 @@
           <td>
             <li>姓名：<%= @order.billing_name %></li>
             <li>地址：<%= @order.billing_address %></li>
+            <li>电话：<%= @order.billing_phone %></li>
           </td>
           <td>
             <li>姓名：<%= @order.shipping_name %></li>
             <li>地址：<%= @order.shipping_address %></li>
+            <li>电话：<%= @order.shipping_phone %></li>
           </td>
         </tr>
       </tbody>
