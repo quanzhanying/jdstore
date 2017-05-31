@@ -92,9 +92,12 @@
             <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
           <% end %>
         </div> -->
-        <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
+        <button type="submit" link_to add_to_cart_product_path(@product) class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
           <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
         </button>
+        <!-- <button type="submit" link_to buy_now_product_path(@product) class="btn btn-danger <%= @product.quantity == 0 ? 'disabled' : '' %>">
+          立刻下单
+        </button> -->
         <% end %>
 
         <!-- 收藏商品按钮 -->
