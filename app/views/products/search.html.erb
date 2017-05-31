@@ -47,7 +47,15 @@
               <p class="describe"><%= product.title %></p>
               <p class="evaluate">已有<%= product.reviews.count%>条评价</p>
               <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
+                <% if current_user %>
+                  <% if current_user.is_favorite_of?(product) %>
+                <%= link_to(content_tag(:i,' 已收藏', class: 'fa fa-heart'), favorite_product_path(product)+"?fa=unfavorite-p", :method => :post,:remote => true,id:  "favorite-item-"+product.id.to_s) %>
+                 <% else %>
+                <%= link_to(content_tag(:i,' 收藏', class: 'fa fa-heart-o'), favorite_product_path(product)+"?fa=favorite-p", :method => :post,:remote => true,id:  "favorite-item-"+product.id.to_s) %>
+                  <% end %>
+                <% else %>
+                  <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-heart-o"> 收藏</i></a>
+                <% end %>
               </div>
               <div class="shopCart cart text-center">
                 <%= render :partial => "products/add_to_cart", :locals => { :product => product } %>
