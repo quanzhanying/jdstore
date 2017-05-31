@@ -82,20 +82,65 @@
   color           : #fff;
 }
 
+.intro-text-btn {
+  display      : block;
+  width        : 178px;
+  height       : 48px;
+  line-height  : 45px;
+  border       : 1px solid #d32048;
+  border-radius: 50px;
+
+  &.add-cart {
+    color: #fff;
+  }
+
+  &.btn-disabled {
+    background  : #aaa;
+    border-color: #fff;
+  }
+}
+
+.intro-text {
+  width: 744px;
+
+  h3 {
+    margin-top : 0;
+    line-height: 30px;
+  }
+}
+
+.intro-text-desc {
+  margin-top: 7px;
+}
+
+.intro-text-value {
+  height     : 60px;
+  line-height: 60px;
+}
+
+.intro-text-service {
+  height     : 50px;
+  line-height: 50px;
+}
 
 .intro-text-btn {
-	display: block;
-	width: 178px;
-	height: 48px;
-	line-height: 45px;
-	border: 1px solid #d32048;
-	font-family: "Microsoft Yahei",simhei;
-	border-radius: 50px;
-	&.add-cart {
-		color: #fff;
-	}
-	&.btn-disabled {
-		background: #aaa;
+  display      : block;
+  width        : 178px;
+  height       : 48px;
+  line-height  : 45px;
+  border       : 1px solid #d32048;
+  border-radius: 10px;
+
+  &.add-cart {
+    color: #fff;
+  }
+
+  &.btn-disabled {
+    background  : #aaa;
     border-color: #fff;
-	}
+  }
+}
+
+.intro-text-quantity span {
+  margin-top: 15px;
 }

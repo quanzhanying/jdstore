@@ -2,7 +2,7 @@
     <%= link_to("加入购物车", add_to_cart_product_path(@product),
         :method => :post,
         :remote => true,
-        :class => "intro-text-btn addCartBtn add-cart pl15 pr15 mt30 ml20 tc col-red f20 bg-red") %>
+        :class => "intro-text-btn addCartBtn add-cart pl15 pr15 mt30 ml20 tc bg-orange f20 bg-red") %>
 <% else %>
-  <a href="javascript:;" class="intro-text-btn add-cart pl15 pr15 mt20 ml20 tc col-red f20 bg-red btn-disabled">已售完</a>
+  <a href="javascript:;" class="intro-text-btn add-cart pl15 pr15 mt20 ml20 tc f20 bg-orange btn-disabled">已售完</a>
 <% end %>
