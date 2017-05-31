@@ -2,9 +2,9 @@ class Order < ApplicationRecord
   before_create :generate_token
 
   def generate_token
-    self.token = secureRandom.uuid
+    self.token = SecureRandom.uuid
   end
-  
+
   belongs_to :user
 
   validates :billing_name, presence: true
