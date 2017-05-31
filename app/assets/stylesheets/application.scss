@@ -17,3 +17,87 @@
  @import "font-awesome";
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+//----导航栏----------//
+
+ .navbar-default {
+     background-color: #9a1c1c;
+     border-color: #e7e7e7;
+ }
+
+ .navbar.navbar-default {
+     color: #af2e06 !important;
+
+ }
+
+ .navbar.navbar-default a:hover,.navbar.navbar-default a:active,.navbar.navbar-default a:focus {
+     color: #eb5424 !important
+ }
+
+ .navbar.navbar-default.show_bgcolor {
+     background-color: #02061A
+ }
+
+ .navbar.navbar-default .logo-box {
+     margin-right: 15px;
+     font-family: 'Oswald', sans-serif;
+     font-size: 20px
+ }
+
+ .navbar.navbar-default .logo-box img {
+     display: inline-block;
+     margin-top: -6px;
+     margin-right: 8px;
+     margin-left: 30px;
+     width: 30px;
+     height: 30px;
+     border: 2px solid #ffffff;
+     border-radius: 25px
+ }
+
+ .navbar.navbar-default .dropdown-menu {
+     background-color: #fff;
+     min-width: 175px
+ }
+
+ .navbar.navbar-default .dropdown-menu a {
+     color: #000;
+     padding: 8px 17px
+ }
+
+ .navbar.navbar-default .dropdown-menu a:hover {
+     background-color: #f0f0f0;
+     color: #eb5424 !important
+ }
+
+ .navbar.navbar-default .dropdown-menu:before {
+     content: "";
+     border-bottom: 10px solid #fff;
+     border-right: 10px solid transparent;
+     border-left: 10px solid transparent;
+     position: absolute;
+     top: -10px;
+     right: 16px;
+     z-index: 10
+ }
+
+ .navbar.navbar-default .search-box {
+     margin-top: 7.5px
+ }
+
+ .navbar.navbar-default .search-box input {
+     height: 35px
+ }
+
+ .navbar.navbar-default .search-box input:focus {
+     border: 2px solid #ccc
+ }
+
+ .navbar.navbar-default .search-box button {
+     background-color: #fff;
+     border: 1.5px solid #fff;
+     padding: 5px 10px 5px 10px;
+     height: 35px;
+     color: #333
+ }
+// 
