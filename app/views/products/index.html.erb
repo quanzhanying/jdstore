@@ -11,7 +11,7 @@
   <div class="col-xs-6 col-md-3 ">
     <span class="thumbnail">
       <div class="pull-right">
-        <% if current_user.is_favorites?(product) %>
+        <% if current_user && current_user.is_favorites?(product) %>
           <%= link_to(delete_from_wish_list_product_path(product), method: :post, class:"love") do %><i class="fa fa-heart " aria-hidden="true"></i><% end %>
         <% else %>
           <%= link_to(add_to_wish_list_product_path(product), method: :post, class:"nolove") do %><i class="fa fa-heart-o " aria-hidden="true"></i><% end %>
