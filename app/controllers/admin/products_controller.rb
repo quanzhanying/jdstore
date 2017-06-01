@@ -25,7 +25,6 @@ def create
   @product = Product.new(product_params)
   @product.category_id = params[:category_id]
 
-
   if @product.save
     # 保存新建商品图片
     if params[:product_images] != nil
