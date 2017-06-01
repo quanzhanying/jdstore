@@ -3,20 +3,66 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* 商品indexCSS样式表 */
-.panel-footer{
-  padding: 5px;
-  font-size: 15px;
-  a:hover{
-    text-decoration: none;
-  }
-  span.price{
-    color: rgb(245,190,126);
-  }
+
+//-------购物车图标以及点赞图标出现-------------
+/* font Awesome http://fontawesome.io*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+/* Animation.css*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
+.col-item {
+  background: #FFF;
 }
+.col-item .options {
+  position:absolute;
+  top:6px;
+  right:22px;
+}
+.col-item .photo {
+  overflow: hidden;
+}
+.col-item .photo .options {
+  display:none;
+}
+.col-item .options-cart {
+  position:absolute;
+  left:22px;
+  top:6px;
+  display:none;
+}
+.col-item .photo:hover .options,
+.col-item .photo:hover .options-cart {
+  display:block;
+  -webkit-animation: fadeIn .5s ease;
+  -moz-animation: fadeIn .5s ease;
+  -ms-animation: fadeIn .5s ease;
+  -o-animation: fadeIn .5s ease;
+  animation: fadeIn .5s ease;
+}
+.col-item .price-details {
+  width: 100%;
+  margin-top: 5px;
+}
+.col-item .price-details h1 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+  float:left;
+  color: rgb(245,190,126);
+}
+.col-item .price-details span {
+  float:right;
+}
+.col-item .price-details .price-new {
+  font-size:16px;
+  color: rgb(245,190,126);
+}
+
+
+
 //-----图片向上滑动------
-body {
-  background: #F5F5F5;
-}
+// body {
+//   background: #F5F5F5;
+// }
 
 .product-box {
   width: 200px;

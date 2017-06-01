@@ -40,9 +40,9 @@ class ProductsController < ApplicationController
       flash[:warning] = "您选择的商品数量超过库存，实际加入购物车的商品为#{@quantity}件。"
     end
     current_cart.add(@product, @quantity)
-    flash[:warning] = "加入购物车的商品为#{@quantity}件。"
+    flash[:warning] = "商品已加入购物车"
 
-    redirect_to product_path(@product)
+    redirect_to :back
   end
 
 #-------点赞功能-----------
@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
        @product.upvote_by current_user
      end
 
-     redirect_to product_path(@product)
+     redirect_to :back
    end
 
    def quit
@@ -71,7 +71,7 @@ class ProductsController < ApplicationController
        current_user.quit!(@product)
      end
 
-     redirect_to product_path(@product)
+     redirect_to :back
    end
 #------搜索栏------------
   def search
