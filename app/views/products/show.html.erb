@@ -17,7 +17,7 @@
        <% @photos.each_with_index do |p,index| %>
          <% if index <5 %>
            <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag p.avatar.small.url%></a></li>
-  
+
 
         <% else %>
           <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
