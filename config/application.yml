@@ -23,6 +23,8 @@ production:
   SEND_CLOUD_USER_NAME: "zhangwei19890518_test_zOWnZm"  # 你的 API_USER
 
   SEND_CLOUD_USER_KEY: "T3E9pkIz3QuLJVf3"  # 你的 API_KEY
+  PROJECT_ID:  "145195"
+  PROJECT_KEY:   "99b3be876a8ed45988883e2f266859a2"
 
 development:
 
@@ -37,3 +39,5 @@ development:
   SEND_CLOUD_USER_NAME: "zhangwei19890518_test_zOWnZm"  # 你的 API_USER
 
   SEND_CLOUD_USER_KEY: "T3E9pkIz3QuLJVf3"  # 你的 API_KEY
+  PROJECT_ID:  "145195" #airbrake的id
+  PROJECT_KEY:   "99b3be876a8ed45988883e2f266859a2" #airbrake的key
