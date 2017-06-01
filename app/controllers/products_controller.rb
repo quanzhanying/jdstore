@@ -31,6 +31,8 @@ class ProductsController < ApplicationController
       end
   end
 
+#-------加入购物车--------
+
   def add_to_cart
     @product = Product.find(params[:id])
     @quantity = params[:quantity].to_i
@@ -43,6 +45,14 @@ class ProductsController < ApplicationController
     flash[:warning] = "商品已加入购物车"
 
     redirect_to :back
+  end
+
+#--------直接购买--------------
+  def instant_buy
+    @product = Product.find(params[:id])
+    @quantity = params[:quantity].to_i
+    current_cart.add(@product, @quantity)
+    redirect_to carts_path
   end
 
 #-------点赞功能-----------

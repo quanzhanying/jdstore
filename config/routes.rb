@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
     member do
       post :add_to_cart
-      post :buy_now
+      post :instant_buy
       post :join
       post :quit
       put "like", to: "products#upvote"

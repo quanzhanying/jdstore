@@ -56,7 +56,7 @@
           </div>
           <!-- 商品服务 -->
           <div class="product-quantity">
-            包邮： 199元起包邮 | 7天无忧退货
+            包邮： 199元起包邮
           </div>
 
         </div>
@@ -66,8 +66,6 @@
           <div class="product-quantity">
             类别： <%= @product.category.name %>
           </div>
-
-
         </div>
       </div>
 
@@ -75,52 +73,52 @@
       <div class="add-to-cart-buttom row">
         <!--选择商品数量-->
         <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
-         <div class="buy-quantity">
-          <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
-          <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
-          <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
-         </div>
-
-
-        <!-- 加入购物车按钮 -->
-        <!-- <div class="col-sm-4">
-          <% if @product.quantity.present? && @product.quantity > 0 %>
-            <%= link_to add_to_cart_product_path(@product), method: :post, class: "btn btn-danger" do %>
-              <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
+          <div class="buy-quantity">
+            <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
+            <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
+            <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
+          </div>
+         <!-- 加入购物车按钮 -->
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-default" >
+              <% if @product.quantity.present? && @product.quantity > 0 %>
+              <i class="fa fa-shopping-cart" >加入购物车</i>
+              <% else %>
+              售罄
+              <% end %>
+            </button>
+          </div>
+          <!--直接购买-->
+          <div class="col-sm-4">
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+              <%= link_to("立即购买", instant_buy_product_path(@product), class: "btn btn-default",  :method => :post) %>
+            <% else %>
+            售罄
             <% end %>
-          <% else %>
-            <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
-          <% end %>
-        </div> -->
-        <button type="submit"  class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
-          <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
-        </button>
-        <!-- <button type="submit" link_to buy_now_product_path(@product) class="btn btn-danger <%= @product.quantity == 0 ? 'disabled' : '' %>">
-          立刻下单
-        </button> -->
+            </button>
+          </div>
         <% end %>
 
         <!-- 收藏商品按钮 -->
-        <!-- <div class="col-sm-4 product-collection">
-          <!-- <%= link_to("添加收藏 - 人气(26)", "#")%> -->
-          <!-- <% if current_user && current_user.is_member_of?(@product) %>
-            <%= link_to quit_product_path(@product), method: :post, class: " btn btn-lg btn-default pull-right" do%>
+        <div class="col-sm-4 product-collection">
+          <% if current_user && current_user.is_member_of?(@product) %>
+            <%= link_to quit_product_path(@product), method: :post, class: " btn btn-default pull-right" do%>
             <i class="fa fa-heart fa-lg"></i><% end %>
           <% else %>
-            <%= link_to join_product_path(@product), method: :post, class: " btn btn-lg btn-danger pull-right" do%>
+            <%= link_to join_product_path(@product), method: :post, class: " btn btn-danger pull-right" do%>
               <i class="fa fa-heart fa-lg"></i><% end %>
           <% end %>
-        </div> -->
+        </div>
 
         <!--  点赞 -->
-        <!-- <div class="col-sm-4 product-zan">
+        <div class="col-sm-4 product-zan">
         <%= link_to like_product_path(@product), method: :put do %>
           <div class="pi-thumbs-up">
             <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
             <a>人气（<%= @product.get_upvotes.size %>）</a>
           </div>
         <% end %>
-        </div> -->
+        </div>
       </div>
     </div>
 
@@ -189,9 +187,67 @@
           </div>
         </div>
       </div>
-    <!-- 购物指南区 -->
-      <!-- <div class="col-md-3">
-        <div class="product-recommend">
+    <!-- 推荐区 -->
+        <div class="col-md-3 proposal-product">
+        <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
+        <hr />
+        <div >
+          <% Product.limit(4).sort_by{|product| product.price}.each do |product| %>
+          <div class="productshow-box panel panel-default" style=" padding:0px">
+            <article class="col-item">
+              <div class="photo">
+                <div class="options">
+                  <!-- 收藏 -->
+                  <% if current_user && current_user.is_member_of?(product) %>
+                    <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="delete from wish list">
+                      <%= link_to("" ,quit_product_path(product), method: :post, class: " fa fa-heart")%>
+                    </button>
+                  <% else %>
+                    <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Add to wish list">
+                      <%= link_to("", join_product_path(product), method: :post, class: " fa fa-heart")%>
+                    </button>
+                  <% end %>
+                  <!-- 点赞 -->
+                  <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="love">
+                    <%= link_to like_product_path(product), method: :put do %>
+                      <div class="pi-thumbs-up">
+                        <i class="fa fa-thumbs-up " ></i>
+                        <%= product.get_upvotes.size %>
+                      </div>
+                    <% end %>
+                  </button>
+                </div>
+
+                <div class="options-cart">
+                  <button class="btn btn-default" title="Add to cart">
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                      <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-shopping-cart") %>
+                    <% else %>
+                    售罄
+                    <% end %>
+                  </button>
+                </div>
+                <%= link_to product_path(product) do %>
+                  <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].image.main.url, class: "thumbnail", class: " img-responsive center-block") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: " img-responsive center-block") %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="panel-footer">
+                <div class="row">
+                  <div class="price-details col-md-6">
+                    <h1><%= product.title %></h1>
+                    <span class="price-new">￥ <%= product.price %></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <% end %>
+        </div>
+        <!-- <div class="product-recommend">
           <h5>购物指南</h5>
           <hr>
           <h6>配送费用</h6>
@@ -209,8 +265,8 @@
           <hr>
           <h6>关于商品颜色</h6>
           <p>因拍摄灯光或显示器等因素，网页商品颜色可能与实物存在一定偏差，请以实物为准，敬请谅解。</p>
-        </div>
-      </div> -->
+        </div> -->
+      </div>
     </div>
   </div>
 </div>
