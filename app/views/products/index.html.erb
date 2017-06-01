@@ -23,8 +23,22 @@
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
           <% end %>
-          <span class="price">￥ <%= product.price %></span>
-          <span class="like"><%= link_to(content_tag(:i, '点赞人数', class: 'fa fa-thumbs-up'), "#") %></span>
+          <table>
+            <tr>
+              <td>
+                <span class="price">￥ <%= product.price %></span>
+              </td>
+              <td>
+                <%= link_to like_product_path(product), method: :put do %>
+                <div class="like">
+                <i class="fa fa-thumbs-up" , style="color:#ff5722;"></i>
+                <%= product.get_upvotes.size %>
+                </div>
+                <% end %>
+              </td>
+            </tr>
+          </table>
+
         </div>
       <% end %>
     </div>
