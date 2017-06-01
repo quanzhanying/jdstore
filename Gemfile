@@ -31,8 +31,8 @@ gem 'font-awesome-rails'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'carrierwave-qiniu'
- gem 'qiniu-rs'
- gem 'figaro'
+gem 'qiniu-rs'
+gem 'figaro'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
