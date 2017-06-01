@@ -55,11 +55,14 @@
                    <ul class="dropdown-menu">
                       <% if current_user.admin? %>
                         <li>
-                          <%= link_to("Admin 选单", admin_products_path ) %>
+                          <%= link_to("賣家選單", admin_products_path ) %>
                         </li>
                       <% end %>
                       <li>
-                         <%=  link_to("個人訂單列表", account_orders_path)  %>
+                         <%=  link_to("個人帳戶", edit_account_user_path(current_user))  %>
+                      </li>
+                      <li>
+                         <%=  link_to("個人訂單", account_orders_path)  %>
                       </li>
                       <li>
                         <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>

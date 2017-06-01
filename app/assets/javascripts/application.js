@@ -15,10 +15,15 @@
 //= require turbolinks
 //= require bootstrap
 //= require autosize.min
+//= require wow.min
 //= require_tree .
 
 $(document).ready(function () {
   $('#myCarousel').carousel({
     interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
   })
+})
+
+$(document).ready(function () {
+  new WOW().init();
 })

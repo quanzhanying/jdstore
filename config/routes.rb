@@ -30,16 +30,17 @@ Rails.application.routes.draw do
     end
   end
   namespace  :account  do
-    resources  :orders
+    resources :orders
+    resources :users
   end
 
-  resources  :cart_items
+  resources :cart_items
   resources :categories
 
   resources  :orders  do
       member  do
-        post  :pay_with_alipay
-        post  :pay_with_wechat
+        post :pay_with_alipay
+        post :pay_with_wechat
         post :apply_to_cancel
       end
     end
