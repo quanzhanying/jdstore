@@ -1,6 +1,7 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_required
+  before_action :set_categories, only: [:new, :create, :edit, :update]
 
   layout "admin"
 
@@ -68,6 +69,10 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
+
+  def set_categories
+    @categories = Category.all.map {|c| [c.name, c.id]}
+  end
 
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id)
