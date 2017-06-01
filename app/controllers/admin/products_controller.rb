@@ -8,6 +8,12 @@ class Admin::ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @photos = @product.photos
+  end
+
+
   def new
     @product = Product.new
     @categories = Category.all.map{ |c| [c.name, c.id]}

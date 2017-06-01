@@ -3,48 +3,31 @@
     <img id="zoom_01" src=<%= @product.image.medium.url %> data-zoom-image=<%= @product.image.url %> >
 
 
+    <% if @photos.present? %>
+     <div class="tab-content show-picture">
+       <% @photos.each_with_index do |p,index| %>
+         <% if index <5 %>
+          <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>"><%= (image_tag p.avatar.medium.url) %>
+          </div>
+         <% end %>
+       <% end %>
+     </div>
 
+     <ul class="show-photo-xsmall-box nav nav-tabs">
+       <% @photos.each_with_index do |p,index| %>
+         <% if index <5 %>
+           <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag p.avatar.small.url%></a></li>
+  
 
+        <% else %>
+          <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
+        <% end %>
+      <% end %>
+    </ul>
 
-    <% if @product.image.present? %>
-           <!-- <% @photos.each_with_index do |p, index| %>
-          <% if index == 0 %>
-            <%= image_tag p.avatar.medium.url %>
-            <div style="letter-spacing: -8px">
-          <% else %>
-            <%= image_tag p.avatar.thumb.url %>
-          <% end %>
-       <% end %> -->
-
-       <!-- 主图 -->
-           <div class="col-md-6">
-               <div class="productDetail">
-                 <div class="productDetail-left">
-                   <div class="productDetail-left-bigImage">
-                     <%= image_tag(@product.photos[0].avatar.thumb.url) %>
-                   </div>
-            </div>
-       <!-- 下方小图-->
-           <div class="col-md-6">
-                   <%= image_tag @product.photos[0].avatar.medium.url  %>
-                 </div>
-                 <div class="productDetail-left-imageList-item">
-                   <%= image_tag @product.photos[1].avatar.medium.url  %>
-                 </div>
-                 <div class="productDetail-left-imageList-item">
-                   <%= image_tag @product.photos[2].avatar.medium.url  %>
-                 </div>
-
-               </div>
-             </div>
-           </div>
-           </div>
-
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-
+  <% end %>
   </div>
+
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
