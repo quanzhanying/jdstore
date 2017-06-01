@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require autosize.min
 //= require_tree .
 
 $(document).ready(function () {
