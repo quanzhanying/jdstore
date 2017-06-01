@@ -4,6 +4,8 @@
     <%= f.input :description, input_html: { class: "form-control"} %>
     <%= f.input :price, input_html: { class: "form-control"} %>
     <%= f.input :stock, input_html: { class: "form-control"} %>
+    <%= f.select :category_id @categories %>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
 <% end %>

@@ -14,6 +14,7 @@
       </p>
     </div>
     <div> 数量 : <%= @product.stock %> </div>
+    <div> 类别 : <%= @product.categroy.name %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
     <div class="pull-right">
       <% if @product.stock.present? && @product.stock > 0 %>
