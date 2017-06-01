@@ -21,16 +21,21 @@
 
   <div class="group">
       <%= f.select :category_id, @categories %>
-
-  <% if @product.image.present? %>
-      <span>目前商品图</span> <br>
-      <%= image_tag(@product.image.thumb.url) %>
-  <% end %>
-
-  <div class="group">
-      <%= f.input :image, as: :file %>
-
   </div>
+
+<% if @product.photos.present? %>
+  <span>目前商品圖</span> <br>
+<% @product.photos.each do |p| %>
+  <%= image_tag p.avatar.thumb.url %><br>
+  <% end %>
+<% end %>
+
+<div class="group">
+  <%= f.input :image, as: :file %>
+  <%= f.label :avatar %><br>
+  <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+</div>
+
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
