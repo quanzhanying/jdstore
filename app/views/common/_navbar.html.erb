@@ -67,10 +67,12 @@
               <% else %>
               <li><%= link_to("我的收藏", account_products_path) %></li>
               <% end %>
+              <hr>
               <li><%= link_to("我的账户", edit_account_user_path(current_user)) %></li>
               <li>
                 <%= link_to("我的订单", account_orders_path ) %>
               </li>
+              <hr>
               <li><%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
