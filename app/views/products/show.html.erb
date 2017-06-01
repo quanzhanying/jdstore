@@ -60,6 +60,26 @@
    </div>
 </div>
 
+<!-- qrcode二维码 -->
+<div id="overlay" onclick="off()">
+  <div id="text">扫一扫，分享给好友~
+    <%= raw @qr.as_html %>
+  </div>
+</div>
+<div style="padding:10px">
+  <button onclick="on()">
+    <i class=" fa fa-weixin fa-3x" aria-hidden=" true"></i>
+  </button>
+</div>
+<script>
+  function on() {
+    document.getElementById("overlay").style.height = "100%";
+  }
+  function off() {
+    document.getElementById("overlay").style.height = "0";
+  }
+</script>
+
 
 
 <!-- 美洽客服 -->

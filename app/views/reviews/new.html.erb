@@ -1,0 +1,30 @@
+<div class="col-md-4 col-md-offset-4">
+  <%= simple_form_for [@product, @product.reviews.build] do |f| %>
+
+    <div class="productDetail-evaluation ">
+      <div class="intro-text-count clearfix ">
+        <div >价值指数: </div>
+        <div id="star-value"></div>
+      </div>
+      <div class="intro-text-count clearfix ">
+        <div >风险指数: </div>
+        <div id="star-risk"></div>
+      </div>
+      <div class="intro-text-count clearfix ">
+        <div >未来指数: </div>
+        <div id="star-furtue"></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <%= f.input :body, label: "内容", input_html: { class: "form-control"} %>
+    </div>
+
+    <div class="group">
+      <%= f.submit "提交", data: { disable_with: "Submitting..." } %>
+    </div>
+
+  <% end %>
+</div>
+
+<script src="/assets/application.js"></script>

@@ -1485,3 +1485,51 @@ div.cart__main__wapper {
     .account{
       text-align: center;
     }
+
+
+/*-------qrcode二维码----*/
+    #overlay table {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    }
+    #overlay td {
+    border-left: solid 12px #000;
+    padding: 0;
+    margin: 0;
+    width: 0px;
+    height: 12px;
+    }
+    #overlay td.black { border-color: #000; }
+    #overlay td.white { border-color: #fff; }
+    #overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    background-color: rgba(0,0,0,0.8);
+    // z-index: -1;
+    cursor: pointer;
+    }
+    #text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    }
+    button {
+        color: #62b900;
+        font: inherit;
+        margin: 0;
+        background-color: transparent;
+        border: 0px;
+        }
