@@ -1,0 +1,33 @@
+<div class="detail productList-wrap mt20 w1200 bc pb50">
+<div class="intro clearfix">
+  <div class="fl col-xs-4">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %>
+  </div>
+  <div class="intro-text fr">
+        <h3 class="f20 ell fb"><%= @product.title %></h3>
+        <p class="intro-text-desc"><%= @product.description %></p>
+        <p class="intro-text-value">
+          <span class="pl20 pr30">售价</span><span class="price f24 fb col-red">￥<%= @product.price %></span>
+        </p>
+        <p class="intro-text-count">
+        <span class="pl20 pr30">库存</span><span id="quantity"><%= @product.quantity %></span>
+        </p>
+        <div class="intro-text-quantity clearfix">
+          <span class="pl20 pr30 fl">数量</span>
+          <div class="countNumber fl mt10">
+            <%= link_to("-", remove_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
+            <input class="countNumber-input" type="text" value="<%= @product.buying_quantity %>">
+            <%= link_to("+", add_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
+          </div>
+        </div>
+
+          <p class="intro-text-btnWrap">
+            <%= render :partial => "products/cart_btn"%>
+          </p>
+  </div>
+</div>
+</div>

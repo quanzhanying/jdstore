@@ -1,0 +1,3 @@
+$('.countNumber-btn-plus').bind('ajax:success', function(e, data) {
+	$('.countNumber-input').val('<%= @product.buying_quantity %>')
+});
