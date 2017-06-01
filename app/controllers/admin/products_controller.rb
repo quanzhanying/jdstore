@@ -36,6 +36,12 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to :back
+  end
+
   def create
     @product = Product.new(product_params)
 
