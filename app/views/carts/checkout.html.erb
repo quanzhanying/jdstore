@@ -50,18 +50,19 @@
 
           <legend>訂購人</legend>
           <div  class= "form-group col-lg-6" >
-            <%=  f.input  :billing_name   %>
+            <%=  f.input  :billing_name, input_html: {value: current_user.name, class: 'width-50'}  %>
           </div>
           <div  class= "form-group col-lg- 6" >
-            <%=  f.input  :billing_address   %>
+            <%=  f.input  :billing_address, input_html: {value: current_user.address}   %>
+
           </div>
 
           <legend>收貨人</legend>
           <div  class= "form-group col-lg-6" >
-           <%=  f.input  :shipping_name   %>
+           <%=  f.input  :shipping_name, input_html: {value: current_user.name, class: 'width-50'}   %>
           </div>
           <div  class= "form-group col-lg -6" >
-            <%=  f.input  :shipping_address   %>
+            <%=  f.input  :shipping_address, input_html: {value: current_user.address}    %>
           </div>
 
         <div  class= "checkout" >
