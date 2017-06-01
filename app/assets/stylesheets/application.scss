@@ -12,11 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "font-awesome";
 
 .admin_proudct_table{
   border: solid 3px #dcdcdc;
@@ -175,4 +176,15 @@
 }
 .alert{
   margin-top: 10px;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.list-inline > li {
+    width: 10%;
 }

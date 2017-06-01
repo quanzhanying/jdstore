@@ -2,10 +2,22 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @all_products =  Hash.new
+    @categoies = ProductCategory.all
+    @products.each do |product|
+         product_temps = @all_products[product.category]
+         if product_temps.blank?
+           product_temps = Array.new
+           @all_products[product.category] = product_temps
+         end
+         product_temps.push(product)
+    end
+
   end
 
   def show
     @product = Product.find(params[:id])
+    @categoies = ProductCategory.all
   end
 
   def add_to_cart
@@ -21,6 +33,12 @@ class ProductsController < ApplicationController
       flash[:warning] = "商品已下架"
     end
     redirect_to :back
+  end
+
+  def filter_by_category
+    @category = ProductCategory.find(params[:id])
+    @products = Product.where(:category => @category.name).all
+    @categoies = ProductCategory.all
   end
 
   private
