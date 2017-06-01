@@ -556,7 +556,7 @@ a:hover {
 
 .page-wrap {
   min-height: 100%;
-  min-width: 100%;
+  min-width: 75%;
   margin-bottom: -60px;
 }
 
@@ -571,13 +571,30 @@ a:hover {
 
 .account-view .account-detail {
   margin: 10px auto;
-  color: #ffffff;
-  width: 900px;
-  height: 500px;
+  color: #3c3d42;
+  text-align: center;
 }
 
 .account-view .account-detail .title {
+  font-size: 1em;
   margin-bottom: 50px;
+}
+
+.btn-account {
+  margin: 3em;
+  color: #ffffff;
+  background-color: #0f4644;
+  border-color: transparent;
+  width: 20%;
+}
+.panel-heading-account {
+  height: 60px;
+  margin-bottom: -5px;
+  padding: 20px;
+  text-align: center;
+  background-color: #0f4644;
+  color: #edbdb5;
+  font-size: 1.2em;
 }
 
 // 我的账户中心結束
