@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :like
+      post :unlike
     end
 
     collection do

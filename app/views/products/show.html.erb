@@ -25,7 +25,11 @@
           <h4 class="stock">库存：<%= @product.quantity %></h4>
           <div class="actions">
             <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-default add-to-cart")%>
-            <%= link_to(content_tag(:i, '点赞', class:'fa fa-heart'), "#", class: "btn btn-default like") %>
+            <% if current_user && current_user.has_liked?(@product) %>
+              <%= link_to("取消点赞", unlike_product_path(@product), method: :post, class: "btn btn-default like") %>
+            <% else %>
+              <%= link_to(content_tag(:i, "点赞", class:'fa fa-heart'), like_product_path(@product), method: :post, class: "btn btn-default like") %>
+            <% end %>
           </div>
         </div>
       </div>

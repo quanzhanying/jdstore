@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-
+  before_action :authenticate_user!, only: [:like, :unlike]
   def index
     @products = Product.order("position ASC")
   end
@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
       @products = Product.all
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(:category_id => @category_id) 
+      @products = Product.where(:category_id => @category_id)
     end
   end
 
@@ -28,6 +28,28 @@ class ProductsController < ApplicationController
       flash[:warning] = "你的购物车内已有此物品"
     end
     redirect_to :back
+  end
+
+  def like
+    @product = Product.find(params[:id])
+    if !current_user.has_liked?(@product)
+      current_user.like!(@product)
+      flash[:notice] = "谢谢你对我们的认可！"
+    else
+      flash[:warning] = "你已经给该书点过赞了！"
+    end
+    redirect_to product_path(@product)
+  end
+
+  def unlike
+    @product = Product.find(params[:id])
+    if current_user.has_liked?(@product)
+      current_user.unlike!(@product)
+      flash[:alert] = "谢谢反馈，我们会继续努力！"
+    else
+      flash[:warning] = "你还没有点赞呢！"
+    end
+    redirect_to product_path(@product)
   end
 
   def search
