@@ -35,6 +35,10 @@ $(window).scroll(function () {
     $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
   }
 })
+//商品index页面
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 // 商品详情页面的图片切换
 $(document).on('mouseover', '.productDetail-left-imageList-item', function () {
