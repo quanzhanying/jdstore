@@ -18,6 +18,7 @@ u.save
 Product.create!(title: "恋情的终结",
   description: "书",
   price: 39.2,
+  author: "格雷厄姆·格林",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51hYTActU4L._SX357_BO1,204,203,200_.jpg")
   )
@@ -25,6 +26,7 @@ Product.create!(title: "恋情的终结",
 Product.create!(title: "浮生六记",
   description: "书",
   price: 33.75,
+  author: "沈复",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51v7artv36L._SX384_BO1,204,203,200_.jpg")
   )
@@ -32,6 +34,7 @@ Product.create!(title: "浮生六记",
 Product.create!(title: "步履不停",
   description: "书",
   price: 26.2,
+  author: "是枝裕和",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51MJN%2BwqDTL._SX366_BO1,204,203,200_.jpg")
   )
@@ -39,6 +42,7 @@ Product.create!(title: "步履不停",
 Product.create!(title: "这么慢，那么美",
   description: "书",
   price: 26.2,
+  author: "罗敷",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/510im9j53mL._SX357_BO1,204,203,200_.jpg")
   )
@@ -46,6 +50,7 @@ Product.create!(title: "这么慢，那么美",
 Product.create!(title: "我这一辈子",
   description: "书",
   price: 23.3,
+  author: "",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51ni-h62dOL._SX320_BO1,204,203,200_.jpg")
   )
@@ -53,6 +58,7 @@ Product.create!(title: "我这一辈子",
 Product.create!(title: "时间简史",
   description: "书",
   price: 31.1,
+  author: "史蒂芬·霍金",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51ewBewBwIL._SX390_BO1,204,203,200_.jpg")
   )
@@ -60,6 +66,7 @@ Product.create!(title: "时间简史",
 Product.create!(title: "皮特猫",
   description: "书",
   price: 62.8,
+  author: "艾瑞克·利特温",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51VECKzx4fL._SX395_BO1,204,203,200_.jpg")
   )
@@ -67,6 +74,7 @@ Product.create!(title: "皮特猫",
 Product.create!(title: "摩尔人的最后叹息",
   description: "书",
   price: 39.2,
+  author: "萨曼·鲁西迪",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51qzGyYrHbL._SX380_BO1,204,203,200_.jpg")
   )

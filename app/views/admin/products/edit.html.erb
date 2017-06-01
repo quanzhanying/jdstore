@@ -5,6 +5,10 @@
 </div>
 
 <div class="group">
+  <%= f.input :author %>
+</div>
+
+<div class="group">
   <%= f.input :description %>
 </div>
 
@@ -29,7 +33,7 @@
   <%= f.input :image, as: :file %>
 </div>
 
-<%= f.submit "Update Product", data: {disable_with: "Submiting..."} %>
+<%= f.submit t("admin.update_product"), data: {disable_with: "Submiting..."} %>
 <% end %>
 
 <script>
