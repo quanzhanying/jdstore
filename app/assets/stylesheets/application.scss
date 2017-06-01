@@ -344,6 +344,24 @@ body {
   margin: 0 -15px auto;
   background-color: #FFFDE7;
   padding-top: 60px;
+  .product-title, .price, .stock, .quantity{
+    margin-bottom: 30px;
+  }
+  .price span{
+    color: #ff9f1a;
+  }
+  .add-to-cart, .like{
+    background: #ff9f1a;
+    padding:1.2em 1.5em;
+    border: none;
+    text-transform: UPPERCASE;
+    font-weight: bold;
+    color: #fff;
+  }
+  .add-to-cart:hover, .like:hover{
+    background: #b36800;
+    color: #fff;
+  }
   #pro-info{
     background-color: #fff;
     border: 1px solid orange;
