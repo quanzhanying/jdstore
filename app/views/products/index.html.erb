@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row col-md-offset-0">
   <% @products.each do |product| %>
-    <div class="col-md-4 col-xs-offset-2">
+    <div class="col-md-3 col-md-offset-0">
       <%= link_to product_path(product) do %>
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
@@ -9,6 +9,13 @@
         <% end %>
       <% end %>
       <%= product.title %> ￥ <%= product.price %>
+      <br>
+      <br>
     </div>
   <% end %>
+
+  <% if @products.blank? %>
+    <h4 align="center">抱歉，没有找到与“<%= params[:search] %>”有关的结果。</h4>
+  <% end %>
+
 </div>
