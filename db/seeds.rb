@@ -27,7 +27,7 @@ if Product.count == 0
     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
     price: 298,
     quantity: 5,
-    image: open("http://imgs-qn.iliangcang.com/ware/upload/orig/2/354/354800.jpg"),
+    image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg5uee47asj30rs0rsgn4.jpg"),
     category_id: 1
     )
 
@@ -35,7 +35,7 @@ if Product.count == 0
     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
     price: 299,
     quantity: 5,
-    image: open("http://imgs-qn.iliangcang.com/ware/upload/orig/2/373/373935.jpg"),
+    image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg5udmiot9j30id0id0uz.jpg"),
     category_id: 1
     )
 
@@ -43,7 +43,15 @@ if Product.count == 0
     description: "小蓝边碗",
     price: 699,
     quantity: 5,
-    image: open("http://imgs-qn.iliangcang.com/ware/upload/orig/2/306/306268.jpg"),
+    image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg5ucpv8itj30ku0kuqat.jpg"),
+    category_id: 1
+    )
+
+  Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
+    description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
+    price: 298,
+    quantity: 5,
+    image: open("https://ws1.sinaimg.cn/large/006tKfTcly1fg5ua4hmg6j30640640sl.jpg"),
     category_id: 1
     )
 
@@ -57,6 +65,7 @@ if Product.count == 0
   else
     puts "Product created already"
   end
+
 
   # Intialize category
   if Category.count == 0

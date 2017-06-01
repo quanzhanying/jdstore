@@ -162,7 +162,7 @@
      left: 0;
      width: 100%;
      height: 100%;
-     background-color: rgba(0, 0, 0, 0.40);
+    //  background-color: rgba(0, 0, 0, 0.40);  /*--- 大图滤镜效果 -----*/
  }
  .bs-slider > .carousel-inner > .item > img,
  .bs-slider > .carousel-inner > .item > a > img {
@@ -170,6 +170,11 @@
      width: 100% !important;
  }
 
+ .item img{
+  width: 100%;
+  height: 100%;
+
+ }
  /********************
  *****Slide effect
  **********************/
@@ -499,17 +504,12 @@
 
 /*----- main campaign -----*/
 
-.mainCampaign {
-  z-index: 1;
-  height: auto;
-  width: 100%;
-  background: #f7f7f7;
-  /*------ 图片置中 -----*/
+.mainproduct {
+  margin: 50px 60px 50px 60px;
+}
+
+.detail{
   text-align: center;
-  position: relative;
-  padding-top: 10px;
-  /*----- 距离navbar -----*/
-  background-position: center center;
 }
 
 
@@ -573,6 +573,14 @@
   font-size: 100%;
   border-style: solid;
 }
+
+.product-item {
+  .image {
+    width: 250px;
+    height:250px;
+  }
+}
+
 
 
 
