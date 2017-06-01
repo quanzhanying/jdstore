@@ -11,12 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
-//= require jquery_ujs
+//= require jquery_ujs   //删除并修改了部分内容，详见报错记录023 http://majing-blog.logdown.com/posts/1905683
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require_tree .
 //------首页轮播--------
 $(document).ready(function() {
@@ -44,7 +41,8 @@ $(document).on('mouseover', '.productDetail-left-imageList-item', function () {
 
 
 //products/show页面 购买商品数量的改变
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {    //见报错记录023 http://majing-blog.logdown.com/posts/1905683
+$(document).ready(function(){
   /*增加数量*/
   $("#quantity-plus").click(function(e) {
     var num = parseInt($("#quantity-input").val()) + 1;
