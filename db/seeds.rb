@@ -9,3 +9,8 @@ u = User.new(email: "administer1@jd.com", password: "123456", password_confirmat
 u.save
 u.is_admin = true
 u.save
+
+Category.create(name: "宫廷燕窝")
+Category.create(name: "美肤香体")
+Category.create(name: "零食干果")
+Category.create(name: "精油药膏")
