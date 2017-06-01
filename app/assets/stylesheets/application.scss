@@ -339,7 +339,7 @@ body {
   }
 }
 
-//-------products show product-------
+//-------products show page-------
 #show{
   margin: 0 -15px auto;
   background-color: #FFFDE7;
@@ -365,6 +365,21 @@ body {
   }
   #pro-info{
     background-color: #fff;
-    border: 1px solid orange;
+    border: 0.5px;
   }
+}
+
+#review{
+  margin: 0 -15px auto;
+  background-color: #FFFDE7;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .tab{
+    background-color: #fff;
+    border: 0.5px;
+  }
+  .navbar-tabs{
+    border-bottom-width: 0;
+  }
+
 }
