@@ -15,7 +15,7 @@
     </div>
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ￥ <%= @product.price %> </div>
-
+     <!-- 商品页调整商品数量 -->
       <% if @product.quantity.present? && @product.quantity >0 %>
         <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
          <div class="buy-quantity">

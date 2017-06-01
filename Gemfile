@@ -49,7 +49,7 @@ gem 'figaro'
 
 #搜索功能
 gem 'ransack'
-
+#商品页调整商品数量 
 gem 'jquery-turbolinks'
 
 group :development, :test do

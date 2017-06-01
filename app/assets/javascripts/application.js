@@ -37,7 +37,7 @@ Credits: Bootstrap, jQuery, TouchSwipe, Animate.css, FontAwesome
 
 $('#bootstrap-touch-slider').bsTouchSlider();
 
-
+  /*商品页调整商品数量*/
 $(document).ready(function() {
   /*增加数量*/
   $("#quantity-plus").click(function(e) {
