@@ -24,7 +24,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.category_id = params[:category_id] #添加的category的代码
-    if @product.save
+    if @product.save!
       if params[:photos] != nil
          params[:photos]['avatar'].each do |a|
            @photo = @product.photos.create(:avatar => a)
