@@ -96,4 +96,7 @@ Rails.application.configure do
     user_name: ENV["SEND_CLOUD_USER_NAME"],
     password: ENV["SEND_CLOUD_USER_KEY"]
     }
+
+  config.serve_static_assets = true
+  config.assets.compile = true
 end
