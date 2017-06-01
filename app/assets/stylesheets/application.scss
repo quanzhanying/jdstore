@@ -21,38 +21,56 @@
  // 导航栏
 
 
+ //搜索
+ .search {
+   float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+   width: 400px;
+   margin-left: 400px; /*右边距*/
+   margin-top: 10px; /*上边距*/
+   position: relative; /*相对定位*/
+ }
 
-
-//搜索
-.search {
-  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
-  width: 400px;
-  margin-left: 400px; /*右边距*/
-  margin-top: 10px; /*上边距*/
-  position: relative; /*相对定位*/
+.welcome{
+  margin-top: 15px;
+  margin-left: 1220px;
 }
 
+.list {
+  float: left; /*你去左边*/
+  margin-left: 1100px;
 
-
-/*5种背景颜色*/
-.bg-color1 {
-  background: #FFFFFF; /*白色*/
 }
 
-.bg-color2 {
-  background: #F25F5C;
+.dropdown {
+
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+  padding-right: 70px; /*右边加点空间，不然太挤啦*/
+
 }
 
-.bg-color3 {
-  background: #FFE066;
+.cart-wrap {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+
+}
+.cart {
+  float: left;
 }
 
-.bg-color4 {
-  background: #247BA0;
+.fa-shopping-cart {
+  color: #C81623; /*红色图标*/
+  font-size: 16px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
 }
 
-.bg-color5 {
-  background: #70C1B3;
+.cart a {
+  color: #6D6D6D; /*灰色字体*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.cart a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
 }
 
 

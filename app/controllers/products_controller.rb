@@ -7,14 +7,18 @@ before_action :validate_search_key, only: [:search]
   def index
     if params[:category].blank?
       @products = Product.all
+
     else
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(:category_id => @category_id)
+
     end
+
   end
 
   def show
     @product = Product.find(params[:id])
+
   end
 
   def add_to_cart
@@ -33,7 +37,7 @@ before_action :validate_search_key, only: [:search]
   def search
       if @query_string.present?
         search_result = Product.ransack(@search_criteria).result(:distinct => true)
-        @products = search_result.paginate(:page => params[:page], :per_page => 12 )
+        @products = search_result.paginate(:page => params[:page], :per_page => 5 )
       end
     end
 
@@ -49,10 +53,5 @@ before_action :validate_search_key, only: [:search]
     def search_criteria(query_string)
       { :title_cont => query_string }
     end
-
-
-
-
-
 
 end

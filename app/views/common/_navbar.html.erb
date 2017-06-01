@@ -25,6 +25,7 @@
 
 
 
+
     <div class="nav navbar-nav navbar-right">
                     <% if !current_user %>
                      <li class="navbar-listItem">
@@ -33,12 +34,20 @@
                      <li class="navbar-listItem">
                           <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-out'), new_user_session_path) %>
                      </li>
-                      <% else %>
-                      <li class="dropdown">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                           Hi!, <%= current_user.email %>
-                              <b class="caret"></b>
-                              </a>
+                      <% end %>
+    </div>
+
+
+
+              <% if  current_user %>
+                  <div class="welcome">
+                   Hi!, <%= current_user.email %>
+                 </div>
+                 <div class="list">
+                    <div class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                         账户信息
+                      <b class="caret"></b></a>
                           <ul class="dropdown-menu">
                               <% if current_user.admin? %>
                            <li>
@@ -48,8 +57,22 @@
                               <li> <%= link_to("个人订单列表", account_orders_path ) %> </li>
                               <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                             </ul>
-                        </li>
-                      <% end %>
+                    </div>
+
+                    <div class="cart-wrap">
+                     <div class="cart">
+                     <a href="/carts">
+                     <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(<%= current_cart.products.count %>)
+                     </a>
+                    </div>
+                    </div>
+                    <% end %>
+
     </div>
+    </div>
+
+
+
+
   </div>
 	</nav>
