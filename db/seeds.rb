@@ -70,8 +70,9 @@ if Product.count == 0
   # Intialize category
   if Category.count == 0
     puts "Creating category"
-    Category.create!(name: "饮食餐具")
-    Category.create!(name: "烹饪工具")
+    Category.create!(name: "饮食餐具系列")
+    Category.create!(name: "烹饪工具系列")
+    Category.create!(name: "特品系列")
   else
     puts "Category created already"
   end
