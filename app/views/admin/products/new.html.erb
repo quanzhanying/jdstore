@@ -9,6 +9,10 @@
 </div>
 
 <div class="group">
+  <%= f.input :description %>
+</div>
+
+<div class="group">
   <%= f.association :category %>
 </div>
 
@@ -24,7 +28,7 @@
   <%= f.input :image, as: :file %>
 </div>
 
-<%= f.submit "Create Product", data: {disable_with: "Submiting..."} %>
+<%= f.submit t("admin.create_product"), data: {disable_with: "Submiting..."} %>
 <% end %>
 
 <script>
