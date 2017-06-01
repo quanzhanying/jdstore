@@ -1,26 +1,51 @@
-<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail wow pulse", data: { wow_delay: "0.2s" }) %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2><%= @product.title %></h2>
-    <div style = "height: 100px;">
-      <p>
-        <%= @product.description %>
-      </p>
+<div class="container-fluid text-center" id="show">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" id="pro-info">
+      <div class="row">
+        <div class="col-md-4">
+          <% if @product.image.present? %>
+            <%= image_tag(@product.image.medium.url, class: "thumbnail wow pulse", data: { wow_delay: "0.2s" }) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        </div>
+        <div class="details col-md-8">
+          <h3 class="product-title"><%= @product.title %></h3>
+          <div class="rating">
+            <div class="stars">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+          <p class="product-description"><%= @product.description %></p>
+          <h4 class="prict">price</h4>
+          <div class="actions">
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-default add_to_cart")%>
+            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>数量 ：<%= @product.quantity %></div>
-    <div class="product-price"> ￥ <%= @product.price %></div>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-danger") %>
-      <% else %>
-        已销售一空，无法购买
-      <% end %>
+  </div>
+</div>
+
+<div class="container-fluid" id="review">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+  <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">商品介绍</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">商品评价</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">...</div>
+        <div role="tabpanel" class="tab-pane" id="profile">...</div>
+      </div>
     </div>
   </div>
 </div>

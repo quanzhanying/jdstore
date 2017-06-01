@@ -17,6 +17,7 @@
 //= require bootstrap/collapse
 //= require bootstrap/transition
 //= require bootstrap/carousel
+//= require bootstrap/tab
 //= require autosize.min
 //= require wow.min
 //= require jquery.countdown.min
