@@ -6,6 +6,7 @@ end
 
 def show
   @product = Product.find(params[:id])
+  @photos = @product.photos.all
 end
 
 def add_to_cart
