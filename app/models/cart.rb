@@ -19,7 +19,12 @@ class Cart < ApplicationRecord
       cart_item = cart_items.build
     end
     cart_item.product = product
-    cart_item.quantity += quantity
+
+    if quantity > 0
+      cart_item.quantity = quantity
+    else
+      cart_item.quantity = 1
+    end
     cart_item.save
   end
 

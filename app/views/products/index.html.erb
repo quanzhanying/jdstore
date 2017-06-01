@@ -38,11 +38,10 @@
         			<div class="options-cart">
         				<button class="btn btn-default" title="Add to cart">
                   <% if product.quantity.present? && product.quantity > 0 %>
-                  <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-shopping-cart") %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-shopping-cart") %>
                   <% else %>
                   售罄
                   <% end %>
-        					<!-- <span class="fa fa-shopping-cart"></span> -->
         				</button>
         			</div>
               <%= link_to product_path(product) do %>
