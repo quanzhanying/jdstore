@@ -28,12 +28,6 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
-  private
-
-  def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
-  end
-
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("alipay")
@@ -48,5 +42,11 @@ class OrdersController < ApplicationController
     @order.pay!
 
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
   end
 end
