@@ -41,6 +41,10 @@ class ProductsController < ApplicationController
     @categoies = ProductCategory.all
   end
 
+  def favorite
+    flash[:notice] = "商品已收藏"
+  end
+
   private
   def product_params
     params.require(:product).permit(:title, :description, :price, :quantity)

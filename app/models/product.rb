@@ -16,4 +16,14 @@ class Product < ApplicationRecord
       end
     end
   end
+
+ def prodcut_type
+   type = "toy"
+   if self.category == "喂养"
+     type = "eat"
+   else self.category == "儿童服饰" || self.category == "婴幼儿服饰"
+     type = "cloth"
+   end
+ end
+
 end

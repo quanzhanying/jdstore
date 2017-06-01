@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
       get :filter_by_category
+      post :favorite
     end
   end
 

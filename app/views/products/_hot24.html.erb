@@ -1,0 +1,47 @@
+<div class="col-md-4 right">
+  <div class="row hot24">
+    <div class="header">
+      24小时热销榜
+    </div>
+    <div class="body">
+      <ul class="hotSell">
+
+        <%  for i in 1..10 %>
+          <li class="item">
+            <a href="" target="_blank">
+              <div class="img-wrap">
+                <img width="250" height="250" src="http://yanxuan.nosdn.127.net/a7c7eec41194e65d64931a2d08ef4f8c.png">
+              </div>
+              <div class="content">
+                <div class="title">
+                  <span class="name">新疆阿瓦提长绒棉弱捻超柔毛巾</span>
+                </div>
+                <div class="price">¥12</div>
+              </div>
+            </a>
+          </li>
+        <% end %>
+        <li class="item">
+          <a href="" target="_blank">
+            <div class="img-wrap">
+              <img width="250" height="250" src="http://yanxuan.nosdn.127.net/a7c7eec41194e65d64931a2d08ef4f8c.png">
+            </div>
+            <div class="content">
+              <div class="title">
+                <span class="name">新疆阿瓦提长绒棉弱捻超柔毛巾</span>
+              </div>
+              <div class="price">¥12</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+  </div>
+    <% if @popluar24.blank? %>
+     <div class="row ">
+
+     </div>
+    <%else %>
+
+    <% end %>
+  </div>
+</div>
