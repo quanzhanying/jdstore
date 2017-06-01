@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <!-- 右侧下拉选单（移动端显示）-->
         <div class="navbar-header">
@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
           </button>
         <!-- 网站名称 -->
-            <a class="navbar-brand " href="/">穿梭市集</a>
+          <a class="navbar-brand " href="/">穿梭市集</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -35,7 +35,7 @@
             <input type="text" name="keyword" class="form-control" placeholder="搜寻好物..." value="">
             <div class="input-group-btn">
               <button class="btn btn-default" type="submit" ><span><i class="fa fa-search"></i></span>开始</button>
-            </div>             
+            </div>
           </div>
         </form>
 
@@ -58,7 +58,6 @@
             </a>
 
         <ul class="dropdown-menu">
-
             <% if current_user.admin? %>
               <li>
                 <%= link_to("Admin 选单", admin_products_path ) %>
