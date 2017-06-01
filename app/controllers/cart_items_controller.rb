@@ -1,5 +1,6 @@
 class CartItemsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  respond_to :js
 
   def destroy
     @cart = current_cart
@@ -45,7 +46,7 @@ class CartItemsController < ApplicationController
       elsif @cart_item.quantity == 0
            redirect_to carts_path, alert: "商品不能少于零！"
       end
-  end  
+  end
 
   private
 
