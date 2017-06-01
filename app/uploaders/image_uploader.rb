@@ -8,14 +8,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   #storage :file
   # storage :fog
 
+  storage :qiniu
 
 
-
-     if Rails.env.production? #远端
-       storage :qiniu
-     else Rails.env.development? #本地
-      storage :file
-     end
+    #  if Rails.env.production? #远端
+    #    storage :qiniu
+    #  else Rails.env.development? #本地
+    #   storage :file
+    #  end
 
 
 
