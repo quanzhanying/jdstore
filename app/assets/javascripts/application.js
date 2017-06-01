@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs   //删除并修改了部分内容，详见报错记录023 http://majing-blog.logdown.com/posts/1905683
+//= require jquery_ujs   
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
