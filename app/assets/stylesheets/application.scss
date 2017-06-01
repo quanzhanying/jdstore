@@ -14,6 +14,12 @@
  *= require_self
  */
 
+.body{
+  padding: 55px 0 0 0
+}
+
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
@@ -78,7 +84,7 @@
 .title {
   width: 520px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
-  margin-top: 100px; /*上边距*/
+  margin-top: 50px; /*上边距*/
 }
 .title-1 {
   font-size: 50px; /*设置字体36px*/
