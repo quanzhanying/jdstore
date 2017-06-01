@@ -4,13 +4,13 @@ if User.where(:email => "admin@test.com").all.count == 0
 end
 
 products_info = [
- {title: 'a', catetoy: "婴幼儿服饰", description: '4',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
- {title: 'b', catetoy: "儿童服饰", description: '3',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
- {title: 'c', catetoy: "配搭", description: '2',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
- {title: 'd', catetoy: "妈咪", description: '1',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
- {title: 'e', catetoy: "寝居玩具", description: '1',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
- {title: 'f', catetoy: "婴童", description: '1',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
- {title: 'g', catetoy: "喂养", description: '1',image: 'https://ws3.sinaimg.cn/large/006tNc79gy1fg5ylhho85j30by0byq3m.jpg'},
+ {title: 'a', catetoy: "婴幼儿服饰", description: '4',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
+ {title: 'b', catetoy: "儿童服饰", description: '3',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
+ {title: 'c', catetoy: "配搭", description: '2',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
+ {title: 'd', catetoy: "妈咪", description: '1',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
+ {title: 'e', catetoy: "寝居玩具", description: '1',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
+ {title: 'f', catetoy: "婴童", description: '1',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
+ {title: 'g', catetoy: "喂养", description: '1',image: 'https://images-na.ssl-images-amazon.com/images/I/41zHTkGM4mL._SX200_QL80_.jpg'},
 ]
 
 products_info.each do |info|
