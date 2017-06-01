@@ -1,21 +1,21 @@
-<h2>编辑</h2>
+<h2>编辑商品</h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
 <div class="group">
-  <%= f.input :title %>
+  <%= f.input :title, label: "名称" %>
 </div>
 
 <div class="group">
-  <%= f.input :description %>
+  <%= f.input :description, label: "描述" %>
 </div>
 
 <div class="group">
-  <%= f.input :quantity %>
+  <%= f.input :quantity, label: "数量" %>
 </div>
 
 <div class="group">
-  <%= f.input :price %>
+  <%= f.input :price, label: "价格" %>
 </div>
 
 <% if @product.image.present? %>
@@ -25,7 +25,7 @@
 <% end %>
 
 <div class="group">
-  <%= f.input :image, as: :file %>
+  <%= f.input :image, label: "图片", as: :file %>
 </div>
 
 <%= f.submit "提交", data: { disable_with: "提交中..." } %>

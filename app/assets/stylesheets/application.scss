@@ -46,6 +46,49 @@
     width: 100% !important;
 }
 
+/* 搜索欄 */
+.search-box {
+  margin-top: 6px;
+  input {
+    height: 35px;
+  }
+
+  input:focus {
+    border: 2px solid #ccc;
+  }
+
+  button {
+    background-color: #fff;
+    border: 1.5px solid #fff;
+    padding: 5px 10px 5px 10px;
+    height: 35px;
+    color: #333;
+  }
+}
+
+.mike {
+    float: auto;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #60af00;
+    width: 86px;
+    height: 38px;
+    border: 1px solid #5d9b4d;
+    font-size: 14px;
+    font-family: simsun;
+}
+
+.search-form{
+  position: relative;
+  height: auto;
+  width: auto;
+  min-height: auto;
+  margin: 5px auto 0 auto;
+  text-align: left;
+}
+
+
 /********************
 *****Slide effect
 **********************/
@@ -413,7 +456,7 @@
 
 // Nav栏位对应的CSS
 .navbar-aside {
-    background-color: #1ECD97;
+    background-color: #F8F8F8;
     color: #666666;
 }
 
