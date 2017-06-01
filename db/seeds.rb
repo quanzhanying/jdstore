@@ -15,3 +15,11 @@ u.password_confirmation = "123456"
 
 u.is_admin = true
 u.save
+
+
+Product.create!(title: "areon chair",
+                 description: "三秒进入编程状态",
+                 price: 2800,
+                 quantity: 10,
+                 image: open("https://ww3.sinaimg.cn/large/006tNbRwgy1fg5bzni555j31jk1jk7a6.jpg")
+                 )
