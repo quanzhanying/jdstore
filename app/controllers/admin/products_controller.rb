@@ -52,10 +52,21 @@ def destroy
 def update
   @product = Product.find(params[:id])
   @product.category_id = params[:category_id]
-  if @product.update(product_params)
+
+  if params[:product_images] != nil
+    @product.product_images.destroy_all #need to destroy old pics first
+
+    params[:product_images]['image'].each do |a|
+    @product.product_images.create(:image => a)
+    end
+
+    @product.update(product_params)
+    redirect_to admin_products_path
+
+  elsif @product.update(product_params)
     redirect_to admin_products_path
   else
-    rendr :edit
+    render :edit
   end
 end
 
