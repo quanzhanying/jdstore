@@ -1,63 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>漫生活，绘空间</title>
-        <meta charset='utf-8'>
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/buttons.js"></script> -->
-        <style>
-            .row.content {height: 550px}
-                                                                                                                                                                                                                                                                                                                                                                        @media screen and (max-width: 767px) {
-                                                                                                                                                                                                                                                                                                                                                                          .row.content {height: auto;}
-                                                                                                                                                                                                                                                                                                                                                                        }
-        </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>无标题文档</title>
+    <style type="text/css">
+
+    
+
+    </style>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row content">
-                <br>
-                <!-- 推荐商品，加入链接 -->
-                <div class="col-sm-10">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/1' do %><%= image_tag("p1.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/2' do %><%= image_tag("p2.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/3' do %><%= image_tag("p3.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/4' do %><%= image_tag("p4.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/5' do %><%= image_tag("p5.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/6' do %><%= image_tag("p6.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/7' do %><%= image_tag("p7.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/8' do %><%= image_tag("p8.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                        <div class="col-sm-4">
-                            <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/9' do %><%= image_tag("p9.jpg", class: "thumbnail") %><% end %>
-                        </div>
-                    </div>
-                </div>
-                <!-- 推荐商品，加入链接 -->
-            </div>
-        </div>
+
+    <div id="layout">
+    <ul>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/1' do %><%= image_tag("p1.jpg") %><% end %>      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/2' do %><%= image_tag("p2.jpg") %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/3' do %><%= image_tag("p3.jpg") %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/4' do %><%= image_tag("p4.jpg") %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/5' do %><%= image_tag("p5.jpg") %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/6' do %><%= image_tag("p6.jpg") %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/7' do %><%= image_tag("p7.jpg", height:360, width:360) %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/8' do %><%= image_tag("p8.jpg", height:360, width:360) %><% end %>
+      </li>
+      <li>
+        <%= link_to 'https://nameless-meadow-97724.herokuapp.com/products/9' do %><%= image_tag("p9.jpg", height:360, width:360) %><% end %>
+      </li>
+
+    </ul>
+    </div>
+
     </body>
-</html>
+    </html>
