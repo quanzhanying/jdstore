@@ -6,9 +6,13 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
 
-  # storage :file
+    #storage :file
+  if Rails.env.development? # 开发环境执行以下代码
+    storage :file           # 图片储存到本地
+  else                      # 非开发环境，也就是部署到 heroku 等地方时，执行以下代码
+    storage :qiniu          # 图片储存到七牛云
+  end
 
-  storage :qiniu
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
