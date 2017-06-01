@@ -52,6 +52,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'figaro'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
