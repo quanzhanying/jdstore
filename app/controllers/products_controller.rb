@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @arraywhere = Array[["fruits","进口水果"],["aquatic","进口水产"],["meat","进口鲜肉"]]
-    @arrayorder = Array[["hot","show_count desc"],["new","created_at desc"],["sale","sale desc"],["price","promotional"],["price-down","promotional  desc"]]
+    @arrayorder = Array[["hot","show_count desc"],["new","created_at desc"],["sale","sale desc"],["price","promotional"],["price-down","promotional  desc"],["review","reviews_count desc"]]
     if !params[:where].blank? && !@arraywhere.assoc(params[:where]).blank?
         where = params[:where]
         @w = @arraywhere.assoc(where)
@@ -47,6 +47,8 @@ class ProductsController < ApplicationController
         @products = search_result.order("sale desc").paginate(:page => params[:page], :per_page =>100)
       when "price"
         @products = search_result.order("promotional").paginate(:page => params[:page], :per_page =>100)
+      when "price-down"
+        @products = search_result.order("promotional desc").paginate(:page => params[:page], :per_page =>100)
       else
         @products = search_result.paginate(:page => params[:page], :per_page =>100)
       end

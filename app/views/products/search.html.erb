@@ -14,13 +14,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="order">
+      <div class="order" onselectstart="return false">
         <div class="col-md-8">
-          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=hot"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;热门</span></a>
-          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=new"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
-          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=sale"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
-          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=price"%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;价格</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;评价数</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=hot"%>" class="<%= if !params[:order].blank? && params[:order] == "hot" then "click" end%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;热门</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=new"%>" class="<%= if !params[:order].blank? && params[:order] == "new" then "click" end%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=sale"%>" class="<%= if !params[:order].blank? && params[:order] == "sale" then "click" end%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
+          <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order="+ if !params[:order].blank? && params[:order] == "price" then "price-down" else "price" end%>" class="
+            <% if !params[:order].blank? %>
+           <%=if params[:order] == "price-down" || params[:order] == "price" then "click-price" end%>
+          <% end %>
+          "><span class="fa fa-long-arrow-<%= if !params[:order].blank? && params[:order]=="price" then "up" else "down" end%>" aria-hidden="true">&nbsp;价格</span></a>
+            <a href="<%= search_products_path + "?utf8=✓&q=" + params[:q] + "&order=review"%>"  class="<%= if !params[:order].blank? && params[:order] == "review" then "click" end%>"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;评价数</span></a>
         </div>
         <div class="text-right">
           <span>

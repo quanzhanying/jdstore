@@ -130,7 +130,8 @@ margin-bottom: 4px;
 
 .product-index a {
   color: #7f8c8d;
-
+  font-weight: bolder;
+  font-family: Arial;
 }
 
 .product-index li:hover {
@@ -384,6 +385,16 @@ hr {
   padding: 5px 9px;
   //position: relative;
   background: #fff;
+}
+
+.order a.click {
+  pointer-events: none;
+    background-color: #e5e5e5;
+    color: #B28435;
+}
+.order a.click-price {
+    background-color: #e5e5e5;
+    color: #B28435;
 }
 
 .order a:hover {
@@ -1860,4 +1871,13 @@ border-radius: 4px;
 }
 .JDstoreTab a{
  color: #555555;
+}
+
+.shoping-cart.order-list hr{
+  border: 1px solid #f9f9f9;
+}
+
+.order-list .cart-list{
+  padding: 15px 0 15px 0;
+
 }

@@ -5,59 +5,54 @@
 
     <h2> 订单明细 </h2>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th width="80%">商品明细</th>
-          <th>单价</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class="shoping-cart order-list">
+      <div class="cart-column-head center-block">
 
-        <% @product_lists.each do |product_list| %>
-          <tr>
-            <td>
-              <%= product_list.product_name %>
-            </td>
-            <td>
-              <%= product_list.product_price %>
-            </td>
-          </tr>
-        <% end %>
+        <label class="col-md-4 ">商品名称</label>
+        <label class="col-md-3 ">单价</label>
+        <label class="col-md-2 ">数量</label>
+        <label class="col-md-3 ">小计</label>
 
-      </tbody>
-    </table>
+      </div>
+      <% @product_lists.each do |product_list| %>
+      <div class="cart-item-list">
+        <div class="cart-list text-center">
+
+          <div class="col-md-4 text-left">
+            <%= product_list.product_name %>
+          </div>
+          <div class="col-md-3"><span id="product-promotional"><%= product_list.product_price %></span>&nbsp;RMB
+          </div>
+          <div class="col-md-2">
+            <%= product_list.quantity %>件
+          </div>
+          <div class="col-md-3">
+            <span class="quantity-price"><%= product_list.product_price * product_list.quantity%></span>&nbsp;RMB
+          </div>
+        </div>
+        <hr>
+      </div>
+      <% end %>
+    </div>
 
     <div class="total clearfix">
       <span class="pull-right">
-        总计 <%= @order.total %> CNY
+        总计&nbsp;  <span style="color: #c40000;"> <%= @order.total %></span> &nbsp;RMB
       </span>
     </div>
 
      <hr>
 
-     <h2> 寄送资讯 </h2>
+     <h2> 收件人地址 </h2>
 
      <table class="table table-striped table-bordered">
       <tbody>
         <tr>
           <td>
-            订购人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.billing_name %> - <%= @order.billing_address %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            收件人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+            <span>收件人名字：</span> <%= @order.billing_name %> <br>
+            <span>邮政编码：</span> <%= @order.billing_address %><br>
+            <span>电话：</span> <%= @order.shipping_name %> <br>
+            <span>收件人地址：</span>  <%= @order.shipping_address %>
           </td>
         </tr>
       </tbody>

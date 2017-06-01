@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :user
-belongs_to :product
-validates :body, presence: true
+  validates :body, presence: true
+  belongs_to :product, counter_cache: true
 end

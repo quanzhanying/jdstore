@@ -59,16 +59,16 @@
             <div class="product-index">
               <ul>
                 <li class="active">
-                  <a href="/">首页</a>
+                  <a href="/" style="<%= if params[:where].blank? then "color:#B28435;" end%>">首页</a>
                 </li>
                 <li>
-                  <a href="/products?where=fruits">进口水果</a>
+                  <a href="/products?where=fruits" style="<%= if !params[:where].blank? && params[:where]=="fruits" then "color:#B28435;" end%>">进口水果</a>
                 </li>
                 <li>
-                  <a href="/products?where=aquatic">进口水产</a>
+                  <a href="/products?where=aquatic" style="<%= if !params[:where].blank? && params[:where]=="aquatic" then "color:#B28435;" end%>">进口水产</a>
                 </li>
                 <li>
-                  <a href="/products?where=meat">进口鲜肉</a>
+                  <a href="/products?where=meat" style="<%= if !params[:where].blank? && params[:where]=="meat" then "color:#B28435;" end%>">进口鲜肉</a>
                 </li>
               </ul>
             </div>
@@ -187,16 +187,16 @@
       <div class="product-index">
         <ul>
           <li class="active">
-            <a href="/">首页</a>
+            <a href="/" style="<%= if params[:where].blank? then "color:#B28435;" end%>">首页</a>
           </li>
           <li>
-            <a href="/products?where=fruits">进口水果</a>
+            <a href="/products?where=fruits" style="<%= if !params[:where].blank? && params[:where]=="fruits" then "color:#B28435;" end%>">进口水果</a>
           </li>
           <li>
-            <a href="/products?where=aquatic">进口水产</a>
+            <a href="/products?where=aquatic" style="<%= if !params[:where].blank? && params[:where]=="aquatic" then "color:#B28435;" end%>">进口水产</a>
           </li>
           <li>
-            <a href="/products?where=meat">进口鲜肉</a>
+            <a href="/products?where=meat" style="<%= if !params[:where].blank? && params[:where]=="meat" then "color:#B28435;" end%>">进口鲜肉</a>
           </li>
         </ul>
       </div>
@@ -324,23 +324,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="loginmodal-container">
-      <h2 class="text-center">欢迎注册</h2>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "注册" %>
-      </div>
-      <%= render "devise/shared/links" %>
-      <% end %>
-    </div>
-  </div>
-</div> -->

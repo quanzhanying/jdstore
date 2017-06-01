@@ -6,38 +6,58 @@
 
       <h2> 购物明细 </h2>
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-
-              <th colspan="2">商品资讯</th>
-            <th>单价</th>
-            <th>数量</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <% current_cart.cart_items.each do |cart_item| %>
-          <tr>
-            <td>
-              <img src="<%= img430(cart_item.product,1) %>" style="width:200px;" alt="">
-            </td>
-            <td>
+      <div class="shoping-cart">
+        <div class="cart-column-head center-block">
+          <label class="col-md-2 ">商品</label>
+          <label class="col-md-2 ">名称</label>
+          <label class="col-md-2 ">单价</label>
+          <label class="col-md-2 ">数量</label>
+          <label class="col-md-2 ">小计</label>
+          <label class="col-md-2 ">操作</label>
+        </div>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <div class="cart-item-<%= cart_item.product_id%>">
+          <div class="cart-list text-center">
+            <div class="col-md-2 ">
+              <%= link_to product_path(cart_item.product) do %>
+              <%= image_tag(img430(cart_item.product,1), style: "width: 160px;") %>
+              <% end %>
+            </div>
+            <div class="col-md-2 text-left">
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-            </td>
-            <td>
+            </div>
+            <div class="col-md-2">
               <%= cart_item.product.promotional %>
-            </td>
-
-            <td>
-              <%= cart_item.quantity %>
-            </td>
-
-          </tr>
-          <% end %>
-
-        </tbody>
-      </table>
+              RMB
+            </div>
+            <div class="col-md-2">
+              <div class="quantity-box" onselectstart="return false">
+                <%= cart_item.quantity%>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <span class="quantity-price"><%= cart_item.product.promotional * cart_item.quantity %>
+                RMB</span>
+            </div>
+            <div class="col-md-2">
+              <p>
+              <% if current_user %>
+              <% if current_user.is_favorite_of?(cart_item.product) %>
+                <%= link_to("已收藏", favorite_product_path(cart_item.product)+"?fa=unfavorite-c", :method => :post,:remote => true,id:  "favorite-item-"+cart_item.product_id.to_s,class: "cart-list-fa") %>
+                 <% else %>
+                <%= link_to("加入收藏", favorite_product_path(cart_item.product)+"?fa=favorite-c", :method => :post,:remote => true,id:  "favorite-item-"+cart_item.product_id.to_s) %>
+                <% end %>
+                <% else %>
+                <a href="#" data-toggle="modal" data-target="#login-modal">加入收藏</i></a>
+                <% end %>
+                </p>
+              <%= link_to "删除", cart_item_path(cart_item.product_id), :method => :delete, :remote => true %>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <% end %>
+      </div>
 
       <div class="total clearfix">
         <span class="pull-right">
@@ -45,7 +65,7 @@
         </span>
       </div>
 
-      <hr>
+
 
       <h2> 订单资讯 </h2>
 
