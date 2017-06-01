@@ -1,16 +1,21 @@
-<div style="margin-top: 0px;">
-  <br><br>
-  <div class="col-md-9 col-centered">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">订单列表 </h3>
+<ul class="breadcrumb">
+  <li><%= link_to("我的账户", edit_account_user_path(current_user)) %></li>
+  <li><%= link_to("我的订单", account_orders_path ) %></li>
+</ul>
+
+
+<div class="row", style="margin-left: -21px;">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading-account">
+        <h3 class="panel-title">个人订单列表</h3>
       </div>
       <div class="panel-body">
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>#</th>
-              <th>生成时间</th>
+              <th class="col-md-2">#</th>
+              <th class="col-md-6">生成时间</th>
 
             </tr>
           </thead>
@@ -26,3 +31,6 @@
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+</div>
