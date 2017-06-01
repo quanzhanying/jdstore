@@ -50,7 +50,7 @@ Product.create!(title: "这么慢，那么美",
 Product.create!(title: "我这一辈子",
   description: "书",
   price: 23.3,
-  autor: "",
+  author: "",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51ni-h62dOL._SX320_BO1,204,203,200_.jpg")
   )
@@ -58,7 +58,7 @@ Product.create!(title: "我这一辈子",
 Product.create!(title: "时间简史",
   description: "书",
   price: 31.1,
-  autor: "史蒂芬·霍金",
+  author: "史蒂芬·霍金",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51ewBewBwIL._SX390_BO1,204,203,200_.jpg")
   )
@@ -66,7 +66,7 @@ Product.create!(title: "时间简史",
 Product.create!(title: "皮特猫",
   description: "书",
   price: 62.8,
-  autor: "艾瑞克·利特温",
+  author: "艾瑞克·利特温",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51VECKzx4fL._SX395_BO1,204,203,200_.jpg")
   )
@@ -74,7 +74,7 @@ Product.create!(title: "皮特猫",
 Product.create!(title: "摩尔人的最后叹息",
   description: "书",
   price: 39.2,
-  autor: "萨曼·鲁西迪",
+  author: "萨曼·鲁西迪",
   quantity: 5,
   image: open("https://images-cn.ssl-images-amazon.com/images/I/51qzGyYrHbL._SX380_BO1,204,203,200_.jpg")
   )
