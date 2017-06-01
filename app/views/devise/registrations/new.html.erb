@@ -1,34 +1,34 @@
 <div class="container page-wrap ">
   <div class="devise-view">
     <img src="http://ww4.sinaimg.cn/large/006tKfTcgy1ffr161honcj30xg0n0am7.jpg" style="opacity:0.6;" alt="background image">
-    <div class="devise-sign-up">
-      <div class="left">
-        <h1 class="logo">Select.</h1>
-        <div>
-          <h6>只给您最好的家具。</h6>
+
+      <div class="row">
+        <div class="col-md-6", style="margin-bottom: 120px;">
+          <h1 class="logo">Select.</h1>
+          <div>
+            <h6>只给您最好的家具。</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true, label: "电子邮箱", placeholder: "请输入电子邮箱", type: "email", value: "", name: "user[email]", id: "user_email", input_html: { class: "string email required form-control" } %>
+              <%= f.input :password, required: true, label: "密码", placeholder: "密码至少6位", type: "password", name: "user[password]", id: "user_password", input_html: { class: "form-group password required user_password"} %>
+              <%= f.input :password_confirmation, required: true, label: "密码确认", placeholder: "再输入一遍确认密码", type: "password", name: "user[password_confirmation]", id: "user_password_confirmation", input_html: { class: "form-group password required user_password_confirmation"} %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, :label => "注 册", type: "submit", name: "commit", value: "注 册", input_html: {  class: "btn btn-default btn btn-devise btn-block"}%>
+            </div>
+
+          <% end %>
+          <br />
+          已经有账号？  <a href="/users/sign_in">点此登录</a>
+          <br />
         </div>
       </div>
-    <div class="right">
-      <div class="input-block">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true, label: "电子邮箱", placeholder: "请输入电子邮箱", type: "email", value: "", name: "user[email]", id: "user_email", input_html: { class: "string email required form-control" } %>
-            <%= f.input :password, required: true, label: "密码", placeholder: "密码至少6位", type: "password", name: "user[password]", id: "user_password", input_html: { class: "form-group password required user_password"} %>
-            <%= f.input :password_confirmation, required: true, label: "密码确认", placeholder: "再输入一遍确认密码", type: "password", name: "user[password_confirmation]", id: "user_password_confirmation", input_html: { class: "form-group password required user_password_confirmation"} %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, :label => "注 册", type: "submit", name: "commit", value: "注 册", input_html: {  class: "btn btn-default btn btn-devise btn-block"}%>
-          </div>
-
-        <% end %>
-        <br />
-        已经有账号？  <a href="/users/sign_in">点此登录</a>
-        <br />
-        </div>
-      </div>
-    </div>
   </div>
 </div>

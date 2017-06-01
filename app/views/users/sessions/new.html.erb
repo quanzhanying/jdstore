@@ -1,37 +1,35 @@
 <div class="container page-wrap ">
   <div class="devise-view">
     <img src="http://ww4.sinaimg.cn/large/006tKfTcgy1ffr161honcj30xg0n0am7.jpg" style="opacity:0.6;" alt="background image">
-    <div class="devise-sign-up">
-      <div class="left">
+    <div class="row">
+      <div class="col-md-6", style="margin-bottom: 120px;">
         <h1 class="logo">Select.</h1>
         <div>
           <h6>只给您最好的家具。</h6>
         </div>
       </div>
-      <div class="right">
-        <div class="input-block">
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
+      <div class="col-md-4">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
 
-              <%= f.input :email, required: false, autofocus: true, :label => "邮箱", placeholder: "请输入您的邮箱", type: "email", value: "", name: "user[email]", id: "user_email", input_html: { class: "string email optional form-control"}%>
+            <%= f.input :email, required: false, autofocus: true, :label => "邮箱", placeholder: "请输入您的邮箱", type: "email", value: "", name: "user[email]", id: "user_email", input_html: { class: "string email optional form-control"}%>
 
-          </div>
-          <div class="form-inputs">
-              <%= f.input :password, required: false, :label => "密码",placeholder: "请输入您的密码", type: "password", name: "user[password]", id: "user_password", input_html: { class: "form-group password optional user_password"}%>
-          </div>
-          <div class="form-group boolean optional user_remember_me">
-            <div class="checkbox">
-            </div>
-          </div>
-            <div class="form-actions">
-              <%= f.button :submit, type: "submit", name: "commit", value: "登 录", input_html: { class: "btn btn-default btn btn-devise btn-block"}%>
-            </div>
-          <% end %>
-          <br />
-          新用户？<a href="/users/sign_up">点此注册</a>
-          <br />
-          <span><a href="/users/password/new">忘记密码?</a>
         </div>
+        <div class="form-inputs">
+            <%= f.input :password, required: false, :label => "密码",placeholder: "请输入您的密码", type: "password", name: "user[password]", id: "user_password", input_html: { class: "form-group password optional user_password"}%>
+        </div>
+        <div class="form-group boolean optional user_remember_me">
+          <div class="checkbox">
+          </div>
+        </div>
+          <div class="form-actions">
+            <%= f.button :submit, type: "submit", name: "commit", value: "登 录", input_html: { class: "btn btn-default btn btn-devise btn-block"}%>
+          </div>
+        <% end %>
+        <br />
+        新用户？<a href="/users/sign_up">点此注册</a>
+        <br />
+        <span><a href="/users/password/new">忘记密码?</a>
       </div>
     </div>
   </div>
