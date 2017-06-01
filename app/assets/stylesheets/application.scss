@@ -214,7 +214,7 @@ a:hover {
 .hot-products-title {
   text-align: center;
   margin: 40px auto;
-  font-size: 30px;
+  font-size: 2em;
   margin-bottom: -110px;
 }
 .hot-productslist {
@@ -262,8 +262,9 @@ a:hover {
       }
       .productList-item-name{
         margin-top:2px !important;
-        margin-left: 35px;
+        margin-left: 15px;
         margin-right: 35px;
+        text-align: left;
       }
       .productList-item-desc {
         margin-top:2px !important;
