@@ -43,12 +43,9 @@ gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
 gem 'rest-client'
-<<<<<<< HEAD
 gem 'ckeditor'
-=======
 gem 'rqrcode'
 
->>>>>>> dd3961a97715f25b85dbcb6da7f524d6bb8b3d05
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
