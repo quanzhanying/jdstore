@@ -1,35 +1,38 @@
-<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-     <!-- 商品页调整商品数量 -->
-      <% if @product.quantity.present? && @product.quantity >0 %>
-        <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
-         <div class="buy-quantity">
-          <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
-          <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
-          <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
-         </div>
-         <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
-          <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
-         </button>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
       <% else %>
-        已销售一空，无法购买
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2> <%= @product.title %> </h2>
+      <div style="height:100px;">
+        <p>
+          <%= @product.description %>
+        </p>
+      </div>
+      <div> 数量 : <%= @product.quantity %> </div>
+      <div class="product-price"> ￥ <%= @product.price %> </div>
+       <!-- 商品页调整商品数量 -->
+        <% if @product.quantity.present? && @product.quantity >0 %>
+          <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
+           <div class="buy-quantity">
+            <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
+            <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
+            <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
+           </div>
+           <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
+            <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
+           </button>
+          <% end %>
+        <% else %>
+          已销售一空，无法购买
+        <% end %>
 
+    </div>
   </div>
+
 </div>

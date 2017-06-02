@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
       end
         current_cart.add_product_to_cart(@product, @quantity)
         redirect_to :back
-    end 
+    end
   end
 
   def search
