@@ -60,13 +60,13 @@ nav.navbar-default ul.dropdown-menu > li > a:hover { background: #f14444; color:
 
 
 body {
-  padding-top: 70px;
+  padding-top: 100px;
 }
 //-------footer--------//
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 @import url(http://fonts.googleapis.com/css?family=Gudea);
 .footer1 {
-    background: #fff url("../images/footer/footer-bg.png") repeat scroll left top;
+    background: #F5F5F5 url("../images/footer/footer-bg.png") repeat scroll left top;
 	padding-top: 40px;
 	padding-right: 0;
 	padding-bottom: 20px;
@@ -235,7 +235,7 @@ Product show
 .ul > li{margin-right:25px;font-weight:lighter;cursor:pointer}
 li.active{border-bottom:3px solid silver;}
 
-.item-photo{display:flex;justify-content:center;align-items:center;border-right:1px solid #f6f6f6;}
+.item-photo{display:auto;justify-content:center;align-items:center;}
 .menu-items{list-style-type:none;font-size:11px;display:inline-flex;margin-bottom:0px;margin-top:20px}
 .btn-success{width:100%;}
 .btn-warning{width:100%;}
