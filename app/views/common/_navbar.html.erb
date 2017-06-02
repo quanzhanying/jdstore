@@ -24,8 +24,10 @@
                 <% end %>
               </li>
                 <% if !current_user %>
-                 <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>  <!--登录弹窗 -->
-                 <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>   <!--登录弹窗-->
+                 <!-- <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>   -->
+                <li><%= link_to("注册", new_user_registration_path) %> </li>
+                 <!-- <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>    -->
+                <li><%= link_to("登陆", new_user_session_path) %> <li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
