@@ -1,0 +1,250 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 商品indexCSS样式表 */
+
+//-------购物车图标以及点赞图标出现-------------
+/* font Awesome http://fontawesome.io*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+/* Animation.css*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
+.col-item {
+  background: #FFF;
+}
+.col-item .options {
+  position:absolute;
+  top:6px;
+  right:22px;
+}
+.col-item .photo {
+  overflow: hidden;
+}
+.col-item .photo .options {
+  display:none;
+}
+.col-item .options-cart {
+  position:absolute;
+  left:22px;
+  top:6px;
+  display:none;
+}
+.col-item .photo:hover .options,
+.col-item .photo:hover .options-cart {
+  display:block;
+  -webkit-animation: fadeIn .5s ease;
+  -moz-animation: fadeIn .5s ease;
+  -ms-animation: fadeIn .5s ease;
+  -o-animation: fadeIn .5s ease;
+  animation: fadeIn .5s ease;
+}
+.col-item .price-details {
+  width: 100%;
+  margin-top: 5px;
+}
+.col-item .price-details h1 {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+  float:left;
+  color: rgb(245,190,126);
+}
+.col-item .price-details span {
+  float:right;
+}
+.col-item .price-details .price-new {
+  font-size:16px;
+  color: rgb(245,190,126);
+}
+
+
+
+//-----图片向上滑动------
+// body {
+//   background: #F5F5F5;
+// }
+
+.product-box {
+  padding-left: 15px;
+  margin: 20px;
+  margin-left: 50px;
+  margin-right:40px ;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.product-box img {
+  width: 100%;
+}
+
+.product-box:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
+}
+
+/* 商品详情页CSS样式表 */
+// 页面头部微调
+.product-show {
+  margin-top: 2em;
+}
+
+// 商品标题样式
+.product-title {
+  color: #7f8c8d;
+}
+
+/*商品多个图片信息*/
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 518px;
+}
+
+.productDetail img {
+  width: 100%;
+  height: 100%;
+}
+
+.productDetail-left-bigImage {
+	width: 580px;
+	height: 580px;
+}
+
+.productDetail-left-imageList {
+	margin-top: 15px;
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 130px;
+	height: 130px;
+	margin-left: 8px;
+  margin-right: 8px;
+}
+
+.productDetail-left-imageList-lastItem {
+	margin-right: 0;
+}
+
+// 商品简述样式
+.product-description {
+  margin: 1.5em auto 2em;
+  line-height: 1.6em;
+}
+
+// 商品价格样式
+.product-price-bgcolor {
+  background-color: #f5f5f5;
+  padding: 1.5em 1em;
+  margin-bottom: 1em;
+}
+.product-price {
+  font-size: 3em;
+  color: #7f8c8d;
+  font-weight: lighter;
+}
+
+//商品库存样式
+.product-quantity {
+  margin: 1.5em auto;
+}
+
+// 按钮区域样式
+.add-to-cart-buttom {
+  margin: 3em auto 1em;
+}
+
+// 收藏按钮
+.product-collection {
+
+}
+//点赞
+.product-zan {
+  a:hover{
+    text-decoration: none;
+  }
+}
+// 数量输入框
+.quantity-input {
+  color: #333;
+  text-align: center;
+  width: 60px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+}
+
+//商品详情区域样式
+.product-particulars {
+  margin: 1.1em 0 3em;
+}
+.product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.6em;
+  // img {
+  //   max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+  //   }
+}
+
+// 商品品论区域样式
+.review-comment-form {
+  text-align: left;
+  padding: 2em 2em;
+}
+.review-comment-button {
+  text-align: left;
+  padding: 0 2em;
+  margin-top: -2em;
+}
+.reviews {
+  text-align: left;
+  li {
+    list-style: none;
+  }
+}
+.review-user-email {
+  font-weight: bold;
+}
+.review-comment {
+  margin: 1em auto;
+}
+.review-hr {
+  padding: 0 3em;
+}
+
+//推荐商品区域的
+
+//-----图片向上滑动------
+
+.productshow-box {
+  width: 235px;
+  padding-left: 15px;
+  margin: 10px;
+  margin-left: 10px;
+  margin-right:10px ;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.productshow-box img {
+  width: 100%;
+}
+
+.productshow-box:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
+}

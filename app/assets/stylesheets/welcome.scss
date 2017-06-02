@@ -1,0 +1,156 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+以下是首页banner滚动大图的CSS样式包
+*/
+.box {
+  margin-top: -20px;
+}
+
+/*  --- 大图高度 和 滚动按钮 ---  */
+.fade-carousel {                                      //滚动大图的相框高
+    position: relative;
+    height: 900px;
+}
+.fade-carousel .carousel-inner .item {                //图片截取的宽度，这里与相框高度一致
+    height: 900px;
+}
+.fade-carousel .carousel-indicators > li {            //滚动按钮的设置
+    width: 5px;
+    height: 5px;
+    margin: 0 2px;
+    background-color: #fff;
+    opacity: 0.5;
+}
+.fade-carousel .carousel-indicators > li.active {     //当前滚动按钮的设置
+    width: 40px;
+    height: 5px;
+    opacity: 0.8;
+}
+
+/*  --- 标题文字设置 ---  */
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;                                       //元素堆叠等级3，将显示在最上层
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;                        //英文大写
+    text-shadow: 0 0 5px #666;            //文字阴影 和 动态显示时间
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {                                            //h1标题设置
+    font-size: 4em;
+    font-weight: 500;
+    margin: 10px;
+    padding: 0;
+}
+
+.hero h3 {                                            //h1标题设置
+    letter-spacing: 0.1em;
+}
+
+.fade-carousel .carousel-inner .item .hero {          //动态出现设置
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {   //动态出现设置
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/*  --- 遮罩滤镜层 ---  */
+.overlay {                                            //遮罩滤镜层，把图片调暗，突出文案内容
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;                                       //元素堆叠等级2，将显示在最中层
+    background-color: #080d15;
+    opacity: 0;
+}
+
+/*  --- 按钮 ---  */
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/*  --- 图片 ---  */
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 900px;
+  background-size: cover;                             //确保图片完全撑开
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://static.pexels.com/photos/112324/pexels-photo-112324.jpeg);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://static.pexels.com/photos/48706/pexels-photo-48706.jpeg);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ooo.0o0.ooo/2017/05/29/592c15c74543a.jpg);
+}
+
+/*  --- 响应式设置 ---  */
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 3em; }
+}
+@media screen and (max-width: 640px){
+    .hero h3 { font-size: 1.5em; }
+}
+
+
+//----推荐商品区域------
+
+#hot-products{
+  background-color: #ECEFF1;
+  // margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+a.left.carousel-control{
+background: none;
+position: absolute;
+top: -10%;
+left: -10%;
+font-size: 40px;
+color: #fff;
+opacity: 1;
+
+}
+a.right.carousel-control{
+background: none;
+position: absolute;
+top: -10%;
+right: -10%;
+font-size: 40px;
+color: #fff;
+opacity: 1;
+}

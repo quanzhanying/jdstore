@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>幸福小站</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar"%>
+          <%= render "common/flashes"%>
+            <%= yield %>
+
+        </div>
+      </div>
+    </div>
+    <%= render "common/footer"%>
   </body>
 </html>

@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>
+      订单明细 <br>
+      <small>
+        <%= link_to("订单连结", order_url(@order.token)) %>
+      </small>
+    </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>商品明细</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>小计</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @product_lists.each do |product_list| %>
+          <tr>
+            <td>
+              <%= product_list.product_name %>
+            </td>
+            <td>
+              <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= product_list.quantity %>
+            </td>
+            <td>
+              <%= product_list.quantity * product_list.product_price %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <div class="total group clearfix">
+      <h4 class="pull-right">
+        总计 <%= @order.total %> CNY
+      </h4>
+     </div>
+
+     <hr>
+
+     <h2> 寄送资讯 </h2>
+
+     <table class="table table-striped table-bordered">
+       <thead>
+         <tr>
+           <th>订购人</th>
+           <th>收货人</th>
+         </tr>
+       </thead>
+      <tbody>
+        <tr>
+          <td>
+            <li>姓名：<%= @order.billing_name %></li>
+            <li>地址：
+            <%= ChinaCity.get(@order.billing_province) %>
+            <%= ChinaCity.get(@order.billing_city) %>
+            <%= ChinaCity.get(@order.billing_district) %>
+            </li>
+            <li>电话：<%= @order.billing_phone %></li>
+            <li>详细地址：<%= @order.billing_address %></li>
+          </td>
+          <td>
+            <li>姓名：<%= @order.shipping_name %></li>
+            <li>地址：
+            <%= ChinaCity.get(@order.province) %>
+            <%= ChinaCity.get(@order.city) %>
+            <%= ChinaCity.get(@order.district) %>
+            </li>
+            <li>电话：<%= @order.shipping_phone %></li>
+            <li>详细地址：<%= @order.shipping_address %></li>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

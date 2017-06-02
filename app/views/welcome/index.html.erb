@@ -1,0 +1,313 @@
+<!-- ↓↓↓ 大图滚动banner 代码块↓↓↓ -->
+<div class="box">
+  <div class="row">
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <div class="overlay"></div>
+
+      <!-- 默认三张图列表 -->
+      <div class="banner">
+        <ul class="carousel-indicators ">
+          <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#bs-carousel" data-slide-to="1"></li>
+          <li data-target="#bs-carousel" data-slide-to="2"></li>
+        </ul>
+      </div>
+
+      <!-- 文案部分 -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero row">
+            <hgroup>
+                <h1>幸福，从一朵花开始</h1>
+                <h3>也许世界上也有五千朵和你一模一样的花</h3>
+                <h3>但只有你是我独一无二的玫瑰</h3>  <!--//h3文案部分需要调整两行间的行距 -->
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>你为爱情做过最勇敢的事情，是什么？</h1>
+                <h3>让鲜花替你去表白吧</h3>
+                <h3>现在就开启你的幸福之旅</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>把大自然搬回家</h1>
+                <h3>让我们为您打造一个童话世界</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ↑↑↑ 大图滚动banner 代码块 ↑↑↑ -->
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>热卖商品</h2>
+            <hr class="star-primary">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 portfolio-item">
+            <a href="/products" class="portfolio-link" data-toggle="modal">
+
+                <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg0z0tzdycj30m60sgjuu.jpg" class="img-responsive" alt="Cabin">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+            <a href="/products" class="portfolio-link" data-toggle="modal">
+
+                <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg0z1n1q81j30m60sgdje.jpg" class="img-responsive" alt="Slice of cake">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+            <a href="/products" class="portfolio-link" data-toggle="modal">
+
+                <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg0z35jfa9j30m60sg77t.jpg" class="img-responsive" alt="Circus tent">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+            <a href="/products" class="portfolio-link" data-toggle="modal">
+
+                <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fg0z3lvegdj30m60sgwj9.jpg" class="img-responsive" alt="Game controller">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+            <a href="/products" class="portfolio-link" data-toggle="modal">
+
+                <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fg0z3ym9y6j30m60sgju6.jpg" class="img-responsive" alt="Safe">
+            </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+            <a href="/products" class="portfolio-link" data-toggle="modal">
+
+                <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg0z4dk7i6j30m60sgwik.jpg" class="img-responsive" alt="Submarine">
+            </a>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!--推荐商品区域-->
+
+<div class="row" id="hot-products" style="margin-bottom:60px;">
+
+  <div class="col-sm-10 col-sm-offset-1">
+    <!-- carousel begain -->
+    <div id="myCarousel" class="carousel slide">
+
+     <div class="carousel-inner">
+        <div class="item active">
+         <div class="row" >
+           <div style=" margin-top:30px;">
+             <!--按照点赞数量来排列-->
+             <% Product.limit(4).sort_by{|product| product.get_upvotes.size }.reverse.each do |product| %>
+             <div class="col-sm-3">
+             <div class=" productshow-box panel panel-default" style=" padding:0px">
+               <article class="col-item">
+                 <div class="photo">
+                   <div class="options">
+                     <!-- 收藏 -->
+                     <% if current_user && current_user.is_member_of?(product) %>
+                       <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="delete from wish list">
+                         <%= link_to("" ,quit_product_path(product), method: :post, class: " fa fa-heart")%>
+                       </button>
+                     <% else %>
+                       <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Add to wish list">
+                         <%= link_to("", join_product_path(product), method: :post, class: " fa fa-heart")%>
+                       </button>
+                     <% end %>
+                     <!-- 点赞 -->
+                     <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="love">
+                       <%= link_to like_product_path(product), method: :put do %>
+                         <div class="pi-thumbs-up">
+                           <i class="fa fa-thumbs-up " ></i>
+                           <%= product.get_upvotes.size %>
+                         </div>
+                       <% end %>
+                     </button>
+                   </div>
+
+                   <div class="options-cart">
+                     <button class="btn btn-default" title="Add to cart">
+                       <% if product.quantity.present? && product.quantity > 0 %>
+                         <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-shopping-cart") %>
+                       <% else %>
+                       售罄
+                       <% end %>
+                     </button>
+                   </div>
+                   <%= link_to product_path(product) do %>
+                     <% if product.photos.present? %>
+                       <%= image_tag(product.photos[0].image.main.url, class: "thumbnail", class: " img-responsive center-block") %>
+                     <% else %>
+                       <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: " img-responsive center-block") %>
+                     <% end %>
+                   <% end %>
+                 </div>
+                 <div class="panel-footer">
+                   <div class="row">
+                     <div class="price-details col-md-6">
+                       <h1><%= product.title %></h1>
+                       <span class="price-new">￥ <%= product.price %></span>
+                     </div>
+                   </div>
+                 </div>
+               </article>
+             </div>
+           </div>
+           <% end %>
+           </div>
+         </div>
+        </div>
+        <div class="item">
+          <div class="row" >
+            <div style=" margin-top:30px;">
+              <!--按照价钱高低来排列-->
+              <% Product.limit(4).order("price DESC").each do |product| %>
+              <div class="col-sm-3">
+              <div class=" productshow-box panel panel-default" style=" padding:0px">
+                <article class="col-item">
+                  <div class="photo">
+                    <div class="options">
+                      <!-- 收藏 -->
+                      <% if current_user && current_user.is_member_of?(product) %>
+                        <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="delete from wish list">
+                          <%= link_to("" ,quit_product_path(product), method: :post, class: " fa fa-heart")%>
+                        </button>
+                      <% else %>
+                        <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="Add to wish list">
+                          <%= link_to("", join_product_path(product), method: :post, class: " fa fa-heart")%>
+                        </button>
+                      <% end %>
+                      <!-- 点赞 -->
+                      <button class="btn btn-default" type="submit" data-toggle="tooltip" data-placement="top" title="love">
+                        <%= link_to like_product_path(product), method: :put do %>
+                          <div class="pi-thumbs-up">
+                            <i class="fa fa-thumbs-up " ></i>
+                            <%= product.get_upvotes.size %>
+                          </div>
+                        <% end %>
+                      </button>
+                    </div>
+
+                    <div class="options-cart">
+                      <button class="btn btn-default" title="Add to cart">
+                        <% if product.quantity.present? && product.quantity > 0 %>
+                          <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-shopping-cart") %>
+                        <% else %>
+                        售罄
+                        <% end %>
+                      </button>
+                    </div>
+                    <%= link_to product_path(product) do %>
+                      <% if product.photos.present? %>
+                        <%= image_tag(product.photos[0].image.main.url, class: "thumbnail", class: " img-responsive center-block") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", class: " img-responsive center-block") %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="price-details col-md-6">
+                        <h1><%= product.title %></h1>
+                        <span class="price-new">￥ <%= product.price %></span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- carousel end -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+      </a>
+    </div>
+
+  </div>
+</div>
+<!--推荐商品区域 end-->
+
+
+<!-- 听听铁粉怎么说 -->
+<div id="team" class="team">
+   <div class="container">
+       <row>
+          <div class="col-lg-12 text-center">
+             <h2 class="wow fadeInUp">听听铁粉怎么说</h2>
+           <hr class="star-primary">
+           <!-- <p class="wow fadeInUp" data-wow-delay="0.4s">听他们的体验</p> -->
+           <div class="col-md-4 wow fadeInLeft" data-wow-delay="2s">
+               <!-- <%= image_tag("https://ws3.sinaimg.cn/large/006tKfTcgy1fg11wzc0wpj30jg0jgmyz.jpg", class: "img-circle") %> -->
+               <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg11wzc0wpj30jg0jgmyz.jpg" class="img-circle" width="80" height="80">
+               <h4>Lily</h4>
+               <b>热恋中的女生</b>
+               <br>
+               <b> 80%的女人中收到大把鲜花的瞬间会感到异常幸福！当他送我99朵玫瑰向我告白时，那种怦然心动的欣喜与幸福扑面而来！</b>
+               <br>
+               <%= link_to(fa_icon("facebook"),'#') %>
+               <%= link_to(fa_icon("twitter"),'#') %>
+               <%= link_to(fa_icon("linkedin"),'#') %>
+               <!-- <%= link_to(fa_icon("pinterest"),'#') %> -->
+           </div>
+           <div class="col-md-4 wow fadeInLeft" data-wow-delay="1.6s">
+               <img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fg139zbuayj308c08ct96.jpg" class="img-circle" width="80" height="80">
+
+
+               <h4>Rose</h4>
+               <b>两个孩子的妈妈</b>
+               <br>
+               <b> 花有一种寓意就是指这个女人如花般美丽，并且娇嫩。即便已经是二宝妈，每当收到老公送我的鲜花时，仿佛回到了我们在大学里刚刚相恋的那个时候，依然甜蜜如初。</b>
+               <br>
+               <%= link_to(fa_icon("facebook"),'#') %>
+               <%= link_to(fa_icon("twitter"),'#') %>
+               <%= link_to(fa_icon("linkedin"),'#') %>
+               <!-- <%= link_to(fa_icon("pinterest"),'#') %> -->
+           </div>
+           <div class="col-md-4 wow fadeInLeft" data-wow-delay="1.2s">
+               <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fg13cyvsn2j306o06owel.jpg" class="img-circle" width="80" height="80">
+               <h4>Paul</h4>
+               <b>大学生</b>
+               <br>
+               <b>送花，其实送的是一种感觉，有时是你眼中的她，有时也是你所希望的她眼中的你。它更像一个含义和载体，可能也是一份给自己的礼物。</b>
+               <br>
+               <%= link_to(fa_icon("facebook"),'#') %>
+               <%= link_to(fa_icon("twitter"),'#') %>
+               <%= link_to(fa_icon("linkedin"),'#') %>
+               <!-- <%= link_to(fa_icon("pinterest"),'#') %> -->
+           </div>
+          </div>
+       </row>
+   </div>
+   <br/>
+   <br/>
+   <br/>
+
+</div>
+
+  <!-- 铁粉说板块 -->
