@@ -1,40 +1,53 @@
-<h2><%= t("admin.edit_product") %></h2>
-<%= simple_form_for [:admin, @product] do |f| %>
-<div class="group">
-  <%= f.input :title %>
+<div class="container-fluid" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h2><%= t("admin.edit_product") %></h2>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for [:admin, @product] do |f| %>
+          <div class="group">
+            <%= f.input :title %>
+          </div>
+
+          <div class="group">
+            <%= f.input :author %>
+          </div>
+
+          <div class="group">
+            <%= f.input :description %>
+          </div>
+
+          <div class="group">
+            <%= f.association :category %>
+          </div>
+
+          <div class="group">
+            <%= f.input :quantity %>
+          </div>
+
+          <div class="group">
+            <%= f.input :price %>
+          </div>
+
+          <% if @product.image.present? %>
+            <span>目前商品图</span> <br>
+            <%= image_tag(@product.image.thumb.url) %>
+          <% end %>
+
+          <div class="group">
+            <%= f.input :image, as: :file %>
+          </div>
+
+          <%= f.submit t("admin.update_product"), data: {disable_with: "Submiting..."} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="group">
-  <%= f.input :author %>
-</div>
-
-<div class="group">
-  <%= f.input :description %>
-</div>
-
-<div class="group">
-  <%= f.association :category %>
-</div>
-
-<div class="group">
-  <%= f.input :quantity %>
-</div>
-
-<div class="group">
-  <%= f.input :price %>
-</div>
-
-<% if @product.image.present? %>
-  <span>目前商品图</span> <br>
-  <%= image_tag(@product.image.thumb.url) %>
-<% end %>
-
-<div class="group">
-  <%= f.input :image, as: :file %>
-</div>
-
-<%= f.submit t("admin.update_product"), data: {disable_with: "Submiting..."} %>
-<% end %>
 
 <script>
   autosize($('#product_description'))
