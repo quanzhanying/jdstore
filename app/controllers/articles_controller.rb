@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
 
     if @article.save
-      redirect_to :back
+      redirect_to account_article_collections_path
       flash[:notice] = "文章已提交，待管理员审核后可发布"
     else
       render :new
@@ -63,11 +63,12 @@ class ArticlesController < ApplicationController
   end
 
 
+  # ---private---
 
   private
 
   def article_params
-    params.require(:article).permit(:image, :title, :description,:summary, :user_id)
+    params.require(:article).permit(:image, :title, :description, :summary, :user_id)
   end
 
 end

@@ -96,6 +96,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :clubs            #社群功能
+
   get "about/index"
 
   root 'welcome#index'

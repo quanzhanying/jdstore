@@ -56,6 +56,11 @@ class User < ApplicationRecord
   has_many :articles
 
 
+  # ---与club订单关系---
+
+  has_many :clubs
+
+
   # ---is_admin判断式---
 
   def admin?
