@@ -83,7 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'https://desolate-lowlands-96151.herokuapp.com'}
+  config.action_mailer.default_url_options = { :host => 'https://glacial-ridge-61888.herokuapp.com'}
 
    config.action_mailer.delivery_method = :smtp
    ActionMailer::Base.smtp_settings = {
@@ -92,7 +92,7 @@ Rails.application.configure do
      domain: "heroku.com",
      authentication: "login",
      enable_starttls_auto: true,
-     user_name: ENV["smallken"],
-     password: ENV["god168339"]
+     user_name: ENV["SEND_CLOUD_USER_NAME"],
+     password: ENV["SEND_CLOUD_USER_KEY"]
      }
 end
