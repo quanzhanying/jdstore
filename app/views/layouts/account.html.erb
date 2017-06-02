@@ -31,6 +31,11 @@
               </ul>
               <hr>
               <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                <li><%= link_to("我的文章", edit_account_user_path(current_user)) %></li>
+                <li><%= link_to("我要投稿", new_article_path) %></li>
+              </ul>
+              <hr>
+              <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
                 <li><%= link_to("编辑账户", edit_account_user_path(current_user)) %></li>
               </ul>
               <hr>

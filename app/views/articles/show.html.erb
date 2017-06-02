@@ -120,31 +120,31 @@
 
         </div>
 
-        <!-- 热门文章 -->
+        <!-- 热评文章 -->
 
         <div class=" article-author-title-list">
-          <h5>热门文章</h5>
+          <h5>热评文章</h5>
 
 
-          <% @userarticles.each do |userarticle| %>
+          <% @article_hots.each do |article_hot| %>
             <hr>
             <div class="row article-show-hot">
               <div class="col-xs-4">
-                <% if userarticle.image.present? %>
-                  <%= image_tag(userarticle.image.thumb.url, class: "img-rounded img-responsive center-block" )%>
+                <% if article_hot.image.present? %>
+                  <%= link_to image_tag(article_hot.image.thumb.url, class: "img-rounded img-responsive center-block"), article_path(article_hot) %>
                 <% else %>
-                  <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block") %>
+                  <%= link_to image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block"), article_path(article_hot) %>
                 <% end %>
               </div>
               <div class="col-xs-8">
-                  <p><%= link_to(userarticle.title, article_path(userarticle)) %></p>
+                  <p><%= link_to(article_hot.title, article_path(article_hot)) %></p>
               </div>
             </div>
           <% end %>
           <hr>
 
         </div>
-        
+
         <!-- 投稿按钮 -->
         <div class="">
           <%= link_to("我要投稿", new_article_path, class: "btn btn-danger center-block") %>
