@@ -1,15 +1,17 @@
-<h2>登录</h2>
+<h2 align="center">登录</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, :label => "邮件", required: false, autofocus: true %>
-    <%= f.input :password, :label => "密码", required: false %>
-    <%= f.input :remember_me, :label => "记住密码", as: :boolean if devise_mapping.rememberable? %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "登录" %>
-  </div>
+<div class="form-inputs">
+  <%= f.input :email, :label => "邮件", required: false, autofocus: true %>
+  <%= f.input :password, :label => "密码", required: false %>
+  <%= f.input :remember_me, :label => "记住密码", as: :boolean if devise_mapping.rememberable? %>
+</div>
+
+<div class="form-actions pull-down">
+  <%= f.button :submit, "登录" %>
+</div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
