@@ -7,7 +7,7 @@
                <% @photos.each_with_index do |p, index| %>
                  <% if index == 0 %>
                    <%= image_tag p.avatar.medium.url %>
-                   <div style="letter-spacing: -8px">
+                   <div style="letter-spacing: -8px; margin-top:5px" >
                  <% else %>
                    <%= image_tag p.avatar.thumb.url %>
                  <% end %>
@@ -21,7 +21,7 @@
     <!-- description -->
         <div class="col-md-7">
           <h3> <%= @product.title %> </h3>
-          <div class="show-description" style="height:280px;">
+          <div class="show-description" style="height:490px;">
             <p>
               <%= @product.description %>
             </p>
