@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   def index
     if !params[:min_id].blank?
       @product = Product.find(params[:product_id])
-    @reviews = @product.reviews.where("id > ?",params[:min_id]).order("id desc").limit(5)
+    @reviews = @product.reviews.where("id < ?",params[:min_id]).order("id desc").limit(20)
     respond_to do |format|
         format.html
         format.js
