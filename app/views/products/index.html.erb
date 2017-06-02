@@ -1,17 +1,42 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-          <% end %>
-      <% end %>
-        <%= product.title %> ¥ <%= product.price %>
+<div class="container">
+  <!--wll 分类功能 -->
+  <div class="productCatetory">
+    <div class="productCatetory-menuList">
+      <div class="productCatetory-menuList-item ">
+        <%= link_to products_path(category: "历史读物") do %>
+         <h4>历史读物</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "学习方法") do %>
+         <h4>学习方法</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "管理") do %>
+         <h4>管理</h4>
+         <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-xs-6 col-md-3">
+        <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+        <% end %>
+
+          <%= product.title %> ¥ <%= product.price %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
 
 
 <div class="container-fluid">
