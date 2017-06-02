@@ -10,6 +10,7 @@ u.email = "admin@test.com"
 
 u.username = "xiaowu"
 
+
 u.password = "123123"
 
 u.password_confirmation = "123123"

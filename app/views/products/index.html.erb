@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12 product-index">
   <div class="col-md-12 search">
     <div class="col-md-8 col-md-offset-2">
         <%= search_form_for @q do |f| %>
@@ -11,7 +11,7 @@
   <div class="col-xs-6 col-md-3 ">
     <span class="thumbnail">
       <div class="pull-right">
-        <% if current_user.is_favorites?(product) %>
+        <% if  current_user && current_user.is_favorites?(product) %>
           <%= link_to(delete_from_wish_list_product_path(product), method: :post, class:"love") do %><i class="fa fa-heart " aria-hidden="true"></i><% end %>
         <% else %>
           <%= link_to(add_to_wish_list_product_path(product), method: :post, class:"nolove") do %><i class="fa fa-heart-o " aria-hidden="true"></i><% end %>
@@ -21,7 +21,7 @@
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url) %>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic")%>
         <% end %>
       <% end %>
       <div class="caption">
