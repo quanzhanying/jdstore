@@ -1,0 +1,147 @@
+<div class="container">
+	<div class="row">
+   <div class="col-xs-4 item-photo">
+     <% if @product.image.present? %>
+       <%= image_tag(@product.image.medium.url, class:"img-responsive wow bounce", data: {wow_delay:"1.5s"} )%> <!-- 加入show下图片效果 效果网站 https://daneden.github.io/animate.css/ -->
+     <% else %>
+       <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"img-responsive")%>
+     <% end %>
+    </div>
+    <div class="col-xs-5" style="border:0px solid gray">
+        <h3><%= @product.title %></h3>
+        <h5 style="color:#337ab7"><%= @product.description %></h5>
+        <!-- Precios -->
+        <h6 class="title-price"><small>价格：</small></h6>
+        <h3 style="margin-top:0px;">￥ <%= @product.price %></h3>
+
+        <!-- Detalles especificos del producto -->
+        <div class="section">
+            <h6 class="title-attr" style="margin-top:15px;" ><small>颜色</small></h6>
+            <div>
+                <div class="attr" style="width:25px;background:#5a5a5a;"></div>
+                <div class="attr" style="width:25px;background:white;"></div>
+            </div>
+        </div>
+        <div class="section" style="padding-bottom:5px;">
+            <h6 class="title-attr"><small>分期购</small></h6>
+            <div>
+                <div class="attr2">分二期</div>
+                <div class="attr2">分三期</div>
+            </div>
+        </div>
+        <div class="section" style="padding-bottom:20px;">
+            <h6 class="title-attr"><small></small></h6>
+            <div>
+              <h6 class="title-attr" style="margin-top:15px;" ><small>库存</small><%= @product.quantity %> 件</h6>
+            </div>
+        </div>
+
+        <!-- Botones de compra -->
+        <div class="section" style="padding-bottom:20px;">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to( add_to_cart_product_path(@product),:method => :post, :class => "btn  btn-lg btn-success") do %><i class='fa fa-shopping-cart'></i>  加入购物车<% end %>
+          <% else %>
+            <button class="btn-danger">已销售一空，无法购买</button>
+          <% end %>
+            <h6>
+              <% if  current_user && current_user.is_favorites?(@product) %>
+                <label class="label label-warning"> 已加入心愿单 </label>
+              <% else %>
+                <%= link_to( add_to_wish_list_product_path(@product), method: :post, class: "btn btn-lg btn-warning ") do %><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> 加入心愿单 <% end %>
+              <% end %>
+            </h6>
+        </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">您订单中的国内合格商品即可享受免费配送。
+        </div>
+        <div class="panel-body">
+          <%= link_to  carts_path do%>
+          <button class="btn btn-warning"><i class='fa fa-shopping-cart'></i>  进入购物车结算</button>
+          <% end %>
+        </div>
+        <div class="panel-footer">您的购物车总计商品：<%= current_cart.products.count %> 件</div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+        <ul class="menu-items">
+            <li class="active">商品具体信息</li>
+        </ul>
+        <div style="width:100%;border-top:1px solid silver">
+            <p style="padding:15px;">
+                <small>
+                <%= image_tag(@product.image.medium.url, class:"img-responsive") %>
+                </small>
+            </p>
+            <small>
+            <ul>
+                <li>Super AMOLED capacitive touchscreen display with 16M colors</li>
+                <li>Available on GSM, AT&T, T-Mobile and other carriers</li>
+                <li>Compatible with GSM 850 / 900 / 1800; HSDPA 850 / 1900 / 2100 LTE; 700 MHz Class 17 / 1700 / 2100 networks</li>
+                <li>MicroUSB and USB connectivity</li>
+                <li>Interfaces with Wi-Fi 802.11 a/b/g/n/ac, dual band and Bluetooth</li>
+                <li>Wi-Fi hotspot to keep other devices online when a connection is not available</li>
+                <li>SMS, MMS, email, Push Mail, IM and RSS messaging</li>
+                <li>Front-facing camera features autofocus, an LED flash, dual video call capability and a sharp 4128 x 3096 pixel picture</li>
+                <li>Features 16 GB memory and 2 GB RAM</li>
+                <li>Upgradeable Jelly Bean v4.2.2 to Jelly Bean v4.3 Android OS</li>
+                <li>17 hours of talk time, 350 hours standby time on one charge</li>
+                <li>Available in white or black</li>
+                <li>Model I337</li>
+                <li>Package includes phone, charger, battery and user manual</li>
+                <li>Phone is 5.38 inches high x 2.75 inches wide x 0.13 inches deep and weighs a mere 4.59 oz </li>
+            </ul>
+            </small>
+        </div>
+    </div>
+    	</div>
+    </div>
+
+
+
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+
+  /*----------------------
+Product show
+----------------------*/
+$(document).ready(function(){
+           //-- Click on detail
+           $("ul.menu-items > li").on("click",function(){
+               $("ul.menu-items > li").removeClass("active");
+               $(this).addClass("active");
+           })
+
+           $(".attr,.attr2").on("click",function(){
+               var clase = $(this).attr("class");
+
+               $("." + clase).removeClass("active");
+               $(this).addClass("active");
+           })
+
+           //-- Click on QUANTITY
+           $(".btn-minus").on("click",function(){
+               var now = $(".section > div > input").val();
+               if ($.isNumeric(now)){
+                   if (parseInt(now) -1 > 0){ now--;}
+                   $(".section > div > input").val(now);
+               }else{
+                   $(".section > div > input").val("1");
+               }
+           })
+           $(".btn-plus").on("click",function(){
+               var now = $(".section > div > input").val();
+               if ($.isNumeric(now)){
+                   $(".section > div > input").val(parseInt(now)+1);
+               }else{
+                   $(".section > div > input").val("1");
+               }
+           })
+       })
+</script>  <!--用户没回进入都会倒计时两天-->

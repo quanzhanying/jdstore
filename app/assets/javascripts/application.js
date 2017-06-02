@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/collapse
+//= require bootstrap/dropdown
+//= require autosize.min
+//= require jquery.countdown.min
+//= require wow.min
+//= require bootstrap/modal
 //= require_tree .
+
+$(document).ready(function(){
+  new WOW().init();
+})  //图片效果动画的js代码
