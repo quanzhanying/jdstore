@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+
+    <% @articles.each do |article| %>
+      <div class="article-all col-md-6 container">
+        <div class="article-box row">
+
+            <div class="">
+              <!-- 文章列表图片 -->
+              <div class="col-md-5">
+                <% if article.image.present? %>
+                  <%= link_to image_tag(article.image.articleimg.url, class: "product-list-style-img img-responsive"), article_path(article) %>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/600x400&text=No Pic", class: "product-list-style-img img-responsive"), article_path(article)%>
+                <% end %>
+              </div>
+
+              <!-- 文章列表标题、作者、日期 -->
+              <div class="col-md-7">
+                <%= link_to(article.title, article_path(article), class: "article-index-title") %>
+                <div class="article-user row">
+                  <div class="col-md-6">
+                    <span> <%= article.user.email %></span>
+                  </div>
+                  <div class="col-md-6">
+                    <span> <%= article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+        <hr>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>
+
+
+
+
+<!-- <% @articles.each do |article| %>
+  <%= article.title %>
+  <%= article.user.email %>
+  <%= article.summary %>
+<% end %> -->

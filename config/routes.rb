@@ -24,6 +24,14 @@ Rails.application.routes.draw do
         patch :move_down         #课程位置移动
       end
     end
+    resources :articles do       #文章后台
+      member do
+        patch :move_up           #文章位置移动
+        patch :move_down         #文章位置移动
+        post :publish
+        post :hide
+      end
+    end
   end
 
   resources :products do      #前台product
@@ -76,7 +84,10 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders          #用户后台查看订单
     resources :collections     #用户收藏
+    resources :users           #用户编辑个人信息
   end
+
+  resources :articles         #文章前台
 
   get "about/index"
 

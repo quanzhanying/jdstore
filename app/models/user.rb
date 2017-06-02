@@ -32,10 +32,32 @@ class User < ApplicationRecord
   has_many :course_orders
 
 
+  # ---与article订单关系---
+
+  has_many :articles
+
+
   # ---is_admin判断式---
 
   def admin?
     is_admin
   end
+
+
+  # ---判断是否设置了用户名---
+
+  def display_name
+    if self.username.present?
+      self.username
+    else
+      self.email.split("@").first           #把“@”两头的内容分开，做出数组
+    end
+  end
+
+
+  # ---添加头像---
+
+  mount_uploader :avatar, ImageUploader
+
 
 end

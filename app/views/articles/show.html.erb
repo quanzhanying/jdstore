@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="row">
+
+    <div class="article-show">
+
+      <div class="col-md-8 article-show-box">
+
+        <!-- 标题 -->
+        <div class="article-title">
+          <h1><%= @article.title %></h1>
+        </div>
+
+        <!-- 作者、发布时间 -->
+        <div class="article-author">
+          <span> <%= @article.user.display_name %></span> ·
+          <span> <%= @article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+        </div>
+
+        <!-- 摘要 -->
+        <div class="article-summary">
+          <p>
+            <blockquote>
+                <%= simple_format(@article.summary) %>
+            </blockquote>
+          </p>
+        </div>
+
+        <!-- 主图 -->
+        <div class="article-image">
+          <%= image_tag(@article.image.articleimg.url, class: "img-rounded img-responsive center-block") %>
+        </div>
+        <hr>
+
+        <!-- 内容 -->
+        <div class="article-description">
+          <%= simple_format(@article.description) %>
+        </div>
+
+
+      </div>
+
+      <div class="col-md-4">
+
+        <!-- 文章作者 -->
+        <div class="article-side-author">
+          <!-- 头像 -->
+          <div class="article-avatar">
+            <% if @user.avatar.present? %>
+              <%= image_tag(@user.avatar.avatar.url, class: "img-circle img-responsive center-block" )%>
+            <% else %>
+              <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block") %>
+            <% end %>
+          </div>
+          <!-- 用户名 -->
+          <div class="article-username text-center">
+            <%= @article.user.display_name %>
+          </div>
+          <!-- 简介 -->
+          <div class="article-author-summary">
+            <%= simple_format(@article.user.summary) %>
+            <span>共发表文章：<%= @article.user.articles.count %> 篇</span>
+            <hr>
+          </div>
+
+          <!-- 最近文章 -->
+          <div class="article-author-title-list">
+            <h5>最近文章</h5>
+            <% @userarticles.each do |userarticle| %>
+              <p>· <%= link_to(userarticle.title, article_path(userarticle)) %><span class="article-author-title-list-time">(<%= userarticle.created_at.strftime("%Y-%m-%d %H:%M:%S") %>)</span></p>
+            <% end %>
+          </div>
+
+        </div>
+
+        <!-- 热门文章 -->
+
+        <div class=" article-author-title-list">
+          <h5>热门文章</h5>
+
+
+          <% @userarticles.each do |userarticle| %>
+            <hr>
+            <div class="row article-show-hot">
+              <div class="col-xs-4">
+                <% if userarticle.image.present? %>
+                  <%= image_tag(userarticle.image.thumb.url, class: "img-rounded img-responsive center-block" )%>
+                <% else %>
+                  <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block") %>
+                <% end %>
+              </div>
+              <div class="col-xs-8">
+                  <p><%= link_to(userarticle.title, article_path(userarticle)) %></p>
+              </div>
+            </div>
+          <% end %>
+          <hr>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

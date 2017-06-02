@@ -18,6 +18,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [800, 800]
 
 
+  version :avatar do
+    process resize_to_fit: [80, 80]
+  end
+
   version :thumb do
     process resize_to_fit: [180, 180]
   end
@@ -28,6 +32,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :courseimgbanner do
     process resize_to_fit: [2000, 400]
+  end
+
+  version :articleimg do
+    process resize_to_fit: [800, 600]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

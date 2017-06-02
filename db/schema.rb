@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170528094836) do
-=======
-ActiveRecord::Schema.define(version: 20170527154713) do
->>>>>>> 469cb1bec4f50a4e5f2236f1d42ca410b17b5871
+ActiveRecord::Schema.define(version: 20170601173305) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "position"
+    t.boolean  "is_hidden",   default: true
+    t.text     "summary"
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -136,6 +144,9 @@ ActiveRecord::Schema.define(version: 20170527154713) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
+    t.string   "username"
+    t.string   "avatar"
+    t.text     "summary"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
