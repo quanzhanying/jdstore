@@ -372,12 +372,14 @@ h4 code {
   color            : #cdbfe3;
   text-align       : center;
   text-shadow      : 0 1px 0 rgba(0,0,0,.1);
-  background-color : #d88208;
-  background-image : -webkit-gradient(linear, left top, left bottom, from(#d88208), to(#d88208));
-  background-image : -webkit-linear-gradient(top, #d88208 0%, #d88208 100%);
-  background-image : -o-linear-gradient(top, #d88208 0%, #d88208 100%);
-  background-image : linear-gradient(to bottom, #d88208 0%, #ffa42f 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#d88208', endColorstr='#d88208', GradientType=0);
+  // background-color : #d88208;
+  background-color : #3f3f44;
+  background-image : -webkit-gradient(linear, left top, left bottom, from(#3f3f44), to(#3f3f44));
+  background-image : -webkit-linear-gradient(top, #3f3f44 0%, #d88208 100%);
+  background-image : -o-linear-gradient(top, #3f3f44 0%, #3f3f44 100%);
+  // background-image : linear-gradient(to bottom, #3f3f44 0%, #ffa42f 100%);
+  background-image : linear-gradient(to bottom, #3f3f44 0%, #cdbfe3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#3f3f44', endColorstr='#3f3f44', GradientType=0);
   background-repeat: repeat-x;
 }
 /* Masthead (headings and download button) */
