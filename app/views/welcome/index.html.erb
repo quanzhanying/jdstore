@@ -1,38 +1,78 @@
-<div class="col-md-12">
-
-     <div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
- </ol>
- <div class="carousel-inner">
-    <div class="item active">
-     <a href="#">
-      <img src="http://ww4.sinaimg.cn/large/006tKfTcgy1ffrvi2a9bwj31hc0zknhf.jpg" alt="First slide">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-    <div class="item">
-     <a href="#">
-      <img src="http://ww2.sinaimg.cn/large/006tKfTcgy1ffrvj63oeyj31hc0zk1ky.jpg" alt="Second slide">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-    <div class="item">
-      <a href="#">
-        <img src="http://ww4.sinaimg.cn/large/006tKfTcgy1ffrvjubbvdj31hc0zknpd.jpg" alt="Third slide">
-        <div class="carousel-caption"></div>
-      </a>
+<div class="jumbo">
+  <div class="carousel slide carousel-fade" data-ride="carousel">
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+      </div>
+      <div class="item">
+      </div>
+      <div class="item">
+      </div>
     </div>
   </div>
-
- <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-   <span class="glyphicon glyphicon-chevron-left"></span>
- </a>
- <a class="carousel-control right" href="#myCarousel" data-slide="next">
-   <span class="glyphicon glyphicon-chevron-right"></span>
- </a>
+  <!-- Remeber to put all the content you want on top of the slider below the slider code -->
+  <div class="title">
+    <h1>收到鲜花一瞬的喜悦 <br>鲜花围绕时的幸福请交给我们来传递！</h1>
+  </div>
 </div>
-   </div>
- </div>
+<!-- main part -->
+<div class="welcome_main">
+  <ul class="image-grid">
+    <li class="image-grid__item">
+      <a href="/products/bouquet" class="grid-item">
+
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/06/DSC_0116.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+
+  			<div class="grid-item__name">Bouquet</div>
+  	 </a>
+  	</li>
+
+    <li class="image-grid__item">
+  		<a href="/products/box_flower" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/03/DSC_0078-0011.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Box flower</div>
+  		</a>
+  	</li>
+
+    <li class="image-grid__item">
+  		<a href="/products/ceremony" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2016/12/DSC_0094-001-427x525.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Ceremony</div>
+  		</a>
+  	</li>
+
+    <li class="image-grid__item">
+  		<a href="/products/micro" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2015/02/DSC_1815.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Micro</div>
+  		</a>
+  	</li>
+
+    <li class="image-grid__item">
+  		<a href="#" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/05/DSC_01531.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Bottle flower</div>
+  		</a>
+  	</li>
+
+    <li class="image-grid__item">
+  		<a href="#" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/02/DSC_0320.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Continuing</div>
+  		</a>
+  	</li>
+  </ul>
+</div>
+
+<script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$('.carousel').carousel();
+</script>
