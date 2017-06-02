@@ -21,7 +21,7 @@ class Product < ApplicationRecord
 
   acts_as_list
   scope :recent, -> { order("created_at DESC")}
-  
+
   belongs_to :category
 
   has_many :product_user_relationships

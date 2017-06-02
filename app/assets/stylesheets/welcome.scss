@@ -5,7 +5,9 @@
 /*
 以下是首页banner滚动大图的CSS样式包
 */
-
+.box {
+  margin-top: -20px;
+}
 
 /*  --- 大图高度 和 滚动按钮 ---  */
 .fade-carousel {                                      //滚动大图的相框高
@@ -122,4 +124,33 @@
 }
 @media screen and (max-width: 640px){
     .hero h3 { font-size: 1.5em; }
+}
+
+
+//----推荐商品区域------
+
+#hot-products{
+  background-color: #ECEFF1;
+  // margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+a.left.carousel-control{
+background: none;
+position: absolute;
+top: -10%;
+left: -10%;
+font-size: 40px;
+color: #fff;
+opacity: 1;
+
+}
+a.right.carousel-control{
+background: none;
+position: absolute;
+top: -10%;
+right: -10%;
+font-size: 40px;
+color: #fff;
+opacity: 1;
 }
