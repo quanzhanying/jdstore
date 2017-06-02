@@ -1,0 +1,54 @@
+<div class="col-md-12 product-index">
+  <div class="col-md-12 search">
+    <div class="col-md-8 col-md-offset-2">
+        <%= search_form_for @q do |f| %>
+          <%= f.search_field :title_cont, class:"form-control search-form",  placeholder: "输入商品的相关信息" %>
+          <% end %>
+    </div>
+
+  </div>
+  <% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3 ">
+    <span class="thumbnail">
+      <div class="pull-right">
+
+        <% if  current_user && current_user.is_favorites?(product) %>
+
+          <%= link_to(delete_from_wish_list_product_path(product), method: :post, class:"love") do %><i class="fa fa-heart " aria-hidden="true"></i><% end %>
+        <% else %>
+          <%= link_to(add_to_wish_list_product_path(product), method: :post, class:"nolove") do %><i class="fa fa-heart-o " aria-hidden="true"></i><% end %>
+        <% end %>
+      </div>
+      <%= link_to(product_path(product)) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url) %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic")%>
+        <% end %>
+      <% end %>
+      <div class="caption">
+  			<div class="row">
+  				<div class="text-center">
+  					<h3><%= product.title %></h3>
+            <p class="description"><%= product.description %></p>
+  				</div>
+  				<div class="price">
+  					<h3 class="text-center">
+  					<p>￥ <%= product.price %>.00</p></h3>
+  				</div>
+  			</div>
+
+        <hr>
+        <div class="row">
+  				<div class="col-md-6">
+  					<%=link_to(product_path(product),class:"btn btn-default btn-product") do %><i class="fa fa-info" aria-hidden="true"></i> 查看详情</a><% end %>
+  				</div>
+  				<div class="col-md-6">
+  					<%= link_to(add_to_cart_product_path(product),:method => :post, class:"btn btn-primary btn-product") do %><i class="fa fa-shopping-cart" aria-hidden="true"></i> 加入购物车</a> <% end %>
+          </div>
+    		</div>
+      </div>
+    </span>
+  </div>
+  <% end %>
+</div>

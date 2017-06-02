@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <%= simple_form_for [:account, @user] do |f| %>
+
+        <%= f.input :name, :label => '姓名' %>
+        <%= f.input :address ,:label => '地址' %>
+        <%= f.input :phone ,:label => '电话' %>
+        <%= f.button  :submit, '更新' , class: 'button' %>
+
+    <% end %>
+
+  </div>
+
+</div>
