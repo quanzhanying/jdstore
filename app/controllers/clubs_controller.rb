@@ -6,6 +6,7 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = Club.all.order("created_at DESC")
+    @club_review = ClubReview.new
   end
 
   def show

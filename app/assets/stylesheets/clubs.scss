@@ -34,7 +34,7 @@
 }
 
 .club-title {
-  margin: auto 10px;
+  margin: -20px 10px 0;
   a {
   font-size: 0.6em;
     color: #7f8c8d;
@@ -56,4 +56,9 @@
 .club-index-box-review {
   background-color: #E5E5E5;
   padding: 15px 30px;
+}
+
+.club-review-user-avatar {
+  margin-left: 30px;
+  float: left;
 }

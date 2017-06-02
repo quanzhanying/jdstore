@@ -54,14 +54,55 @@
           </div>
 
         </div>
+
+
+        <!-- 帖子评论 -->
+        <div class="club-index-box-review">
+
+          <!-- 填写评论 -->
+          <%= simple_form_for ([club, @club_review]) do |f| %>
+            <div class="">
+              <%= f.input :comment, :label => "发表评论" %>
+            </div>
+            <div class="">
+              <%= f.submit "发表评论", class: "btn btn-sm btn-default ", data: {disable_with: "Submiting"} %>
+            </div>
+          <% end %>
+          <hr>
+
+          <!-- 评论内容 -->
+          <div class="club-reviews">
+            <% club.club_reviews.each do |club_review| %>
+
+              <div class="row">
+
+                <div class="">
+                  <!-- 评论者头像 -->
+                  <div class="club-review-user-avatar">
+                    <% if club_review.user.avatar.present? %>
+                      <%= image_tag(club_review.user.avatar.avatarminixs.url, class: "img-circle img-responsive") %>
+                    <% else %>
+                      <%= image_tag("http://placehold.it/40x40&text=No Pic", class: "img-circle img-responsive center-block") %>
+                    <% end %>
+                  </div>
+                  <div class="club-user-name">
+                    <p><strong><%= club_review.user.display_name %>：</strong> <br> <%= club_review.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+                  </div>
+                </div>
+
+                <div class="club-review-comment">
+                    <%= club_review.comment %>
+                </div>
+
+
+              </div>
+
+              <hr>
+            <% end %>
+          </div>
+        </div>
+
       <% end %>
-
-      <!-- 帖子评论 -->
-      <div class="club-index-box-review">
-        帖子评论
-      </div>
-
-
     </div>
 
 

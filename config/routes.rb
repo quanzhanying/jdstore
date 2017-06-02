@@ -96,7 +96,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :clubs            #社群功能
+  resources :clubs do            #社群功能
+    resources :club_reviews
+  end
 
   get "about/index"
 

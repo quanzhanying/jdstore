@@ -1,0 +1,2 @@
+module ClubReviewsHelper
+end
