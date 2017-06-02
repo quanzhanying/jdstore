@@ -1,19 +1,22 @@
-<div class="search-result">
+<div class="container-fluid search-result" id="products">
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
-        <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+    <div class="col-md-10 col-md-offset-1 col-xs-10">
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
           <% end %>
-        <% end %>
-        <%= product.title %> ￥ <%= product.price %>
-      </div>
-    <% end %>
-  </div>
-  <div class="text-center">
-    <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+          <span class="price">￥ <%= product.price %></span>
+          <span class="like"><%= link_to(content_tag(:i , product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+    </div>
   </div>
 </div>
