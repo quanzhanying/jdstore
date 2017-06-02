@@ -1,21 +1,29 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4 col-md-offset-1">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <%= image_tag("http://placehold.it/500x500&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-3">
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
         <%= @product.description %>
       </p>
     </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-    <div class="pull-right">
+
+    <div>
+      <h5> 剩余数量 : <%= @product.quantity %> </h5>
+      <h4> ￥ <%= @product.price %> </h4>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <hr>
+    <div class="pull-down">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-success") %>
           <% else %>
@@ -23,4 +31,9 @@
           <% end %>
     </div>
   </div>
+  <div class="col-md-4">
+    <h2>书评</h2>
+    <p>这部分是上一位读者的书评</p>
+  </div>
+
 </div>

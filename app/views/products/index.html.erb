@@ -1,21 +1,29 @@
-<div class="row col-md-offset-0">
-  <% @products.each do |product| %>
-    <div class="col-md-3 col-md-offset-0">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
+<div class="contaniner">
+  <div class="row">
+
+    <div class="col-md-10 col-md-offset-1">
+      <% @products.each do |product| %>
+        <div class="col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+            <div align="center">
+              <h4> ￥ <%= product.price %> </h4>
+              <h5> <%= product.title %> </h5>
+            </div>
+          <br>
+          <br>
+        </div>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-      <br>
-      <br>
+
+      <% if @products.blank? %>
+        <h4 align="center">抱歉，没有找到与“<%= params[:search] %>”有关的结果。</h4>
+      <% end %>
     </div>
-  <% end %>
 
-  <% if @products.blank? %>
-    <h4 align="center">抱歉，没有找到与“<%= params[:search] %>”有关的结果。</h4>
-  <% end %>
-
+  </div>
 </div>
