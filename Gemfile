@@ -69,7 +69,7 @@ gem 'qiniu-rs'
 #密码管理
 gem 'figaro'
 
-#验证码
+#验证码(只能在本地运行)
 gem 'rucaptcha'
 gem 'dalli'
 
