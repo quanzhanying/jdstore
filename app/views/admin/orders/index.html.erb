@@ -1,4 +1,30 @@
 <h2><%= t("admin.order_list") %></h2>
+
+<div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      排序
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+          <%= link_to("所有订单", admin_orders_path) %>
+        </li>
+        <li>
+          <%= link_to("已完成订单", admin_orders_path(:state => "finished")) %>
+        </li>
+        <li>
+            <%= link_to("待收款订单", admin_orders_path(:state => "placed")) %>
+        </li>
+        <li>
+          <%= link_to("待发货订单", admin_orders_path(:state => "paid") ) %>
+        </li>
+        <li>
+          <%= link_to("回收站", admin_orders_path(:state => "cancelled") ) %>
+        </li>
+    </ul>
+</div>
+<br><br>
+
 <table class="table table-bordered">
   <thead>
     <tr>

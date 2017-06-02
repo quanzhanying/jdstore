@@ -1,4 +1,28 @@
 <h2>订单列表</h2>
+<div class="dropdown clearfix pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      排序
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li>
+          <%= link_to("所有订单", account_orders_path) %>
+        </li>
+        <li>
+          <%= link_to("已完成订单", account_orders_path(:state => "finished")) %>
+        </li>
+        <li>
+            <%= link_to("待付款订单", account_orders_path(:state => "placed")) %>
+        </li>
+        <li>
+          <%= link_to("待收货订单", account_orders_path(:state => "paid") ) %>
+        </li>
+        <li>
+          <%= link_to("回收站", account_orders_path(:state => "cancelled") ) %>
+        </li>
+    </ul>
+</div>
+<br><br>
 <table class="table table-bordered">
   <thead>
     <tr>

@@ -3,7 +3,20 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_required
   def index
-    @orders = Order.order("id DESC")
+    @orders = case params[:state]
+              when 'placed'
+                Order.where(aasm_state: "order_placed").order('id DESC')
+              when 'paid'
+                Order.where(aasm_state: "paid").order('id DESC')
+              when 'ship'
+                Order.where(aasm_state: "shipping").order('id DESC')  
+              when 'cancelled'
+                Order.where(aasm_state: ["order_cancelled", "good_returned"]).order('id DESC')
+              when 'finished'
+                Order.where(aasm_state: "shipped").order('id DESC')
+              else
+                Order.order('id DESC')
+              end
   end
 
   def show
