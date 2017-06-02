@@ -58,13 +58,23 @@
         <tr>
           <td>
             <li>姓名：<%= @order.billing_name %></li>
-            <li>地址：<%= @order.billing_address %></li>
+            <li>地址：
+            <%= ChinaCity.get(@order.billing_province) %>
+            <%= ChinaCity.get(@order.billing_city) %>
+            <%= ChinaCity.get(@order.billing_district) %>
+            </li>
             <li>电话：<%= @order.billing_phone %></li>
+            <li>详细地址：<%= @order.billing_address %></li>
           </td>
           <td>
             <li>姓名：<%= @order.shipping_name %></li>
-            <li>地址：<%= @order.shipping_address %></li>
+            <li>地址：
+            <%= ChinaCity.get(@order.province) %>
+            <%= ChinaCity.get(@order.city) %>
+            <%= ChinaCity.get(@order.district) %>
+            </li>
             <li>电话：<%= @order.shipping_phone %></li>
+            <li>详细地址：<%= @order.shipping_address %></li>
           </td>
         </tr>
       </tbody>

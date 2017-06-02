@@ -62,14 +62,22 @@
 
           <legend> 订购人</legend>
           <div class="form-group">
-            <%= f.input :billing_name ,label: "购买人姓名" %>
-          </div>
-          <div class="form-group ">
-            <%= f.input :billing_address ,label: "购买人地址" %>
+            <%= f.input :billing_name ,label: "订购人姓名" %>
           </div>
           <div class="form-group">
-            <%= f.input :billing_phone ,label: "购买人电话" %>
+            <%= f.input :billing_phone ,label: "订购人电话" %>
           </div>
+          <div class="form-group ">
+            <%= f.input :billing_address ,label: "订购人详细地址" %>
+          </div>
+          <div class="city-group">
+            <%= f.select :billing_province,  ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select "%>
+            <%= f.select :billing_city,      ChinaCity.list(f.object.province).presence || [["--城市--", 230900]],    {}, class: "city-select " %>
+            <%= f.select :billing_district,  ChinaCity.list(f.object.city).presence     || [["--地区--", 230903]],    {}, class: "city-select " %>
+          </div>
+
+          </div>
+
 
           <hr>
 
@@ -77,12 +85,18 @@
           <div class="form-group ">
            <%= f.input :shipping_name ,label: "收货人姓名" %>
           </div>
-          <div class="form-group ">
-            <%= f.input :shipping_address ,label: "收货人地址" %>
-          </div>
           <div class="form-group">
             <%= f.input :shipping_phone ,label: "收货人电话" %>
           </div>
+          <div class="form-group ">
+            <%= f.input :shipping_address ,label: "收货人详细地址" %>
+          </div>
+          <div class="city-group">
+            <%= f.select :province,  ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select "%>
+            <%= f.select :city,      ChinaCity.list(f.object.province).presence || [["--城市--", 230900]],    {}, class: "city-select " %>
+            <%= f.select :district,  ChinaCity.list(f.object.city).presence     || [["--地区--", 230903]],    {}, class: "city-select " %>
+          </div>
+
 
           <div class="checkout">
             <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
