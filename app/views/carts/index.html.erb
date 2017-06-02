@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8 col-md-offset-2">
 
   <%= link_to("清空购物车", clean_carts_path ,
               method: :delete , class: "pull-right",
@@ -21,7 +21,7 @@
 
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
-            <td>
+            <td class="col-md-1">
               <%= link_to product_path(cart_item.product) do %>
                 <% if cart_item.product.image.present? %>
                   <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
@@ -34,7 +34,7 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart_item.product.price %>
+              <%= cart_item.product.price %> 元
             </td>
             <td>
               <%= cart_item.quantity %>

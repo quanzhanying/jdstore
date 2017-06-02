@@ -31,9 +31,22 @@
           <% end %>
     </div>
   </div>
-  <div class="col-md-4">
-    <h2>书评</h2>
-    <p>这部分是上一位读者的书评</p>
+  <div class="col-md-3">
+    <h2 align="center">书评</h2>
+    <p>
+      <%= @product.bookreview %>
+    </p>
+
+    <br>
+    <hr>
+    <div class="pull-down">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("付费阅读完整书评", "#{}", :method => :post, :class => "btn btn-primary btn-lg btn-success") %>
+        <p>功能尚未实现，敬请期待</p>
+          <% else %>
+            库存不足，无法购买
+          <% end %>
+    </div>
   </div>
 
 </div>
