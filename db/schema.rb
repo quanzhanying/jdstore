@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530072701) do
+ActiveRecord::Schema.define(version: 20170531161319) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -34,16 +34,29 @@ ActiveRecord::Schema.define(version: 20170530072701) do
   create_table "elements", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "element_id"
-    t.string   "element_name"
+    t.integer  "quantity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "menucategories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "quantity"
+    t.integer  "price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "avatar"
+    t.string   "image"
+    t.string   "category_name"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_menus_on_category_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -105,7 +118,11 @@ ActiveRecord::Schema.define(version: 20170530072701) do
     t.string   "username"
     t.string   "gender"
     t.boolean  "is_fitting"
+<<<<<<< HEAD
 
+=======
+    t.string   "avatar"
+>>>>>>> amy2
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

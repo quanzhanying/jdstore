@@ -4,8 +4,8 @@ Rails.application.routes.draw do
    devise_for :users
    namespace :admin do
       resources :products
+      resources :menus
       resources :category
-      resources :elements
       resources :orders do
          member do
             post :cancel
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
    end
 
    resources :products do
-      resources :elements
       member do
          post :add_to_cart
       end
@@ -30,9 +29,9 @@ Rails.application.routes.draw do
       end
    end
 
+   resources :elements
    resources :cart_items
    resources :category
-   resources :elements
    resources :orders do
       member do
          post :pay_with_alipay

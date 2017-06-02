@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ElementTest < ActiveSupport::TestCase
+class MenuTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

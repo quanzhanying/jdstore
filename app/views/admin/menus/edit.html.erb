@@ -1,0 +1,31 @@
+<h2> Edit menu </h2>
+
+<%= simple_form_for [:admin, @menu] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+  
+  <div class="group">
+      <%= f.association :category %>  <!--simple_form_for格式 -->
+  </div>
+
+  <div>
+     <%= f.input :image, as: :file%>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
