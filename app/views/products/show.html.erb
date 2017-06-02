@@ -1,5 +1,5 @@
 <div class="container box" >
-    <!-- left card -->
+    <!-- picture -->
       <div class="row">
         <div class="col-md-5">
           <div class="preview-pic">
@@ -10,10 +10,10 @@
             <% end %>
           </div>
         </div>
-    <!-- right card -->
+    <!-- description -->
         <div class="col-md-7">
           <h3> <%= @product.title %> </h3>
-          <div style="height:290px;">
+          <div class="show-description" style="height:280px;">
             <p>
               <%= @product.description %>
             </p>
@@ -46,7 +46,33 @@
 
   <hr>
 
-  
+  <div class="guide">
+    <div class="guide-title">购物指南</div>
+    <br>
+    <div class="guide-body">
+      <div class="col-md-3 column">
+        <p>配送费用</p>
+        <p>小件商品的配送费用为20.00元/单。单笔订单消费购买小件商品满299.00元，可享受免费配送服务</p>
+      </div>
+      <div class="col-md-3 column">
+        <p>支付方式</p>
+        <p>支付宝账户余额 网银支付（通过支付宝 信用卡支付（通过支付宝）</p>
+      </div>
+      <div class="col-md-3 column">
+        <p>更换商品、退货</p>
+        <p>未经使用的商品，可在到货起14日内进行退货服务申请。当您需要申请退货服务时请联系客服中心。</p>
+      </div>
+      <div class="col-md-3 column">
+        <p>关于商品颜色</p>
+        <p>因拍摄灯光或显示器等因素，网页商品颜色可能与实物存在一定偏差，请以实物为准，敬请谅解。</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
 
 
 

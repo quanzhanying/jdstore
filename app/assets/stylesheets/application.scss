@@ -16,6 +16,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
 /*----- navbar -----*/
 #nav-height {
   padding-top: 15px;
@@ -505,23 +507,15 @@
 
 
 
-/*----- main campaign -----*/
+/*----- Welcome page -----*/
 
 .mainproduct {
   margin: 50px 60px 50px 60px;
 }
 
-.detail{
-  text-align: center;
-}
-
-
-
-
-/*----- Welcome page -----*/
-
 .welcome-product {
   margin-top: 80px;
+
 }
 .detail {
   font-size: 20px;
@@ -529,35 +523,36 @@
   text-decoration: none;
   text-align: left;
   border-radius: 1px;
+}
 
-  .a {
+a:link {
+  color: #444444;
+
+}
+a:visited,
+a:hover {
+    color: #cc0000;
+    background-color: transparent;
     text-decoration: none;
+}
+
+
+.prolist {
+  border-width: 10px;
+  border-style: solid;
+  border-color: #FFFFFF;
+
+
+
   }
+.product-intro-list-img-right {
+  width: 100%;     /*---- 照片布满prolist-----*/
+  height: 100%;    /*---- 照片布满prolist-----*/
 }
 
 
 
 
-
-
-
-
-
-
-/*----- slogan -----*/
-.slogan {
-  height: 300px;
-  text-align: center;
-  text-shadow: 2px;
-}
-
-.slogan-ad {
-  padding-top: 60px;
-  padding-bottom: 2em;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 
 
 /*----- products 页面 -----*/
@@ -570,7 +565,7 @@
   display: block;
 }
 
-.show {
+.product-head {
   margin-top: 16px;
   text-align: center;
   font-size: 100%;
@@ -578,6 +573,11 @@
 }
 
 .product-item {
+  width: 270px;         /*----- 容纳图片的空间大于图片使边框留白 -----*/
+  margin-right: 10px;  /*---- 产品间距 -----*/
+  margin-bottom: 50px;
+
+
   .image {
     width: 250px;
     height:250px;
@@ -588,19 +588,44 @@
 
 
 
-/*----- product show 页面 -----*/
+/*----- product/show 页面 -----*/
 .box {
   margin-top: 60px; /*----- 不被alert阻挡 -----*/
 }
 
-.add-cart {
-
-}
 
 .price {
   font-size: 30px;
   padding-left: 0;
   float: left;
+}
+
+.thumbnail{
+  padding: 10px;   /*---- 图片的白边 -----*/
+}
+
+.hr{
+  color: #323232;
+  font-weight: bold;
+}
+
+.guide-title {
+  font-size: 20px;
+
+}
+
+.guide-body {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.column {
+
+}
+
+
+.show-description {
+  height:280px;
 
 }
 
@@ -626,18 +651,20 @@
 
 }
 
-.a:hover,
-.a:focus {
+.a:hover, {
+  color: #d95f59;
   text-decoration: none;
 }
 
-
-
-
-.quantity {
-  width: 20px;
+.show-recom {
+  text-align: center;
 }
 
+
+/*----- cart.checkout ------*/
+.quantity {
+  width: 30px;
+}
 
 
 
