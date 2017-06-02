@@ -19,5 +19,8 @@ class Product < ApplicationRecord
   has_many :users, through: :favorites, source: :user
   acts_as_list
 
+  has_many :photos
+  accepts_nested_attributes_for :photos
+
   scope :random, -> { limit(3).order("RANDOM()") }     ## limit是随机的数目
 end

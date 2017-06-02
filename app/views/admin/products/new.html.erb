@@ -22,7 +22,8 @@
   </div>
 
   <div class="group">
-    <%= f.input :image, as: :file %>
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
 
 
@@ -30,9 +31,7 @@
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
   </div>
 
-  <%= f.submit "Submit", data: {
-  disable_with: "Submitting..."
-} %>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <%end %>
 </div>
