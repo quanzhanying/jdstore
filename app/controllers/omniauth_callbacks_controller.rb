@@ -11,5 +11,5 @@ class OmniauthCallbacksController < ApplicationController
 			redirect_to new_user_registration_path
 		end
 	end
-  
+
 end
