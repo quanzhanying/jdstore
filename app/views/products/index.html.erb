@@ -23,22 +23,9 @@
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
           <% end %>
-          <table>
-            <tr>
-              <td>
-                <span class="price">￥ <%= product.price %></span>
-              </td>
-              <td>
-                <%= link_to like_product_path(product), method: :put do %>
-                <div class="like">
-                <i class="fa fa-thumbs-up" , style="color:#ff5722;"></i>
-                <%= product.get_upvotes.size %>
-                </div>
-                <% end %>
-              </td>
-            </tr>
-          </table>
 
+          <span class="price">￥ <%= product.price %></span>
+          <span class="like"><%= link_to(content_tag(:i , product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
         </div>
       <% end %>
     </div>

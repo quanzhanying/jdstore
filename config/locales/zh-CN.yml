@@ -13,3 +13,5 @@
     new_product: 新增商品
     new_category: 新增类别
     edit_product: 编辑商品
+    update_product: 更新
+    create_product: 确认

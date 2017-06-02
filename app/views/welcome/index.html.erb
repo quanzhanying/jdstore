@@ -61,7 +61,7 @@
                       <% end %>
                     <% end %>
                     <span class="price">￥ <%= product.price %></span>
-                    <span class="like"><%= link_to(content_tag(:i, '点赞人数', class: 'fa fa-thumbs-up'), "#") %></span>
+                    <span class="like"><%= link_to(content_tag(:i, product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
                   </div>
                 </div>
               <% end %>
@@ -80,7 +80,7 @@
                       <% end %>
                     <% end %>
                     <span class="price">￥ <%= product.price %></span>
-                    <span class="like"><%= link_to(content_tag(:i, '点赞人数', class: 'fa fa-thumbs-up'), "#") %></span>
+                    <span class="like"><%= link_to(content_tag(:i, product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
                   </div>
                 </div>
               <% end %>
