@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     else
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(:category_id => @category_id)
-    end   
+    end
   end
 
   def show
@@ -38,10 +38,10 @@ class ProductsController < ApplicationController
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
     @search_criteria = search_criteria(@query_string)
+  end 
   end
 
 
   def search_criteria(query_string)
     { :title_cont => query_string }
   end
-end
