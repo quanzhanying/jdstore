@@ -47,6 +47,8 @@ $(document).on('mouseover', '.productDetail-left-imageList-item', function () {
 //products/show页面 购买商品数量的改变
 // $(document).on('turbolinks:load', function() {    //见报错记录023 http://majing-blog.logdown.com/posts/1905683
 $(document).ready(function(){
+  slideUpAlert();
+
   /*增加数量*/
   $("#quantity-plus").click(function(e) {
     var num = parseInt($("#quantity-input").val()) + 1;
@@ -68,3 +70,10 @@ $(document).ready(function(){
     e.preventDefault();
   });
 });
+// 收起通知信息
+function slideUpAlert() {
+  // 消息停留3000毫秒（3秒），消失动画时间250毫秒
+  $(".alert").delay(3000).slideUp(250, function() {
+    $(this).remove();
+  });
+}
