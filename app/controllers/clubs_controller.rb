@@ -22,7 +22,6 @@ class ClubsController < ApplicationController
 
     if @club.save
       redirect_to clubs_path
-      flash[:notice] = "帖子发布成功"
     else
       render :new
     end
