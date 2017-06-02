@@ -5,9 +5,9 @@
       <div class="col-xs-12 col-md-4 text-center product-list-style">
         <% link_to product_path(product) %>
           <% if product.image.present? %>
-            <%= link_to image_tag(product.image.medium.url, class: "product-list-style-img img-responsive center-block"), product_path(product), target: "_blank" %>
+            <%= link_to image_tag(product.image.medium.url, class: "product-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
           <% else %>
-            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img img-responsive center-block"), product_path(product), target: "_blank" %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
           <% end %>
         <br>
         <%= link_to(product.title, product_path(product), target: "_blank") %>

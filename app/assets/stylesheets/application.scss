@@ -48,6 +48,18 @@
     }
   }
 
+  .all_image_css {
+    transition: 0.8s;
+  }
+
+
+  .all_image_css:hover {
+    filter:alpha(Opacity=100);
+    -moz-opacity:0.4;
+    opacity: 0.7;
+    transition: 0.8s;
+  }
+
   // navbar设置
   .navbar-style {
     background: #f5f5f5;

@@ -92,7 +92,7 @@
 
               <div class="">
                 <!-- 文章列表图片 -->
-                <div class="col-md-5">
+                <div class="col-md-5 all_image_css">
                   <% if article.image.present? %>
                     <%= link_to image_tag(article.image.articleimg.url, class: "product-list-style-img img-responsive"), article_path(article) %>
                   <% else %>
@@ -143,7 +143,7 @@
 
     <div class="row">
       <% @courses.each do |course| %>
-        <div class="col-xs-12 col-md-4 text-center product-list-style">
+        <div class="col-xs-12 col-md-4 text-center product-list-style all_image_css">
           <% link_to product_path(course) %>
             <% if course.image.present? %>
               <%= link_to image_tag(course.image.medium.url, class: "product-list-style-img img-responsive center-block"), product_path(course) %>
@@ -179,9 +179,9 @@
         <div class="col-xs-6 col-md-3 text-center product-list-style">
           <% link_to product_path(product) %>
             <% if product.image.present? %>
-              <%= link_to image_tag(product.image.thumb.url, class: "product-list-style-img img-responsive center-block"), product_path(product), target: "_blank" %>
+              <%= link_to image_tag(product.image.thumb.url, class: "product-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
             <% else %>
-              <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "product-list-style-img img-responsive center-block"), product_path(product), target: "_blank" %>
+              <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "product-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
             <% end %>
           <br>
           <%= link_to(product.title, product_path(product), target: "_blank") %>

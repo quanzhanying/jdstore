@@ -34,8 +34,23 @@
         <!-- 内容 -->
         <div class="article-description">
           <%= simple_format(@article.description) %>
-          <hr>
         </div>
+
+        <!-- 文章收藏功能 -->
+        <div class="article-collection text-center">
+          <% if current_user && current_user.is_article_member_of?(@article) %>
+            <div class="article-collection-btn">
+              <%= link_to quit_article_path(@article), method: :post, class: "btn btn-lg btn-danger" do %>
+              <i class="fa fa-thumbs-up fa-1x">  赞  (<span><%= @article.article_collections.count %></span>) </i><% end %>
+            </div>
+          <% else %>
+            <div class="article-collection-btn">
+              <%= link_to join_article_path(@article), method: :post, class: "btn btn-lg btn-default" do %>
+              <i class="fa fa-thumbs-o-up fa-1x">  赞  (<span><%= @article.article_collections.count %></span>) </i><% end %>
+            </div>
+          <% end %>
+        </div>
+        <hr>
 
         <!-- 文章评论 -->
         <div class="article-review-box">
@@ -129,7 +144,7 @@
           <% @article_hots.each do |article_hot| %>
             <hr>
             <div class="row article-show-hot">
-              <div class="col-xs-4">
+              <div class="col-xs-4 all_image_css">
                 <% if article_hot.image.present? %>
                   <%= link_to image_tag(article_hot.image.thumb.url, class: "img-rounded img-responsive center-block"), article_path(article_hot) %>
                 <% else %>

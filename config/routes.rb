@@ -83,12 +83,17 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders          #用户后台查看订单
-    resources :collections     #用户收藏
+    resources :collections     #用户商品收藏
     resources :users           #用户编辑个人信息
+    resources :article_collections      #用户文章收藏
   end
 
   resources :articles do         #文章前台
     resources :article_reviews
+    member do
+      post :join              #加入收藏
+      post :quit              #取消收藏
+    end
   end
 
   get "about/index"
