@@ -49,22 +49,22 @@
       <tbody>
         <tr>
           <td>
-            订购人
+            <span>收件人名字：</span> <%= @order.billing_name %>
           </td>
         </tr>
         <tr>
           <td>
-            <%= @order.billing_name %> - <%= @order.billing_address %>
+            <span>邮政编码：</span> <%= @order.billing_address %>
           </td>
         </tr>
         <tr>
           <td>
-            收件人
+            <span>电话：</span> <%= @order.shipping_name %>
           </td>
         </tr>
         <tr>
           <td>
-            <%= @order.shipping_name %> - <%= @order.shipping_address %>
+            <span>收件人地址：</span>  <%= @order.shipping_address %>
           </td>
         </tr>
       </tbody>

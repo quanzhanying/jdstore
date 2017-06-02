@@ -1,5 +1,15 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
+  def index
+    if !params[:min_id].blank?
+      @product = Product.find(params[:product_id])
+    @reviews = @product.reviews.where("id > ?",params[:min_id]).order("id desc").limit(5)
+    respond_to do |format|
+        format.html
+        format.js
+      end
+    end
+  end
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)

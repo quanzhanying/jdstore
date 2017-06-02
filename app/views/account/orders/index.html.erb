@@ -5,21 +5,29 @@
 <h2>订单列表 </h2>
 
 
-<table class="table table-bordered">
+<table class="table table-hover pull-right"  style="width:1060px;">
   <thead>
     <tr>
-      <th>#</th>
-      <th>生成时间</th>
+      <th>订单编号</th>
+      <th>订单金额</th>
+      <th>下单时间</th>
+      <th>订单状态</th>
 
     </tr>
   </thead>
   <tbody>
 
     <% @orders.each do |order| %>
-    <tr>
-      <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-      <td> <%= order.created_at.to_s(:long) %> </td>
+
+  <tr onclick="parent.location='<%= order_path(order.token) %>';">
+      <td> <%= order.id %> </td>
+      <td> ￥<%= order.total %></td>
+      <td> <%= format_datetime(order.created_at) %> </td>
+      <% aasm = @aasm_state.assoc(order.aasm_state) %>
+
+      <td> <%= aasm[1] %> </td>
     </tr>
+
     <% end %>
 
   </tbody>

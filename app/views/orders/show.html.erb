@@ -49,10 +49,19 @@
       <tbody>
         <tr>
           <td>
-            <span>收件人名字：</span> <%= @order.billing_name %><br>
-            <span>邮政编码：</span> <%= @order.billing_address %><br>
-            <span>电话：</span> <%= @order.shipping_name %> <br>
-            <span>收件人地址：</span>  <%= @order.shipping_address %><br>
+            <div class="">
+              <span>收件人名字：</span> <%= @order.billing_name %>
+            </div><br>
+            <div class="">
+              <span>邮政编码：</span> <%= @order.billing_address %>
+            </div><br>
+            <div class="">
+                <span>电话：</span> <%= @order.shipping_name %>
+            </div><br>
+           <div class="">
+             <span>收件人地址：</span>  <%= @order.shipping_address %>
+           </div>
+            <br>
           </td>
         </tr>
       </tbody>

@@ -1,20 +1,27 @@
 module ApplicationHelper
 
-    def resource_name
-      :user
+  def format_datetime(aDatetime)
+    if aDatetime
+      aDatetime += 8.hours
+      aDatetime.strftime('%Y年%m月%d日 %H点%M分%S秒')
     end
+  end
 
-    def resource
-        @resource ||= User.new
-    end
+  def resource_name
+    :user
+  end
 
-    def resource_class
-        User
-    end
+  def resource
+    @resource ||= User.new
+  end
 
-    def devise_mapping
-        @devise_mapping ||= Devise.mappings[:user]
-    end
+  def resource_class
+    User
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 
 
   def img430(g,big)

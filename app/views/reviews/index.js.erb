@@ -1,0 +1,7 @@
+<% @reviews.each do |review| %>
+  $("#reviews-list").append("<%=j render :partial => "review", :locals => { :review => review } %>");
+<% end %>
+
+<% if @reviews.any? %>
+var current_post_id = <%= @reviews.last.id %>;
+<% end %>

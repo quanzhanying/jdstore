@@ -59,7 +59,10 @@
   </div>
 
   <div class="text-center">
-    <%= will_paginate @products %>
+    <div class="pag">
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('上一页'), :next_label => t('下一页') %>
+    </div>
+
 
   </div>
 

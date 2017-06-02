@@ -1,20 +1,20 @@
-<% @product.reviews.order("id desc").each do |review| %>
-<div class="reviews_wrapper clearfix">
+<% @reviews.each do |review| %>
+<div id ="review-item-<%= review.id %>" class="reviews_wrapper clearfix">
     <div class="pull-left">
         <p><%= review.body %></p>
     </div>
     <div class="pull-right">
       <div class="up">
-        发表者：<%= review.user.email %>
+        发表者：<%= if review.user.username.nil? then review.user.email else review.user.username end%>
       </div>
       <div class="down">
         <p>评论时间：<%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></p>
       </div>
     </div>
-    <div>
-  </div>
 </div>
 <% end %>
+
+
 <!-- <%# if review.user == current_user %>
    <%#= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
 <%# end %> -->
