@@ -519,22 +519,23 @@
 }
 .detail {
   font-size: 20px;
-  font-style: italic;
   text-decoration: none;
   text-align: left;
   border-radius: 1px;
 }
 
-a:link {
-  color: #444444;
 
-}
-a:visited,
-a:hover {
-    color: #cc0000;
-    background-color: transparent;
-    text-decoration: none;
-}
+.detail a:link {      /*-----  饮食餐具的link颜色 ------ */
+    color: #444444;
+
+  }
+.detail a:hover {
+      color: #cc0000;
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+
 
 
 .prolist {
@@ -647,14 +648,17 @@ a:hover {
   border-radius: 2%;
 }
 
-.detail {
-
+.descrip a:link {
+    color: #444444;
 }
 
-.a:hover, {
-  color: #d95f59;
-  text-decoration: none;
-}
+.descrip a:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: #cc0000;
+  }
+
+
 
 .show-recom {
   text-align: center;
@@ -737,6 +741,12 @@ body {
   font-size: 15px;
   font-weight: 30px;
 
+  a:hover {
+        background-color: transparent;
+        text-decoration: none;
+        color: #cc0000;
+      }
+
 }
 
 //----------button-------
@@ -750,8 +760,14 @@ body {
   }
 
   .btn-danger:hover {
-      background-color: #FFFFFF;//鼠标放置在btn上的背景颜色
-      color: #000000;
+      background-color: #f77f2f;//鼠标放置在btn上的背景颜色
+      color: #fff;
+      border-color: #f77f2f;//鼠标放置在btn上的边框颜色
+    }
+
+  .btn-dange:active {
+      background-color: #f77f2f;//鼠标放置在btn上的背景颜色
+      color: #fff;
       border-color: #f77f2f;//鼠标放置在btn上的边框颜色
 
   }
