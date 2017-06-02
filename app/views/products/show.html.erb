@@ -14,7 +14,7 @@
               <% end %>
               </div>
             <% else %>
-                <%= image_tag("http://placehold.it/500x300&text=No Pic", class: "thumbnail") %>
+                <%= image_tag("http://placehold.it/300x180&text=No Pic", class: "thumbnail") %>
             <% end %>
           </div>
           <div class="pd-show-container">
@@ -43,6 +43,18 @@
                已售罄
             <% end %>
           </div>
+          <hr>
+          <!-- qrcode二维码 -->
+          <div id="overlay" onclick="off()">
+            <div id="text">扫一扫，分享给好友~
+              <%= raw @qr.as_html %>
+            </div>
+          </div>
+          <div style="padding:10px">
+            <button onclick="on()">
+              <i class=" fa fa-weixin fa-3x" aria-hidden=" true"></i>
+            </button>
+          </div>
        </div>
 
      </div>
@@ -51,6 +63,7 @@
           <div class="pd-des-title">
           <h2> <%= @product.title %> </h2>
           </div>
+          <hr>
            <div class="pd-des-container">
            <p>
              <%= sanitize @product.description %>
@@ -60,17 +73,7 @@
    </div>
 </div>
 
-<!-- qrcode二维码 -->
-<div id="overlay" onclick="off()">
-  <div id="text">扫一扫，分享给好友~
-    <%= raw @qr.as_html %>
-  </div>
-</div>
-<div style="padding:10px">
-  <button onclick="on()">
-    <i class=" fa fa-weixin fa-3x" aria-hidden=" true"></i>
-  </button>
-</div>
+
 <script>
   function on() {
     document.getElementById("overlay").style.height = "100%";
