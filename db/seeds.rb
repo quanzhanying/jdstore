@@ -68,7 +68,9 @@ if Product.find_by(title: '小王子').nil?
                   description: '小王子（纯美珍藏绘本）',
                   price: 29,
                   quantity: 6,
-                  image: open('https://img1.doubanio.com/lpic/s1237549.jpg'))
+                  image: open('https://img1.doubanio.com/lpic/s1237549.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -79,7 +81,9 @@ if Product.find_by(title: '人类群星闪耀时').nil?
                   description: '茨威格从悠久的历史中撷取十四个重要时刻加以生动刻画，这些时刻——正如他在本书“序言”中所说——“对世世代代做出不可改变的决定；它决定着一个人的生死、决定着一个民族的存亡甚至整个人类的命运”。',
                   price: 36,
                   quantity: 10,
-                  image: open('https://img3.doubanio.com/lpic/s28104752.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s28104752.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -90,7 +94,9 @@ if Product.find_by(title: '浪潮之巅').nil?
                   description: '这不是一本科技产业发展历史集，而是在这个数字时代，一本IT人非读不可，而非IT人也应该拜读的作品。 ',
                   price: 99,
                   quantity: 8,
-                  image: open('https://img3.doubanio.com/lpic/s27932441.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s27932441.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -101,7 +107,9 @@ if Product.find_by(title: '海边的卡夫卡').nil?
                   description: '小说描写一个15岁少年立志成为世界上坚韧的人，离家踏上“不重复第二遍”的旅途，由此遇上一系列奇人奇事。',
                   price: 49,
                   quantity: 10,
-                  image: open('http://pic.pimg.tw/lovetabris/1184031969.jpg'))
+                  image: open('http://pic.pimg.tw/lovetabris/1184031969.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -112,7 +120,9 @@ if Product.find_by(title: '无声告白').nil?
                   description: '我们终此一生，就是要摆脱他人的期待，找到真正的自己。',
                   price: 26,
                   quantity: 5,
-                  image: open('https://img3.doubanio.com/lpic/s28109182.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s28109182.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -124,7 +134,9 @@ if Product.find_by(title: '對話伍迪艾倫').nil?
                   description: '我的電影永遠都會用來表達個人感受，無論是索然無味的人生或是恐怖的存在。',
                   price: 149,
                   quantity: 5,
-                  image: open('https://img3.doubanio.com/lpic/s28343713.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s28343713.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -135,7 +147,9 @@ if Product.find_by(title: '木心1989-1994 文學回憶錄套書').nil?
                   description: '《文學回憶錄》，從古代至二十世紀、從西方到東方，攏聚文學花果，是開啟世界文學之門的叩門磚，是航向世界文學的引路燈塔。',
                   price: 99,
                   quantity: 6,
-                  image: open('https://img1.doubanio.com/lpic/s24611679.jpg'))
+                  image: open('https://img1.doubanio.com/lpic/s24611679.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -147,7 +161,9 @@ if Product.find_by(title: '长尾理论').nil?
                   description: '书中阐述，商业和文化的未来不在于传统需求曲线上那个代表“畅销商品”（hits）的头部； 而是那条代表“冷门商品”（misses）经常为人遗忘的长尾。 举例来说， 一家大型书店通常可摆放10万本书，但亚马逊网络书店的图书销售额中，有四分之一来自排名10万以后的书籍。这些“冷门”书籍的销售比例正以高速成长，预估未来可占整体书市的一半。 ',
                   price: 77,
                   quantity: 8,
-                  image: open('https://img3.doubanio.com/lpic/s1914890.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s1914890.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -158,7 +174,9 @@ if Product.find_by(title: '解忧杂货店').nil?
                   description: '僻静的街道旁有一家杂货店，只要写下烦恼投进卷帘门的投信口，第二天就会在店后的牛奶箱里得到回答。',
                   price: 49,
                   quantity: 10,
-                  image: open('https://img3.doubanio.com/lpic/s27264181.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s27264181.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -171,7 +189,9 @@ if Product.find_by(title: '未来简史').nil?
 未来，人类将面临着三大问题：生物本身就是算法，生命是不断处理数据的过程；意识与智能的分离；拥有大数据积累的外部环境将比我们自己更了解自己。如何看待这三大问题，以及如何采取应对措施，将直接影响着人类未来的发展。',
                   price: 45,
                   quantity: 5,
-                  image: open('https://img3.doubanio.com/lpic/s29287103.jpg'))
+                  image: open('https://img3.doubanio.com/lpic/s29287103.jpg')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
@@ -183,7 +203,9 @@ if Product.find_by(title: '上瘾').nil?
                   description: '让用户养成使用习惯的四大产品逻辑',
                   price: 45,
                   quantity: 5,
-                  image: open('https://img1.doubanio.com/view/ark_article_cover/retina/public/34357709.jpg?v=1495531728.0'))
+                  image: open('https://img1.doubanio.com/view/ark_article_cover/retina/public/34357709.jpg?v=1495531728.0')
+                  bookreview: '功能尚未实现，敬请期待'
+                  )
   puts '新增产品'
 else
   puts '该产品已创建，不重复增加'
