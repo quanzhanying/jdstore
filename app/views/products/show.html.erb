@@ -13,33 +13,44 @@
     <!-- right card -->
         <div class="col-md-7">
           <h3> <%= @product.title %> </h3>
-          <div style="height:100px;">
+          <div style="height:290px;">
             <p>
               <%= @product.description %>
             </p>
           </div>
           <div> 数量 : <%= @product.quantity %> </div>
-          <div class="product-price"> ￥ <%= @product.price %> </div>
-        <div>
-        <% if !current_user.is_favorite_of?(@product) %>
-          <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-            <i class="fa fa-heart" aria-hidden="true"></i>
-          <% end %>
-        <% else %>
-          <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-            <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+                 <div class="show-price">
+                      <div class="price">
+                        ￥ <%= @product.price %>
+                      </div>
+                      <div class="addcart pull-right">
+                          <% if !current_user.is_favorite_of?(@product) %>
+                            <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                              <i class="fa fa-heart" aria-hidden="true"></i>
+                            <% end %>
+                          <% else %>
+                            <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                              <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                            <% end %>
+                          <% end %>
 
-      <div class="col-md-6 pull-right">
+                          <% if @product.quantity.present? && @product.quantity > 0 %>
+                              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+                          <% else %>
+                              已销售一空，无法购买
+                          <% end %>
+                      </div>
+              </div>
+     </div>
+  </div>
 
-        <% if @product.quantity.present? && @product.quantity > 0 %>
-            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-        <% else %>
-            已销售一空，无法购买
-        <% end %>
+  <hr>
 
-    </div>
+  
+
+
+
+
+
+
 </div>

@@ -19,7 +19,7 @@
          <div class="col-md-10">
     <!-- 产品列表 -->
            <div class="product">
-             <div class="show"> <h4>Product </h4> </div>
+             <div class="show"> <h4> 开味商品</h4> </div>
 
                <% @products.each do |product| %>
                <%= link_to product_path(product) do %>   <!-- 把整张图变成连结 -->
@@ -70,7 +70,7 @@
       <div class="row">
         <div class="col-md-10">
             <div class="product-random">
-               <div class="show-recom"> <h4> Hot Selling  </h4> </div>
+               <div class="show-recom"> <h4> 良品推荐  </h4> </div>
 
                  <% @suggests.each do |product| %>
                  <%= link_to product_path(product) do %>

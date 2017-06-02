@@ -19,6 +19,19 @@ else
  puts "Admin 已经建立过了，脚本跳过该步骤。"
 end
 
+
+# Intialize category
+if Category.count == 0
+  puts "Creating category"
+  Category.create!(name: "饮食餐具系列")
+  Category.create!(name: "烹饪工具系列")
+  Category.create!(name: "特品系列")
+else
+  puts "Category created already"
+end
+
+
+
 # Intialize Product
 
 if Product.count == 0
@@ -64,15 +77,4 @@ if Product.count == 0
     )
   else
     puts "Product created already"
-  end
-
-
-  # Intialize category
-  if Category.count == 0
-    puts "Creating category"
-    Category.create!(name: "饮食餐具系列")
-    Category.create!(name: "烹饪工具系列")
-    Category.create!(name: "特品系列")
-  else
-    puts "Category created already"
   end
