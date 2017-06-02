@@ -1,6 +1,6 @@
 <p>
-  <input name="lng" type="hidden" id="lng" style="width:200px;" value="<%= @job.cp_lng %>"/>
-  <input name="lat" type="hidden" id="lat" style="width:200px;" value="<%= @job.cp_lat %>"/><br>
+  <input name="lng" type="hidden" id="lng" style="width:200px;" value="<%= @product.cp_lng %>"/>
+  <input name="lat" type="hidden" id="lat" style="width:200px;" value="<%= @product.cp_lat %>"/><br>
 </p>
 <div style="width: 326px; height: 320px; border: 1px solid gray; float: left;" id="container1"></div>
 <script type="text/javascript">
@@ -73,7 +73,7 @@
       map.addOverlay(marker);
       marker.enableDragging(); //可以拖动
       //创建信息窗口
-      var infoWindow = new BMap.InfoWindow("'<%= @job.cp_name %>'的位置。<br/>可以放大拖动,查看周边信息！");
+      var infoWindow = new BMap.InfoWindow("'<%= @product %>'的位置。<br/>可以放大拖动,查看周边信息！");
       //显示窗口
       marker.openInfoWindow(infoWindow);
       //点击监听

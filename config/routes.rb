@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 mount ChinaCity::Engine => '/china_city'
 
-
   namespace :account do
 		resources :orders
   end
@@ -11,7 +10,7 @@ mount ChinaCity::Engine => '/china_city'
  	end
   devise_for :users
  	root 'products#index'
-  
+
  	resources :products do
 		member do
 			post :add_to_cart
