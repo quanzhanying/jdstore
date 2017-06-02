@@ -1,62 +1,70 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>
-      订单明细 (<%= render_order_paid_state(@order) %>)
-    </h2>
+<div class="container-fluid" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-info">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <h3>
+            订单明细 (<%= render_order_paid_state(@order) %>)
+            <%= render "admin/orders/state_option", order: @order %>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th width="80%">商品明细</th>
+                <th>单价</th>
+                <th>数量</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @product_lists.each do |product_list| %>
+                <tr>
+                  <td><%= product_list.product_name %></td>
+                  <td><%= product_list.product_price %></td>
+                  <td><%= product_list.quantity %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
 
-    <%= render "admin/orders/state_option", order: @order %>
+        <!-- footer -->
+        <div class="panel-footer">
+          <div class="total clearfix">
+            <span class="pull-right">
+              总计 <%= @order.total %> CNY
+            </span>
+          </div>
+        </div>
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th width="80%">商品明细</th>
-          <th>单价</th>
-          <th>数量</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @product_lists.each do |product_list| %>
-          <tr>
-            <td><%= product_list.product_name %></td>
-            <td><%= product_list.product_price %></td>
-            <td><%= product_list.quantity %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-        总计 <%= @order.total %> CNY
-      </span>
+        <!-- Table -->
+        <table class="table table-stripped">
+          <tbody>
+            <tr>
+              <td>
+                订购人
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= @order.billing_name %> - <%= @order.billing_address %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                收件人
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= @order.shipping_name %> - <%= @order.shipping_address %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    <hr>
-
-    <table class="table table-striped table-bordered">
-      <tbody>
-        <tr>
-          <td>
-            订购人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.billing_name %> - <%= @order.billing_address %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            收件人
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= @order.shipping_name %> - <%= @order.shipping_address %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
   </div>
 </div>
