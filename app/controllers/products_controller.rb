@@ -42,7 +42,22 @@ class ProductsController < ApplicationController
   end
 
   def favorite
-    flash[:notice] = "商品已收藏"
+
+    @product = Product.find(params[:id])
+    unless @product.blank?
+      if Favorite.isExist?(params[:id])
+        flash[:notice] = "商品已收藏"
+      else
+        @favorite = Favorite.new
+        @favorite.product_id = @product.id
+        @favorite.user_id = current_user.id
+        @favorite.save
+        flash[:notice] = "商品收藏成功"
+      end
+    else
+      flash[:warning] = "商品收藏失败!"
+    end
+    redirect_back(fallback_location: :back)
   end
 
   private

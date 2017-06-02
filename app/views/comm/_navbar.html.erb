@@ -28,7 +28,7 @@
                 <% else %>
                   <%= link_to("我的订单", orders_path) %>
                 <% end %>
-
+                <%= link_to("我的收藏", favorites_path) %>
               </li>
               <% if current_user.is_admin? %>
               <li>

@@ -40,5 +40,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :favorites
+
   root "products#index"
 end

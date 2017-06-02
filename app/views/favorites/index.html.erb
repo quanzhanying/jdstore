@@ -1,0 +1,50 @@
+<h2>
+  收藏夹
+</h2>
+<div class="container-fluid">
+  <table class="table table-boderness">
+    <thead>
+      <tr>
+        <td>
+          #
+        </td>
+        <td>
+          商品名称
+        </td>
+        <td>
+          商品预览图
+        </td>
+        <td>
+          收藏时间
+        </td>
+        <td>
+          编辑
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% unless @favorites.blank? %>
+        <% @favorites.each do |fav| %>
+          <tr>
+            <td>
+              #
+            </td>
+            <td>
+              <%= link_to(fav.product.title, product_path(fav.product))%>
+            </td>
+            <td>
+              <%= link_to(image_tag(fav.product.image, :width => 200, :height => 200), product_path(fav.product)) %>
+            </td>
+            <td>
+              <%= fav.created_at.strftime("%Y-%m-%d") %>
+            </td>
+            <td>
+              <%= link_to("取消收藏", favorite_path(fav), method: :delete, class:"btn btn-sm btn-danger") %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
