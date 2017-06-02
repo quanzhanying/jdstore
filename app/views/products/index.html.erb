@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12 product-index">
   <div class="col-md-12 search">
     <div class="col-md-8 col-md-offset-2">
         <%= search_form_for @q do |f| %>
@@ -21,7 +21,7 @@
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url) %>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic")%>
         <% end %>
       <% end %>
       <div class="caption">

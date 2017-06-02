@@ -1,71 +1,110 @@
 <div class="row">
   <div class="col-md-12">
     <%= link_to("清空购物车", clean_carts_path ,
-                 method: :delete , class: "pull-right" ,
-                 style: "text-decoration: underline;",
+                 method: :delete , class: "pull-right btn btn-default" ,
                  data: { confirm: "你确定要清空购物车吗？"})%>
-
-
-    <h2> 购物车 </h2>
-
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th colspan="2">商品资讯</th>
-          <th>单价</th>
-          <th>数量</th>
-          <th>操作选项</th>
+    <h2 class="text-center"> 购物车 </h2>
+    <br><br>
+    <div class="col-sm-8 col-md-8 col-md-offset-1">
+     <table class="table table-hover">
+       <thead>
+         <tr>
+           <th colspan="2">商品</th>
+           <th>单价</th>
+           <th>数量</th>
+           <th>操作选项</th>
+         </tr>
+       </thead>
+       <tbody>
+         <% current_cart.cart_items.each do |cart_item| %>
+         <tr>
+           <td>
+             <%= link_to product_path(cart_item.product) do %>
+               <% if cart_item.product.image.present? %>
+                 <%= image_tag(cart_item.product.image.small.url) %>
+               <% else %>
+                 <%= image_tag("http://placehold.it/100x100&text=No Pic") %>
+               <% end %>
+             <% end %>
+           </td>
+           <td>
+             <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+           </td>
+           <td>
+             ￥ <%= cart_item.product.price %>.00
+           </td>
+           <td>
+             <!-- <%=cart_item.quantity %> 第一次实作的-->
+             <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+               <!-- <%= f.select :quantity, [1,2,3,4,5] %> 第二次实作修改-->
+               <%= f.select :quantity, 1..cart_item.product.quantity,class:"form-control" %>
+               <%= f.submit "更新" ,class:"btn btn-xs btn-default", data: { disable_with: "Submiting..." } %>
+             <% end %>
+           </td>
+           <td>
+             <%= link_to cart_item_path(cart_item.product_id), method: :delete, class:"btn btn-danger" do %>
+               <i class="fa fa-trash"></i> 删除
+             <% end %>
+           </td>
+         </tr>
+         <% end %>
+         <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><h5>预计(共<%= current_cart.products.count %>件商品):</h5></td>
+          <td class="text-right"><h5><strong><%= render_cart_total_price(current_cart) %> RMB</strong></h5></td>
         </tr>
-      </thead>
-      <tbody>
-        <% current_cart.cart_items.each do |cart_item| %>
         <tr>
-          <td>
-            <%= link_to product_path(cart_item.product) do %>
-              <% if cart_item.product.image.present? %>
-                <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-              <% end %>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
-          </td>
-          <td>
-            <%= cart_item.product.price %>
-          </td>
-          <td>
-            <!-- <%=cart_item.quantity %> 第一次实作的-->
-            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-              <!-- <%= f.select :quantity, [1,2,3,4,5] %> 第二次实作修改-->
-              <%= f.select :quantity, 1..cart_item.product.quantity %>
-              <%= f.submit "更新" , data: { disable_with: "Submiting..." } %>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-              <i class="fa fa-trash"></i>
-            <% end %>
-          </td>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><h5>预算邮费：</h5></td>
+          <td class="text-right"><h5><strong>免费</strong></h5></td>
         </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <br>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-        <span>
-          总计 <%= render_cart_total_price(current_cart) %> RMB
-        </span>
-      </span>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><h3>总计：</h3></td>
+          <td class="text-right"><h3><strong><%= render_cart_total_price(current_cart) %> RMB</strong></h3></td>
+        </tr>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td>
+            <%= link_to products_path do %>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-shopping-cart"></span> 继续购物
+            </button>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to checkout_carts_path, method: :post do %>
+            <button type="button" class="btn btn-warning"><i class='fa fa-shopping-cart'></i>
+                进入结算中心
+            </button>
+            <% end %>
+          </td>
+      </tr>
+       </tbody>
+     </table>
+     <br><br>
     </div>
-
-    <hr>
-
-    <div class="checkout clearfix">
-      <%= link_to("确认结账",checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    <div class="col-md-3 col-xs-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">您订单中的国内合格商品即可享受免费配送。
+        </div>
+        <div class="panel-body">
+          <h4>小计（<%= current_cart.products.count %>件商品）：<%= render_cart_total_price(current_cart) %> RMB</h4>
+          <%= link_to  carts_path do%>
+          <button class="btn btn-warning"><i class='fa fa-shopping-cart'></i>  进入结算中心</button>
+          <% end %>
+        </div>
+        <div class="panel-footer">为了您的包裹安全抵达您的身边，我们只用顺丰快递！</div>
+      </div>
+    </div>
     </div>
   </div>
 </div>

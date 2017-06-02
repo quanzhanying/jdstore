@@ -58,7 +58,7 @@
         </div>
         <div class="panel-body">
           <%= link_to  carts_path do%>
-          <button class="btn btn-warning"><i class='fa fa-shopping-cart'></i>  进入购物车结算</button>
+          <button class="btn btn-warning"><i class='fa fa-shopping-cart'></i>  进入结算中心</button>
           <% end %>
         </div>
         <div class="panel-footer">您的购物车总计商品：<%= current_cart.products.count %> 件</div>
@@ -71,7 +71,11 @@
         <div style="width:100%;border-top:1px solid silver">
             <p style="padding:15px;">
                 <small>
-                <%= image_tag(@product.image.medium.url, class:"img-responsive") %>
+									<% if @product.image.present? %>
+						        <%= image_tag(@product.image.medium.url, class:"img-responsive wow bounce", data: {wow_delay:"1.5s"} )%> <!-- 加入show下图片效果 效果网站 https://daneden.github.io/animate.css/ -->
+						      <% else %>
+						        <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"img-responsive")%>
+						      <% end %>
                 </small>
             </p>
             <small>
