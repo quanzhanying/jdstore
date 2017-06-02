@@ -34,11 +34,59 @@
         <!-- 内容 -->
         <div class="article-description">
           <%= simple_format(@article.description) %>
+          <hr>
         </div>
 
+        <!-- 文章评论 -->
+        <div class="article-review-box">
+          <%= simple_form_for ([@article, @article_review]) do |f| %>
+            <div class="">
+              <%= f.input :comment, :label => "发表评论" %>
+            </div>
+            <div class="">
+              <%= f.submit "提交评论", class: "btn btn-sm btn-default ", data: {disable_with: "Submiting"} %>
+            </div>
+          <% end %>
+          <hr>
+          <% if @article_reviews.blank? %>
+            <p class="text-center">这篇文章还没有人评论，来为ta添加一个吧！</p>
+          <% else %>
+
+          <div class="article-reviews ">
+            <% @article_reviews.each do |article_review| %>
+              <div class="row">
+
+                <!-- 评论者头像 -->
+                <div class="col-sm-1 col-xs-2">
+                  <% if article_review.user.avatar.present? %>
+                    <%= image_tag(article_review.user.avatar.avatarmini.url, class: "img-circle img-responsive") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "img-circle img-responsive center-block") %>
+                  <% end %>
+                </div>
+
+                <!-- 评论内容 -->
+                <div class="col-sm-11 ccol-xs-10">
+                  <div class="article-review-username">
+                    <div><%= article_review.user.display_name %> <span class="pull-right"><%= article_review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span></div>
+                  </div>
+                  <div>
+                    <%= simple_format(article_review.comment) %>
+                  </div>
+                </div>
+
+              </div>
+              <hr>
+            <% end %>
+          </div>
+
+          <% end %>
+
+        </div>
 
       </div>
 
+      <!-- 有侧边栏 -->
       <div class="col-md-4">
 
         <!-- 文章作者 -->
@@ -96,6 +144,12 @@
           <hr>
 
         </div>
+        
+        <!-- 投稿按钮 -->
+        <div class="">
+          <%= link_to("我要投稿", new_article_path, class: "btn btn-danger center-block") %>
+        </div>
+
 
       </div>
 

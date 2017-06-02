@@ -33,6 +33,10 @@
   margin: 30px auto;
 }
 
+.article-show-box {
+  margin-bottom: 60px;
+}
+
 .article-title {
   h1 {
     font-size: 2em;
@@ -68,6 +72,25 @@
     border-radius: 6px;
     }
 }
+
+
+// 文章评论
+.article-review-box {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  list-style: none;
+}
+
+.article-reviews {
+  padding: 0 20px;
+  text-align: justify;
+}
+
+.article-review-username {
+  color: #7f8c8d;
+  font-size: 0.8em;
+}
+
 
 // 侧边栏
 .article-side-author {

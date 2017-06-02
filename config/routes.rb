@@ -87,7 +87,9 @@ Rails.application.routes.draw do
     resources :users           #用户编辑个人信息
   end
 
-  resources :articles         #文章前台
+  resources :articles do         #文章前台
+    resources :article_reviews
+  end
 
   get "about/index"
 

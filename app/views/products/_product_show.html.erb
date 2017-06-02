@@ -116,15 +116,15 @@
             <% end %>
             <hr>
             <% if @reviews.blank? %>
-              <p>这个商品还没有人评论，来为他添加一个吧！</p>
+              <p>这个商品还没有人评论，来为ta添加一个吧！</p>
             <% else %>
               <% @reviews.each do |review| %>
                 <div class="reviews">
                   <ul>
                     <li>
                       <div class="row">
-                        <div class="col-sm-9 review-user-email"><%= review.user.email %></div>
-                        <div class="col-sm-3"><%= review.created_at.strftime("%Y-%m-%d %H-%M-%S") %></div>
+                        <div class="col-sm-9 review-user-email"><%= review.user.display_name %></div>
+                        <div class="col-sm-3"><%= review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
                       </div>
                       <div class="review-comment">
                         <%= review.comment %>

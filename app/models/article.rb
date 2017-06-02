@@ -3,6 +3,7 @@ class Article < ApplicationRecord
   acts_as_list
 
   belongs_to :user
+  has_many :article_reviews, dependent: :destroy
 
 
   # ---后台隐藏或公开按钮---

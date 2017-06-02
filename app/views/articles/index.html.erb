@@ -20,7 +20,7 @@
                 <%= link_to(article.title, article_path(article), class: "article-index-title") %>
                 <div class="article-user row">
                   <div class="col-md-6">
-                    <span> <%= article.user.email %></span>
+                    <span> <%= article.user.display_name %></span>
                   </div>
                   <div class="col-md-6">
                     <span> <%= article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
@@ -38,6 +38,9 @@
 
 
   </div>
+
+
+
 </div>
 
 
