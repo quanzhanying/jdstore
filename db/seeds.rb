@@ -8,6 +8,7 @@
 u = User.new
 u.email = "admin@test.com"
 
+
 u.username = "xiaowu"
 
 
