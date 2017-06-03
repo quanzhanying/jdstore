@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <% if @query_string.blank? %>
+        <div class="search-info-title">
+          搜索信息不能为空，请输入关键字搜索
+        </div>
+
+      <% elsif @products.blank? %>
+        <br>
+        <h5 class="search-info-title">找不到您要的商品，试试其他的关键字</h5>
+      <% else %>
+      <div class="row">
+        <% @products.each do |product| %>
+          <div class="col-xs-6 col-md-3">
+            <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+            <% end %>
+              <%= product.title %> ¥ <%= product.price %>
+          </div>
+        <% end %>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

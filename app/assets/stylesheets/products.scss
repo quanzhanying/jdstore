@@ -1,0 +1,35 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*wll-分类功能*/
+.productCatetory {
+	width: 600px;
+  text-align: center;
+	margin: 10px auto;
+}
+
+.productCatetory-menuList {
+	height: 70px;
+}
+
+.productCatetory-menuList-item {
+	float: left;
+	width: 175px;
+}
+/*wll排序*/
+.order {
+  background: #fff;
+  width: 1200px;
+  height: 44px;
+  margin: 30px auto;
+}
+.orderList-orderItem {
+  float: left;
+  width: 108px;
+  height: 42px;
+  cursor: pointer;
+}
+.orderList-activeItem a {
+  color: #d32048;
+}

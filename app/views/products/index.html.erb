@@ -1,0 +1,114 @@
+<div class="container">
+  <!--wll 分类功能 -->
+  <div class="productCatetory">
+    <div class="productCatetory-menuList">
+      <div class="productCatetory-menuList-item ">
+        <%= link_to products_path(category: "历史读物") do %>
+         <h4>历史读物</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "学习方法") do %>
+         <h4>学习方法</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "管理") do %>
+         <h4>管理</h4>
+         <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <!--wll 排序功能 -->
+  <div class="order clearfix mt30 w1200 bc">
+    <p class="fl title pl20 pr20">商品排序：</p>
+    <ul style="list-style-type:none;" , class="fl orderList">
+      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if !params[:order] %>">
+        <%= link_to("新品", products_path) %>
+      </li>
+      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_product_quantity' %>">
+        <%= link_to("销量", products_path(:c => @category,:order => "by_product_quantity")) %>
+      </li>
+      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>">
+        <%= link_to("价格", products_path(:c => @category,:order => "by_product_price")) %>
+      </li>
+      <!-- 用来判断点过哪个标签就加红哪个标签，注释掉就没有此变色功能  <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>-->
+    </ul>
+  </div>
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-xs-6 col-md-3">
+        <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+        <% end %>
+
+          <%= product.title %> ¥ <%= product.price %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide" id="carousel-jdstore">
+        <ol class="carousel-indicators">
+          <li class="active" data-slide-to="0" data-target="#carousel-jdstore"></li>
+          <li data-slide-to="1" data-target="#carousel-jdstore"></li>
+          <li data-slide-to="2" data-target="#carousel-jdstore"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg"/>
+            <div class="carousel-caption">
+              <h4>
+                First Thumbnail label
+              </h4>
+              <p>
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg"/>
+            <div class="carousel-caption">
+              <h4>
+                Second Thumbnail label
+              </h4>
+              <p>
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg"/>
+            <div class="carousel-caption">
+              <h4>
+                Third Thumbnail label
+              </h4>
+              <p>
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-jdstore" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-jdstore" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<body>
