@@ -11,6 +11,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def order
+    @products = case params[:order]
+            when 'by_lower_bound'
+              Product.order('price DESC')
+            when 'by_upper_bound'
+              Product.order('created_at DESC')
+
+            end
+  end
+
 
   def show
     @product = Product.find(params[:id])
