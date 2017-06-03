@@ -595,11 +595,16 @@
 
 }
 
+.product-preview {
+  padding-left: 0;
+}
+
 .preview-pic img{ /*---- show图片 -----*/
   width: 350px;
   height: 350px;
-
 }
+
+
 
 .price {
   font-size: 30px;
@@ -631,12 +636,20 @@
   height:280px;
 }
 
-.preview-image img {
-      width: 700px;
-      height: 700px;
-      padding: 10px;
-    }
+.preview-image {   /*---- show展示图大小 -----*/
+    width: 700px;
+    height: 700px;
 
+    img {
+    width: 700px;
+    height: 700px;
+    padding: 10px;
+  }
+}
+
+.preview-pic1 {
+  margin-bottom: 30px; /*------ show展示图的间距 -----*/
+}
 
 
 
