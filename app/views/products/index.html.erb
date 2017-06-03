@@ -4,10 +4,10 @@
       <div class="filter">
         <div class="btn-group btn-group-lg" role="group" aria-label="order">
           <button type="button" class="btn btn-warning">
-            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), order_products_path(:order => "by_lower_bound")) %>
+            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), products_path(:order => "by_product_price")) %>
           </button>
           <button type="button" class="btn btn-warning">
-            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), order_products_path(:order => "by_upper_bound")) %>
+            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), products_path(:order => "by_product_created")) %>
           </button>
           <button type="button" class="btn btn-warning">
             <%= link_to(content_tag(:i, '点赞数量', class: 'fa fa-arrow-down'), '#') %>
