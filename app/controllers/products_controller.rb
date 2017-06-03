@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:like, :unlike]
-  def index
-    @products = Product.order("position ASC")
-  end
+
 
   def index
     if params[:category].blank?
@@ -62,6 +60,20 @@ class ProductsController < ApplicationController
      else
        redirect_to root_path, notice: "搜索信息不能为空，请输入关键字搜索！"
      end
+  end
+
+  def add_to_favorite
+    @product = Product.find(params[:id])
+    @product.users << current_user
+    @product.save
+    redirect_to :back, notice:"成功加入收藏!"
+  end
+
+  def quit_favorite
+    @product = Product.find(params[:id])
+    @product.users.delete(current_user)
+    @product.save
+    redirect_to :back, alert: "成功取消收藏!"
   end
 
 
