@@ -17,3 +17,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+/*  search-bar */
+
+.products-search-form {   //调搜索框大小和位置
+  margin-top: 9px;
+  padding-left: 20px;
+  width: 290px;
+  .search-bar {
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+    padding-right: 40px;
+
+  .search-bar-input  {
+    min-width: 300px;
+    transition: 0.35s;
+    }
+  }
+}
