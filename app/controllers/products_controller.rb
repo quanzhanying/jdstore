@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def collect
+    @products = Product.all
+    if params[:favorite] == "yes"
+      @products = current_user.products
+    end
+  end
+
 
   def show
     @product = Product.find(params[:id])
