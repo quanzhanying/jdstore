@@ -14,7 +14,7 @@
 
       <div class="row jobs-show0"></div>
       <div class="job-table">
-        <% @products.each do |job| %>
+        <% @products.each do |product| %>
         <div class="row jobs-show">
 
           <div class="col-md-12 col-lg-9 col-lg-offset-1">
@@ -22,7 +22,7 @@
             <div class="pull-right">
               发布时间：<%= product.created_at.to_date %>
             </div>
-            <p ><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
+            <p ><%= link_to(render_highlight_content(product, @query_string), product_path(product)) %></p>
 
           </div>
         </div>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="text-center">
-      <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
     </div>
   <% end %>
 </div>
