@@ -4,13 +4,13 @@
       <div class="filter">
         <div class="btn-group btn-group-lg" role="group" aria-label="order">
           <button type="button" class="btn btn-warning">
-            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), '#') %>
+            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), products_path(:order => "by_product_price")) %>
+          </button>
+          <button type="button" class="btn btn-warning">
+            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), products_path(:order => "by_product_created")) %>
           </button>
           <button type="button" class="btn btn-warning">
             <%= link_to(content_tag(:i, '点赞数量', class: 'fa fa-arrow-down'), '#') %>
-          </button>
-          <button type="button" class="btn btn-warning">
-            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), '#') %>
           </button>
         </div>
       </div>

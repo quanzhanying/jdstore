@@ -2,14 +2,23 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:like, :unlike]
 
-  def index
-    if params[:category].blank?
-      @products = Product.order("position ASC")
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(:category_id => @category_id)
+    def index
+      # 分类功能
+      if params[:category].present?
+        @category_id = Category.find_by(name: params[:category]).id
+        @products = Product.where(category_id: @category_id).order("position ASC").paginate(:page => params[:page], :per_page => 12)
+       # 排序功能
+      else
+        @products = case params[:order]
+          when 'by_product_price'
+            Product.order('price DESC').paginate(:page => params[:page], :per_page => 12)
+          when 'by_product_created'
+            Product.all.order("position ASC").paginate(:page => params[:page], :per_page => 12)
+          else
+            Product.paginate(:page => params[:page], :per_page => 12)
+          end
+      end
     end
-  end
 
   def collect
     @products = Product.all
