@@ -1535,7 +1535,7 @@ div.cart__main__wapper {
     right: 0;
     // background-color: #008CBA;
     overflow: hidden;
-    width: 100%;
+    width: 150%;
     height: 0;
     transition: .5s ease;
     background-color: rgba(0,0,0,0.8);
@@ -1545,11 +1545,13 @@ div.cart__main__wapper {
     #text{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     font-size: 50px;
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+    zoom: 0.8;
+
     }
     button {
         color: #62b900;
