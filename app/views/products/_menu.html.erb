@@ -12,11 +12,15 @@
 
 
     <%= link_to products_path(category: category.name) do %>
+
+     <div class="box">
       <% if category.image.present? %>
         <%= image_tag(category.image.small.url, class: "thumbnail") %>
       <% else %>
         <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "thumbnail") %>
       <% end %>
+    </div>
+
     <% end %>
     <%= category.name %>
 
