@@ -53,6 +53,12 @@
             </div>
           </div>
 
+          <br>
+          <!-- 点赞按钮 -->
+          <%= link_to upvote_club_path(club), method: :post do %>
+            <i class="fa fa-thumbs-o-up"></i> &nbsp <span><%= club.club_votes.count %></span>
+          <% end %>
+
         </div>
 
 
@@ -72,7 +78,7 @@
 
           <!-- 评论内容 -->
           <div class="club-reviews">
-            <% club.club_reviews.each do |club_review| %>
+            <% club.club_reviews.order("created_at DESC").each do |club_review| %>
 
               <div class="row">
 

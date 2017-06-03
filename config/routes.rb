@@ -98,6 +98,9 @@ Rails.application.routes.draw do
 
   resources :clubs do            #社群功能
     resources :club_reviews
+    member do
+      post :upvote               #帖子投票功能
+    end
   end
 
   get "about/index"

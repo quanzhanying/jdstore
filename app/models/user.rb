@@ -46,6 +46,21 @@ class User < ApplicationRecord
   end
 
 
+
+  # ---社群帖子点赞三方关系代码块---
+
+  has_many :club_votes
+  has_many :participated_clubs, through: :club_votes, source: :club
+
+  def is_club_member_of?(club)
+    participated_clubs.include?(club)
+  end
+
+  def join_club_vote!(club)
+    participated_clubs << club
+  end
+
+
   # ---与order订单关系---
 
   has_many :orders

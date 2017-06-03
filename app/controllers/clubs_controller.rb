@@ -49,6 +49,20 @@ class ClubsController < ApplicationController
   end
 
 
+  # club_vote投票功能
+
+  def upvote
+    @club = Club.find(params[:id])
+
+    if !current_user.is_club_member_of?(@club)
+      current_user.join_club_vote!(@club)
+    else
+      flash[:notice] = "这篇帖子 你已经点过赞"
+    end
+    redirect_to clubs_path
+  end
+
+
   # ---private---
 
   private
