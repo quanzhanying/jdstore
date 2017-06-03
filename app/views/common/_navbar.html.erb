@@ -31,7 +31,7 @@
           </a>
 
 
-          <ul class="dropdown-menu">
+          <!-- <ul class="dropdown-menu"> -->
             <% if current_user.admin? %>
             <li>
               <%=link_to("Admin 选单",admin_products_path)%>
@@ -46,8 +46,18 @@
       <% end %>
     </ul>
     <!-- 搜索欄 -->
+    <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
+      <div class="input-group search-box">
+        <input type="text" class="form-control" name="keyword" placeholder="搜索商品" value="<%= params[:keyword] %>">
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    <% end %>
 
-</form>        </div>
+
 
 </div>
 </div>
