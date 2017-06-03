@@ -1,4 +1,3 @@
-<% @reviews.each do |review| %>
 <div id ="review-item-<%= review.id %>" class="reviews_wrapper clearfix">
     <div class="pull-left">
         <p><%= review.body %></p>
@@ -12,9 +11,9 @@
       </div>
     </div>
 </div>
-<% end %>
 
 
-<!-- <%# if review.user == current_user %>
+
+<%# if review.user == current_user %>
    <%#= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
-<%# end %> -->
+<%# end %>
