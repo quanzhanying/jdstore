@@ -2,16 +2,32 @@
 <div class="menu  bg-color1">
   <div class="menuList">
 
-  <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if !params[:category] %>">
-    <%= link_to("首页", products_path)%>
-  </div>
+  
 
    <% Category.all.each do |category| %>
 
   <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if params[:category] == category.name %>">
 
-      <%= link_to category.name, products_path(category: category.name), class: "link" %>
-  </div>
+
+    <%= link_to products_path(category: category.name) do %>
+
+     <div class="box">
+      <% if category.image.present? %>
+        <%= image_tag(category.image.small.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "thumbnail") %>
+      <% end %>
+    </div>
+
+    <% end %>
+
+
+
+    <div class="mune-name">
+    <%= category.name %>
+   </div>
+    </div>
+
 
 <% end %>
 

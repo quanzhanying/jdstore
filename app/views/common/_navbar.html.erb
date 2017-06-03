@@ -41,6 +41,17 @@
                    Hi!, <%= current_user.email %>
                  </div>
                  <div class="list">
+
+
+                    <div class="find">
+                      <%= link_to("有趣的发现", products_path)%>
+                    </div>
+
+                    <div class="favorite">
+                      <%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart "), products_path(:favorite => "yes"))%>
+                    </div>
+
+
                     <div class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                          账户信息
@@ -54,7 +65,8 @@
                               <li> <%= link_to("个人订单列表", account_orders_path ) %> </li>
                               <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                             </ul>
-                    </div>
+                          </div>
+
 
                     <div class="cart-wrap">
                      <div class="cart">

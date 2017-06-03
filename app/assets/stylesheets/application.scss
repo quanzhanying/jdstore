@@ -14,6 +14,15 @@
  *= require_self
  */
 
+.body {
+  padding: 55px 0 0 0
+}
+
+.body1 {
+  padding: 100px 0 0 0
+}
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
@@ -37,7 +46,21 @@
 
 .list {
   float: left; /*你去左边*/
-  margin-left: 1100px;
+  margin-left: 900px;
+
+}
+
+.find {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+  padding-right: 40px; /*右边加点空间，不然太挤啦*/
+
+}
+
+.favorite {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+  padding-right: 40px; /*右边加点空间，不然太挤啦*/
 
 }
 
@@ -45,7 +68,7 @@
 
   float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
 
-  padding-right: 70px; /*右边加点空间，不然太挤啦*/
+  padding-right: 40px; /*右边加点空间，不然太挤啦*/
 
 }
 
@@ -78,10 +101,11 @@
 .title {
   width: 520px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
-  margin-top: 100px; /*上边距*/
+  margin-top: 70px; /*上边距*/
 }
 .title-1 {
-  font-size: 50px; /*设置字体36px*/
+  font-size: 36px; /*设置字体36px*/
+  padding-top: 10px;
   //float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
 //  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
 }
@@ -94,27 +118,38 @@
   width: 100%;
 }
 
+
+
+.mune-name{
+  padding-left: 35px;
+ padding-top: 0px;
+
+}
+
+
 .menuList{
   width: 1100px;
-  margin: 70px auto;
-  height: 100px;
+  margin: 50px auto;
+  height: 5px;
 
 }
 
 .menuList-item {
   float: left;
-  padding: 0 60px;
+  padding: 0 10px;
   font-size: 18px;
-  line-height: 100px;
+  line-height: 5px;
 
 }
 
 .menuList-item:hover {
-  background-color: #DCDCDC;
+  //background-color: #DCDCDC;
 }
 .menuList-activeItem {
-  background: #DCDCDC;
+
+
+  //background: #DCDCDC;
 }
 .menuList-activeItem:hover {
-  background: #DCDCDC;
+  //background: #DCDCDC;
 }
