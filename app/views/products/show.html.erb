@@ -268,7 +268,8 @@
                       <% if  @reviews.count >= 20 %>
                       <div class="col-md-12">
                         <br>
-                        <hr class="col-md-12">
+                        <br>
+                        <hr>
                       </div>
                       <div id="review-bottom" class="col-md-10 col-md-offset-1 text-center">
                         <%= link_to("加载更多...",product_reviews_path(@product)+"?min_id="+ @reviews.last.id.to_s, :method => :get ,:remote => true,id: "reviews-more")%>
@@ -290,24 +291,27 @@
           // 当捲轴动的时候，会触发这个事件
           $(window).scroll(function(){
           // 当捲到最下面的时候
-          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-          //if ((window.innerHeight + window.scrollY) >= document.getElementById("tab-right").offsetHeight) {
-            if (review_id != review_id_old) {
-              var url = "<%= product_reviews_path(@product) %>?min_id=" + review_id;
-              review_id_old = review_id;
-              //$("#reviews-more").attr("href", url);
-              if (url) {
-                $.ajax({
-                  method: "GET",
-                  url: url,
-                  dataType: "script"
-                })
-              } else {
-                console.log("data ended")
-              }
+          if($('#reviews-list').closest('.tab-pane').hasClass('active')){
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            //if ((window.innerHeight + window.scrollY) >= document.getElementById("tab-right").offsetHeight) {
+              if (review_id != review_id_old) {
+                var url = "<%= product_reviews_path(@product) %>?min_id=" + review_id;
+                review_id_old = review_id;
+                //$("#reviews-more").attr("href", url);
+                if (url) {
+                  $.ajax({
+                    method: "GET",
+                    url: url,
+                    dataType: "script"
+                  })
+                } else {
+                  console.log("data ended")
+                }
 
+              }
             }
           }
+
           })
           <% end %>
         </script>

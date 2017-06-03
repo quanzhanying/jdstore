@@ -1029,13 +1029,16 @@ div.zoomMask {
   border: 1px solid #f2f2f2;
   //position: absolute;
   top: 0;
-  display: inline-block;
+  float: right;
   margin-left: 10px;
   font-size: 12px;
   vertical-align: top;
 //  margin-top: 14px;
 }
-
+.product-wrap .ald-skuRight {
+  float: left;
+  border-top: 0px solid #f2f2f2;
+}
 .ald-hd {
   position: relative;
   height: 20px;
@@ -1881,4 +1884,39 @@ border-radius: 4px;
 .order-list .cart-list{
   padding: 15px 0 15px 0;
 
+}
+
+///购物进度条///
+.flow_steps ul li {
+	float: left;
+	height: 23px;
+	padding: 0 40px 0 30px;
+	line-height: 23px;
+	text-align: center;
+	background: url(../images/barbg.png) no-repeat 100% 0 #E4E4E4;
+	font-weight: bold;
+
+}
+
+.flow_steps ul li.done {
+	background-position: 100% -46px;
+	background-color: #FFEDA2;
+}
+
+.flow_steps ul li.current_prev {
+	background-position: 100% -23px;
+	background-color: #FFEDA2;
+}
+
+.flow_steps ul li.current {
+	//color: #fff;
+	background-color: #FFEDA2;
+}
+
+.flow_steps ul li.last {
+	background-image: none;
+}
+////----////
+.review hr{
+  border-top: 1px solid #B28435;
 }
