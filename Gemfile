@@ -41,6 +41,7 @@ gem 'aasm'
 gem 'figaro'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'elevatezoom-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

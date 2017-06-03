@@ -1,31 +1,35 @@
 <div class="row">
   <div class="col-md-6">
-    <img id="zoom_01" src=<%= @product.image.medium.url %> data-zoom-image=<%= @product.image.url %> >
+<img id="zoom_01" src=<%= @product.image.medium.url %> data-zoom-image=<%= @product.image.url %> >
 
 
-    <% if @photos.present? %>
-     <div class="tab-content show-picture">
-       <% @photos.each_with_index do |p,index| %>
-         <% if index <5 %>
-          <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>"><%= (image_tag p.avatar.medium.url) %>
-          </div>
-         <% end %>
-       <% end %>
-     </div>
+    <div class='col-xs-12 col-md-6'>
+      <% if @photos.present? %>
+         <div class="tab-content clear-fix">
+           <% @photos.each_with_index do |p,index| %>
+             <% if index <4 %>
+              <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>">
 
-     <ul class="show-photo-xsmall-box nav nav-tabs">
-       <% @photos.each_with_index do |p,index| %>
-         <% if index <5 %>
-           <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag p.avatar.small.url%></a></li>
+                <%= image_tag(p.avatar.thumb.url, class: "thumbnail") %>
+              </div>
+             <% end %>
+           <% end %>
+         </div>
 
-
+         <ul class="nav nav-tabs">
+           <% @photos.each_with_index do |p,index| %>
+             <% if index <4 %>
+               <li>
+                <div style="letter-spacing: 5px"> <a href="#<%= index %>" data-toggle="tab"><%= image_tag(p.avatar.small.url) %></a></div>
+               </li>
+             <% end %>
+           <% end %>
+         </ul>
         <% else %>
           <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
         <% end %>
-      <% end %>
-    </ul>
+      </div>
 
-  <% end %>
   </div>
 
   <div class="col-md-6">
