@@ -1,12 +1,56 @@
+
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
+    <div class="product-image">
+     <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+    </div>
+   </div>
+  <div class="col-md-8">
+    <!-- 商品标题 -->
+
+     <h2 class="product-title"><%= @product.title %></h2>
+      <hr>
+
+      <!-- 商品简述 -->
+    <div class="product-description">
+     <p>
+       <%= simple_format(@product.description) %>
+     </p>
+    </div>
+
+    <!-- 商品价格 -->
+   <div class="product-price-bgcolor">
+     <div class="product-price">
+      ￥ <%= @product.price %>
+     </div>
+   </div>
+    <div class="product-quantity">
+     <div> 月销: <%= @product.quantity %> 笔</div>
+    </div>
+
+    <div >
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-md-5">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-7">
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
@@ -23,4 +67,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> -->

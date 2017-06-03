@@ -2,18 +2,17 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
+            <a class="navbar-brand" href="/">达人驾到 </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li>
-                <%= link_to("商品", products_path) %>
-              </li>
-            </ul>
 
             <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to("课程", products_path) %>
+              </li>
+
               <li>
               <div class="products-search-form">
                 <%= form_tag search_products_path, :method => :get  do %>
