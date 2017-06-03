@@ -270,7 +270,9 @@
                         <hr class="col-md-12">
                       </div>
                       <div id="review-bottom" class="col-md-10 col-md-offset-1 text-center">
+                        <% if  @reviews.count > 20 %>
                         <%= link_to("加载更多...",product_reviews_path(@product)+"?min_id="+ @reviews.last.id.to_s, :method => :get ,:remote => true,id: "reviews-more")%>
+                        <% end %>
                       </div>
                     </div>
                   </div>
@@ -283,6 +285,7 @@
         <script type="text/javascript">
         //------评论------
         // 记下目前画面最小的贴文 ID
+        <% if  @reviews.count > 20 %>
           var review_id = <%= @reviews.last.id %>;
           var review_id_old = 0;
           // 当捲轴动的时候，会触发这个事件
@@ -307,7 +310,7 @@
             }
           }
           })
-
+          <% end %>
           //---------数量-------///
           (function ($) {
             $.fn.changeNnmber = function () {
