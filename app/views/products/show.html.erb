@@ -71,8 +71,10 @@
        </div>
       </div>
    </div>
+   <a href="#top">
+      <div class="backtop re"> <i class="fa fa-chevron-up fa-2x"></i></div>
+  </a>
 </div>
-
 
 <script>
   function on() {
@@ -83,7 +85,36 @@
   }
 </script>
 
+<script>
+$(document).ready(function() {
 
+  /*
+   *
+   * Code for 'back to top' button
+   *
+   */
+
+  //hides back to top button
+  $('.backtop').hide();
+
+  //button fade in fade out
+  $(document).scroll(function() {
+
+    if ($(this).scrollTop() > 800) {
+      $('.backtop').fadeIn();
+    } else {
+      $('.backtop').fadeOut();
+    }
+  });
+
+  //animate scroll to top
+  $('.backtop').on('click', function() {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500)
+  });
+})
+</script>
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
