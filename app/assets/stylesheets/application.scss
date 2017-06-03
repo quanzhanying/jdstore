@@ -580,7 +580,7 @@
 
 
   .image {
-    width: 250px;
+    width: 250px;     /*----- 图片大小 -----*/
     height:250px;
   }
 }
@@ -590,10 +590,16 @@
 
 
 /*----- product/show 页面 -----*/
-.box {
-  margin-top: 60px; /*----- 不被alert阻挡 -----*/
+.main1 {
+  margin-top: 60px; /*----- 不被flash alert阻挡 -----*/
+
 }
 
+.preview-pic img{ /*---- show图片 -----*/
+  width: 350px;
+  height: 350px;
+
+}
 
 .price {
   font-size: 30px;
@@ -607,7 +613,7 @@
 
 .hr{
   color: #323232;
-  font-weight: bold;
+  font-size: 40px;
 }
 
 .guide-title {
@@ -620,15 +626,20 @@
   margin-right: -15px;
 }
 
-.column {
-
-}
-
 
 .show-description {
   height:280px;
-
 }
+
+.preview-image img {
+      width: 700px;
+      height: 700px;
+      padding: 10px;
+    }
+
+
+
+
 
 
 
@@ -707,8 +718,9 @@ body {
 .main {
   padding-top: 80px;
   /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
-  padding-bottom: 500px;
+  padding-bottom: 370px;
   /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
+
 
 }
 
@@ -716,12 +728,9 @@ body {
 
   width: 100%;
   position: absolute;
-  height: relative;
+  height: 360px;    /*----- footer 的总高度 -----*/
   bottom: 0;
-  background: #e1e8ed;
-  color:  #444444;
-  display: inline-block;
-  text-align: center;
+
   /*----- footer 置底 -----*/
 
   /*----- footer loga 颜色 -----*/
@@ -729,17 +738,26 @@ body {
     color: #d95f59;
   }
 }
+.promise {
+  padding-top: 10px;
+  height: 140px;
+  background: #e1e8ed;
+  color:  #444444;
+  // display: inline-block;
+  text-align: center;
+}
 
 .footer {
   /*----- footer 下半部高度 -----*/
   padding-top: 30px;
-  height: 210px;
+  height: 220px;
   border-top: #f4f0e8 1px solid;
   background: #f4f0e8;
   color:  #444444;
   width: 100%;
   font-size: 15px;
   font-weight: 30px;
+  text-align: center;
 
   a:hover {
         background-color: transparent;

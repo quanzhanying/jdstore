@@ -1,90 +1,83 @@
-<div class="container box" >
-    <!-- picture -->
-      <div class="row">
-        <div class="col-md-5">
-          <div class="preview-pic">
-            <% if @photos.present? %>
-               <% @photos.each_with_index do |p, index| %>
-                 <% if index == 0 %>
-                   <%= image_tag p.avatar.medium.url %>
-                   <div style="letter-spacing: -8px; margin-top:5px" >
-                 <% else %>
-                   <%= image_tag p.avatar.thumb.url %>
-                 <% end %>
-               <% end %>
-               </div>
-             <% else %>
-                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-             <% end %>
-          </div>
-        </div>
-    <!-- description -->
-        <div class="col-md-7">
-          <h3> <%= @product.title %> </h3>
-          <div class="show-description" style="height:490px;">
-            <p>
-              <%= @product.description %>
-            </p>
-          </div>
-          <div> 数量 : <%= @product.quantity %> </div>
-                 <div class="show-price">
-                      <div class="price">
-                        ￥ <%= @product.price %>
-                      </div>
-                      <div class="addcart pull-right">
-                          <% if !current_user.is_favorite_of?(@product) %>
-                            <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-                              <i class="fa fa-heart" aria-hidden="true"></i>
-                            <% end %>
-                          <% else %>
-                            <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-                              <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-                            <% end %>
-                          <% end %>
 
-                          <% if @product.quantity.present? && @product.quantity > 0 %>
-                              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-                          <% else %>
-                              已销售一空，无法购买
-                          <% end %>
-                      </div>
+
+<div class="container main1">
+  <div class="row">
+    <div class="col-md-9 col-sm-12 col-xs-12">
+
+            <!-- 商品资料 -->
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="preview-pic">
+                  <% if @photos.present? %>
+                     <% @photos.each_with_index do |p, index| %>
+                       <% if index == 0 %>
+                         <%= image_tag p.avatar.thumb.url, class: "thumbnail " %>
+                         <!-- <div style="letter-spacing: -8px; margin-top:5px" >
+                       <% else %>
+                         <%= image_tag p.avatar.thumb.url %>
+                       <% end %>
+                     <% end %>
+                     </div> -->
+                   <% else %>
+                       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                   <% end %>
+                </div>
               </div>
-     </div>
-  </div>
 
-  <hr>
+          <!-- description -->
+              <div class="col-md-5">
+                <h3> <%= @product.title %> </h3>
+                <div class="show-description " style="height: 160px;">
+                  <p>
+                    <%= @product.description %>
+                  </p>
+                </div>
+                <div> 数量 : <%= @product.quantity %> </div>
+                       <div class="show-price">
+                            <div class="price">
+                              ￥ <%= @product.price %>
+                            </div>
+                            <div class="addcart pull-right">
+                                <% if !current_user.is_favorite_of?(@product) %>
+                                  <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                  <% end %>
+                                <% else %>
+                                  <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                                    <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                                  <% end %>
+                                <% end %>
 
-  <div class="guide">
-    <div class="guide-title">购物指南</div>
-    <br>
-    <div class="guide-body">
-      <div class="col-md-3 column">
-        <p>配送费用</p>
-        <p>小件商品的配送费用为20.00元/单。单笔订单消费购买小件商品满299.00元，可享受免费配送服务</p>
-      </div>
-      <div class="col-md-3 column">
-        <p>支付方式</p>
-        <p>支付宝账户余额 网银支付（通过支付宝 信用卡支付（通过支付宝）</p>
-      </div>
-      <div class="col-md-3 column">
-        <p>更换商品、退货</p>
-        <p>未经使用的商品，可在到货起14日内进行退货服务申请。当您需要申请退货服务时请联系客服中心。</p>
-      </div>
-      <div class="col-md-3 column">
-        <p>关于商品颜色</p>
-        <p>因拍摄灯光或显示器等因素，网页商品颜色可能与实物存在一定偏差，请以实物为准，敬请谅解。</p>
-      </div>
+                                <% if @product.quantity.present? && @product.quantity > 0 %>
+                                    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+                                <% else %>
+                                    已销售一空，无法购买
+                                <% end %>
+                            </div>
+                      </div>
+               </div>
     </div>
 
+    <!-- 推荐 -->
+    <div class="col-md-3">
+      panel b
+    </div>
   </div>
 
+  <br>
+    <hr>
 
-
-
-
-
-
-
-
+  <div class="pictures">
+    <% if @photos.present? %>
+        <% @photos.each_with_index do |p, index| %>
+          <div class="row preview-pic1">
+            <div class="col-md-6 preview-image">
+                  <% if index >= 0  %>
+                    <%= image_tag p.avatar.medium.url, class: "thumbnail" %>
+                  <% end %>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
 
 </div>

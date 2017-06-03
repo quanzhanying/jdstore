@@ -23,12 +23,12 @@
 
   <body>
 
-  <div class="row main">    <!-- 用row把navbar撑开，图片就能排满不留白边 -->
-
+  <div class="row">    <!-- 用row把navbar撑开，图片就能排满不留白边 -->
+      <div class="main">
         <%=render "common/navbar" %>
         <%= render "common/flashes" %>
         <%= yield %>
-
+      </div>
   </div>
 
         <%= render "common/footer" %>

@@ -26,10 +26,10 @@
                <div class="col-md- col-sm-4 col-xs-12">
                  <div class="product-item">
 
-                     <% if product.image.present? %>
-                     <%= image_tag(product.image.thumb.url, class: "image") %>
+                   <% if product.photos.present? %>
+                     <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
                    <% else %>
-                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
                      <% end %>
                    <hr>
                          <div class="product-title" style="height: 50px">
@@ -76,9 +76,11 @@
                  <%= link_to product_path(product) do %>
                  <div class="col-md-4 col-sm-4 col-xs-12">
                    <div class="product-item">
-                     <% if product.image.present? %>
-                       <%= image_tag(product.image.thumb.url, class: "image") %>
-                     <%end %>
+                     <% if product.photos.present? %>
+                       <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
+                     <% else %>
+                       <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
+                       <% end %>
                      <hr>
                            <div class="product-title" style="height: 50px">
                              <h4><%= product.title %></h4>
