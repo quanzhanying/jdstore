@@ -27,6 +27,7 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
-
+  has_many :favorites
+  has_many :products, through: :favorites, source: :product
   has_many :orders
 end
