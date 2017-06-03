@@ -43,7 +43,9 @@
   <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">商品介绍</a></li>
-        <li role="presentation"><a href="#score" aria-controls="score" role="tab" data-toggle="tab">商品评价</a></li>
+        <li role="presentation"><a href="#score" aria-controls="score" role="tab" data-toggle="tab">商品评价<%= @product.reviews.count %></a></li>
+
+
       </ul>
 
       <!-- Tab panes -->
@@ -52,7 +54,12 @@
           <h2>商品详情</h2>
         </div>
         <div role="tabpanel" class="tab-pane" id="score">
-          <h2>评论</h2>
+          <div id="reivews">
+            <br>
+            <%= render "reviews/form"%>
+            <br>
+            <%= render @product.reviews%>
+          </div>
         </div>
       </div>
     </div>

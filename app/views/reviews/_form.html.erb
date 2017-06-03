@@ -1,0 +1,8 @@
+<%= simple_form_for([@product, @product.reviews.build]) do |f|%>
+  <label class="control-label text required" for="review_body"><abbr title="required">*</abbr> 评论内容</label>
+  <div class="field">
+      <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <input type="submit" name="commit" value="发表评论" class="btn btn-default" data-disable-with="发表评论">
+<% end %>
