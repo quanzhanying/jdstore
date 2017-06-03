@@ -4,6 +4,11 @@ class User < ApplicationRecord
   has_many :orders
   has_many :likes
   has_many :liked_products, through: :likes, source: :product
+
+
+  has_many :favorites
+  has_many :products, through: :favorites, source: :product
+
   has_many :reviews
 
 

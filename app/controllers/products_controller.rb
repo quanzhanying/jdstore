@@ -2,24 +2,31 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:like, :unlike]
 
-  def index
-    if params[:category].blank?
-      @products = Product.order("position ASC")
-    else
-      @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(:category_id => @category_id)
+    def index
+      # 分类功能
+      if params[:category].present?
+        @category_id = Category.find_by(name: params[:category]).id
+        @products = Product.where(category_id: @category_id).order("position ASC").paginate(:page => params[:page], :per_page => 12)
+       # 排序功能
+      else
+        @products = case params[:order]
+          when 'by_product_price'
+            Product.order('price DESC').paginate(:page => params[:page], :per_page => 12)
+          when 'by_product_created'
+            Product.all.order("position ASC").paginate(:page => params[:page], :per_page => 12)
+          else
+            Product.paginate(:page => params[:page], :per_page => 12)
+          end
+      end
+    end
+
+  def collect
+    @products = Product.all
+    if params[:favorite] == "yes"
+      @products = current_user.products
     end
   end
 
-  def order
-    @products = case params[:order]
-            when 'by_lower_bound'
-              Product.order('price DESC')
-            when 'by_upper_bound'
-              Product.order('created_at DESC')
-
-            end
-  end
 
 
   def show
@@ -71,6 +78,20 @@ class ProductsController < ApplicationController
      else
        redirect_to root_path, notice: "搜索信息不能为空，请输入关键字搜索！"
      end
+  end
+
+  def add_to_favorite
+    @product = Product.find(params[:id])
+    @product.users << current_user
+    @product.save
+    redirect_to :back, notice:"成功加入收藏!"
+  end
+
+  def quit_favorite
+    @product = Product.find(params[:id])
+    @product.users.delete(current_user)
+    @product.save
+    redirect_to :back, alert: "成功取消收藏!"
   end
 
 

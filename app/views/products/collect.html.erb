@@ -4,17 +4,14 @@
       <div class="filter">
         <div class="btn-group btn-group-lg" role="group" aria-label="order">
           <button type="button" class="btn btn-warning">
-
-            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), products_path(:order => "by_product_price")) %>
-          </button>
-          <button type="button" class="btn btn-warning">
-            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), products_path(:order => "by_product_created")) %>
+            <%= link_to(content_tag(:i, '价格', class: 'fa fa-arrow-down'), '#') %>
           </button>
           <button type="button" class="btn btn-warning">
             <%= link_to(content_tag(:i, '点赞数量', class: 'fa fa-arrow-down'), '#') %>
-
           </button>
-
+          <button type="button" class="btn btn-warning">
+            <%= link_to(content_tag(:i, '上架时间', class: 'fa fa-arrow-down'), '#') %>
+          </button>
         </div>
       </div>
       <% @products.each do |product| %>
@@ -28,17 +25,11 @@
           <% end %>
           <span class="price">￥ <%= product.price %></span>
           <span class="like"><%= link_to(content_tag(:i , product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
-
           <% if !product.users.include?(current_user) %>
-            <%= link_to add_to_favorite_product_path(product),method: :post do %>
-              <i class="fa fa-heart"></i>
-            <% end %>
+            <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
           <% else %>
-            <%= link_to quit_favorite_product_path(product), method: :post do %>
-              <i class="fa fa-heart", style="color: red"></i>
-            <% end %>
+            <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
           <% end %>
-
         </div>
       <% end %>
     </div>
