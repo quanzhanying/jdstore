@@ -45,8 +45,9 @@ else
   puts "发条金属步行机器人 已经存在"
 end
 
-if Product.find_by(title: "发条金属步行机器人").nil?
+if Product.find_by(title: "磁应力金属橡皮泥").nil?
 Product.create!(
+
 
  title: "磁应力金属橡皮泥",
   description: "让橡皮泥“活”起来！不仅能像普通橡皮泥一样可随意捏出各种造型，更能被磁铁所吸引！！试着把它塑造成眼镜蛇的造型，用磁铁就能让它摇头晃脑。白领及高压人士选择，缓解压力宣泄情绪之良品。",
