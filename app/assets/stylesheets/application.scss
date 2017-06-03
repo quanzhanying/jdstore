@@ -1914,8 +1914,18 @@ border-radius: 4px;
 
 .flow_steps ul li.last {
 	background-image: none;
-}  
+}
 ////----////
 .review hr{
   border-top: 1px solid #B28435;
+}
+#back-to-top{
+  position: fixed;
+  //right: 120px;
+  bottom: 30px;
+}
+.back-to-top{
+  float: right;
+  position: relative;
+  right: -50px;
 }
