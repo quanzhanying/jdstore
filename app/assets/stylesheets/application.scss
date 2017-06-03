@@ -1833,7 +1833,7 @@ h1[id] {
  */
 // to solve the body's white space of left and right margin.
 
-.indexbody {
+.indexbody, .bs-docs-featurette {
   margin-left : -15px;
   margin-right: -15px;
 }
@@ -1920,6 +1920,7 @@ a:hover {
 
 .main-content {
   min-height: 850px;
+
 }
 
 // 搜索//
@@ -1934,4 +1935,13 @@ padding-top: 7px;
 
 .search-result {
   margin-top: 30px;
+}
+
+.carousel-inner img {
+    /*-webkit-filter: grayscale(90%);*/
+     /*filter: grayscale(90%); make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
+    opacity: 0.5;
 }
