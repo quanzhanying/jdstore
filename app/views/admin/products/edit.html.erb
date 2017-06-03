@@ -48,6 +48,44 @@
   </div>
 </div>
 
+<<<<<<< HEAD
+=======
+<div class="group">
+  <%= f.input :author %>
+</div>
+
+<div class="group">
+  <%= f.input :description %>
+</div>
+
+<div class="group">
+  <%= f.association :category %>
+</div>
+
+<div class="group">
+  <%= f.input :quantity %>
+</div>
+
+<div class="group">
+  <%= f.input :price %>
+</div>
+
+<% if @product.image.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image.thumb.url) %>
+<% end %>
+
+<div class="group">
+  <%= f.input :image, as: :file %>
+</div>
+
+<<<<<<< HEAD
+<%= f.submit "Update Product", data: {disable_with: "Submiting..."} %>
+=======
+<%= f.submit t("admin.update_product"), data: {disable_with: "Submiting..."} %>
+>>>>>>> f622344ac5a4746b4a55a7ea9067430174a0f909
+<% end %>
+>>>>>>> 24cdee15aabf502a4610a227b2947cb39bb08ca5
 
 <script>
   autosize($('#product_description'))

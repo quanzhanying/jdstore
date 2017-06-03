@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :orders
   has_many :likes
   has_many :liked_products, through: :likes, source: :product
+  has_many :reviews
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
