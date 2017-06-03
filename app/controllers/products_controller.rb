@@ -1,13 +1,10 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   before_action :authenticate_user!, only: [:like, :unlike]
-  def index
-    @products = Product.order("position ASC")
-  end
 
   def index
     if params[:category].blank?
-      @products = Product.all
+      @products = Product.order("position ASC")
     else
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(:category_id => @category_id)
@@ -17,6 +14,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @reviews = @product.reviews
+    @avg_review = @reviews.average(:score).present? ? @reviews.average(:score).round(2) : 0
   end
 
   def add_to_cart

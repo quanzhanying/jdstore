@@ -1,18 +1,29 @@
-<div class="reviews_wrapper clearfix">
-      <div class="pull-left">
-          <p><%= review.body %></p>
+<% if review.created_at %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span class="pull-right">
+        <%= review.created_at.strftime('%Y-%m-%d')  %>
+      </span>
+      <div class="star-score" data-score= <%= review.score %> ></div>
+      <br>
+      <div class="content">
+        <%= review.body %>
       </div>
-
-    <div class="pull-right">
-        <% if review.created_at %>
-          <p>
-            <div class="up">
-              发表者：<%= review.user.email %>
-            </div>
-            <div class="down">
-              <p>评论时间：<%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></p>
-            </div>
-           </p>
-        <% end %>
     </div>
-</div>
+  </div>
+<% end %>
+
+<script>
+  $('.star-score').raty({
+              path: '/images/',
+                  readOnly: true,
+                  score: function() {
+                return $(this).attr('data-score');
+              }
+  });
+
+  $('#star-score').raty({
+            path: '/images/',
+            scoreName: 'review[score]'
+  });
+</script>

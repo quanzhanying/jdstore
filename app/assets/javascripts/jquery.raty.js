@@ -5,7 +5,7 @@
  *
  * @author  : Washington Botelho
  * @doc     : http://wbotelhos.com/raty
- * @version : 2.7.1
+ * @version : 2.7.0
  *
  */
 
@@ -59,7 +59,7 @@
     },
 
     _adjustCallback: function() {
-      var options = ['number', 'readOnly', 'score', 'scoreName', 'target', 'path'];
+      var options = ['number', 'readOnly', 'score', 'scoreName', 'target'];
 
       for (var i = 0; i < options.length; i++) {
         if (typeof this.opt[options[i]] === 'function') {
@@ -235,9 +235,8 @@
     },
 
     _bindOver: function() {
-      var
-        that   = this,
-        action = that.opt.half ? 'mousemove.raty' : 'mouseover.raty';
+      var that   = this,
+          action = that.opt.half ? 'mousemove.raty' : 'mouseover.raty';
 
       that.stars.on(action, function(evt) {
         var score = methods._getScoreByPosition.call(that, evt, this);
@@ -289,9 +288,8 @@
     },
 
     _createCancel: function() {
-      var
-        icon   = this.opt.path + this.opt.cancelOff,
-        cancel = $('<' + this.opt.starType + ' />', { title: this.opt.cancelHint, 'class': this.opt.cancelClass });
+      var icon   = this.opt.path + this.opt.cancelOff,
+          cancel = $('<' + this.opt.starType + ' />', { title: this.opt.cancelHint, 'class': this.opt.cancelClass });
 
       if (this.opt.starType === 'img') {
         cancel.attr({ src: icon, alt: 'x' });
@@ -671,7 +669,7 @@
 
         if (self.data('readonly') !== readonly) {
           if (readonly) {
-            self.off('.raty').children(this.opt.starType).off('.raty');
+            self.off('.raty').children('img').off('.raty');
 
             methods._lock.call(this);
           } else {

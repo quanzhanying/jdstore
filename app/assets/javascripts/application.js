@@ -21,7 +21,6 @@
 //= require autosize.min
 //= require wow.min
 //= require jquery.countdown.min
-//= require jquery.raty
 //= require select2
 //= require_tree .
 
