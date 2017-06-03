@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     end
 
     #分类＃
-    resources :categories do
-    end
+    resources :categories
+    
   end
 
   resources :products do
