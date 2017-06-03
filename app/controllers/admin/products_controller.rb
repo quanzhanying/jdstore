@@ -17,9 +17,11 @@ class Admin::ProductsController < ApplicationController
   end
 
 
-    def edit
-      @product = Product.find(params[:id])
-    end
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+
 
   def create
     @product = Product.new(product_params)
