@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     @product.save
     @products_see = Product.where(:product_type => @product.product_type).order("show_count desc").limit(15)
     @products_hot = Product.where(:product_type => @product.product_type, :hot => true).limit(6)
-    @reviews = @product.reviews.order("id desc").limit(5)
+    @reviews = @product.reviews.order("id desc").limit(10)
   end
 
   def search

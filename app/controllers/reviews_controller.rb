@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
       #min_id = params[:min_id]
       #if !@min_id_old.blank? && min_id != @min_id_old
       @product = Product.find(params[:product_id])
-      @reviews = @product.reviews.where("id < ?",params[:min_id]).order("id desc").limit(5)
+      @reviews = @product.reviews.where("id < ?",params[:min_id]).order("id desc").limit(10)
       respond_to do |format|
           format.html
           format.js
