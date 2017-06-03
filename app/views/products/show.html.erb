@@ -4,8 +4,9 @@
   <div class="row">
     <div class="col-md-9 col-sm-12 col-xs-12">
 
-            <!-- 商品资料 -->
-              <div class="col-md-5 col-sm-12 col-xs-12 product-preview">
+            <!-- 商品资料 left-->
+            <div class="wrapper" >
+              <div class="col-md-6 col-sm-12 col-xs-12 product-preview">
                 <div class="preview-pic">
                   <% if @photos.present? %>
                      <% @photos.each_with_index do |p, index| %>
@@ -23,39 +24,75 @@
                 </div>
               </div>
 
-          <!-- description -->
-              <div class="col-md-5">
-                <h3> <%= @product.title %> </h3>
-                <div class="show-description " style="height: 160px;">
-                  <p>
-                    <%= @product.description %>
-                  </p>
-                </div>
-                <div> 数量 : <%= @product.quantity %> </div>
-                       <div class="show-price">
-                            <div class="price">
-                              ￥ <%= @product.price %>
-                            </div>
-                            <div class="addcart pull-right">
-                                <% if !current_user.is_favorite_of?(@product) %>
-                                  <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                  <% end %>
-                                <% else %>
-                                  <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-                                    <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-                                  <% end %>
-                                <% end %>
+          <!-- right card -->
+          <div class="col-md-6" style="height: 300px" >
 
-                                <% if @product.quantity.present? && @product.quantity > 0 %>
-                                    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-                                <% else %>
-                                    已销售一空，无法购买
-                                <% end %>
-                            </div>
-                      </div>
-               </div>
+            <h3><%= @product.title %></h3>
+            <h5 style="color:#f77f2f"><%= @product.description %></h5>
+
+            <div class="price-service">
+              <p class="price">售价
+                <span class="rmb">￥</span>
+                <span class="price"><%= @product.price %></span>
+              </p>
+              <p class="service">服务
+                <span class="service-detail">7天无忧退货 | 48小时快速退款 | 正品保证</span>
+              </p>
+            </div>
+            <!-- <div> 数量 : <%= @product.quantity %> </div>
+                <div class="quantity-size">
+                  <p class="quantity">库存 <span class="quantity"><%= @product.quantity %></span> </p> -->
+            <!-- </div> -->
+            <div class="action">
+              <div class="col-md-3">
+                <% if @product.quantity.present? && @product.quantity > 0 %>
+                <%= link_to("立即购买", "#", class: "buy btn btn-danger",  :method => :post) %>
+              <% else %>
+                已销售一空，无法购买
+                <% end %>
+              </div>
+              <div class="col-md-3">
+                <% if @product.quantity.present? && @product.quantity > 0 %>
+                <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger") %>
+              <% else %>
+                已销售一空，无法购买
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <% if !current_user.is_favorite_of?(@product) %>
+                <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                <i class="fa fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                <i class="fa fa-heart" style="color:red;"></i>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+          <hr>
+
+        <div class="pictures">
+          <% if @photos.present? %>
+              <% @photos.each_with_index do |p, index| %>
+                <div class="row preview-pic1">
+                  <div class="col-md-6 preview-image">
+                        <% if index >= 0  %>
+                          <%= image_tag p.avatar.medium.url, class: "thumbnail" %>
+                        <% end %>
+                  </div>
+                </div>
+              <% end %>
+          <% end %>
+        </div>
     </div>
+
+
 
     <!-- 推荐 -->
     <div class="col-md-3">
@@ -64,20 +101,5 @@
   </div>
 
   <br>
-    <hr>
-
-  <div class="pictures">
-    <% if @photos.present? %>
-        <% @photos.each_with_index do |p, index| %>
-          <div class="row preview-pic1">
-            <div class="col-md-6 preview-image">
-                  <% if index >= 0  %>
-                    <%= image_tag p.avatar.medium.url, class: "thumbnail" %>
-                  <% end %>
-            </div>
-          </div>
-        <% end %>
-    <% end %>
-  </div>
 
 </div>

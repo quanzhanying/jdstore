@@ -590,13 +590,14 @@
 
 
 /*----- product/show 页面 -----*/
+
+/*----- left card -----*/
 .main1 {
   margin-top: 60px; /*----- 不被flash alert阻挡 -----*/
-
 }
 
 .product-preview {
-  padding-left: 0;
+  padding-top: 10;
 }
 
 .preview-pic img{ /*---- show图片 -----*/
@@ -604,36 +605,61 @@
   height: 350px;
 }
 
+.wrapper {
+  display: inline-block; /*----- 把图片与描述放在一个区块 -----*/
+  border: 1px solid rgb(221, 221, 221);
+
+  .thumbnail{
+    padding: 10px;   /*---- 图片的白边 -----*/
+    margin-top: 20px;
+    }
 
 
-.price {
-  font-size: 30px;
-  padding-left: 0;
-  float: left;
+  }
+
+
+/*-----show page right card ----*/
+
+
+.price-service{
+  // background-color: rgb(245,245,245);
+  margin-top: 30px;
+  margin-bottom: 30px;
+ //  padding-left: 10px;
+ //  padding-right: 10px;
+  color: #666;
+  border-top: 1px dotted #dedede;
+  border-bottom: 1px dotted #dedede;
+  p.price{
+    span.rmb{
+      color: #d7282d;
+
+    }
+    span.price{
+      color: #d7282d;
+      font-size: 30px;
+    }
+  }
+  p.service{
+    span.service-detail{
+      margin-left: 20px;
+    }
+  }
+}
+.action {
+  margin-top:30px;
+  padding-left:0;padding-right:0px;
+  .col-md-3{
+    padding-left:0px;padding-right:0px;
+  }
 }
 
-.thumbnail{
-  padding: 10px;   /*---- 图片的白边 -----*/
-}
 
-.hr{
-  color: #323232;
-  font-size: 40px;
-}
-
-.guide-title {
-  font-size: 20px;
-
-}
-
-.guide-body {
-  margin-left: -15px;
-  margin-right: -15px;
-}
+/*----- show layout bottom -----*/
 
 
-.show-description {
-  height:280px;
+.preview-pic1 {
+  margin-bottom: 30px; /*------ show展示图的间距 -----*/
 }
 
 .preview-image {   /*---- show展示图大小 -----*/
@@ -643,14 +669,103 @@
     img {
     width: 700px;
     height: 700px;
-    padding: 10px;
+    padding: 15px; /*----- 图的白边 -----*/
   }
 }
 
-.preview-pic1 {
-  margin-bottom: 30px; /*------ show展示图的间距 -----*/
-}
 
+
+
+
+
+
+.show-page {
+   width: 950px;
+   margin: 0 auto;
+   padding-top: 50px;
+ }
+
+ .card {
+   width: 950px;
+   background: #fff;
+   margin-bottom: 20px;
+   padding-bottom: 15px;
+   border: 1px solid #ddd;
+ }
+
+ .show-page .row{
+   margin-left: 0;
+ }
+
+ .preview {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   margin-top:30px;
+ }
+
+
+
+
+
+
+
+
+ .tab-content {
+   overflow: hidden;
+   padding-top: 15px;
+ }
+
+
+ /*-----show page description ----*/
+ .tabs {
+   background-color:#fff;
+
+   margin-top: 10px;
+   margin-right: 10px;
+   margin-bottom: 50px;
+   padding-left: 15px;
+   padding-right: 15px;
+   padding-bottom: 15px;
+ }
+ .tabmenu .nav-tabs {
+   border: none;
+   margin: 0px;
+ }
+
+ .tabmenu .nav-tabs > li {
+   margin-right: 2px;
+ }
+ .tabmenu .nav-tabs > li > a {
+   border: 0;
+   margin-right: 0;
+   color: #A9A9A9;
+ }
+
+ .tabmenu .nav-tabs > li > a:hover, //导航栏链接颜色样式
+ .tabmenu .nav-tabs > li > a:focus {
+   background-color: transparent;
+   border-bottom: 4px solid #f77f2f;
+ }
+ .tabmenu .nav-tabs > .active > a,
+ .tabmenu .nav-tabs > .active > a:hover,
+ .tabmenu .nav-tabs > .active > a:focus {
+   border: 0;
+   border-bottom: 4px solid #f77f2f;
+ }
+
+ .tabmenu .nav-tabs > .open > a,
+ .tabmenu .nav-tabs > .open > a:focus,
+ .tabmenu .nav-tabs > .open > a:hover {
+   background-color: #212121;
+   border-bottom: 4px solid #f77f2f;
+ }
 
 
 
