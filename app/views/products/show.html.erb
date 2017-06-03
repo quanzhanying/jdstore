@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="show-page">
   <!-- left card -->
   <div class="row card">
@@ -74,6 +75,19 @@
         <div class="tab-content">
           <div class="tab-pane active" id="tab_default_1">
             <p>详情</p>
+            <% if @photos.present? %>
+               <% @photos.each_with_index do |p, index| %>
+                 <% if index == 0 %>
+                   <%= image_tag p.avatar.medium.url %>
+                   <div style="letter-spacing: -8px">
+                 <% else %>
+                   <%= image_tag p.avatar.thumb.url %>
+                 <% end %>
+               <% end %>
+               </div>
+             <% else %>
+                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+             <% end %>
           </div>
           <div class="tab-pane" id="tab_default_2">
             <p>评价</p>
@@ -82,4 +96,5 @@
       </div>
     </div>
   </div>
+
 </div>

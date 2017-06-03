@@ -16,6 +16,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
 /*----- navbar -----*/
 #nav-height {
   padding-top: 15px;
@@ -27,33 +29,36 @@
 }
 
 .navbar-default {
-  background-color: #323232;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #f4f0e8;
   //背景颜色
-  border-color: #323232;
+  border-color: #f4f0e8;
   //边框色
   margin-bottom: 0;
   //底部 margin 不撑开距离
 }
 
    .navbar-default .navbar-brand {  //logo字体样式
-      color: #FFFFFF; //字体颜色
+      font-size: 20px;
+      color: #444444; //字体颜色
       padding: 10px 15px; //上下10px 左右15px
       line-height: 30px; //文字行高
   }
 
   .navbar-default .navbar-brand:hover,
   .navbar-default  .navbar-brand:focus {
-      color: #f77f2f; //鼠标放置在链接上的文字颜色
+      color: #cc0000; //鼠标放置在链接上的文字颜色
       background-color: transparent; //鼠标放置在链接上的背景颜色
   }
 
   .navbar-default .navbar-nav > li > a {
-    color: #FFFFFF;
+    color: #444444;
 }
 
 .navbar-default .navbar-nav > li > a:hover, //导航栏链接颜色样式
 .navbar-default .navbar-nav > li > a:focus {
-    color: #2f85f7;
+    color: #cc0000;   /* 点击样色*/
     background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -66,8 +71,8 @@
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
-    background-color: #212121;
-    color: #f77f2f;
+    background-color: #f4f0e8;
+    color: #cc0000;
 }
 
 /*----- search bar at navbar -----*/
@@ -162,7 +167,7 @@
      left: 0;
      width: 100%;
      height: 100%;
-     background-color: rgba(0, 0, 0, 0.40);
+    //  background-color: rgba(0, 0, 0, 0.40);  /*--- 大图滤镜效果 -----*/
  }
  .bs-slider > .carousel-inner > .item > img,
  .bs-slider > .carousel-inner > .item > a > img {
@@ -170,6 +175,11 @@
      width: 100% !important;
  }
 
+ .item img{
+  width: 100%;
+  height: 100%;
+
+ }
  /********************
  *****Slide effect
  **********************/
@@ -497,64 +507,53 @@
 
 
 
-/*----- main campaign -----*/
+/*----- Welcome page -----*/
 
-.mainCampaign {
-  z-index: 1;
-  height: auto;
-  width: 100%;
-  background: #f7f7f7;
-  /*------ 图片置中 -----*/
-  text-align: center;
-  position: relative;
-  padding-top: 10px;
-  /*----- 距离navbar -----*/
-  background-position: center center;
+.mainproduct {
+  margin: 50px 60px 50px 60px;
+}
+
+.welcome-product {
+  margin-top: 80px;
+
+}
+.detail {
+  font-size: 20px;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 1px;
 }
 
 
+.detail a:link {      /*-----  饮食餐具的link颜色 ------ */
+    color: #444444;
+
+  }
+.detail a:hover {
+      color: #cc0000;
+      background-color: transparent;
+      text-decoration: none;
+  }
 
 
-/*----- 首页产品系列连结图 -----*/
-.product-intro {
-  z-index: 1;
-  width: 100%;
-  background: #f7f7f7;
-  /*----- 距离footer的margin -----*/
-  margin-bottom: 20px;
-  /*----- 包围图片的框随browser变换大小 -----*/
-  height: relative;
-}
 
-.intro-link {
-  display: inline-block;
-}
-/*----- 连结图 -----*/
-.product-intro-list-img-left {
-  /*----- 左图片靠中间 -----*/
-  margin-right: 0;
-  width: 600px;
-}
 
+.prolist {
+  border-width: 10px;
+  border-style: solid;
+  border-color: #FFFFFF;
+
+
+
+  }
 .product-intro-list-img-right {
-  /*----- 右图片靠中间 -----*/
-  margin-left: 0;
-  width: 600px;
-}
-/*----- slogan -----*/
-.slogan {
-  height: 300px;
-  text-align: center;
-  text-shadow: 2px;
+  width: 100%;     /*---- 照片布满prolist-----*/
+  height: 100%;    /*---- 照片布满prolist-----*/
 }
 
-.slogan-ad {
-  padding-top: 60px;
-  padding-bottom: 2em;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
+
+
+
 
 
 /*----- products 页面 -----*/
@@ -567,20 +566,70 @@
   display: block;
 }
 
-.show {
+.product-head {
   margin-top: 16px;
   text-align: center;
   font-size: 100%;
   border-style: solid;
 }
 
+.product-item {
+  width: 270px;         /*----- 容纳图片的空间大于图片使边框留白 -----*/
+  margin-right: 10px;  /*---- 产品间距 -----*/
+  margin-bottom: 50px;
+
+
+  .image {
+    width: 250px;
+    height:250px;
+  }
+}
 
 
 
-/*----- product show 页面 -----*/
+
+
+/*----- product/show 页面 -----*/
 .box {
   margin-top: 60px; /*----- 不被alert阻挡 -----*/
 }
+
+
+.price {
+  font-size: 30px;
+  padding-left: 0;
+  float: left;
+}
+
+.thumbnail{
+  padding: 10px;   /*---- 图片的白边 -----*/
+}
+
+.hr{
+  color: #323232;
+  font-weight: bold;
+}
+
+.guide-title {
+  font-size: 20px;
+
+}
+
+.guide-body {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.column {
+
+}
+
+
+.show-description {
+  height:280px;
+
+}
+
 
 
 
@@ -597,17 +646,29 @@
   width: 350px;
   height: 350px;
   border-radius: 2%;
+}
+
+.descrip a:link {
+    color: #444444;
+}
+
+.descrip a:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: #cc0000;
+  }
 
 
+
+.show-recom {
+  text-align: center;
 }
 
 
-
-
+/*----- cart.checkout ------*/
 .quantity {
-  width: 20px;
+  width: 30px;
 }
-
 
 
 
@@ -630,6 +691,7 @@
 /*----- footer -----*/
 html {
   height: 100%;
+
 }
 
 body {
@@ -637,12 +699,15 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  background-color: #f3f3f5;
+
+
 }
 
 .main {
   padding-top: 80px;
   /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
-  padding-bottom: 300px;
+  padding-bottom: 500px;
   /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
 
 }
@@ -651,27 +716,37 @@ body {
 
   width: 100%;
   position: absolute;
-  height: 220px;
+  height: relative;
   bottom: 0;
-  background: #f7f7f7;
-  padding-top: 40px;
+  background: #e1e8ed;
+  color:  #444444;
   display: inline-block;
   text-align: center;
   /*----- footer 置底 -----*/
 
   /*----- footer loga 颜色 -----*/
   .fa {
-    color: #e66c36;
+    color: #d95f59;
   }
 }
 
 .footer {
   /*----- footer 下半部高度 -----*/
-  height: 120px;
-  border-top: #25292e 1px solid;
-  background: #25292e;
-  color: #5c5c5c;
+  padding-top: 30px;
+  height: 210px;
+  border-top: #f4f0e8 1px solid;
+  background: #f4f0e8;
+  color:  #444444;
   width: 100%;
+  font-size: 15px;
+  font-weight: 30px;
+
+  a:hover {
+        background-color: transparent;
+        text-decoration: none;
+        color: #cc0000;
+      }
+
 }
 
 //----------button-------
@@ -685,8 +760,14 @@ body {
   }
 
   .btn-danger:hover {
-      background-color: #FFFFFF;//鼠标放置在btn上的背景颜色
-      color: #000000;
+      background-color: #f77f2f;//鼠标放置在btn上的背景颜色
+      color: #fff;
+      border-color: #f77f2f;//鼠标放置在btn上的边框颜色
+    }
+
+  .btn-dange:active {
+      background-color: #f77f2f;//鼠标放置在btn上的背景颜色
+      color: #fff;
       border-color: #f77f2f;//鼠标放置在btn上的边框颜色
 
   }

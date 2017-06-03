@@ -7,6 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <!--google font -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Noto Serif', serif; font-size: 16px;
+      }
+    </style>
+
+    <!-- google font end -->
 
 
   </head>
@@ -18,7 +28,7 @@
         <%=render "common/navbar" %>
         <%= render "common/flashes" %>
         <%= yield %>
-    
+
   </div>
 
         <%= render "common/footer" %>

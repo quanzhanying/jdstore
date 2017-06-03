@@ -3,8 +3,8 @@
   <div class="col-md-12">
 
     <%= link_to("清空购物车", clean_carts_path ,
-              method: :delete , class: "pull-right",
-              style: "text-decoration: underline;",
+              method: :delete , class: "btn btn-warning primary pull-right",
+              style: "text-decoration: none",
               data: { confirm: "你确定要清空整个购物车吗？"} )%>
 
     <h2> 购物车 </h2>
@@ -24,8 +24,8 @@
           <tr>
             <td>
               <%= link_to product_path(cart_item.product) do %>
-                <% if cart_item.product.image.present? %>
-                  <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
+                <% if cart_item.product.photos[0].present? %>
+                  <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
                 <% else %>
                   <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                 <% end %>
