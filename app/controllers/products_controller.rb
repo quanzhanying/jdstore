@@ -20,6 +20,13 @@ class ProductsController < ApplicationController
       end
     end
 
+  def collect
+    @products = Product.all
+    if params[:favorite] == "yes"
+      @products = current_user.products
+    end
+  end
+
 
   def show
     @product = Product.find(params[:id])
@@ -70,6 +77,20 @@ class ProductsController < ApplicationController
      else
        redirect_to root_path, notice: "搜索信息不能为空，请输入关键字搜索！"
      end
+  end
+
+  def add_to_favorite
+    @product = Product.find(params[:id])
+    @product.users << current_user
+    @product.save
+    redirect_to :back, notice:"成功加入收藏!"
+  end
+
+  def quit_favorite
+    @product = Product.find(params[:id])
+    @product.users.delete(current_user)
+    @product.save
+    redirect_to :back, alert: "成功取消收藏!"
   end
 
 
