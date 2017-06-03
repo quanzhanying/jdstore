@@ -54,6 +54,7 @@ gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro' #管理机密信息，密钥
 gem "intercom-rails" #客服系统
+gem 'social-share-button' #社群分享鈕
 
 
 group :development do

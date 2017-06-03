@@ -22,9 +22,9 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
       <ul>
         <p>社群媒体分享</p>
-        <a href="/" target=_new><i class="fa fa-github"></i></a>
-        <a href="https://twitter.com/" target=_new><i class="fa fa-twitter"></i></a>
-        <a href=“https://www.facebook.com/” target=_new><i class=" fa fa-facebook"></i> </a>
+        <div class="social-share-button", style="margin-top: 0px;">
+          <%= social_share_button_tag("Select. 家具选，给您最好的家具。", :allow_sites => %w(facebook twitter google_plus wechat weibo)) %>
+        </div>
       </ul>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">

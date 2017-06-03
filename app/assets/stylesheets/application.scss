@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
 
@@ -720,3 +721,13 @@ a:hover {
   margin-bottom: 75px;
 }
 // product/show页面中商品详情结束
+
+// product/show社群分享鈕開始
+.social-share-button {
+  .ssb-icon {
+    background-size: 1.5em 1.5em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+// product/show社群分享鈕結束

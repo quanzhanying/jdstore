@@ -179,6 +179,11 @@
             <!-- 收藏商品和取消商品view部分结束 -->
           </div>
           <!-- 商品評論＋點讚＋收藏集合鈕結束 -->
+          <!-- 社群分享鈕開始 -->
+          <div class="social-share-button", style="float: right; margin-top: 5px;">
+            <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo)) %>
+          </div>
+          <!-- 社群分享鈕結束 -->
         </div>
         <!-- 商品訊息區結束 -->
 
