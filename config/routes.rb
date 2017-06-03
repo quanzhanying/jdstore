@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :add_to_favorite
+      post :quit_favorite
     end
     collection do
       get :search
