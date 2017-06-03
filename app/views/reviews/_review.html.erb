@@ -1,0 +1,18 @@
+<div class="reviews_wrapper clearfix">
+      <div class="pull-left">
+          <p><%= review.body %></p>
+      </div>
+
+    <div class="pull-right">
+        <% if review.created_at %>
+          <p>
+            <div class="up">
+              发表者：<%= review.user.email %>
+            </div>
+            <div class="down">
+              <p>评论时间：<%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></p>
+            </div>
+           </p>
+        <% end %>
+    </div>
+</div>

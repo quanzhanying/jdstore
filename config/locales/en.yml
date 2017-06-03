@@ -34,5 +34,6 @@
     new_product: New Product
     edit_product: Edit Product
     new_category: New Category
+    edit_category: Edit Category
     update_product: Update Product
     create_product: Create Product
