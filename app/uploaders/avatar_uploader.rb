@@ -14,18 +14,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
    storage :file
   end
 
-  process resize_to_fill: [800, 800]
+  process resize_to_fill: [900, 900]
 
   version :thumb do
-    process resize_to_fill: [400,400]
+    process resize_to_fill: [450,450]
   end
 
   version :medium do
-    process resize_to_fill: [200,200]
+    process resize_to_fill: [300,300]
   end
 
   version :small do
-    process resize_to_fill: [100,100]
+    process resize_to_fill: [250,250]
   end
 
   # Override the directory where uploaded files will be stored.

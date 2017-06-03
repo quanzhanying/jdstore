@@ -31,11 +31,26 @@
 <% end %>
 
 <div class="group">
-  <%= f.input :image, as: :file %>
+  <!-- <%= f.input :image, as: :file %> -->
   <%= f.label :avatar %><br>
   <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
 </div>
 
+<div class="group">
+    <%= f.input :image, as: :file %>
+</div>
+
+<div class="group">
+    <%= f.input :image2, as: :file %>
+</div>
+
+<div class="group">
+    <%= f.input :image3, as: :file %>
+</div>
+
+<div class="group">
+    <%= f.input :image4, as: :file %>
+</div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
