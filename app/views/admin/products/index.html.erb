@@ -39,7 +39,9 @@
               <td><%= product.title %></td>
               <td><%= product.price %></td>
               <td>
-                <%= link_to("Edit", edit_admin_product_path(product))%>
+                <%= link_to edit_admin_product_path(product) do %>
+                  <i class="fa fa-pencil-square-o"></i>
+                <% end %>
                 <%= link_to move_up_admin_product_path(product), method: :patch do %>
                   <i class="fa fa-arrow-circle-o-up" ></i>
                 <% end %>
