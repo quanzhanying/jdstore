@@ -5,24 +5,18 @@ class Admin::ProductsController < ApplicationController
   before_action :admin_required
 
   def index
-    # if params[:category].blank?
-      @products = Product.all
-    # else
-    #   @category_id = Category.find_by(name: params[:category]).id #先找到category_id
-    #   @products = Product.where(category_id:  @category_id) #再根据category_id找到相对应的产品
-    # end
+    @products = Product.all
   end
 
   def new
     @product = Product.new
     @photo = @product.photos.build #for multi-pics
-    @categories = Category.all.map { |c| [c.name, c.id] } #添加category的代码
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
     @product = Product.new(product_params)
-    @product.category_id = params[:category_id]  #添加category的代码
-
+    @product.category_id = params[:category_id]
     if @product.save!
       if params[:photos] != nil
         params[:photos]['avatar'].each do |a|
@@ -37,12 +31,12 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id] }  #添加category的代码
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.category_id = params[:category_id]  #添加category的代码
+    @product.category_id = params[:category_id]
     if params[:photos] != nil
      @product.photos.destroy_all #need to destroy old pics first
 

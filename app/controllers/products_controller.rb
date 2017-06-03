@@ -1,18 +1,32 @@
 class ProductsController < ApplicationController
   def index
-    def index
-      if params[:category].blank?
+    if params[:category].blank?
         @products = Product.all
-      else
+    else
         @category_id = Category.find_by(name: params[:category]).id #先找到category_id
         @products = Product.where(category_id:  @category_id) #再根据category_id找到相对应的产品
-      end
     end
-    
-    if params[:searcher]
+      if params[:searcher]
       @products = Product.search(params[:searcher])
     end
   end
+
+  def new
+       @categories = Category.all.map { |c| [c.name, c.id] }
+  end
+
+  def create
+       @product.category_id = params[:category_id]
+  end
+
+  def edit
+       @categories = Category.all.map { |c| [c.name, c.id] }
+  end
+
+  def update
+   @product.category_id = params[:category_id]
+  end
+
 
   def show
     @product =Product.find(params[:id])
@@ -34,7 +48,8 @@ class ProductsController < ApplicationController
   def update_price
     product = Product.find(params[:id])
 
-    response = RestClient.get "https://yunbi.com//api/v2/tickers/#{product.product_id}" # 因为我们之前保存过币种id的值的，现在可以调用啦！
+    response = RestClient.get "https://yunbi.com//api/v2/tickers/#{product.product_id}"
+    # 因为我们之前保存过币种id的值的，现在可以调用啦！
 
     data = JSON.parse(response.body)
 
