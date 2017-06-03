@@ -1,0 +1,39 @@
+<div class="login-wrap">
+  <div class="moving-bg">
+    <div class="image-content">
+      <div class="w1200 clearfix bc mt50 pb20">
+        <div class="logo fl"><%=link_to("小小食杂铺", products_path, class: "col-red")%></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="registration-wrap">
+    <div class="registration-block">
+      <div class="content clearfix">
+        <div class="right-part fr">
+          <div class="devise">
+            <h3>忘记密码？</h3>
+
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "请输入您的注册邮箱地址，找回密码" %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "点击发送恢复密码链接地址" %>
+              </div>
+            <% end %>
+
+            <hr>
+
+            <div class="tip">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
