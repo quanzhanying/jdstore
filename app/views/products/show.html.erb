@@ -292,7 +292,7 @@
           $(window).scroll(function(){
           // 当捲到最下面的时候
           if($('#reviews-list').closest('.tab-pane').hasClass('active')){
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight -200) {
             //if ((window.innerHeight + window.scrollY) >= document.getElementById("tab-right").offsetHeight) {
               if (review_id != review_id_old) {
                 var url = "<%= product_reviews_path(@product) %>?min_id=" + review_id;
