@@ -1,397 +1,73 @@
 
-<!--搜索框-->
-<!-- <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
-  <div class="input-group search-box">
-    <input type="text" class="form-control" name="keyword" placeholder="搜索商品" value="<%= params[:keyword] %>">
-    <div class="input-group-btn">
-      <button type="submit" class="btn btn-default">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </div>
-  </div>
-<% end %> -->
-
-<!--首页轮播-->
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
- </ol>
- <div class="carousel-inner">
-    <div class="item active">
-     <a href="javascript:;">
-      <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fg7zn5cjz5j31kw1er7wp.jpg">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-    <div class="item">
-     <a href="javascript:;">
-      <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg80pba9ukj31kw11xqv6.jpg">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-
 <div class="container">
   <!--wll 分类功能 -->
   <div class="productCatetory">
     <div class="productCatetory-menuList">
       <div class="productCatetory-menuList-item ">
-        <%= link_to products_path(category: "历史读物") do %>
-         <h4>历史读物</h4>
+        <%= link_to products_path(category: "最新上架") do %>
+         <h4>最新上架</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item ">
+        <%= link_to products_path(category: "经管商业") do %>
+         <h4>经管商业</h4>
          <% end %>
       </div>
       <div class="productCatetory-menuList-item">
-        <%= link_to products_path(category: "学习方法") do %>
-         <h4>学习方法</h4>
+        <%= link_to products_path(category: "人文艺术") do %>
+         <h4>人文艺术</h4>
          <% end %>
       </div>
       <div class="productCatetory-menuList-item">
-        <%= link_to products_path(category: "管理") do %>
-         <h4>管理</h4>
+        <%= link_to products_path(category: "历史传记") do %>
+         <h4>历史传记</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "亲子教育") do %>
+         <h4>亲子教育</h4>
          <% end %>
       </div>
     </div>
   </div>
-
-
-  <!--wll 排序功能 -->
-  <div class="order clearfix mt30 w1200 bc">
-    <p class="fl title pl20 pr20">商品排序：</p>
-    <ul style="list-style-type:none;" , class="fl orderList">
-      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if !params[:order] %>">
-        <%= link_to("新品", products_path) %>
-      </li>
-      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_product_quantity' %>">
-        <%= link_to("销量", products_path(:c => @category,:order => "by_product_quantity")) %>
-      </li>
-      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>">
-        <%= link_to("价格", products_path(:c => @category,:order => "by_product_price")) %>
-      </li>
-      <!-- 用来判断点过哪个标签就加红哪个标签，注释掉就没有此变色功能  <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>-->
-    </ul>
-  </div>
-
+  <!--产品列表 -->
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-xs-6 col-md-3">
-        <%= link_to product_path(product) do %>
+      <div class="col-md-3 col-sm-6">
+        <span class="thumbnail">
+          <%= link_to product_path(product) do %>
             <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
             <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
             <% end %>
-        <% end %>
-
-          <%= product.title %> ¥ <%= product.price %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
-    <div class="item">
-     <a href="javascript:;">
-      <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg814gfy71j30zk0np45x.jpg">
-      <div class="carousel-caption"></div>
-     </a>
-    </div>
-  </div>
-</div>
-
-
-<!--书籍排序-->
-<div class="container">
-  <div class="row row3">
-    <div class="col-md-10">
-      <div class="product-index">
-        <ul>
-          <li class="active">
-            <a href="/" style="">首页</a>
-          </li>
-          <li>
-            <a href="/products?where=fruits" style="">历史</a>
-          </li>
-          <li>
-            <a href="/products?where=aquatic" style="color:#B28435;">文学</a>
-          </li>
-          <li>
-            <a href="/products?where=meat" style="">其他</a>
-          </li>
-        </ul>
-
-
-
-      </div>
-    </div>
-  </div>
-</div>
-<!-- 书籍信息 -->
-
-
-<html lang="en">
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Website CSS style -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext,vietnamese" rel="stylesheet">
-		<!-- Website Font style -->
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-		<link rel="stylesheet" href="product.css">
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese" rel="stylesheet">
-
-
-		<title>Product Shop Responsive </title>
-	</head>
-	<body>
-		<div class="container">
-		<h4>NEW COLLECTION</h4>
-	<div class="row">
-  <!-- 1 -->
-    	<!-- BEGIN PRODUCTS -->
-  		<div class="col-md-4 col-sm-6">
-    		<span class="thumbnail">
-      			<img src="https://img1.doubanio.com/lpic/s4532008.jpg" alt="...">
-      			<h4>穷查理宝典</h4>
-      			<div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                </div>
-      			<p>听听最智慧的老人的建议 </p>
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<p class="price">3块/天</p>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > 借阅</button></a>
-      				</div>
-
-      			</div>
-    		</span>
-  		</div>
-      <!-- 2 -->
-      <div class="col-md-4 col-sm-6">
-    		<span class="thumbnail">
-      			<img src="https://img3.doubanio.com/lpic/s27264181.jpg" alt="...">
-      			<h4>解忧杂货店</h4>
-      			<div class="ratings">
+          <% end %>
+            <h4><%= product.title %></h4>
+            <div class="ratings">
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
-                </div>
-      			<p>现代人内心流失的东西，这家杂货店能帮你找回</p>
-      			<hr class="line">
-      			<div class="row">
-      				<div class="col-md-6 col-sm-6">
-      					<p class="price">$29,90</p>
-      				</div>
-      				<div class="col-md-6 col-sm-6">
-      				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > BUY ITEM</button></a>
-      				</div>
+            </div>
+            <p><%= product.description %></p>
+            <hr class="line">
+            br
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <p class="price">￥<%= product.price %></p>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <% if product.quantity.present? && product.quantity > 0 %>
+                  <%= link_to("借阅", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger right") %>
+                <% else %>
+                   Sold out
+                <% end %>
+              </div>
+            </div>
+        </span>
+      </div>
+    <% end %>
+ </div>
 
-      			</div>
-    		</span>
-  		</div>
-        <!--3-->
-        <div class="col-md-4 col-sm-6">
-      		<span class="thumbnail">
-        			<img src="https://img3.doubanio.com/lpic/s27264181.jpg" alt="...">
-        			<h4>解忧杂货店</h4>
-        			<div class="ratings">
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star-empty"></span>
-                  </div>
-        			<p>现代人内心流失的东西，这家杂货店能帮你找回</p>
-        			<hr class="line">
-        			<div class="row">
-        				<div class="col-md-6 col-sm-6">
-        					<p class="price">$29,90</p>
-        				</div>
-        				<div class="col-md-6 col-sm-6">
-        				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > BUY ITEM</button></a>
-        				</div>
-
-        			</div>
-      		</span>
-    		</div>
-        <!-- 4 -->
-        <!-- 1 -->
-          	<!-- BEGIN PRODUCTS -->
-        		<div class="col-md-4 col-sm-6">
-          		<span class="thumbnail">
-            			<img src="https://img1.doubanio.com/lpic/s4532008.jpg" alt="...">
-            			<h4>穷查理宝典</h4>
-            			<div class="ratings">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                      </div>
-            			<p>听听最智慧的老人的建议 </p>
-            			<hr class="line">
-            			<div class="row">
-            				<div class="col-md-6 col-sm-6">
-            					<p class="price">3块/天</p>
-            				</div>
-            				<div class="col-md-6 col-sm-6">
-            				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > 借阅</button></a>
-            				</div>
-
-            			</div>
-          		</span>
-        		</div>
-            <!-- 2 -->
-            <div class="col-md-4 col-sm-6">
-          		<span class="thumbnail">
-            			<img src="https://img3.doubanio.com/lpic/s27264181.jpg" alt="...">
-            			<h4>解忧杂货店</h4>
-            			<div class="ratings">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star-empty"></span>
-                      </div>
-            			<p>现代人内心流失的东西，这家杂货店能帮你找回</p>
-            			<hr class="line">
-            			<div class="row">
-            				<div class="col-md-6 col-sm-6">
-            					<p class="price">$29,90</p>
-            				</div>
-            				<div class="col-md-6 col-sm-6">
-            				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > BUY ITEM</button></a>
-            				</div>
-
-            			</div>
-          		</span>
-        		</div>
-              <!--3-->
-              <div class="col-md-4 col-sm-6">
-            		<span class="thumbnail">
-              			<img src="https://img3.doubanio.com/lpic/s27264181.jpg" alt="...">
-              			<h4>解忧杂货店</h4>
-              			<div class="ratings">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </div>
-              			<p>现代人内心流失的东西，这家杂货店能帮你找回</p>
-              			<hr class="line">
-              			<div class="row">
-              				<div class="col-md-6 col-sm-6">
-              					<p class="price">$29,90</p>
-              				</div>
-              				<div class="col-md-6 col-sm-6">
-              				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > BUY ITEM</button></a>
-              				</div>
-
-              			</div>
-            		</span>
-          		</div>
-
-              <!-- 1 -->
-                	<!-- BEGIN PRODUCTS -->
-              		<div class="col-md-4 col-sm-6">
-                		<span class="thumbnail">
-                  			<img src="https://img1.doubanio.com/lpic/s4532008.jpg" alt="...">
-                  			<h4>穷查理宝典</h4>
-                  			<div class="ratings">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </div>
-                  			<p>听听最智慧的老人的建议 </p>
-                  			<hr class="line">
-                  			<div class="row">
-                  				<div class="col-md-6 col-sm-6">
-                  					<p class="price">3块/天</p>
-                  				</div>
-                  				<div class="col-md-6 col-sm-6">
-                  				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > 借阅</button></a>
-                  				</div>
-
-                  			</div>
-                		</span>
-              		</div>
-                  <!-- 2 -->
-                  <div class="col-md-4 col-sm-6">
-                		<span class="thumbnail">
-                  			<img src="https://img3.doubanio.com/lpic/s27264181.jpg" alt="...">
-                  			<h4>解忧杂货店</h4>
-                  			<div class="ratings">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </div>
-                  			<p>现代人内心流失的东西，这家杂货店能帮你找回</p>
-                  			<hr class="line">
-                  			<div class="row">
-                  				<div class="col-md-6 col-sm-6">
-                  					<p class="price">$29,90</p>
-                  				</div>
-                  				<div class="col-md-6 col-sm-6">
-                  				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > BUY ITEM</button></a>
-                  				</div>
-
-                  			</div>
-                		</span>
-              		</div>
-                    <!--3-->
-                    <div class="col-md-4 col-sm-6">
-                  		<span class="thumbnail">
-                    			<img src="https://img3.doubanio.com/lpic/s27264181.jpg" alt="...">
-                    			<h4>解忧杂货店</h4>
-                    			<div class="ratings">
-                                  <span class="glyphicon glyphicon-star"></span>
-                                  <span class="glyphicon glyphicon-star"></span>
-                                  <span class="glyphicon glyphicon-star"></span>
-                                  <span class="glyphicon glyphicon-star"></span>
-                                  <span class="glyphicon glyphicon-star-empty"></span>
-                              </div>
-                    			<p>现代人内心流失的东西，这家杂货店能帮你找回</p>
-                    			<hr class="line">
-                    			<div class="row">
-                    				<div class="col-md-6 col-sm-6">
-                    					<p class="price">$29,90</p>
-                    				</div>
-                    				<div class="col-md-6 col-sm-6">
-                    				 <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-danger right" > BUY ITEM</button></a>
-                    				</div>
-
-                    			</div>
-                  		</span>
-                		</div>
-
-
-
-
-
-
-		<!-- END PRODUCTS -->
-	</div>
-</div><!-------container----->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-	</body>
-</html>
+</div>

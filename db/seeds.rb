@@ -9,29 +9,9 @@
 
 # Initialize product
 
-Product.create!(title: "Cherry Keyboard",
-   description: "G80-3000键盘",
-   price: 2800,
-   quantity: 5,
-   image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
-   )
 
- Product.create!(title: "camera",
-    description: "camera",
-    price: 2800,
-    quantity: 5,
-    image: open("https://images-cn.ssl-images-amazon.com/images/I/510riktx0yL.jpg")
-    )
-
-  Product.create!(title: "camera",
-     description: "camera",
-     price: 2800,
-     quantity: 5,
-     image: open("https://images-cn.ssl-images-amazon.com/images/I/510riktx0yL.jpg")
-     )
-
-     Category.create(name: "纸质书")
-     Category.create(name: "电子读物")
-     Category.create(name: "好物精选")
-     Category.create(name: "电子读物1")
-     Category.create(name: "好物精选1")
+     Category.create(name: "最新上架")
+     Category.create(name: "经管商业")
+     Category.create(name: "人文艺术")
+     Category.create(name: "历史传记")
+     Category.create(name: "亲子教育")
