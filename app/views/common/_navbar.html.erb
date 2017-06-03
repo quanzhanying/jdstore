@@ -62,9 +62,50 @@
         </li>
 
         <% if !current_user %>
-        <li><%= link_to("注册", new_user_registration_path) %>
-        </li>
-        <li><%= link_to(content_tag(:i, '登录', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
+        <!-- <li><%#= link_to("注册", new_user_registration_path) %></li>
+        <li><%#= link_to(content_tag(:i, '登录', class: 'fa fa-sign-in'), new_user_session_path) %></li> -->
+        <!-- 以下代码添加在最后 -->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog m-modal" role="document">
+            <div class="loginmodal-container">
+               <h2>登录</h2>
+               <hr>
+               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                 <div class="form-inputs">
+                   <%= f.input :email, :label => "邮箱", required: false, autofocus: true %>
+                   <%= f.input :password, :label => "密码", required: false %>
+                   <%= f.input :remember_me, :label => "记住我", as: :boolean if devise_mapping.rememberable? %>
+                 </div>
+                 <div class="form-actions">
+                   <%= f.button :submit, "登录"%>
+                 </div>
+               <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog m-modal">
+            <div class="loginmodal-container">
+              <h2>注册</h2>
+              <hr>
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :email, :label => "邮箱", required: true, autofocus: true %>
+                  <%= f.input :password, :label => "密码", required: true, hint: ("密码长度至少#{@minimum_password_length}位" if @minimum_password_length) %>
+                  <%= f.input :password_confirmation, :label => "确认密码", required: true %>
+                </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "注册" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        
         <% else %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
