@@ -130,9 +130,13 @@
 
 }
 
+
+.a-dropdown a{
+ background-color: #232f3e;  
+}
 .dropdown a{
   color: #FFFFFF;
-  background-color: #232f3e;
+  //background-color: #232f3e;
   text-decoration: none;
 }
 
@@ -158,11 +162,12 @@
 
 .cart a {
   color: #FFFFFF; /*白色字体*/
+  background-color: #232f3e;
   text-decoration: none; /*不要下划线*/
 }
 
 .cart a:hover {
-  color: #778899; /*鼠标一上去的时候，字体变成红色*/
+  color: #778899; /*鼠标一上去的时候，字体变成灰色*/
 }
 
 
