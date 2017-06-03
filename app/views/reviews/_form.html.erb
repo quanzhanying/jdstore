@@ -1,8 +1,30 @@
 <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
-  <label class="control-label text required" for="review_body"><abbr title="required">*</abbr> 评论内容</label>
   <div class="field">
+    <div id="star-score"></div>
+  </div>
+
+  <div class="field">
+      <%= f.label :"添加评论" %><br>
       <%= f.text_area :body, class: "form-control" %>
   </div>
+
   <br>
-  <input type="submit" name="commit" value="发表评论" class="btn btn-default" data-disable-with="发表评论">
+  <div class="actions">
+    <%= f.submit "提交", class: "btn btn-default" %>
+  </div>
 <% end %>
+
+<script>
+  $('.star-score').raty({
+              path: '/images/',
+                  readOnly: true,
+                  score: function() {
+                return $(this).attr('data-score');
+              }
+  });
+
+  $('#star-score').raty({
+            path: '/images/',
+            scoreName: 'review[score]'
+  });
+</script>

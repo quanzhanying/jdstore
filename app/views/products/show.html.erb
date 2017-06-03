@@ -12,13 +12,7 @@
         <div class="details col-md-6">
           <h3 class="product-title"><%= @product.title %></h3>
           <div class="rating">
-            <div class="stars">
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
+            <div class="star-score" data-score=<%= @avg_review %> ></div>
           </div>
           <h4 class="author">作者：<%= @product.author %></h4>
           <h4 class="price">价格：<span>￥<%= @product.price %></span></h4>
@@ -43,9 +37,7 @@
   <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">商品介绍</a></li>
-        <li role="presentation"><a href="#score" aria-controls="score" role="tab" data-toggle="tab">商品评价<%= @product.reviews.count %></a></li>
-
-
+        <li role="presentation"><a href="#score" aria-controls="score" role="tab" data-toggle="tab">商品评价 (<%= @product.reviews.count %>)</a></li>
       </ul>
 
       <!-- Tab panes -->
