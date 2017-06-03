@@ -1,45 +1,85 @@
-<div class="container box" >
-    <!-- left card -->
-      <div class="row">
-        <div class="col-md-5">
-          <div class="preview-pic">
-            <% if @product.image.present? %>
-              <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-            <% end %>
-          </div>
-        </div>
-    <!-- right card -->
-        <div class="col-md-7">
-          <h3> <%= @product.title %> </h3>
-          <div style="height:100px;">
-            <p>
-              <%= @product.description %>
-            </p>
-          </div>
-          <div> 数量 : <%= @product.quantity %> </div>
-          <div class="product-price"> ￥ <%= @product.price %> </div>
-        <div>
-        <% if !current_user.is_favorite_of?(@product) %>
-          <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-            <i class="fa fa-heart" aria-hidden="true"></i>
-          <% end %>
-        <% else %>
-          <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-            <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
-          <% end %>
+<div class="show-page">
+  <!-- left card -->
+  <div class="row card">
+    <div class="preview col-md-7">
+      <div class="preview-pic tab-content">
+        <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
         <% end %>
       </div>
     </div>
+    <!-- right card -->
+    <div class="col-md-5" style="margin-top:50px;">
+      <h3><%= @product.title %></h3>
+      <h5 style="color:#f77f2f"><%= @product.description %></h5>
 
-      <div class="col-md-6 pull-right">
-
-        <% if @product.quantity.present? && @product.quantity > 0 %>
-            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <div class="price-service">
+        <p class="price">售价
+          <span class="rmb">￥</span>
+          <span class="price"><%= @product.price %></span>
+        </p>
+        <p class="service">服务
+          <span class="service-detail">7天无忧退货 | 48小时快速退款 | 正品保证</span>
+        </p>
+      </div>
+      <!-- <div> 数量 : <%= @product.quantity %> </div>
+          <div class="quantity-size">
+            <p class="quantity">库存 <span class="quantity"><%= @product.quantity %></span> </p> -->
+      <!-- </div> -->
+      <div class="action">
+        <div class="col-md-3">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("立即购买", "#", class: "buy btn btn-danger",  :method => :post) %>
         <% else %>
-            已销售一空，无法购买
-        <% end %>
-
+          已销售一空，无法购买
+          <% end %>
+        </div>
+        <div class="col-md-3">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger") %>
+        <% else %>
+          已销售一空，无法购买
+          <% end %>
+        </div>
+        <div class="col-md-6">
+          <% if !current_user.is_favorite_of?(@product) %>
+          <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+          <i class="fa fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+          <i class="fa fa-heart" style="color:red;"></i>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
+    <!-- product description -->
+    <div class="col-md-12">
+      <div class="tabs">
+        <div class="tabmenu">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">宝贝详情
+              </a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">宝贝评价
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab_default_1">
+            <p>详情</p>
+          </div>
+          <div class="tab-pane" id="tab_default_2">
+            <p>评价</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
