@@ -41,9 +41,14 @@ gem 'aasm'
 gem 'acts_as_list'
 gem 'will_paginate'
 gem 'i18n'
+#qiniu 相关gem
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+#搜索相关gem
+gem 'ransack'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
