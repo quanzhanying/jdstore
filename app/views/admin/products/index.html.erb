@@ -5,7 +5,6 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>#</th>
       <th width="220">Product Pic</th>
       <th>Name</th>
       <th>Price</th>
@@ -16,9 +15,6 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td>
-          <%= product.id %>
-        </td>
         <td>
           <% @products.each do |p| %>
             <% if p.photos.present? %>
