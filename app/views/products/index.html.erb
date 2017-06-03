@@ -1,9 +1,14 @@
 
 
 
+
+
+
  <div class="title">
-<div class="title-1">
-   INTERESTING FINDS
+<div class="title-1  <%= 'title-1-active' if !params[:category] %>">
+
+  <%= "INTERESTING FINDS"%>
+
  </div>
  </div>
 
@@ -28,6 +33,14 @@
         <% end %>
       <% end %>
       <%= product.title %> ￥ <%= product.price %>
+
+      <% if !product.users.include?(current_user) %>
+       <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+     <% else %>
+       <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+      <% end %>
+
+
     </div>
   <% end %>
 </ul>

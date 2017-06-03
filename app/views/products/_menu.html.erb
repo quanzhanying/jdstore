@@ -2,9 +2,7 @@
 <div class="menu  bg-color1">
   <div class="menuList">
 
-  <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if !params[:category] %>">
-    <%= link_to("首页", products_path)%>
-  </div>
+  
 
    <% Category.all.each do |category| %>
 
@@ -22,9 +20,14 @@
     </div>
 
     <% end %>
-    <%= category.name %>
 
-  </div>
+
+
+    <div class="mune-name">
+    <%= category.name %>
+   </div>
+    </div>
+
 
 <% end %>
 
