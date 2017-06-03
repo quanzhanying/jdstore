@@ -23,7 +23,12 @@ Rails.application.routes.draw do
      post :add_buying_quantity
      post :remove_buying_quantity
    end
+
+  # 搜索 #
+  collection do
+   get :search
   end
+end
 
   resources :carts do
    collection do
@@ -55,5 +60,4 @@ Rails.application.routes.draw do
      end
    end
   end
-
-end
+end 
