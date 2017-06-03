@@ -1528,6 +1528,7 @@ div.cart__main__wapper {
     }
     #overlay td.black { border-color: #000; }
     #overlay td.white { border-color: #fff; }
+
     #overlay {
     position: absolute;
     bottom: 0;
@@ -1535,7 +1536,7 @@ div.cart__main__wapper {
     right: 0;
     // background-color: #008CBA;
     overflow: hidden;
-    width: 150%;
+    width: 100%;
     height: 0;
     transition: .5s ease;
     background-color: rgba(0,0,0,0.8);
@@ -1545,12 +1546,13 @@ div.cart__main__wapper {
     #text{
     position: absolute;
     top: 50%;
-    left: 40%;
-    font-size: 50px;
+    left: 50%;
+    height: 40%;
+    font-size: 43px;
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-    zoom: 0.8;
+    zoom: 0.5;
 
     }
     button {
