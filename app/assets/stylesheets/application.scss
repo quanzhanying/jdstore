@@ -48,7 +48,7 @@
 }
 
 .navbar-custom.top-collapse {
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 0 10px 0 150px;
   background-color: #0258A4;
 }
@@ -181,12 +181,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10px;
+    height: 0px;
     background-color: #FFFFFF;
 }
 
 .progress{
-    height: 10px;
+    height: 0px;
     width: 0%;
     background: #0258A4;
     border-radius: 0;
@@ -498,7 +498,8 @@ section {
 /* Google Chrome Scrollbar */
 
 ::-webkit-scrollbar {
-    width: 18px;
+    width: 15px;
+    height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -1528,6 +1529,7 @@ div.cart__main__wapper {
     }
     #overlay td.black { border-color: #000; }
     #overlay td.white { border-color: #fff; }
+
     #overlay {
     position: absolute;
     bottom: 0;
@@ -1546,10 +1548,13 @@ div.cart__main__wapper {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 50px;
+    height: 40%;
+    font-size: 43px;
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+    zoom: 0.5;
+
     }
     button {
         color: #62b900;

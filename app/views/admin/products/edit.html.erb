@@ -18,6 +18,10 @@
     <%= f.input :price %>
   </div>
 
+  <div class="group"> 
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "选择类别") %>
+  </div>
+
   <% if @product.photos.present? %>
     <span>目前商品图</span> <br>
     <% @product.photos.each do |p| %>
