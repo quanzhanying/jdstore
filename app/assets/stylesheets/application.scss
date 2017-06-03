@@ -85,7 +85,7 @@ body {
 
 // langing page 相关 scss 代码
  .jumbotron {
-  background-image:url('jumbotron.jpg');
+  background-image: image-url('jumbotron.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 70px;
@@ -188,11 +188,12 @@ body {
 
 /****** 登录系统界面开始 ******/
 .log {
-  background-image:url('login.jpg');
+  background-image:image-url('jumbotron.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 60px;
   padding-bottom: 110px;
+  opacity: 0.9
 }
 
 .login-container {
