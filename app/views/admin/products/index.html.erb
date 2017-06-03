@@ -9,6 +9,7 @@
       <th width="220">Product Pic</th>
       <th>Name</th>
       <th>Price</th>
+      <th>Category</th>
       <th width="100"> Options</th>
     </tr>
   </thead>
@@ -33,6 +34,7 @@
         <td>
           <%= product.price %>
         </td>
+        <td><%= product.category.name if product.category %></td><!-- category_id写成category.name会报错，写成 category.name if product.category 就OK了-->
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
         </td>

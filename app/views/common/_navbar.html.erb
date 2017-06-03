@@ -27,6 +27,17 @@
                <% end %>
              </li>
 
+             <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown">分类浏览
+                 <b class = "caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+                 <% Category.all.each do |category| %><!-- 这里论坛教程说用@category，但我会报错 -->
+                     <li><%= link_to(category.name, products_path(category: category.name))%></li><!-- 也可以用category: category.name表达id -->
+                 <% end %>
+               </ul>
+             </li>
+
               <!-- 商品页按钮 -->
               <li class="act">
                   <%= link_to products_path do  %>
