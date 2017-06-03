@@ -1895,7 +1895,6 @@ border-radius: 4px;
 	text-align: center;
 	background: url(../images/barbg.png) no-repeat 100% 0 #E4E4E4;
 	font-weight: bold;
-
 }
 
 .flow_steps ul li.done {
@@ -1909,13 +1908,13 @@ border-radius: 4px;
 }
 
 .flow_steps ul li.current {
-	//color: #fff;
-	background-color: #FFEDA2;
+	color: #fff;
+	background-color: #990D1B;
 }
 
 .flow_steps ul li.last {
 	background-image: none;
-}
+}  
 ////----////
 .review hr{
   border-top: 1px solid #B28435;
