@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   devise_for :users
   root 'welcome#index'
   #---管理员专区---#
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
 
     #分类＃
     resources :categories
-    
+
   end
 
   resources :products do
@@ -34,6 +35,8 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    # 评论 ＃
+    resources :comments
   end
 
   resources :carts do
