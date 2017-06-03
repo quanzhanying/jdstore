@@ -33,7 +33,7 @@
           </a>
 
 
-          <ul class="dropdown-menu">
+          <!-- <ul class="dropdown-menu"> -->
             <% if current_user.admin? %>
             <li>
               <%=link_to("Admin 选单",admin_products_path)%>
@@ -47,6 +47,7 @@
         </li>
       <% end %>
     </ul>
+
     <!-- 搜索栏 -->
 <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
   <div class="input-group search-box">
@@ -63,7 +64,7 @@
 
 
 
-</form>        </div>
+
 
 </div>
 </div>

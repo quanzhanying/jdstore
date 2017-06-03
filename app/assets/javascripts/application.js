@@ -13,13 +13,22 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+
 //= require bootstrap-sprockets
+//= require bootstrap
 //= require_tree .
 
 
-/*Bootstrap Carousel Touch Slider.
+
+
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
 
 https://bootstrapthemes.co
 
@@ -60,3 +69,4 @@ $(document).ready(function() {
     e.preventDefault();
   });
 });
+
