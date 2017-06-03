@@ -16,8 +16,13 @@
         <p class="intro-text-count">
         <span class="pl20 pr30">库存</span><span id="quantity"><%= @product.quantity %></span>
         </p>
+        <p class="intro-text-count">
+        <span class="pl20 pr30">类别</span><span id="quantity"><%= @product.category.name %></span>
+        </p>
+
         <div class="intro-text-quantity clearfix">
           <span class="pl20 pr30 fl">数量</span>
+
           <div class="countNumber fl mt10">
             <%= link_to("-", remove_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
             <input class="countNumber-input" type="text" value="<%= @product.buying_quantity %>">
