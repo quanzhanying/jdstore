@@ -35,6 +35,16 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def add_to_cart_and_buy
+    @product = Product.find(params[:id])
+    if !@product.blank?
+      if !current_cart.is_product_added?(@product)
+          current_cart.add_product_to_cart(@product)
+      end
+    end
+    redirect_to carts_path
+  end
+
   def filter_by_category
     @category = ProductCategory.find(params[:id])
     @products = Product.where(:category => @category.name).all
