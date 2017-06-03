@@ -20,9 +20,9 @@
           <%= product.id %>
         </td>
         <td>
-          <%= link_to product_path(product) do %>
-            <% if product.photos.present? %>
-              <%= image_tag(product.image.medium.url, class: "thumbnail") %>
+          <% @products.each do |p| %>
+            <% if p.photos.present? %>
+              <%= image_tag(p.photos[0].avatar.thumb.url) %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
