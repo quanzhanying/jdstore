@@ -13,5 +13,6 @@ class Order < ApplicationRecord
   validates :shipping_name, presence: true
   validates :shipping_address, presence: true
 
-  has_many :product_list
+  has_many :product_lists
+
 end
