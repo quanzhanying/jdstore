@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="products text-center">
+
+      <% @categoies.each do |cate| %>
+        <% unless @all_products[cate.name].blank? %>
+          <%= cate.name %>
+          <hr />
+          <table class="table borderless">
+          <% @all_products[cate.name].each_with_index do |product, index|%>
+            <% if (index % 4) == 0 %>
+              <tr>
+            <% end %>
+              <td>
+                <div class="product_thumbnail text-center col-sm-4">
+                  <%= link_to(image_tag(product.image, :alt => product.title, :width => 200, :height => 200), product_path(product)) %>
+                  <br />
+                  <%= link_to(product.title, product_path(product)) %>
+                </div>
+              </td>
+            <% if ((index+1) % 4 )== 0 || index == (@all_products[cate.name].size-1) %>
+             </tr>
+             <% end %>
+          <% end %>
+          </table>
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+</div>

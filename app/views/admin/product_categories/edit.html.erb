@@ -1,0 +1,9 @@
+<h2>编辑产品分类</h2>
+<div class="container-fluid">
+  <%= simple_form_for [:admin ,@category] do |f| %>
+    <div class="form-group">
+      <%= f.input :name , label: "产品分类名"%>
+      <%= f.submit "提交修改", class: "btn btn-lg btn-danger", disable_with: "Submiting..."%>
+    </div>
+  <% end %>
+</div>

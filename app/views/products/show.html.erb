@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="content">
+      <div class="row">
+
+        <!-- product image preview  -->
+        <div class="col-sm-6 col-md-6">
+            <div class="row">
+              <div class="product-image-preview col-md-8 col-md-offset-3">
+                <div class="col-md-8 product-image">
+                  <img src="<%=@product.image%>" />
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-2 product-small-image">
+                  <div class="row">
+                      <img src="<%=@product.image%>"/>
+                  </div>
+                  <div class="row ">
+                      <img src="<%=@product.image%>"/>
+                  </div>
+                  <div class="row ">
+                      <img src="<%=@product.image%>"/>
+                  </div>
+                  <div class="row">
+                      <img src="<%=@product.image%>"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- product detail -->
+        <div class="col-sm-5 col-md-5 product-info">
+          <div class="row">
+            <span class="title"><%= @product.title %></span>
+          </div>
+          <div class="row">
+            <span class="sub-title"><%= @product.description %></span>
+          </div>
+
+          <div class="row sale-info">
+            <div class="row">
+              <span class="left-title">售价: </span> <span class="num">¥<%= @product.price %></span>
+            </div>
+            <div class="row">
+              <div class="">
+              <span class="left-title">服务: </span>
+              <div class="server">
+                <i class="fa fa-circle" aria-hidden="true"></i>30天无忧退货<span class="interspace"></span>
+                <i class="fa fa-circle" aria-hidden="true"></i>48小时快速退款<span class="interspace"></span>
+                <i class="fa fa-circle" aria-hidden="true"></i>满88元免邮费<span class="interspace"></span>
+              </div>
+              <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="row">
+              <span class="left-title">数量:</span> <span><%= @product.quantity %></span>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <%= link_to("立即购买", add_to_cart_and_buy_product_path(@product), :method => :post, class:"btn btn-lg btn-danger btn-add-to-cart") %>
+            <% if @product.quantity > 0 %>
+            <div class="detail-btn-add-to-cart">
+
+              <%= link_to(add_to_cart_product_path(@product), :method => :post, class:"btn btn-lg btn-danger")  do%>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> 加入购物车
+              <% end %>
+            </div>
+            <% else %>
+            <%= link_to("缺货中", "#", class:"btn btn-lg btn-danger") %>
+            <% end %>
+            <%= link_to(favorite_product_path(@product), :method => :post, class:"btn btn-lg btn-danger btn-favorite")  do %>
+             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+             <br />
+             收藏
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="other-views">
+        <div class="header">
+          <span class="item show">大家都在看</span>
+        </div>
+        <div class="content">
+
+        </div>
+      </div> -->
+
+      <div class="row product-detail-info">
+        <div class="col-md-8 detail">
+          <ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="#">详情</a></li>
+              <li role="presentation"><a href="#">评论</a></li>
+          </ul>
+          <div class="sum-info  row">
+              <%= render_product_sum_info(@product) %>
+          </div>
+          <div class="sum-images">
+                <img src="<%=@product.image%>" />
+                <img src="<%=@product.image%>" />
+                <img src="<%=@product.image%>" />
+          </div>
+        </div>
+        <%= render "hot24" %>
+      </div>
+  </div>
+
+</div>

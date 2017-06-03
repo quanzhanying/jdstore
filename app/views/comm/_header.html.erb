@@ -1,0 +1,33 @@
+<div class="row vertical-align header ">
+  <div class="col-md-7 text-right vcenter">
+      <%= image_tag("header.gif")%>
+  </div>
+  <div class="col-md-5 text-left vcenter">
+    <div class="row vertical-align ">
+      <div class="col-md-8 ">
+        <input type="text" class="form-control" placeholder="慕思同款乳胶床垫2折起">
+      </div>
+      <div class="col-md-1">
+        <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-md-1">
+        <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- nav -->
+<% unless @categoies.blank? %>
+<div>
+  <ul class="list-inline text-center">
+    <li >
+      <%= link_to("首页", products_path) %>
+    </li>
+    <% @categoies.each do |cate| %>
+      <li>
+      <%= link_to(cate.name, filter_by_category_product_path(cate)) %>
+     </li>
+    <% end %>
+  </div>
+  <% end %>
+</div>

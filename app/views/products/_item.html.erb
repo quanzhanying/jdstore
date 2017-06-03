@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <div class="product_thumbnail text-center col-sm-4">
+      <%= link_to(image_tag(product.image, :alt => product.title, :width => 200, :height => 200), product_path(product)) %>
+      <br />
+      <%= link_to(product.title, product_path(product)) %>
+    </div>
+  </td>
+</tr>

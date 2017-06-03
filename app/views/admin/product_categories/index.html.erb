@@ -1,0 +1,37 @@
+<h2>产品分类</h2>
+<div class="container-fluid">
+  <div class="row text-right">
+    <%=link_to("新建分类", new_admin_product_category_path, class:"btn btn-lg btn-danger admin_btn_new")%>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+          <td>
+            分类名称
+          </td>
+          <td>
+            创建日期
+          </td>
+          <td colspan="2">
+            编辑
+          </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categoies.each do |category| %>
+        <tr>
+          <td>
+            <%=link_to(category.name, filter_by_category_admin_product_path(category)) %>
+          </td>
+          <td>
+            <%= category.created_at %>
+          </td>
+          <td>
+            <%= link_to("编辑", edit_admin_product_category_path(category), class:"btn btn-default btn-sm")%>
+            <%= link_to("删除", admin_product_category_path(category), class:"btn btn-default btn-sm", method: :delete)%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
