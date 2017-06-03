@@ -24,6 +24,7 @@ before_action :validate_search_key, only: [:search]
 
 
 
+
   end
 
   def add_to_cart
