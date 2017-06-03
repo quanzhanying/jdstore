@@ -14,10 +14,13 @@
  *= require_self
  */
 
-.body{
+.body {
   padding: 55px 0 0 0
 }
 
+.body1 {
+  padding: 35px 0 0 0
+}
 
 
  @import "bootstrap-sprockets";
@@ -103,15 +106,15 @@
 .menuList{
   width: 1100px;
   margin: 70px auto;
-  height: 100px;
+  height: 5px;
 
 }
 
 .menuList-item {
   float: left;
-  padding: 0 60px;
+  padding: 0 10px;
   font-size: 18px;
-  line-height: 100px;
+  line-height: 5px;
 
 }
 

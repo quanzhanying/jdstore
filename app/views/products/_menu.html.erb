@@ -10,7 +10,16 @@
 
   <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if params[:category] == category.name %>">
 
-      <%= link_to category.name, products_path(category: category.name), class: "link" %>
+
+    <%= link_to products_path(category: category.name) do %>
+      <% if category.image.present? %>
+        <%= image_tag(category.image.small.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "thumbnail") %>
+      <% end %>
+    <% end %>
+    <%= category.name %>
+
   </div>
 
 <% end %>
