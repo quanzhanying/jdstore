@@ -4,18 +4,28 @@
   <div class="productCatetory">
     <div class="productCatetory-menuList">
       <div class="productCatetory-menuList-item ">
-        <%= link_to products_path(category: "历史读物") do %>
-         <h4>历史读物</h4>
+        <%= link_to products_path(category: "最新上架") do %>
+         <h4>最新上架</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item ">
+        <%= link_to products_path(category: "经管商业") do %>
+         <h4>经管商业</h4>
          <% end %>
       </div>
       <div class="productCatetory-menuList-item">
-        <%= link_to products_path(category: "学习方法") do %>
-         <h4>学习方法</h4>
+        <%= link_to products_path(category: "人文艺术") do %>
+         <h4>人文艺术</h4>
          <% end %>
       </div>
       <div class="productCatetory-menuList-item">
-        <%= link_to products_path(category: "管理") do %>
-         <h4>管理</h4>
+        <%= link_to products_path(category: "历史传记") do %>
+         <h4>历史传记</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "亲子教育") do %>
+         <h4>亲子教育</h4>
          <% end %>
       </div>
     </div>
@@ -42,8 +52,7 @@
             </div>
             <p><%= product.description %></p>
             <hr class="line">
-
-
+            br
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <p class="price">￥<%= product.price %></p>
