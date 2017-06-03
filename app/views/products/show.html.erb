@@ -1,24 +1,23 @@
-<div class="row">
-  <div class="col-md-6">
+<div class='row product-box product-show'>
+
+  <div class="col-md-6 product-image">
 
   <!-- 显示多张图片 -->
     <% if @product_images.present? %>
-      <% @product_images.each_with_index do |p, index| %>
-        <% if index == 0 %>
-          <%= image_tag p.image.medium.url %>
-           <div style="letter-spacing: -8px"> <!-- 只在第一张图片时执行这一行，div换行，保证剩下的图片在第一张图片下方 -->
-        <% else %>
-          <%= image_tag p.image.thumb.url %>
-        <% end %>
+    <div class="col-md-12 ">
+        <%= image_tag(@product_images.first.image.url , class: 'main-image thumbnail')%>
+      </div>
+      <% @product_images.each_with_index do |p| %>
+      <div class="col-xs-2 image-box">
+          <%= image_tag(p.image.small.url,class: 'list-image thumbnail') %>
+        </div>
       <% end %>
-    </div> <!-- 全部图片循环完毕，结束div-->
+
     <% else %>
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
 
   </div>
-
-
 
 
   <div class="col-md-6">
