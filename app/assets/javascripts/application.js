@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require bootstrap/modal
 //= require_tree .
 
 /*===== Products#show - 更改显示图片=====*/
