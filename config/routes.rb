@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post :add_to_cart
       post :add_to_favorite
       post :quit_favorite
+      put "like", to: "products#upvote"
     end
     collection do
       get :search

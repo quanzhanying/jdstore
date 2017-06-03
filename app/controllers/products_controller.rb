@@ -37,6 +37,12 @@ class ProductsController < ApplicationController
     redirect_to :back, alert: "成功取消收藏!"
   end
 
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
+  end
+
   def search
      if @query_string.present?
        @products = search_params

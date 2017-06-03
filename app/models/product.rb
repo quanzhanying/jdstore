@@ -3,4 +3,6 @@ class Product < ApplicationRecord
 
  has_many :favorites
  has_many :users, through: :favorites, source: :user
+
+ acts_as_votable
 end

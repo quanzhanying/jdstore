@@ -7,7 +7,16 @@
         <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
-        
+
+        <!-- acts_as_votable -->
+
+        <%= link_to like_product_path(product), method: :put do %>
+        <div class="pi-thumbs-up">
+          <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+          <%= product.get_upvotes.size %>
+        </div>
+        <% end %>
+
         <!-- favorite function -->
         <% if !product.users.include?(current_user) %>
           <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
@@ -19,4 +28,7 @@
       <%= product.title %> ￥ <%= product.price %>
     </div>
   <% end %>
+
+
+
 </div>
