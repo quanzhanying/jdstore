@@ -1217,10 +1217,10 @@ a:active, a:hover, a:link, a:visited {
 /*-------products-item-show----*/
 
 div.pd-s__item {
-    background: url(https://www.hyperledger.org/wp-content/uploads/sites/7/2016/10/hl_healthcare.jpg) center center no-repeat #102026;
+    // background: url(https://www.hyperledger.org/wp-content/uploads/sites/7/2016/10/hl_healthcare.jpg) center center no-repeat #102026;
     background-size: cover;
     padding-top: 50px;
-    height: 900px;
+    height: auto;
 }
 
 .col-item {
@@ -1415,6 +1415,31 @@ div.pd-s__item {
   border-color:rgba(0, 0, 0, 0.15);
   background-color: rgba(0, 0, 0, 0.15)
 }
+
+.pd-des-title h2 {
+  text-align: center;
+	color: rgba(0,0,0,0.8);
+	font-size: 55px;
+	padding-bottom: 36px;
+	text-shadow: 0 -3px 0 #333,
+		0 3px 4px rgba(0,0,0, 0.4),
+		0 4px 5px rgba(0,0,0, 0.15),
+		0 14px 5px rgba(0,0,0, 0.18),
+		0 6px 5px rgba(0,0,0, 0.21);
+}
+
+.pd-des-container {
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.pd-des-card {
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 10px 10px 10px -10px;
+  padding: 30px 30px 60px 30px;
+}
+
 /*-------cart-main-wapper----*/
 
 div.cart__main__wapper {
