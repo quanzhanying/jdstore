@@ -33,24 +33,25 @@ class Order < ApplicationRecord
     state :order_cancelled
     state :good_returned
 
-    event :make_payment, after_commit: :pay! do
-      transitions form: :order_placed, to: :paid
+
+    event :make_payment do
+      transitions from: :order_placed, to: :paid
     end
 
     event :ship do
-      transitions form: :paid, to: :shipping
+      transitions from: :paid,         to: :shipping
     end
 
     event :deliver do
-      transitions form: :shipping, to: :shipped
+      transitions from: :shipping,     to: :shipped
     end
 
     event :return_good do
-      transitions form: :shipped, to: :goog_returned
+      transitions from: :shipped,      to: :good_returned
     end
 
     event :cancel_order do
-      transitions form: [:order_placed, :paid], to: :order_canceled
+      transitions from: [:order_placed, :paid], to: :order_cancelled
     end
   end
 
