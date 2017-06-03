@@ -24,10 +24,13 @@ Rails.application.routes.draw do
       post :add_to_cart
       post :like
       post :unlike
+      post :add_to_favorite
+      post :quit_favorite
     end
 
     collection do
       get :search
+      get :collect
     end
   end
 
