@@ -1,3 +1,90 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*===== product show产品详情页面 =====*/
+
+
+
+.product-show {
+  margin: 100px 0 100px 0;
+
+  /*===== 产品多图展示 =====*/
+  .product-image {
+    .image-box {
+      margin:  0;
+    }
+
+    .main-image {
+      width: 65%;
+      margin-bottom: 10px;
+      border: none;
+    }
+
+    .list-image {
+
+      width: 100px;
+
+
+    }
+
+
+    .list-image-active {
+      box-shadow: 1.5px 1.5px 1.5px #666;
+    }
+  }
+}
+
+/*===== 产品信息 =====*/
+.product-detail {
+
+
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.42857143;
+      color: #2c3e50;
+      background-color: #ffffff;
+     text-align: left;
+
+  h2 {
+    margin-top: 5px;
+    font-size: 24px;
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px dashed #aaa;
+    margin: 30px 0 30px 0;
+  }
+
+  .product-price {
+
+    height: 60px;
+    font-size: 24px;
+    .currency_symbol{
+        font-size: 15px;
+    }
+  }
+
+  .buy_button {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+    font-size: 18px;
+
+    background-color: none;
+    margin: 20px;
+    padding: 15px 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+  }
+
+  .buy_button:hover {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+      text-decoration: none;
+    }
+}

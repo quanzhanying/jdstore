@@ -16,3 +16,14 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+
+/*===== Products#show - 更改显示图片=====*/
+$(document).on('mouseover', '.list-image', function () {
+  var src_other = $(this).attr('src') //抓取小图图片路径
+  var src_main = src_other.toString().replace("small_", "large_") //更改小图图片路径
+
+  $('.main-image').attr('src', src_main) //变更大图图片路径
+
+  $('.list-image').removeClass('list-image-active') //其他小图移除图片阴影
+  $(this).addClass('list-image-active') //当前小图新增图片阴影
+})
