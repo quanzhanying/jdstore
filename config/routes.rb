@@ -47,10 +47,11 @@ Rails.application.routes.draw do
        post :return
      end
    end
+
+   resources :categories
  end
 
 
  devise_for :users
  root 'welcome#index'
-
 end

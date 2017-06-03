@@ -23,5 +23,5 @@
   </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-
+  <%= select_tag(:category, options_for_select(@categories), :prompt => "类别") %>
 <% end %>
