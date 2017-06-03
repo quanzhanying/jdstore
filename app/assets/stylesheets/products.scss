@@ -1,0 +1,146 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*商品列表*/
+.productList {
+  margin-bottom: 0;
+}
+
+.productList-item {
+  width             : 230px;
+  height            : 350px;
+  background        : #fff;
+  margin-right      : 12px;
+  margin-bottom     : 12px;
+  box-shadow        : 1px 1px 3px 0 rgba(0, 0, 0, 0.09);
+  position          : relative;
+  top               : 0;
+  -webkit-transition: all 0.4s;
+  transition        : all 0.4s;
+
+  &:hover {
+    position  : relative;
+    top       : -2px;
+    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.15);
+
+    .productList-item-cartBtn {
+      display: block;
+    }
+  }
+
+  img {
+    width : 100%;
+    height: 200px;
+  }
+}
+
+.productList-lastItem {
+  margin-right: 0;
+}
+
+.productList-item-name {
+  color: #333;
+}
+
+.productList-item-desc {
+  color: #808080;
+}
+
+.productList-item-cartBtn {
+  top               : 168px;
+  right             : 20px;
+  width             : 40px;
+  height            : 40px;
+  text-align        : center;
+  line-height       : 40px;
+  background        : #fff;
+  border-radius     : 50%;
+  display           : none;
+  -webkit-transition: all 0.1s;
+  transition        : all 0.1s;
+}
+
+.productList-item-cartBtn:hover {
+  background: #D32048;
+
+  .fa-shopping-cart {
+    color: #fff;
+  }
+}
+
+.productList-item-sellout {
+  position        : absolute;
+  top             : 80px;
+  left            : 50%;
+  width           : 70px;
+  height          : 70px;
+  line-height     : 70px;
+  margin-left     : -35px;
+  font-size       : 16px;
+  background-color: rgba(0, 0, 0, .55);
+  border-radius   : 50%;
+  color           : #fff;
+}
+
+.intro-text-btn {
+  display      : block;
+  width        : 178px;
+  height       : 48px;
+  line-height  : 45px;
+  border       : 1px solid #d32048;
+  border-radius: 50px;
+
+  &.add-cart {
+    color: #fff;
+  }
+
+  &.btn-disabled {
+    background  : #aaa;
+    border-color: #fff;
+  }
+}
+
+.intro-text {
+  width: 744px;
+
+  h3 {
+    margin-top : 0;
+    line-height: 30px;
+  }
+}
+
+.intro-text-desc {
+  margin-top: 7px;
+}
+
+.intro-text-value {
+  height     : 60px;
+  line-height: 60px;
+}
+
+.intro-text-service {
+  height     : 50px;
+  line-height: 50px;
+}
+
+.intro-text-btn {
+  display      : block;
+  width        : 178px;
+  height       : 48px;
+  line-height  : 45px;
+  border       : 1px solid #d32048;
+  border-radius: 10px;
+
+  &.add-cart {
+    color: #fff;
+  }
+
+  &.btn-disabled {
+    background  : #aaa;
+    border-color: #fff;
+  }
+}
+
+.intro-text-quantity span {
+  margin-top: 15px;
+}

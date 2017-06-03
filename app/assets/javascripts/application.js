@@ -13,4 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/carousel
 //= require_tree .
+
+$(document).ready(function() {
+  $('#myCarousel').carousel({interval: 1500});
+
+});

@@ -1,0 +1,49 @@
+<!-- <h2>Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %> -->
+
+<!-- <div class="login-wrap"> -->
+<div class="registration-wrap">
+  <div class="registration-block">
+    <div class="content clearfix">
+      <div class="right-part fr">
+        <div class="devise">
+          <h2>注册</h2>
+
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "邮箱" %>
+              <%= f.input :password, required: true, label: false, placeholder: "密码" %>
+              <%= f.input :password_confirmation, required: true, label: false, placeholder: "确认密码" %>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="registration-btn">一键注册</button>
+            </div>
+          <% end %>
+
+          <div class="tip">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
