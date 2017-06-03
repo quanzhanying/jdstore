@@ -1,17 +1,55 @@
-<h2>订单列表</h2>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>生成时间</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= link_to(order.id, order_path(order.token)) %></td>
-        <td><%= order.created_at.to_s(:long) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-info">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <h3>
+            订单列表
+            <div class="dropdown clearfix pull-right">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  排序
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                    <li>
+                      <%= link_to("所有订单", account_orders_path) %>
+                    </li>
+                    <li>
+                      <%= link_to("已完成订单", account_orders_path(:state => "finished")) %>
+                    </li>
+                    <li>
+                        <%= link_to("待付款订单", account_orders_path(:state => "placed")) %>
+                    </li>
+                    <li>
+                      <%= link_to("待收货订单", account_orders_path(:state => "paid") ) %>
+                    </li>
+                    <li>
+                      <%= link_to("回收站", account_orders_path(:state => "cancelled") ) %>
+                    </li>
+                </ul>
+            </div>
+          </h3>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>生成时间</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.each do |order| %>
+              <tr>
+                <td><%= link_to(order.id, order_path(order.token)) %></td>
+                <td><%= order.created_at.to_s(:long) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
