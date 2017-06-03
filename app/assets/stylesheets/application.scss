@@ -26,7 +26,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
 @import url(https://fonts.googleapis.com/css?family=Acme);
 
+
+
 /*===== 網站通用設置 ======*/
+
 body {
   overflow-x: hidden; //裁切內容，超出視窗不顯示
   letter-spacing: 1px;
@@ -85,6 +88,12 @@ body {
   td {
       height: px;
       vertical-align: middle !important; // 表格內容垂直置中
+
+      .container-fluid .jumbotron{
+    padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+    margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    border-radius: 0;//圆角为0
+    }
   }
 
 
@@ -103,7 +112,7 @@ body {
     .btn-default:hover,
     .btn-default:active,
     .btn-default:focus {
-      background-color: #fff;
+      background-color: #02061A;
     }
 
     .suggested-product-content{
@@ -793,17 +802,17 @@ body {
   h3 {
     color: #2c3e50;
     letter-spacing: 2px;
-    margin-top: 35px;
+    margin-top: 0px;
   }
 
   hr {
     height: 1.5px;
     background-color: #666 !important;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
 
   .btn-default {
-    margin: 10px 0 0 -10px;
+    margin: 0px 0 0 0px;
   }
 
   .btn-default:hover {
