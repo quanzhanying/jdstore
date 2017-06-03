@@ -14,20 +14,53 @@
  *= require_self
  */
 
-.body {
-  padding: 55px 0 0 0
-}
-
-.body1 {
-  padding: 100px 0 0 0
-}
 
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
 
+ .body {
+   padding: 55px 0 0 0
+ }
+
+ .body1 {
+   padding: 100px 0 0 0
+ }
+
+
+
  // 导航栏
+
+
+
+
+.navbar-default {
+
+  background-color: #232f3e;
+  color: #FFFFFF
+}
+
+.navbar-brand a {
+ color: #FFFFFF;
+ font-size: 150%;
+ text-decoration: none;
+ background-color: #232f3e
+}
+
+.navbar-brand a:hover{
+  color: #778899;
+
+}
+
+.navbar-listItem a {
+  color: #FFFFFF;
+  background-color: #232f3e
+}
+
+.navbar-listItem a:hover{
+
+}
 
 
  //搜索
@@ -57,12 +90,37 @@
 
 }
 
+.find a{
+  color: #FFFFFF;
+  background-color: #232f3e;
+  text-decoration: none;
+}
+.find a:hover{
+  color: #778899;
+}
+
 .favorite {
+
   float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
 
   padding-right: 40px; /*右边加点空间，不然太挤啦*/
-
 }
+
+.favorite a {
+  color: #FFFFFF;
+  background-color: #232f3e;
+  text-decoration: none;
+}
+
+.favorite a:hover{
+  color: #778899;
+}
+
+
+
+
+
+
 
 .dropdown {
 
@@ -71,6 +129,17 @@
   padding-right: 40px; /*右边加点空间，不然太挤啦*/
 
 }
+
+.dropdown a{
+  color: #FFFFFF;
+  background-color: #232f3e;
+  text-decoration: none;
+}
+
+.dropdown a:hover{
+  color: #778899;
+}
+
 
 .cart-wrap {
   float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -88,12 +157,12 @@
 }
 
 .cart a {
-  color: #6D6D6D; /*灰色字体*/
+  color: #FFFFFF; /*白色字体*/
   text-decoration: none; /*不要下划线*/
 }
 
 .cart a:hover {
-  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+  color: #778899; /*鼠标一上去的时候，字体变成红色*/
 }
 
 
