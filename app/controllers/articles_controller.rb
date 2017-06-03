@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :join, :quit]
   layout "account", only: [:new]
 
 
@@ -49,7 +49,6 @@ class ArticlesController < ApplicationController
       current_user.join_article_collection!(@article)
     end
       redirect_to article_path(@article)
-      flash[:notice] = "你已将 ''#{@article.title}'' 加入文章收藏"
   end
 
   def quit
@@ -59,7 +58,6 @@ class ArticlesController < ApplicationController
       current_user.quit_article_collection!(@article)
     end
       redirect_to article_path(@article)
-      flash[:notice] = "你已将 ''#{@article.title}'' 移除收藏"
   end
 
 

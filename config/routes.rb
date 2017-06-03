@@ -100,6 +100,8 @@ Rails.application.routes.draw do
     resources :club_reviews
     member do
       post :upvote               #帖子投票功能
+      post :join                #社群帖子加入收藏
+      post :quit                #社群帖子取消收藏
     end
   end
 

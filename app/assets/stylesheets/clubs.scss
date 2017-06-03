@@ -4,6 +4,8 @@
   font-size: 1.2em;
 }
 
+// ================index页面================ //
+
 .club-index-box-main {
   background-color: #f5f5f5;
   margin: 20px auto 0;
@@ -11,9 +13,9 @@
   // box-shadow: 0 0 10px #d3d3d3;
 }
 
-.club-index-box-side {
+.club-index-up-btn {
+  margin: 20px auto 0;
 }
-
 
 // 内容
 .club-user-avatar {
@@ -48,7 +50,6 @@
   img {
     max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
     border-radius: 6px;
-
     }
 }
 
@@ -61,4 +62,57 @@
 .club-review-user-avatar {
   margin-left: 30px;
   float: left;
+}
+
+
+// ================侧边栏================ //
+
+
+.club-index-box-side {
+  margin: 20px auto 0;
+}
+
+.club-index-box-side-user {
+  padding: 15px 30px;
+  border: 1px #e3e3e3 solid;
+  border-radius: 6px;
+}
+
+.club-index-box-side-avatar {
+  margin: 20px auto;
+}
+
+.club-index-box-side-adv {
+  margin: 10px auto;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}
+
+.club-index-box-side-list {
+  margin-top: 30px;
+  color: #7f8c8d;
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
+
+.club-index-box-side-list-hot {
+  font-size: 0.8em;
+  color: #7f8c8d;
+}
+
+
+// ================show页面================ //
+.club-show-box {
+  font-size: 1.2em;
+  background-color: #f5f5f5;
+  margin: 20px auto 0;
+  padding: 0 140px;
+  // box-shadow: 0 0 15px #d3d3d3;
+}
+
+.club-show-box-review {
+  background-color: #E5E5E5;
+  padding: 15px 170px;
+  margin: auto -140px;
 }

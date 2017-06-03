@@ -46,18 +46,35 @@ class User < ApplicationRecord
   end
 
 
+  # ---收藏社群帖子功能三方关系代码块---
 
-  # ---社群帖子点赞三方关系代码块---
-
-  has_many :club_votes
-  has_many :participated_clubs, through: :club_votes, source: :club
+  has_many :club_collections                               #收藏商品关系
+  has_many :participated_clubs, through: :club_collections, source: :club
 
   def is_club_member_of?(club)
     participated_clubs.include?(club)
   end
 
-  def join_club_vote!(club)
+  def join_club_collection!(club)
     participated_clubs << club
+  end
+
+  def quit_club_collection!(club)
+    participated_clubs.delete(club)
+  end
+
+
+  # ---社群帖子点赞三方关系代码块---
+
+  has_many :club_votes                                    #社群帖子点赞关系
+  has_many :participated_club_votes, through: :club_votes, source: :club
+
+  def is_club_vote_member_of?(club)
+    participated_club_votes.include?(club)
+  end
+
+  def join_club_vote!(club)
+    participated_club_votes << club
   end
 
 

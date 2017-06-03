@@ -1,0 +1,220 @@
+<div class="container">
+
+
+  <!-- ===============自适应大屏幕效果============ -->
+
+  <div class="club-show-box hidden-sm hidden-md hidden-xs">
+
+
+    <div class="club-index-box-main">
+
+      <!-- 头像、发帖者名称、发帖时间 -->
+      <div class="row">
+        <div class="club-user-avatar">
+          <% if @club.user.avatar.present? %>
+            <%= image_tag(@club.user.avatar.avatarmini.url, class: "img-circle img-responsive" )%>
+          <% else %>
+            <%= image_tag("http://placehold.it/40x40&text=No Pic", class: "img-circle img-responsive center-block") %>
+          <% end %>
+        </div>
+        <div class="club-user-name">
+          <p><strong><%= @club.user.display_name %></strong> <br> <%= @club.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+      </div>
+
+      <!-- 发帖内容 -->
+      <div class="row">
+        <div class="club-title">
+          <h2><%= link_to(@club.title, club_path(@club)) %></h2>
+        </div>
+        <div class="club-description">
+          <%= simple_format(@club.description) %>
+        </div>
+      </div>
+
+      <br>
+      <!-- 点赞按钮 -->
+      <%= link_to upvote_club_path(@club), method: :post do %>
+        <i class="fa fa-thumbs-o-up"></i> &nbsp <span><%= @club.club_votes.count %></span>
+      <% end %>
+
+      <!-- 收藏按钮 -->&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      <% if current_user && current_user.is_club_member_of?(@club) %>
+        <%= link_to quit_club_path(@club), method: :post do %>
+          <i class="fa fa-bookmark"></i> &nbsp <span><%= @club.club_collections.count %></span>
+        <% end %>
+      <% else %>
+        <%= link_to join_club_path(@club), method: :post do %>
+          <i class="fa fa-bookmark-o"></i> &nbsp <span><%= @club.club_collections.count %></span>
+        <% end %>
+      <% end %>
+
+      <!-- 评论数量 -->&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <i class="fa fa-commenting-o"></i> &nbsp <span><%= @club.club_reviews.count %></span>
+
+
+    </div>
+
+
+    <!-- 帖子评论 -->
+    <div class="club-show-box-review  hidden-md">
+
+      <!-- 填写评论 -->
+      <%= simple_form_for ([@club, @club_review]) do |f| %>
+        <div class="">
+          <%= f.input :comment, :label => "发表评论" %>
+        </div>
+        <div class="">
+          <%= f.submit "发表评论", class: "btn btn-sm btn-default ", data: {disable_with: "Submiting"} %>
+        </div>
+      <% end %>
+      <hr>
+
+      <!-- 评论内容 -->
+      <div class="club-reviews">
+        <% @club.club_reviews.order("created_at DESC").each do |club_review| %>
+
+          <div class="row">
+
+            <div class="">
+              <!-- 评论者头像 -->
+              <div class="club-review-user-avatar">
+                <% if club_review.user.avatar.present? %>
+                  <%= image_tag(club_review.user.avatar.avatarminixs.url, class: "img-circle img-responsive") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/40x40&text=No Pic", class: "img-circle img-responsive center-block") %>
+                <% end %>
+              </div>
+              <div class="club-user-name">
+                <p><strong><%= club_review.user.display_name %>：</strong> <br> <%= club_review.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+              </div>
+            </div>
+
+            <div class="club-review-comment">
+                <%= club_review.comment %>
+            </div>
+
+
+          </div>
+
+          <hr>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ==============自适应小屏幕效果============= -->
+
+  <div class=" row hidden-lg" style="font-size: 1.2em;">
+
+
+    <div class="club-index-box-main">
+
+      <!-- 头像、发帖者名称、发帖时间 -->
+      <div class="row">
+        <div class="club-user-avatar">
+          <% if @club.user.avatar.present? %>
+            <%= image_tag(@club.user.avatar.avatarmini.url, class: "img-circle img-responsive" )%>
+          <% else %>
+            <%= image_tag("http://placehold.it/40x40&text=No Pic", class: "img-circle img-responsive center-block") %>
+          <% end %>
+        </div>
+        <div class="club-user-name">
+          <p><strong><%= @club.user.display_name %></strong> <br> <%= @club.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+      </div>
+
+      <!-- 发帖内容 -->
+      <div class="row">
+        <div class="club-title">
+          <h2><%= link_to(@club.title, club_path(@club)) %></h2>
+        </div>
+        <div class="club-description">
+          <%= simple_format(@club.description) %>
+        </div>
+      </div>
+
+      <br>
+      <!-- 点赞按钮 -->
+      <%= link_to upvote_club_path(@club), method: :post do %>
+        <i class="fa fa-thumbs-o-up"></i> &nbsp <span><%= @club.club_votes.count %></span>
+      <% end %>
+
+      <!-- 收藏按钮 -->&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      <% if current_user && current_user.is_club_member_of?(@club) %>
+        <%= link_to quit_club_path(@club), method: :post do %>
+          <i class="fa fa-bookmark"></i> &nbsp <span><%= @club.club_collections.count %></span>
+        <% end %>
+      <% else %>
+        <%= link_to join_club_path(@club), method: :post do %>
+          <i class="fa fa-bookmark-o"></i> &nbsp <span><%= @club.club_collections.count %></span>
+        <% end %>
+      <% end %>
+
+      <!-- 评论数量 -->&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <i class="fa fa-commenting-o"></i> &nbsp <span><%= @club.club_reviews.count %></span>
+
+
+    </div>
+
+
+    <!-- 帖子评论 -->
+    <div class="club-index-box-review">
+
+      <!-- 填写评论 -->
+      <%= simple_form_for ([@club, @club_review]) do |f| %>
+        <div class="">
+          <%= f.input :comment, :label => "发表评论" %>
+        </div>
+        <div class="">
+          <%= f.submit "发表评论", class: "btn btn-sm btn-default ", data: {disable_with: "Submiting"} %>
+        </div>
+      <% end %>
+      <hr>
+
+      <!-- 评论内容 -->
+      <div class="club-reviews">
+        <% @club.club_reviews.order("created_at DESC").each do |club_review| %>
+
+          <div class="row">
+
+            <div class="">
+              <!-- 评论者头像 -->
+              <div class="club-review-user-avatar">
+                <% if club_review.user.avatar.present? %>
+                  <%= image_tag(club_review.user.avatar.avatarminixs.url, class: "img-circle img-responsive") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/40x40&text=No Pic", class: "img-circle img-responsive center-block") %>
+                <% end %>
+              </div>
+              <div class="club-user-name">
+                <p><strong><%= club_review.user.display_name %>：</strong> <br> <%= club_review.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+              </div>
+            </div>
+
+            <div class="club-review-comment">
+                <%= club_review.comment %>
+            </div>
+
+
+          </div>
+
+          <hr>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<br><br>
