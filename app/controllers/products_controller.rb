@@ -19,6 +19,11 @@ before_action :validate_search_key, only: [:search]
   def show
     @product = Product.find(params[:id])
 
+    # 显示所有图片
+    @product_images = @product.product_images.all
+
+
+
   end
 
   def add_to_cart

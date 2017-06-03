@@ -1,14 +1,20 @@
 # == Schema Information
 #
-# Table name: categories
+# Table name: product_images
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  product_id :integer
+#  image      :string
+#  main_image :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Category < ApplicationRecord
+class ProductImage < ApplicationRecord
+
+
+  belongs_to :product
+
+  # 商品图片上传 #
   mount_uploader :image, ImageUploader
-  has_many :products
 end
