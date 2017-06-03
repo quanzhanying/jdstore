@@ -82,7 +82,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.fans << current_user
     @product.save
-    redirect_to :back, notice:"成功加入收藏!"
+    # notice:"成功加入收藏!" #目前还不知道不刷新页面的情况下怎么更新flash
+    # binding.pry
+    # redirect_to :back, notice:"成功加入收藏!"
+    render "add_to_favorite"
   end
   # 收藏商品method结束
 
@@ -91,7 +94,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.fans.delete(current_user)
     @product.save
-    redirect_to :back, alert: "成功取消收藏!"
+    # alert:"成功取消收藏!"
+    # redirect_to :back, alert: "成功取消收藏!"
+    render "add_to_favorite"
   end
   # 取消收藏的method结束
 

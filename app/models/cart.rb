@@ -11,6 +11,13 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :products, through: :cart_items, source: :product
 
+  def product_price(cart_item)
+    if cart_item.product.price.present?
+      sum1 = cart_item.quantity * cart_item.product.price
+    end
+    sum1
+  end
+
   def total_price
     sum = 0
     cart_items.each do |cart_item|

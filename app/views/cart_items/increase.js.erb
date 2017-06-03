@@ -1,0 +1,15 @@
+// var btnPlus = $('#quantity-plus-<%= params[:index] %>');
+// var btnMinus = $('#quantity-minus-<%= params[:index] %>');
+// $('#quantity-input-<%= params[:index] %>').val('<%= @cart_item.quantity %>');
+// $('#cart-item-subtotal-<%= params[:index] %>').html('<%= render_price(@cart_item.quantity * @cart_item.product.price) %>');
+// if (<%= @cart_item.quantity >= @cart_item.product.quantity %>) {
+//   btnPlus.attr("disabled");
+//   btnPlus.addClass("disabled");
+// } else if (<%= @cart_item.product.stock > 1 %>) {
+//   btnMinus.removeAttr("disabled");
+//   btnMinus.removeClass("disabled");
+// }
+
+$("#quantity-input-<%= cart_item.product_id%>").html(<%= cart_item.quantity %>);
+$("#cart-item-subtotal-<%= cart_item.product_id %>").html(<%= cart_item.product.price * cart_item.quantity  %>);
+$("#cart-total").html(<%= render_cart_total_price(current_cart) %>);

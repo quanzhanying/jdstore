@@ -170,11 +170,9 @@
             <!-- 点赞的view部分结束 -->
             <!-- 收藏商品和取消商品view部分 -->
             <div class="btn btn-default">
-              <% if !@product.fans.include?(current_user) %>
-                <%= link_to(" 收藏商品",add_to_favorite_product_path(@product),method: :post, class: "fa fa-heart-o") %>
-              <% else %>
-                <%= link_to(" 取消收藏", cancel_favorite_product_path(@product),method: :post,  class: "fa fa-heart") %>
-              <% end %>
+              <span id="product-favorite-<%= @product.id %>">
+                <%= render :partial => "add_to_favorite", :locals => { :post => @product } %>
+              </span>
             </div>
             <!-- 收藏商品和取消商品view部分结束 -->
           </div>

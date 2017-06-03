@@ -1,0 +1,2 @@
+str = "<%=j render :partial => "add_to_favorite", :locals => { :post => @product } %>";
+$("#product-favorite-<%= @product.id %>").html(str);

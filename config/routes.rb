@@ -12,7 +12,12 @@ Rails.application.routes.draw do
       get :checkout
     end
   end
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :increase
+      post :decrease
+    end
+  end
   resources :orders do
     member do
       post :pay_with_alipay

@@ -1,0 +1,5 @@
+<% if !@product.fans.include?(current_user) %>
+  <%= link_to(" 收藏商品",add_to_favorite_product_path(@product),method: :post, :remote => true, class: "fa fa-heart-o") %>
+<% else %>
+  <%= link_to(" 取消收藏", cancel_favorite_product_path(@product),method: :post, :remote => true, class: "fa fa-heart") %>
+<% end %>
