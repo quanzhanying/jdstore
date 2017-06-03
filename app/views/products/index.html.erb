@@ -157,7 +157,7 @@
     <div class="row", style="margin-left: -21px;">
       <% @products.each do |product| %>
         <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
-          <li class="productList-item box panel panel-default">
+          <li id="product-<%= product.id %>" class="productList-item box panel panel-default">
             <div class="productList-item-pic">
               <%= link_to product_path(product) do %>
                 <% if product.photos.present? %>
@@ -169,7 +169,7 @@
             </div>
             <div class="productList-item-price">￥<%= product.price %>
               <% if product.stock > 0 %>
-                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+                <%= link_to add_to_cart_product_path(product), :method => :post, :remote => true, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
                   <i class="fa fa-shopping-cart"></i>
                 <% end %>
               <% end %>

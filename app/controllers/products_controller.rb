@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
     else
       flash[:warning] = "你的购物车内已有此物品"
     end
-    redirect_to :back
+    # redirect_to :back
   end
 
   #立即购买的method，目前是立即购买的话会删除之前购物车中所有商品，这个后期还得再修改

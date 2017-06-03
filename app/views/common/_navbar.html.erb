@@ -49,7 +49,7 @@
         <!-- 搜索栏代码结束 -->
         <li>
           <%= link_to carts_path do %>
-            购物车 <i class="fa fa-shopping-cart"></i>( <%= current_cart.products.count%>)
+            购物车 <i class="fa fa-shopping-cart"></i>(<span id = "cart_items-count"> <%= current_cart.products.count%> </span>)
           <% end %>
         </li>
         <% if !current_user %>
