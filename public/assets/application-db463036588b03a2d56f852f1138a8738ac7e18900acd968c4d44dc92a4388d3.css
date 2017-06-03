@@ -931,6 +931,217 @@ acronym {
   left: 0;
   top: 0;
 }
+/* line 5, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block {
+  width: 430px;
+  background: #fff;
+  border-top: 1px solid #F0F0F0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
+  letter-spacing: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  margin-left: -215px;
+  margin-top: 200px;
+  border: none;
+  border-radius: 50px;
+}
+/* line 26, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block a {
+  color: #666666;
+  font-weight: 400;
+  text-decoration: none;
+}
+/* line 32, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .content {
+  padding: 22px 30px 30px;
+}
+/* line 36, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+/* line 41, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block h2 img {
+  width: 36px;
+  margin-top: -5px;
+  margin-right: 7px;
+}
+/* line 48, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .left-part {
+  display: none;
+}
+/* line 52, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .left-part,
+.registration-block .right-part {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+/* line 59, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .left-part {
+  border-right: 1px solid #d7d7d7;
+}
+/* line 64, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .introduce .item {
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 70, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .introduce .icon {
+  float: left;
+}
+/* line 73, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .introduce .icon img {
+  width: 42px;
+  height: 42px;
+  opacity: 0.7;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+/* line 82, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .introduce .text {
+  float: left;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+/* line 88, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .introduce .text h2 {
+  font-size: 1.2857em;
+  padding-bottom: 10px;
+  color: #666666;
+  margin: 0;
+}
+/* line 95, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .introduce .text p {
+  color: #666;
+  font-size: 1.0714em;
+}
+/* line 102, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .devise {
+  width: 315px;
+  margin: 0 auto;
+}
+/* line 106, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .devise .registration-btn {
+  background: #D88208;
+  border-radius: 6px;
+  width: 100%;
+  color: #fff;
+  height: 34px;
+  border: none;
+  box-shadow: none;
+  margin-top: 10px;
+  font-size: 16px;
+}
+/* line 118, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .devise .forget-password {
+  position: relative;
+  display: block;
+  margin-top: -34px;
+  margin-right: 0;
+  margin-bottom: 20px;
+  float: right;
+  font-weight: 100;
+}
+/* line 128, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .devise .tip {
+  line-height: 26px;
+  margin-top: 20px;
+  text-align: center;
+}
+/* line 133, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-block .devise .tip a {
+  color: #4783ED;
+  font-weight: 100;
+  font-size: 1em;
+}
+
+@-webkit-keyframes change {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+@keyframes change {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+/* line 164, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.change {
+  -webkit-animation: change 600ms;
+  animation-name: change 600ms;
+  -webkit-animation-duration: 60s;
+  animation-duration: 60s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* line 173, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.moving-bg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  height: 900px;
+  background: #F4F3F3;
+}
+/* line 186, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.moving-bg .image-content {
+  height: 853px;
+}
+/* line 190, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.moving-bg img {
+  display: none;
+  width: 100%;
+  height: 853px;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+/* line 199, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.moving-bg::before {
+  display: none;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  height: 853px;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* line 213, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/devise.scss */
+.registration-wrap {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 @charset "UTF-8";
 /*商品列表*/
 /* line 6, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/products.scss */
@@ -14062,43 +14273,43 @@ h4 code {
   color: #cdbfe3;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background-color: #d88208;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d88208), to(#d88208));
-  background-image: -webkit-linear-gradient(top, #d88208 0%, #d88208 100%);
-  background-image: -o-linear-gradient(top, #d88208 0%, #d88208 100%);
-  background-image: linear-gradient(to bottom, #d88208 0%, #ffa42f 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#d88208', endColorstr='#d88208', GradientType=0);
+  background-color: #3f3f44;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3f3f44), to(#3f3f44));
+  background-image: -webkit-linear-gradient(top, #3f3f44 0%, #d88208 100%);
+  background-image: -o-linear-gradient(top, #3f3f44 0%, #3f3f44 100%);
+  background-image: linear-gradient(to bottom, #3f3f44 0%, #cdbfe3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#3f3f44', endColorstr='#3f3f44', GradientType=0);
   background-repeat: repeat-x;
 }
 
 /* Masthead (headings and download button) */
-/* line 385, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 387, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-masthead .bs-docs-booticon {
   margin: 0 auto 30px;
 }
 
-/* line 389, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 391, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-masthead h1 {
   font-weight: 300;
   line-height: 1;
   color: #fff;
 }
 
-/* line 395, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 397, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-masthead .lead {
   margin: 0 auto 30px;
   font-size: 20px;
   color: #fff;
 }
 
-/* line 401, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 403, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-masthead .version {
   margin-top: -15px;
   margin-bottom: 30px;
   color: #9783b9;
 }
 
-/* line 407, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 409, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-masthead .btn {
   width: 100%;
   padding: 15px 30px;
@@ -14106,29 +14317,29 @@ h4 code {
 }
 
 @media (min-width: 480px) {
-  /* line 413, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 415, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead .btn {
     width: auto;
   }
 }
 @media (min-width: 768px) {
-  /* line 418, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 420, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead {
     padding: 80px 0;
   }
 
-  /* line 422, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 424, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead h1 {
     font-size: 60px;
   }
 
-  /* line 426, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 428, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead .lead {
     font-size: 24px;
   }
 }
 @media (min-width: 992px) {
-  /* line 431, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 433, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead .lead {
     width: 80%;
     font-size: 30px;
@@ -14140,32 +14351,32 @@ h4 code {
  * Jumbotron-esque headers at the top of every page that's not the homepage.
  */
 /* Page headers */
-/* line 442, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 444, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-header {
   margin-bottom: 40px;
   font-size: 20px;
 }
 
-/* line 447, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 449, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-header h1 {
   margin-top: 0;
   color: #fff;
 }
 
-/* line 452, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 454, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-header p {
   margin-bottom: 0;
   font-weight: 300;
   line-height: 1.4;
 }
 
-/* line 458, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 460, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-header .container {
   position: relative;
 }
 
 @media (min-width: 768px) {
-  /* line 462, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 464, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-header {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -14173,14 +14384,14 @@ h4 code {
     text-align: left;
   }
 
-  /* line 469, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 471, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-header h1 {
     font-size: 60px;
     line-height: 1;
   }
 }
 @media (min-width: 992px) {
-  /* line 475, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 477, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-header h1,
   .bs-docs-header p {
     margin-right: 380px;
@@ -14192,7 +14403,7 @@ h4 code {
  * Single display ad that shows on all pages (except homepage) in page headers.
  * The hella `!important` is required for any pre-set property.
  */
-/* line 486, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 488, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad {
   width: auto !important;
   height: auto !important;
@@ -14208,12 +14419,12 @@ h4 code {
   border-width: 1px 0 !important;
 }
 
-/* line 501, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 503, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad-img {
   margin: 0 !important;
 }
 
-/* line 505, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 507, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad-tag,
 .carbonad-text {
   display: block !important;
@@ -14224,31 +14435,31 @@ h4 code {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-/* line 515, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 517, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad-text {
   padding-top: 0 !important;
 }
 
-/* line 519, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 521, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad-tag {
   color: inherit !important;
   text-align: left !important;
 }
 
-/* line 524, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 526, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad-tag a,
 .carbonad-text a {
   color: #fff !important;
 }
 
-/* line 529, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 531, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .carbonad #azcarbon > img {
   display: none;
   /* hide what I assume are tracking images */
 }
 
 @media (min-width: 480px) {
-  /* line 534, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 536, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .carbonad {
     width: 330px !important;
     margin: 20px auto !important;
@@ -14256,20 +14467,20 @@ h4 code {
     border-radius: 4px;
   }
 
-  /* line 541, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 543, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead .carbonad {
     margin: 50px auto 0 !important;
   }
 }
 @media (min-width: 768px) {
-  /* line 546, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 548, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .carbonad {
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
 }
 @media (min-width: 992px) {
-  /* line 552, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 554, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .carbonad {
     position: absolute;
     top: 0;
@@ -14280,7 +14491,7 @@ h4 code {
     margin: 0 !important;
   }
 
-  /* line 562, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 564, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-masthead .carbonad {
     position: static;
   }
@@ -14290,7 +14501,7 @@ h4 code {
  *
  * Reasons to use Bootstrap, entries from the Expo, and more.
  */
-/* line 571, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 573, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -14302,13 +14513,13 @@ h4 code {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* line 582, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 584, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette + .bs-docs-footer {
   margin-top: 0;
   border-top: 0;
 }
 
-/* line 587, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 589, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette-title {
   margin-bottom: 5px;
   font-size: 30px;
@@ -14316,64 +14527,64 @@ h4 code {
   color: #a01a00;
 }
 
-/* line 594, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 596, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .half-rule {
   width: 100px;
   margin: 40px auto;
 }
 
-/* line 599, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 601, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette h3 {
   margin-bottom: 5px;
   font-weight: normal;
   color: #a01a00;
 }
 
-/* line 605, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 607, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette-img {
   display: block;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* line 611, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 613, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette-img:hover {
   color: #337ab7;
   text-decoration: none;
 }
 
-/* line 616, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 618, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featurette-img img {
   display: block;
   margin-bottom: 15px;
 }
 
 @media (min-width: 480px) {
-  /* line 621, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 623, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featurette .img-responsive {
     margin-top: 30px;
   }
 }
 @media (min-width: 768px) {
-  /* line 626, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 628, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featurette {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 
-  /* line 631, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 633, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featurette-title {
     font-size: 40px;
   }
 
-  /* line 635, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 637, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featurette .lead {
     max-width: 80%;
     margin-right: auto;
     margin-left: auto;
   }
 
-  /* line 641, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 643, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featurette .img-responsive {
     margin-top: 0;
   }
@@ -14383,30 +14594,30 @@ h4 code {
  *
  * Homepage thumbnails from the Expo.
  */
-/* line 650, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 652, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featured-sites {
   margin-right: -1px;
   margin-left: -1px;
 }
 
-/* line 655, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 657, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featured-sites .col-xs-6 {
   padding: 1px;
 }
 
-/* line 659, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 661, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-featured-sites .img-responsive {
   margin-top: 0;
 }
 
 @media (min-width: 768px) {
-  /* line 663, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 665, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featured-sites .col-sm-3:first-child img {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
 
-  /* line 668, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 670, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-featured-sites .col-sm-3:last-child img {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -14417,29 +14628,29 @@ h4 code {
  *
  * Linked docs examples.
  */
-/* line 678, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 680, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-examples .thumbnail {
   margin-bottom: 10px;
 }
 
-/* line 682, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 684, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-examples h4 {
   margin-bottom: 5px;
 }
 
-/* line 686, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 688, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-examples p {
   margin-bottom: 20px;
 }
 
 @media (max-width: 480px) {
-  /* line 690, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 692, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-examples {
     margin-right: -10px;
     margin-left: -10px;
   }
 
-  /* line 695, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 697, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-examples > [class^="col-"] {
     padding-right: 10px;
     padding-left: 10px;
@@ -14452,26 +14663,26 @@ h4 code {
  * sections of docs content.
  */
 /* By default it's not affixed in mobile views, so undo that */
-/* line 707, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 709, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar.affix {
   position: static;
 }
 
 @media (min-width: 768px) {
-  /* line 711, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 713, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar {
     padding-left: 20px;
   }
 }
 /* First level of nav */
-/* line 716, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 718, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidenav {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 /* All levels of nav */
-/* line 721, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 723, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav > li > a {
   display: block;
   padding: 4px 20px;
@@ -14480,7 +14691,7 @@ h4 code {
   color: #767676;
 }
 
-/* line 729, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 731, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav > li > a:focus,
 .bs-docs-sidebar .nav > li > a:hover {
   padding-left: 19px;
@@ -14490,7 +14701,7 @@ h4 code {
   border-left: 1px solid #d88208;
 }
 
-/* line 738, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 740, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav > .active > a,
 .bs-docs-sidebar .nav > .active:focus > a,
 .bs-docs-sidebar .nav > .active:hover > a {
@@ -14502,14 +14713,14 @@ h4 code {
 }
 
 /* Nav: second level (shown on .active) */
-/* line 748, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 750, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav .nav {
   display: none;
   /* Hide by default, but at >768px, show it */
   padding-bottom: 10px;
 }
 
-/* line 754, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 756, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav .nav > li > a {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -14518,13 +14729,13 @@ h4 code {
   font-weight: normal;
 }
 
-/* line 762, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 764, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav .nav > li > a:focus,
 .bs-docs-sidebar .nav .nav > li > a:hover {
   padding-left: 29px;
 }
 
-/* line 767, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 769, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-sidebar .nav .nav > .active > a,
 .bs-docs-sidebar .nav .nav > .active:focus > a,
 .bs-docs-sidebar .nav .nav > .active:hover > a {
@@ -14533,7 +14744,7 @@ h4 code {
 }
 
 /* Back to top (hidden on mobile) */
-/* line 774, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 776, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .back-to-top,
 .bs-docs-theme-toggle {
   display: none;
@@ -14545,20 +14756,20 @@ h4 code {
   color: #999;
 }
 
-/* line 785, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 787, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .back-to-top:hover,
 .bs-docs-theme-toggle:hover {
   color: #d88208;
   text-decoration: none;
 }
 
-/* line 791, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 793, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-theme-toggle {
   margin-top: 0;
 }
 
 @media (min-width: 768px) {
-  /* line 795, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 797, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .back-to-top,
   .bs-docs-theme-toggle {
     display: block;
@@ -14566,32 +14777,32 @@ h4 code {
 }
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
-  /* line 802, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 804, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar .nav > .active > ul {
     display: block;
   }
 
   /* Widen the fixed sidebar */
-  /* line 806, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 808, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar.affix,
   .bs-docs-sidebar.affix-bottom {
     width: 213px;
   }
 
-  /* line 811, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 813, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar.affix {
     position: fixed;
     /* Undo the static from mobile first approach */
     top: 20px;
   }
 
-  /* line 817, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 819, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar.affix-bottom {
     position: absolute;
     /* Undo the static from mobile first approach */
   }
 
-  /* line 822, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 824, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar.affix .bs-docs-sidenav,
   .bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
     margin-top: 0;
@@ -14600,7 +14811,7 @@ h4 code {
 }
 @media (min-width: 1200px) {
   /* Widen the fixed sidebar again */
-  /* line 830, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 832, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-docs-sidebar.affix,
   .bs-docs-sidebar.affix-bottom {
     width: 263px;
@@ -14612,17 +14823,17 @@ h4 code {
  * Content blocks for each component or feature.
  */
 /* Space things out */
-/* line 841, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 843, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-section {
   margin-bottom: 60px;
 }
 
-/* line 845, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 847, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-section:last-child {
   margin-bottom: 0;
 }
 
-/* line 849, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 851, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 h1[id] {
   padding-top: 20px;
   margin-top: 0;
@@ -14635,7 +14846,7 @@ h1[id] {
  * Requires a base and modifier class.
  */
 /* Common styles for all types */
-/* line 860, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 862, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout {
   padding: 20px;
   margin: 20px 0;
@@ -14644,55 +14855,55 @@ h1[id] {
   border-radius: 3px;
 }
 
-/* line 868, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 870, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout h4 {
   margin-top: 0;
   margin-bottom: 5px;
 }
 
-/* line 873, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 875, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout p:last-child {
   margin-bottom: 0;
 }
 
-/* line 877, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 879, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout code {
   border-radius: 3px;
 }
 
 /* Tighten up space between multiple callouts */
-/* line 881, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 883, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout + .bs-callout {
   margin-top: -5px;
 }
 
 /* Variations */
-/* line 885, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 887, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout-danger {
   border-left-color: #ce4844;
 }
 
-/* line 889, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 891, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout-danger h4 {
   color: #ce4844;
 }
 
-/* line 893, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 895, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout-warning {
   border-left-color: #aa6708;
 }
 
-/* line 897, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 899, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout-warning h4 {
   color: #aa6708;
 }
 
-/* line 901, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 903, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout-info {
   border-left-color: #1b809e;
 }
 
-/* line 905, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 907, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-callout-info h4 {
   color: #1b809e;
 }
@@ -14702,14 +14913,14 @@ h1[id] {
  *
  * Color swatches and associated values for our grayscale and brand colors.
  */
-/* line 913, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 915, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches {
   margin: 0 -5px;
   overflow: hidden;
   /* clearfix */
 }
 
-/* line 919, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 921, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatch {
   float: left;
   width: 60px;
@@ -14719,80 +14930,80 @@ h1[id] {
 }
 
 @media (min-width: 768px) {
-  /* line 927, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 929, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .color-swatch {
     width: 100px;
     height: 100px;
   }
 }
 /* Framework colors */
-/* line 933, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 935, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .gray-darker {
   background-color: #222;
 }
 
-/* line 937, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 939, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .gray-dark {
   background-color: #333;
 }
 
-/* line 941, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 943, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .gray {
   background-color: #555;
 }
 
-/* line 945, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 947, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .gray-light {
   background-color: #999;
 }
 
-/* line 949, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 951, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .gray-lighter {
   background-color: #eee;
 }
 
-/* line 953, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 955, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .brand-primary {
   background-color: #337ab7;
 }
 
-/* line 957, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 959, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .brand-success {
   background-color: #5cb85c;
 }
 
-/* line 961, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 963, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .brand-warning {
   background-color: #f0ad4e;
 }
 
-/* line 965, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 967, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .brand-danger {
   background-color: #d9534f;
 }
 
-/* line 969, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 971, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .brand-info {
   background-color: #5bc0de;
 }
 
 /* Docs colors */
-/* line 973, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 975, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .bs-purple {
   background-color: #d88208;
 }
 
-/* line 977, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 979, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .bs-purple-light {
   background-color: #c7bfd3;
 }
 
-/* line 981, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 983, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .bs-purple-lighter {
   background-color: #e5e1ea;
 }
 
-/* line 985, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 987, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .color-swatches .bs-gray {
   background-color: #f9f9f9;
 }
@@ -14802,19 +15013,19 @@ h1[id] {
  *
  * Avatars, names, and usernames for core team.
  */
-/* line 993, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 995, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-team .team-member {
   line-height: 32px;
   color: #555;
 }
 
-/* line 998, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1000, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-team .team-member:hover {
   color: #333;
   text-decoration: none;
 }
 
-/* line 1003, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1005, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-team .github-btn {
   float: right;
   width: 180px;
@@ -14823,7 +15034,7 @@ h1[id] {
   border: none;
 }
 
-/* line 1011, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1013, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-team img {
   float: left;
   width: 32px;
@@ -14836,12 +15047,12 @@ h1[id] {
  *
  * Better display for the responsive table on the Wall of Browser Bugs.
  */
-/* line 1022, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1024, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-browser-bugs td p {
   margin-bottom: 0;
 }
 
-/* line 1026, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1028, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-docs-browser-bugs th:first-child {
   width: 18%;
 }
@@ -14852,12 +15063,12 @@ h1[id] {
  * Highlight the grid columns within the docs so folks can see their padding,
  * alignment, sizing, etc.
  */
-/* line 1035, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1037, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .show-grid {
   margin-bottom: 15px;
 }
 
-/* line 1039, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1041, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .show-grid [class^="col-"] {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -14873,7 +15084,7 @@ h1[id] {
  * Isolated sections of example content for each component or feature. Usually
  * followed by a code snippet.
  */
-/* line 1053, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1055, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example {
   position: relative;
   padding: 45px 15px 15px;
@@ -14886,7 +15097,7 @@ h1[id] {
 }
 
 /* Echo out a label for the example */
-/* line 1064, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1066, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example:after {
   position: absolute;
   top: 15px;
@@ -14899,13 +15110,13 @@ h1[id] {
   content: "Example";
 }
 
-/* line 1076, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1078, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-padded-bottom {
   padding-bottom: 24px;
 }
 
 /* Tweak display of the code snippets when following an example */
-/* line 1080, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1082, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example + .highlight,
 .bs-example + .zero-clipboard + .highlight {
   margin: -15px -15px 15px;
@@ -14915,7 +15126,7 @@ h1[id] {
 
 /* Make the examples and snippets not full-width */
 @media (min-width: 768px) {
-  /* line 1088, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1090, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-example {
     margin-right: 0;
     margin-left: 0;
@@ -14927,7 +15138,7 @@ h1[id] {
     box-shadow: none;
   }
 
-  /* line 1099, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1101, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-example + .highlight,
   .bs-example + .zero-clipboard + .highlight {
     margin-top: -16px;
@@ -14938,19 +15149,19 @@ h1[id] {
     border-bottom-left-radius: 4px;
   }
 
-  /* line 1109, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1111, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-example-standalone {
     border-radius: 4px;
   }
 }
 /* Undo width of container */
-/* line 1114, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1116, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example .container {
   width: auto;
 }
 
 /* Tweak content of examples for optimum awesome */
-/* line 1118, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1120, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .alert:last-child,
 .bs-example > .form-control:last-child,
 .bs-example > .jumbotron:last-child,
@@ -14968,30 +15179,30 @@ h1[id] {
   margin-bottom: 0;
 }
 
-/* line 1135, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1137, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > p > .close {
   float: none;
 }
 
 /* Typography */
-/* line 1139, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1141, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-type .table .type-info {
   color: #767676;
   vertical-align: middle;
 }
 
-/* line 1144, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1146, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-type .table td {
   padding: 15px 0;
   border-color: #eee;
 }
 
-/* line 1149, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1151, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-type .table tr:first-child td {
   border-top: 0;
 }
 
-/* line 1153, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1155, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-type h1,
 .bs-example-type h2,
 .bs-example-type h3,
@@ -15002,13 +15213,13 @@ h1[id] {
 }
 
 /* Contextual background colors */
-/* line 1162, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1164, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-bg-classes p {
   padding: 15px;
 }
 
 /* Images */
-/* line 1166, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1168, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .img-circle,
 .bs-example > .img-rounded,
 .bs-example > .img-thumbnail {
@@ -15016,54 +15227,54 @@ h1[id] {
 }
 
 /* Tables */
-/* line 1172, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1174, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .table-responsive > .table {
   background-color: #fff;
 }
 
 /* Buttons */
-/* line 1176, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1178, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .btn,
 .bs-example > .btn-group {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-/* line 1182, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1184, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .btn-toolbar + .btn-toolbar {
   margin-top: 10px;
 }
 
 /* Forms */
-/* line 1186, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1188, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-control-sizing input[type="text"] + input[type="text"],
 .bs-example-control-sizing select {
   margin-top: 10px;
 }
 
-/* line 1191, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1193, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-form .input-group {
   margin-bottom: 10px;
 }
 
-/* line 1195, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1197, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > textarea.form-control {
   resize: vertical;
 }
 
 /* List groups */
-/* line 1199, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1201, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .list-group {
   max-width: 400px;
 }
 
 /* Navbars */
-/* line 1203, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1205, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example .navbar:last-child {
   margin-bottom: 0;
 }
 
-/* line 1207, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1209, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-bottom-example,
 .bs-navbar-top-example {
   z-index: 1;
@@ -15072,13 +15283,13 @@ h1[id] {
   /* cut the drop shadows off */
 }
 
-/* line 1215, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1217, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-bottom-example .navbar-header,
 .bs-navbar-top-example .navbar-header {
   margin-left: 0;
 }
 
-/* line 1220, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1222, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-bottom-example .navbar-fixed-bottom,
 .bs-navbar-top-example .navbar-fixed-top {
   position: relative;
@@ -15086,64 +15297,64 @@ h1[id] {
   margin-left: 0;
 }
 
-/* line 1227, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1229, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-top-example {
   padding-bottom: 45px;
 }
 
-/* line 1231, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1233, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-top-example:after {
   top: auto;
   bottom: 15px;
 }
 
-/* line 1236, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1238, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-top-example .navbar-fixed-top {
   top: -1px;
 }
 
-/* line 1240, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1242, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-bottom-example {
   padding-top: 45px;
 }
 
-/* line 1244, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1246, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-bottom-example .navbar-fixed-bottom {
   bottom: -1px;
 }
 
-/* line 1248, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1250, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-navbar-bottom-example .navbar {
   margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
-  /* line 1252, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1254, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-navbar-bottom-example .navbar-fixed-bottom,
   .bs-navbar-top-example .navbar-fixed-top {
     position: absolute;
   }
 }
 /* Pagination */
-/* line 1258, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1260, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example .pagination {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 /* Pager */
-/* line 1263, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1265, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .pager {
   margin-top: 0;
 }
 
 /* Example modals */
-/* line 1267, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1269, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-modal {
   background-color: #f5f5f5;
 }
 
-/* line 1271, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1273, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-modal .modal {
   position: relative;
   top: auto;
@@ -15154,7 +15365,7 @@ h1[id] {
   display: block;
 }
 
-/* line 1281, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1283, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-modal .modal-dialog {
   left: auto;
   margin-right: auto;
@@ -15162,12 +15373,12 @@ h1[id] {
 }
 
 /* Example dropdowns */
-/* line 1287, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1289, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .dropdown > .dropdown-toggle {
   float: left;
 }
 
-/* line 1291, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1293, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .dropdown > .dropdown-menu {
   position: static;
   display: block;
@@ -15176,24 +15387,24 @@ h1[id] {
 }
 
 /* Example tabbable tabs */
-/* line 1298, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1300, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-tabs .nav-tabs {
   margin-bottom: 15px;
 }
 
 /* Tooltips */
-/* line 1302, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1304, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-tooltips {
   text-align: center;
 }
 
-/* line 1306, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1308, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-tooltips > .btn {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-/* line 1311, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1313, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-tooltip .tooltip {
   position: relative;
   display: inline-block;
@@ -15202,13 +15413,13 @@ h1[id] {
 }
 
 /* Popovers */
-/* line 1318, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1320, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-popover {
   padding-bottom: 24px;
   background-color: #f9f9f9;
 }
 
-/* line 1323, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1325, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example-popover .popover {
   position: relative;
   display: block;
@@ -15218,7 +15429,7 @@ h1[id] {
 }
 
 /* Scrollspy demo on fixed height div */
-/* line 1331, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1333, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .scrollspy-example {
   position: relative;
   height: 200px;
@@ -15226,36 +15437,36 @@ h1[id] {
   overflow: auto;
 }
 
-/* line 1338, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1340, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-example > .nav-pills-stacked-example {
   max-width: 300px;
 }
 
 /* Simple collapse example */
-/* line 1342, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1344, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 #collapseExample .well {
   margin-bottom: 0;
 }
 
 /* Don't wrap event names in Events tables in JS plugin docs */
-/* line 1346, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1348, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-events-table > tbody > tr > td:first-child,
 .bs-events-table > thead > tr > th:first-child {
   white-space: nowrap;
 }
 
-/* line 1351, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1353, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-events-table > thead > tr > th:first-child {
   width: 150px;
 }
 
-/* line 1355, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1357, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .js-options-table > thead > tr > th:nth-child(1),
 .js-options-table > thead > tr > th:nth-child(2) {
   width: 100px;
 }
 
-/* line 1360, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1362, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .js-options-table > thead > tr > th:nth-child(3) {
   width: 50px;
 }
@@ -15265,7 +15476,7 @@ h1[id] {
  *
  * Generated via Pygments and Jekyll, these are snippets of HTML, CSS, and JS.
  */
-/* line 1368, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1370, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .highlight {
   padding: 9px 14px;
   margin-bottom: 14px;
@@ -15274,7 +15485,7 @@ h1[id] {
   border-radius: 4px;
 }
 
-/* line 1376, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1378, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .highlight pre {
   padding: 0;
   margin-top: 0;
@@ -15285,14 +15496,14 @@ h1[id] {
   border: 0;
 }
 
-/* line 1386, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1388, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .highlight pre code {
   font-size: inherit;
   color: #333;
   /* Effectively the base text color */
 }
 
-/* line 1392, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1394, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .highlight pre code:first-child {
   display: inline-block;
   padding-right: 45px;
@@ -15304,13 +15515,13 @@ h1[id] {
  * Generate a set of tests to show the responsive utilities in action.
  */
 /* Responsive (scrollable) doc tables */
-/* line 1402, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1404, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .table-responsive .highlight pre {
   white-space: normal;
 }
 
 /* Utility classes table  */
-/* line 1406, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1408, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-table th small,
 .responsive-utilities th small {
   display: block;
@@ -15318,40 +15529,40 @@ h1[id] {
   color: #999;
 }
 
-/* line 1413, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1415, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities tbody th {
   font-weight: normal;
 }
 
-/* line 1417, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1419, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities td {
   text-align: center;
 }
 
-/* line 1421, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1423, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities td.is-visible {
   color: #468847;
   background-color: #dff0d8 !important;
 }
 
-/* line 1426, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1428, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities td.is-hidden {
   color: #ccc;
   background-color: #f9f9f9 !important;
 }
 
 /* Responsive tests */
-/* line 1431, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1433, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities-test {
   margin-top: 5px;
 }
 
-/* line 1435, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1437, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities-test .col-xs-6 {
   margin-bottom: 10px;
 }
 
-/* line 1439, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1441, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .responsive-utilities-test span {
   display: block;
   padding: 15px 10px;
@@ -15362,7 +15573,7 @@ h1[id] {
   border-radius: 4px;
 }
 
-/* line 1449, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1451, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .hidden-on .col-xs-6 .hidden-lg,
 .hidden-on .col-xs-6 .hidden-md,
 .hidden-on .col-xs-6 .hidden-sm,
@@ -15375,7 +15586,7 @@ h1[id] {
   border: 1px solid #ddd;
 }
 
-/* line 1461, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1463, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .hidden-on .col-xs-6 .visible-lg-block,
 .hidden-on .col-xs-6 .visible-md-block,
 .hidden-on .col-xs-6 .visible-sm-block,
@@ -15394,19 +15605,19 @@ h1[id] {
  *
  * Special styles for displaying the icons and their classes in the docs.
  */
-/* line 1478, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1480, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-glyphicons {
   margin: 0 -10px 20px;
   overflow: hidden;
 }
 
-/* line 1483, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1485, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-glyphicons-list {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 1488, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1490, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-glyphicons li {
   float: left;
   width: 25%;
@@ -15419,14 +15630,14 @@ h1[id] {
   border: 1px solid #fff;
 }
 
-/* line 1500, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1502, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-glyphicons .glyphicon {
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 24px;
 }
 
-/* line 1506, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1508, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-glyphicons .glyphicon-class {
   display: block;
   text-align: center;
@@ -15434,20 +15645,20 @@ h1[id] {
   /* Help out IE10+ with class names */
 }
 
-/* line 1513, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1515, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-glyphicons li:hover {
   color: #fff;
   background-color: #d88208;
 }
 
 @media (min-width: 768px) {
-  /* line 1518, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1520, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-glyphicons {
     margin-right: 0;
     margin-left: 0;
   }
 
-  /* line 1523, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1525, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-glyphicons li {
     width: 12.5%;
     font-size: 12px;
@@ -15460,71 +15671,71 @@ h1[id] {
  * the display of inputs, headings, and more. Also included are all the download
  * buttons and actions.
  */
-/* line 1535, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1537, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer .toggle {
   float: right;
   margin-top: 25px;
 }
 
 /* Headings and form contrls */
-/* line 1540, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1542, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer label {
   margin-top: 10px;
   font-weight: 500;
   color: #555;
 }
 
-/* line 1546, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1548, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer h2 {
   padding-top: 30px;
   margin-top: 0;
   margin-bottom: 5px;
 }
 
-/* line 1552, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1554, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer h3 {
   margin-bottom: 0;
 }
 
-/* line 1556, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1558, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer h4 {
   margin-top: 15px;
   margin-bottom: 0;
 }
 
-/* line 1561, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1563, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer .bs-callout h4 {
   margin-top: 0;
   /* lame, but due to specificity we have to duplicate */
   margin-bottom: 5px;
 }
 
-/* line 1567, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1569, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer input[type="text"] {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   background-color: #fafafa;
 }
 
-/* line 1572, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1574, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer .help-block {
   margin-bottom: 5px;
   font-size: 12px;
 }
 
 /* For the variables, use regular weight */
-/* line 1577, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1579, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 #less-section label {
   font-weight: normal;
 }
 
 /* Downloads */
-/* line 1581, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1583, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customize-download .btn-outline {
   padding: 20px;
 }
 
 /* Error handling */
-/* line 1585, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1587, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer-alert {
   position: fixed;
   top: 0;
@@ -15539,23 +15750,23 @@ h1[id] {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-/* line 1599, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1601, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer-alert .close {
   margin-top: -4px;
   font-size: 24px;
 }
 
-/* line 1604, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1606, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer-alert p {
   margin-bottom: 0;
 }
 
-/* line 1608, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1610, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer-alert .glyphicon {
   margin-right: 5px;
 }
 
-/* line 1612, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1614, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-customizer-alert pre {
   margin: 10px 0 0;
   color: #fff;
@@ -15565,7 +15776,7 @@ h1[id] {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* line 1621, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1623, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-dropzone {
   position: relative;
   padding: 20px;
@@ -15576,22 +15787,22 @@ h1[id] {
   border-radius: 4px;
 }
 
-/* line 1631, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1633, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-dropzone .import-header {
   margin-bottom: 5px;
 }
 
-/* line 1635, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1637, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-dropzone .glyphicon-download-alt {
   font-size: 40px;
 }
 
-/* line 1639, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1641, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-dropzone hr {
   width: 100px;
 }
 
-/* line 1643, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1645, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-dropzone .lead {
   margin-bottom: 10px;
   font-weight: normal;
@@ -15599,12 +15810,12 @@ h1[id] {
 }
 
 /*.bs-dropzone*/
-/* line 1649, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1651, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 #import-manual-trigger {
   cursor: pointer;
 }
 
-/* line 1653, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1655, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-dropzone p:last-child {
   margin-bottom: 0;
 }
@@ -15615,7 +15826,7 @@ h1[id] {
  * Extra styles for displaying wordmarks, logos, etc.
  */
 /* Logo series wrapper */
-/* line 1662, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1664, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-logos {
   display: table;
   width: 100%;
@@ -15627,39 +15838,39 @@ h1[id] {
 }
 
 /* Individual items */
-/* line 1672, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1674, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item {
   padding: 60px 0;
   text-align: center;
 }
 
-/* line 1677, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1679, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item + .bs-brand-item {
   border-top: 1px solid #fff;
 }
 
-/* line 1681, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1683, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-logos .inverse {
   color: #fff;
   background-color: #d88208;
 }
 
 /* Heading content within */
-/* line 1686, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1688, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item h1,
 .bs-brand-item h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 1692, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1694, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item .bs-docs-booticon {
   margin-right: auto;
   margin-left: auto;
 }
 
 /* Make the icons stand out on what is/isn't okay */
-/* line 1697, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1699, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item .glyphicon {
   width: 30px;
   height: 30px;
@@ -15669,30 +15880,30 @@ h1[id] {
   border-radius: 50%;
 }
 
-/* line 1706, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1708, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item .glyphicon-ok {
   background-color: #5cb85c;
 }
 
-/* line 1710, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1712, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bs-brand-item .glyphicon-remove {
   background-color: #d9534f;
 }
 
 @media (min-width: 768px) {
-  /* line 1714, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1716, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-brand-item {
     display: table-cell;
     width: 1%;
   }
 
-  /* line 1719, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1721, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-brand-item + .bs-brand-item {
     border-top: 0;
     border-left: 1px solid #fff;
   }
 
-  /* line 1724, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1726, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-brand-item h1 {
     font-size: 60px;
   }
@@ -15700,13 +15911,13 @@ h1[id] {
 /*
  * ZeroClipboard styles
  */
-/* line 1731, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1733, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .zero-clipboard {
   position: relative;
   display: none;
 }
 
-/* line 1736, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1738, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .btn-clipboard {
   position: absolute;
   top: 0;
@@ -15722,7 +15933,7 @@ h1[id] {
   border-radius: 0 4px 0 4px;
 }
 
-/* line 1751, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1753, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .btn-clipboard-hover {
   color: #fff;
   background-color: #d88208;
@@ -15730,12 +15941,12 @@ h1[id] {
 }
 
 @media (min-width: 768px) {
-  /* line 1757, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1759, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .zero-clipboard {
     display: block;
   }
 
-  /* line 1761, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1763, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .bs-example + .zero-clipboard .btn-clipboard {
     top: -16px;
     border-top-right-radius: 0;
@@ -15744,18 +15955,18 @@ h1[id] {
 /*
  * AnchorJS Styles
  */
-/* line 1769, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1771, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .anchorjs-link {
   color: inherit;
 }
 
 @media (max-width: 480px) {
-  /* line 1773, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1775, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   .anchorjs-link {
     display: none;
   }
 }
-/* line 1778, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1780, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 *:hover > .anchorjs-link {
   opacity: 0.75;
   -webkit-transition: color 0.16s linear;
@@ -15763,7 +15974,7 @@ h1[id] {
   transition: color 0.16s linear;
 }
 
-/* line 1785, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1787, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 *:hover > .anchorjs-link:hover,
 .anchorjs-link:focus {
   text-decoration: none;
@@ -15776,7 +15987,7 @@ h1[id] {
  * Odds and ends for optimum docs display.
  */
 /* Pseudo :focus state for showing how it looks in the docs */
-/* line 1796, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1798, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 #focusedInput {
   border-color: #cccccc;
   /* Restate unfocused value to make CSSLint happy that there's a pre-CSS3 fallback*/
@@ -15789,7 +16000,7 @@ h1[id] {
 }
 
 /* v4 notice above main navbar */
-/* line 1807, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1809, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .v4-tease {
   display: block;
   padding: 15px 20px;
@@ -15799,7 +16010,7 @@ h1[id] {
   background-color: #0275d8;
 }
 
-/* line 1816, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1818, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .v4-tease:hover {
   color: #fff;
   text-decoration: none;
@@ -15808,7 +16019,7 @@ h1[id] {
 
 /* Nullify ill-advised printing of hrefs; see #18711 */
 @media print {
-  /* line 1823, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+  /* line 1825, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
   a[href]:after {
     content: "" !important;
   }
@@ -15819,52 +16030,52 @@ h1[id] {
  * Licensed under the Creative Commons Attribution 3.0 Unported License. For
  * details, see https://creativecommons.org/licenses/by/3.0/.
  */
-/* line 1835, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
-.indexbody {
+/* line 1837, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+.indexbody, .bs-docs-featurette {
   margin-left: -15px;
   margin-right: -15px;
 }
 
-/* line 1841, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1843, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .alert {
   margin: 0;
   border-radius: 0;
 }
 
-/* line 1847, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1849, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 footer {
   color: white;
 }
 
-/* line 1851, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1853, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 footer .footer-below {
   padding: 25px 0;
   background-color: #607D8B;
 }
 
-/* line 1856, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1858, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 html {
   height: 100%;
 }
 
-/* line 1860, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1862, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* line 1866, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1868, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .content {
   flex: 1;
 }
 
-/* line 1871, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1873, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 a {
   color: #6D6D6D;
 }
 
-/* line 1875, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1877, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 a:focus,
 a:hover {
   color: #FF6F00;
@@ -15872,49 +16083,81 @@ a:hover {
 }
 
 /*字体颜色和背景颜色*/
-/* line 1883, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1885, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bg-gray {
   background: #F5F5F5;
 }
 
-/* line 1887, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1889, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bg-red {
   background: #D32048;
 }
 
-/* line 1891, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1893, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .bg-orange {
   background: #D88208;
 }
 
-/* line 1895, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1897, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .col-gray {
   color: #808080;
 }
 
-/* line 1899, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1901, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .col-black {
   color: #333333;
 }
 
-/* line 1903, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1905, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .col-red {
   color: #d32048;
 }
 
-/* line 1907, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1909, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .col-blue {
   color: #005AA0;
 }
 
 /*边框*/
-/* line 1911, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1913, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .border {
   border: 1px solid #DDDDDD;
   border-radius: 10px;
 }
 
-/* line 1916, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+/* line 1918, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
 .productList-wrap {
   margin-top: 50px;
+}
+
+/* line 1922, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+.main-content {
+  min-height: 850px;
+}
+
+/* line 1928, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+#search-id {
+  width: 200px;
+  padding-top: 7px;
+}
+
+/* line 1933, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+.search-info-title {
+  text-align: center;
+}
+
+/* line 1937, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+.search-result {
+  margin-top: 30px;
+}
+
+/* line 1941, /Users/liuhuajiao/jdstore/jdstore/app/assets/stylesheets/application.scss */
+.carousel-inner img {
+  /*-webkit-filter: grayscale(90%);*/
+  /*filter: grayscale(90%); make all photos black and white */
+  width: 100%;
+  /* Set width to 100% */
+  margin: auto;
+  background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
+  opacity: 0.5;
 }
