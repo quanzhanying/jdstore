@@ -1,6 +1,14 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    def index
+      if params[:category].blank?
+        @products = Product.all
+      else
+        @category_id = Category.find_by(name: params[:category]).id #先找到category_id
+        @products = Product.where(category_id:  @category_id) #再根据category_id找到相对应的产品
+      end
+    end
+    
     if params[:searcher]
       @products = Product.search(params[:searcher])
     end
