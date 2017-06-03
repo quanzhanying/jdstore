@@ -14,6 +14,15 @@
  *= require_self
  */
 
+.body {
+  padding: 55px 0 0 0
+}
+
+.body1 {
+  padding: 100px 0 0 0
+}
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
@@ -78,7 +87,7 @@
 .title {
   width: 520px; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
-  margin-top: 100px; /*上边距*/
+  margin-top: 50px; /*上边距*/
 }
 .title-1 {
   font-size: 50px; /*设置字体36px*/
@@ -97,15 +106,15 @@
 .menuList{
   width: 1100px;
   margin: 70px auto;
-  height: 100px;
+  height: 5px;
 
 }
 
 .menuList-item {
   float: left;
-  padding: 0 60px;
+  padding: 0 10px;
   font-size: 18px;
-  line-height: 100px;
+  line-height: 5px;
 
 }
 

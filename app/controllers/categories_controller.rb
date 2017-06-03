@@ -1,16 +1,19 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  
+
 
   # GET /categories
   # GET /categories.json
   def index
     @categories = Category.all
+
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+
+
   end
 
   # GET /categories/new
@@ -20,6 +23,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+
   end
 
   # POST /categories
@@ -36,6 +40,7 @@ class CategoriesController < ApplicationController
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /categories/1
@@ -49,7 +54,9 @@ class CategoriesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
+
     end
+    
   end
 
   # DELETE /categories/1
@@ -70,6 +77,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :image)
     end
 end

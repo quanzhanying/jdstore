@@ -13,7 +13,7 @@ end
 
 def new
   @product = Product.new
-  @categories = Category.all.map { |c| [c.name, c.id] } #这一行为加入的代码
+  @categories = Category.all.map { |c| [c.name, c.image, c.id] } #这一行为加入的代码
 
 # 新建商品图片
   @product_image = @product.product_images.build
@@ -40,7 +40,9 @@ end
 
 def edit
   @product = Product.find(params[:id])
-  @categories = Category.all.map{ |c| [c.name, c.id]}
+  @categories = Category.all.map{ |c| [c.name, c.image, c.id]}
+
+
 end
 
 def destroy
