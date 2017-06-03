@@ -1,30 +1,15 @@
-<% @products.each do |product| %>
 
-<!-- priductlist show -->
-<div class="productlist-right-imagelist bg-color2">
-
-  <div class="productlist-right-item-image-a bg-color3">
-
-    <%= link_to product_path(product) do %>
-    <% end %>
-    <% if product.image.present? %>
-    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-    <% else %>
-    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="productlist-right-price-b bg-color4">
-
-    <div class="productlist-right-price-b productlist-right-title-c bg-color5">
-      <%= product.title %>
-      <div class="productlist-right-price-b productlist-right-link-d bg-color2">
-        ￥ <%= product.price %>
-      </div>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
     </div>
-  </div>
-  <div class="productlist-right-colorgallery-e bg-color3">
-  </div>
-</div>
-<!-- end -->
-<% end %>
+  <% end %>
 </div>
