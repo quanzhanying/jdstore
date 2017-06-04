@@ -157,22 +157,11 @@
       <div class="section3-table" id="section3-table">
         <div class="section3-content">
           <!-- SOSOBTC Widget Begin -->
-          <script type="text/javascript"
-              src="//static2.sosobtc.com/sb.js"
-          ></script>
-          <script type="text/javascript">
-              new SOSOBTC.widget({
-                  "symbol": "BTC:YUNBI",
-                  "default_theme": "light",
-                  "disable_theme_change": true,
-                  "hide_logo": true,
-                  "hide_market_name": true,
-                  "container": "kline_container"
-              })
-          </script>
+
+          <div style="width: 100%; height: 560px;" id="sosobtc_kline"></div>
           <!-- SOSOBTC Widget End -->
         </div>
-        <h3>BTC/CNY当前行情</h3>
+        <p>BTC/CNY当前行情</p>
       </div>
     </section>
 
@@ -320,6 +309,8 @@
 </body>
 </html>
 
+<%= content_for :handwrite_javascript do %>
+
 <script type="text/javascript">
   /* Toggle Navigation Close On Click */
 
@@ -402,6 +393,16 @@ $(document).ready(function() {
 })
 </script>
 
+<script src="//static2.sosobtc.com/public/assets/plugin/sosobtc_plugin.js"></script>
+<script type="text/javascript">
+    (function () {
+        SOSOBTC('Kline').init({
+            sid: 'yunbi_btc', enableChatRoom: false,
+            id: 'sosobtc_kline',
+        });
+    })();
+</script>
+
 
 <!-- 美洽客服 -->
 <script type='text/javascript'>
@@ -424,3 +425,11 @@ $(document).ready(function() {
     _MEIQIA('init');
   </script>
   <!-- 美洽客服 -->
+
+  <script>
+  $( document ).ready(function() {
+      console.log( "ready!" );
+  });
+  </script>
+
+  <% end %>

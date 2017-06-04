@@ -3,11 +3,11 @@
 
     <head>
         <title title="你未来资产的一部分">数字资产--你未来资产的一部分</title>
-        <%= csrf_meta_tags %>
-
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <%= csrf_meta_tags %>
+
     </head>
 
 
@@ -20,6 +20,10 @@
         </div>
 
         <%= render "common/footer" %>
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <%= yield :handwrite_javascript %>
 
     </body>
 

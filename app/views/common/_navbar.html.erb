@@ -3,7 +3,7 @@
     <div class="row">
         <div class="content">
 
-          <a class="logo" href="/"><img src="assets/blockchain-logo.png"></a>
+          <a class="logo" href="/"><img src="../assets/blockchain-logo.png"></a>
           <div class="mobile-toggle">
               <li class="dropdown">
                   <%= link_to("Products", products_path) %>
@@ -91,6 +91,8 @@
   </header>
 </nav>
 
+<%= content_for :handwrite_javascript do %>
+
 <script>
 
 // Sticky Header
@@ -120,3 +122,11 @@ $('.main_header li a').click(function() {
 });
 
 </script>
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+
+<% end %>

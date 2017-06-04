@@ -76,6 +76,8 @@
   </a>
 </div>
 
+<%= content_for :handwrite_javascript do %>
+
 <script>
   function on() {
     document.getElementById("overlay").style.height = "100%";
@@ -137,3 +139,11 @@ $(document).ready(function() {
     _MEIQIA('init');
 </script>
 <!-- 美洽客服 -->
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+
+<% end %>

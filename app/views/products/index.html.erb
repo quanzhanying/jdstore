@@ -78,6 +78,8 @@
   </div>
 </div>
 
+<%= content_for :handwrite_javascript do %>
+
 <!-- 美洽客服 -->
 <script type='text/javascript'>
   (function(m, ei, q, i, a, j, s) {
@@ -97,5 +99,13 @@
 <script>
     // 你可以自己的代码中选择合适的时机来调用手动初始化
     _MEIQIA('init');
-  </script>
-  <!-- 美洽客服 -->
+</script>
+<!-- 美洽客服 -->
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+
+<% end %>
