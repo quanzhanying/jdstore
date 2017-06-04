@@ -23,17 +23,32 @@
           <!--=== 網站連結 ===-->
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to(t('商品列表'), products_path) %></li>
-            <!-- <li><%= link_to(t('brand-access'), '#', class: "scroll") %></li>
-            <li><%= link_to(t('recommend-access'), '#', class: "scroll") %></li> -->
+
           </ul>
           <!--=== 帳號操作 ===-->
           <ul class='nav navbar-nav  navbar-right'>
             <li class="divider" role="separator"></li>
 
+            <!-- navbar搜索框 -->
+            <li>
+              <div class="products-search-form">
+                <%= form_tag search_products_path, :method => :get  do %>
+                <div class="input-group" id="search-id" >
+                  <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入您要查找的商品信息">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </div>
+               </div>
+                <% end %>
+              </div>
+            </li>
+
             <!-- 購物車 -->
             <li>
               <%= link_to carts_path do %>
-                <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
+                <i class='fa fa-shopping-cart'></i> 购物车( <%= current_cart.products.count %> )
               <% end %>
             </li>
 
@@ -49,13 +64,21 @@
                   <%= current_user.email %>
                   <b class='caret'></b>
                 </a>
-                <!-- 下拉選單 -->
-                <ul class='dropdown-menu'>
-                  <!-- admin 後台 -->
+
+
+                <ul class="dropdown-menu">
                   <% if current_user.admin? %>
-                    <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
-                    <li class="divider"> </li>
+                  <li>
+                    <%= link_to("Admin 选单", admin_products_path) %>
+                  </li>
                   <% end %>
+                  <li>
+                    <%= link_to("个人订单列表", account_orders_path ) %>
+                  </li>
+
+                  <!-- 我的收藏在navbar上显示，fix bug没有登录不显示我的收藏  -->
+
+                    <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%> </li>
 
                   <li> <%= link_to(t('登出'), destroy_user_session_path, method: :delete) %> </li>
                 </ul>
