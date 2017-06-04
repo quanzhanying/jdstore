@@ -18,12 +18,6 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
-      post :add_to_favorite
-      post :quit_favorite
-      put "like", to: "products#upvote"
-    end
-    collection do
-      get :search
     end
   end
 
@@ -47,7 +41,5 @@ Rails.application.routes.draw do
   namespace :account do
     resources :orders
   end
-
-  resources :welcome
 
 end
