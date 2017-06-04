@@ -13,16 +13,16 @@
               </li>
             </ul>
 
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown"> 分类浏览
-                <b class = "caret"></b>   <!--这里代表下拉菜单的倒三角-->
-              </a>
-              <ul class="dropdown-menu">
-                <% Category.all.each do |category| %>
-                <li><%= link_to(category.name, products_path(category_id: category_id))%></li>  <!--这里的products_path后面括号部分，就是筛选的条件 -->
+        <li class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown"> 分类浏览
+           <b class = "caret"></b>   <!--这里代表下拉菜单的倒三角-->
+          </a>
+          <ul class="dropdown-menu">
+            <% Category.all.each do |category| %>
+              <li><%= link_to(category.name, products_path(category_id: category_id))%></li>  <!--这里的products_path后面括号部分，就是筛选的条件 -->
                 <% end %>
-              </ul>
-            </li>
+          </ul>
+        </li>
 
             <ul class="nav navbar-nav navbar-right">
               <li>
