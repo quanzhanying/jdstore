@@ -31,9 +31,10 @@ class CartItemsController < ApplicationController
       @cart_item.quantity = @cart_item.quantity + 1
       @cart_item.save
     elsif @cart_item.quantity == @cart_item.product.stock
-      alert: "库存不足！"
+      # alert: "库存不足！"
     end
-    redirect_to :back
+    # redirect_to :back
+    render "increase"
   end
 
   # 减少数量
@@ -44,7 +45,7 @@ class CartItemsController < ApplicationController
         @cart_item.quantity -= 1
         @cart_item.save
    elsif @cart_item.quantity == 0
-     alert: "商品不能少于零！"
+    #  alert: "商品不能少于零！"
    end
    redirect_to carts_path
   end

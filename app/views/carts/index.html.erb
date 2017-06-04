@@ -19,7 +19,7 @@
             <th colspan="2">商品名</th>
             <th>单价</th>
             <th>数量</th>
-            <th>价格</th>
+            <th>小计（元）</th>
             <th>操作</th>
           </tr>
         </thead>
@@ -41,27 +41,9 @@
               <td>
                 <%= cart_item.product.price %>
               </td>
-              <td>
-                <!-- <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-                  <%= f.select :quantity, 1..cart_item.product.stock, class: "form-control" %>
-                  <%= f.submit "更新", class: "btn btn-primary pull-right", data: { disable_with: "提交中..."} %>
-                <% end %> -->
-
-                <!-- 减少数量按钮 -->
-                <%= link_to("-", decrease_cart_item_path(cart_item.product_id), method: :post, remote: true) %>
-                <!-- 数量显示 -->
-                <!-- <input type="text" name="quantities[]" value="<%= cart_item.quantity == 0 ? '已售罄' : cart_item.quantity %>" id="quantity-input-<%= cart_item.product_id %>" class="quantity-input" disabled> -->
-                <span id = "quantity-input-<%= cart_item.product_id%>"> <%= cart_item.quantity %> </span>
-                <!-- 增加数量按钮 -->
-                <%= link_to("+", increase_cart_item_path(cart_item.product_id), method: :post, remote: true) %>
-              </td>
-                <!-- 合计 -->
-              <td class="product-total">
-                <small>￥</small>
-                <span id="cart-item-subtotal-<%= cart_item.product_id %>">
-                  <strong> <%= cart_item.product.price * cart_item.quantity  %> </strong>
-                </span>
-              </td>
+              <span id = "cart_item-quantity-price-<%= cart_item.product.id %>">
+              <%= render :partial => "quantity-price", :locals => { cart_item: cart_item } %>
+              </span>
 
               <td>
                 <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>

@@ -9,7 +9,8 @@
 //   btnPlus.removeAttr("disabled");
 //   btnPlus.removeClass("disabled");
 // }
-
-$("#quantity-input-<%= cart_item.product_id%>").html(<%= cart_item.quantity %>);
-$("#cart-item-subtotal-<%= cart_item.product_id %>").html(<%= cart_item.product.price * cart_item.quantity  %>);
+str = "<%=j render :partial => "quantity-price", :locals => { cart_item: cart_item } %>";
+$("#cart_item-quantity-price-<%= cart_item.product.id %>").html(str);
+// $("#quantity-input-<%= cart_item.product_id%>").html(<%= cart_item.quantity %>);
+// $("#cart-item-subtotal-<%= cart_item.product_id %>").html(<%= cart_item.product.price * cart_item.quantity  %>);
 $("#cart-total").html(<%= render_cart_total_price(current_cart) %>);
