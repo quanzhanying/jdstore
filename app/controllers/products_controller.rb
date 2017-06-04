@@ -83,7 +83,6 @@ class ProductsController < ApplicationController
     @product.fans << current_user
     @product.save
     # notice:"成功加入收藏!" #目前还不知道不刷新页面的情况下怎么更新flash
-    # binding.pry
     # redirect_to :back, notice:"成功加入收藏!"
     render "add_to_favorite"
   end
@@ -104,7 +103,8 @@ class ProductsController < ApplicationController
   def upvote
     @product = Product.find(params[:id])
     @product.upvote_by current_user
-    redirect_to :back
+    # redirect_to :back
+    render "like"
   end
   # 点赞功能代码结束
 

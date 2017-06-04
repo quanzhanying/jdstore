@@ -160,10 +160,9 @@
             </div>
             <!-- 点赞的view部分 -->
             <div class="btn btn-default">
-              <%= link_to like_product_path(@product), method: :put do %>
-                <div class="pi-thumbs-up">
-                <i class="fa fa-thumbs-up fa-x", style=" padding: 0px 5px;"></i>
-                <%= @product.get_upvotes.size %>
+              <%= link_to like_product_path(@product), method: :put,  :remote => true  do %>
+                <div id = "product-like-<%= @product.id %>" class="pi-thumbs-up">
+                  <%= render :partial => "like", :locals => { :put => @product } %>
                 </div>
               <% end %>
             </div>
