@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体 需要使用VPN才可生效
 
 
 /*----- navbar -----*/
@@ -64,7 +65,7 @@
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #f77f2f;
+    color: #cc0000;
     background-color: #FFE0B2;
 }
 
@@ -503,59 +504,6 @@
 
  }
 
-
-
-
-
-/*----- Welcome page -----*/
-
-.mainproduct {
-  margin: 50px 60px 50px 60px;
-}
-
-.welcome-product {
-  margin-top: 80px;
-
-}
-.detail {
-  font-size: 20px;
-  text-decoration: none;
-  text-align: left;
-  border-radius: 1px;
-}
-
-
-.detail a:link {      /*-----  饮食餐具的link颜色 ------ */
-    color: #444444;
-
-  }
-.detail a:hover {
-      color: #cc0000;
-      background-color: transparent;
-      text-decoration: none;
-  }
-
-
-
-
-.prolist {
-  border-width: 10px;
-  border-style: solid;
-  border-color: #FFFFFF;
-
-
-
-  }
-.product-intro-list-img-right {
-  width: 100%;     /*---- 照片布满prolist-----*/
-  height: 100%;    /*---- 照片布满prolist-----*/
-}
-
-
-
-
-
-
 /*----- products 页面 -----*/
 
 .product-tab {
@@ -709,7 +657,7 @@ body {
   /*-----  layout.application main的padding-top值要等于或大于navbar的height值 -----*/
   padding-bottom: 500px;
   /*----- layout.appplicatin main的padding-bottom值要等于或大于footer的height值 -----*/
-
+  // background: #E1E8ED;
 }
 
 .footer-style {
@@ -753,9 +701,9 @@ body {
   .btn-danger {
       color: #fff;//字体颜色
 
-      background-color: #f77f2f;//背景颜色
+      background-color: #cc0000;//背景颜色
 
-      border-color: #f77f2f;//边框颜色
+      border-color: #cc0000;//边框颜色
 
   }
 
@@ -765,10 +713,10 @@ body {
       border-color: #f77f2f;//鼠标放置在btn上的边框颜色
     }
 
-  .btn-dange:active {
-      background-color: #f77f2f;//鼠标放置在btn上的背景颜色
+  .btn-danger:active {
+      background-color: #cc0000;//鼠标放置在btn上的背景颜色
       color: #fff;
-      border-color: #f77f2f;//鼠标放置在btn上的边框颜色
+      border-color: #cc0000;//鼠标放置在btn上的边框颜色
 
   }
 
