@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join, :quit, :upvote]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :join, :quit, :upvote, :clubuser]
 
 
   # ---CRUD---
@@ -40,7 +40,7 @@ class ClubsController < ApplicationController
     @club = Club.find(params[:id])
 
     if @club.update(club_params)
-      redirect_to clubs_path
+      redirect_to clubuser_clubs_path
     else
       render :edit
     end
@@ -85,6 +85,13 @@ class ClubsController < ApplicationController
       flash[:notice] = "这篇帖子 你已经点过赞"
     end
     redirect_to :back
+  end
+
+
+  # 个人中心
+
+  def clubuser
+    @club_hots = Club.all.paginate(:page => params[:page], :per_page => 10).sort_by{|club| -club.club_reviews.count}
   end
 
 

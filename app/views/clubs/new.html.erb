@@ -4,7 +4,11 @@
 
     <!-- 表单区域 -->
     <div class="col-md-8">
+      <hr>
+      <h4 class="text-center">发帖子</h4>
+      <hr>
         <%= render "form" %>
+      <hr>
     </div>
 
 
@@ -42,16 +46,9 @@
             <%= link_to("发帖子", new_club_path, class: "btn btn-sm btn-danger center-block") %>
           </div>
           <div class="col-md-6">
-            <%= link_to("个人主页", new_club_path, class: "btn btn-sm btn-warning center-block") %>
+            <%= link_to("个人主页", clubuser_clubs_path, class: "btn btn-sm btn-warning center-block") %>
           </div>
           <hr>
-          <div class="col-md-6">
-            <%= link_to("我的帖子", new_club_path, class: "btn btn-sm btn-default center-block") %>
-          </div>
-          <div class="col-md-6">
-            <%= link_to("我的收藏", new_club_path, class: "btn btn-sm btn-default center-block") %>
-          </div>
-        </div>
       </div>
 
 

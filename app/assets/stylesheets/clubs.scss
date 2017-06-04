@@ -116,3 +116,22 @@
   padding: 15px 170px;
   margin: auto -140px;
 }
+
+
+// ================clubuser页面================ //
+.club-user-summary {
+  margin: 20px auto 40px;
+  color: #7f8c8d;
+  line-height: 1.8em;
+}
+
+.club-user-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}

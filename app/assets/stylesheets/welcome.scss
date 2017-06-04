@@ -80,8 +80,21 @@
 
 /*  --- 按钮 ---  */
 .btn.btn-lg {padding: 10px 40px;}
-.btn.btn-hero,
-.btn.btn-hero:hover,
+.btn.btn-hero {
+  color: #f5f5f5;
+  background-color: #7f8c8d;
+  border-color: #7f8c8d;
+
+  outline: none;
+  margin: 20px auto;
+}
+.btn.btn-hero:hover {
+  color: #f5f5f5;
+  background-color: #6fa5a9;
+  border-color: #6fa5a9;
+  outline: none;
+  margin: 20px auto;
+}
 .btn.btn-hero:focus {
     color: #f5f5f5;
     background-color: #1abc9c;
@@ -100,10 +113,10 @@
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(https://ooo.0o0.ooo/2017/05/29/592bdcf77c48b.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/05/29/592b9122cb2c2.jpg);
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url(https://ooo.0o0.ooo/2017/05/29/592b9122cb2c2.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/06/04/5933b4b0b44fe.jpg);
 }
 .fade-carousel .slides .slide-3 {
   background-image: url(https://ooo.0o0.ooo/2017/05/29/592b8f2064104.jpg);

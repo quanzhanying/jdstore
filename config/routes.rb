@@ -103,6 +103,9 @@ Rails.application.routes.draw do
       post :join                #社群帖子加入收藏
       post :quit                #社群帖子取消收藏
     end
+    collection do
+      get :clubuser
+    end
   end
 
   get "about/index"
