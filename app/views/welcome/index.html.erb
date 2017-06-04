@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/tjs/bootstrap.min.js"></script>
+</head>
+<body>
+
 <!-- 这是导航栏 -->
 <div class="navbar bg-color1">
   <div class="navbarContent">
@@ -28,64 +40,54 @@
 </div>
 
 <!-- 这是轮播图 -->
-<div class="carousel">
-  <div class="slider_margin">
-<!-- Add this css File in head tag-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
-        <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+<div class="row">
+  <div class="container-fluid">
 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-            </ol>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
 
-            <!-- Wrapper For Slides -->
-            <div class="carousel-inner" role="listbox">
+      </ol>
 
-                <!-- Third Slide -->
-                <div class="item active">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
 
-                    <!-- Slide Background -->
-                    <!-- <img src="https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/> -->
-                    <img src="https://ooo.0o0.ooo/2017/06/04/59338b057452f.png" alt="Screen Shot 2017-06-04 at 12.21.04 PM.png" title="Screen Shot 2017-06-04 at 12.21.04 PM.png" />
-                    <div class="bs-slider-overlay"></div>
+        <div class="item active">
+          <img src="https://ooo.0o0.ooo/2017/06/04/59338b057452f.png" alt="Screen Shot 2017-06-04 at 12.21.04 PM.png" style="width:100%;height:500px;">
+          <div class="carousel-caption">
+            <h3>泰国美食，无法抗拒！</h3>
+            <p>来自美食之都的味蕾享受，好吃到让你尖叫！</p>
+          </div>
+        </div>
 
-                    <div class="container">
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide_style_left">
-                                <h1 data-animation="animated zoomInRight">泰国美食，无法抗拒！</h1>
-                                <p data-animation="animated fadeInLeft">来自美食之都的味蕾享受，好吃到让你尖叫！</p>
-                                <div target="_blank" class="btn btn-default" data-animation="animated fadeInLeft"><%= link_to("立马得到", products_path)%></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
+        <div class="item">
+          <img src="https://ooo.0o0.ooo/2017/06/04/59338b5c0ab2f.jpg" alt="picture-3.jpg" style="width:100%;height:500px">
+          <div class="carousel-caption">
+            <h3>泰国香薰，绕梁三日！</h3>
+            <p>扑面而来的自异域奢靡，让你沉醉到无法自拔!</p>
+          </div>
+        </div>
 
-                <!-- Second Slide -->
-                <div class="item">
+      </div>
 
-                    <!-- Slide Background -->
-                    <img src="https://ooo.0o0.ooo/2017/06/04/59338b5c0ab2f.jpg" alt="picture-3.jpg" title="picture-3.jpg" />
-                    <div class="bs-slider-overlay"></div>
-                    <!-- Slide Text Layer -->
-                    <div class="slide-text slide_style_center">
-                        <h1 data-animation="animated flipInX">泰国香薰，绕梁三日！</h1>
-                        <p data-animation="animated lightSpeedIn">扑面而来的自异域奢靡，让你沉醉到无法自拔.</p>
-                        <div target="_blank" class="btn btn-default" data-animation="animated fadeInLeft"><%= link_to("立马得到", products_path)%></div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-            </div><!-- End of Wrapper For Slides -->
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 
+  </body>
+  </html>
 
-
-      </div> <!-- End  bootstrap-touch-slider Slider -->
-</div>
 </div>
 
 <!-- 这是排序 -->
