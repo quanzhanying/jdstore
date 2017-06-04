@@ -48,25 +48,25 @@ else
 end
 
 ## 大孩子 2
-if Product.find_by(title: "磁应力金属橡皮泥").nil?
-Product.create!(
- title: "磁应力金属橡皮泥",
-  description: "让橡皮泥“活”起来！不仅能像普通橡皮泥一样可随意捏出各种造型，更能被磁铁所吸引！！试着把它塑造成眼镜蛇的造型，用磁铁就能让它摇头晃脑。白领及高压人士选择，缓解压力宣泄情绪之良品。",
-  price: 185,
-  quantity: 30,
-  category_id: 2,
-  image: open("https://images-na.ssl-images-amazon.com/images/I/51AMaD8ErgL._SL1000_.jpg"),
-  product_images_attributes: [
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/51AMaD8ErgL._SL1000_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/51nYUv2TTtL.jpg")},
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/519pUKZQCBL.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/51weVsatkyL.jpg") }
-  ]
-  )
-  puts "成功建立1个商品：磁应力金属橡皮泥"
-else
-  puts "磁应力金属橡皮泥 已经存在"
-end
+# if Product.find_by(title: "磁应力金属橡皮泥").nil?
+# Product.create!(
+#  title: "磁应力金属橡皮泥",
+#   description: "让橡皮泥“活”起来！不仅能像普通橡皮泥一样可随意捏出各种造型，更能被磁铁所吸引！！试着把它塑造成眼镜蛇的造型，用磁铁就能让它摇头晃脑。白领及高压人士选择，缓解压力宣泄情绪之良品。",
+#   price: 185,
+#   quantity: 30,
+#   category_id: 2,
+#   image: open("https://images-na.ssl-images-amazon.com/images/I/51AMaD8ErgL._SL1000_.jpg"),
+#   product_images_attributes: [
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/51AMaD8ErgL._SL1000_.jpg") },
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/51nYUv2TTtL.jpg")},
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/519pUKZQCBL.jpg") },
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/51weVsatkyL.jpg") }
+#   ]
+#   )
+#   puts "成功建立1个商品：磁应力金属橡皮泥"
+# else
+#   puts "磁应力金属橡皮泥 已经存在"
+# end
 
 ## 大孩子 3
 if Product.find_by(title: "百变转角积木").nil?
@@ -161,7 +161,7 @@ Product.create!(
   price: 139,
   quantity: 500,
   category_id: 1,
-  image: open("https://images-na.ssl-images-amazon.com/images/I/71V9%2BhQs0WL._SL1500_.jpg"),
+  image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/71V9%2BhQs0WL._SL1500_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61OUZyyvZSL._SL1100_.jpg")},
@@ -206,7 +206,6 @@ Product.create!(
   category_id: 1,
   image: open("https://images-na.ssl-images-amazon.com/images/I/615zUsVzO3L.jpg"),
   product_images_attributes: [
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/615zUsVzO3L.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/615zUsVzO3L.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81zaKflO0oL.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81KisyCSfwL.jpg") }
@@ -279,6 +278,22 @@ else
   puts "竹炭除味包 已经存在"
 end
 
+
+Product.create!(
+ title: "鸵鸟睡枕",
+  description: "睡觉神器，让充电是小睡可以随时随地，无处不在。独特的仿生学设计，为您创建私人空间，放松身心，让您每天都精力充沛！",
+  price: 139,
+  quantity: 500,
+  category_id: 1,
+  image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg"),
+  product_images_attributes: [
+    { image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61OUZyyvZSL._SL1100_.jpg")},
+    { image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99l6m4mhj30rn0rngp6.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81uN1kCLROL._SL1255_.jpg") }
+  ]
+  )
+  puts "成功建立1个商品：鸵鸟睡枕"
 # Initialize  Categorys
 
 #1
