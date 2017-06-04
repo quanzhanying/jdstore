@@ -46,7 +46,7 @@
             <div class="action">
               <div class="col-md-3">
                 <% if @product.quantity.present? && @product.quantity > 0 %>
-                <%= link_to("立即购买", "#", class: "buy btn btn-danger",  :method => :post) %>
+                <%= link_to("立即购买", instant_buy_product_path(@product), class: "buy btn btn-danger",  :method => :post) %>
               <% else %>
                 已销售一空，无法购买
                 <% end %>
@@ -135,7 +135,29 @@
 
     <!-- 推荐 -->
     <div class="col-md-3">
-      猜你可能喜欢
+        <div class="show-recom">
+         <h4 style="padding-top:10px;">为您推荐的宝贝</h4>
+           <hr>
+             <% @suggests.each do |product| %>
+               <%= link_to product_path(product) do %>
+                 <div class="recomitem">
+                   <div class="recomitemlist">
+                       <% if product.photos.present? %>
+                         <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                       <% end %>
+                   </div>
+
+                        <% if product.quantity.present? && product.quantity > 0 %>
+                            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                        <% else %>
+                            已销售一空，无法购买
+                        <% end %>
+
+
+                 </div>
+               <% end %>
+             <% end %>
+        </div>
     </div>
   </div>
 

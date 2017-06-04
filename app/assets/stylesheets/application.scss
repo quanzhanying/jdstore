@@ -515,8 +515,21 @@
 
 .welcome-product {
   margin-top: 80px;
-
 }
+
+
+.prolist {
+  border-width: 10px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  }
+
+.product-intro-list-img-right {
+  width: 100%;     /*---- 照片布满prolist-----*/
+  height: 100%;    /*---- 照片布满prolist-----*/
+}
+
+
 .detail {
   font-size: 20px;
   text-decoration: none;
@@ -536,20 +549,6 @@
   }
 
 
-
-
-.prolist {
-  border-width: 10px;
-  border-style: solid;
-  border-color: #FFFFFF;
-
-
-
-  }
-.product-intro-list-img-right {
-  width: 100%;     /*---- 照片布满prolist-----*/
-  height: 100%;    /*---- 照片布满prolist-----*/
-}
 
 
 
@@ -597,25 +596,21 @@
 }
 
 .product-preview {
-  padding-top: 10;
+
 }
 
 .preview-pic img{ /*---- show图片 -----*/
   width: 350px;
   height: 350px;
-}
+  padding: 10px;   /*---- 图片的白边 -----*/
+  margin-top: 20px;
+  }
+
 
 .wrapper {
   display: inline-block; /*----- 把图片与描述放在一个区块 -----*/
   border: 1px solid rgb(221, 221, 221);
-
-  .thumbnail{
-    padding: 10px;   /*---- 图片的白边 -----*/
-    margin-top: 20px;
-    }
-
-
-  }
+}
 
 
 /*-----show page right card ----*/
@@ -725,6 +720,22 @@
 }
 
 
+
+/*----- show page recom -----*/
+.show-recom {
+  width: 270px;
+  height: 270px;
+}
+
+.recomitemlist img {
+  width: 250px;
+  height: 250px;
+  padding: 10px;    /*----- 配合class="thumbnail" 定义使padding显示 ----*/
+  border-radius: 2%;
+  }
+
+
+
 /*----- recommend page -----*/
 
 
@@ -752,7 +763,7 @@
 
 
 
-.show-recom {
+.recom {
   text-align: center;
 }
 
