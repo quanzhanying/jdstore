@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div class="row facepanel">
+      <div class="col-md-4 col-md-offset-4 sign-up-page">
+
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <h2 class="text-center">注 册</h2>
+            <hr>
+            <div class="form-inputs">
+              <%= f.input :email, :label => "邮箱", required: true, autofocus: true %>
+              <%= f.input :password, :label => "密码", required: true, hint: ("#{@minimum_password_length} 位数字或字母" if @minimum_password_length) %>
+              <%= f.input :password_confirmation, :label => "确认密码", required: true %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, "注 册", class: "btn btn-primary btn-block" %>
+            </div>
+
+          <%= render "devise/shared/links" %>
+        <% end %>
+      </div>
+    </div>
+</div>
