@@ -9,8 +9,6 @@ class User < ApplicationRecord
   has_many :article_reviews, dependent: :destroy      #文章留言关系
   has_many :club_reviews, dependent: :destroy         #社群留言关系
 
-  mount_uploader :avatar, ImageUploader
-
 
   # ---收藏商品功能三方关系代码块---
 

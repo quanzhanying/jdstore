@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [800, 800]
 
   version :avatarminixs do
-    process resize_to_fit: [40, 60]
+    process resize_to_fit: [40, 40]
   end
 
   version :avatarmini do
