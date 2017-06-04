@@ -9,16 +9,26 @@
     <br>
     <h2 class="search-info-title"> Sorry, we don't have product you would like to search</h2>
   <% else %>
-        <ul class="productList clearfix pb20">
+    <div class="container">
+      <section class="product-items-box">
         <% @products.each do |product| %>
-          <li class="fl productList-item p15 pr">
-            <p class="productList-item-pic w200 h200">
-            <%= link_to product_path(product) do %>
-              <%= image_tag(product.image.thumb.url, class: 'thumbnail')%>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= link_to product_path(product) do %> <!-- 商品连结 -->
+              <div class="box">
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                <% end %>
+              </div> <!-- 商品图片 -->
+              <div class="product-info">
+                <p><%= product.title %></p> <!-- 商品名称 -->
+                <p><%= product.price %></p> <!-- 商品价格 -->
+              </div>
             <% end %>
-            </p>
-          </li>
+          </div>
         <% end %>
-       </ul>
+      </section>
+    </div>
   <% end %>
 </div>
