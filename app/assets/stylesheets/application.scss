@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 
 /*  搜索框 */
@@ -79,4 +80,1231 @@
   }
 
  }
+}
+
+/*===== Fonts =====*/
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
+// @import url(https://fonts.googleapis.com/css?family=Lobster);
+// @import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
+@import url(https://fonts.googleapis.com/css?family=Acme);
+
+
+
+/*===== 網站通用設置 ======*/
+
+body {
+  overflow-x: hidden; //裁切內容，超出視窗不顯示
+  letter-spacing: 1px;
+  font-size: 14px;
+  position: relative;
+
+  a {
+    text-decoration:none !important;
+  }
+
+    /*===== 頁面內容設定 ======*/
+  .container-fluid {
+    margin-top: 55px;
+    min-height: 550px;
+  }
+
+    /*===== 換頁按鈕設定 ======*/
+  .page-box {
+    margin-top: 75px;
+
+    a {
+      background-color: #eee;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: #666 !important;
+    }
+  }
+
+  /*===== 基礎欄位設定 ======*/
+  .width-25 {
+    width: 25%;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+
+  .width-75 {
+    width: 75%;
+  }
+
+  .width-100 {
+    width: 100%;
+  }
+
+  .height-200 {
+    height: 200px;
+  }
+
+  th {
+      vertical-align: middle !important; // 表格標題垂直置中
+  }
+
+  td {
+      height: px;
+      vertical-align: middle !important; // 表格內容垂直置中
+
+      .container-fluid .jumbotron{
+    padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+    margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    border-radius: 0;//圆角为0
+    }
+  }
+
+
+  /*===== 立即選購按鈕 ======*/
+  .buy-box {
+    text-align: center;
+    margin: 50px auto 0 auto;
+    color: #02061A;
+
+
+    .btn-default {
+      margin-top: 30px;
+      padding: 15px 20px 15px 20px;
+    }
+
+    .btn-default:hover,
+    .btn-default:active,
+    .btn-default:focus {
+      background-color: #02061A;
+    }
+
+    .suggested-product-content{
+      text-align: center;
+      margin: 20px 0px 20px 0px;
+
+      img {
+        margin: auto;
+        max-width: 200px;
+      }
+    }
+  }
+
+  /*===== DIV排版 ======*/
+  .left-box {
+    float: left;
+  }
+
+  .right-box {
+    float: right;
+  }
+}
+
+/*===== Navbar 导览列 ======*/
+.navbar.navbar-default {
+  background: rgba(0,0,0,0.3);
+  color: #000 !important;
+
+  a:hover,
+  a:active,
+  a:focus {
+    color: #eb5424 !important;
+  }
+
+  &.show_bgcolor {
+    background-color: #02061A;
+  }
+
+  /*===== Logo ======*/
+  .logo-box {
+    margin-right: 15px;
+    font-family: 'Oswald', sans-serif; /* Google字型 */
+    font-size: 20px;
+
+    img {
+      display: inline-block;
+      margin-top: -6px;
+      margin-right: 8px;
+      margin-left: 30px;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #ffffff; /* Logo 外框 */
+      border-radius: 25px; /* Logo 切成圓形 */
+    }
+  }
+
+  /*===== Dropdown ======*/
+  .dropdown-menu{
+    background-color: #fff;
+    min-width: 175px;
+    // box-shadow: 0 5px 10px #aaa;
+
+    a {
+      color: #000;
+      padding: 8px 17px;
+    }
+
+    a:hover {
+      background-color: #f0f0f0;
+      color: #eb5424 !important;
+    }
+  }
+
+  /* 下拉選單三角箭頭 */
+  .dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+  }
+
+  /* 搜索欄 */
+  .search-box {
+    margin-top: 7.5px;
+    input {
+      height: 35px;
+    }
+
+    input:focus {
+      border: 2px solid #ccc;
+    }
+
+    button {
+      background-color: #fff;
+      border: 1.5px solid #fff;
+      padding: 5px 10px 5px 10px;
+      height: 35px;
+      color: #333;
+    }
+  }
+}
+
+/*===== Footer 页脚 ======*/
+.footer{
+  text-align: center;
+  min-height: 200px;
+  background-color: #02061A;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 14px;
+
+  h4 {
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  li {
+    margin-top: 5px;
+  }
+
+  a {
+    text-decoration:none;
+    color: #ccc;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    color: #eb5424;
+  }
+
+  img {
+    display: inline-block;
+    margin-top: -6px;
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff; /* Logo 外框 */
+    border-radius: 25px; /* Logo 切成圓形 */
+  }
+
+  p {
+    a {
+      color: #ddd;
+    }
+    a:hover {
+      color: #eb5424;
+    }
+  }
+
+  .footer-box {
+    text-align: left !important;
+    margin-top: 15px;
+  }
+
+  .footer-content {
+    font-size: 16px;
+    font-family: Raleway;
+    color: #ddd;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    font-weight: 200;
+
+    img {
+      width: 25px;
+      margin-left: 7.5px;
+      margin-right: -0.1px;
+    }
+
+    img:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/*===== 首页通用设置 =====*/
+.welcome-box {
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .short-line {
+    background: #eb5424;
+    margin: 15px auto 35px auto;
+    width: 125px;
+    height: 2px;
+  }
+
+  /*===== Button 按钮 =====*/
+  .btn-push {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+  .btn-intro {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+  .btn-push:hover,
+  .btn-intro:hover {
+    background-color: rgba(235, 84, 36, 0.5);
+    border-color: #eb5424;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .btn-push,
+  .btn-intro {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .goTop {
+    height: 35px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: fixed;
+    top: 80%;
+    right: 35px;
+    // display: none;
+    box-shadow: 1px 1px 3px #666;
+
+    span {
+      color: #000;
+      position: absolute;
+      top: 7px;
+      left: 8px;
+      font-size: 20px;
+    }
+  }
+
+  .goTop:hover {
+    background-color: #f0f0f0;
+
+    span{
+      color: #eb5424;
+    }
+  }
+}
+
+/*===== Intro 首页-网站介绍 =====*/
+.intro-box {
+
+  /*===== 轮播内容 =====*/
+  .item {
+    h3 {
+      color: #fff;
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      margin-top: -35%;
+      text-shadow: 1px 1px 3px #333;
+    }
+
+    p {
+      color: #f8f8f8;
+      font-size: 22px;
+      font-style: italic;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /*===== 换页按钮 =====*/
+  .carousel-control {
+    span {
+      margin-top: 145%;
+      font-size: 50px;
+    }
+  }
+}
+
+/*===== Story 首页-品牌故事 =====*/
+.story-box {
+  text-align: center;
+  padding: 25px 62.5px 50px 62.5px;
+
+  h3 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  p {
+    color: #666;
+    line-height: 30px;
+    text-align: justify;
+  }
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  hr {
+    height: 1.5px;
+    background-color: #999;
+  }
+}
+
+/*===== Categories 首页-商品分类 =====*/
+.categories-box {
+  background-color: #F5F5F5;
+  text-align: center;
+
+  a {
+    text-decoration:none;
+    color: #002E2E;
+  }
+
+  img {
+    width: 300px;
+  }
+
+  /*===== Content 分类內容 =====*/
+  .category-content {
+    padding: 50px 0 0 0;
+
+    border-right: 2.5px dashed #ccc;
+    /*===== Box 分类图片 =====*/
+    h3 {
+      padding: 20px 0 20px 0;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    p {
+      text-align: justify;
+      letter-spacing: 1.5px;
+      padding: 0 62.5px 50px 62.5px;
+      color: #666;
+      line-height: 26px;
+
+    }
+  }
+}
+
+/*===== Show 首页-推荐商品 =====*/
+.show-box {
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  img {
+    width: 100%;
+  }
+
+  .box {
+	  margin-top: 15px;
+	  box-shadow: 0.5px 0.5px 3px #aaa;
+	}
+
+  .three {
+    margin-top: 12px;
+  }
+
+  .box:hover {
+    opacity: 0.6;
+  }
+}
+
+/*===== Brands 首页-合作伙伴 =====*/
+.brand-box {
+  background-color: #F5F5F5;
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  img {
+    margin: 25px 15px 35px 15px;
+    width: 150px;
+  }
+}
+
+/*===== Push 首页-立即购买 =====*/
+.push-box {
+  text-align: center;
+  padding: 75px 0 0 0;
+  height: 200px;
+  background: image_url("start.jpg") no-repeat scroll top center/ cover;
+}
+
+/*===== Product 產品 =====*/
+.product-box {
+  text-align: center;
+  padding: 0 0 100px 0;
+
+  .background-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #666 !important;
+  }
+
+  .btn {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    color: #eb5424;
+  }
+
+  .dropdown-menu {
+    li {
+      min-width: 200px;
+      padding: 2.5px 0 2.5px 0;
+    }
+
+    li:hover {
+      a {
+        background-color: #f0f0f0 !important;
+      }
+    }
+  }
+
+  a:hover {
+    color: #eb5424 !important;
+
+    img {
+      opacity: 0.75;
+    }
+  }
+
+  .search-error {
+    margin: 150px 0 150px 0;
+  }
+
+  /*===== 產品列表內容設置 =====*/
+  .product-content {
+    img {
+      width: 100%;
+      margin: 7.5px auto 7.5px auto;
+    }
+
+    h2 {
+      margin-top: 150px;
+    }
+
+
+  }
+
+
+
+  .product-info {
+    text-align: left;
+    line-height: 14px;
+    min-height: 55px;
+  }
+
+  /*===== 產品路徑設置 =====*/
+  .path-box {
+    text-align: left;
+    height: 20px;
+
+    .right-box {
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  /*===== 產品顏色設置 =====*/
+  .color-circle {
+    button {
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      color: #ffffff;
+      padding: 10px 10px 10px 10px;
+      margin: 0px 2px 0px 2px;
+    }
+
+    button:active {
+      outline: none; //點擊不顯示外框
+    }
+  }
+
+  /*===== 精選商品圖示 =====*/
+  .chosen-box {
+    position: absolute;
+    border-radius: 45px;
+    top: 22px;
+    left: 27px;
+    width: 45px;
+    height: 45px;
+    padding-top: 11px;
+    color: #fff;
+    background-color: #02061A;
+    border: 2.5px solid #999;
+    opacity: 0.85;
+    z-index: 1;
+  }
+
+  .location {
+    top: 15px;
+    left: 30px;
+  }
+}
+
+/*===== 產品信息區塊設置 =====*/
+.product-show {
+  margin: 0 0 100px 0;
+
+  /*===== 產品圖片區塊設置=====*/
+  .product-image {
+    .image-box {
+      padding: 7.5px;
+    }
+
+    .main-image {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .list-image {
+      width: 100%;
+    }
+
+    .list-image-active {
+      box-shadow: 1.5px 1.5px 1.5px #666;
+    }
+  }
+
+  /*===== 產品介紹區塊設置 =====*/
+  .product-detail {
+    // padding: 0 25px 0 25px;
+    text-align: left;
+
+    h1 {
+      margin-top: 5px;
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px dashed #aaa;
+      margin: 30px 0 30px 0;
+    }
+
+    img {
+      width: 17.5px;
+    }
+
+    div {
+      display: block;
+    }
+
+    .price {
+      height: 60px;
+    }
+
+    .currency {
+      margin: 10px 0 0 0;
+
+      button {
+        margin-right: -10px;
+      }
+
+      ul{
+        margin-top: -5px;
+      }
+    }
+
+    .wish {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    .share {
+      margin-right: 15px;
+    }
+
+    /*===== 按鈕設置 =====*/
+    .btn-default {
+      margin-top: 25px;
+      width: 100%;
+      color: #666;
+    }
+
+    .btn-default:hover {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+    }
+
+    .quantity-box {
+      height: 20px;
+
+      .quantity-input {
+        width: 50px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 2.5px;
+        outline: none;
+      }
+
+      .quantity-input:focus {
+        border: 1px solid #000;
+      }
+
+      .quantity-actions {
+        padding: 2.5px 10px 2.5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 2.5px;
+      }
+
+      .quantity-actions:hover {
+        border: 1px solid #eb5424;
+      }
+
+      .quantity-none {
+        color: #999;
+        font-weight: 500;
+      }
+    }
+
+  }
+}
+
+.suggest-box {
+
+  hr.suggest {
+    margin: 80px auto 0px auto;
+    max-width: 250px;
+    border-bottom: 2px double #8c8b8b !important;
+    text-align: center;
+  }
+
+  hr.suggest:after {
+    content: 'BEST MATCHES';
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    padding: 0 10px;
+    background: #fff;
+    font-size: 18px;
+  }
+
+  img {
+    margin: 30px auto 0px auto;
+    width: 110px !important;
+  }
+
+}
+
+
+/*===== Content 網站-內容區塊排版設定 =====*/
+.content-box {
+  min-height: 450px;
+
+  h3 {
+    color: #2c3e50;
+    letter-spacing: 2px;
+    margin-top: 0px;
+  }
+
+  hr {
+    height: 1.5px;
+    background-color: #666 !important;
+    margin-bottom: 0px;
+  }
+
+  .btn-default {
+    margin: 0px 0 0 0px;
+  }
+
+  .btn-default:hover {
+    border-color: #eb5424;
+  }
+}
+
+
+
+/*===== Cart 網站-購物車設定 =====*/
+.cart-item-box {
+  text-align: left;
+  margin: 5px 0 5px 0;
+
+  img {
+    max-width: 75px;
+  }
+
+  div {
+    margin-left: 15px;
+    display: inline-block;
+  }
+
+  hr {
+    height: 1px;
+    background-color: #eee !important;
+    margin: 7.5px 0 -2.5px 0;
+  }
+
+  .name {
+    min-width: 50%;
+  }
+
+  .price {
+    min-width: 100px;
+  }
+
+  input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+    outline: none;
+  }
+
+  input:focus {
+    border: 1px solid #000;
+  }
+}
+
+
+/*===== Order 網站-訂單資訊設定 =====*/
+.order-form {
+  text-align: left;
+
+  .form-group {
+    input {
+      height: 40px;
+    }
+  }
+
+  .form-actions {
+    text-align: center;
+
+    .btn-default {
+      color: #333;
+    }
+
+    .btn-default:hover,
+    .btn-default:active,
+    .btn-default:focus {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+    }
+  }
+}
+
+/*===== Order 網站-訂單歷史 =====*/
+.order-box {
+  text-align: left;
+
+
+  h3 {
+    text-align: center;
+  }
+
+  table{
+    box-shadow: 0 0 3px #999;
+  }
+
+  thead{
+    line-height: 200%;
+    background-color: #02061A;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  strong {
+    line-height: 250%;
+  }
+
+  .btn-default {
+    margin: 0 5px 0 5px;
+  }
+
+  img {
+    max-width: 75px;
+  }
+
+
+}
+
+/*===== Control 後台-控制選單 =====*/
+.nav-sidebar {
+  margin-top: 65px;
+
+  span {
+    margin-left: 2.5px;
+  }
+
+  li {
+    max-width: 250px;
+    padding: 12.5px 15px 12.5px 15px;
+    background-color: #546270;
+    border: 1px solid #4a4a4a;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #44c7f4;
+  }
+}
+
+/*===== Admin 後台-通用設置 =====*/
+.admin-box {
+  padding: 25px;
+
+  table{
+    box-shadow: 0 0 3px #999;
+  }
+
+  thead{
+    background-color: #02061A;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  a {
+    color: #666;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    color: #44c7f4;
+  }
+
+  .description-box {
+    max-width: 550px;
+  }
+
+  /*===== 操作選項 =====*/
+  .action-box {
+    min-width: 100px;
+    margin-top: -3.5px;
+    margin-bottom: -3.5px;
+
+    .show-btn {
+      background-color: #eee !important;
+    }
+  }
+
+  /*===== 按鈕設置 =====*/
+  .btn-default {
+    padding: 5px 10px 5px 10px;
+    background-color: #fff;
+    border: 1.5px solid #ccc;
+  }
+
+  .btn-info {
+    padding: 10px 15px 10px 15px;
+    border: 1.5px solid #ccc;
+    color: #fff;
+  }
+
+  .btn-default:hover {
+    opacity: 0.85;
+  }
+
+  .btn-info:hover {
+    color: #fff;
+  }
+
+  /*===== 產品顏色設置 =====*/
+
+  .admin-color-circle {
+    button {
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      color: #ffffff;
+      padding: 10px 10px 10px 10px;
+      margin: 0px 2px 0px 2px;
+    }
+
+    button:active {
+      outline: none; //點擊不顯示外框
+    }
+  }
+
+  /*===== 換頁按鈕 =====*/
+  .admin-page-box {
+    margin-top: 75px;
+
+    a {
+      background-color: #ddd;
+    }
+
+    a:hover {
+      background-color: #ccc;
+      color: #666 !important;
+    }
+  }
+}
+
+
+
+
+/*===== Admin-Form 後台表單設置 =====*/
+.admin-data-box {
+  hr {
+    height: 1.5px;
+    background-color: #ccc;
+    margin: 30px 0 30px 0;
+  }
+
+  h2{
+    color: #3D537F;
+  }
+
+  input {
+    height: 40px;
+  }
+
+  select {
+    height: 35px;
+    min-width: 175px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+
+  .hidden-box {
+    input {
+      height: 16px !important;
+    }
+    font-size: 16px;
+  }
+
+  /*===== 送出按鈕 =====*/
+  .form-actions{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+
+    .btn {
+      width: 100%;
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      background-color: #4A99B5;
+      border-color: #4A99B5;
+      color: #fff;
+    }
+  }
+}
+
+/*===== Admin 產品後台圖片區塊設置 =====*/
+.product-image {
+  .image-box {
+    padding: 7.5px;
+  }
+
+  .main-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .list-image {
+    width: 100%;
+  }
+
+  .list-image-active {
+    box-shadow: 1.5px 1.5px 1.5px #666;
+  }
+}
+
+/*===== Users 用戶中心 =====*/
+.user_setup{
+  height: 750px;
+  background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.user_setup_content{
+  background: #fff;
+  margin-top: 135px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 1px 3px 5px #333;
+  border: 5px solid #555;
+  border-radius: 25px;
+
+  opacity:0.95;
+  filter:alpha(opacity=95);
+
+  h2{
+    text-align: center;
+  }
+
+  .psw{
+    float: right;
+    margin-top: -33px;
+    position: relative;
+  }
+
+  .account{
+    text-align: center;
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+      background-color: #4A99B5;
+      border-color: #4A99B5;
+      color: #fff;
+    }
+  }
+}
+
+.account-box{
+  background: image_url("account_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.account-content{
+  background: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 1px 3px 5px #333;
+  border: 5px solid #555;
+  border-radius: 25px;
+
+  opacity:0.95;
+  filter:alpha(opacity=95);
+
+  h2{
+    text-align: center;
+  }
+
+  .gender-box {
+    span {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  .phone {
+    width: 65%;
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+      background-color: #4A99B5;
+      border-color: #4A99B5;
+      color: #fff;
+    }
+  }
 }
