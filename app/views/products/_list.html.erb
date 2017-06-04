@@ -3,7 +3,7 @@
   <ul class="productList clearfix">
     <div class="row", style="margin-top: -49px;">
       <% @products.each do |product| %>
-        <div class="col-md-3">
+        <div class="col-md-3", style="padding-left: 0px; padding-right: 0px;">
           <li class="productList-item productList-panel">
             <div class="productList-item-pic">
               <%= link_to product_path(product) do %>
