@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+
+
   def index
     @products = Product.all
     if params[:favorite] == "yes"
