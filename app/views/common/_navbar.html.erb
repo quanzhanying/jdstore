@@ -68,9 +68,11 @@
         <li><%#= link_to(content_tag(:i, '登录', class: 'fa fa-sign-in'), new_user_session_path) %></li> -->
         <!-- 以下代码添加在最后 -->
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-          <div class="modal-dialog" role="document">
+
+          <div class="modal-dialog m-modal" role="document">
             <div class="loginmodal-container">
                <h2>登录</h2>
+               <hr>
                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                  <div class="form-inputs">
                    <%= f.input :email, :label => "邮箱", required: false, autofocus: true %>
@@ -86,9 +88,10 @@
         </div>
 
         <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-          <div class="modal-dialog">
+          <div class="modal-dialog m-modal">
             <div class="loginmodal-container">
               <h2>注册</h2>
+              <hr>
                 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= f.error_notification %>
                 <div class="form-inputs">
