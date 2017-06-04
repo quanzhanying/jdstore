@@ -123,6 +123,7 @@
 }
 
 
+
 /*5种背景颜色*/
 .bg-color1 {
   background: #50514F;
@@ -149,4 +150,159 @@
   margin: 20px auto;
   width: 100%;
   height: 400px;
+}
+
+/*这是热卖产品*/
+.dream{
+   color: #696969;
+   font-size: 40px;
+   font-weight: 700;
+   margin: 0px -10px 0px 0px;
+   text-align: center;
+   padding: 0px 0px;
+ }
+
+ .button{
+   border: 2px solid #26211d;
+   text-align: center;
+   padding: 5px 0px;
+   font-weight: 700;
+   margin-top: 10px;
+   display: block;
+   width: 100px;
+ }
+
+ .fitimage{
+   overflow:hidden;
+   position: relative;
+ }
+
+ .center-pic{
+   padding: 80px 80px 10px;
+   margin: 0px 10px;
+ }
+
+ .pic-1{
+   padding: 0px 30px 20px 170px;
+ }
+
+
+ /* customer-feedback */
+#customer-feedback {
+  padding-bottom: 50px;
+  background-color:#fff;
+  padding-top: 20px;
+  .col-md-4 {
+    padding: 15px 10px;
+    .quote-box-1 {
+      padding: 30px 30px;
+      background-color: #FFF;
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 2em;
+      border:4px solid  #faf6ec;
+      margin-top:-41px;
+      position: relative;
+      z-index:1;
+      .fa{
+        color:#faf6ec;
+      }
+    }
+  }
+}
+.fd-avatar-box{
+    border:4px solid  #faf6ec;
+    border-radius: 168px;
+    width: 83px;
+    height: 83px;
+    background-color: #fff;
+    position: relative;
+
+    z-index: 14;
+    margin:0 auto;
+    .fd-avatar-box-color-overlay{
+      position: absolute;
+      background-color: none;
+      border-radius: 167px;
+      height: 83px;
+      width: 83px;
+
+    }
+    img {
+      width: 100%;
+      margin:1px auto;
+      z-index: 15;
+    }
+    .round-image-74 {
+      background-color: white;
+      border: 1px solid  #faf6ec;
+      border-radius: 37px;
+      -moz-border-radius: 37px;
+      -webkit-border-radius: 37px;
+      height: 74px;
+      width: 74px;
+      overflow: hidden;
+      text-align: center;
+    }
+}
+
+/* call-to-action */
+
+#call-to-action {
+  background-color: #fff;
+  padding-top: 0px;
+  padding-bottom: 45px;
+  .btn-default {
+    background-color: rgb(211,122,130);
+    color: #fff;
+    border-color: #fff;
+    padding-top: 8px;
+    width: 150px;
+  }
+}
+
+/*  Welcome page Footer  */
+
+.footer {
+  background-color: rgb(239,234,225);
+  color: #959595;
+  margin-top: 20px;
+  padding-top: 20px;
+  height: 100px;
+  width: 100%;
+  border-top:1px solid #e6e6e6;
+  .copyright {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgb(239,234,225);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    .design {
+      margin-left: 20px;
+      span {
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        a {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.5);
+          margin-bottom: 20px;
+          transition: 0.35s;
+        }
+        a:hover {
+          color: #333333;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #959595;
+        span {
+          color: rgba(0, 0, 0, 0.7);
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }
