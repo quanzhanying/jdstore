@@ -247,7 +247,7 @@
                     <div class="row review">
                       <div class="col-md-2 review-user">
                         <% if current_user %>
-                        <img src="<%= if review.user.image.nil? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
+                        <img src="<%= if current_user.image.nil? then "/images/avatar.gif" else current_user.image end%>" width="25" alt="">
                         <%= if current_user.username.nil? then current_user.display_name else current_user.username end %>
                         <% end %>
                       </div>
