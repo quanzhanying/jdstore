@@ -1,0 +1,28 @@
+<h2> 分类列表 </h2>
+
+<div class="pull-right">
+  <%= link_to '新的分类', new_admin_category_path, class: 'btn btn-primary'%>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+
+      <th>名称</th>
+      <th colspan="2">设置</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.name%></td>
+      <td><%= link_to '编辑',edit_admin_category_path(category)%></td>
+      <td><%= link_to '删除',admin_category_path(category),method: :delete, data: {confirm: '你确定要删除吗'}%></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
