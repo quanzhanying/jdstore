@@ -1,11 +1,12 @@
 
 <div class="row">
-  <div class= "body">
+  <div class= "body2">
   <div class="col-md-12">
+
 
     <%= link_to("清空购物车", clean_carts_path, class: "pull-right",
             method: :delete,
-            style: "text-decoration: underline;",
+            style: "color:#f44336;text-decoration: none; background-color:#FFFFFF",
             data: { confirm: "你确定要清空整个购物车吗？"} )%>
 
 
@@ -49,7 +50,9 @@
             </td>
             <td>
                <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <b class="cart-delete">
                 <i class="fa fa-trash"></i>
+               </b>
                 <% end %>
             </td>
           </tr>
