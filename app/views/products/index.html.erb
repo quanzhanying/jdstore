@@ -1,14 +1,8 @@
 
 
-
-
-
-
  <div class="title">
 <div class="title-1  <%= 'title-1-active' if !params[:category] %>">
-
   <%= "INTERESTING FINDS"%>
-
  </div>
  </div>
 
@@ -18,13 +12,16 @@
 
 
 
-<div class="body1">
-<div class="productList-wrap w1200 pt20 bc">
-   <ul class="productList clearfix pb20">
 
+
+<div class="productList clearfix">
 
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
+
+
+
+      <div class="productList-item-pic w200 h200">
       <%= link_to product_path(product) do %>
         <% if product.product_images.present? %>
           <%= image_tag(product.product_images[0].image.thumb.url, class: "thumbnail") %>
@@ -32,17 +29,48 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-
-      <% if !product.users.include?(current_user) %>
-       <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
-     <% else %>
-       <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
-      <% end %>
-
-
     </div>
+
+
+
+      <div class="productList-item-price">
+       ￥<%= product.price %>
+
+
+       <p class="p-favorite">
+       <% if !product.users.include?(current_user) %>
+        <%= link_to("",add_to_favorite_product_path(product),method: :post,class: "fa fa-heart") %>
+       <% else %>
+        <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+       <% end %>
+       </p>
+
+     <!-- <p class="f-favorite">
+       收藏
+     </p> -->
+     </div>
+
+
+      <%= product.title %>
+
+
+      <b class="p-shopping-cart">
+      <% if product.quantity > 0 %>
+     <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
+
+       <i class="fa fa-shopping-cart col-red"></i>
+       </b>
+
+     <% end %>
+    <% end %>
+    <% if product.quantity <= 0 %>
+    <p class="productList-item-sellout f20 tc">已售完</p>
+    <% end %>
+
+
+
+     </div>
   <% end %>
-</ul>
+
 </div>
 </div>

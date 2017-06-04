@@ -22,7 +22,7 @@
 
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
- /****** LOGIN MODAL ******/
+ //登录//
  .loginmodal-container {
    padding: 30px;
    max-width: 350px;
@@ -118,15 +118,42 @@
  }
 
 
+// footer
+
+body {
+    height: 100%;
+    margin: 0;
+}
+html {
+    padding-bottom: 150px;
+    min-height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #232f3e;
+}
 
 
- .body {
-   padding: 55px 0 0 0
+
+
+
+
+//页面布局//
+
+ .body2 {
+   padding: 150px 0 0 0
  }
 
- .body1 {
-   padding: 100px 0 0 0
- }
 
 
 
@@ -285,16 +312,39 @@
 
 
 /*菜单*/
+
 .menu {
   width: 100%;
 }
 
+.box img{
+
+  border-style:none;
+  border-radius: 50%;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition: all 0.4s;
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+
+}
+
+.box:hover img {
+  transform: scale(1.2); /*在400ms内，图片的尺寸从 1倍 放大到 1.2倍*/
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+
 
 
 .mune-name{
-  padding-left: 35px;
- padding-top: 0px;
-
+  padding-left: 30px;
+  padding-top: 0px;
+  font-size: 12px;
 }
 
 
@@ -313,6 +363,7 @@
 
 }
 
+
 .menuList-item:hover {
   //background-color: #DCDCDC;
 }
@@ -323,4 +374,70 @@
 }
 .menuList-activeItem:hover {
   //background: #DCDCDC;
+}
+
+// product-index//
+.productList-item-price{
+  padding-top: 0px;
+  font-size: 16px;
+  color: #ff5252;
+}
+
+.p-favorite{
+  float: right; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  padding-right: 160px;
+}
+
+//.f-favorite{
+  //float: right; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  //padding-left: 5px;
+//}
+
+.p-favorite a{
+  text-decoration: none; /*不要下划线*/
+}
+
+.p-favorite a:hover {
+  color: #ff5252;
+  background-color :#FFFFFF;
+}
+
+.p-shopping-cart a:hover {
+  background-color :#FFFFFF;
+}
+
+
+//body {
+//  background: #F5F5F5;
+//}
+
+/*商品列表*/
+.productList {
+  margin: 20px auto;
+  width: 1200px;
+  overflow: hidden;
+}
+
+
+.productList-item-pic {
+
+  width: 200px;
+  padding: 10px 10px 20px 20px;
+  margin: 50px auto;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.productList-item-pic img {
+  width: 200px;
+}
+
+.productList-item-pic:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
 }
