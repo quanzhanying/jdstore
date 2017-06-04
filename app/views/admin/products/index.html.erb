@@ -1,51 +1,42 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="padding-bottom: 20px;"><h2>商品列表<h2></h3>
-  </div>
-  <div class="panel-body">
-
-    <div class="pull-right" style="padding-bottom: 10px;">
-      <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
-    </div>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th width="220">商品图片</th>
-          <th>商品名称</th>
-          <th>商品价格</th>
-          <th width="100"> 操作 </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <tr>
-            <td>
-              <%= product.id %>
-            </td>
-            <td>
-              <%= link_to product_path(product) do %>
-                <% if product.image.present? %>
-                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                <% end %>
-              <% end %>
-            </td>
-            <td>
-              <%= product.title %>
-            </td>
-            <td>
-              <%= product.price %>
-            </td>
-            <td>
-              <%= link_to("Edit", edit_admin_product_path(product)) %> |
-              <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-  </div>
+<h2> Product List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Product Pic</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.id %>
+        </td>
+        <td>
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= product.title %>
+        </td>
+        <td>
+          <%= product.price %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(product)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
