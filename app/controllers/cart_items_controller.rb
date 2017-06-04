@@ -47,7 +47,8 @@ class CartItemsController < ApplicationController
    elsif @cart_item.quantity == 0
     #  alert: "商品不能少于零！"
    end
-   redirect_to carts_path
+  #  redirect_to carts_path
+  render "decrease"
   end
 
   private

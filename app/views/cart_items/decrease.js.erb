@@ -1,16 +1,3 @@
-// var btnPlus = $('#quantity-plus-<%= params[:index] %>');
-// var btnMinus = $('#quantity-minus-<%= params[:index] %>');
-// $('#quantity-input-<%= params[:index] %>').val('<%= @cart_item.quantity %>');
-// $('#cart-item-subtotal-<%= params[:index] %>').html('<%= render_price(@cart_item.quantity * @cart_item.product.price) %>');
-// if (<%= @cart_item.quantity <= 1 %>) {
-//   btnMinus.attr("disabled");
-//   btnMinus.addClass("disabled");
-// } else if (<%= @cart_item.product.stock > 0 %>) {
-//   btnPlus.removeAttr("disabled");
-//   btnPlus.removeClass("disabled");
-// }
-str = "<%=j render :partial => "quantity-price", :locals => { cart_item: cart_item } %>";
-$("#cart_item-quantity-price-<%= cart_item.product.id %>").html(str);
-// $("#quantity-input-<%= cart_item.product_id%>").html(<%= cart_item.quantity %>);
-// $("#cart-item-subtotal-<%= cart_item.product_id %>").html(<%= cart_item.product.price * cart_item.quantity  %>);
-$("#cart-total").html(<%= render_cart_total_price(current_cart) %>);
+$("#cart-total").html('<strong>总计:' + '<%= render_cart_total_price(current_cart) %>' + 'RMB</strong>');
+$('#quantity-input-<%= @cart_item.product_id%>').text('<%= @cart_item.quantity %>')
+$('#cart-item-subtotal-<%= @cart_item.product_id %>').html('<strong>' + '<%= @cart_item.product.price * @cart_item.quantity  %>' + '</strong>' )
