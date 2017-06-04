@@ -256,10 +256,9 @@ a:hover {
         }
       }
       .productList-item-pic {
-        width:200px;
-        height:200px;
+        width: 100%;
         margin-top: 30px;
-        margin-left: 13px;
+        margin-left: auto !important;
         margin-right: auto !important;
       }
       .productList-item-price {

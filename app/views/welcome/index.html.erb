@@ -50,7 +50,7 @@
 		<br />
 		<li class="active">热卖商品 <i class="fa fa-angle-down" aria-hidden="true"></i></li>
   </ul>
-	<div class="hot-products-title ">
+	<div class="hot-products-title">
     <span>热卖商品</span>
   </div>
   <div class="container hot-productslist" style="margin-bottom:-60px; margin-top:-60px;">
@@ -65,40 +65,41 @@
 						<div class="row", style="margin-left: -21px;">
 						  <% @suggests.each do |product| %>
 						<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
-						    <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -50px;">
-							    <li class="productList-item box panel panel-default">
-								    <div class="productList-item-pic">
-											<%= link_to product_path(product) do %>
-				                <% if product.photos.present? %>
-				                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
-				                <% else %>
-				                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-				                <% end %>
-				              <% end %>
-								    </div>
-								    <div class="productList-item-price">￥<%= product.price %>
-								    	<% if product.stock > 0 %>
-									    	<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
-									   		<i class="fa fa-shopping-cart"></i>
-										  <% end %>
-									    <% end %>
+						<div class="col-md-3">
+							<li class="productList-item productList-panel">
+								<div class="productList-item-pic">
+									<%= link_to product_path(product) do %>
+										<% if product.photos.present? %>
+											<%= image_tag(product.photos[0].avatar.thumb.url) %>
+										<% else %>
+											<%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+										<% end %>
+									<% end %>
+								</div>
+								<div class="productList-item-price">￥<%= product.price %>
+									<% if product.stock > 0 %>
+										<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+											<i class="fa fa-shopping-cart"></i>
+										<% end %>
+									<% end %>
 									<!-- 待加入預購功能 -->
-									    <% if product.stock <= 0 %>
-									    	<div class="productList-item-sellout", style="margin-top: -33px;">
-										  	<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-										    </div>
-									    <% end %>
+									<% if product.stock <= 0 %>
+										<div class="productList-item-sellout", style="margin-top: -33px;">
+											<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+										</div>
+									<% end %>
 									<!-- 待加入預購功能 -->
-								    </div>
-								    <div class="productList-item-name ell">
-											<%= link_to product_path(product) do %>
-												 <%= product.name %>
-											<% end %>
-						     		</div>
+								</div>
+								<div class="productList-item-name ell">
+									<%= link_to product_path(product) do %>
+										 <%= product.name %>
+									<% end %>
+								</div>
 								<!-- <div class="productList-item-desc"><%= product.description %></div> -->
-						    	</li>
-						    </div>
-						  <% end %>
+							</li>
+						</div>
+
+					  <% end %>
             </div>
 					</ul>
         </div>
