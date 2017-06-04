@@ -16,3 +16,5 @@
 //= require bootstrap
 //= require bootstrap/modal
 //= require_tree .
+
+/*轮播图*/
