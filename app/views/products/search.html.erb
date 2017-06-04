@@ -9,25 +9,17 @@
     <br>
     <h2 class="search-info-title"> Sorry, we don't have product you would like to search</h2>
   <% else %>
-    <h2 class="search-info-title"> 有关"<%= @query_string %>"的工作信息 </h2>
     <div class="search-result">
 
-      <div class="row jobs-show0"></div>
-      <div class="job-table">
+        <ul class="productList clearfix pb20">
         <% @products.each do |product| %>
-        <div class="row jobs-show">
-
-          <div class="col-md-12 col-lg-9 col-lg-offset-1">
-
-            <div class="pull-right">
-              发布时间：<%= product.created_at.to_date %>
-            </div>
-            <p ><%= link_to(render_highlight_content(product,@query_string),product_path(product)) %></p>
-
-          </div>
-        </div>
+          <li class="fl productList-item p15 pr">
+            <p class="productList-item-pic w200 h200">
+            <%= image_tag(product.image.thumb.url, class: 'thumbnail')%>
+            </p>
+          </li>
         <% end %>
-      </div>
+       </ul>
     </div>
     <div class="text-center">
       <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
