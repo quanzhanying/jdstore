@@ -9,20 +9,16 @@
     <br>
     <h2 class="search-info-title"> Sorry, we don't have product you would like to search</h2>
   <% else %>
-    <div class="search-result">
-
         <ul class="productList clearfix pb20">
         <% @products.each do |product| %>
           <li class="fl productList-item p15 pr">
             <p class="productList-item-pic w200 h200">
-            <%= image_tag(product.image.thumb.url, class: 'thumbnail')%>
+            <%= link_to product_path(product) do %>
+              <%= image_tag(product.image.thumb.url, class: 'thumbnail')%>
+            <% end %>
             </p>
           </li>
         <% end %>
        </ul>
-    </div>
-    <div class="text-center">
-      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
-    </div>
   <% end %>
 </div>
