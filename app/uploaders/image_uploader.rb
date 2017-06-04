@@ -3,7 +3,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
 #  storage :file
-  storage :qiniu
+
+#开发环境执行以下代码,图片储存到本地
+#非开发环境，也就是部署到 heroku 等地方时，执行以下代码,图片储存到七牛云
+  if Rails.env.development?
+    storage :file
+  else
+    storage :qiniu
+  end
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
