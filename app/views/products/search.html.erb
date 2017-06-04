@@ -29,9 +29,11 @@
 <div class="product-box">
     <div class="container">
         <!--=== 搜索结果，没有符合条件的数据 ===-->
-        <% if @products.blank?%>
-            <br>
+        <% if @query_string.blank? %>
             <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+        <% elsif @products.blank?%>
+            <br>
+            <h2 class="search-info-title">亲，没有搜索到商品哦，要不换个关键词试试？</h2>
         <% else %>
             <!--=== 搜索结果，有符合条件的数据 ===-->
             <!--=== 搜索內容 ===-->
