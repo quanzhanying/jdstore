@@ -1,34 +1,41 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">商品列表</h3>
+  </div>
+  <div class="panel-body">
 
-        <!-- acts_as_votable -->
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
 
-        <%= link_to like_product_path(product), method: :put do %>
-        <div class="pi-thumbs-up">
-          <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
-          <%= product.get_upvotes.size %>
+            <!-- acts_as_votable -->
+
+            <%= link_to like_product_path(product), method: :put do %>
+            <div class="pi-thumbs-up">
+              <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+              <%= product.get_upvotes.size %>
+            </div>
+            <% end %>
+
+            <!-- favorite function -->
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+             <% else %>
+             <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+            <% end %>
+
+          <% end %>
+          <%= product.title %> ￥ <%= product.price %>
         </div>
-        <% end %>
-
-        <!-- favorite function -->
-        <% if !product.users.include?(current_user) %>
-          <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
-         <% else %>
-         <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
-        <% end %>
-
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
     </div>
-  <% end %>
 
 
-
+  </div>
 </div>

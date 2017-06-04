@@ -1,18 +1,27 @@
-<div class="products-1 search-page">
-  <div class="col-md-12 col-md-offset-1">
-    <%= render "common/flashes" %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"> 搜索结果 </h3>
   </div>
+  <div class="panel-body">
 
-  <!-- 确定搜索结果排列的效果 -->
-  <div class="minHeight1000 lp-bg-gray">
+    <div class="products-1 search-page">
+      <div class="col-md-12 col-md-offset-1">
+        <%= render "common/flashes" %>
+      </div>
 
-    <div class="ProductList-wrap w1200 pt20 bc">
-      <br>
-      <% if @products.present? %>
-        <% render :partial => "product_item" %>
-      <% else %>
-        抱歉，没找到您要的商品，请换一个关键字再搜索。
-      <% end %>
+      <!-- 确定搜索结果排列的效果 -->
+      <div class="minHeight1000 lp-bg-gray">
+
+        <div class="ProductList-wrap w1200 pt20 bc">
+          <br>
+          <% if @products.present? %>
+            <% render :partial => "product_item" %>
+          <% else %>
+            抱歉，没找到您要的商品，请换一个关键字再搜索。
+          <% end %>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
