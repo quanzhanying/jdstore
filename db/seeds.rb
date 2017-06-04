@@ -90,25 +90,25 @@ else
 end
 
 ## 大孩子 4
-if Product.find_by(title: "减压松果风车").nil?
-Product.create!(
- title: "减压松果风车",
-  description: "由三十八精密零件组装而成的松果风车，轻轻一甩就快速转动变形，带来视觉听觉的愉悦，办公室加压必备。材质：原木底座，黄铜管。",
-  price: 380,
-  quantity: 110,
-  category_id: 2,
-  image: open("https://images-na.ssl-images-amazon.com/images/I/81fbGRQ9LoL._SL1500_.jpg"),
-  product_images_attributes: [
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81fbGRQ9LoL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81fM4oiAnTL._SL1500_.jpg")},
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81KCX6q15ZL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81DH8vE%2BirL._SL1500_.jpg") }
-  ]
-  )
-  puts "成功建立1个商品：减压松果风车"
-else
-  puts "减压松果风车 已经存在"
-end
+# if Product.find_by(title: "减压松果风车").nil?
+# Product.create!(
+#  title: "减压松果风车",
+#   description: "由三十八精密零件组装而成的松果风车，轻轻一甩就快速转动变形，带来视觉听觉的愉悦，办公室加压必备。材质：原木底座，黄铜管。",
+#   price: 380,
+#   quantity: 110,
+#   category_id: 2,
+#   image: open("https://images-na.ssl-images-amazon.com/images/I/81fbGRQ9LoL._SL1500_.jpg"),
+#   product_images_attributes: [
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/81fbGRQ9LoL._SL1500_.jpg") },
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/81fM4oiAnTL._SL1500_.jpg")},
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/81KCX6q15ZL._SL1500_.jpg") },
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/81DH8vE%2BirL._SL1500_.jpg") }
+#   ]
+#   )
+#   puts "成功建立1个商品：减压松果风车"
+# else
+#   puts "减压松果风车 已经存在"
+# end
 
 ## 大孩子 5
 if Product.find_by(title: "DJI Inspire2 专业航拍无人机").nil?

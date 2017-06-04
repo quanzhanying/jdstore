@@ -88,3 +88,54 @@
       text-decoration: none;
     }
 }
+
+/*===== Product/index 设置 =====*/
+.product-section {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #888;
+
+margin-top: 100px;
+padding-top: 50px;
+}
+.product-content {
+  a:hover {
+    background-color: white;
+  }
+  img {
+
+    width: 100%;
+    margin: 7.5px auto 7.5px auto;
+    border-style: dashed;
+    border-color:grey;
+    border-width:1px;
+    position: relative;
+  }
+
+  img:hover {
+opacity: 0.7;
+}
+
+  h2 {
+    margin-top: 150px;
+  }
+  .absolute {
+    position: absolute;
+    top: 20px;
+    left: 2em;
+
+  }
+  .fa:hover{
+    background-color: none;
+    color: none;
+  }
+
+
+}
+
+.product-info {
+  text-align: left;
+  line-height: 14px;
+  min-height: 55px;
+}

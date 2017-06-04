@@ -5,70 +5,51 @@
   <%= "INTERESTING FINDS"%>
  </div>
  </div>
-
-
-
 <%= render :partial => "products/menu" %>
 
+<!-- <div class="productList clearfix"> -->
+<div class="container">
 
 
-
-
-<div class="productList clearfix">
-
+<div class="row product-section">
   <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-
-
-
-      <div class="productList-item-pic w200 h200">
+    <div class='col-xs-10 col-sm-3 col-md-3 product-content'>
+      <!-- <div class="productList-item-pic w200 h200"> -->
       <%= link_to product_path(product) do %>
         <% if product.product_images.present? %>
-          <%= image_tag(product.product_images[0].image.thumb.url, class: "thumbnail") %>
+          <%= image_tag(product.product_images[0].image.large.url, class: "thumbnail") %>
         <% else %>
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-    </div>
+    <div class="absolute">
 
+      <% if !product.users.include?(current_user) %>
+   <%= link_to("",add_to_favorite_product_path(product),method: :post,class: "fa fa-heart fa-1.5x", style: "color:rgba(0,0,0,0.1);") %>
+  <% else %>
+   <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart fa-1.5x", style: "color:rgba(255,0,0,0.4);") %>
+  <% end %>
+</div>
 
+     <div class="product-info">
+       <p><span>￥</span><%= product.price %></p>
+        <p><%= product.title %></p>
 
-      <div class="productList-item-price">
-       ￥<%= product.price %>
-
-
-       <p class="p-favorite">
-       <% if !product.users.include?(current_user) %>
-        <%= link_to("",add_to_favorite_product_path(product),method: :post,class: "fa fa-heart") %>
-       <% else %>
-        <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
-       <% end %>
-       </p>
-
-     <!-- <p class="f-favorite">
-       收藏
-     </p> -->
-     </div>
-
-
-      <%= product.title %>
-
-
+        <!--
       <b class="p-shopping-cart">
       <% if product.quantity > 0 %>
      <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
 
        <i class="fa fa-shopping-cart col-red"></i>
-       </b>
+       </b> -->
 
-     <% end %>
+     <!-- <% end %>
     <% end %>
     <% if product.quantity <= 0 %>
     <p class="productList-item-sellout f20 tc">已售完</p>
-    <% end %>
+    <% end %> -->
 
-
-
+     </div>
      </div>
   <% end %>
 
