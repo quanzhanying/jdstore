@@ -1,14 +1,14 @@
 <!-- 区域：商品展示列表 -->
-<div class="productList-wrap", style="margin: -15px auto;">
+<div class="col-md-10 col-centered">
   <ul class="productList clearfix">
-    <div class="row", style="margin-left: -21px;">
+    <div class="row", style="margin-top: -49px;">
       <% @products.each do |product| %>
-        <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
-          <li class="productList-item box panel panel-default">
+        <div class="col-md-3">
+          <li class="productList-item productList-panel">
             <div class="productList-item-pic">
               <%= link_to product_path(product) do %>
-                <% if product.image.present? %>
-                  <%= image_tag(product.image.thumb.url) %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
                 <% else %>
                   <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
                 <% end %>

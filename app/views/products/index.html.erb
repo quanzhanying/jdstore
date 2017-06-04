@@ -150,54 +150,13 @@
 </div>
 <!-- 商品排序显示页面部分结束 -->
 
-<!-- 区域：商品展示列表 -->
-
+<!-- 商品展示列表開始 -->
 <div class="productList-wrap", style="margin: -15px auto;">
-  <ul class="productList clearfix">
-    <div class="row", style="margin-left: -21px;">
-      <% @products.each do |product| %>
-        <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
-          <li class="productList-item box panel panel-default">
-            <div class="productList-item-pic">
-              <%= link_to product_path(product) do %>
-                <% if product.photos.present? %>
-                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="productList-item-price">￥<%= product.price %>
-              <% if product.stock > 0 %>
-                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
-                  <i class="fa fa-shopping-cart"></i>
-                <% end %>
-              <% end %>
-              <!-- 待加入預購功能 -->
-              <% if product.stock <= 0 %>
-                <div class="productList-item-sellout", style="margin-top: -33px;">
-                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                </div>
-              <% end %>
-              <!-- 待加入預購功能 -->
-            </div>
-            <div class="productList-item-name ell">
-              <%= link_to product_path(product) do %>
-                 <%= product.name %>
-              <% end %>
-            </div>
-            <!-- <div class="productList-item-desc"><%= product.description %></div> -->
-          </li>
-        </div>
-      <% end %>
-    </div>
-  </ul>
+  <%= render :partial => "products/list" %>
   <div class="text-center">
     <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
   </div>
-
 </div>
-
 <!-- 商品展示列表结束 -->
 
 <!-- 设置回到顶部和网站链接功能 -->

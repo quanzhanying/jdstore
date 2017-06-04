@@ -30,8 +30,9 @@
   </div>
   <!-- 商品排序显示页面部分结束 -->
   <!-- 区域：商品展示列表 -->
-  <%= render :partial => "products/list" %>
-  <!-- 商品展示列表结束 -->
+  <div class="productList-wrap", style="margin: -15px auto;">
+    <%= render :partial => "products/list" %>
+    <!-- 商品展示列表结束 -->
       <!-- <div class="search-result">
         <div class="row products-show0"></div>
         <div class="product-table">
@@ -55,4 +56,5 @@
         <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
       </div>
     <% end %>
+  </div>
 </div>
