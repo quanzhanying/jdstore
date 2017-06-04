@@ -154,26 +154,26 @@ end
 
 # 旅行 类产品
 ## 旅行 1
-if Product.find_by(title: "鸵鸟睡枕").nil?
-Product.create!(
- title: "鸵鸟睡枕",
-  description: "睡觉神器，让充电是小睡可以随时随地，无处不在。独特的仿生学设计，为您创建私人空间，放松身心，让您每天都精力充沛！",
-  price: 139,
-  quantity: 500,
-  category_id: 1,
-  image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg"),
-  product_images_attributes: [
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/71V9%2BhQs0WL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/61OUZyyvZSL._SL1100_.jpg")},
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/717fbsl9PxL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81uN1kCLROL._SL1255_.jpg") },
-    { image: open("https://ws4.sinaimg.cn/large/006tNc79ly1fg983i40anj30jq0f7jx9.jpg") }
-  ]
-  )
-  puts "成功建立1个商品：鸵鸟睡枕"
-else
-  puts "鸵鸟睡枕 已经存在"
-end
+# if Product.find_by(title: "鸵鸟睡枕").nil?
+# Product.create!(
+#  title: "鸵鸟睡枕",
+#   description: "睡觉神器，让充电是小睡可以随时随地，无处不在。独特的仿生学设计，为您创建私人空间，放松身心，让您每天都精力充沛！",
+#   price: 139,
+#   quantity: 500,
+#   category_id: 1,
+#   image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg"),
+#   product_images_attributes: [
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/71V9%2BhQs0WL._SL1500_.jpg") },
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/61OUZyyvZSL._SL1100_.jpg")},
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/717fbsl9PxL._SL1500_.jpg") },
+#     { image: open("https://images-na.ssl-images-amazon.com/images/I/81uN1kCLROL._SL1255_.jpg") },
+#     { image: open("https://ws4.sinaimg.cn/large/006tNc79ly1fg983i40anj30jq0f7jx9.jpg") }
+#   ]
+#   )
+#   puts "成功建立1个商品：鸵鸟睡枕"
+# else
+#   puts "鸵鸟睡枕 已经存在"
+# end
 
 ## 旅行 2
 if Product.find_by(title: "B&O PLAY H5 无线蓝牙耳机").nil?
@@ -278,22 +278,168 @@ else
   puts "竹炭除味包 已经存在"
 end
 
-
+# 中世纪 类别产品
+## 中世纪 1
+if Product.find_by(title: "LexMod Remark沙发").nil?
 Product.create!(
- title: "鸵鸟睡枕",
-  description: "睡觉神器，让充电是小睡可以随时随地，无处不在。独特的仿生学设计，为您创建私人空间，放松身心，让您每天都精力充沛！",
-  price: 139,
-  quantity: 500,
-  category_id: 1,
-  image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg"),
+ title: "LexMod Remark沙发",
+  description: "中世纪风格扶手椅，天然枫木椅脚，100%纯麻布表面，无需安装。",
+  price: 5000,
+  quantity: 40,
+  category_id: 3,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/81tl4QP%2BYxL._SL1500_.jpg"),
   product_images_attributes: [
-    { image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99e64uyfj30rl0rktdn.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/61OUZyyvZSL._SL1100_.jpg")},
-    { image: open("https://ws2.sinaimg.cn/large/006tNc79ly1fg99l6m4mhj30rn0rngp6.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81uN1kCLROL._SL1255_.jpg") }
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81tl4QP%2BYxL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81J%2BDzITFDL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81QcITT%2BVnL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81QrLvnD8GL._SL1500_.jpg") }
   ]
   )
-  puts "成功建立1个商品：鸵鸟睡枕"
+  puts "成功建立1个商品：LexMod Remark沙发"
+else
+  puts "LexMod Remark沙发 已经存在"
+end
+
+
+## 中世纪 2
+if Product.find_by(title: "Eames椅子").nil?
+Product.create!(
+ title: "Eames椅子",
+  description: "中世纪风格扶手椅，天然枫木椅脚，贴合身形，无需安装。",
+  price: 1690,
+  quantity: 340,
+  category_id: 3,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/51VGCi3Sr9L._SL1000_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/51VGCi3Sr9L._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/41Q%2B3l88xeL.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/51akvnCS%2BzL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/515-02s1ZHL.jpg") }
+  ]
+  )
+  puts "成功建立1个商品：Eames椅子"
+else
+  puts "Eames椅子 已经存在"
+end
+
+# 厨具 类别产品
+## 厨具 1
+if Product.find_by(title: "KitchenAid 专业级厨师机").nil?
+Product.create!(
+ title: "KitchenAid 专业级厨师机",
+  description: "10种糖果色装点厨房。多功能厨师机，具有67种不同的操作方式，解放主妇双手，献给一家子的美味神器。",
+  price: 6690,
+  quantity: 340,
+  category_id: 4,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/61hxThYm8EL._SL1000_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61hxThYm8EL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61RraI56R3L._SL1000_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61I0WcOPJoL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/517d843EgYL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/51BLcCyeLNL._SL1000_.jpg") }
+
+  ]
+  )
+  puts "成功建立1个商品：KitchenAid 专业级厨师机"
+else
+  puts "KitchenAid 专业级厨师机 已经存在"
+end
+
+## 厨具 2
+if Product.find_by(title: "玻璃糖果罐").nil?
+Product.create!(
+ title: "玻璃糖果罐",
+  description: "手工纯皮拎手，高品质无铅玻璃，纯原木密封盖，密封性良好，设计精美，装点厨房必备。",
+  price: 6690,
+  quantity: 340,
+  category_id: 4,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/71ZVo80Ho3L._SL1500_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71ZVo80Ho3L._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61TP4zmR5EL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/713jDi%2BIpbL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71LQ4zZEaYL._SL1500_.jpg") }
+  ]
+  )
+  puts "成功建立1个商品：玻璃糖果罐"
+else
+  puts "玻璃糖果罐 已经存在"
+end
+
+
+
+# 公仔 类别产品
+## 公仔 1
+if Product.find_by(title: "猫头鹰公仔").nil?
+Product.create!(
+ title: "猫头鹰公仔",
+  description: "萌萌的，小小的，摆在角落，放在床头，旅行摆拍皆宜。",
+  price: 6690,
+  quantity: 340,
+  category_id: 5,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/71LVEs59kQL._SX522_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71LVEs59kQL._SX522_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/618tWUXN%2BYL._SL1000_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/619YycuJUFL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61WNKHlc47L._SL1000_.jpg") }
+
+  ]
+  )
+  puts "成功建立1个商品：猫头鹰公仔"
+else
+  puts "猫头鹰公仔 已经存在"
+end
+
+
+# 木质 类别产品
+## 木质 1
+if Product.find_by(title: "木质蓝牙键盘").nil?
+Product.create!(
+ title: "木质蓝牙键盘",
+  description: "摆脱传统键盘的塑料感，让原木的温润始终在指尖流淌。",
+  price: 6690,
+  quantity: 340,
+  category_id: 6,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/616mifjqXNL._SL1000_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/616mifjqXNL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61EwFvyiR5L._SL1000_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/618kBlKk7JL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61plXGYq7GL._SL1000_.jpg") }
+
+  ]
+  )
+  puts "成功建立1个商品：木质蓝牙键盘"
+else
+  puts "木质蓝牙键盘 已经存在"
+end
+
+
+# 植物 类别产品
+## 植物 1
+if Product.find_by(title: "陶土花盆").nil?
+Product.create!(
+ title: "陶土花盆",
+  description: "给你的植物换个有质感的家",
+  price: 6690,
+  quantity: 340,
+  category_id: 7,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/A1vdg%2BEm7rL._SL1500_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/A1vdg%2BEm7rL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/91Ja%2B6fbrPL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/91yhY7U3v5L._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/91g-Ll8sFYL._SL1500_.jpg") }
+  ]
+  )
+  puts "成功建立1个商品：陶土花盆"
+else
+  puts "陶土花盆 已经存在"
+end
+
+
 # Initialize  Categorys
 
 #1
