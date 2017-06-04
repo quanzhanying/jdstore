@@ -1,8 +1,12 @@
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 /*Footer Default
 ------------------------------------*/
 .footer-default .footer {
-	color: #dadada;
-	background: #695858;
+	// color: #dadada;
+	// background: #695858;
 	// padding: 20px 0 30px;
 }
 
@@ -15,14 +19,14 @@
 	font-size: 14px;
 }
 .footer-default .footer p {
-	color: #dadada;
+	// color: #dadada;
 }
 
 .footer-default .footer a {
-	color: #72c02c;
+	// color: #72c02c;
 }
 .footer-default .footer a:hover {
-	color: #5fb611;
+	// color: #5fb611;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -32,7 +36,7 @@
 .footer-default .footer h2,
 .footer-default .footer h3,
 .footer-default .footer h4 {
-	color: #e4e4e4;
+	// color: #e4e4e4;
 	background: none;
 	text-shadow: none;
 }
@@ -46,7 +50,7 @@
 .footer-default .footer .blog-list {
 	margin: 0;
 	padding: 0;
-	color: #dadada;
+	// color: #dadada;
 	list-style: none;
 }
 
@@ -55,7 +59,7 @@
 	margin-bottom: 7px;
 }
 .footer-default .footer .blog-list li span {
-	color: #818488;
+	// color: #818488;
 }
 
 .footer-default .footer .dl-horizontal,
@@ -64,33 +68,33 @@
 	background: none !important;
 }
 .footer-default .footer .posts .dl-horizontal a {
-	color: #dadada;
+	// color: #dadada;
 }
 .footer-default .footer .dl-horizontal a:hover {
-	color: #5fb611 !important;
+	// color: #5fb611 !important;
 }
 .footer-default .footer .dl-horizontal img {
-	border-color: #888 !important;
+	// border-color: #888 !important;
 }
 
 /*Copyright*/
 .footer-default .copyright {
 	font-size: 12px;
 	padding: 11px 0 11px; // 11px 0 7px;
-	background: #3e4753;
+	// background: #3e4753;
 }
 
 .footer-default .copyright p {
-	color: #dadada;
+	// color: #dadada;
 	margin-top: 12px;
 }
 
 .footer-default .copyright a {
 	margin: 0 5px;
-	color: #72c02c;
+	// color: #72c02c;
 }
 .footer-default .copyright a:hover {
-	color: #5fb611;
+	// color: #5fb611;
 }
 
 .footer-default .copyright a img {
@@ -101,31 +105,31 @@
 /*Footer-v1
 ------------------------------------*/
 .footer-v1 .footer {
-	height: 250px; //add
+	height: 200px; //add
 	// margin-top: -250px; //add
 	padding: 20px 0; //40px 0;
-	background: #272727;
+	// background: #272727;
 }
 
 .footer-v1 .footer p {
-	color: #eee;
+	// color: #eee;
 }
 
 .footer-v1 .footer h2 {
-	color: #eee;
+	// color: #eee;
 	font-size: 18px;
 	font-weight: 200;
 }
 
 /*Link List*/
 .footer-v1 .link-list li {
-	border-top: solid 1px #353535;
+	border-top: solid 1px #f5f5f5;
 }
 
 .footer-v1 address,
 .footer-v1 .link-list a,
 .footer-v1 .link-list i {
-	color: #eee;
+	// color: #eee;
 }
 
 .footer-v1 address {
@@ -139,15 +143,16 @@
 
 /*Copyright*/
 .footer-v1 .copyright {
-	background: #222;
+	// background: #222;
 	border-top: none;
 	padding: 10px 0 5px;
 }
 
 .footer-v1 .copyright p {
-	color: #eee;
-	margin-top: 14px;
-	margin-bottom: 14px;
+	// color: #eee;
+	// margin-top: 5px;
+	// margin-bottom: 5px;
+  margin: 5px auto;
 }
 
 .footer-v1 .copyright a {
@@ -155,12 +160,12 @@
 }
 
 .footer-v1 .footer-socials {
-	margin-top: 12px;
+	margin: 5px auto;
 	text-align: right;
 }
 
 .footer-v1 .footer-socials li a {
-	color: #777;
+	// color: #777;
 	font-size: 16px;
 }
 
@@ -176,7 +181,7 @@
 ------------------------------------*/
 /*Thumb Headline*/
 .thumb-headline h2 {
-	color: #eee;
+	// color: #eee;
 	font-size: 16px;
 }
 
@@ -188,7 +193,7 @@
 /*Latest List*/
 .latest-list li {
 	padding: 8px 0;
-	border-top: 1px solid #353535;
+	border-top: 1px solid #f5f5f5;
 }
 
 .latest-list li:first-child {
@@ -197,17 +202,17 @@
 }
 
 .latest-list li a {
-	color: #eee;
+	// color: #eee;
 }
 
 .latest-list small {
-	color: #999;
+	// color: #999;
 	display: block;
 }
 
 /*Link List*/
 .link-list li {
-	border-top: solid 1px #353535;
+	// border-top: solid 1px #353535;
 }
 
 .link-list li:first-child {
@@ -215,7 +220,7 @@
 }
 
 .link-list a {
-	color: #eee;
+	// color: #eee;
 	font-size: 11px;
 	padding: 6px 0px;
 	display: inline-block;
@@ -223,14 +228,14 @@
 }
 
 .link-list li i {
-	color: #bbb;
+	// color: #bbb;
 	float: right;
 	margin-top: 10px;
 }
 
 /*Latest Tweets*/
 .latest-tweets .latest-tweets-inner p {
-	color: #555;
+	// color: #555;
 	font-size: 13px;
 }
 
@@ -245,15 +250,15 @@
 .latest-tweets .latest-tweets-inner i.fa {
 	top: 2px;
 	float: left;
-	color: #bbb;
-	color: #55acee;
+	// color: #bbb;
+	// color: #55acee;
 	font-size: 18px;
 	margin-right: 5px;
 	position: relative;
 }
 
 .latest-tweets .latest-tweets-inner small {
-	color: #777;
+	// color: #777;
 	display: block;
 }
 

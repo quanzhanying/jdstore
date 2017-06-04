@@ -20,8 +20,8 @@
   margin-top: 120px;
   padding-top: 20px;
   padding-bottom: 20px;
-  box-shadow: 1px 3px 5px #333;
-  border: 1px solid #3A3636;
+  box-shadow: 1px 3px 5px #999;
+  border: 1px solid #690;
   border-radius: 10px;
 
   opacity:0.90;
@@ -51,17 +51,19 @@
     margin-bottom: 25px;
 
     .button{
-      color: #fff;
-      background-color: #3A3636;
-      border-color: #3A3636;
+      color: #999;
+      background-color: #fff;
+      border-color: #690;
+      border: 1px solid #690;
       font-size: 16px;
       letter-spacing: 1px;
       width: 100%;
     }
     .button:hover{
-      background-color: #98691b;
-      border-color: #98691b;
-      color: #fff;
+      background-color: #fff;
+      border-color: orange;
+      border: 1px solid orange;
+      color: #999;
     }
   }
 }

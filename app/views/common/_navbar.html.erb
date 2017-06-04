@@ -1,259 +1,629 @@
-<header>
-  <!-- Navigation Area -->
-  <div class="nav-top-bar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="top-bar-left">
-            <ul>
-              <li><i class="fa fa-globe"></i> Languages</li>
-              <li>
-                <form class="woocommerce-ordering" method="get">
-                  <select class="selectpicker">
-                    <option>CN</option>
-                    <option>TW</option>
-                    <option>EN</option>
-                  </select>
-                </form>
-              </li>
-            </ul>
-          </div>
-        </div>
+<nav class="navbar-main">
 
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="top-bar-right">
-            <ul>
-              <li>
-                <%= link_to carts_path do %>
-                购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
-                <% end %>
-              </li>
-              <% if !current_user %>
-              <li><%= link_to("注册", new_user_registration_path) %> </li>
-              <!-- <li><%= link_to("登入", new_user_session_path) %></li> -->
-              <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-              <% else %>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- Hi!, <%= current_user.email %> -->
-                  您好，<%= current_user.user_name %>
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <% if current_user.admin? %>
-                  <li><%= link_to("Admin Panel", admin_products_path) %></li>
-                  <li><%= link_to("个人订单列表", account_orders_path ) %></li>
-                  <% end %>
-                  <li> <%= link_to(content_tag(:i, '信息', class: 'fa fa-user'), edit_user_registration_path(current_user) ) %> </li>
-                  <!-- <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li> -->
-                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                </ul>
-              </li>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12 nav-top">
+        <div class="site-wrapper">
+
+          <div class="col-md-6 nav-top-left">
+            <span class="btn btn-xs">
+              <% if current_user %>
+              您好：<%= current_user.user_name %>，
               <% end %>
-            </ul>
+              <a href="/">欢迎光临大绿色商城！</a>
+            </span>
+          </div>
+
+          <div class="col-md-6 nav-top-right">
+            <!-- <span class="btn btn-xs">
+            <%= link_to carts_path do %>
+            购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
+            <% end %>
+          </span> -->
+            <div class="btn-group">
+              <% if !current_user %>
+              <span class="btn btn-xs"><%= link_to(content_tag(:i, " 注册", class: "fa fa-user-circle"), new_user_registration_path) %>
+              </span>
+              <span class="btn btn-xs"><%= link_to(content_tag(:i, " 登入", class: "fa fa-sign-in"), new_user_session_path) %></span>
+            <% else %>
+              <span class="dropdown-xs">
+                <ul class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  个人中心
+                  <span class="caret"></span>
+                </ul>
+                <ul class="dropdown-menu btn-xs" aria-labelledby="dropdownMenu1">
+                  <% if current_user.admin? %>
+                  <li><%= link_to(content_tag(:i, " 管理后台", class: "fa fa-laptop"), admin_products_path) %></li>
+                  <li><%= link_to(content_tag(:i, " 订单列表", class: "fa fa-truck"), account_orders_path) %></li>
+                  <% end %>
+                  <li><%= link_to(content_tag(:i, " 个人信息", class: "fa fa-user"), edit_user_registration_path(current_user) ) %></li>
+                  <li><%= link_to(content_tag(:i, " 登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %></li>
+                </ul>
+              </span>
+              <% end %>
+              <span class="btn btn-xs">
+                <a href="#">帮助中心</a>
+              </span>
+              <span>
+                <i class="fa fa-weixin"></i>
+              </span>
+              <span>
+                <i class="fa fa-weibo"></i>
+              </span>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Navigation Area -->
-  <div class="logo-section">
-    <div class="container">
-      <div class="row">
+      <div class="col-md-12 nav-mid">
+        <div class="site-wrapper">
 
-        <div class="col-md-3 col-xd6" > <!-- style="background-color: green;" -->
-          <div class="logo-wrap">
+          <div class="col-md-3 nav-mid-left">
             <div class="logo">
-              <a href="/"><img class="" src="/images/logo.png" alt=""></a>
+              <a href="/">
+                <img src="/images/logo.png" alt="大绿色商城">
+              </a>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-6 col-xd6" > <!-- style="background-color: blue;" -->
-          <div class="widget_product_search">
-            <%= form_tag search_products_path, :method => :get do %>
-            <!-- <input type="text" class="form-control search-box" placeholder="搜索"> -->
-            <input type="text" class="form-control search-box" name="q" value="<%= params[:q] %>" placeholder="搜索">
-            <button type="submit" class="submit-search"><i class="fa fa-search"></i></button>
-            <% end %>
+          <div class="col-md-6 nav-mid-mid">
+            <div class="search">
+              <%= form_tag search_products_path, :method => :get do %>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="搜索商品" name="q" value="<%= params[:q] %>">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+              <% end %>
+            </div>
+            <div class="search-hot">
+              <ul>
+                <li style="color: #FF9800;">热门搜索:</li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=真实">真实</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=进口">进口</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=水果">水果</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=蔬菜">蔬菜</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=樱桃">樱桃</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=黄杏">黄杏</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=芒果">芒果</a>
+                </li>
+                <li>
+                  <a href="/products/search?utf8=✓&q=香瓜">香瓜</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="search-hot">
-            <ul>
-              <li style="color: orange;">热门搜索:</li>
-              <li><a href="/products/search?utf8=✓&q=真实">真实</a></li>
-              <li><a href="/products/search?utf8=✓&q=进口">进口</a></li>
-              <li><a href="/products/search?utf8=✓&q=水果">水果</a></li>
-              <li><a href="/products/search?utf8=✓&q=蔬菜">蔬菜</a></li>
-              <li><a href="/products/search?utf8=✓&q=樱桃">樱桃</a></li>
-              <li><a href="/products/search?utf8=✓&q=黄杏">黄杏</a></li>
-              <li><a href="/products/search?utf8=✓&q=芒果">芒果</a></li>
-              <li><a href="/products/search?utf8=✓&q=香瓜">香瓜</a></li>
-            </ul>
+          <div class="col-md-3 nav-mid-right">
+            <div class="cart">
+              <%= link_to carts_path do %>
+              <i class="fa fa-shopping-cart"></i>
+              (<%= current_cart.products.count %>)
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-md-3">
 
         </div>
       </div>
+
+      <div class="col-md-12 nav-bot">
+        <div class="site-wrapper">
+
+          <div class="col-md-9 nav-bot-left">
+
+
+            <div class="menu">
+              <div class="menu-nav">
+
+                <div class="menu-category">
+                  <div class="dropdown">
+                    <a href="#">商品分类
+                      <span class="caret"></span>
+                      <!-- <b><img src="/images/littleb.png"/></b> -->
+                    </a>
+                  </div>
+                  <div class="category-box">
+                    <div id="category-main" class="dd">
+                      <div id="category-more">
+
+                        <div class="item">
+                          <span class="i-master">
+                            <h3>
+                              <p class="item-3"></p>
+                              <a class="trackref" title="新鲜果蔬" target="_blank" href="#">新鲜果蔬</a>
+                            </h3>
+                            <ul class="subCat">
+                              <li>
+                                <a href="#" target="_blank">水果</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">蔬菜</a>
+                              </li>
+                            </ul>
+                            <s></s>
+                          </span>
+                          <div class="i-cm">
+                            <div class="i-left">
+                              <div class="cat-sort">
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="/products/search1?utf8=✓&q=水果" target="_blank">水果</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=樱桃">樱桃</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=荔枝">荔枝</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=芒果">芒果</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=苹果">苹果</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=桃">桃/李/杏</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=梨">梨</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=菠萝">菠萝</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=哈密瓜">哈密瓜</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=木瓜">木瓜</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=柑橘类">柑橘类</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=橙">橙</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=蓝莓">蓝莓</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=草莓">草莓</a>
+                                    <a class="trackref" target="_blank" href="/products/search1?utf8=✓&q=牛油果">牛油果</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="/products/search1?utf8=✓&q=蔬菜" target="_blank">蔬菜</a>
+                                    </strong>
+                                  </dt>
+                                  <dd></dd>
+                                </dl>
+                              </div>
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td>
+                                    <a href="#" target="_blank"><img alt="导航-产品分类-新鲜果蔬" src="" border="0" width="560" height="200"/></a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <span class="i-master">
+                            <h3>
+                              <p class="item-4"></p>
+                              <a class="trackref" title="肉类蛋禽" target="_blank" href="#">肉类蛋禽</a>
+                            </h3>
+                            <ul class="subCat">
+                              <li>
+                                <a href="#" target="_blank">牛羊猪</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">鸡鸭鹅</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">蛋</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">鱼</a>
+                              </li>
+                            </ul>
+                            <s></s>
+                          </span>
+                          <div class="i-cm">
+                            <div class="i-left">
+                              <div class="cat-sort">
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">牛羊猪</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">牛</a>
+                                    <a class="trackref" target="_blank" href="#">羊</a>
+                                    <a class="trackref" target="_blank" href="#">猪</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">鸡</a>
+                                      <a class="trackref" href="#" target="_blank">鸭</a>
+                                      <a class="trackref" href="#" target="_blank">鹅</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">土鸡</a>
+                                    <a class="trackref" target="_blank" href="#">山鸡</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">蛋</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">土鸡蛋</a>
+                                    <a class="trackref" target="_blank" href="#">海鸭蛋</a>
+                                    <a class="trackref" target="_blank" href="#">鹌鹑蛋</a>
+                                    <a class="trackref" target="_blank" href="#">咸鸭蛋</a>
+                                    <a class="trackref" target="_blank" href="#">皮蛋</a>
+                                  </dd>
+                                </dl>
+
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">鱼</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">海鱼</a>
+                                    <a class="trackref" target="_blank" href="#">河鱼</a>
+                                  </dd>
+                                </dl>
+                              </div>
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td>
+                                    <a href="#" target="_blank"><img alt="导航-产品分类-肉类蛋禽" src="" border="0" width="560" height="200"/></a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <span class="i-master">
+                            <h3>
+                              <p class="item-1"></p>
+                              <a class="trackref" title="新鲜果蔬" target="_blank" href="#">五谷粮油</a>
+                            </h3>
+                            <ul class="subCat">
+                              <li>
+                                <a href="#" target="_blank">米</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">麦</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">豆</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">油</a>
+                              </li>
+                            </ul>
+                            <s></s>
+                          </span>
+                          <div class="i-cm">
+                            <div class="i-left">
+                              <div class="cat-sort">
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">米</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">大米</a>
+                                    <a class="trackref" target="_blank" href="#">小米</a>
+                                    <a class="trackref" target="_blank" href="#">糯米</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">麦</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">面粉</a>
+                                    <a class="trackref" target="_blank" href="#">面制品</a>
+                                    <a class="trackref" target="_blank" href="#">麦片</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">豆</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">绿豆</a>
+                                    <a class="trackref" target="_blank" href="#">红豆</a>
+                                    <a class="trackref" target="_blank" href="#">扁豆</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">五谷杂锦</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">百宝粥</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">食用油</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">花生油</a>
+                                    <a class="trackref" target="_blank" href="#">菜籽油</a>
+                                  </dd>
+                                </dl>
+                              </div>
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td>
+                                    <a href="#" target="_blank"><img alt="导航-产品分类-五谷粮油" src="" border="0" width="560" height="200"/></a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <span class="i-master">
+                            <h3>
+                              <p class="item-2"></p>
+                              <a class="trackref" title="干货零食" target="_blank" href="#">干货零食</a>
+                            </h3>
+                            <ul class="subCat">
+                              <li>
+                                <a href="#" target="_blank">干货</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">零食</a>
+                              </li>
+                            </ul>
+                            <s></s>
+                          </span>
+                          <div class="i-cm">
+                            <div class="i-left">
+                              <div class="cat-sort">
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">干货</a>
+                                    </strong>
+                                  </dt>
+                                  <dd></dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">零食</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">滋补类</a>
+                                    <a class="trackref" target="_blank" href="#">坚果类</a>
+                                    <a class="trackref" target="_blank" href="#">奶制品</a>
+                                  </dd>
+                                </dl>
+                              </div>
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td>
+                                    <a href="#" target="_blank"><img alt="导航-产品分类-干货零食" src="" border="0" width="560" height="200"/></a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="item">
+                          <span class="i-master">
+                            <h3>
+                              <p class="item-5"></p>
+                              <a class="trackref" title="茶水饮品" target="_blank" href="#">茶水饮品</a>
+                            </h3>
+                            <ul class="subCat">
+                              <li>
+                                <a href="#" target="_blank">茶叶</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">果汁</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">咖啡</a>
+                              </li>
+                            </ul>
+                            <s></s>
+                          </span>
+                          <div class="i-cm">
+                            <div class="i-left">
+                              <div class="cat-sort">
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">茶叶</a>
+                                    </strong>
+                                  </dt>
+                                  <dd></dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">果汁</a>
+                                    </strong>
+                                  </dt>
+                                  <dd></dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">咖啡</a>
+                                    </strong>
+                                  </dt>
+                                  <dd></dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">养生</a>
+                                    </strong>
+                                  </dt>
+                                  <dd></dd>
+                                </dl>
+                              </div>
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td>
+                                    <a href="#" target="_blank"><img alt="导航-产品分类-茶水饮品" src="" border="0" width="560" height="200"/></a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <span class="i-master">
+                            <h3>
+                              <p class="item-6"></p>
+                              <a class="trackref" title="礼品礼盒" target="_blank" href="#">礼品礼盒</a>
+                            </h3>
+                            <ul class="subCat">
+                              <li>
+                                <a href="#" target="_blank">节日精选</a>
+                              </li>
+                              <li>
+                                <a href="#" target="_blank">亲朋好友</a>
+                              </li>
+                            </ul>
+                            <s></s>
+                          </span>
+                          <div class="i-cm">
+                            <div class="i-left">
+
+                              <div class="cat-sort">
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">节日精选</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">春节</a>
+                                    <a class="trackref" target="_blank" href="#">情人节</a>
+                                    <a class="trackref" target="_blank" href="#">端午节</a>
+                                    <a class="trackref" target="_blank" href="#">中秋节</a>
+                                    <a class="trackref" target="_blank" href="#">父/母亲节</a>
+                                    <a class="trackref" target="_blank" href="#">圣诞节</a>
+                                    <a class="trackref" target="_blank" href="#">儿童节</a>
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>
+                                    <strong>
+                                      <a class="trackref" href="#" target="_blank">亲朋好友</a>
+                                    </strong>
+                                  </dt>
+                                  <dd>
+                                    <a class="trackref" target="_blank" href="#">父母长辈</a>
+                                    <a class="trackref" target="_blank" href="#">夫妻情侣</a>
+                                    <a class="trackref" target="_blank" href="#">闺蜜好友</a>
+                                    <a class="trackref" target="_blank" href="#">儿女小辈</a>
+                                  </dd>
+                                </dl>
+                              </div>
+
+                              <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td>
+                                    <a href="#" target="_blank"><img alt="导航-产品分类-礼品礼盒" src="" border="0" width="560" height="200"/></a>
+                                  </td>
+                                </tr>
+                              </table>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <span class="cutline"></span> -->
+                <a href="/" class="menu-mid ">首页</a>
+
+                <span class="cutline"></span>
+                <a href="#" class="menu-mid ">农户加盟</a>
+
+                <span class="cutline"></span>
+                <a href="#" class="menu-mid ">电商扶持</a>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- <div class="col-md-3 nav-bot-right">
+            <div class="hotline">
+              热线电话：400-12345678
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
     </div>
+    <!-- row end -->
+
   </div>
-
-  <!-- Navigation Area -->
-  <div class="navbar-sticky">
-    <nav class="navbar navbar-index-top shadow">
-      <div class="container header-container">
-        <div id="main-menu-wrap"><a href="#" class="menu-trigger"></a></div>
-
-        <!-- Main Menu -->
-        <div id="main-menu" class="main-nav mega_menu_wrapper ">
-          <ul id="custom-menu" class="main-menu mega_menu">
-            <li class="menu-child-list">
-              <a class="menu-left-gero" href="/">首页</a>
-            </li>
-
-            <li class="menu-child-list"><a href="#">全部分类</a>
-              <ul class="sub-menu clearfix">
-                <li><a href="/products/search?utf8=✓&q=新鲜果蔬">新鲜果蔬</a>
-                  <ul class="sub-menu oprn-right clearfix">
-                    <li><a href="/products/search1?utf8=✓&q=水果">水果</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=蔬菜">蔬菜</a></li>
-                  </ul>
-                </li>
-                <li><a href="/products/search?utf8=✓&q=肉类蛋禽">肉类蛋禽</a>
-                  <ul class="sub-menu oprn-right clearfix">
-                    <li><a href="/products/search1?utf8=✓&q=肉">肉</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=禽">禽</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=蛋">蛋</a></li>
-                  </ul>
-                </li>
-                <li><a href="/products/search?utf8=✓&q=粮油米面">粮油米面</a>
-                  <ul class="sub-menu oprn-right clearfix">
-                    <li><a href="/products/search1?utf8=✓&q=米">米</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=豆">豆</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=面">面</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=油">油</a></li>
-                  </ul>
-                </li>
-                <li><a href="/products/search?utf8=✓&q=干货零食">干货零食</a>
-                  <ul class="sub-menu oprn-right clearfix">
-                    <li><a href="/products/search1?utf8=✓&q=干货">干货</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=零食">零食</a></li>
-                  </ul>
-                </li>
-                <li><a href="/products/search?utf8=✓&q=茶水饮品">茶水饮品</a>
-                  <ul class="sub-menu oprn-right clearfix">
-                    <li><a href="/products/search1?utf8=✓&q=茶叶">茶叶</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=咖啡">咖啡</a></li>
-                    <li><a href="/products/search1?utf8=✓&q=果汁">果汁</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-
-            <li class="menu-child-list">
-              <!-- <a href="about.html">关于我们</a> -->
-              <a href="#">关于我们</a>
-            </li>
-
-            <!-- <li class="menu-child-list"><a href="#">Pages</a>
-            <ul class="sub-menu clearfix">
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="services.html">Services</a></li>
-          </ul>
-        </li> -->
-
-        <!-- <li class="menu-child-list"><a href="#">Blog</a>
-        <ul class="sub-menu clearfix">
-        <li><a href="blog.html">Blog 1</a></li>
-        <li><a href="blog-standared.html">Blog 2</a></li>
-        <li><a href="blog-sidebar.html">Blog 3</a></li>
-        <li>
-        <a href="blog-detail.html">Blog single</a>
-        Sub Menu
-        <ul class="sub-menu oprn-right clearfix">
-        <li><a href="blog-single.html">Blog detail 1</a></li>
-      </ul>
-      List
-    </li>
-  </ul>
-</li> -->
-
-<!-- <li class="menu-child-list">
-<a href="#">Shop</a>
-<ul class="sub-menu clearfix">
-<li><a href="shop-col-3.html">Shop col 3</a></li>
-<li><a href="shop-without-sidebar.html">Shop col 4</a></li>
-<li><a href="shop-with-sidebar.html">Shop with sidebar</a></li>
-<li><a href="shop-single.html">shop single</a></li>
-<li><a href="shop-cart.html">Cart</a></li>
-<li><a href="shop-checkout.html">Checkout</a></li>
-</ul>
-</li> -->
-
-<li class="menu-child-list">
-  <!-- <a href="contact-us.html">联系我们</a> -->
-  <a href="#">联系我们</a>
-</li>
-
-</ul>
-</div>
-
-<!-- start  navbar-mini-cart -->
-<div class="pull-right nav-right-section">
-  <ul class="navbar-mini-cart-wrapper">
-    <li>
-      热线电话：<i class="fa fa-phone" aria-hidden="true"></i>400-12345678
-    </li>
-    <!-- <li>
-    <a href="#" class="navbar-mini-cart-btn">
-    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-    <span class="item-count">21</span>
-  </a>
-  <ul class="navbar-mini-cart">
-  <li class="item">
-  <div class="product-img">
-  <img src="/images/products/small-1.jpg" alt="">
-</div>
-<div class="product-details">
-<h6>Name of the product</h6>
-<p>$255.5</p>
-<a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-</div>
-</li>
-<li class="item">
-<div class="product-img">
-<img src="/images/products/small-2.jpg" alt="">
-</div>
-<div class="product-details">
-<h6>Name of the product</h6>
-<p>$155.5</p>
-<a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-</div>
-</li>
-<li class="minicart-price-total">
-<div class="price-total">
-<span class="label-price-total">Subtotal</span>
-<div class="price-total-w">
-<span>$255.5</span>
-</div>
-</div>
-
-<div class="checkout-btn">
-<a href="shop-cart.html" class="btn btn-default">View Cart</a>
-<a href="shop-checkout.html" class="btn btn-default ml-5">checkout</a>
-</div>
-</li>
-</ul>
-</li> -->
-</ul>
-<!-- end  navbar-mini-cart -->
-</div>
-</div>
+  <!-- container-fluid end -->
 
 </nav>
-</div>
-</header>
+
+
+<script type="text/javascript">
+  $(".cutline").eq(0).css("display", "none");
+  $(function () {
+    $('.item').mouseover(function () {
+      $(this).addClass('hover')
+    })
+    $('.item').mouseleave(function () {
+      $(this).removeClass('hover')
+    })
+  })
+
+  // function deleteCartGoods(rec_id) {
+  //   Ajax.call('delete_cart_goods.php', 'id=' + rec_id, deleteCartGoodsResponse, 'POST', 'JSON');
+  // }
+
+  // function deleteCartGoodsResponse(res) {
+  //   if (res.error) {
+  //     alert(res.err_msg);
+  //   } else {
+  //     document.getElementById('ECS_CARTINFO').innerHTML = res.content;
+  //   }
+  // }
+</script>

@@ -10,11 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/modal
+//= require bootstrap-sprockets
+// require bootstrap/carousel
+// require jquery.min
+// require jquery.SuperSlide.2.1.1
 //= require autosize.min
 //= require jquery.countdown.min
 //= require wow.min
