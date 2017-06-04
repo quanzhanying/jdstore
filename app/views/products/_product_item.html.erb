@@ -1,25 +1,14 @@
-<ul class="productList clearfix">
-  <% @products.each_with_index do |product, index| %>
-    <li style="list-style-type:none;", class="productList-item" "<%= last_item(index) %>">
-      <!-- style="list-style-type:none;" 可以支掉列表中的小圆点 -->
-      <p class="productList-item-pic w200 h200">
-        <%= link_to product_path(product) do %>
-          <% if product.photos.present? %>
-            <%= image_tag(product.photos[0].image.thumb.url) %>
-          <% else %>
-            <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-          <% end %>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
-      </p>
-      <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
-      <p class="productList-item-name ell">
-        <%= link_to product_path(product) do %>
-           <%= product.title %>
-        <% end %>
-      </p>
-      <% if product.quantity == 0 %>
-        <p class="productList-item-sellout f20 tc">已售完</p>
       <% end %>
-    </li>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
   <% end %>
-</ul>
+</div>
