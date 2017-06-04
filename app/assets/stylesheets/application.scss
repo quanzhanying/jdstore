@@ -251,8 +251,8 @@ section {
 }
 
 .BC-themeWord h2 {
-    font-size: 60px;
-    color: rgba(255,255,255,0.6);
+    font-size: 100px;
+    color: rgba(255,255,255,0.9);
     word-spacing: 8px;
     letter-spacing: 8px;
     margin-top: 300px;
@@ -260,9 +260,9 @@ section {
 
 .BC-themeWord p {
     font-size: 20px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.5);
     text-align: center;
-    margin: 30px 0;
+    margin: 50px 0;
 }
 
 .BC-page-table .actionBtn {
@@ -271,6 +271,10 @@ section {
     height: 100%;
     vertical-align: middle;
     text-align: center;
+}
+
+.BC-page-table .actionBtn button {
+  bottom: 10px;
 }
 
 .BC-page-table .btn {
