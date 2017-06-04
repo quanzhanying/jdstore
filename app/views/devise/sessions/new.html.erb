@@ -1,0 +1,78 @@
+<h2>Log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+<!--
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+ <div class="modal-dialog" role="document">
+   <div class="loginmodal-container">
+      <h2 class="text-center">登录</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <div class="form-inputs">
+          <%= f.input :email, :label => "邮箱", placeholder: "邮箱地址", required: false, autofocus: true %>
+          <%= f.input :password, :label => "密码", placeholder: "输入秘密", required: false %>
+          <%= f.input :remember_me, :label => "记住我", as: :boolean if devise_mapping.rememberable? %>
+       </div>
+
+
+       <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+         <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+       </div>
+       <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+         <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+       </div>
+       <br>
+        <div class="footer text-center">
+          <%= f.submit "登录", class: "btn btn-round btn-info"%>
+        </div>
+
+      <% end %>
+   </div>
+ </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal-dialog">
+ <div class="loginmodal-container">
+   <h2 class="text-center">注册</h2>
+     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+     <%= f.error_notification %>
+
+     <div class="input-group">
+       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+       <input id="email" type="text" class="form-control" name="email" placeholder="Email", required: true, autofocus: true >
+     </div>
+     <div class="input-group">
+       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+       <input id="password" type="password" class="form-control" name="password" placeholder="Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) >
+     </div>
+     <div class="input-group">
+       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+       <input id="password" type="password" class="form-control" name="password" placeholder="Password", required: true >
+     </div>
+     <br>
+
+     <div class="footer text-center">
+       <%= f.submit "注册", class: "btn btn-round btn-info"%>
+     </div>
+   <% end %>
+ </div>
+</div>
+</div>
+-->
