@@ -76,11 +76,13 @@
    margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
    border-radius: 0;//圆角为0
  }
+
 .jumbotron {
-  background-image:url('http://ww1.sinaimg.cn/large/006tNbRwgy1ffv3u02yarj31kw11o1kz.jpg');
+  background-image: url('http://opoks822l.bkt.clouddn.com/%E7%BA%A2%E9%85%92.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
+
 }
 
 .title {
@@ -196,4 +198,12 @@
 
 .login-help{
   font-size: 12px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0px;
+  bottom: 10px;
+  width: 30px;
+  line-height: 15px;
 }
