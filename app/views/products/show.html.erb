@@ -74,22 +74,50 @@
         </div>
 
 
+          <div class="col-md-11 comment">
+            <div class="tabs">
+              <div class="tabmenu">
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#tab_default_1" data-toggle="tab">商品详情
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_2" data-toggle="tab">商品评价
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-          <hr>
-
-        <div class="pictures">
-          <% if @photos.present? %>
-              <% @photos.each_with_index do |p, index| %>
-                <div class="row preview-pic1">
-                  <div class="col-md-6 preview-image">
-                        <% if index >= 0  %>
-                          <%= image_tag p.avatar.medium.url, class: "thumbnail" %>
-                        <% end %>
-                  </div>
+              <div class="tab-content">
+                <!-- 商品详情内容 -->
+                <div class="tab-pane active" id="tab_default_1">
+                   <p class="product-description2 text-center">产品展示</p>
+                     <% if @photos.present? %>
+                         <% @photos.each_with_index do |p, index| %>
+                           <div class="row preview-pic1">
+                             <div class="col-md-6 col-sm-12 ">
+                                   <% if index >= 0  %>
+                                     <%= image_tag p.avatar.medium.url, class: "thumbnail" %>
+                                   <% end %>
+                             </div>
+                           </div>
+                         <% end %>
+                     <% end %>
                 </div>
-              <% end %>
-          <% end %>
-        </div>
+
+                <!-- 商品评价内容 -->
+                <div class="tab-pane" id="tab_default_2">
+                  <p>评价</p>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
     </div>
 
 
