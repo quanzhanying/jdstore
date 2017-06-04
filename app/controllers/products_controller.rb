@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-  before_action :authenticate_user!, only: [:like, :unlike]
+  before_action :authenticate_user!, only: [:like, :unlike, :add_to_favorite, :quit_favorite]
 
     def index
       # 分类功能
