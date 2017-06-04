@@ -19,18 +19,7 @@
 @import "font-awesome";
 
 
-//---------Footer---------
-
-footer {
-    color: white;
-}
-
-footer .footer-below {
-    padding: 25px 0;
-    background-color: #233140;
-}
-
-/*  search-bar */
+/*  搜索框 */
 
 .products-search-form {   //调搜索框大小和位置
   margin-top: 9px;
@@ -51,7 +40,7 @@ footer .footer-below {
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-/****** LOGIN MODAL ******/
+/****** 登录弹窗 ******/
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
