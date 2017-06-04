@@ -30,7 +30,8 @@
                      <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
                    <% else %>
                      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
-                     <% end %>
+                  <% end %>
+
                    <hr>
                          <div class="product-title" style="height: 50px">
                            <h4><%= product.title %></h4>
@@ -53,9 +54,9 @@
                          <% end %>
 
                          <% if product.quantity.present? && product.quantity > 0 %>
-                         <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
-                       <% else %>
-                         已销售一空，无法购买
+                           <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                         <% else %>
+                           已销售一空，无法购买
                          <% end %>
                  </div>
                </div>

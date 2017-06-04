@@ -584,6 +584,11 @@
   }
 }
 
+.product-title h4:hover,
+.product-title h4:focus {
+  text-decoration: none;
+}
+
 
 
 
@@ -722,10 +727,21 @@
 
 
 /*----- show page recom -----*/
-.show-recom {
-  width: 270px;
-  height: 270px;
-}
+
+
+.recomitem{
+  margin-bottom: 20px;
+
+    span.rmb{
+      color: #d7282d;
+
+    }
+    span.price{
+      color: #d7282d;
+      font-size: 20px;
+    }
+ }
+
 
 .recomitemlist img {
   width: 250px;
@@ -745,10 +761,13 @@
 
 }
 
-.image {
-  width: 350px;
-  height: 350px;
-  border-radius: 2%;
+.recom-pic {
+    .thumbnail {
+      padding: 10px;
+      width: 350px;
+      height: 350px;
+      border-radius: 2%;
+    }
 }
 
 .descrip a:link {
