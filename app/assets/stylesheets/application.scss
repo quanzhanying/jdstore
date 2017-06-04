@@ -27,97 +27,201 @@
 }
 
 
-/****** LOGIN MODAL ******/
-.loginmodal-container {
-  padding: 30px;
-  max-width: 350px;
-  width: 100% !important;
-  background-color: #F7F7F7;
-  margin: 0 auto;
-  border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  font-family: roboto;
-}
+//============== 登录／注册 =================
 
-.loginmodal-container h1 {
-  text-align: center;
-  font-size: 1.8em;
-  font-family: roboto;
-}
-
-.loginmodal-container input[type=submit] {
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
+.sign-container {
   position: relative;
+  overflow: hidden;
+  width: 600px;
+  height: 500px;
+  margin: 0px auto 0;
+  padding-top: 40px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 20px;
+}
+.box {
+
+
+  height: 80%;
+  padding: 3.5em 2em 0;
+}
+.box.left{
+  background-color: #ffffff;
+}
+.box.right {
+  background: linear-gradient(310deg, rgba(0,0,0,0.5), rgba(0,0,0,0.28));
 }
 
-.loginmodal-container input[type=text], input[type=password] {
-  height: 44px;
-  font-size: 16px;
-  width: 100%;
-  margin-bottom: 10px;
-  -webkit-appearance: none;
-  background: #fff;
-  border: 1px solid #d9d9d9;
-  border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
-  padding: 0 8px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-.loginmodal-container input[type=text]:hover, input[type=password]:hover {
-  border: 1px solid #b9b9b9;
-  border-top: 1px solid #a0a0a0;
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-}
-
-.loginmodal {
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Arial', sans-serif;
+.sign-container h1 {
+  font-size: 1.5em;
   font-weight: 700;
-  height: 36px;
-  padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
-  user-select: none; */
-}
-
-.loginmodal-submit {
-  /* border: 1px solid #3079ed; */
-  border: 0px;
-  color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1);
-  background-color: #4d90fe;
-  padding: 17px 0px;
-  font-family: roboto;
-  font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
-}
-
-.loginmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
-  border: 0px;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
-}
-
-.loginmodal-container a {
-  text-decoration: none;
-  color: #666;
-  font-weight: 400;
+  margin-bottom: 1.5em;
   text-align: center;
-  display: inline-block;
-  opacity: 0.6;
-  transition: opacity ease 0.5s;
+  text-indent: 6px;
+  letter-spacing: 6px;
+  line-height: 1.4em;
+  text-transform: uppercase;
 }
 
-.login-help{
+.sign-tabs {
+  font-weight: 600;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #d9d9d9;
+}
+.sign-tabs .tab {
+  display: inline-block;
+  margin-bottom: -1px;
+  padding: 20px 15px 10px;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid #d9d9d9;
+  transition: all 0.1s ease-in-out;
+}
+.sign-tabs .tab a {
+  font-size: 11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #d9d9d9;
+  transition: all 0.1s ease-in-out;
+}
+.sign-tabs .tab.active a, body .sign-container .sign-tabs .tab:hover a {
+  color: #1E282C;
+}
+.sign-tabs .tab.active {
+  border-bottom: 1px solid #1E282C;
+}
+
+.tab-content form {
+  position: relative;
+  height: 287px;
+}
+.tab-content label, .sign-container .tab-content input, .sign-container .tab-content .extra-link {
+  -moz-animation: slideIn 0.4s ease-in-out;
+  -webkit-animation: slideIn 0.4s ease-in-out;
+  animation: slideIn 0.4s ease-in-out;
+}
+.tab-content label {
   font-size: 12px;
+  color: #1E282C;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.tab-content label:not([for='remember']) {
+  display: none;
+}
+.tab-content input.inpt {
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 14px;
+  padding: 15px 12px;
+  color: #999999;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  background: transparent;
+/*   -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; */
+}
+.tab-content input.inpt::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #999999;
+}
+.tab-content input.inpt:-ms-input-placeholder {
+  font-size: 14px;
+  color: #999999;
+}
+.tab-content input.inpt:focus {
+  border-color: #999999;
+}
+.tab-content input.submit {
+  font-size: 0.8em;
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #1E282C;
+}
+.tab-content input.submit:hover {
+  background-color: #1E282C;
+  color: #ffffff;
+  transition: 0.2s ease;
+}
+.tab-content input:focus {
+  outline: none;
+}
+
+.tab-content .form-actions {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.tab-content .form-actions a {
+  font-size: 12px;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #999999;
+}
+.tab-content .form-actions a:hover {
+  text-decoration: underline;
+}
+.signup-info {
+  display: none;
+}
+
+
+/* Social Networks Sign In */
+.right .sign-via {
+  display: block;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  font-size: 20px;
+  color: #FFF;
+  text-align: center;
+  animation: reveal 0.9s ease;
+}
+
+button.social-network {
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #efefef;
+  width: 100%;
+  height: 45px;
+  padding-left: 35%;
+  margin: 15px 0px;
+  border: 2px solid #efefef;
+  background: transparent;
+  transition: 0.2s ease;
+  cursor: pointer;
+  animation: reveal 0.9s ease;
+
+}
+
+button i{
+  float: left;
+  margin: 1px 20px 0px 0px;
+}
+
+button.social-network:hover {
+  color: #999;
+  background: #efefef;
+  transition: 0.2s ease;
+}
+
+
+.panel-signup {
+  box-shadow: 0 16px 38px -12px rgba(0,0,0,0.56), 0 4px 25px 0px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.2);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -40px;
+    padding: 0;
 }
