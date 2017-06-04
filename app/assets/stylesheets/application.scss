@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
 
@@ -46,6 +47,14 @@ body {
 }
 a:hover {
   text-decoration: none;
+}
+
+.footer {
+  box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
+  padding-top: 60px;
+  padding-bottom: 90px;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
 /*字体颜色和背景颜色*/
 .bg-color {
@@ -720,3 +729,13 @@ a:hover {
   margin-bottom: 75px;
 }
 // product/show页面中商品详情结束
+
+// product/show社群分享鈕開始
+.social-share-button {
+  .ssb-icon {
+    background-size: 1.5em 1.5em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+// product/show社群分享鈕結束
