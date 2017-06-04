@@ -49,7 +49,7 @@
                             <% end %>
                         <% end %>
                         <div class="product-info">
-                            <p><%= link_to(product.title , product_path(product)) %></p>
+                            <p><%= link_to(render_highlight_content(product,@query_string), product_path(product)) %></p>
                             <p>$ <%= product.price %></p>
                         </div>
                     </div>
