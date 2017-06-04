@@ -6,13 +6,12 @@
             <% if @photos.present? %>
               <% @photos.each_with_index do |p, index| %>
                 <% if index == 0 %>
-                  <%= image_tag p.avatar.medium.url %>
-                  <div style="letter-spacing: -8px">
+                  <%= image_tag p.avatar.medium.url, style:"width:100%;heigh:100%;" %>
+
                 <% else %>
-                  <%= image_tag p.avatar.thumb.url %>
+                  <%= image_tag p.avatar.thumb.url, style:"width:100%;heigh:100%;" %>
                 <% end %>
               <% end %>
-              </div>
             <% else %>
                 <%= image_tag("http://placehold.it/300x180&text=No Pic", class: "thumbnail") %>
             <% end %>
