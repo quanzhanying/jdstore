@@ -14,6 +14,22 @@ class ReviewsController < ApplicationController
       #end
     end
   end
+  def like
+    @review = Review.find(params[:id])
+    if !current_user.is_like_of?(@review)
+       current_user.like!(@review)
+       jq = "$('#like-item-"+@review.id.to_s+"').attr('href','"+unlike_product_review_path(params[:product_id],@review)+"').children('i').removeClass('fa-thumbs-o-up').addClass('fa-thumbs-up').html(' "+@review.likes.count.to_s+"');"
+       render js: jq
+    end
+  end
+  def unlike
+    @review = Review.find(params[:id])
+    if current_user.is_like_of?(@review)
+       current_user.unlike!(@review)
+       jq = "$('#like-item-"+@review.id.to_s+"').attr('href','"+like_product_review_path(params[:product_id],@review)+"').children('i').removeClass('fa-thumbs-up').addClass('fa-thumbs-o-up').html(' "+@review.likes.count.to_s+"');"
+       render js: jq
+    end
+  end
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
@@ -35,6 +51,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:body)
+    params.require(:review).permit(:body,:score)
   end
 end

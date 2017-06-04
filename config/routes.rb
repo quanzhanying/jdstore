@@ -18,7 +18,12 @@ Rails.application.routes.draw do
   end
 
   resources :products do
-    resources :reviews
+    resources :reviews do
+      member do
+        post :unlike
+        post :like
+      end
+    end
     collection do
       get :search
     end

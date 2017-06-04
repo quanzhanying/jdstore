@@ -12,8 +12,23 @@ class User < ApplicationRecord
   has_many :favorite_products, :through => :favorites, :source => :product
   has_many :reviews
   has_many :identifies
+  has_many :likes
+  has_many :liked_reviews, :through => :likes, :source => :review
+  def display_name
+   # # 取 email 的前半来显示，如果你也可以另开一个字段是 nickname 让用户可以自己编辑显示名称
+   self.email.split("@").first
+  end
   def admin?
     is_admin
+  end
+  def is_like_of?(review)
+    liked_reviews.include?(review)
+  end
+  def like!(review)
+    liked_reviews << review
+  end
+  def unlike!(review)
+    liked_reviews.delete(review)
   end
   def is_favorite_of?(product)
     favorite_products.include?(product)

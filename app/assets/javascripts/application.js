@@ -16,6 +16,7 @@
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require bootstrap/modal
+//= require jquery.raty
 
 //= require_tree .
 (function($) {
@@ -249,7 +250,7 @@ var funParabola = function(element, target, options) {
       if (flagMove == false) return this;
 
       var startx = 0, rate = coordTarget.x > 0? 1: -1;
-      
+
       var step = function() {
         // 切线 y'=2ax+b
         var tangent = 2 * a * startx + b; // = y / x

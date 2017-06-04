@@ -1,3 +1,63 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#reviews-list{
+  margin: 30px 15px 0 15px;
+  float: left;
+  width: 100%;
+}
+.review-mian{
+  padding: 15px;
+  min-height: 110px;
+  border-top: 1px solid #f2f2f2;
+}
+.review-left{
+  float: left;
+  width: 150px;
+  margin-right: 30px;
+}
+.review-right{
+  display: table-cell;
+}
+
+.review-star{
+    height: 14px;
+    background: url(/images/star.png) no-repeat;
+    margin-bottom: 10px;
+    width: 78px;
+}
+
+.review-star.star0 {
+    background-position: -80px 0;
+}
+.review-star.star1 {
+    background-position: -64px 0;
+}
+.review-star.star2 {
+    background-position: -48px 0;
+}
+.review-star.star3 {
+    background-position: -32px 0;
+}
+.review-star.star4 {
+    background-position: -16px 0;
+}
+.review-star.star5 {
+    background-position: 0;
+}
+
+.review-thumbs{
+  // position: absolute;
+   float: right;
+  // bottom: 10px;
+  margin-bottom: 15px;
+}
+.review-user{
+  margin: 15px;
+}
+#product-raty{
+display: inline-block;
+}
+#product-raty img {
+padding-bottom: 4px;
+}

@@ -1,4 +1,9 @@
 <%= simple_form_for([@product,Review.new]) do |f|%>
+<span>商品满意度：</span>
+<div id="product-raty" class="raty" data-score="0" ></div>
+&nbsp;
+<span id="hint">0</span>分
+<div>
 <div class="form-group">
   <%= f.input :body, label: "评论内容", input_html: { class: "form-control" ,style: "border: 1px solid #ccc;"} %>
 </div>

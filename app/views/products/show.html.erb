@@ -245,26 +245,45 @@
                   </div>
                   <div class="tab-pane" id="tab-right">
                     <div class="row review">
-                      <div id="reviews-list" class="col-md-10 col-md-offset-1">
-                        <div>
-                          <%= render "reviews/form"%>
-                        </div>
-                        <% @reviews.each do |review| %>
-                        <div id ="review-item-<%= review.id %>" class="reviews_wrapper clearfix">
-                            <div class="pull-left">
-                                <p><%= review.body %></p>
-                            </div>
-                            <div class="pull-right">
-                              <div class="up">
-                                发表者：<%= if review.user.username.nil? then review.user.email else review.user.username end%>
-                              </div>
-                              <div class="down">
-                                <p>评论时间：<%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></p>
-                              </div>
-                            </div>
-                        </div>
+                      <div class="col-md-2 review-user">
+                        <% if current_user %>
+                        <img src="/images/avatar.gif" width="25" alt="">
+                        <%= if current_user.username.nil? then current_user.display_name else current_user.username end %>
                         <% end %>
                       </div>
+                      <div class="col-md-9">
+                          <%= render "reviews/form"%>
+                        </div>
+                      </div>
+                          <div id="reviews-list">
+                            <% @reviews.each do |review| %>
+                            <div id="review-item-<%= review.id %>" class="review-mian">
+                                <div class="review-left">
+                                  <img src="<%= if review.user.image.nil? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
+                                  <%= if review.user.username.nil? then review.user.display_name else review.user.username end%>
+                                </div>
+                                <div class="review-right">
+                                  <div class="review-star star<%= review.score%>">
+                                  </div>
+                                  <p><%= review.body %></p>
+                                </div>
+                                <div class="review-thumbs">
+                                  <span><%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></span>&nbsp;&nbsp;&nbsp;
+                                  <% if current_user %>
+                                    <% if current_user.is_like_of?(review) %>
+                                  <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-up'), unlike_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
+                                   <% else %>
+                                  <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-o-up'), like_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
+                                    <% end %>
+                                  <% else %>
+                                    <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-thumbs-o-up"></i></a>
+                                  <% end %>
+                                </div>
+                            </div>
+                            <% end %>
+                          </div>
+
+
                       <% if  @reviews.count >= 20 %>
                       <div class="col-md-12">
                         <br>
@@ -283,6 +302,14 @@
           </div>
         </div>
         <script type="text/javascript">
+        $(".raty").raty( {
+          path: '/images/',
+          targetType: 'number',
+          target    : '#hint',
+          targetKeep: true,
+          score :0,
+          scoreName :'review[score]'
+        } );
         //------评论------
         // 记下目前画面最小的贴文 ID
         <% if  @reviews.count >= 20 %>
