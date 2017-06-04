@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   layout "navbarview"
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user! , only: [:like, :unlike]
 
   def index
    @products = Product.all.order("position ASC")
@@ -22,6 +23,29 @@ class ProductsController < ApplicationController
    end
    redirect_to :back
  end
+
+ def like
+   @product = Product.find(params[:id])
+   if !current_user.is_like?(@product)
+       current_user.like!(@product)
+       flash[:notice] = "收藏商品成功！"
+    else
+       flash[:warning] = "你已经收藏过本商品了！"
+    end
+     redirect_to product_path(@product)
+ end
+
+ def unlike
+   @product = Product.find(params[:id])
+   if current_user.is_like?(@product)
+       current_user.unlike!(@product)
+       flash[:notice] = "取消收藏商品！"
+    else
+       flash[:warning] = "你没有收藏过商品，如何取消 XD！"
+    end
+     redirect_to product_path(@product)
+ end
+
 
  def search
    if @query_string.present?

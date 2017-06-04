@@ -37,16 +37,20 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :favorites
   end
 
   resources :products do
     member do
       post :add_to_cart
+      post :like
+      post :unlike
     end
     collection do
       get :search
     end
     #增加search
+    resources :posts
   end
 
   root 'welcome#index'

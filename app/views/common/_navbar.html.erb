@@ -45,6 +45,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><%= link_to("My orders", account_orders_path ) %></li>
+                            <li>
+                                <%= link_to account_favorites_path do %> 我的收藏 <i class= "fa fa-heart fa-md"></i>
+                                <% end %>
+                            </li>
+                            <!-- <li><%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), account_favorites_path)%> </li> -->
                             <li class="divider"> </li>
                             <% if current_user.is_admin? %>
                                 <li><%= link_to("Admin 菜单", admin_products_path) %> </li>
