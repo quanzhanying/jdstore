@@ -49,8 +49,9 @@ class Product < ApplicationRecord
   acts_as_votable  #点赞功能
 
   scope :selling, -> { where(can_sell: true) } # 选出正在销售中的商品
-  scope :new, -> { where(new_product: true) }
-  scope :promotive, -> { where(promotive_product: true) }
+  scope :newest, -> { where(new_product: true, can_sell: true) } # 选出最新的商品
+  scope :promotive, -> { where(promotive_product: true,can_sell: true) } # 选出活动的商品
+  scope :ordinary, -> { where(promotive_product: false, new_product: false, can_sell: true) } # 选出普通的商品
   scope :recent, -> { order('created_at DESC') }  #按照发布时间的顺序
   scope :random8, -> { limit(8).order('RANDOM()') } #随机选出8个样品
 

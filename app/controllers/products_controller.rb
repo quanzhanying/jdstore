@@ -3,15 +3,17 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   layout "products"
   def index
+    @new_products = Product.newest.recent.paginate(:page => params[:page], :per_page => 4)  #选出最新的商品
+    @promotive_products = Product.promotive.recent.paginate(:page => params[:page], :per_page => 4)  #选出活动的商品
     # 商品列表排序功能和不同种类分类显示功能
     if params[:category].blank? && params[:brand].blank?
       @products = case params[:order]
       when 'by_product_stock'
-        Product.selling.order('stock DESC').paginate(:page => params[:page], :per_page => 8)
+        Product.ordinary.order('stock DESC').paginate(:page => params[:page], :per_page => 8)
       when 'by_product_price'
-        Product.selling.order('price DESC').paginate(:page => params[:page], :per_page => 8)
+        Product.ordinary.order('price DESC').paginate(:page => params[:page], :per_page => 8)
       else
-      @products = Product.selling.recent.paginate(:page => params[:page], :per_page => 8)
+      @products = Product.ordinary.recent.paginate(:page => params[:page], :per_page => 8)
       end
     elsif !params[:category].blank? && params[:brand].blank?
       @category_id = Category.find_by(name: params[:category]).id
@@ -131,6 +133,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :stock, :price, :can_sell, :image, :category_id, :brand_id)
+    params.require(:product).permit(:name, :description, :stock, :price, :can_sell, :new_product, :promotive_product, :image, :category_id, :brand_id)
   end
 end
