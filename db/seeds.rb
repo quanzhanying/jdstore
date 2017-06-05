@@ -22,8 +22,33 @@ end
 
 # User.create!(name: 'admin', email: 'admin@test.com', password: '123456', password_confirmation: '123456', is_admin: true)
 
-# Initialize Product
+# Initialize Category
 
+Category.create!(
+  name: "新鲜果蔬"
+)
+
+Category.create!(
+  name: "肉类蛋禽"
+)
+
+Category.create!(
+  name: "五谷粮油"
+)
+
+Category.create!(
+  name: "干货零食"
+)
+
+Category.create!(
+  name: "茶水饮品"
+)
+
+Category.create!(
+  name: "礼品礼盒"
+)
+
+# Initialize Product
 # img_url: "小图", #图片不大，设置与img1一致
 # img1_url: "图片1",
 # img2_url: "图片2",
@@ -31,33 +56,13 @@ end
 # img4_url: "图片4",
 # img5_url: "图片5"
 
-# 模板(水果)
-# Product.create!(
-#   name: "",
-#   category: "新鲜果蔬",
-#   category1: "水果",
-#   category2: "",
-#   location: "",
-#   keyword: "新鲜水果",
-#   content: "",
-#   description: "",
-#   remark: "",
-#   price: ,
-#   price_unit: "元/kg",
-#   quantity: 99,
-#   img_url: "",
-#   img1_url: "",
-#   img2_url: "",
-#   img3_url: "",
-#   img4_url: "",
-#   img5_url: ""
-# )
-
 Product.create!(
   name: "山东烟台大红灯樱桃",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "樱桃",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "樱桃",
   location: "中国山东烟台",
   keyword: "新鲜水果 热销 特价 真实",
   content: "空运包邮 75元/3斤,115元/5斤",
@@ -76,9 +81,11 @@ Product.create!(
 
 Product.create!(
   name: "陕西金太阳大黄杏",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "黄杏",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "黄杏",
   location: "中国陕西",
   keyword: "新鲜水果 热销 特价 真实",
   content: "产地直供 5斤装 包邮",
@@ -97,9 +104,11 @@ Product.create!(
 
 Product.create!(
   name: "缅甸圣德龙芒果",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "芒果",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "芒果",
   location: "缅甸进口",
   keyword: "新鲜水果 热销 特价 真实",
   content: "产地直供 8斤装 包邮",
@@ -118,9 +127,11 @@ Product.create!(
 
 Product.create!(
   name: "山东玉菇甜瓜/香瓜/蜜瓜",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "甜瓜 香瓜 蜜瓜",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "甜瓜 香瓜 蜜瓜",
   location: "中国山东",
   keyword: "新鲜水果 热销 特价 真实",
   content: "产地直供 5斤装 包邮",
@@ -139,9 +150,11 @@ Product.create!(
 
 Product.create!(
   name: "越南进口红心火龙果",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "火龙果",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "火龙果",
   location: "越南进口",
   keyword: "新鲜水果",
   content: "3个装总重约1kg",
@@ -160,9 +173,11 @@ Product.create!(
 
 Product.create!(
   name: "广西百香果西番莲",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "百香果",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "百香果",
   location: "中国广西",
   keyword: "新鲜水果",
   content: "12个装 单果50-80g",
@@ -181,9 +196,11 @@ Product.create!(
 
 Product.create!(
   name: "泰国进口椰青",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "椰青",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "椰青",
   location: "泰国进口",
   keyword: "新鲜水果",
   content: "2个装 单果约750g",
@@ -202,9 +219,11 @@ Product.create!(
 
 Product.create!(
   name: "泰国进口山竹",
-  category: "新鲜果蔬",
-  category1: "水果",
-  category2: "山竹",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "山竹",
   location: "泰国进口",
   keyword: "新鲜水果",
   content: "1kg 简装",
@@ -225,9 +244,11 @@ Product.create!(
 
 Product.create!(
   name: "小油菜",
-  category: "新鲜果蔬",
-  category1: "蔬菜",
-  category2: "小油菜",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "蔬菜",
+  category3: "小油菜",
   location: "中国北京",
   keyword: "",
   content: "约400g",
@@ -246,9 +267,11 @@ Product.create!(
 
 Product.create!(
   name: "西兰花",
-  category: "新鲜果蔬",
-  category1: "蔬菜",
-  category2: "西兰花",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "蔬菜",
+  category3: "西兰花",
   location: "中国北京",
   keyword: "",
   content: "约300g",
@@ -267,9 +290,11 @@ Product.create!(
 
 Product.create!(
   name: "西红柿",
-  category: "新鲜果蔬",
-  category1: "蔬菜",
-  category2: "西红柿",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "蔬菜",
+  category3: "西红柿",
   location: "中国北京",
   keyword: "",
   content: "约300g",
@@ -288,9 +313,11 @@ Product.create!(
 
 Product.create!(
   name: "玉米",
-  category: "新鲜果蔬",
-  category1: "蔬菜",
-  category2: "玉米",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "蔬菜",
+  category3: "玉米",
   location: "中国云南玉溪",
   keyword: "",
   content: "约1000g",
@@ -311,9 +338,11 @@ Product.create!(
 
 Product.create!(
   name: "澳洲家庭牛排套餐",
-  category: "肉类蛋禽",
-  category1: "肉",
-  category2: "牛肉",
+  category_id: 2,
+  category: "全部商品",
+  category1: "肉类蛋禽",
+  category2: "牛羊猪",
+  category3: "牛肉",
   location: "澳洲 进口",
   keyword: "",
   content: "约400g",
@@ -332,9 +361,11 @@ Product.create!(
 
 Product.create!(
   name: "奥尔良烤翅免腌制",
-  category: "肉类蛋禽",
-  category1: "禽",
-  category2: "鸡肉 鸡翅",
+  category_id: 2,
+  category: "全部商品",
+  category1: "肉类蛋禽",
+  category2: "鸡鸭鹅",
+  category3: "鸡肉 鸡翅",
   location: "中国浙江杭州市",
   keyword: "",
   content: "200g两对",
@@ -353,9 +384,11 @@ Product.create!(
 
 Product.create!(
   name: "大西洋冰鲜三文鱼腩刺身",
-  category: "肉类蛋禽",
-  category1: "肉",
-  category2: "三文鱼",
+  category_id: 2,
+  category: "全部商品",
+  category1: "肉类蛋禽",
+  category2: "鱼",
+  category3: "三文鱼",
   location: "进口",
   keyword: "",
   content: "400g 袋装",
@@ -374,9 +407,11 @@ Product.create!(
 
 Product.create!(
   name: "洞庭湖咸蛋",
-  category: "肉类蛋禽",
-  category1: "蛋",
-  category2: "咸蛋 咸鸭蛋",
+  category_id: 2,
+  category: "全部商品",
+  category1: "肉类蛋禽",
+  category2: "蛋",
+  category3: "咸蛋 咸鸭蛋",
   location: "进口",
   keyword: "",
   content: "20枚 1kg",
@@ -397,9 +432,11 @@ Product.create!(
 
 Product.create!(
   name: "东北五常生态稻花香大米",
-  category: "粮油米面",
-  category1: "米",
-  category2: "大米",
+  category_id: 3,
+  category: "全部商品",
+  category1: "粮油米面",
+  category2: "米",
+  category3: "大米",
   location: "中国 东北",
   keyword: "",
   content: "15斤 包邮",
@@ -418,9 +455,11 @@ Product.create!(
 
 Product.create!(
   name: "东北杂粮大米精选十谷米",
-  category: "粮油米面",
-  category1: "米",
-  category2: "大米 杂粮",
+  category_id: 3,
+  category: "全部商品",
+  category1: "粮油米面",
+  category2: "米",
+  category3: "大米 杂粮",
   location: "中国 东北",
   keyword: "",
   content: "400g",

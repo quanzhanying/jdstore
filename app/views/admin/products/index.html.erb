@@ -5,19 +5,19 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
+      <!-- <th>商品分类</th> -->
+      <th>商品ID</th>
+      <th width="128">商品图片</th>
+      <th>商品名称</th>
+      <th>商品价格</th>
       <th width="100"> Options</th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td>
-          <%= product.id %>
-        </td>
+        <!-- <td>< product.category.name></td> -->
+        <td><%= product.id %></td>
         <td>
           <!-- <%= link_to product_path(product) do %>
             <% if product.image.present? %>

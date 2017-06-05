@@ -60,13 +60,17 @@ ul {
 }
 
 .wrapper,
-body,
-html {
-  min-height: 100%;
+html, body {
+  height: 100%;
 }
 
 body {
   font-family: 'Microsoft YaHei', 'Segoe UI', 'Arial';
+}
+
+.wrapper {
+  min-height: 100%;
+  // margin-bottom: -200px;
 }
 
 .site-wrapper {
@@ -305,8 +309,8 @@ img {
 // .indexPro .pPush img {}
 
 .indexPro .pCont {
-  border-top: 1px solid #dadada;
-  border-left: 1px solid #dadada;
+  // border-top: 1px solid #dadada;
+  // border-left: 1px solid #dadada;
   margin-bottom: 10px;
 }
 
@@ -315,9 +319,13 @@ img {
   zoom: 1;
 }
 
+.pList li {
+  border: 1px solid #dadada;
+}
+
 .indexPro .pCont .pList li {
-  border-bottom: 1px solid #dadada;
-  border-right: 1px solid #DADADA;
+  // border-bottom: 1px solid #dadada;
+  // border-right: 1px solid #DADADA;
   width: 239px; //230px;
   height: 284px;
   padding: 4px;
