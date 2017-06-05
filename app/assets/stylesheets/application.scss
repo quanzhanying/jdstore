@@ -317,6 +317,21 @@ footer {
   width: 100%;
 }
 
+.box {
+  position: relative;
+}
+
+.hue{
+  position: absolute;
+  background-color: rgba(0,0,0,.08);
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 50%;
+}
+
 .box img{
   width: 100px;
   border-style:none;

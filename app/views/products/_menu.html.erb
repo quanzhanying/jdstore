@@ -11,6 +11,10 @@
 
 
      <div class="box">
+      <% if params[:category] == category.name %>
+      <div class="hue"></div>
+      <% end %>
+
       <% if category.image.present? %>
         <%= image_tag(category.image.url, class: "thumbnail") %>
       <% else %>
