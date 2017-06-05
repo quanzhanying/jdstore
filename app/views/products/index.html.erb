@@ -1,21 +1,21 @@
 <!-- <section>
-  <div class="breadcrumps-back">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="breadcrumps-heading">
-            <h3>商品展示</h3>
-            <div class="breadcrumps-border"></div>
-            <ul>
-              <li><a href="/"> 首页</a> /</li>
-              <li><a href="#"> 商品展示</a></li>
-              <li></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="breadcrumps-back">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="breadcrumps-heading">
+<h3>商品展示</h3>
+<div class="breadcrumps-border"></div>
+<ul>
+<li><a href="/"> 首页</a> /</li>
+<li><a href="#"> 商品展示</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section> -->
 
 <div class="container-fluid">
@@ -35,11 +35,11 @@
                 <div class="pImg fly_img">
                   <a title="<%= product.name %>" target="_blank" href="#">
                     <%= link_to product_path(product) do %>
-                      <% if product.img_url.present? %>
-                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
-                      <% else %>
-                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
-                      <% end %>
+                    <% if product.img_url.present? %>
+                    <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                    <% else %>
+                    <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                    <% end %>
                     <% end %>
                   </a>
                   <div class="gBtn">
@@ -47,7 +47,7 @@
                     <% if product.quantity.present? && product.quantity > 0 %>
                     <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
                     <% else %>
-                      已销售一空，无法购买！
+                    已销售一空，无法购买！
                     <% end %>
                   </div>
                 </div>
@@ -70,16 +70,16 @@
 
 
 <!-- <div class="row">
-  <% @products.each do |product| %>
-  <div class="col-xs-6 col-md-3">
-  <%= link_to product_path(product) do %>
-  <% if product.image.present? %>
-  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-  <% else %>
-  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-  <% end %>
-  <% end %>
-  <%= product.name %> ￥ <%= product.price %>
+<% @products.each do |product| %>
+<div class="col-xs-6 col-md-3">
+<%= link_to product_path(product) do %>
+<% if product.image.present? %>
+<%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+<% else %>
+<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+<% end %>
+<% end %>
+<%= product.name %> ￥ <%= product.price %>
 </div>
 <% end %>
 </div> -->
