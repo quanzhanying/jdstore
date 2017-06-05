@@ -2,7 +2,32 @@
 <div class="menu  bg-color1">
   <div class="menuList">
 
+
+
+    <div class="menuList-item bg-color1">
+      <%= link_to products_path() do %>
+       <div class="box">
+          <%= image_tag("https://s-media-cache-ak0.pinimg.com/favicons/49f0245b0a800cc12e2fe7db7f2bdc540e0c822142da4d34ee100500.png?e9c9afcdf3b744522dcda1ef390c33e4", class: "thumbnail", style: "padding: 18px") %>
+      </div>
+      <% end %>
+      <div class="mune-name">
+      发现
+     </div>
+      </div>
+
+      <div class="menuList-item bg-color1">
+        <%= link_to products_path(:favorite => "yes") do %>
+         <div class="box">
+           <%= image_tag("https://ws3.sinaimg.cn/large/006tNbRwly1fgahc59q8rj306c06it8x.jpg", class: "thumbnail", style: "padding: 5px") %>
+       </div>
+        <% end %>
+        <div class="mune-name">
+       收藏
+       </div>
+        </div>
+
    <% Category.all.each do |category| %>
+
 
   <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if params[:category] == category.name %>">
 
