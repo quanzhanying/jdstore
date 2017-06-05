@@ -18,6 +18,12 @@
       <td> <%= order.aasm_state %> </td>
     </tr>
     <% end %>
-
   </tbody>
 </table>
+
+<div class="row text-center">
+  <div class="row">
+<div class="flickr_pagination">
+    <%= will_paginate @orders, :container => false , remote: true %>
+</div>
+</div>
