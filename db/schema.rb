@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20170605112827) do
     t.integer  "products_counter", default: 0
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -87,10 +86,6 @@ ActiveRecord::Schema.define(version: 20170605112827) do
     t.string   "number"
     t.decimal  "msrp",        precision: 10, scale: 2
     t.string   "category3"
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["name"], name: "index_products_on_name"
-    t.index ["number"], name: "index_products_on_number", unique: true
-    t.index ["status", "category_id"], name: "index_products_on_status_and_category_id"
   end
 
   create_table "users", force: :cascade do |t|
