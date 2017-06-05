@@ -318,7 +318,7 @@ footer {
 }
 
 .box img{
-
+  width: 100px;
   border-style:none;
   border-radius: 50%;
   transition: all 0.03s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
