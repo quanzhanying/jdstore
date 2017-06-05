@@ -23,7 +23,7 @@ Product.create!(title: "Aeron",
                  description: "Aeron",
                  price: 7999,
                  quantity: 10,
-                 image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fga3wpr2tij30o90fawht.jpg")
+                 image: open("https://ooo.0o0.ooo/2017/06/05/5934cfd736565.jpeg")
                  )
 
 Product.create!(title: "macbook",
