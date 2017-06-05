@@ -30,12 +30,12 @@ Product.create!(title: "macbook",
                 description: "macbook",
                 price: 9999,
                 quantity: 10,
-                image: open("https://ws1.sinaimg.cn/large/006tNbRwgy1fga3wr7sp7j30zw0latcz.jpg")
+                image: open("https://ooo.0o0.ooo/2017/06/05/5934d171ebbc3.jpg")
                 )
 
 Product.create!(title: "iphone 7",
                 description: "iphone 7",
                 price: 5999,
                 quantity: 10,
-                image: open("https://ws1.sinaimg.cn/large/006tNbRwgy1fga3wr0z4fj30ge0akwfe.jpg")
+                image: open("https://ooo.0o0.ooo/2017/06/05/5934d17235952.jpeg")
                 )
