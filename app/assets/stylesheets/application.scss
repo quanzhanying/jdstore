@@ -591,20 +591,27 @@
 }
 
 .product-preview {
+  margin-top: 20px;
+  margin-bottom: 20px;
 
 }
 
-.preview-pic img{ /*---- show图片 -----*/
+.preview-pic {
+  height: 350px;
+
+  img{ /*---- show图片 -----*/
   width: 350px;
   height: 350px;
   padding: 10px;   /*---- 图片的白边 -----*/
-  margin-top: 20px;
+
   }
+}
 
 
 .wrapper {
   display: inline-block; /*----- 把图片与描述放在一个区块 -----*/
   border: 1px solid rgb(221, 221, 221);
+  height: relative;
 }
 
 
