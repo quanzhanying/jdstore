@@ -12,6 +12,9 @@
               <li>
                 <%= link_to("课程", products_path) %>
               </li>
+              <li>
+                <%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%>
+              </li>
 
         <li class="dropdown">
            <a class="dropdown-toggle" data-toggle="dropdown"> 分类浏览
@@ -39,11 +42,13 @@
                 <% end %>
               </div>
             </li>
+
               <li>
                    <%= link_to carts_path do  %>
                      购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                   <% end %>
               </li>
+
                 <li>
                   <% if !current_user %>
                    <li><%= link_to("注册", new_user_registration_path) %> </li>
