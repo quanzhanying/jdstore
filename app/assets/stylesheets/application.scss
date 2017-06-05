@@ -1,0 +1,443 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+ //登录//
+ .loginmodal-container {
+   padding: 30px;
+   max-width: 350px;
+   width: 100% !important;
+   background-color: #F7F7F7;
+   margin: 0 auto;
+   border-radius: 2px;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   font-family: roboto;
+ }
+
+ .loginmodal-container h1 {
+   text-align: center;
+   font-size: 1.8em;
+   font-family: roboto;
+ }
+
+ .loginmodal-container input[type=submit] {
+   width: 100%;
+   display: block;
+   margin-bottom: 10px;
+   position: relative;
+ }
+
+ .loginmodal-container input[type=text], input[type=password] {
+   height: 44px;
+   font-size: 16px;
+   width: 100%;
+   margin-bottom: 10px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid #d9d9d9;
+   border-top: 1px solid #c0c0c0;
+   /* border-radius: 2px; */
+   padding: 0 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+ }
+
+ .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+   border: 1px solid #b9b9b9;
+   border-top: 1px solid #a0a0a0;
+   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ }
+
+ .loginmodal {
+   text-align: center;
+   font-size: 14px;
+   font-family: 'Arial', sans-serif;
+   font-weight: 700;
+   height: 36px;
+   padding: 0 8px;
+ /* border-radius: 3px; */
+ /* -webkit-user-select: none;
+   user-select: none; */
+ }
+
+ .loginmodal-submit {
+   /* border: 1px solid #3079ed; */
+   border: 0px;
+   color: #fff;
+   text-shadow: 0 1px rgba(0,0,0,0.1);
+   background-color: #4d90fe;
+   padding: 17px 0px;
+   font-family: roboto;
+   font-size: 14px;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ }
+
+ .loginmodal-submit:hover {
+   /* border: 1px solid #2f5bb7; */
+   border: 0px;
+   text-shadow: 0 1px rgba(0,0,0,0.3);
+   background-color: #357ae8;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ }
+
+ .loginmodal-container a {
+   text-decoration: none;
+   color: #666;
+   font-weight: 400;
+   text-align: center;
+   display: inline-block;
+   opacity: 0.6;
+   transition: opacity ease 0.5s;
+ }
+
+ .login-help{
+   font-size: 12px;
+ }
+
+
+// footer
+
+body {
+    height: 100%;
+    margin: 0;
+}
+html {
+    padding-bottom: 150px;
+    min-height: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #232f3e;
+}
+
+
+
+
+
+
+//页面布局//
+
+ .body2 {
+   padding: 150px 0 0 0
+ }
+
+
+
+
+ // 导航栏
+
+
+
+
+.navbar-default {
+
+  background-color: #232f3e;
+  color: #FFFFFF
+}
+
+.navbar-brand a {
+ color: #FFFFFF;
+ font-size: 150%;
+ text-decoration: none;
+ background-color: #232f3e
+}
+
+.navbar-brand a:hover{
+  color: #778899;
+
+}
+
+.navbar-listItem a {
+  color: #FFFFFF;
+  background-color: #232f3e
+}
+
+.navbar-listItem a:hover{
+
+}
+
+
+ //搜索
+ .search {
+   float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+   width: 400px;
+   margin-left: 400px; /*右边距*/
+   margin-top: 10px; /*上边距*/
+   position: relative; /*相对定位*/
+ }
+
+.welcome{
+  margin-top: 15px;
+  margin-left: 1220px;
+}
+
+.list {
+  float: left; /*你去左边*/
+  margin-left: 900px;
+
+}
+
+.find {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+  padding-right: 40px; /*右边加点空间，不然太挤啦*/
+
+}
+
+.find a{
+  color: #FFFFFF;
+  background-color: #232f3e;
+  text-decoration: none;
+}
+.find a:hover{
+  color: #778899;
+}
+
+.favorite {
+
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+  padding-right: 40px; /*右边加点空间，不然太挤啦*/
+}
+
+.favorite a {
+  color: #FFFFFF;
+  background-color: #232f3e;
+  text-decoration: none;
+}
+
+.favorite a:hover{
+  color: #778899;
+}
+
+
+
+
+.dropdown {
+
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+  padding-right: 40px; /*右边加点空间，不然太挤啦*/
+
+}
+
+
+.a-dropdown a{
+ background-color: #232f3e;
+}
+.dropdown a{
+  color: #FFFFFF;
+  //background-color: #232f3e;
+  text-decoration: none;
+}
+
+.dropdown a:hover{
+  color: #778899;
+}
+
+
+.cart-wrap {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+
+
+}
+.cart {
+  float: left;
+}
+
+.fa-shopping-cart {
+  color: #C81623; /*红色图标*/
+  font-size: 16px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
+}
+
+.cart a {
+  color: #FFFFFF; /*白色字体*/
+  background-color: #232f3e;
+  text-decoration: none; /*不要下划线*/
+}
+
+.cart a:hover {
+  color: #778899; /*鼠标一上去的时候，字体变成灰色*/
+}
+
+
+/*字幕*/
+.title {
+  width: 520px; /*宽度1200px*/
+  margin: 0 auto; /*水平居中*/
+  margin-top: 70px; /*上边距*/
+}
+.title-1 {
+  font-size: 36px; /*设置字体36px*/
+  padding-top: 10px;
+  //float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+//  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
+}
+
+
+
+
+/*菜单*/
+
+.menu {
+  width: 100%;
+}
+
+.box img{
+
+  border-style:none;
+  border-radius: 50%;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition: all 0.4s;
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+
+}
+
+.box:hover img {
+  transform: scale(1.2); /*在400ms内，图片的尺寸从 1倍 放大到 1.2倍*/
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+
+
+
+.mune-name{
+  padding-left: 30px;
+  padding-top: 0px;
+  font-size: 12px;
+}
+
+
+.menuList{
+  width: 1100px;
+  margin: 50px auto;
+  height: 5px;
+
+}
+
+.menuList-item {
+  float: left;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 5px;
+
+}
+
+
+.menuList-item:hover {
+  //background-color: #DCDCDC;
+}
+.menuList-activeItem {
+
+
+  //background: #DCDCDC;
+}
+.menuList-activeItem:hover {
+  //background: #DCDCDC;
+}
+
+// product-index//
+.productList-item-price{
+  padding-top: 0px;
+  font-size: 16px;
+  color: #ff5252;
+}
+
+.p-favorite{
+  float: right; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  padding-right: 160px;
+}
+
+//.f-favorite{
+  //float: right; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  //padding-left: 5px;
+//}
+
+.p-favorite a{
+  text-decoration: none; /*不要下划线*/
+}
+
+.p-favorite a:hover {
+  color: #ff5252;
+  background-color :#FFFFFF;
+}
+
+.p-shopping-cart a:hover {
+  background-color :#FFFFFF;
+}
+
+
+//body {
+//  background: #F5F5F5;
+//}
+
+/*商品列表*/
+.productList {
+  margin: 20px auto;
+  width: 1200px;
+  overflow: hidden;
+}
+
+
+.productList-item-pic {
+
+  width: 200px;
+  padding: 10px 10px 20px 20px;
+  margin: 50px auto;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.productList-item-pic img {
+  width: 200px;
+}
+
+.productList-item-pic:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
+}

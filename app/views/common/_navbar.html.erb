@@ -1,0 +1,127 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+      <%=link_to("BIG BOY", products_path)%>
+    </div>
+    </div>
+
+
+    <div class="search id="search-id"">
+        <%= form_tag search_products_path , :method => :get  do %>
+        <div class="input-group">
+          <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品信息">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+
+
+
+    <div class="nav navbar-nav navbar-right">
+                    <% if !current_user %>
+                     <li class="navbar-listItem">
+                       <a href="#" data-toggle="modal" data-target="#signup-modal"><span class="glyphicon glyphicon-user"></span>注册</a>
+
+                        </li>
+                        <li class="navbar-listItem">
+                          <a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> 登入</a>
+
+                     </li>
+                      <% end %>
+    </div>
+
+
+
+              <% if  current_user %>
+                  <div class="welcome">
+                   Hi!, <%= current_user.email %>
+                 </div>
+                 <div class="list">
+
+
+                    <div class="find">
+                      <%= link_to("有趣的发现", products_path)%>
+                    </div>
+
+                    <div class="favorite">
+                      <%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart "), products_path(:favorite => "yes"))%>
+                    </div>
+
+
+                    <div class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                         <b class="a-dropdown">
+                           账户信息
+                         </b>
+                      <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <% if current_user.admin? %>
+                           <li>
+                             <%= link_to("Admin 选单", admin_products_path ) %>
+                           </li>
+                             <% end %>
+                              <li> <%= link_to("个人订单列表", account_orders_path ) %> </li>
+                              <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                            </ul>
+                          </div>
+
+
+                    <div class="cart-wrap">
+                     <div class="cart">
+                     <a href="/carts">
+                     <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(<%= current_cart.products.count %>)
+                     </a>
+                    </div>
+                    </div>
+                    <% end %>
+
+    </div>
+    </div><!-- 以下代码添加在最后 -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="loginmodal-container">
+       <h2>Log in</h2>
+       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="form-inputs">
+           <%= f.input :email, required: false, autofocus: true %>
+           <%= f.input :password, required: false %>
+           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+         </div>
+         <div class="form-actions">
+           <%= f.button :submit, "Log in" %>
+         </div>
+       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h2>Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+  </div>
+	</nav>

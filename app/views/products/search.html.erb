@@ -1,0 +1,34 @@
+<div class="product-box">
+  <div class="container">
+    <%= image_tag("product_bg.jpg", class: "background-image") %>
+    <%= render "products/menu" %>
+    <!--=== 搜索结果，没有符合条件的数据 ===-->
+    <% if @products.blank?%>
+      <div class="search-error">
+        <h2><%= t('search-no-data')%></h2>
+      </div>
+    <% else %>
+    <!--=== 搜索结果，有符合条件的数据 ===-->
+    <!--=== 搜索內容 ===-->
+      <div class='row'>
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+          <%= product.title %> ￥ <%= product.price %>
+        </div>
+      <% end %>
+
+      </div>
+
+      <div class="page-box">
+        <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<h2> New Product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+<!-- 上传多张产品图片 -->
+  <div class="group">
+   <!-- <%= f.input :image, as: :file %> -->
+   <%= f.label :product_image %><br>
+   <%= f.file_field :product_image, :multiple => true, name: "product_images[image][]" %>
+  </div>
+
+  <%= select_tag(:category_id, options_for_select(@categories)) %>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>

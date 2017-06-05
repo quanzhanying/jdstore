@@ -1,0 +1,57 @@
+
+
+ <div class="title">
+<div class="title-1  <%= 'title-1-active' if !params[:category] %>">
+  <%= "INTERESTING FINDS"%>
+ </div>
+ </div>
+<%= render :partial => "products/menu" %>
+
+<!-- <div class="productList clearfix"> -->
+<div class="container">
+
+
+<div class="row product-section">
+  <% @products.each do |product| %>
+    <div class='col-xs-10 col-sm-3 col-md-3 product-content'>
+      <!-- <div class="productList-item-pic w200 h200"> -->
+      <%= link_to product_path(product) do %>
+        <% if product.product_images.present? %>
+          <%= image_tag(product.product_images[0].image.large.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+    <div class="absolute">
+
+      <% if !product.users.include?(current_user) %>
+   <%= link_to("",add_to_favorite_product_path(product),method: :post,class: "fa fa-heart fa-1.5x", style: "color:rgba(0,0,0,0.1);") %>
+  <% else %>
+   <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart fa-1.5x", style: "color:rgba(255,0,0,0.4);") %>
+  <% end %>
+</div>
+
+     <div class="product-info">
+       <p><span>￥</span><%= product.price %></p>
+        <p><%= product.title %></p>
+
+        <!--
+      <b class="p-shopping-cart">
+      <% if product.quantity > 0 %>
+     <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn pa border f18", :remote => true do %>
+
+       <i class="fa fa-shopping-cart col-red"></i>
+       </b> -->
+
+     <!-- <% end %>
+    <% end %>
+    <% if product.quantity <= 0 %>
+    <p class="productList-item-sellout f20 tc">已售完</p>
+    <% end %> -->
+
+     </div>
+     </div>
+  <% end %>
+
+</div>
+</div>
