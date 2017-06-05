@@ -49,11 +49,12 @@ body {
 
 /*===== Navbar 导览列 ======*/
 .navbar-default {
-  background: rgba(0,0,0,0.5); //半透明背景
+  background: #212121 !important; //半透明背景
 
   /* 文字连结 */
   a {
     color: #fff !important;
+    background-color: #212121 !important;
   }
 
   /* 连结-鼠标效果 */
@@ -65,11 +66,12 @@ body {
 
   /*===== 导览列滑动特效 ======*/
   &.scroll_navbar {
-    background-color: #fff; //背景颜色
+    background-color: #212121 !important; //背景颜色
 
     /* 文字连结 */
     a {
       color: #000 !important;
+      background-color: #212121;
     }
 
     /* 连结-鼠标效果 */
@@ -88,12 +90,12 @@ body {
 
   /*===== Dropdown ======*/
   .dropdown-menu{
-    background-color: #fff;
+    background-color: #212121;
     min-width: 175px;
 
     /* 连结 */
     a {
-      color: #000 !important;
+      color: #fff !important;
       padding: 8px 17px;
     }
 
@@ -456,7 +458,7 @@ body {
   /* 按钮 */
   .btn {
     background-color: #fff;
-    margin: 0 10px 0 10px;
+    margin: 0 100px 0 100px;
   }
 
   /* 按钮-鼠标效果 */
