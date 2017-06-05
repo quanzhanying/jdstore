@@ -219,9 +219,16 @@ a:hover {
   }
 // 轮播图结束
 
-// 热卖商品轮播图
+// 热卖商品
 .hot-products-title {
   text-align: center;
+  margin: 40px auto;
+  font-size: 2em;
+  margin-bottom: -110px;
+}
+.show-hot-products-title {
+  text-align: left;
+  padding: 0px 0px 0px 130px;
   margin: 40px auto;
   font-size: 2em;
   margin-bottom: -110px;

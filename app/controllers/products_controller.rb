@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @suggests = Product.selling.random8 #选出4个随机商品
+    @suggests_show = Product.selling.random4 #选出4个随机商品
     @photos = @product.photos.all
     @comments = @product.comments.all # 找出所有评论
     if @product.can_sell = false

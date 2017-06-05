@@ -54,5 +54,6 @@ class Product < ApplicationRecord
   scope :ordinary, -> { where(promotive_product: false, new_product: false, can_sell: true) } # 选出普通的商品
   scope :recent, -> { order('created_at DESC') }  #按照发布时间的顺序
   scope :random8, -> { limit(8).order('RANDOM()') } #随机选出8个样品
+  scope :random4, -> { limit(4).order('RANDOM()') } #随机选出4个样品
 
 end
