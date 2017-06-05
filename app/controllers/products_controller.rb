@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+before_action :authenticate_user!, only: [:add_to_favorite, :quit_favorite]
 before_action :validate_search_key, only: [:search]
 
 
@@ -15,8 +15,6 @@ def quit_favorite
 @product.save
 redirect_to :back, alert: "成功取消收藏!"
 end
-
-
 
 
 
