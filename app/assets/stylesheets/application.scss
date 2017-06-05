@@ -26,7 +26,7 @@
    padding-top: 1px;
    font-size: 14px;
    color: #cccccc;
-   background-color: #f9f9fa;
+   background-color: #eceff1;
    letter-spacing: 0.1em;
    font-family: Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, STHeiti, 华文细黑, sans-serif;
  }
@@ -59,7 +59,7 @@
   margin-left: 6px;
 }
 
-.dropdown-menu {
+.user-list__item {
     position: absolute;
     top: 100%;
     left: 0;
@@ -594,10 +594,10 @@ nav ul li {
 }
 
 .sticky {                                 /* 导航页背景效果 */
-  background-color: rgba(0, 0, 0, 0.73);
+  background-color: rgba(255, 255, 255, 0.95);
   opacity: 1;
   top: 0px;
-  border-bottom: 0px solid silver;
+  border-bottom: 1px solid silver;
 }
 
 .logo {
@@ -677,24 +677,7 @@ nav li a  {
 }
 
 nav li a:hover {
-  color: #fff;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    z-index: 1000;
-    float: right;
-    width: 200px;
-    padding: 5px 0px;
-    list-style: none;
-    font-size: 14px;
-    background-color: rgba(0, 0, 0, 0.73);
-    border: 0px solid rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.475);
-    clear: both;
+  color: #666;
 }
 
 .navright {               /*导航栏右侧区域*/
@@ -1237,7 +1220,6 @@ a:active, a:hover, a:link, a:visited {
 div.pd-s__item {
     // background: url(https://www.hyperledger.org/wp-content/uploads/sites/7/2016/10/hl_healthcare.jpg) center center no-repeat #102026;
     background-size: cover;
-    padding-top: 50px;
     height: auto;
 }
 
@@ -1370,15 +1352,39 @@ div.pd-s__item {
 
 /*--product--show--*/
 
+.pd-show-head {
+  background-color: #fff;
+  padding: 20px 20px 0 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
 .pd-show-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 310px;
+    max-width: 380px;
     margin: auto;
     text-align: center;
 }
 
+.pd--show-card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.pd--show-card-img img {
+    margin-bottom: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
 .pd-show-container {
     padding: 0 16px;
+    padding-top: 20px;
+    background-color: #fff;
+}
+
+.pd-show-button-data-update {
+  padding-bottom: 10px;
 }
 
 .pd-show-container-title {
@@ -1387,17 +1393,30 @@ div.pd-s__item {
 }
 
 .pd-show-container button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    margin-bottom: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.15);
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
+position: relative;
+display: block;
+width: 250px;
+margin: 20px auto;
+padding: 10px;
+
+background-color: #fff;
+border: 1px solid #ccc;
+
+color: #000;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+
+transform-style: flat;
+transition: all 250ms ease-out;
+
+&:before,
+&:after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    transition: all 250ms ease-out;
+}
 }
 
 .pd-show-container a {
@@ -1412,9 +1431,10 @@ div.pd-s__item {
 
 .pd-info-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 310px;
+    max-width: 380px;
     margin: auto;
     text-align: left;
+    background-color: #fff;
 }
 
 .pd-info-container {
@@ -1425,13 +1445,50 @@ div.pd-s__item {
 
 .pd-info-add-cart-btn {
     padding: 0 16px;
-    margin-top: -85px;
+    margin-top: -90px;
 }
 
 .pd-show-button {
-  color: #337ab7;
-  border-color:rgba(0, 0, 0, 0.15);
-  background-color: rgba(0, 0, 0, 0.15)
+  position: relative;
+  display: block;
+  width: 100%;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transform-style: flat;
+  transition: all 250ms ease-out;
+
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  }
+}
+
+.btn-update-date, .btn-add-to-cart {
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #ddd;
+    background-color: rgba(3, 155, 211, 0.13);
+
+    &:before {
+			box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+    }
+  }
 }
 
 .pd-des-title h2 {
@@ -1455,7 +1512,7 @@ div.pd-s__item {
 .pd-des-card {
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin: 10px 10px 10px -10px;
+  margin: 0 10px 10px -10px;
   padding: 30px 30px 60px 30px;
 }
 
