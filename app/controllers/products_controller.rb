@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @suggests = Product.random
     @product = Product.find(params[:id])
     @photos = @product.photos.all
   end
@@ -62,6 +63,16 @@ class ProductsController < ApplicationController
       flash[:warning] = "你的购物车内已有此物品"
     end
       redirect_to :back
+  end
+
+  def instant_buy
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+    else
+      flash[:warning] = "你的购物车已有此物品，快去结账吧"
+    end
+    redirect_to carts_path
   end
 
   def favorite

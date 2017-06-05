@@ -34,47 +34,49 @@ end
 
 # Intialize Product
 
-if Product.count == 0
-  puts "Creating product"
-  Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
-    description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
-    price: 298,
-    quantity: 5,
-    image: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg5uee47asj30rs0rsgn4.jpg"),
-    category_id: 1
-    )
 
-  Product.create!(title: "gogo family-漫步云端 鸡年纪念盘",
-    description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
-    price: 299,
-    quantity: 5,
-    image: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg5udmiot9j30id0id0uz.jpg"),
-    category_id: 1
-    )
+# if Product.count == 0
+#   puts "Creating product"
+#   Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
+#     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
+#     price: 298,
+#     quantity: 5,
+#     image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg5uee47asj30rs0rsgn4.jpg"),
+#     category_id: 1
+#     )
+#
+#   Product.create!(title: "gogo family-漫步云端 鸡年纪念盘",
+#     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
+#     price: 299,
+#     quantity: 5,
+#     image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg5udmiot9j30id0id0uz.jpg"),
+#     category_id: 1
+#     )
+#
+#   Product.create!(title: "礼盒“福”字款",
+#     description: "小蓝边碗",
+#     price: 699,
+#     quantity: 5,
+#     image: open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg5ucpv8itj30ku0kuqat.jpg"),
+#     category_id: 1
+#     )
+#
+#   Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
+#     description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
+#     price: 298,
+#     quantity: 5,
+#     image: open("https://ws1.sinaimg.cn/large/006tKfTcly1fg5ua4hmg6j30640640sl.jpg"),
+#     category_id: 1
+#     )
+#
+#   Product.create!(title: "迷你便携式果汁榨汁机",
+#     description: "MR9200-A果汁料理机",
+#     price: 328,
+#     quantity: 5,
+#     image: open("https://ws3.sinaimg.cn/large/006tNc79gy1ffvr0obs1nj30m80m83yt.jpg"),
+#     category_id: 2
+#     )
+#   else
+#     puts "Product created already"
+#   end
 
-  Product.create!(title: "礼盒“福”字款",
-    description: "小蓝边碗",
-    price: 699,
-    quantity: 5,
-    image: MiniMagick::Image.open("https://ws2.sinaimg.cn/large/006tKfTcgy1fg5ucpv8itj30ku0kuqat.jpg"),
-    category_id: 1
-    )
-
-  Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
-    description: "深度：2.5CM 盘口直径：26CM 盘底直径：16CM",
-    price: 298,
-    quantity: 5,
-    image: MiniMagick::Image.open("https://ws1.sinaimg.cn/large/006tKfTcly1fg5ua4hmg6j30640640sl.jpg"),
-    category_id: 1
-    )
-
-  Product.create!(title: "迷你便携式果汁榨汁机",
-    description: "MR9200-A果汁料理机",
-    price: 328,
-    quantity: 5,
-    image: MiniMagick::Image.open("https://ws3.sinaimg.cn/large/006tNc79gy1ffvr0obs1nj30m80m83yt.jpg"),
-    category_id: 2
-    )
-  else
-    puts "Product created already"
-  end

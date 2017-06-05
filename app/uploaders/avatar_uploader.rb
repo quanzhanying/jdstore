@@ -30,6 +30,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [400,400]
   end
 
+  version :large do
+    process resize_to_fill: [550,550]
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:

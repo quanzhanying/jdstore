@@ -23,4 +23,8 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :photos
 
   scope :random, -> { limit(3).order("RANDOM()") }     ## limit是随机的数目
+
+  has_many :reviews
+
+
 end
