@@ -1,6 +1,7 @@
+
 <div class='row product-box product-show'>
 
-  <div class="col-md-5 col-md-offset-1 col-xs-12 product-image">
+  <div class="col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 product-image">
 
   <!-- 显示多张图片 -->
     <% if @product_images.present? %>
@@ -20,7 +21,7 @@
   </div>
 
 
-  <div class="col-md-4 col-md-offset-1 col-xs-10 col-xs-offset-1 product-detail">
+  <div class="col-sm-3 col-sm-offset-0 col-xs-10  col-xs-offset-1 product-detail">
    <div>
 
 
@@ -36,8 +37,8 @@
 
   </div>
       <hr />
-      <div>
-    <div >
+      <div >
+
       <% if @product.quantity.present? && @product.quantity > 0 %>
       <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "buy_button") %>
       <% else %>
@@ -45,6 +46,6 @@
       <%end%>
 
     </div>
-  </div>
+
   </div>
 </div>
