@@ -3,11 +3,12 @@
   <div class="menuList">
 
 
-
+<!-- nav-全部产品 -->
     <div class="menuList-item bg-color1">
       <%= link_to products_path() do %>
        <div class="box">
-          <%= image_tag("https://s-media-cache-ak0.pinimg.com/favicons/49f0245b0a800cc12e2fe7db7f2bdc540e0c822142da4d34ee100500.png?e9c9afcdf3b744522dcda1ef390c33e4", class: "thumbnail", style: "padding: 18px") %>
+
+          <%= image_tag("https://ws4.sinaimg.cn/large/006tNbRwly1fgahnqtmscj3050050743.jpg", class: "thumbnail", style: "padding: 18px") %>
       </div>
       <% end %>
       <div class="mune-name">
@@ -15,9 +16,14 @@
      </div>
       </div>
 
+<!-- 只有登录用户才能看到这个我的收藏nav选项 -->
+ <% if !@current_user.nil? %>
       <div class="menuList-item bg-color1">
         <%= link_to products_path(:favorite => "yes") do %>
          <div class="box">
+           <% if params[:favorite] == "yes" %>
+           <div class="hue"></div>
+           <% end %>
            <%= image_tag("https://ws3.sinaimg.cn/large/006tNbRwly1fgahc59q8rj306c06it8x.jpg", class: "thumbnail", style: "padding: 5px") %>
        </div>
         <% end %>
@@ -25,6 +31,9 @@
        收藏
        </div>
         </div>
+<% end %>
+
+<!-- nav-产品分类 -->
 
    <% Category.all.each do |category| %>
 

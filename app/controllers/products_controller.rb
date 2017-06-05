@@ -21,8 +21,7 @@ end
   def index
 
 
-
-
+    @current_user=current_user
     if params[:category].blank?
       @products = Product.all
       if params[:favorite] == "yes"
