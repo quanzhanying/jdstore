@@ -568,8 +568,7 @@
 .product-head {
   margin-top: 16px;
   text-align: center;
-  font-size: 100%;
-  border-style: solid;
+
 }
 
 .product-item {
@@ -584,10 +583,7 @@
   }
 }
 
-.product-title h4:hover,
-.product-title h4:focus {
-  text-decoration: none;
-}
+
 
 
 
@@ -662,7 +658,7 @@
   margin-bottom: 30px; /*------ show展示图的间距 -----*/
 
   img {
-  padding: 15px; /*----- 图的白边 -----*/
+  padding: 12px; /*----- 图的白边 -----*/
  }
 }
 
@@ -685,7 +681,7 @@
   background-color:#fff;
 
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 0px;
   margin-bottom: 50px;
   padding-left: 15px;
   padding-right: 15px;
@@ -731,24 +727,35 @@
 
 .recomitem{
   margin-bottom: 20px;
+  background-color: #FFFFFF;
+  width: 250px;
 
-    span.rmb{
+    span.rmb {
+      margin-left: 10px;
       color: #d7282d;
+      font-size: 20px;
 
     }
     span.price{
       color: #d7282d;
       font-size: 20px;
     }
+
+    .btn-xs{
+      float: right;
+      margin-right: 10px;
+    }
+
+
  }
 
 
-.recomitemlist img {
-  width: 250px;
-  height: 250px;
-  padding: 10px;    /*----- 配合class="thumbnail" 定义使padding显示 ----*/
-  border-radius: 2%;
-  }
+.recomitemlist  img {
+    width: 250px;
+    height: 250px;
+    padding: 10px;    /*----- 配合class="thumbnail" 定义使padding显示 ----*/
+    border: none;
+    }
 
 
 

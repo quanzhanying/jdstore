@@ -74,7 +74,7 @@
         </div>
 
           <!-- 商品展示与评论 -->
-          <div class="col-md-11 comment">
+          <div class="col-md-12 comment">
             <div class="tabs">
               <div class="tabmenu">
                 <ul class="nav nav-tabs">
@@ -139,6 +139,7 @@
          <h4 style="padding-top:10px" font-style:"bold">猜您可能会喜欢</h4>
            <hr>
              <% @suggests.each do |product| %>
+             <!-- 不同的产品 -->
                <%= link_to product_path(product) do %>
                  <div class="recomitem">
                    <div class="recomitemlist">
@@ -148,15 +149,18 @@
                          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
                        <% end %>
                    </div>
+                <% end %>
+                <!-- 不同的产品 end -->
+                    <div class="wrap-recom">
                       <span class="rmb">￥ </span>
                       <span class="price"><%= product.price %> </span>
                         <% if product.quantity.present? && product.quantity > 0 %>
-                            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-xs btn-danger") %>
                         <% else %>
                             已销售一空，无法购买
                         <% end %>
+                      </div>
                  </div>
-               <% end %>
              <% end %>
         </div>
     </div>
