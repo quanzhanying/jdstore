@@ -21,6 +21,77 @@ else
 end
 
 
+# Initialize  Categorys
+
+
+if Category.find_by(name: "旅行").nil?
+Category.create!(
+name: "旅行"
+)
+puts "成功建立1个类别：旅行"
+else
+  puts "类别：旅行 已经存在"
+end
+
+
+if Category.find_by(name: "大孩子").nil?
+Category.create!(
+name: "大孩子"
+)
+puts "成功建立1个类别：大孩子"
+else
+  puts "类别：大孩子 已经存在"
+end
+
+if Category.find_by(name: "中世纪").nil?
+Category.create!(
+name: "中世纪"
+
+)
+puts "成功建立1个类别：中世纪"
+else
+  puts "类别：中世纪 已经存在"
+end
+
+
+if Category.find_by(name: "厨具").nil?
+Category.create!(
+name: "厨具"
+
+)
+puts "成功建立1个类别：厨具"
+else
+  puts "类别：厨具 已经存在"
+end
+
+
+if Category.find_by(name: "公仔").nil?
+Category.create!(
+name: "公仔"
+)
+puts "成功建立1个类别：公仔"
+else
+  puts "类别：公仔 已经存在"
+end
+
+if Category.find_by(name: "木质").nil?
+Category.create!(name: "木质")
+puts "成功建立1个类别：木质"
+else
+  puts "类别：木质 已经存在"
+end
+
+
+if Category.find_by(name: "植物").nil?
+Category.create!(
+name: "植物"
+)
+puts "成功建立1个类别：植物"
+else
+  puts "类别：植物 已经存在"
+end
+
+
 # Initialize  Products
 
 # 大孩子
@@ -437,77 +508,4 @@ Product.create!(
   puts "成功建立1个商品：陶土花盆"
 else
   puts "陶土花盆 已经存在"
-end
-
-
-# Initialize  Categorys
-
-#1
-if Category.find_by(name: "旅行").nil?
-Category.create!(
-name: "旅行"
-)
-puts "成功建立1个类别：旅行"
-else
-  puts "类别：旅行 已经存在"
-end
-
-#2
-if Category.find_by(name: "大孩子").nil?
-Category.create!(
-name: "大孩子"
-)
-puts "成功建立1个类别：大孩子"
-else
-  puts "类别：大孩子 已经存在"
-end
-
-if Category.find_by(name: "中世纪").nil?
-Category.create!(
-name: "中世纪"
-
-)
-puts "成功建立1个类别：中世纪"
-else
-  puts "类别：中世纪 已经存在"
-end
-
-
-if Category.find_by(name: "厨具").nil?
-Category.create!(
-name: "厨具"
-
-)
-puts "成功建立1个类别：厨具"
-else
-  puts "类别：厨具 已经存在"
-end
-
-
-if Category.find_by(name: "公仔").nil?
-Category.create!(
-name: "公仔"
-)
-puts "成功建立1个类别：公仔"
-else
-  puts "类别：公仔 已经存在"
-end
-
-if Category.find_by(name: "木质").nil?
-Category.create!(
-name: "木质"
-)
-puts "成功建立1个类别：木质"
-else
-  puts "类别：木质 已经存在"
-end
-
-
-if Category.find_by(name: "植物").nil?
-Category.create!(
-name: "植物"
-)
-puts "成功建立1个类别：植物"
-else
-  puts "类别：植物 已经存在"
 end
