@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#  Initialize admin user
+u = User.new
+u.email = "xiaoyingquan@163.com"
+
+u.password = "111111"
+
+u.password_confirmation = "111111"
+
+u.is_admin = true
+u.save
+
+#Initialize product
+
+Product.create!(title: "Aeron",
+                 description: "Aeron",
+                 price: 7999,
+                 quantity: 10,
+                 image: open("https://ooo.0o0.ooo/2017/06/05/5934cfd736565.jpeg")
+                 )
+
+Product.create!(title: "macbook",
+                description: "macbook",
+                price: 9999,
+                quantity: 10,
+                image: open("https://ooo.0o0.ooo/2017/06/05/5934d171ebbc3.jpg")
+                )
+
+Product.create!(title: "iphone 7",
+                description: "iphone 7",
+                price: 5999,
+                quantity: 10,
+                image: open("https://ooo.0o0.ooo/2017/06/05/5934d17235952.jpeg")
+                )
