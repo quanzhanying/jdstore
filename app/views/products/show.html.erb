@@ -6,7 +6,7 @@
       <%= image_tag("http://placehold.it/500x500&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 block">
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
@@ -14,14 +14,13 @@
       </p>
     </div>
 
+    <hr>
+
     <div>
       <h5> 剩余数量 : <%= @product.quantity %> </h5>
       <h4> ￥ <%= @product.price %> </h4>
     </div>
 
-    <br>
-    <br>
-    <br>
     <hr>
     <div class="pull-down">
       <% if @product.quantity.present? && @product.quantity > 0 %>
@@ -31,21 +30,17 @@
           <% end %>
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 block">
     <h2 align="center">书评</h2>
-    <p>
+    <p class="bookreview">
       <%= @product.bookreview %>
     </p>
 
-    <br>
     <hr>
-    <div class="pull-down">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("付费阅读完整书评", "#{}", :method => :post, :class => "btn btn-primary btn-lg btn-success") %>
-        <p>功能尚未实现，敬请期待</p>
-          <% else %>
-            库存不足，无法购买
-          <% end %>
+    <div class="pull-down" align="center">
+      <div class="btn btn-primary btn-lg btn-success">
+        <a href="https://fullstack.xinshengdaxue.com/works/614">付费阅读完整内容</a>
+      </div>
     </div>
   </div>
 
