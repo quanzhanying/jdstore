@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>凨-百度地图API之地图标注(JS版)，地理位置信息，根据地址获取经度纬度</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8277432c34c6f58ba75d3a541ed2559e"></script>
+</head>
+<body>
+<div>
+    <p>搜索:
+        <input id="keyword" type="text" size="50"/> <input id="Search" type="button" value="搜索"
+                                                           style="cursor: pointer"/>
+    </p>
+
+    <p> 纬度：<input name="lng" type="text" id="lng" style="width:200px;" value="120.570464"/>
+        经度：<input name="lat" type="text" id="lat" style="width:200px;" value="31.300216"/>
+        标注点所在区域：<input name="address" type="text" id="address" style="width:200px;"/>
+    </p>
+</div>
+<div style="width: 420px; height: 340px; border: 1px solid gray; float: left;" id="container">
+</div>
+<div style="width: 350px; height: 340px;">
+    <input id="biao" type="button" value="标注" style="cursor: pointer"/>
+</div>
+<script type="text/javascript">
+    var map = new BMap.Map("container");
+    //创建地址解析的实例
+    var myGeo = new BMap.Geocoder();
+    var lng = $('#lng').val(), lat = $('#lat').val();
+    //默认根据IP读取当前城市
+    var LocalCity = true;
+    //默认北京市,或经度纬度不正确情况下
+    if (!lng || !lat) {
+        lng = 116.331398;
+        lat = 39.897445;
+    } else {
+        LocalCity = false;
+    }
+    //设置地图中心坐标
+    map.centerAndZoom(new BMap.Point(lng, lat), 12);
+    //添加默认缩放平移控件
+    map.addControl(new BMap.NavigationControl());
+    //开启缩小放大
+    map.enableScrollWheelZoom();
+    //当前城市
+    if (LocalCity) {
+        var myCity = new BMap.LocalCity();
+        myCity.get(setCenter);
+    }else{
+        //设置覆盖物
+        var point = new BMap.Point(lng, lat);
+        setPoint(point);
+    }
+    //搜索
+    $('#Search').bind('click', function () {
+        //清空覆盖物
+        map.clearOverlays();
+        var searchTxt = $("#keyword").val();
+        myGeo.getPoint(searchTxt, function (point) {
+            setPoint(point);
+        }, "全国");
+
+    });
+    //搜索
+    $('#biao').bind('click', function () {
+        //清空覆盖物
+        map.clearOverlays();
+        var center = map.getCenter();
+        var point = new BMap.Point(center.lng, center.lat);
+        setPoint(point);
+    });
+    /**
+     * 回调函数
+     */
+    function setCenter(result) {
+        var cityName = result.name;
+        //把地图设置当前城市
+        map.setCenter(cityName);
+    }
+    /**
+     * 设置覆盖物，获取坐标
+     * @param point
+     */
+    function setPoint(point) {
+        if (point) {
+            //坐标赋值
+            $('#lng').val(point.lng);
+            $('#lat').val(point.lat);
+            Geocoder(point);
+
+            map.centerAndZoom(point, 12);
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+            marker.enableDragging();//可以拖动
+            //创建信息窗口
+            var infoWindow = new BMap.InfoWindow("这就是您公司的位置。<br/>如果不正确，请拖动红色图标");
+            //显示窗口
+            marker.openInfoWindow(infoWindow);
+            //点击监听
+            marker.addEventListener("click", function () {
+                this.openInfoWindow(infoWindow);
+            });
+            //拖动监听
+            marker.addEventListener("dragend", function (e) {
+                //坐标赋值
+                $('#lng').val(e.point.lng);
+                $('#lat').val(e.point.lat);
+                Geocoder(e.point);
+            });
+        }
+    }
+    /**
+     * 根据坐标获取地址
+     * @param pointr
+     * @constructor
+     */
+    function Geocoder(point) {
+        var gc = new BMap.Geocoder();
+        gc.getLocation(point, function (rs) {
+            var addComp = rs.addressComponents;
+            $('#address').val(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+        });
+    }
+
+</script>
+</body>
+</html>

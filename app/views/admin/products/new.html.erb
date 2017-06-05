@@ -1,0 +1,39 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>凨-百度地图API之地图标注(JS版)，地理位置信息，根据地址获取经度纬度</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8277432c34c6f58ba75d3a541ed2559e"></script>
+</head>
+
+<h2> New Product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+	<div class="group">
+   	<%= f.input :image, as: :file %>
+ 	</div>
+
+  <%= f.text_field :cp_lat, :id => "maplat", :type => "hidden" %>
+  <%= f.text_field :cp_lng, :id => "maplng", :type => "hidden" %>
+  <%= render "common/baidumap_1" %>
+
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
