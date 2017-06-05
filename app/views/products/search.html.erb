@@ -1,60 +1,64 @@
-<div>
-  <ul class="breadcrumb">
-    <li><a href="/products">全品项商品首页</a></li>
-    <li class="active">搜索结果</li>
-  </ul>
-  <!-- 商品排序显示页面显示部分 -->
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
-      <!-- 搜索結果提示開始 -->
-      <div class="well well-lg", style="text-align: center; font-size: 1.2em;">
-        <% if @query_string.blank? %>
-          <div class="search-info-title">
-            <p style="margin-bottom: 0px;">搜索信息不能为空，请您输入相关信息进行搜索。</p>
-          </div>
-        <% elsif @products.blank? %>
-          <p class="search-info-title", style="margin-bottom: 0px;">没有找到「<%= @query_string %>」的商品信息，请输入关键字搜索。</p>
-        <% else %>
-          <p class="search-info-title", style="margin-bottom: 0px;"> 有关「<%= @query_string %>」的商品信息。</p>
-      </div>
-      <!-- 搜索結果提示結束 -->
-      <div class="order clearfix">
-        <p class="title">商品排序 | </p>
-        <ul class="orderList">
-          <li class="orderList-orderItem <%= 'orderList-activeItem' if !params[:order] %>"><%= link_to("新品", products_path) %></li>
-          <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_stock' %>"><%= link_to("销量", products_path(:order => "by_product_stock")) %></li>
-          <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
-        </ul>
-      </div>
+<ul class="breadcrumb">
+  <li><a href="/products">全品项商品首页</a></li>
+  <li class="active">搜索结果</li>
+</ul>
+<!-- 商品排序显示页面显示部分 -->
+<div class="row">
+  <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
+    <!-- 搜索結果提示開始 -->
+    <div class="well well-lg", style="text-align: center; font-size: 1.2em;">
+      <% if @query_string.blank? %>
+        <div class="search-info-title">
+          <p style="margin-bottom: 0px;">搜索信息不能为空，请您输入相关信息进行搜索。</p>
+        </div>
+      <% elsif @products.blank? %>
+        <p class="search-info-title", style="margin-bottom: 0px;">没有找到「<%= @query_string %>」的商品信息，请输入关键字搜索。</p>
+      <% else %>
+        <p class="search-info-title", style="margin-bottom: 0px;"> 有关「<%= @query_string %>」的商品信息。</p>
+    </div>
+    <!-- 搜索結果提示結束 -->
+    <div class="order clearfix">
+      <p class="title">商品排序 | </p>
+      <ul class="orderList">
+        <li class="orderList-orderItem <%= 'orderList-activeItem' if !params[:order] %>"><%= link_to("新品", products_path) %></li>
+        <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_stock' %>"><%= link_to("销量", products_path(:order => "by_product_stock")) %></li>
+        <li class="orderList-orderItem <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
+      </ul>
     </div>
   </div>
-  <!-- 商品排序显示页面部分结束 -->
-  <!-- 区域：商品展示列表 -->
-  <div class="productList-wrap", style="margin: -15px auto;">
-    <%= render :partial => "products/list" %>
-    <!-- 商品展示列表结束 -->
-      <!-- <div class="search-result">
-        <div class="row products-show0"></div>
-        <div class="product-table">
-          <div class="row">
-            <% @products.each do |product| %>
-              <div class="col-xs-6 col-md-3">
-                <%= link_to product_path(product) do %>
-                  <% if product.image.present? %>
-                    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                  <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
-                  <% end %>
+</div>
+<!-- 商品排序显示页面部分结束 -->
+<!-- 区域：商品展示列表 -->
+<div class="row">
+  <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
+    <div class="panel">
+      <div class="productList-wrap">
+        <%= render :partial => "products/list" %>
+        <!-- 商品展示列表结束 -->
+          <!-- <div class="search-result">
+            <div class="row products-show0"></div>
+            <div class="product-table">
+              <div class="row">
+                <% @products.each do |product| %>
+                  <div class="col-xs-6 col-md-3">
+                    <%= link_to product_path(product) do %>
+                      <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                      <% end %>
+                    <% end %>
+                    <%= render_highlight_content(product, @query_string) %> ￥ <%= product.price %> <!-- 搜索关键字黄色背景显示 -->
+                  <!-- </div>
                 <% end %>
-                <%= render_highlight_content(product, @query_string) %> ￥ <%= product.price %> <!-- 搜索关键字黄色背景显示 -->
-              <!-- </div>
-            <% end %>
+              </div>
+            </div>
+          </div> -->
+          <div class="text-center">
+            <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
           </div>
-        </div>
-      </div> -->
-      <div class="text-center">
-        <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

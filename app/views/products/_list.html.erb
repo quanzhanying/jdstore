@@ -3,7 +3,7 @@
   <ul class="productList clearfix">
     <div class="row", style="margin-top: -49px;">
       <% @products.each do |product| %>
-        <div class="col-md-3", style="padding-left: 0px; padding-right: 0px;">
+        <div class="col-md-3 col-xs-5", style="padding-left: 0px; padding-right: 0px;">
           <li class="productList-item productList-panel">
             <div class="productList-item-pic">
               <%= link_to product_path(product) do %>
@@ -22,7 +22,7 @@
               <% end %>
               <!-- 待加入預購功能 -->
               <% if product.stock <= 0 %>
-                <div class="productList-item-sellout", style="margin-top: -33px;">
+                <div class="productList-item-sellout", style="margin-top: -33px; margin-right: 15px;">
                   <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                 </div>
               <% end %>

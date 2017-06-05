@@ -321,37 +321,38 @@ a:hover {
   background-color: #ffffff;
   border: 1px solid transparent;
   border-radius: 0px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.05)
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1)
 }
 .productList-panel:hover, {
-  width: 105%;
   margin-bottom: 23px;
   background-color: #ffffff;
   border: 1px solid transparent;
   border-radius: 0px;
-  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05)
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1)
 }
 
 .productList-wrap {
 
   padding-top:20px;
+  padding-bottom: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
   .productList {
     padding: 0px;
+    width: 100%;
     .productList-item {
       float:left;
       display:inline;
       width: 100%;
-      max-width: 265px;
-      margin: 0.5px;
+      height: auto;
+      margin: 0.5px auto;
       position:relative;
-      padding: 0px 15px;
+      padding: 15px 15px 0px;
 
       .productList-item-pic {
-        margin: 30px auto;
+        margin: 15px auto 0;
         width: 90%;
         img {
           width: 100%;
@@ -367,7 +368,8 @@ a:hover {
       }
       .productList-item-name{
         margin-top:2px !important;
-        margin: 15px 15px 30px;
+        margin: 0px 15px;
+        height: 90px;
       }
       .productList-item-desc {
         margin-top:2px !important;
@@ -382,7 +384,7 @@ a:hover {
       }
       .productList-item-cartBtn {
         position:absolute;
-        right: 15px;
+        right: 30px;
         font-size:18px;
       }
     }
