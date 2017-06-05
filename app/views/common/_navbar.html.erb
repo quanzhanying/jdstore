@@ -2,11 +2,11 @@
 <div class="row">
 
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">泰•开心</a>
-        </div>
-      <ul class="nav navbar-nav">
+    <div class="container-fluid ">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">泰•开心</a>
+      </div>
+      <ul class="nav navbar-nav" style="margin-left: -5px;">
       <!--  分类的下拉菜单
         <li class="dropdown">
           <a href="<%= products_path %>" class="dropdown-toggle" data-toggle="dropdown" aria-e panded="false">商品分类<span class="caret"></span></a>
@@ -20,12 +20,28 @@
           </ul>
         </li>
       !-->
-        <li class="active"><a href="<%= products_path %>">所有商品</a></li>
+        <li class="active" style="margin-left: -10px;"><a href="<%= products_path %>">所有商品</a></li>
         <% Category.all.each do |category| %>
-          <li>
+          <li style="margin-left: -10px;">
             <%= link_to(category.name, products_path(category: category.name)) %>
           </li>
         <% end %>
+
+        <form class="navbar-form navbar-left" style="margin-left: -5px;">
+          <%= form_tag search_products_path, :method => :get do %>
+
+          <div class="input-group">
+            <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Search">
+
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+          <% end %>
+        </form>
+
 
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -64,21 +80,6 @@
           <% end %>
       </ul>
 
-      <form class="navbar-form navbar-right">
-        <%= form_tag search_products_path, :method => :get do %>
-
-        <div class="input-group">
-          <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="Search">
-
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
-        </div>
-
-        <% end %>
-      </form>
 
     </div>
   </nav>
