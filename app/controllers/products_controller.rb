@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite, :unfavorite, :add_to_cart]
 
   def index
     @suggests = Product.random

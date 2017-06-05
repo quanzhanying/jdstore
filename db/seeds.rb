@@ -34,6 +34,7 @@ end
 
 # Intialize Product
 
+
 # if Product.count == 0
 #   puts "Creating product"
 #   Product.create!(title: "HYBRID中西融合系列 骨瓷菜盘",
@@ -78,3 +79,4 @@ end
 #   else
 #     puts "Product created already"
 #   end
+
