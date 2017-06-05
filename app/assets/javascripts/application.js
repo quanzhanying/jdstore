@@ -12,10 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
-=======
-
->>>>>>> 2b788122646c6ec167fc9f7141c4a3e30db3a409
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require ckeditor/init
