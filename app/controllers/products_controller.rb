@@ -23,12 +23,14 @@ class ProductsController < ApplicationController
       end
     end
 
+ # 收藏功能
   def collect
     @products = Product.all
     if params[:favorite] == "yes"
       @products = current_user.products
     end
   end
+
 
 
   def show
