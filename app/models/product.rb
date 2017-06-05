@@ -2,18 +2,20 @@
 #
 # Table name: products
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  description :text
-#  price       :integer
-#  stock       :integer
-#  can_sell    :boolean
-#  user_id     :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  image       :string
-#  category_id :integer
-#  brand_id    :integer
+#  id                :integer          not null, primary key
+#  name              :string
+#  description       :text
+#  price             :integer
+#  stock             :integer
+#  can_sell          :boolean
+#  user_id           :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  image             :string
+#  category_id       :integer
+#  brand_id          :integer
+#  new_product       :boolean          default(FALSE)
+#  promotive_product :boolean          default(FALSE)
 #
 
 class Product < ApplicationRecord
@@ -47,6 +49,8 @@ class Product < ApplicationRecord
   acts_as_votable  #点赞功能
 
   scope :selling, -> { where(can_sell: true) } # 选出正在销售中的商品
+  scope :new, -> { where(new_product: true) }
+  scope :promotive, -> { where(promotive_product: true) }
   scope :recent, -> { order('created_at DESC') }  #按照发布时间的顺序
   scope :random8, -> { limit(8).order('RANDOM()') } #随机选出8个样品
 
