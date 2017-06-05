@@ -1,18 +1,21 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite, :unfavorite, :add_to_cart]
 
   def index
+    @suggests = Product.random
     if params[:category].present?
       @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(category_id: @category_id)
+      @products = Product.where(category_id: @category_id).order("position ASC")
     else
       @products = Product.all.order("position ASC")
     end
   end
 
   def show
+    @suggests = Product.random
     @product = Product.find(params[:id])
+    @photos = @product.photos.all
   end
 
   def new
@@ -60,6 +63,16 @@ class ProductsController < ApplicationController
       flash[:warning] = "你的购物车内已有此物品"
     end
       redirect_to :back
+  end
+
+  def instant_buy
+    @product = Product.find(params[:id])
+    if !current_cart.products.include?(@product)
+      current_cart.add_product_to_cart(@product)
+    else
+      flash[:warning] = "你的购物车已有此物品，快去结账吧"
+    end
+    redirect_to carts_path
   end
 
   def favorite

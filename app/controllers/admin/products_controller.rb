@@ -4,7 +4,6 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.all
     @products = Product.all.order("position ASC")
     @products = @products.paginate(:page => params[:page], :per_page => 8)
   end
@@ -12,6 +11,7 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all.map { |c| [c.name, c.id] }
+    @photo = @product.photos.build   #for multi-pics
   end
 
   def create
@@ -19,6 +19,11 @@ class Admin::ProductsController < ApplicationController
     @product.category_id = params[:category_id]
 
     if @product.save
+      if params[:photos] != nil
+           params[:photos]['avatar'].each do |a|
+             @photo = @product.photos.create(:avatar => a)
+           end
+      end
       redirect_to admin_products_path
     else
       render :new
@@ -35,8 +40,18 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.category_id = params[:category_id]
 
-    if @product.update(product_params)
+    if params[:photos] != nil
+      @product.photos.destroy_all #need to destroy old pics first
+
+      params[:photos]['avatar'].each do |a|
+        @picture = @product.photos.create(:avatar => a)
+      end
+
+      @product.update(product_params)
       redirect_to admin_products_path, notice: "Update Successful"
+
+    elsif @product.update(product_params)
+      redirect_to admin_products_path
     else
       render :edit
     end
@@ -63,7 +78,7 @@ class Admin::ProductsController < ApplicationController
   end
 
 
-  
+
     private
 
     def product_params

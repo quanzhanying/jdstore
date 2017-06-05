@@ -1,3 +1,79 @@
 //Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing-page {
+  margin-bottom: 60px;
+  .background-blue {
+    background-color: #F3F3F5 !important;
+  }
+  font-family: 'Noto Sans SC', sans-serif;
+/*----- banner -----*/
+.slogan1 h1{
+  color: #fff;
+  margin-top: 40px;
+  margin-left: 35%;
+  font-weight: 400;
+  font-size: 80px;
+  width: 400px;
+}
+
+.slogan2 {
+  color:#636363;
+}
+/*----- Welcome page -----*/
+
+.mainproduct {
+  margin: 50px 60px 50px 60px;
+}
+
+.welcome-product {
+  margin-top: 80px;
+
+}
+.detail {
+  font-size: 20px;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 1px;
+}
+
+
+.detail a:link {      /*-----  饮食餐具的link颜色 ------ */
+    color: #cc0000;
+
+  }
+.detail a:hover {
+      color: #cc0000;
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+.prolist {
+  border-width: 10px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  }
+
+.product-intro-list-img-right {
+  width: 100%;     /*---- 照片布满prolist-----*/
+  height: 100%;    /*---- 照片布满prolist-----*/
+}
+
+.info-title {
+  letter-spacing: 3px;
+}
+
+p {
+  color: #636363;
+  letter-spacing: 3px;
+  line-height: 25px;
+  text-align: left;
+}
+
+.welcome-buttom{
+  margin-top: 50px;
+}
+
+
+}
