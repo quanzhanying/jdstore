@@ -29,9 +29,15 @@ Rails.application.routes.draw do
   end
 
   resources :products do
+    resources :reviews
+
     member do
       post :add_to_cart
+      post :favorite
+      post :unfavorite
+      post :instant_buy
     end
+
     collection do
       get :search
     end
@@ -62,5 +68,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :products
   end
+
+  resources :favorites
 
 end

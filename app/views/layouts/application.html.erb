@@ -6,13 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--google font -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Noto Serif', serif; font-size: 16px;
+      }
+    </style>
+
+    <!-- google font end -->
+
+
   </head>
 
   <body>
 
-  <div class="container-fluid">
-        <%=render "common/navbar" %>
+  <div class="row">    <!-- 用row把navbar撑开，图片就能排满不留白边 -->
       <div class="main">
+        <%=render "common/navbar" %>
         <%= render "common/flashes" %>
         <%= yield %>
       </div>

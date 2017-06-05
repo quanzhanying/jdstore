@@ -1,54 +1,129 @@
 <div class="container-fluid">
-        <div class="row product-main">
-            <div class="product-list">
-              
-              <div class="container">
-                  <%@products.each do |product| %>
-                    <div class="col-xs-6 col-md-3 product-list">
-                      <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                        <% else %>
-                          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-                        <% end %>
-                      <% end %>
-                      <%= product.title %> ￥ <%= product.price %>
+  <div class="row">
+    <div class="col-md-2">
+         <!-- <div class="product-tab">
+             <div class="col-md-offset-2 col-md-10">
+              <div class="category">
+                <div class="catename">panel  a</div>
+                <div class="catename">panel  a</div>
+                <div class="catename">panel  a</div>
+                <div class="catename">panel  a</div>
+                </div>
+              </div>
+         </div> -->
+    </div>
+
+
+    <div class="col-md-9 col-xs-12 ">
+      <div class="row">
+         <div class="col-md-11">
+    <!-- 产品列表 -->
+           <div class="product">
+             <div class="product-head"> <h3> 开味商品</h3> </div>
+
+               <% @products.each do |product| %>
+                <!-- 把整张图变成连结 -->
+               <%= link_to product_path(product) do %>
+               <div class="col-md- col-sm-4 col-xs-12">
+                 <div class="product-item">
+
+                   <% if product.photos.present? %>
+                     <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
+                   <% else %>
+                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
+                   <% end %>
+               <% end %>
+                <!-- 把整张图变成连结 end-->
+
+                   <hr>
+                   <div class="product-title" style="height: 50px">
+                     <h4><%= product.title %></h4>
+                   </div>
+
+
+                    <div class="product-price">
+                      <h4>$<%= product.price %></h4>
                     </div>
-                  <% end %>
+
+
+                <% if current_user && !current_user.is_favorite_of?(product) %>
+                    <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <% end %>
+                <% else %>
+                    <%= link_to unfavorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                    <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                    <% end %>
+                <% end %>
+
+
+                <% if product.quantity.present? && product.quantity > 0 %>
+                   <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                <% else %>
+                   已销售一空，无法购买
+                <% end %>
               </div>
             </div>
-      </div>
-</div>
+            <% end %>
 
 
-<!-- <div class="container all-product-box">
-  <div class="row">
+          </div>
+          <!-- 产品列表 end-->
+        </div>
+      </div>
 
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-            <a target="_blank" href="/products/9"><img class="product-list-style-img img-responsive center-block" src="http://oqc041sze.bkt.clouddn.com/uploads/product/image/9/thumb_Snip20170522_39.png" alt="Thumb snip20170522 39"></a>
-        <br>
-        <a target="_blank" href="/products/9">长方形藤编篮子</a>
-        <br>
-        <strong>￥ <a target="_blank" href="/products/9">248</a></strong><p></p>
+      <!-- random product list -->
+      <div class="row">
+        <div class="col-md-11">
+
+            <div class="product-random">
+               <div class="recom"> <h3> 开味推荐  </h3> </div>
+
+                 <% @suggests.each do |product| %>
+                 <!-- 把整张图变成连结 -->
+                 <%= link_to product_path(product) do %>
+                 <div class="col-md-4 col-sm-4 col-xs-12">
+                   <div class="product-item">
+                     <% if product.photos.present? %>
+                       <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
+                     <% else %>
+                       <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
+                      <% end %>
+                  <% end %>
+                   <!-- 把整张图变成连结 -->
+                     <hr>
+                           <div class="product-title" style="height: 50px">
+                             <h4><%= product.title %></h4>
+                           </div>
+
+                           <div class="product-price">
+                             <h4>$<%= product.price %></h4>
+                           </div>
+
+                           <% if current_user && !current_user.is_favorite_of?(product) %>
+                               <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                               <i class="fa fa-heart" aria-hidden="true"></i>
+                               <% end %>
+                           <% else %>
+                               <%= link_to unfavorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                               <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                               <% end %>
+                           <% end %>
+
+                           <% if product.quantity.present? && product.quantity > 0 %>
+                              <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                           <% else %>
+                              已销售一空，无法购买
+                           <% end %>
+                   </div>
+                 </div>
+
+                 <% end %>
+               </div>
+             </div>
+           </div>
+
+
       </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-            <a target="_blank" href="/products/10"><img class="product-list-style-img img-responsive center-block" src="http://oqc041sze.bkt.clouddn.com/uploads/product/image/10/thumb_4547315253791_400.jpg" alt="Thumb 4547315253791 400"></a>
-        <br>
-        <a target="_blank" href="/products/10">抽屉式收纳盒</a>
-        <br>
-        <strong>￥ <a target="_blank" href="/products/10">99</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-            <a target="_blank" href="/products/18"><img class="product-list-style-img img-responsive center-block" src="http://oqc041sze.bkt.clouddn.com/uploads/product/image/18/thumb_img04.jpg" alt="Thumb img04"></a>
-        <br>
-        <a target="_blank" href="/products/18">聚酯纤维棉麻混纺软盒</a>
-        <br>
-        <strong>￥ <a target="_blank" href="/products/18">100</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-            <a target="_blank" href="/products/12"><img class="product-list-style-img img-responsive center-block" src="http://oqc041sze.bkt.clouddn.com/uploads/product/image/12/thumb_Snip20170522_36.png" alt="Thumb snip20170522 36"></a>
-        <br>
-        <a target="_blank" href="/products/12">透明亚克力收纳盒</a>
-        <br>
-        <strong>￥ <a target="_blank" href="/products/12">129</a></strong><p></p>
-      </div> -->
+    </div>
+  </div>
