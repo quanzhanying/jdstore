@@ -1,6 +1,6 @@
-<div class="container">
-<div class="row">
-   <div class="col-md-12">
+<div class="container-fluid">
+
+   <div class="col-md-8 col-md-offset-2">
 
     <h2> 购物明细 </h2>
 
@@ -47,8 +47,6 @@
 
       <%= simple_form_for @order do |f| %>
 
-
-
           <legend> 订购人</legend>
           <div class="form-group col-lg-6">
             <%= f.input :billing_name  %>
@@ -73,5 +71,5 @@
 
     </div>
   </div>
-</div>
+
 </div>
