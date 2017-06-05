@@ -13,6 +13,7 @@
             <li>
               <%= link_to(category.name, products_path(category: category.name)) %>
             </li>
+            <li class="divider"></li>
           <% end %>
         </ul>
       </li>
@@ -25,8 +26,17 @@
         <% end %>
       </li>
         <% if !current_user %>
-                      <li><a href="#" data-toggle="modal" data-target="#signup-modal"><span class="fa fa-sign-in"></span>注册</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-sign-in"></span>登入</a></li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa fa-sign-in" aria-hidden="true">注册</i>
+
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-user-o" aria-hidden="true">登录</i>
+            <% end %>
+          </li>
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -65,48 +75,3 @@
 
   </div>
 </nav>
-
-<!--
-<li><a href="#">宫廷燕窝</a></li>
-<li><a href="#">美肤香体</a></li>
-<li><a href="#">零食干果</a></li>
-<li><a href="#">精油药膏</a></li>
--->
-
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-<div class="modal-dialog" role="document">
-  <div class="loginmodal-container">
-     <h2>Log in</h2>
-     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-     <div class="form-inputs">
-         <%= f.input :email, :label => "邮箱", placeholder: "邮箱地址", required: false, autofocus: true %>
-         <%= f.input :password, :label => "密码", placeholder: "输入秘密", required: false %>
-         <%= f.input :remember_me, :label => "记住我", as: :boolean if devise_mapping.rememberable? %>
-      </div>
-      <div class="footer text-center">
-        <%= f.submit "登录", class: "btn btn-round btn-info"%>
-      </div>
-     <% end %>
-  </div>
-</div>
-</div>
-
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-<div class="modal-dialog">
-  <div class="loginmodal-container">
-    <h2>Sign up</h2>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email, :label => "邮箱", placeholder: "邮箱地址", required: true, autofocus: true %>
-        <%= f.input :password, :label => "密码", placeholder: "输入秘密", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, :label => "密码确认", placeholder: "再次输入秘密", required: true %>
-      </div>
-      <div class="form-actions">
-          <%= f.button :submit, "注册" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-</div>
-</div>
