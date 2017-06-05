@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525055135) do
+ActiveRecord::Schema.define(version: 20170605070119) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20170525055135) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "weight",           default: 0
+    t.integer  "products_counter", default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -53,10 +62,10 @@ ActiveRecord::Schema.define(version: 20170525055135) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "price"
+    t.decimal  "price",       precision: 10, scale: 2
     t.integer  "quantity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
     t.string   "image"
     t.string   "content"
     t.string   "category"
@@ -73,6 +82,14 @@ ActiveRecord::Schema.define(version: 20170525055135) do
     t.string   "img4_url"
     t.string   "img5_url"
     t.string   "price_unit"
+    t.integer  "category_id"
+    t.string   "status",                               default: "none"
+    t.string   "number"
+    t.decimal  "msrp",        precision: 10, scale: 2
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["name"], name: "index_products_on_name"
+    t.index ["number"], name: "index_products_on_number", unique: true
+    t.index ["status", "category_id"], name: "index_products_on_status_and_category_id"
   end
 
   create_table "users", force: :cascade do |t|
