@@ -22,12 +22,18 @@
     <%= f.input :price %>
   </div>
 
-  <% if @product.image.present?%>
+  <% if @product.photos.present?%>
     <span>目前商品图</span> <br>
-    <%= image_tag(@product.image.thumb.url)%>
+    <% @product.photos.each do |p| %>
+    <%= image_tag p.image.thumb.url ,class: "thumbnail"%><br/>
+    <% end %>
+  <%else%>
+  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
   <% end %>
+
   <div class="group">
-    <%= f.input :image, as: :file %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :multiple => true, name: "photos[image][]" %>（"请上传5张图片"）
   </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." }%>
