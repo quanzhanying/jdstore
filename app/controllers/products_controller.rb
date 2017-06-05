@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-  before_action :authenticate_user!, only: [:like, :unlike]
+  before_action :authenticate_user!, only: [:like, :unlike, :add_to_favorite, :quit_favorite]
 
     def index
       # 分类功能
@@ -13,9 +13,12 @@ class ProductsController < ApplicationController
           when 'by_product_price'
             Product.order('price DESC').paginate(:page => params[:page], :per_page => 12)
           when 'by_product_created'
-            Product.all.order("position ASC").paginate(:page => params[:page], :per_page => 12)
+            Product.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+            # 按照点赞人数排序
+          when 'by_liked_user'
+            Product.all.sort_by{|a|a.liked_users.count}.reverse
           else
-            Product.paginate(:page => params[:page], :per_page => 12)
+            Product.all.order("position ASC").paginate(:page => params[:page], :per_page => 12)
           end
       end
     end
