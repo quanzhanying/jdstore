@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170604052218) do
+ActiveRecord::Schema.define(version: 20170605095010) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "province"
+    t.string   "city"
+    t.string   "district"
+    t.string   "addr"
+    t.string   "phone"
+    t.string   "name"
+    t.boolean  "addr_default"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -157,6 +170,7 @@ ActiveRecord::Schema.define(version: 20170604052218) do
     t.boolean  "is_admin",               default: false
     t.string   "username"
     t.string   "image"
+    t.integer  "gender",                 default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

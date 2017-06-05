@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, PhotoUploader
   #validates :username, presence: true, length: {maximum: 25}
   has_many :orders
 
@@ -14,6 +15,7 @@ class User < ApplicationRecord
   has_many :identifies
   has_many :likes
   has_many :liked_reviews, :through => :likes, :source => :review
+  has_many :addresses
   def display_name
    # # 取 email 的前半来显示，如果你也可以另开一个字段是 nickname 让用户可以自己编辑显示名称
    self.email.split("@").first
@@ -52,7 +54,7 @@ class User < ApplicationRecord
         user = User.create(
         username: data["name"],
         email: data["email"],
-        image: data["image"],
+        image: MiniMagick::Image.open(data["image"]),
         password: Devise.friendly_token[0,20]
         )
       end
@@ -80,7 +82,7 @@ class User < ApplicationRecord
         user = User.create(
         username: name,
         email: data["email"],
-        image: data["image"],
+        image: MiniMagick::Image.open(data["image"]),
         password: Devise.friendly_token[0,20]
         )
       end
@@ -104,7 +106,7 @@ class User < ApplicationRecord
         user = User.create(
         username: access_token.extra.raw_info.name,
         email: data.email,
-        image: data.image,
+        image: MiniMagick::Image.open(data.image),
         password: Devise.friendly_token[0,20]
         )
       end

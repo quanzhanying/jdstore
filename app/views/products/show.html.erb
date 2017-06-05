@@ -64,13 +64,13 @@
                       <span id="tm-count" class="tm-count"><%= @product.favorite_products.count %></span>
                     </div>
                     <div class="dt">
-                      <span>促 销 价</span>
-                        <span style="font-size: 18px;">&nbsp;&nbsp;￥&nbsp;</span>
+                      <span style="margin-right:15px;">促 销 价</span>
+                        <span style="font-size: 18px;">￥&nbsp;</span>
                         <span class="price"><%= @product.promotional %></span>
                     </div>
                     <div class="dd">
-                      <span>价 格</span>
-                        <span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥&nbsp;</span>
+                      <span style="margin-right:33px;">价 格</span>
+                        <span style="font-size: 18px;">￥&nbsp;</span>
                         <span class="price-o"><%= @product.price %></span>
                     </div>
                   </div>
@@ -247,7 +247,7 @@
                     <div class="row review">
                       <div class="col-md-2 review-user">
                         <% if current_user %>
-                        <img src="<%= if current_user.image.nil? then "/images/avatar.gif" else current_user.image end%>" width="25" alt="">
+                        <img src="<%= if current_user.image.blank? then "/images/avatar.gif" else current_user.image end%>" width="25" alt="">
                         <%= if current_user.username.nil? then current_user.display_name else current_user.username end %>
                         <% end %>
                       </div>
@@ -259,7 +259,7 @@
                             <% @reviews.each do |review| %>
                             <div id="review-item-<%= review.id %>" class="review-mian">
                                 <div class="review-left">
-                                  <img src="<%= if review.user.image.nil? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
+                                  <img src="<%= if review.user.image.blank? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
                                   <%= if review.user.username.nil? then review.user.display_name else review.user.username end%>
                                 </div>
                                 <div class="review-right">
@@ -276,7 +276,7 @@
                                   <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-o-up'), like_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
                                     <% end %>
                                   <% else %>
-                                    <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-thumbs-o-up"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-thumbs-o-up">&nbsp;<%= review.likes_count.to_s%></i></a>
                                   <% end %>
                                 </div>
                             </div>

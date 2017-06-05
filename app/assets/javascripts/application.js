@@ -17,7 +17,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap/modal
 //= require jquery.raty
-
+//= require 'china_city/jquery.china_city'
 //= require_tree .
 (function($) {
   $.fn.imagezoom = function(options) {

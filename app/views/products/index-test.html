@@ -1,492 +1,80 @@
+
 <div class="container">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-8">
-    <div class="search">
-      <div class="form-group has-warning">
-        <%#= form_tag search_jobs_path , :method => :get, :class => "form-group" do %>
-        <div class="input-group">
-          <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="吃货请输入水果的关键词">
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-search">
-              &nbsp;搜索&nbsp;
-            </button>
-            <img src="/images/space.png" width="22" height="16">
-            <img src="https:///img.alicdn.com/tfs/TB1Vx4WQFXXXXcmXFXXXXXXXXXX-492-32.png" width="246" height="16">
-          </span>
-        </div>
-        <%# end %>
-      </div>
+
+  <div class="my-settings">
+    <div class="col-md-3">
+      <img   alt="180x150" src="http://placehold.it/180x190">
+
     </div>
-    <div class="search-hot">
-      <ul>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-        <li>
-          <a href="#">樱桃</a>
-        </li>
-      </ul>
+    <div class="col-md-9">
+      <div class="my-center-head">
+        <div class="my-center-left">
+          <span>个人设置</span>
+        </div>
+        <div class="my-center-right">
+          <a href="#">我的订单</a>
+          <a href="#">个人中心</a>
+          <a href="#">管理收货地址</a>
+          <a href="#" class="hide-line">修改密码</a>
+        </div>
+      </div>
+<style media="screen">
+  .my-name span{
+    line-height: 35px;
+    padding: 15px
+  }
+  .my-name input{
+    padding: 3px 12px 3px 12px;
+    width: 200px;
+  }
+</style>
+      <div class="my-info">
+        <p>基本信息</p>
+      </div>
+<%= simple_form_for [new_account_mycenter_path, @mycenter] do |f| %>
+      <div class="my-name">
+        <span>账户名:</span><br>
+        <span>昵　称:</span> <input type="text" value="<%= @mycenter.username %>"  name="user"><br>
+        <span>性　别:</span>
+        <label class="radio-inline">
+          <input type="radio" name="mycenter[gender]" value="0"> 保密
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="mycenter[gender]" value="1"> 男
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="mycenter[gender]" value="2"> 女
+        </label>
+      </div>
+
+
+      <div class="my-photo">
+        <p>头像设置</p>
+      </div>
+
+<%= f.button :submit, '更新', class: 'button' %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="order">
-        <div class="col-md-8">
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;排序</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;新品</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;销量</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;价格</span></a>
-          <a href="#"><span class="fa fa-long-arrow-down" aria-hidden="true">&nbsp;评价数</span></a>
-        </div>
-        <div class="text-right">
-          <span>
-            共12.5万件商品
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+before_action :authenticate_user!
 
+def show
+  @mycenter = current_user
+end
 
-<div class="container">
-  <div class="product-list">
-    <ul>
-      <li>
-        <div class="product-price">
-          <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-          <p class="price">￥128</p>
-          <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-          <p class="evaluate">已有33条评价</p>
-          <div class="cart text-center">
-            <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-          </div>
-          <div class="cart text-center">
-            <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="product-price">
-          <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-          <p class="price">￥128</p>
-          <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-          <p class="evaluate">已有33条评价</p>
-          <div class="cart text-center">
-            <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-          </div>
-          <div class="cart text-center">
-            <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="product-price">
-          <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-          <p class="price">￥128</p>
-          <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-          <p class="evaluate">已有33条评价</p>
-          <div class="cart text-center">
-            <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-          </div>
-          <div class="cart text-center">
-            <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="product-price">
-          <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-          <p class="price">￥128</p>
-          <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-          <p class="evaluate">已有33条评价</p>
-          <div class="cart text-center">
-            <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-          </div>
-          <div class="cart text-center">
-            <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="product-price">
-          <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-          <p class="price">￥128</p>
-          <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-          <p class="evaluate">已有33条评价</p>
-          <div class="cart text-center">
-            <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-          </div>
-          <div class="cart text-center">
-            <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-          </div>
-        </li>
-        <li>
-          <div class="product-price">
-            <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-            <p class="price">￥128</p>
-            <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-            <p class="evaluate">已有33条评价</p>
-            <div class="cart text-center">
-              <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-            </div>
-            <div class="cart text-center">
-              <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="product-price">
-            <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-            <p class="price">￥128</p>
-            <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-            <p class="evaluate">已有33条评价</p>
-            <div class="cart text-center">
-              <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-            </div>
-            <div class="cart text-center">
-              <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="product-price">
-            <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-            <p class="price">￥128</p>
-            <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-            <p class="evaluate">已有33条评价</p>
-            <div class="cart text-center">
-              <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-            </div>
-            <div class="cart text-center">
-              <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="product-price">
-            <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-            <p class="price">￥128</p>
-            <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-            <p class="evaluate">已有33条评价</p>
-            <div class="cart text-center">
-              <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-            </div>
-            <div class="cart text-center">
-              <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="product-price">
-            <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-            <p class="price">￥128</p>
-            <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-            <p class="evaluate">已有33条评价</p>
-            <div class="cart text-center">
-              <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-            </div>
-            <div class="cart text-center">
-              <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="product-price">
-            <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-            <p class="price">￥128</p>
-            <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-            <p class="evaluate">已有33条评价</p>
-            <div class="cart text-center">
-              <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-            </div>
-            <div class="cart text-center">
-              <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-            </div>
-          </li>
-          <li>
-            <div class="product-price">
-              <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-              <p class="price">￥128</p>
-              <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-              <p class="evaluate">已有33条评价</p>
-              <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-              </div>
-              <div class="cart text-center">
-                <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="product-price">
-              <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-              <p class="price">￥128</p>
-              <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-              <p class="evaluate">已有33条评价</p>
-              <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-              </div>
-              <div class="cart text-center">
-                <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="product-price">
-              <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-              <p class="price">￥128</p>
-              <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-              <p class="evaluate">已有33条评价</p>
-              <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-              </div>
-              <div class="cart text-center">
-                <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="product-price">
-              <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-              <p class="price">￥128</p>
-              <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-              <p class="evaluate">已有33条评价</p>
-              <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-              </div>
-              <div class="cart text-center">
-                <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="product-price">
-              <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-              <p class="price">￥128</p>
-              <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-              <p class="evaluate">已有33条评价</p>
-              <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-              </div>
-              <div class="cart text-center">
-                <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="product-price">
-              <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-              <p class="price">￥128</p>
-              <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-              <p class="evaluate">已有33条评价</p>
-              <div class="cart text-center">
-                <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-              </div>
-              <div class="cart text-center">
-                <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-              </div>
-            </li>
-            <li>
-              <div class="product-price">
-                <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                <p class="price">￥128</p>
-                <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                <p class="evaluate">已有33条评价</p>
-                <div class="cart text-center">
-                  <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                </div>
-                <div class="cart text-center">
-                  <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-price">
-                <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                <p class="price">￥128</p>
-                <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                <p class="evaluate">已有33条评价</p>
-                <div class="cart text-center">
-                  <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                </div>
-                <div class="cart text-center">
-                  <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-price">
-                <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                <p class="price">￥128</p>
-                <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                <p class="evaluate">已有33条评价</p>
-                <div class="cart text-center">
-                  <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                </div>
-                <div class="cart text-center">
-                  <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-price">
-                <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                <p class="price">￥128</p>
-                <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                <p class="evaluate">已有33条评价</p>
-                <div class="cart text-center">
-                  <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                </div>
-                <div class="cart text-center">
-                  <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-price">
-                <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                <p class="price">￥128</p>
-                <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                <p class="evaluate">已有33条评价</p>
-                <div class="cart text-center">
-                  <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                </div>
-                <div class="cart text-center">
-                  <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="product-price">
-                <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                <p class="price">￥128</p>
-                <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                <p class="evaluate">已有33条评价</p>
-                <div class="cart text-center">
-                  <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                </div>
-                <div class="cart text-center">
-                  <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                </div>
-              </li>
-              <li>
-                <div class="product-price">
-                  <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                  <p class="price">￥128</p>
-                  <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                  <p class="evaluate">已有33条评价</p>
-                  <div class="cart text-center">
-                    <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                  </div>
-                  <div class="cart text-center">
-                    <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="product-price">
-                  <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                  <p class="price">￥128</p>
-                  <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                  <p class="evaluate">已有33条评价</p>
-                  <div class="cart text-center">
-                    <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                  </div>
-                  <div class="cart text-center">
-                    <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="product-price">
-                  <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                  <p class="price">￥128</p>
-                  <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                  <p class="evaluate">已有33条评价</p>
-                  <div class="cart text-center">
-                    <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                  </div>
-                  <div class="cart text-center">
-                    <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="product-price">
-                  <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                  <p class="price">￥128</p>
-                  <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                  <p class="evaluate">已有33条评价</p>
-                  <div class="cart text-center">
-                    <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                  </div>
-                  <div class="cart text-center">
-                    <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="product-price">
-                  <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                  <p class="price">￥128</p>
-                  <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                  <p class="evaluate">已有33条评价</p>
-                  <div class="cart text-center">
-                    <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                  </div>
-                  <div class="cart text-center">
-                    <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="product-price">
-                  <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                  <p class="price">￥128</p>
-                  <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                  <p class="evaluate">已有33条评价</p>
-                  <div class="cart text-center">
-                    <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                  </div>
-                  <div class="cart text-center">
-                    <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="product-price">
-                    <a href="#"><img class="product-img" src="https://img.alicdn.com/imgextra/i2/1070626038/TB2kt0VdItnpuFjSZFvXXbcTpXa_!!1070626038.jpg_220x220q90.jpg" alt=""></a>
-                    <p class="price">￥128</p>
-                    <p class="describe">优果优选 泰国金枕头榴莲 大果 1个装</p>
-                    <p class="evaluate">已有33条评价</p>
-                    <div class="cart text-center">
-                      <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;收藏</a>
-                    </div>
-                    <div class="cart text-center">
-                      <a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;加入购物车</a>
-                    </div>
-                  </div>
-                </li>
-      </ul>
-    </div>
+def update
+  @mycenter = current_user
+  @mycenter.update(mycenter_params)
+  if @mycenter.save
+    flash[:notice] = '用戶資料更新成功'
+  end
+  redirect_to account_mycenter_index
+end
 
-  </div>
+private
+
+  def mycenter_params
+    params.require(:mycenter).permit(:username, :gender)
+  end

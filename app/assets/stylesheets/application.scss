@@ -75,7 +75,7 @@ margin-bottom: 4px;
   //background-color: rgba(250, 250, 250, 0.39);
 }
 
-.form-control {
+.search .form-control {
   border: 2px solid #B28435;
 }
 
@@ -122,10 +122,10 @@ margin-bottom: 4px;
   font-size: 16px;
   list-style: none; //将默认的列表符号去掉、、//
   float: left;
-  padding-right: 20px;
-  margin-left: -20px;
-  margin-right: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
   font-weight: bold;
+  position: relative;
 }
 
 .product-index a {
@@ -134,10 +134,28 @@ margin-bottom: 4px;
   font-family: Arial;
 }
 
-.product-index li:hover {
-  color: #B28435;
-  background: #fff;
+.product-index li a:hover {
+border:none;
+color:#B28435;
+background:transparent
+
 }
+.product-index li a::after {
+  content:"";
+	background:#B28435;
+	height:2px;
+	position:absolute;
+	width:100%;
+	left:0;
+	bottom:0;
+	transition:all 250ms ease 0s;
+	transform:scale(0)
+}
+
+.product-index li a:hover::after{
+  transform:scale(1)
+}
+
 
 .input-group-btn button {
   //font-size: 16px;
@@ -625,6 +643,7 @@ hr {
   color: #666;
 }
 ////-----show----///
+//---放大镜样式----
 div.zoomDiv {
   z-index: 999;
   position: absolute;
@@ -1928,4 +1947,85 @@ border-radius: 4px;
   float: right;
   position: relative;
   right: -50px;
+}
+
+///个人中心///
+.my-center-left{
+  float: left;
+}
+.my-center-right{
+  float: right;
+}
+
+.my-center-head{
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 35px;
+  margin-bottom: 30px;
+}
+.my-center-right span.hide-line{
+  border-right: none;
+}
+.my-info{
+  padding: 7px 15px 0 15px;
+}
+.my-settings{
+  display: inline-block;
+  width: 100%
+}
+.my-name{
+  padding: 20px 0 50px 70px;
+  border-bottom: 1px solid #ccc;
+}
+.my-center-right span{
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid #ccc;
+}
+.my-center-right a{
+  padding-top: 10px;
+  padding-bottom: 19px;
+  position: relative;
+  border-bottom: 1px solid #fff;
+}
+.my-center-right a:hover {
+border:none;
+background:transparent;
+color: #B28435;
+}
+.my-center-right a.active {
+color: #B28435;
+}
+.my-center-right a::after {
+  content:"";
+	background:#B28435;
+	height:2px;
+	position:absolute;
+	width:100%;
+	left:0;
+	bottom:0;
+	transition:all 250ms ease 0s;
+	transform:scale(0)
+}
+
+.my-center-right a:hover::after{
+  transform:scale(1)
+}
+
+///管理收货地址///
+.address-head p{
+  padding-top: 30px;
+}
+.address-head2{
+  height: 27px;
+  width: 100%;
+  background-color: #eee;
+
+}
+.address-list label{
+  //border-right: 1px solid #ccc;
+  padding-top: 20px;
+}
+.address-list .address-table{
+  border: 1px solid #eeecef;
 }

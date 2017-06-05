@@ -40,6 +40,7 @@ gem 'mini_magick'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'ransack'
+gem 'china_city'
 gem 'seo_helper','~> 1.0'
 gem 'letter_opener', group: :development
 gem 'aasm'

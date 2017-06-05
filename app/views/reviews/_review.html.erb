@@ -1,6 +1,6 @@
 <div id="review-item-<%= review.id %>" class="review-mian">
     <div class="review-left">
-      <img src="https://misc.360buyimg.com/lib/img/u/b56.gif" width="25" alt="">
+      <img src="<%= if review.user.image.blank? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
       <%= if review.user.username.nil? then review.user.display_name else review.user.username end%>
     </div>
     <div class="review-right">

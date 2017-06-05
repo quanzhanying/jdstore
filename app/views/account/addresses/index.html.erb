@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="my-settings">
+      <div class="col-md-3 text-center">
+        <img which="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
+      </div>
+          <div class="col-md-9">
+            <div class="my-center-head">
+              <div class="my-center-left">
+                <span>个人设置</span>
+              </div>
+              <div class="my-center-right">
+                <a href="/account/user"><span>个人中心</span></a>
+                <a href="/account/orders"><span>我的订单</span></a>
+                <a href="/account/addresses" class="active"><span>管理收货地址</span></a>
+                <a href="#"><span class="hide-line">修改密码</span></a>
+              </div>
+            </div>
+          <div class="address-add">
+            <%= simple_form_for [:account,@address] do |f| %>
+          <span class="address_title">收货人姓名:</span>
+          <input type="text" value="" name="address[name]" class="address_value_name"><br>
+            <div class="city-group">
+              <span class="address_title">省市:</span>
+                  <%= f.select :province,  ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select form-control city-select-province"%>
+                  <%= f.select :city,      ChinaCity.list(f.object.province).presence || [["--城市--", 230900]],    {}, class: "city-select form-control city-select-city" %>
+                  <%= f.select :district,  ChinaCity.list(f.object.city).presence     || [["--地区--", 230903]],    {}, class: "city-select form-control city-select-city" %>
+            </div>
+             <span class="address_title">街道地址:</span>
+             <input type="text" value=""  name="address[addr]" class="address_value_addr"><br>
+            <span class="address_title">手机号码:</span>
+            <input type="text" value=""  name="address[phone]" class="address_value_name"><br>
+            <%= f.input :addr_default, :label => '设为默认地址',:class => "address_addr_default", :input_html => { :checked => true }%>
+            <%= f.submit "提交", data: { disable_with: "Submitting..."}, :class => "address_addr_default"%>
+            <% end %>
+          </div>
+          <div class="address-head">
+            <p>已保存的地址</p>
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr class="address_title">
+                  <th class="address_name">收货人</th>
+                  <th class="address_city">所在省市</th>
+                  <th class="address_addr">街道地址</th>
+                  <th class="address_name">手机</th>
+                  <th class="address_name"></th>
+                  <th class="address_handle">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% i=0 %>
+                <% @addresses.each do |address| %>
+                <% if address.addr_default then i += 1 end%>
+                <tr>
+                  <th class="address_name"><%= address.name%></th>
+                  <th class="address_city"><%= ChinaCity.get(address.province)+ChinaCity.get(address.city)+ChinaCity.get(address.district)%></th>
+                  <th class="address_addr"><%= address.addr%></th>
+                  <th class="address_name"><%= address.phone%></th>
+                  <th class="address_addr_default"><%= if address.addr_default && i == 1 then "默认地址" end%></th>
+                  <th class="address_handle"><%= link_to "删除",account_address_path(address), :method => :delete %>|<%= link_to "修改",edit_account_address_path(address)%></th>
+                </tr>
+                <% end %>
+              </tbody>
+
+
+            </table>
+          </div>
+
+          </div>
+
+        </div>
+
+    </div>
+</div>

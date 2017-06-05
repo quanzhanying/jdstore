@@ -52,9 +52,14 @@ Rails.application.routes.draw do
   end
   end
   namespace :account do
+    resources :addresses
     resources :favorites
     resources :orders
+    resource :user
+
   end
+
+  mount ChinaCity::Engine => '/china_city'
 
 
 end
