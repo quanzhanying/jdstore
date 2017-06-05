@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
       end
     end
 
+ # 收藏功能
   def collect
     @products = Product.all
     if params[:favorite] == "yes"

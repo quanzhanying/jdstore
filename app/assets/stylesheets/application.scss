@@ -319,6 +319,84 @@ body {
   }
 }
 
+//--------前台首页轮番图--------
+.carousel {
+  width: 1200px;
+  margin: 0 auto;
+}
+.carousel .item {
+  height: 260px;
+}
+
+
+//--------回到顶部按钮--------
+#gotop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #F25F5C;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+/*商品详情*/
+.productDecription {
+	width: 1200px;
+  text-align: center;
+	margin: 20px auto;
+	border: 1px solid #50514F;
+  line-height: 30px;
+}
+
+.productDecription-menuList {
+	height: 35px;
+}
+
+.productDecription-menuList-item {
+	float: left;
+	width: 175px;
+	height: 35px;
+}
+
+.productDecription-content {
+	width: 750px;
+  height: 500px;
+	margin: 50px auto;
+}
+
+.productDecription-content-item {
+  display: none;
+  width: 750px;
+  height: 500px;
+}
+
+
+
 //--------前台商品浏览页面--------
 #products{
   background-color: #FFF8E1;
