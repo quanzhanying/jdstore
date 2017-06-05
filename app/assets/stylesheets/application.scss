@@ -842,13 +842,10 @@ body {
   width: 100%;
   position: absolute;
   height: 360px;    /*----- footer 的总高度 -----*/
-  bottom: 0;
+  bottom: 0;  /*----- footer 置底 -----*/
 
-  /*----- footer 置底 -----*/
-
-  /*----- footer loga 颜色 -----*/
   .fa {
-    color: #d95f59;
+    color: #d95f59;  /*----- footer loga 颜色 -----*/
   }
 }
 .promise {

@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     @suggests = Product.random
     if params[:category].present?
       @category_id = Category.find_by(name: params[:category]).id
-      @products = Product.where(category_id: @category_id)
+      @products = Product.where(category_id: @category_id).order("position ASC")
     else
       @products = Product.all.order("position ASC")
     end
