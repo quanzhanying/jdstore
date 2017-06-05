@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   layout "products"
   def index
-    @new_products = Product.newest.recent.paginate(:page => params[:page], :per_page => 4)  #选出最新的商品
-    @promotive_products = Product.promotive.recent.paginate(:page => params[:page], :per_page => 4)  #选出活动的商品
+    @new_products = Product.newest.recent  #选出最新的商品
+    @promotive_products = Product.promotive.recent  #选出活动的商品
     # 商品列表排序功能和不同种类分类显示功能
     if params[:category].blank? && params[:brand].blank?
       @products = case params[:order]
