@@ -181,7 +181,7 @@ input[type=password]:hover {
  */
 body {
   position   : relative;
-  font-family: 'Roboto', sans-serif, fantasy;
+  font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
   /* For scrollspy */
 }
 /* Keep code small in tables on account of limited space */
@@ -1916,10 +1916,6 @@ a:hover {
   border-radius: 10px;
 }
 
-.productList-wrap {
-  margin-top: 50px;
-}
-
 .main-content {
   min-height: 850px;
 }
@@ -1946,4 +1942,14 @@ a:hover {
   margin    : auto;
   background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
   opacity   : 0.5;
+}
+
+.thumbnail {
+  border-radius       : 20px;
+  background          : #fff;
+  border              : 5px solid transparent;
+  -moz-border-image   : -moz-linear-gradient(#fff 0%, #F5F5F5 100%);
+  -webkit-border-image: -webkit-linear-gradient(#fff 0%, #F5F5F5 100%);
+  border-image        : linear-gradient(#fff 0%, #F5F5F5 100%);
+  border-image-slice  : 1;
 }

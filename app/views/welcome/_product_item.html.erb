@@ -1,5 +1,5 @@
-<li class="fl productList-item p15 pr <%= last_item(index) %>">
-  <p class="productList-item-pic w200 h200">
+<div class="fl  p15 pr <%= last_item(index) %>">
+  <p class="productList-item-pic">
     <%= link_to product_path(product) do %>
     <% if product.image.present? %>
       <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
@@ -18,4 +18,4 @@
   <% if product.quantity == 0 %>
     <p class="productList-item-sellout f20 tc">已售完</p>
   <% end %>
-</li>
+</div>
