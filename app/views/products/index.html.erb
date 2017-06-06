@@ -180,7 +180,7 @@
 <!-- 所處位置導航列結束 -->
 
 <!-- 商品排序显示页面显示部分 -->
-<div class="row", style="margin-left: -21px;">
+<div class="row">
   <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
     <div class="order clearfix">
       <p class="title">商品排序 | </p>
@@ -194,26 +194,19 @@
 </div>
 <!-- 商品排序显示页面部分结束 -->
 
-
-
-<!-- 区域： 活动商品区域 -->
-<!-- 区域： 活动商品区域结束-->
-
-<!-- 区域：商品展示列表 -->
-
-<div class="productList-wrap", style="margin: -15px auto;">
-  <ul class="productList clearfix">
-    <div class="row", style="margin-left: -21px;">
-      <% @products.each do |product| %>
-        <%= render :partial => "product-list", :locals => { :product => product } %>
-      <% end %>
+<!-- 商品展示列表開始 -->
+<div class="row">
+  <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
+    <div class="panel">
+      <div class="productList-wrap">
+        <%= render :partial => "products/list" %>
+        <div class="text-center">
+          <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+        </div>
+      </div>
     </div>
-  </ul>
-  <div class="text-center">
-    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
   </div>
 </div>
-
 <!-- 商品展示列表结束 -->
 
 <!-- 设置回到顶部和网站链接功能 -->

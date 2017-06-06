@@ -252,6 +252,7 @@ a:hover {
       margin-right: auto;
       margin-bottom: 1px;
       position:relative;
+      padding: 3px;
       .box {
         padding-left: 0px;
         padding-right: 0px;
@@ -262,10 +263,9 @@ a:hover {
         }
       }
       .productList-item-pic {
-        width:200px;
-        height:200px;
+        width: 100%;
         margin-top: 30px;
-        margin-left: 13px;
+        margin-left: auto !important;
         margin-right: auto !important;
       }
       .productList-item-price {
@@ -323,49 +323,60 @@ a:hover {
 // }
 // 热卖商品轮播图结束
 //商品展示列表
+.productList-panel {
+  margin-bottom: 23px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1)
+}
+.productList-panel:hover, {
+  margin-bottom: 23px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1)
+}
+
 .productList-wrap {
-  width:1200px;
+
   padding-top:20px;
+  padding-bottom: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
   .productList {
-    padding-bottom:20px;
+    padding: 0px;
+    width: 100%;
     .productList-item {
       float:left;
       display:inline;
-      width: 263px;
-      height: 350px;
-      margin-right: auto;
-      margin-bottom: 1px;
+      width: 100%;
+      height: auto;
+      margin: 0.5px auto;
       position:relative;
-      .box {
-        padding-left: 0px;
-        padding-right: 0px;
-        transition: 0.35s;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-        &:hover{
-          box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.22);
-        }
-      }
+      padding: 15px 15px 0px;
+
       .productList-item-pic {
-        width:200px;
-        height:200px;
-        margin-top: 30px;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin: 15px auto 0;
+        width: 90%;
+        img {
+          width: 100%;
+        }
       }
       .productList-item-price {
         font-weight:bold;
         color: #edbdb5;
         font-size:18px;
         margin-top:5px !important;
-        margin-right: 70px;
+        margin-right: 40px;
         text-align: right;
       }
       .productList-item-name{
         margin-top:2px !important;
-        margin-left: 35px;
-        margin-right: 35px;
+        margin: 0px 15px;
+        height: 90px;
       }
       .productList-item-desc {
         margin-top:2px !important;
@@ -374,13 +385,13 @@ a:hover {
       }
       .productList-item-sellout{
         position:absolute;
-        right: 40px;
+        right: 15px;
         font-size:18px;
         color: #101846;
       }
       .productList-item-cartBtn {
         position:absolute;
-        right: 40px;
+        right: 30px;
         font-size:18px;
       }
     }
