@@ -1,11 +1,11 @@
 class MenusController < ApplicationController
    def index
-      @menus = menu.all
+      @menus = Menu.all
    end
 
    def show
-      @menu = menu.find(params[:id])
+      @menu = Menu.find(params[:id])
    end
 
-   
+
 end
