@@ -8,7 +8,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
-            <img src="/images/carousel01.png">
+            <a href="/products/1"><img src="/images/carousel01.png"></a>
             <div class="carousel-caption">
               <h3></h3>
               <p></p>
@@ -16,7 +16,7 @@
           </div>
           <!-- End Item -->
           <div class="item">
-            <img src="/images/carousel02.png">
+            <a href="/products/2"><img src="/images/carousel02.png"></a>
             <div class="carousel-caption">
               <h3></h3>
               <p></p>
@@ -24,7 +24,7 @@
           </div>
           <!-- End Item -->
           <div class="item">
-            <img src="/images/carousel03.png">
+            <a href="/products/3"><img src="/images/carousel03.png"></a>
             <div class="carousel-caption">
               <h3></h3>
               <p></p>
@@ -32,7 +32,7 @@
           </div>
           <!-- End Item -->
           <div class="item">
-            <img src="/images/carousel04.png">
+            <a href="/products/4"><img src="/images/carousel04.png"></a>
             <div class="carousel-caption">
               <h3></h3>
               <p></p>
@@ -40,7 +40,7 @@
           </div>
           <!-- End Item -->
           <div class="item">
-            <img src="/images/carousel05.png">
+            <a href="/products/5"><img src="/images/carousel05.png"></a>
             <div class="carousel-caption">
               <h3></h3>
               <p></p>
@@ -56,24 +56,19 @@
           <!-- End Carousel Inner -->
           <ul class="nav nav-pills nav-justified">
             <li data-target="#myCarousel" data-slide-to="0" class="active">
-              <a href="#">大樱桃<small></small>
-              </a>
+              <a href="/products/1">大樱桃<small></small></a>
             </li>
             <li data-target="#myCarousel" data-slide-to="1">
-              <a href="#">百香果<small></small>
-              </a>
+              <a href="/products/2">百香果<small></small></a>
             </li>
             <li data-target="#myCarousel" data-slide-to="2">
-              <a href="#">火龙果<small></small>
-              </a>
+              <a href="/products/3">火龙果<small></small></a>
             </li>
             <li data-target="#myCarousel" data-slide-to="3">
-              <a href="#">贵妃芒<small></small>
-              </a>
+              <a href="/products/4">贵妃芒<small></small></a>
             </li>
             <li data-target="#myCarousel" data-slide-to="4">
-              <a href="#">新茶<small></small>
-              </a>
+              <a href="/products/5">冰糖木瓜<small></small></a>
             </li>
           </ul>
         </div>
@@ -111,8 +106,9 @@ $(document).ready(function () {
 
 <div class="container-fluid">
   <div class="row">
-    <div class="site-wrapper mt-20">
-      <div class="push-show">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-yelp" style="color:orange"></i> 大爱无疆 </h3></div>
+      <div class="push-show mt-20">
         <ul>
           <li>
             <div class="push-show-product">
@@ -148,7 +144,7 @@ $(document).ready(function () {
   <div class="row">
     <div class="site-wrapper mt-30">
       <div>
-        <span><h3><i class="fa fa-leaf"></i> 热销商品 </h3></span>
+        <span><h3><i class="fa fa-leaf" style="color:#690"></i> 热销商品 </h3></span>
         <span style="float: right;"><h4><%= link_to("查看更多...", products_path) %><h4><span>
       </div>
       <br>
@@ -198,7 +194,7 @@ $(document).ready(function () {
 <div class="container-fluid">
   <div class="row">
     <div class="site-wrapper mt-30">
-      <div><h3><i class="glyphicon glyphicon-apple"></i> 新鲜果蔬 </h3></div>
+      <div><h3><i class="glyphicon glyphicon-apple" style="color:#690"></i> 新鲜果蔬 </h3></div>
       <div class="indexPro mt-20">
         <div class="pCont clearfix">
           <ul id="floor-gap-fresh" class="pList">

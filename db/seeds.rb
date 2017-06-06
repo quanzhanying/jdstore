@@ -56,6 +56,130 @@ Category.create!(
 # img4_url: "图片4",
 # img5_url: "图片5"
 
+
+
+
+
+
+
+
+##############################################
+
+Product.create!(
+  name: "山东烟台美早大樱桃",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "樱桃",
+  location: "中国山东烟台",
+  keyword: "新鲜水果 热销 特价 真实",
+  content: "空运包邮 110元/3斤,165元/5斤",
+  description: "红唇之吻 烟台美早大樱桃 26mm-28mm大果 1.5kg，2.5kg装 顺丰包邮 75元/3斤，115元/5斤",
+  remark: "",
+  price: 75,
+  price_unit: "元/1500g",
+  quantity: 99,
+  img_url: "https://img14.360buyimg.com/n0/jfs/t5689/165/2227775223/214124/16e6ad82/592ea0beN2b1dea2c.jpg",
+  img1_url: "https://img14.360buyimg.com/n0/jfs/t5689/165/2227775223/214124/16e6ad82/592ea0beN2b1dea2c.jpg",
+  img2_url: "https://img14.360buyimg.com/n0/jfs/t5470/137/1872799043/108422/9a259472/59158d41Ned1e0416.jpg",
+  img3_url: "https://img10.360buyimg.com/n1/jfs/t5146/228/1856113288/67077/36a2ac16/59158d42N87de736c.jpg",
+  img4_url: "https://img10.360buyimg.com/n1/jfs/t5611/328/94890673/182444/8de58170/59158d42Nb6285b70.jpg",
+  img5_url: "https://img10.360buyimg.com/n1/jfs/t5464/135/1874657785/177639/26062a69/59158d42N33b22a4c.jpg"
+)
+
+Product.create!(
+  name: "广西百香果西番莲",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "百香果",
+  location: "中国广西",
+  keyword: "新鲜水果 热销 特价 真实",
+  content: "包邮 45元/5斤",
+  description: "百香果5斤包邮广西鸡蛋果新鲜水果红果当季大果百香果西番莲现摘 大果2.5kg 约5斤",
+  remark: "",
+  price: 45,
+  price_unit: "元/2500g",
+  quantity: 99,
+  img_url: "https://img14.360buyimg.com/n1/jfs/t5746/3/1203595309/979729/9aa62eee/59244394Na2faf6ec.png",
+  img1_url: "https://img14.360buyimg.com/n1/jfs/t5746/3/1203595309/979729/9aa62eee/59244394Na2faf6ec.png",
+  img2_url: "https://img14.360buyimg.com/n1/jfs/t5584/342/1226184648/161808/41c73b9f/5924439fN2b9844c7.jpg",
+  img3_url: "https://img14.360buyimg.com/n1/jfs/t5581/116/1210489485/210570/58377869/592443a0N5bff8872.jpg",
+  img4_url: "https://img14.360buyimg.com/n1/jfs/t5653/177/1191502815/171555/ef4e90c7/592443a1Nc5349101.jpg",
+  img5_url: "https://img14.360buyimg.com/n1/jfs/t5650/332/1165351606/454591/86c5b019/592443a2N26406bfe.jpg"
+)
+
+Product.create!(
+  name: "广西火龙果",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "火龙果",
+  location: "中国广西",
+  keyword: "新鲜水果 热销 特价 真实 预售",
+  content: "包邮 35.98元/5斤",
+  description: "预售 火龙果 包邮 35.98元/5斤",
+  remark: "",
+  price: 35.98,
+  price_unit: "元/2500g",
+  quantity: 99,
+  img_url: "https://img14.360buyimg.com/n1/jfs/t3046/265/544746786/200600/37296076/57baa5beNc13e05df.jpg",
+  img1_url: "https://img14.360buyimg.com/n1/jfs/t3046/265/544746786/200600/37296076/57baa5beNc13e05df.jpg",
+  img2_url: "https://img14.360buyimg.com/n1/jfs/t2998/363/973228004/202761/4bfcd19e/57baa5c2N756fc860.jpg",
+  img3_url: "https://img14.360buyimg.com/n1/jfs/t3244/239/575055254/170785/c5d77019/57baa5c8N60e5ce21.jpg",
+  img4_url: "https://img14.360buyimg.com/n1/jfs/t3232/52/553119387/171556/21ac860e/57baa5ccNadfedbd8.jpg",
+  img5_url: "https://img14.360buyimg.com/n1/jfs/t3232/69/539717695/176729/cf1ff3d8/57baa5d1N901ffea5.jpg"
+)
+
+Product.create!(
+  name: "广西贵妃芒",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "贵妃芒",
+  location: "中国广西",
+  keyword: "新鲜水果 热销 特价 真实 现货",
+  content: "包邮 39.8元/8斤",
+  description: "广西贵妃芒 包邮 39.8元/8斤",
+  remark: "",
+  price: 39.8,
+  price_unit: "元/2500g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/s450x450_jfs/t4552/152/783638979/271221/8fac2f9a/58d4c059N5327b712.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/s450x450_jfs/t4552/152/783638979/271221/8fac2f9a/58d4c059N5327b712.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/s450x450_jfs/t3202/52/9585957568/343877/21839a73/58d4c060N92df0f40.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/s450x450_jfs/t4471/222/793531196/356189/96950b81/58d4c06dNb18d721c.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/s450x450_jfs/t4234/122/2675074289/310214/8e4def0b/58d4c075Nc4c7899f.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/s450x450_jfs/t4579/268/791992998/466304/30d72c56/58d4c07aN96e6008c.jpg"
+)
+
+Product.create!(
+  name: "云南冰糖红心木瓜",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "水果",
+  category3: "木瓜",
+  location: "中国广西",
+  keyword: "新鲜水果 热销 特价 真实 现货",
+  content: "包邮 23.9元/8斤",
+  description: "云南特产冰糖红心牛奶木瓜/青木瓜 产地直发 包邮 23.9元/8斤",
+  remark: "",
+  price: 23.9,
+  price_unit: "元/2500g",
+  quantity: 99,
+  img_url: "https://img13.360buyimg.com/n1/jfs/t3289/105/8807398207/396229/f416e6bd/58ca2d40N053471b1.jpg",
+  img1_url: "https://img13.360buyimg.com/n1/jfs/t3289/105/8807398207/396229/f416e6bd/58ca2d40N053471b1.jpg",
+  img2_url: "https://img13.360buyimg.com/n1/jfs/t4231/140/19367233/375404/2d8f1c34/58ad92ebNf1483faf.jpg",
+  img3_url: "https://img13.360buyimg.com/n1/jfs/t4378/149/20869897/264475/60b048e4/58ad92eeNaa37bafa.jpg",
+  img4_url: "https://img13.360buyimg.com/n1/jfs/t4612/193/125357527/92528/4f624d76/58ca2d3cN4034e7b4.jpg",
+  img5_url: "https://img13.360buyimg.com/n1/jfs/t4555/189/131246635/127765/6b2768da/58ca2d3eN6849f857.jpg"
+)
+
 Product.create!(
   name: "山东烟台大红灯樱桃",
   category_id: 1,
