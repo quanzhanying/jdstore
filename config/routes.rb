@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
    resources :cart_items
    resources :category
+   resources :menus
    resources :orders do
       member do
          post :pay_with_alipay
