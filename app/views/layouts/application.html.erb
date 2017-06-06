@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Jdstore</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+    <head>
+        <title>绘生活 - 漫空间</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <%= render "common/sidebar" %>
+                <div class="container-fluid">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+        <!-- <%= render "common/footer" %> -->
+    </body>
 </html>

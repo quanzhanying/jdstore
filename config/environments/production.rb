@@ -82,5 +82,9 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
+  # 解决上传heroku图片不能显示的问题
   config.active_record.dump_schema_after_migration = false
+  config.serve_static_assets = true
+  config.assets.compile = true
+  # 解决上传heroku图片不能显示的问题
 end
