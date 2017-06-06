@@ -1,0 +1,138 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!--=== 右側下拉選單（移動端顯示） ===-->
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <!--=== Website Logo/Name ===-->
+      <a class="navbar-brand logo-box scroll title" href="/">
+        <!-- <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg3iv0og2wj30ha0g2wh8.jpg" alt="Logo"> -->
+        真读  Real Read
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
+      <ul class="nav navbar-nav navbar-aside">
+        <li class="active">
+          <%= link_to("我要找书", products_path) %>
+        </li>
+      </ul>
+
+      <!-- 搜索框 -->
+      <!--
+          <form class="navbar-form center" action="/products/search" accept-charset="UTF-8" method="get">
+            <input name="utf8" type="hidden" value="✓">
+            <div class="input-group search-box">
+              <input type="text" class="form-control" name="keyword" placeholder="搜索商品" value="">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span>
+                    <i class="fa fa-search"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form> -->
+
+      <!-- 搜索框 -->
+        <div class="nav-form col-md-offset-5">
+          <ul class="nav navbar-nav navbar-aside">
+            <li class="active">
+              <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+              <div class="search-box">
+                <%= text_field_tag :search, params[:search], placeholder: "输入书名查找"%>
+                <%= submit_tag "搜索", :name => nil, class: "mike" %>
+              </div>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do  %>
+          购物车 <i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+          <% end %>
+        </li>
+
+        <% if !current_user %>
+        <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
+        <!-- <li><%#= link_to("注册", new_user_registration_path) %></li>
+        <li><%#= link_to(content_tag(:i, '登录', class: 'fa fa-sign-in'), new_user_session_path) %></li> -->
+        <!-- 以下代码添加在最后 -->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+
+          <div class="modal-dialog m-modal" role="document">
+            <div class="loginmodal-container">
+               <h2>登录</h2>
+               <hr>
+               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                 <div class="form-inputs">
+                   <%= f.input :email, :label => "邮箱", required: false, autofocus: true %>
+                   <%= f.input :password, :label => "密码", required: false %>
+                   <%= f.input :remember_me, :label => "记住我", as: :boolean if devise_mapping.rememberable? %>
+                 </div>
+                 <div class="form-actions">
+                   <%= f.button :submit, "登录"%>
+                 </div>
+               <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog m-modal">
+            <div class="loginmodal-container">
+              <h2>注册</h2>
+              <hr>
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :email, :label => "邮箱", required: true, autofocus: true %>
+                  <%= f.input :password, :label => "密码", required: true, hint: ("密码长度至少#{@minimum_password_length}位" if @minimum_password_length) %>
+                  <%= f.input :password_confirmation, :label => "确认密码", required: true %>
+                </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "注册" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <% else %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Hi!,
+            <%= current_user.email %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+            <li>
+              <%= link_to("管理员选项", admin_products_path ) %>
+            </li>
+            <% end %>
+
+            <li>
+              <%= link_to("我的订单", account_orders_path ) %>
+            </li>
+
+            <li>
+              <%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+            </li>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

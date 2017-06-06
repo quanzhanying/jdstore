@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/500x500&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-3 block">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+
+    <hr>
+
+    <div>
+      <h5> 剩余数量 : <%= @product.quantity %> </h5>
+      <h4> ￥ <%= @product.price %> </h4>
+    </div>
+
+    <hr>
+    <div class="pull-down">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-success") %>
+          <% else %>
+            库存不足，无法购买
+          <% end %>
+    </div>
+  </div>
+  <div class="col-md-3 block">
+    <h2 align="center">书评</h2>
+    <p class="bookreview">
+      <%= @product.bookreview %>
+    </p>
+
+    <hr>
+    <div class="pull-down" align="center">
+      <div class="btn btn-primary btn-lg btn-success">
+        <a href="https://fullstack.xinshengdaxue.com/works/614">付费阅读完整内容</a>
+      </div>
+    </div>
+  </div>
+
+</div>
