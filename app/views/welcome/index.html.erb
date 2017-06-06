@@ -1,35 +1,103 @@
 
-<div class="jumbotron">
+<!-- <div class="jumbotron">
    <h1 class="title "> 健康沙拉 </h1>
    <p class="slogan"> 我就是不想考虑中午吃什么！</p>
    <br>
    <p class="lead"> <a class="btn btn-lg btn-danger" href="/products"> 一键解决烦恼</a></p>
-</div>
+</div> -->
 
+
+<!--===== 广告轮播 =====-->
+<section class="intro-box">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="intro" class="carousel slide" data-ride="carousel">
+
+
+         <!--===== 轮播按钮 =====-->
+      <div id="myCarousel" class="carousel slide"><!--其他网址复制-->
+        <ol class="carousel-indicators">
+           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+           <li data-target="#myCarousel" data-slide-to="1"></li>
+           <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!--===== 轮播内容 =====-->
+        <div class="carousel-inner">
+           <div class="item active">
+             <a href="javascript:;">
+             <%= image_tag("food3.jpg") %> <!-- 图片位置 -->
+             <div class="carousel-caption">
+             </a>
+                <h3>健人速食</h3> <!-- 标题 -->
+                <p>让你轻松解决健身期间的饮食问题</p> <!-- 内文 -->
+             </div>
+           </div>
+
+           <div class="item">
+             <a href="javascript:;">
+             <%= image_tag("food2.jpg") %>
+             <div class="carousel-caption">
+                <h3>健康配比</h3>
+                <p>营养学数据做支撑，按性别配置一周健康午餐</p>
+             </div>
+            </a>
+           </div>
+           <div class="item">
+             <a href="javascript:;">
+             <%= image_tag("food1.jpg") %>
+             <div class="carousel-caption">
+                <h3>一键下单</h3>
+                <p>点餐也纠结吃什么？没关系！只需一键下单，轻松解决！</p>
+             </div>
+          </a>
+           </div>
+        </div>
+      </div>
+
+        <!--===== 换页按钮 =====-->
+        <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+           <span class="fa fa-angle-left" aria-hidden="true"></span> <!-- 左侧按钮图示 -->
+           <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+           <span class="fa fa-angle-right" aria-hidden="true"></span> <!-- 右侧按钮图示 -->
+           <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--品牌故事-->
 <div class="story-box">
      <div class="row">
          <div class="col-md-10 col-md-offset-1">
-            <h2 class="section-heading">品牌故事</h2>
+            <h2 class="section-heading">制作人</h2>
             <h1> Laura & Amy</h1>
-            <div class="short-line"> </div>
+
             <hr>
             <div class="row">
-               <div class="col-md-3 col-md-offset-1">
+               <div class="col-md-3 col-md-offset-3">
                   <%= image_tag 'author-laura.jpg', class: 'img-responsive' %>
                </div>
 
-               <div class="col-md-7">
-                  <h3> Laura 王昭昉</h3>
-
+               <div class="col-md-3">
+                  <h3> Laura </h3>
+                  <p>找到最佳偷懒方式，让自己健身的时候也能享受美食</p>
                </div>
             </div>
             <hr>
+
             <div class="row">
-               <div class="col-md-7">
-                  <h3> Amy 张雅婷</h3>
-                  <p>   </p>
+               <div class="col-md-3 col-md-offset-3">
+                  <h3> Amy</h3>
+                  <p>  反正就是不想考虑吃什么……</p>
+                  <p>  节约时间撸代码才是正点 </p>
                </div>
-               <div class="col-md-3 col-md-offset-1">
+               <div class="col-md-3 ">
                   <%= image_tag 'author-amy.jpg', class: 'img-responsive' %>
                </div>
             </div>
@@ -37,37 +105,51 @@
       </div>
 </div>
 
-<div class="preview-b">
-   <div class="row">
-      <h2 class="preview-a"> 本周菜谱概览 </h2>
-      <div class="col-md-3 col-md-offset-1">
-         <h3><%= link_to("男性健身餐", products_path(category: "男性健身餐")) %></h3>
-         <hr>
-         <p> 专为健身男士提供的一周午餐，主要功能包括但不限于：增肌减脂、排毒清肠。量较大。 </p>
-         <%= link_to products_path(category: "男性健身餐") do %>
-         <%= image_tag 'man-bodybuilding.jpg', class: 'img-responsive' %>
-         <% end %>
+
+<!--===== 商品分类 =====-->
+  <section class="categories-box">
+    <div class="row">
+      <div class="col-md-4 category-content">
+          <div class="category-box">
+            <%= image_tag("man-bodybuilding.jpg") %> <!-- 分类图片 -->
+          </div>
+          <div>
+            <h3><%= link_to("男性健身餐", products_path(category: "男性健身餐")) %></h3>
+            <hr>
+            <p>专为健身男士提供的一周午餐，主要功能包括但不限于：增肌减脂、排毒清肠。量较大。</p> <!-- 分类介绍 -->
+          </div>
+        <% end %>
       </div>
-
-      <div class="col-md-3 col-md-offset-1">
-         <h3><%= link_to("女性健身餐", products_path(category: "女性健身餐"))%></h3>
-         <hr>
-         <p> 专为健身女士提供的一周午餐，主要功能包括但不限于：减脂排毒、美容养颜。量较小。 </p>
-         <%= link_to products_path(category: "女性健身餐") do%>
-         <%= image_tag 'woman-bodybuilding.jpg', class: 'img-responsive' %>
-         <% end %>
+      <div class="col-md-4 category-content">
+       
+          <div class="category-box">
+            <%= image_tag("woman-bodybuilding.jpg") %>
+          </div>
+          <div>
+            <h3><%= link_to("女性健身餐", products_path(category: "女性健身餐"))%></h3>
+            <hr>
+            <p>专为健身女士提供的一周午餐，主要功能包括但不限于：减脂排毒、美容养颜。量较小。</p>
+          </div>
+        <% end %>
       </div>
-
-      <div class="col-md-3 col-md-offset-1 ">
-         <h3><%= link_to("随心装", products_path(category: "随心"))%></h3>
-         <hr>
-         <p> 不考虑是否健身，随便吃。慎点！ </p>
-         <%= link_to products_path(category: "随心") do %>
-         <% end %>
-         <%= image_tag 'whatever.jpg', class: 'img-responsive' %>
+      <div class="col-md-4 category-content">
+          <div class="category-box">
+            <%= image_tag("whatever.jpg") %>
+          </div>
+          <div>
+            <h3><%= link_to("随心装", products_path(category: "随心"))%></h3>
+            <hr>
+            <p>不考虑是否健身，随便吃。慎点！ </p>
+          </div>
+        <% end %>
       </div>
+    </div>
+  </section>
 
 
-   </div>
-
-</div>
+  <hr>
+  <div class="knowledge ">
+     <section class="btn btn-danger ">
+      <%= link_to('健身小贴士', tips_path, class:'btn btn-push' ) %>
+     </section>
+  </div>
