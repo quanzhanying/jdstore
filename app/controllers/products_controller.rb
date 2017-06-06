@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only:[:search]
+
+
+
   def index
+    
     #分类显示
     if params[:category].blank?
       @products = Product.all
