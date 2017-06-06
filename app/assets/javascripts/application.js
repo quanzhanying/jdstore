@@ -21,7 +21,7 @@
 
 $(window).scroll(function () {
   /*===== Welcome#index - 首頁導航列變化 =====*/
-	if ($(this).scrollTop() > 325) {
+	if ($(this).scrollTop() < 325) {
 		$('#navbar').addClass('show_bgcolor')
 	} else {
 		$('#navbar').removeClass('show_bgcolor')
