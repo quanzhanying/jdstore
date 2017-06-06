@@ -296,8 +296,9 @@ label {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Lato:100|Exo+2);
+@import url(//fonts.googleapis.com/css?family=Roboto);
+@import url(//fonts.googleapis.com/css?family=Lato:100);
+@import url(//fonts.googleapis.com/css?family=Exo+2);
 /* line 9, /Users/amznh/.rvm/gems/ruby-2.3.1/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -13406,4 +13407,21 @@ td {
   border-width: 1px;
   border-radius: 3px;
   text-align: center;
+}
+
+/* line 591, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.tag-line1 {
+  font-family: 'Lato',sans-serif;
+  font-weight: bolder;
+}
+
+/* line 596, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.tag-line2 {
+  font-family: 'Lato',sans-serif;
+}
+
+/* line 599, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.site-name {
+  font-family: "Exo 2", sans-serif;
+  font-weight: bolder;
 }
