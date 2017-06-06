@@ -1,0 +1,19 @@
+<h1> <%= @product.title %> </h1>
+
+<p>
+  <%= simple_format(@product.description) %>
+
+</p>
+
+<p>
+  <%= simple_format(@product.price) %>
+
+</p>
+<p>
+  <%= simple_format(@product.quantity) %>
+
+</p>
+
+<div class="group">
+   <%= f.input :image, as: :file %>
+</div>
