@@ -3,4 +3,6 @@ class Product < ApplicationRecord
   acts_as_list
   belongs_to :category
   has_many :comments
+  has_many :photos
+  accepts_nested_attributes_for :photos
 end

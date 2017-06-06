@@ -63,8 +63,8 @@
       <div class="col-md-3 col-sm-6">
         <span class="thumbnail">
           <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
             <% end %>
@@ -79,7 +79,6 @@
             </div>
             <p><%= product.description %></p>
             <hr class="line">
-            <br>
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <p class="price">￥<%= product.price %></p>
