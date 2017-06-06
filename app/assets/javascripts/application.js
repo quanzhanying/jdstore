@@ -24,23 +24,8 @@ $(document).ready(function() {
 
 });
 
+
 // go top //
-// $(window).scroll(function () {
-//   if ($(this).scrollTop() > 500) {
-//     $(".gotop").fadeIn(200);
-//   } else {
-//     $(".gotop").fadeOut(200);
-//   }
-//
-//   $(".gotop").click(
-//     function() {
-//       $('html,body').animate({
-//           scrollTop: 0
-//       }, 700);
-//     });
-// })
-
-
 $(document).on('click', '#gotop', function () {
   $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
 })
