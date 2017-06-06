@@ -807,3 +807,68 @@
 .item.right:not(.prev) {visibility: hidden;}
 .rightest{ visibility: visible;}
 // 以上为首页动画CSS
+
+/*------首页文案css-----*/
+
+.story-box {
+  text-align: center;
+  padding: 25px 62.5px 50px 62.5px;
+
+  h3 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  p {
+    color: #666;
+    line-height: 30px;
+    text-align: justify;
+  }
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  hr {
+    height: 1.5px;
+    background-color: #999;
+  }
+}
+
+/*===== Categories 首页-商品分类 =====*/
+.categories-box {
+  background-color: #F5F5F5;
+  text-align: center;
+
+  a {
+    text-decoration:none;
+    color: #002E2E;
+  }
+
+  img {
+    width: 300px;
+  }
+
+  /*===== Content 分类內容 =====*/
+  .category-content {
+    padding: 50px 0 0 0;
+
+    border-right: 2.5px dashed #ccc;
+    /*===== Box 分类图片 =====*/
+    h3 {
+      padding: 20px 0 20px 0;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    p {
+      text-align: justify;
+      letter-spacing: 1.5px;
+      padding: 0 62.5px 50px 62.5px;
+      color: #666;
+      line-height: 26px;
+
+    }
+  }
+}
