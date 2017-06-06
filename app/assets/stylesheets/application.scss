@@ -20,12 +20,13 @@
  @import "bootstrap";
  @import "font-awesome";
 
- @import url(//fonts.googleapis.com/css?family=Roboto);
- @import url(//fonts.googleapis.com/css?family=Lato:100);
-@import url(//fonts.googleapis.com/css?family=Exo+2);
+ @import url('//fonts.googleapis.com/css?family=Roboto');
+ @import url('//fonts.googleapis.com/css?family=Lato:100');
+@import url('//fonts.googleapis.com/css?family=Exo+2');
 
  //登录//
  .loginmodal-container {
+
    padding: 30px;
    max-width: 350px;
    width: 100% !important;
