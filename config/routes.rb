@@ -31,10 +31,9 @@ Rails.application.routes.draw do
       post :favorite
       post :unfavorite
     end
-
-    resources :favorites
-
   end
+
+  resources :favorites
 
   resources :carts do
     collection do

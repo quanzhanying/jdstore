@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   has_many :favorites
 
-  has_many :favorite_products, :through=> :favorites, :source => :product
+  has_many :favorite_products, :through => :favorites, :source => :product
 
 
   devise :database_authenticatable, :registerable,
