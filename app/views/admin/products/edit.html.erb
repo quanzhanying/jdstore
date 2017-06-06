@@ -2,7 +2,7 @@
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
-  <div class="group"><%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %></div>
+  <!-- <div class="group"><%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %></div> -->
   <div class="group"><%= f.input :name %></div>
   <div class="group"><%= f.input :content %></div>
   <div class="group"><%= f.input :description %></div>
