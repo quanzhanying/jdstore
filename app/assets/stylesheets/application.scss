@@ -1,0 +1,403 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+.body{
+  margin: 20px auto;
+  width: 100%;
+}
+
+
+//============== 登录／注册 =================
+
+.sign-container {
+  position: relative;
+
+  width: 600px;
+  height: 400px;
+  margin: 0px auto 0;
+  padding-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 20px;
+}
+.box {
+
+
+  height: 70%;
+  padding: 3.5em 2em 0;
+}
+.box.left{
+  background-color: #ffffff;
+}
+.box.right {
+  background: linear-gradient(310deg, rgba(0,0,0,0.5), rgba(0,0,0,0.28));
+}
+
+.sign-container h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+  text-align: center;
+  text-indent: 6px;
+  letter-spacing: 6px;
+  line-height: 1.4em;
+  text-transform: uppercase;
+}
+
+.sign-tabs {
+  font-weight: 600;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #d9d9d9;
+}
+.sign-tabs .tab {
+  display: inline-block;
+  margin-bottom: -1px;
+  padding: 20px 15px 10px;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid #d9d9d9;
+  transition: all 0.1s ease-in-out;
+}
+.sign-tabs .tab a {
+  font-size: 11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #d9d9d9;
+  transition: all 0.1s ease-in-out;
+}
+.sign-tabs .tab.active a, body .sign-container .sign-tabs .tab:hover a {
+  color: #1E282C;
+}
+.sign-tabs .tab.active {
+  border-bottom: 1px solid #1E282C;
+}
+
+.tab-content form {
+  position: relative;
+  height: 287px;
+}
+.tab-content label, .sign-container .tab-content input, .sign-container .tab-content .extra-link {
+  -moz-animation: slideIn 0.4s ease-in-out;
+  -webkit-animation: slideIn 0.4s ease-in-out;
+  animation: slideIn 0.4s ease-in-out;
+}
+.tab-content label {
+  font-size: 12px;
+  color: #1E282C;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.tab-content label:not([for='remember']) {
+  display: none;
+}
+.tab-content input.inpt {
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 14px;
+  padding: 15px 12px;
+  color: #999999;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  background: transparent;
+/*   -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; */
+}
+.tab-content input.inpt::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #999999;
+}
+.tab-content input.inpt:-ms-input-placeholder {
+  font-size: 14px;
+  color: #999999;
+}
+.tab-content input.inpt:focus {
+  border-color: #999999;
+}
+.tab-content input.submit {
+  font-size: 0.8em;
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #1E282C;
+}
+.tab-content input.submit:hover {
+  background-color: #1E282C;
+  color: #ffffff;
+  transition: 0.2s ease;
+}
+.tab-content input:focus {
+  outline: none;
+}
+
+.tab-content .form-actions {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.tab-content .form-actions a {
+  font-size: 12px;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #999999;
+}
+.tab-content .form-actions a:hover {
+  text-decoration: underline;
+}
+.signup-info {
+  display: none;
+}
+
+
+/* Social Networks Sign In */
+.right .sign-via {
+  display: block;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  font-size: 20px;
+  color: #FFF;
+  text-align: center;
+  animation: reveal 0.9s ease;
+}
+
+button.social-network {
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #efefef;
+  width: 100%;
+  height: 45px;
+  padding-left: 35%;
+  margin: 15px 0px;
+  border: 2px solid #efefef;
+  background: transparent;
+  transition: 0.2s ease;
+  cursor: pointer;
+  animation: reveal 0.9s ease;
+
+}
+
+
+
+
+.panel-signup {
+  box-shadow: 0 16px 38px -12px rgba(0,0,0,0.56), 0 4px 25px 0px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.2);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -40px;
+    padding: 0;
+}
+
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+/*轮播图*/
+.carousel {
+  margin: 20px auto;
+  width: 100%;
+  height: 400px;
+}
+
+/*这是热卖产品*/
+.dream{
+   color: #696969;
+   font-size: 40px;
+   font-weight: 700;
+   margin: 0px -10px 0px 0px;
+   text-align: center;
+   padding: 0px 0px;
+ }
+
+ .button{
+   border: 2px solid #26211d;
+   text-align: center;
+   padding: 5px 0px;
+   font-weight: 700;
+   margin-top: 10px;
+   display: block;
+   width: 100px;
+ }
+
+ .fitimage{
+   overflow:hidden;
+   position: relative;
+ }
+
+ .center-pic{
+   padding: 80px 80px 10px;
+   margin: 0px 10px;
+ }
+
+ .pic-1{
+   padding: 0px 30px 20px 170px;
+ }
+
+
+ /* customer-feedback */
+#customer-feedback {
+  padding-bottom: 50px;
+  background-color:#fff;
+  padding-top: 20px;
+  .col-md-4 {
+    padding: 15px 10px;
+    .quote-box-1 {
+      padding: 30px 30px;
+      background-color: #FFF;
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 2em;
+      border:4px solid  #faf6ec;
+      margin-top:-41px;
+      position: relative;
+      z-index:1;
+      .fa{
+        color:#faf6ec;
+      }
+    }
+  }
+}
+.fd-avatar-box{
+    border:4px solid  #faf6ec;
+    border-radius: 168px;
+    width: 83px;
+    height: 83px;
+    background-color: #fff;
+    position: relative;
+
+    z-index: 14;
+    margin:0 auto;
+    .fd-avatar-box-color-overlay{
+      position: absolute;
+      background-color: none;
+      border-radius: 167px;
+      height: 83px;
+      width: 83px;
+
+    }
+    img {
+      width: 100%;
+      margin:1px auto;
+      z-index: 15;
+    }
+    .round-image-74 {
+      background-color: white;
+      border: 1px solid  #faf6ec;
+      border-radius: 37px;
+      -moz-border-radius: 37px;
+      -webkit-border-radius: 37px;
+      height: 74px;
+      width: 74px;
+      overflow: hidden;
+      text-align: center;
+    }
+}
+
+/* call-to-action */
+
+#call-to-action {
+  background-color: #fff;
+  padding-top: 0px;
+  padding-bottom: 45px;
+  .btn-default {
+    background-color: rgb(211,122,130);
+    color: #fff;
+    border-color: #fff;
+    padding-top: 8px;
+    width: 150px;
+  }
+}
+
+/*  Welcome page Footer  */
+
+.footer {
+  background-color: rgb(239,234,225);
+  color: #959595;
+  margin-top: 20px;
+  padding-top: 20px;
+  height: 100px;
+  width: 100%;
+  border-top:1px solid #e6e6e6;
+  .copyright {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgb(239,234,225);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    .design {
+      margin-left: 20px;
+      span {
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        a {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.5);
+          margin-bottom: 20px;
+          transition: 0.35s;
+        }
+        a:hover {
+          color: #333333;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin-top: 5px;
+        color: #959595;
+        span {
+          color: rgba(0, 0, 0, 0.7);
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

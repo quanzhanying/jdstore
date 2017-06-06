@@ -1,0 +1,50 @@
+
+
+    <div class="box box-center">
+
+      <div class="container-fluid sign-container">
+        <div class="panel panel-signup panel-success">
+          <div class="panel-heading"><h1>欢迎光临 泰•开心</h1></div>
+        </div>
+
+        <div class="page-header">
+          <h4>邮箱登录</h4>
+        </div>
+
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="content">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <div class="form-group label-floating">
+
+              <%= f.text_field :email, type: :email, placeholder: "输入邮箱", required: true, autofocus: true, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <div class="form-group label-floating">
+
+              <%= f.text_field :password, type: :password, placeholder: "输入密码", required: true, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <%= f.input :remember_me, label: false, inline_label: "记住我", as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+        </div>
+           <div class="row text-center">
+             <%= f.submit "登录", class: "btn btn-round btn-success"%>
+           </div>
+
+        <% end %>
+
+    </div>
+</div>
