@@ -184,11 +184,18 @@ body {
 
 /*===== Footer 页脚 ======*/
 .footer{
+
+  bottom: 0;
+  /* set the fixed height of the footer here*/
   text-align: center;
   min-height: 50px; //最小高度
   background-color: #222;
   padding: 15px 0;
   color: #fff;
+  p {
+     color: white;
+     margin-top: 30px;
+ }
 
   /* 标题 */
   h4 {
