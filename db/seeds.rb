@@ -15,9 +15,21 @@ if User.find_by(email: "zhuqi@test.com").nil?
   u.password_confirmation = "123456"   # 最少要六码
   u.is_admin = true
   u.save
-  puts "Admin 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+  puts "Admin1 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
 else
-  puts "Admin 已经建立过了，脚本跳过该步骤."
+  puts "Admin1 已经建立过了，脚本跳过该步骤."
+end
+
+if User.find_by(email: "bigkid@test.com").nil?
+  u = User.new
+  u.email = "bigkid@test.com"           # 可以改成自己的 email
+  u.password = "123456"                # 最少要六码
+  u.password_confirmation = "123456"   # 最少要六码
+  u.is_admin = true
+  u.save
+  puts "Admin2 已经建立好了，帐号为#{u.email}, 密码为#{u.password}"
+else
+  puts "Admin2 已经建立过了，脚本跳过该步骤."
 end
 
 

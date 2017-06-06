@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+before_action :authenticate_user!, only: [:add_to_favorite, :quit_favorite]
 before_action :validate_search_key, only: [:search]
 
 
@@ -18,13 +18,10 @@ end
 
 
 
-
-
   def index
 
 
-
-
+    @current_user=current_user
     if params[:category].blank?
       @products = Product.all
       if params[:favorite] == "yes"

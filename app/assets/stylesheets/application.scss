@@ -20,10 +20,13 @@
  @import "bootstrap";
  @import "font-awesome";
 
- @import url(http://fonts.googleapis.com/css?family=Roboto);
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
+ @import url('https://fonts.googleapis.com/css?family=Lato:100');
+ @import url('https://fonts.googleapis.com/css?family=Exo+2');
 
  //登录//
  .loginmodal-container {
+
    padding: 30px;
    max-width: 350px;
    width: 100% !important;
@@ -123,24 +126,27 @@
 body {
     height: 100%;
     margin: 0;
+
 }
 html {
     padding-bottom: 150px;
     min-height: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    position: relative;
+      position: relative;
 }
 
 footer {
     width: 100%;
+
+    margin-right: -200px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50px;
     color: #FFFFFF;
-    background-color: #232f3e;
+    background-color: #000000;
 }
 
 
@@ -297,7 +303,7 @@ footer {
 
 /*字幕*/
 .title {
-  width: 520px; /*宽度1200px*/
+  text-align: center; /*宽度1200px*/
   margin: 0 auto; /*水平居中*/
   margin-top: 70px; /*上边距*/
 }
@@ -317,25 +323,40 @@ footer {
   width: 100%;
 }
 
-.box img{
+.box {
+  position: relative;
+}
 
+.hue{
+  position: absolute;
+  background-color: rgba(0,0,0,.08);
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.box img{
+  width: 100px;
   border-style:none;
   border-radius: 50%;
-  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
-  -webkit-transition: all 0.4s;
-  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
-  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
-  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
-  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+  transition: all 0.03s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition: all 0.03s;
+  -webkit-transition:all 0.03s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.03s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.03s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.03s ease-in-out; /*让「IE浏览器」支持这个属性*/
 
 }
 
 .box:hover img {
-  transform: scale(1.2); /*在400ms内，图片的尺寸从 1倍 放大到 1.2倍*/
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -ms-transform: scale(1.2);
+  transform: scale(1.1); /*在30ms内，图片的尺寸从 1倍 放大到 1.1倍*/
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
 }
 
 
@@ -440,4 +461,145 @@ footer {
 
 .productList-item-pic:hover {
   top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
+}
+
+
+/*===== 表格 ======*/
+table {
+  margin-top: 50px;
+}
+th {
+  vertical-align: middle !important; // 表格標題垂直置中
+  background-color: #444;
+  color: white;
+}
+
+td {
+  height: px;
+  vertical-align: middle !important; // 表格內容垂直置中
+}
+
+
+
+// 使用J&A模版重新定义导航栏
+
+/*===== Navbar  ======*/
+.navbar.navbar-default {
+  background: rgba(0,0,0,0.3);
+  color: #000 !important;
+
+  a:hover,
+  a:active,
+  a:focus {
+    color: #ffffff !important;
+  }
+
+  &.show_bgcolor {
+    background-color: #02061A;
+  }
+
+  /*===== Logo ======*/
+  .logo-box {
+    margin-right: 15px;
+    font-family: 'Oswald', sans-serif; /* Google字型 */
+    font-size: 20px;
+
+    img {
+      display: inline-block;
+      margin-top: -6px;
+      margin-right: 8px;
+      margin-left: 30px;
+      width: 30px;
+      height: 30px;
+
+    }
+  }
+
+
+  /*===== 下拉菜单 ======*/
+  .dropdown-menu{
+    background-color: #fff;
+    min-width: 175px;
+    // box-shadow: 0 5px 10px #aaa;
+
+    a {
+      color: #000;
+      padding: 8px 17px;
+    }
+
+    a:hover {
+      background-color: #f0f0f0;
+      color: #eb5424 !important;
+    }
+  }
+
+  /* 下拉菜单箭头*/
+  .dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+  }
+
+  /* 搜索 */
+  .search-box {
+    margin-top: 7.5px;
+    @media screen and (max-width:991px) and (min-width: 768px){
+    width: 1px;
+    }
+    input {
+      height: 35px;
+    }
+
+    input:focus {
+      border: 2px solid #ccc;
+    }
+
+    button {
+      background-color: #fff;
+      border: 1.5px solid #fff;
+      padding: 5px 10px 5px 10px;
+      height: 35px;
+      color: #333;
+    }
+  }
+}
+
+// admin 后台
+.category-table {
+  img{
+    width: 100px;
+  }
+}
+.admin-nav{
+  li{
+    border-style:dashed;
+    border-width:1px;
+    border-radius:3px;
+    text-align: center;
+  }
+
+}
+
+// 字体
+
+// 首页tag line
+.tag-line1{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bolder;
+}
+
+.tag-line2{
+  font-family: 'Exo 2',sans-serif;
+  font-weight: 100;
+  color: #333
+}
+
+.site-name{
+  font-family: 'Exo 2', sans-serif ;
+  font-weight: bolder;
 }

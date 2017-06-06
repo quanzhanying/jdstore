@@ -2,7 +2,41 @@
 <div class="menu  bg-color1">
   <div class="menuList">
 
+
+<!-- nav-全部产品 -->
+    <div class="menuList-item bg-color1">
+      <%= link_to products_path() do %>
+       <div class="box">
+
+          <%= image_tag("https://ws4.sinaimg.cn/large/006tNbRwly1fgahnqtmscj3050050743.jpg", class: "thumbnail", style: "padding: 18px") %>
+      </div>
+      <% end %>
+      <div class="mune-name">
+      发现
+     </div>
+      </div>
+
+<!-- 只有登录用户才能看到这个我的收藏nav选项 -->
+ <% if !@current_user.nil? %>
+      <div class="menuList-item bg-color1">
+        <%= link_to products_path(:favorite => "yes") do %>
+         <div class="box">
+           <% if params[:favorite] == "yes" %>
+           <div class="hue"></div>
+           <% end %>
+           <%= image_tag("https://ws3.sinaimg.cn/large/006tNbRwly1fgahc59q8rj306c06it8x.jpg", class: "thumbnail", style: "padding: 5px") %>
+       </div>
+        <% end %>
+        <div class="mune-name">
+       收藏
+       </div>
+        </div>
+<% end %>
+
+<!-- nav-产品分类 -->
+
    <% Category.all.each do |category| %>
+
 
   <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if params[:category] == category.name %>">
 
@@ -11,8 +45,12 @@
 
 
      <div class="box">
+      <% if params[:category] == category.name %>
+      <div class="hue"></div>
+      <% end %>
+
       <% if category.image.present? %>
-        <%= image_tag(category.image.small.url, class: "thumbnail") %>
+        <%= image_tag(category.image.url, class: "thumbnail") %>
       <% else %>
         <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "thumbnail") %>
       <% end %>

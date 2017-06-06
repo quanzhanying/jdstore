@@ -15,10 +15,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/alert
-//= require bootstrap/dropdown
-//= require bootstrap/modal
+//= require bootstrap
 //= require_tree .
+
+
+$(window).scroll(function () {
+  /*===== Welcome#index - 首頁導航列變化 =====*/
+	if ($(this).scrollTop() > 325) {
+		$('#navbar').removeClass('show_bgcolor')
+	} else {
+		$('#navbar').addClass('show_bgcolor')
+	}
+
+})
+
 
 /*===== Products#show - 更改显示图片=====*/
 $(document).on('mouseover', '.list-image', function () {

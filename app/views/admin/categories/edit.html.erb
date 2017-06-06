@@ -1,0 +1,22 @@
+<h2> 修改类目 </h2>
+
+<%= simple_form_for [:admin, @category] do |f| %>
+
+<div class="group">
+    <%= f.input :name %>
+  </div>
+
+
+  <% if @category.image.present? %>
+   <span>当前类目图</span> <br>
+   <%= image_tag(@category.image.thumb.url) %>
+   <% end %>
+
+
+  <div class="group">
+    <%= f.input :image, as: :file %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>

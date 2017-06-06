@@ -56,7 +56,7 @@ class CategoriesController < ApplicationController
       end
 
     end
-    
+
   end
 
   # DELETE /categories/1

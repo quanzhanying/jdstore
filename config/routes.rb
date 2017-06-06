@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :categories
   namespace :admin do
     resources :products
+    resources :categories
     resources :orders do
       member do
        post :cancel
