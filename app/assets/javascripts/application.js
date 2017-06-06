@@ -16,5 +16,6 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require autosize.min
+//= require bootstrap/modal
 //= require_tree .
 //= require bootstrap-sprockets
