@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  impressionist :actions=>[:show]
   before_action :validate_search_key, only: [:search]
 
   def index
