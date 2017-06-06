@@ -34,6 +34,13 @@
   }
 }
 
+.productList-wrap {
+  max-width : 1240px;
+  position  : relative;
+  margin-top: 50px;
+  text-align: center;
+}
+
 .productList-lastItem {
   margin-right: 0;
 }
@@ -143,4 +150,25 @@
 
 .intro-text-quantity span {
   margin-top: 15px;
+}
+//copy from https://fullstack.xinshengdaxue.com/competitions/2
+@media (max-width: 1240px) {
+  .productList-wrap {
+    width: 992px;
+  }
+}
+@media (max-width: 991px) {
+  .productList-wrap {
+    width: 744px;
+  }
+}
+@media (max-width: 760px) {
+  .productList-wrap {
+    width: 496px;
+  }
+}
+@media (max-width: 500px) {
+  .productList-wrap {
+    width: 248px;
+  }
 }
