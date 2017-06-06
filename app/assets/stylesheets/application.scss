@@ -180,7 +180,8 @@ input[type=password]:hover {
  * Update the basics of our documents to prep for docs content.
  */
 body {
-  position: relative;
+  position   : relative;
+  font-family: 'Roboto', sans-serif, fantasy;
   /* For scrollspy */
 }
 /* Keep code small in tables on account of limited space */
@@ -1833,7 +1834,8 @@ h1[id] {
  */
 // to solve the body's white space of left and right margin.
 
-.indexbody, .bs-docs-featurette {
+.bs-docs-featurette,
+.indexbody {
   margin-left : -15px;
   margin-right: -15px;
 }
@@ -1920,13 +1922,12 @@ a:hover {
 
 .main-content {
   min-height: 850px;
-
 }
-
 // 搜索//
+
 #search-id {
-width: 200px;
-padding-top: 7px;
+  width      : 200px;
+  padding-top: 7px;
 }
 
 .search-info-title {
@@ -1938,10 +1939,11 @@ padding-top: 7px;
 }
 
 .carousel-inner img {
-    /*-webkit-filter: grayscale(90%);*/
-     /*filter: grayscale(90%); make all photos black and white */
-    width: 100%; /* Set width to 100% */
-    margin: auto;
-    background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
-    opacity: 0.5;
+  /*-webkit-filter: grayscale(90%);*/
+  /*filter: grayscale(90%); make all photos black and white */
+  width     : 100%;
+  /* Set width to 100% */
+  margin    : auto;
+  background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
+  opacity   : 0.5;
 }
