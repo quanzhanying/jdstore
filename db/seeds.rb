@@ -56,13 +56,6 @@ Category.create!(
 # img4_url: "图片4",
 # img5_url: "图片5"
 
-
-
-
-
-
-
-
 ##############################################
 
 Product.create!(
@@ -77,7 +70,7 @@ Product.create!(
   content: "空运包邮 110元/3斤,165元/5斤",
   description: "红唇之吻 烟台美早大樱桃 26mm-28mm大果 1.5kg，2.5kg装 顺丰包邮 75元/3斤，115元/5斤",
   remark: "",
-  price: 75,
+  price: 110,
   price_unit: "元/1500g",
   quantity: 99,
   img_url: "https://img14.360buyimg.com/n0/jfs/t5689/165/2227775223/214124/16e6ad82/592ea0beN2b1dea2c.jpg",

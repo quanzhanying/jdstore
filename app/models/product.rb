@@ -1,6 +1,16 @@
 class Product < ApplicationRecord
-  belongs_to :Category
-  
+
+  # belongs_to :category
+
+  # before_create :set_default_attrs
+
   mount_uploader :image, ImageUploader
   acts_as_list
+
+  private
+
+  # def set_default_attrs
+  #   self.number = self.id
+  # end
+
 end

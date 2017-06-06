@@ -51,6 +51,8 @@ gem 'ransack'
 gem 'letter_opener', group: :development
 # 状体
 gem 'aasm'
+# Tree
+gem 'ancestry'
 # 短信
 # gem 'smart_sms'
 
