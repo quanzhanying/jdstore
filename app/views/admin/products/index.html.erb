@@ -4,16 +4,16 @@
   <%= link_to("新增类别", categories_path, class: "btn btn-primary btn-sm") %>
   <%= link_to("订单页面", admin_orders_path, class: "btn btn-primary btn-sm") %>
 </div>
-<table class="table table-bordered">
+<table class="table table-hover table-responsive">
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>category</th>
-      <th width="100"> Options</th>
-      <th>timestamp</th>
+      <th width="220">产品图片</th>
+      <th>名称</th>
+      <th>价格</th>
+      <th>类目</th>
+      <th width="100"> 选项</th>
+
     </tr>
   </thead>
   <tbody>
@@ -41,14 +41,12 @@
         <td>
           <%= product.category.name %>
         </td>
-        
+
         <td>
           <%= link_to("Edit", edit_admin_product_path(product)) %>
           <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
         </td>
-        <td>
 
-        </td>
       </tr>
     <% end %>
   </tbody>
