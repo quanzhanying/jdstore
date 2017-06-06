@@ -296,8 +296,9 @@ label {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-@import url(https://fonts.googleapis.com/css?family=Lato:100|Exo+2);
+@import url("//fonts.googleapis.com/css?family=Roboto");
+@import url("//fonts.googleapis.com/css?family=Lato:100");
+@import url("//fonts.googleapis.com/css?family=Exo+2");
 /* line 9, /Users/amznh/.rvm/gems/ruby-2.3.1/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -12851,14 +12852,14 @@ button.close {
   font-family: roboto;
 }
 
-/* line 41, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 42, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
 }
 
-/* line 47, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 48, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container input[type=submit] {
   width: 100%;
   display: block;
@@ -12866,7 +12867,7 @@ button.close {
   position: relative;
 }
 
-/* line 54, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 55, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container input[type=text], input[type=password] {
   height: 44px;
   font-size: 16px;
@@ -12882,7 +12883,7 @@ button.close {
   -moz-box-sizing: border-box;
 }
 
-/* line 69, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 70, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container input[type=text]:hover, input[type=password]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
@@ -12891,7 +12892,7 @@ button.close {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 77, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal {
   text-align: center;
   font-size: 14px;
@@ -12904,7 +12905,7 @@ button.close {
     user-select: none; */
 }
 
-/* line 89, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 90, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
@@ -12917,7 +12918,7 @@ button.close {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
-/* line 101, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 102, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
@@ -12926,7 +12927,7 @@ button.close {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
-/* line 109, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 110, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container a {
   text-decoration: none;
   color: #666;
@@ -12937,18 +12938,18 @@ button.close {
   transition: opacity ease 0.5s;
 }
 
-/* line 119, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 120, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .login-help {
   font-size: 12px;
 }
 
-/* line 126, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 127, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 body {
   height: 100%;
   margin: 0;
 }
 
-/* line 131, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 132, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 html {
   padding-bottom: 150px;
   min-height: 100%;
@@ -12957,7 +12958,7 @@ html {
   position: relative;
 }
 
-/* line 139, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 140, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 footer {
   width: 100%;
   margin-right: -200px;
@@ -12970,18 +12971,18 @@ footer {
   background-color: #000000;
 }
 
-/* line 159, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 160, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .body2 {
   padding: 150px 0 0 0;
 }
 
-/* line 171, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 172, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-default {
   background-color: #232f3e;
   color: #FFFFFF;
 }
 
-/* line 177, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 178, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-brand a {
   color: #FFFFFF;
   font-size: 150%;
@@ -12989,18 +12990,18 @@ footer {
   background-color: #232f3e;
 }
 
-/* line 184, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 185, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-brand a:hover {
   color: #778899;
 }
 
-/* line 189, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 190, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-listItem a {
   color: #FFFFFF;
   background-color: #232f3e;
 }
 
-/* line 200, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 201, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .search {
   float: left;
   /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
@@ -13013,20 +13014,20 @@ footer {
   /*相对定位*/
 }
 
-/* line 208, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 209, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .welcome {
   margin-top: 15px;
   margin-left: 1220px;
 }
 
-/* line 213, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 214, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .list {
   float: left;
   /*你去左边*/
   margin-left: 900px;
 }
 
-/* line 219, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 220, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .find {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -13034,19 +13035,19 @@ footer {
   /*右边加点空间，不然太挤啦*/
 }
 
-/* line 226, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 227, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .find a {
   color: #FFFFFF;
   background-color: #232f3e;
   text-decoration: none;
 }
 
-/* line 231, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 232, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .find a:hover {
   color: #778899;
 }
 
-/* line 235, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 236, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .favorite {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -13054,19 +13055,19 @@ footer {
   /*右边加点空间，不然太挤啦*/
 }
 
-/* line 242, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 243, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .favorite a {
   color: #FFFFFF;
   background-color: #232f3e;
   text-decoration: none;
 }
 
-/* line 248, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 249, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .favorite a:hover {
   color: #778899;
 }
 
-/* line 255, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 256, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .dropdown {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -13074,34 +13075,34 @@ footer {
   /*右边加点空间，不然太挤啦*/
 }
 
-/* line 264, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 265, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .a-dropdown a {
   background-color: #232f3e;
 }
 
-/* line 267, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 268, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .dropdown a {
   color: #FFFFFF;
   text-decoration: none;
 }
 
-/* line 273, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 274, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .dropdown a:hover {
   color: #778899;
 }
 
-/* line 278, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 279, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart-wrap {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
 }
 
-/* line 283, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 284, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart {
   float: left;
 }
 
-/* line 287, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 288, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .fa-shopping-cart {
   color: #C81623;
   /*红色图标*/
@@ -13111,7 +13112,7 @@ footer {
   /*右边距*/
 }
 
-/* line 293, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 294, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart a {
   color: #FFFFFF;
   /*白色字体*/
@@ -13120,14 +13121,14 @@ footer {
   /*不要下划线*/
 }
 
-/* line 299, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 300, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart a:hover {
   color: #778899;
   /*鼠标一上去的时候，字体变成灰色*/
 }
 
 /*字幕*/
-/* line 305, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 306, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .title {
   text-align: center;
   /*宽度1200px*/
@@ -13137,7 +13138,7 @@ footer {
   /*上边距*/
 }
 
-/* line 310, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 311, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .title-1 {
   font-size: 36px;
   /*设置字体36px*/
@@ -13145,17 +13146,17 @@ footer {
 }
 
 /*菜单*/
-/* line 322, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 323, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .menu {
   width: 100%;
 }
 
-/* line 326, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 327, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .box {
   position: relative;
 }
 
-/* line 330, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 331, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .hue {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.08);
@@ -13167,7 +13168,7 @@ footer {
   border-radius: 50%;
 }
 
-/* line 341, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 342, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .box img {
   width: 100px;
   border-style: none;
@@ -13185,7 +13186,7 @@ footer {
   /*让「IE浏览器」支持这个属性*/
 }
 
-/* line 354, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 355, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .box:hover img {
   transform: scale(1.1);
   /*在30ms内，图片的尺寸从 1倍 放大到 1.1倍*/
@@ -13195,21 +13196,21 @@ footer {
   -ms-transform: scale(1.1);
 }
 
-/* line 365, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 366, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .mune-name {
   padding-left: 30px;
   padding-top: 0px;
   font-size: 12px;
 }
 
-/* line 372, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 373, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .menuList {
   width: 1100px;
   margin: 50px auto;
   height: 5px;
 }
 
-/* line 379, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 380, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .menuList-item {
   float: left;
   padding: 0 10px;
@@ -13217,46 +13218,46 @@ footer {
   line-height: 5px;
 }
 
-/* line 401, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 402, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-price {
   padding-top: 0px;
   font-size: 16px;
   color: #ff5252;
 }
 
-/* line 407, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 408, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-favorite {
   float: right;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
   padding-right: 160px;
 }
 
-/* line 417, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 418, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-favorite a {
   text-decoration: none;
   /*不要下划线*/
 }
 
-/* line 421, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 422, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-favorite a:hover {
   color: #ff5252;
   background-color: #FFFFFF;
 }
 
-/* line 426, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 427, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-shopping-cart a:hover {
   background-color: #FFFFFF;
 }
 
 /*商品列表*/
-/* line 436, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 437, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList {
   margin: 20px auto;
   width: 1200px;
   overflow: hidden;
 }
 
-/* line 443, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 444, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-pic {
   width: 200px;
   padding: 10px 10px 20px 20px;
@@ -13276,38 +13277,38 @@ footer {
   /*让「IE浏览器」支持这个属性*/
 }
 
-/* line 458, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 459, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-pic img {
   width: 200px;
 }
 
-/* line 462, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 463, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-pic:hover {
   top: -5px;
   /*在400ms内，top的值从 0px 变化为 5px*/
 }
 
 /*===== 表格 ======*/
-/* line 468, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 469, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 table {
   margin-top: 50px;
 }
 
-/* line 471, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 472, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 th {
   vertical-align: middle !important;
   background-color: #444;
   color: white;
 }
 
-/* line 477, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 478, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 td {
   height: px;
   vertical-align: middle !important;
 }
 
 /*===== Navbar  ======*/
-/* line 487, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 488, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default {
   background: rgba(0, 0, 0, 0.3);
   color: #000 !important;
@@ -13316,24 +13317,24 @@ td {
   /* 下拉菜单箭头*/
   /* 搜索 */
 }
-/* line 491, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 492, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default a:hover,
 .navbar.navbar-default a:active,
 .navbar.navbar-default a:focus {
   color: #ffffff !important;
 }
-/* line 497, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 498, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default.show_bgcolor {
   background-color: #02061A;
 }
-/* line 502, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 503, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .logo-box {
   margin-right: 15px;
   font-family: 'Oswald', sans-serif;
   /* Google字型 */
   font-size: 20px;
 }
-/* line 507, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 508, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .logo-box img {
   display: inline-block;
   margin-top: -6px;
@@ -13342,22 +13343,22 @@ td {
   width: 30px;
   height: 30px;
 }
-/* line 520, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 521, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu {
   background-color: #fff;
   min-width: 175px;
 }
-/* line 525, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 526, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu a {
   color: #000;
   padding: 8px 17px;
 }
-/* line 530, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 531, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu a:hover {
   background-color: #f0f0f0;
   color: #eb5424 !important;
 }
-/* line 537, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 538, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu:before {
   content: "";
   border-bottom: 10px solid #fff;
@@ -13368,25 +13369,25 @@ td {
   right: 16px;
   z-index: 10;
 }
-/* line 549, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 550, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box {
   margin-top: 7.5px;
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  /* line 549, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+  /* line 550, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
   .navbar.navbar-default .search-box {
     width: 1px;
   }
 }
-/* line 554, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 555, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box input {
   height: 35px;
 }
-/* line 558, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 559, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box input:focus {
   border: 2px solid #ccc;
 }
-/* line 562, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 563, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box button {
   background-color: #fff;
   border: 1.5px solid #fff;
@@ -13395,12 +13396,12 @@ td {
   color: #333;
 }
 
-/* line 574, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 575, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .category-table img {
   width: 100px;
 }
 
-/* line 579, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 580, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .admin-nav li {
   border-style: dashed;
   border-width: 1px;
@@ -13408,18 +13409,18 @@ td {
   text-align: center;
 }
 
-/* line 591, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 592, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .tag-line1 {
-  font-family: 'Lato',sans-serif;
-  font-weight: bolder;
+  font-family: 'Lato', sans-serif;
 }
 
-/* line 596, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 597, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .tag-line2 {
   font-family: 'Lato',sans-serif;
+  font-weight: 100;
 }
 
-/* line 599, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 602, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .site-name {
   font-family: "Exo 2", sans-serif;
   font-weight: bolder;
