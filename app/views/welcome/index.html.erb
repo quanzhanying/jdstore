@@ -41,23 +41,29 @@
    <div class="row">
       <h2 class="preview-a"> 本周菜谱概览 </h2>
       <div class="col-md-3 col-md-offset-1">
-         <h3> 男士健身餐</h3>
+         <h3><%= link_to("男性健身餐", products_path(category: "男性健身餐")) %></h3>
          <hr>
          <p> 专为健身男士提供的一周午餐，主要功能包括但不限于：增肌减脂、排毒清肠。量较大。 </p>
+         <%= link_to products_path(category: "男性健身餐") do %>
          <%= image_tag 'man-bodybuilding.jpg', class: 'img-responsive' %>
+         <% end %>
       </div>
 
       <div class="col-md-3 col-md-offset-1">
-         <h3> 女士健身餐</h3>
+         <h3><%= link_to("女性健身餐", products_path(category: "女性健身餐"))%></h3>
          <hr>
          <p> 专为健身女士提供的一周午餐，主要功能包括但不限于：减脂排毒、美容养颜。量较小。 </p>
+         <%= link_to products_path(category: "女性健身餐") do%>
          <%= image_tag 'woman-bodybuilding.jpg', class: 'img-responsive' %>
+         <% end %>
       </div>
 
       <div class="col-md-3 col-md-offset-1 ">
-         <h3 class=""> 随心装</h3>
+         <h3><%= link_to("随心装", products_path(category: "随心"))%></h3>
          <hr>
          <p> 不考虑是否健身，随便吃。慎点！ </p>
+         <%= link_to products_path(category: "随心") do %>
+         <% end %>
          <%= image_tag 'whatever.jpg', class: 'img-responsive' %>
       </div>
 
