@@ -77,7 +77,7 @@ class ProductsController < ApplicationController
        search_result = Product.ransack(@search_criteria).result(:distinct => true)
        @products = search_result.paginate(:page => params[:page], :per_page => 8 )
        if @products.blank?
-         redirect_to root_path, alert: "没有找到相关工作信息！"
+         redirect_to root_path, alert: "没有找到相关商品信息！"
        end
      else
        redirect_to root_path, notice: "搜索信息不能为空，请输入关键字搜索！"
