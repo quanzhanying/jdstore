@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <!--  product photo -->
     <div class="col-md-6">
       <% if @product.photos.present? %>
       <!-- 主图 -->
@@ -30,11 +31,13 @@
               </div>
             </div>
         </div>
-
       <% else %>
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
     </div>
+    <!-- End of product photo -->
+
+    <!-- 商品信息 -->
     <div class="col-md-6">
       <h2> <%= @product.title %> </h2>
       <div style="height:100px;">
@@ -44,34 +47,68 @@
       </div>
       <div> 数量 : <%= @product.quantity %> </div>
       <div class="product-price"> ￥ <%= @product.price %> </div>
-       <!-- 商品页调整商品数量 -->
-        <% if @product.quantity.present? && @product.quantity >0 %>
-          <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
-           <div class="buy-quantity">
-             <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
-             <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
-             <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
-           </div>
-           <br>
-           <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
-            <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
-           </button>
-          <% end %>
-        <% else %>
-          已销售一空，无法购买
+     <!-- 商品页调整商品数量 -->
+      <% if @product.quantity.present? && @product.quantity >0 %>
+        <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
+         <div class="buy-quantity">
+           <%= link_to("-", "", id: "quantity-minus", class: "quantity-minus btn btn-default disabled") %>
+           <%= f.input_field "", name: "quantity", value: '1', id: "quantity-input", class: "quantity-input" %>
+           <%= link_to("+", "", id: "quantity-plus", class: "quantity-plus btn btn-default #{@product.quantity <= 1 ? 'disabled' : ''}") %>
+         </div>
+         <br>
+         <button type="submit" class="btn btn-warning <%= @product.quantity == 0 ? 'disabled' : '' %>">
+          <%= fa_icon("cart-arrow-down", text: "加入购物车") %>
+         </button>
         <% end %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+      <!-- end 商品页调整商品数量 -->
     </div>
- </div>
-   <!-- 评论功能 -->
-   <div class="col-md-10">
-     <h5 class="comments_title">
-       <%= @product.comments.count %> Comments
-     </h5>
-     <hr>
-     <div id="comments">
-       <%= render @product.comments%>
-       <%= render "comments/form"%>
-     </div>
+    <!-- end 商品信息 -->
 
+  </div>
+</div>
+
+    <!-- 商品详情＋ 评论功能-->
+<div class="col-md-8">
+  <div class="tabs" >
+    <div class="tabbable-panel">
+      <!-- 菜单切换 -->
+      <div class="tabbable-line">
+        <ul id="myTab" class="nav nav-tabs">
+       	<li class="active">
+       		<a href="#tab_default_1" data-toggle="tab">
+       			 商品详情
+       		</a>
+       	</li>
+       	<li><a href="#tab_default_2" data-toggle="tab">用户评论</a></li>
+       </ul>
+      </div>
+      <!-- 内容 -->
+       <div id="myTabContent" class="tab-content">
+         <!-- 商品详情 -->
+         	<div class="tab-pane fade in active" id="tab_default_1">
+           		<p class="product-description"><%= @product.description %></p>
+              <p class="product-description2 text-center">产品展示</p>
+              <p class="product-description2 text-center">
+                <%= image_tag(@product.photos[0].image.medium.url) %>
+              </p>
+          </div>
+           <!-- 评论功能 -->
+         	<div class="tab-pane fade" id="tab_default_2">
+           <h5 class="comments_title">
+             <%= @product.comments.count %> Comments
+           </h5>
+           <hr>
+            <div id="comments">
+              <%= render @product.comments%>
+              <%= render "comments/form"%>
+            </div>
+         	</div>
+        </div>
+        <!-- end 内容 -->
+
+    </div>
   </div>
 </div>

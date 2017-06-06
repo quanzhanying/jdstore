@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
 
   def index
-    
+
     #分类显示
     if params[:category].blank?
       @products = Product.all
@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comments = @product.comments
   end
 
   def add_to_cart
