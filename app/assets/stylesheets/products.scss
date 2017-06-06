@@ -127,12 +127,23 @@
 }
 // 首页轮播
 .carousel {
-  width: 1200px;
-  margin: 0 auto;
+  width: 100px;
+  margin-top: -20px !important;
+
+
 }
 .carousel .item {
-  height: 375px;
+  height: 395px;
+
 }
+
+.carousel-inner {
+    position: center;
+    overflow: hidden;
+    width: 100%;
+
+}
+
 // 商品信息
 .productDetail {
 	width: 1200px;
