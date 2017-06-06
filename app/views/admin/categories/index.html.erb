@@ -30,8 +30,12 @@
       </td>
       <td> <%= category.products.count %> </td>
       <td>
-        <%= link_to 'Edit', edit_admin_category_path(category) %>
-        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to edit_admin_category_path(category) do %>
+          <span class="fa fa-pencil"></span>
+          <% end %>
+        <%= link_to(admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }) do %>
+        <span class="fa fa-trash"></span>
+        <% end %>
       </td>
     </tr>
     <% end %>
