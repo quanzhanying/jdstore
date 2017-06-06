@@ -17,7 +17,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.category_id = params[:category_id]
-    @categories =Category.all.map { |c| [c.name, c.id] } 
+    @categories =Category.all.map { |c| [c.name, c.id] }
     if @product.save
       redirect_to admin_products_path
     else
@@ -39,6 +39,14 @@ class Admin::ProductsController < ApplicationController
    else
      render :edit
    end
+ end
+
+ def destroy
+   @product = Product.find(params[:id])
+   @product.destroy
+
+   flash[:warning] = "成功将 #{@product.title} 删除!"
+   redirect_to :back
  end
 
   private

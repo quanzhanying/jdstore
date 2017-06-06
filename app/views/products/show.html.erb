@@ -20,7 +20,7 @@
         <span class="pl20 pr30">类别</span><span id="quantity"><%= @product.category.name %></span>
         </p>
 
-        <div class="intro-text-quantity clearfix">
+        <!-- <div class="intro-text-quantity clearfix">
           <span class="pl20 pr30 fl">数量</span>
 
           <div class="countNumber fl mt10">
@@ -28,7 +28,7 @@
             <input class="countNumber-input" type="text" value="<%= @product.buying_quantity %>">
             <%= link_to("+", add_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
           </div>
-        </div>
+        </div> -->
 
           <p class="intro-text-btnWrap">
             <%= render :partial => "products/cart_btn"%>
@@ -36,3 +36,33 @@
   </div>
 </div>
 </div>
+
+
+<!--
+<div class="product-details col-md-10 text-center">
+  for picture
+  <div class="product-pic col-md-4">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  for details
+  <div class="product-text col-md-4">
+    <h1 class=“product-title”><%= @product.title %></h1>
+    <p class="product-description"><%= @product.description %></p>
+    <div class="product-price-block">
+      <span class="product-price-text">价格</span>
+      <span class ="product-price"><%= @product.price %></span>
+    </div>
+    <div class="product-category-block">
+      <span class="product-category-text">类别</span>
+      <span class ="product-categary"><%= @product.category.name %></span>
+    </div>
+  </div>
+  for summary
+  <div class="product-summary col-md-4">
+    <p><%= @product.description %></p>
+  </div>
+</div> -->
