@@ -1,8 +1,36 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <% if @product.image.present? %>
-        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% if @product.photos.present? %>
+      <!-- 主图 -->
+        <div class="col-md-5">
+            <div class="productDetail">
+              <div class="productDetail-left">
+                <div class="productDetail-left-bigImage">
+                  <%= image_tag @product.photos[0].image.medium.url  %>
+                </div>
+                <!-- 下方小图-->
+                <div class="productDetail-left-imageList ">
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag @product.photos[0].image.medium.url  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag @product.photos[1].image.medium.url  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag @product.photos[2].image.medium.url  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag @product.photos[3].image.medium.url  %>
+                  </div>
+                  <div class="productDetail-left-imageList-item">
+                    <%= image_tag @product.photos[4].image.medium.url  %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
       <% else %>
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
@@ -44,6 +72,6 @@
        <%= render @product.comments%>
        <%= render "comments/form"%>
      </div>
-   </div>
 
+  </div>
 </div>

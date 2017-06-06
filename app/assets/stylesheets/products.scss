@@ -3,314 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.menu-wrap {
-    background: #333333;
-    height: 42px;
-    line-height: 42px;
-    color: #fff;
-}
 
-
-
-.product-box {
-    text-align: center;
-    padding: 0 0 100px 0
-}
-
-.product-box .background-image {
-    width: 100%;
-    margin-bottom: 20px;
-      height: 400px;
-}
-
-.product-box a {
-    color: #666 !important
-}
-
-.product-box .btn {
-    background-color: #fff;
-    margin: 0 10px 0 10px
-}
-
-.product-box .btn:hover,.product-box .btn:focus {
-    color: #eb5424
-}
-
-.product-box .dropdown-menu li {
-    min-width: 200px;
-    padding: 2.5px 0 2.5px 0
-}
-
-.product-box .dropdown-menu li:hover a {
-    background-color: #f0f0f0 !important
-}
-
-.product-box a:hover {
-    color: #eb5424 !important
-}
-
-.product-box a:hover img {
-    opacity: 0.75
-}
-
-.product-box .search-error {
-    margin: 150px 0 150px 0
-}
-
-.product-box .product-content img {
-    width: 100%;
-    margin: 7.5px auto 7.5px auto
-}
-
-.product-box .product-content h2 {
-    margin-top: 150px
-}
-
-.product-box .product-info {
-    text-align: left;
-    line-height: 14px;
-    min-height: 55px
-}
-
-.product-box .path-box {
-    text-align: left;
-    height: 20px
-}
-
-.product-box .path-box .right-box button {
-    margin: -15px 0 -15px 0;
-    padding: 7.5px 10px 7.5px 10px;
-    border: 2px solid #666;
-    color: #333
-}
-
-.product-box .path-box .right-box button:focus {
-    background-color: #fff;
-    color: #333
-}
-
-.product-box .path-box .right-box ul {
-    margin-top: 15px
-}
-
-.product-box .color-circle button {
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    color: #ffffff;
-    padding: 10px 10px 10px 10px;
-    margin: 0px 2px 0px 2px
-}
-
-.product-box .color-circle button:active {
-    outline: none
-}
-
-.product-box .chosen-box {
-    position: absolute;
-    border-radius: 45px;
-    top: 22px;
-    left: 27px;
-    width: 45px;
-    height: 45px;
-    padding-top: 11px;
-    color: #fff;
-    background-color: #02061A;
-    border: 2.5px solid #999;
-    opacity: 0.85;
-    z-index: 1
-}
-
-.product-box .location {
-    top: 15px;
-    left: 30px
-}
-// 首页轮播
-.carousel {
-  width: 1200px;
-  margin: 0 auto;
-}
-.carousel .item {
-  height: 375px;
-}
-// 商品信息
-.productDetail {
-	width: 1200px;
-	margin: 20px auto;
-	height: 518px;
-}
-
-.productDetail img {
-  width: 100%;
-  height: 100%;
-}
-
-.productDetail-left-bigImage {
-	width: 420px;
-	height: 420px;
-}
-
-.productDetail-left-imageList {
-	margin-top: 15px;
-}
-
-.productDetail-left-imageList-item {
-	float: left; /*同一行*/
-	width: 72px;
-	height: 72px;
-	margin-right: 15px;
-}
-
-.productDetail-left-imageList-lastItem {
-	margin-right: 0;
-}
-//
-/*5种背景颜色*/
-.bg-color1 {
-  background: #50514F;
-}
-
-.bg-color2 {
-  background: #F25F5C;
-}
-
-.bg-color3 {
-  background: #FFE066;
-}
-
-.bg-color4 {
-  background: #247BA0;
-}
-
-.bg-color5 {
-  background: #70C1B3;
-}
-
-/*商品详情*/
-.productDecription {
-	width: 1200px;
-  text-align: center;
-	margin: 20px auto;
-	border: 1px solid #50514F;
-  line-height: 30px;
-}
-
-.productDecription-menuList {
-	height: 35px;
-}
-
-.productDecription-menuList-item {
-	float: left;
-	width: 175px;
-	height: 35px;
-}
-
-.productDecription-content {
-	width: 750px;
-  height: 500px;
-	margin: 50px auto;
-}
-
-.productDecription-content-item {
-  display: none;
-  width: 750px;
-  height: 500px;
-}
-
-//热门书籍
-
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
-body{font-family: 'Quicksand', sans-serif;}
-   h4{
-    	font-weight: 600px;
-	}
-	p{
-		font-size: 12px;
-		margin-top: 5px;
-	}
-	.price{
-		font-size: 30px;
-    	margin: 0 auto;
-    	color: #333;
-	}
-
-	.thumbnail{
-		opacity: 0.90;
-		-webkit-transition: all 0.5s;
-		transition: all 0.5s;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-	}
-
-
-	.thumbnail:hover{
-		opacity:1.00;
-		box-shadow: 0px 0px 10px #4bc23f;
-	}
-	.line{
-		margin-bottom: -5px;
-	}
-	@media screen and (max-width: 770px) {
-		.right{
-			float:left;
-			width: 100%;
-		}
-	}
-	span.thumbnail {
-   border: 1px solid #4bc23f !important;
-    border-radius: 5px !important;
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 0px 14px 0px rgba(99,3,0,0.16);
-	padding: 10px;
-}
-.container h4{margin-top:20px; margin-bottom:3px;}
-button {    margin-top: 2px;
-}
-.right {
-    float: right;
-    border-bottom: 2px solid #0a5971;
-}
-.button-info {
-    color: #7d9e2d;
-    background-color: #7d9e2d;
-    border-color: #666666;
-	font-size:13px;
-	font-weight:600;
-}
-
-
-// 书籍排序
-
-.product-index ul {
-    line-height: 40px
-}
-
-.product-index li {
-    font-size: 16px;
-    list-style: none;
-    float: left;
-    padding-right: 20px;
-    margin-left: -20px;
-    margin-right: 20px;
-    font-weight: bold
-}
-
-.product-index a {
-    color: #7f8c8d;
-    font-weight: bolder;
-    font-family: Arial
-}
-
-.product-index li:hover {
-    color: #B28435;
-    background: #fff
-}
-
-
-// 排序
-
-// 轮播图片
 
 /*wll-分类功能*/
 .productCatetory {
@@ -342,4 +35,37 @@ button {    margin-top: 2px;
 }
 .orderList-activeItem a {
   color: #d32048;
+}
+
+
+/*商品信息*/
+.productDetail {
+	width: 1200px;
+	margin: 20px auto;
+	height: 518px;
+}
+
+.productDetail img {
+  width: 100%;
+  height: 100%;
+}
+
+.productDetail-left-bigImage {
+	width: 420px;
+	height: 420px;
+}
+
+.productDetail-left-imageList {
+	margin-top: 15px;
+}
+
+.productDetail-left-imageList-item {
+	float: left; /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+	width: 72px;
+	height: 72px;
+	margin-right: 15px;
+}
+
+.productDetail-left-imageList-lastItem {
+	margin-right: 0;
 }

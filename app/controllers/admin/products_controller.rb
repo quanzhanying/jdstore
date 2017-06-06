@@ -10,6 +10,22 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all.map { |c| [c.name, c.id]}
+    @photo = @product.photos.build
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.category_id = params[:category_id]
+    if @product.save
+      if params[:photos] != nil
+        params[:photos]['image'].each do |a|
+          @photo = @product.photos.create(:image => a)
+        end
+      end
+      redirect_to admin_products_path
+    else
+    render :new
+    end
   end
 
   def edit
@@ -20,20 +36,18 @@ class Admin::ProductsController < ApplicationController
   def update
     @product =Product.find(params[:id])
     @product.category_id = params[:category_id]
-    if @product.update(product_params)
-       redirect_to admin_products_path
+    if params[:photos] != nil
+      @product.photos.destroy_all #如果有新参数过来，就删掉原来旧的，以新的为准
+      params[:photos]['image'].each do |a|
+        @photo = @product.photos.create(:image => a)
+      end
+      @product.update(product_params)
+      redirect_to admin_products_path,notice: "更新成功!"
+
+    elsif @product.update(product_params)
+       redirect_to admin_products_path,notice: "更新成功!"
     else
       render :edit
-    end
-  end
-
-  def create
-    @product = Product.new(product_params)
-    @product.category_id = params[:category_id]
-    if @product.save
-      redirect_to admin_products_path
-    else
-    render :new
     end
   end
 
