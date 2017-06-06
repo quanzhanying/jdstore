@@ -25,9 +25,12 @@
       <%= f.input :image, as: :file %>
    </div>
 
-   <div class="group">
-       <%= f.association :category %>  <!--simple_form_for格式 -->
-   </div>
+   <!-- <div class="group">
+       <%= f.association :category %>  <!-simple_form_for格式 -->
+   <!-- </div> -> -->
+
+   <%= select_tag(:category_id, options_for_select(@categories), :prompt => 'Select one!') %>
+
 
 <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
 <% end %>

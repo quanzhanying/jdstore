@@ -2,9 +2,15 @@ class Admin::ProductsController < ApplicationController
    layout "admin"
    before_action :authenticate_user!
    before_action :admin_required
+   
    def index
-      @products = Product.all
+   if params[:category].blank?
+     @products = Product.all
+   else
+     @category_id = Category.find_by(name: params[:category]).id
+     @products = Product.where(:category_id => @category_id)
    end
+ end
 
    def new
       @product = Product.new
@@ -50,7 +56,7 @@ class Admin::ProductsController < ApplicationController
    private
 
    def product_params
-      params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id, :category_name)
+      params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id)
    end
 
 end

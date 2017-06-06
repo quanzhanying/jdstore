@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
    root 'welcome#index'
    devise_for :users
    namespace :admin do
