@@ -21,7 +21,7 @@
  @import "font-awesome";
 
  @import url(http://fonts.googleapis.com/css?family=Roboto);
- @import url(https://fonts.googleapis.com/css?family=Lato:100);
+ @import url(https://fonts.googleapis.com/css?family=Lato:100|Exo+2);
 
 
  //登录//
@@ -464,7 +464,9 @@ footer {
 
 
 /*===== 表格 ======*/
-
+table {
+  margin-top: 50px;
+}
 th {
   vertical-align: middle !important; // 表格標題垂直置中
 }
@@ -474,7 +476,10 @@ td {
   vertical-align: middle !important; // 表格內容垂直置中
 }
 
-
+/*===== 按钮 ======*/
+.btn-default {
+  min-width: 100px;
+}
 
 // 使用J&A模版重新定义导航栏
 
@@ -486,7 +491,7 @@ td {
   a:hover,
   a:active,
   a:focus {
-    color: #eb5424 !important;
+    color: #ffffff !important;
   }
 
   &.show_bgcolor {
