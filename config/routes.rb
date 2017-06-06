@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :comments
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: {sessions:'users/sessions',registrations:'users/registrations'}
+
   root 'welcome#index'
   #---管理员专区---#
   namespace :admin do

@@ -6,16 +6,17 @@
       <form novalidate="novalidate" class="simple_form new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="OndANSrzG5cisNbBlGFxwSNAVcoSLm+PYCdE+d4TFQhYn9xiE++DKdC2V2D2cu3XiD1J52xwtEealKDkxBaZ/g==">
         <div class="form-inputs">
           <div class="form-group email required user_email"><input class="form-control string email required" autofocus="autofocus" required="required" aria-required="true" placeholder="you@example.com" type="email" value="" name="user[email]" id="user_email"></div>
-          <div class="form-group string required user_nickname"><input class="form-control string required" required="required" aria-required="true" placeholder="用戶名稱" type="text" name="user[nickname]" id="user_nickname"></div>
-          <div class="form-group password required user_password"><input class="form-control password required" maxlength="16" required="required" aria-required="true" placeholder="設定 6 到 16 字位密碼" size="16" type="password" name="user[password]" id="user_password"></div>
-          <div class="form-group password required user_password_confirmation"><input class="form-control password required" maxlength="16" required="required" aria-required="true" placeholder="確認密碼" size="16" type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
+          <div class="form-group password required user_password"><input class="form-control password required" maxlength="16" required="required" aria-required="true" placeholder="设定 6 到 16 字位密码" size="16" type="password" name="user[password]" id="user_password"></div>
+          <div class="form-group password required user_password_confirmation"><input class="form-control password required" maxlength="16" required="required" aria-required="true" placeholder="忘记密码" size="16" type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
         </div>
         <dixv class="form-actions">
-          <input type="submit" name="commit" value="註冊" class="btn btn-default button" data-disable-with="註冊">
+          <input type="submit" name="commit" value="注册" class="btn btn-default button" data-disable-with="注册">
         </div>
-</form>      <hr>
+</form>
         <div class="account">
-          <a href="/users/sign_in">已經是非读不可的用户了吗？</a><br>
+          <br>
+
+          <a href="/users/sign_in"> 已有账号？直接登录</a>
         </div>
       </div>
     </div>
