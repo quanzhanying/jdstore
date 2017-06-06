@@ -14,14 +14,13 @@
           <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
         </div>
         <div class="item-price fl tc"><%= cart_item.product.price %></div>
-        <div class="item-quantity fl tc">
+        <!-- <div class="item-quantity fl tc">
           <div class="countNumber">
             <%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
             <input class="countNumber-input" type="text" value="<%= cart_item.quantity %>">
             <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
           </div>
-
-        </div>
+        </div> -->
         <div class="item-total fl tc"><%= cart_item.product.price * cart_item.quantity  %></div>
         <div class="item-operation fl tc"><%= link_to("删除", cart_item_path(cart_item.product_id), method: :delete, class: "delete-btn", remote: true)%></div>
       </div>
