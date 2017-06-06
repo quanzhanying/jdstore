@@ -83,6 +83,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  if Rails.env.production?
+    config.cache_store = :dalli_store,
+                          (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                          {:username => ENV["MEMCACHIER_USERNAME"],
+                          :password => ENV["MEMCACHIER_PASSWORD"],
+                          :failover => true,
+                          :socket_timeout => 1.5,
+                          :socket_failure_delay => 0.2,
+                          :down_retry_delay => 60
+                          }
+  end
+
   config.action_mailer.default_url_options = { :host => 'https://cryptic-shelf-34174.herokuapp.com/products'}
 
   config.action_mailer.delivery_method = :smtp
