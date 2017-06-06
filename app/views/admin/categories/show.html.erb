@@ -1,11 +1,10 @@
-
 <div class="backend-main">
 
-<h2> Product List </h2>
+<h2><%= @category.name %></h2>
 
 <hr>
 
-  
+
     <div class="pull-right" style="padding-bottom: 20px;">
       <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
     </div>
@@ -54,8 +53,5 @@
   </tbody>
 </table>
 
-<div class="text-center col-md-12 pagination">
-<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
-</div>
 
 </div>

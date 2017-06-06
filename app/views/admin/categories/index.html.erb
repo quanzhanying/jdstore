@@ -20,7 +20,7 @@
         <td>
           <%= category.id %>
         </td>
-        <td><%= category.name %></td>
+        <td><%= link_to(category.name, admin_category_path(category)) %></td>
         <td>
           <%= link_to 'Edit', edit_admin_category_path(category) %>
           <%= link_to 'Destroy', admin_category_path(category), method: :delete, data: {
