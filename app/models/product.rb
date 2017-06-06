@@ -10,4 +10,8 @@ class Product < ApplicationRecord
 
   belongs_to :category
 
+  has_many :favorites
+
+  has_many :members, :through => :favorites, :source => :user
+
 end
