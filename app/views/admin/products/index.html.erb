@@ -1,6 +1,6 @@
 <h2> Product List </h2>
 <div style="padding-top: 50px;">
-  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-default") %>
+  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-default btn-lg") %>
 
 </div>
 <table class="table table-hover table-responsive">
@@ -24,7 +24,7 @@
         <td>
           <%= link_to product_path(product) do %>
             <% if product.product_images.present? %>
-              <%= image_tag(product.product_images[0].image.thumb.url, class: "thumbnail") %>
+              <%= image_tag(product.product_images[0].image.small.url, class: "thumbnail") %>
             <% else %>
               <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
             <% end %>
@@ -42,8 +42,12 @@
         </td>
 
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
-          <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+          <%= link_to(edit_admin_product_path(product),class: "btn btn-default") do %>
+            <span class="fa fa-pencil"></span>
+            <% end %>
+          <%= link_to(admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" },class: "btn btn-default") do %>
+            <span class="fa fa-trash"></span>
+            <% end %>
         </td>
 
       </tr>

@@ -469,6 +469,8 @@ table {
 }
 th {
   vertical-align: middle !important; // 表格標題垂直置中
+  background-color: #444;
+  color: white;
 }
 
 td {
@@ -476,10 +478,7 @@ td {
   vertical-align: middle !important; // 表格內容垂直置中
 }
 
-/*===== 按钮 ======*/
-.btn-default {
-  min-width: 100px;
-}
+
 
 // 使用J&A模版重新定义导航栏
 
@@ -569,8 +568,18 @@ td {
   }
 }
 
+// admin 后台
 .category-table {
   img{
     width: 100px;
   }
+}
+.admin-nav{
+  li{
+    border-style:dashed;
+    border-width:1px;
+    border-radius:3px;
+    text-align: center;
+  }
+
 }

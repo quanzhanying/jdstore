@@ -2,11 +2,11 @@
 类目管理
 
 <div style="padding-top: 50px;">
-  <%= link_to("新增类目", new_admin_category_path, class: "btn btn-default") %>
+  <%= link_to("新增类目", new_admin_category_path, class: "btn btn-default btn-lg") %>
 
 </div>
 
-<table class="table table-bordered category-table">
+<table class="table table-hover table-responsive category-table">
   <thead>
     <tr>
       <th>#</th>
@@ -30,10 +30,10 @@
       </td>
       <td> <%= category.products.count %> </td>
       <td>
-        <%= link_to edit_admin_category_path(category) do %>
+        <%= link_to edit_admin_category_path(category),class: "btn btn-default" do %>
           <span class="fa fa-pencil"></span>
           <% end %>
-        <%= link_to(admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }) do %>
+        <%= link_to(admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-default") do %>
         <span class="fa fa-trash"></span>
         <% end %>
       </td>
