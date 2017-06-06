@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
    root 'welcome#index'
    resources :tips
    devise_for :users
