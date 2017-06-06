@@ -9,7 +9,9 @@ class User < ApplicationRecord
 
   def admin?
     is_admin
-
   end
+
+  has_many :favorites
+  has_many :favorited_products, :through => :favorites, :source => :product
 
 end
