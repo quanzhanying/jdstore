@@ -18,11 +18,21 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+ html,body
+ {
+     width: 100%;
+
+     margin: 0px;
+     padding: 0px;
+     overflow-x: hidden;
+ }
+
 //----导航栏----------//
 
  .navbar-default {
-     background-color: #9a1c1c;
-     border-color: #9a1c1c;
+     background-color: #b9cead;
+     border-color: #b9cead;
  }
 
  .navbar.navbar-default {
@@ -82,11 +92,13 @@
  }
 
  .navbar.navbar-default .search-box {
-     margin-top: 7.5px
+     margin: 2.5px 90px 2.5px 20px;
+     position: left;
  }
 
  .navbar.navbar-default .search-box input {
-     height: 35px
+     height: 37px
+
  }
 
  .navbar.navbar-default .search-box input:focus {
@@ -129,19 +141,70 @@
 //     font-size: 14px;
 //     margin-top: -70px;
 // }
+// footer
 html{height:100%;}
 body{min-height:100%;margin:0;padding:0;position:relative;}
 main{padding-bottom:100px;}/* main的padding-bottom值要等于或大于footer的height值 */
-footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #023223;
-  color: #fff;font-size: 14px; text-align: center;padding: 20px 0;min-height: 150px;}
+footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #b9cead;
+color: #fff;font-size: 14px; text-align: center;padding: 20px 0;min-height: 150px;}
 
 
-//
+//登录
+.user_setup
+ {
+    height: 750px;
+    background: url(https://ws1.sinaimg.cn/large/006tKfTcgy1fg80sn7qm2j31kw11zu0y.jpg) no-repeat scroll top center/cover;
+    margin-top: -20px;
 
-.carousel {
-  width: 1200px;
-  margin: 0 auto;
+    margin-bottom: -20px;
 }
-.carousel .item {
-  height: 375px;
+
+.user_setup_content {
+    background: #89b267;
+    margin-top: 120px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    box-shadow: 1px 10px 50px #51564e;
+    border: 3px solid #777;
+    border-radius: 50px;
+    opacity: 0.95;
+    filter: alpha(opacity=95)
+}
+
+.user_setup_content h2 {
+    text-align: center
+}
+
+
+.user_setup_content .account {
+    text-align: center;
+    float: right;
+    margin-right: 150px;
+
+
+}
+
+.user_setup_content .form-inputs {
+    margin-top: 25px
+}
+
+.user_setup_content .form-actions {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px
+}
+
+.user_setup_content .form-actions .button {
+    color: #fff;
+    background-color: #4A6BB5;
+    border-color: #4A6BB5;
+    font-size: 16px;
+    letter-spacing: 1px;
+    width: 100%
+}
+
+.user_setup_content .form-actions .button:hover {
+    background-color: #4A99B5;
+    border-color: #4A99B5;
+    color: #fff
 }
