@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -30,9 +30,61 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#账号系统
+gem 'devise'
+
+#前端框架
+gem 'bootstrap-sass'
+gem 'simple_form'
+gem 'font-awesome-rails'
+
+#记录schema for model
+gem 'annotate'
+
+#图片功能
+gem 'carrierwave'
+gem 'mini_magick'
+
+#订单信息提醒
+gem 'letter_opener', group: :development
+
+#订单状态
+gem 'aasm'
+#客服系统
+gem "intercom-rails"
+
+#搜索功能
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
+
+#后台商品排序
+gem 'acts_as_list'
+
+#七牛图片存储
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+
+#密码管理
+gem 'figaro'
+
+#验证码(只能在本地运行)
+gem 'rucaptcha'
+gem 'dalli'
+
+#网页浏览量
+gem 'impressionist'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  #debug
+  gem 'pry'
+  #美化rails c界面
+  gem 'awesome_rails_console'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -40,9 +92,12 @@ group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  #gem 'spring'
+  #gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do
+  gem 'pg'
+end
