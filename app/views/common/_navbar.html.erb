@@ -81,7 +81,7 @@
               <% end %>
             </ul>
             <!-- 搜索欄 -->
-            <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
+            <%= form_tag search_products_path, :method => :get, class: "navbar-form " do %>
             <div class="input-group search-box">
               <input type="text" class="form-control" name="keyword" placeholder="<%= "请输入商品信息" %>" value="<%= params[:q] %>">
               <div class="input-group-btn">
