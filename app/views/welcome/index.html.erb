@@ -112,19 +112,19 @@
   <section class="categories-box">
     <div class="row">
       <div class="col-md-4 category-content">
-        <%= link_to '#' , class: "category_1" do %> <!-- 分类连结 -->
+        <%= link_to products_path(category_id: 1), class: "category_1" do %> <!-- 分类连结 -->
           <div class="category-box">
             <%= image_tag("man-bodybuilding.jpg") %> <!-- 分类图片 -->
           </div>
           <div>
-            <h3>男士健身餐</h3> <!-- 分类标题 -->
+            <h3 >男士健身餐</h3> <!-- 分类标题 -->
             <hr>
             <p>专为健身男士提供的一周午餐，主要功能包括但不限于：增肌减脂、排毒清肠。量较大。</p> <!-- 分类介绍 -->
           </div>
         <% end %>
       </div>
       <div class="col-md-4 category-content">
-        <%= link_to '#' , class: "category_2" do %>
+        <%= link_to products_path(category_id: 2), class: "category_2" do %>
           <div class="category-box">
             <%= image_tag("woman-bodybuilding.jpg") %>
           </div>
@@ -136,7 +136,7 @@
         <% end %>
       </div>
       <div class="col-md-4 category-content">
-        <%= link_to '#' , class: "category_3" do %>
+        <%= link_to products_path(category_id: 3) , class: "category_3" do %>
           <div class="category-box">
             <%= image_tag("whatever.jpg") %>
           </div>

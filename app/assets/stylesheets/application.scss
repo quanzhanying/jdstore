@@ -16,15 +16,28 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
- //
- //
+
+
  // .jumbotron {
  //   background-image:url('https://ws3.sinaimg.cn/large/006tKfTcgy1fg75gxna9sj31hc0zk4o6.jpg');
  //   background-repeat: no-repeat;
  //   background-size: cover;
  //   padding-bottom: 110px;
  // }
- //
+
+
+
+ .navbar-fixed-top {
+     top: 0px;
+ }
+
+ .navbar-fixed-top, .navbar-fixed-bottom {
+     position: fixed;
+     top: 0px;
+     right: 0;
+     left: 0;
+     z-index: 1030;
+ }
  // .title {
  //   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
  //   text-align: center;
@@ -45,14 +58,14 @@
  //   text-align: center;
  //   color: white;
  // }
-
- .carousel {
-   width: 1280px;
-   margin: 0 auto;
- }
- .carousel .item {
-   height: 600px;
- }
+ //
+ // .carousel {
+ //   width: 1280px;
+ //   margin: 0 auto;
+ // }
+ // .carousel .item {
+ //   height: 600px;
+ // }
 
  /*===== 网站通用设置 ======*/
 body {
@@ -172,7 +185,7 @@ body {
 /*===== Footer 页脚 ======*/
 .footer{
   text-align: center;
-  min-height: 175px; //最小高度
+  min-height: 50px; //最小高度
   background-color: #222;
   padding: 15px 0;
   color: #fff;
@@ -196,6 +209,16 @@ body {
   a:focus {
     color: #0070DE;
   }
+}
+
+html {
+   position: relative;
+   min-height: 50%;
+}
+
+body {
+   /* Margin bottom by footer height*/
+   margin-bottom: 0px;
 }
 
 /*===== 首页通用设置 =====*/
