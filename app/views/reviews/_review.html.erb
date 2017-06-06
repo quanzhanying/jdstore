@@ -1,0 +1,29 @@
+<% if review.created_at %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span class="pull-right">
+        <%= review.created_at.strftime('%Y-%m-%d')  %>
+      </span>
+      <div class="star-score" data-score= <%= review.score %> ></div>
+      <br>
+      <div class="content">
+        <%= review.body %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  $('.star-score').raty({
+              path: '/images/',
+                  readOnly: true,
+                  score: function() {
+                return $(this).attr('data-score');
+              }
+  });
+
+  $('#star-score').raty({
+            path: '/images/',
+            scoreName: 'review[score]'
+  });
+</script>

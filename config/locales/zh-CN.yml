@@ -1,0 +1,18 @@
+"zh-CN":
+  sign_up: 创建账号
+  sign_in: 账号登录
+  forget_password: 忘记密码？
+  hello: "亲～ %{email} 你好："
+  admin:
+    product_list: 商品列表
+    order_list: 订单列表
+    category_list : 类别列表
+    products: 商品
+    orders: 订单
+    categories: 类别
+    new_product: 新增商品
+    new_category: 新增类别
+    edit_category: 编辑类别
+    edit_product: 编辑商品
+    update_product: 更新
+    create_product: 确认

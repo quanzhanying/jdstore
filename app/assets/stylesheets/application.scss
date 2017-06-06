@@ -1,0 +1,493 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import "select2";
+ @import "select2-bootstrap";
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
+ /****** 导航栏 ******/
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0; //导航栏的圆角为0
+   }
+ }
+
+
+ .navbar-default {
+     background-color: #FFC107;  //背景颜色
+     border-color: #FF9800; //边框色
+     margin-bottom: 0; //底部 margin 不撑开距离
+ }
+
+ .navbar-default .navbar-brand {
+   font-size: 30px;
+   color: #ffffff; //字体颜色
+   padding: 10px 15px; //上下10px，左右15px
+   line-height: 30px; //文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #E0E0E0; //鼠标放置在链接上的文字颜色
+   background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+   font-size: 20px;
+   color: #ffffff;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+   color: #E0E0E0;
+   background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: #ffffff;
+   background-color: #FFA000;
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+   background-color: #FFE0B2;
+   color: #212121;
+ }
+
+// langing page 相关 scss 代码
+ .jumbotron {
+  background-image: image-url('jumbotron.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 70px;
+}
+
+.title {
+  font-family: "Microsoft Yahei", 微软雅黑, "Helvetica Neue";
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 30px;
+  color: #FAFAFA !important;
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding-bottom: 80px;
+  text-align: center;
+  color: white;
+  top: 12px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #FFC107;
+}
+
+#company, #famous, #buy,{
+  margin-top: 80px;
+  background-color: #fff;
+}
+
+
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.logo {
+    color: #FFC107; //logo的颜色为
+    font-size: 200px;
+}
+
+.bg-grey {
+    background-color: #ECEFF1;
+}
+
+ .container-fluid .jumbotron{
+   padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   border-radius: 0;//圆角为0
+ }
+
+ #portfolio{
+   margin: 0 -15px 60px;
+   padding-bottom: 50px;
+   padding-top: 30px;
+   .price {
+     margin-right: 10px;
+   }
+   .like > a,
+   .like > a:hover{
+     color: #FF9800;
+   }
+ }
+
+ .carousel-control.right, .carousel-control.left {
+    background-image: none; //carousel 后面的阴影部分去掉
+    color: #f4511e;
+}
+
+.carousel-indicators li {
+    border-color: #f4511e;
+}
+
+.carousel-indicators li.active {
+    background-color: #f4511e;
+}
+
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 70%;
+    height: 70%;
+    opacity: 0.9;
+}
+.person:hover {
+    border-color: #FFC107;
+}
+
+/****** 登录系统界面开始 ******/
+.log {
+  background-image:image-url('jumbotron.jpg');
+  margin: 0 -15px auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 110px;
+  opacity: 0.9
+}
+
+.login-container {
+  padding: 10px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.login-container h2 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.login-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-container input[type=string], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  border-radius: 2px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-container input[type=string]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+  /* border-radius: 3px; */
+  /* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-container a {
+  text-decoration: none;
+  color: f44336 ;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+/****** 搜索框 ******/
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+#search-id {
+    width: 200px;
+    padding-top: 7px;
+    margin-left: 30px;
+}
+
+//---------Footer---------
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #E0E0E0;
+
+  p {
+    color: #666;
+    margin-top: 30px;
+  }
+}
+
+//--------前台首页轮番图--------
+.carousel {
+  width: 1200px;
+  margin: 0 auto;
+}
+.carousel .item {
+  height: 260px;
+}
+
+
+//--------回到顶部按钮--------
+.scroll-top-wrapper{
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  text-align: center;
+  z-index: 99999999;
+  background-color: #777777;
+  color: #eeeeee;
+  width: 50px;
+  height: 48px;
+  line-height: 48px;
+  right: 30px;
+  bottom: 30px;
+  padding-top: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-top-wrapper:hover {
+  background-color: #888888;
+}
+
+.scroll-top-wrapper.show {
+  visibility: visible;
+  cursor: pointer;
+  opacity: 1.0;
+}
+
+.scroll-top-wrapper i.fa {
+  line-height: 24px;
+}
+
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+/*商品详情*/
+.productDecription {
+	width: 1200px;
+  text-align: center;
+	margin: 20px auto;
+	border: 1px solid #50514F;
+  line-height: 30px;
+}
+
+.productDecription-menuList {
+	height: 35px;
+}
+
+.productDecription-menuList-item {
+	float: left;
+	width: 175px;
+	height: 35px;
+}
+
+.productDecription-content {
+	width: 750px;
+  height: 500px;
+	margin: 50px auto;
+}
+
+.productDecription-content-item {
+  display: none;
+  width: 750px;
+  height: 500px;
+}
+
+
+
+//--------前台商品浏览页面--------
+#products{
+  background-color: #FFF8E1;
+  margin: 0 -15px 0 -15px;
+  padding-top: 60px;
+  padding-bottom: 200px;
+  .product-image{
+    border: 2px solid transparent // 商品图片的边框
+  }
+  .product-image:hover{
+    border-color: #FF9800; //指向该图片时，边框的颜色显示为橙色
+  }
+  .price{
+    margin-right: 30px; // 价格和点赞人数之间有一定的间隔
+  }
+  .like > a,
+  .like > a:hover{
+    color: #FF9800; // 点赞人数的链接颜色改为橙色
+  }
+}
+
+//-------products show page-------
+#show{
+  margin: 0 -15px auto;
+  background-color: #FFFDE7;
+  padding-top: 60px;
+  .product-title, .author, .price, .stock, .quantity, .rating{
+    margin-bottom: 30px;
+  }
+  .price span{
+    color: #ff9f1a;
+  }
+  .add-to-cart, .like{
+    background: #ff9f1a;
+    border: none;
+    text-transform: UPPERCASE;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    margin-right: 15px;
+  }
+  .add-to-cart:hover, .like:hover{
+    background: #b36800;
+    color: #fff;
+  }
+  #pro-info{
+    background-color: #fff;
+    border: 0.5px;
+  }
+}
+
+#review{
+  margin: 0 -15px auto;
+  background-color: #FFFDE7;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .tab{
+    background-color: #fff;
+    border: 0.5px;
+  }
+  .navbar-tabs{
+    border-bottom-width: 0;
+  }
+}

@@ -1,0 +1,61 @@
+<div class="container-fluid" id="show">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" id="pro-info">
+      <div class="row">
+        <div class="col-md-6">
+          <% if @product.image.present? %>
+            <%= image_tag(@product.image.medium.url, class: "thumbnail wow pulse", data: { wow_delay: "0.2s" }) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title"><%= @product.title %></h3>
+          <div class="rating">
+            <div class="star-score" data-score=<%= @avg_review %> ></div>
+          </div>
+          <h4 class="author">作者：<%= @product.author %></h4>
+          <h4 class="price">价格：<span>￥<%= @product.price %></span></h4>
+          <h4 class="stock">库存：<%= @product.quantity %></h4>
+          <div class="actions">
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-default add-to-cart")%>
+            <% if current_user && current_user.has_liked?(@product) %>
+              <%= link_to("取消点赞", unlike_product_path(@product), method: :post, class: "btn btn-default like") %>
+            <% else %>
+              <%= link_to(content_tag(:i, "点赞", class:'fa fa-heart'), like_product_path(@product), method: :post, class: "btn btn-default like") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid" id="review">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 tab">
+  <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">商品介绍</a></li>
+        <li role="presentation"><a href="#score" aria-controls="score" role="tab" data-toggle="tab">商品评价 (<%= @product.reviews.count %>)</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="info">
+          <h2>商品详情</h2>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="score">
+          <div id="reivews">
+            <br>
+            <%= render "reviews/form"%>
+            <br>
+            <%= render @product.reviews%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

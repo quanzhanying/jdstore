@@ -19,5 +19,21 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+"en":
+  sign_up: Sign Up
+  sign_in: Log In
+  forget_password: Forgot your password?
+  hello: "Hi %{email},"
+  admin:
+    product_list: Product List
+    order_list: Order List
+    category_list : Category List
+    products: Products
+    orders: Orders
+    categories: Categories
+    new_product: New Product
+    edit_product: Edit Product
+    new_category: New Category
+    edit_category: Edit Category
+    update_product: Update Product
+    create_product: Create Product

@@ -1,0 +1,138 @@
+<div class="jumbotron">
+  <h1 class="title">阅读</h1>
+  <p class="slogan">是最好的休息方式</p>
+  <p class="lead"><a class="btn btn-lg btn-danger" href="/products">马上购买</a></p>
+</div>
+
+<section id="company">
+  <div class = "container-fluid text-center">
+    <div class="row">
+      <h2>我们带你认识</h2>
+      <h4>来自世界各地的朋友</h4>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <span class="glyphicon glyphicon-globe logo"></span>
+          <div class="caption">
+            <h3>全球精选图书</h3>
+            <p>和700万终身学习者一起进步</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <span class="glyphicon glyphicon-gift logo"></span>
+          <div class="caption">
+            <h3>人生好时节</h3>
+            <p>成长和收获是最好的礼物</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <span class="glyphicon glyphicon-book logo"></span>
+          <div class="caption">
+            <h3>读一本好书</h3>
+            <p>结识一个远方的好朋友</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Container (Portfolio Section) -->
+<div class="container-fluid bg-grey" id="portfolio">
+  <h2 class="text-center">精选知识好礼</h2>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="row">
+              <% @products.each do |product| %>
+                <div class="col-md-3">
+                  <div class="product-card-block">
+                    <%= link_to product_path(product) do %>
+                      <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                      <% end %>
+                    <% end %>
+                    <span class="price">￥ <%= product.price %></span>
+                    <span class="like"><%= link_to(content_tag(:i, product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <% @products2.each do |product| %>
+                <div class="col-md-3">
+                  <div class="product-card-block">
+                    <%= link_to product_path(product) do %>
+                      <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                      <% end %>
+                    <% end %>
+                    <span class="price">￥ <%= product.price %></span>
+                    <span class="like"><%= link_to(content_tag(:i, product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
+                  </div>
+                </div>
+              <% end %>
+           </div>
+         </div>
+       </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="famous">
+  <div class="container text-center">
+    <h2>他们也在这里</h2>
+    <p>加入他们一起读书，成为是终身成长者</p>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <%= image_tag 'li.jpg', class:"img-circle person" %>
+        <p><strong>李笑来</strong></p>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag 'pang.jpg', class:"img-circle person" %>
+        <p><strong>罗振宇</strong></p>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag 'luo.jpg', class:"img-circle person" %>
+        <p><strong>罗永浩</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container-fluid">
+    <p class="lead"><a class="btn btn-lg btn-danger" href="/products">马上购买</a></p>
+  </div>
+</section>
+
+<!-- The scroll to top feature -->
+<div class="scroll-top-wrapper">
+  <span class="scroll-top-inner">
+    <i class="fa fa-2x fa-arrow-circle-up"></i>
+  </span>
+</div>

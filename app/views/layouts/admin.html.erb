@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JDstore 后台</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills nav-stacked" style="max-width: 100px; margin-left: 60px; margin-top: 30px;">
+            <li><%= link_to(t("admin.products"), admin_products_path, class: "btn btn-info") %></li>
+            <li><%= link_to(t("admin.orders"), admin_orders_path, class: "btn btn-info") %></li>
+            <li><%= link_to(t("admin.categories"), admin_categories_path, class: "btn btn-info") %></li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+          <div class="pull-right">
+            <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+            <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+          </div>
+        </div>
+      </div>
+      <%= render "common/footer" %>
+    </div>
+  </body>
+</html>
