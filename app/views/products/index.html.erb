@@ -15,42 +15,6 @@
         </div>
       </div>
 
-
-
-
-     <% #轮番图 %>
-      <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-       </ol>
-       <div class="carousel-inner">
-          <div class="item active">
-           <a href="javascript:;">
-            <img src="https://images-cn.ssl-images-amazon.com/images/G/28/cnbooks/event/2017JuneB150G50/xq-170531-1500300-book1._CB509456109_.jpg"">
-            <div class="carousel-caption"></div>
-           </a>
-          </div>
-          <div class="item">
-           <a href="javascript:;">
-            <img src="https://images-cn.ssl-images-amazon.com/images/G/28/img13_audit/bmvd/zzhangli/suqin_tcg._CB508831157_.jpg"">
-            <div class="carousel-caption"></div>
-           </a>
-          </div>
-          <div class="item">
-           <a href="javascript:;">
-            <img src="https://images-cn.ssl-images-amazon.com/images/G/28/shiying/2017-99gift/qxl_20170419_1500300_books._CB529239326_.jpg"">
-            <div class="carousel-caption"></div>
-           </a>
-          </div>
-        </div>
-      </div>
-
-
-    
-
-
       <% @products.each do |product| %>
         <div class="col-xs-6 col-md-3">
           <%= link_to product_path(product) do %>

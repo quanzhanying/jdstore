@@ -29,12 +29,6 @@ $(document).ready(function(){
   new WOW().init();
 })
 
-$(document).ready(function () {
-  $('#myCarousel').carousel({
-    interval: 4000 //目前是2秒播放一张，可以根据需要调整这个值
-  })
-})
-
 $(document).on('click', '#gotop', function () {
   $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
 })
