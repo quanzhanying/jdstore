@@ -212,101 +212,53 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <div class="productDetail">
-        <ul class="productDetail-tabList clearfix">
-          <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
-            商品详情
-          </li>
-
-          <li class="productDetail-tabList-tab">
-            商品评价<span class="badge"><%= @product.comments.count %></span>
-          </li>
-
-        </ul>
-
-        <div class="productDetail-contentWrap">
-          <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
-            <p><%= simple_format(@product.description) %></p>
-            <div class="productDetail-introImg">
-            </div>
+      <ul class="productDetail-tabList clearfix">
+        <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
+          商品详情
+        </li>
+        <li class="productDetail-tabList-tab">
+          商品评价<span class="badge"><%= @product.comments.count %></span>
+        </li>
+      </ul>
+      <div class="productDetail-contentWrap">
+        <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
+          <p><%= simple_format(@product.description) %></p>
+          <div class="productDetail-introImg">
           </div>
-          <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
-            <div id="product_comments">
-              <ul class="commentList">
-                <p style="border-top-style:solid; border-bottom-style:dotted; border-width:1.2px; text-align: center;">
-                来自我们顾客的宝贵评价</p>
-                <% @comments.each do |comment| %>
-                  <li class="commentList-item clearfix">
-                    <p class="content">
-                      <%= simple_format(comment.body)  %>
-                    </p>
-                    <p class="name">
-                      <%= comment.user.email %>
-                    </p>
-                  </li>
-                <% end %>
-              </ul>
-              <p style="border-bottom-style:solid; border-width:1.2px; text-align: center; color: #3c3d42">
-                想提供您的心得吗？欢迎留言！
-                <span class="comment-say">
-                  <%= link_to("发表评价", new_product_comment_path(@product), :class => "btn btn-primary btn-sm") %>
-                </span>
-              </p>
-            </div>
+        </div>
+        <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
+          <div id="product_comments">
+            <ul class="commentList">
+              <p style="border-top-style:solid; border-bottom-style:dotted; border-width:1.2px; text-align: center;">
+              来自我们顾客的宝贵评价</p>
+              <% @comments.each do |comment| %>
+                <li class="commentList-item clearfix">
+                  <p class="content">
+                    <%= simple_format(comment.body)  %>
+                  </p>
+                  <p class="name">
+                    <%= comment.user.email %>
+                  </p>
+                </li>
+              <% end %>
+            </ul>
+            <p style="border-bottom-style:solid; border-width:1.2px; text-align: center; color: #3c3d42">
+              想提供您的心得吗？欢迎留言！
+              <span class="comment-say">
+                <%= link_to("发表评价", new_product_comment_path(@product), :class => "btn btn-primary btn-sm") %>
+              </span>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- 商品详情和用户评价结束 -->
+</div>
+<!-- 商品详情和用户评价结束 -->
 
-  <!-- 热卖商品区域 -->
-  <div class="row show-hot-products">
-  	<div class="show-hot-products-title ">
-      <span>热卖商品</span>
-    </div>
-    <div class="container hot-productslist" style="margin-bottom:-60px; margin-top:-60px;">
-        <div class="col-md-offset-1 col-md-10">
-  				<div class="hot-productList-wrap">
-  					<ul class="hot-productList">
-  						<div class="row", style="margin-left: -21px;">
-  						  <% @suggests_show.each do |product| %>
-  						<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
-  						    <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -50px;">
-  							    <li class="productList-item box panel panel-default">
-  								    <div class="productList-item-pic">
-  											<%= link_to product_path(product) do %>
-  				                <% if product.photos.present? %>
-  				                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
-  				                <% else %>
-  				                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-  				                <% end %>
-  				              <% end %>
-  								    </div>
-  								    <div class="productList-item-price">￥<%= product.price %>
-  								    	<% if product.stock > 0 %>
-  									    	<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
-  									   		<i class="fa fa-shopping-cart"></i>
-  										  <% end %>
-  									    <% end %>
-  									<!-- 待加入預購功能 -->
-  									    <% if product.stock <= 0 %>
-  									    	<div class="productList-item-sellout", style="margin-top: -33px;">
-  										  	<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-  										    </div>
-  									    <% end %>
-  									<!-- 待加入預購功能 -->
-  								    </div>
-  								    <div class="productList-item-name ell">
-  											<%= link_to product_path(product) do %>
-  												 <%= product.name %>
-  											<% end %>
-  						     		</div>
-  								<!-- <div class="productList-item-desc"><%= product.description %></div> -->
-  						    	</li>
-  						    </div>
-  						  <% end %>
-              </div>
-  					</ul>
-          </div>
-  			</div>
-        <!-- 热卖商品区域结束 -->
+<!-- 热卖商品区域 -->
+<div class="show-hot-products-title ">
+  <span>推荐商品</span>
+</div>
+<%= render :partial => "products/suggests" %>
+<!-- 热卖商品区域结束 -->

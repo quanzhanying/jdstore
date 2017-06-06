@@ -331,30 +331,23 @@ a:hover {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1)
 }
-.productList-panel:hover, {
-  margin-bottom: 23px;
-  background-color: #ffffff;
-  border: 1px solid transparent;
-  border-radius: 0px;
-  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1)
-}
+
 
 .productList-wrap {
-
-  padding-top:20px;
+  padding-top: 5px;
   padding-bottom: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
   .productList {
     padding: 0px;
     width: 100%;
+    margin: 0.1px;
     .productList-item {
       float:left;
       display:inline;
-      width: 100%;
+      width: 99.99%;
       height: auto;
-      margin: 0.5px auto;
+      margin: 0 0 1px 0;
       position:relative;
       padding: 15px 15px 0px;
 

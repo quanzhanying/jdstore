@@ -31,34 +31,35 @@
 <!-- 区域：商品展示列表 -->
 <div class="row">
   <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
-    <div class="panel">
-      <div class="productList-wrap">
+    <div class="productList-wrap">
+      <ul class="productList clearfix">
         <%= render :partial => "products/list" %>
-        <!-- 商品展示列表结束 -->
-          <!-- <div class="search-result">
-            <div class="row products-show0"></div>
-            <div class="product-table">
-              <div class="row">
-                <% @products.each do |product| %>
-                  <div class="col-xs-6 col-md-3">
-                    <%= link_to product_path(product) do %>
-                      <% if product.image.present? %>
-                        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-                      <% else %>
-                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
-                      <% end %>
-                    <% end %>
-                    <%= render_highlight_content(product, @query_string) %> ￥ <%= product.price %> <!-- 搜索关键字黄色背景显示 -->
-                  <!-- </div>
-                <% end %>
-              </div>
-            </div>
-          </div> -->
-          <div class="text-center">
-            <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
-          </div>
-        <% end %>
+      </ul>
+      <div class="text-center">
+        <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+<!-- 商品展示列表结束 -->
+  <!-- <div class="search-result">
+    <div class="row products-show0"></div>
+    <div class="product-table">
+      <div class="row">
+        <% @products.each do |product| %>
+          <div class="col-xs-6 col-md-3">
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+              <% end %>
+            <% end %>
+            <%= render_highlight_content(product, @query_string) %> ￥ <%= product.price %> <!-- 搜索关键字黄色背景显示 -->
+          <!-- </div>
+        <% end %>
+      </div>
+    </div>
+  </div> -->

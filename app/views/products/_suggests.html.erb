@@ -1,0 +1,48 @@
+<div class="row show-hot-products">
+	<div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
+			<div class="productList-wrap", style="margin: 100px auto;">
+				<div class="col-md-10 col-centered">
+					<ul class="productList clearfix">
+						<div class="row", style="margin-top: -49px;">
+							<% @suggests_show.each do |product| %>
+						<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
+								<div class="col-md-3 col-xs-5", style="padding-left: 0px; padding-right: 0px;">
+									<li class="productList-item productList-panel">
+										<div class="productList-item-pic">
+											<%= link_to product_path(product) do %>
+												<% if product.photos.present? %>
+													<%= image_tag(product.photos[0].avatar.thumb.url) %>
+												<% else %>
+													<%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+												<% end %>
+											<% end %>
+										</div>
+										<div class="productList-item-price">￥<%= product.price %>
+											<% if product.stock > 0 %>
+												<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+												<i class="fa fa-shopping-cart"></i>
+											<% end %>
+											<% end %>
+									<!-- 待加入預購功能 -->
+											<% if product.stock <= 0 %>
+												<div class="productList-item-sellout", style="margin-top: -33px; margin-right: 15px;">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+												</div>
+											<% end %>
+									<!-- 待加入預購功能 -->
+										</div>
+										<div class="productList-item-name ell">
+											<%= link_to product_path(product) do %>
+												 <%= product.name %>
+											<% end %>
+										</div>
+								<!-- <div class="productList-item-desc"><%= product.description %></div> -->
+									</li>
+								</div>
+							<% end %>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
