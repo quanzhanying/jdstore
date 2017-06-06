@@ -25,7 +25,7 @@
             <% end %>
           <% end %>
           <span class="price">￥ <%= product.price %></span>
-          <span class="like"><%= link_to(content_tag(:i , product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
+          <span class="like" style="margin-right: 20px;"><%= link_to(content_tag(:i , product.liked_users.count, class: 'fa fa-thumbs-up'), "#") %></span>
 
           <% if !product.users.include?(current_user) %>
             <%= link_to add_to_favorite_product_path(product),method: :post do %>
