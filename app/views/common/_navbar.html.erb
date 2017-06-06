@@ -74,6 +74,7 @@
                    </li>
                 <% end %>
                   <li><%= link_to(content_tag(:i, '个人订单', class: 'fa fa-list'), account_orders_path) %></li>
+                  <li><%= link_to account_loves_path do %> 我的收藏 <i class= "fa fa-heart fa-md", style="color:red"></i><% end %></li>
                   <li><%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
               </ul>
             </li>

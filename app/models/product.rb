@@ -9,4 +9,7 @@ class Product < ApplicationRecord
   has_many :photos
   accepts_nested_attributes_for :photos
 
+  has_many :loves
+  has_many :loved_users, :through => :loves, :source => :user
+
 end

@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  ActiveSupport::Inflector.inflections do |inflect|
+   inflect.irregular 'love', 'loves'
+  end
+
   def admin_required
     if !current_user.admin?
       redirect_to '/', alert: "you are not admin"

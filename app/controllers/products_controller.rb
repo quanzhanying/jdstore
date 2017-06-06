@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user! , only: [:like, :unlike]
 
   def index
     if params[:category].blank?
@@ -31,6 +32,28 @@ class ProductsController < ApplicationController
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
       @products = search_result.order('created_at DESC')
     end
+  end
+
+  def like
+    @product = Product.find(params[:id])
+    if !current_user.is_like?(@product)
+        current_user.like!(@product)
+        flash[:notice] = "收藏商品成功！"
+     else
+        flash[:warning] = "你已经收藏过本商品了！"
+     end
+      redirect_to product_path(@product)
+  end
+
+  def unlike
+    @product = Product.find(params[:id])
+    if current_user.is_like?(@product)
+        current_user.unlike!(@product)
+        flash[:notice] = "取消收藏商品！"
+     else
+        flash[:warning] = "你没有收藏过商品，如何取消 XD！"
+     end
+      redirect_to product_path(@product)
   end
 
   def validate_search_key

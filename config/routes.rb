@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :like
+      post :unlike
     end
     collection do
       get :search
@@ -44,6 +46,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :loves
   end
 
 

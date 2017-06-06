@@ -40,6 +40,13 @@
             <div> 数量 : <%= @product.quantity %> </div>
             <div>类别 : <%= @product.category.name %></div>
             <div class="product-price"> ￥ <%= @product.price %> </div>
+            <span>
+              <% if current_user && current_user.is_like?(@product) %>
+                <%= link_to("取消商品", unlike_product_path(@product), method: :post, class: "fa fa-heart") %>
+              <% else %>
+                <%= link_to("收藏收藏", like_product_path(@product), method: :post, class: "fa fa-heart", style:"color:red" ) %>
+              <% end %>
+            </span>
             <div class="pull-right">
               <% if @product.quantity.present? && @product.quantity > 0 %>
                 <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-lg btn-danger") %>
