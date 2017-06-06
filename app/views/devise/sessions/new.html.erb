@@ -8,7 +8,10 @@
         <%= f.input :email, required: false, autofocus: true %>
         <%= f.input :password, required: false %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= rucaptcha_image_tag(alt: 'Captcha') %>
+        <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
       </div>
+      <br>
 
       <div class="forget pull-right">
           <%= link_to "忘记密码", new_password_path(resource_name) %> <br><br>

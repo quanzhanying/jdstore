@@ -189,6 +189,7 @@ body {
 /****** 登录系统界面开始 ******/
 .log {
   background-image:image-url('jumbotron.jpg');
+  margin: 0 -15px auto;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 60px;
@@ -330,15 +331,44 @@ body {
 
 
 //--------回到顶部按钮--------
-#gotop {
-  width: 50px;
-  height: 50px;
+.scroll-top-wrapper{
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #F25F5C;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  text-align: center;
+  z-index: 99999999;
+  background-color: #777777;
+  color: #eeeeee;
+  width: 50px;
+  height: 48px;
+  line-height: 48px;
+  right: 30px;
+  bottom: 30px;
+  padding-top: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-top-wrapper:hover {
+  background-color: #888888;
+}
+
+.scroll-top-wrapper.show {
+  visibility: visible;
   cursor: pointer;
-  display: none; /*默认先隐藏掉*/
+  opacity: 1.0;
+}
+
+.scroll-top-wrapper i.fa {
+  line-height: 24px;
 }
 
 
@@ -460,15 +490,4 @@ body {
   .navbar-tabs{
     border-bottom-width: 0;
   }
-
-}
-
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    margin-right: 40px
-
 }

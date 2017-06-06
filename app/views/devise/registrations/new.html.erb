@@ -10,7 +10,10 @@
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
+        <%= rucaptcha_image_tag(alt: 'Captcha') %>
+        <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
       </div>
+      <br>
 
       <div class="form-actions">
         <%= f.button :submit, "马上注册", class: "btn btn-danger" %>

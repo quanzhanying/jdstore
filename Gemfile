@@ -45,6 +45,8 @@ gem 'figaro'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'select2-rails'
+gem 'rucaptcha'
+gem 'dalli'
 
 gem 'ransack'
 gem 'will_paginate'

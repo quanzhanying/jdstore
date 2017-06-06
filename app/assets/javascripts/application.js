@@ -29,23 +29,26 @@ $(document).ready(function(){
   new WOW().init();
 })
 
-$(document).ready(function () {
-  $('#myCarousel').carousel({
-    interval: 4000 //目前是2秒播放一张，可以根据需要调整这个值
-  })
-})
-
-$(document).on('click', '#gotop', function () {
-  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
-})
-
-$(window).scroll(function () {
-  if ($(this).scrollTop() > 500) {
-    $('#gotop').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
-  } else {
-    $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+$(document).ready(function(){
+  $(function(){
+    $(document).on('scroll', function(){
+      if ($(window).scrollTop() > 100){
+        $('.scroll-top-wrapper').addClass('show')
+      }
+      else{
+        $('.scroll-top-wrapper').removeClass('show')
+      }
+    });
+    $('.scroll-top-wrapper').on('click', scrollToTop);
+  });
+  function scrollToTop(){
+    verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+    element = $('body');
+    offset = element.offset();
+    offsetTop = offset.top;
+    $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
   }
-})
+});
 
 $(document).on('click', '.productDecription-menuList-item', function () {
   var index = $(this).index() //拿到这个「选项卡」的index，第一个是0，第二个是1，以此类推
