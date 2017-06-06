@@ -56,7 +56,7 @@ class CategoriesController < ApplicationController
       end
 
     end
-    
+
   end
 
   # DELETE /categories/1
@@ -64,7 +64,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to admin_categories_url, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
