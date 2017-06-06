@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #root 'products#index'
   root 'welcome#index'
-  
+
   devise_for :users
 
   namespace :account do
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :categories#好像是从这个提取资料的意思
     resources :orders do
      member do
        post :cancel
