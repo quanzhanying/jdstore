@@ -125,24 +125,27 @@
 body {
     height: 100%;
     margin: 0;
+
 }
 html {
     padding-bottom: 150px;
     min-height: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    position: relative;
+      position: relative;
 }
 
 footer {
     width: 100%;
+
+    margin-right: -200px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50px;
     color: #FFFFFF;
-    background-color: #232f3e;
+    background-color: #000000;
 }
 
 
@@ -460,48 +463,7 @@ footer {
 }
 
 
-
-// 使用J&A模版重新定义导航栏
-
-/*===== 頁面內容設定 ======*/
-.container-fluid {
-margin-top: 55px;
-min-height: 550px;
-}
-/*===== 換頁按鈕設定 ======*/
-.page-box {
-margin-top: 75px;
-
-a {
-  background-color: #eee;
-}
-
-a:hover {
-  background-color: #ddd;
-  color: #666 !important;
-}
-}
-
-/*===== 基礎欄位設定 ======*/
-.width-25 {
-width: 25%;
-}
-
-.width-50 {
-width: 50%;
-}
-
-.width-75 {
-width: 75%;
-}
-
-.width-100 {
-width: 100%;
-}
-
-.height-200 {
-height: 200px;
-}
+/*===== 表格 ======*/
 
 th {
   vertical-align: middle !important; // 表格標題垂直置中
@@ -512,19 +474,11 @@ td {
   vertical-align: middle !important; // 表格內容垂直置中
 }
 
-/*===== DIV排版 ======*/
-.left-box {
-  float: left;
-}
-
-.right-box {
-  float: right;
-}
 
 
+// 使用J&A模版重新定义导航栏
 
-
-/*===== Navbar 导览列 ======*/
+/*===== Navbar  ======*/
 .navbar.navbar-default {
   background: rgba(0,0,0,0.3);
   color: #000 !important;
@@ -557,7 +511,7 @@ td {
   }
 
 
-  /*===== Dropdown ======*/
+  /*===== 下拉菜单 ======*/
   .dropdown-menu{
     background-color: #fff;
     min-width: 175px;
@@ -574,7 +528,7 @@ td {
     }
   }
 
-  /* 下拉選單三角箭頭 */
+  /* 下拉菜单箭头*/
   .dropdown-menu:before {
     content: "";
     border-bottom: 10px solid #fff;
@@ -586,7 +540,7 @@ td {
     z-index: 10;
   }
 
-  /* 搜索欄 */
+  /* 搜索 */
   .search-box {
     margin-top: 7.5px;
     @media screen and (max-width:991px) and (min-width: 768px){
@@ -606,80 +560,6 @@ td {
       padding: 5px 10px 5px 10px;
       height: 35px;
       color: #333;
-    }
-  }
-}
-
-/*===== Footer 页脚 ======*/
-.footer{
-  text-align: center;
-  min-height: 200px;
-  background-color: #02061A;
-  padding: 15px 0;
-  color: #fff;
-  font-size: 14px;
-
-  h4 {
-    font-size: 16px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-
-  li {
-    margin-top: 5px;
-  }
-
-  a {
-    text-decoration:none;
-    color: #ccc;
-  }
-
-  a:hover,
-  a:active,
-  a:focus {
-    color: #eb5424;
-  }
-
-  img {
-    display: inline-block;
-    margin-top: -6px;
-    margin-right: 8px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ffffff; /* Logo 外框 */
-    border-radius: 25px; /* Logo 切成圓形 */
-  }
-
-  p {
-    a {
-      color: #ddd;
-    }
-    a:hover {
-      color: #eb5424;
-    }
-  }
-
-  .footer-box {
-    text-align: left !important;
-    margin-top: 15px;
-  }
-
-  .footer-content {
-    font-size: 16px;
-    font-family: Raleway;
-    color: #ddd;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    font-weight: 200;
-
-    img {
-      width: 25px;
-      margin-left: 7.5px;
-      margin-right: -0.1px;
-    }
-
-    img:hover {
-      opacity: 1;
     }
   }
 }
