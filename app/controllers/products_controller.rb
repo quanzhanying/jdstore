@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_action :authenticate_user! , only: [:favorete, :unfavorite]
+
   def index
     if params[:category].blank?
         @products = Product.all
@@ -65,5 +68,22 @@ class ProductsController < ApplicationController
 
     redirect_to :back
   end
+
+  def favorite
+    @product = Product.find(params[:id])
+    if !current_user.is_member_of?(@product)
+      current_user.favorite!(@product)
+      redirect_to :back, notice: "已点赞宝贝！"
+    end
+  end
+
+  def unfavorite
+    @product = Product.find(params[:id])
+    if current_user.is_member_of?(@product)
+      current_user.unfavorite!(@product)
+      redirect_to :back, notice: "已取消点赞！"
+    end
+  end
+
 
 end

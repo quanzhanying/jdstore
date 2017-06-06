@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :orders
 
   has_many :favorites
-  
+
   has_many :favorite_products, :through=> :favorites, :source => :product
 
 
@@ -14,4 +14,17 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+
+  def is_member_of?(product)
+    favorite_products.include?(product)
+  end
+
+  def favorite!(product)
+    favorite_products << product
+  end
+
+  def unfavorite!(product)
+    favorite_products.delete(product)
+  end
+
 end
