@@ -7,12 +7,21 @@
   </div>
   <div class="col-md-7">
     <div class="flow_steps pull-right">
+      <% if !@order.is_paid %>
       <ul>
         <li class="current_prev">1.提交订单</li>
-        <li class="current">2.付款成功</li>
+        <li class="current">2.在线付款</li>
         <li>3.确认收货</li>
         <li class="last">4.评价商品</li>
       </ul>
+      <% else %>
+      <ul>
+        <li class="done">1.提交订单</li>
+        <li class="current_prev">2.在线付款</li>
+        <li class="current">3.确认收货</li>
+        <li class="last">4.评价商品</li>
+      </ul>
+      <% end %>
     </div>
   </div>
   <div class="col-md-12">
@@ -26,11 +35,18 @@
 
       </div>
       <% @product_lists.each do |product_list| %>
+
       <div class="cart-item-list">
         <div class="cart-list text-center">
 
           <div class="col-md-4 text-left">
+            <% if !product_list.product.blank?%>
+            <%= link_to product_path(product_list.product) do %>
+            <%= image_tag(img430(product_list.product,1), style: "width: 60px;")+product_list.product_name %>
+            <% end %>
+            <% else %>
             <%= product_list.product_name %>
+            <% end %>
           </div>
           <div class="col-md-3"><span id="product-promotional"><%= product_list.product_price %></span>&nbsp;RMB
           </div>
@@ -55,23 +71,20 @@
 
      <hr>
 
-     <h2> 收件人地址 </h2>
+     <h2> 寄件地址 </h2>
 
      <table class="table table-striped table-bordered">
       <tbody>
         <tr>
           <td>
             <div class="">
-              <span>收件人名字：</span> <%= @order.billing_name %>
+              <span>收件人：</span> <%= @order.shipping_name %>
             </div><br>
             <div class="">
-              <span>邮政编码：</span> <%= @order.billing_address %>
-            </div><br>
-            <div class="">
-                <span>电话：</span> <%= @order.shipping_name %>
+                <span>电话：</span> <%= @order.shipping_phone %>
             </div><br>
            <div class="">
-             <span>收件人地址：</span>  <%= @order.shipping_address %>
+             <span>收件人地址：</span>  <%= @order.shipping_province %><%=@order.shipping_city %><%=@order.shipping_district %><%=@order.shipping_address %>
            </div>
             <br>
           </td>
@@ -79,7 +92,7 @@
       </tbody>
     </table>
     <div class="pull-left">
-       <% if @order.order_placed? || @order.paid? %>
+       <% if @order.order_placed? #|| @order.paid? %>
          <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn  btn-info") %>
        <% end %>
      </div>
@@ -90,7 +103,7 @@
       </div>
 
     <% else %>
-       <p class="text-center">此订单已完成付款</p>
+       <p class="text-center">付款成功</p>
     <% end %>
   </div>
 </div>

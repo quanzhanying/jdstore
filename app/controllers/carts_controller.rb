@@ -7,6 +7,8 @@ class CartsController < ApplicationController
 
   def checkout
    @order = Order.new
+   #@address = Address.find(params[:id])
+   @addresses = current_user.addresses.order("updated_at desc")
   end
 
   def index

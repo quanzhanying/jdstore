@@ -79,16 +79,12 @@
 <div id="flyItem" class="fly_item"><img src="https://img.alicdn.com/bao/uploaded/i4/TB1VAYpKFXXXXcnXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" width="40" height="40"></div>
 
 <script type="text/javascript">
-//--增加收藏删除收藏
-// $(".fa-ajax").on('click',function(evt){
-//   evt.preventDefault();
-//   var url = $(this).attr("href");
-//     $.ajax({
-//       method: "POST",
-//       url: url,
-//       dataType: "script"
-//     })
-// })
+//登录后下来菜单
+$('li.dropdown').hover(function () {
+  $(this).addClass('open')
+ },function(){
+   $(this).removeClass('open')
+ })
 
 //----轮播
 $(".carousel-indicators li").hover(function(){
@@ -168,4 +164,4 @@ if (url) {
   	});
   }
   </script>
-  <script src="https://qiyukf.com/script/02c1672a3956f8164b94bb36949f615c.js" defer async></script>
+  <!-- <script src="https://qiyukf.com/script/02c1672a3956f8164b94bb36949f615c.js" defer async></script> -->

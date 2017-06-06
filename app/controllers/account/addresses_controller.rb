@@ -4,28 +4,50 @@ class Account::AddressesController < ApplicationController
     @addresses = current_user.addresses.order("updated_at desc")
     @address = Address.new
   end
-
   def edit
     @address = Address.find(params[:id])
     @addresses = current_user.addresses.order("updated_at desc")
+    @address = Address.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @address = Address.new(address_params)
     @address.user = current_user
     @address.save
-    redirect_to account_addresses_path
+    if params[:type].blank?
+      redirect_to account_addresses_path
+    elsif params[:type] == "1"
+      @addresses = current_user.addresses.order("updated_at desc")
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def update
     @address = Address.find(params[:id])
     @address.update(address_params)
     @address.save
-    redirect_to account_addresses_path
+    if params[:type].blank?
+      redirect_to account_addresses_path
+    elsif params[:type] == "1"
+      @addresses = current_user.addresses.order("updated_at desc")
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def new
     @address = Address.new
+    respond_to do |format|
+    format.html
+    format.js
+    end
   end
 
   def destroy

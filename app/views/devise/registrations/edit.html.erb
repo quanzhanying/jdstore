@@ -1,37 +1,52 @@
-<div class="container">
-  <div class="row">
-    <div class="modal-dialog">
-      <div class="loginmodal-container">
 
-        <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+
+  <div class="my-settings">
+    <div class="col-md-3 text-center">
+      <img which="160" alt="" src="<%= if @user.image.blank? then "http://placehold.it/180x180" else @user.image.url end%>">
+      <p></p>
+      <p>当前头像</p>
+    </div>
+
+    <div class="col-md-9">
+      <div class="my-center-head">
+        <div class="my-center-left">
+          <span>修改密码</span>
+        </div>
+        <div class="my-center-right">
+          <a href="/account/user" class="active"><span>个人中心</span></a>
+          <a href="/account/orders"><span>我的订单</span></a>
+          <a href="/account/addresses"><span>管理收货地址</span></a>
+          <a href="/users/edit" class="active"><span class="hide-line">修改密码</span></a>
+        </div>
+      </div>
+      <div class="my-info">
+        <p>修改密码</p>
+      </div>
+<div class="">
+
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true %>
-
+              <%= f.input :email, required: true, autofocus: true ,wrapper_html: {class:'form-inline'},label_html:{class:'edit-passwd-title'},input_html:{class:'edit-passwd-input'},label:"邮　箱"%>
+              <%= f.input :current_password, required: true ,wrapper_html: {class:'form-inline'},label_html: {class:'edit-passwd-title'},input_html:{class:'edit-passwd-input'},label:"当前密码"%>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
+            <%= f.input :password, autocomplete: "off", required: false ,wrapper_html: {class:'form-inline'},label_html: {class:'edit-passwd-title'},input_html:{class:'edit-passwd-input'},label:"新密码"%>
+            <%= f.input :password_confirmation, required: false ,wrapper_html: {class:'form-inline'},label_html: {class:'edit-passwd-title'},input_html:{class:'edit-passwd-input'},label:"确认密码"%>
 
-            <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-            <%= f.input :password_confirmation, required: false %>
-            <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
           </div>
-
           <div class="form-actions">
-            <%= f.button :submit, "Update" %>
+            <div class="edit-passwd-update">
+              <%= f.button :submit, "更　新" %>
+            </div>
+
           </div>
         <% end %>
-
-        <h3>Cancel my account</h3>
-
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-        <%= link_to "Back", :back %>
-
-      </div>
+</div>
     </div>
   </div>
 </div>

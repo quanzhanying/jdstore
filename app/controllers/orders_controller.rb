@@ -1,15 +1,21 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
-
   def create
-    @order = Order.new(order_params)
+    @order = Order.new
+    @address = Address.find(params[:address])
     @order.user = current_user
+    @order.shipping_name = @address.name
+    @order.shipping_province = ChinaCity.get(@address.province)
+    @order.shipping_city = ChinaCity.get(@address.city)
+    @order.shipping_district = ChinaCity.get(@address.district)
+    @order.shipping_address = @address.addr
+    @order.shipping_phone = @address.phone
     if params[:num].blank?
       @order.total = current_cart.total_price
       if @order.save
         current_cart.cart_items.each do |cart_item|
           product_list = ProductList.new
           product_list.order = @order
+          product_list.product_id = cart_item.product.id
           product_list.product_name = cart_item.product.title
           product_list.product_price = cart_item.product.promotional
           product_list.quantity = cart_item.quantity
@@ -28,6 +34,7 @@ class OrdersController < ApplicationController
       if @order.save
           product_list = ProductList.new
           product_list.order = @order
+          product_list.product_id = @product.id
           product_list.product_name = @product.title
           product_list.product_price = @product.promotional
           product_list.quantity = num

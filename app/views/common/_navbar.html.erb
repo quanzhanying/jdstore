@@ -36,13 +36,8 @@
                 <%= link_to("Admin 选单", admin_products_path) %>
               </li>
               <% end %>
-              <% if !current_user.image.blank? %>
               <li>
-                <%= link_to(current_user.email, "javascript:void(0);") %>
-              </li>
-              <% end %>
-              <li>
-                <%= link_to(content_tag(:i, ' 个人中心', class: 'fa fa-file-text-o'), account_user_path) %>
+                <%= link_to(content_tag(:i, ' 个人中心', class: 'fa fa-user'), account_user_path) %>
               </li>
 
               <li>

@@ -13,6 +13,6 @@ has_many :reviews
 has_many :favorites
 has_many :favorite_products, through: :favorites, source: :user
 accepts_nested_attributes_for :photos
-
+has_many :product_lists
 
 end

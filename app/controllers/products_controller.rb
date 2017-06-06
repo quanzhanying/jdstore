@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
    #render :js =>  params[:num]
    @num = params[:num].to_i
    @product = Product.find(params[:id])
-
+   @addresses = current_user.addresses.order("updated_at desc")
   end
 
   def favorite

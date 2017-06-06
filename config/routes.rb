@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
+  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks",:registrations => "users/registrations"}
   namespace :admin do
     resources :products do
       collection do
@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     collection do
       delete :clean
       post :checkout
+       get :checkout
     end
   end
   resources :cart_items do
@@ -52,7 +53,8 @@ Rails.application.routes.draw do
   end
   end
   namespace :account do
-    resources :addresses
+    resources :addresses do
+    end
     resources :favorites
     resources :orders
     resource :user

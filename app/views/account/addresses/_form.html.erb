@@ -1,0 +1,27 @@
+<div class="modal" id="mymodal-data-addr" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="container address-form">
+
+<div class="address-add">
+<div class="address-modal">
+  <span>修改收货地址</span><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+</div>
+  <%= simple_form_for [:account,@address],remote: true do |f| %>
+  <input value="1" type="hidden" name="type">
+  <span class="address_title">收货人姓名:</span>
+  <input type="text" value="<%= address.name%>" name="address[name]" class="address_value_name"><br>
+  <div class="city-group">
+    <span class="address_title">省市:</span>
+    <%= f.select :province,  ChinaCity.list.unshift(["--省份--", 230000]), {}, class: "city-select form-control city-select-province"%>
+    <%= f.select :city,      ChinaCity.list(f.object.province).presence || [["--城市--", 230900]],    {}, class: "city-select form-control city-select-city" %>
+    <%= f.select :district,  ChinaCity.list(f.object.city).presence     || [["--地区--", 230903]],    {}, class: "city-select form-control city-select-city" %>
+  </div>
+  <span class="address_title">街道地址:</span>
+  <input type="text" value="<%= address.addr%>"  name="address[addr]" class="address_value_addr"><br>
+  <span class="address_title">手机号码:</span>
+  <input type="text" value="<%= address.phone%>"  name="address[phone]" class="address_value_name"><br>
+  <%= f.input :addr_default, :label => '设为默认地址',:class => "address_addr_default" , :input_html => { :checked => true }%>
+  <%= f.submit "提交", data: { disable_with: "Submitting..."}, :class => "address_addr_default"%>
+  <% end %>
+</div>
+</div>
+</div>

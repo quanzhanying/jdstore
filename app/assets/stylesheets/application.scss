@@ -122,8 +122,8 @@ margin-bottom: 4px;
   font-size: 16px;
   list-style: none; //将默认的列表符号去掉、、//
   float: left;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 12px;
+  padding-left: 12px;
   font-weight: bold;
   position: relative;
 }
@@ -1966,6 +1966,7 @@ border-radius: 4px;
 .my-center-right span.hide-line{
   border-right: none;
 }
+
 .my-info{
   padding: 7px 15px 0 15px;
 }
@@ -2011,7 +2012,28 @@ color: #B28435;
 .my-center-right a:hover::after{
   transform:scale(1)
 }
+.my-name span{
+  line-height: 35px;
+  padding: 15px
+}
+.my-name input{
+  padding: 3px 12px 3px 12px;
+  width: 200px;
+}
 
+.edit-passwd-title{
+  width: 150px;
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.edit-passwd-input{
+  width: 250px !important;
+  height: 34px !important;
+}
+.edit-passwd-update{
+  margin-left: 330px;
+}
 ///管理收货地址///
 .address-head p{
   padding-top: 30px;

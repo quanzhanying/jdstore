@@ -2,17 +2,19 @@
   <div class="my-settings">
     <div class="col-md-3 text-center">
       <img which="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
+      <p></p>
+      <p>当前头像</p>
     </div>
     <div class="col-md-9">
       <div class="my-center-head">
         <div class="my-center-left">
-          <span>个人设置</span>
+          <span>修改地址</span>
         </div>
         <div class="my-center-right">
           <a href="/account/user"><span>个人中心</span></a>
           <a href="/account/orders"><span>我的订单</span></a>
           <a href="/account/addresses" class="active"><span>管理收货地址</span></a>
-          <a href="#"><span class="hide-line">修改密码</span></a>
+          <a href="/users/edit"><span class="hide-line">修改密码</span></a>
         </div>
       </div>
       <div class="address-add">
@@ -66,3 +68,36 @@
   </div>
 </div>
 </div>
+<script type="text/javascript">
+(function() {
+(function($) {
+  $.fn.china_city = function() {
+    return this.each(function() {
+      var selects;
+      selects = $(this).find('.city-select');
+      return selects.change(function() {
+        var $this, next_selects;
+        $this = $(this);
+        next_selects = selects.slice(selects.index(this) + 1);
+        $("option:gt(0)", next_selects).remove();
+        if (next_selects.first()[0] && $this.val()) {
+          return $.get("/china_city/" + ($(this).val()), function(data) {
+            var i, len, option, results;
+            results = [];
+            for (i = 0, len = data.length; i < len; i++) {
+              option = data[i];
+              results.push(next_selects.first()[0].options.add(new Option(option[0], option[1])));
+            }
+            return results;
+          });
+        }
+      });
+    });
+  };
+  return $(function() {
+    return $('.city-group').china_city();
+  });
+})(jQuery);
+
+}).call(this);
+</script>

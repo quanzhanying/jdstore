@@ -1,37 +1,56 @@
+
 <div class="container">
-  <div class="row">
 
+  <div class="my-settings">
+    <div class="col-md-3 text-center">
+      <img which="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
+      <p></p>
+      <p>当前头像</p>
+    </div>
+    <div class="col-md-9">
+      <div class="my-center-head">
+        <div class="my-center-left">
+          <span>订单管理</span>
+        </div>
+        <div class="my-center-right">
+          <a href="/account/user"><span>个人中心</span></a>
+          <a href="/account/orders" class="active"><span>我的订单</span></a>
+          <a href="/account/addresses"><span>管理收货地址</span></a>
+          <a href="/users/edit"><span class="hide-line">修改密码</span></a>
+        </div>
+      </div>
 
-<h2>订单列表 </h2>
+      <table class="table table-hover pull-right" >
 
+        <thead>
+          <tr>
+            <th>订单编号</th>
+            <th>订单金额</th>
+            <th>下单时间</th>
+            <th>订单状态</th>
 
-<table class="table table-hover pull-right"  style="width:1060px;">
-  <thead>
-    <tr>
-      <th>订单编号</th>
-      <th>订单金额</th>
-      <th>下单时间</th>
-      <th>订单状态</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    </tr>
-  </thead>
-  <tbody>
+          <% @orders.each do |order| %>
 
-    <% @orders.each do |order| %>
+        <tr onclick="parent.location='<%= order_path(order.token) %>';">
+            <td> <%= order.id %> </td>
+            <td> ￥<%= order.total %></td>
+            <td> <%= format_datetime(order.created_at) %> </td>
+            <% aasm = @aasm_state.assoc(order.aasm_state) %>
 
-  <tr onclick="parent.location='<%= order_path(order.token) %>';">
-      <td> <%= order.id %> </td>
-      <td> ￥<%= order.total %></td>
-      <td> <%= format_datetime(order.created_at) %> </td>
-      <% aasm = @aasm_state.assoc(order.aasm_state) %>
+            <td> <%= aasm[1] %> </td>
+          </tr>
 
-      <td> <%= aasm[1] %> </td>
-    </tr>
-
-    <% end %>
-
-  </tbody>
-</table>
-
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <div class="pag">
+          <%= will_paginate @orders, renderer: BootstrapPagination::Rails, :previous_label => t('上一页'), :next_label => t('下一页') %>
+        </div>
+    </div>
   </div>
 </div>

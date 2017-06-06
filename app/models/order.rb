@@ -14,8 +14,11 @@ class Order < ApplicationRecord
   self.update_columns(is_paid: true )
  end
 
-   validates :billing_name, presence: true
-   validates :billing_address, presence: true
+  #  validates :billing_name, presence: true
+  #  validates :billing_address, presence: true
+  #  validates :shipping_phone, presence: true
+  #  validates :shipping_province, presence: true
+  #  validates :shipping_city, presence: true
    validates :shipping_name, presence: true
    validates :shipping_address, presence: true
    has_many :product_lists

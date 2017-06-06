@@ -4,10 +4,11 @@
   <div class="my-settings">
     <div class="col-md-3 text-center">
       <img which="160" alt="" src="<%= if @user.image.blank? then "http://placehold.it/180x180" else @user.image.url end%>">
+      <p></p>
+      <p>当前头像</p>
     </div>
     <div class="col-md-9">
       <div class="my-center-head">
-        <%= link_to "Change your password", edit_user_registration_path %>
         <div class="my-center-left">
           <span>个人设置</span>
         </div>
@@ -15,19 +16,9 @@
           <a href="/account/user" class="active"><span>个人中心</span></a>
           <a href="/account/orders"><span>我的订单</span></a>
           <a href="/account/addresses"><span>管理收货地址</span></a>
-          <a href="#"><span class="hide-line">修改密码</span></a>
+          <a href="/users/edit"><span class="hide-line">修改密码</span></a>
         </div>
       </div>
-<style media="screen">
-  .my-name span{
-    line-height: 35px;
-    padding: 15px
-  }
-  .my-name input{
-    padding: 3px 12px 3px 12px;
-    width: 200px;
-  }
-</style>
       <div class="my-info">
         <p>基本信息</p>
       </div>
@@ -50,7 +41,7 @@
 
       <div class="my-photo">
         <p>头像设置</p>
-          <%= f.input :image, as: :file, label: '头像' %>
+          <%= f.input :image, as: :file %>
       </div>
 
 <%= f.button :submit, '更新', class: 'button' %>
