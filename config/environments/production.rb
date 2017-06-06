@@ -97,7 +97,7 @@ Rails.application.configure do
                           }
   end
 
-  config.action_mailer.default_url_options = { :host => 'https://whispering-stream-74899.herokuapp.com'}
+  config.action_mailer.default_url_options = { :host => 'https://cryptic-shelf-34174.herokuapp.com/products'}
 
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
