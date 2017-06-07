@@ -67,6 +67,10 @@
     }
   }
 
+  .add-to-cart{
+      margin-top: 50px;
+    }
+
   .buy_button {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #2c3e50;
@@ -156,4 +160,40 @@ opacity: 0.7;
   text-align: left;
   line-height: 14px;
   min-height: 55px;
+}
+
+
+
+.quantity-box {
+clear: left;
+    height: 20px;
+    padding: 25px 0 15px 0;
+
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+    outline: none;
+  }
+
+  .quantity-input:focus {
+    border: 1px solid #000;
+  }
+
+  .quantity-actions {
+    padding: 2.5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+
+  }
+
+  .quantity-actions:hover {
+    border: 1px solid #eb5424;
+  }
+
+  .left-box {
+   float: left;
+ }
+
 }

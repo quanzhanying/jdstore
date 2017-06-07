@@ -40,3 +40,42 @@ $(document).on('mouseover', '.list-image', function () {
   $('.list-image').removeClass('list-image-active') //其他小图移除图片阴影
   $(this).addClass('list-image-active') //当前小图新增图片阴影
 })
+
+
+
+
+/*===== Products#show - 调整购买数量 =====*/
+$(document).on('turbolinks:load', function() {
+  /*===== 增加购买数量 =====*/
+  $("#quantity-up").click(function(e) {
+    var num = parseInt($("#quantity").val()); //num变量存入输入的数量
+    var numMax = $("#quantity").attr("max"); //numMax变量存入最大数量max=@product.quantity（库存）
+    if (num < numMax) { // 判断输入数量是否大于库存
+      $("#quantity").val(num += 1); //不大于库存的情况下数量可以加1
+    }
+    e.preventDefault(); //返回
+  });
+
+  /*===== 减少购买数量 =====*/
+  $("#quantity-down").click(function(e) {
+    var num = parseInt($("#quantity").val()); //num变量存入输入的数量
+    if (num > 1) { // 判断输入数量是否大于1
+      $("#quantity").val(num -= 1); //大于1的情况下可以数量可以减1
+    }
+    e.preventDefault();
+  });
+
+  /*===== 检查购买数量不能超库存 =====*/
+  $("#quantity").blur(function(e) {
+    var num = parseInt($(this).val()); // 取到当前id（this=#quantity）的数量，也就是用户输入的数量
+    var numMax = $(this).attr("max"); //取数量上限max=@product.quantity,不能超过库存
+    if (num > numMax) { //当输入数量超过库存时，数量变为库存量
+      num = numMax;
+    }
+    else if (num < 0) { //当输入数量小于0的时候，数量变为1
+      num = 1;
+    }
+    $(this).val(num);
+    e.preventDefault();
+  });
+});

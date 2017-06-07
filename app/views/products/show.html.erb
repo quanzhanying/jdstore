@@ -27,7 +27,7 @@
 
     <h2> <%= @product.title %> </h2>
     <div class="product-price"> <span class="currency_symbol">￥</span><%= @product.price %> </div>
-    <div style="height:100px;">
+    <div >
       <p>
         <%= @product.description %>
       </p>
@@ -37,15 +37,34 @@
 
   </div>
       <hr />
-      <div >
 
+      <div style="float:left;">
+        <% if !@product.users.include?(current_user) %>
+     <%= link_to("",add_to_favorite_product_path(@product),method: :post,class: "fa fa-heart fa-1.5x", style: "color:rgba(0,0,0,0.1);") %>
+    <% else %>
+     <%= link_to("", quit_favorite_product_path(@product),method: :post,  class: "fa fa-heart fa-1.5x", style: "color:rgba(255,0,0,0.4);") %>
+    <% end %>
+      收藏
+      </div>
+      <div style="float:right;">
+        <i class='fa fa-weixin fa-fw'> </i>
+      </div>
       <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "buy_button") %>
-      <% else %>
-         已销售一空，无法购买
+      <div class="quantity-box">
+        数量:
+        <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
+        <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity %>" class="quantity-input">
+        <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
+
+      </div>
+      <div class="add-to-cart">
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "buy_button") %>
+      </div>
+
+     <% else %>
+      已销售一空，无法购买
       <%end%>
 
-    </div>
 
   </div>
 </div>
