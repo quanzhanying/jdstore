@@ -13,7 +13,16 @@ Rails.application.routes.draw do
         post :move_down
       end
     end
-    resources :categories
+
+    resources :categories do
+      resources :product do
+        member do
+          post :move_up
+          post :move_down
+        end
+      end
+    end
+
     resources :orders do
     member do
       post :cancel
