@@ -12,7 +12,7 @@
 
     <div>
       <% if review.user == current_user %>
-         <%= link_to("删除", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+         <%= link_to("删除", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn pull-right") %>
       <% end %>
     </div>
 </div>
