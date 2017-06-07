@@ -168,7 +168,7 @@
     <div class="container">
       <div class="row">
         <div class="box">
-          <div class="box-main">
+          <div class="box-main"> <!-- 主图区-->
             <a href=""><img
               width="409"
               height="409"
@@ -179,10 +179,11 @@
                <!-- rel地址是大图的地址 最好为800x800像素 -->
                <!-- 放大镜原理是：当你鼠标放到主图区域的时，取像素大的图片进行显示在另一个区域 -->
           </div>
-          <ul>
+          <ul>    <!-- 小图图区-->
             <li>
               <div class="box-img">
                 <a href="#"><img src="https://img.alicdn.com/bao/uploaded/i1/TB1ASpIOpXXXXaIaXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" big="https://img.alicdn.com/bao/uploaded/i1/TB1ASpIOpXXXXaIaXXXXXXXXXXX_!!0-item_pic.jpg">
+                  <!-- big 是800x800的大图地址，用于鼠标触碰li元素的时候，替换大图区 rel 地址-->
                 </a>
               </div>
             </li>

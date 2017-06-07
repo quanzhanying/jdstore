@@ -9,6 +9,6 @@
       <span class="p-price">
         <strong>￥<%= cart.product.promotional %></strong>×<%= cart.quantity %></span>
       <br>
-      <%= link_to "删除", cart_item_path(cart.product_id), :method => :delete, :remote => true, style: "color:#7f8c8d;"%>
+      <%= link_to "删除", cart_item_path(cart.product_id), :method => :delete, :remote => true %>
   </div>
 </li>

@@ -1,25 +1,5 @@
 
-<div class="container">
-
-  <div class="my-settings">
-    <div class="col-md-3 text-center">
-      <img width="160" alt="" src="<%= if @user.image.blank? then "http://placehold.it/180x180" else @user.image.url end%>">
-      <p></p>
-      <p>当前头像</p>
-    </div>
-
-    <div class="col-md-9">
-      <div class="my-center-head">
-        <div class="my-center-left">
-          <span>修改密码</span>
-        </div>
-        <div class="my-center-right">
-          <a href="/account/user" class="active"><span>个人中心</span></a>
-          <a href="/account/orders"><span>我的订单</span></a>
-          <a href="/account/addresses"><span>管理收货地址</span></a>
-          <a href="/users/edit" class="active"><span class="hide-line">修改密码</span></a>
-        </div>
-      </div>
+<%= render "account/users/navbar" %>
       <div class="my-info">
         <p>修改密码</p>
       </div>
@@ -47,6 +27,4 @@
           </div>
         <% end %>
 </div>
-    </div>
-  </div>
-</div>
+<%= render "account/users/footer" %>

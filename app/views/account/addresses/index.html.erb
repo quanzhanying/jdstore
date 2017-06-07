@@ -1,22 +1,5 @@
-<div class="container">
-    <div class="my-settings">
-      <div class="col-md-3 text-center">
-        <img width="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
-        <p></p>
-        <p>当前头像</p>
-      </div>
-          <div class="col-md-9">
-            <div class="my-center-head">
-              <div class="my-center-left">
-                <span>增加地址</span>
-              </div>
-              <div class="my-center-right">
-                <a href="/account/user"><span>个人中心</span></a>
-                <a href="/account/orders"><span>我的订单</span></a>
-                <a href="/account/addresses" class="active"><span>管理收货地址</span></a>
-                <a href="/users/edit"><span class="hide-line">修改密码</span></a>
-              </div>
-            </div>
+<%= render "account/users/navbar" %>
+
           <div class="address-add">
             <%= simple_form_for [:account,@address] do |f| %>
           <span class="address_title">收货人姓名:</span>
@@ -65,12 +48,8 @@
             </table>
           </div>
 
-          </div>
+<%= render "account/users/footer" %>
 
-        </div>
-
-    </div>
-</div>
 <script type="text/javascript">
 (function() {
 (function($) {

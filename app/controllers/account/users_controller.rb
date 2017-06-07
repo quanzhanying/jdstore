@@ -3,11 +3,12 @@ class Account::UsersController < ApplicationController
 
   def show
     @user = current_user
+    @url = 1
   end
 
   def update
     @user = User.find(current_user.id)
-      if @user.update(user_params)
+      if @user.update_attributes(user_params)
         if params[:user][:image].present?
           render :crop
         else

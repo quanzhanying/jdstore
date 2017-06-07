@@ -3,8 +3,10 @@ class Account::AddressesController < ApplicationController
   def index
     @addresses = current_user.addresses.order("updated_at desc")
     @address = Address.new
+    @url = 3
   end
   def edit
+    @url = 3
     @address = Address.find(params[:id])
     @addresses = current_user.addresses.order("updated_at desc")
     @address = Address.find(params[:id])

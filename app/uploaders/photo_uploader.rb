@@ -17,10 +17,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   version :thumb do
       process :crop
-      resize_to_fill(100, 100)
+      resize_to_fill(160, 160)
   end
   version :tiny, from_version: :thumb do
-    process resize_to_fill: [200, 200]
+    process resize_to_fill: [20, 20]
   end
   version :large do
     resize_to_limit(600, 600)

@@ -1465,6 +1465,7 @@ li {
 
 .settleup-2014 li {
   display: inline-block;
+  border: 1px solid #f2f2f2;
 }
 
 .settleup-2014 .cw-icon {
@@ -1666,7 +1667,7 @@ hover #settleup-content {
   float: right;
   height: 29px;
   padding: 0 10px;
-  background: #E4393C;
+  background: #a94442;
   color: #fff;
   text-align: center;
   font-weight: 700;
@@ -1679,10 +1680,13 @@ hover #settleup-content {
 #settleup-content a {
   text-decoration: none;
 }
-
+#settleup-content .p-detail a:hover{
+  color: #B28435;
+}
 #settleup-content li.hover,
 #settleup-content li:hover {
   background: #F5F5F5;
+  //border: 1px solid #B28435;
 }
 
 

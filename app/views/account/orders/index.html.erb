@@ -1,24 +1,5 @@
 
-<div class="container">
-
-  <div class="my-settings">
-    <div class="col-md-3 text-center">
-      <img width="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
-      <p></p>
-      <p>当前头像</p>
-    </div>
-    <div class="col-md-9">
-      <div class="my-center-head">
-        <div class="my-center-left">
-          <span>订单管理</span>
-        </div>
-        <div class="my-center-right">
-          <a href="/account/user"><span>个人中心</span></a>
-          <a href="/account/orders" class="active"><span>我的订单</span></a>
-          <a href="/account/addresses"><span>管理收货地址</span></a>
-          <a href="/users/edit"><span class="hide-line">修改密码</span></a>
-        </div>
-      </div>
+<%= render "account/users/navbar" %>
 
       <table class="table table-hover pull-right" >
 
@@ -52,5 +33,6 @@
           <%= will_paginate @orders, renderer: BootstrapPagination::Rails, :previous_label => t('上一页'), :next_label => t('下一页') %>
         </div>
     </div>
-  </div>
-</div>
+
+
+<%= render "account/users/footer" %>
