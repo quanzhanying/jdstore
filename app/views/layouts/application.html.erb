@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="shortcut icon" href="/images/faviconcon.ico">
+    <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
   </head>
 
   <body>
@@ -26,5 +27,11 @@
     </div>
 
     <%= render "common/footer" %>
+    <script type="text/javascript">
+       $youziku.load("body", "54d6c6b7af47451c8be9e743fb4704b3", "SiYuan-ExtraLight");
+       /*$youziku.load("#id1,.class1,h1", "54d6c6b7af47451c8be9e743fb4704b3", "SiYuan-ExtraLight");*/
+       /*．．．*/
+       $youziku.draw();
+    </script>    
   </body>
 </html>

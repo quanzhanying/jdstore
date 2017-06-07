@@ -16,7 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import url(http://fonts.googleapis.com/css?family=Roboto); //----------navbar----------
+@import url( 'https://fonts.googleapis.com/earlyaccess/notosanssc.css'); //----------navbar----------
 
 .navbar-default {
   background-color: #607D8B; //背景颜色
@@ -181,7 +181,8 @@ input[type=password]:hover {
  */
 body {
   position   : relative;
-  font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  // font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  font-family: 'Noto Sans SC', sans-serif;
   /* For scrollspy */
 }
 /* Keep code small in tables on account of limited space */
@@ -1953,24 +1954,23 @@ a:hover {
   border-image        : linear-gradient(#fff 0%, #F5F5F5 100%);
   border-image-slice  : 1;
 }
-
 // go top //
 
 #gotop {
-  width: 50px;
-  height: 50px;
+  width   : 50px;
+  height  : 50px;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right   : 20px;
+  bottom  : 20px;
   //background: #F25F5C;
-  cursor: pointer;
-  display: none; /*默认先隐藏掉*/
-
+  cursor  : pointer;
+  display : none;
+  /*默认先隐藏掉*/
   span {
-      color: #F50057;
-      font-size: 40px;
-      position: absolute;
-      top: 8px;
-      left: 8px;
-    }
+    color    : #F50057;
+    font-size: 40px;
+    position : absolute;
+    top      : 8px;
+    left     : 8px;
+  }
 }
