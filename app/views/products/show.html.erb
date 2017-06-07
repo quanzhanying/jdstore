@@ -60,6 +60,15 @@
         已销售一空，无法购买
       <% end %>
       <!-- end 商品页调整商品数量 -->
+      <br>
+      <span>
+        <% if current_user && current_user.is_like?(@product) %>
+          <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+        <% else %>
+          <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+        <% end %>
+      </span>
+
     </div>
     <!-- end 商品信息 -->
 
