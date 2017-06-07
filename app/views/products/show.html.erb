@@ -1,322 +1,115 @@
-<section>
-  <div class="breadcrumps-back">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="breadcrumps-heading mt-20">
-            <h3>商品信息</h3>
-            <div class="breadcrumps-border"></div>
-            <ul>
-              <li><a href="/"> 首页</a> /</li>
-              <li><a href="#"> 商品信息</a></li>
-              <li></li>
-            </ul>
-          </div>
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-12 col-sm-12 col-xd-12">
+      <h4>商品信息</h4>
+      <ul class="list-inline">
+        <li><a href="/"> 首页 </a>/</li>
+        <li><a href="/products"> 商品 </a>/</li>
+        <li><a href="#"> 商品信息 </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript">
+    $("#getting-started")
+    .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+      $(this).text(
+        event.strftime('%D days %H:%M:%S')
+      );
+    });
+  </script>
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-4">
+      <% if @product.img_url.present? %>
+        <%= image_tag(@product.img_url, size: "360x360", class: "main-image wow zoomIn", data: {wow_delay: "1s"} , alt: @product.name) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/320x320&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+        <%= image_tag(@product.img1_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+        <%= image_tag(@product.img2_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+        <%= image_tag(@product.img3_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "list-image", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+        <%= image_tag(@product.img4_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+        <%= image_tag(@product.img5_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+        <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h4> <%= @product.name %> </h4>
+      <br>
+      <h5><%= @product.content %></h5>
+      <br>
+      <div style="background-color:#f5f5f5;padding-left:10px;">
+        <br>
+        <h3 >￥<%= @product.price %><% @product.price_unit %></h3>
+        <br>
+      </div>
+      <br>
+      <h5>库存数量：<%= @product.quantity %></h5>
+      <br>
+      <h5>剩余时间：<span id="getting-started"></span></h5>
+      <br><br><br><br><br>
+      <div style="text-align:center;">
+        <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
+        <% else %>
+          <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货</a>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#menu1" data-toggle="tab">商品详情</a></li>
+        <li><a href="#menu2" data-toggle="tab">用户评价</a></li>
+      </ul>
+      <div class="tab-content pt-10">
+        <div id="menu1" class="tab-pane fade in active">
+          <P>绿色，天然，有机，健康！</P>
+          <p><%= @product.description %></p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <h3>Menu 2</h3>
+          <p>Some content in menu 2.</p>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- <section id="shop-single-product" class="ptb-100"> -->
-<section id="shop-single-product" style="margin: 20px auto 200px;">
-  <div class="container">
-    <div class="row">
-
-      <aside class="sidebar-right">
-        <div class="col-md-3">
-          <div class="widget mt-30">
-            <h3 class="widget-title">商品分类</h3>
-            <ul>
-              <li class="cat-item"><a href="/products">新鲜果蔬</a></li>
-              <li class="cat-item"><a href="/products">肉类蛋禽</a></li>
-              <li class="cat-item"><a href="/products">粮油米面</a></li>
-              <li class="cat-item"><a href="/products">干货零食</a></li>
-              <li class="cat-item"><a href="/products">茶水饮品</a></li>
-            </ul>
-          </div>
-
-          <div class="widget mt-30">
-            <h3 class="widget-title">更多分类</h3>
-            <ul>
-              <li class="cat-item"><a href="/products">热销商品</a></li>
-              <li class="cat-item"><a href="/products">特价促销</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </aside>
+</div>
 
 
-      <div class="col-md-9">
-        <div class="product-single-content">
-
-          <div class="row">
-            <div class="col-md-5 col-sm-5">
-              <div class="product-image">
-                <!-- <% if @product.image.present? %>
-                <%= image_tag(@product.image.medium.url, class: "img-responsive", alt: "") %>
-                <% else %>
-                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "img-responsive", alt: "") %>
-                <% end %> -->
-
-                <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img_url, size: "320x320", class: "wow zoomIn", data: {wow_delay: "1s"} , alt: @product.name) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/320x320&text=No Pic", class: "", alt: "None") %>
-                <% end %>
-
-                <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img1_url, size: "60x60", class: "", alt: @product.name) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
-                <% end %>
-
-                <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img2_url, size: "60x60", class: "", alt: @product.name) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
-                <% end %>
-
-                <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img3_url, size: "60x60", class: "", alt: @product.name) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
-                <% end %>
-
-                <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img4_url, size: "60x60", class: "", alt: @product.name) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
-                <% end %>
-
-                <% if @product.img_url.present? %>
-                  <%= image_tag(@product.img5_url, size: "60x60", class: "", alt: @product.name) %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "", alt: "None") %>
-                <% end %>
-
-              </div>
-
-            </div>
-            <div class="col-md-7 col-sm-7">
-              <div class="product-content-right">
-                <h3><%= @product.name %></h3>
-                <div class="single-product-review">
-                  <ul>
-                    <li>
-                      <i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
-                    </li>
-                    <li>
-                      <p>(9 reviews)</p>
-                    </li>
-                  </ul>
-                </div>
-                <h5>￥<%= @product.price %><% @product.price_unit %></h5>
-                <h6><%= @product.content %></h6>
-              </div>
-
-              <div class="product-quantity">
-                <ul>
-                  <li> 剩余数量 : <%= @product.quantity %> </li><br>
-                  <li> 剩余时间 : <span id="getting-started"></span></li>
-                  <br><br>
-                  <li>
-                    <% if @product.quantity.present? && @product.quantity > 0 %>
-                    <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn cart-button") %>
-                    <% else %>
-                    已销售一空，无法购买！
-                    <% end %>
-                  </li>
-                  <!-- <li>
-                    <div class="cart-item-quantity">
-                      <input class="quantity form-group" type="number" value="01">
-                    </div>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-tags">
-            <!-- <ul>
-              <li>
-                SKU: <span>009</span>
-              </li>
-              <li>
-                Category: <span>vegetable</span>
-              </li>
-              <li>
-                Tag: <span>vegetable, green. corn</span>
-              </li>
-              <li>
-                Share: <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-              </li>
-            </ul> -->
-          </div>
-
-
-        </div>
-
-        <!-- Product Row Two -->
-        <div class="row pt-50">
-          <div class="col-md-12">
-            <div class="tab-horizontal">
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs product-navtabs">
-                <li class="active"><a href="#eightteen" data-toggle="tab">商品描述</a></li>
-                <li><a href="#seventeen" data-toggle="tab">Information</a></li>
-                <li><a href="#nineteen" data-toggle="tab">Reviews</a></li>
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content product-tab-content">
-                <div class="tab-pane fade in active" id="eightteen">
-                  <P>绿色，天然，有机，健康！</P>
-                  <p><%= @product.description %></p>
-                </div>
-
-                <div class="tab-pane fade" id="seventeen">
-                  <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                      <div class="product-info">
-                        <ul>
-                          <li>
-                            Color: <span>Yellow</span>
-                          </li>
-                          <li>
-                            Weight: <span>2 kg</span>
-                          </li>
-                          <li>
-                            Origin: <span>Mexico</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                      <div class="product-info">
-                        <ul>
-                          <li>
-                            Month of Production: <span>March</span>
-                          </li>
-                          <li>
-                            Availability: <span>Available</span>
-                          </li>
-                          <li>
-                            Free shipping: <span>USA</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tab-pane fade" id="nineteen">
-                  <div class="">
-
-                    <div class="comment-holder">
-                      <ul class="media-list comment-list">
-                        <li class="media single-authors-content pt-40 pb-30">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/images/blog/author-1.jpg" alt="">
-                            </a>
-                            <h5 class="media-heading">Jona Doe</h5>
-                            <p>Customer</p>
-                          </div>
-                          <div class="media-body">
-                            <i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
-                            <p>
-                              Duis autem vel eum irure dolor n hendrer it invul uputate velt esse molestie <br>
-                              conseq uat. Duis suautem vel eupm irure dolor in hendrerit.vel eum irure d <br>
-                              olor n hendrer it invul uputate velt esse
-                            </p>
-                            <a href="#leave-comment"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a>
-                          </div>
-                        </li>
-
-                        <li class="media single-authors-content pt-25 pb-30">
-                          <div class="media-left">
-                            <a href="#">
-                              <img class="media-object" src="assets/images/blog/author-2.jpg" alt="">
-                            </a>
-                            <h5 class="media-heading">John Doe</h5>
-                            <p>Customer</p>
-                          </div>
-                          <div class="media-body">
-                            <i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
-                            <p>
-                              Duis autem vel eum irure dolor n hendrer it invul uputate velt esse molestie <br>
-                              conseq uat. Duis suautem vel eupm irure dolor in hendrerit.vel eum irure d <br>
-                              olor n hendrer it invul uputate velt esse
-                            </p>
-                            <a href="#leave-comment"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div id="leave-comment" class="page-left-header pt-60">
-                      <h5>Your review</h5>
-
-                      <div class="form-group">
-                        <label class="pt-40">Your Rating :</label>
-                        <i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
-                      </div>
-                    </div>
-
-                    <div class="">
-
-                      <!-- Post Form -->
-                      <form class="form reply-form pt-25">
-                        <div class="clearfix">
-                          <div id="contact_message"></div>
-
-
-                          <div class="col-xs-12">
-                            <!-- Message -->
-                            <div class="form-group">
-                              <textarea rows="8" class="form-control organix-reply-form" placeholder="Message"></textarea>
-                            </div>
-
-                          </div>
-
-                          <div class="col-xs-6">
-                            <!-- Name -->
-                            <div class="form-group">
-                              <input type="text" class="form-control organix-reply-form" placeholder="Name*" pattern=".{2,100}" required>
-                            </div>
-                          </div>
-                          <div class="col-xs-6">
-                            <!-- Email -->
-                            <div class="form-group">
-                              <input type="email" class="form-control organix-reply-form" placeholder="Email*"  required>
-                            </div>
-                          </div>
-
-
-                        </div>
-
-                        <div class="col-xs-12">
-                          <!-- Send Button -->
-                          <button class="btn btn-default">Submit</button>
-                        </div>
-
-
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Product Row Two -->
-
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- <div class="row">
@@ -345,13 +138,3 @@
     </div>
   </div>
 </div> -->
-
-<script type="text/javascript">
-  $("#getting-started")
-  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
-    $(this).text(
-      event.strftime('%D days %H:%M:%S')
-    );
-  });
-
-</script>
