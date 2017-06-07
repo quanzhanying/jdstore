@@ -40,6 +40,25 @@
       <% end %>
     </div>
   </div>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>评论内容</th>
+          <th>发表用户</th>
+          <th>发表时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.content %></td>
+            <td><%= comment.user.email %></td>
+            <td><%= comment.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= render "comments/form" %>
 </div>
 
 <!-- <div class="row">

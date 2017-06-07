@@ -30,10 +30,10 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    resources  :comments
   end
 
   namespace :admin do
-
    resources :products do
      member do
        patch :move_up

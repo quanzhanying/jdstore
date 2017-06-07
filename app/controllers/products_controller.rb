@@ -1,11 +1,10 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
-  def index
-    @products = Product.all.order("position ASC")
-  end
+
 
   def show
     @product = Product.find(params[:id])
+    @comments = @product.comments
   end
 
   def add_to_cart
