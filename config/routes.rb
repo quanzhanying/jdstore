@@ -26,7 +26,14 @@ Rails.application.routes.draw do
       post :add_to_cart
       post :update_price
     end
+
+    member do
+      post :favorite
+      post :unfavorite
+    end
   end
+
+  resources :favorites
 
   resources :carts do
     collection do

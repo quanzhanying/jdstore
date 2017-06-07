@@ -53,20 +53,25 @@
                             <%= image_tag("http://placehold.it/250x150&text=No Pic", class: "thumbnail") %>
                           <% end %>
                         <% end %>
-                  </div>
-                  <div class="info">
-                    <div class="row">
-                      <div class="price-details col-sm-3">
-                        <p class="details">
-                        ￥ <%= product.price %>
-                        </p>
-                        <span class="price-new"><%= product.title %></span>
-
-                        <button class="btn btn-default"><%= link_to "更新价格", update_price_product_path(product), :method => :post %></button>
-
+                     </div>
+                      <div class="info">
+                        <div class="row">
+                          <div class="price-details col-sm-3">
+                            <div class="price-title"><%= product.title %></div>
+                            <div class="details">￥ <%= product.price %></div>
+                            <div class="price-update"  >
+                              <div class="favorite-position">
+                                <% if !product.members.include?(current_user) %>
+                                  <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-1x") %><%= product.members.count %>
+                                <% else %>
+                                  <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-1x", style: "color:red") %><%= product.members.count %>
+                                <% end %>
+                              </div>
+                              <button class="btn btn-default update-position"><%= link_to "更新价格", update_price_product_path(product), class: "fontcolor", :method => :post %></button>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
                   </article>
                 </div>
               <% end %>

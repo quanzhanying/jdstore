@@ -46,6 +46,11 @@
             <% else %>
                已售罄
             <% end %>
+            <% if !@product.members.include?(current_user) %>
+              <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= @product.members.count %>
+            <% else %>
+              <%= link_to("", unfavorite_product_path(@product),method: :post,  class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= @product.members.count %>
+            <% end %>
           </div>
           <hr>
           <!-- qrcode二维码 -->
