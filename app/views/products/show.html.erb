@@ -1,0 +1,68 @@
+<div class="detail productList-wrap mt20 w1200 bc pb50">
+<div class="intro clearfix">
+  <div class="fl col-xs-4">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %>
+  </div>
+  <div class="intro-text fr">
+        <h3 class="f20 ell fb"><%= @product.title %></h3>
+        <p class="intro-text-desc"><%= @product.description %></p>
+        <p class="intro-text-value">
+          <span class="pl20 pr30">售价</span><span class="price f24 fb col-red">￥<%= @product.price %></span>
+        </p>
+        <!-- <p class="intro-text-count">
+        <span class="pl20 pr30">库存</span><span id="quantity"><%= @product.quantity %></span>
+        </p> -->
+        <p class="intro-text-count">
+        <span class="pl20 pr30">类别</span><span id="quantity"><%= @product.category.name %></span>
+        </p>
+
+        <!-- <div class="intro-text-quantity clearfix">
+          <span class="pl20 pr30 fl">数量</span>
+
+          <div class="countNumber fl mt10">
+            <%= link_to("-", remove_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post, remote: true) %>
+            <input class="countNumber-input" type="text" value="<%= @product.buying_quantity %>">
+            <%= link_to("+", add_buying_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post, remote: true) %>
+          </div>
+        </div> -->
+
+          <p class="intro-text-btnWrap">
+            <%= render :partial => "products/cart_btn"%>
+          </p>
+  </div>
+</div>
+</div>
+
+
+<!--
+<div class="product-details col-md-10 text-center">
+  for picture
+  <div class="product-pic col-md-4">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  for details
+  <div class="product-text col-md-4">
+    <h1 class=“product-title”><%= @product.title %></h1>
+    <p class="product-description"><%= @product.description %></p>
+    <div class="product-price-block">
+      <span class="product-price-text">价格</span>
+      <span class ="product-price"><%= @product.price %></span>
+    </div>
+    <div class="product-category-block">
+      <span class="product-category-text">类别</span>
+      <span class ="product-categary"><%= @product.category.name %></span>
+    </div>
+  </div>
+  for summary
+  <div class="product-summary col-md-4">
+    <p><%= @product.description %></p>
+  </div>
+</div> -->
