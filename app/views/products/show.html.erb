@@ -40,11 +40,7 @@
     <!-- 商品信息 -->
     <div class="col-md-6">
       <h2> <%= @product.title %> </h2>
-      <div style="height:100px;">
-        <p>
-          <%= @product.description %>
-        </p>
-      </div>
+
       <div> 数量 : <%= @product.quantity %> </div>
       <div class="product-price"> ￥ <%= @product.price %> </div>
      <!-- 商品页调整商品数量 -->
@@ -71,44 +67,48 @@
 </div>
 
     <!-- 商品详情＋ 评论功能-->
-<div class="col-md-8">
-  <div class="tabs" >
-    <div class="tabbable-panel">
-      <!-- 菜单切换 -->
-      <div class="tabbable-line">
-        <ul id="myTab" class="nav nav-tabs">
-       	<li class="active">
-       		<a href="#tab_default_1" data-toggle="tab">
-       			 商品详情
-       		</a>
-       	</li>
-       	<li><a href="#tab_default_2" data-toggle="tab">用户评论</a></li>
-       </ul>
-      </div>
-      <!-- 内容 -->
-       <div id="myTabContent" class="tab-content">
-         <!-- 商品详情 -->
-         	<div class="tab-pane fade in active" id="tab_default_1">
-           		<p class="product-description"><%= @product.description %></p>
-              <p class="product-description2 text-center">产品展示</p>
-              <p class="product-description2 text-center">
-                <%= image_tag(@product.photos[0].image.medium.url) %>
-              </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="tabs" >
+        <div class="tabbable-panel">
+          <!-- 菜单切换 -->
+          <div class="tabbable-line">
+            <ul id="myTab" class="nav nav-tabs">
+           	<li class="active">
+           		<a href="#tab_default_1" data-toggle="tab">
+           			 商品详情
+           		</a>
+           	</li>
+           	<li><a href="#tab_default_2" data-toggle="tab">用户评论</a></li>
+           </ul>
           </div>
-           <!-- 评论功能 -->
-         	<div class="tab-pane fade" id="tab_default_2">
-           <h5 class="comments_title">
-             <%= @product.comments.count %> Comments
-           </h5>
-           <hr>
-            <div id="comments">
-              <%= render @product.comments%>
-              <%= render "comments/form"%>
+          <!-- 内容 -->
+           <div id="myTabContent" class="tab-content">
+             <!-- 商品详情 -->
+             	<div class="tab-pane fade in active" id="tab_default_1">
+               		<p class="product-description"><%= @product.description %></p>
+                  <p class="product-description2 text-center">产品展示</p>
+                  <p class="product-description2 text-center">
+                    <%= image_tag(@product.photos[0].image.medium.url) %>
+                  </p>
+              </div>
+               <!-- 评论功能 -->
+             	<div class="tab-pane fade" id="tab_default_2">
+               <h5 class="comments_title">
+                 <%= @product.comments.count %> Comments
+               </h5>
+               <hr>
+                <div id="comments">
+                  <%= render @product.comments%>
+                  <%= render "comments/form"%>
+                </div>
+             	</div>
             </div>
-         	</div>
-        </div>
-        <!-- end 内容 -->
+            <!-- end 内容 -->
 
+        </div>
+      </div>
     </div>
   </div>
 </div>
