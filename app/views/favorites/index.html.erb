@@ -7,16 +7,49 @@
     <div class="product-list">
       <div class="container">
         <% @products.each do |product| %>
-        <div class="col-xs-6 col-md-3 product-list">
-          <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-          <% end %>
-          <% end %>
-        </div>
+         <!-- 把整张图变成连结 -->
+        <%= link_to product_path(product) do %>
+        <div class="col-md- col-sm-4 col-xs-12">
+          <div class="content">
+
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
+            <% end %>
         <% end %>
+         <!-- 把整张图变成连结 end-->
+
+            <hr>
+            <div class="product-title" style="height: 50px">
+              <h4><%= product.title %></h4>
+            </div>
+
+
+             <div class="product-price">
+               <h4>$<%= product.price %></h4>
+             </div>
+
+
+         <% if current_user && !current_user.is_favorite_of?(product) %>
+             <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+             <i class="fa fa-heart" aria-hidden="true"></i>
+             <% end %>
+         <% else %>
+             <%= link_to unfavorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+             <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+             <% end %>
+         <% end %>
+
+
+         <% if product.quantity.present? && product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+         <% else %>
+            已销售一空，无法购买
+         <% end %>
+       </div>
+     </div>
+     <% end %>
       </div>
     </div>
   </div>
