@@ -12,15 +12,6 @@
   </div>
 </div>
 
-  <script type="text/javascript">
-    $("#getting-started")
-    .countdown("<%= Time.zone.now + 2.days %>", function(event) {
-      $(this).text(
-        event.strftime('%D days %H:%M:%S')
-      );
-    });
-  </script>
-
 <div class="row">
   <div class="site-wrapper mt-20">
     <div class="col-md-4">
@@ -109,8 +100,14 @@
   </div>
 </div>
 
-
-
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+</script>
 
 <!-- <div class="row">
   <div class="col-md-6">
