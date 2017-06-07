@@ -1959,16 +1959,43 @@ a:hover {
   height  : 50px;
   position: fixed;
   right   : 20px;
-  bottom  : 20px;
+  bottom  : 100px;
   //background: #F25F5C;
   cursor  : pointer;
   display : none;
   /*默认先隐藏掉*/
   span {
-    color    : #F50057;
+    color    : #D88208;
     font-size: 40px;
     position : absolute;
     top      : 8px;
     left     : 8px;
   }
 }
+// .goTop {
+//   height          : 35px;
+//   width           : 35px;
+//   background-color: #fff;
+//   border-radius   : 5px;
+//   position        : fixed;
+//   top             : 80%;
+//   right           : 35px;
+//   // display: none;
+//   box-shadow      : 1px 1px 3px #666;
+//
+//   span {
+//     color    : #000;
+//     position : absolute;
+//     top      : 7px;
+//     left     : 8px;
+//     font-size: 20px;
+//   }
+// }
+//
+// .goTop:hover {
+//   background-color: #f0f0f0;
+//
+//   span {
+//     color: #eb5424;
+//   }
+// }
