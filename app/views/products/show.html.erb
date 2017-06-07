@@ -1,6 +1,8 @@
-<!-- <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head> -->
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
@@ -41,10 +43,17 @@
                 <br>
                 <div class="dzl-pd-show-description">库存 : &nbsp;&nbsp;&nbsp;<%= @product.quantity %> </div>
                 <br>
+                <div class="dzl-pd-show-description ">
+                  <form >
+                  数量&nbsp;&nbsp;&nbsp;
+                    <input class="dzl-quantity-change1" type="button"  value="-" onclick="sub()">
+                    <input class="dzl-quantity-change2" type="text" name="ans" value="1">
+                    <input class="dzl-quantity-change1" type="button"  value="+" onclick="add()">
+                  </form>
+                </div>
+                <br>
                 <br>
                 <div>
-                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dzl-pd-show-buy"><img src="/assets/favorite.png" width="30" height="30">&nbsp;收藏商品</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
                     <span>
                         <% if current_user && current_user.is_like?(@product) %>
                             <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, :class => "dzl-pd-show-buy") %>
@@ -61,7 +70,38 @@
                             商品已销售一空，无法购买
                         <% end %>
                     </span>
-                </div>
+                </div><br>
+                <div class="dzl-pd-show-description"><img class="ex1" src="/assets/favorite-q.png" height="15" width="15"> 收藏 （1人气）</div>
             </div>
         </div>
+        <br><br>
+<!-- 商品详细和商品评价 -->
+        <div class="container">
+          <ul class="nav nav-tabs dzl-product-detail">
+            <li class="active"><a data-toggle="tab" href="#product-details">商品详情</a></li>
+            <li><a data-toggle="tab" href="#product-comment">商品评价</a></li>
+          </ul>
+
+          <br><br>
+          <div class="tab-content">
+            <div id="product-details" class="tab-pane fade in active">
+              <p>TWELVE MOONS 团队手绘单品--执子之手含义请自由解读；<br>瓶身高33cm，直径8cm；</p>
+            </div>
+            <div id="product-comment" class="tab-pane fade">
+              <form>
+                <div class="form-group">
+                <label for="comment">您的留言:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <br>
+                <button class=" btn btn-default pull-right">提交</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+
+        </div>
+        <!-- 商品详细介绍  结束-->
+
     </div>
