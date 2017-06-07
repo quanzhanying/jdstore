@@ -95,3 +95,56 @@
 .productDetail-left-imageList-lastItem {
 	margin-right: 0;
 }
+
+// 商品详情
+/*5种背景颜色*/
+.bg-color1 {
+  background: #50514F;
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+/*商品详情*/
+.productDecription {
+	width: 1200px;
+  text-align: center;
+	margin: 20px auto;
+	border: 1px solid #50514F;
+  line-height: 30px;
+}
+
+.productDecription-menuList {
+	height: 35px;
+}
+
+.productDecription-menuList-item {
+	float: left;
+	width: 175px;
+	height: 35px;
+}
+
+.productDecription-content {
+	width: 750px;
+  height: 500px;
+	margin: 50px auto;
+}
+
+.productDecription-content-item {
+  display: none;
+  width: 750px;
+  height: 500px;
+}
