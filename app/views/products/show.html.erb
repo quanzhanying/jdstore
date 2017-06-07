@@ -57,16 +57,25 @@
                 已销售一空，无法购买
                 <% end %>
               </div>
-              <div class="col-md-6">
-                <% if current_user && !current_user.is_favorite_of?(@product) %>
+              <div class="col-md-2">
+                <% if current_user %>
+                  <% if !current_user.is_favorite_of?(product) %>
                     <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-                    <i class="fa fa-heart" aria-hidden="true"></i>
+                      <i class="fa fa-heart" aria-hidden="true"></i>
                     <% end %>
-                <% else %>
+                  <% else %>
                     <%= link_to unfavorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-                    <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                      <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
                     <% end %>
+                  <% end %>
+                <% else %>
+                  <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                  <% end %>
                 <% end %>
+              </div>
+              <div class="col-md-4" style="padding-top: 7px;">
+              <%= social_share_button_tag(@product.title) %>
               </div>
             </div>
           </div>
