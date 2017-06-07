@@ -14,12 +14,30 @@ class PhotoUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{model.id}"
   end
 
-  process resize_to_fit: [160, 160]
 
   version :thumb do
-    process resize_to_fill: [60,60]
+      process :crop
+      resize_to_fill(100, 100)
   end
-
+  version :tiny, from_version: :thumb do
+    process resize_to_fill: [200, 200]
+  end
+  version :large do
+    resize_to_limit(600, 600)
+  end
+  def crop
+    if model.crop_x.present?
+      resize_to_limit(600, 600)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        # [[w, h].join('x'),[x, y].join('+')].join('+') => "wxh+x+y"
+        img.crop([[w, h].join('x'),[x, y].join('+')].join('+'))
+      end
+    end
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:

@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <%= simple_form_for @order do |f| %>
     <div class="col-md-5">
 
       <h2> 购物明细 </h2>
@@ -24,7 +25,7 @@
           <label class="col-md-2 ">小计</label>
           <label class="col-md-2 ">操作</label>
         </div>
-        <%= simple_form_for @order do |f| %>
+
         <input type="hidden" name="product" value="<%= @product.id %>">
         <div class="cart-item-<%= @product.id %>">
           <div class="cart-list text-center">
@@ -71,6 +72,7 @@
         <li class="address_handle">操作</li>
       </ul>
       <div id="address-jq">
+        <%if !@addresses.blank? %>
         <% i=0 %>
       <% @addresses.each do |address| %>
       <% if address.addr_default then i += 1 end%>
@@ -85,11 +87,21 @@
     <li class="address_handle"><%= link_to "修改",edit_account_address_path(address),:method => :get,:remote => true,:class => "address-jqedit"%>|<%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-jqnew"%></li>
   </ul>
   <% end %>
-  </div>
+
   <br><br>
   <input type="submit" name="commit" value="生成订单" class="btn btn-lg btn-danger pull-right" data-disable-with="Submitting...">
+  <% else %>
+  <div class="text-center">
+    <br>
+    <span>您还没有任何收货地址马上</span>
+      <%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-new"%>
+  </div>
+
   <% end %>
-    </div>
+  </div>
+
+  </div>
+  <% end %>
   </div>
 </div>
 <script type="text/javascript">

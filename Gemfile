@@ -35,7 +35,7 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 
 gem 'carrierwave'
-
+gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'

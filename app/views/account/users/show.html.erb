@@ -3,7 +3,7 @@
 
   <div class="my-settings">
     <div class="col-md-3 text-center">
-      <img which="160" alt="" src="<%= if @user.image.blank? then "http://placehold.it/180x180" else @user.image.url end%>">
+      <img width="160" alt="" src="<%= if @user.image.blank? then "http://placehold.it/180x180" else @user.image.url end%>">
       <p></p>
       <p>当前头像</p>
     </div>
@@ -28,13 +28,13 @@
         <span>用户名:</span> <input type="text" value="<%= @user.username %>"  name="user[username]"><br>
         <span>性　别:</span>
         <label class="radio-inline">
-          <input type="radio" name="user[gender]" value="0" <%= if @user.gender=0 then "checked" end%>> 保密
+          <input type="radio" name="user[gender]" value="0" <%= if @user.gender==0 then "checked" end%>> 保密
         </label>
         <label class="radio-inline">
-          <input type="radio" name="user[gender]" value="1" <%= if @user.gender=1 then "checked" end%>> 男
+          <input type="radio" name="user[gender]" value="1" <%= if @user.gender==1 then "checked" end%>> 男
         </label>
         <label class="radio-inline">
-          <input type="radio" name="user[gender]" value="2" <%= if @user.gender=2 then "checked" end%>> 女
+          <input type="radio" name="user[gender]" value="2" <%= if @user.gender==2 then "checked" end%>> 女
         </label>
       </div>
 

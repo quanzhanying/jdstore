@@ -1,7 +1,7 @@
 <div class="container">
     <div class="my-settings">
       <div class="col-md-3 text-center">
-        <img which="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
+        <img width="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
         <p></p>
         <p>当前头像</p>
       </div>
