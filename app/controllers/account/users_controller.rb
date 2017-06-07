@@ -7,7 +7,6 @@ class Account::UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    @user.update(user_params)
       if @user.update(user_params)
         if params[:user][:image].present?
           render :crop

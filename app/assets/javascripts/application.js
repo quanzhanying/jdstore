@@ -23,8 +23,8 @@
 (function($) {
   $.fn.imagezoom = function(options) {
     var settings = {
-      xzoom: 460,
-      yzoom: 460,
+      xzoom: 460,  //放大镜显示框的宽度
+      yzoom: 460, //放大镜显示框的高度
       offset: 10,
       position: "BTR",
       preload: 1
