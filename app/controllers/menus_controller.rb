@@ -1,6 +1,11 @@
 class MenusController < ApplicationController
    def index
-      @menus = Menu.all
+     if params[:category].blank?
+       @menus = Menu.all
+     else
+       @category_id = Category.find_by(name: params[:category]).id
+       @menus = Menu.where(:category_id => @category_id)
+     end
    end
 
    def show
