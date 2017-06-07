@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @recommends = Product.where("keyword LIKE ?", "%热销%").order("position ASC").paginate(:page => params[:page], :per_page => 7)
   end
 
   def add_to_cart
