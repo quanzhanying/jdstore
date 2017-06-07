@@ -1658,6 +1658,9 @@ hover #settleup-content {
   line-height: 29px;
   padding-left: 10px;
 }
+#settleup-content .smb .p-total b,#settleup-content .smb .p-total strong{
+  color: #c40000;
+}
 
 #settleup-content .smb span {
   color: #c81623;
@@ -1667,7 +1670,7 @@ hover #settleup-content {
   float: right;
   height: 29px;
   padding: 0 10px;
-  background: #a94442;
+  background: #c40000;
   color: #fff;
   text-align: center;
   font-weight: 700;
@@ -1675,6 +1678,17 @@ hover #settleup-content {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+}
+#settleup-content .cart_empty{
+  padding: 10px 20px 10px 20px;
+}
+#settleup-content .cart_empty_img{
+  margin-right: 20px;
+  display: inline-block;
+vertical-align: middle;
+width: 57px;
+height: 49px;
+background-image: url(http://img11.360buyimg.com/uba/jfs/t3571/299/131233948/1117/a1196554/58004d6dN2927f0f7.png);
 }
 
 #settleup-content a {
