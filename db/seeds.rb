@@ -222,6 +222,42 @@ Product.create!(
 )
 
 Product.create!(
+  name: "云南高山小土豆",
+  category_id: 1,
+  category: "全部商品",
+  category1: "新鲜果蔬",
+  category2: "蔬菜",
+  category3: "土豆",
+  location: "中国云南",
+  keyword: "新鲜水果 热销 特价 真实 现货 爱心",
+  content: "包邮 13.5元/9斤",
+  description: "云南高山新鲜老品种小土豆马铃薯洋芋红皮迷你大黄心农家批发蔬菜 爱心助农 深山无污染 好吃看得见。<br>
+  山里的老品种土豆原生态种植，个头确实不大但好吃。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i3/3164999370/TB2mLQ0orplpuFjSspiXXcdfFXa_!!3164999370.jpg\"><br>
+  云南冷泉深山，本是山清水秀，得天独厚的环境和沙地土质让这里的土豆曾供不应求，今年大量外地高产转基因土豆冒充进入市场，让土豆价格远低于成本，让低产的老品种土豆更是成本都没法收回。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i4/3164999370/TB2KXigrEdnpuFjSZPhXXbChpXa_!!3164999370.jpg\"><br>
+  张伯伯原名张卫国，退伍军人，参加过自卫反击脚受过伤，他是大山的儿子，坚持回到家乡，女儿远嫁，他种的50亩土豆投资了上万块，却不得不面对高产外地土豆的冲击。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i3/3164999370/TB2EGgyoB0kpuFjSsziXXa.oVXa_!!3164999370.jpg\"><br>
+  老品种土豆在云南已经有50多年种植历史了，我们从小吃到大，香、糯、淀粉含量高，重要的是原生态，给父母孩子食用，安全放心。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i1/3164999370/TB2ETeorypnpuFjSZFkXXc4ZpXa_!!3164999370.jpg\"><br>
+  有人曾经问张伯伯，其实现在高产的土豆品种那么多，哪怕市场价格再烂，也能赚到钱，为什么要种好吃但产量少的老品种？<br>
+  张伯伯说：因为良心，现在转基因土豆这么多，虫子都不吃的土豆，我们不能坑了娃儿。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i4/3164999370/TB2aOeqrtRopuFjSZFtXXcanpXa_!!3164999370.jpg\"><br>
+  我们这次特地挑选了个头均匀，完好的土豆帮张伯伯上到网上，帮助张伯伯销售土豆，价格很低不为盈利，只为助农。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i1/3164999370/TB2yuMVowxlpuFjSszbXXcSVpXa_!!3164999370.jpg\">",
+  remark: "",
+  price: 13.5,
+  price_unit: "元/4500g",
+  quantity: 99,
+  img_url: "https://img.alicdn.com/imgextra/i1/3164999370/TB2pJMGtYBnpuFjSZFGXXX51pXa_!!3164999370.jpg_430x430q90.jpg",
+  img1_url: "https://img.alicdn.com/bao/uploaded/i3/TB12NOGRpXXXXcHXXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg",
+  img2_url: "https://img.alicdn.com/imgextra/i2/3164999370/TB2p7txoSFjpuFjSszhXXaBuVXa_!!3164999370.jpg_430x430q90.jpg",
+  img3_url: "https://img.alicdn.com/imgextra/i1/3164999370/TB2ieMhoCBjpuFjSsplXXa5MVXa_!!3164999370.jpg_430x430q90.jpg",
+  img4_url: "https://img.alicdn.com/imgextra/i2/3164999370/TB2sBSgrC0mpuFjSZPiXXbssVXa_!!3164999370.jpg_430x430q90.jpg",
+  img5_url: "https://img.alicdn.com/imgextra/i1/3164999370/TB2pJMGtYBnpuFjSZFGXXX51pXa_!!3164999370.jpg_430x430q90.jpg"
+)
+
+Product.create!(
   name: "山东烟台大红灯樱桃",
   category_id: 1,
   category: "全部商品",
