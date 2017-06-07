@@ -23,15 +23,14 @@
           </span> -->
             <div class="btn-group">
               <% if !current_user %>
-              <span class="btn btn-xs"><%= link_to(content_tag(:i, " 注册", class: "fa fa-user-circle"), new_user_registration_path) %>
-              </span>
-              <span class="btn btn-xs"><%= link_to(content_tag(:i, " 登入", class: "fa fa-sign-in"), new_user_session_path) %></span>
+              <span class="btn btn-xs"><%= link_to(content_tag(:i, "注册", class: "fa fa-user-circle"), new_user_registration_path) %> &nbsp; | </span>
+              <span class="btn btn-xs"><%= link_to(content_tag(:i, "登入", class: "fa fa-sign-in"), new_user_session_path) %> &nbsp; | </span>
             <% else %>
               <span class="dropdown-xs">
                 <ul class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  个人中心
-                  <span class="caret"></span>
+                  个人中心<span class="caret"></span>
                 </ul>
+                &nbsp; |
                 <ul class="dropdown-menu btn-xs" aria-labelledby="dropdownMenu1">
                   <% if current_user.admin? %>
                   <li><%= link_to(content_tag(:i, " 管理后台", class: "fa fa-laptop"), admin_products_path) %></li>
@@ -42,15 +41,9 @@
                 </ul>
               </span>
               <% end %>
-              <span class="btn btn-xs">
-                <a href="#">帮助中心</a>
-              </span>
-              <span>
-                <i class="fa fa-weixin"></i>
-              </span>
-              <span>
-                <i class="fa fa-weibo"></i>
-              </span>
+              <span class="btn btn-xs"><a href="#"> 帮助中心 </a> &nbsp; | </span>
+              <span><i class="fa fa-weixin fa-fw"></i> &nbsp; | </span>
+              <span><i class="fa fa-weibo fa-fw"></i></span>
             </div>
 
           </div>

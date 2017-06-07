@@ -89,7 +89,7 @@
       <div class="tab-content pt-10">
         <div id="menu1" class="tab-pane fade in active">
           <P>绿色，天然，有机，健康！</P>
-          <p><%= @product.description %></p>
+          <p><%= simple_format(@product.description) %></p>
         </div>
         <div id="menu2" class="tab-pane fade">
           <h3>Menu 2</h3>

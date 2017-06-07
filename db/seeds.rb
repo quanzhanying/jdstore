@@ -49,6 +49,17 @@ Category.create!(
 )
 
 # Initialize Product
+
+# description: <br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\"><br>
+# <img alt=\"\" src=\"\">",
+
 # img_url: "小图", #图片不大，设置与img1一致
 # img1_url: "图片1",
 # img2_url: "图片2",
@@ -68,7 +79,15 @@ Product.create!(
   location: "中国山东烟台",
   keyword: "新鲜水果 热销 特价 真实",
   content: "空运包邮 110元/3斤,165元/5斤",
-  description: "红唇之吻 烟台美早大樱桃 26mm-28mm大果 1.5kg，2.5kg装 顺丰包邮 75元/3斤，115元/5斤",
+  description: "红唇之吻 烟台美早大樱桃 26mm-28mm大果 1.5kg，2.5kg装 顺丰包邮 75元/3斤，115元/5斤。<br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5833/167/875346708/264312/df9d5345/592259c0N2bebb45d.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5821/193/884370807/121328/9512951d/592259b8Nf06fa3ff.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5602/157/883336983/129511/d215492e/592259bcNc2ea2d0d.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5869/230/849995356/247057/b6ce60dc/59225d65N7b48dccb.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5770/22/849897870/153582/92c55e8d/592259c0N1ddcd781.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5689/258/884861895/185119/44059c1b/592259c1N97949f30.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5848/310/856455468/129839/d266c1a8/592259cbN1e943edd.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/sku/jfs/t5866/158/873133697/201730/5e4ff834/592259cbN31202f81.jpg\">",
   remark: "",
   price: 110,
   price_unit: "元/1500g",
@@ -91,7 +110,13 @@ Product.create!(
   location: "中国广西",
   keyword: "新鲜水果 热销 特价 真实",
   content: "包邮 45元/5斤",
-  description: "百香果5斤包邮广西鸡蛋果新鲜水果红果当季大果百香果西番莲现摘 大果2.5kg 约5斤",
+  description: "百香果5斤包邮广西鸡蛋果新鲜水果红果当季大果百香果西番莲现摘 大果2.5kg 约5斤。<br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t5914/16/33678953/399275/67ab5d75/592443b1Ne67647b9.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t5632/213/1211786854/237167/72497356/592443b1N3d849527.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t5899/292/1166432694/396004/410c0b68/592443abN258f3e2f.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t5722/275/1188909661/540979/4f5a5be2/592443aaNaf02090a.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t5920/49/28805706/706289/7fd54df0/592443b5N39815d4f.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t5605/336/1205020752/217718/3736cb50/592443b6N49c6cbec.jpg\">",
   remark: "",
   price: 45,
   price_unit: "元/2500g",
@@ -114,7 +139,14 @@ Product.create!(
   location: "中国广西",
   keyword: "新鲜水果 热销 特价 真实 预售",
   content: "包邮 35.98元/5斤",
-  description: "预售 火龙果 包邮 35.98元/5斤",
+  description: "预售 火龙果 包邮 35.98元/5斤。<br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t5422/49/414704937/1101468/f0fe410f/58ff09f1Necc42744.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t4939/305/2391639111/732065/b38fe821/58ff09e1N77d1f285.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t4810/59/2403472686/551134/9ee081a7/58ff09e2N6a4d168f.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t5029/316/2386981089/776989/80bff7d3/58ff09e8N220b2654.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t5095/36/411723036/912097/b7334f2d/58ff09e8N4a666668.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t4489/96/3300614665/1328313/456ddf7c/58ff09edN0999d399.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t4612/224/3352758558/992408/db8b87db/58ff09f2N0e20ca7e.jpg\"><br>",
   remark: "",
   price: 35.98,
   price_unit: "元/2500g",
@@ -137,7 +169,15 @@ Product.create!(
   location: "中国广西",
   keyword: "新鲜水果 热销 特价 真实 现货",
   content: "包邮 39.8元/8斤",
-  description: "广西贵妃芒 包邮 39.8元/8斤",
+  description: "广西贵妃芒 包邮 39.8元/8斤。<br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t3235/18/8025939673/310430/ce85c44c/58be3fd1N3dad711b.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t3193/59/8050399018/254423/794dc33f/58be3fd5N9bd38908.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t3097/99/8106743466/194324/6088d6b1/58be3fd3N5d4a3693.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t3877/359/1901804527/193842/42e7ad7/589c2916Nfe12b6a9.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t3136/27/8086610309/169736/e4eedf17/58be3fdbNce38d45f.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWareDetail/jfs/t4270/86/1203514808/320305/6cb40916/58be3fd2N5a49d50d.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t3274/143/6085672063/166938/377cae4b/589d8dd7N806a9060.jpg\"><br>
+  <img alt=\"\" src=\"https://img30.360buyimg.com/popWaterMark/jfs/t3925/279/1867945350/349428/293e315c/589c2960N8c92229d.jpg\">",
   remark: "",
   price: 39.8,
   price_unit: "元/2500g",
@@ -160,7 +200,15 @@ Product.create!(
   location: "中国广西",
   keyword: "新鲜水果 热销 特价 真实 现货",
   content: "包邮 23.9元/8斤",
-  description: "云南特产冰糖红心牛奶木瓜/青木瓜 产地直发 包邮 23.9元/8斤",
+  description: "云南特产冰糖红心牛奶木瓜/青木瓜 产地直发 包邮 23.9元/8斤。<br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i2/3164999370/TB2HrsgemJjpuFjy0FdXXXmoFXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i4/3164999370/TB2xnAOhmhlpuFjSspkXXa1ApXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i2/3164999370/TB2UF19fkqvpuFjSZFhXXaOgXXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i4/3164999370/TB204rEfdFopuFjSZFHXXbSlXXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i3/3164999370/TB2kXY_ebFkpuFjy1XcXXclapXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i4/3164999370/TB2d4jvfmVmpuFjSZFFXXcZApXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i3/3164999370/TB2ZxnvfmVmpuFjSZFFXXcZApXa_!!3164999370.jpg\"><br>
+  <img alt=\"\" src=\"https://img.alicdn.com/imgextra/i1/3164999370/TB2DaK9fkqvpuFjSZFhXXaOgXXa_!!3164999370.jpg\">",
   remark: "",
   price: 23.9,
   price_unit: "元/2500g",
