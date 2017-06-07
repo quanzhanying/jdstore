@@ -14,11 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
-
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require select2
 //= require_tree .
+
 
 /*===== 首页导览列变化特效 =====*/
 $(window).scroll(function () {
@@ -34,3 +34,7 @@ $(document).ready(function () {
     interval: 2500 //目前是2秒播放一张，可以根据需要调整这个值
   })
 })
+
+$(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+});
