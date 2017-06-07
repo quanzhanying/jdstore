@@ -1,9 +1,16 @@
 <div class="backend-main">
 <h2 >Categories</h2>
-<div class="pull-right" style="padding-bottom: 20px;">
-  <%=link_to '新增分类', new_admin_category_path, class: "btn btn-primary btn-sm"%>
-</div>
 
+
+<div class="backend-category pull-right" style="margin-bottom: 20px;">
+
+      <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+
+
+
+      <%=link_to '新增分类', new_admin_category_path, class: "btn btn-primary btn-sm"%>
+
+</div>
 
 <table class="table table-bordered">
   <thead>
@@ -20,7 +27,7 @@
         <td>
           <%= category.id %>
         </td>
-        <td><%= category.name %></td>
+        <td><%= link_to(category.name, admin_category_path(category)) %></td>
         <td>
           <%= link_to 'Edit', edit_admin_category_path(category) %>
           <%= link_to 'Destroy', admin_category_path(category), method: :delete, data: {

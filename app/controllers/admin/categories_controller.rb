@@ -8,6 +8,12 @@ class Admin::CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def show
+    @category = Category.find(params[:id])
+    @products = @category.products.order("position ASC")
+    @products = @category.products.paginate(:page => params[:page], :per_page => 8)
+  end
+
   def new
     @category = Category.new
   end
