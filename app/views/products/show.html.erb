@@ -35,10 +35,10 @@
     <div> 库存: <%= @product.quantity %> </div>
 
 
-  </div>
+
       <hr />
 
-      <div style="float:left;">
+      <div class="add-to-fav">
         <% if !@product.users.include?(current_user) %>
      <%= link_to("",add_to_favorite_product_path(@product),method: :post,class: "fa fa-heart fa-1.5x", style: "color:rgba(0,0,0,0.1);") %>
     <% else %>

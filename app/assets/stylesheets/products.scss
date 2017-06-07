@@ -146,11 +146,13 @@ opacity: 0.7;
     position: absolute;
     top: 20px;
     left: 2em;
-
+   a:hover{
+     text-decoration:none;
+   }
   }
   .fa:hover{
     background-color: none;
-    color: none;
+    color: rgba(255,0,0,0.4)!important;
   }
 
 
@@ -162,12 +164,27 @@ opacity: 0.7;
   min-height: 55px;
 }
 
+.add-to-fav{
+  float:left;
+  a:hover {
+    background-color: #fff ;
 
+    text-decoration: none;
+  }
+  .fa:hover {
+    color: rgba(255,0,0,0.4) !important;
+  }
+}
 
 .quantity-box {
-clear: left;
+    clear: left;
     height: 20px;
     padding: 25px 0 15px 0;
+    a:hover {
+      background-color: #fff ;
+      color: #eb5424;
+      text-decoration: none;
+    }
 
   .quantity-input {
     width: 50px;
@@ -186,14 +203,13 @@ clear: left;
     border: 1px solid #ccc;
     border-radius: 2.5px;
 
+
   }
 
   .quantity-actions:hover {
     border: 1px solid #eb5424;
   }
 
-  .left-box {
-   float: left;
- }
+
 
 }
