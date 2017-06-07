@@ -45,6 +45,7 @@ gem 'figaro'
 gem 'rest-client'
 gem 'ckeditor'
 gem 'rqrcode'
+gem 'social-share-button'
 
 
 group :development, :test do

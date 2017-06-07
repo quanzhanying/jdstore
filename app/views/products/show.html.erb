@@ -75,7 +75,12 @@
              <%= sanitize @product.description %>
            </p>
        </div>
-      </div>
+       <br>
+       <hr class="pd-des-container-bottom-line">
+       <div class="product-show__social-share-button">
+         <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter email google_plus wechat weibo), :image => @product.image.url, desc: @product.description) %>
+       </div>
+     </div>
    </div>
    <a href="#top">
       <div class="backtop re"> <i class="fa fa-chevron-up fa-2x"></i></div>
