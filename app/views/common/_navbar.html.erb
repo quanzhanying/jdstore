@@ -5,11 +5,9 @@
 
           <a class="logo" href="/"><img src="../assets/blockchain-logo.png"></a>
           <div class="mobile-toggle">
-              <li class="dropdown">
-                  <%= link_to("Products", products_path) %>
-              </li>
-              <span>B</span>
-              <span>C</span>
+              <span></span>
+              <span></span>
+              <span></span>
           </div>
 
            <ul class="navright">
@@ -50,7 +48,7 @@
               <li class="act actcart">
                   <%= link_to carts_path do  %>
                      <i class="fa fa-shopping-cart fa-2x"></i>
-                     (<%= current_cart.products.count %>)
+                     <span class="btn__badge"><%= current_cart.products.count %></span>
                   <% end %>
               </li>
 
