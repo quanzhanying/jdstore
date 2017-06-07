@@ -47,7 +47,9 @@
       收藏
       </div>
       <div style="float:right;">
-        <i class='fa fa-weixin fa-fw'> </i>
+        <!-- <i class='fa fa-weixin fa-fw'> </i> -->
+        <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => @product_images.first.image.large.url , desc: @product.description) %>
+
       </div>
       <% if @product.quantity.present? && @product.quantity > 0 %>
       <div class="quantity-box">
