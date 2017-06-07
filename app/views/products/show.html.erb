@@ -115,8 +115,24 @@
              	</div>
             </div>
             <!-- end 内容 -->
-
         </div>
+            <div class="col-md-4">
+               <h4>猜你喜欢：</h4>
+              <br>
+              <br>
+              <div class="col-md-4">
+                <% @suggests.each do |product| %>
+                  <%= link_to product_path(product) do %>
+                  <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
+                    <% else %>
+                      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                    <% end %>
+                  <% end %>
+                  <p><%= product.title %></p>
+                <% end %>
+              </div>
+            </div>
       </div>
     </div>
   </div>

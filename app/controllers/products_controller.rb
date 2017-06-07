@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @comments = @product.comments
+    @suggests = Product.all.random2
   end
 
   def add_to_cart

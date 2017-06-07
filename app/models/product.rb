@@ -7,4 +7,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :photos
   has_many :favorites
   has_many :favorited_users, :through => :favorites, :source => :user
+
+  scope :random2, -> { limit(2).order("RANDOM()") }
+
 end
