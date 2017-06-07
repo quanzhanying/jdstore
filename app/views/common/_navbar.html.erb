@@ -47,7 +47,7 @@
               <li class="act actcart">
                   <%= link_to carts_path do  %>
                      <i class="fa fa-shopping-cart fa-2x"></i>
-                     (<%= current_cart.products.count %>)
+                     <span class="btn__badge"><%= current_cart.products.count %></span>
                   <% end %>
               </li>
 

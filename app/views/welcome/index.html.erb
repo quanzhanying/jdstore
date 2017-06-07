@@ -57,7 +57,7 @@
             <!-- 购物车按钮-->
             <li class="landing-page-navbar__item__cart">
                 <%= link_to carts_path do  %>
-                   购物车<i class="fa fa-shopping-cart"></i>(<%= current_cart.products.count %>)
+                   购物车<i class="fa fa-shopping-cart"></i><span class="landing-page-navbar_cart-btn__badge"><%= current_cart.products.count %></span>
                 <% end %>
             </li>
 

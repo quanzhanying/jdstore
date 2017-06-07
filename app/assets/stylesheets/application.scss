@@ -176,6 +176,19 @@
   border-color: rgba(0, 0, 0, 0.05);
 }
 
+.landing-page-navbar_cart-btn__badge {
+  background: white;
+  color: rgba(0, 0, 0, 0.95);
+  font-size: 12px;
+  width: auto;
+  height: 20px;
+  position: relative;
+  top: -15px;
+  right: 5px;
+  padding: 4px 6px;
+  border-radius: 10px;
+}
+
 /* Toggle Button Colors End */
 
 /* Progress Animation On Scroll */
@@ -691,6 +704,17 @@ nav li a:hover {
     margin-top: 8px;
   }
  }
+
+ .btn__badge {
+  background: #ff9500;
+  color: white;
+  font-size: 10px;
+  position: relative;
+  padding: 3px 6px;
+  top: -25px;
+  right: 20px;
+  border-radius: 15px;
+}
 
  /*** search ***/
 
