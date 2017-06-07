@@ -66,9 +66,9 @@
   color: #000 !important;
 }
 
-/* On hover, the dropdown links will turn red */
+/* On hover, the dropdown links will turn #8f2626 */
 .dropdown-menu li a:hover {
-  background-color: red !important;
+  background-color: #8f2626 !important;
 }
 
 
@@ -78,6 +78,7 @@
   position: relative;
   margin: 0 -15px 0 -15px;
   bottom: -5px;
+  width: 100%;
 }
 .home-video-hero .video-frame {
   position: relative;
@@ -190,29 +191,36 @@ video {
     color: #fff;
 }
 
-// ------Footer------
-// html {
-//     position: relative;
-//     min-height: 100%;
-//   }
-//
-//   body {
-//     margin-bottom: 150px;
-//   }
-//
-//  .footer {
-//    position: absolute;
-//    bottom: 0;
-//    width: 100%;
-//    height: 100px;
-//    background-color: #222222;
-//    margin: auto;
-//
-//    p {
-//       color: white;
-//      margin-top: 30px;
-//    }
-//------ footer -------
+// 关于无麸说明
+
+.container {
+      padding: 80px 120px;
+      background-color: #292828;
+      width: 100% !important;
+  }
+.wood {
+  color: #f5eded;
+}
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+.collapse {
+  color: #f5eded;
+}
+.middle {
+  color: #f5eded;
+  font-size: 25px;
+}
+
+//------ footer -----
 html {
   position: relative;
   min-height: 100%;
@@ -254,19 +262,3 @@ footer .footer-below {
     text-decoration: none;
   }
 }
-
-
-.container {
-      padding: 80px 120px;
-  }
-  .person {
-      border: 10px solid transparent;
-      margin-bottom: 25px;
-      width: 80%;
-      height: 80%;
-      opacity: 0.7;
-  }
-
-  .person:hover {
-      border-color: #f1f1f1;
-  }
