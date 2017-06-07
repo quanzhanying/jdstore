@@ -1,4 +1,56 @@
-<footer>
+<footer class="mt-30">
+  <!-- <div class="container-fluid"> -->
+    <div class="row">
+      <div class="col-md-12 nav-bgc">
+        <div class="site-wrapper">
+          <div class="col-md-12">
+            <div class="carousel slide media-carousel" id="media">
+              <div class="carousel-inner">
+
+                <div class="item  active">
+                  <div class="row mtb-10">
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-1.png"></a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-2.png"></a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-3.png"></a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-4.png"></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="row mtb-10">
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-1a.png"></a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-2a.png"></a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-3a.png"></a>
+                    </div>
+                    <div class="col-md-3">
+                      <a class="" href="#"><img alt="" src="/images/partner-4a.png"></a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+              <a data-slide="next" href="#media" class="right carousel-control">›</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
   <div class="site-wrapper">
   <div class="row mt-20">
       <div class="col-md-3">
@@ -48,7 +100,7 @@
       <hr/>
     </div>
 
-    <div class="row mtd-10">
+    <div class="row mtb-10">
       <div class="col-md-6 col-sm-12 col-xd-12" style="text-align:center">
         <p>
           Copyright &copy;2017 dalvse.com, All Rights Reserved.
@@ -93,3 +145,9 @@
    <!--end site-wrapper -->
 </footer>
 <!-- end footer -->
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#media').carousel({pause: true, interval: 5000});
+});
+</script>
