@@ -1289,66 +1289,44 @@ div.pd-s__item {
   width: 100%;
   margin-top: 5px;
 }
-.col-item .price-details h1 {
-  font-size: 14px;
-  line-height: 20px;
-  margin: 0;
-  float:left;
-}
-.col-item .price-details .details {
-  margin-bottom: 0px;
-  font-size:14px;
-}
-.col-item .price-details span {
-  float:right;
-}
-.col-item .price-details .price-new {
-  font-size:16px;
-}
-.col-item .price-details .price-old {
+
+.col-item .price-details .price-title {
   font-size:18px;
-  text-decoration:line-through;
-}
-.col-item .separator {
-  border-top: 1px solid #E1E1E1;
-}
-
-.col-item .clear-left {
-  clear: left;
-}
-.col-item .separator a {
-  text-decoration:none;
-}
-.col-item .separator p {
-  margin-bottom: 0;
-  margin-top: 6px;
-  text-align: center;
+  float:left;
+  margin-top: -3px;
+  color: #337ab7;
 }
 
-.col-item .separator p i {
-  margin-right: 5px;
+.col-item .price-details .details {
+  font-size:14px;
+  float :right;
+  color: red;
 }
-.col-item .btn-add {
-  width: 60%;
+
+.col-item .price-details .price-update {
+  font-size:20px;
+  margin-top: 30px;
+}
+
+.col-item .price-details .price-update .favorite-position {
   float: left;
+  margin-top: 4px;
 }
-.col-item .btn-add a {
-  display:inline-block !important;
+
+.col-item .price-details .price-update .update-position {
+  font-size:16px;
+  float: right;
+  transition: background-color 1.5s;
+  &:hover{
+    background: #337ab7;
+    .fontcolor{
+      color: #fff;
+    }
+  }
+
 }
-.col-item .btn-add {
-  border-right: 1px solid #E1E1E1;
-}
-.col-item .btn-details {
-  width: 40%;
-  float: left;
-  padding-left: 10px;
-}
-.col-item .btn-details a {
-  display:inline-block !important;
-}
-.col-item .btn-details a:first-child {
-  margin-right:12px;
-}
+
+
 
 /*--product--show--*/
 
@@ -1586,7 +1564,7 @@ div.cart__main__wapper {
       .button{
         color: #fff;
         background-color: #4A6BB5;
-        transition: background-color 2s;
+        transition: background-color 1.5s;
         border-color: #4A6BB5;
         font-size: 16px;
         letter-spacing: 1px;
