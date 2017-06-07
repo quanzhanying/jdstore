@@ -22,6 +22,9 @@
 
 
 
+
+
+
   /*商品页调整商品数量*/
 $(document).ready(function() {
   /*增加数量*/
@@ -52,3 +55,12 @@ $(document).on('mouseover', '.productDetail-left-imageList-item', function () {
   var src = $(this).find('img').attr('src') //从被鼠标选中的图片的src里面拿到图片链接
   $('.productDetail-left-bigImage').find('img').attr('src', src) //把图片链接设置到大图的src里面
 })
+
+
+// product页面滑动
+$(document).ready(function () {
+  $('#myCarousel').carousel({
+    interval: 2000 //目前是2秒播放一张，可以根据需要调整这个值
+  })
+})
+
