@@ -20,3 +20,10 @@ Product.create!(title: "areon chair",
                  quantity: 10,
                  image: open("https://ww3.sinaimg.cn/large/006tNbRwgy1fg5bzni555j31jk1jk7a6.jpg")
                  )
+
+ Product.create!(title: "hometown",
+                  description: "beatuy",
+                  price: 99,
+                  quantity: 10000,
+                  image: open("https://ww1.sinaimg.cn/large/006tNc79gy1fgdferinnfj30zk0qo75f.jpg")
+                   )
