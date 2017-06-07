@@ -1656,3 +1656,20 @@ div.cart__main__wapper {
         background-color: transparent;
         border: 0px;
         }
+
+/*-------点赞商品列表----*/
+.favorite-index {
+  // background:image_url('ethreum005.jpg') no-repeat scroll top center/ cover;
+  background: url(https://ws1.sinaimg.cn/large/006tNbRwgy1fgcur8uirwj30ou0dw3zc.jpg) no-repeat scroll top center/ cover;
+  height: 1200px;
+}
+
+span.favorite-title {
+  font-size:18px;
+  color : #337ab7;
+}
+
+span.favorite-price {
+  font-size:16px;
+  color : #ff9500;
+}
