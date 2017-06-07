@@ -96,55 +96,68 @@
 	margin-right: 0;
 }
 
-// 商品详情
-/*5种背景颜色*/
-.bg-color1 {
-  background: #50514F;
+
+/*商品详情＋ 评论功能*/
+.tabs {
+  background-color:#fff;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
 }
 
-.bg-color2 {
-  background: #F25F5C;
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
 }
-
-.bg-color3 {
-  background: #FFE066;
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
 }
-
-.bg-color4 {
-  background: #247BA0;
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
 }
-
-.bg-color5 {
-  background: #70C1B3;
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
 }
-
-/*商品详情*/
-.productDecription {
-	width: 1200px;
-  text-align: center;
-	margin: 20px auto;
-	border: 1px solid #50514F;
-  line-height: 30px;
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid rgb(245,190,126);
 }
-
-.productDecription-menuList {
-	height: 35px;
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
 }
-
-.productDecription-menuList-item {
-	float: left;
-	width: 175px;
-	height: 35px;
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
 }
-
-.productDecription-content {
-	width: 750px;
-  height: 500px;
-	margin: 50px auto;
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
 }
-
-.productDecription-content-item {
-  display: none;
-  width: 750px;
-  height: 500px;
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid rgb(245,190,126);
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active:hover {
+  border:none;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.tabbable-line > .nav-tabs>li.active>a, .tabbable-line > .nav-tabs>li.active>a:focus, .tabbable-line > .nav-tabs>li.active>a:hover {
+border: 0;
 }

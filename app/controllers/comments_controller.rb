@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
-
-
+  before_action :authenticate_user!, :only => [:create]
 
     # POST /comments
     # POST /comments.json
@@ -11,10 +9,10 @@ class CommentsController < ApplicationController
       @comment.user = current_user
 
       if @comment.save
-    redirect_to product_path(@product), notice: 'Review was successfully created!'
-  else
-    redirect_to product_path(@product), alert: "Comment can't be blank!"
-  end
+        redirect_to product_path(@product), notice: '已评论!'
+      else
+        redirect_to product_path(@product), alert: "内容能为空!"
+      end
     end
 
 
@@ -32,6 +30,6 @@ class CommentsController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params
-    params.require(:comment).permit(:product_id, :body, :user_id)
+    params.require(:comment).permit(:body)
   end
   end
