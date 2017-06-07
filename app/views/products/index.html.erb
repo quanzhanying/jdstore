@@ -64,7 +64,7 @@
                                 <% if !product.members.include?(current_user) %>
                                   <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-1x") %><%= product.members.count %>
                                 <% else %>
-                                  <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-1x", style: "color:red") %><%= product.members.count %>
+                                  <%= link_to("", unfavorite_product_path(product),method: :post,  class: "fa fa-thumbs-up fa-1x", style: "color:#337ab7") %><%= product.members.count %>
                                 <% end %>
                               </div>
                               <button class="btn btn-default update-position"><%= link_to "更新价格", update_price_product_path(product), class: "fontcolor", :method => :post %></button>
