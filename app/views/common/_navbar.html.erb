@@ -17,7 +17,7 @@
              <li class="act">
                <%= form_tag(products_path, :method => "get") do %>
                 <div class="cntr">
-                 <i class="fa fa-line-chart fa-2x text-danger"></i>
+                 <!-- <i class="fa fa-line-chart fa-2x text-danger"></i> -->
                  <div class="cntr-innr" >
                    <label class="search">
                      <input type="text"  name="searcher" value="<%= params[:searcher] %>" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请 输 入 搜 索 信 息">
@@ -27,6 +27,7 @@
                <% end %>
              </li>
 
+             <!-- 商品页分类 -->
              <li class="dropdown act">
                  <a class="dropdown-toggle" data-toggle="dropdown">分类浏览
                  <b class = "caret"></b>
@@ -74,6 +75,10 @@
                                  <i class="fa fa-home fa-1x"></i>个人订单列表
                               <% end %> -->           <!-- 另一种实现方式 -->
                               <%= link_to(content_tag(:i, '个人订单列表', class: 'fa fa-home fa-1x droplist'), account_orders_path, method: :get) %>
+                          </li>
+
+                          <li>
+                              <%= link_to(content_tag(:i, '我点赞的币', class: 'fa fa-thumbs-up droplist'), favorites_path) %>
                           </li>
 
                           <li>
