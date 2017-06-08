@@ -27,7 +27,8 @@ class User < ApplicationRecord
   end
 
   def like!(product)
-    favorited_products << product
+    # favorited_products << product
+    product.favorited_users << self
   end
 
   def unlike!(product)
