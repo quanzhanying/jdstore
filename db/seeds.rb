@@ -32,12 +32,20 @@ Category.create!(
 Category.create!(
   name:"咖啡器具"
 )
-Product.create!(title: "澳洲羊排素材沙拉",
+
+Product.create!(
+  id: 1,
+  category_id: 1,
+  title: "澳洲羊排素材沙拉",
   description: "每天限量供应",
   price: 56,
   quantity: 100,
-  category_id: 1,
+  image: MiniMagick::Image.open("#{Rails.root}/app/public/images/野兽yangpai.jpg")
   )
+
+  Photo.create!(product_id:1, image: MiniMagick::Image.open("#{Rails.root}/app/public/images/野兽yangpai.jpg"))
+
+
 Product.create!(title: "烟熏三文鱼",
 description: "每天限量供应",
 price: 56,
