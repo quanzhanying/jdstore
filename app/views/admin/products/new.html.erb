@@ -9,8 +9,13 @@
     <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
     <div class="group">
       <%#= f.input :image, as: :file %>
-      <%= f.label :avatar %><br>
+      <%= f.label :商品展示图片 %><br>
       <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+    </div>
+    <div class="group">
+      <%#= f.input :image, as: :file %>
+      <%= f.label :商品详情区域图片 %><br>
+      <%= f.file_field :avatar, :multiple => true, name: "pictures[avatar][]" %>
     </div>
     <%= select_tag(:brand_id, options_for_select(@brands), :prompt => "品牌") %>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
