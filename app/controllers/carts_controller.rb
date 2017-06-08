@@ -6,9 +6,13 @@ class CartsController < ApplicationController
   end
 
   def checkout
-   @order = Order.new
-   #@address = Address.find(params[:id])
-   @addresses = current_user.addresses.order("updated_at desc")
+   if current_cart.cart_items.blank?
+     flash[:alert] = "购物车为空！"
+     redirect_to :back
+   else
+     @addresses = current_user.addresses.order("updated_at desc")
+     @order = Order.new
+   end
   end
 
   def index

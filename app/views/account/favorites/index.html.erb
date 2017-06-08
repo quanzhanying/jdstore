@@ -19,7 +19,7 @@
         <% @products.each do |product| %>
         <li class="favorite-li">
           <div class="favorite-cart">
-            <%= link_to(content_tag(:i,'', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post,:remote => true,class: "item_buy") %>
+            <%= link_to(content_tag(:i,'', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product),:remote => true,class: "item_buy") %>
           </div>
           <div class="fa-delete">
             <%= link_to(content_tag(:i,'', class: 'fa fa-heart'), favorite_product_path(product)+"?fa=unfavorite-f", :method => :post,:remote => true,id: "favorite-item-"+product.id.to_s) %>

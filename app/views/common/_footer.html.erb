@@ -78,12 +78,7 @@
 
 <div id="flyItem" class="fly_item"><img src="https://img.alicdn.com/bao/uploaded/i4/TB1VAYpKFXXXXcnXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" width="40" height="40"></div>
 
-<script type="text/javascript">
-Messenger.options = {
-    extraClasses: 'messenger-fixed messenger-on-top messenger-on-left',
-    theme: 'block'
-}
-</script>
+
 <style media="screen">
 ul.messenger.messenger-theme-block.messenger-fixed .messenger-message.alert-info {
     color: #B28435;
@@ -97,14 +92,14 @@ ul.messenger.messenger-theme-block.messenger-fixed.messenger-on-top {
 </style>
 <script type="text/javascript">
 // $("body").click(function () {
-// $.globalMessenger().post({
-// message: "操作成功<br>",//提示信息
-// type: 'info',//消息类型。error、info、success
-// hideAfter: 3,//多长时间消失
-// showCloseButton:true,//是否显示关闭按钮
-// hideOnNavigate: true //是否隐藏导航
+//   $.globalMessenger().post({
+//     message: "操作成功",//提示信息
+//     type: 'warning',//消息类型。error、info、success、warning
+//     hideAfter: 3,//多长时间消失
+//     showCloseButton:true,//是否显示关闭按钮
+//     hideOnNavigate: true //是否隐藏导航
+//   });
 // });
-});
 </script>
 
 <script type="text/javascript">
@@ -158,39 +153,43 @@ if (url) {
 },function(){
 })
 
-//------fly---
-  // 元素以及其他一些变量
-  var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector(".settleup-2014");
-  var numberItem = 0;
-  // 抛物线运动
-  var myParabola = funParabola(eleFlyElement, eleShopCart, {
-  	speed: 400, //抛物线速度
-  	curvature: 0.001, //控制抛物线弧度
-  	complete: function() {
-  		eleFlyElement.style.visibility = "hidden";
-  		//eleShopCart.querySelector("span").innerHTML = ++numberItem; //修改元素值
-  	}
-  });
-  // 绑定点击事件
+  </script>
+  <script type="text/javascript">
+  //------fly---
+    // 元素以及其他一些变量
+    var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector(".settleup-2014");
+    var numberItem = 0;
+    // 抛物线运动
+    var myParabola = funParabola(eleFlyElement, eleShopCart, {
+      speed: 400, //抛物线速度
+      curvature: 0.001, //控制抛物线弧度
+      complete: function() {
+        eleFlyElement.style.visibility = "hidden";
+        //eleShopCart.querySelector("span").innerHTML = ++numberItem; //修改元素值
+      }
+    });
+    // 绑定点击事件
+
   if (eleFlyElement && eleShopCart) {
-
-  	[].slice.call(document.getElementsByClassName("item_buy")).forEach(function(button) {
-  		button.addEventListener("click", function(event) {
-        //eleFlyElement.find("img").attr('src',$(this).find("a").attr("mid"));
-        $("#flyItem img").attr('src',$(this).attr("mid"));
-  			// 滚动大小
-  			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-  			    scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
-  			eleFlyElement.style.left = event.clientX + scrollLeft + "px";
-  			eleFlyElement.style.top = event.clientY + scrollTop + "px";
-  			eleFlyElement.style.visibility = "visible";
-
-  			// 需要重定位
-        myParabola.position().move();
-
-
-  		});
-  	});
-  }
+    [].slice.call(document.getElementsByClassName("item_buy")).forEach(function(button) {
+    button.addEventListener("click", function(event) {
+          event.preventDefault();
+          $("#flyItem img").attr('src',$(this).attr("mid"));
+          var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+              scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
+          eleFlyElement.style.left = event.clientX + scrollLeft + "px";
+          eleFlyElement.style.top = event.clientY + scrollTop + "px";
+          var url = $(this).attr("href");
+          var add = true;
+          if (url) {
+            $.ajax({
+              method: "POST",
+              url: url,
+              dataType: "script"
+            })
+          }
+        },false);
+    	});
+    }
   </script>
   <!-- <script src="https://qiyukf.com/script/02c1672a3956f8164b94bb36949f615c.js" defer async></script> -->

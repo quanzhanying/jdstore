@@ -1,4 +1,9 @@
 module ApplicationHelper
+  def message_type(key)  #由于flashes的信息类型不一样，需要做个转换处理
+    message = Array[["notice","success"],["alert","error"],["warning","alert"]] #定义一个数组，用来转换对应的信息类型。
+    message_key = message.assoc(key)
+    return message_key[1]
+  end
 
   def format_datetime(aDatetime)
     if aDatetime

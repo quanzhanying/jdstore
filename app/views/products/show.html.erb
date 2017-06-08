@@ -120,7 +120,7 @@
 
                         </div>
                         <div class="shopCart tb-btn-basket">
-                          <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), :method => :post ,:remote => true, class: "J_LinkBasket item_buy", mid: img430(@product,1)) %>
+                          <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), class: "J_LinkBasket item_buy", mid: img430(@product,1)) %>
                         </div>
                       </div>
                     </div>

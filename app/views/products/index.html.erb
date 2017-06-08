@@ -48,7 +48,7 @@
               <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-heart-o"> 收藏</i></a>
             <% end %>
           </div>
-            <a class="item_buy" mid="<%= img430(product,1) %>" data-remote="true" rel="nofollow" data-method="post" href="<%= add_to_cart_product_path(product)%>"><div class="shopCart cart text-center"><i class="fa fa-cart-arrow-down"> 加入购物车</i></div></a>
+            <a class="item_buy" mid="<%= img430(product,1) %>" href="<%= add_to_cart_product_path(product)%>"><div class="shopCart cart text-center"><i class="fa fa-cart-arrow-down"> 加入购物车</i></div></a>
             <%#= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product), :method => :post,:remote => true,class: 'item_buy' , mid: img430(product,1)) %>
         </div>
       </li>
@@ -65,30 +65,3 @@
 
 
   </div>
-
-  <script type="text/javascript">
-// Get a list of all svg elements
-icons = document.querySelectorAll('.icon-hook');
-
-// Cycle through list
-for (var i = 0; i < icons.length; i++) {
-  icons[i].addEventListener('click', function(event) {
-    event.preventDefault();
-
-    var icon = this;
-    var currentClass = icon.getAttribute('class'); // The starting class
-
-    console.log(icon);
-
-    if (currentClass.indexOf('active-favor') > -1) {
-      // Remove .active
-      icon.setAttribute('class', currentClass.replace(' active-favor', ''));
-    } else {
-      // Add .active
-      icon.setAttribute('class', currentClass + ' active-favor');
-    }
-  }, false);
-}
-
-
-</script>

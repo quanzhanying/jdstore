@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def add_to_cart
     @product = Product.find(params[:id])
-    info = "$.globalMessenger().post({message:'已经超过最大可购买数量！',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});"
+    info = "$.globalMessenger().post({message:'" + @product.title + "已经超过最大可购买数量！',type:'error',hideAfter:3,showCloseButton:true,hideOnNavigate:true});"
     if  params[:num].blank?
         num = 1
         #render :js => num.to_s

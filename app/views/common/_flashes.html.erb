@@ -1,8 +1,12 @@
+<script type="text/javascript">
 <% if flash.any? %>
   <% user_facing_flashes.each do |key, value| %>
-    <div class="alert alert-dismissable alert-<%= flash_class(key) %>">
-      <button class="close" data-dismiss="alert">×</button>
-      <%= value %>
-    </div>
+  $.globalMessenger().post({
+    message: '<%= value %>',//提示信息
+    type: '<%= message_type(key) %>',//消息类型。error、info、success、info
+    hideAfter: 2,//停留时间，单位秒
+    showCloseButton:true//是否显示关闭按钮
+  });
   <% end %>
 <% end %>
+</script>
