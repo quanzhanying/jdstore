@@ -16,7 +16,6 @@
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require_tree .
-//= require masonry/jquery.masonry
 
 $(function(){
     var $pins = $('#pins');
