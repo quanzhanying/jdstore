@@ -72,7 +72,7 @@ Category.create!(
 Product.create!(
   name: "山东烟台美早大樱桃",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "樱桃",
@@ -103,7 +103,7 @@ Product.create!(
 Product.create!(
   name: "广西百香果西番莲",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "百香果",
@@ -132,7 +132,7 @@ Product.create!(
 Product.create!(
   name: "广西火龙果",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "火龙果",
@@ -162,7 +162,7 @@ Product.create!(
 Product.create!(
   name: "广西贵妃芒",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "贵妃芒",
@@ -193,7 +193,7 @@ Product.create!(
 Product.create!(
   name: "云南冰糖红心木瓜",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "木瓜",
@@ -224,7 +224,7 @@ Product.create!(
 Product.create!(
   name: "云南高山小土豆",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "蔬菜",
   category3: "土豆",
@@ -260,7 +260,7 @@ Product.create!(
 Product.create!(
   name: "山东烟台大红灯樱桃",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "樱桃",
@@ -283,7 +283,7 @@ Product.create!(
 Product.create!(
   name: "陕西金太阳大黄杏",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "黄杏",
@@ -306,7 +306,7 @@ Product.create!(
 Product.create!(
   name: "缅甸圣德龙芒果",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "芒果",
@@ -329,7 +329,7 @@ Product.create!(
 Product.create!(
   name: "山东玉菇甜瓜/香瓜/蜜瓜",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "甜瓜 香瓜 蜜瓜",
@@ -352,7 +352,7 @@ Product.create!(
 Product.create!(
   name: "越南进口红心火龙果",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "火龙果",
@@ -375,7 +375,7 @@ Product.create!(
 Product.create!(
   name: "广西百香果西番莲",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "百香果",
@@ -398,7 +398,7 @@ Product.create!(
 Product.create!(
   name: "泰国进口椰青",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "椰青",
@@ -421,7 +421,7 @@ Product.create!(
 Product.create!(
   name: "泰国进口山竹",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "水果",
   category3: "山竹",
@@ -446,7 +446,7 @@ Product.create!(
 Product.create!(
   name: "小油菜",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "蔬菜",
   category3: "小油菜",
@@ -469,7 +469,7 @@ Product.create!(
 Product.create!(
   name: "西兰花",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "蔬菜",
   category3: "西兰花",
@@ -492,7 +492,7 @@ Product.create!(
 Product.create!(
   name: "西红柿",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "蔬菜",
   category3: "西红柿",
@@ -515,7 +515,7 @@ Product.create!(
 Product.create!(
   name: "玉米",
   category_id: 1,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "新鲜果蔬",
   category2: "蔬菜",
   category3: "玉米",
@@ -540,7 +540,7 @@ Product.create!(
 Product.create!(
   name: "澳洲家庭牛排套餐",
   category_id: 2,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "肉类蛋禽",
   category2: "牛羊猪",
   category3: "牛肉",
@@ -563,7 +563,7 @@ Product.create!(
 Product.create!(
   name: "奥尔良烤翅免腌制",
   category_id: 2,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "肉类蛋禽",
   category2: "鸡鸭鹅",
   category3: "鸡肉 鸡翅",
@@ -586,7 +586,7 @@ Product.create!(
 Product.create!(
   name: "大西洋冰鲜三文鱼腩刺身",
   category_id: 2,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "肉类蛋禽",
   category2: "鱼",
   category3: "三文鱼",
@@ -609,7 +609,7 @@ Product.create!(
 Product.create!(
   name: "洞庭湖咸蛋",
   category_id: 2,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "肉类蛋禽",
   category2: "蛋",
   category3: "咸蛋 咸鸭蛋",
@@ -634,7 +634,7 @@ Product.create!(
 Product.create!(
   name: "东北五常生态稻花香大米",
   category_id: 3,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "粮油米面",
   category2: "米",
   category3: "大米",
@@ -657,7 +657,7 @@ Product.create!(
 Product.create!(
   name: "东北杂粮大米精选十谷米",
   category_id: 3,
-  category: "全部商品",
+  # category: "全部商品",
   category1: "粮油米面",
   category2: "米",
   category3: "大米 杂粮",

@@ -113,7 +113,7 @@ class ProductsController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { :name_or_category_or_category1_or_category2_or_category3_or_keyword_or_location_cont => query_string }
+    { :name_or_category1_or_category2_or_category3_or_keyword_or_location_cont => query_string }
   end
 
   def search_criteria1(query_string1)

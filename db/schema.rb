@@ -15,12 +15,16 @@ ActiveRecord::Schema.define(version: 20170608024920) do
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
     t.integer  "product_id"
-    t.integer  "quantity",   default: 1
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.decimal  "price",      precision: 10, scale: 2
+    t.decimal  "msrp",       precision: 10, scale: 2
+    t.string   "price_unit"
+    t.integer  "quantity",                            default: 1
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
   create_table "carts", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,14 +33,14 @@ ActiveRecord::Schema.define(version: 20170608024920) do
     t.string   "name"
     t.integer  "weight",           default: 0
     t.integer  "products_counter", default: 0
+    t.string   "ancestry"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.string   "ancestry"
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer  "product_id"
     t.integer  "user_id"
+    t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,36 +71,36 @@ ActiveRecord::Schema.define(version: 20170608024920) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.string   "number"
     t.string   "name"
+    t.string   "content"
     t.text     "description"
     t.decimal  "price",       precision: 10, scale: 2
+    t.decimal  "msrp",        precision: 10, scale: 2
+    t.string   "price_unit"
     t.integer  "quantity"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
-    t.string   "image"
-    t.string   "content"
-    t.string   "category"
-    t.string   "location"
-    t.string   "remark"
-    t.string   "position"
-    t.string   "img_url"
+    t.integer  "category_id"
     t.string   "category1"
     t.string   "category2"
+    t.string   "category3"
     t.string   "keyword"
+    t.string   "location"
+    t.string   "image"
+    t.string   "img_url"
     t.string   "img1_url"
     t.string   "img2_url"
     t.string   "img3_url"
     t.string   "img4_url"
     t.string   "img5_url"
-    t.string   "price_unit"
-    t.integer  "category_id"
-    t.string   "status",                               default: "none"
-    t.string   "number"
-    t.decimal  "msrp",        precision: 10, scale: 2
-    t.string   "category3"
+    t.string   "remark"
+    t.string   "status"
+    t.string   "position"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
@@ -107,11 +111,10 @@ ActiveRecord::Schema.define(version: 20170608024920) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "is_admin",               default: false
+    t.boolean  "is_supplier",            default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "is_admin",               default: false
-    t.string   "name"
-    t.boolean  "is_supplier",            default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

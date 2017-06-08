@@ -4,8 +4,8 @@ class CreateCategories < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :weight, default: 0
       t.integer :products_counter, default: 0
+      t.string :ancestry
       t.timestamps
     end
-    # add_index :categories, [:name]
   end
 end
