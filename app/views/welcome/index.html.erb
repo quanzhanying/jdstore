@@ -82,7 +82,8 @@
     <div class="row">
       <div class="col-md-4 category-content">
           <div class="category-box">
-            <%= image_tag("man-bodybuilding.jpg") %> <!-- 分类图片 -->
+            <a href="<%= products_path(category:'男性健身餐')%>">
+            <%= image_tag("man-bodybuilding.jpg") %> </a><!-- 分类图片 -->
           </div>
           <div>
             <h3><%= link_to("男性健身餐", products_path(category: "男性健身餐")) %></h3>
@@ -95,7 +96,8 @@
       <div class="col-md-4 category-content">
 
           <div class="category-box">
-            <%= image_tag("woman-bodybuilding.jpg") %>
+            <a href=" <%= products_path(category:'女性健身餐')%>">
+            <%= image_tag("woman-bodybuilding.jpg") %> </a>
           </div>
           <div>
             <h3><%= link_to("女性健身餐", products_path(category: "女性健身餐"))%></h3>
@@ -107,7 +109,8 @@
       <div class="col-md-4 category-content">
 
           <div class="category-box">
-            <%= image_tag("whatever.jpg") %>
+            <a href=" <%= products_path(category: '随心')%>">
+            <%= image_tag("whatever.jpg") %>  </a>
           </div>
           <div>
             <h3><%= link_to("随心装", products_path(category: "随心"))%></h3>
