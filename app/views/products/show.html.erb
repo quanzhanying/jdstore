@@ -159,8 +159,17 @@
       <div class="productDetail-contentWrap">
         <div class="productDetail-content col-md-9 col-centered" style="display: block; overflow: hidden;">
           <p><%= simple_format(@product.description) %></p>
+          <!-- 商品详情区域显示多张图片开始 -->
           <div class="productDetail-introImg">
+            <% if @pictures.present? %>
+              <% @pictures.each_with_index do |p, index| %>
+                  <%= image_tag p.avatar.big.url %>
+              <% end %>
+            <% else %>
+                <!-- <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %> -->
+            <% end %>
           </div>
+          <!-- 商品详情区域显示多张图片结束 -->
         </div>
         <div class="productDetail-content col-md-9 col-centered" style="display: block; overflow: hidden;">
           <div id="product_comments">

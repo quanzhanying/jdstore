@@ -61,6 +61,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [400,400] # 为方便排版，把上传的图片都订成正方形
   end
 
+  version :big do
+    process resize_to_fill: [750,530] # 为美化商品详情区域排版，把该区域上传的图片都订成这个大小规格
+  end
+
   version :small do
     process resize_to_fill: [70,70] # 为方便排版，把上传的图片都订成正方形
   end

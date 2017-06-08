@@ -42,6 +42,11 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :photos
   # 多图上传与photos的关系结束
 
+  # 商品详情添加多张图片与pictures的关系
+  has_many :pictures
+  accepts_nested_attributes_for :pictures
+  # 商品详情添加多张图片与pictures的关系结束
+
   # 评论相关
   has_many :comments
   # 评论相关结束
