@@ -2659,7 +2659,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 .navbar.navbar-warning .dropdown-menu .active > a:focus {
   color: rgba(255,255,255, 0.84);
 }
-.navbar.navbar-danger {
+.navbar.navbar-F {
   background-color: #f44336;
   color: rgba(255,255,255, 0.84);
 }

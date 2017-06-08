@@ -8,25 +8,33 @@
  <div class="carousel-inner">
     <div class="item active">
      <a href="javascript:;">
-      <img  src="https://ws3.sinaimg.cn/large/006tKfTcgy1fg84ztugp0j31kw0vhe86.jpg">
-      <div class="carousel-caption"></div>
+      <img  src="https://ws1.sinaimg.cn/large/006tNc79gy1fgck9ejed6j30sc08cjul.jpg">
+      <div class="carousel-caption">
+       <h4>多久没有这么悠闲的看完一本书了？</h4>
+   </div>
      </a>
+
     </div>
     <div class="item">
      <a href="javascript:;">
-      <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fg84tpbwm5j31kw1htnph.jpg">
-      <div class="carousel-caption"></div>
+      <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fgdoiwtsqcj30uk08djsm.jpg">
+      <div class="carousel-caption">
+        <h4>享受阅读，已然忘记是日出还是日落</h4>
+        </div>
      </a>
+
     </div>
     <div class="item">
      <a href="javascript:;">
-      <img src="https://ws2.sinaimg.cn/large/006tNc79gy1fg3milvdc6j31kw11z4qx.jpg">
-      <div class="carousel-caption"></div>
+      <img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fgdonqn0jej30si08cace.jpg">
+      <div class="carousel-caption">
+          <h4>借的书，不读完，玩都不放心</h4>
+       </div>
      </a>
+
     </div>
   </div>
 </div>
-<div class="container">
   <!--wll 分类功能 -->
   <div class="productCatetory">
     <div class="productCatetory-menuList">
@@ -58,15 +66,16 @@
     </div>
   </div>
   <!--产品列表 -->
+  <div class="container">
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-md-3 col-sm-6">
         <span class="thumbnail">
           <%= link_to product_path(product) do %>
             <% if product.photos.present? %>
-              <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
+              <%= image_tag(product.photos[0].image.thumb.url) %>
             <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
             <% end %>
           <% end %>
             <h4><%= product.title %></h4>
@@ -84,7 +93,7 @@
               </div>
               <div class="col-md-6 col-sm-6">
                 <% if product.quantity.present? && product.quantity > 0 %>
-                  <%= link_to("借阅", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger right") %>
+                  <%= link_to("借阅", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
                 <% else %>
                    Sold out
                 <% end %>
