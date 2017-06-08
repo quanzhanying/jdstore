@@ -43,21 +43,24 @@ Product.create!(
   image: MiniMagick::Image.open("#{Rails.root}/app/public/images/野兽yangpai.jpg")
   )
 
-  Photo.create!(product_id:1, image: MiniMagick::Image.open("#{Rails.root}/app/public/images/野兽yangpai.jpg"))
 
-
-Product.create!(title: "烟熏三文鱼",
+Product.create!(
+id: 2,
+category_id: 1,
+title: "烟熏三文鱼",
 description: "每天限量供应",
 price: 56,
 quantity: 100,
-category_id: 1,
+image: MiniMagick::Image.open("#{Rails.root}/app/public/images/野兽烟熏三文鱼.jpg"
 )
-Product.create!(title: "新西兰黑椒牛排",
+Product.create!(
+id: 3,
+category_id: 1,
+title: "新西兰黑椒牛排",
 description: "每天限量供应",
 price: 56,
 quantity: 100,
-category_id: 1,
-
+image: MiniMagick::Image.open("#{Rails.root}/app/public/images/野兽新西兰黑椒牛排.jpg"
 )
 
 Product.create!(title: "野兽生活 防弹咖啡 中度烘焙 低霉菌咖啡豆227g2袋 生酮饮食 包邮",
