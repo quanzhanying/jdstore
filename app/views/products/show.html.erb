@@ -68,11 +68,25 @@
       <h5>剩余时间：<span id="getting-started"></span></h5>
       <br><br><br><br><br>
       <div style="text-align:center;">
-        <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
-        <% else %>
-        <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货</a>
-        <% end %>
+        <span>
+          <% if current_user && current_user.is_like?(@product) %>
+
+            <!-- <label class="label label-success"> 收藏商品 </label> -->
+            <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+
+          <% else %>
+            <!-- <label class="label label-success"> 未收藏商品 </label> -->
+            <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+          <% end %>
+
+        </span>
+        <span>
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
+          <% else %>
+          <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货</a>
+          <% end %>
+        </span>
       </div>
     </div>
     <div class="col-md-2">
@@ -116,11 +130,16 @@
             <b>￥<%= product.price %></b><% product.price_unit %>
           </div>
           <div>
-            <% if product.quantity.present? && product.quantity > 0 %>
-            <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus fa-1x") %>
-            <% else %>
-            已销售一空，无法购买！
-            <% end %>
+            <span>
+              
+            </span>
+            <span>
+              <% if product.quantity.present? && product.quantity > 0 %>
+                <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus fa-1x") %>
+              <% else %>
+                已销售一空，无法购买！
+              <% end %>
+            </span>
           </div>
         </div>
       </div>

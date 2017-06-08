@@ -23,11 +23,15 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :favorites
   end
 
   resources :products do
     member do
       post :add_to_cart
+      # post :favorite
+      post :like
+      post :unlike
     end
 
     collection do

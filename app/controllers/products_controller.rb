@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   before_action :validate_search_key2, only: [:search2]
   before_action :validate_search_key3, only: [:search3]
 
+  before_action :authenticate_user! , only: [:like, :unlike]
+
   def index
     @products = Product.all.order("position ASC")
   end
@@ -27,6 +29,39 @@ class ProductsController < ApplicationController
       flash[:warning] = "你的购物车内已有此物品"
     end
     redirect_to :back
+  end
+
+  # def favorite
+  #   @product = Product.find(params[:id])
+  #   type = params[:type]
+  #   if type == "favorite"
+  #     current_user.favorite_products << @product
+  #   elsif type == "unfavorite"
+  #     current_user.favorite_products.delete(@product)
+  #   end
+  #   redirect_to :back
+  # end
+
+  def like
+    @product = Product.find(params[:id])
+    if !current_user.is_like?(@product)
+        current_user.like!(@product)
+        flash[:notice] = "收藏商品成功！"
+     else
+        flash[:warning] = "你已经收藏过本商品了！"
+     end
+      redirect_to product_path(@product)
+  end
+
+  def unlike
+    @product = Product.find(params[:id])
+    if current_user.is_like?(@product)
+        current_user.unlike!(@product)
+        flash[:notice] = "取消收藏商品！"
+     else
+        flash[:warning] = "你没有收藏过商品，如何取消 XD！"
+     end
+      redirect_to product_path(@product)
   end
 
   def search

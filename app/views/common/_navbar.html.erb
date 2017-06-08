@@ -35,6 +35,7 @@
                   <% if current_user.admin? %>
                   <li><%= link_to(content_tag(:i, " 管理后台", class: "fa fa-laptop"), admin_products_path) %></li>
                   <li><%= link_to(content_tag(:i, " 订单列表", class: "fa fa-truck"), account_orders_path) %></li>
+                  <li><%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-heart"), account_favorites_path) %></li>
                   <% end %>
                   <li><%= link_to(content_tag(:i, " 个人信息", class: "fa fa-user"), edit_user_registration_path(current_user) ) %></li>
                   <li><%= link_to(content_tag(:i, " 登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %></li>
