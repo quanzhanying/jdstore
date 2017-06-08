@@ -1,2 +1,3 @@
 $("#address-jq").html("<%=j render :partial => "addrlist", :locals => { :addresses => @addresses } %>");
 $('#mymodal-data-addr').modal("hide");
+$.globalMessenger().post({message:'地址信息修改成功！',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});

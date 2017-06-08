@@ -56,51 +56,55 @@
           <hr>
         </div>
       </div>
+      <div class="total clearfix">
+            <span class="pull-right">
+            </span>
+      </div>
+      <div class="checkout-addr">
+        <ul class="address_title">
+          <li class="address_name">选择地址</li>
+          <li class="address_name">收货人</li>
+          <li class="address_city">所在省市</li>
+          <li class="address_addr">街道地址</li>
+          <li class="address_name">手机号码</li>
+          <li class="address_name">默认</li>
+          <li class="address_handle">操作</li>
+        </ul>
+        <div id="address-jq">
+          <%if !@addresses.blank? %>
+          <% i=0 %>
+        <% @addresses.each do |address| %>
+        <% if address.addr_default then i += 1 end%>
+    <ul class="address-jq">
+          <span class="radio-address"><input type="radio" name="address" value="<%= address.id.to_s%>" <%= if address.addr_default && i == 1 then "checked" end%>></span>
+
+      <li class="address_name"><%= address.name%></li>
+      <li class="address_city"><%= ChinaCity.get(address.province)+ChinaCity.get(address.city)+ChinaCity.get(address.district)%></li>
+      <li class="address_addr"><%= address.addr%></th>
+      <li class="address_name"><%= address.phone%></th>
+      <li class="address_addr_default"><%= if address.addr_default && i == 1 then "默认地址" end%></li>
+      <li class="address_handle"><%= link_to "修改",edit_account_address_path(address),:method => :get,:remote => true,:class => "address-jqedit"%>|<%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-jqnew"%></li>
+    </ul>
+    <% end %>
+
+    <br><br>
+    <input type="submit" name="commit" value="生成订单" class="btn btn-lg btn-danger pull-right" data-disable-with="Submitting...">
+    <% else %>
+    <div class="text-center">
+      <br>
+      <span>您还没有任何收货地址马上</span>
+        <%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-new"%>
+    </div>
+
+    <% end %>
+    </div>
+
+    </div>
     </div>
 
     <!-- <h2> 订单资讯 </h2> -->
 
-    <div class="checkout-addr">
 
-      <ul class="address_title">
-        <li class="address_name">选择地址</li>
-        <li class="address_name">收货人</li>
-        <li class="address_city">所在省市</li>
-        <li class="address_addr">街道地址</li>
-        <li class="address_name">手机号码</li>
-        <li class="address_name">默认</li>
-        <li class="address_handle">操作</li>
-      </ul>
-      <div id="address-jq">
-        <%if !@addresses.blank? %>
-        <% i=0 %>
-      <% @addresses.each do |address| %>
-      <% if address.addr_default then i += 1 end%>
-  <ul class="address-jq">
-        <span class="radio-address"><input type="radio" name="address" value="<%= address.id.to_s%>" <%= if address.addr_default && i == 1 then "checked" end%>></span>
-
-    <li class="address_name"><%= address.name%></li>
-    <li class="address_city"><%= ChinaCity.get(address.province)+ChinaCity.get(address.city)+ChinaCity.get(address.district)%></li>
-    <li class="address_addr"><%= address.addr%></th>
-    <li class="address_name"><%= address.phone%></th>
-    <li class="address_addr_default"><%= if address.addr_default && i == 1 then "默认地址" end%></li>
-    <li class="address_handle"><%= link_to "修改",edit_account_address_path(address),:method => :get,:remote => true,:class => "address-jqedit"%>|<%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-jqnew"%></li>
-  </ul>
-  <% end %>
-
-  <br><br>
-  <input type="submit" name="commit" value="生成订单" class="btn btn-lg btn-danger pull-right" data-disable-with="Submitting...">
-  <% else %>
-  <div class="text-center">
-    <br>
-    <span>您还没有任何收货地址马上</span>
-      <%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-new"%>
-  </div>
-
-  <% end %>
-  </div>
-
-  </div>
   <% end %>
   </div>
 </div>

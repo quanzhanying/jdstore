@@ -65,6 +65,8 @@ class ProductsController < ApplicationController
   end
 
   def favorite
+    info = "$.globalMessenger().post({message:'加入收藏成功！',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});"
+    uninfo = "$.globalMessenger().post({message:'取消收藏成功！',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});"
     @product = Product.find(params[:id])
     if !params[:fa].blank?
       favorite = params[:fa]
@@ -74,28 +76,28 @@ class ProductsController < ApplicationController
            current_user.favorite!(@product)
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart-o').addClass('fa-heart').html(' 已收藏');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-p');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-p');" + info
           render :js => jq
       when "unfavorite-p"
         if current_user.is_favorite_of?(@product)
            current_user.unfavorite!(@product)
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart').addClass('fa-heart-o').html(' 收藏');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-p');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-p');" + uninfo
           render :js => jq
       when "favorite-f"
         if !current_user.is_favorite_of?(@product)
            current_user.favorite!(@product)
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart-o').addClass('fa-heart');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-f');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-f');" + info
           render :js => jq
       when "unfavorite-f"
         if current_user.is_favorite_of?(@product)
            current_user.unfavorite!(@product)
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').children('i').removeClass('fa-heart').addClass('fa-heart-o');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-f');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-f');" + uninfo
           render :js => jq
       when "favorite-s"
         if !current_user.is_favorite_of?(@product)
@@ -103,7 +105,7 @@ class ProductsController < ApplicationController
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').html('已收藏');" +
               "$('#tm-count.tm-count').html('"+@product.favorite_products.count.to_s+"');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-s');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-s');" + info
           render :js => jq
       when "unfavorite-s"
         if current_user.is_favorite_of?(@product)
@@ -111,21 +113,21 @@ class ProductsController < ApplicationController
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').html('加入收藏');" +
               "$('#tm-count.tm-count').html('"+@product.favorite_products.count.to_s+"');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-s');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-s');" + uninfo
           render :js => jq
       when "favorite-c"
         if !current_user.is_favorite_of?(@product)
            current_user.favorite!(@product)
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').addClass('cart-list-fa').html('已收藏');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-c');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=unfavorite-c');" + info
           render :js => jq
       when "unfavorite-c"
         if current_user.is_favorite_of?(@product)
            current_user.unfavorite!(@product)
         end
           jq= "$('#favorite-item-"+@product.id.to_s+"').removeClass('cart-list-fa').html('加入收藏');" +
-              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-c');"
+              "$('#favorite-item-"+@product.id.to_s+"').attr('href','" + favorite_product_path(@product) + "?fa=favorite-c');" + uninfo
           render :js => jq
       end
 

@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   def add_to_cart
     @product = Product.find(params[:id])
+    info = "$.globalMessenger().post({message:'已经超过最大可购买数量！',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});"
     if  params[:num].blank?
         num = 1
         #render :js => num.to_s
@@ -29,7 +30,7 @@ class ApplicationController < ActionController::Base
               ci.quantity += num
               ci.save
             else
-              render :js => "alert('已经超过最大可购买数量');"
+              render :js => info
             end
         end
     else
@@ -48,7 +49,7 @@ class ApplicationController < ActionController::Base
                     ci.save
                   end
               else
-                  render :js => "alert('已经超过最大可购买数量');"
+                  render :js => info
               end
           end
       end
@@ -89,7 +90,7 @@ class ApplicationController < ActionController::Base
     end
   end
   def after_sign_out_path_for(resource)
-    root_path #request.referrer || 
+    root_path #request.referrer ||
   end
   protected
 

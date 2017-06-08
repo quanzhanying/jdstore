@@ -3,7 +3,6 @@ class CartItemsController < ApplicationController
 
 
   def destroy
-
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
     if @cart_item.nil?
@@ -23,7 +22,7 @@ class CartItemsController < ApplicationController
       jq = '$(".cart-item-' + params[:id].to_s + '").remove();' +
       '$(".cw-icon span").html("' + current_cart.cart_items.sum("quantity").to_s + '" );' +
       '$("#cart_items span").html("(' + current_cart.cart_items.sum("quantity").to_s + ')" );' +
-      '$(".product-price-totle").html("总计：' + sum.to_s + ' RMB" );'
+      '$(".product-price-totle").html("总计：' + sum.to_s + ' RMB" );' + "$.globalMessenger().post({message:'从购物车删除"+ @product.title + "',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});"
       render :js =>  jq
     end
 

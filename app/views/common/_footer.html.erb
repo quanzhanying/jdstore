@@ -79,6 +79,35 @@
 <div id="flyItem" class="fly_item"><img src="https://img.alicdn.com/bao/uploaded/i4/TB1VAYpKFXXXXcnXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" width="40" height="40"></div>
 
 <script type="text/javascript">
+Messenger.options = {
+    extraClasses: 'messenger-fixed messenger-on-top messenger-on-left',
+    theme: 'block'
+}
+</script>
+<style media="screen">
+ul.messenger.messenger-theme-block.messenger-fixed .messenger-message.alert-info {
+    color: #B28435;
+    background-color:rgba(255,255,255, 0.8);
+    border-color: #B28435;
+}
+ul.messenger.messenger-theme-block.messenger-fixed.messenger-on-top {
+    top: 200px;
+    bottom: auto;
+}
+</style>
+<script type="text/javascript">
+// $("body").click(function () {
+// $.globalMessenger().post({
+// message: "操作成功<br>",//提示信息
+// type: 'info',//消息类型。error、info、success
+// hideAfter: 3,//多长时间消失
+// showCloseButton:true,//是否显示关闭按钮
+// hideOnNavigate: true //是否隐藏导航
+// });
+});
+</script>
+
+<script type="text/javascript">
 //登录后下来菜单
 $('li.dropdown').hover(function () {
   $(this).addClass('open')
