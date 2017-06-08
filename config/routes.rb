@@ -51,7 +51,10 @@ Rails.application.routes.draw do
     end
     #增加search
     resources :posts
+    resources :comments
   end
+
+resources :comments
 
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
