@@ -1,0 +1,303 @@
+<div class="welcome-box">
+  <!--===== 广告轮播 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 轮播按钮 =====-->
+          <ol class="carousel-indicators">
+            <li data-target="#intro" data-slide-to="0" class="active"></li>
+            <li data-target="#intro" data-slide-to="1"></li>
+            <li data-target="#intro" data-slide-to="2"></li>
+          </ol>
+
+          <!--===== 轮播内容 =====-->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <%= link_to '#', target: "_blank" do %> <!-- 图片连结，点击另开视窗 -->
+                <%= image_tag("intro_1.jpg") %> <!-- 图片位置 -->
+                <div class="carousel-caption">
+                  <h3>匿名交易</h3> <!-- 标题 -->
+                  <p>支援Zcash，隱藏您的真實身份</p> <!-- 内文 -->
+                </div>
+              <% end %>
+            </div>
+            <div class="item">
+              <%= link_to '#', target: "_blank" do %>
+                <%= image_tag("intro_2.jpg") %>
+                <div class="carousel-caption">
+                  <h3>未來科技</h3>
+                  <p>夢幻裝備，具現化您的想像</p>
+                </div>
+              <% end %>
+            </div>
+            <div class="item">
+              <%= link_to '#', target: "_blank" do %>
+                <%= image_tag("intro_3.jpg") %>
+                <div class="carousel-caption">
+                  <h3>半人半神</h3>
+                  <p>唯有神裝，才能匹配神人</p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <!--===== 换页按钮 =====-->
+          <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span> <!-- 左侧按钮图示 -->
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span> <!-- 右侧按钮图示 -->
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 品牌故事 =====-->
+  <section class="story-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>品牌故事</h2> <!-- 区块标题 -->
+        <h1>黑市</h1> <!-- 品牌名称 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <div class="row">
+          <div class="col-md-3 col-md-offset-1">
+            <%= image_tag("founder_1.png") %> <!-- 创办人头像 1 -->
+          </div>
+          <div class="col-md-7">
+            <h3>Yeh</h3> <!-- 创办人姓名 -->
+            <p>「每位神人都有平凡的一面，隱藏身影是迫於無奈，所以我們支援強匿名性的 Zcash，讓您購買神裝時，不留下任何電子足跡。」</p>
+            <p>  Dr.Yeh，涉獵領域，橫跨醫學、運動、投資、談判、編程、攝影、心理學、經濟學等，簡單來說，就是一個不務正業的打雜工(弱)。 </p> <!-- 创办人介绍 -->
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-7 col-md-offset-1">
+            <h3>Pierre</h3> <!-- 创办人姓名 -->
+            <p>擅長領域：不詳。幾乎沒有任何電子足跡的隱藏人物(謎)。</p> <!-- 创办人介绍 -->
+          </div>
+          <div class="col-md-3">
+            <%= image_tag("founder_2.png") %> <!-- 创办人头像 2 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 服务优势 =====-->
+  <section class="service-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>契約</h2> <!-- 副标题 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="box">
+              <%= image_tag("service_1.png") %> <!-- 图示 -->
+              <h3>獨一無二</h3> <!-- 标题 -->
+              <p>所有神裝，全世界僅有一件，不會撞衫。</p> <!-- 内文 -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="box">
+              <%= image_tag("service_2.png") %>
+              <h3>牛逼快遞</h3>
+              <p>聘用復仇者聯盟為快遞團隊，使命必達。</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="box">
+              <%= image_tag("service_3.png") %>
+              <h3>終身不保固</h3>
+              <p>保固？您傻了嗎！神裝，本來就不會壞。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 商品分类 =====-->
+  <section class="categories-box">
+    <div class="row">
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_1" do %> <!-- 分类连结 -->
+          <div class="category-box">
+            <%= image_tag("category_4.jpg") %> <!-- 分类图片 -->
+          </div>
+          <div>
+            <h3>武器類</h3> <!-- 分类标题 -->
+            <p>Marvel跟DC漫畫中，主角們的經典武器，皆是一時之選，無堅不摧。</p> <!-- 分类介绍 -->
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_2" do %>
+          <div class="category-box">
+            <%= image_tag("category_5.jpg") %>
+          </div>
+          <div>
+            <h3>盔甲類</h3>
+            <p>從巨型的反浩克裝甲，到微型的蟻人戰衣，雖是盔甲，卻只有單一尺寸 ; 無法試穿，亦無法量身訂做。</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_3" do %>
+          <div class="category-box">
+            <%= image_tag("category_3.jpg") %>
+          </div>
+          <div>
+            <h3>其他類</h3>
+            <p>武器拿不動，盔甲穿不下，沒關係！週邊裝備的兼容性較高，讓您無虎添翼！</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 推荐商品 =====-->
+  <section class="show-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>夢幻逸品</h2> <!-- 副标题 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <div class="row">
+          <div class="col-md-3">
+            <%= link_to '#' do %> <!-- 商品连结 -->
+              <div class="box"><%= image_tag("item_1.jpg") %></div> <!-- 商品图片 -->
+              <div class="content">
+                <p>雷神之鎚</p> <!-- 商品名称 -->
+                <p>ⓩ10000</p> <!-- 商品价格 -->
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_2.jpg") %></div>
+              <div class="content">
+                <p>鷹眼之弓</p>
+                <p>ⓩ2000</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_3.jpg") %></div>
+              <div class="content">
+                <p>反浩克裝甲</p>
+                <p>ⓩ5000</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_9.jpg") %></div>
+              <div class="content">
+                <p>蟻人戰衣</p>
+                <p>ⓩ2200</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_10.jpg") %></div>
+              <div class="content">
+                <p>黑豹裝甲</p>
+                <p>ⓩ2500</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_6.jpg") %></div>
+              <div class="content">
+                <p>蝙蝠裝甲</p>
+                <p>ⓩ2000</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_7.jpg") %></div>
+              <div class="content">
+                <p>神力手環</p>
+                <p>ⓩ10000</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <%= link_to '#' do %>
+              <div class="box"><%= image_tag("item_11.jpg") %></div>
+              <div class="content">
+                <p>美國隊長盾牌</p>
+                <p>ⓩ2400</p>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 用户反馈 =====-->
+  <section class="feedback-box">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>客戶評價</h2> <!-- 副标题 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <div id="feedback" class="carousel slide" data-ride="carousel">
+          <!--===== 轮播按钮 =====-->
+          <ol class="carousel-indicators">
+            <li data-target="#feedback" data-slide-to="0" class="active"></li>
+            <li data-target="#feedback" data-slide-to="1"></li>
+            <li data-target="#feedback" data-slide-to="2"></li>
+          </ol>
+
+          <!--===== 轮播内容 =====-->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <p>藉由神力手環，我打敗了戰神阿瑞斯！</p>
+              <%= image_tag("feedback_1.png") %> <!-- 图片 -->
+              <strong>Diana Prince - 神力女超人</strong> <!-- 介绍 -->
+            </div>
+            <div class="item">
+              <p>我是忠實客戶，蝙蝠裝甲讓我可以跟超人對打！</p>
+              <%= image_tag("feedback_2.png") %>
+              <strong>Bruce Wayne - 美國億萬富翁</strong>
+            </div>
+            <div class="item">
+              <p>想要壓制浩克，反浩克裝甲是您明智的選擇。</p>
+              <%= image_tag("feedback_3.png") %>
+              <strong>Tony Stark - 史塔克企業CEO</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 合作品牌 =====-->
+  <section class="brand-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>合作品牌</h2> <!-- 副标题 -->
+        <div class="short-line"></div> <!-- 分隔线 -->
+        <%= image_tag("brand_1.png") %> <!-- 品牌图片 -->
+        <%= image_tag("brand_2.png") %>
+        <%= image_tag("brand_3.png") %>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!--===== 立即购买 =====-->
+  <section class="push-box">
+    <%= link_to('入手神裝', products_path, class:'btn btn-push' ) %>
+  </section>
+</div>
