@@ -16,7 +16,6 @@
 //= require bootstrap
 //= require autosize.min
 //= require wow.min
-//= require bootstrap-sprockets
 //= require_tree .
 
 $(document).ready(function () {
