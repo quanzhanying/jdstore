@@ -40,9 +40,10 @@
     <!-- 商品信息 -->
     <div class="col-md-6">
       <h2> <%= @product.title %> </h2>
-
-      <div> 数量 : <%= @product.quantity %> </div>
-      <div class="product-price"> ￥ <%= @product.price %> </div>
+      <div> 作者: <%= @product.author %> </div>
+      <div> 库存: <%= @product.quantity %> </div>
+      <div> 租金:￥ <%= @product.price %> </div>
+      <div> 运费:￥ <%= @product.delivery %> </div>
      <!-- 商品页调整商品数量 -->
       <% if @product.quantity.present? && @product.quantity >0 %>
         <%= simple_form_for @product, method: :post, url: add_to_cart_product_path(@product) do |f| %>
@@ -60,6 +61,15 @@
         已销售一空，无法购买
       <% end %>
       <!-- end 商品页调整商品数量 -->
+      <br>
+      <span>
+        <% if current_user && current_user.is_like?(@product) %>
+          <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+        <% else %>
+          <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+        <% end %>
+      </span>
+
     </div>
     <!-- end 商品信息 -->
 
@@ -106,9 +116,30 @@
              	</div>
             </div>
             <!-- end 内容 -->
+        </div>
 
+      </div>
+    </div>
+    <!-- 随机推荐 -->
+    <div class="row">
+      <div class="col-md-3 proposal-product">
+         <h4 style="padding-top:10px;">为您推荐的书籍：</h4>
+        <hr>
+        <br>
+        <div class="container" >
+          <% @suggests.each do |product| %>
+            <%= link_to product_path(product) do %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+            <p><%= product.title %></p>
+          <% end %>
         </div>
       </div>
     </div>
+    <!-- end 随机推荐 -->
   </div>
 </div>

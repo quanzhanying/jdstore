@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only:[:search]
-
+  before_action :authenticate_user! , only: [:like, :unlike]
 
 
   def index
@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @comments = @product.comments
+    @suggests = Product.all.random2
   end
 
   def add_to_cart
@@ -42,6 +43,28 @@ class ProductsController < ApplicationController
         @products = search_result
       end
   end
+
+  def like
+       @product = Product.find(params[:id])
+       if !current_user.is_like?(@product)
+           current_user.like!(@product)
+           flash[:notice] = "收藏商品成功！"
+        else
+           flash[:warning] = "你已经收藏过本商品了！"
+        end
+         redirect_to product_path(@product)
+     end
+
+   def unlike
+     @product = Product.find(params[:id])
+     if current_user.is_like?(@product)
+         current_user.unlike!(@product)
+         flash[:notice] = "取消收藏商品！"
+      else
+         flash[:warning] = "你没有收藏过商品！"
+      end
+       redirect_to product_path(@product)
+   end
 
   protected
   #去除特殊字符

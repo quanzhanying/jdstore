@@ -1,74 +1,66 @@
 <div class="navbar navbar-default" role="navigation" id="navbar">
-<div class="container">
-  <div class="navbar-header">
+  <div class="container">
+    <div class="navbar-header">
+      <!--=== 網站 Logo/名稱 ===-->
+      <a class="navbar-brand logo-box scroll" href="/">
+      <i class="fa fa-superpowers" aria-hidden="true"></i>非读不可
+      </a>
+    </div>
 
-    <!--=== 網站 Logo/名稱 ===-->
-    <a class="navbar-brand logo-box scroll" href="/">
-    <i class="fa fa-superpowers" aria-hidden="true"></i>非读不可
-</a>        </div>
-
-  <div class="collapse navbar-collapse top-nav" id="menu-4">
-    <!--=== 網站連結 ===-->
-    <ul class="nav navbar-nav navbar-left">
-      <li><a href="/products">精选书籍</a></li>
-    </ul>
-
-
-
-          <!-- 下拉選單 -->
-          <ul class="nav navbar-nav navbar-right">
-      <li>
-        <%= link_to carts_path do %>
-          购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %> )
-        <% end %>
-      </li>
-      <% if !current_user %>
-        <li><%= link_to("注册",new_user_registration_path)%></li>
-        <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-      <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Hi!,<%= current_user.email %>
-            <b class="caret"></b> <!--插入符号-->
-          </a>
-
-
-          <!-- <ul class="dropdown-menu"> -->
-            <% if current_user.admin? %>
-            <li>
-              <%=link_to("Admin 选单",admin_products_path)%>
-            </li>
-            <% end %>
-            <li>
-              <%=link_to("个人订单列表",account_orders_path)%>
-            </li>
-            <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-          </ul>
+    <div class="collapse navbar-collapse top-nav" id="menu-4">
+      <!--=== 網站連結 ===-->
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/products">精选书籍</a></li>
+      </ul>
+            <!-- 下拉選單 -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+            购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %> )
+          <% end %>
         </li>
+        <% if !current_user %>
+          <li><%= link_to("注册",new_user_registration_path)%></li>
+          <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Hi!,<%= current_user.email %>
+                <b class="caret"></b> <!--插入符号-->
+              </a>
+              <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                  <li>
+                    <%=link_to("Admin 选单",admin_products_path)%>
+                  </li>
+                <% end %>
+                <li>
+                  <%=link_to("个人订单列表",account_orders_path)%>
+                </li>
+                <li>
+                  <%= link_to account_favorites_path do %> 我的收藏 <i class= "fa fa-heart fa-md"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                </li>
+              </ul>
+          </li>
+        <% end %>
+      </ul>
+      <!-- end下拉選單 -->
+      <!-- 搜索栏 -->
+      <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
+        <div class="input-group search-box">
+          <input type="text" class="form-control" name="keyword" placeholder="搜索商品" value="<%= params[:keyword] %>">
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
       <% end %>
-    </ul>
-
-    <!-- 搜索栏 -->
-<%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
-  <div class="input-group search-box">
-    <input type="text" class="form-control" name="keyword" placeholder="搜索商品" value="<%= params[:keyword] %>">
-    <div class="input-group-btn">
-      <button type="submit" class="btn btn-default">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
+      <!-- end搜索栏 -->
     </div>
   </div>
-<% end %>
-
-
-
-
-
-
-
-</div>
-</div>
-
-</div>
-
 </div>
