@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore 后台</title>
+    <title>Select. 管理后台</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +15,7 @@
       <div class="row">
         <div class="col-md-2">
           <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+            <li class="active"><a href="#">管理后台</a></li>
             <li><%= link_to("商品", admin_products_path) %></li>
             <li><%= link_to("订单", admin_orders_path) %></li>
           </ul>

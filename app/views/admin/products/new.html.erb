@@ -1,22 +1,27 @@
-<div>
-  <h1>添加新商品</h2>
-  <hr>
-  <%= simple_form_for [:admin, @product] do |f| %>
-    <%= f.input :name, :label => "商品名", placeholder: "名称" %>
-    <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 5} %>
-    <%= f.input :price, :label => "价格", placeholder: "价格" %>
-    <%= f.input :stock, :label => "库存", placeholder: "库存" %>
-    <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
-    <div class="group">
-      <%#= f.input :image, as: :file %>
-      <%= f.label :avatar %><br>
-      <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+<div class="col-md-10 col-centered">
+  <div class="panel-default">
+    <div class="panel-heading">
+      <p>添加新商品</p>
     </div>
-    <%= select_tag(:brand_id, options_for_select(@brands), :prompt => "品牌") %>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
-    <%= f.input :can_sell, :label => "上线", as: :radio_buttons, collection: [['上线', true], ['隐藏', false]], required: true %>
-    <%= f.input :new_product, :label => "最新商品", as: :radio_buttons, collection: [['是', true], ['否', false]], required: true %>
-    <%= f.input :promotive_product, :label => "活动商品", as: :radio_buttons, collection: [['是', true], ['否', false]], required: true %>
-    <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交。。。"} %>
-  <% end %>
+    <div class="panel-body">
+    <%= simple_form_for [:admin, @product] do |f| %>
+      <%= f.input :name, :label => "商品名", placeholder: "名称" %>
+      <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 5} %>
+      <%= f.input :price, :label => "价格", placeholder: "价格" %>
+      <%= f.input :stock, :label => "库存", placeholder: "库存" %>
+      <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
+      <div class="group">
+        <%#= f.input :image, as: :file %>
+        <%= f.label :avatar %><br>
+        <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+      </div>
+      <%= select_tag(:brand_id, options_for_select(@brands), :prompt => "品牌") %>
+      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
+      <%= f.input :can_sell, :label => "上线", as: :radio_buttons, collection: [['上线', true], ['隐藏', false]], required: true %>
+      <%= f.input :new_product, :label => "最新商品", as: :radio_buttons, collection: [['是', true], ['否', false]], required: true %>
+      <%= f.input :promotive_product, :label => "活动商品", as: :radio_buttons, collection: [['是', true], ['否', false]], required: true %>
+      <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交。。。"} %>
+    <% end %>
+  </div>
+</div>
 </div>
