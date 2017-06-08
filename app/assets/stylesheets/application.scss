@@ -164,6 +164,14 @@ body {
     }
   }
 }
+
+/*商品列表*/
+.productpage {
+  margin: 20px auto;//意思上下为20px,左右平均居中
+  width: 1200px;//元素宽度
+  overflow: hidden;//当内容溢出元素框时内容会被修剪，并且其余内容是不可见的。
+}
+
 //---------Navbar---------
 
 .navbar-default {

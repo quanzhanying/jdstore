@@ -1,49 +1,57 @@
+<div class="productscolor">
+  <div class="container-fluid">
+	   <div class="row-fluid">
+        <div class="span12">
+          <!-- 商品页大图 -->
+        <div class="productspage">
 
-  <div class="container">
-    <div class="product-box">
-    <!--===== 页面路径 & 排序 =====-->
-    <section class="path-sort-box">
-      <!--=== 选单按钮 ===-->
-      <div class="right-box">
-        <div class="dropdown btn-group clearfix">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            預設排序 <span class="caret"></span>
-          </button>
-          <!-- 选单内容：排序方式 -->
-          <ul class="dropdown-menu dropdown-menu-right" selection aria-labelledby="dropdownMenuDivider">
-            <li>
-              <%=  link_to("按價格排序：高至低", products_path(:order => "high_to_low"))  %>
-            </li>
-            <li>
-              <%= link_to("按價格排序：低至高", products_path(:order => "low_to_high"))  %>
-            </li>
-            <li>
-              <%=  link_to("依上架時間：新至舊" ,  products_path)  %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-  </div>
-    <!--===== 商品列表 =====-->
-    <section class="product-items-box">
-      <% @products.each_with_index do |product, index| %>
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <%= link_to product_path(product) do %> <!-- 商品连结 -->
-            <div class="box">
-              <% if product.image.present? %>
-                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
-              <% end %>
-            </div> <!-- 商品图片 -->
-            <div class="product-info">
-              <p><%= product.title %></p> <!-- 商品名称 -->
-              <p><%= product.price %></p> <!-- 商品价格 -->
+            <!--=== 选单按钮 ===-->
+            <div class="product-box">
+              <!--===== 页面路径 & 排序 =====-->
+              <section class="path-sort-box">
+                <!--=== 选单按钮 ===-->
+                <div class="right-box">
+                  <div class="dropdown btn-group clearfix">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      預設排序 <span class="caret"></span>
+                    </button>
+                    <!-- 选单内容：排序方式 -->
+                    <ul class="dropdown-menu dropdown-menu-right" selection aria-labelledby="dropdownMenuDivider">
+                      <li>
+                        <%=  link_to("按價格排序：高至低", products_path(:order => "high_to_low"))  %>
+                      </li>
+                      <li>
+                        <%= link_to("按價格排序：低至高", products_path(:order => "low_to_high"))  %>
+                      </li>
+                      <li>
+                        <%=  link_to("依上架時間：新至舊" ,  products_path)  %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
             </div>
-          <% end %>
-        </div>
-      <% end %>
-    </section>
+
+            <!--===== 商品列表 =====-->
+            <div class="productpage">
+                <% @products.each_with_index do |product, index| %>
+                  <div class="shangpin col-xs-6 col-md-3">
+                     <div class="card image">
+                          <% if product.image.present? %>
+                            <%= image_tag(product.image.thumb.url, class: "thumbnail", style: "width:100%") %>
+                          <% else %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", style: "width:100%") %>
+                          <% end %>
+                        <h4 style="text-align:center; color:#212121;"><b><%= product.title %></b></h4>
+                        <p style="text-align:center; color:#212121;">￥<%= product.price %></p>
+                      </div>
+                      <div class="middle">
+                        <%= link_to("查看详情", product_path(product), :class => "btn btn-primary") %>
+                      </div>
+                  </div>
+                <% end %>
+              </div>
+    	   </div>
+    </div>
   </div>
+</div>

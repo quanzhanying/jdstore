@@ -1,3 +1,165 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Style the links inside the sidenav 侧边栏按钮*/
+#mySidenav a {
+    position: absolute; /* Position them relative to the browser window */
+    left: -80px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 100px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+    position: fixed; /* Make it stick, even on scroll 保持在网页中间*/
+}
+
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+
+#blog {
+    top: 420px;
+    background-color: #1E88E5; /* Blue */
+}
+
+#projects {
+    top: 510px;
+    background-color: #1E88E5; /* Red */
+}
+
+#contact {
+    top: 600px;
+    background-color: #1E88E5; /* Light Black */
+}
+//---商品模块效果-----
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    background-color: #fff;//背景颜色白色
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+//悬浮阴影
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.shangpin:hover .image {
+  opacity: 0.3;
+}
+
+.shangpin:hover .middle {
+  opacity: 1;
+}
+
+
+//views/products/show*商品详情*
+.productdetail {
+  font-family: "Lato", sans-serif;
+  width: 1200px;
+	margin: 20px auto;
+}
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+// show多图
+.show-picture {
+  margin-top:30px;
+}
+.show-photo-xsmall-box{
+  height:80px;
+  width:400px;
+}
+.show-photo-xsmall-box.nav-tabs {
+  margin-top: 15px; }
+
+.show-photo-xsmall-box.nav-tabs li {
+  width: 18%;
+  margin-right: 2.5%;
+}
+.show-photo-xsmall-box.nav-tabs li a {
+  padding: 0;
+  margin: 0;
+}
+.show-photo-xsmall-box.nav-tabs li:last-of-type {
+  margin-right: 0;
+}
+//show页面+-按钮
+// 数量输入框
+.product-page .quantity-input {
+  color: #333;
+  text-align: center;
+  width: 60px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+  margin-top: 10px;
+}
