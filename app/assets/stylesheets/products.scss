@@ -48,6 +48,9 @@
 
 
   // welcome index
+    #layout {
+      margin-left: -20px;
+    }
     #layout ul {
     list-style: none;
     }
@@ -125,7 +128,12 @@ img.ex1 {  // 收藏的五角星图标调整位置。 默认的位置没有和�
 .dzl-product-detail {    //商品详情和商品评价条的背景颜色设置
   background-color: #f5f5f5;
 }
+
 .dzl-product-detail li {  // 把商品详情和商品评价的2个标签变宽
   width: 250px;
   text-align: center;
+}
+
+.index-background {   // 首页的背景颜色调整
+  background-color: #f0ffff;
 }
