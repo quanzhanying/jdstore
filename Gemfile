@@ -41,6 +41,7 @@ gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
 gem 'will_paginate'
+gem 'intercom-rails'
 
 
 group :development, :test do
