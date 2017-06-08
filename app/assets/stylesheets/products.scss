@@ -7,19 +7,31 @@
 
 /*wll-分类功能*/
 .productCatetory {
-	width: 1600px;
+	width: 100%;
   text-align: center;
-	margin: 30px auto;
+
 }
 
 .productCatetory-menuList {
 	height: 50px;
+	text-align: center;
+	background-color: #b9cead;
+	color: white;
+	padding-top: 0px;
+	word-spacing: 30px;
+	height: 40px;
+	width: 100%;
+
 }
 
 .productCatetory-menuList-item {
 	float: left;
 	width: 175px;
+	margin-left:90px;
+
+
 }
+
 /*wll排序*/
 .order {
   background: #fff;
@@ -43,22 +55,33 @@
     left: 30px
 }
 // 首页轮播
-.carousel {
-  width: 100px;
-  margin-top: -20px !important;
+
+// 轮播图
 
 
-}
 .carousel .item {
-  height: 395px;
-
+ height: 300px;
 }
+
+.carousel {
+
+  margin-top: -20px !important;
+}
+
 
 .carousel-inner {
     position: center;
     overflow: hidden;
     width: 100%;
 
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
 }
 
 
@@ -161,8 +184,10 @@
 .tabbable-line > .nav-tabs>li.active>a, .tabbable-line > .nav-tabs>li.active>a:focus, .tabbable-line > .nav-tabs>li.active>a:hover {
 border: 0;
 }
+
 /*随机推荐*/
 .proposal-product {
   border: 1px solid #ddd;
   background: #fff;
 }
+
