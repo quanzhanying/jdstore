@@ -709,17 +709,16 @@ a:hover {
   .productDetail-tabList-tab {
     float:left;
     display:inline;
-    width: 33.3333%;
+    width: 50.0000%;
     height: 60px;
     line-height: 60px;
     padding-left: 0px;
     padding-right: 0px;
     cursor: pointer;
-    border-right: 1px solid #101846;
     text-align:center !important;
   }
   .productDetail-tabList-tab:hover,
-  a.productDetail-tabList-tab:active {   //已選擇的語法如何寫？
+  .productDetail-tabList-tab:active {   //已選擇的語法如何寫？
     color: #edbdb5;
     background: #101846;
   }

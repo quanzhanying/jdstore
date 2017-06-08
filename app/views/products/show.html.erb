@@ -1,67 +1,3 @@
-<!-- 全商品列表的的navbar -->
-<!-- <div class="header_placeholder h80"></div>
-<div class="header">
-<div class="header1">
-  <div class="header_content clearfix">
-    <div class="logo1"><%=link_to("Select.", products_path)%></div>
-    <div class="search_bar1">
-      <%= form_tag search_products_path , :method => :get do %>
-        <div class="input-group" id="search-id" >
-          <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品信息">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="cart-wrap1">
-      <div class="cart">
-      	<%= link_to carts_path do %>
-          <i class="fa fa-shopping-cart cart-icon f16 mr10 tc"></i>我的购物车
-          <span class="products_count"><%= current_cart.products.count %></span>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-</div> -->
-<!-- 全商品列表的navbar结束 -->
-
-<!-- 在商品列表中增加分类显示的按钮 -->
-
-<!-- <div class="row">
-  <% if params[:controller] == ('products') && params[:action] == ('show') %>
-    <div class="menu-wrap">
-      <ul class="menuList">
-        <li class="menuList-item">
-          <%= link_to("首页", products_path)%>
-        </li>
-        <% Category.all.each do |category| %>
-          <li class="menuList-item <%= 'menuList-activeItem' if @product.category.name == category.name %>">
-            <%= link_to category.name, products_path(category: category.name), class: "link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% else %>
-    <div class="menu-wrap">
-      <ul class="menuList">
-        <li class="menuList-item <%= 'menuList-activeItem' if !params[:category] %>">
-          <%= link_to("首页", products_path)%>
-        </li>
-        <% Category.all.each do |category| %>
-          <li class="menuList-item <%= 'menuList-activeItem' if params[:category] == category.name %>">
-            <%= link_to category.name, products_path(category: category.name), class: "link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-</div> -->
-<!-- 分类显示按钮结束 -->
-
 <ul class="breadcrumb">
   <li>
     <a href="/products">全品项商品</a> /
@@ -210,9 +146,9 @@
 
 <!-- 商品详情及用户评价 -->
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-8  col-md-offset-1 col-xs-12", style="float: left;">
     <div class="productDetail">
-      <ul class="productDetail-tabList clearfix">
+      <ul class="productDetail-tabList">
         <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
           商品详情
         </li>
@@ -221,18 +157,18 @@
         </li>
       </ul>
       <div class="productDetail-contentWrap">
-        <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
+        <div class="productDetail-content col-md-9 col-centered" style="display: block; overflow: hidden;">
           <p><%= simple_format(@product.description) %></p>
           <div class="productDetail-introImg">
           </div>
         </div>
-        <div class="productDetail-content col-md-6 col-centered" style="display: block; overflow: hidden;">
+        <div class="productDetail-content col-md-9 col-centered" style="display: block; overflow: hidden;">
           <div id="product_comments">
             <ul class="commentList">
               <p style="border-top-style:solid; border-bottom-style:dotted; border-width:1.2px; text-align: center;">
               来自我们顾客的宝贵评价</p>
               <% @comments.each do |comment| %>
-                <li class="commentList-item clearfix">
+                <li class="commentList-item">
                   <p class="content">
                     <%= simple_format(comment.body)  %>
                   </p>
@@ -253,12 +189,51 @@
       </div>
     </div>
   </div>
-</div>
-<!-- 商品详情和用户评价结束 -->
+  <!-- 商品详情和用户评价结束 -->
 
-<!-- 热卖商品区域 -->
-<div class="show-hot-products-title ">
-  <span>推荐商品</span>
+  <!-- 热卖商品区域 -->
+  <div class="col-md-2 col-xs-8", style="padding-left: 0px;">
+    <div>
+      <p style="margin-top: 18px; text-align: center; margin-bottom: 15px;"><strong>推荐商品</strong></p>
+    </div>
+    <div class="productList-wrap">
+      <ul class="productList">
+        <% @suggests_show.each do |product| %>
+        <!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
+          <li class="productList-item productList-panel">
+            <div class="productList-item-pic">
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="productList-item-price">￥<%= product.price %>
+              <% if product.stock > 0 %>
+                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+                <i class="fa fa-shopping-cart"></i>
+              <% end %>
+              <% end %>
+          <!-- 待加入預購功能 -->
+              <% if product.stock <= 0 %>
+                <div class="productList-item-sellout", style="margin-top: -33px; margin-right: 15px;">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                </div>
+              <% end %>
+          <!-- 待加入預購功能 -->
+            </div>
+            <div class="productList-item-name ell">
+              <%= link_to product_path(product) do %>
+                 <%= product.name %>
+              <% end %>
+            </div>
+        <!-- <div class="productList-item-desc"><%= product.description %></div> -->
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
-<%= render :partial => "products/suggests" %>
 <!-- 热卖商品区域结束 -->
