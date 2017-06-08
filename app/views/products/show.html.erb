@@ -121,21 +121,23 @@
       </div>
     </div>
     <!-- 随机推荐 -->
-    <div class="col-md-3 proposal-product">
-       <h4 style="padding-top:10px;">为您推荐的书籍：</h4>
-      <hr>
-      <br>
-      <div class="container" >
-        <% @suggests.each do |product| %>
-          <%= link_to product_path(product) do %>
-          <% if product.photos.present? %>
-            <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+    <div class="row">
+      <div class="col-md-3 proposal-product">
+         <h4 style="padding-top:10px;">为您推荐的书籍：</h4>
+        <hr>
+        <br>
+        <div class="container" >
+          <% @suggests.each do |product| %>
+            <%= link_to product_path(product) do %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
             <% end %>
+            <p><%= product.title %></p>
           <% end %>
-          <p><%= product.title %></p>
-        <% end %>
+        </div>
       </div>
     </div>
     <!-- end 随机推荐 -->
