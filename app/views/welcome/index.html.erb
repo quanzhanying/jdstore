@@ -32,6 +32,27 @@
                </a>
               </div>
             </div>
+<<<<<<< HEAD
+=======
+          </div>
+
+<br>
+<div class="container">
+  <section class="product-items-box">
+    <% @products.each_with_index do |product, index| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+
+        <%= link_to product_path(product) do %> <!-- 商品连结 -->
+          <div class="box">
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+            <% end %>
+          </div> <!-- 商品图片 -->
+          <div class="product-info">
+            <p><%= product.title %></p> <!-- 商品名称 -->
+            <p><%= product.price %></p> <!-- 商品价格 -->
           </div>
         </div>
       </div>
