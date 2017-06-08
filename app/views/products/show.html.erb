@@ -22,7 +22,9 @@
             <% else %>
                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
             <% end %>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
+        <br>
         <div class="col-md-7">
             <div class="dzl-pd-show-description">
                 <h2><%= @product.title %> </h2>
@@ -46,6 +48,7 @@
             </div>
             <br>
             <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>
                     <% if current_user && current_user.is_like?(@product) %>
                         <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, :class => "dzl-pd-show-buy") %>
@@ -80,9 +83,9 @@
             </div>
             <div id="comment1" class="tab-pane fade in active">
                 <br>
-                <h3 class="comments_title">
+                <h6 class="comments_title">
                     <%= @product.comments.count %> Comments
-                </h3>
+                </h6>
                 <hr>
                 <table class="table">
                     <thead>
