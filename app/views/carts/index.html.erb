@@ -23,11 +23,11 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th colspan="2">商品名</th>
-                <th>单价</th>
-                <th>数量</th>
-                <th>小计（元）</th>
-                <th>操作</th>
+                <th colspan="2" class="col-md-4">商品名</th>
+                <th class="col-md-2">单价</th>
+                <th class="col-md-2">数量</th>
+                <th class="col-md-2">小计（元）</th>
+                <th class="col-md-1"></th>
               </tr>
             </thead>
             <tbody>
@@ -36,13 +36,13 @@
                   <td>
                     <%= link_to product_path(cart_item.product) do %>
                       <% if cart_item.product.photos[0].present? %>
-                        <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                        <%= image_tag(cart_item.product.photos[0].avatar.thumb.url, class: "thumbnail", style: "width: 50px;") %>
                       <% else %>
-                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", style: "width: 50px;") %>
                       <% end %>
                     <% end %>
                   </td>
-                  <td>
+                  <td style="text-align: left;">
                     <%= link_to(cart_item.product.name, product_path(cart_item.product)) %>
                   </td>
                   <td>
@@ -60,15 +60,14 @@
               <% end %>
             </tbody>
             </table>
-          <br>
-          <div class="total clearfix">
+          <div class="total clearfix well well-lg", style="text-align: right; padding-right: 30px; margin-bottom: 0px;">
             <span class="pull-right">
-              <span id = "cart-total"><strong>
-                总计: <%= render_cart_total_price(current_cart) %>RMB</strong>
-              </span>
+              <h4 style="color: #edbdb5;"><span id = "cart-total">
+                 总计: ￥ <%= render_cart_total_price(current_cart) %>
+              </span></h4>
             </span>
           </div>
-          <hr>
+          <br>
           <div class="checkout clearfix">
             <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-danger pull-right")%>
           </div>
