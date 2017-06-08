@@ -13,6 +13,10 @@
       </div>
 
       <div class="group">
+        <%= f.input :author %>
+      </div>
+
+      <div class="group">
         <%= f.input :description %>
       </div>
 
@@ -22,6 +26,10 @@
 
       <div class="group">
         <%= f.input :price %>
+      </div>
+
+      <div class="group">
+        <%= f.input :delivery %>
       </div>
 
       <% if @product.photos.present?%>
