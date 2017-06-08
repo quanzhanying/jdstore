@@ -1,0 +1,89 @@
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="product-image">
+     <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+    </div>
+   </div>
+  <div class="col-md-8">
+    <!-- 商品标题 -->
+
+     <h2 class="product-title"><%= @product.title %></h2>
+      <hr>
+
+      <!-- 商品简述 -->
+    <div class="product-description">
+     <p>
+       <%= simple_format(@product.description) %>
+     </p>
+    </div>
+
+    <!-- 商品价格 -->
+   <div class="product-price-bgcolor">
+     <div class="product-price">
+      ￥ <%= @product.price %>
+     </div>
+   </div>
+    <div class="product-quantity">
+     <div> 月销: <%= @product.quantity %> 笔</div>
+    </div>
+
+    <div >
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>评论内容</th>
+          <th>发表用户</th>
+          <th>发表时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.content %></td>
+            <td><%= comment.user.email %></td>
+            <td><%= comment.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= render "comments/form" %>
+</div>
+
+<!-- <div class="row">
+  <div class="col-md-5">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-7">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> 数量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div> -->

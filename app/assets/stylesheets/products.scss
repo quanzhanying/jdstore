@@ -1,0 +1,45 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 商品详情页CSS样式表 */
+
+// 商品标题样式
+.product-title {
+  color: #455A64;
+  font-weight: lighter;
+}
+
+.product-image{
+  box-shadow: 0 29px 32px -20px rgba(0,0,0,0.5);
+    margin: 20px 20px;
+    position: relative;
+    z-index: 2;
+    border-radius: 15px 50px;
+
+}
+
+// 商品简述样式
+.product-description {
+  // background-color: #f5f5f5;
+  color: #455A64;
+  font-size: 2em;
+  margin: 1em auto 1em;
+  line-height: 1.6em;
+
+}
+
+// 商品价格样式
+.product-price-bgcolor {
+  // padding: 0.5em 1em;
+  margin-bottom: 1em;
+}
+.product-price {
+  font-size: 2em;
+  color: #c62828;
+}
+
+.product-quantity{
+  color: #455A64;
+  font-size: 1.5em;
+}

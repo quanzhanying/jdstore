@@ -1,0 +1,150 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
+ //---------Navbar---------
+ .navbar-default {
+     background-color: #212121;
+     border-color: #212121;
+     margin-bottom: 0;
+     border-radius: 0;
+ }
+
+ .navbar-default .navbar-brand {
+     color: #FAFAFA;
+     padding: 10px 15px;
+     line-height: 30px;
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+     color: #FAFAFA;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+     color: #FAFAFA;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+     color: #FF6F00;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+     color: #FF6F00;
+     background-color: #FFE0B2;
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #FFE0B2;
+     color: #212121;
+ }
+
+ //---------Footer---------
+
+ .footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   /* Set the fixed height of the footer here */
+   height: 100px;
+   background-color: #212121;
+
+   p {
+     color: white;
+     margin-top: 30px;
+   }
+ }
+
+ //---------login/sign-up---------
+.facepanel {
+    background-image: url("http://ww2.sinaimg.cn/large/006tNc79gy1ffc2cmh303j31hc0zg4i6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+
+.login-page, .sign-up-page {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    span {
+    display: inline-block;
+    margin-right: 15px;
+    }
+    form {
+    max-width: 480px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px #9daaaf, 0 0 8px #c1c5c1;
+    h2 {
+      margin-bottom: 30px;
+    }
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    transition: 1s;
+    @include box-sizing(border-box);
+    &:focus {
+    box-shadow: 1px 1px #fff;
+    border-color: #red;
+      z-index: 2;
+    }
+    }
+   }
+  }
+}
+
+/*  search-bar */
+
+.products-search-form {   //调搜索框大小和位置
+  margin-top: 9px;
+  padding-left: 20px;
+  width: 290px;
+  .search-bar {
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+    padding-right: 40px;
+
+  .search-bar-input  {
+    min-width: 300px;
+    transition: 0.35s;
+    }
+  }
+}
