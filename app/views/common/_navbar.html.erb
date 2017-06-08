@@ -22,7 +22,7 @@
           </a>
           <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
-              <li><%= link_to(category.name, products_path(category_id: category_id))%></li>  <!--这里的products_path后面括号部分，就是筛选的条件 -->
+              <li><%= link_to(category.name, products_path(category_id: category.id))%></li>  <!--这里的products_path后面括号部分，就是筛选的条件 -->
                 <% end %>
           </ul>
         </li>
