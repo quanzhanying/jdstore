@@ -1,0 +1,73 @@
+<div class="welcome-box">
+  <!--===== 广告轮播 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 轮播按钮 =====-->
+          <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+           </ol>
+          <!--===== 轮播内容 =====-->
+           <div class="carousel-inner">
+              <div class="item active">
+               <a href="javascript:;">
+                <img src="http://i.imgur.com/zwYoT3d.jpg?1">
+                <div class="carousel-caption"></div>
+               </a>
+              </div>
+              <div class="item">
+               <a href="javascript:;">
+                <img src="http://i.imgur.com/ZECaYML.jpg?1">
+                <div class="carousel-caption"></div>
+               </a>
+              </div>
+              <div class="item">
+               <a href="javascript:;">
+                <img src="http://i.imgur.com/85JqWC3.jpg?2">
+                <div class="carousel-caption"></div>
+               </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<br>
+
+<div class="productscolor">
+  <div class="container-fluid">
+	   <div class="row-fluid">
+        <div class="span12">
+          <!-- 商品页大图 -->
+        <div class="productspage">
+            <!--===== 商品列表 =====-->
+            <div class="productpage">
+                <% @products.each_with_index do |product, index| %>
+                  <div class="shangpin col-xs-6 col-md-3">
+                     <div class="card image">
+                          <% if product.image.present? %>
+                            <%= image_tag(product.image.thumb.url, class: "thumbnail", style: "width:100%") %>
+                          <% else %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail", style: "width:100%") %>
+                          <% end %>
+                        <h4 style="text-align:center; color:#212121;"><b><%= product.title %></b></h4>
+                        <p style="text-align:center; color:#212121;">￥<%= product.price %></p>
+                      </div>
+                      <div class="middle">
+                        <%= link_to("查看详情", product_path(product), :class => "btn btn-primary") %>
+                      </div>
+                  </div>
+                <% end %>
+              </div>
+    	   </div>
+      </div>
+    </div>
+  </div>
+</div>

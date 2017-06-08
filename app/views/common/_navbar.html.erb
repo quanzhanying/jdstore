@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/" style="color:white; "> TOYER </a>
+        </div>
+
+        <!-- 加入分类浏览按钮 -->
+        <div class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <% Category.all.each do |category| %>
+              <li>
+                <%= link_to category.name, products_path(category: category.name), class: "link" %>
+              </li>
+              <% end %>
+              <li><%= link_to "全部", products_path, class: "link" %></li>
+            </ul>
+        </li>
+        </div>
+          <!-- 分类浏览按钮结束 -->
+
+        <!-- Search bar -->
+        <div class="nav navbar-nav navbar-left">
+          <%= form_tag search_products_path , :method => :get do %>
+            <div class="input-group" id="search-id" >
+              <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜尋商品......">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%=  link_to  carts_path  do   %>
+                  購物車<i class= "fa fa-shopping-cart"></i>(<%= current_cart.products.count%>)
+                <% end %>
+            </li>
+            <% if !current_user %>
+                 <li><%= link_to("註冊", new_user_registration_path) %> </li>
+                 <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li><% else %>
+                 <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                       Hi!, <%= current_user.name %>
+                       <b class="caret"></b>
+                   </a>
+                   <ul class="dropdown-menu">
+                      <% if current_user.admin? %>
+                        <li>
+                          <%= link_to("賣家選單", admin_products_path ) %>
+                        </li>
+                      <% end %>
+                      <li>
+                         <%=  link_to("個人帳戶", edit_account_user_path(current_user))  %>
+                      </li>
+                      <li>
+                         <%=  link_to("個人訂單", account_orders_path)  %>
+                      </li>
+                      <li>
+                        <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
+                      </li>
+                    </ul>
+                 </li>
+              <% end %>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h2>分類一覽</h2>
+
+<div class="pull-right">
+  <%= link_to("新增分類", new_category_path, :class => 'btn btn-sm btn-default')%>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= @categories.name %></th>
+    </tr>
+  </thead>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= link_to(category.name, category_path(category)) %></td>
+      <td>
+        <%= link_to("修改分類", edit_category_path(category), :class => 'btn btn-sm btn-default') %>
+        <%= link_to('刪除分類', category, method: :delete, data: { confirm: 'Are you sure?'}, :class => 'btn btn-sm btn-default') %>
+      </td>
+    </tr>
+  <% end %>
+</table>
