@@ -40,3 +40,12 @@ $(document).on('mouseover', '.list-image', function () {
   $('.list-image').removeClass('list-image-active') //其他小图移除图片阴影
   $(this).addClass('list-image-active') //当前小图新增图片阴影
 })
+
+
+
+//轮播图
+//------首页轮播--------
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 4000})
+    $(window).trigger('scroll') // 一开始就触发一下滚动事件
+});

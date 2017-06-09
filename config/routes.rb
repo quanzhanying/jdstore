@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   }
 
 
-  root 'products#index'
+  root 'welcome#index'
 end

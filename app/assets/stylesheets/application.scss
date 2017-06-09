@@ -136,19 +136,39 @@ html {
       position: relative;
 }
 
-footer {
-    width: 100%;
 
-    margin-right: -200px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    color: #FFFFFF;
-    background-color: #000000;
-}
 
+
+  //footer样式设置
+  .footer-admin{
+    padding: 150px 0 0 0;
+  }
+  .footer-product{
+    padding: 150px 0 0 0;
+  }
+  .footer-style {
+     background-color: #f5f5f5;
+        width: 100%;
+        margin-right: -200px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+
+
+  }
+  .footer-style h5 {
+
+    margin-top: 2em;
+    font-size: 1.6em;
+  }
+  .footer-style-p {
+
+    text-align: justify;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+  }
 
 
 
@@ -159,9 +179,6 @@ footer {
  .body2 {
    padding: 150px 0 0 0
  }
-
-
-
 
  // 导航栏
 
