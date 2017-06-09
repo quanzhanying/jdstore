@@ -2,9 +2,11 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  #validates :nickname, presence: true   #限制用户名不得为空，这条禁止比较好，不会和display_name冲突
+  validates :nickname, presence: true   #限制用户名不得为空，但是逻辑上会和display_name冲突
+  validates_format_of :nickname, with: /^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]+$/, :multiline => true   #支持汉字、数字、字母、下划线但不能以下划线开头和结尾
 
-  validates_uniqueness_of :nickname    #限制用户名唯一
+
+  #validates_uniqueness_of :nickname    #限制用户名唯一
 
   has_many :orders
 
@@ -39,4 +41,28 @@ class User < ApplicationRecord
       self.email.split("@").first
     end
   end
+
+
+
+  def login=(login)
+    @login = login
+  end
+
+  def login
+    @login || self.nickname || self.email
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(nickname) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      if conditions[:nickname].nil?
+        where(conditions).first
+      else
+        where(nickname: conditions[:nickname]).first
+      end
+    end
+  end
+
 end
