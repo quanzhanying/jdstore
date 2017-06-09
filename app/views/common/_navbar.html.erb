@@ -49,7 +49,7 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
-       <h2>Log in</h2>
+       <h2>登陆</h2>
        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
          <div class="form-inputs">
            <%= f.input :email, required: false, autofocus: true %>
@@ -57,7 +57,7 @@
            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
          </div>
          <div class="form-actions">
-           <%= f.button :submit, "Log in" %>
+           <%= f.button :submit, "登陆" %>
          </div>
        <% end %>
     </div>
@@ -67,7 +67,7 @@
 <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
-      <h2>Sign up</h2>
+      <h2>注册</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
@@ -76,7 +76,7 @@
           <%= f.input :password_confirmation, required: true %>
         </div>
         <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
+            <%= f.button :submit, "注册" %>
         </div>
       <% end %>
     </div>

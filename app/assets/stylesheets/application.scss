@@ -200,7 +200,27 @@
   font-size: 12px;
 }
 
+
+/*footer*/
+.footer {
+  background: #424242;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 13px;
+
+  color: #C2C2C2;
+  span {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+    height: 5px;
+    line-height: 5px;
+  }
+}
+
+/*左侧边栏*/
 .sidebar {
+
   position: fixed;
   left: 0px;
   bottom: 10px;

@@ -1,15 +1,15 @@
-<h2> Product List </h2>
+<h2> 商品列表 </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+  <%= link_to("新增商品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
+      <th>编号</th>
+      <th width="220">商品图片</th>
+      <th>名称</th>
+      <th>价格</th>
+      <th width="100"> 选项 </th>
     </tr>
   </thead>
   <tbody>
@@ -31,10 +31,10 @@
           <%= product.title %>
         </td>
         <td>
-          <%= product.price %>
+        ¥  <%= product.price %> RMB
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to("编辑", edit_admin_product_path(product)) %>
         </td>
       </tr>
     <% end %>
