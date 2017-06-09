@@ -1,31 +1,5 @@
 <%= render :partial => "products/search_bar" %>
 <br>
-<!-- <div>
-    <br>
-    <% if @query_string.blank? %>
-        <div class="search-info-title">
-            亲，没有搜索到商品哦，要不换个关键词试试？
-        </div>
-    <% elsif @products.blank? %>
-        <br>
-        <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
-    <% else %>
-
-
-        <h2 class="search-info-title"> 有关"<%= @query_string %>"的信息 </h2>
-        <div class="search-result">
-            <div class="table table-borderd">
-                <% @products.each do |product| %>
-                    <%= link_to(product.title,product_path(product)) %>
-                    <hr>
-                <% end %>
-            </div>
-        </div>
-        <div class="text-center">
-            <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
-        </div>
-    <% end %>
-</div> -->
 <div class="product-box">
     <div class="container">
         <!--=== 搜索结果，没有符合条件的数据 ===-->
@@ -45,7 +19,6 @@
                             <% if product.image.present? %>
                                 <!-- 顯示圖片 -->
                                 <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
-                                <!-- <%= image_tag(product.image.medium.url, class: "thumbnail") %> -->
                             <% else %>
                                 <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                             <% end %>
