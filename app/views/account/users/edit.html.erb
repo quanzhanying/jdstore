@@ -4,9 +4,9 @@
   <div class="panel-body">
       <%= simple_form_for [:account, @user] do |f| %>
 
-          <%= f.input :name, :label => "姓名" %>
-          <%= f.input :address, :label => "地址" %>
-          <%= f.button :submit, "更新", :class => "button" %>
+          <%= f.input :name, :label => "姓名", autofocus: true%>
+          <%= f.input :address, :label => "地址", autofocus: true %>
+          <%= f.button :submit, "更新", :class => "button"%>
       <% end %>
   </div>
 </div>
