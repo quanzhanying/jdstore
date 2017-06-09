@@ -661,10 +661,22 @@ nav ul {
     width: 100%;
   }
 }
+
+.navright {               /*导航栏右侧区域*/
+  margin-right: 160px;
+}
+
 nav .navright .act  {
   float: left;
+  margin-top: 15px; /*上边距*/
   margin-left: 60px;
   line-height: 1.5;
+  cursor: pointer;
+
+  &.actcart{   /*购物车图标的上边距*/
+    margin-top: 8px;
+  }
+
   & .droplist {
     color: #337ab7;
     transition: color 500ms linear;
@@ -674,7 +686,6 @@ nav .navright .act  {
     }
   }
 }
-
 
 @media only screen and (max-width: 766px) {
   nav ul li {
@@ -697,17 +708,6 @@ nav li a:hover {
   color: #666;
 }
 
-.navright {               /*导航栏右侧区域*/
-  margin-right: 160px;
-}
-
-.act {
-  float: left;
-  margin-top: 15px; /*上边距*/
-  &.actcart{   /*购物车图标的上边距*/
-    margin-top: 8px;
-  }
- }
 
  .btn__badge {
   background: #ff9500;
@@ -1525,16 +1525,32 @@ transition: all 250ms ease-out;
 .backtop {
   width: 55px;
   height: 55px;
-  margin-right: 30px;
-  margin-bottom: 30px;
+  top: 85%;
+  right: 45px;
+  // margin-right: 30px;
+  // margin-bottom: 30px;
   background-color: #BDBDBD;
-  border-radius: 27.5px 27.5px 27.5px 27.5px;
-  text-align: center;
-  padding-top: 10px;
+  border-radius: 27.5px;
+  // text-align: center;
   position: fixed;
-  right: 15px;
-  bottom: 0px;
+  // bottom: 0px;
   opacity: 0.8;
+
+  span {
+  color: #000;
+  font-size: 20px;
+        position: absolute;
+  top: 16px;
+  left: 19px;
+}
+
+  &:hover {
+      background-color: #f0f0f0;
+
+      span{
+        color: #eb5424;
+      }
+  }
 }
 
 /*--social-share-button--*/
