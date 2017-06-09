@@ -19,6 +19,10 @@ production:
 
   qiniu_bucket_domain: oqdv4main.bkt.clouddn.com  # 你的 qiniu bucket domain
 
+  SEND_CLOUD_USER_NAME: "annawang_test_UxMqlK"  # 你的 API_USER
+
+  SEND_CLOUD_USER_KEY: "9MwKZE9JGQvvbGGW"  # 你的 API_KEY
+
 
 
 development:
@@ -29,3 +33,7 @@ development:
   qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
 
   qiniu_bucket_domain: oqdv4main.bkt.clouddn.com  # 你的 qiniu bucket domain
+
+  SEND_CLOUD_USER_NAME: "annawang_test_UxMqlK"  # 你的 API_USER
+
+  SEND_CLOUD_USER_KEY: "9MwKZE9JGQvvbGGW"  # 你的 API_KEY
