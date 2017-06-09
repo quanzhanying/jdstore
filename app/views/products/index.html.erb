@@ -66,42 +66,46 @@
     </div>
   </div>
   <!--产品列表 -->
+
   <div class="container">
   <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-md-3 col-sm-6">
-        <span class="thumbnail">
-          <%= link_to product_path(product) do %>
-            <% if product.photos.present? %>
-              <%= image_tag(product.photos[0].image.thumb.url) %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+    <div class="product-list">
+      <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6">
+          <span class="thumbnail">
+            <%= link_to product_path(product) do %>
+              <% if product.photos.present? %>
+                <%= image_tag(product.photos[0].image.thumb.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+              <% end %>
             <% end %>
-          <% end %>
-            <h4><%= product.title %></h4>
-            <div class="ratings">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-            <hr class="line">
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <p class="price">￥<%= product.price %></p>
+              <h4><%= product.title %></h4>
+              <div class="ratings">
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
               </div>
-              <div class="col-md-6 col-sm-6">
-                <% if product.quantity.present? && product.quantity > 0 %>
-                  <%= link_to("借阅", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
-                <% else %>
-                   Sold out
-                <% end %>
+              <hr class="line">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <p class="price">￥<%= product.price %></p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("借阅", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                  <% else %>
+                     Sold out
+                  <% end %>
+                </div>
               </div>
-            </div>
-        </span>
-      </div>
-    <% end %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+
  </div>
 
 </div>

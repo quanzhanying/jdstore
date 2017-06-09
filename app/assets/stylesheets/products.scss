@@ -26,7 +26,7 @@
 
 .productCatetory-menuList-item {
 	float: left;
-	width: 175px;
+	width: 150px;
 	margin-left:90px;
 
 
@@ -84,9 +84,11 @@
   margin-left: auto;
 }
 
-
-
-/*商品信息*/
+/*product-index product-list */
+.product-list {
+	margin: 25px auto;
+}
+/*product-show 商品信息*/
 
 .productDetail {
 	width: 1200px;
@@ -190,4 +192,3 @@ border: 0;
   border: 1px solid #ddd;
   background: #fff;
 }
-
