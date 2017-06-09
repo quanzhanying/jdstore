@@ -42,40 +42,39 @@
                                         <% end %>
                                     </td>
                                     <td style="width: 30%"> <%= link_to(cart_item.product.title, product_path(cart_item.product))%><br>
-                                        <%= link_to(cart_item.product.description.gsub(/^(.{30,}?).*$/m,'\1......'), product_path(cart_item.product))%></td>
-                                    <td style="width: 15%"> <%= cart_item.product.price %> </td>
-                                    <td style="width: 15%">
-                                        <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-                                            <%= f.select :quantity, 1..cart_item.product.quantity %>
-                                            <%= f.submit "变更", data: {disable_with: "Submiting..."} %>
-                                        <% end %>
-                                    </td>
-                                    <td style="width: 15%"><%= cart_item.product.price * cart_item.quantity %></td>
-                                    <td style="width: 10%">
-                                        <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-                                            <i class="fa fa-trash">删除</i>
-                                        <% end %>
-                                    </td>
-                                </tr>
-                            <% end %>
-                        </tbody>
-                    </table>
-                    <br>
-                    <div class="dzl-carts-pay">
-                        <div class="checkout clearfix">
-                            <span>
-                                <%= link_to("清空购物车",clean_carts_path,
+                                        <td style="width: 15%"> <%= cart_item.product.price %> </td>
+                                        <td style="width: 15%">
+                                            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                                                <%= f.select :quantity, 1..cart_item.product.quantity %>
+                                                <%= f.submit "变更", data: {disable_with: "Submiting..."} %>
+                                            <% end %>
+                                        </td>
+                                        <td style="width: 15%"><%= cart_item.product.price * cart_item.quantity %></td>
+                                        <td style="width: 10%">
+                                            <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                                                <i class="fa fa-trash">删除</i>
+                                            <% end %>
+                                        </td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                        <br>
+                        <div class="dzl-carts-pay">
+                            <div class="checkout clearfix">
+                                <span>
+                                    <%= link_to("清空购物车",clean_carts_path,
                          method: :delete, class: "dzl-btn-clear pull-left" ,
                          data: {confirm: "你确定要清空整个购物车吗？"}) %>
-                            </span>
-                            总价:&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span class="dzl-summary" >¥&nbsp;&nbsp;<%= render_cart_total_price(current_cart) %>
-                            </span>
-                            <span>
-                                <%= link_to("去结算", checkout_carts_path, method: :post, class: "dzl-btn-pay pull-right")%>
-                            </span>
+                                </span>
+                                总价:&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="dzl-summary" >¥&nbsp;&nbsp;<%= render_cart_total_price(current_cart) %>
+                                </span>
+                                <span>
+                                    <%= link_to("去结算", checkout_carts_path, method: :post, class: "dzl-btn-pay pull-right")%>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
