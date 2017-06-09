@@ -55,8 +55,18 @@
              <div class="carousel-caption">
                 <h3>一键下单</h3>
                 <p>点餐也纠结吃什么？没关系！只需一键下单，轻松解决！</p>
+                <div class="take order">
+                   <% if current_user.gender == 'false' && current_user.is_fitting == false %>
+                       <%= link_to("一键下单", products_path(category: "男性健身餐"), class: "btn btn-lg btn-danger pull-middle") %>
+                   <% elsif current_user.gender == 'true' && current_user.is_fitting == false %>
+                       <%= link_to("一键下单", products_path(category: "女性健身餐"), class: "btn btn-lg btn-danger pull-middle") %>
+                   <% elsif  current_user.is_fitting == true %>
+                       <%= link_to("一键下单", products_path(category: "随心"), class: "btn btn-lg btn-danger pull-middle") %>
+                  <% end %>
+
+                </div>
              </div>
-          </a>
+             </a>
            </div>
         </div>
       </div>

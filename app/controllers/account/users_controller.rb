@@ -22,7 +22,7 @@ class Account::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :gender)
+    params.require(:user).permit(:username, :email, :gender, :is_fitting)
   end
 
 end
