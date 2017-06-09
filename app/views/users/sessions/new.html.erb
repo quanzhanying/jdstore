@@ -5,7 +5,7 @@
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
-          <%= f.input :email, :label => 'email', placeholder: '请输入常用的邮箱地址', error: '请输入邮箱地址',  required: true, autofocus: true %>
+          <%= f.input :login, :label => 'email or nickname', placeholder: '请输入邮箱或用户名', error: '邮箱/昵称',  required: true, autofocus: true %>
           <%= f.input :password, placeholder: '请输入6-16位密码', error: '请输入6-16位密码', required: true, input_html: { maxlength: 16 }  %>
           <%= f.input :remember_me, :label => '记住我', as: :boolean if devise_mapping.rememberable? %>
           <%= link_to "忘记密码？", new_password_path(resource_name), class: "pwd" %>
