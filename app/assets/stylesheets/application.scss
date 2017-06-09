@@ -104,3 +104,43 @@ background-color: #3caae8;
       background-color: #3e8e41;
   }
   // dropdown-test end
+.thumbnail-dzl {    // 设置购物车里的商品图片：原图片太大。 设置此参数把原图片变小。
+  width:100px;
+}
+
+.dzl-carts-index {
+  background-color:#fff4e8;   // 将购物车index的背景色参照京东商城的样子设置成米黄色
+}
+
+.dzl-carts-pay {
+  border: 1px solid #f0f0f0;  // 结算栏的外边框
+}
+
+.dzl-btn-pay {   // 购物车的“去结算”按钮
+  background-color: #e64346;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dzl-btn-clear {    // 购物车里的清空购物车按钮
+  background-color: white;
+  color: #8c8c8c;
+  font-size: 14px;
+  padding: 15px 40px;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 700px;  // 把总价往右边推
+}
+
+.dzl-summary {
+  color: #e4393c;
+  font-size: 22px;
+  margin-top: 25px;
+
+}
