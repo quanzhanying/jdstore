@@ -46,7 +46,9 @@ end
 
     # 显示所有图片
     @product_images = @product.product_images.all
-
+    @reviews=@product.reviews.all
+    # @reviews = Review.where(product_id: @product.id).order("created_at DESC")
+   @review = Review.new
 
 
 

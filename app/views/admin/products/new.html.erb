@@ -18,14 +18,29 @@
     <%= f.input :price %>
   </div>
 
+<%= select_tag(:category_id, options_for_select(@categories)) %>
+<hr />
 <!-- 上传多张产品图片 -->
   <div class="group">
    <!-- <%= f.input :image, as: :file %> -->
-   <%= f.label :product_image %><br>
+   <%= f.label :上传产品图片（多张） %><br>
    <%= f.file_field :product_image, :multiple => true, name: "product_images[image][]" %>
   </div>
 
-  <%= select_tag(:category_id, options_for_select(@categories)) %>
+<hr />
+  <div class="group">
+    <%= f.input :particulars %>
+  </div>
+
+
+  <!-- 上传多张产品详情图片 -->
+    <div class="group">
+     <%= f.label :上传详情图片（多张） %><br>
+     <%= f.file_field :product_particular_image, :multiple => true, name: "product_particular_images[image][]" %>
+    </div>
+
+<hr />
+
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-   
+
 <% end %>

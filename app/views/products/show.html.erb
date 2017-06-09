@@ -70,3 +70,85 @@
 
   </div>
 </div>
+
+
+<!-- 商品详情区域 + 推荐展示 -->
+ <div class="container">
+     <!-- 商品详情区域 + 商品评论区域 -->
+     <div class="col-md-12 product-particulars">
+
+
+       <!-- 导航栏 -->
+       <div class="row">
+         <ul class="nav nav-tabs nav-justified">
+           <li class="active">
+             <a href="#tab_default_1" data-toggle="tab">商品详情</a>
+           </li>
+           <li>
+             <a href="#tab_default_2" data-toggle="tab">用户评价</a>
+           </li>
+           <li>
+             <a href="#tab_default_3" data-toggle="tab">为您推荐</a>
+           </li>
+         </ul>
+       </div>
+
+       <div class="tab-content">
+
+         <!-- 商品详情区域 -->
+         <div class="product-particulars-box row tab-pane active" id="tab_default_1">
+          <div style="margin:40px 0;">
+            <%= simple_format(@product.description) %>
+          </div>
+           <% @product.product_particular_images.each do |p| %>
+
+               <%= image_tag(p.image.large.url,class: 'thumbnail') %>
+
+           <% end %>
+
+         </div>
+
+         <!-- 商品评论区域 -->
+         <div class="product-particulars-box row tab-pane" id="tab_default_2">
+           <%= simple_form_for ([@product, @review]) do |f| %>
+             <div class="review-comment-form">
+               <%= f.input :comment, :label => "添加评论" %>
+             </div>
+             <div class="review-comment-button">
+               <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
+             </div>
+           <% end %>
+           <hr>
+           <% if @reviews.blank? %>
+             <p>这个商品还没有人评论，来为ta添加一个吧！</p>
+           <% else %>
+             <% @reviews.each do |review| %>
+               <div class="reviews">
+                 <ul>
+                   <li style="list-style-type:none">
+                     <div class="row">
+                       <div class="col-sm-9 review-user-email"><%= review.user.email %></div>
+                       <div class="col-sm-3"><%= review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
+                     </div>
+                     <div class="review-comment">
+                       <%= review.comment %>
+                     </div>
+                   </li>
+                 </ul>
+                 <div class="review-hr">
+                   <hr>
+                 </div>
+               </div>
+             <% end %>
+           <% end %>
+         </div>
+         <!-- 商品推荐 -->
+         <div class="product-particulars-box row tab-pane" id="tab_default_3">
+           啦啦啦
+        </div>
+
+       </div>
+
+    </div>
+
+ </div>
