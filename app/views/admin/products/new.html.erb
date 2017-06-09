@@ -10,6 +10,11 @@
         <%= f.input :author %>
     </div>
     <div class="group">
+        <h5>商品分类</h5>
+        <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
+        <br>
+    </div>
+    <div class="group">
         <%= f.input :quantity, :label => "商品库存"%>
     </div>
     <div class="group">

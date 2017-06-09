@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :cart_items
 
   namespace :admin do
+
     resources :products do
       member do
          patch :move_up
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    resources :categories
   end
 
   namespace :account do
