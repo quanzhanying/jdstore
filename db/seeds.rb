@@ -27,8 +27,8 @@ Category.create!(name: '手绘石头')
 # Initialize Product
 # product1
 Product.create!(
-title: '秋千',
-description: '儿时的回忆',
+title: '铁环本 手绘本 水彩本 插画本--秋千',
+description: '封面封底为左佐的原创插画作品；超厚特种纸--桑当斯内页，表面中纹，纸张可适应多种画材，水彩表现出色；活页装订，任意一页均可拆卸。',
 quantity: '1',
 price: '160',
 category_id: '1',
@@ -36,8 +36,8 @@ image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI006360.jpg")
 
 # product2
 Product.create!(
-title: '安睡',
-description: '静静的熟睡',
+title: '铁环本 手绘本 活页本 水彩本--酣',
+description: '封面封底为哲-Tititi的原创插画作品；内页更新为200克纯质书画纸，可适应多种画材（见测试图），活页装订，任意一页均可拆卸。',
 quantity: '3',
 price: '150',
 category_id: '1',
@@ -45,9 +45,10 @@ image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI001360.jpg")
 
 # product3
 Product.create!(
-title: '骏马',
-description: '美女与骏马',
-quantity: '2', price: '150',category_id: '1',
+title: '源系列 手绘本 水彩本 涂鸦本 速写本- 马',
+description: '足足196页精选优质纸张，适应多种画材(见下方测试图) 。 锁线胶装，书脊以网布固定，可180度打开。一起画画吧，记录灵感，好好珍藏。',
+quantity: '2', price: '150',
+category_id: '1',
 image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI002360.jpg"))
 
 # product4
@@ -60,24 +61,24 @@ image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003360.jpg")
 
 # product5
 Product.create!(
-  title: '花香',
-  description: '沉浸在花香中',
+  title: '源系列 手绘本 水彩本 涂鸦本 速写本- 花香',
+  description: '足足196页精选优质纸张，适应多种画材(见下方测试图) 。 锁线胶装，书脊以网布固定，可180度打开。一起画画吧，记录灵感，好好珍藏。',
   quantity: '1',
   price: '160',category_id: '1',
   image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI004360.jpg"))
 
 # product6
   Product.create!(
-  title: '作画',
-  description: '大自然中尽情作画',
+  title: '源系列 手绘本 水彩本 涂鸦本 速写本- 画',
+  description: '足足196页精选优质纸张，适应多种画材(见下方测试图) 。 锁线胶装，书脊以网布固定，可180度打开。一起画画吧，记录灵感，好好珍藏。',
   quantity: '2',
   price: '260',category_id: '1',
   image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI005360.jpg"))
 
 # product7
 Product.create!(
-title: "梦中甘露",
-description: "哲-Tititi作 品，Posted in 作品集, 张王哲。",
+title: "铁环本  手绘本 活页本 水彩本--境",
+description: "封面封底为哲-Tititi的原创插画作品；内页更新为200克纯质书画纸，可适应多种画材（见测试图），活页装订，任意一页均可拆卸。",
 author: "哲-Tititi",
 price: "480",
 quantity: "1",category_id: '1',
@@ -85,8 +86,8 @@ image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI003.jpg"))
 
 # product8
   Product.create!(
-  title: '狐狸',
-  description: '与兔子在森林中嬉戏',
+  title: '铁环本 哲-Tititi作品 手绘本 活页本 水彩本',
+  description: '封面封底为哲-Tititi的原创插画作品；超厚特种纸--桑当斯内页，表面中纹，纸张可适应多种画材，水彩表现出色；活页装订，任意一页均可拆卸。',
   quantity: '1',
   price: '160',category_id: '1',
   image: open("http://twelvemoons.com.cn/wp-content/uploads/2015/12/TI011.jpg"))

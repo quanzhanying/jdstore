@@ -112,6 +112,10 @@ background-color: #3caae8;
   background-color:#fff4e8;   // 将购物车index的背景色参照京东商城的样子设置成米黄色
 }
 
+.table > .dzl-carts-index > tr > td {    // 购物车里的商品，垂直居中
+  vertical-align:middle;
+}
+
 .dzl-carts-pay {
   border: 1px solid #f0f0f0;  // 结算栏的外边框
 }
@@ -138,7 +142,7 @@ background-color: #3caae8;
   margin-right: 700px;  // 把总价往右边推
 }
 
-.dzl-summary {
+.dzl-summary {   // 商品总价
   color: #e4393c;
   font-size: 22px;
   margin-top: 25px;
