@@ -59,7 +59,7 @@
               <% else %>
               <li class="dropdown act">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-smile-o fa-1x"></i>Hi!, <%= current_user.nickname %>
+                      <i class="fa fa-smile-o fa-1x"></i>Hi!, <%= current_user.display_name %>
                       <b class="caret"></b>
                       <ul class="dropdown-menu">
                           <% if current_user.admin? %>
@@ -77,6 +77,10 @@
 
                           <li>
                               <%= link_to(content_tag(:i, '我点赞的币', class: 'fa fa-thumbs-up droplist'), favorites_path) %>
+                          </li>
+
+                          <li>
+                              <%= link_to(content_tag(:i, '编辑个人资料', class: 'fa fa-user droplist'), edit_user_registration_path(current_user)) %>
                           </li>
 
                           <li>
