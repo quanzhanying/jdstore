@@ -67,6 +67,11 @@
     }
   }
 
+  .add-to-cart{
+      margin-top: 50px;
+      // text-align: center;
+    }
+
   .buy_button {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #2c3e50;
@@ -142,11 +147,13 @@ opacity: 0.7;
     position: absolute;
     top: 20px;
     left: 2em;
-
+   a:hover{
+     text-decoration:none;
+   }
   }
   .fa:hover{
     background-color: none;
-    color: none;
+    color: rgba(255,0,0,0.4)!important;
   }
 
 
@@ -156,4 +163,55 @@ opacity: 0.7;
   text-align: left;
   line-height: 14px;
   min-height: 55px;
+}
+
+.add-to-fav{
+  float:left;
+  a:hover {
+    background-color: #fff ;
+
+    text-decoration: none;
+  }
+  .fa:hover {
+    color: rgba(255,0,0,0.4) !important;
+  }
+}
+
+.quantity-box {
+    clear: left;
+    height: 20px;
+    padding: 25px 0 15px 0;
+
+    a:hover {
+      background-color: #fff ;
+      color: #eb5424;
+      text-decoration: none;
+    }
+
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+    outline: none;
+  }
+
+  .quantity-input:focus {
+    border: 1px solid #000;
+  }
+
+  .quantity-actions {
+    padding: 2.5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+
+
+  }
+
+  .quantity-actions:hover {
+    border: 1px solid #eb5424;
+  }
+
+
+
 }

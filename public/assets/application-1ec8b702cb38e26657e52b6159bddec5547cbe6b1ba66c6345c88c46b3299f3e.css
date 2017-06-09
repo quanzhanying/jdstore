@@ -71,6 +71,10 @@
   font-size: 15px;
 }
 /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.product-detail .add-to-cart {
+  margin-top: 50px;
+}
+/* line 75, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail .buy_button {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #2c3e50;
@@ -83,41 +87,41 @@
   padding: 15px 100px;
 }
 @media screen and (max-width: 1270px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 75, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 80px;
   }
 }
 @media screen and (max-width: 1100px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 75, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 70px;
   }
 }
 @media screen and (max-width: 1020px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 75, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 60px;
   }
 }
 @media screen and (max-width: 940px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 75, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 50px;
   }
 }
 @media screen and (max-width: 860px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 75, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 40px;
   }
 }
-/* line 102, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 106, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail .buy_button:hover {
   background-color: #fff;
   border-color: #eb5424;
@@ -126,7 +130,7 @@
 }
 
 /*===== Product/index 设置 =====*/
-/* line 111, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 115, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-section {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -136,11 +140,11 @@
   padding-top: 50px;
 }
 
-/* line 121, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 125, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content a:hover {
   background-color: white;
 }
-/* line 124, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 128, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content img {
   width: 100%;
   margin: 7.5px auto 7.5px auto;
@@ -150,31 +154,64 @@
   position: relative;
   padding: 35px;
 }
-/* line 135, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 139, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content img:hover {
   opacity: 0.7;
 }
-/* line 139, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 143, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content h2 {
   margin-top: 150px;
 }
-/* line 142, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 146, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content .absolute {
   position: absolute;
   top: 20px;
   left: 2em;
 }
-/* line 148, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 152, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content .fa:hover {
   background-color: none;
   color: none;
 }
 
-/* line 156, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 160, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-info {
   text-align: left;
   line-height: 14px;
   min-height: 55px;
+}
+
+/* line 168, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box {
+  clear: left;
+  height: 20px;
+  padding: 25px 0 15px 0;
+}
+/* line 173, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+  outline: none;
+}
+/* line 181, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-input:focus {
+  border: 1px solid #000;
+}
+/* line 185, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-actions {
+  padding: 2.5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+}
+/* line 192, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-actions:hover {
+  border: 1px solid #eb5424;
+}
+/* line 196, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .left-box {
+  float: left;
 }
 /* line 1, /Users/amznh/BIGKID/app/assets/stylesheets/scaffolds.scss */
 body {
@@ -296,9 +333,6 @@ label {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("//fonts.googleapis.com/css?family=Roboto");
-@import url("//fonts.googleapis.com/css?family=Lato:100");
-@import url("//fonts.googleapis.com/css?family=Exo+2");
 /* line 9, /Users/amznh/.rvm/gems/ruby-2.3.1/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -13411,16 +13445,18 @@ td {
 
 /* line 592, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .tag-line1 {
-  font-family: 'Lato',sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-weight: bolder;
 }
 
 /* line 597, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .tag-line2 {
-  font-family: 'Lato',sans-serif;
+  font-family: 'Exo 2',sans-serif;
+  font-weight: 100;
+  color: #333;
 }
 
-/* line 600, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 603, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .site-name {
   font-family: "Exo 2", sans-serif;
   font-weight: bolder;

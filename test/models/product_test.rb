@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  image       :string
 #  category_id :integer
+#  particulars :text
 #
 
 require 'test_helper'
