@@ -49,7 +49,8 @@ end
     @reviews=@product.reviews.all
     # @reviews = Review.where(product_id: @product.id).order("created_at DESC")
    @review = Review.new
-
+   # 随机推荐 3 个商品
+    @suggests = Product.random3
 
 
   end

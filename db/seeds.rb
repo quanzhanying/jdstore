@@ -35,21 +35,19 @@ end
 
 # Initialize  Categorys
 
-
 if Category.find_by(name: "旅行").nil?
 Category.create!(
-name: "旅行"
-)
+name: "旅行")
 puts "成功建立1个类别：旅行"
 else
   puts "类别：旅行 已经存在"
 end
 
 
+
 if Category.find_by(name: "大孩子").nil?
 Category.create!(
-name: "大孩子"
-)
+name: "大孩子")
 puts "成功建立1个类别：大孩子"
 else
   puts "类别：大孩子 已经存在"
@@ -58,7 +56,6 @@ end
 if Category.find_by(name: "中世纪").nil?
 Category.create!(
 name: "中世纪"
-
 )
 puts "成功建立1个类别：中世纪"
 else
@@ -69,7 +66,6 @@ end
 if Category.find_by(name: "厨具").nil?
 Category.create!(
 name: "厨具"
-
 )
 puts "成功建立1个类别：厨具"
 else
@@ -87,7 +83,9 @@ else
 end
 
 if Category.find_by(name: "木质").nil?
-Category.create!(name: "木质")
+Category.create!(
+name: "木质"
+)
 puts "成功建立1个类别：木质"
 else
   puts "类别：木质 已经存在"
@@ -150,7 +148,6 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81azr%2BI6LPL._SL1500_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/71U3glKmG8L._SL1500_.jpg") }
   ]
-
   )
   puts "成功建立1个商品：B&O PLAY H5 无线蓝牙耳机"
 else
@@ -170,7 +167,13 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/615zUsVzO3L.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81zaKflO0oL.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81KisyCSfwL.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81qRUkJc%2B9L.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71I3h0Vv0WL.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81zaKflO0oL.jpg") }
   ]
+
   )
   puts "成功建立1个商品：皱皱城市地图（巴黎）"
 else
@@ -190,6 +193,10 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81rPRvb1X6L._SL1500_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/91tKrOkE9FL._SL1500_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81zJpQLAfBL._SL1500_.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81PXWFKH%2BOL._SX522_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81XKZKKY32L._SL1500_.jpg")}
   ]
   )
   puts "成功建立1个商品：First Aid急救包"
@@ -212,6 +219,9 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51tOKq6TUNL._SL1001_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/513hmR6GtoL._SL1001_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/31h%2B8L6%2BVmL.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/714wFTvZBXL._SL1001_.jpg") }
   ]
   )
   puts "成功建立1个商品：blink眼罩"
@@ -232,6 +242,11 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81CekYITyEL._SL1500_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/814i4BKAmML._SL1500_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/91-mBWfGJPL._SL1500_.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/91jDsNC1NOL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/91NML4ETvuL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/91xHLUDNnnL._SL1500_.jpg") }
   ]
   )
   puts "成功建立1个商品：竹炭除味包"
@@ -258,8 +273,11 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61Bc-twNN8L._SL1001_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61QlEkgLcNL._SL1001_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61fAlBCjobL._SL1001_.jpg") }
+  ],
+  product_particular_images_attributes: [  { image: open("https://images-na.ssl-images-amazon.com/images/I/61Bc-twNN8L._SL1001_.jpg") }
   ]
-  )
+)
+
   puts "成功建立1个商品：发条金属步行机器人"
 else
   puts "发条金属步行机器人 已经存在"
@@ -300,7 +318,13 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81NeGaP5uaL._SL1500_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81RI-eWnTbL._SL1500_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81z3qlwIW3L._SL1500_.jpg") }
-  ]
+  ],
+  product_particular_images_attributes: [
+    { image: open("http://beyond123.com/images/pa/pa-angle1.jpg") },
+    { image: open("http://beyond123.com/images/pa/pa-angle2.jpg") },
+        { image: open("http://beyond123.com/images/pa/pa-angle-box.jpg") },
+            { image: open("http://beyond123.com/images/pa/pa-angle3.jpg") },
+  ]  { image: open("http://beyond123.com/images/pa/pa-angle4.jpg") }
   )
   puts "成功建立1个商品：百变转角积木"
 else
@@ -342,6 +366,10 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51di-iOO8aL._SL1200_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51BmxjKoZJL._SL1200_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51vm7DK9dxL._SL1200_.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://gounmanned.com/images/product/xmedium_ac56a2b9-867d-4ddb-840d-36f991bb4114.png.pagespeed.ic.F6nrtxChCI.png") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/610Y80gVBYL._SL1200_.jpg") },
   ]
   )
   puts "成功建立1个商品：DJI Inspire2 专业航拍无人机"
@@ -363,7 +391,13 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61XOGLWIGSL._SL1001_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61rrQqp-01L._SL1001_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/71e3NM1WBQL._SL1001_.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61JdcMKxm4L._SL1001_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71lsJT5uydL._SL1001_.jpg") },
+      { image: open("https://images-na.ssl-images-amazon.com/images/I/71hutwOcCVL._SL1001_.jpg") }
   ]
+
   )
   puts "成功建立1个商品：电动积木机器人"
 else
@@ -407,6 +441,11 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/41Q%2B3l88xeL.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51akvnCS%2BzL._SL1000_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/515-02s1ZHL.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/51aWFQ3miYL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81A2VzjFmmL._SL1500_.jpg") },
+      { image: open("https://images-na.ssl-images-amazon.com/images/I/51zzrFBB4WL._SL1000_.jpg") }
   ]
   )
   puts "成功建立1个商品：Eames椅子"
@@ -430,7 +469,11 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61I0WcOPJoL._SL1000_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/517d843EgYL._SL1000_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51BLcCyeLNL._SL1000_.jpg") }
-
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61bkGASdxGL._SL1000_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61PcLU13ioL._SL1000_.jpg") },
+      { image: open("https://images-na.ssl-images-amazon.com/images/I/51EIvZ99kzL._SL1000_.jpg") }
   ]
   )
   puts "成功建立1个商品：KitchenAid 专业级厨师机"
@@ -530,24 +573,3 @@ Product.create!(
 else
   puts "陶土花盆 已经存在"
 end
-
-Product.create!(
- title: "B&O PLAY H5 无线蓝牙耳机",
-  description: "沉浸式音效，无感佩戴，轻松舒适,无线连接，防水防尘，专为旅行外出设计。",
-  price: 1612,
-  quantity: 30,
-  category_id: 1,
-  image: open("https://images-na.ssl-images-amazon.com/images/I/61v8404V-CL._SL1500_.jpg"),
-  product_images_attributes: [
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/61v8404V-CL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/61TjaWuE3FL._SL1500_.jpg")},
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/512MTzLiMnL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/61b3EFuPIqL._SL1500_.jpg") }
-  ],
-  product_particular_images_attributes: [
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/7198UVCpBUL._SL1500_.jpg") },
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/81azr%2BI6LPL._SL1500_.jpg")},
-    { image: open("https://images-na.ssl-images-amazon.com/images/I/71U3glKmG8L._SL1500_.jpg") }
-  ]
-
-  )
