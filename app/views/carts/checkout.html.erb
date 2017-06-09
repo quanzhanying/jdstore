@@ -49,18 +49,18 @@
 
           <legend> 订购人</legend>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_name  %>
+            <%= f.input :billing_name, placehold: '请输入订购人姓名', input_html: {value: current_user.name}, label: "姓名" %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :billing_address  %>
+            <%= f.input :billing_address, placehold: "请输入订购人地址", input_html: {value: current_user.address}, label: "地址" %>
           </div>
 
           <legend> 收货人</legend>
           <div class="form-group col-lg-6">
-           <%= f.input :shipping_name  %>
+           <%= f.input :shipping_name, placehold: "请输入收货人姓名", input_html: {value: current_user.name}, label: "姓名"  %>
           </div>
           <div class="form-group col-lg-6">
-            <%= f.input :shipping_address  %>
+            <%= f.input :shipping_address, placehold: "请输入收货人地址", input_html: {value: current_user.address}, label: "地址"  %>
           </div>
 
         <div class="checkout">

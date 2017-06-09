@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
+    resources :users #用户中心的相关路径
     resources :orders
   end
 
