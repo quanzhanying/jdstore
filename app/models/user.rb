@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  #validates :nickname, presence: true   #限制用户名不得为空，这条禁止比较好，不会和display_name冲突
+  validates :nickname, presence: true   #限制用户名不得为空，但是逻辑上会和display_name冲突
 
   validates_uniqueness_of :nickname    #限制用户名唯一
 
