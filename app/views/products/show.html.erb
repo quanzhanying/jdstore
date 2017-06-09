@@ -18,6 +18,13 @@
     <div> 数量 : <%= @product.quantity %> </div>
     <div class="product-price"> ¥ <%= @product.price %> </div>
     <div class="pull-right">
+      <span>
+    <% if current_user && current_user.is_like?(@product) %>
+      <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+    <% else %>
+    <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+    <% end %>
+  </span>
       <% if @product.quantity.present? && @product.quantity > 0 %>
     <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
     <% else %>
