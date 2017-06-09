@@ -30,4 +30,5 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :products, through: :favorites, source: :product
   has_many :orders
+  has_many :reviews, dependent: :destroy
 end

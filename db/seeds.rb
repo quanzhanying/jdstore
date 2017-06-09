@@ -144,7 +144,13 @@ Product.create!(
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61TjaWuE3FL._SL1500_.jpg")},
     { image: open("https://images-na.ssl-images-amazon.com/images/I/512MTzLiMnL._SL1500_.jpg") },
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61b3EFuPIqL._SL1500_.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/7198UVCpBUL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81azr%2BI6LPL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71U3glKmG8L._SL1500_.jpg") }
   ]
+
   )
   puts "成功建立1个商品：B&O PLAY H5 无线蓝牙耳机"
 else
@@ -524,3 +530,24 @@ Product.create!(
 else
   puts "陶土花盆 已经存在"
 end
+
+Product.create!(
+ title: "B&O PLAY H5 无线蓝牙耳机",
+  description: "沉浸式音效，无感佩戴，轻松舒适,无线连接，防水防尘，专为旅行外出设计。",
+  price: 1612,
+  quantity: 30,
+  category_id: 1,
+  image: open("https://images-na.ssl-images-amazon.com/images/I/61v8404V-CL._SL1500_.jpg"),
+  product_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61v8404V-CL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61TjaWuE3FL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/512MTzLiMnL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/61b3EFuPIqL._SL1500_.jpg") }
+  ],
+  product_particular_images_attributes: [
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/7198UVCpBUL._SL1500_.jpg") },
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/81azr%2BI6LPL._SL1500_.jpg")},
+    { image: open("https://images-na.ssl-images-amazon.com/images/I/71U3glKmG8L._SL1500_.jpg") }
+  ]
+
+  )
