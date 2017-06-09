@@ -27,4 +27,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_images # 可以直接通过Product class上传ProductImage class中的图片，具体解释参见：http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html
   has_many :product_particular_images, dependent: :destroy
   accepts_nested_attributes_for :product_particular_images
+
+  #scope
+    scope :random3, -> { limit(3).order('RANDOM()') }
 end
