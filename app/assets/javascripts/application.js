@@ -45,7 +45,6 @@ $(document).on('mouseover', '.list-image', function () {
 
 
 
-
 /*===== Products#show - 调整购买数量 =====*/
 $(document).on('turbolinks:load', function() {
   /*===== 增加购买数量 =====*/
@@ -80,4 +79,11 @@ $(document).on('turbolinks:load', function() {
     $(this).val(num);
     e.preventDefault();
   });
+
+  
+
+//------首页轮播--------
+$(document).ready(function() {
+    $('#myCarousel').carousel({interval: 4000})
+    $(window).trigger('scroll') // 一开始就触发一下滚动事件
 });
