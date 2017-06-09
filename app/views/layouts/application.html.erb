@@ -1,24 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>JDStore </title>
-        <%= csrf_meta_tags %>
+  <script type="text/javascript" src="https://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application' %>
-    </head>
+  <head>
+    <title>JDStore
+    </title>
+    <%= csrf_meta_tags %>
 
-    <body>
-         <div class="main" style="margin-bottom: 70px;">
-            <div class="container-fluid">
-              <div class="row">
-                <%= render "common/navbar" %>
-                <%= yield %>
-              </div>
-            </div>
-          </div>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <script type="text/javascript">
+    $youziku.load("SiYuan-ExtraLight");
+    $youziku.draw();
+  </script>
 
-        <%= render "common/footer" %>
+  <script>
+    window.intercomSettings = {
+      app_id: "fuqgifyg"
+    };
+  </script>
+  <script>
+    (function () {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+      } else {
+        var d = document;
+        var i = function () {
+          i.c(arguments)
+        };
+        i.q = [];
+        i.c = function (args) {
+          i.q.push(args)
+        };
+        w.Intercom = i;
+        function l() {
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = 'https://widget.intercom.io/widget/fuqgifyg';
+          var x = d.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+        if (w.attachEvent) {
+          w.attachEvent('onload', l);
+        } else {
+          w.addEventListener('load', l, false);
+        }
+      }
+    })()
+  </script>
+  <body>
+    <div class="main" style="margin-bottom: 70px;">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar" %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 
-    </body>
+    <%= render "common/footer" %>
+
+  </body>
 </html>
