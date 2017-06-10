@@ -11,7 +11,8 @@
 // about supported directives.
 //
 
-//= require bootstrap
+//= require bootstrap/dropdown
+//= require bootstrap/alert
 
 //= require jquery
 //= require jquery.turbolinks
