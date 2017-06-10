@@ -33,7 +33,7 @@
       margin-bottom: 0;
       border-radius: 0;
   }
-  
+
   .navbar-default .navbar-brand {
       color: #EF6C00;
       padding: 10px 15px;
@@ -138,9 +138,14 @@
 
   footer {
       color: white;
+      position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
   }
 
   footer .footer-below {
-      padding: 25px 0;
+      padding: 25px 0 ;
       background-color: #233140;
   }

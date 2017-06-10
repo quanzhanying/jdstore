@@ -31,19 +31,6 @@ ActiveRecord::Schema.define(version: 20170603130936) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "groupships", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer  "total",            default: 0
     t.integer  "user_id"
