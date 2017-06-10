@@ -2,7 +2,7 @@
 <% @products.each do |product| %>
   <div class="col-md-3 col-xs-5", style="padding-left: 0px; padding-right: 0px;">
     <li class="productList-item productList-panel">
-      <div class="productList-item-pic">
+      <div class="productList-item-pic", style="position: relative;">
         <%= link_to product_path(product) do %>
           <% if product.photos.present? %>
             <%= image_tag(product.photos[0].avatar.thumb.url) %>
@@ -10,6 +10,16 @@
             <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
           <% end %>
         <% end %>
+
+        <!-- 活動商品標籤 -->
+        <!-- <div class="products-label", style="background-color: #ff9800;">
+          <p>夏轻色</p>
+        </div> -->
+        <!-- 最新商品標籤 -->
+        <!-- <div class="products-label">
+          <p>新到货</p>
+        </div> -->
+
       </div>
       <div class="productList-item-price">￥<%= product.price %>
         <% if product.stock > 0 %>

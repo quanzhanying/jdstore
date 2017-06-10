@@ -130,3 +130,22 @@
 	margin-left: auto;
 }
 // 评论结束
+
+// 商品清單標籤（最新商品＋活動商品）開始
+.products-label {
+  background: #439a46;;
+  color: #ffffff;
+  height: 4em;
+  width: 4em;
+  border-radius: 30px;
+  position: absolute;
+  margin: 10px;
+  z-index: 2;
+  top: -2.6em;
+  left: -2em;
+  p {
+    margin-top: 1.2em;
+    text-align: center;
+  }
+}
+// 商品清單標籤（最新商品＋活動商品）結束
