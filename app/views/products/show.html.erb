@@ -67,14 +67,20 @@
       <% end %>
       <!-- end 商品页调整商品数量 -->
       <br>
-      <span>
-        <% if current_user && current_user.is_like?(@product) %>
-          <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
-        <% else %>
-          <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
-        <% end %>
-      </span>
-
+      <div class="row">
+        <div class="col-md-3">
+          <span>
+            <% if current_user && current_user.is_like?(@product) %>
+              <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+            <% else %>
+              <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+            <% end %>
+          </span>
+        </div>
+        <div class="col-md-9" >
+          <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => @product.photos[0].image.medium.url, desc: @product.description) %>
+        </div>
+      </div>
     </div>
     <!-- end 商品信息 -->
 

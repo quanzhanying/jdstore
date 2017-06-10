@@ -49,8 +49,12 @@ gem 'figaro'
 
 #搜索功能
 gem 'ransack'
-#商品页调整商品数量 
+
+#商品页调整商品数量
 gem 'jquery-turbolinks'
+
+#社群分享
+gem 'social-share-button'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
