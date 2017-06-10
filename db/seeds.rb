@@ -136,6 +136,7 @@ Product.create!(
   price: 1612,
   quantity: 30,
   category_id: 1,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/61v8404V-CL._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61v8404V-CL._SL1500_.jpg") },
@@ -162,6 +163,7 @@ Product.create!(
   price: 66,
   quantity: 700,
   category_id: 1,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/615zUsVzO3L.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/615zUsVzO3L.jpg")},
@@ -188,6 +190,7 @@ Product.create!(
   price: 66,
   quantity: 700,
   category_id: 1,
+  particulars: "",
   image: open("https://images-na.ssl-images-amazon.com/images/I/81rPRvb1X6L._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81rPRvb1X6L._SL1500_.jpg") },
@@ -214,6 +217,7 @@ Product.create!(
   price: 111,
   quantity: 180,
   category_id: 1,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/51tOKq6TUNL._SL1001_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51tOKq6TUNL._SL1001_.jpg") },
@@ -237,6 +241,7 @@ Product.create!(
   price: 69,
   quantity: 340,
   category_id: 1,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/81CekYITyEL._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81CekYITyEL._SL1500_.jpg") },
@@ -266,6 +271,7 @@ Product.create!(
   price: 63,
   quantity: 250,
   category_id: 2,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/51nAg2LMT9L.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51nAg2LMT9L.jpg") },
@@ -312,6 +318,7 @@ Product.create!(
   price: 199,
   quantity: 310,
   category_id: 2,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/715XdM-LeKL._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/715XdM-LeKL._SL1500_.jpg") },
@@ -324,7 +331,7 @@ Product.create!(
     { image: open("http://beyond123.com/images/pa/pa-angle2.jpg") },
         { image: open("http://beyond123.com/images/pa/pa-angle-box.jpg") },
             { image: open("http://beyond123.com/images/pa/pa-angle3.jpg") },
-  ]  { image: open("http://beyond123.com/images/pa/pa-angle4.jpg") }
+  ]
   )
   puts "成功建立1个商品：百变转角积木"
 else
@@ -360,6 +367,7 @@ Product.create!(
   price: 18888,
   quantity: 50,
   category_id: 2,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/51IwGeRZ6xL._SL1200_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51IwGeRZ6xL._SL1200_.jpg") },
@@ -385,6 +393,7 @@ Product.create!(
   price: 99,
   quantity: 200,
   category_id: 2,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/61XOGLWIGSL._SL1001_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61Hbd94vtKL._SL1001_.jpg") },
@@ -413,6 +422,7 @@ Product.create!(
   price: 5000,
   quantity: 40,
   category_id: 3,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/81tl4QP%2BYxL._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/81tl4QP%2BYxL._SL1500_.jpg") },
@@ -435,6 +445,7 @@ Product.create!(
   price: 1690,
   quantity: 340,
   category_id: 3,
+      particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/51VGCi3Sr9L._SL1000_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/51VGCi3Sr9L._SL1000_.jpg") },
@@ -462,6 +473,7 @@ Product.create!(
   price: 6690,
   quantity: 340,
   category_id: 4,
+      particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/61hxThYm8EL._SL1000_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/61hxThYm8EL._SL1000_.jpg") },
@@ -489,6 +501,7 @@ Product.create!(
   price: 6690,
   quantity: 340,
   category_id: 4,
+    particulars: "",
   image: open("https://images-na.ssl-images-amazon.com/images/I/71ZVo80Ho3L._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/71ZVo80Ho3L._SL1500_.jpg") },
@@ -513,6 +526,7 @@ Product.create!(
   price: 6690,
   quantity: 340,
   category_id: 5,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/71LVEs59kQL._SX522_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/71LVEs59kQL._SX522_.jpg") },
@@ -537,6 +551,7 @@ Product.create!(
   price: 6690,
   quantity: 340,
   category_id: 6,
+    particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/616mifjqXNL._SL1000_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/616mifjqXNL._SL1000_.jpg") },
@@ -561,6 +576,7 @@ Product.create!(
   price: 6690,
   quantity: 340,
   category_id: 7,
+      particulars: " ",
   image: open("https://images-na.ssl-images-amazon.com/images/I/A1vdg%2BEm7rL._SL1500_.jpg"),
   product_images_attributes: [
     { image: open("https://images-na.ssl-images-amazon.com/images/I/A1vdg%2BEm7rL._SL1500_.jpg") },
