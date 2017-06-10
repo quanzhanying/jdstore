@@ -12,6 +12,11 @@
   text-decoration: none;
   background-color: #FFFFFF;
 }
+
+/* line 15, /Users/amznh/BIGKID/app/assets/stylesheets/carts.scss */
+.total {
+  font-size: 20px;
+}
 @charset "UTF-8";
 /*===== product show产品详情页面 =====*/
 /* line 10, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
@@ -22,25 +27,27 @@
 /* line 15, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-show .product-image .image-box {
   margin: 0;
+  text-align: center;
 }
-/* line 19, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 20, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-show .product-image .main-image {
   width: 65%;
   margin-bottom: 10px;
   border: none;
+  text-align: center;
 }
-/* line 25, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 27, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-show .product-image .list-image {
   width: 100px;
   border-radius: 50%;
 }
-/* line 33, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 35, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-show .product-image .list-image-active {
   box-shadow: 1.5px 1.5px 1.5px #666;
 }
 
 /*===== 产品信息 =====*/
-/* line 40, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 42, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -50,27 +57,31 @@
   text-align: left;
   margin-top: 40px;
 }
-/* line 51, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 53, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail h2 {
   margin-top: 5px;
   font-size: 24px;
 }
-/* line 56, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 58, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail hr {
   border: 0;
   border-bottom: 1px dashed #aaa;
   margin: 30px 0 30px 0;
 }
-/* line 62, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 64, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail .product-price {
   height: 60px;
   font-size: 24px;
 }
-/* line 66, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 68, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail .product-price .currency_symbol {
   font-size: 15px;
 }
-/* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 73, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.product-detail .add-to-cart {
+  margin-top: 50px;
+}
+/* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail .buy_button {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #2c3e50;
@@ -83,41 +94,41 @@
   padding: 15px 100px;
 }
 @media screen and (max-width: 1270px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 80px;
   }
 }
 @media screen and (max-width: 1100px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 70px;
   }
 }
 @media screen and (max-width: 1020px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 60px;
   }
 }
 @media screen and (max-width: 940px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 50px;
   }
 }
 @media screen and (max-width: 860px) {
-  /* line 71, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+  /* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
   .product-detail .buy_button {
     /*宽度小于等于320,同理*/
     padding: 15px 40px;
   }
 }
-/* line 102, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 109, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-detail .buy_button:hover {
   background-color: #fff;
   border-color: #eb5424;
@@ -126,7 +137,7 @@
 }
 
 /*===== Product/index 设置 =====*/
-/* line 111, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 118, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-section {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -136,11 +147,11 @@
   padding-top: 50px;
 }
 
-/* line 121, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 128, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content a:hover {
   background-color: white;
 }
-/* line 124, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 131, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content img {
   width: 100%;
   margin: 7.5px auto 7.5px auto;
@@ -150,31 +161,159 @@
   position: relative;
   padding: 35px;
 }
-/* line 135, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 142, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content img:hover {
   opacity: 0.7;
 }
-/* line 139, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 146, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content h2 {
   margin-top: 150px;
 }
-/* line 142, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 149, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content .absolute {
   position: absolute;
   top: 20px;
   left: 2em;
 }
-/* line 148, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 153, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.product-content .absolute a:hover {
+  text-decoration: none;
+}
+/* line 157, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-content .fa:hover {
   background-color: none;
-  color: none;
+  color: rgba(255, 0, 0, 0.4) !important;
 }
 
-/* line 156, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+/* line 165, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
 .product-info {
   text-align: left;
   line-height: 14px;
   min-height: 55px;
+}
+
+/* line 171, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.add-to-fav {
+  float: left;
+}
+/* line 173, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.add-to-fav a:hover {
+  background-color: #fff;
+  text-decoration: none;
+}
+/* line 178, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.add-to-fav .fa:hover {
+  color: rgba(255, 0, 0, 0.4) !important;
+}
+
+/* line 183, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box {
+  clear: left;
+  height: 20px;
+  padding: 25px 0 15px 0;
+}
+/* line 188, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box a:hover {
+  background-color: #fff;
+  color: #eb5424;
+  text-decoration: none;
+}
+/* line 194, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+  outline: none;
+}
+/* line 202, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-input:focus {
+  border: 1px solid #000;
+}
+/* line 206, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-actions {
+  padding: 2.5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+}
+/* line 214, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.quantity-box .quantity-actions:hover {
+  border: 1px solid #eb5424;
+}
+
+/* line 222, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.suggested-product-content {
+  margin-top: 50px;
+}
+/* line 224, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.suggested-product-content img {
+  border-style: none;
+  border-radius: 50%;
+}
+/* line 228, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.suggested-product-content img:hover {
+  box-shadow: 1.5px 1.5px 1.5px #666;
+}
+
+/* line 234, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.product-particulars {
+  margin: 2em 0 3em;
+}
+
+/* line 238, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.6em;
+}
+/* line 245, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.product-particulars-box img {
+  max-width: 100%;
+}
+
+/* line 251, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.nav-tabs {
+  margin-left: 0;
+}
+
+/* line 254, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.review-comment-form {
+  text-align: left;
+  padding: 2em 2em;
+}
+
+/* line 258, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.review-comment-button {
+  text-align: left;
+  padding: 0 2em;
+  margin-top: -2em;
+}
+
+/* line 263, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.reviews {
+  text-align: left;
+}
+/* line 265, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.reviews li {
+  list-style: none;
+}
+
+/* line 269, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.review-user-email {
+  color: #999;
+}
+
+/* line 272, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.review-comment {
+  margin: 1em auto;
+}
+
+/* line 275, /Users/amznh/BIGKID/app/assets/stylesheets/products.scss */
+.review-hr {
+  padding: 0 3em;
 }
 /* line 1, /Users/amznh/BIGKID/app/assets/stylesheets/scaffolds.scss */
 body {
@@ -275,6 +414,523 @@ label {
   display: block;
 }
 @charset "UTF-8";
+/* line 11, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.box {
+  margin-top: -15px;
+}
+
+/*  --- 大图高度 和 滚动按钮 ---  */
+/* line 16, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel {
+  position: relative;
+  height: 600px;
+}
+
+/* line 20, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .carousel-inner .item {
+  height: 600px;
+}
+
+/* line 23, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .carousel-indicators > li {
+  width: 5px;
+  height: 5px;
+  margin: 0 2px;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+/* line 30, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .carousel-indicators > li.active {
+  width: 40px;
+  height: 5px;
+  opacity: 0.8;
+}
+
+/*  --- 标题文字设置 ---  */
+/* line 37, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  font-family: "Noto Sans SC", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #666;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* line 53, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.hero h1 {
+  font-size: 70px;
+  font-weight: 600;
+  margin: 10px;
+  padding: 0;
+}
+
+/* line 60, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.hero h3 {
+  letter-spacing: 0.1em;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* line 66, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .carousel-inner .item .hero {
+  opacity: 0;
+  -webkit-transition: 2s all ease-in-out .1s;
+  -moz-transition: 2s all ease-in-out .1s;
+  -ms-transition: 2s all ease-in-out .1s;
+  -o-transition: 2s all ease-in-out .1s;
+  transition: 2s all ease-in-out .1s;
+}
+
+/* line 74, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .carousel-inner .item.active .hero {
+  opacity: 1;
+  -webkit-transition: 2s all ease-in-out .1s;
+  -moz-transition: 2s all ease-in-out .1s;
+  -ms-transition: 2s all ease-in-out .1s;
+  -o-transition: 2s all ease-in-out .1s;
+  transition: 2s all ease-in-out .1s;
+}
+
+/*  --- 遮罩滤镜层 ---  */
+/* line 84, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #080d15;
+  opacity: 0;
+}
+
+/*  --- 按钮 ---  */
+/* line 94, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.btn.btn-lg {
+  padding: 10px 40px;
+}
+
+/* line 95, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+  color: #f5f5f5;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  outline: none;
+  margin: 20px auto;
+}
+
+/*  --- 图片 ---  */
+/* line 106, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 114, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fgf1itg40cj319u0uk0y3.jpg);
+}
+
+/* line 117, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fgf1jl1b5lj31kw11xjwd.jpg);
+}
+
+/* line 120, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ws3.sinaimg.cn/large/006tNbRwgy1fgf1kkrhqhj319u0ukwhw.jpg);
+}
+
+/*  --- 响应式设置 ---  */
+@media screen and (min-width: 980px) {
+  /* line 126, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+  .hero {
+    width: 980px;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* line 129, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+  .hero h1 {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* line 132, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+  .hero h3 {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 768px) {
+  /* line 139, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+  .lg-section-2 .content-2 {
+    max-width: 100%;
+    padding-top: 120px;
+  }
+}
+/* line 145, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-2 {
+  height: 680px;
+}
+
+/* line 148, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-2 .content-2 {
+  padding-top: 90px;
+  margin: 0 auto;
+  width: 690px;
+  text-align: center;
+}
+
+/* line 154, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-2 .content-2 h2 {
+  padding-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+/* line 158, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-2 .content-2 p {
+  line-height: 34px;
+  font-size: 1.1em;
+  color: #666;
+  padding: 0 50px;
+  text-align: center;
+}
+
+/* line 165, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-2 .content-2 img {
+  margin-top: 50px;
+  width: 500px;
+  height: auto;
+}
+
+@media (max-width: 960px) {
+  /* line 171, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+  .lg-section-3 .content-3 .feature-block {
+    width: 250px;
+    margin: 0 auto;
+    float: none;
+  }
+}
+/* line 177, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 .content-3 .feature-block {
+  display: block;
+  border-style: none;
+  border-radius: 0;
+  width: 250px;
+  position: relative;
+  margin: 15px 30px 0;
+  float: left;
+}
+
+/* line 186, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 {
+  background-color: #f2f2f2;
+  height: 640px;
+  width: 100%;
+}
+
+/* line 191, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 .content-3 {
+  display: block;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  padding-top: 70px;
+}
+
+/* line 200, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 .feature-title {
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+}
+
+/* line 204, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 .content-3 h4 {
+  padding: 20px 0 25px;
+  letter-spacing: 3px;
+}
+
+/* line 208, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 .content-3 p {
+  line-height: 25px;
+  font-size: 1.1em;
+  color: #666;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 216, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-3 .content-3 img {
+  margin-top: 50px;
+  width: 250px;
+  height: auto;
+  border-radius: 3px;
+  border: 5px solid #fff;
+}
+
+/* line 223, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 {
+  display: block;
+  width: 100%;
+  height: 500px;
+  min-width: 960px;
+}
+
+/* line 229, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: 450px;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* line 238, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 .client-share-left {
+  padding-left: 30px;
+  float: left;
+  width: 580px;
+}
+
+/* line 243, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 .client-share-right {
+  padding-left: 30px;
+  float: left;
+  width: 380px;
+}
+
+/* line 248, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 .photo img {
+  border: 5px solid #f2f2f2;
+  border-radius: 3px;
+  width: 80px;
+  height: auto;
+}
+
+/* line 254, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 h2 {
+  text-align: center;
+  padding-bottom: 60px;
+  letter-spacing: 3px;
+}
+
+/* line 259, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 .client-share-left p {
+  padding-top: 20px;
+  display: block;
+  clear: both;
+  width: 350px;
+  line-height: 25px;
+  color: #666;
+  font-size: 1.1em;
+}
+
+/* line 268, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 .client-share-right p {
+  padding-top: 20px;
+  display: block;
+  clear: both;
+  line-height: 25px;
+  color: #666;
+  font-size: 1.1em;
+}
+
+/* line 276, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-section-4 .content-4 .name span {
+  font-size: 1.1em;
+  line-height: 22px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* line 282, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+/* line 288, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+#fa-quote {
+  color: #E61C64;
+}
+
+/* line 291, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-action {
+  display: block;
+  background: url("https://ww1.sinaimg.cn/large/006tKfTcly1fd7nyalan1j31kw0w5h5z.jpg");
+  background-image: url("https://ws2.sinaimg.cn/large/006tKfTcgy1fgf8kpy5ubj319u0ukmyo.jpg");
+  background-position-x: center;
+  background-position-y: 80%;
+  background-size: cover;
+  background-position: center 80%;
+  margin: 50px auto 0;
+  width: 100%;
+  min-width: 960px;
+  height: 300px;
+  position: relative;
+}
+
+/* line 305, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.lg-action .action-content {
+  display: block;
+  min-width: 320px;
+  z-index: 91;
+  text-align: center;
+}
+
+/* line 311, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+.action-content {
+  color: #fff;
+  padding: 62px;
+}
+
+/* line 315, /Users/amznh/BIGKID/app/assets/stylesheets/welcome.scss */
+#action-btn {
+  margin-top: 1.3em;
+}
+.social-share-button .ssb-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+}
+
+.social-share-button .ssb-twitter {
+  background-image: url(/assets/social-share-button/twitter-7b64ce0117a85c5d52ed45c27707af61d9b0e0d590284baa287cfe87867b9ae1.svg);
+}
+
+.social-share-button .ssb-facebook {
+  background-image: url(/assets/social-share-button/facebook-03210e1663ee772e93ed5d344cdb36657b68342821aaebe982f2f984915990b3.svg);
+}
+
+.social-share-button .ssb-google_bookmark {
+  background-image: url(/assets/social-share-button/google_bookmark-bb4c960c0421cb7dce602d10e744692bcc1c54f323410f4965d508f96e2255ce.svg);
+}
+
+.social-share-button .ssb-google_plus {
+  background-image: url(/assets/social-share-button/google_plus-50c049fbb29cd3346f1bf9349017b644bcd00a53b56bd156728850f57bd85c0a.svg);
+}
+
+.social-share-button .ssb-weibo {
+  background-image: url(/assets/social-share-button/weibo-a345a6ca554e6f388da9eb35746bb0425cb018c16408ba82852c66d375245d6f.svg);
+}
+
+.social-share-button .ssb-qq {
+  background-image: url(/assets/social-share-button/qq-4dbae8223fc7823f6d73bc7fbe113eb894f4c174ec3ae93103ca382c78a2bf67.svg);
+}
+
+.social-share-button .ssb-delicious {
+  background-image: url(/assets/social-share-button/delicious-0c55f72f821aae5352691f13eb64bf3435573e2169d0720477ed367b2f1ed28e.svg);
+}
+
+.social-share-button .ssb-linkedin {
+  background-image: url(/assets/social-share-button/linkedin-b7fd42895b291003c444a9c2acf867ea813671e0b725a5d7c05dbb13f5c0fdd3.svg);
+}
+
+.social-share-button .ssb-tumblr {
+  background-image: url(/assets/social-share-button/tumblr-330a37f93cce7c27a750188d0bfdbed3a22f566b807e64d21131dcdc94e08ec3.svg);
+}
+
+.social-share-button .ssb-pinterest {
+  background-image: url(/assets/social-share-button/pinterest-86203d156197cce4087fee058b920d275c535df5fd59d8caa83da0ef41d1ec7f.svg);
+}
+
+.social-share-button .ssb-douban {
+  background-image: url(/assets/social-share-button/douban-46298c27e3bc6d59951c0bbc464339a5ba1b44e3b25b571874f1baacd7af2495.svg);
+}
+
+.social-share-button .ssb-wechat {
+  background-image: url(/assets/social-share-button/wechat-d8852cc3396a7a53eba39595d2e9f638c93a34ab1a0f41bae4ff391b63815f56.svg);
+}
+
+.social-share-button .ssb-vkontakte {
+  background-image: url(/assets/social-share-button/vkontakte-0c2b68277fade991d74efcbdb6f7b359a35e65156cbada9625a3fe8f73151c14.svg);
+}
+
+.social-share-button .ssb-odnoklassniki {
+  background-image: url(/assets/social-share-button/odnoklassniki-579bf782bd70fe94748254cac2c8c3dc150cceb0d2a143399e3062246b5ecb39.svg);
+}
+
+.social-share-button .ssb-xing {
+  background-image: url(/assets/social-share-button/xing-0ebccb4042c8c7220e471c4f569df2bf27da227db425525819b6848c86a1603e.svg);
+}
+
+.social-share-button .ssb-email {
+  background-image: url(/assets/social-share-button/email-7067143cbe69d9d8cf25e67fda1a315d133c2b79074a09088bd712cc5c81135d.svg);
+}
+
+.social-share-button .ssb-reddit {
+  background-image: url(/assets/social-share-button/reddit-730429c239b6990b67d0d4aaaeb6e9fe48c62267f889a412e81f5f1066ec625f.svg);
+}
+
+.social-share-button .ssb-hacker_news {
+  background-image: url(/assets/social-share-button/hacker_news-d89b13fec49355a787389a776f2e03a0a38314abf93777b8865f8c5f146eaf8d.svg);
+}
+
+.social-share-button .ssb-telegram {
+  background-image: url(/assets/social-share-button/telegram-a6b5607917f3e3efbcf35c3ed43356b05622fcfc533d2fbf5066621b78c1dbe4.svg);
+}
+
+.ss-wechat-dialog {
+  width: 300px;
+  position: fixed;
+  background: #fff;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  z-index: 11001;
+  font-size: 14px;
+  line-height: 1.2em;
+}
+
+.ss-wechat-dialog .wechat-popup-header {
+  font-weight: bold;
+}
+
+.ss-wechat-dialog .wechat-dialog-qr {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.ss-wechat-dialog .wechat-popup-close {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #999;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.ss-wechat-dialog .wechat-popup-footer {
+  text-align: left;
+  line-height: 22px;
+  color: #666;
+}
+@charset "UTF-8";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -289,6 +945,7 @@ label {
  *
 
 
+
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -296,9 +953,6 @@ label {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://fonts.googleapis.com/css?family=Lato:100");
-@import url("https://fonts.googleapis.com/css?family=Exo+2");
 /* line 9, /Users/amznh/.rvm/gems/ruby-2.3.1/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -12839,7 +13493,7 @@ button.close {
   clip: auto;
 }
 
-/* line 29, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 31, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -12852,14 +13506,14 @@ button.close {
   font-family: roboto;
 }
 
-/* line 42, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 44, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
 }
 
-/* line 48, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 50, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container input[type=submit] {
   width: 100%;
   display: block;
@@ -12867,7 +13521,7 @@ button.close {
   position: relative;
 }
 
-/* line 55, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 57, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container input[type=text], input[type=password] {
   height: 44px;
   font-size: 16px;
@@ -12883,7 +13537,7 @@ button.close {
   -moz-box-sizing: border-box;
 }
 
-/* line 70, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 72, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container input[type=text]:hover, input[type=password]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
@@ -12892,7 +13546,7 @@ button.close {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 78, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 80, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal {
   text-align: center;
   font-size: 14px;
@@ -12905,7 +13559,7 @@ button.close {
     user-select: none; */
 }
 
-/* line 90, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 92, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
@@ -12918,7 +13572,7 @@ button.close {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
-/* line 102, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 104, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
@@ -12927,7 +13581,7 @@ button.close {
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
-/* line 110, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 112, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .loginmodal-container a {
   text-decoration: none;
   color: #666;
@@ -12938,18 +13592,20 @@ button.close {
   transition: opacity ease 0.5s;
 }
 
-/* line 120, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 122, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .login-help {
   font-size: 12px;
 }
 
-/* line 127, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 129, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Noto Sans SC', sans-serif;
+  color: #666;
 }
 
-/* line 132, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 136, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 html {
   padding-bottom: 150px;
   min-height: 100%;
@@ -12958,31 +13614,52 @@ html {
   position: relative;
 }
 
-/* line 140, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
-footer {
+/* line 148, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.footer-admin {
+  padding: 150px 0 0 0;
+}
+
+/* line 151, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.footer-product {
+  padding: 150px 0 0 0;
+}
+
+/* line 154, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.footer-style {
+  background-color: #f5f5f5;
   width: 100%;
   margin-right: -200px;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
-  color: #FFFFFF;
-  background-color: #000000;
 }
 
-/* line 160, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 166, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.footer-style h5 {
+  margin-top: 2em;
+  font-size: 1.6em;
+}
+
+/* line 171, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+.footer-style-p {
+  text-align: justify;
+  line-height: 2em;
+  letter-spacing: 0.1em;
+}
+
+/* line 184, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .body2 {
   padding: 150px 0 0 0;
 }
 
-/* line 172, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 193, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-default {
   background-color: #232f3e;
   color: #FFFFFF;
 }
 
-/* line 178, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 199, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-brand a {
   color: #FFFFFF;
   font-size: 150%;
@@ -12990,18 +13667,18 @@ footer {
   background-color: #232f3e;
 }
 
-/* line 185, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 206, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-brand a:hover {
   color: #778899;
 }
 
-/* line 190, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 211, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar-listItem a {
   color: #FFFFFF;
   background-color: #232f3e;
 }
 
-/* line 201, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 222, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .search {
   float: left;
   /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
@@ -13014,20 +13691,20 @@ footer {
   /*相对定位*/
 }
 
-/* line 209, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 230, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .welcome {
   margin-top: 15px;
   margin-left: 1220px;
 }
 
-/* line 214, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 235, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .list {
   float: left;
   /*你去左边*/
   margin-left: 900px;
 }
 
-/* line 220, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 241, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .find {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -13035,19 +13712,19 @@ footer {
   /*右边加点空间，不然太挤啦*/
 }
 
-/* line 227, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 248, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .find a {
   color: #FFFFFF;
   background-color: #232f3e;
   text-decoration: none;
 }
 
-/* line 232, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 253, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .find a:hover {
   color: #778899;
 }
 
-/* line 236, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 257, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .favorite {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -13055,19 +13732,19 @@ footer {
   /*右边加点空间，不然太挤啦*/
 }
 
-/* line 243, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 264, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .favorite a {
   color: #FFFFFF;
   background-color: #232f3e;
   text-decoration: none;
 }
 
-/* line 249, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 270, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .favorite a:hover {
   color: #778899;
 }
 
-/* line 256, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 277, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .dropdown {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
@@ -13075,34 +13752,34 @@ footer {
   /*右边加点空间，不然太挤啦*/
 }
 
-/* line 265, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 286, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .a-dropdown a {
   background-color: #232f3e;
 }
 
-/* line 268, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 289, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .dropdown a {
   color: #FFFFFF;
   text-decoration: none;
 }
 
-/* line 274, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 295, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .dropdown a:hover {
   color: #778899;
 }
 
-/* line 279, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 300, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart-wrap {
   float: left;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
 }
 
-/* line 284, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 305, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart {
   float: left;
 }
 
-/* line 288, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 309, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .fa-shopping-cart {
   color: #C81623;
   /*红色图标*/
@@ -13112,7 +13789,7 @@ footer {
   /*右边距*/
 }
 
-/* line 294, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 315, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart a {
   color: #FFFFFF;
   /*白色字体*/
@@ -13121,14 +13798,14 @@ footer {
   /*不要下划线*/
 }
 
-/* line 300, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 321, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .cart a:hover {
   color: #778899;
   /*鼠标一上去的时候，字体变成灰色*/
 }
 
 /*字幕*/
-/* line 306, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 327, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .title {
   text-align: center;
   /*宽度1200px*/
@@ -13138,7 +13815,7 @@ footer {
   /*上边距*/
 }
 
-/* line 311, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 332, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .title-1 {
   font-size: 36px;
   /*设置字体36px*/
@@ -13146,17 +13823,17 @@ footer {
 }
 
 /*菜单*/
-/* line 323, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 344, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .menu {
   width: 100%;
 }
 
-/* line 327, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 348, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .box {
   position: relative;
 }
 
-/* line 331, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 352, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .hue {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.08);
@@ -13168,7 +13845,7 @@ footer {
   border-radius: 50%;
 }
 
-/* line 342, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 363, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .box img {
   width: 100px;
   border-style: none;
@@ -13186,7 +13863,7 @@ footer {
   /*让「IE浏览器」支持这个属性*/
 }
 
-/* line 355, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 376, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .box:hover img {
   transform: scale(1.1);
   /*在30ms内，图片的尺寸从 1倍 放大到 1.1倍*/
@@ -13196,21 +13873,21 @@ footer {
   -ms-transform: scale(1.1);
 }
 
-/* line 366, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 387, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .mune-name {
   padding-left: 30px;
   padding-top: 0px;
   font-size: 12px;
 }
 
-/* line 373, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 394, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .menuList {
   width: 1100px;
   margin: 50px auto;
   height: 5px;
 }
 
-/* line 380, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 401, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .menuList-item {
   float: left;
   padding: 0 10px;
@@ -13218,46 +13895,46 @@ footer {
   line-height: 5px;
 }
 
-/* line 402, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 423, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-price {
   padding-top: 0px;
   font-size: 16px;
   color: #ff5252;
 }
 
-/* line 408, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 429, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-favorite {
   float: right;
   /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
   padding-right: 160px;
 }
 
-/* line 418, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 439, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-favorite a {
   text-decoration: none;
   /*不要下划线*/
 }
 
-/* line 422, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 443, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-favorite a:hover {
   color: #ff5252;
   background-color: #FFFFFF;
 }
 
-/* line 427, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 448, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .p-shopping-cart a:hover {
   background-color: #FFFFFF;
 }
 
 /*商品列表*/
-/* line 437, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 458, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList {
   margin: 20px auto;
   width: 1200px;
   overflow: hidden;
 }
 
-/* line 444, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 465, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-pic {
   width: 200px;
   padding: 10px 10px 20px 20px;
@@ -13277,38 +13954,38 @@ footer {
   /*让「IE浏览器」支持这个属性*/
 }
 
-/* line 459, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 480, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-pic img {
   width: 200px;
 }
 
-/* line 463, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 484, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .productList-item-pic:hover {
   top: -5px;
   /*在400ms内，top的值从 0px 变化为 5px*/
 }
 
 /*===== 表格 ======*/
-/* line 469, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 490, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 table {
   margin-top: 50px;
 }
 
-/* line 472, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 493, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 th {
   vertical-align: middle !important;
   background-color: #444;
   color: white;
 }
 
-/* line 478, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 499, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 td {
   height: px;
   vertical-align: middle !important;
 }
 
 /*===== Navbar  ======*/
-/* line 488, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 509, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default {
   background: rgba(0, 0, 0, 0.3);
   color: #000 !important;
@@ -13317,24 +13994,24 @@ td {
   /* 下拉菜单箭头*/
   /* 搜索 */
 }
-/* line 492, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 513, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default a:hover,
 .navbar.navbar-default a:active,
 .navbar.navbar-default a:focus {
   color: #ffffff !important;
 }
-/* line 498, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 519, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default.show_bgcolor {
   background-color: #02061A;
 }
-/* line 503, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 524, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .logo-box {
   margin-right: 15px;
   font-family: 'Oswald', sans-serif;
   /* Google字型 */
   font-size: 20px;
 }
-/* line 508, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 529, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .logo-box img {
   display: inline-block;
   margin-top: -6px;
@@ -13343,22 +14020,22 @@ td {
   width: 30px;
   height: 30px;
 }
-/* line 521, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 542, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu {
   background-color: #fff;
   min-width: 175px;
 }
-/* line 526, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 547, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu a {
   color: #000;
   padding: 8px 17px;
 }
-/* line 531, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 552, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu a:hover {
   background-color: #f0f0f0;
   color: #eb5424 !important;
 }
-/* line 538, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 559, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .dropdown-menu:before {
   content: "";
   border-bottom: 10px solid #fff;
@@ -13369,25 +14046,25 @@ td {
   right: 16px;
   z-index: 10;
 }
-/* line 550, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 571, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box {
   margin-top: 7.5px;
 }
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  /* line 550, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+  /* line 571, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
   .navbar.navbar-default .search-box {
     width: 1px;
   }
 }
-/* line 555, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 576, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box input {
   height: 35px;
 }
-/* line 559, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 580, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box input:focus {
   border: 2px solid #ccc;
 }
-/* line 563, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 584, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .navbar.navbar-default .search-box button {
   background-color: #fff;
   border: 1.5px solid #fff;
@@ -13396,12 +14073,12 @@ td {
   color: #333;
 }
 
-/* line 575, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 596, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .category-table img {
   width: 100px;
 }
 
-/* line 580, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 601, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .admin-nav li {
   border-style: dashed;
   border-width: 1px;
@@ -13409,18 +14086,20 @@ td {
   text-align: center;
 }
 
-/* line 592, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 613, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .tag-line1 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bolder;
 }
 
-/* line 597, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 618, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .tag-line2 {
-  font-family: 'Lato',sans-serif;
+  font-family: 'Exo 2',sans-serif;
   font-weight: 100;
+  color: #333;
 }
 
-/* line 602, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
+/* line 624, /Users/amznh/BIGKID/app/assets/stylesheets/application.scss */
 .site-name {
   font-family: "Exo 2", sans-serif;
   font-weight: bolder;
