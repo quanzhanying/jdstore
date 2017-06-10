@@ -37,6 +37,8 @@
              </a>
                 <h3>健人速食</h3> <!-- 标题 -->
                 <p>让你轻松解决健身期间的饮食问题</p> <!-- 内文 -->
+                <br>
+                <p class="lead"> <a class="btn btn-lg btn-danger" href="/products"> 一键解决烦恼</a></p>
              </div>
            </div>
 
@@ -46,6 +48,8 @@
              <div class="carousel-caption">
                 <h3>健康配比</h3>
                 <p>营养学数据做支撑，按性别配置一周健康午餐</p>
+                <br>
+                <p class="lead"> <a class="btn btn-lg btn-danger" href="/products"> 一键解决烦恼</a></p>
              </div>
             </a>
            </div>
@@ -55,6 +59,7 @@
              <div class="carousel-caption">
                 <h3>一键下单</h3>
                 <p>点餐也纠结吃什么？没关系！只需一键下单，轻松解决！</p>
+
                 <div class="take order">
                    <% if current_user.gender == 'false' && current_user.is_fitting == false %>
                        <%= link_to("一键下单", products_path(category: "男性健身餐"), class: "btn btn-lg btn-danger pull-middle") %>
@@ -65,6 +70,7 @@
                   <% end %>
 
                 </div>
+
              </div>
              </a>
            </div>
