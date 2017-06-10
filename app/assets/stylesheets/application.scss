@@ -184,6 +184,13 @@ html {
    padding: 150px 0 0 0
  }
 
+ .search-menu{
+  padding-top: 100px;
+}
+ .product-box{
+   padding-top: 150px;
+ }
+
  // 导航栏
 
 
@@ -217,14 +224,7 @@ html {
 }
 
 
- //搜索
- .search {
-   float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
-   width: 400px;
-   margin-left: 400px; /*右边距*/
-   margin-top: 10px; /*上边距*/
-   position: relative; /*相对定位*/
- }
+
 
 .welcome{
   margin-top: 15px;
@@ -430,10 +430,7 @@ html {
   padding-right: 160px;
 }
 
-//.f-favorite{
-  //float: right; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
-  //padding-left: 5px;
-//}
+
 
 .p-favorite a{
   text-decoration: none; /*不要下划线*/
@@ -449,9 +446,7 @@ html {
 }
 
 
-//body {
-//  background: #F5F5F5;
-//}
+
 
 /*商品列表*/
 .productList {
@@ -589,6 +584,8 @@ td {
     }
   }
 }
+
+
 
 // admin 后台
 .category-table {

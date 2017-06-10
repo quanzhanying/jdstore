@@ -1,11 +1,23 @@
-<div class="product-box">
+
+
+
+
+<div class="title">
+<div class="title-1  <%= 'title-1-active' if !params[:category] %>">
+  <span class="tag-line1">INTERESTING FINDS</span> <span class="tag-line2"> For the kid in you</span>
+</div>
+</div>
+<%= render :partial => "products/menu" %>
+
+
   <div class="container">
-    <%= image_tag("product_bg.jpg", class: "background-image") %>
-    <%= render "products/menu" %>
+
     <!--=== 搜索结果，没有符合条件的数据 ===-->
+
+    <div class="product-box">
     <% if @products.blank?%>
       <div class="search-error">
-        <h2><%= t('search-no-data')%></h2>
+        <h2><%= t('商品正在赶来的路上，请耐心等待😊')%></h2>
       </div>
     <% else %>
     <!--=== 搜索结果，有符合条件的数据 ===-->
