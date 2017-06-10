@@ -116,6 +116,7 @@ quantity: "1",
 category_id: '1',
 image: open("http://twelvemoons.com.cn/wp-content/uploads/2014/04/%E6%89%A7%E5%AD%90%E4%B9%8B%E6%89%8B717.jpg"))
 
+# product10
 Product.create!(
 title: "小风琴折页本",
 description: "封面封底为哲-Tititi的原创插画作品；全特种纸风琴折内页，竖条纹肌理；使用前和使用后都会保持整体平整；内页可以用水彩及多种画材绘画。",
@@ -125,6 +126,7 @@ quantity: "10",
 category_id: '1',
 image: open("https://gd4.alicdn.com/imgextra/i3/1791335855/TB2Y3d1ipXXXXbUXpXXXXXXXXXX_!!1791335855.jpg"))
 
+# product11
 Product.create!(
 title: "孔雀羽毛",
 description: "纯手绘创意油画，从笔法到色彩都是和市场行画有着天蓝之别。厚实的肌理效果，明细的凹凸创意油画的特性",
@@ -134,6 +136,7 @@ quantity: "1",
 category_id: '1',
 image: open("http://upload.art.ifeng.com/2016/0506/thumb_1076_500_1462527261785.jpg"))
 
+# product12
 Product.create!(
 title: "五彩手繪敦煌禮佛圖鐘鼓瓶",
 description: "瓶高：39CM  瓶宽：33CM  敦煌礼佛图钟鼓瓶数位敦煌佛女，手托礼盘，衣带飘飞，神态各异。有的双腿盘坐，托腮冥思、有的静望礼盘，神情专注、有的凝眸四望，顾盼生姿……让观者仿若置身敦煌，沐浴佛音。具有极高的鉴赏价值及艺术收藏价值。",
