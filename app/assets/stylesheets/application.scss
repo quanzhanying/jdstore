@@ -736,3 +736,17 @@ body {
       color: #eb5424;
    }
 }
+
+// 图片抓取功能
+.main-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.list-image {
+    width: 100%;
+}
+
+.list-image-active {
+    box-shadow: 1.5px 1.5px 1.5px #666;
+}
