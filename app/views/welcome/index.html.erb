@@ -40,6 +40,83 @@
 </div>
 <!-- 區塊：圖片輪播 -->
 
+<!-- 區塊：服務介紹＋產品分類 -->
+<!-- Container (The Band Section) -->
+<div id="select">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
+    <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
+	  <li><a href="/products">进入商城首页</a></li>
+		<br />
+		<li class="active">关于Select. <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+  </ul>
+	<div class="container text-center", style="padding: 5em 3em 10em;">
+	  <h3 class="logo">Select.</h3>
+	  <h5><em>家具选</em></h5>
+	  <p>我们深信美好生活由生活用具而生。
+			<br />提供六大品牌家具选品，为您挑选出最美好的家具。
+			<br />
+			<br />Select.，只给您最好的家具。</p>
+	  <br />
+		<br />
+		<hr>
+	  <div class="row">
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选椅</strong></p><br>
+	      <a href="#demo" data-toggle="collapse">
+	        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffu3eoh3xzj31900u0tl8.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+					  <p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "椅子")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选桌</strong></p><br>
+	      <a href="#demo2" data-toggle="collapse">
+	        <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3erjaa8j31900u0qhh.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo2" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "桌子")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选凳</strong></p><br>
+	      <a href="#demo3" data-toggle="collapse">
+	        <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffu3eu1n10j31900u049d.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo3" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "凳子")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选沙发</strong></p><br>
+	      <a href="#demo4" data-toggle="collapse">
+	        <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3ewrc43j31900u0te7.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo4" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "沙发")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+<!-- 區塊：服務介紹＋產品分類 -->
+
 <!-- 热卖商品区域 -->
 <div class="row" id="hot-products">
 	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
@@ -53,7 +130,7 @@
   </div>
 	<div class="row">
 	  <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
-	      <div class="productList-wrap", style="margin: 100px auto;">
+	      <div class="productList-wrap", style="margin: 125px auto;">
 <!-- <div id="myCarousel" class="carousel1 slide" data-ride="carousel"> -->
   <!-- 轮播的第一个页面 -->
   <!-- <div class="carousel-inner"> -->
@@ -212,84 +289,6 @@
   </div>
 
 <!-- 热卖商品区域结束 -->
-
-<!-- 區塊：服務介紹＋產品分類 -->
-<!-- Container (The Band Section) -->
-<div id="select">
-	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
-    <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
-	  <li><a href="/products">进入商城首页</a></li>
-		<br />
-		<li class="active">关于Select. <i class="fa fa-angle-down" aria-hidden="true"></i></li>
-  </ul>
-	<div class="container text-center", style="padding: 5em 3em 10em;">
-	  <h3 class="logo">Select.</h3>
-	  <h5><em>家具选</em></h5>
-	  <p>我们深信美好生活由生活用具而生。
-			<br />提供六大品牌家具选品，为您挑选出最美好的家具。
-			<br />
-			<br />Select.，只给您最好的家具。</p>
-	  <br />
-		<br />
-		<hr>
-	  <div class="row">
-	    <div class="col-sm-3">
-	      <p class="text-center"><strong>选椅</strong></p><br>
-	      <a href="#demo" data-toggle="collapse">
-	        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffu3eoh3xzj31900u0tl8.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
-	      </a>
-	      <div id="demo" class="collapse">
-					<!-- 向cotroller中传递brand_id和category_id -->
-					<% Brand.all.each do |brand| %>
-					  <p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "椅子")) %></p>
-					<% end %>
-					<!-- 向cotroller中传递brand_id和category_id结束 -->
-	      </div>
-	    </div>
-	    <div class="col-sm-3">
-	      <p class="text-center"><strong>选桌</strong></p><br>
-	      <a href="#demo2" data-toggle="collapse">
-	        <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3erjaa8j31900u0qhh.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
-	      </a>
-	      <div id="demo2" class="collapse">
-					<!-- 向cotroller中传递brand_id和category_id -->
-					<% Brand.all.each do |brand| %>
-						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "桌子")) %></p>
-					<% end %>
-					<!-- 向cotroller中传递brand_id和category_id结束 -->
-	      </div>
-	    </div>
-	    <div class="col-sm-3">
-	      <p class="text-center"><strong>选凳</strong></p><br>
-	      <a href="#demo3" data-toggle="collapse">
-	        <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffu3eu1n10j31900u049d.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
-	      </a>
-	      <div id="demo3" class="collapse">
-					<!-- 向cotroller中传递brand_id和category_id -->
-					<% Brand.all.each do |brand| %>
-						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "凳子")) %></p>
-					<% end %>
-					<!-- 向cotroller中传递brand_id和category_id结束 -->
-	      </div>
-	    </div>
-	    <div class="col-sm-3">
-	      <p class="text-center"><strong>选沙发</strong></p><br>
-	      <a href="#demo4" data-toggle="collapse">
-	        <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3ewrc43j31900u0te7.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
-	      </a>
-	      <div id="demo4" class="collapse">
-					<!-- 向cotroller中传递brand_id和category_id -->
-					<% Brand.all.each do |brand| %>
-						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "沙发")) %></p>
-					<% end %>
-					<!-- 向cotroller中传递brand_id和category_id结束 -->
-	      </div>
-	    </div>
-	  </div>
-	</div>
-</div>
-<!-- 區塊：服務介紹＋產品分類 -->
-
 
 <!-- 區塊：品牌 -->
 <div id="brands" style="margin-bottom: -75px;">
