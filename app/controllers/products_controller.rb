@@ -9,11 +9,11 @@ class ProductsController < ApplicationController
     if params[:category].blank? && params[:brand].blank?
       @products = case params[:order]
       when 'by_product_stock'
-        Product.ordinary.order('stock DESC').paginate(:page => params[:page], :per_page => 8)
+        Product.selling.order('stock DESC').paginate(:page => params[:page], :per_page => 8)
       when 'by_product_price'
-        Product.ordinary.order('price DESC').paginate(:page => params[:page], :per_page => 8)
+        Product.selling.order('price DESC').paginate(:page => params[:page], :per_page => 8)
       else
-      @products = Product.ordinary.recent.paginate(:page => params[:page], :per_page => 8)
+      @products = Product.selling.recent.paginate(:page => params[:page], :per_page => 8)
       end
     elsif !params[:category].blank? && params[:brand].blank?
       @category_id = Category.find_by(name: params[:category]).id

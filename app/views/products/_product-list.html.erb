@@ -8,6 +8,21 @@
           <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
         <% end %>
       <% end %>
+
+      <!-- 商品标签（最新商品+活动商品）开始 -->
+      <div>
+        <% if product.new_product == true %>
+          <div class="products-label">
+            <p>新到货</p>
+          </div>
+        <% elsif product.promotive_product == true %>
+          <div class="products-label", style="background-color: #ff9800;">
+            <p>夏轻色</p>
+          </div>
+        <% end %>
+      </div>
+      <!-- 商品标签（最新商品+活动商品）结束 -->
+
     </div>
     <div class="productList-item-price">￥<%= product.price %>
       <% if product.stock > 0 %>
