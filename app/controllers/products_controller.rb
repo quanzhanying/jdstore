@@ -5,8 +5,17 @@ class ProductsController < ApplicationController
   before_action :authenticate_user! , only: [:like, :unlike]
 
   def index
-   @products = Product.all.order("position ASC")
-   @products = @products.paginate(:page => params[:page], :per_page=> 10)
+  #  @products = Product.all.order("position ASC")
+  #  @products = @products.paginate(:page => params[:page], :per_page=> 10)
+
+   if params[:category].blank?
+    @products = Product.all.order("position ASC")
+    @products = @products.paginate(:page => params[:page], :per_page=> 10)
+  else
+    @category_id = Category.find_by(name: params[:category]).id #先找到category_id
+    @products = Product.where(category_id:  @category_id) #再根据category_id找到相对应的产品。
+
+  end
  end
 
  def show

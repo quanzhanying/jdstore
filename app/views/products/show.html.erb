@@ -11,91 +11,93 @@
     <!-- 分类导航 -->
     <div class="row">
         <div class="well">
-            <span><a href="/">首页</a></span> &nbsp;&nbsp; >&nbsp;&nbsp;  <span><%= @product.title %></a>
-        </div>
-    </div>
-    <!-- 商品图片显示，库存，收藏信息 -->
-    <div class="row">
-        <div class="col-md-5">
-            <% if @product.image.present? %>
-                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-            <% else %>
-                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-            <% end %>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-        <br>
-        <div class="col-md-7">
-            <div class="dzl-pd-show-description">
-                <h2><%= @product.title %> </h2>
+            <span><%= link_to("所有商品", products_path) %>  &nbsp;&nbsp; >&nbsp;&nbsp;
+                <%= link_to(@product.category.name, products_path) %> &nbsp;&nbsp; >&nbsp;&nbsp;
+                <span><%= @product.title %></a>
             </div>
-            <br>
-            <div class="dzl-pd-show-description">  <%= @product.description %> </div>
-            <br>
-            <div class="dzl-pd-show-description"> 作者 : <%= @product.author %> </div>
-            <br>
-            <div class="dzl-product-price">售价 <span class="rmb-price"> &nbsp;&nbsp;&nbsp;￥ <%= @product.price %> </span> </div>
-            <br>
-            <div class="dzl-pd-show-description">库存 : &nbsp;&nbsp;&nbsp;<%= @product.quantity %> </div>
-            <br>
-            <br>
-            <div>
+        </div>
+        <!-- 商品图片显示，库存，收藏信息 -->
+        <div class="row">
+            <div class="col-md-5">
+                <% if @product.image.present? %>
+                    <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+                <% else %>
+                    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                <% end %>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>
-                    <% if current_user && current_user.is_like?(@product) %>
-                        <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, :class => "dzl-pd-show-buy") %>
-                    <% else %>
-                        <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, :class => "dzl-pd-show-buy") %>
-                    <% end %>
-                </span>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>
-                    <% if @product.quantity.present? && @product.quantity > 0 %>
-                        <%= link_to("加入购物车",add_to_cart_product_path(@product), :method => :post, :class => "dzl-pd-show-buy") %>
-                    <% else %>
-                        商品已销售一空，无法购买
-                    <% end %>
-                </span>
             </div>
             <br>
-            <div class="dzl-pd-show-description">  ☆ 收藏 （ <%= @product.favorited_users.count %> 人气）</div>
-        </div>
-    </div>
-    <div class="col-md-9 col-md-offset-2 col-xs-12">
-        <h3 class="text-center" style="margin-left:-70px">商品详情</h3>
-        <ul class="nav nav-tabs">
-            <li  class="active"><a data-toggle="tab" href="#details1">资讯</a></li>
-            <li><a data-toggle="tab" href="#comment1">评论</a></li>
-        </ul>
-        <div class="tab-content">
-            <div id="details1" class="tab-pane fade in active">
-                <h2>详情</h2>
-                <p class="description"> <%= @product.description %> </p>
-            </div>
-            <div id="comment1" class="tab-pane fade">
+            <div class="col-md-7">
+                <div class="dzl-pd-show-description">
+                    <h2><%= @product.title %> </h2>
+                </div>
                 <br>
-                <h6 class="comments_title">
-                    <%= @product.comments.count %> Comments
-                </h6>
-                <hr>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>评论内容</th>
-                            <th>发表时间</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% @comments.each do |comment| %>
-                            <tr>
-                                <td><%= comment.content %></td>
-                                <td><%= comment.created_at %></td>
-                            </tr>
+                <div class="dzl-pd-show-description">  <%= @product.description %> </div>
+                <br>
+                <div class="dzl-pd-show-description"> 作者 : <%= @product.author %> </div>
+                <br>
+                <div class="dzl-product-price">售价 <span class="rmb-price"> &nbsp;&nbsp;&nbsp;￥ <%= @product.price %> </span> </div>
+                <br>
+                <div class="dzl-pd-show-description">库存 : &nbsp;&nbsp;&nbsp;<%= @product.quantity %> </div>
+                <br>
+                <br>
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>
+                        <% if current_user && current_user.is_like?(@product) %>
+                            <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, :class => "dzl-pd-show-buy") %>
+                        <% else %>
+                            <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, :class => "dzl-pd-show-buy") %>
                         <% end %>
-                    </tbody>
-                </table>
-                <%= render "comments/form" %>
+                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>
+                        <% if @product.quantity.present? && @product.quantity > 0 %>
+                            <%= link_to("加入购物车",add_to_cart_product_path(@product), :method => :post,
+                         :class => "dzl-pd-show-buy") %>
+                        <% else %>
+                            商品已销售一空，无法购买
+                        <% end %>
+                    </span>
+                </div>
+                <br>
+                <div class="dzl-pd-show-description">  ☆ 收藏 （ <%= @product.favorited_users.count %> 人气）</div>
+            </div>
+        </div>
+        <!-- 商品评论 -->
+        <div class="col-md-9 col-md-offset-2 col-xs-12">
+            <h3 class="text-center" style="margin-left:-70px">商品详情</h3>
+            <ul class="nav nav-tabs">
+                <li  class="active"><a data-toggle="tab" href="#details1">资讯</a></li>
+                <li><a data-toggle="tab" href="#comment1">评论</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="details1" class="tab-pane fade in active">
+                    <h2>详情</h2>
+                    <p class="description"> <%= @product.description %> </p>
+                </div>
+                <div id="comment1" class="tab-pane fade">
+                    <br>
+                    <h6 class="comments_title"> <%= @product.comments.count %> Comments </h6>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>评论内容</th>
+                                <th>发表时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @comments.each do |comment| %>
+                                <tr>
+                                    <td><%= comment.content %></td>
+                                    <td><%= comment.created_at %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                    <%= render "comments/form" %>
+                </div>
             </div>
         </div>
     </div>
-</div>
