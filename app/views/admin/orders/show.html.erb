@@ -1,8 +1,9 @@
+<div class="container orders">
 <div class="row">
    <div class="col-md-12">
 
     <h2> 订单明细 (<%= render_order_paid_state(@order) %>) </h2>
-    
+
     <%= render "admin/orders/state_option", order: @order %>
 
     <table class="table table-bordered">
@@ -68,4 +69,5 @@
     </table>
 
   </div>
+</div>
 </div>
