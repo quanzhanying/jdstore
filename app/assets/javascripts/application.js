@@ -38,3 +38,16 @@ $(document).ready(function () {
 $(document).ready(function() {
     $(".dropdown-toggle").dropdown();
 });
+
+$(window).scroll(function(){
+   if ($(this).scrollTop() > 900){
+      $(".goTop").fadeIn(100);
+   } else {
+      $(".goTop").fadeOut(200);
+   }
+
+      $(".goTop").click(
+         function(){
+            $('html,body').scrollTop(0);
+         });
+})
