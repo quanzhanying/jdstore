@@ -4,17 +4,24 @@
   <head>
     <title>Select.</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="shortcut icon" href="/images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="container-fluid">
+  <body id="mywelcome" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="container-fluid", style="margin-top: 0px;">
       <div class="row">
-        <%= render "common/welcome_navbar" %>
-        <%= render "common/flashes" %>
+        <%= render "common/welcome_navbar"%>
+        <% if flash.any? %>
+          <% user_facing_flashes.each do |key, value| %>
+            <div class="alert alert-dismissable alert-<%= flash_class(key) %>", style="margin-top: 64px;" >
+              <button class="close" data-dismiss="alert">×</button>
+              <%= value %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <%= yield %>
     </div>

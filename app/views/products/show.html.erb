@@ -210,7 +210,7 @@
         <% @suggests_show.each do |product| %>
         <!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
           <li class="productList-item productList-panel">
-            <div class="productList-item-pic">
+            <div class="productList-item-pic", style="position: relative;">
               <%= link_to product_path(product) do %>
                 <% if product.photos.present? %>
                   <%= image_tag(product.photos[0].avatar.thumb.url) %>
