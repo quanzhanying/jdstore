@@ -40,7 +40,10 @@ gem 'aasm'
 gem 'figaro'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
-
+gem 'ransack'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'seo_helper'
 
 
 group :development, :test do
