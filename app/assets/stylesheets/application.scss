@@ -699,6 +699,54 @@ body {
    background-image:url('https://ws3.sinaimg.cn/large/006tNbRwgy1fgaryrew4lj31kw0h5npd.jpg');
      background-repeat: no-repeat;
      background-size: cover;
-     min-height: 250px;
+     min-height: 300px;
      padding: 110px 50px;
+     right: 35px;
+
+   span {
+      color: #000;
+      font-size: 20px;
+         position: absolute;
+         top: 7px;
+         left: 8px;
+         }
    }
+
+
+.goTop{
+   height: 35px;
+   width: 35px;
+   top: 80%;
+   right: 35px;
+   position: fixed;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 1px 1px 3px #666;
+   span {
+      color: #000;
+      font-size: 20px;
+         position: absolute;
+         top: 7px;
+         left: 8px;
+   }
+}
+.goTop:hover {
+   background-color: #f0f0f0;
+   span {
+      color: #eb5424;
+   }
+}
+
+// 图片抓取功能
+.main-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.list-image {
+    width: 100%;
+}
+
+.list-image-active {
+    box-shadow: 1.5px 1.5px 1.5px #666;
+}

@@ -38,3 +38,26 @@ $(document).ready(function () {
 $(document).ready(function() {
     $(".dropdown-toggle").dropdown();
 });
+
+$(window).scroll(function(){
+   if ($(this).scrollTop() > 900){
+      $(".goTop").fadeIn(100);
+   } else {
+      $(".goTop").fadeOut(200);
+   }
+
+      $(".goTop").click(
+         function(){
+            $('html,body').scrollTop(0);
+         });
+})
+// 图片抓取功能
+$(document).on('mouseover', '.list-image', function () {
+  var src_other = $(this).attr('src') //抓取小图图片路径
+  var src_main = src_other.toString().replace("other", "main") //更改小图图片路径
+
+  $('.main-image').attr('src', src_main) //变更大图图片路径
+
+  $('.list-image').removeClass('list-image-active') //其他小图移除图片阴影
+  $(this).addClass('list-image-active') //当前小图新增图片阴影
+})
