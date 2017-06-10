@@ -10,19 +10,45 @@
     <%# else %>
       <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <%# end %>
-    <% if @photos.present? %>
-      <% @photos.each_with_index do |p, index| %>
-        <% if index == 0 %>
-          <%= image_tag p.avatar.medium.url %>
+
+    <!-- <%# if @photos.present? %>
+      <%# @photos.each_with_index do |p, index| %>
+        <%# if index == 0 %>
+          <%#= image_tag p.avatar.medium.url %>
           <div style="letter-spacing: -8px">
-        <% else %>
-          <%= image_tag p.avatar.thumb.url %>
-        <% end %>
-      <% end %>
+        <%# else %>
+          <%#= image_tag p.avatar.thumb.url %>
+        <%# end %>
+      <%# end %>
     </div>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
+    <%# else %>
+      <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
+    <%# end %> -->
+
+    <% if @photos.present? %>
+  <div class="tab-content show-picture">
+    <% @photos.each_with_index do |product,index| %>
+      <% if index < 5 %>
+      <!-- 用each_with_index记录，第一张(index ==0)时，显示大图，其余显示小图(thumb) -->
+        <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>">
+          <!-- 为达到点击轮播效果，采用了rails内建的tap pane 选项卡窗格的写法 -->
+          <%= image_tag(product.avatar.medium.url) %>
+        </div>
+      <% end %>
     <% end %>
+  </div>
+
+  <ul class="show-photo-xsmall-box nav nav-tabs">
+     <% @photos.each_with_index do |product,index| %>
+       <% if index <5 %>
+         <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag(product.avatar.thumb.url) %></a></li>
+       <% end %>
+     <% end %>
+   </ul>
+<% else %>
+  <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
+<% end %>
+
   </div>
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
@@ -42,3 +68,5 @@
     </div>
   </div>
 </div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
