@@ -96,4 +96,28 @@ price: 198,
 quantity: 1000,
 image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/31lUvbTeWkL._AA160_.jpg"))
 
+Product.create!(title: "YAMAHA 雅马哈 ARIUS系列YDP-143R电钢琴88键数码钢琴(含配套琴架 三踏板及琴凳) 深玫瑰木色",
+description: "真实的声音，自然的触感，充满享受的演奏，融入了先进技术的高性价比数码钢琴。
+迷人的木质厢式设计和雅马哈传奇的钢琴制造工艺造就了数码钢琴的优良品质。",
+price: 5699,
+quantity: 1000,
+image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/41Xp5dxOc%2BL._AC_UL160_SR160,160_.jpg"))
+
+Product.create!(title: "梦响MOZA VNK80 演奏独奏小提琴 国际大师监制虎纹纯手工小提琴",
+description: "随琴配置琴盒、琴弓、进口琴弦2套，FOM肩托，电子调音器，弱音器，松香，鹿皮绒琴布——已配齐，无需另购配件。默认安装一个微调，再另配三个微调，需要发货前把四个微调都装上的亲请下单后邮件说明或致电说明，也可收到货后请老师安装微调。",
+price: 2800,
+quantity: 1000,
+image: MiniMagick::Image.open("https://images-cn.ssl-images-amazon.com/images/I/41WdORGah0L._AA160_.jpg"))
+
+# Product.create!(title: "",
+# description: "",
+# price: ,
+# quantity: 1000,
+# image: MiniMagick::Image.open(""))
+#
+# Product.create!(title: "",
+# description: "",
+# price: ,
+# quantity: 1000,
+# image: MiniMagick::Image.open(""))
 #MiniMagick::Image.
