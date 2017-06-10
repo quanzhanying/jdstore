@@ -130,7 +130,7 @@ body {
     margin: 0;
     font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
     color: #666;                                        // 修改全站的字体主色 压低亮度
-
+    overflow-x: hidden; //裁切內容，超出視窗不顯示
 }
 html {
     padding-bottom: 150px;

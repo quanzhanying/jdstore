@@ -13,12 +13,14 @@
   .product-image {
     .image-box {
       margin:  0;
+      text-align: center;
     }
 
     .main-image {
       width: 65%;
       margin-bottom: 10px;
       border: none;
+      text-align: center;
     }
 
     .list-image {
@@ -214,4 +216,63 @@ opacity: 0.7;
 
 
 
+}
+// 推荐商品区域
+.suggested-product-content{
+  margin-top: 50px;
+  img{
+    border-style: none;
+    border-radius: 50%;
+    padding: 20px;
+  
+  }
+  img:hover{
+    box-shadow: 1.5px 1.5px 1.5px #666;
+  }
+}
+
+//商品详情区域
+.product-particulars {
+  margin: 2em 0 3em;
+}
+
+.product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.6em;
+  img {
+    max-width:100%;
+    }
+}
+
+// 商品品论区域样式
+.nav-tabs {
+  margin-left: 0;
+}
+.review-comment-form {
+  text-align: left;
+  padding: 2em 2em;
+}
+.review-comment-button {
+  text-align: left;
+  padding: 0 2em;
+  margin-top: -2em;
+}
+.reviews {
+  text-align: left;
+  li {
+    list-style: none;
+  }
+}
+.review-user-email {
+  color: #999;
+}
+.review-comment {
+  margin: 1em auto;
+}
+.review-hr {
+  padding: 0 3em;
 }

@@ -1,5 +1,3 @@
-
-
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -21,19 +19,19 @@
 //= require_tree .
 
 
-$(window).scroll(function () {
+$(window).scroll(function() {
   /*===== Welcome#index - 首頁導航列變化 =====*/
-	if ($(this).scrollTop() > 325) {
-		$('#navbar').removeClass('show_bgcolor')
-	} else {
-		$('#navbar').addClass('show_bgcolor')
-	}
+  if ($(this).scrollTop() > 325) {
+    $('#navbar').removeClass('show_bgcolor')
+  } else {
+    $('#navbar').addClass('show_bgcolor')
+  }
 
 })
 
 
 /*===== Products#show - 更改显示图片=====*/
-$(document).on('mouseover', '.list-image', function () {
+$(document).on('mouseover', '.list-image', function() {
   var src_other = $(this).attr('src') //抓取小图图片路径
   var src_main = src_other.toString().replace("small_", "large_") //更改小图图片路径
 
@@ -72,18 +70,47 @@ $(document).on('turbolinks:load', function() {
     var numMax = $(this).attr("max"); //取数量上限max=@product.quantity,不能超过库存
     if (num > numMax) { //当输入数量超过库存时，数量变为库存量
       num = numMax;
-    }
-    else if (num < 0) { //当输入数量小于0的时候，数量变为1
+    } else if (num < 0) { //当输入数量小于0的时候，数量变为1
       num = 1;
     }
     $(this).val(num);
     e.preventDefault();
   });
 
-  
+
+
+  /*===== 確認購買數量（不能超出庫存數量） =====*/
+  $(".cart-quantity-input").blur(function(e) {
+    var num = parseInt($(this).val());
+    var numMax = $(this).attr("max");
+    if (num > numMax) {
+      num = numMax;
+    } else if (num < 0) {
+      num = 1
+    }
+    $(this).val(num);
+    e.preventDefault();
+
+    var id = $(this).attr("id");
+    $.ajax({
+      type: "PATCH",
+      url: "/cart_items/" + id,
+      dataType: 'json',
+      data: {
+        quantity: num
+      },
+    });
+
+    window.location.reload();
+  });
+
+  });
+
+
 
 //------首页轮播--------
-$(document).ready(function() {
-    $('#myCarousel').carousel({interval: 4000})
-    $(window).trigger('scroll') // 一开始就触发一下滚动事件
-});
+// $(document).ready(function() {
+//     $('#myCarousel').carousel({interval: 4000})
+//     $(window).trigger('scroll') // 一开始就触发一下滚动事件
+//
+// });
