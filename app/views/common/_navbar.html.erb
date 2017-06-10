@@ -1,5 +1,5 @@
 <!-- 除却landing page页面的其他页面navbar -->
-<nav class="navbar navbar-default" role="navigation" id="Navbar">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="Navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand logo" href="/">Select.</a>
@@ -81,3 +81,15 @@
     </div>
   </div>
 </nav>
+
+<!-- navbar動態效果 -->
+<script>
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 125) {
+        $('#Navbar').addClass('show_bgcolor')
+    } else {
+        $('#Navbar').removeClass('show_bgcolor')
+    }
+})
+</script>
+<!-- navbar動態效果 -->

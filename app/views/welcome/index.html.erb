@@ -42,7 +42,7 @@
 
 <!-- 热卖商品区域 -->
 <div class="row" id="hot-products">
-	<ul class="breadcrumb", style="margin-top: 0px;">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
     <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
 	  <li><a href="/products">进入商城首页</a></li>
 		<br />
@@ -197,14 +197,13 @@
 		  </div>
     </div>
   </div>
-</div>
 
 <!-- 热卖商品区域结束 -->
 
 <!-- 區塊：服務介紹＋產品分類 -->
 <!-- Container (The Band Section) -->
 <div id="select">
-	<ul class="breadcrumb", style="margin-top: 0px;">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
     <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
 	  <li><a href="/products">进入商城首页</a></li>
 		<br />
@@ -281,7 +280,7 @@
 
 <!-- 區塊：品牌 -->
 <div id="brands" style="margin-bottom: -75px;">
-	<ul class="breadcrumb">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
 		<li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
     <li><a href="/products">进入商城首页</a></li>
 		<br />
@@ -333,14 +332,15 @@
   </ul>
 </div>
 <!-- 设置回到顶部和网站链接功能结束 -->
+</div>
 
 <!-- 平滑滑动到指定区域的效果 -->
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  $(".navbar a, footer a[href='#mywelcome']").on('click', function(event) {
 
-  // Make sure this.hash has a value before overriding default behavior
+   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
 
     // Prevent default anchor click behavior
