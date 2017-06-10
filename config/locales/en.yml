@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  # errors:
+  #   messages:
+  #     extension_whitelist_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
