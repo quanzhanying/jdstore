@@ -4711,7 +4711,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 8px 15px;
   width: 230px;
   height: 70px;
-  margin-top: 21px;
+  margin-top: 31px;
   margin-left: 0px;
   margin-bottom: 0px;
   text-align: -webkit-right;
@@ -5052,6 +5052,10 @@ a.thumbnail.active {
   margin-bottom: 23px;
   border: 1px solid transparent;
   border-radius: 0px;
+  z-index: 2;
+  margin-top: 87px;
+  position: absolute;
+  width: 102%;
 }
 .alert h4 {
   margin-top: 0;

@@ -11,10 +11,17 @@
   </head>
 
   <body id="mywelcome" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div class="container-fluid">
+    <div class="container-fluid", style="margin-top: 0px;">
       <div class="row">
-        <%= render "common/welcome_navbar" %>
-        <%= render "common/flashes" %>
+        <%= render "common/welcome_navbar"%>
+        <% if flash.any? %>
+          <% user_facing_flashes.each do |key, value| %>
+            <div class="alert alert-dismissable alert-<%= flash_class(key) %>", style="margin-top: 64px;" >
+              <button class="close" data-dismiss="alert">×</button>
+              <%= value %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <%= yield %>
     </div>
