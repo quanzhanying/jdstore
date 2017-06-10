@@ -92,7 +92,7 @@
             <!-- 搜索-->
             <%= form_tag search_products_path, :method => :get, class: "navbar-form " do %>
             <div class="input-group search-box">
-              <input type="text" class="form-control" name="keyword" placeholder="<%= "请输入商品信息" %>" value="<%= params[:q] %>">
+              <input type="text" class="form-control" name="q" placeholder="<%= "请输入商品信息" %>" value="<%= params[:q] %>">
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
                   <span>
