@@ -49,6 +49,7 @@ gem 'figaro'
 gem 'ransack'
 gem 'will_paginate-bootstrap'
 gem 'seo_helper'
+
 gem 'jquery-turbolinks'
 
 group :development, :test do
