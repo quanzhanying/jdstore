@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
 
   def show
     @suggests = Product.random
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @photos = @product.photos.all
   end
 
