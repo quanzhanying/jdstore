@@ -1,0 +1,25 @@
+
+<div class="row user_setup">
+  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 user_setup_content">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+      <h2><span class="fa fa-user-circle-o"></span> 注册 </h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, :label => false, placeholder: "abc@example.com", error: "请输入您的邮箱", required: true, autofocus: true %>
+          <%= f.input :name, :label => false, placeholder: "用户名", error: "用请输入您的户名", required: true %>
+          <%= f.input :password, :label => false, placeholder: "密码长度6-16位", error: "请输入长度为6-16位的密码", required: true, input_html: { maxlength: 16 } %>
+          <%= f.input :password_confirmation, :label => false, placeholder: "确认密码", error: "密码不相符，请再次输入", required: true, input_html: { maxlength: 16 } %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "注册",class: "button" %>
+        </div>
+      <% end %>
+      <hr />
+        <div class="account">
+          <%= link_to "已经注册过了，请点此登陆", new_session_path(resource_name) %><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

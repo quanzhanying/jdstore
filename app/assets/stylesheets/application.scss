@@ -617,10 +617,142 @@ td {
 .tag-line2{
   font-family: 'Exo 2',sans-serif;
   font-weight: 100;
-  color: #333
+  color: #333;
 }
 
 .site-name{
   font-family: 'Exo 2', sans-serif ;
   font-weight: bolder;
+}
+
+
+// devise User setup
+
+.user_setup{
+  height: 1000px;
+  background: image_url("user_background.png") no-repeat scroll top center/ cover;
+  margin-bottom: -67px;
+  color: #333;
+  a{
+    color: #333;
+  }
+
+  // a:hover{
+  //   background-color: none !important;
+  //   text-decoration: none !important;
+  // }
+}
+
+
+.user_setup_content{
+  background: #fff;
+  margin-top: 135px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 1px 3px 5px #333;
+  border: 5px solid #555;
+  border-radius: 25px;
+  background-color: rgba(255,255,255,0.2);
+
+
+
+  h2{
+    text-align: center;
+  }
+
+  .psw{
+    float: right;
+    margin-top: -33px;
+    position: relative;
+  }
+
+  .account{
+    text-align: center;
+    a:hover{
+      background-color: none !important;
+    }
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #fff;
+      background-color:  rgba(255,0,0,0.6);
+      border-color:  rgba(255,0,0,0.6);
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+      background-color: rgba(255,0,0,0.8);
+      border-color: rgba(255,0,0,0.8);
+      color: #fff;
+    }
+  }
+}
+
+.account-box{
+  background: image_url("user_background.png") no-repeat scroll top center/ cover;
+}
+
+.account-content{
+  background: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 1px 3px 5px #333;
+  border: 5px solid #555;
+  border-radius: 25px;
+
+  background-color: rgba(255,255,255,0.2);
+
+
+  h2{
+    text-align: center;
+  }
+
+  .gender-box {
+    span {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  .phone {
+    width: 65%;
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #fff;
+      background-color:  rgba(255,0,0,0.6);
+      border-color:  rgba(255,0,0,0.6);
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+      background-color: rgba(255,0,0,0.8);
+      border-color: rgba(255,0,0,0.8);
+      color: #fff;
+    }
+
+  }
 }

@@ -1,6 +1,6 @@
 
   <div class="col-md-12">
-    <% if current_page?('/') %>
+    <% if current_page?('/') || current_page?('/users/sign_up')|| current_page?('/users/sign_in')|| current_page?('/users/password/new')   %>
     <div class="navbar navbar-default navbar-fixed-top" role="navigation" >
     <% else %>
       <div class="navbar navbar-default navbar-fixed-top show_bgcolor" role="navigation" id="navbar">
@@ -64,7 +64,7 @@
               <li class='dropdown'>
                 <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
                   <%= "Hi!" %>
-                  <%= current_user.email %>
+                  <%= current_user.name %>
                   <span class='caret'></span>
                 </a>
                 <!-- 下拉菜单 -->
