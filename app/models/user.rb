@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates_format_of :nickname, with: /^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]+$/, :multiline => true   #支持汉字、数字、字母、下划线但不能以下划线开头和结尾
   #可以把上面的正则表达式删掉，也是可以支持中文的
 
-  #validates_uniqueness_of :nickname    #限制用户名唯一
+  validates_uniqueness_of :nickname    #限制用户名唯一
 
   has_many :orders
 
