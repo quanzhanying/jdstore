@@ -220,8 +220,22 @@ video {
   color: #f5eded;
   font-size: 25px;
 }
-
-
+// 无麸是神马图片
+.lemma-picture.text-pic {
+    margin: 0 ;
+    margin-bottom: 0px;
+    position: relative;
+}
+.lemma-picture {
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.lemma-picture.layout-right {
+    margin-left: 0;
+    float: right;
+    clear: right;
+}
 
 
 
