@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">JD Store</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+             <li class="active">
+               <%= link_to("Products", products_path) %>
+             </li>
+
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Found<span class="caret"></span></a>
+
+               <ul class="dropdown-menu" role="menu">
+                 <% Category.all.each do |category| %>
+                  <li>
+                    <%= link_to category.name, products_path(category: category.name), class: "link" %>
+                  </li>
+                <% end %>
+               </ul>
+             </li>
+
+             <li>
+               <div class="nav navbar-nav navbar-left">
+                  <%= form_tag search_products_path , :method => :get do %>
+                  <div class="input-group" id="search-id" >
+                    <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品信息">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li>
+                  <%= link_to carts_path do  %>
+                     购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                  <% end %>
+               </li>
+              <% if !current_user %>
+                  <li><%= link_to("注册", new_user_registration_path) %> </li>
+                  <li><%= link_to("登录", new_user_session_path) %></li>
+              <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Hi!, <%= current_user.display_name %>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li> <%= link_to("商品管理", admin_products_path) %> </li>
+                        <li>
+                          <%= link_to("个人订单列表", account_orders_path ) %>
+                        </li>
+                        <li><%= link_to "个人中心", edit_account_user_path(current_user) %></li>
+                        <li> <%= link_to("退出", destroy_user_session_path, method: :delete) %> </li>
+                    </ul>
+                  </li>
+              <% end %>
+            </ul>
+        </div>
+    </div>
+</nav>
