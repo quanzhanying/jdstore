@@ -14,6 +14,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
      process resize_to_fill: [500,300]
    end
 
+   version :thumbimage do     #用户头像用
+     process resize_to_fit: [100,100]
+   end
+
+   def extension_whitelist    #功能为文件类型白名单，可以选择不用。
+      %w(jpg jpeg gif png)
+   end
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog

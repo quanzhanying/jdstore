@@ -57,6 +57,14 @@
               <li class="act"><%= link_to(content_tag(:i, "注册", class: 'fa fa-user-plus'), new_user_registration_path) %> </li>
               <li class="act"><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
               <% else %>
+              <li>
+                <% if current_user.avatar.present? %>
+                  <%= image_tag(current_user.avatar.thumbimage.url, style: "border-radius:50%; width: 50px; height:50px;", class: "thumbnail") %>
+                <% else %>
+                  <!-- <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %> -->
+                  <img src= "<%= render_user_avatar(current_user, 50) %>">
+                <% end %>
+              </li>
               <li class="dropdown act">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="fa fa-smile-o fa-1x"></i>Hi!, <%= current_user.display_name %>

@@ -42,8 +42,6 @@ class User < ApplicationRecord
     end
   end
 
-
-
   def login=(login)
     @login = login
   end
@@ -64,5 +62,8 @@ class User < ApplicationRecord
       end
     end
   end
+
+  mount_uploader :avatar, AvatarUploader
+
 
 end
