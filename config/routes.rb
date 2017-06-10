@@ -54,6 +54,5 @@ Rails.application.routes.draw do
     :passwords     => "users/passwords",
   }
 
-
   root 'welcome#index'
 end
