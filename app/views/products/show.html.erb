@@ -71,9 +71,9 @@
         <div class="col-md-3">
           <span>
             <% if current_user && current_user.is_like?(@product) %>
-              <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+              <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-danger" ) %>
             <% else %>
-              <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+              <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-danger" ) %>
             <% end %>
           </span>
         </div>
