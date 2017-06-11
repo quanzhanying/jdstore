@@ -4316,7 +4316,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 .navbar-toggle:focus {
   outline: 0;
@@ -4552,7 +4552,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  // background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(16, 24, 70, 0.7);
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {

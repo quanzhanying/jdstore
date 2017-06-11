@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require social-share-button
 //= require social-share-button/wechat
-//= require bootstrap-sprockets
 //= require bootstrap
 //= require_tree .
 
