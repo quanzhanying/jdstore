@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Select. 管理后台</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid", style="margin-top: 87px;">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="nav nav-pills nav-stacked" style="max-width: 300px; margin-top: 31px;">
+            <li class="active"><a href="#">管理后台</a></li>
+            <li><%= link_to("商品", admin_products_path) %></li>
+            <li><%= link_to("订单", admin_orders_path) %></li>
+          </ul>
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>

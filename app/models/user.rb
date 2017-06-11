@@ -1,0 +1,51 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  is_admin               :boolean          default(FALSE)
+#  username               :string
+#  name                   :string
+#  phonenumber            :integer
+#  address                :string
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
+
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  # 我的账户修改栏位限制信息
+  # validates :name, presence: true
+  # validates :username, presence: true
+  # validates :phonenumber, presence: true
+  # validates :address, presence: true
+  # 我的账户修改栏位限制信息结束
+
+  has_many :products
+  has_many :orders
+  # 收藏功能商品开始
+  has_many :favorites
+  has_many :favorite_products, through: :favorites, source: :product
+  # 收藏功能商品结束
+  def admin?
+    is_admin
+  end
+end

@@ -1,0 +1,261 @@
+<ul class="breadcrumb">
+  <li>
+    <a href="/products">全品项商品</a> /
+    <a href="/products?category=<%= @product.category.name %>"><%= @product.category.name %></a>
+  </li>
+  <li>
+    <a href="/products?brand=<%= @product.brand.name %>"><%= @product.brand.name %></a> /
+    <a href="/products?brand=<%= @product.brand.name %>&category=<%= @product.category.name %>"><%= @product.category.name %></a>
+  </li>
+</ul>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-body", style="padding: 45px 0px;">
+
+        <!-- 商品圖片區開始 -->
+        <div class="col-md-5 col-md-offset-1">
+          <!-- 第一张大图显示 -->
+          <!-- <div class="intro-bigPic">
+          <div class="magnifier-preview border" id="preview"></div>
+            <% if @photos.present? %>
+              <a class="magnifier-thumb-wrapper" href="javascript:;">
+                <img
+                  id="thumb"
+                  src="<%= @photos.first.avatar.medium.url %>"
+                  data-large-img-wrapper="preview"
+                  data-large-img-url="<%= @photos.first.avatar.medium.url %>">
+              </a>
+            <% end %>
+          </div> -->
+          <!-- 第一张大图显示结束 -->
+          <!-- 第一张图显示大图，其余的都显示小图 -->
+
+          <!-- 多图显示功能：实现点击小图，大图跟着改变 -->
+           <% if @photos.present? %>
+             <div class="tab-content show-picture">
+               <% @photos.each_with_index do |p,index| %>
+                 <% if index <5 %>
+                  <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>"><%= image_tag(p.avatar.medium.url) %>
+                  </div>
+                 <% end %>
+               <% end %>
+             </div>
+
+             <ul class="show-photo-xsmall-box nav nav-tabs">
+               <% @photos.each_with_index do |p,index| %>
+                 <% if index <5 %>
+                   <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag(p.avatar.small.url)%></a></li>
+                 <% end %>
+               <% end %>
+             </ul>
+          <!-- 多图显示功能结束 -->
+           <% else %>
+               <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+           <% end %>
+        </div>
+        <!-- 商品圖片區結束 -->
+
+        <!-- 商品訊息區開始 -->
+        <div class="col-md-5 col-md-offet-1">
+          <!-- 商品名 -->
+          <div style="height: 169px;">
+            <h3> <%= @product.name %></h3>
+          </div>
+          <!-- 商品庫存 -->
+          <div style="text-align: left;">
+            现有库存量:<%= @product.stock %>
+          </div>
+
+          <hr>
+          <!-- 商品價格 -->
+          <div class="well well-lg", style="text-align: right; padding-right: 30px; margin-bottom: 0px;">
+            <h4 style="color: #edbdb5;"> ￥ <%= @product.price %></h4>
+          </div>
+          <!-- 商品購買集合鈕開始 -->
+          <div class="btn-group btn-group-justified", style="height: 60px;">
+            <!-- 实做立即购买按钮 -->
+            <div class="btn btn-primary btn-lg buy_now", style="background-color: #474c6b;">
+              <%= link_to("立即购买", buy_now_product_path, :method => :post) %>
+            </div>
+            <!-- 实做立即购买按钮结束 -->
+            <% if @product.stock.present? && @product.stock > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :remote => true, class: "btn btn-primary btn-lg") %>
+            <% else %>
+              <%= link_to("已售罄", add_to_cart_product_path(@product), :method => :post,  class: "btn btn-primary btn-lg btn-danger disabled") %>
+            <% end %>
+          </div>
+          <!-- 商品購買集合鈕結束 -->
+
+          <hr>
+          <!-- 商品評論＋點讚＋收藏集合鈕開始 -->
+          <div class="btn-group btn-group-justified", style="height: 45px;">
+            <div class="btn btn-default">
+              <a href="#product_comments"><span class="badge"><%= @product.comments.count %></span>查看评价</a>
+            </div>
+            <!-- 点赞的view部分 -->
+            <div class="btn btn-default">
+              <%= link_to like_product_path(@product), method: :put,  :remote => true  do %>
+                <div id = "product-like-<%= @product.id %>" class="pi-thumbs-up">
+                  <%= render :partial => "like", :locals => { :put => @product } %>
+                </div>
+              <% end %>
+            </div>
+            <!-- 点赞的view部分结束 -->
+            <!-- 收藏商品和取消商品view部分 -->
+            <div class="btn btn-default">
+              <span id="product-favorite-<%= @product.id %>">
+                <%= render :partial => "add_to_favorite", :locals => { :post => @product } %>
+              </span>
+            </div>
+            <!-- 收藏商品和取消商品view部分结束 -->
+          </div>
+          <!-- 商品評論＋點讚＋收藏集合鈕結束 -->
+          <!-- 社群分享鈕開始 -->
+          <div class="social-share-button", style="float: right; margin-top: 5px;">
+            <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo)) %>
+          </div>
+          <!-- 社群分享鈕結束 -->
+        </div>
+        <!-- 商品訊息區結束 -->
+
+      </div>
+    </div>
+    <!-- 品牌簡短介紹開始 -->
+    <div>
+      <% if @product.brand_id == 1 %>
+        <%= render :partial => "products/short_HAY" %>
+      <% elsif @product.brand_id == 2 %>
+        <%= render :partial => "products/short_GUBI" %>
+      <% elsif @product.brand_id == 3 %>
+        <%= render :partial => "products/short_MENU" %>
+      <% elsif @product.brand_id == 4 %>
+        <%= render :partial => "products/short_muuto" %>
+      <% elsif @product.brand_id == 5 %>
+        <%= render :partial => "products/short_STUA" %>
+      <% elsif @product.brand_id == 6%>
+        <%= render :partial => "products/short_ferm_living" %>
+      <% end %>
+    </div>
+    <!-- 品牌簡短介紹結束 -->
+    </div>
+  </div>
+</div>
+
+
+<!-- 商品详情及用户评价 -->
+<div class="row">
+  <div class="col-md-8  col-md-offset-1 col-xs-12", style="float: left;">
+    <div class="productDetail">
+      <ul class="productDetail-tabList">
+        <li class="productDetail-tabList-tab productDetail-tabList-activeTab">
+          商品详情
+        </li>
+        <li class="productDetail-tabList-tab">
+          商品评价<span class="badge"><%= @product.comments.count %></span>
+        </li>
+      </ul>
+      <div class="productDetail-contentWrap">
+        <div class="productDetail-content col-md-9 col-centered" style="display: block; overflow: hidden;">
+          <p><%= simple_format(@product.description) %></p>
+          <!-- 商品详情区域显示多张图片开始 -->
+          <div class="productDetail-introImg">
+            <% if @pictures.present? %>
+              <% @pictures.each_with_index do |p, index| %>
+                  <%= image_tag p.avatar.big.url %>
+              <% end %>
+            <% else %>
+                <!-- <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %> -->
+            <% end %>
+          </div>
+          <!-- 商品详情区域显示多张图片结束 -->
+        </div>
+        <div class="productDetail-content col-md-9 col-centered" style="display: block; overflow: hidden;">
+          <div id="product_comments">
+            <ul class="commentList">
+              <p style="border-top-style:solid; border-bottom-style:dotted; border-width:1.2px; text-align: center;">
+              来自我们顾客的宝贵评价</p>
+              <% @comments.each do |comment| %>
+                <li class="commentList-item">
+                  <p class="content">
+                    <%= simple_format(comment.body)  %>
+                  </p>
+                  <p class="name">
+                    <%= comment.user.email %>
+                  </p>
+                </li>
+              <% end %>
+            </ul>
+            <p style="border-bottom-style:solid; border-width:1.2px; text-align: center; color: #3c3d42">
+              想提供您的心得吗？欢迎留言！
+              <span class="comment-say">
+                <%= link_to("发表评价", new_product_comment_path(@product), :class => "btn btn-primary btn-sm") %>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 商品详情和用户评价结束 -->
+
+  <!-- 热卖商品区域 -->
+  <div class="col-md-2 col-xs-8", style="padding-left: 0px;">
+    <div>
+      <p style="margin-top: 18px; text-align: center; margin-bottom: 15px;"><strong>推荐商品</strong></p>
+    </div>
+    <div class="productList-wrap">
+      <ul class="productList">
+        <% @suggests_show.each do |product| %>
+        <!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
+          <li class="productList-item productList-panel">
+            <div class="productList-item-pic", style="position: relative;">
+              <%= link_to product_path(product) do %>
+                <% if product.photos.present? %>
+                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                <% end %>
+              <% end %>
+              <!-- 商品标签（最新商品+活动商品）开始 -->
+              <div>
+                <% if product.new_product == true %>
+                  <div class="products-label">
+                    <p>新到货</p>
+                  </div>
+                <% elsif product.promotive_product == true %>
+                  <div class="products-label", style="background-color: #ff9800;">
+                    <p>夏轻色</p>
+                  </div>
+                <% end %>
+              </div>
+              <!-- 商品标签（最新商品+活动商品）结束 -->
+            </div>
+            <div class="productList-item-price">￥<%= product.price %>
+              <% if product.stock > 0 %>
+                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+                <i class="fa fa-shopping-cart"></i>
+              <% end %>
+              <% end %>
+          <!-- 待加入預購功能 -->
+              <% if product.stock <= 0 %>
+                <div class="productList-item-sellout", style="margin-top: -33px; margin-right: 15px;">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                </div>
+              <% end %>
+          <!-- 待加入預購功能 -->
+            </div>
+            <div class="productList-item-name ell">
+              <%= link_to product_path(product) do %>
+                 <%= product.name %>
+              <% end %>
+            </div>
+        <!-- <div class="productList-item-desc"><%= product.description %></div> -->
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- 热卖商品区域结束 -->

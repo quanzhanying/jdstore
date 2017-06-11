@@ -1,0 +1,3 @@
+// $("#product-like-<%= @product.id %>").html(<%= @product.get_upvotes.size %>);
+str = "<%=j render :partial => "like", :locals => { :put => @product } %>";
+$("#product-like-<%= @product.id %>").html(str);

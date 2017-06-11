@@ -1,0 +1,766 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require social-share-button
+ *= require_self
+ */
+
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+ @import 'font-awesome';
+
+// 字型
+ @import url('https://fonts.googleapis.com/css?family=Yesteryear');
+ @import url('https://fonts.googleapis.com/css?family=Proza+Libre');
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+// 字型-logo"Select."
+ .logo {
+   font-family: 'Yesteryear', cursive;
+   text-transform: capitalize;
+ }
+
+
+// 通用的css代码
+
+.col-centered {
+  float: none;
+  margin: 0 auto; //置中
+  margin-top: 50px;
+}
+
+body {
+  overflow-x: hidden; //修正welcome页面右边有空白的问题
+}
+.minHeight1000 {
+  min-height: 1000px; //页面最小高度1000px
+}
+a:hover {
+  text-decoration: none;
+}
+
+.footer {
+  box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
+  padding-top: 60px;
+  padding-bottom: 90px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+/*字体颜色和背景颜色*/
+.bg-color {
+  background: #edbdb5;
+}
+
+.png div {
+  position:relative;
+}
+
+// 通用的css代码结束
+
+// landing page页面导航栏
+.navbar-default {
+  background: rgba(237, 189, 181, 0.6);
+
+  &.show_bgcolor {
+    background-color: #edbdb5;
+  }
+}
+
+// .navbar-default {
+//   z-index: 10;
+//   border-bottom-style: none;
+//   transition: background-color .6s;
+//   &.transparent {
+//     background: transparent;
+//     border: none!important;
+//
+//   .navbar-brand {
+//     color: #101846;
+//     font-weight: 700;
+//   }
+//
+//   .navbar-nav > li > a{
+//     color: #101846;
+//     transition: 0.15s linear;
+//     letter-spacing: 4px;
+//   }
+//   .navbar-nav li a:hover{
+//     color: #101846;
+//     border-color: #146eb4;
+//     background-color: #edbdb5;
+//   }
+//  }
+//  &.black {
+//     background-color: #edbdb5;
+//     border-bottom: 1px solid #e0dfdf;
+//     .navbar-nav li a:hover, .navbar-nav li.active a{
+//     color: #101846 !important;
+//     background-color: #fff !important;
+// }
+//     .navbar-nav > li > a{
+//       color: #101846;
+//       transition: 0.15s linear;
+//       letter-spacing: 4px;
+//     }
+//     .navbar-nav > li > i{
+//       display: inline-block; //图片和链接文字显示在同一行
+//       width: 32px; //定制图片宽度
+//       height: 32px; //定制图片高度
+//     }
+//     .navbar-brand {
+//       color: #101846;
+//       font-weight: 700;
+//     }
+//   }
+// }
+// landing page导航栏结束
+
+// 其他页面navbar
+#myNavbar {
+  .navbar-nav li a:hover, .navbar-nav li.active a{
+  color: #101846 !important;
+  background-color: #fff !important;
+  }
+  .navbar-nav > li > a{
+    color: #101846;
+    transition: 0.15s linear;
+    letter-spacing: 4px;
+  }
+}
+
+// 其他页面navbar
+#Navbar {
+  .navbar-nav li a:hover, .navbar-nav li.active a{
+  color: #101846 !important;
+  background-color: #fff !important;
+  }
+  .navbar-nav > li > a{
+    color: #101846;
+    transition: 0.15s linear;
+    letter-spacing: 4px;
+  }
+}
+
+// 工作列表标题栏
+.header_placeholder {
+  display: none;
+  height: 80px;
+}
+.header {
+  width:1200px;
+  margin: 20px auto;
+}
+.header_content {
+  margin-left:auto !important;
+  margin-right:auto !important;
+  margin-top:10px;
+  padding-bottom:20px;
+  position:relative;
+  .logo1 {
+    float:left;
+    display:inline;
+    font-size: 36px!important;
+    width: 360px;
+    height: 60px;
+  }
+  .search_bar1 {
+    float:left;
+    display:inline;
+    width:30%;
+    margin-left:40px;
+    margin-top:10px;
+    position:relative;
+  }
+  .cart-wrap1 {
+    float:right;
+    display:inline;
+    position:relative;
+    margin-top:10px;
+    height: 40px;
+    line-height: 40px;
+    .cart {
+      background: #F5F5F5;
+      font-size:12px;
+      padding-left:20px;
+      padding-right:20px;
+      position:relative;
+      border: 1px solid!important;
+    }
+  }
+}
+// 工作列表标题栏结束
+
+
+//轮播图
+.banner {
+  text-align:center;
+  padding-top:30px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  img {
+  width: 1200px;
+  height: 360px;
+ }
+ .carousel {
+   margin: 20px auto;
+   width: 1200px;
+   height: 400px;
+ }
+}
+.carousel-inner > .item > a > img {
+    display: block;
+    height: 360px;
+    max-width: 100%;
+    line-height: 1;
+    width: 100%;
+  }
+// 轮播图结束
+
+// 热卖商品
+.hot-products-title {
+  text-align: center;
+  margin: 40px auto;
+  font-size: 2em;
+  margin-bottom: -110px;
+}
+.show-hot-products-title {
+  text-align: left;
+  padding: 0px 0px 0px 130px;
+  margin: 40px auto;
+  font-size: 2em;
+  margin-bottom: -110px;
+}
+.hot-productslist {
+  margin-left: -37px !important;
+}
+.hot-productList-wrap {
+  // width:1200px;
+  padding-top:20px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  .hot-productList {
+    list-style-type: none;
+    padding-bottom:20px;
+    .productList-item {
+      float:left;
+      display:inline;
+      width: 263px;
+      height: 350px;
+      margin-right: auto;
+      margin-bottom: 1px;
+      position:relative;
+      padding: 3px;
+      .box {
+        padding-left: 0px;
+        padding-right: 0px;
+        transition: 0.35s;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+        &:hover{
+          box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.22);
+        }
+      }
+      .productList-item-pic {
+        width: 100%;
+        margin-top: 30px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .productList-item-price {
+        font-weight:bold;
+        color: #edbdb5;
+        font-size:18px;
+        margin-top:5px !important;
+        margin-right: 70px;
+        text-align: right;
+      }
+      .productList-item-name{
+        margin-top:2px !important;
+        margin-left: 15px;
+        margin-right: 35px;
+        text-align: left;
+      }
+      .productList-item-desc {
+        margin-top:2px !important;
+        margin-left: 35px;
+        font-size:12px;
+      }
+      .productList-item-sellout{
+        position:absolute;
+        right: 40px;
+        font-size:18px;
+        color: #101846;
+      }
+      .productList-item-cartBtn {
+        position:absolute;
+        right: 20px;
+        bottom: 72px;
+        font-size:18px;
+      }
+    }
+  }
+}
+// a.left1.carousel-control{
+// background: none;
+// position: absolute;
+// top: 40%;
+// left: -5%;
+// font-size: 40px;
+// color: #fff;
+// opacity: 1;
+// }
+// a.right1.carousel-control{
+// background: none;
+// position: absolute;
+// top: 40%;
+// left: auto;
+// right: -120px;
+// font-size: 40px;
+// color: #fff;
+// opacity: 1;
+// }
+// 热卖商品轮播图结束
+//商品展示列表
+.productList-panel {
+  margin-bottom: 23px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1)
+}
+
+
+.productList-wrap {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  .productList {
+    padding: 0px;
+    width: 100%;
+    margin: 0.1px;
+    .productList-item {
+      float:left;
+      display:inline;
+      width: 99.99%;
+      height: auto;
+      margin: 0 0 1px 0;
+      position:relative;
+      padding: 15px 15px 0px;
+
+      .productList-item-pic {
+        margin: 15px auto 0;
+        width: 90%;
+        img {
+          width: 100%;
+        }
+      }
+      .productList-item-price {
+        font-weight:bold;
+        color: #edbdb5;
+        font-size:18px;
+        margin-top:5px !important;
+        margin-right: 40px;
+        text-align: right;
+      }
+      .productList-item-name{
+        margin-top:2px !important;
+        margin: 0px 15px;
+        height: 90px;
+      }
+      .productList-item-desc {
+        margin-top:2px !important;
+        margin-left: 35px;
+        font-size:12px;
+      }
+      .productList-item-sellout{
+        position:absolute;
+        right: 15px;
+        font-size:18px;
+        color: #101846;
+      }
+      .productList-item-cartBtn {
+        position:absolute;
+        right: 30px;
+        font-size:18px;
+      }
+    }
+  }
+}
+
+ // 菜单
+.menu-wrap {
+  background: #333333;
+  color: #fff;
+  margin-top: 0;
+}
+.menuList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #333333;
+  overflow: hidden;
+  height: 42px;
+  line-height: 42px;
+  width: 1200px;
+  font-size: 16px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.menuList-item {
+  float: left;
+  a {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+  }
+  padding: 0 22px;
+  cursor: pointer;
+}
+.menuList-item:hover {
+  background-color: #434343;
+}
+.menuList-activeItem {
+  background: #D32048;
+}
+.menuList-activeItem:hover {
+  background: #D32048;
+}
+
+// 商品排序显示
+.order {
+  background: #101846;
+  height: 44px;
+  line-height: 44px;
+  margin-left: 0px;
+  margin-right: 0px;
+  color: #aaaaaa;
+  margin-top: 0px;
+  padding-left: 30px;
+  p.title {
+    float:left;
+    display:inline;
+    height: 44px;
+    line-height: 44px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .orderList {
+    float:left;
+    display:inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    // background: #333333;
+    overflow: hidden;
+    height: 42px;
+    line-height: 42px;
+    // width: 1200px;
+    // font-size: 14px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.orderList a {
+  color: #aaaaaa;
+}
+
+.orderList-orderItem {
+  float:left;
+  display:inline;
+  padding-left:20px;
+  padding-right:20px;
+  color: #fff !important;
+  cursor: pointer;
+}
+.orderList-activeItem a {
+  color: #edbdb5;
+}
+
+// 点赞
+.like a {
+  color: #DD2C00;
+}
+// 点赞结束
+
+// 收藏和取消收藏
+.favorite a {
+  color: #DD2C00;
+}
+// 收藏和取消收藏结束
+
+// 立即购买
+.buy_now {
+  a {
+  color: #fff !important;
+ }
+}
+// 立即购买结束
+
+// 登入/注冊頁開始
+.devise-view img {
+  vertical-align : middle;
+  margin: auto;
+  background-color: #323232;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -5;
+}
+
+.devise-view a:link {
+  color: #fff;
+}
+
+.page-wrap {
+  min-height: 100%;
+  min-width: 100%;
+  margin-bottom: -60px;
+}
+
+.devise-view {
+  margin-bottom: -10px;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -999;
+}
+
+.devise-view .devise-sign-up {
+  margin: 80px auto;
+  color: #ffffff;
+  width: 900px;
+  height: 500px;
+}
+
+.devise-view .devise-sign-up .left {
+  padding: 0 20px 20px;
+  width: 580px;
+  height: 500px;
+  float: left;
+}
+
+.devise-view .devise-sign-up .right {
+  padding: 20px 20px 0;
+  margin: auto;
+  width: 320px;
+  height: 500px;
+  float: left;
+  color: #fff;
+}
+.devise-view .devise-sign-up .center {
+  padding: 20px 20px 0;
+  margin: auto;
+  width: 320px;
+  height: 500px;
+  float: center;
+  color: #fff;
+}
+// 登入/注冊頁結束
+
+// 我的账户中心开始
+
+.account-view a:link {
+  color: #fff;
+}
+
+.page-wrap {
+  min-height: 100%;
+  min-width: 75%;
+  margin-bottom: -60px;
+}
+
+.account-view {
+  margin-bottom: -10px;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.account-view .account-detail {
+  margin: 10px auto;
+  color: #3c3d42;
+  text-align: center;
+}
+
+.account-view .account-detail .title {
+  font-size: 1em;
+  margin-bottom: 50px;
+}
+
+.btn-account {
+  margin: 3em;
+  color: #ffffff;
+  background-color: #0f4644;
+  border-color: transparent;
+  width: 20%;
+}
+.panel-heading-account {
+  height: 60px;
+  margin-bottom: -5px;
+  padding: 20px;
+  text-align: center;
+  background-color: #0f4644;
+  color: #edbdb5;
+  font-size: 1.2em;
+}
+
+// 我的账户中心結束
+
+// 设置回到顶部按钮和点赞链接
+.sidebar {
+  display: none;
+  position: fixed;
+  z-index: 998;
+  right: 30px;
+  bottom: 100px;
+  width: 40px;
+  height: auto;
+  line-height: 20px;
+  * {
+    box-sizing: border-box;
+  }
+  ul {
+    padding: 0;
+  }
+  li {
+    position: relative;
+    display: block;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 8px;
+    background: #fbfbfb;
+    line-height: 42px;
+    &:hover {
+      background: #eee;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &.backtop i {
+      font-size: 18px;
+    }
+    &.support {
+      i {
+        font-size: 20px;
+      }
+      .ewm {
+        line-height: 22px;
+        display: none;
+        left: 0px;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        display: none;
+        left: 0;
+        top: 50%;
+        margin-top: -68px;
+        width: 136px;
+        height: 136px;
+        padding-left: 20px;
+        p {
+          background: #eee;
+          border-radius: 3px;
+          padding: 12px;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+    i {
+      color: #555;
+    }
+  }
+}
+// 设置回到顶部按钮和点赞链接结束
+
+// product/show页面中商品详情
+.productDetail {
+  border:1px solid #101846 !important;
+  margin-top: 0px auto;
+  text-align: center;
+  line-height: 3em;
+  background-color: #fff;
+  margin: 0 auto !important;
+}
+.productDetail-tabList {
+  background: #F5F5F5;
+  height: 60px;
+  padding-left: 0px;
+  list-style-type: none;
+  border-bottom: 1px solid #101846;
+  .productDetail-tabList-tab {
+    float:left;
+    display:inline;
+    width: 50.0000%;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: pointer;
+    text-align:center !important;
+  }
+  .productDetail-tabList-tab:hover,
+  .productDetail-tabList-tab:active {   //已選擇的語法如何寫？
+    color: #edbdb5;
+    background: #101846;
+  }
+}
+
+.productDetail-contentWrap{
+  // width: 750px;
+  height: auto;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.productDetail-content {
+  display: none;
+  // width: 750px;
+  height: auto;
+  padding: 60px 45px;
+  text-align:left;
+  margin-bottom: 75px;
+}
+// product/show页面中商品详情结束
+
+// product/show社群分享鈕開始
+.social-share-button {
+  .ssb-icon {
+    background-size: 1.5em 1.5em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+// product/show社群分享鈕結束
+
+// product/show商品詳情页圖片開始
+.productDetail-introImg {
+  img{
+  width: 100%;
+  }
+}
+// product/show商品詳情页圖片結束

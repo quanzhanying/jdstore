@@ -1,0 +1,114 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 區塊：輪播--開始
+.container-carousel{
+  margin-top: 0px;
+  margin-left: -45px;
+  margin-right: -45px;
+}
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item>a{
+    display: block;
+    height: 100%;
+}
+
+.product-item {
+    border: 2px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 1;
+}
+.product-item:hover {
+    border-color: #101846;
+}
+// 區塊：輪播--結束
+
+// 區塊：品牌--開始
+div.container
+{
+
+    margin: 0 auto;
+	padding: 10em 3em;
+	text-align: center;
+}
+
+div.container a
+{
+    color: #101846;
+    text-decoration: none;
+
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+/* Pull right and left  */
+div.pullRightLeft a:before, div.pullRightLeft a:after
+{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0px;
+    content: '';
+    background: #101846;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullRightLeft a:before
+{
+    left: 0px;
+}
+
+div.pullRightLeft a:after
+{
+    right: 0px;
+}
+
+div.pullRightLeft a:hover:before, div.pullRightLeft a:hover:after
+{
+    width: 100%;
+}
+
+.img-HAY
+{
+  background: url(http://ww4.sinaimg.cn/large/006tKfTcgy1ffqjjoqt4lj31kw14wto4.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+
+}
+
+.img-GUBI
+{
+  background: url(http://ww1.sinaimg.cn/large/006tKfTcgy1ffqip83gdsj31kw1kw4r6.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+
+}
+
+.img-MENU
+{
+  background: url(http://ww2.sinaimg.cn/large/006tKfTcgy1ffqiq28hzmj31kw1kw1l0.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+
+}
+.img-muuto
+{
+  background: url(http://ww2.sinaimg.cn/large/006tKfTcgy1ffqipwjhgoj31kw1kwqv7.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+
+}
+.img-STUA
+{
+  background: url(http://ww3.sinaimg.cn/large/006tKfTcgy1ffqirokc0pj31kw1kwu10.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+
+}
+.img-fermliving
+{
+  background: url(http://ww1.sinaimg.cn/large/006tKfTcgy1ffqjhb9do3j31kw13a4qs.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+
+}
+// 區塊：品牌--結束

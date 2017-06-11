@@ -1,0 +1,377 @@
+<!-- 區塊：圖片輪播 -->
+<div class="container-carousel">
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators"></ol>
+	<!-- 廣告輪播列表 -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item">
+            <img src="http://ww4.sinaimg.cn/large/006tKfTcgy1ffqpsclqtpj313x0zm7h8.jpg" data-color="#eee">
+            <div class="carousel-caption">
+              <h1 class="logo">Select.</h1>
+							<h4>最好的家具与服务，给最具品味的您。</h4>
+              <h3><a href="/products" class="btn btn-primary btn-lg", style="font-size: 0.7em;">家具选</a></h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffu5bi7x1wj31kw1qm7wj.jpg" data-color="#eee">
+            <div class="carousel-caption">
+              <h3><a href="/products#products_new" class="btn btn-success btn-lg", style="font-size: 0.8em;">最新到货</a></h3>
+            </div>
+        </div>
+        <div class="item active">
+            <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3elcctoj31900u0aqk.jpg" data-color="#eee">
+            <div class="carousel-caption">
+              <h3><a href="/products#products_promotive" class="btn btn-warning btn-lg", style="font-size: 0.8em;">2017初夏轻色</a></h3>
+            </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+
+        <span class="sr-only">上一則</span>
+      </a>
+      <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+
+        <span class="sr-only">下一則</span>
+      </a>
+</div>
+</div>
+<!-- 區塊：圖片輪播 -->
+
+<!-- 區塊：服務介紹＋產品分類 -->
+<!-- Container (The Band Section) -->
+<div id="select">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
+    <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
+	  <li><a href="/products">进入商城首页</a></li>
+		<br />
+		<li class="active">关于Select. <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+  </ul>
+	<div class="container text-center", style="padding: 5em 3em 10em;">
+	  <h3 class="logo">Select.</h3>
+	  <h5><em>家具选</em></h5>
+	  <p>我们深信美好生活由生活用具而生。
+			<br />提供六大品牌家具选品，为您挑选出最美好的家具。
+			<br />
+			<br />Select.，只给您最好的家具。</p>
+	  <br />
+		<br />
+		<hr>
+	  <div class="row">
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选椅</strong></p><br>
+	      <a href="#demo" data-toggle="collapse">
+	        <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1ffu3eoh3xzj31900u0tl8.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+					  <p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "椅子")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选桌</strong></p><br>
+	      <a href="#demo2" data-toggle="collapse">
+	        <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3erjaa8j31900u0qhh.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo2" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "桌子")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选凳</strong></p><br>
+	      <a href="#demo3" data-toggle="collapse">
+	        <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1ffu3eu1n10j31900u049d.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo3" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "凳子")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <p class="text-center"><strong>选沙发</strong></p><br>
+	      <a href="#demo4" data-toggle="collapse">
+	        <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1ffu3ewrc43j31900u0te7.jpg" class="img-rounded  product-item" alt="/" width="255" height="255">
+	      </a>
+	      <div id="demo4" class="collapse">
+					<!-- 向cotroller中传递brand_id和category_id -->
+					<% Brand.all.each do |brand| %>
+						<p><%= link_to(brand.name, products_path(:brand => brand.name, :category => "沙发")) %></p>
+					<% end %>
+					<!-- 向cotroller中传递brand_id和category_id结束 -->
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+<!-- 區塊：服務介紹＋產品分類 -->
+
+<!-- 热卖商品区域 -->
+<div class="row" id="hot-products">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
+    <li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
+	  <li><a href="/products">进入商城首页</a></li>
+		<br />
+		<li class="active">热卖商品 <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+  </ul>
+	<div class="hot-products-title">
+    <span>热卖商品</span>
+  </div>
+	<div class="row">
+	  <div class="col-md-10 col-md-offset-1", style="margin-bottom: -18px;" >
+	      <div class="productList-wrap", style="margin: 125px auto;">
+<!-- <div id="myCarousel" class="carousel1 slide" data-ride="carousel"> -->
+  <!-- 轮播的第一个页面 -->
+  <!-- <div class="carousel-inner"> -->
+      <!-- <div class="item active"> -->
+					<div class="col-md-10 col-centered">
+						<ul class="productList clearfix">
+							<div class="row", style="margin-top: -49px;">
+								  <% @suggests.each do |product| %>
+								<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
+								<div class="col-md-3 col-xs-5", style="padding-left: 0px; padding-right: 0px;">
+				          <li class="productList-item productList-panel">
+				            <div class="productList-item-pic", style="position: relative;">
+				              <%= link_to product_path(product) do %>
+				                <% if product.photos.present? %>
+				                  <%= image_tag(product.photos[0].avatar.thumb.url) %>
+				                <% else %>
+				                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+				                <% end %>
+				              <% end %>
+											<!-- 商品标签（最新商品+活动商品）开始 -->
+								      <div>
+								        <% if product.new_product == true %>
+								          <div class="products-label">
+								            <p>新到货</p>
+								          </div>
+								        <% elsif product.promotive_product == true %>
+								          <div class="products-label", style="background-color: #ff9800;">
+								            <p>夏轻色</p>
+								          </div>
+								        <% end %>
+								      </div>
+								      <!-- 商品标签（最新商品+活动商品）结束 -->
+				            </div>
+				            <div class="productList-item-price">￥<%= product.price %>
+				              <% if product.stock > 0 %>
+				                <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+				                  <i class="fa fa-shopping-cart"></i>
+				                <% end %>
+				              <% end %>
+				              <!-- 待加入預購功能 -->
+				              <% if product.stock <= 0 %>
+				                <div class="productList-item-sellout", style="margin-top: -33px; margin-right: 15px;">
+				                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				                </div>
+				              <% end %>
+				              <!-- 待加入預購功能 -->
+				            </div>
+				            <div class="productList-item-name ell">
+				              <%= link_to product_path(product) do %>
+				                 <%= product.name %>
+				              <% end %>
+				            </div>
+				            <!-- <div class="productList-item-desc"><%= product.description %></div> -->
+				          </li>
+				        </div>
+				      <% end %>
+				    </div>
+				  </ul>
+				</div>
+												<!-- 轮播第二个画面 -->
+			                      <!-- <div class="item">
+															<div class="productList-wrap", style="margin: -15px auto;">
+																<ul class="productList clearfix">
+																	<div class="row", style="margin-left: -21px;">
+																	<% @suggests.each do |product| %> -->
+																	<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
+																	<!-- <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
+																		<li class="productList-item box panel panel-default">
+																			<div class="productList-item-pic">
+																				<%= link_to product_path(product) do %>
+																					<% if product.image.present? %>
+																						<%= image_tag(product.image.thumb.url) %>
+																					<% else %>
+																						<%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+																					<% end %>
+																				<% end %>
+																			</div>
+																			<div class="productList-item-price">￥<%= product.price %>
+																				<% if product.stock > 0 %>
+																					<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn productList-item-cartBtn", :remote => true do %>
+																						<i class="fa fa-shopping-cart"></i>
+																					<% end %>
+																				<% end %> -->
+																				<!-- 待加入預購功能 -->
+																				<!-- <% if product.stock <= 0 %>
+																					<div class="productList-item-sellout", style="margin-top: -33px;">
+																						<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+																					</div>
+																				<% end %> -->
+																				<!-- 待加入預購功能 -->
+																			<!-- </div>
+																			<div class="productList-item-name ell">
+																				<%= link_to product_path(product) do %>
+																					 <%= product.name %>
+																				<% end %>
+																			</div> -->
+																			<!-- <div class="productList-item-desc"><%= product.description %></div> -->
+																		<!-- </li>
+																	</div> -->
+																	<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容结束，保持全网站风格的一致 -->
+																	<!-- <% end %>
+			                                </div>
+																		</ul>
+			                              </div>
+																	</div> -->
+						<!-- 轮播第三个画面 -->
+                <!-- <div class="item">
+									<div class="productList-wrap", style="margin: -15px auto;">
+										<ul class="productList clearfix">
+											<div class="row", style="margin-left: -21px;">
+											<% @suggests.each do |product| %> -->
+											<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容，保持全网站风格的一致 -->
+											<!-- <div class="col-md-3 col-xs-6", style="margin-left: 35px; margin-right: -70px;">
+												<li class="hot-productList-item box panel panel-default">
+													<div class="hot-productList-item-pic">
+														<%= link_to product_path(product) do %>
+															<% if product.image.present? %>
+																<%= image_tag(product.image.thumb.url) %>
+															<% else %>
+																<%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+															<% end %>
+														<% end %>
+													</div>
+													<div class="hot-productList-item-price">￥<%= product.price %>
+														<% if product.stock > 0 %>
+															<%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn hot-productList-item-cartBtn", :remote => true do %>
+																<i class="fa fa-shopping-cart"></i>
+															<% end %>
+														<% end %> -->
+														<!-- 待加入預購功能 -->
+														<!-- <% if product.stock <= 0 %>
+															<div class="hot-productList-item-sellout", style="margin-top: -33px;">
+																<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+															</div>
+														<% end %> -->
+														<!-- 待加入預購功能 -->
+													<!-- </div>
+													<div class="hot-productList-item-name ell">
+														<%= link_to product_path(product) do %>
+															 <%= product.name %>
+														<% end %>
+													</div> -->
+													<!-- <div class="productList-item-desc"><%= product.description %></div> -->
+												<!-- </li>
+											</div> -->
+											<!-- 从全商品列表中直接拷贝的_list.html.erb中的部分内容结束，保持全网站风格的一致 -->
+											<!-- <% end %>
+                          </div>
+												</ul> -->
+                        <!-- </div> -->
+								<!--/carousel-inner-->
+								<!-- <a class="left1 carousel-control" href="#myCarousel" role="button" data-slide="prev">‹</a>
+								<a class="right1 carousel-control" href="#myCarousel" role="button" data-slide="next">›</a> -->
+		  </div>
+    </div>
+  </div>
+
+<!-- 热卖商品区域结束 -->
+
+<!-- 區塊：品牌 -->
+<div id="brands" style="margin-bottom: -75px;">
+	<ul class="breadcrumb", style="margin-top: 0px; height: 64px;">
+		<li><a href="/"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></li>
+    <li><a href="/products">进入商城首页</a></li>
+		<br />
+	  <li class="active">品牌选 <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+  </ul>
+
+  <div class="container img-HAY pullRightLeft">
+    <a href="/products?brand=HAY">HAY</a>
+  </div>
+
+  <div class="container img-GUBI pullRightLeft">
+    <a href="/products?brand=GUBI">GUBI</a>
+  </div>
+
+  <div class="container img-MENU pullRightLeft">
+    <a href="/products?brand=MENU">MENU</a>
+  </div>
+
+  <div class="container img-muuto pullRightLeft">
+    <a href="/products?brand=muuto">muuto</a>
+  </div>
+
+  <div class="container img-STUA pullRightLeft">
+    <a href="/products?brand=STUA">STUA</a>
+  </div>
+
+  <div class="container img-fermliving pullRightLeft">
+    <a href="/products?brand=ferm+living">ferm living</a>
+  </div>
+
+</div>
+
+<!-- 區塊：品牌 -->
+<!-- 设置回到顶部和网站链接功能 -->
+<div id="sidebar" class="sidebar">
+  <ul>
+    <li class="backtop"><i class="fa fa-arrow-circle-up"></i></li>
+    <li class="support">
+      <i class="fa fa-thumbs-o-up"></i>
+      <div class="ewm">
+        <p>
+          觉得不错嘛？<br>
+          来，动动小手<br>
+          <a href="https://fullstack.xinshengdaxue.com/works/579" target="_blank">帮我投个票</a><br>
+          谢谢^_^
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- 设置回到顶部和网站链接功能结束 -->
+</div>
+
+<!-- 平滑滑动到指定区域的效果 -->
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#mywelcome']").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+<!-- 平滑滑动到指定区域效果结束 -->

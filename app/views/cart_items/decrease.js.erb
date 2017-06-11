@@ -1,0 +1,3 @@
+$("#cart-total").html('<strong>总计:' + '<%= render_cart_total_price(current_cart) %>' + 'RMB</strong>');
+$('#quantity-input-<%= @cart_item.product_id%>').text('<%= @cart_item.quantity %>')
+$('#cart-item-subtotal-<%= @cart_item.product_id %>').html('<strong>' + '<%= @cart_item.product.price * @cart_item.quantity  %>' + '</strong>' )

@@ -1,0 +1,43 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+production:
+
+  qiniu_access_key: vgelc5NUnHYeVyHvHdBqjUd3Pmkak7JHrTdpN7gG  # 你的 qiniu AccessKey
+
+  qiniu_secret_key: qYVO3ZwpCFRLf0vwRHH57iq5NmHYV7_larf40Ang  # 你的 qiniu SecretKey
+
+  qiniu_bucket: select-furn  # 你的 qiniu bucket
+
+  qiniu_bucket_domain: oqct44ups.bkt.clouddn.com  # 你的 qiniu bucket domain
+
+  SEND_CLOUD_USER_NAME: "zhangwei19890518_test_zOWnZm"  # 你的 API_USER
+
+  SEND_CLOUD_USER_KEY: "T3E9pkIz3QuLJVf3"  # 你的 API_KEY
+  PROJECT_ID:  "145195"
+  PROJECT_KEY:   "99b3be876a8ed45988883e2f266859a2"
+
+development:
+
+  qiniu_access_key: vgelc5NUnHYeVyHvHdBqjUd3Pmkak7JHrTdpN7gG  # 你的 qiniu AccessKey
+
+  qiniu_secret_key: qYVO3ZwpCFRLf0vwRHH57iq5NmHYV7_larf40Ang  # 你的 qiniu SecretKey
+
+  qiniu_bucket: select-furn  # 你的 qiniu bucket
+
+  qiniu_bucket_domain: oqct44ups.bkt.clouddn.com  # 你的 qiniu bucket domain
+
+  SEND_CLOUD_USER_NAME: "zhangwei19890518_test_zOWnZm"  # 你的 API_USER
+
+  SEND_CLOUD_USER_KEY: "T3E9pkIz3QuLJVf3"  # 你的 API_KEY
+  PROJECT_ID:  "145195" #airbrake的id
+  PROJECT_KEY:   "99b3be876a8ed45988883e2f266859a2" #airbrake的key

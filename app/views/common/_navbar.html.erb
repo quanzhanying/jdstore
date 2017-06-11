@@ -1,0 +1,103 @@
+<!-- 除却landing page页面的其他页面navbar -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="Navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--=== 右侧下拉选单（移动端时显示） ===-->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand logo" href="/">Select.</a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-4">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to("商城首页", products_path) %>
+        </li>
+        <!-- 加入分类浏览按钮 -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">选品牌<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <% Brand.all.each do |brand| %>
+              <li>
+                <%= link_to brand.name, products_path(brand: brand.name), class: "link" %>
+              </li>
+              <% end %>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">选家具<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <% Category.all.each do |category| %>
+              <li>
+                <%= link_to category.name, products_path(category: category.name), class: "link" %>
+              </li>
+              <% end %>
+            </ul>
+        </li>
+        <!-- 分类浏览按钮结束 -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- 导航栏中添加搜索栏 -->
+        <li>
+          <%= form_tag search_products_path , :method => :get, class: "navbar-form  navbar-right"  do %>
+            <div class="input-group" id="search-id" >
+              <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="请输入商品信息">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </li>
+        <!-- 搜索栏代码结束 -->
+        <li>
+          <%= link_to carts_path do %>
+            购物车 <i class="fa fa-shopping-cart"></i>(<span id = "cart_items-count"> <%= current_cart.products.count%> </span>)
+          <% end %>
+        </li>
+        <% if !current_user %>
+          <li><%= link_to(content_tag(:i, '注册', class: 'fa fa-user-o'), new_user_registration_path) %></li>
+          <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              你好，<%= current_user.username %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.admin? %>
+              <li><%= link_to("管理后台", admin_products_path, method: :get) %></li>
+              <% else %>
+              <li><%= link_to("我的收藏", account_products_path) %></li>
+              <% end %>
+              <hr>
+              <li><%= link_to("我的账户", edit_account_user_path(current_user)) %></li>
+              <li>
+                <%= link_to("我的订单", account_orders_path ) %>
+              </li>
+              <hr>
+              <li><%= link_to(content_tag(:i, '退出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- navbar動態效果 -->
+<script>
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 125) {
+        $('#Navbar').addClass('show_bgcolor')
+    } else {
+        $('#Navbar').removeClass('show_bgcolor')
+    }
+})
+</script>
+<!-- navbar動態效果 -->

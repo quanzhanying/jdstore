@@ -1,0 +1,151 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 全商品頁頭圖開始
+// .background-image {
+//     width: 100%;
+//     margin-bottom: 0px;
+//     margin-top: -23px;
+//   }
+// 全商品頁頭圖結束
+
+// 全商品頁活動廣告區域開始
+.panel-body_products_img {
+  height: 210px;
+  margin: 0 0px;
+}
+.products_img {
+  background-color: #edbdb5
+}
+.products_ad_1_img {
+  height: 160px;
+  width: 100%;
+  background: url(http://i.imgur.com/LCJQ13h.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+.products_ad_2_img {
+  height: 160px;
+  width: 100%;
+  background: url(http://i.imgur.com/Ska7z8A.jpg) no-repeat scroll center/cover; -webkit-filter:opacity(1);
+}
+// 全商品頁活動廣告區域結束
+
+
+// 收藏商品清單標題開始
+.panel-favorite{
+  height: 60px;
+  margin-top: 45px;
+  margin-bottom: -5px;
+  padding: 20px;
+  text-align: center;
+  background-color: #0f4644;
+  color: #edbdb5;
+  font-size: 1.2em;
+}
+// 收藏商品清單標題結束
+
+// 多图显示开始
+.show-picture {
+  margin-top:30px;
+}
+.show-photo-xsmall-box{
+  height:80px;
+  width:400px;
+}
+.show-photo-xsmall-box.nav-tabs {
+  margin-top: 15px; }
+
+.show-photo-xsmall-box.nav-tabs li {
+  width: 18%;
+  margin-right: 2.5%;
+}
+.show-photo-xsmall-box.nav-tabs li a {
+  padding: 0;
+  margin: 0;
+}
+.show-photo-xsmall-box.nav-tabs li:last-of-type {
+  margin-right: 0;
+}
+// 多图显示结束
+
+// 放大镜开始
+/*放大镜*/
+// 放大镜结束
+
+// 评论开始
+
+.commentList-item {
+	// width: 670px;
+	border-bottom: 1px solid #DDDDDD;
+  padding-top:10px;
+  padding-bottom:30px;
+  margin-left:auto !important;margin-right:auto !important;
+  line-height: 2em;
+  margin-top: 30px;
+}
+
+.commentList-item .content {
+  display:inline;
+  text-align:left;
+	width: 420px;
+  font-size:12px;
+  color: #3c3d42;
+}
+
+.commentList-item .name {
+  float:right;
+  display:inline;
+	width: 180px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  word-wrap:normal;
+  text-align:right;
+  font-size:12px;
+  color: #3c3d42;
+}
+
+.commentList {
+  list-style-type: none;
+  margin-top: 0px;
+  padding: 0px;
+  color: #3c3d42;
+}
+
+.comment-say {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align:center;
+  font-size: 20px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.comment-say a {
+	margin-right: auto;
+	margin-left: auto;
+}
+// 评论结束
+
+// 商品清單標籤（最新商品＋活動商品）開始
+.products-label {
+  background: #439a46;;
+  color: #ffffff;
+  height: 4em;
+  width: 4em;
+  border-radius: 30px;
+  position: absolute;
+  margin: 10px;
+  z-index: 2;
+  top: -2.6em;
+  left: -2em;
+  p {
+    margin-top: 1.2em;
+    text-align: center;
+  }
+}
+// 商品清單標籤（最新商品＋活動商品）結束
