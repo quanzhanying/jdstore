@@ -55,12 +55,7 @@ background-color: #3caae8;
   color: white;
 }
 
-.sidenav {
-  background-color: #F0FFFF;
-  height: auto;
-  margin-top: 20px;
-  padding-top: 8px;
-}
+
 
 
   // dropdown-test
@@ -191,3 +186,24 @@ background-color: #3caae8;
   margin-top: 25px;
 
 }
+
+// 首页，
+.index-web{
+  float: left;
+  background-color: #f0ffff;
+}
+.column {
+  float:left;
+
+
+}
+.sidenav {
+  width: 15%;
+  margin-left: 3%;
+  margin-top: 20px;
+  padding-top: 8px;
+}
+.img-wall {
+  width: 82%;
+}
+// 首页 完毕
