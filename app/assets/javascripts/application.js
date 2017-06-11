@@ -16,9 +16,7 @@
 //= require social-share-button
 //= require social-share-button/wechat
 //= require bootstrap-sprockets
-//= require bootstrap/dropdown
-//= require bootstrap/modal
-//= require bootstrap/alert
+//= require bootstrap
 //= require_tree .
 
 // --首頁圖片輪播--
