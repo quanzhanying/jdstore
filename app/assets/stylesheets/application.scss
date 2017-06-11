@@ -503,7 +503,14 @@ td {
 .navbar.navbar-default {
   background: rgba(0,0,0,0.3);
   color: #000 !important;
-
+  a{
+    color:#ddd;
+  }
+  li{
+    a{
+      color:#ddd;
+    }
+  }
   a:hover,
   a:active,
   a:focus {
