@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Jdstore</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>BIG KID </title>
+        <%= csrf_meta_tags %>
+        <link rel="icon" type="image/png" href="BIGKID.png" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/earlyaccess/notosanssc.css" rel="stylesheet" />  <!-- 引入google思源黑简在线字体 需要使用VPN才可生效 -->
+    </head>
+
+    <body>
+
+        <div class="container">
+           <div class="row">
+            <%= render "common/navbar" %>
+           </div>
+           <div class= "body">
+            <%= render "common/flashes" %>
+            <%= yield %>
+          </div>
+        </div>
+           <div class= "footer-product">
+        <%= render "common/footer" %>
+      </div>
+
+    </body>
 </html>

@@ -1,0 +1,168 @@
+<div class="container">
+<div class='row product-box product-show'>
+
+  <div class="col-sm-6  col-xs-12  product-image">
+    <!-- 显示多张图片 -->
+    <% if @product_images.present? %>
+    <div class="col-md-12 ">
+      <%= image_tag(@product_images.first.image.large.url , class: 'main-image thumbnail')%>
+    </div>
+    <% @product_images.each_with_index do |p| %>
+    <div class="col-xs-4 col-sm-2 col-md-2 image-box">
+      <%= image_tag(p.image.small.url,class: 'list-image thumbnail') %>
+    </div>
+    <% end %>
+
+  <% else %>
+    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+
+  </div>
+
+  <div class="col-sm-5 col-xs-12 product-detail">
+    <div>
+
+      <h2>
+        <%= @product.title %>
+      </h2>
+      <div class="product-price">
+        <span class="currency_symbol">￥</span><%= @product.price %>
+      </div>
+      <div >
+        <p>
+          <%= @product.description %>
+        </p>
+      </div>
+      <div>
+        库存:
+        <%= @product.quantity %>
+      </div>
+
+      <hr/>
+
+      <div class="add-to-fav">
+        <% if !@product.users.include?(current_user) %>
+        <%= link_to("",add_to_favorite_product_path(@product),method: :post,class: "fa fa-heart fa-1.5x", style: "color:rgba(0,0,0,0.1);") %>
+      <% else %>
+        <%= link_to("", quit_favorite_product_path(@product),method: :post,  class: "fa fa-heart fa-1.5x", style: "color:rgba(255,0,0,0.4);") %>
+        <% end %>
+        收藏
+      </div>
+      <div style="float:right;">
+        <!-- <i class='fa fa-weixin fa-fw'> </i> -->
+        <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => @product_images.first.image.large.url , desc: @product.description) %>
+
+      </div>
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+      <div class="quantity-box">
+        数量:
+        <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
+        <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity %>" class="quantity-input">
+        <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
+
+      </div>
+      <div class="add-to-cart">
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "buy_button") %>
+      </div>
+
+    <% else %>
+      已销售一空，无法购买
+      <%end%>
+
+    </div>
+  </div>
+
+</div>
+
+  <!-- 商品详情区域 + 推荐展示 -->
+  <div class="container">
+    <!-- 商品详情区域 + 商品评论区域 -->
+    <div class="col-md-12 product-particulars">
+
+      <!-- 导航栏 -->
+      <div class="row">
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active">
+            <a href="#tab_default_1" data-toggle="tab">商品详情</a>
+          </li>
+          <li>
+            <a href="#tab_default_2" data-toggle="tab">用户评价</a>
+          </li>
+          <li>
+            <a href="#tab_default_3" data-toggle="tab">为您推荐</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content">
+
+        <!-- 商品详情区域 -->
+        <div class="product-particulars-box row tab-pane active" id="tab_default_1">
+          <div>
+            <%= simple_format(@product.description) %>
+          </div>
+          <% @product.product_particular_images.each do |p| %>
+
+          <%= image_tag(p.image.big.url,class: 'thumbnail') %>
+
+          <% end %>
+
+        </div>
+
+        <!-- 商品评论区域 -->
+        <div class="product-particulars-box row tab-pane" id="tab_default_2">
+          <%= simple_form_for ([@product, @review]) do |f| %>
+          <div class="review-comment-form">
+            <%= f.input :comment, :label => "添加评论" %>
+          </div>
+          <div class="review-comment-button">
+            <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
+          </div>
+          <% end %>
+          <hr>
+          <% if @reviews.blank? %>
+          <p>这个商品还没有人评论，来为ta添加一个吧！</p>
+        <% else %>
+          <% @reviews.each do |review| %>
+          <div class="reviews">
+            <ul>
+              <li>
+                <div class="row">
+                  <div class="col-sm-9 review-user-email"><%= review.user.email %></div>
+                  <div class="col-sm-3"><%= review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
+                </div>
+                <div class="review-comment">
+                  <%= review.comment %>
+                </div>
+              </li>
+            </ul>
+            <div class="review-hr">
+              <hr>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <!-- 商品推荐 -->
+        <div class="product-particulars-box row tab-pane" id="tab_default_3">
+          <!--=== 隨機推薦商品 ===-->
+          <% @suggests.each_with_index do |product, index| %>
+          <div class='col-xs-12 col-sm-4 col-md-4 suggested-product-content'>
+            <%= link_to product_path(product) do %>
+            <!-- 商品圖片 -->
+            <% if product.product_images.present? %>
+            <!-- 顯示第一張圖片 -->
+            <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
+            <% else %>
+            <%= image_tag('http://placehold.it/100x100&text=No Pic', class: 'thumbnail') %>
+            <% end %>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>

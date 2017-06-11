@@ -1,0 +1,44 @@
+<h2> </h2>
+类目管理
+
+<div style="padding-top: 50px;">
+  <%= link_to("新增类目", new_admin_category_path, class: "btn btn-default btn-lg") %>
+
+</div>
+
+<table class="table table-hover table-responsive category-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>名称</th>
+      <th>logo</th>
+      <th>产品数量</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+      <td> <%= category.id %> </td>
+      <td> <%= category.name %> </td>
+      <td>
+        <% if category.image.present? %>
+          <%= image_tag(category.image.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/100x100&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      </td>
+      <td> <%= category.products.count %> </td>
+      <td>
+        <%= link_to edit_admin_category_path(category),class: "btn btn-default" do %>
+          <span class="fa fa-pencil"></span>
+          <% end %>
+        <%= link_to(admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-default") do %>
+        <span class="fa fa-trash"></span>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

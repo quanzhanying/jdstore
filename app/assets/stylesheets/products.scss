@@ -1,0 +1,278 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*===== product show产品详情页面 =====*/
+
+
+
+.product-show {
+  margin: 100px 0 100px 0;
+
+  /*===== 产品多图展示 =====*/
+  .product-image {
+    .image-box {
+      margin:  0;
+      text-align: center;
+    }
+
+    .main-image {
+      width: 65%;
+      margin-bottom: 10px;
+      border: none;
+      text-align: center;
+    }
+
+    .list-image {
+
+      width: 100px;
+     border-radius: 50%;
+
+    }
+
+
+    .list-image-active {
+      box-shadow: 1.5px 1.5px 1.5px #666;
+    }
+  }
+}
+
+/*===== 产品信息 =====*/
+.product-detail {
+
+
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.42857143;
+      color: #2c3e50;
+      background-color: #ffffff;
+     text-align: left;
+     margin-top: 40px;
+
+  h2 {
+    margin-top: 5px;
+    font-size: 24px;
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px dashed #aaa;
+    margin: 30px 0 30px 0;
+  }
+
+  .product-price {
+
+    height: 60px;
+    font-size: 24px;
+    .currency_symbol{
+        font-size: 15px;
+    }
+  }
+
+  .add-to-cart{
+      margin-top: 50px;
+      // text-align: center;
+    }
+
+  .buy_button {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+    font-size: 18px;
+
+    background-color: none;
+
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+
+    height: 20px;
+    padding: 15px 100px;
+    @media screen and (max-width:1270px){/*宽度小于等于320,同理*/
+    padding: 15px 80px;
+    }
+    @media screen and (max-width:1100px){/*宽度小于等于320,同理*/
+    padding: 15px 70px;
+    }
+    @media screen and (max-width:1020px){/*宽度小于等于320,同理*/
+    padding: 15px 60px;
+    }
+    @media screen and (max-width:940px){/*宽度小于等于320,同理*/
+    padding: 15px 50px;
+    }
+    @media screen and (max-width:860px){/*宽度小于等于320,同理*/
+    padding: 15px 40px;
+    }
+  }
+
+  .buy_button:hover {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+      text-decoration: none;
+    }
+}
+
+/*===== Product/index 设置 =====*/
+.product-section {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #888;
+
+margin-top: 100px;
+padding-top: 50px;
+}
+.product-content {
+  a:hover {
+    background-color: white;
+  }
+  img {
+
+    width: 100%;
+    margin: 7.5px auto 7.5px auto;
+    border-style: dashed;
+    border-color:grey;
+    border-width:1px;
+    position: relative;
+    padding: 35px; //增加图片周围留白，更美观
+  }
+
+  img:hover {
+opacity: 0.7;
+}
+
+  h2 {
+    margin-top: 150px;
+  }
+  .absolute {
+    position: absolute;
+    top: 20px;
+    left: 2em;
+   a:hover{
+     text-decoration:none;
+   }
+  }
+  .fa:hover{
+    background-color: none;
+    color: rgba(255,0,0,0.4)!important;
+  }
+
+
+}
+
+.product-info {
+  text-align: left;
+  line-height: 14px;
+  min-height: 55px;
+}
+
+.add-to-fav{
+  float:left;
+  a:hover {
+    background-color: #fff ;
+
+    text-decoration: none;
+  }
+  .fa:hover {
+    color: rgba(255,0,0,0.4) !important;
+  }
+}
+
+.quantity-box {
+    clear: left;
+    height: 20px;
+    padding: 25px 0 15px 0;
+
+    a:hover {
+      background-color: #fff ;
+      color: #eb5424;
+      text-decoration: none;
+    }
+
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+    outline: none;
+  }
+
+  .quantity-input:focus {
+    border: 1px solid #000;
+  }
+
+  .quantity-actions {
+    padding: 2.5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+
+
+  }
+
+  .quantity-actions:hover {
+    border: 1px solid #eb5424;
+  }
+
+
+
+}
+// 推荐商品区域
+.suggested-product-content{
+  margin-top: 50px;
+  img{
+    border-style: none;
+    border-radius: 50%;
+    padding: 20px;
+  
+  }
+  img:hover{
+    box-shadow: 1.5px 1.5px 1.5px #666;
+  }
+}
+
+//商品详情区域
+.product-particulars {
+  margin: 2em 0 3em;
+}
+
+.product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.6em;
+  img {
+    max-width:100%;
+    }
+}
+
+// 商品品论区域样式
+.nav-tabs {
+  margin-left: 0;
+}
+.review-comment-form {
+  text-align: left;
+  padding: 2em 2em;
+}
+.review-comment-button {
+  text-align: left;
+  padding: 0 2em;
+  margin-top: -2em;
+}
+.reviews {
+  text-align: left;
+  li {
+    list-style: none;
+  }
+}
+.review-user-email {
+  color: #999;
+}
+.review-comment {
+  margin: 1em auto;
+}
+.review-hr {
+  padding: 0 3em;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BIG KID 后台</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/earlyaccess/notosanssc.css" rel="stylesheet" />  <!-- 引入google思源黑简在线字体 需要使用VPN才可生效 -->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+        <%= render "common/navbar" %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-2">
+
+        <ul class="nav nav-pills nav-stacked admin-nav" style="max-width: 300px;margin-top:100px; margin-left:-10px;">
+          <li> <%= link_to("产品管理", admin_products_path) %> </li>
+          <li> <%= link_to("类目管理", admin_categories_path) %> </li>
+          <li> <%= link_to("订单管理", admin_orders_path) %> </li>
+
+        </ul>
+      </div>
+      <!-- <div class= "body"> -->
+      <div class="col-xs-9">
+        <%= yield %>
+      </div>
+
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class= "footer-admin">
+  <%= render "common/footer" %>
+  </div>
+</body>
+</html>

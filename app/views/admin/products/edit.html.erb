@@ -1,0 +1,57 @@
+<h2> Edit Product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+<div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+  <div class="group">
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <div class="group">
+      <%= f.select :category_id, @categories %>
+  </div>
+<hr />
+  <% if @product.product_images.present? %>
+   <span>目前商品图</span> <br>
+   <% @product.product_images.each do |product_image| %>
+   <%= image_tag(product_image.image.thumb.url) %>
+   <% end %>
+  <% end %>
+
+
+  <div class="group">
+    <%= f.label :上传新的商品图 %><br>
+    <%= f.file_field :image, :multiple => true, name: "product_images[image][]" %>
+  </div>
+<hr />
+  <div class="group">
+    <%= f.input :particulars %>
+  </div>
+<hr />
+    <% if @product.product_particular_images.present? %>
+     <span>目前商品详情图</span> <br>
+     <% @product.product_particular_images.each do |product_particular_image| %>
+     <%= image_tag(product_particular_image.image.thumb.url) %>
+     <% end %>
+    <% end %>
+
+    <div class="group">
+      <%= f.label :上传新的商品详情图 %><br>
+      <%= f.file_field :image, :multiple => true, name: "product_particular_images[image][]" %>
+    </div>
+<hr />
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>

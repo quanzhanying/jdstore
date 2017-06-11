@@ -1,0 +1,148 @@
+
+  <div class="col-md-12">
+    <% if current_page?('/') || current_page?('/users/sign_up')|| current_page?('/users/sign_in')|| current_page?('/users/password/new')   %>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation" >
+    <% else %>
+      <div class="navbar navbar-default navbar-fixed-top show_bgcolor" role="navigation" id="navbar">
+        <% end %>
+        <div class="container">
+          <div class="navbar-header">
+            <!--=== 右侧下拉菜单（移动端显示） ===-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!--=== 网站logo/名称 ===-->
+            <%= link_to root_path, class: "navbar-brand logo-box scroll" do %>
+            <%= image_tag("logo.png") %><span class="site-name">BIG KID</span>
+            <% end %>
+          </div>
+          <div class="collapse navbar-collapse top-nav" id="menu-4">
+            <!--=== 网站链接===-->
+            <ul class="nav navbar-nav navbar-left">
+              <li><%= link_to("有趣的产品", products_path) %></li>
+
+            </ul>
+            <!--=== 账号操作 ===-->
+            <ul class='nav navbar-nav  navbar-right'>
+              <li class="divider" role="separator"></li>
+              <!-- 我的收藏-->
+                <% if current_user %>
+              <li>
+                <%= link_to products_path(:favorite => "yes") do %>
+                <%= "我的收藏" %>
+                <i class='fa fa-heart'></i>
+                <% end %>
+              </li>
+                <% end %>
+              <!-- 购物车 -->
+              <li>
+                <%= link_to carts_path do %>
+                <i class='fa fa-shopping-cart'></i>
+                (
+                <%= current_cart.products.count %>
+                )
+                <% end %>
+              </li>
+
+              <% if !current_user %>
+              <!-- 登陆／注册 -->
+              <li><%= link_to("注册", new_user_registration_path) %>
+              </li>
+              <li>
+
+                <!-- <%= link_to("登陆", new_user_session_path) %> -->
+                <a href="#" data-toggle="modal" data-target="#login-modal">
+                  <span class="glyphicon glyphicon-log-in"></span>
+                  登入</a>
+
+              </li>
+            <% else %>
+              <!-- 使用者下拉式菜单 -->
+              <li class='dropdown'>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+                  <%= "Hi!" %>
+                  <%= current_user.name %>
+                  <span class='caret'></span>
+                </a>
+                <!-- 下拉菜单 -->
+                <ul class='dropdown-menu'>
+                  <!-- admin 後台 -->
+                  <% if current_user.admin? %>
+                  <li>
+                    <%= link_to("Admin 后台", admin_products_path) %>
+                  </li>
+                  <li class="divider"></li>
+                  <% end %>
+                  <!-- user 选项 -->
+
+                  <li>
+                    <%= link_to("我的订单", account_orders_path) %>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to("登出", destroy_user_session_path, method: :delete) %>
+                  </li>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+            <!-- 搜索-->
+            <%= form_tag search_products_path, :method => :get, class: "navbar-form " do %>
+            <div class="input-group search-box">
+              <input type="text" class="form-control" name="q" placeholder="<%= "请输入商品信息" %>" value="<%= params[:q] %>">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span>
+                    <i class="fa fa-search"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 以下代码添加在最后 -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="loginmodal-container">
+          <h2>Log in</h2>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, required: false, autofocus: true %>
+            <%= f.input :password, required: false %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h2>Sign up</h2>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>

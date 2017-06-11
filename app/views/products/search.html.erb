@@ -1,0 +1,46 @@
+
+
+
+
+<div class="title">
+<div class="title-1  <%= 'title-1-active' if !params[:category] %>">
+  <span class="tag-line1">INTERESTING FINDS</span> <span class="tag-line2"> For the kid in you</span>
+</div>
+</div>
+<%= render :partial => "products/menu" %>
+
+
+  <div class="container">
+
+    <!--=== 搜索结果，没有符合条件的数据 ===-->
+
+    <div class="product-box">
+    <% if @products.blank?%>
+      <div class="search-error">
+        <h2><%= t('商品正在赶来的路上，请耐心等待😊')%></h2>
+      </div>
+    <% else %>
+    <!--=== 搜索结果，有符合条件的数据 ===-->
+    <!--=== 搜索內容 ===-->
+      <div class='row'>
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+          <%= product.title %> ￥ <%= product.price %>
+        </div>
+      <% end %>
+
+      </div>
+
+      <div class="page-box">
+        <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
+      </div>
+    <% end %>
+  </div>
+</div>
