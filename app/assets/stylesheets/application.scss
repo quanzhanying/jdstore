@@ -55,12 +55,7 @@ background-color: #3caae8;
   color: white;
 }
 
-.sidenav {
-  background-color: #F0FFFF;
-  height: auto;
-  margin-top: 20px;
-  padding-top: 8px;
-}
+
 
 
   // dropdown-test
@@ -104,6 +99,49 @@ background-color: #3caae8;
       background-color: #3e8e41;
   }
   // dropdown-test end
+  // navbar dropdown
+  .dropbtn2 {
+      background-color: #2fa4e7;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+  }
+
+  .dropdown2 {
+      position: relative;
+      display: inline-block;
+      padding: 15px;
+      color: white;
+  }
+
+  .dropdown-content2 {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+
+  .dropdown-content2 a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+
+  .dropdown-content2 a:hover {background-color: #f1f1f1}
+
+  .dropdown2:hover .dropdown-content2 {
+      display: block;
+  }
+
+  .dropdown2:hover .dropbtn2 {
+      background-color: #3e8e41;
+  }
+  // navbar dropdown end
 .thumbnail-dzl {    // 设置购物车里的商品图片：原图片太大。 设置此参数把原图片变小。
   width:100px;
 }
@@ -148,3 +186,24 @@ background-color: #3caae8;
   margin-top: 25px;
 
 }
+
+// 首页，
+.index-web{
+  float: left;
+  background-color: #f0ffff;
+}
+.column {
+  float:left;
+
+
+}
+.sidenav {
+  width: 15%;
+  margin-left: 3%;
+  margin-top: 20px;
+  padding-top: 8px;
+}
+.img-wall {
+  width: 82%;
+}
+// 首页 完毕
