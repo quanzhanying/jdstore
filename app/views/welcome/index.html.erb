@@ -4,6 +4,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
 </head>
+
 <!-- <div class="jumbotron">
    <h1 class="title "> 健康沙拉 </h1>
    <p class="slogan"> 我就是不想考虑中午吃什么！</p>
@@ -16,7 +17,9 @@
 <!--===== 广告轮播 =====-->
 <section class="intro-box">
   <div class="row">
+
     <div class="col-md-12">
+
       <div id="intro" class="carousel slide" data-ride="carousel">
 
 
@@ -30,12 +33,14 @@
 
         <!--===== 轮播内容 =====-->
         <div class="carousel-inner">
+
            <div class="item active">
              <a href="javascript:;">
              <%= image_tag("food3.jpg") %> <!-- 图片位置 -->
              <div class="carousel-caption">
              </a>
                 <h3>健人速食</h3> <!-- 标题 -->
+<<<<<<< HEAD
                 <p>让你轻松解决健身期间的饮食问题</p>
                 <br>
 
@@ -54,6 +59,11 @@
 
 
 
+=======
+                <p>让你轻松解决健身期间的饮食问题</p> <!-- 内文 -->
+                <br>
+                <p class="lead"> <a class="btn btn-lg btn-danger" href="/products"> 一键解决烦恼</a></p>
+>>>>>>> bdf23a65cd3346e6cc7563e6973c60f73898d116
              </div>
            </div>
 
@@ -65,6 +75,7 @@
                 <h3>健康配比</h3>
                 <p>营养学数据做支撑，按性别配置一周健康午餐</p>
                 <br>
+<<<<<<< HEAD
                 <div class="take order">
                    <% if current_user == nil %>
                       <%= link_to("马上注册",  new_user_session_url, class: "btn btn-lg btn-danger pull-middle") %>
@@ -76,6 +87,9 @@
                        <%= link_to("一键下单", products_path(category: "随心"), class: "btn btn-lg btn-danger pull-middle") %>
                   <% end %>
                 </div>
+=======
+                <p class="lead"> <a class="btn btn-lg btn-danger" href="/products"> 一键解决烦恼</a></p>
+>>>>>>> bdf23a65cd3346e6cc7563e6973c60f73898d116
              </div>
            </div>
 
@@ -87,6 +101,11 @@
                 <h3>一键下单</h3>
                 <p>点餐也纠结吃什么？没关系！只需一键下单，轻松解决！</p>
                 <br>
+<<<<<<< HEAD
+=======
+                  <p class="lead"> <a class="btn btn-lg btn-danger" href="/products"> 一键解决烦恼</a></p>
+
+>>>>>>> bdf23a65cd3346e6cc7563e6973c60f73898d116
                 <div class="take order">
                    <% if current_user == nil %>
                       <%= link_to("马上注册",  new_user_session_url, class: "btn btn-lg btn-danger pull-middle") %>
@@ -98,6 +117,7 @@
                        <%= link_to("一键下单", products_path(category: "随心"), class: "btn btn-lg btn-danger pull-middle") %>
                   <% end %>
                 </div>
+
              </div>
            </div>
         </div>
@@ -165,14 +185,11 @@
   </section>
 
   <hr>
-  <div class="knowledge ">
-     <section class="btn btn-danger ">
+  <div class="knowledge">
+     <section class="btn btn-danger" style="right: 50%;" >
       <%= link_to('健身小贴士', tips_path, class:'btn btn-push' ) %>
      </section>
   </div>
-
-
-
 
 
   <!--品牌故事-->
@@ -207,4 +224,8 @@
               </div>
            </div>
         </div>
+  </div>
+
+  <div class="goTop">
+     <span class="fa fa-chevron-up"></span>
   </div>
