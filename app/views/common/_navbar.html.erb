@@ -13,6 +13,13 @@
                <li class="active">
                   <%= link_to("Products", products_path)%>
                </li>
+               <li>
+                  <% if current_user == nil %>
+                     <%= link_to("个人中心", new_user_session_path) %>
+                  <% else %>
+                     <%= link_to("个人中心", edit_account_user_path(current_user))%>
+                  <% end %>
+               </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -42,9 +49,7 @@
                            <li>
                               <%= link_to("个人订单列表", account_orders_path)%>
                            </li>
-                           <li>
-                              <%= link_to("个人中心", edit_account_user_path(current_user))%>
-                           </li>
+
 
 
                         <% end %>
