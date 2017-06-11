@@ -36,7 +36,7 @@
 
            <div class="item active">
              <a href="javascript:;">
-             <%= image_tag("food3.jpg") %> <!-- 图片位置 -->
+             <%= image_tag("food6.jpg") %> <!-- 图片位置 -->
              <div class="carousel-caption">
              </a>
                 <h3>健人速食</h3> <!-- 标题 -->
@@ -61,7 +61,7 @@
 
            <div class="item">
              <a href="javascript:;">
-             <%= image_tag("food2.jpg") %>
+             <%= image_tag("food7.jpg") %>
              <div class="carousel-caption">
                </a>
                 <h3>健康配比</h3>
@@ -85,7 +85,7 @@
 
            <div class="item">
              <a href="javascript:;">
-             <%= image_tag("food1.jpg") %>
+             <%= image_tag("food8.jpg") %>
              <div class="carousel-caption">
                </a>
                 <h3>一键下单</h3>
@@ -127,17 +127,15 @@
 
 
 <!--===== 商品分类 =====-->
-  <section class="categories-box">
-    <div class="row">
+  <section class="categories-box w3-row-padding w3-center w3-light-grey">
+    <div class="row ">
       <div class="col-md-4 category-content">
           <div class="category-box">
             <a href="<%= products_path(category:'男性健身餐')%>">
-            <%= image_tag("man-bodybuilding.jpg") %> </a><!-- 分类图片 -->
+            <%= image_tag("man.jpg") %> </a><!-- 分类图片 -->
           </div>
           <div>
             <h3><%= link_to("男性健身餐", products_path(category: "男性健身餐")) %></h3>
-
-            <hr>
             <p>专为健身男士提供的一周午餐，主要功能包括但不限于：增肌减脂、排毒清肠。量较大。</p> <!-- 分类介绍 -->
           </div>
 
@@ -146,24 +144,23 @@
 
           <div class="category-box">
             <a href=" <%= products_path(category:'女性健身餐')%>">
-            <%= image_tag("woman-bodybuilding.jpg") %> </a>
+            <%= image_tag("woman.jpg") %> </a>
           </div>
           <div>
             <h3><%= link_to("女性健身餐", products_path(category: "女性健身餐"))%></h3>
-            <hr>
+
             <p>专为健身女士提供的一周午餐，主要功能包括但不限于：减脂排毒、美容养颜。量较小。</p>
           </div>
 
       </div>
       <div class="col-md-4 category-content">
-
           <div class="category-box">
             <a href=" <%= products_path(category: '随心')%>">
             <%= image_tag("whatever.jpg") %>  </a>
           </div>
           <div>
             <h3><%= link_to("随心装", products_path(category: "随心"))%></h3>
-            <hr>
+
             <p>不考虑是否健身，随便吃。慎点！ </p>
           </div>
 
@@ -185,7 +182,6 @@
            <div class="col-md-10 col-md-offset-1">
               <h2 class="section-heading">制作人</h2>
               <h1> Laura & Amy</h1>
-
               <hr>
               <div class="row">
                  <div class="col-md-3 col-md-offset-3">
@@ -197,18 +193,17 @@
                     <p>找到最佳偷懒方式，让自己健身的时候也能享受美食</p>
                  </div>
               </div>
-              <hr>
 
-              <div class="row">
+
                  <div class="col-md-3 col-md-offset-3">
                     <h3> Amy</h3>
                     <p>  反正就是不想考虑吃什么……</p>
                     <p>  节约时间撸代码才是正点 </p>
                  </div>
-                 <div class="col-md-3 ">
+                 <div class="col-md-3">
                     <%= image_tag 'author-amy.jpg', class: 'img-responsive' %>
                  </div>
-              </div>
+
            </div>
         </div>
   </div>
