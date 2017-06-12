@@ -75,9 +75,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories do
-    resources :products
-  end
+  
+
+
 
   resources :favorites
 
