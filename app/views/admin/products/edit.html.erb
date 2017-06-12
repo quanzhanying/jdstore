@@ -21,6 +21,10 @@
     <%= f.input :price %>
   </div>
 
+  <div class="form-group">
+     <%= f.association :category %>
+   </div>
+
   <% if @product.photos.present? %>
     <span>目前商品圖</span> <br>
     <% @product.photos.each do |p| %>
@@ -33,13 +37,9 @@
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
 
-  <div class="group">
-      <%= f.select :category_id, @categories %>
-  </div>
+  <br>
 
-  <%= f.submit "Submit", data: {
-  disable_with: "Submitting..."
-} %>
+  <%= f.submit "Submit", data: {  disable_with: "Submitting..." } %>
 <%end %>
 
 </div>

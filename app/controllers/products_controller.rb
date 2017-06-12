@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
 
   def show
     @suggests = Product.random
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @photos = @product.photos.all
   end
 
@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
       flash[:notice] = "你已成功将 #{@product.title} 加入购物车"
@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
   end
 
   def instant_buy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
     else
@@ -76,14 +76,14 @@ class ProductsController < ApplicationController
   end
 
   def favorite
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     current_user.favorite_products << @product
     flash[:notice] = "收藏成功"
     redirect_to :back
   end
 
   def unfavorite
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     current_user.favorite_products.delete(@product)
     flash[:notice] = "已取消收藏"
     redirect_to :back

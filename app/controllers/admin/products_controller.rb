@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.all.order("position ASC")
+    @products = Product.order("position ASC")
     @products = @products.paginate(:page => params[:page], :per_page => 8)
   end
 
@@ -16,7 +16,6 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.category_id = params[:category_id]
 
     if @product.save
       if params[:photos] != nil
@@ -24,7 +23,9 @@ class Admin::ProductsController < ApplicationController
              @photo = @product.photos.create(:avatar => a)
            end
       end
-      redirect_to admin_products_path
+
+      @product.category_id = params[:category_id]
+      redirect_to admin_categories_path
     else
       render :new
     end
@@ -32,12 +33,11 @@ class Admin::ProductsController < ApplicationController
 
 
   def edit
-    @product = Product.find(params[:id])
-    @categories = Category.all.map{ |c| [c.name, c.id]}
+    @product = Product.find_by_friendly_id!(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.category_id = params[:category_id]
 
     if params[:photos] != nil
@@ -48,31 +48,31 @@ class Admin::ProductsController < ApplicationController
       end
 
       @product.update(product_params)
-      redirect_to admin_products_path, notice: "Update Successful"
+      redirect_to admin_categories_path, notice: "Update Successful"
 
     elsif @product.update(product_params)
-      redirect_to admin_products_path
+      redirect_to admin_categories_path
     else
       render :edit
     end
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
 
     if @product.destroy
-      redirect_to admin_products_path, alert: "Product Deleted"
+      redirect_to admin_categories_path, alert: "Product Deleted"
     end
   end
 
   def move_up
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.move_higher
     redirect_to :back
   end
 
   def move_down
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.move_lower
     redirect_to :back
   end
