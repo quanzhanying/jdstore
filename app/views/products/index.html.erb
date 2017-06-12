@@ -1,0 +1,141 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+         <!-- <div class="product-tab">
+             <div class="col-md-offset-2 col-md-10">
+              <div class="category">
+                <div class="catename">panel  a</div>
+                <div class="catename">panel  a</div>
+                <div class="catename">panel  a</div>
+                <div class="catename">panel  a</div>
+                </div>
+              </div>
+         </div> -->
+    </div>
+
+
+    <div class="col-md-9 col-xs-12 ">
+      <div class="row">
+         <div class="col-md-11">
+    <!-- 产品列表 -->
+           <div class="product">
+             <div class="product-head"> <h3> 开味商品</h3> </div>
+
+               <% @products.each do |product| %>
+                <!-- 把整张图变成连结 -->
+               <%= link_to product_path(product) do %>
+               <div class="col-md- col-sm-4 col-xs-12">
+                 <div class="content">
+
+                   <% if product.photos.present? %>
+                     <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
+                   <% else %>
+                     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
+                   <% end %>
+               <% end %>
+                <!-- 把整张图变成连结 end-->
+
+                   <hr>
+                   <div class="product-title" style="height: 50px">
+                     <h4><%= product.title %></h4>
+                   </div>
+
+
+                    <div class="product-price">
+                      <h4>$<%= product.price %></h4>
+                    </div>
+
+
+                <% if current_user %>
+                    <% if !current_user.is_favorite_of?(product) %>
+                      <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      <% end %>
+                    <% else %>
+                      <%= link_to unfavorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                        <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                      <% end %>
+                    <% end %>
+                <% else %>
+                  <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                  <% end %>
+                <% end %>
+
+
+                <% if product.quantity.present? && product.quantity > 0 %>
+                   <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                <% else %>
+                   已销售一空，无法购买
+                <% end %>
+              </div>
+            </div>
+            <% end %>
+
+
+          </div>
+          <!-- 产品列表 end-->
+        </div>
+      </div>
+
+      <!-- random product list -->
+      <div class="row">
+        <div class="col-md-11">
+
+            <div class="product-random">
+               <div class="recom"> <h3> 开味推荐  </h3> </div>
+
+                 <% @suggests.each do |product| %>
+                 <!-- 把整张图变成连结 -->
+                 <%= link_to product_path(product) do %>
+                 <div class="col-md-4 col-sm-4 col-xs-12">
+                   <div class="content">
+                     <% if product.photos.present? %>
+                       <%= image_tag(product.photos[0].avatar.thumb.url, class: "image") %>
+                     <% else %>
+                       <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "image") %>
+                      <% end %>
+                  <% end %>
+                   <!-- 把整张图变成连结 -->
+                     <hr>
+                           <div class="product-title" style="height: 50px">
+                             <h4><%= product.title %></h4>
+                           </div>
+
+                           <div class="product-price">
+                             <h4>$<%= product.price %></h4>
+                           </div>
+
+                           <% if current_user %>
+                             <% if !current_user.is_favorite_of?(product) %>
+                               <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                                 <i class="fa fa-heart" aria-hidden="true"></i>
+                               <% end %>
+                             <% else %>
+                               <%= link_to unfavorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                                 <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i>
+                               <% end %>
+                             <% end %>
+                           <% else %>
+                             <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                               <i class="fa fa-heart" aria-hidden="true"></i>
+                             <% end %>
+                           <% end %>
+
+                           <% if product.quantity.present? && product.quantity > 0 %>
+                              <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                           <% else %>
+                              已销售一空，无法购买
+                           <% end %>
+                   </div>
+                 </div>
+
+                 <% end %>
+               </div>
+             </div>
+           </div>
+
+
+      </div>
+    </div>
+  </div>

@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require autosize.min
 //= require_tree .
+//= require social-share-button
+//= require social-share-button/wechat
