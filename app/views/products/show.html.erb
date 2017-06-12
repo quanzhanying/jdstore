@@ -59,6 +59,7 @@
               </div>
               <div class="col-md-2">
                 <% if current_user %>
+
                   <% if !current_user.is_favorite_of?(@product) %>
                     <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
                       <i class="fa fa-heart" aria-hidden="true"></i>
