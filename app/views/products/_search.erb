@@ -1,0 +1,69 @@
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-12 col-sm-12 col-xd-12">
+      <h4> <%= params[:q] %> </h4>
+      <ul class="list-inline">
+        <li><a href="/"> 首页 </a>/</li>
+        <li><a href="/products"> 商品 </a>/</li>
+        <li><a href="#"> <%= params[:q] %> </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div>
+        <% if @products.blank? %>
+          <div><h3><i class="fa fa-question-circle"></i>没货哦！</h3></div>
+          <div style="text-align: center;"><%= link_to("查看所有商品", products_path, class: "btn btn-default") %></div>
+        <% else %>
+          <div><h3><i class="fa fa-leaf"></i><a href="#"> <%= params[:q] %></a> </h3></div>
+        <% end %>
+        <!-- <span style="float: right;"><h4><%= link_to("查看更多...", products_path) %><h4><span> -->
+      </div>
+      <!-- <br> -->
+      <% if !@products.blank? %>
+      <div class="indexPro mt-20">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

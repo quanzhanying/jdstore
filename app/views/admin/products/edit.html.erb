@@ -1,0 +1,30 @@
+<h2> Edit Product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <!-- <div class="group"><%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %></div> -->
+  <div class="group"><%= f.input :name %></div>
+  <div class="group"><%= f.input :content %></div>
+  <div class="group"><%= f.input :description %></div>
+  <div class="group"><%= f.input :quantity %></div>
+  <div class="group"><%= f.input :category %></div>
+  <div class="group"><%= f.input :category1 %></div>
+  <div class="group"><%= f.input :category2 %></div>
+  <div class="group"><%= f.input :keyword %></div>
+  <div class="group"><%= f.input :price %></div>
+  <div class="group"><%= f.input :price_unit %></div>
+  <div class="group"><%= f.input :img_url %></div>
+  <div class="group"><%= f.input :img1_url %></div>
+  <div class="group"><%= f.input :img2_url %></div>
+  <div class="group"><%= f.input :img3_url %></div>
+  <div class="group"><%= f.input :img4_url %></div>
+  <div class="group"><%= f.input :img5_url %></div>
+  <div class="group"><%= f.input :image, as: :file %></div>
+
+  <%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+
+<% end %>
+
+<script type="text/javascript">
+  autosize($('#product_description'));
+</script>

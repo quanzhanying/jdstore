@@ -1,0 +1,471 @@
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.nav-main {
+  margin: 0 auto;
+}
+
+.nav-top {
+  height: 30px;
+  background-color: #f5f5f5;
+}
+.nav-top-left {
+  text-align: left;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+.nav-top-right{
+  text-align: right;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+.nav-top-right li{
+  font-size: 0.9em;
+}
+.dropdown-xs a {
+    height: 26px;
+}
+
+.nav-mid {
+  height: 110px;
+}
+.nav-mid-left{
+  // text-align: left;
+  // margin-top: 15px;
+}
+.nav-mid-mid {
+  // text-align: center;
+  // margin-top: 25px;
+}
+.nav-mid-right{
+  // text-align: center;
+  // margin-top: 25px;
+  // font-size: 1.5em;
+}
+.logo {
+  float: left;
+	margin-top: 20px;
+}
+.search {
+	float: left;
+  margin: 25px 10px 5px 10px;
+	// border-color: #FF9800;
+	// border: 1px solid #FF9800;
+}
+.search-hot {
+	margin: 0px 10px;
+}
+.search-hot li {
+  padding-right: 15px;
+  float: left;
+  display: inline;
+}
+.cart {
+	text-align: center;
+	margin-top: 25px;
+	font-size: 1.5em;
+}
+
+.nav-bot {
+  height: 35px;
+  background-color: #f5f5f5;
+}
+// .nav-bot-left {
+//   text-align: left;
+//   margin-top: 4px;
+//   font-size: 1.5em
+// }
+// .nav-bot-right {
+//   text-align: right;
+//   margin-top: 8px;
+//   font-size: 1.2em;
+// }
+
+.menu .menu-nav .menu-mid, .menu-category {
+  float: left;
+  font-size: 1.2em;
+  text-align: center;
+	vertical-align: middle;
+  line-height: 35px;
+	// display: inline-block;
+}
+
+.menu .menu-nav .menu-category {
+  position: relative;
+  // display: inline-block;
+  // cursor: pointer;
+  z-index: 9;
+}
+
+.menu-category {
+	width: 200px;
+	background-color: #FF9800; //8BC34A 绿色 FF9800 橙色
+	display: inline-block;
+}
+.menu-category a {
+  color: #fff;
+}
+.menu-category a:hover {
+  color: #fff;
+}
+
+.menu-mid {
+	width: 150px;
+	// background-color: #8BC34A;
+	display: inline-block;
+}
+.menu-mid a {
+  color: #555;
+}
+.menu-mid a:hover {
+  // color: #fff;
+}
+
+.menu .menu-nav .menu-category:hover .category-box {
+  position: absolute;
+  display: block;
+}
+
+
+.cutline {
+  float: left;
+  margin-top: 8px;
+  height: 20px;
+  border: 1px solid #c2c2c2;
+  // display: inline-block;
+}
+
+.category-box {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 740px;
+  height: auto;
+}
+
+#category-main {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 480px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f5f5f5; //分类下拉背景颜色
+	opacity:0.90; //设置透明度
+	filter:alpha(opacity=90);
+}
+
+#category-more {
+  padding-top: 8px;
+  padding-left: 15px;
+}
+
+#category-more .item {
+  height: 58px;
+}
+
+#category-more .item .i-master {
+  display: block;
+  height: 54px;
+  padding-left: 40px;
+  text-align: left;
+}
+
+#category-more .item .i-master a {
+  color: #333333;
+  margin-left: 2px;
+}
+
+#category-more .item .i-master a:hover {
+  color: #fa9600;
+}
+
+#category-more .item h3 {
+  font-weight: normal;
+  font-size: 18px;
+  padding-top: 5px;
+  line-height: 22px;
+}
+
+#category-more .item .subCat {
+  font-size: 12px;
+  overflow: hidden;
+  line-height: 20px;
+  height: 20px;
+}
+
+#category-more .item .subCat a {
+  color: #777;	//二级菜单字体
+}
+
+#category-more .item .subCat li {
+  float: left;
+  margin-right: 8px;
+  _display: inline;
+}
+
+#category-more .item .i-cm {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  width: 560px;
+  height: 480px;
+  background: #ffffff;
+  display: none;
+}
+
+#category-more .item .i-master s {
+  position: absolute;
+  width: 11px;
+  height: 54px;
+  background-color: white;
+  left: 190px;
+  display: none;
+  margin-top: -47px;
+}
+
+#category-more .item .i-master h3 .item-1 {
+  width: 16px;
+  height: 22px;
+  // background: url(../images/Grain_oil.png) no-repeat 2px 5px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item .i-master h3 .item-2 {
+  width: 14px;
+  height: 22px;
+  // background: url(../images/corn.png) no-repeat 2px 5px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item .i-master h3 .item-3 {
+  width: 16px;
+  height: 22px;
+  // background: url(../images/fut.png) no-repeat 2px 5px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item .i-master h3 .item-4 {
+  width: 16px;
+  height: 22px;
+  // background: url(../images/egg.png) no-repeat 2px 5px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item .i-master h3 .item-5 {
+  width: 16px;
+  height: 22px;
+  // background: url(../images/Gift_box.png) no-repeat 2px 5px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item .i-master h3 .item-6 {
+  width: 16px;
+  height: 22px;
+  // background: url(../images/liqueur.png) no-repeat 2px 5px;
+  margin-left: -20px;
+  float: left;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-cm {
+  display: block;
+}
+
+#category-more .item.hover .i-master {
+  background-color: white;
+  color: #76ac25;
+  margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-master h3 {
+  margin-left: 10px;
+}
+
+#category-more .item.hover .i-master .subCat {
+  margin-left: 10px;
+}
+
+#category-more .item.hover .i-master a {
+  // text-decoration: none;
+}
+
+#category-more .item.hover .i-master a:hover {
+  color: #76ac25;
+  // text-decoration: underline;
+}
+
+#category-more .item.hover .i-master s {
+  display: block;
+}
+
+#category-more .item.hover .i-master h3 .item-1 {
+  width: 16px;
+  height: 22px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-master h3 .item-2 {
+  width: 14px;
+  height: 22px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-master h3 .item-3 {
+  width: 16px;
+  height: 22px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-master h3 .item-4 {
+  width: 16px;
+  height: 22px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-master h3 .item-5 {
+  width: 16px;
+  height: 22px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .item.hover .i-master h3 .item-6 {
+  width: 16px;
+  height: 22px;
+  margin-left: -20px;
+  float: left;
+  _margin-left: -10px;
+  _position: relative;
+}
+
+#category-more .i-cm .i-left {
+  float: left;
+  width: 542px;
+}
+
+#category-more .i-cm .i-right {
+  float: right;
+  width: 205px;
+  height: 506px;
+}
+
+#category-more .cat-sort {
+  width: 542px;
+  height: 246px;
+  padding: 8px 0 24px 10px;
+}
+
+#category-more .cat-sort dl {
+  overflow: hidden;
+  zoom: 1;
+  // font-family: Microsoft YaHei;
+  padding: 1px 0 0 0;
+}
+
+#category-more .cat-sort dt {
+  width: 80px;
+  padding-right: 10px;
+  float: left;
+  text-align: right;
+  height: 18px;
+  line-height: 18px;
+  margin: 4px 0px;
+  color: #76ac25;
+}
+
+#category-more .cat-sort dt a {
+  color: #76ac25;
+  font-size: 14px;
+}
+
+#category-more .cat-sort dt a:hover {
+  // text-decoration: underline;
+}
+
+#category-more .cat-sort dd {
+  overflow: hidden;
+  zoom: 1;
+}
+
+#category-more .cat-sort dd a {
+  float: left;
+  white-space: nowrap;
+  display: block;
+  // text-decoration: none;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  margin: 4px 0px;
+  text-align: left;
+  padding: 0px 10px;
+  border-left: 1px solid #ccc;
+  color: #666;
+}
+
+#category-more .cat-sort dd a:hover {
+  // text-decoration: none;
+  color: #76ac25;
+}
+
+#category-more .i-left .i-img img {
+  width: 560px;
+  height: 200px;
+}
+
+// a.submit5 {
+//   margin: 10px 0 0 0;
+//   display: block;
+//   font-size: 14px;
+//   color: #fff;
+//   height: 28px;
+//   line-height: 28px;
+//   cursor: pointer;
+//   vertical-align: middle;
+//   vertical-align: baseline\9;
+//   // text-decoration: none;
+//   width: 110px;
+//   text-align: center;
+//   background: url(../images/productinfo.png) no-repeat -182px -234px;
+// }
+//
+// a.submit5:hover {
+//   color: #fff;
+//   background: url(../images/productinfo.png) no-repeat -182px -262px;
+// }

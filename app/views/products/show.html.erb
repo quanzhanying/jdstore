@@ -1,0 +1,202 @@
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-12 col-sm-12 col-xd-12">
+      <h4>商品信息</h4>
+      <ul class="list-inline">
+        <li><a href="/"> 首页 </a>/</li>
+        <li><a href="/products"> 商品 </a>/</li>
+        <li><a href="#"> 商品信息 </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <% if @product.img_url.present? %>
+        <%= image_tag(@product.img_url, size: "360x360", class: "main-image wow zoomIn", data: {wow_delay: "1s"} , alt: @product.name) %>
+        <% else %>
+        <%= image_tag("http://placehold.it/320x320&text=No Pic", class: "", alt: "None") %>
+        <% end %>
+      </div>
+      <% if @product.img_url.present? %>
+      <%= image_tag(@product.img1_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+      <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+      <%= image_tag(@product.img2_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+      <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+      <%= image_tag(@product.img3_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+      <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "list-image", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+      <%= image_tag(@product.img4_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+      <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+
+      <% if @product.img_url.present? %>
+      <%= image_tag(@product.img5_url, size: "70x70", class: "list-image", alt: @product.name) %>
+      <% else %>
+      <%= image_tag("http://placehold.it/70x70&text=No Pic", class: "", alt: "None") %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h4> <%= @product.name %> </h4>
+      <br>
+      <h5><%= @product.content %></h5>
+      <br>
+      <div style="background-color:#f5f5f5;padding-left:10px;">
+        <br>
+        <h3 >￥<%= @product.price %><% @product.price_unit %></h3>
+        <br>
+      </div>
+      <br>
+      <h5>库存数量：<%= @product.quantity %></h5>
+      <br>
+      <h5>剩余时间：<span id="getting-started"></span></h5>
+      <br><br><br><br><br>
+      <div style="text-align:center;">
+        <span>
+          <% if current_user && current_user.is_like?(@product) %>
+
+            <!-- <label class="label label-success"> 收藏商品 </label> -->
+            <%= link_to("取消收藏 ☆ ", unlike_product_path(@product), method: :post, class: "btn btn-default" ) %>
+
+          <% else %>
+            <!-- <label class="label label-success"> 未收藏商品 </label> -->
+            <%= link_to("收藏商品 ❤ ", like_product_path(@product), method: :post, class: "btn btn-default" ) %>
+          <% end %>
+
+        </span>
+        <span>
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
+          <% else %>
+          <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货</a>
+          <% end %>
+        </span>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <h4>购物须知：</h4><br>
+      <p>
+        1、生鲜商品为鲜活易腐类，不支持7天无理由退货。<br><br>
+        2、本商城承诺坏果包赔，如您发现商品有质量问题，请在收到商品之时起24小时内及时提交申请或联系客服处理。<br><br>
+        3、专业生鲜客服团队—让您售后无忧<br>
+        &nbsp;&nbsp;在线客服：dalvse.com<br>
+        &nbsp;&nbsp;客服电话：400-12345678<br>
+        &nbsp;&nbsp;服务时间：09:00-18:00<br>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-3">
+      <div class="mtb-10" style=""><h4>热卖精选：</h4></div>
+
+      <% @recommends.each do |product| %>
+      <div class="row pt-20">
+        <div class="col-md-4">
+          <%= link_to product_path(product) do %>
+          <% if product.img_url.present? %>
+          <%= image_tag(product.img_url, size: "80x80", class: "lazy", alt: product.name) %>
+          <% else %>
+          <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "lazy", alt: "None") %>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div>
+            <%= link_to product_path(product), target:"" do %>
+            <%= product.name %>
+            <% end %>
+          </div>
+          <div style="color:orange;">
+            <b>￥<%= product.price %></b><% product.price_unit %>
+          </div>
+          <div>
+            <span>
+              
+            </span>
+            <span>
+              <% if product.quantity.present? && product.quantity > 0 %>
+                <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus fa-1x") %>
+              <% else %>
+                已销售一空，无法购买！
+              <% end %>
+            </span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-9">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#menu1" data-toggle="tab">商品详情</a></li>
+        <li><a href="#menu2" data-toggle="tab">用户评价</a></li>
+      </ul>
+      <div class="tab-content pt-10">
+        <div id="menu1" class="tab-pane fade in active">
+          <P>绿色，天然，有机，健康！</P>
+          <p><%= simple_format(@product.description) %></p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <h3>Menu 2</h3>
+          <p>Some content in menu 2.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$("#getting-started")
+.countdown("<%= Time.zone.now + 2.days %>", function(event) {
+  $(this).text(
+    event.strftime('%D days %H:%M:%S')
+  );
+});
+</script>
+
+<!-- <div class="row">
+<div class="col-md-6">
+<% if @product.image.present? %>
+<%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+<% else %>
+<%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+<% end %>
+</div>
+<div class="col-md-6">
+<h2> <%= @product.name %> </h2>
+<div style="height:100px;">
+<p>
+<%= @product.description %>
+</p>
+</div>
+<div> 数量 : <%= @product.quantity %> </div>
+<div class="product-price"> ￥ <%= @product.price %> </div>
+<div class="pull-right">
+<% if @product.quantity.present? && @product.quantity > 0 %>
+<%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-md btn-danger") %>
+<% else %>
+已销售一空，无法购买！
+<% end %>
+</div>
+</div>
+</div> -->

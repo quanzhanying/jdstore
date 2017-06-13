@@ -1,0 +1,513 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@charset "UTF-8";
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Microsoft YaHei', 'Segoe UI', 'Arial';
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.footer {
+  // height: 200px;
+  .thumbnail {
+    margin: 0;
+  }
+}
+
+.site-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: #6C6C6C;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #690;
+  text-decoration: none;
+}
+
+a:active {
+  color: #690;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+input:focus,
+select {
+  outline: none;
+}
+
+img {
+  border: none;
+}
+
+.pr-gero {
+  padding-right: 0;
+}
+
+.pl-gero {
+  padding-left: 0;
+}
+
+.pt-5 {
+  padding-top: 5px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-15 {
+  padding-top: 15px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pt-25 {
+  padding-top: 25px;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.pt-60 {
+  padding-top: 60px;
+}
+
+.pt-70 {
+  padding-top: 70px;
+}
+
+.pb-30 {
+  padding-bottom: 30px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.ptb-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ptb-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ptb-60 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.ptb-80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.ptb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.ptb-130 {
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mtb-5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.mtb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mtb-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-bgc {
+  background-color: #f5f5f5;
+}
+
+
+//---------- product ----------//
+
+.push-show li {
+  float: left;
+  display: inline;
+  margin-left: 32px;
+}
+
+.push-show li:first-child {
+  margin-left: 0;
+}
+
+.push-show-product {
+  width: 276px;
+  height: 160px;
+}
+
+
+
+.time-buy li {
+  float: left;
+  display: inline;
+  margin-left: 32px;
+}
+
+.time-buy li:first-child {
+  margin-left: 0;
+}
+
+.time-buy-product {
+  width: 233px;
+  height: 272px;
+  border: 1px;
+  border-color: #000;
+}
+
+
+
+
+/*精品生鲜*/
+
+// .indexPro {
+//   margin-bottom: 50px;
+// }
+//
+// .indexPro .PTitle {
+//   width: 1200px;
+//   height: 50px;
+//   border-top: 1px solid #dadada;
+//   padding: 5px 0;
+//   line-height: 50px;
+//   overflow: hidden;
+// }
+//
+// .indexPro .PTitle h3 {
+//   display: block;
+//   float: left;
+//   font-size: 20px;
+//   color: #666;
+// }
+//
+// .indexPro .PTitle h3 img {
+//   float: left;
+//   margin-right: 10px;
+// }
+//
+// .indexPro .PTitle h3 span {
+//   color: #ff6336;
+//   font-size: 24px;
+// }
+
+// .indexPro .PTitle a {
+//   display: block;
+//   float: right;
+//   font-size: 14px;
+//   color: #669900;
+// }
+
+// .indexPro .PTitle a:first-child {
+//   float: left;
+// }
+//
+// .indexPro .pPush {}
+//
+// .indexPro .pPush img {}
+
+.indexPro .pCont {
+  // border-top: 1px solid #dadada;
+  // border-left: 1px solid #dadada;
+  margin-bottom: 10px;
+}
+
+.indexPro .pCont .pList {
+  // width: 1200px;
+  zoom: 1;
+}
+
+.pList li {
+  border: 1px solid #dadada;
+}
+
+.indexPro .pCont .pList li {
+  // border-bottom: 1px solid #dadada;
+  // border-right: 1px solid #DADADA;
+  width: 239px; //230px;
+  height: 284px;
+  padding: 4px;
+  float: left;
+  position: relative;
+}
+
+.indexPro .pCont .pList li:hover {
+  -webkit-box-shadow: 0 0 10px #efefef;
+  box-shadow: 0 0 10px #c7c7c7;
+}
+
+.indexPro .pCont .pList .title-a {
+  position: absolute;
+  top: 195px;
+  width: 230px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+}
+
+.indexPro .pCont .pList .title-a a {
+  width: 220px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;//18px;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.indexPro .pCont .pList .price {
+  position: absolute;
+  top: 235px;
+  line-height: 20px;
+  height: 20px;
+  overflow: hidden;
+  zoom: 1;
+  margin-top: 4px;
+}
+
+.indexPro .pCont .pList .price b {
+  float: left;
+  margin-left: 20px;
+  // font-size: 20px;
+  font-size: 16px;
+  color: #ea5404;
+  width: 100px;
+}
+
+.indexPro .pCont .pList .pImg {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  width: 160px;
+  height: 160px;
+}
+
+.indexPro .pCont .pList .pImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.indexPro .pCont .pList .pImg .gBtn {
+  position: absolute;
+  width: 30px;
+  height: 24px;
+  top: 210px;
+  cursor: pointer;
+  left: 140px;
+}
+
+.indexPro .pCont .pList .pImg .gBtn a {
+  width: 30px;
+  height: 24px;
+  display: block;
+  // background: url(../images/shopping_cart.jpg) no-repeat;
+  line-height: 24px;
+  font-size: 16px;
+  color: #690;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.timedbuy_change li .tb_cha_price {
+  position: relative;
+}
+
+// .timedbuy_change li .tb_cha_price .gBtn {
+//   position: absolute;
+//   width: 30px;
+//   height: 24px;
+//   top: 5px;
+//   cursor: pointer;
+//   left: 180px;
+// }
+
+// .timedbuy_change li .tb_cha_price .gBtn a {
+//   width: 30px;
+//   height: 24px;
+//   display: block;
+  // background: url(../images/shopping_cart.jpg) no-repeat;
+  // line-height: 24px;
+  // font-size: 16px;
+  // color: #690;
+  // text-decoration: none;
+  // padding-left: 20px;
+// }
+
+
+//---------- carouse1 ----------//
+
+.carousel-img {
+  // min-height: 500px;
+}
+
+#myCarousel .nav a small {
+  display: block;
+}
+
+#myCarousel .nav {
+  // background: #eee;
+}
+
+#myCarousel .nav a {
+    border-radius:0px;
+}
+
+.nav-pills {
+  // width: 100%;
+}
+
+.nav-justified > li > a {
+  border-radius: 0;
+}
+
+.nav-pills > li[data-slide-to="0"].active a {
+  background-color: #8BC34A;
+  // border: 1px solid #4CAF50;
+}
+
+.nav-pills > li[data-slide-to="1"].active a {
+  background-color: #8BC34A;
+  // border: 1px solid #4CAF50;
+}
+
+.nav-pills > li[data-slide-to="2"].active a {
+  background-color: #8BC34A;
+  // border: 1px solid #4CAF50;
+}
+
+.nav-pills > li[data-slide-to="3"].active a {
+  background-color: #8BC34A;
+  // border: 1px solid #4CAF50;
+}
+
+.nav-pills > li[data-slide-to="4"].active a {
+  background-color: #8BC34A;
+  // border: 1px solid #4CAF50;
+}

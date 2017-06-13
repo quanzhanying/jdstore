@@ -1,0 +1,482 @@
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+
+    <!-- <div class="col-md-12"> -->
+    <div class="carousel1-wrapper">
+      <!-- <div "carousel-img"> -->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href="/products/1"><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fgf8dcknzdj31hc0dc4q9.jpg"></a>
+            <!-- <a href="/products/1"><img src="/images/carousel01.png"></a> -->
+            <div class="carousel-caption">
+              <h1>烟台美早大樱桃</h1>
+              <h3>26mm-28mm大果</h3>
+              <p>净重：3斤110,元，5斤165元， 顺丰包邮！</p>
+            </div>
+          </div>
+          <!-- End Item -->
+          <div class="item">
+            <a href="/products/2"><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fgeyzt7n6aj31hc0dc1hs.jpg"></a>
+            <!-- <a href="/products/2"><img src="/images/carousel02.png"></a> -->
+            <div class="carousel-caption">
+              <h1>广西满天星百香果</h1>
+              <h3>比一般百香果更甜</h3>
+              <p>5斤45元，包邮！</p>
+            </div>
+          </div>
+          <!-- End Item -->
+          <div class="item">
+            <a href="/products/3"><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fgez0ysqj6j31hc0dcx0r.jpg"></a>
+            <!-- <a href="/products/3"><img src="/images/carousel03.png"></a> -->
+            <div class="carousel-caption">
+              <h1>广西红心火龙果</h1>
+              <h3>金都一号大果</h3>
+              <p>5斤35.98元， 包邮！</p>
+            </div>
+          </div>
+          <!-- End Item -->
+          <div class="item">
+            <a href="/products/4"><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fgez1ebzb1j31hc0dchdl.jpg"></a>
+            <!-- <a href="/products/4"><img src="/images/carousel04.png"></a> -->
+            <div class="carousel-caption">
+              <h1>广西 贵妃芒</h1>
+              <h3>皮薄 肉厚 壳小</h3>
+              <p>8斤39.8元，包邮！</p>
+            </div>
+          </div>
+          <!-- End Item -->
+          <div class="item">
+            <a href="/products/5"><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgez1riffwj31hc0dc1kf.jpg"></a>
+            <!-- <a href="/products/5"><img src="/images/carousel05.png"></a> -->
+            <div class="carousel-caption">
+              <h1>云南冰糖红心木瓜</h1>
+              <h3>海拔2000米，高原产，原生态</h3>
+              <p>8斤 23.9元，包邮！</p>
+            </div>
+          </div>
+          <!-- End Item -->
+
+        </div>
+      </div>
+
+      <div class="col-md-12 nav-bgc">
+        <div class="site-wrapper">
+          <!-- End Carousel Inner -->
+          <ul class="nav nav-pills nav-justified">
+            <li data-target="#myCarousel" data-slide-to="0" class="active">
+              <a href="/products/1">大樱桃<small></small></a>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="1">
+              <a href="/products/2">百香果<small></small></a>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="2">
+              <a href="/products/3">火龙果<small></small></a>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="3">
+              <a href="/products/4">贵妃芒<small></small></a>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="4">
+              <a href="/products/5">冰糖木瓜<small></small></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Carousel -->
+    <!-- </div> -->
+  </div>
+  <!-- End row -->
+<!-- </div> -->
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#myCarousel').carousel({interval: 3000});
+
+  var clickEvent = false;
+  $('#myCarousel').on('click', '.nav a', function () {
+    clickEvent = true;
+    $('.nav li').removeClass('active');
+    $(this).parent().addClass('active');
+  }).on('slid.bs.carousel', function (e) {
+    if (!clickEvent) {
+      var count = $('.nav').children().length - 1;
+      var current = $('.nav li.active');
+      current.removeClass('active').next().addClass('active');
+      var id = parseInt(current.data('slide-to'));
+      if (count == id) {
+        $('.nav li').first().addClass('active');
+      }
+    }
+    clickEvent = false;
+  });
+});
+</script>
+
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-yelp" style="color:orange"></i> 大爱无疆 </h3></div>
+      <div class="push-show mt-10">
+        <ul>
+          <li>
+            <div class="push-show-product">
+              <a href="/products/6" target=""><img alt="首页-产品专题-01" src="/images/push01.jpg" width="276" height="160" /></a>
+            </div>
+          </li>
+          <li>
+            <div class="push-show-product">
+              <a href="/products/6" target=""><img alt="首页-产品专题-02" src="/images/push02.jpg" width="276" height="160" /></a>
+            </div>
+          </li>
+          <li>
+            <div class="push-show-product">
+              <a href="/products/6" target=""><img alt="首页-产品专题-03" src="/images/push03.jpg" width="276" height="160" /></a>
+            </div>
+          </li>
+          <li>
+            <div class="push-show-product">
+              <a href="/products/6" target=""><img alt="首页-产品专题-04" src="/images/push04.jpg" width="276" height="160" /></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="site-wrapper">
+  <hr>
+</div> -->
+
+
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div>
+        <span style="font-size:24px;"><i class="fa fa-leaf" style="color:#690"></i> 热销商品 </span>
+        <span style="float:right; font-size:18px;"><%= link_to("查看更多...", products_path) %><span>
+      </div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- 新鲜果蔬 -->
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="glyphicon glyphicon-apple" style="color:#690"></i> 新鲜果蔬 </h3></div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products_category1.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- 肉类蛋禽 -->
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-paw"></i> 肉类蛋禽 </h3></div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products_category2.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- 五谷粮油 -->
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-pagelines"></i> 五谷粮油 </h3></div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products_category3.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- 干货零食 -->
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-pinterest"></i> 干货零食 </h3></div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products_category4.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- 茶水饮品 -->
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-coffee"></i> 茶水饮品 </h3></div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products_category5.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- 礼品礼盒 -->
+<!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="site-wrapper mt-30">
+      <div><h3><i class="fa fa-gift"></i> 礼品礼盒 </h3></div>
+      <div class="indexPro mt-10">
+        <div class="pCont clearfix">
+          <ul id="floor-gap-fresh" class="pList">
+            <% @products_category6.each do |product| %>
+            <li class="price_list1">
+              <div class="li-boxshadow">
+                <div class="pImg fly_img">
+                  <a title="<%= product.name %>" target="_blank" href="#">
+                    <%= link_to product_path(product) do %>
+                      <% if product.img_url.present? %>
+                        <%= image_tag(product.img_url, size: "160x160", class: "lazy", alt: product.name) %>
+                      <% else %>
+                        <%= image_tag("http://placehold.it/160x160&text=No Pic", class: "lazy", alt: "None") %>
+                      <% end %>
+                    <% end %>
+                  </a>
+                  <div class="gBtn">
+                    <!-- <a href=""><i class="fa fa-cart-plus"></i></a> -->
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("", add_to_cart_product_path(product), method: :post, class: "fa fa-cart-plus") %>
+                    <% else %>
+                    已销售一空，无法购买！
+                    <% end %>
+                  </div>
+                </div>
+                <div class="title-a">
+                  <a title="<%= product.name %>" href="#" target="_blank"><%= product.name %></a>
+                </div>
+                <div class="price">
+                  <b>￥<%= product.price %></b><% product.price_unit %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->

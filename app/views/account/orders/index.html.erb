@@ -1,0 +1,77 @@
+<section>
+  <div class="breadcrumps-back">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumps-heading">
+            <h3>订单列表</h3>
+            <div class="breadcrumps-border"></div>
+            <ul>
+              <li><a href="/"> 首页</a> /</li>
+              <li><a href="#"> 订单列表</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="shop-col-3" class="ptb-100"> -->
+<section id="shop-col-3" style="margin: 20px auto 100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="cart-list text-center">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>生成时间</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @orders.each do |order| %>
+                <tr class="cart_item">
+                  <td class="cart-detail">
+                    <div class="cart-name">
+                      <h5><%= link_to(order.id, order_path(order.token)) %></h5>
+                    </div>
+                  </td>
+                  <td class="cart-detail">
+                    <div class="cart-amount">
+                      <h6><%= order.created_at.to_s(:long) %></h6>
+                    </div>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- <h2>订单列表 </h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>#</th>
+<th>生成时间</th>
+</tr>
+</thead>
+<tbody>
+<% @orders.each do |order| %>
+<tr>
+<td> <%= link_to(order.id, order_path(order.token)) %> </td>
+<td> <%= order.created_at.to_s(:long) %> </td>
+</tr>
+<% end %>
+</tbody>
+</table> -->

@@ -1,0 +1,69 @@
+
+/* ======== login ======== */
+.user_login{
+  height: 750px;
+  // background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.user_signup{
+  height: 850px;
+  // background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.user_edit{
+  height: 1000px;
+  // background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.user_pop_content{
+  background: #fff;
+  margin-top: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 1px 3px 5px #999;
+  border: 1px solid #690;
+  border-radius: 10px;
+
+  opacity:0.90;
+  filter:alpha(opacity=90);
+
+  h2{
+    text-align: center;
+  }
+
+  .psw{
+    float: right;
+    margin-top: -33px;
+    position: relative;
+  }
+
+  .account{
+    text-align: center;
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #999;
+      background-color: #fff;
+      border-color: #690;
+      border: 1px solid #690;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+    .button:hover{
+      background-color: #fff;
+      border-color: orange;
+      border: 1px solid orange;
+      color: #999;
+    }
+  }
+}

@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Jdstore</title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <title>大绿色 - 大自然的颜色！</title>
+  <%= csrf_meta_tags %>
+  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+  <%= javascript_include_tag 'application' %>
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body id="<%= "#{controller_name}-#{action_name}" %>" >
 
-  <body>
-    <%= yield %>
-  </body>
+  <div class="wrapper">
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield %>
+    </div>
+  </div>
+
+  <%= render "common/footer" %>
+
+  <script src="https://qiyukf.com/script/83fee5aba8487f3bfda263c207c4282b.js" defer async></script>
+
+</body>
+
 </html>

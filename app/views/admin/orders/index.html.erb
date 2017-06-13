@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-12 col-sm-12 col-xd-12">
+      <h4>订单列表</h4>
+      <ul class="list-inline">
+        <li><a href="/"> 首页 </a>/</li>
+        <li><a href="/products"> 商品 </a>/</li>
+        <li><a href="#"> 订单列表 </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="site-wrapper mt-20">
+    <div class="col-md-12">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>生成时间</th>
+            <th>订购者</th>
+            <th>订单状态</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td> <%= link_to(order.id, admin_order_path(order) ) %> </td>
+            <td> <%= order.created_at.to_s(:long) %> </td>
+            <td> <%= order.user.email %></td>
+            <td> <%= order.aasm_state %> </td>
+          </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>
