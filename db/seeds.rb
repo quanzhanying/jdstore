@@ -41,4 +41,3 @@
       quantity: 5,
       image: open("https://images-cn.ssl-images-amazon.com/images/I/41LN-bXtA7L._AC_UL320_SR320,320_.jpg")
       )
-    
