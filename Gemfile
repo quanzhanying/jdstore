@@ -55,6 +55,9 @@ gem 'aasm'
 gem 'ancestry'
 # 短信
 # gem 'smart_sms'
+# 管理密码
+gem 'figaro'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
