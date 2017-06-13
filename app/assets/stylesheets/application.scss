@@ -1,0 +1,752 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ // @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+ // .jumbotron {
+ //   background-image:url('https://ws3.sinaimg.cn/large/006tKfTcgy1fg75gxna9sj31hc0zk4o6.jpg');
+ //   background-repeat: no-repeat;
+ //   background-size: cover;
+ //   padding-bottom: 110px;
+ // }
+
+
+
+ .navbar-fixed-top {
+     top: 0px;
+ }
+
+ .navbar-fixed-top, .navbar-fixed-bottom {
+     position: fixed;
+     top: 0px;
+     right: 0;
+     left: 0;
+     z-index: 1030;
+ }
+ // .title {
+ //   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+ //   text-align: center;
+ //   margin-top: 200px;
+ //   margin-bottom: 80px;
+ // }
+ //
+ // .slogan {
+ //   margin-top: 10px;
+ //   margin-bottom: 50px;
+ //   text-align: center;
+ //   color: white;
+ //   top: 12px;
+ // }
+ //
+ // .lead {
+ //   margin-bottom: 60px;
+ //   text-align: center;
+ //   color: white;
+ // }
+ //
+ // .carousel {
+ //   width: 1280px;
+ //   margin: 0 auto;
+ // }
+ // .carousel .item {
+ //   height: 600px;
+ // }
+
+
+ /****** LOGIN MODAL ******/
+ .loginmodal-container {
+   padding: 30px;
+   max-width: 350px;
+   width: 100% !important;
+   background-color: #F7F7F7;
+   margin: 0 auto;
+   border-radius: 2px;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   font-family: roboto;
+ }
+
+ .loginmodal-container h1 {
+   text-align: center;
+   font-size: 1.8em;
+   font-family: roboto;
+ }
+
+ .loginmodal-container input[type=submit] {
+   width: 100%;
+   display: block;
+   margin-bottom: 10px;
+   position: relative;
+ }
+
+ .loginmodal-container input[type=text], input[type=password] {
+   height: 44px;
+   font-size: 16px;
+   width: 100%;
+   margin-bottom: 10px;
+   -webkit-appearance: none;
+   background: #fff;
+   border: 1px solid #d9d9d9;
+   border-top: 1px solid #c0c0c0;
+   /* border-radius: 2px; */
+   padding: 0 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+ }
+
+ .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+   border: 1px solid #b9b9b9;
+   border-top: 1px solid #a0a0a0;
+   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+ }
+
+ .loginmodal {
+   text-align: center;
+   font-size: 14px;
+   font-family: 'Arial', sans-serif;
+   font-weight: 700;
+   height: 36px;
+   padding: 0 8px;
+ /* border-radius: 3px; */
+ /* -webkit-user-select: none;
+   user-select: none; */
+ }
+
+ .loginmodal-submit {
+   /* border: 1px solid #3079ed; */
+   border: 0px;
+   color: #fff;
+   text-shadow: 0 1px rgba(0,0,0,0.1);
+   background-color: #4d90fe;
+   padding: 17px 0px;
+   font-family: roboto;
+   font-size: 14px;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+ }
+
+ .loginmodal-submit:hover {
+   /* border: 1px solid #2f5bb7; */
+   border: 0px;
+   text-shadow: 0 1px rgba(0,0,0,0.3);
+   background-color: #357ae8;
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+ }
+
+ .loginmodal-container a {
+   text-decoration: none;
+   color: #666;
+   font-weight: 400;
+   text-align: center;
+   display: inline-block;
+   opacity: 0.6;
+   transition: opacity ease 0.5s;
+ }
+
+ .login-help{
+   font-size: 12px;
+ }
+
+
+
+
+ /*===== 网站通用设置 ======*/
+body {
+  overflow-x: hidden; //裁切页面内容，超出视窗不显示
+  letter-spacing: 1px; //文字间距
+  font-size: 14px; //文字大小
+  position: relative; //设定为相对位置
+
+  a {
+    text-decoration:none !important; //文字连结移除底线
+  }
+
+  /*===== 基础栏位设定 ======*/
+  .width-25 {
+    width: 25%;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+
+  .width-75 {
+    width: 75%;
+  }
+
+  .width-100 {
+    width: 100%;
+  }
+}
+
+/*===== Navbar 导览列 ======*/
+.navbar-default {
+  background: rgba(0,0,0,0.5); //半透明背景
+
+  /* 文字连结 */
+  a {
+    color: #fff !important;
+  }
+
+  /* 连结-鼠标效果 */
+  a:hover,
+  a:active,
+  a:focus {
+    color: #0070DE !important;
+  }
+
+  /*===== 导览列滑动特效 ======*/
+  &.scroll_navbar {
+    background-color: #fff; //背景颜色
+
+    /* 文字连结 */
+    a {
+      color: #000 !important;
+    }
+
+    /* 连结-鼠标效果 */
+    a:hover,
+    a:active,
+    a:focus {
+      color: #0070DE !important;
+    }
+  }
+
+  /*===== Logo ======*/
+  .logo-box {
+    margin-right: 15px;
+    font-size: 20px;
+  }
+
+  /*===== Dropdown ======*/
+  .dropdown-menu{
+    background-color: #fff;
+    min-width: 175px;
+
+    /* 连结 */
+    a {
+      color: #000 !important;
+      padding: 8px 17px;
+    }
+
+    /* 连结-鼠标滑动效果 */
+    a:hover {
+      background-color: #f0f0f0;
+      color: #0070DE !important;
+    }
+  }
+
+  /* 下拉选单三角箭头 */
+  .dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+  }
+
+  /* 搜索栏 */
+  .search-box {
+    margin-top: 7.5px;
+
+    /* 输入框 */
+    input {
+      height: 35px;
+    }
+
+    /* 按钮 */
+    button {
+      padding: 5px 10px 5px 10px;
+      height: 35px;
+    }
+  }
+}
+
+/*===== Footer 页脚 ======*/
+.footer{
+
+  bottom: 0;
+  /* set the fixed height of the footer here*/
+  text-align: center;
+  min-height: 50px; //最小高度
+  background-color: #222;
+  padding: 15px 0;
+  color: #fff;
+  p {
+     color: white;
+     margin-top: 30px;
+ }
+
+  /* 标题 */
+  h4 {
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  /* 连结 */
+  a {
+    text-decoration:none;
+    color: #ddd;
+  }
+
+  /* 连结-鼠标效果 */
+  a:hover,
+  a:active,
+  a:focus {
+    color: #0070DE;
+  }
+}
+
+html {
+   position: relative;
+   min-height: 50%;
+}
+
+body {
+   /* Margin bottom by footer height*/
+   margin-bottom: 0px;
+}
+
+/*===== 首页通用设置 =====*/
+.welcome-box {
+  /* 副标题 */
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  /* 短分隔线 */
+  .short-line {
+    background: #0070DE;
+    margin: 15px auto 30px auto;
+    width: 150px;
+    height: 1.5px;
+  }
+
+  /* 按钮 */
+  .btn-push {
+    background-color: transparent;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); //半透明背景
+    padding: 10px 20px;
+    font-size: 20px;
+
+    /* 显示特效 */
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* 按钮-鼠标滑动效果 */
+  .btn-push:hover {
+    background-color: #0070DE;
+    border-color: #0070DE;
+  }
+}
+
+/*===== Intro 首页-广告轮播 =====*/
+.intro-box {
+  /*===== 轮播内容 =====*/
+  .item {
+    /* 标题 */
+    h3 {
+      margin-top: -40%; //标题高度
+      font-size: 50px; //文字大小
+      letter-spacing: 5px; //文字间距
+    }
+
+    /* 内文 */
+    p {
+      font-size: 20px;
+    }
+
+    /* 图片 */
+    img {
+      width: 100%;
+    }
+  }
+
+  /*===== 换页按钮 =====*/
+  .carousel-control {
+    span {
+      margin-top: 145%; //按钮高度
+      font-size: 50px; //按钮大小
+    }
+  }
+}
+
+/*===== Story 首页-品牌故事 =====*/
+.story-box {
+  /* 区块 */
+  background-color: #fff;
+  text-align: center;
+  padding: 25px 62.5px 50px 62.5px; //区块间隔
+
+  /* 标题 */
+  h3 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  /* 内文 */
+  p {
+    color: #333;
+    line-height: 24px;
+    text-align: justify;
+  }
+
+  /* 图片 */
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  /* 分隔线 */
+  hr {
+    height: 1.5px;
+    background-color: #666;
+  }
+}
+
+/*===== Service 首页-服务优势 =====*/
+.service-box {
+  /* 区块 */
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 25px 62.5px 50px 62.5px; //区块间隔
+
+  /* 图片 */
+  img {
+    width: 100px;
+  }
+
+  /*===== 内容区块 =====*/
+  .box {
+    margin: 0 25px 0 25px;
+
+    /* 标题 */
+    h3 {
+      font-size: 18px;
+    }
+
+    /* 内文 */
+    p {
+      color: #666;
+      line-height: 24px;
+      margin-top: 25px;
+      text-align: justify;
+    }
+  }
+}
+
+/*===== Categories 首页-商品分类 =====*/
+.categories-box {
+  /* 区块 */
+  background-color: #fff;
+  text-align: center;
+
+  /* 图片 */
+  img {
+    width: 300px;
+  }
+
+  /*===== Content 分类內容 =====*/
+  .category-content {
+    padding: 50px 0 0 0;
+
+    /* 标题 */
+    h3 {
+      padding: 20px 0 20px 0;
+      font-size: 18px;
+    }
+
+    /* 内文 */
+    p {
+      padding: 0 62.5px 50px 62.5px;
+      text-align: justify;
+      color: #666;
+    }
+  }
+}
+
+/*===== Show 首页-推荐商品 =====*/
+.show-box {
+  /* 区块 */
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  /* 图片 */
+  img {
+    width: 100%;
+  }
+
+  /* 图片区块 */
+  .box {
+    margin-top: 15px;
+    box-shadow: 2px 2px 5px #888;
+  }
+
+  /* 图片区块-鼠标滑动效果 */
+  .box:hover {
+    opacity: 0.6;
+  }
+
+  /* 文字区块 */
+  .content {
+    margin-top: 15px;
+    color: #000;
+  }
+}
+
+/*===== Feedback 首页-用户反馈 =====*/
+.feedback-box {
+  /* 区块 */
+  background-color: #fff;
+  text-align: center;
+  padding: 50px 0 125px 0;
+
+  /* 标题 */
+  strong {
+    margin-top: 25px;
+    color: #4A6BB5;
+  }
+
+  /* 图片 */
+  img {
+    width: 80px;
+    margin: 0 auto 25px auto;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+
+  /* 文字 */
+  p {
+    color: #666;
+    max-width: 550px;
+    margin: 0 auto 25px auto;
+  }
+
+  /* 按钮设置 */
+  .carousel-indicators {
+    bottom: -70px; //按钮位置
+
+    /* 按钮 */
+    li {
+      background-color: #ddd;
+      height: 12.5px;
+      width: 12.5px;
+      margin: 0 5px;
+      border-radius: 0;
+
+      /* 按钮转向45度 */
+      -moz-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    /* 按钮-启动效果 */
+    li.active {
+      background-color: #4A6BB5;
+    }
+  }
+}
+
+/*===== Brands 首页-合作伙伴 =====*/
+.brand-box {
+  /* 区块 */
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  /* 图片 */
+  img {
+    margin: 10px 15px 10px 15px;
+    width: 150px;
+  }
+}
+
+/*===== Push 首页-立即购买 =====*/
+.push-box {
+  /* 区块 */
+  text-align: center;
+  padding: 75px 0 0 0;
+  height: 200px;
+  background: image_url("start.jpg") no-repeat scroll top center/ cover; //背景图片
+}
+
+
+/*===== 商品页面通用设置 ======*/
+.product-box {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 0 100px 0;
+
+  a {
+    color: #666; //连结字体颜色
+  }
+
+  /* 图片-鼠标滑动效果 */
+  a:hover {
+    color: #0070DE !important;
+    img {
+      opacity: 0.75;
+    }
+  }
+
+  /* 按钮 */
+  .btn {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+  }
+
+  /* 按钮-鼠标效果 */
+  .btn:hover,
+  .btn:focus {
+    color: #0070DE;
+  }
+
+  /* 广告图 */
+  .intro-box {
+    text-align: center;
+
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* 商品类型 & 品牌选单 */
+  .menu-box {
+
+  }
+
+  /* 页面路径 & 排序  */
+  .path-sort-box {
+    text-align: left;
+    height: 20px;
+
+    .left-box {
+      float: left;
+    }
+
+    .right-box {
+      float: right;
+
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  /* 商品列表  */
+  .product-items-box {
+    .box {
+      img {
+        width: 100%;
+        margin: 7.5px auto 7.5px auto;
+      }
+    }
+
+    .product-info {
+      text-align: left;
+      line-height: 14px;
+      min-height: 55px;
+    }
+  }
+}
+
+
+   /* fooder 小知识*/
+   .knowledge {
+   background-image:url('https://ws4.sinaimg.cn/large/006tNbRwgy1fghbf9n9wbj30zi08dq4a.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     min-height: 300px;
+     padding: 110px 50px;
+     right: 35px;
+
+   span {
+      color: #000;
+      font-size: 20px;
+         position: absolute;
+         top: 7px;
+         left: 8px;
+         }
+   }
+
+
+.goTop{
+   height: 35px;
+   width: 35px;
+   top: 80%;
+   right: 35px;
+   position: fixed;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 1px 1px 3px #666;
+   span {
+      color: #000;
+      font-size: 20px;
+         position: absolute;
+         top: 7px;
+         left: 8px;
+   }
+}
+.goTop:hover {
+   background-color: #f0f0f0;
+   span {
+      color: #eb5424;
+   }
+}
+
+// 图片抓取功能
+.main-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.list-image {
+    width: 100%;
+}
+
+.list-image-active {
+    box-shadow: 1.5px 1.5px 1.5px #666;
+}

@@ -1,0 +1,45 @@
+<h2> Menu List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_menu_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Menu Pic</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th width="100" colspan="2"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td>
+          <%= menu.id %>
+        </td>
+        <td>
+            <% if menu.image.present? %>
+              <%= image_tag(menu.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+        </td>
+        <td>
+          <%= menu.title %>
+        </td>
+        <td>
+         <%= menu.category_name %>
+         </td>
+
+        <td>
+          <%= link_to("Edit", edit_admin_menu_path(menu)) %>
+        </td>
+
+        <td>
+          <%= link_to("Delete", admin_menu_path(menu), :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
