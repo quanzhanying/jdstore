@@ -37,6 +37,8 @@ gem 'font-awesome-rails';
 gem 'awesome_rails_console'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'mini_magick'
+gem 'letter_opener', group: :development
 
 
 group :development, :test do
