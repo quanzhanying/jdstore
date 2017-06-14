@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail  wow bounce", data: { wow_delay: "0.2s" }) %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> -  <%=  @product.Category.name  %></h2>
+
+    <div style="height:100px;">
+      <p>
+        <%= @product.description %>
+      </p>
+    </div>
+    <div> 数量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <%  if   @product.quantity.present?  &&  @product.quantity   >  0  %>
+         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,  :class => "btn btn-primary btn-lg btn-danger") %>
+      <%  else  %>
+         已销售一空，不能购买
+      <%  end  %>
+    </div>
+  </div>
+</div>
+
+
+特杀价<div id="getting-started"></div>
+
+<script type="text/javascript">
+  $('#getting-started').countdown('2017/06/01', function(event) {
+    $(this).text(event.strftime('倒计时：%d days %H:%M:%S'));
+  });
+</script>

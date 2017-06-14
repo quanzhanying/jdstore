@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -30,9 +30,27 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem  'bootstrap-sass'
+gem  'devise'          # 登录系统
+gem  'simple_form'     # bootstrap表单样式
+gem  'carrierwave'
+gem  'mini_magick'
+gem  'font-awesome-rails'
+gem  'letter_opener',  group: :development  #  寄送资讯
+gem  'aasm'            #  订单系统
+gem  'intercom-rails'  #  客服系统
+gem  'ransack'         #  搜索
+gem  'will_paginate'   #  分页
+gem  'will_paginate-bootstrap'  # 美化分页效果
+gem  'rucaptcha'       #  验证码gem
+gem  'dalli'           #  加载 Memcached 或 Redis支持 的cache_store方案
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem  'awesome_rails_console'
+  gem  'pry'
+
 end
 
 group :development do

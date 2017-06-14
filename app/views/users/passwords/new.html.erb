@@ -1,0 +1,17 @@
+<h2>忘记密码?</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true, :label  =>  "邮箱"  %>
+    <%= rucaptcha_image_tag(alt: 'Captcha') %>
+    <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "重置密码" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

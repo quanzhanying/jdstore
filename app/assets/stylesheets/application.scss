@@ -10,6 +10,48 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require  font-awesome
  *= require_tree .
  *= require_self
  */
+
+@import   "bootstrap-sprockets";
+@import   "bootstrap";
+@import   "font-awesome";
+
+/*===== Navbar 导航栏 ======*/
+
+/*====footer======*/
+.footer{
+  background-color:  black;
+  padding-bottom: 20px;
+  padding-top:  20px;
+}
+
+//---回到顶端按钮---//
+
+.goTop {
+  height:35px;
+  width:35px;
+  top:80%;
+  position:  fixed;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px  1px  3px  #666;
+
+  span {
+    color: #000;
+    font-size: 20px;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+  }
+}
+
+.goTop:hover {      // 指的是当鼠标移至按钮时，按钮所产生的CSS变化
+    background-color: #f0f0f0;
+
+    span{
+      color: #eb5424;
+    }
+  }
