@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
  # Initialize Admin User
-  if User.find_by(email: "admin@test.com").nil?
+  if User.find_by(email: "370369314@qq.com").nil?
     u = User.new
     u.email = "370369314@qq.com"           # 可以改成自己的 email
     u.password = "123456"                # 最少要六码
