@@ -13,4 +13,40 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap/modal
 //= require_tree .
+
+$(function() {
+
+    $('a[href="#toggle-search"], .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn[type="reset"]').on('click', function(event) {
+		event.preventDefault();
+		$('.navbar-bootsnipp .bootsnipp-search .input-group > input').val('');
+		$('.navbar-bootsnipp .bootsnipp-search').toggleClass('open');
+		$('a[href="#toggle-search"]').closest('li').toggleClass('active');
+
+		if ($('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
+			/* I think .focus dosen't like css animations, set timeout to make sure input gets focus */
+			setTimeout(function() {
+				$('.navbar-bootsnipp .bootsnipp-search .form-control').focus();
+			}, 100);
+		}
+	});
+
+	$(document).on('keyup', function(event) {
+		if (event.which == 27 && $('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
+			$('a[href="#toggle-search"]').trigger('click');
+		}
+	});
+
+});
+
+$(document).on('click', '#gotop', function () {
+  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+})
+
+// /*Tooltip*/
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip();
+// });
