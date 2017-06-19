@@ -44,6 +44,8 @@ gem "mini_magick"
 gem 'acts_as_list'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
