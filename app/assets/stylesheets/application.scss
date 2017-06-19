@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+
+//----定义图层
+.info-default {
+  opacity: 0;
+  text-align: center;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  left: 10px;
+  z-index: 4;
+  color: #fff;
+  display:block;
+  position: absolute;
+  width: auto;
+ }
+ //--当鼠标移动至图片上显现的定义
+ .persona-link:hover  .info-default {
+  opacity: 1//文字透明度为0
+ }
+ //--图片的透明度浅和过渡效果
+.persona-link:hover .img-rounded{
+   opacity: 0.2;
+   -webkit-transform: translate3d(0, 0, 0);
+   -o-transform: translate3d(0, 0, 0);
+   -webkit-backface-visibility: hidden;
+   -webkit-perspective: 1000;
+   -webkit-transition: all 0.3s ease-in-out;
+ }
+//--文字介绍
+.wishlist{
+      vertical-align: middle;
+      display: inline-block;
+      color: #ac976b;
+      font-size: 1.35rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 0.5rem;
+      opacity: 0;
+}
+.wishlist:hover{
+  opacity: 1;
+}
+//---加入购物车按钮宽度
+.add-to-carts {
+  display: inline-block;
+    width: 100%;
+    max-width: 10rem;
+
+}
+//---加入购物车背景
+.outline {
+  background: #807e59;
+    border: 0px solid black;
+    color: white;
+    padding: 0.3125rem 0.625rem;
+    max-width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    font-family: 'brandon-grotesque';
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 1px;
+}
