@@ -41,6 +41,7 @@ gem 'annotate'
 gem 'binding_of_caller'
 gem 'letter_opener', group: :development
 gem 'aasm'
+gem 'figaro'
 
 
 group :development, :test do
