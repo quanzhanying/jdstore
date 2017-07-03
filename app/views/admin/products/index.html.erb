@@ -1,0 +1,29 @@
+<h2> 产品列表 </h2>
+<div class="pull-right">
+  <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+</div>
+  <table class="table list">
+    <tr>
+      <th>
+        商品
+      </th>
+      <th>
+        描述
+      </th>
+      <th>
+        价格
+      </th>
+      <th>
+        库存
+      </th>
+    </tr>
+
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, admin_product_path(product) %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.quantity %></td>
+      </tr>
+    <% end %>
+  </table>
