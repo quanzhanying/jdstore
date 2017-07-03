@@ -11,7 +11,7 @@ class CartItemsController < ApplicationController
     else
       flash[:warning] = "數量不足以加入購物車"
     end
-    
+
     redirect_to carts_path
   end
 
