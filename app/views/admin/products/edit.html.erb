@@ -1,0 +1,5 @@
+<h2> 编辑商品 </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+<% end %>
