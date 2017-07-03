@@ -1,5 +1,8 @@
 class Admin::ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :require_admin
+  layout "admin"
 
   def index
     @products = Product.all
