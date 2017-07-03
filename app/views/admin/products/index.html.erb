@@ -3,6 +3,7 @@
 </div>
 <table class="table list">
   <tr>
+    <th width="220">#</th>
     <th>
       商品
     </th>
@@ -15,14 +16,30 @@
     <th>
       库存
     </th>
+    <th>
+      操作
+    </th>
   </tr>
 
   <% @products.each do |product| %>
     <tr>
+      <td>
+        <%= link_to admin_product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+      </td>
       <td><%= link_to product.name, admin_product_path(product) %></td>
       <td><%= product.description %></td>
       <td><%= product.price %></td>
       <td><%= product.quantity %></td>
+      <td>
+        <%= link_to("编辑", edit_admin_product_path(product) ) %>
+        <%= link_to("删除", admin_product_path(product), :method => :delete ) %>
+      </td>
     </tr>
   <% end %>
 </table>

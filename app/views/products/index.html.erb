@@ -1,27 +1,14 @@
-<h2 class="text-center"> 产品列表 </h2>
-<br>
-<table class="table list">
-  <tr>
-    <th>
-      商品
-    </th>
-    <th>
-      描述
-    </th>
-    <th>
-      价格
-    </th>
-    <th>
-      库存
-    </th>
-  </tr>
-
+<div class="row">
   <% @products.each do |product| %>
-    <tr>
-      <td><%= link_to product.name, admin_product_path(product) %></td>
-      <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= product.quantity %></td>
-    </tr>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.name %> ￥ <%= product.price %>
+    </div>
   <% end %>
-</table>
+</div>
