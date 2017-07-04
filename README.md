@@ -1,6 +1,6 @@
 # README
 
-[简单样例](https://gh72.herokuapp.com)
+[简单未装修样例](https://gh72.herokuapp.com)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
