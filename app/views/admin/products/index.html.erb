@@ -1,6 +1,14 @@
-<ul>
-  <% @products.each do |product| %>
-
-  <li> <%= link_to(product.title, admin_product_path(product)) %></li>
+<div class="row">
+  <% @product.each do |product| %>
+  <div class="col-xs-6 col-md-3">
+    <%= link_to product_path (product) do %>
+      <% if proudct.image.present? %>
+         <%= image_tag(product.image.thumb.url, class:"thumbnail") %>
+      <% else %>
+        <%= image_tag(http://placehold.it/200x200&text= No Pic", class:"thumbnail") %>
+      <% end %>
+    <% end %>
+    <%= product.title %> NT <%= product.price %>
+   </div>
   <% end %>
-</ul>
+</div>
