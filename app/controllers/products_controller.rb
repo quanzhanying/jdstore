@@ -12,6 +12,6 @@ class ProductsController < ApplicationController
 
    current_cart.add_product_to_cart(@product)
    flash[:notice] = "成功加入購物車"
-   redirect_to :backs
+   redirect_to :back
  end
 end
