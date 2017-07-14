@@ -43,7 +43,15 @@
 
     <div class="totoal clearfix">
       <span class="pull-right">
-        <span> 總計 xxx NTD </span>
+        <span>
+         <% sum = 0 %>
+         <% current_cart.cart_items.each do |cart_item| %>
+           <% if cart_item.product.price.present? %>
+             <% sum = sum + cart_item.quantity * cart_item.product.price %>
+           <% end %>
+          <% end %>
+          總計 <%= sum %> NTD
+        </span>
       </span>
     </div>
 
