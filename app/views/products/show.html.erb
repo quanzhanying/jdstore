@@ -3,7 +3,7 @@
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
-      <%= image_tag(http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
   <div class="col-md-6">
@@ -15,7 +15,8 @@
    </div>
    <div> 數量 ： <%= @product.quantity %> </div>
    <div class="product-price"> NT <%= @product.price %> </div>
-    <%= link_to ("加入購物車", "#", :class => btn btn-danger btn-lg) %>
+   <div class="pull-right">
+    <%= link_to("加入購物車", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
    </div>
  </div>
 </div>
