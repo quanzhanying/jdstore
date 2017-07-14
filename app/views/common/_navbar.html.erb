@@ -15,7 +15,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                <li>
-                  <%= link_to "#" do  %>
+                   <%= link_to carts_path do  %>
                     购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                   <% end %>
                </li>
@@ -25,6 +25,7 @@
               <!-- <li><%= link_to("Sign up", new_user_session_path) %></li> -->
               <li><%= link_to(content_tag(:i,'SIGN IN', class:'fa fa-sign-in'), new_user_session_path) %></li>
               <% else %>
+
               <li class="dropdown">
                 <a herf="#" class="dropdown-toggle" data-toggle="dropdown">
                   Hi!, <%= current_user.email %>
