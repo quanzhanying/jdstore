@@ -1,0 +1,19 @@
+
+<div class="container sign-up">
+  <div class="col-md-6 col-md-offset-3" >
+      <h2 class="text-left"> 欢迎登录</h2>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, :label => "邮箱地址",required: false, autofocus: true %>
+          <%= f.input :password, :label => "登入密码",required: false %>
+          <%= f.input :remember_me, :label => "记住我",as: :boolean if devise_mapping.rememberable? %>
+        </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "请登录", class:"session-login" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>

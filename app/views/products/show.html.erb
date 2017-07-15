@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h3><%= simple_format(@product.title) %></h3>
+        <div class="show-service">
+          <p class="price">售价 <span class="rmb">￥</span><span class="price"><%= @product.price %></span></p>
+          <p class="service">服务 <span class="service-detail">7天无忧退货 | 48小时快速退款 | 正品保证</span></p>
+        </div>
+        <div class="show-quantity">
+          <p class="quantity">库存 <span class="quantity"><%= @product.quantity %></span> </p>
+          <p class="delivery">运费 <span class="delivery">满￥99 包邮</span></p>
+        </div>
+
+        <div class="show-action clearfix">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to("加入购物车",add_to_cart_product_path(@product),:remote=>true,method: :post, class: "btn btn-lg a1") %>
+            <%= link_to("立即购买", pay_now_product_path(@product), method: :post, class:"btn btn-lg a2", style: "background-color:none;") %>
+          <% else %>
+            <%= link_to("已售罄","#",class: "btn btn-lg", style:"background-color:gray;") %>
+          <% end %>
+        </div>
+  </div>
+</div>

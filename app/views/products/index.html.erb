@@ -1,0 +1,60 @@
+<!-- <div class="container">
+  <div class="row">
+
+        <% @products.each do |product| %>
+          <div class="col-xs-6 col-md-3">
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+            <%= product.title %> ￥ <%= product.price %>
+          </div>
+        <% end %>
+
+  </div>
+</div> -->
+<div class="container-full">
+    <div class="row">
+    	<div class="col-md-12">
+      <% @products.each do |product| %>
+  			<div class="col-sm-6 col-md-4">
+  				<div class="thumbnail" >
+                <%= link_to product_path(product) do %>
+                  <% if product.image.present? %>
+                    <%= image_tag(product.image.thumb.url, ) %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                  <% end %>
+                <% end %>
+      				<div class="caption">
+      						<div class="row">
+      							<div class="col-md-6 col-xs-6">
+      								<h3><%= product.title %></h3>
+      							</div>
+      							<div class="col-md-6 col-xs-6 price text-center">
+      								<h3>
+      								<label><%= product.price %></label></h3>
+      							</div>
+      						</div>
+      						<p></p>
+      						<div class="row">
+      							<div class="col-md-6">
+      								<!-- <a class="btn btn-primary btn-product"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> -->
+                      <% if !product.users.include?(current_user) %>
+                          <%= link_to("",add_to_favorite_product_path(product),method: :post, class: "fa fa-heart") %>
+                        <% else %>
+                          <%= link_to("", quit_favorite_product_path(product),method: :post,  class: "fa fa-heart", style: "color:red;") %>
+                      <% end %>
+                    </div>
+
+        					</div>
+        				</div>
+            </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
