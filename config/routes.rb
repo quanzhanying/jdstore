@@ -11,6 +11,11 @@ end
     end
   end
 
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+    end
+  end
 
+  resources :cart_items
 end
