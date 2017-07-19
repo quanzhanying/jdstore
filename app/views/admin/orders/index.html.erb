@@ -15,7 +15,7 @@
       <td><%= link_to(order.id, admin_order_path(order) )%> </td>
       <td><%= order.created_at.to_s(:long) %> </td>
       <td><%= order.user.email %> </td>
-      <td><%= oreder.aasm_state %> </td>
+      <td><%= order.aasm_state %> </td>
     </tr>
   <% end %>
 
