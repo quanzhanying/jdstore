@@ -9,3 +9,19 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+production:
+  AWS_ACCESS_KEY_ID: "AKIAJDDARJYZDE4MKKAA"
+  AWS_SECRET_ACCESS_KEY: "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"
+  AWS_REGION: "ap-northeast-1"
+  AWS_BUCKET_NAME: "5ccjdstore"
+  PROJECT_ID: "150201"
+  PROJECT_KEY: "ba625ce897229cb1b5185f4839299ba9"
+
+development:
+  AWS_ACCESS_KEY_ID: "AKIAJDDARJYZDE4MKKAA"
+  AWS_SECRET_ACCESS_KEY: "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"
+  AWS_REGION: "ap-northeast-1"
+  AWS_BUCKET_NAME: "5ccjdstore"
+  PROJECT_ID: "150201"
+  PROJECT_KEY: "ba625ce897229cb1b5185f4839299ba9"
