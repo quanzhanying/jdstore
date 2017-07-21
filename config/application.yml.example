@@ -25,3 +25,4 @@ development:
   AWS_BUCKET_NAME: "5ccjdstore"
   PROJECT_ID: "150201"
   PROJECT_KEY: "ba625ce897229cb1b5185f4839299ba9"
+  
