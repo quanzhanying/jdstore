@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hi %{name},"
+  product_list: Porduct List
+  admin:
+    product_list: Admin Porduct List
+  products: Products
+  orders: Orders
+  category: Category
+  product_pic: Porduct Pic
+  name: Name
+  price: Price
+  options: Options
+  edit: Edit
+  delete: Delete

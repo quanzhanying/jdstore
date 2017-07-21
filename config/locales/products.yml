@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    attributes:
+      product:
+        Products: "商品"
+        Orders: "订单"
+        Category: "分类"
+        Porduct Pic: "商品图"
+        Name: "商品名称"
+        Price: "价格"
+        Options: "选项"
+        Edit: "编辑"
+        Delete: "删除"

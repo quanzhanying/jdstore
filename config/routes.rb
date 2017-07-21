@@ -12,7 +12,6 @@ Rails.application.routes.draw do
        post :return
      end
    end
-   resources :frienldy
   end
   resources :products do
     member do
@@ -40,4 +39,5 @@ Rails.application.routes.draw do
       resources :favorites
     end
     resources :about
+    get "/faq" => "pages#faq"
  end

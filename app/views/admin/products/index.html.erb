@@ -1,4 +1,4 @@
-<h2> Product List </h2>
+<h2> <%= t("admin.product_list") %></h2>
 
 
 <div class="pull-right" style="pading-bottom: 20px;">
@@ -8,10 +8,10 @@
   <thead>
     <tr>
       <th>#</th>
-      <th width="220">Product Pic</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th width="100"> Options</th>
+      <th width="220"><%= t("product_pic") %></th>
+      <th><%= t("name") %></th>
+      <th><%= t("price") %></th>
+      <th width="100"><%= t("options")%></th>
     </tr>
   </thead>
   <tbody>
@@ -36,7 +36,7 @@
           <%= product.price %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          <%= link_to( "Edit", edit_admin_product_path(product)) %>
           <br>
           <%= link_to("Delete", admin_product_path(product), method: :delete, data:{ confirm: "Are you sure?"} ) %>
           </td>
