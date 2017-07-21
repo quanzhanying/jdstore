@@ -12,6 +12,7 @@ Rails.application.routes.draw do
        post :return
      end
    end
+   resources :frienldy
   end
   resources :products do
     member do
