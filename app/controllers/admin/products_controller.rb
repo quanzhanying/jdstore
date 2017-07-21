@@ -18,12 +18,12 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @categories = Category.all.map{ |c| [ c.name, c.id ] }
   end
 
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.category_id = params[:category_id]
 
     if @product.update(product_params)
@@ -45,7 +45,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.destroy
     flash[:alert] = "Product deleted"
     redirect_to admin_products_path
