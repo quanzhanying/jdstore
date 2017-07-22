@@ -39,6 +39,7 @@ gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'figaro'
 gem 'airbrake', '~> 5.4'
+gem 'fog'
 
 group :development, :test do
   gem 'pry'
