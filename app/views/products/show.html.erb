@@ -25,3 +25,13 @@
    </div>
  </div>
 </div>
+
+<div id="getting-started"></div>
+<script type="text/javascript">
+  $("#getting-started")
+  .countdown("<%= Time.zone.now + 2.days %>", function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+</script>
