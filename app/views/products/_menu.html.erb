@@ -1,0 +1,20 @@
+
+<div class="menu bg-color1">
+  <div class="menuList">
+
+  <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if !params[:category] %>">
+    <%= link_to("首页", products_path)%>
+  </div>
+
+   <% Category.all.each do |category| %>
+
+  <div class="menuList-item bg-color1 <%= 'menuList-activeItem' if params[:category] == category.name %>">
+
+      <%= link_to category.name, products_path(category: category.name), class: "link" %>
+  </div>
+
+<% end %>
+
+  </div>
+
+</div>

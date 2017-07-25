@@ -1,0 +1,218 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ // 导航栏
+
+
+ .navbar {
+  font-size: 12px; /*字体12px*/
+  height: 30px;
+  line-height: 30px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #FFFFFF; /*字体颜色*/
+  background: #2c3e50; /*背景颜色*/
+  //width: 1300px; /*设置导航栏宽度1200*/
+  margin: 0 auto; /*水平居中*/
+}
+
+.jh_navbar-left{
+  float: left; /*你去左边*/
+  padding-left: 30px
+}
+
+.jh_navbar-right{
+  float: right; /*你去右边*/
+  padding-right: 30px; /*右边加点空间，不然太挤啦*/
+}
+
+.jh_navbar-listItem{
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  padding-left: 10px; /*左边加点空间，不然太挤啦*/
+  padding-right: 10px; /*右边加点空间，不然太挤啦*/
+}
+
+
+
+
+.navbar-wrap a {
+
+  text-decoration: none; /*不要下划线啦，好丑*/
+}
+//.navbar-wrap a:hover {
+  //color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+//}
+
+
+
+
+
+//logo+search+购物车
+.header {
+  background: #2c3e50; /*背景颜色*/
+  width: 1200px; /*宽度1200px*/
+  margin: 0 auto; /*水平居中*/
+  margin-top: 15px; /*上边距*/
+}
+
+.logo {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
+}
+
+.logo a {
+  font-size: 30px; /*设置字体36px*/
+  color: #C81623; /*红色*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.search {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  width: 400px;
+  margin-left: 40px; /*右边距*/
+  margin-top: 10px; /*上边距*/
+  position: relative; /*相对定位*/
+}
+
+.search-input {
+  width: 400px;
+  height: 36px;
+  line-height: 36px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #666;
+  padding: 4px 20px; /*调一下上下左右边距*/
+  border-width: 2px; /*边框宽度为2px*/
+  border-color: #D32048; /*设置边框颜色为红色*/
+  border-style: solid; /*设置为实线*/
+  font-size: 14px; /*字体14px*/
+  font-family: "microsoft yahei"; /*设置成微软雅黑字体*/
+  border-radius: 20px; /*圆角20px*/
+}
+
+.search-button {
+  width: 54px;
+  height: 36px;
+  border: none; /*去掉button默认的border*/
+  background: none; /*去掉button默认的背景颜色*/
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  position: absolute; /*绝对定位*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  top: 0;
+  right: 0;
+}
+
+.search-button .fa-search {
+  color: #d32048; /*搜索图标的颜色*/
+}
+
+.cart-wrap {
+  float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+  margin-top: 10px; /*上边距*/
+  margin-left: 238px; /*左边距*/
+}
+
+.cart {
+  padding: 8px 20px; /*加内边距*/
+  cursor: pointer; /*鼠标一上去，显示手型*/
+  border: 1px solid #DFDFDF; /*1像素，实线，灰色*/
+  background: #F5F5F5; /*灰色背景*/
+  font-size: 12px; /*字体小一点好看*/
+}
+
+.fa-shopping-cart {
+  color: #C81623; /*红色图标*/
+  font-size: 16px; /*图标大一点好看*/
+  margin-right: 10px; /*右边距*/
+}
+
+.cart a {
+  color: #6D6D6D; /*灰色字体*/
+  text-decoration: none; /*不要下划线*/
+}
+
+.cart a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+
+/*5种背景颜色*/
+.bg-color1 {
+  background: #FFFFFF; /*白色*/
+}
+
+.bg-color2 {
+  background: #F25F5C;
+}
+
+.bg-color3 {
+  background: #FFE066;
+}
+
+.bg-color4 {
+  background: #247BA0;
+}
+
+.bg-color5 {
+  background: #70C1B3;
+}
+
+
+/*字幕*/
+.title {
+  width: 520px; /*宽度1200px*/
+  margin: 0 auto; /*水平居中*/
+  margin-top: 100px; /*上边距*/
+}
+.title-1 {
+  font-size: 50px; /*设置字体36px*/
+  //float: left; /*logo、seatch、cart这三个模块都是用div包起来的，是block元素，如果要处于同一行，那就要加float*/
+//  margin-right: 180px; /*加点右边距，和search模块拉开距离*/
+}
+
+
+
+
+/*菜单*/
+.menu {
+  width: 100%;
+}
+
+.menuList{
+  width: 1100px;
+  margin: 70px auto;
+  height: 100px;
+
+}
+
+.menuList-item {
+  float: left;
+  padding: 0 60px;
+  font-size: 18px;
+  line-height: 100px;
+
+}
+
+.menuList-item:hover {
+  background-color: #DCDCDC;
+}
+.menuList-activeItem {
+  background: #DCDCDC;
+}
+.menuList-activeItem:hover {
+  background: #DCDCDC;
+}

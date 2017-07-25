@@ -1,0 +1,56 @@
+
+
+<div class="header">
+  <div class="logo"><a href="/products">小小食杂铺</a></div>
+  <div>
+	  <div class="search">
+		  <form action="/products/search" accept-charset="UTF-8" method="get">
+		  	<input name="utf8" type="hidden" value="✓">
+		    <input class="search-input" type="text" name="query_string" value="" placeholder="输入你要搜索的商品">
+		    <button type="submit" class="search-button pa tc"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+	</div>
+ <div class="cart-wrap">
+	  <div class="cart">
+		     <%= link_to carts_path do %>
+         我的购物车<i class="fa fa-shopping-cart cart-icon "></i>(<%= current_cart.products.count %>)
+			   <% end %>
+		</div>
+	</div>
+</div>
+
+
+ <div class="title">
+<div class="title-1">
+   INTERESTING FINDS
+ </div>
+ </div>
+
+
+
+<%= render :partial => "products/menu" %>
+
+
+
+
+<div class="productList-wrap w1200 pt20 bc">
+   <ul class="productList clearfix pb20">
+
+
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+    </div>
+  <% end %>
+
+
+</ul>
+</div>

@@ -1,0 +1,40 @@
+
+<div class="navbar-wrap">
+
+  <div class="navbar">
+
+    <div class="jh_navbar-left ">
+      <%=link_to("欢迎来到小小食杂铺！", products_path)%>
+    </div>
+
+    <ul class="jh_navbar-right ">
+                <% if !current_user %>
+               <li class="jh_navbar-listItem">
+                    <%= link_to("注册", new_user_registration_path) %>
+               </li>
+               <li class="jh_navbar-listItem">
+                    <%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-out'), new_user_session_path) %>
+               </li>
+                <% else %>
+                <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     Hi!, <%= current_user.email %>
+                        <b class="caret"></b>
+                        </a>
+                    <ul class="dropdown-menu">
+                        <% if current_user.admin? %>
+                     <li>
+                       <%= link_to("Admin 选单", admin_products_path ) %>
+                     </li>
+                       <% end %>
+                        <li> <%= link_to("个人订单列表", account_orders_path ) %> </li>
+                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+
+                      </ul>
+                  </li>
+                <% end %>
+
+            </ul>
+        </div>
+
+    </div>
