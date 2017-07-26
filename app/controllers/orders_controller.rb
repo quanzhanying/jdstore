@@ -45,6 +45,13 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  def apply_to_cancel
+    @order = Order.find(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "已提交申請"
+    redirect_to :back
+  end
+
     private
 
     def order_params
