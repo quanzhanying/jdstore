@@ -1,19 +1,37 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
+
     <div class="navbar-header">
       <a class="navbar-brand" href='/'>JDstore</a>
     </div>
+
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <%= link_to '#' do %>
-        <span class="glyphicon glyphicon-user"> 登入</span>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to '#' do %>
-        <span class="glyphicon glyphicon-log-in"> 注册</span>
-        <% end %>
-      </li>
+      <% if !current_user %>
+        <li>
+          <%= link_to(new_user_session_path) do %>
+          <span class="fa fa-user"> 登入</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(new_user_registration_path) do %>
+          <span class="fa fa-sign-in"> 注册</span>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href='#'>
+            Hi, <%= current_user.email %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to(destroy_user_session_path,  method: :delete)  do %>
+              <i class="fa fa-sign-out"></i> 退出
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
