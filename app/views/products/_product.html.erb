@@ -1,12 +1,11 @@
-<tr>
-  <td>#</td>
-  <td><%= link_to(product.title, product_path(product)) %></td>
-  <td><%= link_to '#'%></td>
-  <td><%= product.quantity %></td>
-  <td><%= product.price %></td>
-  <td>
-    <%= link_to("Edit", edit_product_path(product)) %> |
-    <%= link_to("Delete", product_path(product), method: :delete, data_dismissable: { confirm: "Are you sure?"}) %>
-  </td>
-  <td><%= product.created_at %></td>
-</tr>
+
+  <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.picture.present? %>
+          <%= image_tag(product.picture.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> ￥ <%= product.price %>
+  </div>

@@ -1,18 +1,25 @@
 <div class="col-md-4 col-md-offset-4">
 <%= simple_form_for [:admin, @product] do |f| %>
 
-<div class="product">
-  <%= f.input :title, input_html: { class: "form-control"} %>
-  <%= f.input :description, input_html: { class: "form-control"}%>
-  <%= f.input :price, input_html: { class: "form-control"}%>
-  <%= f.input :quantity, input_html: { class: "form-control"}%>
-  <%= f.input :picture, input_html: { class: "form-control"}%>
+<div class="form-group">
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :quantity %>
+
+  <% if @product.picture.present? %>
+    <span>目前商品图</span> <br>
+    <%= image_tag(@product.picture.thumb.url) %>
+  <% end %>
+
+
+  <%= f.input :picture, :as => :file %>
   <%= f.input :is_hidden %>
 
 </div>
-  <br>
-<div class="functions">
-  <%= f.submit "Submit", class: "btn btn-default" %>
+
+<div class="form-actions">
+  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
 <div>
 <% end %>
 </div>

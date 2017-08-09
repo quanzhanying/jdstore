@@ -4,13 +4,18 @@
     <%= render_product_status(product) %>
     <%= link_to(product.title, admin_product_path(product)) %>
   </td>
-  <td><%= link_to '#'%></td>
+  <td>
+    <% if product.picture.present? %>
+    <%= image_tag(product.picture.thumb.url, class: "thumbnail") %>
+    <% else %>
+    No image
+    <% end %>
+  </td>
   <td><%= product.quantity %></td>
   <td><%= product.price %></td>
-  <td><%= simple_format(product.description) %></td>
   <td>
-    <%= link_to("Edit", edit_admin_product_path(product), class: "btn btn-default btn-sm") %>
-    <%= link_to("Delete", admin_product_path(product), method: :delete, data_dismissable: { confirm: "Are you sure?"},class: "btn btn-default btn-sm") %>
+    <%= link_to("Edit", edit_admin_product_path(product)) %>
+    <%= link_to("Delete", admin_product_path(product), method: :delete, data_dismissable: { confirm: "Are you sure?"}) %>
     <% if product.is_hidden? %>
       <%= link_to(publish_admin_product_path(product), method: :post) do %>
       <i class="fa fa-eye"></i>

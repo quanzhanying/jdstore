@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_is_admin, except: [:index, :show]
 
   def index
     @products = Product.published.recent

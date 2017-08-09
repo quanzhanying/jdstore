@@ -1,6 +1,23 @@
-<div class="col-md-12">
-<h2><%= @product.title %></h2>
+<div class="container-fluid">
+  <div class="row">
 
-<p><%= simple_format(@product.description) %></p>
+    <div class="col-sm-6">
+      <%= image_tag(@product.picture.medium.url) %>
+    </div>
 
+    <div class="col-sm-6">
+      <h2><%= @product.title %></h2>
+      <p><%= @product.description %></p>
+
+      <br><br>
+
+      <p>数量：<%= @product.quantity %></p>
+      <p>$ <%= @product.price %></p>
+
+      <br><br>
+
+      <%= link_to("加入购物车", '#', class: "btn btn-danger pull-right")%>
+    </div>
+
+  </div>
 </div>
