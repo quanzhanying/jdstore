@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @products = Product.all
+    @products = Product.published.recent
   end
 
   def show
@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description)
+    params.require(:product).permit(:title, :description, :price, :quantity, :is_hidden, :picture)
   end
 
 end
