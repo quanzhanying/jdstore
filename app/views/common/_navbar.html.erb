@@ -24,6 +24,12 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+            <li>
+              <%= link_to("Admin Panel", admin_products_path) %>
+            </li>
+            <hr>
+            <% end %>
             <li>
               <%= link_to(destroy_user_session_path,  method: :delete)  do %>
               <i class="fa fa-sign-out"></i> 退出
