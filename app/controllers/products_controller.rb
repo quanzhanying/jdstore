@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :require_is_admin, except: [:index, :show]
+  before_action :require_is_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @products = Product.published.recent
@@ -42,6 +42,12 @@ class ProductsController < ApplicationController
     @product.destroy
     flash[:alert] = "Product deleted"
     redirect_to products_path
+  end
+
+  def add_to_cart
+    @product = Product.find(params[:id])
+    redirect_to :back
+    flash[:notice] = "测试加入购物车"
   end
 
   private
