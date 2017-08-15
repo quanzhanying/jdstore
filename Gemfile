@@ -51,6 +51,9 @@ gem 'ransack'
 # 文本编辑器支持gem
 gem 'bootstrap-wysihtml5-rails'
 
+# 中文翻译词汇档
+gem 'rails-i18n'
+gem "devise-i18n"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

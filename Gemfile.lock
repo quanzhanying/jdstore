@@ -84,6 +84,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.1.2)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -173,6 +174,9 @@ GEM
       ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.4)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.0.3)
       actionpack (= 5.0.3)
       activesupport (= 5.0.3)
@@ -258,6 +262,7 @@ DEPENDENCIES
   carrierwave-qiniu
   coffee-rails (~> 4.2)
   devise
+  devise-i18n
   figaro
   font-awesome-rails
   jbuilder (~> 2.5)
@@ -271,6 +276,7 @@ DEPENDENCIES
   qiniu-rs
   rails (~> 5.0.0)
   rails-erd
+  rails-i18n
   ransack
   sass-rails (~> 5.0)
   simple_form
@@ -282,4 +288,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
