@@ -68,6 +68,7 @@ GEM
     carrierwave-qiniu (1.1.0)
       carrierwave (~> 1.0)
       qiniu (~> 6.8, >= 6.8.0)
+    choice (0.2.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -165,6 +166,11 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.5.2)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (5.0.3)
@@ -190,6 +196,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    ruby-graphviz (1.2.3)
     ruby-hmac (0.4.0)
     sass (3.4.24)
     sass-rails (5.0.6)
@@ -263,6 +270,7 @@ DEPENDENCIES
   puma (~> 3.0)
   qiniu-rs
   rails (~> 5.0.0)
+  rails-erd
   ransack
   sass-rails (~> 5.0)
   simple_form
@@ -274,4 +282,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-   1.13.6
+   1.15.1

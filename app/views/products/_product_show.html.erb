@@ -60,7 +60,7 @@
       <!-- 加入购物车按钮 -->
       <div class="col-sm-6">
         <% if @product.quantity.present? && @product.quantity > 0 %>
-          <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger") %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :remote => true, method: :post, class: "btn btn-danger") %>
         <% else %>
           <a href="#" class="btn btn-danger active" role="button" disabled="disabled">库存缺货ing...</a>
         <% end %>

@@ -33,7 +33,7 @@
           </li>
           <li>
             <%= link_to carts_path do %>
-              购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %> )
+              购物车 <i class="fa fa-shopping-cart"></i> ( <span id="add-to-cart-ajax"> <%= current_cart.products.count %> </span> )
             <% end %>
           </li>
           <% if !current_user %>
