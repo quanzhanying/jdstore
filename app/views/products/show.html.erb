@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-md-6 >"
-    <% if procuct.image.present? %>
-      <%= image_tag(procuct.image.medium.url, class: "thumbnail") %>
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
@@ -10,13 +10,13 @@
     <h2> <%= @product.title %> </h2>
     <div style="height:100px;">
       <p>
-        <%= @procuct.description %>
-      </P>
+        <%= @product.description %>
+      </p>
     </div>
-    <div> 數量 ： <%= @product.quantity %>> </div>
-    <div class="product-price"> ￥ <%= product.price %> </div>
-    <div class="prll-right">
-      <%= link_to("加入購物車", "#" :class =>"btn btn-danger btn-lg") %>
+    <div> 數量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ￥ <%= @product.price %> </div>
+    <div class="pull-right">
+      <%= link_to("加入購物車", "#", :class => "btn btn-danger btn-lg") %>
     </div>
   </div>
 </div>
