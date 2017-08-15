@@ -8,7 +8,7 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %> ￥ <% product.price %> <%= product.created_at %>
+      <%= product.title %> ￥ <% product.price %> <%= product.created_at.strftime("%Y/%m/%d %I:%M %p") %>
     </div>
   <% end %>
 </div>
