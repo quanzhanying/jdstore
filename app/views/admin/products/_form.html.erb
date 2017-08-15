@@ -1,5 +1,6 @@
 <%= simple_form_for [:admin, @product] do |f| %>
   <div class="form-group">
+    <%= f.input :friendly_id, :required => true, :label => "定义网址" %>
     <%= f.input :title, :label => "商品名称" %>
     <%= f.input :description, :label => "简述" %>
     <%= f.input :quantity, :label => "库存" %>

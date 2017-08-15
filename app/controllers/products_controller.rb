@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     @review = Review.new
   end
