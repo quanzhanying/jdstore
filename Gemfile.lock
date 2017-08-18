@@ -43,9 +43,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    airbrake (5.8.1)
-      airbrake-ruby (~> 1.8)
-    airbrake-ruby (1.8.0)
     arel (7.1.1)
     autoprefixer-rails (7.1.1)
       execjs
@@ -363,7 +360,6 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
-  airbrake (~> 5.4)
   awesome_rails_console
   bootstrap-sass
   byebug
@@ -393,4 +389,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.14.4
+   1.15.3
