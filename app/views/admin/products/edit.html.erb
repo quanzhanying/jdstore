@@ -1,4 +1,4 @@
-<h2>新增商品</h2>
+<h2>修改商品</h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
   <div class="group">
@@ -13,5 +13,5 @@
   <div class="group">
     <%= f.input :price, label: '商品价格', placeholder: '请输入商品价格'%>
   </div>
-  <%= f.submit "Submit", data: { disable_with: "Submiting..."}%>
+  <%= f.submit "Submit", data: {disable_with: "Submiting..."}%>
 <% end %>
