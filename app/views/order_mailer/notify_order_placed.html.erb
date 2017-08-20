@@ -17,7 +17,7 @@
       </thead>
       <tbody>
 
-        <% @product_lists.each do |product_lists| %>
+        <% @product_lists.each do |product_list| %>
           <tr>
             <td>
               <%= product_list.product_name %>
@@ -61,10 +61,10 @@
         </tr>
         <tr>
           <td>
-            <%= @order.shing_name %> - <%= @order.shipping_address %>
+            <%= @order.shipping_name %> - <%= @order.shipping_address %>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>  
+  </div>
 </div>
