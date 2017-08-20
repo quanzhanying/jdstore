@@ -25,7 +25,8 @@ Rails.application.routes.draw do
        post :pay_with_wechat
      end
   end
-  end
+
+
   namespace :account do
     resources :orders
   end
