@@ -1,8 +1,10 @@
 class Order < ApplicationRecord
   belongs_to :user
 
-  validatables :billing_name, presence: true
-  validatables :billing_address, presence: true
-  validatables :shipping_name, presence: true
-  validatables :shipping_address, presence: true
+  validates :billing_name, presence: true
+  validates :billing_address, presence: true
+  validates :shipping_name, presence: true
+  validates :shipping_address, presence: true
+
+  has_many :product_lists
 end
