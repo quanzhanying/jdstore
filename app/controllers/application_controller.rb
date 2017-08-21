@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   helper_method :current_cart
 
   def current_cart
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
   private
 
   def find_cart
-    cart = Cart.fing_by(id: session[:cart_id])
+    cart = Cart.find_by(id: session[:cart_id])
     if cart.blank?
       cart = Cart.create
     end
