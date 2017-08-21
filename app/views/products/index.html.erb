@@ -1,7 +1,7 @@
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-3 col-xs-6">
-      <% link_to product_path(product) do %>
+      <%= link_to product_path(product) do %>
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "thumbnail")%>
         <% else %>
