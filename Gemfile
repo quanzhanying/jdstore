@@ -40,6 +40,7 @@ gem 'aasm'
 gem 'figaro'
 gem 'fog'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'pry'
