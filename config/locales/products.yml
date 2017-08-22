@@ -1,0 +1,9 @@
+  zh-TW:
+    activerecord:
+      attributes:
+        product:
+          title:  "產品名稱"
+          description:  "描述"
+          quantity:  "數量"
+          price:  "價格"
+          image:  "照片"

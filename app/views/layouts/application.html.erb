@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
   </head>
 
   <body>
@@ -17,6 +18,8 @@
       <%= render "common/flashes" %>
       <%= yield %>
     </div>
+    <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+    <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
 
       <%= render "common/footer" %>
 
