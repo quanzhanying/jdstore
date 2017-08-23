@@ -45,7 +45,7 @@
       </tbody>
     </table>
     <br>
-    <div class="total">
+    <div class="total clearfix">
       <span class="pull-right">
         <span>
           总计 <%= render_cart_total_price(current_cart) %> RMB
@@ -56,8 +56,8 @@
     <div>
       <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-danger btn-xs pull-left", data: { confirm: "你确定要清空购物车吗？"}) %>
     </di
-    <div class="checkout">
-      <%= link_to("去结算", "#", method: :post, class: "btn btn-danger btn-lg pull-right")%>
+    <div class="checkout clearfix">
+      <%= link_to("去结算", checkout_carts_path, method: :post, class: "btn btn-danger btn-lg pull-right")%>
     </div>
   </div>
 </div>
