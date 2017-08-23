@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>我的购物车</h2>
+    <h2>全部商品(<%= current_cart.products.count %>)</h2>
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -44,6 +44,9 @@
       </span>
     </div>
     <hr>
+    <div>
+      <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "btn btn-danger btn-xs pull-left", data: { confirm: "你确定要清空购物车吗？"}) %>
+    </di
     <div class="checkout">
       <%= link_to("去结算", "#", method: :post, class: "btn btn-danger btn-lg pull-right")%>
     </div>
