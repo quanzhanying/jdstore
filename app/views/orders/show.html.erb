@@ -13,7 +13,7 @@
         <% @product_lists.each do |product_list| %>
           <tr>
             <td>
-              <%= product_list.product_mame %>
+              <%= product_list.product_name %>
             </td>
             <td>
               <%= product_list.product_price %>
@@ -28,7 +28,9 @@
         总价：¥ <%= @order.total %>
       </span>
     </div>
+
     <hr>
+
     <h2>寄送信息</h2>
     <table class="table table-bordered table-striped">
       <tbody>
