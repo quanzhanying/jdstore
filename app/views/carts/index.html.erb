@@ -3,6 +3,14 @@
 
     <h2>购物车</h2>
 
+    <div class="delelte clearfix">
+      <% if current_cart.cart_items.present? %>
+        <%= link_to("清除所有商品", delete_products_cart_path(current_cart), method: :delete, class: "btn btn-default") %>
+      <% end %>
+    </div>
+
+    <br>
+
     <table class="table table-bordered">
       <thead>
         <tr>
