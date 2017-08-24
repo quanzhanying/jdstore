@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">JDstore</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if !current_user %>
+      <li><a href='/users/sign_in'><i class="fa fa-user"></i> 登入</a></li>
+      <li><a href='/users/sign_up'><span class="fa fa-sign-in"></span> 注册</a></li>
+      <% else %>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href='#'> Hi, <%= current_user.email %>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to(destroy_user_session_path, method: :delete) do %>
+              <i class="fa fa-sign-out"></i> 退出
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

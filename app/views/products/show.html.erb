@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-6">
+      <%= image_tag(@product.picture.medium.url, class: "thumbnail") %>
+    </div>
+
+    <div class="col-sm-6">
+      <h2><%= @product.title %></h2>
+      <div style="height:100px;">
+        <p><%= @product.description %></p>
+      </div>
+
+      <p>数量：<%= @product.quantity %></p>
+      <p>$ <%= @product.price %></p>
+
+      <br><br>
+      <div class="pull-right">
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-primary btn-lg btn-danger")%>
+      </div>
+    </div>
+
+  </div>
+</div>
