@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :carts do
     member do
       delete :delete_products
+      delete :delete_cart_item
     end
   end
 
