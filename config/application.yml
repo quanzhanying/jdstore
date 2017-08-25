@@ -12,18 +12,12 @@
 
 production:
    qiniu_access_key: XA6IqcCOnWY0cnWcNl7LC9LxRrnOU7ESauWm2zim # 你的 qiniu AccessKey
-
    qiniu_secret_key: bl8Tze1dqKyuv00YsaKED9gH5ERjE7q56E5pQF8j  # 你的 qiniu SecretKey
-
    qiniu_bucket:  jdstore-demo  # 你的 qiniu bucket
-
    qiniu_bucket_domain: ov8uvbqbt.bkt.clouddn.com  # 你的 qiniu bucket domain
 
 development:
    qiniu_access_key: XA6IqcCOnWY0cnWcNl7LC9LxRrnOU7ESauWm2zim  # 你的 qiniu AccessKey
-
    qiniu_secret_key: bl8Tze1dqKyuv00YsaKED9gH5ERjE7q56E5pQF8j  # 你的 qiniu SecretKey
-
    qiniu_bucket: jdstore-demo  # 你的 qiniu bucket
-
    qiniu_bucket_domain: ov8uvbqbt.bkt.clouddn.com  # 你的 qiniu bucket domain
