@@ -1,0 +1,27 @@
+<h2>修改商品</h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="group">
+    <%= f.input :title, label: '商品名称', placeholder: '请输入商品名称'%>
+  </div>
+  <div class="group">
+    <%= f.input :description, label: '商品描述', placeholder: '请输入商品描述'%>
+  </div>
+  <div class="group">
+    <%= f.input :quantity, label: '商品数量', placeholder: '请输入商品数量'%>
+  </div>
+  <div class="group">
+    <%= f.input :price, label: '商品价格', placeholder: '请输入商品价格'%>
+  </div>
+
+  <% if @product.image.present? %>
+    <span>目前产品图片</span>
+    <br>
+    <%= image_tag(@product.image.thumb.url)%>
+  <% end %>
+
+  <div class="group">
+    <%= f.input :image, as: :file, label: '产品图片'%>
+  </div>
+  <%= f.submit "完成修改", data: {disable_with: "Submiting..."}%>
+<% end %>
