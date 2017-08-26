@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
   def pay_with_alipay
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("alipay")
-    @order.pay!
+    @order.make_payment!
 
     redirect_to order_path(@order.token)
     flash[:notice] = "支付宝支付成功！！！"
@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
   def pay_with_wechat
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("wechat")
-    @order.pay!
+    @order.make_payment!
 
     redirect_to order_path(@order.token)
     flash[:notice] = "微信支付成功！！！"
