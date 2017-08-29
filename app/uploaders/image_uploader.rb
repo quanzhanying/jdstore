@@ -9,7 +9,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :fog
   if Rails.env.development?
     storage :file
-  else
+  elsif Rails.env.production?
     storage :qiniu
   end
 
