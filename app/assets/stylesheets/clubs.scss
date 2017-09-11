@@ -1,0 +1,137 @@
+// 布局定位
+.club-box {
+  margin: 30px auto;
+  font-size: 1.2em;
+}
+
+// ================index页面================ //
+
+.club-index-box-main {
+  background-color: #f5f5f5;
+  margin: 20px auto 0;
+  padding: 15px 30px;
+  // box-shadow: 0 0 10px #d3d3d3;
+}
+
+.club-index-up-btn {
+  margin: 20px auto 0;
+}
+
+// 内容
+.club-user-avatar {
+  float: left;
+}
+
+.club-user-name {
+  margin-left: 15px;
+  float: left;
+  p {
+    font-size: 0.7em;
+    color: #999;
+    strong {
+      font-size: 1.5em;
+      color: #7f8c8d;
+    }
+  }
+}
+
+.club-title {
+  margin: -20px 10px 0;
+  a {
+  font-size: 0.6em;
+    color: #7f8c8d;
+  }
+}
+
+.club-description {
+  margin: auto 10px;
+  line-height: 1.8em;
+  text-align: justify;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    border-radius: 6px;
+    }
+}
+
+// 帖子评论
+.club-index-box-review {
+  background-color: #E5E5E5;
+  padding: 15px 30px;
+}
+
+.club-review-user-avatar {
+  margin-left: 30px;
+  float: left;
+}
+
+
+// ================侧边栏================ //
+
+
+.club-index-box-side {
+  margin: 20px auto 0;
+}
+
+.club-index-box-side-user {
+  padding: 15px 30px;
+  border: 1px #e3e3e3 solid;
+  border-radius: 6px;
+}
+
+.club-index-box-side-avatar {
+  margin: 20px auto;
+}
+
+.club-index-box-side-adv {
+  margin: 10px auto;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}
+
+.club-index-box-side-list {
+  margin-top: 30px;
+  color: #7f8c8d;
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
+
+.club-index-box-side-list-hot {
+  font-size: 0.8em;
+  color: #7f8c8d;
+}
+
+
+// ================show页面================ //
+.club-show-box {
+  font-size: 1.2em;
+  background-color: #f5f5f5;
+  margin: 20px auto 0;
+  padding: 0 140px;
+  // box-shadow: 0 0 15px #d3d3d3;
+}
+
+.club-show-box-review {
+  background-color: #E5E5E5;
+  padding: 15px 170px;
+  margin: auto -140px;
+}
+
+
+// ================clubuser页面================ //
+.club-user-summary {
+  margin: 20px auto 40px;
+  color: #7f8c8d;
+  line-height: 1.8em;
+}
+
+.club-user-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}

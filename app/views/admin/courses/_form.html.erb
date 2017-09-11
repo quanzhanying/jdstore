@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, @course] do |f| %>
+  <div class="form-group">
+    <%= f.input :title, :label => "课程名称" %>
+    <%= f.input :price, :label => "价格" %>
+    <%= f.input :image, as: :file, :label => "课程主图" %>
+    <%= f.input :course_banner, as: :file, :label => "课程页banner图" %>
+    <%= f.input :description, as: :wysihtml5, :label => "课程描述" %>
+    <hr>
+    <%= f.input :author_title, :label => "课程作者名称" %>
+    <%= f.input :author_description, :label => "课程作者描述" %>
+    <%= f.input :author_img, as: :file, :label => "作者头像" %>
+  </div>
+  <%= f.submit "提交", class: "btn btn-sm btn-default", data: {disable_with: "Submiting..."} %>
+<% end %>

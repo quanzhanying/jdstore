@@ -1,0 +1,61 @@
+<div class="account-box">
+
+  <h3 class="text-center">我收藏的文章（My Article Collections）</h3>
+  <br>
+
+  <table class="table table">
+    <thead>
+      <tr>
+        <th>标题</th>
+        <th>作者</th>
+        <th>发布时间</th>
+        <th>点赞数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @article_collections.each do |article_collection| %>
+        <tr>
+          <td><%= link_to(article_collection.title, article_path(article_collection)) %></td>
+          <td><%= article_collection.user.display_name %></td>
+          <td><%= article_collection.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+          <td><%= article_collection.article_collections.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<br><br><br>
+
+<div class="account-box">
+
+  <h3 class="text-center">我投稿的文章（My Contribute）</h3>
+  <br>
+
+  <table class="table table">
+    <thead>
+      <tr>
+        <th>标题</th>
+        <th>作者</th>
+        <th>发布时间</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_articles.each do |user_article| %>
+        <tr>
+          <td><%= link_to(user_article.title, article_path(user_article)) %></td>
+          <td><%= user_article.user.display_name %></td>
+          <td><%= user_article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+          <% if user_article.is_hidden? %>
+            <td>审核中</td>
+          <% else %>
+            <td>已发布</td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

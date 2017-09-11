@@ -1,0 +1,53 @@
+// 课程列表样式
+.course-list-style {
+  margin: 50px auto ;
+}
+
+// 课程show页面box
+.course-show-box {
+  margin: 30px auto 10px;
+}
+
+// 课程show页标题
+.course-title {
+  color: #7f8c8d;
+}
+
+// 课程描述样式
+.course-description {
+  margin: 40px 0;
+  letter-spacing: 0.1em;
+  line-height: 2.5em;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}
+
+// 课程作者区域
+.course-author-box {
+  margin: 20px auto;
+}
+.author-title {
+  margin: 20px auto;
+  h3 {
+    color: #7f8c8d;
+    font-weight: normal;
+  }
+}
+.author-description {
+  padding: 10px 20px;
+  margin: 2em auto 2em;
+  line-height: 2em;
+}
+
+// 费用与购买
+.course-price-box {
+  background-color: #f5f5f5;
+  padding: 0.5em 1em;
+  margin-bottom: 3em;
+}
+.course-price {
+  color: #7f8c8d;
+  font-weight: lighter;
+  font-size: 4em;
+}

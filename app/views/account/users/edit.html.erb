@@ -1,0 +1,29 @@
+<div class="account-box">
+
+  <h3 class="text-center">个人信息（My Info）</h3>
+  <br>
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <%= simple_form_for [:account, @user] do |f| %>
+
+      <!-- 当前商品图 -->
+      <div class="">
+        <% if @user.avatar.present? %>
+          <%= image_tag(@user.avatar.avatar.url, class: "img-circle img-responsive center-block" )%>
+        <% else %>
+          <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block") %>
+        <% end %>
+      </div>
+
+
+      <%= f.input :avatar, as: :file, :label => "头像" %>
+      <%= f.input :username, :label => "用户名"  %>
+      <%= f.input :summary, :label => "个人简介" %>
+      <%= f.input :email, :label => "我的邮箱" %>
+      <%= f.submit "提交修改", class: "btn btn-sm btn-default" %>
+    <% end %>
+
+  </div>
+
+</div>

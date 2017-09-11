@@ -1,0 +1,35 @@
+<div class="account-box">
+
+  <h3 class="text-center">我的订单（Order List）</h3>
+  <br>
+
+  <table class="table table">
+    <thead>
+      <tr>
+        <th>订单序号</th>
+        <th>订单状态</th>
+        <th>生成时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= link_to(order.id, order_path(order.token)) %></td>
+
+          <% if order.order_cancelled? %>
+            <td>订单已取消</td>
+          <% elsif !order.is_paid? %>
+            <td>等待付款</td>
+          <% else %>
+            <td>已完成付款</td>
+          <% end %>
+
+          <td><%= order.created_at.to_s(:long) %></td>
+          <td><%= link_to("进入", order_path(order.token)) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="text-center">编辑课程</h2>
+
+      <hr>
+      <%= render "form" %>
+
+      <!-- 当前商品图 -->
+      <hr>
+      <% if @course.image.present? %>
+        <span>目前课程主图</span><br>
+        <%= image_tag(@course.image.thumb.url) %>
+      <% end %>
+      <br>
+      <% if @course.course_banner.present? %>
+        <span>目前课程页banner图</span><br>
+        <%= image_tag(@course.course_banner.thumb.url) %>
+      <% end %>
+      <br>
+      <% if @course.author_img.present? %>
+        <span>目前作者头像</span><br>
+        <%= image_tag(@course.author_img.thumb.url) %>
+      <% end %>
+      <hr>
+
+    </div>
+  </div>
+</div>

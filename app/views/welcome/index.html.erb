@@ -1,0 +1,242 @@
+
+<!-- ↓↓↓ 大图滚动banner 代码块↓↓↓ -->
+  <div class="row">
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+      <div class="overlay"></div>
+
+      <!-- 默认三张图列表 -->
+      <div class="banner">
+        <ul class="carousel-indicators ">
+          <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#bs-carousel" data-slide-to="1"></li>
+          <li data-target="#bs-carousel" data-slide-to="2"></li>
+        </ul>
+      </div>
+
+      <!-- 文案部分 -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero row">
+            <hgroup>
+                <h1>极简生活法</h1>
+                <h3>人生如果达到了某种境界，自然会认为无论什么地方都可以安身！</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>找到真实的自己</h1>
+                <h3>苦行和极简让人更加敏锐，匮乏既是富足，自律产生喜悦！</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+                <h1>极简是美的终点</h1>
+                <h3>极简不是一无所有，而是另一种拥有！极简不是生活的减法，它是身心的加法！</h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- ↑↑↑ 大图滚动banner 代码块 ↑↑↑ -->
+
+
+<!-- 中间区域介绍内容 -->
+  <div class="row">
+    <div class="landing-page-mid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="tagline text-center">我们重新定义 高质量生活</h1>
+              <p class="col-md-6 col-md-offset-3 text-center tagp">
+                我们重新定义高质量生活，一学即刻上手改变。 <br>
+                不仅仅是课程，还是持续行动的社群，与千名会员一起感受蜕变，告别低质量生活。
+                在这里，人人都是生活家。</p>
+          </div>
+          <div style="text-align:center;">
+            <%= link_to("加入社群", clubs_path, class: "btn btn-hero btn-lg") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 文章按钮区域 -->
+  <div class="container">
+
+    <div class="row">
+      <div class="container topspan">
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="titspan">资讯</h3>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to("more >", articles_path, class: "pull-right morespan") %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @articles.each do |article| %>
+        <div class="article-all col-md-6 container">
+          <div class="article-box row">
+
+              <div class="">
+                <!-- 文章列表图片 -->
+                <div class="col-md-5 all_image_css">
+                  <% if article.image.present? %>
+                    <%= link_to image_tag(article.image.articleimg.url, class: "product-list-style-img img-responsive"), article_path(article) %>
+                  <% else %>
+                    <%= link_to image_tag("http://placehold.it/600x400&text=No Pic", class: "product-list-style-img img-responsive"), article_path(article)%>
+                  <% end %>
+                </div>
+
+                <!-- 文章列表标题、作者、日期 -->
+                <div class="col-md-7">
+                  <%= link_to(article.title, article_path(article), class: "article-index-title") %>
+                  <div class="article-user row">
+                    <div class="col-md-6">
+                      <span> <%= article.user.display_name %></span>
+                    </div>
+                    <div class="col-md-6">
+                      <span> <%= article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+          </div>
+          <hr>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+
+
+<!-- 教程按钮区域 -->
+  <div class="container">
+
+    <div class="row">
+      <div class="container topspan">
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="titspan">课程</h3>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to("more >", course_products_path, class: "pull-right morespan") %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @courses.each do |course| %>
+        <div class="col-xs-12 col-md-4 text-center product-list-style all_image_css">
+          <% link_to product_path(course) %>
+            <% if course.image.present? %>
+              <%= link_to image_tag(course.image.medium.url, class: "product-list-style-img img-responsive center-block"), product_path(course) %>
+            <% else %>
+              <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img img-responsive center-block"), product_path(course) %>
+            <% end %>
+          <!-- <%= link_to(course.title, product_path(course)) %>
+          <br>
+          <strong>￥ <%= link_to(course.price, product_path(course)) %></strong></p> -->
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+
+<!-- 首页精选商品列表 -->
+  <div class="container all-product-box">
+    <div class="row">
+
+      <div class="container topspan">
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="titspan">商城</h3>
+          </div>
+          <div class="col-xs-6">
+            <%= link_to("more >", products_path, class: "pull-right morespan") %>
+          </div>
+        </div>
+      </div>
+
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3 text-center product-list-style">
+          <% link_to product_path(product) %>
+            <% if product.image.present? %>
+              <%= link_to image_tag(product.image.thumb.url, class: "product-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
+            <% else %>
+              <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "product-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
+            <% end %>
+          <br>
+          <%= link_to(product.title, product_path(product), target: "_blank") %>
+          <br>
+          <strong>￥ <%= link_to(product.price, product_path(product), target: "_blank") %></strong></p>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+
+<!-- 用户评价版面   -->
+  <div class="row landing-page-eva">
+    <div class="container">
+      <div class="col-md-12">
+        <h3 class="tagline">听听他们 怎么说</h1>
+          <div class="col-xs-12 col-sm-6 col-md-6 landing-page-eva-style">
+            <div class="col-xs-3">
+              <%= image_tag("xdite.jpg", class: "img-circle img-responsive img-center frontpage-img") %>
+            </div>
+            <div class="col-xs-9">
+              <h5>Xdite  (学习牛人、编程大神)</h5>
+              <p>作为一个程序员，之前我并不关心身边的琐碎小事，是个典型的”差不多先生”。
+                但是自从加入「极简生活法」以后，ta的生活教程令我完全沉迷。
+                我开始在乎身边的小细节，开始动手改善家居，生活变得精致，心情变得舒服。</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 landing-page-eva-style">
+            <div class="col-xs-3">
+              <%= image_tag("xiaolai.jpg", class: "img-circle img-responsive img-center frontpage-img") %>
+            </div>
+            <div class="col-xs-9">
+              <h5>李笑来  (比特币大咖、投资人)</h5>
+              <p>传统电商还能活吗？特么真挺难！因为玩法落后了。那该怎么玩？「极简生活法」说——跨界。
+                社群互动+优质内容+协助成长，你买到的不只是商品，还有远比商品贵得多得多的附加价值。
+                对这个项目我有点心动了...</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 彩蛋公告栏 -->
+  <div class="row anding-page-advup">
+    <div class="landing-page-adv">
+      <div class="container">
+        <div class="row">
+          <h4>在这里，学会极简生活</h4>
+          <h5>简单是一种平凡，但不平庸</h5>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="container all-product-box">
+  <div class="row">
+
+    <% if @products.blank?%>
+      <div>
+        <h3 class="search-info-title">很抱歉！没有找到您想要的信息...</h3>
+      </div>
+    <% else %>
+      <h3 class="search-info-title">
+        找到 <%= @products.count %> 个符合 "<%= @query_string %>" 的商品
+      </h3>
+        <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3 text-center product-list-style">
+          <% link_to product_path(product) %>
+          <% if product.image.present? %>
+            <%= link_to image_tag(product.image.thumb.url, class: "product-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
+          <% else %>
+            <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "pproduct-list-style-img img-responsive center-block all_image_css"), product_path(product), target: "_blank" %>
+          <% end %>
+          <br>
+          <%= link_to(product.title, product_path(product), target: "_blank") %>
+          <br>
+          <strong>￥ <%= link_to(product.price, product_path(product), target: "_blank") %></strong></p>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>

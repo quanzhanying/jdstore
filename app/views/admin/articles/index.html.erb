@@ -1,0 +1,54 @@
+<div class="account-box">
+
+  <h3 class="text-center">文章列表（Article List）</h3>
+
+  <!-- "增加文章"按钮 -->
+  <br>
+  <div>
+    <%= link_to("增加文章", new_admin_article_path, class: "btn btn-sm btn-default pull-right") %>
+  </div>
+
+
+  <!-- 所有文章列表 -->
+  <table class="table table-hover table-bordered table-responsive">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>标题</td>
+        <td>作者</td>
+        <td>发布时间</td>
+        <td>操作</td>
+        <td>排序</td>
+        <td>状态</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.id %></td>
+          <td><%= link_to(article.title, article_path(article)) %></td>
+          <td><%= article.user.email %></td>
+          <td><%= article.created_at %></td>
+          <td>
+            <%= link_to("Edit", edit_admin_article_path(article)) %> |
+            <%= link_to("destroy", admin_article_path(article), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+          </td>
+          <td>
+            <%= link_to "向上", move_up_admin_article_path(article), method: :patch %> |
+            <%= link_to "向下", move_down_admin_article_path(article), method: :patch %>
+          </td>
+          <td>
+            <% if article.is_hidden %>
+              <%= link_to publish_admin_article_path(article), method: :post, class: "btn btn-xs btn-success" do %>
+              <i class="fa fa-eye"></i><% end %>
+            <% else %>
+              <%= link_to hide_admin_article_path(article), method: :post, class: "btn btn-xs btn-warning" do %>
+              <i class="fa fa-eye-slash"></i><% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -13,4 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap-sprockets
+//= require bootstrap/collapse
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/zh-CN
 //= require_tree .
+
+
+
+
+  // 图片自适应大小支持代码块
+  // 在product/show.html.erb的页面中，对img图片用这一格式进行校正
+  // 让图片在大于div宽度时自动缩小不而溢出，确保版面的公正和美观
+  function ReImgSize(){
+    for (j=0;j<document.images.length;j++)
+    {
+      document.images[j].width=(document.images[j].width>420)?"420":document.images[j].width;
+    }
+  }

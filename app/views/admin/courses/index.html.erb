@@ -1,0 +1,54 @@
+<div class="account-box">
+
+  <h3 class="text-center">课程列表（Course List）</h3>
+
+  <!-- "增加商品"按钮 -->
+  <br>
+  <div>
+    <%= link_to("增加课程", new_admin_course_path, class: "btn btn-sm btn-default pull-right") %>
+  </div>
+
+
+  <!-- 所有商品列表 -->
+  <table class="table table-hover table-bordered table-responsive">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td width="220"></td>
+        <td>课程名称</td>
+        <td>描述</td>
+        <td>价格</td>
+        <td width="100">操作</td>
+        <td>创建时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.id %></td>
+          <td>
+            <%= link_to course_path(course) do%>
+              <% if course.image.present? %>
+                <%= image_tag(course.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= link_to(course.title, course_path(course)) %></td>
+          <td><%= simple_format(course.description) %></td>
+          <td><%= course.price %></td>
+          <td>
+            <%= link_to("Edit", edit_admin_course_path(course)) %> |
+            <%= link_to("destroy", admin_course_path(course), method: :delete, data: { confirm: "你确定要删除吗？"}) %>
+            <br>
+            <%= link_to "向上", move_up_admin_course_path(course), method: :patch %>
+            <%= link_to "向下", move_down_admin_course_path(course), method: :patch %>
+          </td>
+          <td><%= course.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,174 @@
+<div class="container">
+  <div class="row">
+
+    <div class="article-show">
+
+      <div class="col-md-8 article-show-box">
+
+        <!-- 标题 -->
+        <div class="article-title">
+          <h1><%= @article.title %></h1>
+        </div>
+
+        <!-- 作者、发布时间 -->
+        <div class="article-author">
+          <span> <%= @article.user.display_name %></span> ·
+          <span> <%= @article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+        </div>
+
+        <!-- 摘要 -->
+        <div class="article-summary">
+          <p>
+            <blockquote>
+                <%= simple_format(@article.summary) %>
+            </blockquote>
+          </p>
+        </div>
+
+        <!-- 主图 -->
+        <div class="article-image">
+          <%= image_tag(@article.image.articleimg.url, class: "img-rounded img-responsive center-block") %>
+        </div>
+        <hr>
+
+        <!-- 内容 -->
+        <div class="article-description">
+          <%= simple_format(@article.description) %>
+        </div>
+
+        <!-- 文章收藏功能 -->
+        <div class="article-collection text-center">
+          <% if current_user && current_user.is_article_member_of?(@article) %>
+            <div class="article-collection-btn">
+              <%= link_to quit_article_path(@article), method: :post, class: "btn btn-lg btn-danger" do %>
+              <i class="fa fa-thumbs-up fa-1x">  赞  (<span><%= @article.article_collections.count %></span>) </i><% end %>
+            </div>
+          <% else %>
+            <div class="article-collection-btn">
+              <%= link_to join_article_path(@article), method: :post, class: "btn btn-lg btn-default" do %>
+              <i class="fa fa-thumbs-o-up fa-1x">  赞  (<span><%= @article.article_collections.count %></span>) </i><% end %>
+            </div>
+          <% end %>
+        </div>
+        <hr>
+
+        <!-- 文章评论 -->
+        <div class="article-review-box">
+          <%= simple_form_for ([@article, @article_review]) do |f| %>
+            <div class="">
+              <%= f.input :comment, :label => "发表评论" %>
+            </div>
+            <div class="">
+              <%= f.submit "提交评论", class: "btn btn-sm btn-default ", data: {disable_with: "Submiting"} %>
+            </div>
+          <% end %>
+          <hr>
+          <% if @article_reviews.blank? %>
+            <p class="text-center">这篇文章还没有人评论，来为ta添加一个吧！</p>
+          <% else %>
+
+          <div class="article-reviews ">
+            <% @article_reviews.each do |article_review| %>
+              <div class="row">
+
+                <!-- 评论者头像 -->
+                <div class="col-sm-1 col-xs-2">
+                  <% if article_review.user.avatar.present? %>
+                    <%= image_tag(article_review.user.avatar.avatarmini.url, class: "img-circle img-responsive") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/60x60&text=No Pic", class: "img-circle img-responsive center-block") %>
+                  <% end %>
+                </div>
+
+                <!-- 评论内容 -->
+                <div class="col-sm-11 ccol-xs-10">
+                  <div class="article-review-username">
+                    <div><%= article_review.user.display_name %> <span class="pull-right"><%= article_review.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span></div>
+                  </div>
+                  <div>
+                    <%= simple_format(article_review.comment) %>
+                  </div>
+                </div>
+
+              </div>
+              <hr>
+            <% end %>
+          </div>
+
+          <% end %>
+
+        </div>
+
+      </div>
+
+      <!-- 有侧边栏 -->
+      <div class="col-md-4">
+
+        <!-- 文章作者 -->
+        <div class="article-side-author">
+          <!-- 头像 -->
+          <div class="article-avatar">
+            <% if @user.avatar.present? %>
+              <%= image_tag(@user.avatar.avatar.url, class: "img-circle img-responsive center-block" )%>
+            <% else %>
+              <%= image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block") %>
+            <% end %>
+          </div>
+          <!-- 用户名 -->
+          <div class="article-username text-center">
+            <%= @article.user.display_name %>
+          </div>
+          <!-- 简介 -->
+          <div class="article-author-summary">
+            <%= simple_format(@article.user.summary) %>
+            <span>共发表文章：<%= @article.user.articles.count %> 篇</span>
+            <hr>
+          </div>
+
+          <!-- 最近文章 -->
+          <div class="article-author-title-list">
+            <h5>最近文章</h5>
+            <% @userarticles.each do |userarticle| %>
+              <p>· <%= link_to(userarticle.title, article_path(userarticle)) %><span class="article-author-title-list-time">(<%= userarticle.created_at.strftime("%Y-%m-%d %H:%M:%S") %>)</span></p>
+            <% end %>
+          </div>
+
+        </div>
+
+        <!-- 热评文章 -->
+
+        <div class=" article-author-title-list">
+          <h5>热评文章</h5>
+
+
+          <% @article_hots.each do |article_hot| %>
+            <hr>
+            <div class="row article-show-hot">
+              <div class="col-xs-4 all_image_css">
+                <% if article_hot.image.present? %>
+                  <%= link_to image_tag(article_hot.image.thumb.url, class: "img-rounded img-responsive center-block"), article_path(article_hot) %>
+                <% else %>
+                  <%= link_to image_tag("http://placehold.it/80x80&text=No Pic", class: "img-circle img-responsive center-block"), article_path(article_hot) %>
+                <% end %>
+              </div>
+              <div class="col-xs-8">
+                  <p><%= link_to(article_hot.title, article_path(article_hot)) %></p>
+              </div>
+            </div>
+          <% end %>
+          <hr>
+
+        </div>
+
+        <!-- 投稿按钮 -->
+        <div class="">
+          <%= link_to("我要投稿", new_article_path, class: "btn btn-danger center-block") %>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

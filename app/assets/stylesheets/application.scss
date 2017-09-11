@@ -1,0 +1,285 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";                       //文本编辑器的支持样式
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体 需要使用VPN才可生效
+
+
+
+ // 整体设置
+ html {
+    height: 100%;                                        // footer固定底部
+    }
+ body {
+     min-height: 100%;                                   // footer固定底部
+     display: flex;                                      // footer固定底部
+     flex-direction: column;                             // footer固定底部
+     font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+     padding-top: 50px;                                  // 腾出navbar的遮挡空间
+     color: #666;                                        // 修改全站的 字体主色
+     font-size: 1.2em;                                   // 网站所有字体缩小比例
+    .content {
+      flex: 1;                                           // footer固定底部
+    }
+    a {                                                 // 所有a标签统一样式
+      color: #666;                                      // 链接反转的样式
+      transition: 0.5s;                                 // 鼠标移开时 0.5秒渐变
+    }
+    a:hover {
+      color: #7f8c8d;
+      transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+      text-decoration: none;                            // 移除下划线
+    }
+  }
+
+  .all_image_css {
+    transition: 0.8s;
+  }
+
+
+  .all_image_css:hover {
+    filter:alpha(Opacity=100);
+    -moz-opacity:0.4;
+    opacity: 0.7;
+    transition: 0.8s;
+  }
+
+  // navbar设置
+  .navbar-style {
+    background: #f5f5f5;
+    border-color: transparent;                          //边框颜色设置为 透明
+  }
+  .navbar-brand {
+    letter-spacing: 0.1em;                              //拉开一点点字间距
+    font-weight:lighter;                                   //字体粗细比默认样式缩小100磅值，让logo显得精致高级
+  }
+  .li-style {
+    color: #666;                                        // 修改全站的 字体主色
+    font-size: 0.8em;
+    a {                                                 // 所有a标签统一样式
+      color: #666;                                      // 链接反转的样式
+      transition: 0.5s;                                 // 鼠标移开时 0.5秒渐变
+    }
+    a:hover {
+      color: #7f8c8d;
+      transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+      text-decoration: none;                            // 移除下划线
+    }
+  }
+
+  // 搜索栏设置
+  #custom-search-input{
+    padding: 1px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+
+  #custom-search-input input{
+      border: 0;
+      box-shadow: none;
+  }
+
+  #custom-search-input button{
+      margin: 2px 0;
+      background: none;
+      box-shadow: none;
+      border: 0;
+      color: #666666;
+      padding: 0 8px 0 10px;
+      border-left: solid 1px #ccc;
+  }
+
+  #custom-search-input button:hover{
+      border: 0;
+      box-shadow: none;
+      border-left: solid 1px #ccc;
+  }
+
+  #custom-search-input .glyphicon-search{
+      font-size: 15px;
+  }
+
+  // 中间区域介绍内容样式
+  .landing-page-mid {                                   //给图片整好形
+    height: 534px;
+    background-size: cover;                             //确保图片完全撑开
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(https://ooo.0o0.ooo/2017/05/12/59156f9f3b09c.jpg);
+  }
+  .landing-page-mid .tagline {                          //编写标题样式
+    text-align: center;
+    color: #7f8c8d;
+    letter-spacing: 0.1em;                              //把字间距撑开，视觉感更优雅
+    font-size: 1.6em;
+    margin-top: 3.2em;
+  }
+  .landing-page-mid .tagp {                             //编写内容样式
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 2.5em;
+    line-height: 2.5em;                                 //行间距也要拉开大一些
+    letter-spacing: 0.18em;                             //把字间距撑开，视觉感更优雅
+  }
+
+  // 区块分类标识样式（用于区分 商品 和 课程）
+  .topspan {
+    margin-top: 2em;
+  }
+  .titspan {
+    font-weight: 400
+  }
+  .morespan {
+    margin: 2em auto;
+  }
+
+  // 教程区域样式设置
+  .product-course-box-1 {
+    background-color: #7f8c8d;
+    padding: 30px 30px;
+    color: #fff;
+    text-align: center;
+    a {
+      color: #fff;
+    }
+    a:hover {
+      color: #f5f5f5;
+    }
+  }
+  .product-course-box-2 {
+    background-color: #8d827f;
+    padding: 30px 30px;
+    color: #fff;
+    text-align: center;
+    a {
+      color: #fff;
+    }
+    a:hover {
+      color: #f5f5f5;
+    }
+  }
+  .product-course-box-3 {
+    background-color: #8d7f85;
+    padding: 30px 30px;
+    color: #fff;
+    text-align: center;
+    a {
+      color: #fff;
+    }
+    a:hover {
+      color: #f5f5f5;
+    }
+  }
+
+  // 商品展示列表样式设置，为商品栏做好排版整形
+  .product-list-style {                                 //图片+文字 块样式整形
+    margin: 3em auto 2em;
+  }
+  .product-list-style-img {                             //文字 块样式整形
+    margin-bottom: 1.2em;
+  }
+  .all-product-box {
+    margin-bottom: 3em;
+  }
+
+  //用户评价版面样式
+  .landing-page-eva {
+    background-color: #f5f5f5;
+    padding-bottom: 6em;
+  }
+  .landing-page-eva .tagline {                          //编写标题样式
+    text-align: center;
+    color: #7f8c8d;
+    letter-spacing: 0.2em;                              //把字间距撑开，视觉感更优雅
+    font-size: 1.6em;
+    margin-top: 2.8em;
+    margin-bottom: 2em;
+  }
+  .landing-page-eva-style {
+    margin-top: 2em;
+    text-align: justify;
+    line-height: 2em;
+  }
+
+
+  //”彩蛋“”公告栏样式
+  .landing-page-adv {
+    padding-bottom: 2em;
+    background-size: cover;                             //确保图片完全撑开
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("https://ooo.0o0.ooo/2017/06/09/593a09541981b.jpg");
+    color: #fff;
+  }
+  .landing-page-adv h4{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .landing-page-adv h5{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.8em;
+  }
+
+
+  //footer样式设置
+  .footer-style {
+    background-color: #f5f5f5;
+  }
+  .footer-style h5 {
+    margin-top: 2em;
+    font-size: 1.6em;
+  }
+  .footer-style-p {
+    text-align: justify;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+  }
+
+
+  //搜索页面样式 search.html.erb
+  .search-info-title {
+    font-weight: lighter;
+    color: #7f8c8d;
+    text-align: center;
+  }
+
+
+  //登录注册页面
+  .log-page-bg {
+    height: 900px;
+    background-size: cover;                             //确保图片完全撑开
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(https://ooo.0o0.ooo/2017/05/21/592135630adc6.jpg);
+  }
+  .log-page {
+    margin-top: 60px;
+  }
+
+
+  // 个人中心侧边栏nav样式
+  .nav-left-style {
+    background-color: #f5f5f5;
+    margin: 30px auto;
+    height: 500px;
+  }

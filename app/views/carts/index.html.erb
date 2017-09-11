@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <!-- 购物车 清空购物车 -->
+      <br>
+      <div class="row">
+        <div class="">
+          <h3 class="col-xs-6">购物车</h3>
+          <span class="col-xs-6 clean_carts">
+            <%= link_to("清空购物车", clean_carts_path,
+                        method: :delete, class: "pull-right btn-sm btn-default",
+                        data: { confirm: "你确定要清除购物车吗？"}) %>
+          </span>
+        </div>
+      </div>
+
+
+      <!-- 购物列表 -->
+      <div class="shoping-cart">
+
+        <!-- 列表头部 -->
+        <div class="cart-column-head center-block">
+          <label class="col-xs-2 product-image-cart">商品</label>
+          <label class="col-xs-2 product-title-cart">名称</label>
+          <label class="col-xs-2 product-price-cart">单价</label>
+          <label class="col-xs-2 product-quantity-cart">数量</label>
+          <label class="col-xs-2 product-removal-cart">操作</label>
+          <label class="col-xs-2 product-line-price-cart">小计</label>
+        </div>
+
+        <!-- 列表购物车商品 -->
+        <% current_cart.cart_items.each do |cart_item| %>
+          <!-- 商品图片 -->
+          <div class="product-list row text-center">
+            <div class="col-xs-2 product-image-cart">
+              <%= link_to product_path(cart_item.product) do%>
+                <% if cart_item.product.image.present? %>
+                  <%= image_tag(cart_item.product.image.thumb.url, class: "img-responsive center-block") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-responsive center-block") %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <!-- 商品名称 -->
+            <div class="col-xs-2 product-title-cart">
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </div>
+
+            <!-- 商品单价 -->
+            <div class="col-xs-2 product-title-cart">
+              <%= cart_item.product.price %> RMB
+            </div>
+
+            <!-- 商品数量 -->
+            <div class="col-xs-2 product-title-cart">
+              <!-- 在index页面中使用update页面表单的方法，要加上对应的url，指向update的地址 -->
+              <%= simple_form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                <%= f.select :quantity, 1..cart_item.product.quantity %>
+                <%= f.submit "更新", class: "btn btn-xs btn-default", data: { disable_with: "Submiting..."} %>
+              <% end %>
+            </div>
+
+            <!-- 删除商品 -->
+            <div class="col-xs-2 product-title-cart">
+              <!-- 设立使用“link_to...do”的写法，可以将元素变为链接 -->
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do%>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </div>
+
+            <!-- 商品总价 -->
+            <div class="col-xs-2 product-title-cart">
+              <%= cart_item.product.price * cart_item.quantity %> RMB
+            </div>
+          </div>
+          <hr>
+
+        <% end %>
+      </div>
+
+
+      <div class="row">
+
+        <!-- 合计详情 -->
+        <div class="container">
+          <span class="pull-right text-center product-price-totle">
+            总计：<%= render_cart_total_price(current_cart) %> RMB
+          </span>
+        </div>
+
+        <div class="container cart-buying-buttom">
+          <!-- 提交按钮 -->
+          <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-danger pull-right") %>
+        </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

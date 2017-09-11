@@ -1,0 +1,48 @@
+<div class="container">
+
+    <!-- 课程主图banner区域 -->
+    <div class="img-responsive center-block">
+      <%= image_tag(@course.course_banner.course_img.url, class: "img-responsive center-block") %>
+    </div>
+
+
+    <div class="course-show-box">
+      <!-- 课程内容介绍 -->
+      <div class="col-md-9">
+        <h2 class="course-title">
+          <%= @course.title %>
+        </h2>
+        <div class="course-description">
+          <%= simple_format(@course.description) %>
+        </div>
+      </div>
+
+      <!-- 作者介绍 -->
+      <div class="col-md-3 course-author-box">
+        <div>
+          <%= image_tag(@course.author_img.thumb.url, class: "img-responsive center-block img-circle") %>
+        </div>
+        <div class="author-itle text-center">
+          <h4><%= @course.author_title %></h4>
+        </div>
+        <div class="author-description text-center">
+          <p><%= simple_format(@course.author_description) %></p>
+        </div>
+      </div>
+
+      <!-- 费用与购买 -->
+      <div class="course-price-box col-md-12">
+        <div class="course-price text-center">
+          ￥<%= @course.price %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to("立即报名", instant_buy_course_path(@course), method: :post, class: "btn btn-lg btn-danger") %>
+      </div>
+      <br>
+      <hr>
+
+    </div>
+
+
+</div>

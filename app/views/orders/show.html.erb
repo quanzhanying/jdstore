@@ -1,0 +1,125 @@
+<div class="container">
+
+
+    <br>
+    <h3>订单明细</h3>
+
+    <div class="shoping-cart">
+
+      <!-- 列表头部 -->
+      <div class="cart-column-head center-block">
+        <label class="col-xs-3 product-title-cart">名称</label>
+        <label class="col-xs-3 product-price-cart">单价</label>
+        <label class="col-xs-3 product-price-cart">数量</label>
+        <label class="col-xs-3 product-line-price-cart">小计</label>
+      </div>
+
+      <!-- 列表购物车商品 -->
+      <% @product_lists.each do |product_list| %>
+
+        <div class="product-list row text-center">
+
+          <!-- 商品名称 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= product_list.product_name %>
+          </div>
+
+          <!-- 商品单价 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= product_list.product_price %> RMB
+          </div>
+
+          <!-- 商品数量 -->
+          <div class="col-xs-3 product-title-cart">
+            <!-- 在index页面中使用update页面表单的方法，要加上对应的url，指向update的地址 -->
+            <%= product_list.quantity %>
+          </div>
+
+          <!-- 商品总价 -->
+          <div class="col-xs-3 product-title-cart">
+            <%= product_list.product_price * product_list.quantity %> RMB
+          </div>
+        </div>
+        <hr>
+
+      <% end %>
+    </div>
+
+    <div class="row">
+
+      <!-- 合计详情 -->
+      <div class="container">
+        <span class="pull-right text-center product-price-totle">
+          总计：<%= @order.total %> RMB
+        </span>
+      </div>
+
+    </div>
+
+
+
+    <!-- 寄送商品确认表 -->
+
+    <div class="row  order-form-group">
+
+          <div class="col-md-6 col-md-offset-3">
+            <h3 class="text-center">寄送确认</h3>
+            <hr>
+
+            <div class="order-form">
+              <%= simple_form_for @order do |f| %>
+
+                <h4>购货联络人</h4>
+                <div class="form-group">
+                  <br>
+                  <p><strong> 联络人名称：</strong><%= @order.billing_name %></p>
+                  <p><strong> 联络人地址：</strong><%= @order.billing_address %></p>
+                </div>
+
+                <br>
+                <h4>寄送资讯</h4>
+                <div class="form-group">
+                  <br>
+                  <p><strong> 收货人名称：</strong><%= @order.shipping_name %></p>
+                  <p><strong> 收货人电话：</strong><%= @order.phonenum %></p>
+                  <p><strong> 收货人地址：</strong><%= @order.shipping_address %></p>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-md-offset-3">
+            <hr>
+
+            <!-- 付款方式 以及判断是否已结账 -->
+            <div>
+              <% if @order.order_cancelled? %>                        <!-- 这里解决了教程上面的一个bug，即用户未付款却要求取消订单，在订单取消后，该笔订单不能再付款，应显示为已取消状态。-->
+                <p class="text-center">此订单已取消</p>
+              <% elsif !@order.is_paid? %>
+                <div class="group pull-right">
+                  <%= link_to("以支付宝支付", pay_whit_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+                  <%= link_to("以微信支付", pay_whit_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+                </div>
+              <% else %>
+                <p class="text-center">此订单已完成付款</p>
+              <% end %>
+            </div>
+
+            <!-- 用户申请撤销订单 -->
+            <div>
+              <% if @order.order_placed? || @order.paid? %>
+                <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info") %>
+              <% end %>
+            </div>
+
+
+
+          </div>
+    </div>
+
+
+
+
+</div>

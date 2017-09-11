@@ -1,0 +1,131 @@
+/* 商品详情页CSS样式表 */
+
+
+// 页面头部微调
+.product-show {
+  margin-top: 2em;
+}
+
+// 商品标题样式
+.product-title {
+  color: #7f8c8d;
+}
+
+// 商品简述样式
+.product-description {
+  margin: 1.5em auto 2em;
+  line-height: 1.6em;
+}
+
+// 商品价格样式
+.product-price-bgcolor {
+  background-color: #f5f5f5;
+  padding: 1.5em 1em;
+  margin-bottom: 1em;
+}
+.product-price {
+  font-size: 3em;
+  color: #7f8c8d;
+  font-weight: lighter;
+}
+
+//商品库存样式
+.product-quantity {
+  margin: 1.5em auto;
+}
+
+// 按钮区域样式
+.add-to-cart-buttom {
+  margin: 3em auto 1em;
+}
+
+// 收藏按钮
+.product-collection {
+  line-height: 3em;
+}
+
+//商品详情区域样式
+.product-particulars {
+  margin: 1.1em 0 3em;
+}
+.product-particulars-box {
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 2em 1.2em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.6em;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}
+
+// 商品品论区域样式
+.review-comment-form {
+  text-align: left;
+  padding: 2em 2em;
+}
+.review-comment-button {
+  text-align: left;
+  padding: 0 2em;
+  margin-top: -2em;
+}
+.reviews {
+  text-align: left;
+  li {
+    list-style: none;
+  }
+}
+.review-user-email {
+  font-weight: bold;
+}
+.review-comment {
+  margin: 1em auto;
+}
+.review-hr {
+  padding: 0 3em;
+}
+.product-review-user-avatar {
+  float: left;
+}
+
+//购物指南区域样式
+.product-recommend {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  margin: 1em 0 3em;
+  padding: 20px 50px 20px 50px;
+  line-height: 1.6em;
+  text-align: justify;
+}
+
+// 课程show页样式
+.course-box {
+  margin: 20px auto;
+}
+.course-particulars {
+  margin-top: 40px;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  img {
+    max-width:100%;height:auto;             //重要样式代码，需要配合application.js的自适应代码块一起使用
+    }
+}
+
+// 课程教练照片
+.course-author-img {
+  margin: 30px auto;
+}
+.course-author-name {
+  margin: 20px auto;
+}
+
+// 课程价格
+.course-price {
+  margin: 20px auto;
+  background-color: #f5f5f5;
+  font-size: 4em;
+  color: #7f8c8d;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}

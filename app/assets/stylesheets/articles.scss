@@ -1,0 +1,146 @@
+// article/index CSS
+
+.article-all {
+  margin: 30px auto 0;
+}
+
+.article-box {
+}
+
+.article-index-title {
+  font-size: 1.6em;
+  font-weight: normal;
+  a {
+    color: #666;                                      // 链接反转的样式
+    transition: 0.5s;
+  }
+  a:hover {
+    color: #7f8c8d;
+    transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+    text-decoration: none;
+  }
+}
+
+.article-user {
+  color: #999;
+  margin-top: 70px;
+}
+
+
+// article/show CSS
+
+.article-show {
+  margin: 30px auto;
+}
+
+.article-show-box {
+  margin-bottom: 60px;
+}
+
+.article-title {
+  h1 {
+    font-size: 2em;
+    font-weight: normal;
+  }
+}
+
+.article-author {
+  margin: 40px auto 60px;
+  color: #7f8c8d;
+}
+
+.article-summary {
+  p {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #999;
+    line-height: 1.8em;
+  }
+}
+
+.article-image {
+  margin: 50px auto 30px;
+}
+
+.article-description {
+  margin: 30px auto;
+  font-size: 1.2em;
+  line-height: 1.8em;                   //拉开行高
+  text-align: justify;                  //文本两端对齐
+  img {
+    max-width:100%;height:auto;         //重要样式代码，需要配合application.js的自适应代码块一起使用
+    border-radius: 6px;                 //为所有图片设置6px的圆角
+    }
+}
+
+
+// 文章评论
+.article-review-box {
+  font-size: 1.2em;
+  line-height: 1.8em;
+  list-style: none;
+}
+
+.article-reviews {
+  padding: 0 20px;
+  text-align: justify;
+}
+
+.article-review-username {
+  color: #7f8c8d;
+  font-size: 0.8em;
+}
+
+
+// 文章收藏功能
+.article-collection {
+  margin: 80px auto;
+}
+
+.article-collection-btn {
+  padding: 10px;
+}
+
+
+
+// 侧边栏
+.article-side-author {
+  margin: 25px auto;
+  border: 1px #e3e3e3 solid;
+  border-radius: 6px;
+}
+
+.article-avatar {
+  margin: 20px auto 10px;
+}
+
+.article-username {
+  color: #7f8c8d;
+  font-size: 1.2em;
+}
+
+.article-author-summary {
+  margin: 20px 20px;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.8em;
+  color: #999;
+  text-align: justify;
+}
+
+.article-author-title-list {
+  margin: 20px 20px;
+  color: #7f8c8d;
+  font-size: 1.2em;
+  line-height: 1.8em;
+  list-style: none;
+}
+
+.article-author-title-list-time {
+  font-size: 0.6em;
+  color: #7f8c8d;
+}
+
+.article-show-hot {
+  height: 65px;
+}
