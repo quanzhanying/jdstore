@@ -15,9 +15,10 @@ Rails.application.routes.draw do
     resources :carts do
         member do
             post :clear
+            post :checkout
         end
     end
 
     resources :cart_items
-    
+
 end
