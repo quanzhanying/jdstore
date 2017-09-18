@@ -30,7 +30,7 @@ before_action :admin_required
    @product = Product.find(params[:id])
 
    if @product.update(product_params)
-     redirect_to admin_products_path, notice:'Update Su'
+     redirect_to admin_products_path, notice:'Update Success'
    else
      render :edit
    end
