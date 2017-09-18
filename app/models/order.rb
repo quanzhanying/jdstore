@@ -3,7 +3,7 @@ class Order < ApplicationRecord
     before_create :generate_token
 
     def generate_token
-        self.toke = SecureRandom.uuid
+        self.token = SecureRandom.uuid
     end
 
     belongs_to :user
