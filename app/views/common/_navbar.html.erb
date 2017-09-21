@@ -37,8 +37,12 @@
             <li>
               <%= link_to("Admin Panel", admin_products_path) %>
             </li>
-            <hr>
             <% end %>
+            <hr>
+            <li>
+              <%= link_to("我的订单", account_orders_path) %>
+            </li>
+            <hr>
             <li>
               <%= link_to(destroy_user_session_path,  method: :delete)  do %>
               <i class="fa fa-sign-out"></i> 退出
