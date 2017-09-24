@@ -3,6 +3,8 @@
 
     <h2>订单明细 (<%= render_order_paid_state(@order) %>)</h2>
 
+    <%= render "admin/orders/state_option", order: @order %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -38,7 +40,7 @@
           <td>订购人</td>
         </tr>
         <tr>
-          <td><%= @order.billing_name %> - <%= @order.billing_address %><td>
+          <td><%= @order.billing_name %> - <%= @order.billing_address %></td>
         </tr>
         <tr>
           <td>收件人</td>
