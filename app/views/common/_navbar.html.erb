@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href='/'>JDstore</a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to("Products", products_path)%></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to carts_path do %>
+          购物车 <i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %> )
+        <% end %>
+      </li>
+      <% if !current_user %>
+        <li>
+          <%= link_to(new_user_session_path) do %>
+          <span class="fa fa-user"> 登入</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(new_user_registration_path) do %>
+          <span class="fa fa-sign-in"> 注册</span>
+          <% end %>
+        </li>
+      <% else %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href='#'>
+            Hi, <%= current_user.email %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% if current_user.admin? %>
+            <li>
+              <%= link_to("Admin Panel", admin_products_path) %>
+            </li>
+            <% end %>
+            <hr>
+            <li>
+              <%= link_to("我的订单", account_orders_path) %>
+            </li>
+            <hr>
+            <li>
+              <%= link_to(destroy_user_session_path,  method: :delete)  do %>
+              <i class="fa fa-sign-out"></i> 退出
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
