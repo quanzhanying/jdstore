@@ -9,5 +9,9 @@ class CartsController < ApplicationController
     def checkout
         @order = Order.new
     end
-    
+
+    def clean
+        current_cart.clean!
+    end
+
 end
