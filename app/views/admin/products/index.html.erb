@@ -1,0 +1,24 @@
+<div class="pull-right">
+  <%= link_to("New Product", new_admin_product_path, class: "btn btn-primary") %>
+</div>
+
+<br><br>
+
+<div class="col-md-12">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>产品名称</td>
+        <td>图片</td>
+        <td>数量</td>
+        <td>价格</td>
+        <td>管理选项</td>
+        <td>上架时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => 'product', :collection => @products, :as => :product %>
+    </tbody>
+  </table>
+</div>
