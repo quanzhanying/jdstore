@@ -52,7 +52,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :customize 
+  resources :customize
 
   root 'welcome#index'
 

@@ -24,3 +24,6 @@ public/uploads
 
 # Ignore application configuration
 /config/application.yml
+/config/application0.yml
+/config/application1.yml
+/config/application2.yml
