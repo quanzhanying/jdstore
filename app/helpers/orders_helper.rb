@@ -6,4 +6,8 @@ module OrdersHelper
       "未付款"
     end
   end
+
+  def render_order_created_time(order)
+    order.created_at.to_s(:short)
+  end
 end
