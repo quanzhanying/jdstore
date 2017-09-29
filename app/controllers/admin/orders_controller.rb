@@ -13,7 +13,7 @@ class Admin::OrdersController < AdminController
 
   def ship
     @order.ship!
-    OrderMailer.notify_ship(@order).deliver!
+    OrderMailer.notify(@order).deliver!
     redirect_to :back
   end
 
@@ -24,7 +24,7 @@ class Admin::OrdersController < AdminController
 
   def cancel
     @order.cancel_order!
-    OrderMailer.notify_cancel(@order).deliver!
+    OrderMailer.notify(@order).deliver!
     redirect_to :back
   end
 
