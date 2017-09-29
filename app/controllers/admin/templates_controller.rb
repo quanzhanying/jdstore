@@ -1,8 +1,6 @@
-class Admin::TemplatesController < ApplicationController
-  layout "admin"
+class Admin::TemplatesController < AdminController
 
-  before_action :authenticate_user!
-  before_action :admin_required
+  before_action :find_template, only: [:show, :edit, :update, :destroy]
 
   def index
     @templates = Template.all
@@ -14,11 +12,9 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def show
-    @template = Template.find(params[:id])
   end
 
   def edit
-    @template = Template.find(params[:id])
   end
 
   def create
@@ -37,8 +33,6 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def update
-    @template = Template.find(params[:id])
-
     if @template.update(template_params)
       redirect_to admin_templates_path
     else
@@ -47,7 +41,6 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def destroy
-    @template = Template.find(params[:id])
     @template.destroy
     redirect_to admin_templates_path, alert: 'Template Deleted'
   end
@@ -57,4 +50,9 @@ class Admin::TemplatesController < ApplicationController
   def template_params
     params.require(:template).permit(:title, :description, :price, :version, :proportion, templatephoto_attributes: [:image, :id])
   end
+
+  def find_template
+    @template = Template.find(params[:id])
+  end
+
 end
