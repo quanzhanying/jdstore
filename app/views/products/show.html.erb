@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="col-md-6 preview">
+    <% if @photos.present? %>
+    <div class="tab-content preview-pic">
+      <div id="pic1" class="tab-pane fade in active">
+        <%= image_tag @photos[0].avatar.medium.url %>
+      </div>
+      <div id="pic2" class="tab-pane fade">
+        <%= image_tag @photos[1].avatar.medium.url %>
+      </div>
+      <div id="pic3" class="tab-pane fade">
+        <%= image_tag @photos[2].avatar.medium.url %>
+      </div>
+      <div id="pic4" class="tab-pane fade">
+        <%= image_tag @photos[3].avatar.medium.url %>
+      </div>
+      <div id="pic5" class="tab-pane fade">
+        <%= image_tag @photos[4].avatar.medium.url %>
+      </div>
+    </div>
+    <ul class="nav nav-pills preview-thumb">
+      <li class="active"><a data-toggle="pill" href="#pic1">
+        <%= image_tag @photos[0].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic2">
+        <%= image_tag @photos[1].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic3">
+        <%= image_tag @photos[2].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic4">
+        <%= image_tag @photos[3].avatar.thumb.url %>
+      </a></li>
+      <li><a data-toggle="pill" href="#pic5">
+        <%= image_tag @photos[4].avatar.thumb.url %>
+      </a></li>
+    </ul>
+    <% end %>
+
+    <!-- <% if @photos.present? %>
+      <% @photos.each_with_index do |photo,index| %>
+        <% if index == 0 %>
+          <%= image_tag photo.avatar.medium.url %>
+        <div style="letter-spacing: -8px;">
+        <% else %>
+          <%= image_tag photo.avatar.thumb.url %>
+        <% end %>
+      <% end %>
+        </div>
+    <% else%>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %> -->
+  </div>
+  <div class="col-md-6">
+    <h2><%= @product.title %></h2>
+    <div style="height:100px;">
+      <p><%= @product.description %></p>
+    </div>
+    <div>数量 : <%= @product.quantity %></div>
+    <div class="product-price"> ¥ <%= @product.price %></div>
+    <div class="pull-right">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
+                      :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#home">商品详情</a></li>
+      <li><a data-toggle="pill" href="#menu1">用户评价( <%= @comments.count %> )</a></li>
+    </ul>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Some content.</p>
+              </div>
+
+              <div id="menu1" class="tab-pane fade">
+                <div class="col-md-8 col-md-offset-2">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th width="80%">Content</th>
+                        <th>User</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @comments.each do |comment| %>
+                        <tr>
+                          <td>
+                            <%= comment.content %>
+                          </td>
+                          <td>
+                            <%= comment.user.email %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <div class="text-center">
+                    <%= link_to "评价商品", new_product_comment_path(@product), class: "btn btn-danger" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

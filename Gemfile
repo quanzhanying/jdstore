@@ -29,10 +29,26 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise'
+gem 'simple_form'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+gem "font-awesome-rails"
+gem 'awesome_rails_console'
+gem 'letter_opener', group: :development
+gem 'aasm'
+gem 'annotate'
+gem "select2-rails"
+gem 'acts_as_list'  #调整product顺序用
+gem "intercom-rails"   #客服系统
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
+
+  #在controller下断点 binding.pry; 在view 中下断点 <% binding.pry %>
+  gem 'pry'
 end
 
 group :development do
@@ -42,7 +58,18 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "rails-erd"
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Please clean up duplicated gems if any.
+# Feel free to remove gems that you don't want to use or if they conflict with other gem dependencies. (you might need to update .pryrc also)
+group :development, :test do
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+end

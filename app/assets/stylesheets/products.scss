@@ -1,0 +1,29 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// product show page product pictures
+.row {
+  .preview {
+    .preview-pic {
+      img {
+        border: 1px solid #ddd;
+      }
+    }
+    .preview-thumb {
+      margin: 10px 0;
+      img {
+        height: 77px;
+        width: 77px;
+      }
+      a {
+        border-radius: 0px;
+        padding: 0px;
+        border: 1px solid #ddd;
+      }
+      a:hover,
+      a:active {
+        border: 1px solid #D32048;
+      }
+    }
+  }
+}
+// You can use Sass (SCSS) here: http://sass-lang.com/

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>修改类别</h2>
+    <%= simple_form_for @category do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+    <% end %>
+    <div class="pull-right">
+      <%= link_to "类别列表", categories_path, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">类别列表</h2>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>类别名称</th>
+          <th>选项</th>
+          <th>新增时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.id %></td>
+            <td><%= category.name %></td>
+            <td>
+              <%= link_to "Edit", edit_category_path(category), class: "btn btn-default btn-sm" %>
+              <%= link_to "Delete", category_path(category), method: :delete, class: "btn btn-default btn-sm", data: { confirm: "你确定要删除这个类别吗？"} %>
+            </td>
+            <td>
+              <%= category.created_at.to_s(:long) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="">
+      <%= link_to "New", new_category_path, class: "btn btn-danger btn-lg" %>
+    </div>
+  </div>
+</div>
