@@ -1,3 +1,3 @@
 # README
 
-第一周作业：Story 1
+First Week: Story 2
