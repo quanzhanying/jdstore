@@ -1,3 +1,3 @@
 # README
 
-First Week: Story 2
+First Week: Story 3
