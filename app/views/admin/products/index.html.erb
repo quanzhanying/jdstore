@@ -4,9 +4,11 @@
 <div class="pull-right" style="pading-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
+<%= form_tag bulk_update_admin_products_path, :class => "form-inline" do %>
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th><%= check_box_tag "全选", "1", false, :id => "toggle_all" %></th>
       <th>#</th>
       <th width="220"><%= t("product_pic") %></th>
       <th><%= t("name") %></th>
@@ -17,6 +19,9 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td>
+          <%= check_box_tag "ids[]", product.id %>
+        </td>
         <td>
           <%= product.id %>
         </td>
@@ -44,3 +49,22 @@
     <% end %>
   </tbody>
 </table>
+
+    <p>
+      <%= select_tag :product_status, options_for_select( Product::STATUS.map{ |s| [t(s, :scope =>   "product.status"), s] }), :class => "form-control" %>
+
+      <%= submit_tag t(:bulk_update), :class => "btn btn-primary" %>
+      <%= submit_tag t(:bulk_delete), :class => "btn btn-danger", :data => { :confirm => "Are you + sure?" } %>
+   </p>
+   <% end %>
+
+   <script>
+     // 这个 javascript 会绑事件在 #toggle_all 核选方块上，来做全选效果
+     $("#toggle_all").click(function(){
+       if ( $(this).prop("checked") ) {
+         $("input[name='ids[]']").prop("checked", true);
+       } else {
+         $("input[name='ids[]']").prop("checked", false);
+       }
+     })
+   </script>

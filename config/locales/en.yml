@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  bulk_update: Bulk Update
+  bulk_delete: Bulk Delete
   hello: "Hi %{name},"
   product_list: Porduct List
   admin:

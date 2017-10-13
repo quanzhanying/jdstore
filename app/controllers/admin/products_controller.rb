@@ -51,9 +51,29 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  def bulk_update
+    total = 0
+    Array(params[:ids]).each do |product_id|
+      product = Product.find(product_id)
+
+      if params[:commit] == I18n.t(:bulk_update)
+        product.status = params[:product_status]
+        if product.save
+          total += 1
+        end
+      elsif params[:commit] == I18n.t(:bulk_delete)
+        product.destroy
+        total += 1
+      end
+    end
+
+    flash[:alert] = "成功完成 #{total} 笔"
+    redirect_to admin_products_path
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id, :friendly_id)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :category_id, :friendly_id, :status)
   end
 end

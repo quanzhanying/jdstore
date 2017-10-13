@@ -8,7 +8,7 @@
   </div>
 
   <div class="group">
-    <%= f.input :description %>
+    <%= f.input :description, as: :ckeditor %>
   </div>
 
   <div class="group">
@@ -23,6 +23,23 @@
      <%= f.label :friendly_id %>
      <%= f.text_field :friendly_id, :required => true, :class => "form-control" %>
      <p class="help-block">限小写英数字及横线， 将作为网址的一部分</p>
+  </div>
+
+  <div class="btn-group" data-toggle="buttons">
+    <% Product::STATUS.each do |status| %>
+      <label class="btn btn-default <%= (status == f.object.status)? 'active' : '' %>">
+        <%= f.radio_button :status, status %>
+        <%= t(status, :scope => "product.status") %>
+      </label>
+    <% end %>
+  </div>
+
+  <div class="group">
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] }, {}, :class => "form-control" %>
+  </div>
+
+
   </div>
   <br>
 
@@ -40,3 +57,7 @@
 
 <% end %>
 </div>
+
+<script>
+  $("#product_category_id").select2( { theme: "bootstrap"} );
+</script>

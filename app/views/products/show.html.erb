@@ -10,9 +10,11 @@
   </div>
   <div class="col-md-6">
     <h2> <%= @product.title %> </h2>
+    <h2><%= t(@product.status, :scope => "product.status") %></h2>
+    <h2><%= @product.category.try(:name) %></h2>
     <div style="height:100px;">
       <p>
-        <%= @product.description %>
+        <%= sanitize @product.description %>
       </p>
     </div>
     <div> 数量 : <%= @product.quantity %> </div>

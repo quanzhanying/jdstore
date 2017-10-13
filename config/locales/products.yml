@@ -1,4 +1,6 @@
 zh-CN:
+  bulk_update: 批次编辑
+  bulk_delete: 批次删除
   activerecord:
     attributes:
       product:

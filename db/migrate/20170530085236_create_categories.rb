@@ -6,5 +6,8 @@ class CreateCategories < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_column :products, :category_id, :integer
+    add_index :products, :category_id
   end
 end
