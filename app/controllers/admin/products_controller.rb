@@ -4,18 +4,24 @@ layout "admin"
 before_action :authenticate_user!
 before_action :admin_required
 
-  def show
-    @product = Product.find(params[:id])
-  end
+
+    def index
+      @products = Product.all
+    end
 
 
-  def index
-    @products = Product.all
-  end
+    def new
+      @product = Product.new
+    end
 
-  def new
-    @product = Product.new
-  end
+    def show
+      @product = Product.find(params[:id])
+    end
+
+
+
+
+
 
 
   def create
