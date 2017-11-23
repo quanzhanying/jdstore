@@ -56,12 +56,7 @@ def destroy
   redirect_to admin_products_path
 end
 
-    def admin_required
 
-      if !current_user.admin?
-         redirect_to "/"
-       end
-     end
 
 
 private
