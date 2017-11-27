@@ -11,12 +11,17 @@ class CartItemsController < ApplicationController
     redirect_to :back
   end
 
-def update
-  @cart = current_cart
-  @cart_item = @cart.cart_items.find_by(product_id: params[:id])
-  @cart_item.update(cart_item_params)
-  redirect_to carts_path
-end
+  def update
+    @cart = current_cart
+    @cart_item = @cart.cart_items.find_by(product_id: params[:id])
+    if @cart_item.product.quantity >= cart_item_params[:quantity].to_i
+        @cart_item.update(cart_item_params)
+        flash[:notice] = " the number is modified successfully"
+      else
+        flash[:warning] = "the number is less than your wanting"
+      end
+    redirect_to carts_path
+  end
 
 private
 
