@@ -28,6 +28,23 @@ def show
 end
 
 
+def pay_with_alipay
+  @order = Order.find_by_token(params[:id])
+  @order.set_payment_with!("alipay")
+  @order.pay!
+
+  redirect_to order_path(@order.token), notice: "paid by alipay successfully"
+end
+
+def pay_with_wechat
+  @order = Order.find_by_token(params[:id])
+  @order.set_payment_with!("wechat")
+  @order.pay!
+
+  redirect_to order_path(@order.token), notice: "paid by wechat successfully"
+end
+
+
 
   private
 
