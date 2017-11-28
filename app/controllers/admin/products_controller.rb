@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authantication_user!
+  before_action :authanticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_is_admin
   before_action :find_product_before_action, only: [:edit, :update, :destroy]
   def index
     @products = Product.all
@@ -36,8 +37,6 @@ class Admin::ProductsController < ApplicationController
     @product.delete
     redirect_to admin_products_path, alert: "delete product success"
   end
-
-
 
   private
 
