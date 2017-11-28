@@ -1,0 +1,12 @@
+<h2> Add a new product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :quantity %>
+
+  <%= f.submit "create product" %>
+
+<% end %>

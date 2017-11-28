@@ -1,16 +1,20 @@
-<table class="table-default">
-  <% @products.each do |product| %>
+<div class="pull-right">
+  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default") %>
+</div>
+
+<table class="table table-default">
   <thead>
     <tr>
       <th>商品名称</th>
       <th>描述</th>
       <th>价格</th>
-      <th><管理选项</th>
+      <th>管理选项</th>
       <th>数量</th>
       <th>上架时间</th>
     </tr>
   </thead>
 
+  <% @products.each do |product| %>
   <tbody>
     <tr>
       <td><%= product.title %></td>
