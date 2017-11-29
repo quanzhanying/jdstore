@@ -1,4 +1,5 @@
-<div class="padding:10px; float:right; ">
+<div style = "padding:10px; float:right; ">
+
   <% case order.aasm_state%>
   <% when "order_placed" %>
   <%= link_to("cancel order", cancel_admin_order_path(order), class: "btn btn-default btn-sm", method: :post) %>

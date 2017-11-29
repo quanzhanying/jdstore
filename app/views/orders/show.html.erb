@@ -55,6 +55,14 @@
         </tbody>
 
       </table>
+
+      <div class="pull-left">
+        <% if @order.order_placed? || @order.paid? %>
+        <%= link_to("apply to cancel order", apply_to_cancel_order_path(@order.token), method: :post, class: "btn btn-info") %>
+        <% end %>    
+      </div>
+
+
     <% if !@order.is_paid? %>
        <div class="group pull-right">
          <%= link_to("Paid by AliPay", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>

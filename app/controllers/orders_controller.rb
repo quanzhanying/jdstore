@@ -47,6 +47,13 @@ def pay_with_wechat
 end
 
 
+def apply_to_cancel
+  @order = Order.find_by_token(params[:id])
+  OrderMailer.apply_cancel(@order).deliver!
+  flash[:notice] = "your requrest is received"
+  redirect_to :back
+end
+
 
   private
 
