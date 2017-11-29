@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authanticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_is_admin
   before_action :find_product_before_action, only: [:edit, :update, :destroy]
   def index
@@ -45,7 +45,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :quantity, :is_hidden)
+    params.require(:product).permit(:title, :description, :price, :quantity, :is_hidden, :image)
   end
 
 end
