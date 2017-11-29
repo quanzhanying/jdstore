@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Order details(<%= render_order_paid_state(@order) %>) </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th width="80%"> Product details </th>
+          <th>Price</th>
+          <th>Quantity</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @product_lists.each do |product_list| %>
+        <tr>
+          <td>
+            <%= product_list.product_name %>
+
+          </td>
+          <td>
+            <%= product_list.product_price %>
+
+          </td>
+          <td>
+            <%= product_list.quantity %>
+
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="total clearfix">
+      <span class="pull-right">
+      total <%= @order.total %> CNY
+    </span>
+
+    </div>
+    <hr>
+    <h2>Ordering details </h2>
+    <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <td> Order People</td>
+        </tr>
+        <tr>
+          <td> <%= @order.billing_name %> - <%= @order.billing_address %></td>
+        </tr>
+        <tr>
+          <td> Receiver details</td>
+        </tr>
+        <tr>
+          <td> <%= @order.shipping_name %> - <%= @order.shipping_address %></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>
