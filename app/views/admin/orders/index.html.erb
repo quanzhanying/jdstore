@@ -1,0 +1,21 @@
+<h2> Order Listing</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Created Time</th>
+      <th>Order name</th>
+      <th>Order status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= link_to(order.id, admin_order_path(order)) %></td>
+      <td><%= order.created_at.to_s(:long) %></td>
+      <td><%= order.user.email %></td>
+      <td><%= order.aasm_state %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
