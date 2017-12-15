@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :require_is_admin
   before_action :find_product_before_action, only: [:edit, :update, :destroy]
   def index
@@ -48,4 +48,10 @@ class Admin::ProductsController < ApplicationController
     params.require(:product).permit(:title, :description, :price, :quantity, :is_hidden, :image)
   end
 
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alsert] = 'You are not admin!'
+      redirect_to root_path
+    end
+  end
 end
