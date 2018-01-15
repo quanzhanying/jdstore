@@ -1,0 +1,19 @@
+zh-CN:
+  bulk_update: 批次编辑
+  bulk_delete: 批次删除
+  hello: "亲~ %{name} 你好："
+  product_list: 商品列表
+  draft: 草稿
+  public: 公开
+  private: 私密
+  admin:
+    product_list: 商品列表管理
+  products: 商品
+  orders: 订单
+  category: 分类
+  porduct_pic: 商品图
+  name: 商品名称
+  price: 价格
+  options: 选项
+  edit: 编辑
+  delete: 删除
