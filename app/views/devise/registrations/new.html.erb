@@ -1,0 +1,157 @@
+<div class="container">
+  <div id="container-login">
+    <div class="accountbox">
+      <div id="account-page-header">
+        <ul id="JDstoreTab" class="nav nav-tabs JDstoreTab" role="tablist">
+            <li class="active"><a href="#sign-in-Tab2" role="tab" data-toggle="tab">登录</a></li>
+            <li><a href="#sign-up-Tab2" role="tab" data-toggle="tab">注册</a></li>
+        </ul>
+      </div>
+      <div class="content clearfix">
+        <div class="login">
+          <div id="sign-in-content">
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane active" id="sign-in-Tab2">
+                <div class="from sign-in">
+                  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <h2>欢迎登陆 JDtore</h2>
+                    <fieldset>
+                      <p>
+                        <span class="field-with-placeholder">
+                            <input name="user[email]" size="30" type="email" class="login" id="login-JDstoreId" autofocus="autofocus" placeholder="邮箱*">
+                        </span>
+                        <span class="field-with-placeholder">
+                          <input name="user[password]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="密码*">
+                        </span>
+
+                      </p>
+                    </fieldset>
+                    <div class="actions">
+                      <button type="submit" class="button rect" id="sign-in">
+                          <span>登录</span>
+                      </button>
+                    </div>
+
+                    <p id="iforgot-link">
+                      <a target="browser" id="go-iforgot" href="#">忘了自己的 Email 或密码？</a>
+                    </p>
+                  <% end %>
+                </div>
+              </div>
+              <div class="tab-pane" id="sign-up-Tab2">
+                <div class="from sign-in">
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <h2>欢迎注册 JDtore</h2>
+                    <fieldset>
+                      <p>
+                        <span class="field-with-placeholder">
+                            <input name="user[email]" size="30" type="email" class="login" id="login-JDstoreId" autofocus="autofocus" placeholder="邮箱*">
+                        </span>
+                        <span class="field-with-placeholder">
+                          <input name="user[password]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="密码*">
+                        </span>
+                        <span class="field-with-placeholder">
+                          <input name="user[password_confirmation]" size="30" type="password" maxlength="32" class="password" id="login-password" placeholder="确认密码*">
+                        </span>
+                      </p>
+                    </fieldset>
+                    <div class="actions">
+                      <button type="submit" class="button rect" id="sign-in">
+                          <span>注册</span>
+                      </button>
+                    </div>
+
+                    <p id="iforgot-link">
+                      <a target="browser" id="go-iforgot" href="javascript:void(0);">忘了自己的 Email 或密码？</a>
+                    </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-us">
+          <p>您还可以使用以下方式进行登录</p>
+          <ul>
+            <li><%= link_to "Google 登录", user_google_oauth2_omniauth_authorize_path %></li>
+            <li><%= link_to "Github 登录", user_github_omniauth_authorize_path %></li>
+            <li><%= link_to "Facebook登录", user_facebook_omniauth_authorize_path %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cart-navigation">
+        <button id="cancel-button" class="button rect secondary" data-dismiss="modal">
+          <span>取消</span>
+        </button>
+        <p class="details">如果您有问题， 欢迎随时提问。<span class="contact-phone">400-0000-0001</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
+  <div class="row">
+    <div class="modal-dialog">
+      <div class="loginmodal-container">
+<h2 class="text-center">欢迎注册</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "注册" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+  </div>
+</div>
+
+</div>
+</div>
+////////修改密码
+-->
+<!--
+<div class="container">
+  <div class="row">
+    <div class="modal-dialog">
+      <div class="loginmodal-container">
+
+        <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+
+        <%#= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%#= f.error_notification %>
+
+          <div class="form-inputs">
+            <%#= f.input :email, required: true, autofocus: true %>
+
+            <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></p>
+            <%# end %>
+
+            <%#= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+            <%#= f.input :password_confirmation, required: false %>
+            <%#= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+          </div>
+
+          <div class="form-actions">
+            <%#= f.button :submit, "Update" %>
+          </div>
+        <%# end %>
+
+        <h3>Cancel my account</h3>
+
+        <p>Unhappy? <%#= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+        <%= link_to "Back", :back %>
+
+      </div>
+    </div>
+  </div>
+</div> -->

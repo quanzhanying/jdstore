@@ -1,0 +1,28 @@
+<div id="review-item-<%= review.id %>" class="review-mian">
+    <div class="review-left">
+      <img src="<%= if review.user.image.blank? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
+      <%= if review.user.username.nil? then review.user.display_name else review.user.username end%>
+    </div>
+    <div class="review-right">
+      <div class="review-star star<%= review.score%>">
+      </div>
+      <p><%= review.body %></p>
+    </div>
+    <div class="review-thumbs">
+      <span><%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></span>&nbsp;&nbsp;&nbsp;
+      <% if current_user %>
+        <% if current_user.is_like_of?(review) %>
+      <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-up'), unlike_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
+       <% else %>
+      <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-o-up'), like_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
+        <% end %>
+      <% else %>
+        <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-thumbs-o-up"></i></a>
+      <% end %>
+    </div>
+</div>
+
+
+<%# if review.user == current_user %>
+   <%#= link_to("Delete", product_review_path(@product, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm pull-right") %>
+<%# end %>

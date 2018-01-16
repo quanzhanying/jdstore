@@ -1,0 +1,173 @@
+<div class="container">
+  <div class="row">
+    <%= simple_form_for @order do |f| %>
+    <div class="col-md-5">
+
+      <h2> 购物明细 </h2>
+    </div>
+    <div class="col-md-7">
+      <div class="flow_steps pull-right">
+        <ul>
+          <li class="current">1.提交订单</li>
+          <li>2.付款成功</li>
+          <li>3.确认收货</li>
+          <li class="last">4.评价商品</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="shoping-cart">
+        <div class="cart-column-head center-block">
+          <label class="col-md-2 ">商品</label>
+          <label class="col-md-2 ">名称</label>
+          <label class="col-md-2 ">单价</label>
+          <label class="col-md-2 ">数量</label>
+          <label class="col-md-2 ">小计</label>
+          <label class="col-md-2 ">操作</label>
+        </div>
+
+        <input type="hidden" name="product" value="<%= @product.id %>">
+        <div class="cart-item-<%= @product.id %>">
+          <div class="cart-list text-center">
+            <div class="col-md-2 ">
+              <%= link_to product_path(@product) do %>
+              <%= image_tag(img430(@product,1), style: "width: 160px;") %>
+              <% end %>
+            </div>
+            <div class="col-md-2 text-left">
+              <%= link_to(@product.title, product_path(@product)) %>
+            </div>
+            <div class="col-md-2"><span id="product-promotional"><%= @product.promotional %></span>&nbsp;RMB
+            </div>
+            <div class="col-md-2">
+              <div class="quantity-box" onselectstart="return false">
+                <a class="quantity-actions quantity-down<%= if @num == 1 then " disabled" end%>" href="">-</a>
+                <input type="text" name="num" value="<%= @num %>" max="<%= @product.quantity %>" class="quantity-input">
+                <a class="quantity-actions quantity-up<%= if @num == @product.quantity or @product.quantity == 1 then " disabled" end%>" href="">+</a>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <span class="quantity-price"><%= @product.promotional * @num %></span>&nbsp;RMB
+            </div>
+            <div class="col-md-2">
+              <a href="#">加入收藏</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      <div class="total clearfix">
+            <span class="pull-right">
+            </span>
+      </div>
+      <div class="checkout-addr">
+        <ul class="address_title">
+          <li class="address_name">选择地址</li>
+          <li class="address_name">收货人</li>
+          <li class="address_city">所在省市</li>
+          <li class="address_addr">街道地址</li>
+          <li class="address_name">手机号码</li>
+          <li class="address_name">默认</li>
+          <li class="address_handle">操作</li>
+        </ul>
+        <div id="address-jq">
+          <%if !@addresses.blank? %>
+          <% i=0 %>
+        <% @addresses.each do |address| %>
+        <% if address.addr_default then i += 1 end%>
+    <ul class="address-jq">
+          <span class="radio-address"><input type="radio" name="address" value="<%= address.id.to_s%>" <%= if address.addr_default && i == 1 then "checked" end%>></span>
+
+      <li class="address_name"><%= address.name%></li>
+      <li class="address_city"><%= ChinaCity.get(address.province)+ChinaCity.get(address.city)+ChinaCity.get(address.district)%></li>
+      <li class="address_addr"><%= address.addr%></th>
+      <li class="address_name"><%= address.phone%></th>
+      <li class="address_addr_default"><%= if address.addr_default && i == 1 then "默认地址" end%></li>
+      <li class="address_handle"><%= link_to "修改",edit_account_address_path(address),:method => :get,:remote => true,:class => "address-jqedit"%>|<%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-jqnew"%></li>
+    </ul>
+    <% end %>
+
+    <br><br>
+    <input type="submit" name="commit" value="生成订单" class="btn btn-lg btn-danger pull-right" data-disable-with="Submitting...">
+    <% else %>
+    <div class="text-center">
+      <br>
+      <span>您还没有任何收货地址马上</span>
+        <%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-new"%>
+    </div>
+
+    <% end %>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- <h2> 订单资讯 </h2> -->
+
+
+  <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+
+$(".shoping-cart").on('click', ".quantity-up", function (evt) {
+  evt.preventDefault();
+  var price = Number($("#product-promotional").text());
+  var $app = $(this).siblings('.quantity-input');
+  var value = Number($app.val());
+  var numMax = Number($app.attr("max"));
+  var url = $app.attr("url") + "/up?value="
+  if (value < numMax) {
+    $app.val(value += 1);
+    $(".quantity-price").text(value * price);
+    //alert('' + url+ String(value) + '')
+    if (value == numMax) {
+      $(this).addClass("disabled")
+    } else if (value == 2) {
+      $(this).siblings('.quantity-down').removeClass("disabled");
+    }
+  }
+})
+$(".shoping-cart").on('click', ".quantity-down", function (evt) {
+  evt.preventDefault();
+  var price = Number($("#product-promotional").text());
+  var $app = $(this).siblings('.quantity-input');
+  var value = Number($app.val());
+  var numMax = Number($app.attr("max"));
+  var url = $app.attr("url") + "/up?value="
+  if (value > 1) {
+    $app.val(value -= 1);
+    $(".quantity-price").text(value * price);
+    if (value == 1) {
+      $(this).addClass("disabled")
+    } else if (value == (numMax - 1)) {
+      $(this).siblings('.quantity-up').removeClass("disabled");
+    }
+  }
+})
+$(".shoping-cart").on('blur', ".quantity-input", function (evt) {
+  evt.preventDefault();
+  var price = Number($("#product-promotional").text());
+  var value = Number($(this).val());
+  var numMax = Number($(this).attr("max"));
+  var url = $(this).attr("url") + "/up?value="
+  if (value >= numMax) {
+    value = numMax;
+    if (numMax != 1) {
+      $(this).siblings('.quantity-up').addClass("disabled");
+      $(this).siblings('.quantity-down').removeClass("disabled");
+    }
+  } else if (value <= 1) {
+    value = 1;
+    if (numMax != 1) {
+      $(this).siblings('.quantity-up').removeClass("disabled");
+      $(this).siblings('.quantity-down').addClass("disabled");
+    }
+  } else {
+    $(this).siblings('.quantity-up').removeClass("disabled");
+    $(this).siblings('.quantity-down').removeClass("disabled");
+  }
+  $(this).val(value);
+  $(".quantity-price").text(value * price);
+})
+</script>

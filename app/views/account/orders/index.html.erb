@@ -1,0 +1,38 @@
+
+<%= render "account/users/navbar" %>
+
+      <table class="table table-hover pull-right" >
+
+        <thead>
+          <tr>
+            <th>订单编号</th>
+            <th>订单金额</th>
+            <th>下单时间</th>
+            <th>订单状态</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% @orders.each do |order| %>
+
+        <tr onclick="parent.location='<%= order_path(order.token) %>';">
+            <td> <%= order.id %> </td>
+            <td> ￥<%= order.total %></td>
+            <td> <%= format_datetime(order.created_at) %> </td>
+            <% aasm = @aasm_state.assoc(order.aasm_state) %>
+
+            <td> <%= aasm[1] %> </td>
+          </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <div class="pag">
+          <%= will_paginate @orders, renderer: BootstrapPagination::Rails, :previous_label => t('上一页'), :next_label => t('下一页') %>
+        </div>
+    </div>
+
+
+<%= render "account/users/footer" %>

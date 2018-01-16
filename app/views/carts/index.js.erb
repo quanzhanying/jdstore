@@ -1,0 +1,27 @@
+<% sum = 0 %>
+<%if @carts.blank? %>
+$(".mcart-sigle").html("<div class=\'cart_empty\'><i class=\'cart_empty_img\'></i>购物车中还没有商品，赶紧选购吧！</div>");
+<% else %>
+<% @carts.each do |cart| %>
+
+
+<% if cart.id > @max_id %>
+    $(".mcart-sigle .cart_empty").remove();
+    $(".mcart-sigle").append("<%=j render :partial => "cart", :locals => { :cart => cart } %>");
+<% else  %>
+  $("cart-item-<%= cart.product_id %> .p-price").html("×<%= cart.quantity %>" );
+<% end %>
+<% sum += cart.quantity %>
+
+<% end %>
+
+<% end %>
+$(".p-total b").html("<%= sum %>" );
+$(".cw-icon span").html("<%= sum %>" );
+$(".p-total strong").html("<%= render_cart_total_price(current_cart) %>" );
+
+<% if @carts.any? %>
+
+var cart_item_id = <%= @carts.last.id %>;
+
+<% end %>

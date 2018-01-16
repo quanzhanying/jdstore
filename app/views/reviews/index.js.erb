@@ -1,0 +1,11 @@
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+    $("#reviews-list").append("<%=j render :partial => "review", :locals => { :review => review } %>");
+  <% end %>
+<% else%>
+  $("#review-bottom").html("<span>没有更多评论了。。。</span>");
+<% end %>
+<% if @reviews.any? %>
+var review_id = <%= @reviews.last.id %>;
+$("#reviews-more").attr("href", "<%= product_reviews_path(@product) %>?min_id=<%= @reviews.last.id %>");
+<% end %>

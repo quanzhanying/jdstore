@@ -1,0 +1,16 @@
+<% i=0 %>
+<% addresses.each do |address| %>
+<% if address.addr_default then i += 1 end%>
+<ul class="address-jq">
+  <span class="radio-address"><input type="radio" name="address" value="<%= address.id.to_s%>" <%= if address.addr_default && i == 1 then "checked" end%>></span>
+
+<li class="address_name"><%= address.name%></li>
+<li class="address_city"><%= ChinaCity.get(address.province)+ChinaCity.get(address.city)+ChinaCity.get(address.district)%></li>
+<li class="address_addr"><%= address.addr%></th>
+<li class="address_name"><%= address.phone%></th>
+<li class="address_addr_default"><%= if address.addr_default && i == 1 then "默认地址" end%></li>
+<li class="address_handle"><%= link_to "修改",edit_account_address_path(address),:method => :get,:remote => true,:class => "address-jqedit"%>|<%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-jqnew"%></li>
+</ul>
+<% end %>
+<br><br>
+<input type="submit" name="commit" value="生成订单" class="btn btn-lg btn-danger pull-right" data-disable-with="Submitting...">

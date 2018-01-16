@@ -1,0 +1,195 @@
+
+<div class="footer" id="footer">
+    <div class="container">
+      <div class="back-to-top">
+        <div id="back-to-top">
+          <a href="#top"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+        <h4>使用帮助 </h4>
+        <ul>
+          <li> <a href="javascript:void(0);"> 新手指南 </a> </li>
+          <li> <a href="javascript:void(0);"> 常见问题</a> </li>
+          <li> <a href="javascript:void(0);"> 帮助中心</a> </li>
+          <li> <a href="javascript:void(0);"> 用户协议</a> </li>
+        </ul>
+      </div>
+      <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+        <h4> 支付方式 </h4>
+        <ul>
+          <li> <a href="javascript:void(0);"> 货到付款</a> </li>
+          <li> <a href="javascript:void(0);"> 在线支付 </a> </li>
+          <li> <a href="javascript:void(0);"> 余额支付 </a> </li>
+          <li> <a href="javascript:void(0);"> 现金券支付 </a> </li>
+        </ul>
+      </div>
+      <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+        <h4> 配送方式 </h4>
+        <ul>
+          <li> <a href="javascript:void(0);"> 包邮政策 </a> </li>
+          <li> <a href="javascript:void(0);"> 配送说明 </a> </li>
+          <li> <a href="javascript:void(0);"> 运费说明 </a> </li>
+          <li> <a href="javascript:void(0);"> 验货签收 </a> </li>
+
+        </ul>
+      </div>
+      <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+        <h4> 售后服务 </h4>
+        <ul>
+          <li> <a href="javascript:void(0);"> 隐私条款 </a> </li>
+          <li> <a href="javascript:void(0);"> 售后咨询 </a> </li>
+          <li> <a href="javascript:void(0);"> 退货政策 </a> </li>
+          <li> <a href="javascript:void(0);"> 退货办理 </a> </li>
+
+        </ul>
+      </div>
+      <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+        <div class="row">
+          <h4> 官方客服 </h4>
+          <ul>
+            <img src="/images/WechatIMG1.jpeg" width="150" alt="">
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2  col-md-4 col-sm-6 col-xs-12 ">
+        <div class="row">
+          <h4> 联系我们 </h4>
+          <div class="contactus">
+          </div>
+          <ul class="social">
+            <li> 在线客服 ( 工作日 9:00-22:00 )</li>
+            <li> 任何问题，扫描微信二维码，联系在线客服。 </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <!--/.row-->
+  <!--/.container-->
+</div>
+  <!--/.footer-->
+  <section class="text-center" >
+    Copyright© 2014-2017 JDstore shop.weiyueyan.com All Rights Reserved. 桂ICP备17004516号
+    <br>
+    Design by 廖晓华 & 韦月炎
+  </section>
+
+<div id="flyItem" class="fly_item"><img src="https://img.alicdn.com/bao/uploaded/i4/TB1VAYpKFXXXXcnXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" width="40" height="40"></div>
+
+
+<style media="screen">
+ul.messenger.messenger-theme-block.messenger-fixed .messenger-message.alert-info {
+    color: #B28435;
+    background-color:rgba(255,255,255, 0.8);
+    border-color: #B28435;
+}
+ul.messenger.messenger-theme-block.messenger-fixed.messenger-on-top {
+    top: 200px;
+    bottom: auto;
+}
+</style>
+<script type="text/javascript">
+// $("body").click(function () {
+//   $.globalMessenger().post({
+//     message: "操作成功",//提示信息
+//     type: 'warning',//消息类型。error、info、success、warning
+//     hideAfter: 3,//多长时间消失
+//     showCloseButton:true,//是否显示关闭按钮
+//     hideOnNavigate: true //是否隐藏导航
+//   });
+// });
+</script>
+
+<script type="text/javascript">
+//登录后下来菜单
+$('li.dropdown').hover(function () {
+  $(this).addClass('open')
+ },function(){
+   $(this).removeClass('open')
+ })
+
+//----轮播
+$(".carousel-indicators li").hover(function(){
+  var d = Number($(this).attr("data-slide-to"));
+  $("#carousel-example-generic").carousel(d);
+},function(){
+})
+//-----第二导航栏
+$(window).scroll(function () {
+
+  if ($(this).scrollTop() > 200) {
+    $('.row1').css({'display':'none'})
+    $('.row2').css({'display':'block'})
+  $('.settleup-2014').css({'top':20,'position':'fixed','z-index':'9999'})
+  $('.navbar-default').css({'background-color':'#fff','border-color':'#B28435'})
+  } else {
+    $('.row1').css({'display':'block'})
+    $('.row2').css({'display':'none'})
+    $('.settleup-2014').css({'top':0,'position':'absolute','z-index':'1'})
+    $('.navbar-default').css({'background-color':'#f8f8f8','border-color':'#e7e7e7'})
+    //$('.row3 .cw-icon').addClass('fly')
+    //$('.row2 .cw-icon').removeClass('fly')
+  }
+})
+
+//-----迷你购物车
+var cart_item_id = 0;
+$(".settleup-2014").hover(function(){
+  var url = "/carts?max_id=" + cart_item_id + '&v=' + Math.random();
+
+if (url) {
+  $.ajax({
+    method: "GET",
+    url: url,
+    dataType: "script"
+  })
+
+} else {
+  console.log("data ended")
+}
+
+},function(){
+})
+
+  </script>
+  <script type="text/javascript">
+  //------fly---
+    // 元素以及其他一些变量
+    var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector(".settleup-2014");
+    var numberItem = 0;
+    // 抛物线运动
+    var myParabola = funParabola(eleFlyElement, eleShopCart, {
+      speed: 400, //抛物线速度
+      curvature: 0.001, //控制抛物线弧度
+      complete: function() {
+        eleFlyElement.style.visibility = "hidden";
+        //eleShopCart.querySelector("span").innerHTML = ++numberItem; //修改元素值
+      }
+    });
+    // 绑定点击事件
+
+  if (eleFlyElement && eleShopCart) {
+    [].slice.call(document.getElementsByClassName("item_buy")).forEach(function(button) {
+    button.addEventListener("click", function(event) {
+          event.preventDefault();
+          $("#flyItem img").attr('src',$(this).attr("mid"));
+          var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+              scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
+          eleFlyElement.style.left = event.clientX + scrollLeft + "px";
+          eleFlyElement.style.top = event.clientY + scrollTop + "px";
+          var url = $(this).attr("href");
+          var add = true;
+          if (url) {
+            $.ajax({
+              method: "POST",
+              url: url,
+              dataType: "script"
+            })
+          }
+        },false);
+    	});
+    }
+  </script>
+  <!-- <script src="https://qiyukf.com/script/02c1672a3956f8164b94bb36949f615c.js" defer async></script> -->

@@ -1,0 +1,81 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.shoping-cart hr {
+  border-top: 2px solid #d9d9d9;
+  margin: 0;
+  padding: 0;
+}
+.shoping-cart a {
+ color:#7f8c8d;
+}
+
+// 列表表头样式
+.cart-column-head {
+  background: #f5f5f5;
+  padding: 20px 0;
+  //margin-bottom: 20px;
+  color: #7f8c8d;
+  label {
+    text-align: center;
+    line-height: 4px;
+  }
+}
+// 购物车商品
+.cart-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-list .cart-list-fa,.cart-list .cart-list-fa:hover{
+  color: #c40000;
+}
+// 提交按钮样式
+.cart-buying-buttom {
+  //margin: 1.2em auto 3em;
+  background-color: #f5f5f5;
+  margin-top: 30px;
+}
+.quantity-box {
+  display: inline-block;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+  float: left;
+}
+
+.quantity-actions {
+  padding: 1px 10px;
+  border: 1px solid #ccc;
+  border-radius: 2.5px;
+  float: left;
+}
+
+
+.quantity-box a:hover {
+  border: 1px solid #B28435;
+  color: #B28435;
+}
+
+.carts-clean{
+  float: left;
+  line-height: 46px;
+  margin-left: 20px;
+}
+.carts-count{
+  float: right;
+}
+.carts-count p{
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+.carts-bth{
+  float: right;
+  margin-left: 30px;
+//  margin-right: 50px;
+}

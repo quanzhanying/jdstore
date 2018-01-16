@@ -1,0 +1,4 @@
+$("#cart_items span").html("(<%= current_cart.cart_items.sum("quantity") %>)" );
+$(".cw-icon span").html("<%= current_cart.cart_items.sum("quantity") %>" );
+$.globalMessenger().post({message:'<%= @product.title %> 加入购物车！',type:'info',hideAfter:3,showCloseButton:true,hideOnNavigate:true});
+eleFlyElement.style.visibility = "visible";myParabola.position().move();

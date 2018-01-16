@@ -1,0 +1,52 @@
+<h2> Edit Product </h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :quantity, hint: '库存' %>
+    <%= f.input :price, hint: '价格' %>
+    <%= f.input :promotional, hint: '促销价' %>
+    <%= f.input :hot, hint: '是否促销，用于首页促销商品' %>
+<%= f.select :product_type, :collection => ["进口水果","进口水产","进口鲜肉"], :selected => ['']%>
+
+  <% if @product.image.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+    <%= f.input :image, as: :file %>
+
+  <% if @product.image2.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image2.thumb.url) %>
+  <% end %>
+    <%= f.input :image2, as: :file %>
+
+  <% if @product.image3.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image3.thumb.url) %>
+  <% end %>
+    <%= f.input :image3, as: :file %>
+
+  <% if @product.image4.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image5.thumb.url) %>
+  <% end %>
+    <%= f.input :image4, as: :file %>
+
+  <% if @product.image5.present? %>
+  <span>目前商品图</span> <br>
+  <%= image_tag(@product.image5.thumb.url) %>
+  <% end %>
+    <%= f.input :image5, as: :file %>
+
+     <%#= f.label :avatar %>
+     <%#= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
+
+
+       <%#= f.select :category_id, @categories %>
+
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+
+<% end %>

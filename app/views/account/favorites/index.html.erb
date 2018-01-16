@@ -1,0 +1,92 @@
+<br><br>
+<div class="container-fluid" style="background-color:#F2F2F2;">
+  <div class="container">
+    <div class="row">
+<div class="favorite-top">
+<h3>我的收藏夹</h3>
+<div class="favorite-top-count">
+  总收藏 <%= @products.count %> 件商品
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="favorite-list">
+      <ul class="favorite-ul">
+        <% @products.each do |product| %>
+        <li class="favorite-li">
+          <div class="favorite-cart">
+            <%= link_to(content_tag(:i,'', class: 'fa fa-cart-arrow-down'), add_to_cart_product_path(product),:remote => true,class: "item_buy") %>
+          </div>
+          <div class="fa-delete">
+            <%= link_to(content_tag(:i,'', class: 'fa fa-heart'), favorite_product_path(product)+"?fa=unfavorite-f", :method => :post,:remote => true,id: "favorite-item-"+product.id.to_s) %>
+          </div>
+          <div class="favorite-main">
+            <a href="<%= product_path(product) %>" target="_blank"><img src="<%= img430(product,1)%>" alt=""></a>
+          </div>
+          <div class="favorite-img">
+            <ul>
+              <li>
+                <div class="fa-s40">
+                  <a href="#">
+                    <img src="<%= img430(product,1)%>" >
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="fa-s40">
+                  <a href="#">
+                    <img src="<%= img430(product,2)%>">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="fa-s40">
+                  <a href="#">
+                    <img src="<%= img430(product,3)%>">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="fa-s40">
+                  <a href="#">
+                    <img src="<%= img430(product,4)%>">
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="fa-s40">
+                  <a href="#">
+                    <img src="<%= img430(product,5)%>">
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <p class="describe"><%= link_to product.title, product_path(product)%></p>
+          <div class="price">￥<%= product.promotional%></div>
+            <div class="favorite-count">
+              人气&nbsp;&nbsp;<span><%= product.show_count%></span>
+            </div>
+            <div class="popularity">
+              收藏&nbsp;&nbsp;<span><%= product.favorite_products.count%></span>
+            </div>
+        </li>
+
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+$(".favorite-list .fa-s40").hover(function () {
+  //$(this).addClass("fa-selected").siblings().removeClass("fa-selected");
+  $(this).closest(".favorite-li").find(".favorite-main a img").attr('src', $(this).find("img").attr("src"));
+},);
+
+
+</script>

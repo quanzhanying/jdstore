@@ -1,0 +1,96 @@
+<div class="container">
+<div class='row'>
+  <div class='col-xs-8'>
+<style media="screen">
+  .panel-primary{
+    border-color: #B28435;
+  }
+  .panel-primary > .panel-heading {
+    //color: #fff;
+    background-color: #B28435;
+    border-color: #B28435;
+}
+</style>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">选择区域</h3>
+      </div>
+      <div class="panel-body">
+        <%= image_tag @user.image.url(:large), id: "cropbox" %>
+        <br>
+        <%= simple_form_for [:account, @user] do |f| %>
+          <% %w[x y w h].each do |attribute| %>
+            <%= f.input "crop_#{attribute}", as: :hidden %>
+          <% end %>
+
+          <div class="form-actions">
+            <%= f.button :submit,'更新' %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class='col-xs-4'>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">图片预览</h3>
+      </div>
+      <div class="panel-body">
+        <div style="width:100px; height:100px; overflow:hidden">
+          <%= image_tag @user.image_url(:large), id: "preview" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+var AvatarCrop,
+bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+$(function() {
+return new AvatarCrop();
+});
+
+AvatarCrop = (function() {
+function AvatarCrop() {
+  this.updatePreview = bind(this.updatePreview, this);
+  this.update = bind(this.update, this);
+  var height, width;
+  width = parseInt($('#cropbox').width());
+  height = parseInt($('#cropbox').height());
+  $('#cropbox').Jcrop({
+    aspectRatio: 1,
+    setSelect: [0, 0, width, height],
+    onSelect: this.update,
+    onChange: this.update
+  });
+}
+
+AvatarCrop.prototype.update = function(coords) {
+  $('#user_crop_x').val(coords.x);
+  $('#user_crop_y').val(coords.y);
+  $('#user_crop_w').val(coords.w);
+  $('#user_crop_h').val(coords.h);
+  return this.updatePreview(coords);
+};
+
+AvatarCrop.prototype.updatePreview = function(coords) {
+  var rx, ry;
+  rx = 100 / coords.w;
+  ry = 100 / coords.h;
+  return $('#preview').css({
+    width: Math.round(rx * $('#cropbox').width()) + 'px',
+    height: Math.round(ry * $('#cropbox').height()) + 'px',
+    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+  });
+};
+
+return AvatarCrop;
+
+})();
+</script>

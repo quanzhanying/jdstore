@@ -1,0 +1,134 @@
+// Place all the styles related to the account::addresses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.address-head .table .address_name {
+  width: 90px;
+  text-align: center;
+}
+.address-head .table .address_city {
+  width: 200px;
+  text-align: center;
+}
+.address-head .table .address_addr {
+  width: 250px;
+  text-align: center;
+}
+.address-head .table .address_phone {
+  width: 100px;
+  text-align: center;
+}
+.address-head .table .address_handle {
+//  width: 10px;
+
+text-align: center;
+}
+.address-head .address_title{
+background: #f8f8f8;
+}
+.address-head .address_addr_default{
+color: #c40000;
+text-align: center;
+}
+
+.address-add .address_title{
+  line-height: 35px;
+  padding: 7px 15px 7px 15px;
+  width: 114px;
+  display: inline-block;
+  text-align: right;
+}
+.address-add .address_value_name{
+  padding: 3px 12px 3px 12px;
+  width: 200px;
+}
+.address-add .address_value_addr{
+  padding: 3px 12px 3px 12px;
+  width: 400px;
+}
+.address-add .address_value_city{
+  padding: 3px 12px 3px 12px;
+  //width: 200px;
+  float: left;
+}
+.address-add .address_addr_default{
+  margin-left: 114px;
+}
+
+.address-add .city-select-province{
+  width: 140px;
+  display: inline-block;
+}
+.address-add .city-select-city{
+  width: 90px;
+  display: inline-block;
+}
+
+.checkout-addr {
+  margin-top: 30px;
+}
+.checkout-addr ul {
+  display: inline-block;
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0;
+}
+.checkout-addr ul,
+.checkout-addr ul li {
+  padding-left: 0;
+  text-align: center;
+}
+.checkout-addr ul li {
+  float: left;
+
+  display: block;
+  min-height: 36px;
+  line-height: 35px;
+}
+.checkout-addr ul.address-jq:hover {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #B28435;
+}
+.checkout-addr .address_name {
+  width: 100px;
+}
+.checkout-addr .address_city {
+  width: 300px;
+}
+.checkout-addr .address_addr {
+  width: 340px;
+}
+.checkout-addr .address_addr_default {
+  color: #c40000;
+  width: 100px;
+}
+.checkout-addr .address_title {
+  background-color: #f8f8f8;
+}
+.radio-address {
+  float: left;
+  width: 100px;
+  text-align: center;
+  margin-top: 5px;
+}
+.checkout-addr .address_handle {
+  width: 100px;
+}
+.checkout-addr ul li a:hover{
+color: #B28435;
+}
+.address-form{
+  border: 1px solid #B28435;
+  width: 600px !important;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+#mymodal-data-addr{
+  top:300px;
+}
+.address-modal{
+  border-bottom: 1px dotted #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#address-jq .address-new{
+  color: #c40000;
+}

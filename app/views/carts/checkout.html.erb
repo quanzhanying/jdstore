@@ -1,0 +1,127 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-5">
+
+      <h2>
+        购物明细
+      </h2>
+    </div>
+    <div class="col-md-7">
+      <div class="flow_steps pull-right">
+        <ul>
+          <li class="current">1.提交订单</li>
+          <li>2.付款成功</li>
+          <li>3.确认收货</li>
+          <li class="last">4.评价商品</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="shoping-cart">
+        <div class="cart-column-head center-block">
+          <label class="col-md-2 ">商品</label>
+          <label class="col-md-2 ">名称</label>
+          <label class="col-md-2 ">单价</label>
+          <label class="col-md-2 ">数量</label>
+          <label class="col-md-2 ">小计</label>
+          <label class="col-md-2 ">操作</label>
+        </div>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <div class="cart-item-<%= cart_item.product_id%>">
+          <div class="cart-list text-center">
+            <div class="col-md-2 ">
+              <%= link_to product_path(cart_item.product) do %>
+              <%= image_tag(img430(cart_item.product,1), style: "width: 160px;") %>
+              <% end %>
+            </div>
+            <div class="col-md-2 text-left">
+              <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+            </div>
+            <div class="col-md-2">
+              <%= cart_item.product.promotional %>
+              RMB
+            </div>
+            <div class="col-md-2">
+              <div class="quantity-box" onselectstart="return false">
+                <%= cart_item.quantity%>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <span class="quantity-price"><%= cart_item.product.promotional * cart_item.quantity %>
+                RMB</span>
+            </div>
+            <div class="col-md-2">
+              <p>
+                <% if current_user %>
+                <% if current_user.is_favorite_of?(cart_item.product) %>
+                <%= link_to("已收藏", favorite_product_path(cart_item.product)+"?fa=unfavorite-c", :method => :post,:remote => true,id:  "favorite-item-"+cart_item.product_id.to_s,class: "cart-list-fa") %>
+              <% else %>
+                <%= link_to("加入收藏", favorite_product_path(cart_item.product)+"?fa=favorite-c", :method => :post,:remote => true,id:  "favorite-item-"+cart_item.product_id.to_s) %>
+                <% end %>
+              <% else %>
+                <a href="#" data-toggle="modal" data-target="#login-modal">加入收藏</i>
+              </a>
+              <% end %>
+            </p>
+            <%= link_to "删除", cart_item_path(cart_item.product_id), :method => :delete, :remote => true %>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <% end %>
+    </div>
+<br>
+    <div class="total clearfix">
+      <span class="pull-right">
+        总计 <span style="color:#c40000;"><%= render_cart_total_price(current_cart) %></span>
+
+        RMB
+      </span>
+    </div>
+
+    <!-- <h2> 收件人地址 </h2> -->
+    <div class="checkout-addr">
+
+      <ul class="address_title">
+        <li class="address_name">选择地址</li>
+        <li class="address_name">收货人</li>
+        <li class="address_city">所在省市</li>
+        <li class="address_addr">街道地址</li>
+        <li class="address_name">手机号码</li>
+        <li class="address_name">默认</li>
+        <li class="address_handle">操作</li>
+      </ul>
+      <%= simple_form_for @order do |f| %>
+      <div id="address-jq">
+        <%if !@addresses.blank? %>
+        <% i=0 %>
+      <% @addresses.each do |address| %>
+      <% if address.addr_default then i += 1 end%>
+  <ul class="address-jq">
+        <span class="radio-address"><input type="radio" name="address" value="<%= address.id.to_s%>" <%= if address.addr_default && i == 1 then "checked" end%>></span>
+
+    <li class="address_name"><%= address.name%></li>
+    <li class="address_city"><%= ChinaCity.get(address.province)+ChinaCity.get(address.city)+ChinaCity.get(address.district)%></li>
+    <li class="address_addr"><%= address.addr%></th>
+    <li class="address_name"><%= address.phone%></th>
+    <li class="address_addr_default"><%= if address.addr_default && i == 1 then "默认地址" end%></li>
+    <li class="address_handle"><%= link_to "修改",edit_account_address_path(address),:method => :get,:remote => true,:class => "address-jqedit"%>|<%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-jqnew"%></li>
+  </ul>
+  <% end %>
+  <br><br>
+  <input type="submit" name="commit" value="生成订单" class="btn btn-lg btn-danger pull-right" data-disable-with="Submitting...">
+  <% else %>
+  <div class="text-center">
+    <br>
+    <span>您还没有任何收货地址马上</span>
+      <%= link_to "新增",new_account_address_path,:method => :get,:remote => true,:class => "address-new"%>
+  </div>
+
+  <% end %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>

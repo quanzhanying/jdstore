@@ -1,0 +1,54 @@
+
+<div class="container">
+
+  <div class="my-settings">
+    <div class="col-md-3 text-center">
+      <img which="160" alt="" src="<%= if current_user.image.blank? then "http://placehold.it/180x180" else current_user.image.url end%>">
+    </div>
+    <div class="col-md-9">
+      <div class="my-center-head">
+        <div class="my-center-left">
+          <span>订单管理</span>
+        </div>
+        <div class="my-center-right">
+          <a href="/account/user" class="active"><span>个人中心</span></a>
+          <a href="/account/orders"><span>我的订单</span></a>
+          <a href="/account/addresses"><span>管理收货地址</span></a>
+          <a href="/users/edit"><span class="hide-line">修改密码</span></a>
+        </div>
+      </div>
+
+      <table class="table table-hover pull-right" >
+        <% @orders.each do |order| %>
+        <thead>
+          <tr>
+            <th>订单编号</th>
+            <th>订单金额</th>
+            <th>下单时间</th>
+            <th>订单状态</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+          <% @orders.each do |order| %>
+
+        <tr onclick="parent.location='<%= order_path(order.token) %>';">
+            <td> <%= order.id %> </td>
+            <td> ￥<%= order.total %></td>
+            <td> <%= format_datetime(order.created_at) %> </td>
+            <% aasm = @aasm_state.assoc(order.aasm_state) %>
+
+            <td> <%= aasm[1] %> </td>
+          </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <div class="pag">
+          <%= will_paginate @orders, renderer: BootstrapPagination::Rails, :previous_label => t('上一页'), :next_label => t('下一页') %>
+        </div>
+    </div>
+  </div>
+</div>

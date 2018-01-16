@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="my-settings">
+    <div class="col-md-3 text-center">
+      <img width="160" alt="" src="<%= if current_user.image.thumb.blank? then "http://placehold.it/180x180" else current_user.image.thumb.url end%>">
+      <p></p>
+      <p>当前头像</p>
+    </div>
+    <div class="col-md-9">
+      <div class="my-center-head">
+        <div class="my-center-left">
+          <span>个人设置</span>
+        </div>
+        <div class="my-center-right">
+          <a href="/account/user" class="<%= if !@url.blank? &&@url==1 then "active" end%>"><span>个人中心</span></a>
+          <a href="/account/orders" class="<%= if !@url.blank? &&@url==2 then "active" end%>"><span>我的订单</span></a>
+          <a href="/account/addresses" class="<%= if !@url.blank? &&@url==3 then "active" end%>"><span>管理收货地址</span></a>
+          <a href="/users/edit" class="<%= if @url.blank? then "active" end%>"><span class="hide-line">修改密码</span></a>
+        </div>
+      </div>

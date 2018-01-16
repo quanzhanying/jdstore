@@ -1,0 +1,28 @@
+<h2> New Product</h2>
+
+<%= simple_form_for [:admin, @product] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+
+  <%= f.input :quantity, hint: '库存' %>
+
+  <%= f.input :price, hint: '价格' %>
+
+  <%= f.input :promotional, hint: '促销价' %>
+
+  <%= f.input :hot, hint: '是否促销，用于首页促销商品' %>
+
+  <%= f.select :product_type, :collection => ["进口水果","进口水产","进口鲜肉"], :selected => "进口水果" %>
+
+  <%= f.input :image, as: :file, hint: '商品详情图片' %>
+
+  <%= f.input :image2, as: :file, hint: '商品详情图片2' %>
+
+  <%= f.input :image3, as: :file, hint: '商品详情图片3' %>
+
+  <%= f.input :image4, as: :file, hint: '商品详情图片4' %>
+
+  <%= f.input :image5, as: :file, hint: '商品详情图片5' %>
+
+<%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
+<% end %>

@@ -1,0 +1,456 @@
+<br>
+<br>
+<div class="container">
+  <div class="row" style="width:1170px;">
+    <div class="box">
+      <div class="wrap-left">
+        <div class="tb-booth tb-s310">
+          <a href="#">
+            <img src="<%= img430(@product,1) %>" alt="" rel="<%= imgmax(@product,1) %>" class="jqzoom"/>
+            <span class="zoomIcon">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+        <div class="tb-thumb">
+          <ul id="thumblist">
+            <li class="tb-selected">
+              <div class="tb-s40">
+                <a href="#"><img src="<%= img430(@product,1) %>" mid="<%= img430(@product,1) %>" big="<%= imgmax(@product,1) %>">
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="tb-s40">
+                <a href="#">
+                  <img src="<%= img430(@product,2) %>" mid="<%= img430(@product,2) %>" big="<%= imgmax(@product,2) %>">
+                </a>
+              </div>
+              </li>
+              <li>
+                <div class="tb-s40">
+                  <a href="#"><img src="<%= img430(@product,3) %>" mid="<%= img430(@product,3) %>" big="<%= imgmax(@product,3) %>">
+                  </a>
+                </div>
+                </li>
+                <li>
+                  <div class="tb-s40">
+                    <a href="#"><img src="<%= img430(@product,4) %>" mid="<%= img430(@product,4) %>" big="<%= imgmax(@product,4) %>"></a>
+                  </div>
+                  </li>
+                  <li>
+                    <div class="tb-s40">
+                      <a href="#"><img src="<%= img430(@product,5) %>" mid="<%= img430(@product,5) %>" big="<%= imgmax(@product,5) %>"></a>
+                    </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="wrap-right">
+                <h1><%= @product.title %></h1>
+                <div class="summary-price-wrap">
+                  <div class="summary-sale">
+                    <div class="fa">
+                      <span>  <% if current_user %>
+                        <% if current_user.is_favorite_of?(@product) %>
+                        <%= link_to("已收藏", favorite_product_path(@product)+"?fa=unfavorite-s", :method => :post,:remote => true,id:  "favorite-item-"+@product.id.to_s) %>
+                         <% else %>
+                        <%= link_to("加入收藏", favorite_product_path(@product)+"?fa=favorite-s", :method => :post,:remote => true,id:  "favorite-item-"+@product.id.to_s) %>
+                        <% end %>
+                        <% else %>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">加入收藏</i></a>
+                        <% end %></span>
+                      <span id="tm-count" class="tm-count"><%= @product.favorite_products.count %></span>
+                    </div>
+                    <div class="dt">
+                      <span style="margin-right:15px;">促 销 价</span>
+                        <span style="font-size: 18px;">￥&nbsp;</span>
+                        <span class="price"><%= @product.promotional %></span>
+                    </div>
+                    <div class="dd">
+                      <span style="margin-right:33px;">价 格</span>
+                        <span style="font-size: 18px;">￥&nbsp;</span>
+                        <span class="price-o"><%= @product.price %></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="tm-ind-panel">
+                  <ul>
+                    <li>
+                      <span class="tm-label">月销量</span>
+                      <span class="tm-count">394</span>
+                    </li>
+                    <li>
+                      <span class="tm-label">累计评价</span>
+                      <span class="tm-count"><%= @product.reviews.count %></span>
+                    </li>
+                  </ul>
+                </div>
+                <form novalidate="novalidate" id="new_order" action="<%= checkout_product_path%>" accept-charset="UTF-8" method="post">
+                  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+                <div class="tb-key">
+                  <div class="tb-skin">
+                    <div class="tb-sku">
+                      <dl class="tb-amount tm-clear">
+                        <dt class="tb-metatit">数量</dt>
+                        <dd id="J_Amount" onselectstart="return false">
+                          <span class="tb-amount-widget mui-amount-wrap">
+                            <span class="mui-amount-btn">
+                              <span class="mui-amount-increase">
+                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                              </span>
+                              <span class="mui-amount-decrease disabled">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                              </span>
+                            </span>
+                            <input name="num" type="text" class="tb-text mui-amount-input" value="1" max="<%= @product.quantity %>" url="<%= add_to_cart_product_path(@product)  %>?num=">
+                            <span>库存 <i style="color:#c40000;"><%= @product.quantity %></i> 件</span>
+                          </span>
+                        </dd>
+                      </dl>
+                      <div class="tb-action">
+                        <div class="tb-btn-buy">
+                          <%#= link_to("立即购买", checkout_carts_path, :method => :post , id: "J_LinkBasket") %>
+                          <% if !current_user %>
+                          <a href="#" data-toggle="modal" data-target="#login-modal">立即购买</a>
+                        <% else %>
+                          <a href="javascript:document:new_order.submit();">立即购买</a>
+                          <% end %>
+
+                        </div>
+                        <div class="shopCart tb-btn-basket">
+                          <%= link_to(content_tag(:i, ' 加入购物车', class: 'fa fa-shopping-cart'), add_to_cart_product_path(@product), class: "J_LinkBasket item_buy", mid: img430(@product,1)) %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+                <div class="tm-ser">
+                  <dl>
+                    <dt>服务承诺</dt>
+                  </dl>
+                  <dd>
+                    <ul>
+                      <li>
+                        <a href="#">坏单包退</a>
+                      </li>
+                      <li>
+                        <a href="#">满88包邮</a>
+                      </li>
+                      <li>
+                        <a href="#">一站式购齐</a>
+                      </li>
+                      <li>
+                        <a href="#">正品保证</a>
+                      </li>
+                      <li>
+                        <a href="#">极速退款</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+              </div>
+            </div>
+            <div class="ald-skuRight">
+              <div class="ald-hd">
+                <s></s>
+                <span>看了又看</span>
+              </div>
+              <div id="srollGoods" class="ald-carousel">
+                <div class="wrapCon">
+                  <ul id="wrapCon">
+                    <% @products_see.each do |product| %>
+                    <li>
+                      <div class="img">
+                        <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
+                          <img src="<%= img430(product,1) %>">
+                        </a>
+                        <p class="look_price">¥<%= product.promotional %>
+                        </p>
+                      </div>
+                      <p class="look_title">
+                        <a class="ALDCLS-act" href="<%= product_path(product) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product.title %>
+                        </a>
+                      </p>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div>
+                <ul class="ald-switchable-trigger">
+                  <li class="ald-switchable-prev-btn">上一个</li>
+                  <li class="ald-switchable-next-btn">下一个</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="product-wrap">
+              <div class="ald-skuRight">
+                <div class="tab3">
+                  <a href="#">热门关注</a>
+                </div>
+                <div class="product-hot">
+                  <div class="ald-carousel">
+                    <div class="wrapCon">
+                      <ul>
+                        <% @products_hot.each do |product| %>
+                        <li>
+                          <div class="img">
+                            <a class="ALDCLS-act" title="<%= product.title %>" href="<%= product_path(product) %>">
+                              <img src="<%= img430(product,1) %>">
+                            </a>
+                            <p class="look_price">¥<%= product.promotional %>
+                            </p>
+                          </div>
+                          <p class="look_title">
+                            <a class="ALDCLS-act" href="<%= product_path(product) %>" target="_blank" data-spm-anchor-id="a220o.1000855.1998025129.2"><%= product.title %>
+                            </a>
+                          </p>
+                        </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="TabBarBox">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="active ">
+                      <a href="#tab-left" role="tab" data-toggle="tab">商品详情</a>
+                    </li>
+                    <li>
+                      <a href="#tab-right" role="tab" data-toggle="tab">累计评价
+                        <%= @product.reviews.count %></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab-left">
+                    <div class="description">
+                      <p>
+                        <%= raw @product.description %>
+                      </p>
+                    </div>
+                    <!-- <div class="TabBarBox">
+                      <div class="tab2">
+                        <a href="#">商品评价</a>
+                      </div>
+                    </div> -->
+                  </div>
+                  <div class="tab-pane" id="tab-right">
+                    <div class="row review">
+                      <div class="col-md-2 review-user">
+                        <% if current_user %>
+                        <img src="<%= if current_user.image.blank? then "/images/avatar.gif" else current_user.image end%>" width="25" alt="">
+                        <%= if current_user.username.nil? then current_user.display_name else current_user.username end %>
+                        <% end %>
+                      </div>
+                      <div class="col-md-9">
+                          <%= render "reviews/form"%>
+                        </div>
+                      </div>
+                          <div id="reviews-list">
+                            <% @reviews.each do |review| %>
+                            <div id="review-item-<%= review.id %>" class="review-mian">
+                                <div class="review-left">
+                                  <img src="<%= if review.user.image.blank? then "/images/avatar.gif" else review.user.image end%>" width="25" alt="">
+                                  <%= if review.user.username.nil? then review.user.display_name else review.user.username end%>
+                                </div>
+                                <div class="review-right">
+                                  <div class="review-star star<%= review.score%>">
+                                  </div>
+                                  <p><%= review.body %></p>
+                                </div>
+                                <div class="review-thumbs">
+                                  <span><%= review.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></span>&nbsp;&nbsp;&nbsp;
+                                  <% if current_user %>
+                                    <% if current_user.is_like_of?(review) %>
+                                  <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-up'), unlike_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
+                                   <% else %>
+                                  <%= link_to(content_tag(:i," "+review.likes_count.to_s, class: 'fa fa-thumbs-o-up'), like_product_review_path(@product,review), :method => :post,:remote => true,id: "like-item-"+review.id.to_s) %>
+                                    <% end %>
+                                  <% else %>
+                                    <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-thumbs-o-up">&nbsp;<%= review.likes_count.to_s%></i></a>
+                                  <% end %>
+                                </div>
+                            </div>
+                            <% end %>
+                          </div>
+
+
+                      <% if  @reviews.count >= 20 %>
+                      <div class="col-md-12">
+                        <br>
+                        <br>
+                        <hr>
+                      </div>
+                      <div id="review-bottom" class="col-md-10 col-md-offset-1 text-center">
+                        <%= link_to("加载更多...",product_reviews_path(@product)+"?min_id="+ @reviews.last.id.to_s, :method => :get ,:remote => true,id: "reviews-more")%>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+        $(".raty").raty( {
+          path: '/images/',
+          targetType: 'number',
+          target    : '#hint',
+          targetKeep: true,
+          score :0,
+          scoreName :'review[score]'
+        } );
+        //------评论------
+        // 记下目前画面最小的贴文 ID
+        <% if  @reviews.count >= 20 %>
+          var review_id = <%= @reviews.last.id %>;
+          var review_id_old = 0;
+          // 当捲轴动的时候，会触发这个事件
+          $(window).scroll(function(){
+          // 当捲到最下面的时候
+          if($('#reviews-list').closest('.tab-pane').hasClass('active')){
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight -200) {
+            //if ((window.innerHeight + window.scrollY) >= document.getElementById("tab-right").offsetHeight) {
+              if (review_id != review_id_old) {
+                var url = "<%= product_reviews_path(@product) %>?min_id=" + review_id;
+                review_id_old = review_id;
+                //$("#reviews-more").attr("href", url);
+                if (url) {
+                  $.ajax({
+                    method: "GET",
+                    url: url,
+                    dataType: "script"
+                  })
+                } else {
+                  console.log("data ended")
+                }
+
+              }
+            }
+          }
+
+          })
+          <% end %>
+        </script>
+        <script type="text/javascript">
+          //---------数量-------///
+          (function ($) {
+            $.fn.changeNnmber = function () {
+              var $app = $(this).find(".mui-amount-input");
+              var value = Number($app.val());
+              var $up = $(this).find('.mui-amount-increase');
+              var $down = $(this).find('.mui-amount-decrease');
+              var numMax = Number($app.attr("max"));
+              var url = $app.attr("url")
+              $up.on('click', function () {
+                if (value < numMax) {
+                  $app.val(value += 1);
+                  $(".J_LinkBasket").attr("href", url + value);
+                  if (value == numMax) {
+                    $(this).addClass("disabled")
+                  } else if (value == 2) {
+                    $(this).siblings('.mui-amount-decrease').removeClass("disabled");
+                  }
+                }
+              });
+              $down.on('click', function () {
+                if (value > 1) {
+                  $app.val(value -= 1);
+                  $(".J_LinkBasket").attr("href", url + value);
+                  if (value == 1) {
+                    $(this).addClass("disabled")
+                  } else if (value == (numMax - 1)) {
+                    $(this).siblings('.mui-amount-increase').removeClass("disabled");
+                  }
+                }
+              });
+
+              $app.blur(function() {
+                value = Number($(this).val());
+                if (value >= numMax) {
+                  value = numMax;
+                  if (numMax != 1) {
+                    $up.addClass("disabled");
+                    $down.removeClass("disabled");
+                  }
+                } else if (value <= 1) {
+                  value = 1;
+                  if (numMax != 1) {
+                    $up.removeClass("disabled");
+                    $down.addClass("disabled");
+                  }
+                } else {
+                  $up.removeClass("disabled");
+                  $down.removeClass("disabled");
+                }
+                $(this).val(value);
+                $(".J_LinkBasket").attr("href", url + value);
+              });
+
+            }
+          })(jQuery);
+          $(function () {
+            $('#J_Amount').changeNnmber();
+          });
+
+
+
+          //----------看了有看
+          (function ($) {
+            $.fn.scrollGoods = function (options) {
+              var defaults = {
+                top: 0
+              };
+              options = $.extend(defaults, options);
+              var top = options.top;
+              var $app = $(this);
+              var $panel = $app.find('.wrapCon');
+              var $ul = $app.find('#wrapCon');
+              var panelHeight = $panel.height();
+              var ulHeight = $ul.height();
+              var $up = $app.find('.ald-switchable-next-btn');
+              var $down = $app.find('.ald-switchable-prev-btn');
+              $up.on('click', function () {
+                if ((top + ulHeight) <= panelHeight) {
+                  top = 0;
+                } else {
+                  top -= 522;
+                }
+                $ul.animate({
+                  'top': top + 'px'
+                });
+              });
+              $down.on('click', function () {
+                if (top >= 0) {
+                  top = (ulHeight - panelHeight) * -1;
+                } else {
+                  top += 522;
+                }
+                $ul.animate({
+                  'top': top + 'px'
+                });
+              });
+            }
+          })(jQuery);
+          $(function () {
+            $('#srollGoods').scrollGoods();
+          });
+
+          //------放大镜-------//
+          $(".jqzoom").imagezoom();
+          $("#thumblist li").hover(function () {
+            $(this).addClass("tb-selected").siblings().removeClass("tb-selected");
+            $(".jqzoom").attr('src', $(this).find("img").attr("mid"));
+            $(".jqzoom").attr('rel', $(this).find("img").attr("big"));
+          },);
+        </script>

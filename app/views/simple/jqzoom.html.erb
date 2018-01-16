@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jdstore</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript">
+      (function ($) {
+        $.fn.imagezoom = function (options) {
+          var settings = {
+            xzoom: 410, //放大镜显示框的宽度
+            yzoom: 410, //放大镜显示框的高度
+            offset: 10, //主图框和放大镜框中间的距离
+            position: "BTR",
+            preload: 1
+          };
+          if (options) {
+            $.extend(settings, options);
+          }
+          var noalt = '';
+          var self = this;
+          $(this).bind("mouseenter", function (ev) {
+            var imageLeft = $(this).offset().left;
+            var imageTop = $(this).offset().top;
+            var imageWidth = $(this).get(0).offsetWidth;
+            var imageHeight = $(this).get(0).offsetHeight;
+            var boxLeft = $(this).parent().offset().left;
+            var boxTop = $(this).parent().offset().top;
+            var boxWidth = $(this).parent().width();
+            var boxHeight = $(this).parent().height();
+            noalt = $(this).attr("alt");
+            var bigimage = $(this).attr("rel");
+            $(this).attr("alt", '');
+            if ($("div.zoomDiv").get().length == 0) {
+              $(document.body).append("<div class='zoomDiv'><img class='bigimg' src='" + bigimage + "'/></div><div class='zoomMask'>&nbsp;</div>");
+            }
+            if (settings.position == "BTR") {
+              if (boxLeft + boxWidth + settings.offset + settings.xzoom > screen.width) {
+                leftpos = boxLeft - settings.offset - settings.xzoom;
+              } else {
+                leftpos = boxLeft + boxWidth + settings.offset;
+              }
+            } else {
+              leftpos = imageLeft - settings.xzoom - settings.offset;
+              if (leftpos < 0) {
+                leftpos = imageLeft + imageWidth + settings.offset;
+              }
+            }
+            $("div.zoomDiv").css({top: boxTop, left: leftpos});
+            $("div.zoomDiv").width(settings.xzoom);
+            $("div.zoomDiv").height(settings.yzoom);
+            $("div.zoomDiv").show();
+            $(this).css('cursor', 'crosshair');
+            $(document.body).mousemove(function (e) {
+              mouse = new MouseEvent(e);
+              if (mouse.x < imageLeft || mouse.x > imageLeft + imageWidth || mouse.y < imageTop || mouse.y > imageTop + imageHeight) {
+                mouseOutImage();
+                return;
+              }
+              var bigwidth = $(".bigimg").get(0).offsetWidth;
+              var bigheight = $(".bigimg").get(0).offsetHeight;
+              var scaley = 'x';
+              var scalex = 'y';
+              if (isNaN(scalex) | isNaN(scaley)) {
+                var scalex = (bigwidth / imageWidth);
+                var scaley = (bigheight / imageHeight);
+                $("div.zoomMask").width((settings.xzoom) / scalex);
+                $("div.zoomMask").height((settings.yzoom) / scaley);
+                $("div.zoomMask").css('visibility', 'visible');
+              }
+              xpos = mouse.x - $("div.zoomMask").width() / 2;
+              ypos = mouse.y - $("div.zoomMask").height() / 2;
+              xposs = mouse.x - $("div.zoomMask").width() / 2 - imageLeft;
+              yposs = mouse.y - $("div.zoomMask").height() / 2 - imageTop;
+              xpos = (mouse.x - $("div.zoomMask").width() / 2 < imageLeft)
+                ? imageLeft
+                : (mouse.x + $("div.zoomMask").width() / 2 > imageWidth + imageLeft)
+                  ? (imageWidth + imageLeft - $("div.zoomMask").width())
+                  : xpos;
+              ypos = (mouse.y - $("div.zoomMask").height() / 2 < imageTop)
+                ? imageTop
+                : (mouse.y + $("div.zoomMask").height() / 2 > imageHeight + imageTop)
+                  ? (imageHeight + imageTop - $("div.zoomMask").height())
+                  : ypos;
+              $("div.zoomMask").css({top: ypos, left: xpos});
+              $("div.zoomDiv").get(0).scrollLeft = xposs * scalex;
+              $("div.zoomDiv").get(0).scrollTop = yposs * scaley;
+            });
+          });
+          function mouseOutImage() {
+            $(self).attr("alt", noalt);
+            $(document.body).unbind("mousemove");
+            $("div.zoomMask").remove();
+            $("div.zoomDiv").remove();
+          }
+          count = 0;
+          if (settings.preload) {
+            $('body').append("<div style='display:none;' class='jqPreload" + count + "'></div>");
+            $(this).each(function () {
+              var imagetopreload = $(this).attr("rel");
+              var content = jQuery('div.jqPreload' + count + '').html();
+              jQuery('div.jqPreload' + count + '').html(content + '<img src=\"' + imagetopreload + '\">');
+            });
+          }
+        }
+      })(jQuery);
+      function MouseEvent(e) {
+        this.x = e.pageX;
+        this.y = e.pageY;
+      };
+    </script>
+    <style media="screen">
+      /*-----放大镜显示部分-----*/
+      .zoomDiv {
+        z-index: 999;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #ffffff;
+        border: 1px solid #CCCCCC;
+        display: none;
+        text-align: center;
+        overflow: hidden;
+      }
+      .zoomMask {
+        position: absolute;
+        background: url("images/mask.png") repeat scroll 0 0 transparent;   /*鼠标放在主图区的时候的背景图*/
+        cursor: move;
+        z-index: 1;
+      }
+      /*------主图显示部分-------*/
+      .box {
+        margin: 100px auto;
+        width: 810px;
+      }
+      .box-main a {
+        border: 1px solid #CCCCCC;
+      }
+      .box-main a {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+      /*------小图显示部分------*/
+      .box ul,
+      .box ul li {
+        float: left;  /*让元素排列在一起*/
+        list-style: none; /*去掉列表圆点*/
+        padding-left: 0;
+      }
+      .box ul li .box-img:hover {
+        border: 1px solid #c40000;  /*鼠标触碰小图边框变红*/
+      }
+      .box-img {
+        margin: 10px 1px;
+        border: 1px solid #fff;   /*预设好小图边框，避免抖动*/
+      }
+      .box-img a img {
+        display: inline-block;
+        width: 78px;
+        height: 78px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="box">
+          <div class="box-main"> <!-- 主图区-->
+            <a href=""><img
+              width="409"
+              height="409"
+              src="https://img.alicdn.com/imgextra/i4/2653351646/TB26AJIsFXXXXXrXXXXXXXXXXXX_!!2653351646.jpg_430x430q90.jpg"
+              alt=""
+              rel="https://img.alicdn.com/imgextra/i4/2653351646/TB26AJIsFXXXXXrXXXXXXXXXXXX_!!2653351646.jpg"
+               class="jqzoom"/></a>    <!-- class="jqzoom" 是给JavaScript绑定用 -->
+               <!-- rel地址是大图的地址 最好为800x800像素 -->
+               <!-- 放大镜原理是：当你鼠标放到主图区域的时，取像素大的图片进行显示在另一个区域 -->
+          </div>
+          <ul>    <!-- 小图图区-->
+            <li>
+              <div class="box-img">
+                <a href="#"><img src="https://img.alicdn.com/bao/uploaded/i1/TB1ASpIOpXXXXaIaXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" big="https://img.alicdn.com/bao/uploaded/i1/TB1ASpIOpXXXXaIaXXXXXXXXXXX_!!0-item_pic.jpg">
+                  <!-- big 是800x800的大图地址，用于鼠标触碰li元素的时候，替换大图区 rel 地址-->
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="box-img">
+                <a href="#">
+                  <img src="https://img.alicdn.com/imgextra/i4/2653351646/TB26AJIsFXXXXXrXXXXXXXXXXXX_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i4/2653351646/TB26AJIsFXXXXXrXXXXXXXXXXXX_!!2653351646.jpg">
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="box-img">
+                <a href="#"><img src="https://img.alicdn.com/imgextra/i4/2653351646/TB2ROj_qXXXXXahXpXXXXXXXXXX_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i4/2653351646/TB2ROj_qXXXXXahXpXXXXXXXXXX_!!2653351646.jpg">
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="box-img">
+                <a href="#"><img src="https://img.alicdn.com/imgextra/i4/2653351646/TB2M1ZtqXXXXXaZXXXXXXXXXXXX_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i4/2653351646/TB2M1ZtqXXXXXaZXXXXXXXXXXXX_!!2653351646.jpg"></a>
+              </div>
+            </li>
+            <li>
+              <div class="box-img">
+                <a href="#"><img src="https://img.alicdn.com/imgextra/i2/2653351646/TB2lQY0d4eK.eBjSZFuXXcT4FXa_!!2653351646.jpg_430x430q90.jpg" big="https://img.alicdn.com/imgextra/i2/2653351646/TB2lQY0d4eK.eBjSZFuXXcT4FXa_!!2653351646.jpg"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(".jqzoom").imagezoom();     /* 绑定jqzoom class ，调用放大镜函数*/
+      $(".box li").mousemove(function () {   /* 绑定所有box calss 下的 li元素（标签） ,当鼠标触碰li时候执行下面的两个动作*/
+        $(".jqzoom").attr('src', $(this).find("img").attr("src"));  /* $(".jqzoom") 绑定元素，attr修改 这个元素src地址，修改为：$(this)这个表示鼠标触碰的这个元素，find往下搜索img标签，然后取src的地址*/
+        $(".jqzoom").attr('rel', $(this).find("img").attr("big"));/* $(".jqzoom") 绑定元素，attr修改 这个元素rel地址，修改为：$(this)这个表示鼠标触碰的这个元素，find往下搜索img标签，然后取big的地址*/
+      });
+    </script>
+
+  </body>
+</html>
