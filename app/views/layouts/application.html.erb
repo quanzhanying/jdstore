@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>芝樱海</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+          <%= render "common/navbar" %>
+              <%= yield %>
+          </div>
+       <%= render "common/footer" %>
   </body>
 </html>

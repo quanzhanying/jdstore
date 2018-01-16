@@ -1,0 +1,85 @@
+<div class="product-show-box">
+  <div class="container">
+<!--===== 广告图 =====-->
+    <section class="intro-box">
+      <div class="row">
+        <div class="col-md-12">
+          <%= image_tag("http://satohana.com/wp-content/themes/hanamitsu2014/images/ec_information.jpg") %>
+        </div>
+      </div>
+    </section>
+
+<!--=== 页面左侧：产品图片 ===-->
+  <section class="product-show">
+    <div class="row">
+      <div class="col-md-6 product-image-box">
+        <div class="main-image">
+          <%# if @product.image.present? %>
+            <%#= image_tag(@product.image.medium.url, class: "thumbnail") %>
+          <%# else %>
+            <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+          <%# end %>
+
+          <!-- <%# if @photos.present? %>
+            <%# @photos.each_with_index do |p, index| %>
+              <%# if index == 0 %>
+                <%#= image_tag p.avatar.medium.url %>
+                <div style="letter-spacing: -8px">
+              <%# else %>
+                <%#= image_tag p.avatar.thumb.url %>
+              <%# end %>
+            <%# end %>
+          </div>
+          <%# else %>
+            <%#= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail")%>
+          <%# end %> -->
+
+          <% if @photos.present? %>
+            <div class="tab-content show-picture">
+              <% @photos.each_with_index do |product,index| %>
+                <% if index < 5 %>
+                <!-- 用each_with_index记录，第一张(index ==0)时，显示大图，其余显示小图(thumb) -->
+                  <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>">
+                    <!-- 为达到点击轮播效果，采用了rails内建的tap pane 选项卡窗格的写法 -->
+                    <%= image_tag(product.avatar.medium.url) %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-4 other-image">
+            <ul class="show-photo-xsmall-box nav nav-tabs">
+               <% @photos.each_with_index do |product,index| %>
+                 <% if index <5 %>
+                   <li><a href="#<%= index %>" data-toggle="tab"><%= image_tag(product.avatar.thumb.url) %></a></li>
+                 <% end %>
+               <% end %>
+             </ul>
+          <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
+          <% end %>
+        </div>
+      </div>
+
+  <!--=== 页面右侧：产品主要资讯及功能 ===-->
+    <div class="col-md-6 product-main-box">
+
+        <div class="product-name"><h1><%= @product.title %><h1></div>
+        <div class="description"><p><%= @product.description %></p></div>
+        <div class="specification"> 数量 : <%= @product.quantity %> </div>
+        <div class="specification"> 金额: <%= @product.price %>￥</div>
+        <div class="purchase">
+          <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to("加入购物车", add_to_cart_product_path(@product), :method=> :post, :class => "btn btn-primary btn-lg btn-danger") %>
+          <% else %>
+            以售一空，无法购买
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

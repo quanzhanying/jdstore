@@ -1,0 +1,107 @@
+
+<!--轮播图-->
+<div id="company-intro" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#company-intro" data-slide-to="0" class="active"></li>
+    <li data-target="#company-intro" data-slide-to="1"></li>
+    <li data-target="#company-intro" data-slide-to="2"></li>
+  </ol>
+<!-- Wrapper for slides -->
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= link_to image_tag("http://ww4.sinaimg.cn/large/006tKfTcgy1ffrvi2a9bwj31hc0zknhf.jpg", :alt => "Slide1"), {:class => "img-responsive", :alt => "Responsive image"} %>
+      <div class="carousel-caption">
+        <div class="title">
+          <h1>收到鲜花一瞬的喜悦 <br>鲜花围绕时的幸福请交给我们来传递！</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("http://ww2.sinaimg.cn/large/006tKfTcgy1ffrvj63oeyj31hc0zk1ky.jpg", :alt => "Slide2"), {:class => "img-responsive", :alt => "Responsive image"} %>
+      <div class="carousel-caption">
+        <div class="title">
+          <h1>收到鲜花一瞬的喜悦 <br>鲜花围绕时的幸福请交给我们来传递！</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("http://ww4.sinaimg.cn/large/006tKfTcgy1ffrvjubbvdj31hc0zknpd.jpg", :alt => "Slide3"), {:class => "img-responsive", :alt => "Responsive image"} %>
+      <div class="carousel-caption">
+        <div class="title">
+          <h1>收到鲜花一瞬的喜悦 <br>鲜花围绕时的幸福请交给我们来传递！</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Controls -->
+  <a class="left carousel-control" href="#company-intro" role="button" data-slide="prev">
+    <span ></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#company-intro" role="button" data-slide="next">
+    <span></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+
+<!-- main part -->
+<div class="welcome_main">
+  <ul class="image-grid">
+    <li class="image-grid__item">
+      <a href="/products/bouquet" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/06/DSC_0116.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Bouquet</div>
+  	 </a>
+  	</li>
+    <li class="image-grid__item">
+  		<a href="/products/box_flower" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/03/DSC_0078-0011.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Box flower</div>
+  		</a>
+  	</li>
+    <li class="image-grid__item">
+  		<a href="/products/ceremony" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2016/12/DSC_0094-001-427x525.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Ceremony</div>
+  		</a>
+  	</li>
+    <li class="image-grid__item">
+  		<a href="/products/micro" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2015/02/DSC_1815.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Micro</div>
+  		</a>
+  	</li>
+    <li class="image-grid__item">
+  		<a href="#" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/05/DSC_01531.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Bottle flower</div>
+  		</a>
+  	</li>
+    <li class="image-grid__item">
+  		<a href="#" class="grid-item">
+  			<div class="grid-item__image" style="background-image: url(http://satohana.com/images/2017/02/DSC_0320.jpg)"></div>
+  			<div class="grid-item__hover"></div>
+  			<div class="grid-item__name">Continuing</div>
+  		</a>
+  	</li>
+  </ul>
+</div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$( document ).ready(function(){
+$('#company-intro').carousel();
+});
+</script>

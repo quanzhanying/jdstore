@@ -1,0 +1,242 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "about";
+@import "welcome";
+@import "products";
+
+//---------Navbar---------
+img {
+    vertical-align: middle;
+}
+element.style {
+    margin-right: 16px;
+}
+ .navbar-default {
+     background-color: #212121;
+     border-color: #212121;
+     margin-bottom: 0;
+     border-radius: 0;
+ }
+
+ .navbar-default .navbar-brand {
+     color: #EF6C00;
+     padding: 10px 15px;
+     line-height: 30px;
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+     color: #FF6F00;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+     color: #EF6C00;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+     color: #FF6F00;
+     background-color: transparent;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+     color: #FF6F00;
+     background-color: #FFE0B2;
+ }
+
+ .input-group .form-control {
+     position: relative;
+     z-index: 2;
+     float: right;
+     width: 80%;
+     margin-bottom: 0;
+ }
+
+ .nav {
+     margin-bottom: 0;
+     padding-right: 0;
+     list-style: none;
+ }
+
+ #search-id {
+     width: 200px;
+     padding-top: 7px;
+ }
+
+ #page_top {
+     background: #fff;
+     border-bottom: solid 1px #bcbcbc;
+     height: 100px;
+     overflow: hidden;
+     position: fixed;
+     width: 100%;
+     z-index: 100;
+ }
+
+.sub_inner {
+    margin: 0 auto;
+    text-align: left;
+    width: 984px;
+}
+.cf {
+    zoom: 1;
+}
+#page_top header {
+    float: left;
+    line-height: 100px;
+    width: 247px;
+}
+#page_top nav {
+    float: right;
+    padding-top: 40px;
+    width: 677px;
+}
+
+
+.cf:before, .cf:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+}
+#page_top nav li {
+    float: left;
+    height: 60px;
+    transition: all 275ms;
+    width: auto;
+}
+ul {
+    background: transparent;
+    border: 0;
+    font-weight: normal;
+    font-size: 50%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    word-wrap: break-word;
+  }
+  .sub_inner {
+    text-align: left;
+  }
+  .cf:before, .cf:after {
+    content: "";
+    display: block;
+    overflow: hidden;
+}
+
+
+
+
+// ---footer---
+
+#page_bottom {
+    background: url(images/bg.jpg);
+    border-top: solid 1px #bcbcbc;
+
+}
+#sub_page_bottom {
+    background: url(http://satohana.com/wp-content/themes/hanamitsu2014/images/bg_4.png) no-repeat center bottom;
+    padding: 65px 0 78px;
+}
+div {
+    display: block;
+}
+#page_bottom .sub_inner {
+    overflow: hidden;
+    width: 984px;
+}
+
+.sub_inner {
+    margin: 0 auto;
+    text-align: left;
+    width: 984px;
+}
+
+.cf {
+    zoom: 1;
+}
+.fm {
+    float: left;
+    margin-right: 28px;
+    width: 187px;
+}
+.fm h1 {
+    border-bottom: solid 1px #666;
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+    padding-bottom: 5px;
+}
+
+#fm_4 {
+    margin: 0;
+    padding-left: 28px;
+    width: 311px;
+}
+
+.fm li a {
+    text-decoration: none;
+}
+
+footer {
+    display: block;
+}
+.fm li a {
+  color: #333;
+}
+.fm li span {
+    background: #bc2725;
+    color: #fff;
+    font-size: 0.7em;
+    margin-left: 5px;
+    padding: 1px 7px;
+}
+* {
+    box-sizing: border-box;
+}
+.fm li {
+    border-bottom: dashed 1px #bcbcbc;
+    font-size: 1.2em;
+    list-style-type: disc;
+    margin: 0 0 5px 18px;
+    padding-bottom: 5px;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    /* font-size: 120%; */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
