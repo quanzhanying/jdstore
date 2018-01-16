@@ -1,0 +1,161 @@
+.navbar-custome {
+    background: rgba(0,0,0,0.8);
+    border-radius: 0;
+    min-height: 44px;/*不能用max-height，否则此元素的高度为0*/
+    position: relative;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #fff;
+
+
+    .margin-side {
+        margin: 0 auto;
+        max-width: 980px;
+        padding: 0 22px;
+        position: relative;
+        z-index: 2;
+
+        ul.dropdown-menu{
+        li{
+            a{
+              color: black;
+            }
+          }
+        }
+        ul {
+          display: inline;
+          a {
+              color: #fff;
+              padding: 14px 10px !important;
+              line-height: 14px;
+              text-decoration: none;
+          }
+
+        }
+
+    }
+}
+
+/*响应式navbar，浏览器缩小自动调整样式*/
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    // min-width: 600px
+}
+
+/* Style the links inside the navigation bar */
+.topnav li {
+    float: left;
+    display: block;
+    color: #fff !important;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav li:hover {
+    opacity: 0.7;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav li.icon {
+    display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav li:not(:first-child) {display: none;}
+  .topnav li.icon {
+    float: right;
+    display: block;
+    text-decoration: none;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*下拉列表框*/
+/* Dropdown Button */
+.dropbtn {
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    hr {
+        margin: 0;
+    }
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+// .dropdown:hover .dropbtn {
+//     background-color: #151010;
+// }
+
+
+//
+.product-item {
+    display: inline-block;
+    width: 240px;
+
+    .product-item-image {
+        float: left;
+    }
+
+    img {
+        float: left;
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-item-title {
+        float: left;
+        width: 100px;
+        margin: 10px 0 0;
+    }
+
+    .price-and-operate {
+        margin: 10px 0 0;
+
+        p {}
+        float: left;
+    }
+}

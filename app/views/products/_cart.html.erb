@@ -1,0 +1,44 @@
+<div class="dropbtn">
+	<%= link_to carts_path  do  %>
+	购物车
+	<i class="fa fa-shopping-cart"></i>
+	(
+	<%= current_cart.products.count %>
+	)
+	<% end %>
+</div>
+
+<div class="dropdown-content">
+	<% if current_cart.cart_items.includes(:product).present? %>
+		<% current_cart.cart_items.each do |cart_item| %>
+
+			<div class="product-item">
+				<div class="product-item-image">
+				<%= link_to product_path(cart_item.product) do %>
+					<% if cart_item.product.photos[0].present? %>
+						 <%= image_tag(cart_item.product.photos[0].avatar.thumb.url) %>
+					<% else %>
+						<%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+					<% end %>
+				<% end %>
+			 </div>
+			 <div class="product-item-title">
+				 <%= link_to(cart_item.product.title, product_path(cart_item.product),class: "fl") %>
+			 </div>
+				<div class="price-and-operate">
+					<p><span>￥<%= cart_item.product.price %></span> x <span id = "product_purchase_quantity"><%= cart_item.product.purchase_quantity %></span></p>
+
+					<%= link_to("删除", cart_item_path(cart_item.product_id),id:"delete-#{cart_item.product_id}", class: "delete-btn fr",method: :delete,remote: true)%>
+
+				</div>
+			</div>
+			<hr>
+		<% end %>
+		<div class="">
+			<p class="">合计 ￥<%= render_cart_total_price(current_cart) %></p>
+			<%= link_to("确认结账", checkout_carts_path, class: "") %>
+		</div>
+	<% else %>
+		<p class="">购物车还没有商品，赶紧添加吧</p>
+	<% end %>
+</div>

@@ -1,0 +1,187 @@
+<!-- <div class="header_placeholder h80"></div>
+<div class="header">
+  <div class="w1200 clearfix bc mt30 pb20 header_content pr">
+    <div class="logo fl"><%=link_to("时尚生活", products_path, class: "col-red")%></div>
+    <div class="fl ml40 mt10">
+      <%#= render :partial => "products/search_bar" %>
+    </div>
+    <div class="pa mt10 cart-wrap">
+      <%#= render :partial => "products/cart" %>
+    </div>
+  </div>
+</div> -->
+<br>
+<br>
+<%= render :partial => "products/menu" %>
+<br>
+<div class="container">
+    <p ><%= link_to("首页", products_path)%>
+        >
+        <% Category.all.each do |category| %>
+        <% if @product.category.name == category.name %>
+        <%= link_to category.name, products_path(category: category.name) %>
+        <% end %>
+        <% end %>
+        >
+        <%= @product.title %></p>
+        <!-- 点击左上角大图进入图片预览模式 -->
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div id="product-Magnifier" class="modal">
+                <span class="close-Magnifier close cursor">&times;</span>
+                <div class="modal-content">
+                    <% if @photos.present? %>
+                    <% @photos.each_with_index do |p, index| %>
+                    <div class="mySlides" data-index="<%= index %>">
+                        <div class="numbertext"><%= index %></div>
+                        <%= image_tag p.avatar.medium.url %>
+                    </div>
+                    <div class="column" data-index="<%= index %>">
+                        <% if index < 5 %>
+                        <%= image_tag p.avatar.minimal.url ,class:"demo",id:"#{index}"%>
+                        <% end %>
+                    </div>
+                    <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 左上角内容 -->
+    <div class="col-md-6 no-padding">
+        <div class="show-top-left">
+            <div class="border image-medium">
+                <% if @photos.present? %>
+                <a class="product-modal" href="javascript:;">
+                    <img id="thumb" src="<%= @photos.first.avatar.medium.url %>" class="preview-photo">
+                </a>
+                <% end %>
+            </div>
+            <ul>
+                <% if @photos.present? %>
+                <% @photos.each_with_index do |p, index| %>
+                <li class="border to-preview-item ">
+                    <% if index < 5 %>
+                    <%= image_tag p.avatar.medium.url ,class:"to-preview-thumnail"%>
+                    <% end %>
+                </li>
+                <% end %>
+                <% end %>
+            </ul>
+            <p>
+                <% if current_user && current_user.is_favorite_of?(@product) %>
+                <i class="fa fa-star"></i>
+                <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "unfavorite"), method: :put) %>
+            <% else %>
+                <i class="fa fa-star-o"></i>
+
+                <%= link_to('收藏'.html_safe, favorite_product_path(@product, type: "favorite"), method: :put) %>
+                <% end %>
+                <span>（<%= @product.favorite_lists.count %>人气）</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- 右上角内容 -->
+    <div class="col-md-6 no-padding">
+        <h3><%= @product.title %></h3>
+        <p><%= @product.description %></p>
+        <p>
+            <span>售价</span>
+            <span>￥<%= @product.price %></span>
+        </p>
+        <p>
+            <span>运费</span>
+            <span>满99元包邮 | 正品保证</span>
+        </p>
+        <p>
+            <span>库存</span>&nbsp;<span id="quantity"><%= @product.quantity %></span>
+        </p>
+        <div class="intro-text-quantity clearfix">
+            <span>数量</span>
+            <div class="countNumber fl mt10">
+                <%= link_to("-", reduce_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-sub", method: :post,remote: true) %>
+                <input class="countNumber-input" type="text" value="<%= @product.purchase_quantity %>" readonly>
+                <%= link_to("+", add_quantity_product_path(@product), class: "countNumber-btn countNumber-btn-plus", method: :post,remote: true) %>
+            </div>
+        </div>
+        <p class="intro-text-btnWrap">
+            <%= render :partial => "products/cart_btn"%>
+        </p>
+    </div>
+</div>
+
+<!-- 下方内容 -->
+<div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="tab">
+        <button class="tablinks" data-toggle="tab" data-option="商品详情">商品详情</button>
+        <button class="tablinks" data-toggle="tab" data-option="商品评价" id="defaultOpen">商品评价(<%= @product.comments.count%>)</button>
+    </div>
+    <div id="商品详情" class="tabcontent">
+        <div class="productDetail-content pt20 tc pb20" style="display: block;">
+            <div class="productDetail-introImg">
+                <% if @prints.present? %>
+                <% @prints.each_with_index do |p, index| %>
+                <%= image_tag p.avatar.medium.url %>
+                <% end %>
+            <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+                <% end %>
+            </div>
+            <p class="mt20 mb20"><%= @product.description %></p>
+        </div>
+    </div>
+
+    <div id="商品评价" class="tabcontent">
+        <div class="productDetail-content pt30 tc pb20">
+            <div class="productDetail-evaluation w200 bc">
+                <div class="intro-text-count clearfix mt10">
+                    <div class="fl mr10">功能:
+                    </div>
+                    <div class="star-rating" data-score=<%= @avg_function %>></div>
+                </div>
+                <div class="intro-text-count clearfix mt10">
+                    <div class="fl mr10">设计:
+                    </div>
+                    <div class="star-look" data-score=<%= @avg_design %>></div>
+                </div>
+                <div class="intro-text-count clearfix mt10">
+                    <div class="fl mr10">体验:
+                    </div>
+                    <div class="star-experience" data-score=<%= @avg_experience %>></div>
+                </div>
+            </div>
+            <ul class="commentList mt70">
+                <% if @comments.present? %>
+                <% @comments.each do |comment| %>
+                <li class="commentList-item w700 pt10 pb10 bc clearfix">
+                    <p class="fl content tl f12">
+                        <%= comment.content  %><br>
+                        <% if comment.comment_pictures.present? %>
+                        <% comment.comment_pictures.each_with_index do |p, index| %>
+                        <%= image_tag p.picture.medium.url, class: "commentImage no-border" %>
+                        <% end %>
+                        <% end %>
+                        <br>
+                        <img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fczn4z618nj301a010mwz.jpg" class="commentBigImage">
+                    </p>
+                    <p class="fr name ell tr f12">
+                        <%= comment.user.email %>
+                    </p>
+                </li>
+                <% end %>
+                <% end %>
+            </ul>
+            <p class="comment-say mt20 mb20">
+                <%= link_to("增加评价", new_product_comment_path(@product),:class => "btn btn-default") %>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //下方内容中，默认显示商品详情
+    $(function () {
+        document.getElementById("defaultOpen").click();
+    });
+</script>

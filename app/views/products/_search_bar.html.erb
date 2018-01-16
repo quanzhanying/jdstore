@@ -1,0 +1,6 @@
+<div class="search clearfix pr">
+  <%= form_tag search_products_path , :method => :get do %>
+    <input class="search-input fl w400" type="text" class="form-control" name="query_string" value="<%= params[:q] %>" placeholder="输入你要搜索的商品">
+    <button type="submit" class="search-button pa tc"><i class="fa fa-search col-red"></i></button>
+  <% end %>
+</div>

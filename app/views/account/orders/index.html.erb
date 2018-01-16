@@ -1,0 +1,24 @@
+<h2>订单列表 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>生成时间</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @orders.each do |order| %>
+    <tr>
+      <td> <%= link_to(order.id, order_path(order.token)) %> </td>
+      <td> <%= order.created_at.to_s(:long) %> </td>
+      <td>
+           <%= link_to("增加评价", new_product_comment_path(@product),:class => "btn btn-default") %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

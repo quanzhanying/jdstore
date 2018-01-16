@@ -1,0 +1,17 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content %>
+    <%= f.input :product_id %>
+    <%= f.input :user_id %>
+    <%= f.input :image %>
+    <%= f.input :function %>
+    <%= f.input :design %>
+    <%= f.input :experience %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

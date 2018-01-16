@@ -1,0 +1,27 @@
+<% if params[:controller] == ('products') && params[:action] == ('show') %>
+  <div class="menu-wrap">
+    <ul class="col-md-12 col-sm-12 col-xs-12  border"> <!--border要放在这里,否则li会超出menu的边框 -->
+      <li>
+        <%= link_to("首页", products_path)%>
+      </li>
+      <% Category.all.each do |category| %>
+        <li class="<%= 'activeItem' if @product.category.name == category.name %>">
+          <%= link_to category.name, products_path(category: category.name) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="menu-wrap">
+    <ul class="col-md-12 col-sm-12 col-xs-12">
+      <li class="<%= 'activeItem' if !params[:category] %>">
+        <%= link_to("首页", products_path)%>
+      </li>
+      <% Category.all.each do |category| %>
+        <li class="<%= 'activeItem' if params[:category] == category.name %>">
+          <%= link_to category.name, products_path(category: category.name) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

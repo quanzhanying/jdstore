@@ -1,0 +1,8 @@
+<% if @product.quantity.present? && @product.quantity > 0 %>
+    <%= link_to("加入购物车", add_to_cart_product_path(@product),
+        :method => :post,
+        :remote => true,
+        :class => "addCartBtn btn btn-default") %>
+<% else %>
+  <a href="javascript:;" class="btn btn-default">已售完</a>
+<% end %>

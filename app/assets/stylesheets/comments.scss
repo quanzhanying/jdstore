@@ -1,0 +1,37 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.order-information{
+  text-align: center;
+  h3{
+    font: 700 16px/26px "Microsoft YaHei";
+    color: #333;
+  }
+}
+
+/*评星功能*/
+.rating li
+{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 100px;
+  list-style-type: none;
+}
+
+.star,
+{
+  /*
+  正常情况下全黑
+  normal state */
+  color: black;
+}
+
+.selected{
+  // 鼠标悬停在一个星星上，这个选中的星星以及前面的星星都变色。
+  color: red;
+}
+
+.test{
+  color:green;
+}

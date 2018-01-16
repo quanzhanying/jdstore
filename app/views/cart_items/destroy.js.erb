@@ -1,0 +1,8 @@
+
+$('.delete-btn').bind('ajax:success', function(e, data) {
+  var id = <%=@cart_item.product_id %>
+  $('.cart-wrap').html('<%= escape_javascript render(:partial => "products/cart") %>')
+  $(eval(id)).parent().parent().remove();
+  $('#quantity').html('<%= @product.quantity %>')
+  $('.intro-text-btnWrap').html('<%= escape_javascript render(:partial => "products/cart_btn") %>')
+});

@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>智享生活</h3>
+                </div>
+                <div class="panel-body">
+                    <% @products.each do |product| %>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="product-items-<%=product.id%>" data-id="<%=product.id%>">
+                            <%= link_to product_path(product) do %>
+                            <% if product.photos.present? %>
+                            <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail",id:"#{product.id}") %>
+                        <% else %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                            <% end %>
+                            <% end %>
+                            <%= product.title %>
+                            ￥
+                            <%= product.price %>
+
+                        </div>
+                        <!-- 收藏和加入购物车 -->
+                        <div class="product-options">
+                            <a href="/products/<%= product.id %>/join" class="add-to-whishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
+                                <i class="fa fa-heart-o"></i>
+                            </a>
+                            <%= link_to add_to_cart_product_path(product), :method => :post, class: "addCartBtn ", id:"#{product.id}",:remote => true do %>
+                            <i class="fa fa-shopping-cart col-red"></i>
+                            <% end %>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- <p>生活不是简简单单地过日子，而是一种立体的选择</p>
+<p>立体生活， 以现代科技产品为中心，集合智能家居，视音震撼，品味生活，酷炫应用，新潮玩具等方面的立体生活理念  </p>
+<p>我们想要的生活是立体而智能的。在这里，您可以找到品牌归属感。得到生活中</p>
+<p>五维生活空间</p> -->
