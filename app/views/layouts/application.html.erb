@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jdstore</title>
+    <title>JDStore</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+
   </head>
 
+
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar" %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+      <%= render "common/footer" %>
+
   </body>
 </html>
