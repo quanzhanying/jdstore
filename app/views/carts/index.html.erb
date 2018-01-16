@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>ShopCart</h2>
+
+    <div class="checkout clearfix pull-right">
+      总计 <%= current_cart.total_price %> RMB
+      <%= link_to "Proceed to checkout","#", method: :post, class:"btn btn-common btn-danger" %>
+    </div>
+
+    <br>
+
+    <div class="row" style="margin-top:50px; ">
+    <table class="table table-bordered" style="width:100%; ">
+      <thead>
+        <tr>
+          <th colspan="2">Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <%= link_to product_path(cart_item.product) do %>
+              <% if cart_item.product.image.present? %>
+                <%= image_tag(cart_item.product.image.thumb.url, class:"thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail" )%>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
+          </td>
+          <td><%= cart_item.product.price %></td>
+          <td>
+            <%= simple_form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+              <%= f.select :quantity, 1..cart_item.product.quantity %>
+              <%= f.submit "Submit" %>
+            <% end %>
+          </td>
+          <td>
+            <!--<%= link_to(content_tag(:i,'Delete',class:'fa fa-minus-circle'),remove_from_cart_product_path(cart_item.product), :method => "post", class:"btn btn-primary btn-lg") %> -->
+            <%= link_to(content_tag(:i,'',class:'fa fa-trash'),cart_item_path(cart_item.product_id), method: :delete) %>
+          </td>
+
+        </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+  </div>
+
+  <div class="clearfix pull-right">
+    <!--
+      <%= link_to("Empty Cart", cart_path(current_cart), :method=>"delete", class:"btn btn-common btn-danger") %>
+    -->
+    <%= link_to("Clear Cart", clean_carts_path, method: :delete, class:"pull-right", style:"text-decoration: underline;", data: {Confirm:"Are you sure clear the cart? "})    %>
+  </div>
+
+  </div>
+
+</div>
