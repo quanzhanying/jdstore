@@ -1,0 +1,200 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+ // 首页第一图
+.lp-section-1 {
+    background: url(https://ws3.sinaimg.cn/large/006tKfTcgy1fg80pba9ukj31kw11xqv6.jpg);
+    background-position: center 100%;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    width: 100%;
+    height: 650px;
+    position: relative;
+    z-index: 90
+}
+
+.lp-section-1 .content-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    min-width: 320px;
+    height: 450px;
+    position: relative;
+    z-index: 91;
+    text-align: center;
+    padding-top: 180px
+}
+
+.lp-section-1 .content-1 h2 {
+    font-size: 60px;
+    color: #fff;
+    margin-bottom: 15px;
+    margin: 50px 0 100px;
+    letter-spacing: 0.1em
+}
+
+.lp-section-1 .content-1 p {
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #f2f2f2;
+    margin: -90px 0 100px;
+    letter-spacing: 0.15em
+}
+
+//首页按钮--立即开始
+.action-btn {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    margin: 0 auto;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+    text-align: center;
+    font-size: 1.428em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    padding: 0.57em 1.9em;
+    margin-top: 2.85em;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 2px;
+    color: yellow;
+    background: transparent;
+    border: 2px solid #8BC34A;
+    -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0),color 0.3s cubic-bezier(0, 0, 0, 0),width 0.3s cubic-bezier(0, 0, 0, 0),border-width 0.3s cubic-bezier(0, 0, 0, 0),border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0),color 0.3s cubic-bezier(0, 0, 0, 0),width 0.3s cubic-bezier(0, 0, 0, 0),border-width 0.3s cubic-bezier(0, 0, 0, 0),border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0),color 0.3s cubic-bezier(0, 0, 0, 0),width 0.3s cubic-bezier(0, 0, 0, 0),border-width 0.3s cubic-bezier(0, 0, 0, 0),border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    transition: background-color 0.3s cubic-bezier(0, 0, 0, 0),color 0.3s cubic-bezier(0, 0, 0, 0),width 0.3s cubic-bezier(0, 0, 0, 0),border-width 0.3s cubic-bezier(0, 0, 0, 0),border-color 0.3s cubic-bezier(0, 0, 0, 0)
+}
+// 首页第二图
+
+.lp-section-2 {
+    background-color: #75cddc;
+    height: 650px;
+
+}
+
+.lp-section-2 .content-2 {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 690px;
+    text-align: center
+}
+
+.lp-section-2 .content-2 .group {
+    padding-top: 20px
+}
+
+.lp-section-2 .content-2 h2 {
+    font-size: 1.428em;
+    letter-spacing: 3px
+}
+
+.lp-section-2 .content-2 p {
+    line-height: 20px;
+    color: #246;
+    padding: 0 50px;
+    text-align: center
+}
+
+.lp-section-2 .content-2 img {
+    margin-top: -11px;
+    width: 660px;
+    height: 450px;
+}
+
+
+
+.lp-section-2 .content-2 {
+    padding-top: 10px
+}
+
+// <!--=====  第三图  听听他们怎么说 =====-->
+
+.lp-section-3 {
+   text-align: center;
+   padding: 25px 62.5px 50px 62.5px;
+
+}
+
+.lp-section-3 h3 {
+   font-size: 20px;
+   text-align: left
+}
+
+.lp-section-3 p {
+   color: #666;
+   line-height: 30px;
+   text-align: justify;
+}
+
+.lp-section-3 img {
+   width: 200px;
+   border-radius: 20%
+
+}
+
+.lp-section-3 hr {
+   height: 1.5px;
+   background-color: #666
+}
+
+
+// <!--===== 为您推荐 =====-->
+
+.lp-section-4 {
+    text-align: center;
+    padding: 50px 0 50px 0;
+}
+
+.lp-section-4 img {
+    width: 300px;
+    height: 400px;
+    position: relative;
+}
+
+.lp-section-4 .box {
+    margin-top: 15px;
+}
+
+.lp-section-4 .three {
+    margin-top: 12px
+}
+
+.lp-section-4 .box:hover {
+    opacity: 0.8
+}
+// <!--===== =====-->
+
+
+.short-line {
+    background: #9b9093;
+    margin: 15px auto 35px auto;
+    width: 125px;
+    height: 2px;
+    }
+
+    .lp-section-4 h2 {
+        font-size: 24px;
+        font-weight: 600
+    }
+
+
+//首页第五图---立即选购
+
+.lp-section-5 {
+    text-align: center;
+    padding: 100px 0 0 0;
+    height: 200px;
+    margin-bottom: -20px;
+    background: url(https://ws2.sinaimg.cn/large/006tNc79gy1fg3milvdc6j31kw11z4qx.jpg) no-repeat scroll top center/cover;
+   }

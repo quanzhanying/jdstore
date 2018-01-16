@@ -1,0 +1,111 @@
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+ </ol>
+ <div class="carousel-inner">
+    <div class="item active">
+     <a href="javascript:;">
+      <img  src="https://ws1.sinaimg.cn/large/006tNc79gy1fgck9ejed6j30sc08cjul.jpg">
+      <div class="carousel-caption">
+       <h4>多久没有这么悠闲的看完一本书了？</h4>
+   </div>
+     </a>
+
+    </div>
+    <div class="item">
+     <a href="javascript:;">
+      <img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fgdoiwtsqcj30uk08djsm.jpg">
+      <div class="carousel-caption">
+        <h4>享受阅读，已然忘记是日出还是日落</h4>
+        </div>
+     </a>
+
+    </div>
+    <div class="item">
+     <a href="javascript:;">
+      <img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fgdonqn0jej30si08cace.jpg">
+      <div class="carousel-caption">
+          <h4>借的书，不读完，玩都不放心</h4>
+       </div>
+     </a>
+
+    </div>
+  </div>
+</div>
+  <!--wll 分类功能 -->
+  <div class="productCatetory">
+    <div class="productCatetory-menuList">
+      <div class="productCatetory-menuList-item ">
+        <%= link_to products_path(category: "最新上架") do %>
+         <h4>最新上架</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item ">
+        <%= link_to products_path(category: "经管商业") do %>
+         <h4>经管商业</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "人文艺术") do %>
+         <h4>人文艺术</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "历史传记") do %>
+         <h4>历史传记</h4>
+         <% end %>
+      </div>
+      <div class="productCatetory-menuList-item">
+        <%= link_to products_path(category: "亲子教育") do %>
+         <h4>亲子教育</h4>
+         <% end %>
+      </div>
+    </div>
+  </div>
+  <!--产品列表 -->
+
+  <div class="container">
+  <div class="row">
+    <div class="product-list">
+      <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6">
+          <span class="thumbnail">
+            <%= link_to product_path(product) do %>
+              <% if product.photos.present? %>
+                <%= image_tag(product.photos[0].image.thumb.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+              <% end %>
+            <% end %>
+              <h4><%= product.title %></h4>
+              <div class="ratings">
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <span class="glyphicon glyphicon-star-empty"></span>
+              </div>
+              <hr class="line">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <p class="price">￥<%= product.price %></p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <% if product.quantity.present? && product.quantity > 0 %>
+                    <%= link_to("借阅", add_to_cart_product_path(product), :method => :post, :class => "btn btn-danger") %>
+                  <% else %>
+                     Sold out
+                  <% end %>
+                </div>
+              </div>
+          </span>
+        </div>
+      <% end %>
+    </div>
+
+ </div>
+
+</div>

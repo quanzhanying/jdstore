@@ -1,0 +1,105 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.cart-page .shopping-cart, .order-page .shopping-cart, .checkout-page .shopping-cart {
+    border: 1px solid #e8e8e8;
+}
+
+.column-labels {
+    margin-bottom: 0;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #f5f5f5;
+}
+
+.product {
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.product:last-of-type {
+    border: none;
+}
+
+label.product-image, label.product-price, label.product-quantity, label.product-removal, label.product-line-price {
+    height: 45px;
+    line-height: 45px;
+    font-weight: 200;
+}
+
+label.actual-pay {
+    text-align: center;
+    width: 19%;
+    color: #aaa;
+    font-weight: 200;
+}
+
+.product-image, .product-price, .product-quantity, .product-removal, .product-line-price {
+    width: 19%;
+    text-align: center;
+    height: 150px;
+    color: #aaa;
+    display: inline-block;
+}
+
+.product-image img {
+    height: 90%;
+}
+
+.product-price, .product-line-price {
+    line-height: 113px;
+}
+
+.edit_cart_item {
+    margin-top: 45px;
+}
+
+.product .product-quantity input {
+    width: 45px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #f5be7e;
+}
+
+.product-quantity select {
+    height: 30px;
+    background-color: #fff;
+    color: #f5be7e;
+    border-radius: 0;
+}
+
+.product-removal .remove-product {
+    margin-top: 45px;
+    background-color: #f5be7e;
+}
+
+.product-removal .remove-product a {
+    color: #fff;
+}
+
+.product-removal .remove-product a:hover {
+    text-decoration: none;
+}
+
+.product-removal .remove-product:hover {
+    background-color: #f4d0a6;
+}
+
+.totals-item {
+    margin-top: 20px;
+    color: #aaa;
+}
+
+a.checkout-F {
+    padding: 10px 25px;
+    background-color: #d86a6a;
+    color: #fff;
+}
+
+a.checkout-btn:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #d38585;
+}

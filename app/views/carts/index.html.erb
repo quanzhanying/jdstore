@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <h2>
+            <%= link_to("清空购物车", clean_carts_path ,
+                      method: :delete , class: " btn btn-info pull-right",
+                      style: "text-decoration: underline;",
+                      data: { confirm: "你确定要清空整个购物车吗？"} )%>
+
+      购物车
+    </h2>
+    <div class="shopping-cart" style="margin-top: 50px;">
+     <div class="column-labels">
+       <div class="column-labels">
+        <label class="product-image">书</label>
+        <label class="product-price">租金</label>
+        <label class="product-quantity">数量</label>
+        <label class="product-removal">操作</label>
+        <label class="product-line-price">小计</label>
+      </div>
+
+        <% current_cart.cart_items.each do |cart_item|%>
+        <div class="product">
+          <div class="product-image">
+
+            <%= link_to product_path(cart_item.product) do %>
+            <% if cart_item.product.photos[0].present? %>
+            <%= image_tag(cart_item.product.photos[0].image.thumb.url) %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <% end %>
+            <% end %>
+        </div>
+          <div class="product-price">￥<%= cart_item.product.price %></div>
+          <div class="product-quantity">
+
+            <!-- # 购物车中使用 ＋和－按钮改变购物数量 ＃ -->
+            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+            <!-- <%= f.select :quantity, 1..cart_item.product.quantity %>
+                <%= f.submit "更新", data: { disable_with: "Submiting..."} %> -->
+                  <%= link_to("-", remove_quantity_cart_item_path(cart_item.product_id), method: :post) %>
+                  <input class="quantity" type="text" value="<%= cart_item.quantity %>">
+                  <%= link_to("+", add_quantity_cart_item_path(cart_item.product_id), method: :post) %>
+                    <% end %>
+                      </div>
+              <div class="product-removal">
+               <button class="remove-product">
+                <%= link_to("移除商品", cart_item_path(cart_item.product_id), method: :delete)  %>
+              </button>
+            </div>
+            <div class="product-line-price">
+           <%= cart_item.product.price * cart_item.quantity %> RMB
+          </div>
+          </div>
+        <% end %>
+
+
+
+
+      <span class="pull-right">
+        <span>
+          总计
+          <%= render_cart_total_price(current_cart) %>
+          RMB
+        </span>
+
+
+      <div class="checkout clearfix">
+        <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn  btn-lg btn-danger pull-right") %>
+
+      </div>
+
+      </div>
+    </div>
+
+  </div>
