@@ -1,0 +1,67 @@
+<!-- <div class="col-md-12">
+   <div class="row box">
+     <div class="box-inner col-md-6 col-md-offset-3">
+       <h1 class="title">18K Offer</h1>
+       <p class="slogan">
+         <br>
+
+       </p>
+       <p class="lead">
+
+       </p>
+     </div>
+   </div>
+ </div> -->
+
+
+ <!-- Wrapper For Slides -->
+ <div  class="carousel bs-slider slide  control-round indicators-line"  >
+ <!-- Slide Background -->
+ <img src="images/zz1.jpg" class="col-md-12"/>
+ <div class="bs-slider-overlay"></div>
+ <!-- Slide Text Layer -->
+ <div class="slide-text slide_style_center">
+     <h1 data-animation="animated flipInX">little squirrel</h1>
+     <p data-animation="animated lightSpeedIn">精选童品</p>
+     <a class="btn btn-default" href="/products">party</a>
+     <a class="btn btn-primary" href="/products">sports</a>
+     <a class="btn btn-default" href="/products">journey</a>
+
+ </div>
+ </div>
+</div>
+ </div>
+ </div>
+  </div>
+ <!-- End of Slide -->
+
+
+
+<div class="content-section-a">
+
+ </div>
+
+
+ <div class="row">
+<% @products.each do |product| %>
+<div class="col-xs-6 col-md-3">
+ <%= link_to product_path(product) do %>
+   <% if product.image.present? %>
+     <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+   <% else %>
+     <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+   <% end %>
+ <% end %>
+ <%= product.title %> ￥ <%= product.price %>
+</div>
+<% end %>
+</div>
+
+
+
+
+
+
+ <div class="content-section-a">
+
+ </div>
