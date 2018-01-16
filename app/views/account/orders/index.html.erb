@@ -1,0 +1,26 @@
+<div class="col-md-8 col-centered">
+  <div class="panel panel-info">
+    <div class="panel-heading text-center">
+      <h2>订单列表</h2>
+    </div>
+
+    <div class="panel-footer">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>生成时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td> <%= link_to(order.id, order_path(order.token))%> </td>
+            <td> <%= order.created_at.to_s(:long) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

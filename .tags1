@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Admin	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^class Admin::OrdersController < ApplicationController$/;"	class	line:1
+index	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^  def index$/;"	method	line:7	class:Admin
+show	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^  def show$/;"	method	line:11	class:Admin
+ship	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^  def ship$/;"	method	line:16	class:Admin
+shipped	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^  def shipped$/;"	method	line:22	class:Admin
+cancel	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^  def cancel$/;"	method	line:28	class:Admin
+return	/Users/paulshu/jdstore/app/controllers/admin/orders_controller.rb	/^  def return$/;"	method	line:34	class:Admin
