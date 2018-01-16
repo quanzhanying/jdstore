@@ -1,0 +1,35 @@
+<h1> Edit a product </h1>
+
+<%= simple_form_for [:admin, @product ] do |f| %>
+
+<div class="group">
+  <%= f.input :title, :label => "品名" %>
+</div>
+
+<div class="group">
+<%= f.input :description, :label => "商品叙述" %>
+</div>
+
+<div class="group">
+<%= f.input :price, :label => "价格" %>
+</div>
+
+<div class="group">
+<%= f.input :quantity, :label => "库存" %>
+</div>
+
+<div class="group">
+<%= f.input :is_hidden, :label => "隐藏" %>
+</div>
+
+<% if @product.image.present? %>
+<span>目前商品图</span> <br />
+<%= image_tag(@product.image.thumb.url) %>
+<% end %>
+
+<div class="group">
+  <%= f.input :imgae, as: :file %>
+</div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>

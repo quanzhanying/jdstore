@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <div class="img-card">
+              <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+              <%= image_tag("http://palcehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+              <% end %>
+              </div>
+
+                <div class="card-content">
+                    <h4 class="card-title">
+                     ¥ <%= product.price %>
+                    <br>
+                    <%= product.title %></h4>
+              </div>
+              <div class="card-read-more">
+                  <a class="btn btn-link btn-block" href="#">
+                      视频介绍
+                  </a>
+              </div>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div class="row">
+      <% @products.each do |product| %>
+      <div class="col-xs-6 col-md-3">
+        <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+        <%= image_tag("http://palcehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+        <% end %>
+        <%= product.title %> ¥ <%= product.price %>
+        <div class="col-xs-12 col-md-6">
+            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+        </div>
+      </div>
+      <% end %>
+    </div>-->
