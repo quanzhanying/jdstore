@@ -1,0 +1,77 @@
+<br><br><br>
+<div class="container">
+  <h1 class="text-center" style="font-family:Verdana">我们的商品</h1><br>
+  <ul class="nav nav-tabs">
+        <div class="col-md-2 text-center">
+          <%= link_to  products_path do %>
+
+          <%= link_to "所有商品", products_path %>
+          <% end %>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to  products_path(:category => "成品" ) do %>
+
+            <%= link_to "成品", products_path(:category => "成品" ) %>
+          <% end %>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to  products_path(:category => "材料" ) do %>
+
+            <%= link_to "材料", products_path(:category => "材料" ) %>
+          <% end %>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to  products_path(:category => "工具" ) do %>
+
+            <%= link_to "工具", products_path(:category => "工具" ) %>
+          <% end %>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to  products_path(:category => "课程" ) do %>
+            
+            <%= link_to "课程", products_path(:category => "课程" ) %>
+          <% end %>
+        </div>
+        <div class="dropdown clearfix pull-right">
+           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+             排序
+             <span class="caret"></span>
+           </button>
+           <ul class="reorder dropdown-menu ">
+             <li><%= link_to("价格从高到低", products_path(:order => "down_product.price")) %></li>
+             <li><%= link_to("价格从低到高", products_path(:order => "up_product.price")) %></li>
+             <li><%= link_to("发表时间", products_path ) %></li>
+           </ul>
+        </div>
+  </ul>
+</div>
+
+<div class="row">
+
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnails") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+        <%= product.title %> ￥ <%= product.price %>
+      <%= link_to like_product_path(product), method: :put do %>
+        <div class="pi-thumbs-up">
+        <i class="fa fa-thumbs-up fa-2x" , style="color:#ff5722;"></i>
+        <%= product.get_upvotes.size %>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
+
+
+<div class="text-center">
+
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+
+</div>

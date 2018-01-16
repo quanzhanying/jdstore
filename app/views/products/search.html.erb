@@ -1,0 +1,26 @@
+<div>
+  <br>
+  <% if @products.blank? %>
+    <br>
+    <h2 class="text-center" style="color:#FF6F00">抱歉，您想要的商品还没有哦</h2>
+  <% else %>
+    <br>
+    <br>
+    <br>
+    <h2 class="text-center"> 有关"<%= @query_string %>"的商品信息 </h2>
+    <div class="search-result">
+
+      <div class="row jobs-show0"></div>
+
+
+      <div class="text-center">
+        <%= render :partial => "products_item", :collection => @products, :as => :job %>
+        <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+      </div>
+
+    </div>
+    <div class="text-center">
+      <%= will_paginate(@products, renderer: BootstrapPagination::Rails) %>
+    </div>
+  <% end %>
+</div>

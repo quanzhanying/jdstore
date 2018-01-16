@@ -1,0 +1,19 @@
+current directory: /Users/zhangruilan/bisai/jdstore/vendor/cache/gems/byebug-9.0.6/ext/byebug
+/Users/zhangruilan/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20170523-72150-ormbcs.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zhangruilan/bisai/jdstore/vendor/cache/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/zhangruilan/bisai/jdstore/vendor/cache/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/zhangruilan/bisai/jdstore/vendor/cache/gems/byebug-9.0.6/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20170523-72150-i9ds8r/byebug

@@ -1,0 +1,415 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ $banner: url(https://ww3.sinaimg.cn/large/006tNbRwgy1ffruxo1u8ij30sg0iyndz.jpg);
+ $banner-color: #f4f6f7;
+ $btn-color: #fff;
+ $btn-background: #29426b;
+ $btn-background-hover: #00DBE9;
+ $db-image:url(https://ww4.sinaimg.cn/large/006tKfTcgy1ffvhaiw9odj310o05igrp.jpg);
+
+
+ #search-id {
+   width: 200px;
+   padding-top: 7px;
+
+ }
+
+
+
+ //  common
+ html {
+   position: relative;
+   min-height: 100%;
+ }
+
+ main{
+    padding-bottom:100px;/* main的padding-bottom值要等于或大于footer的height值 */
+  }
+
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 50px;
+  }
+
+  .index-title {
+    color:#666;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-top: 40px;
+  }
+
+
+ .section {
+   padding-top: 50px;
+   padding-bottom: 50px;
+ }
+
+ .short-line{
+     display: block;
+     background: #C07F6F;
+     border-style: none;
+     border-radius: 0;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 12px;
+     margin-bottom: 20px;
+     z-index: 53;
+     width: 50px;
+     height: 3px;
+     position: relative;
+ }
+
+
+ //navbar
+ .navbar {
+   border: none;
+ }
+
+   .navbar-default {
+     background-color: #7c3a2d;  //背景颜色
+
+
+       border-color: #212121; //边框色
+
+       margin-bottom: 0px; //底部 margin 不撑开距离
+
+   }
+
+ @media (min-width: 768px) {
+   .navbar {
+     border-radius: 0;//圆角为0
+   }
+ }
+
+  .navbar-default .navbar-brand {
+     color: #f9f7f4; //字体颜色
+
+     padding: 10px 25px; //上下10px，左右15px
+     line-height: 30px; //文字行高
+   }
+
+   .navbar-default .navbar-brand:hover,
+   .navbar-default .navbar-brand:focus {
+     color:  #ce422d; //鼠标放置在链接上的文字颜色
+
+     background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+   }
+
+  .navbar-default .navbar-nav > li > a{
+     color: #f9f7f4;
+     padding-right: 20px;
+     margin-right: 20px;
+
+
+   }
+
+   .navbar-default .navbar-nav > li > a:hover,
+   .navbar-default .navbar-nav > li > a:focus {
+     color:  #ce422d; //鼠标放上去的颜色
+
+     background-color: transparent;
+   }
+   .navbar-default .navbar-nav > .active > a,
+   .navbar-default .navbar-nav > .active > a:hover,
+   .navbar-default .navbar-nav > .active > a:focus {
+     color: #f9f7f4;
+
+     background-color: #9e6966;
+
+   }
+
+   .navbar-default .navbar-nav > .open > a,
+   .navbar-default .navbar-nav > .open > a:focus,
+   .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #FFE0B2;
+
+     color:  #b58780;
+
+
+   }
+
+   .navbar-brand > img {
+         display: inline-block; //图片和链接文字显示在同一行
+         margin-right: 10px; //图片和链接文字拉开一点距离
+         margin-top: -3px;
+         width: 32px; //定制图片宽度
+         height: 32px; //定制图片高度
+     }
+
+
+
+ // banner
+ .container-fluid {
+   .jumbotron {
+     border-radius: 0;//圆角为0
+     padding-top: 0;
+   }
+ }
+
+ .jumbotron {
+   background-image: $banner;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-bottom: 110px;
+ //  background-position: center -38px;
+   margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   color:  #fff; //字体颜色
+   position: relative;
+   height: 670px;
+   letter-spacing: 2px;
+
+   &::before {
+     content: "";
+     width: 100%;
+     height: 100%;
+    background-color: transparentize(#000, .55);
+     position: absolute;
+     top: 0;
+     left: 0;
+   }
+
+   .text-content {
+     position: absolute;
+     z-index: 2;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+   }
+   .title {
+     text-align: center;//文字
+     padding: 50px 20px 0;//上50px，左右20px，下0
+     font-size:65px;
+     font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+     text-align: center;
+     padding-top: 200px;
+
+   }
+
+   .slogan {
+       width: 600px;
+       margin: 30px auto 0;
+       font-size: 40px;
+       line-height: 26px;
+       text-align: center;
+     }
+     .lead {
+       margin-top: 40px;
+       margin-bottom: 230px;
+       text-align: center;
+       color: white;
+       .b-btn {
+         padding: 10px 20px;
+       }
+     }
+   }
+
+
+   // button
+   .b-btn {
+     width: 170px;
+     color: $btn-color;//字体颜色
+     background-color: #ec644f;//背景颜色
+     border-color: #ec644f;//边框颜色 橙色
+    margin: auto;
+   }
+
+   .b-btn:focus,
+   .b-btn:hover {
+     color: #fff;
+     background-color:#ce422d;//鼠标放置在btn上的背景颜色
+     border-color: #ce422d;//鼠标放置在btn上的边框颜色 深红色
+   }
+
+   .btn-lg, .btn-group-lg > .btn {
+     padding: 8px 16px;//通过padding来决定btn的大小
+     font-size: 16px;//btn文字大小
+     border-radius: 3px;//btn圆角
+   }
+
+   .search-wrap, .content {
+     margin-top: -20px;
+   }
+
+   .btn-success {
+     background: $btn-background;
+     color: #fff;
+     &:hover, &:active {
+       background: $btn-background-hover !important;
+       border-color: $btn-background-hover !important;
+     }
+   }
+
+   //门 part2
+   .door{
+     text-align: center;
+     background-color: #fcf7f2;
+     margin:-15px;
+     padding-bottom: 18px;
+   }
+
+   .men-zi {
+     line-height: 2.5em;
+     font-size: 1.2em;
+     color: #666;
+
+   }
+
+   .open>img {
+     width:309px;
+     height:191px;
+
+   }
+
+
+//river
+   .advantage-box {
+     display: block;
+     border-style: none;
+     border-radius: 0;
+     width: 290px;
+     position: relative;
+     margin: 5px 15px 20px;
+     float: left;
+     text-align: center;
+   }
+
+   .image{
+     width: 10px;
+     height:10px;
+   }
+
+   .advantage-box >h3 {
+     color: #666;
+     letter-spacing: 1px;
+     line-height: 22px;
+     margin: 25px 20px 25px 25px;
+   }
+
+   .advantage-box >p {
+     line-height: 1.8em;
+     font-size: 1em;
+     color:#666;
+   }
+
+
+
+//欣赏成果 part4
+.we-do{
+    padding-bottom: 0px;
+    padding-top: 10px;
+    background-color: #fcf7f2;
+}
+
+.product-ul {
+  padding: 0 20px 0;
+  margin: 30px auto 0;
+  text-align: center;
+  overflow: hidden;
+  height: 620px;
+  width: 1154px;
+  li {
+    display: inline-block;
+    width: 300px;
+    height: 278px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    .product-img-wrap {
+      width:310px;
+      height: 270px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      &:hover {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -webkit-transition: all .8s;
+        transition: all .8s;
+      }
+    }
+  }
+
+}
+
+
+
+
+//ditu part5
+.base-image {
+  background-image: $db-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // padding-bottom: 10px;
+  margin: 0 -15px 0;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+  position: relative;
+  height: 290px;
+  letter-spacing: 2px;
+
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+  //  background-color: transparentize(#000, .55);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .text-content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+    .lead {
+      margin-top: 90px;
+      margin-bottom: 150px;
+      text-align: center;
+      color: white;
+      .b-btn {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  //footer
+  .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      height: 90px;
+      background-color: #7c3a2d;
+
+      p {
+          color: white;
+          margin-top: 25px;
+      }
+  }
