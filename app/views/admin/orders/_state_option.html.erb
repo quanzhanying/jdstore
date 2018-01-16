@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>穿梭市集</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+<div style="padding:10px; float:right;">
+
+  <% case order.aasm_state %>
+  <% when "order_placed" %>
+    <%= link_to("取消订单",
+                cancel_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "paid" %>
+    <%= link_to("取消订单",
+                cancel_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+    <%= link_to("出货",
+                ship_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "shipping" %>
+    <%= link_to("设为已出货",
+                shipped_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "shipped" %>
+    <%= link_to("退货",
+                return_admin_order_path(order),
+                class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "order_cancelled" %>
+    <span class="label label-default">订单已取消</span>
+
+  <% when "good_returned" %>
+    <span class="label label-default">已退货</span>
+
+  <% end %>
+
+</div>
+</div>
+</body>

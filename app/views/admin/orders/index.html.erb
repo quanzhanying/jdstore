@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>穿梭市集</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body style="background-color: #fff">
+    <div class="container">
+<h2>订单列表 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>生成时间</th>
+      <th>订购者</th>
+      <th>订单状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td> <%= link_to(order.id, admin_order_path(order) ) %> </td>
+      <td> <%= order.created_at.to_s(:long) %> </td>
+      <td> <%= order.user.email %></td>
+      <td> <%= order.aasm_state %> </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+</div>
+</body>

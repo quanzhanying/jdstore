@@ -1,0 +1,31 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table>thead>tr>th {
+  text-align: center;
+}
+
+.table>tbody>tr>td {
+  vertical-align: middle !important;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin: auto;
+    line-height: 1.846;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 0px;
+    -webkit-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.846;
+    vertical-align: middle;
+    text-align: center;
+    border-top: 1px solid #101846;
+}
