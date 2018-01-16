@@ -1,0 +1,111 @@
+<div class="row index-web">
+<div class="col-md-2 sidenav">
+    <img src="https://ooo.0o0.ooo/2017/05/21/592187f12feac.png" alt="logo.png" title="logo.png" class="img-responsive" />
+    <br>
+    <div class="panel-group text-center">
+        <!-- 首页 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="/">首页</a>
+                </h4>
+            </div>
+        </div>
+        <!-- About Us -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#">ABOUT US</a>
+                </h4>
+            </div>
+        </div>
+        <!-- 作品集 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="text-center" href="/products" >作品集
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <!-- 购物车 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <!-- <a href="/carts">购物车</a> -->
+                    <%= link_to carts_path do %>
+                        购物车<i class="fa fa-shopping-cart"></i> ( <%= current_cart.products.count %>)
+                    <% end %>
+                </h4>
+            </div>
+        </div>
+        <!-- 注册，登录，Admin选项 -->
+          <div class="panel panel-primary">
+            <% if !current_user %>
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div class="dropdown1">
+                            注册|登陆
+                            <span class="caret"></span>
+                            <div class="dropdown-content1">
+                                <%= link_to("注册", new_user_registration_path) %>
+                                <%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path) %>
+                            </div>
+                        </div>
+                    </h4>
+                </div>
+                <% else %>
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                    Hi!, <%= current_user.email %> <br><br>
+                    <%= link_to("我的订单", account_orders_path ) %><br><br>
+                    <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %><br>
+                    </h4>
+                  </div>
+                <% end %>
+        </div>
+        <!-- 注册，登录，Admin选项 -->
+      </div>
+      <div>
+          <p>每个人都缺乏点什么，我们才会瞬间就不快乐……</p>
+          <p>单纯很难，包袱很多......</p>
+          <p>已经很勇敢，还是会难过......</p>
+          <p>在这里，通过手绘作品的天真和纯净，您可以用另一种方式去看世界，如茶香，如诗行。</p>
+          <p>今天【绘生活】就这么成立了，与您的每一次遇见，都是缘。无论缘分深浅，我们会做得更好！</p>
+      </div>
+</div>
+<!-- 首页右边的图片组 -->
+<div class="col-md-10 img-wall">
+    <div id="layout">
+        <ul>
+            <li>
+                <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/1' do %><%= image_tag("p1.jpg") %><% end %>      </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/2' do %><%= image_tag("p2.jpg") %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/3' do %><%= image_tag("p3.jpg") %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/4' do %><%= image_tag("p4.jpg") %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/8' do %><%= image_tag("p5.jpg") %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/9' do %><%= image_tag("p6.jpg") %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/5' do %><%= image_tag("p7.jpg", height:360, width:360) %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/6' do %><%= image_tag("p8.jpg", height:360, width:360) %><% end %>
+                </li>
+                <li>
+                    <%= link_to 'https://arcane-chamber-18488.herokuapp.com/products/7' do %><%= image_tag("p9.jpg", height:360, width:360) %><% end %>
+                </li>
+        </ul>
+    </div>
+</div>
+<!-- 首页右边的图片组 结束 -->
+</div>

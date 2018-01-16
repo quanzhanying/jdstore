@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/assets/logo.png" height="80" width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-size:25px;color:#37a4e7"><b>购物车</b></span>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-5">
+                    <%= render :partial => "products/search_bar" %>
+                </div>
+            </div>
+            <table class="table" style="text-align: center">
+                <thead>
+                    <tr class="well">
+                        <th colspan="2"  style="text-align: center">商品</th>
+                        <th  style="text-align: center">单价</th>
+                        <th  style="text-align: center">数量</th>
+                        <th  style="text-align: center">小计</th>
+                        <th  style="text-align: center">操作选项</th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody class="dzl-carts-index">
+                    <% current_cart.cart_items.each do |cart_item| %>
+                        <tr>
+                            <td style="width: 15%">
+                                <%= link_to product_path(cart_item.product) do %>
+                                    <% if cart_item.product.image.present? %>
+                                        <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail-dzl") %>
+                                    <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                                    <% end %>
+                                <% end %>
+                            </td>
+                            <td style="width: 30%"> <%= link_to(cart_item.product.title, product_path(cart_item.product))%><br>
+                                <td style="width: 15%"> <%= cart_item.product.price %> </td>
+                                <td style="width: 15%">
+                                    <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+                                        <%= f.select :quantity, 1..cart_item.product.quantity %>
+                                        <%= f.submit "变更", data: {disable_with: "Submiting..."} %>
+                                    <% end %>
+                                </td>
+                                <td style="width: 15%"><%= cart_item.product.price * cart_item.quantity %></td>
+                                <td style="width: 10%">
+                                    <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                                        <i class="fa fa-trash">删除</i>
+                                    <% end %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                <br>
+                <div class="dzl-carts-pay">
+                    <div class="checkout clearfix">
+                        <span>
+                            <%= link_to("清空购物车",clean_carts_path,
+                         method: :delete, class: "dzl-btn-clear pull-left" ,
+                         data: {confirm: "你确定要清空整个购物车吗？"}) %>
+                        </span>
+                        总价:&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="dzl-summary" >¥&nbsp;&nbsp;<%= render_cart_total_price(current_cart) %>
+                        </span>
+                        <span>
+                            <%= link_to("去结算", checkout_carts_path, method: :post, class: "dzl-btn-pay pull-right")%>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

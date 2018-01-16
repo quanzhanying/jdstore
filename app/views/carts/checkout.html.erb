@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="/assets/logo.png" height="80" width="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="font-size:25px;color:#37a4e7"><b>购物清单</b></span>
+            <table class="table" style="text-align: center">
+                <thead>
+                    <tr class="well">
+                        <th style="text-align: center">商品</th>
+                        <th  style="text-align: center">单价</th>
+                        <th  style="text-align: center">数量</th>
+                        <th  style="text-align: center">小计</th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody class="dzl-carts-index">
+                    <% current_cart.cart_items.each do |cart_item| %>
+                        <tr>
+                            <td style="width: 30%"> <%= link_to(cart_item.product.title, product_path(cart_item.product))%>
+                                <br>
+                                <td style="width: 15%"> <%= cart_item.product.price %> </td>
+                                <td style="width: 15%">
+                                    <%= cart_item.product.quantity %>
+                                </td>
+                                <td style="width: 15%"><%= cart_item.product.quantity * cart_item.product.price  %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                <hr>
+                <div class="total clearfix ">
+                    <span class="pull-right">
+                        总价:&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="dzl-summary " >¥&nbsp;&nbsp;<%= render_cart_total_price(current_cart) %></span>
+                    </span>
+                </div>
+                <h3 style="text-align:center">收货人信息</h3>
+                <div class="form-group">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <%= simple_form_for @order do |f| %>
+                            <%= f.input :billing_name, :label => "收货人姓名" %>
+                            <%= f.input :billing_address, :label => "收货人详细地址" %>
+                            <%= f.input :shipping_name, :label => "收货人电话/手机" %>
+                            <%= f.input :shipping_address, :label => "邮编" %>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <!-- <div class="col-sm-offset-3 col-sm-8">
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="remember"> 保存为默认收货人</label>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class="col-sm-2">
+                                <%= f.submit "生成订单", class: "dzl-btn-pay", data: {disable_with: "Submiting..."} %>
+                            </div>
+                            <div class="col-sm-5"></div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>

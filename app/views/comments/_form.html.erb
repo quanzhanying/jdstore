@@ -1,0 +1,8 @@
+<%= simple_form_for [@product,@product.comments.build] do |f| %>
+    <div class="form-group">
+        <%= f.input :content, label: "发表评论", input_html: { class: "form-control"} %>
+    </div>
+    <div class="form-actions">
+        <%= f.submit "发表", disable_with: "Submiting...", class: "btn btn-primary"%>
+    </div>
+<% end %>

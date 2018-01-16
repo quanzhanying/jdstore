@@ -1,0 +1,27 @@
+<div class="container">
+    <%= render :partial => "products/search_bar" %>
+    <div class="row">
+        <% @products.each do |product| %>
+            <div class="col-sm-2 dzl-product-index">
+                <%= link_to product_path(product) do %>
+                    <% if product.image.present? %>
+                        <%= image_tag(product.image.thumb.url, class: "thumbnail img-responsive") %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail img-responsive") %>
+                    <% end %>
+                <% end %>
+                <div class="price-index">&nbsp;&nbsp;￥ <strong><%= product.price %></strong></div>
+                <br>
+                <%= product.title %><br>
+                <div> 作者 : <%= product.author %> </div>
+                <br>
+            </div>
+        <% end %>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="text-center">
+        <%= will_paginate @products, :previous_label => '上一页', :next_label => '下一页', :class => "flickr_pagination" %>
+    </div>
+</div>
