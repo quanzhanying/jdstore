@@ -35,6 +35,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+gem "bootstrap-sass"
+gem "simple_form"
+gem "font-awesome-rails"
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
@@ -46,3 +50,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "devise"
