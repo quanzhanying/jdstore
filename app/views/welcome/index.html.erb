@@ -1,0 +1,59 @@
+<div class="welcome-box">
+  <!--===== 广告轮播 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 轮播按钮 =====-->
+          <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+           </ol>
+          <!--===== 轮播内容 =====-->
+           <div class="carousel-inner">
+              <div class="item active">
+               <a href="javascript:;">
+                <img src="http://i.imgur.com/zwYoT3d.jpg?1">
+                <div class="carousel-caption"></div>
+               </a>
+              </div>
+              <div class="item">
+               <a href="javascript:;">
+                <img src="http://i.imgur.com/ZECaYML.jpg?1">
+                <div class="carousel-caption"></div>
+               </a>
+              </div>
+              <div class="item">
+               <a href="javascript:;">
+                <img src="http://i.imgur.com/85JqWC3.jpg?2">
+                <div class="carousel-caption"></div>
+               </a>
+              </div>
+            </div>
+          </div>
+
+<br>
+<div class="container">
+  <section class="product-items-box">
+    <% @products.each_with_index do |product, index| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+
+        <%= link_to product_path(product) do %> <!-- 商品连结 -->
+          <div class="box">
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+            <% end %>
+          </div> <!-- 商品图片 -->
+          <div class="product-info">
+            <p><%= product.title %></p> <!-- 商品名称 -->
+            <p><%= product.price %></p> <!-- 商品价格 -->
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+</div>

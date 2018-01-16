@@ -1,0 +1,24 @@
+<div class="login-wrap">
+  <div class="registration-wrap">
+    <div class="registration-block">
+      <div class="content clearfix">
+        <div class="right-part fr">
+          <div class="devise">
+            <h2>個人資料</h2>
+            <%= simple_form_for [:account, @user] do |f| %>
+              <div class="form-inputs">
+                <%= f.input :name, required: true, placeholder: "姓名" ,label: false%>
+                <%= f.input :gender, label: false, as: :radio_buttons, collection:  [('男'), ('女')], required: true %>
+                <%= f.input :birthday, :label => t('生日'), as: :date, html5: true, required: false %>
+                <%= f.input :phone, required: true, label: false, placeholder: "電話" %>
+                <%= f.input :address, required: true, label: false, placeholder: "地址" %>
+                <div class="form-actions">
+                  <button type="submit" class="registration-btn">儲存</button>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

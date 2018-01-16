@@ -1,0 +1,34 @@
+<div>
+  <br>
+<% if @query_string.blank? %>
+    <div class="search-info-title">
+      Sorry, The search content cannot be blank, please type some product into to search.
+    </div>
+
+  <% elsif @products.blank? %>
+    <br>
+    <h2 class="search-info-title"> Sorry, we don't have product you would like to search</h2>
+  <% else %>
+    <div class="container">
+      <section class="product-items-box">
+        <% @products.each do |product| %>
+          <div class="col-xs-12 col-sm-4 col-md-3">
+            <%= link_to product_path(product) do %> <!-- 商品连结 -->
+              <div class="box">
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/418x418&text=No Pic") %>
+                <% end %>
+              </div> <!-- 商品图片 -->
+              <div class="product-info">
+                <p><%= product.title %></p> <!-- 商品名称 -->
+                <p><%= product.price %></p> <!-- 商品价格 -->
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  <% end %>
+</div>
