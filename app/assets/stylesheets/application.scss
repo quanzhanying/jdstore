@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+  //-----小圈圈人物介绍--------
+ .people-intro{
+     padding: 80px 150px;
+     margin-bottom:20px;
+ }
+ .person {
+     border: 10px solid transparent;
+     margin-bottom: 25px;
+     width: 80%;
+     height: 80%;
+     opacity: 0.7;
+ }
+ .person:hover {
+     border-color: #f1f1f1;
+ }
+
+ //---------Footer---------
+      footer {
+          color: white;
+      }
+      footer .footer-below {
+          padding: 25px 0;
+          background-color: #233140;
+      }
+
+//---------Navbar---------
+        .navbar-default {
+             background-color: #212121;
+             border-color: #212121;
+             margin-bottom: 0;
+             border-radius: 0;
+         }
+         .navbar-default .navbar-brand {
+             color: white;
+             padding: 10px 15px;
+             line-height: 30px;
+         }
+         .navbar-default .navbar-brand:hover,
+         .navbar-default .navbar-brand:focus {
+             color: #FF6F00;
+             background-color: transparent;
+         }
+         .navbar-default .navbar-nav > li > a {
+             color:  white;
+         }
+         .navbar-default .navbar-nav > li > a:hover,
+         .navbar-default .navbar-nav > li > a:focus {
+             color: #FF6F00;
+             background-color: transparent;
+         }
+         .navbar-default .navbar-nav > .active > a,
+         .navbar-default .navbar-nav > .active > a:hover,
+         .navbar-default .navbar-nav > .active > a:focus {
+             color: #FF6F00;
+             background-color: #FFE0B2;
+         }
+         .navbar-default .navbar-nav > .open > a,
+         .navbar-default .navbar-nav > .open > a:focus,
+         .navbar-default .navbar-nav > .open > a:hover {
+             background-color: #FFE0B2;
+             color: #212121;
+         }
+
+//-----搜索功能的css-----
+ // .navbar-center {
+ //    float: initial;
+ //    margin-top: 10px;
+ //    width: 20px;
+ // }
+
+ .search-id {
+    width: 200px;
+    padding-top: 7px;
+ }
+
+ .page-wrap {
+    margin-top: 50px;//搜索页面距离顶部的距离
+ }
+
+ .input-group {
+    left: 13px;//搜索栏距离左边距离
+ }
