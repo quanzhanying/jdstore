@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+@import "navbar";
+@import "footer";
+
+
+
+
+html {
+   position: relative;
+   min-height: 100%;
+ }
+
+ body {
+   /* Margin bottom by footer height */
+   margin-bottom: 100px;
+ }
+
+
+//---------Box---------
+
+ .box {
+     background-image: url("header.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     margin-bottom: 50px;
+
+     .box-inner {
+         background-color: rgba(250, 250, 250, 0.69);
+         padding-bottom: 5px;
+         margin-top: 150px;
+         margin-bottom: 150px;
+     }
+
+     .title {
+         text-align: center;
+         margin-bottom: 80px;
+     }
+
+     .slogan {
+         color: #222;
+         margin-top: 10px;
+         margin-bottom: 50px;
+         text-align: center;
+         font-size: 25px;
+         top: 12px;
+     }
+
+     .lead {
+         margin-bottom: 60px;
+         text-align: center;
+         color: white;
+     }
+ }
+
+
+ //----ABOUT-----
+ .sec-about {
+     font-family: 'Open sans', sans-serif;
+     padding: 4em 0;
+     background: #E0E0E0;
+     line-height: 1.42857143;
+     text-align: center;
+
+     h1 {
+         font-weight: 400;
+         color: #4E342E;
+     }
+
+     p {
+         line-height: 1.5;
+         color: #333333;
+         font-weight: 130;
+         font-size: 16px;
+     }
+ }
+
+ //---------Content---------
+
+ .content-section-a {
+     padding: 50px 0;
+     background-color: #f8f8f8;
+ }
+
+ .content-section-b {
+     padding: 50px 0;
+     border-top: 1px solid #e7e7e7;
+     border-bottom: 1px solid #e7e7e7;
+ }
+
+ .section-heading-spacer {
+     float: left;
+     width: 200px;
+     border-top: 3px solid #e7e7e7;
+ }
+
+ .section-heading {
+     margin-bottom: 30px;
+ }
+
+ .lead {
+     font-size: 18px;
+     font-weight: 400;
+ }

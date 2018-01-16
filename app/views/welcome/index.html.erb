@@ -1,0 +1,101 @@
+<div class="col-md-12">
+    <div class="row box">
+        <div class="box-inner col-md-6 col-md-offset-3">
+            <h1 class="title">18K Offer</h1>
+            <p class="slogan">18K Offer 是一个提供18K薪水工作机会的求职网站。
+         <br>
+                我们希望借由这个网站，能让大家找到且应征上高薪且优质的工作。
+         <br>
+                凭借自己的努力和天份也会变 Winner
+       </p>
+            <p class="lead">
+                <%= link_to '马上应征', products_path, class: 'btn btn-danger' %>
+            </p>
+        </div>
+    </div>
+</div>
+<section id="about" class="sec-about">
+    <div class="container">
+        <h1>About Us</h1>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <p>Hi, 欢迎来到创造工坊，我们为寻找天才设计师而存在，在这里你可以根据名称、城市、职位来搜索自己的心仪的工作。
+
+                     我们致力于为访客提供高匹配率的工作和专业的简历撰写指导。
+
+                     开启你的天才设计之旅吧！
+           </div>
+            </div>
+        </div>
+    </section>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">查看属于你的创造岗位</h2>
+                    <p class="lead">创造工坊可以根据需求，制定出专属的Job</p>
+                    <p class="lead">支持名称、城市、公司搜索</p>
+                    <p class="lead">高匹配率帮您节约时间</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <%= image_tag 'pic-1.jpg', class: 'img-responsive' %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">撰写你的专业简历</h2>
+                    <p class="lead">根据自己的心仪的Job撰写自己的高匹配度的天才简历</p>
+                    <p class="lead">如果不知道如何写出专业的建立，那可以去全栈朱英楠师兄创作的 <a target="_blank" href="http://www.jianliheike.com">简历黑客</a> 看看哦！</p>
+                    <p class="lead">超多的专业简历模板等着你哦！</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <%= image_tag 'pic-2.jpg', class: 'img-responsive' %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">踏上自己的天才创造旅程<br>
+                    </h2>
+                    <p class="lead">再也不会因为工作而烦恼，愿你每一天与快乐为伴。</p>
+                    <p class="lead">享受创造，享受生活。</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <%= image_tag 'pic-3.jpg', class: 'img-responsive' %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- navbar的js效果 -->
+
+<script>
+  $(document).ready(function(){
+     $(".navbar-fixed-top").css("background-color", "transparent"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+     $(".navbar-fixed-top").css("border-color", "transparent"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+  $(window).scroll(function() { // check if scroll event happened
+     if ($(document).scrollTop() > 30) { // check if user scrolled more than 50 from top of the browser window
+       $(".navbar-fixed-top").css("background-color", "#fff"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+     } else {
+       $(".navbar-fixed-top").css("background-color", "transparent"); // if not, change it back to transparent
+     }
+   });
+  });
+</script>
