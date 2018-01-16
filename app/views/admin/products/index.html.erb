@@ -1,0 +1,32 @@
+<div class="pull-right">
+  <%= link_to("新增商品", new_admin_product_path, :class => "btn btn-default" ) %>
+</div>
+<div class="container-fluid">
+<table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+      	<th>#</th>
+        <th>商品名称</th>
+        <th>商品描述</th>
+        <th>库存</th>
+        <th>价格</th>
+        <th>选项</th>
+        <th>创建日期</th>
+      </tr>
+    </thead>
+    <tbody>
+	<% @products.each do |product| %>
+	  <tr>
+	  	<td><%= product.id %></td>	
+		<td><%= link_to(product.title, admin_product_path(product))%></td>
+		<td><%= product.description %></td>
+		<td><%= product.quantity %></td>
+		<td><%= product.price %></td>
+		<td><%= link_to("修改", edit_admin_product_path(product))%>|
+		<%= link_to("删除", admin_product_path(product), method: :delete, data: {confirm: "Are you sure"})%></td>
+		<td><%= product.created_at %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+<div>
