@@ -1,0 +1,43 @@
+<div class="container-product">
+  <div class="col-md-6">
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url) %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @product.title %> </h2>
+    <div style="height:50px;">
+
+    </div>
+    <div> 数量 : <%= @product.quantity %> </div>
+    <div class="product-price"> ¥ <%= @product.price %> </div>
+    <div >
+      <% if @product.quantity.present? && @product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 course-description" style="padding:20px 200px 20px 50px;">
+      <div><p>简介</p></div>
+      <div>
+        <p>
+          <%= simple_format(@product.description) %>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div>
+      </div>
+      <div>
+        <p>热门课程</p>
+      </div>
+    </div>
+  </div>
+</div>
