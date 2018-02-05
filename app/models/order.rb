@@ -1,6 +1,10 @@
 class Order < ApplicationRecord
+  before_create :generate_token
   belongs_to :user
 
+  def generate_token
+    self.token = SecureRandom.uuid
+  end
   has_many :product_lists
 
   validates :billing_name, presence: true
