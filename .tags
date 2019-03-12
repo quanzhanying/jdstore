@@ -1,0 +1,9 @@
+ProductsController	/Users/xueshaojie/fullstack/jdstore/app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	class	line:1
+index	/Users/xueshaojie/fullstack/jdstore/app/controllers/products_controller.rb	/^  def index$/;"	method	line:2	class:ProductsController
+show	/Users/xueshaojie/fullstack/jdstore/app/controllers/products_controller.rb	/^  def show$/;"	method	line:6	class:ProductsController
+add_to_cart	/Users/xueshaojie/fullstack/jdstore/app/controllers/products_controller.rb	/^  def add_to_cart$/;"	method	line:10	class:ProductsController
+CreateCartItems	/Users/xueshaojie/fullstack/jdstore/db/migrate/20190312120149_create_cart_items.rb	/^class CreateCartItems < ActiveRecord::Migration[5.0]$/;"	class	line:1
+change	/Users/xueshaojie/fullstack/jdstore/db/migrate/20190312120149_create_cart_items.rb	/^  def change$/;"	method	line:2	class:CreateCartItems
+CartItem	/Users/xueshaojie/fullstack/jdstore/app/models/cart_item.rb	/^class CartItem < ApplicationRecord$/;"	class	line:1
+Cart	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^class Cart < ApplicationRecord$/;"	class	line:1
+add_product_to_cart	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^  def add_product_to_cart(product)$/;"	method	line:5	class:Cart
