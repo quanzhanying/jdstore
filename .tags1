@@ -4,3 +4,5 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+CartsHelper	/Users/xueshaojie/fullstack/jdstore/app/helpers/carts_helper.rb	/^module CartsHelper$/;"	module	line:1
+render_cart_total_price	/Users/xueshaojie/fullstack/jdstore/app/helpers/carts_helper.rb	/^  def render_cart_total_price(cart)$/;"	method	line:2	class:CartsHelper

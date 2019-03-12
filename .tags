@@ -11,3 +11,6 @@ show	/Users/xueshaojie/fullstack/jdstore/app/controllers/products_controller.rb	
 add_to_cart	/Users/xueshaojie/fullstack/jdstore/app/controllers/products_controller.rb	/^  def add_to_cart$/;"	method	line:10	class:ProductsController
 Cart	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^class Cart < ApplicationRecord$/;"	class	line:1
 add_product_to_cart	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^  def add_product_to_cart(product)$/;"	method	line:5	class:Cart
+total_price	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^  def total_price$/;"	method	line:12	class:Cart
+CartsHelper	/Users/xueshaojie/fullstack/jdstore/app/helpers/carts_helper.rb	/^module CartsHelper$/;"	module	line:1
+render_cart_total_price	/Users/xueshaojie/fullstack/jdstore/app/helpers/carts_helper.rb	/^  def render_cart_total_price(cart)$/;"	method	line:2	class:CartsHelper
