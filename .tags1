@@ -4,5 +4,3 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Cart	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^class Cart < ApplicationRecord$/;"	class	line:1
-add_product_to_cart	/Users/xueshaojie/fullstack/jdstore/app/models/cart.rb	/^  def add_product_to_cart(product)$/;"	method	line:5	class:Cart
