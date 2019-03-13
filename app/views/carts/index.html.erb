@@ -39,13 +39,13 @@
             <td>
               <%= cart_item.quantity %>
               <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-                <%= f.select :quantity, [1,2,3,4,5] %>
+                <%= f.select :quantity, 1..cart_item.product.quantity %>
                 <%= f.submit "更新", data: {disable_with: "Submitint..."} %>
               <% end %>
             </td>
             <td>
               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-                <i class="fa fa-trash">从购物车移除</i>
+                <i class="fa fa-trash"></i>
               <% end %>
             </td>
           </tr>
