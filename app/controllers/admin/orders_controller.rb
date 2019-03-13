@@ -6,7 +6,7 @@ class Admin::OrdersController < ApplicationController
   before_action :admin_required
 
   def index
-    @orders = Order.order("id DESC")
+    @orders = Order.includes(:user).order("id DESC")
   end
 
   def show
@@ -30,6 +30,9 @@ class Admin::OrdersController < ApplicationController
   def cancel
     @order = Order.find(params[:id])
     @order.cancel_order!
+    @order.product_lists.each do |order_item|
+      order_item.product.update(quantity: order_item.product.quantity + order_item.quantity)
+    end
     OrderMailer.notify_cancel(@order).deliver!
     redirect_to :back
   end

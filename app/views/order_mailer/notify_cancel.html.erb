@@ -29,7 +29,7 @@
               <%= product_list.quantity %>
             </td>
             <td>
-              <%= product_list.quantity * product_list.product_price %>
+              <%= product_list.quantity * product_list.product_price.to_f %>
             </td>
           </tr>
         <% end %>
