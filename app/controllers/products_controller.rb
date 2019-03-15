@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def add_to_cart
     @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
