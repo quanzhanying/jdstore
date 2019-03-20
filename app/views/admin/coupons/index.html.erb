@@ -1,0 +1,48 @@
+<h2> Coupon List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增优惠券", new_admin_coupon_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">Coupon title</th>
+      <th>Price</th>
+      <th>Start_at</th>
+      <th>Expire_at</th>
+      <th>Is_online</th>
+      <th width="100"> Status</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @coupons.each do |coupon| %>
+      <tr>
+        <td>
+          <%= coupon.id %>
+        </td>
+        <td>
+          <%= coupon.title %>
+        </td>
+        <td>
+          <%= coupon.price %>
+        </td>
+        <td>
+          <%= coupon.start_at %>
+        </td>
+        <td>
+          <%= coupon.expire_at %>
+        </td>
+        <td>
+          <%= coupon.is_online %>
+        </td>
+        <td>
+          <%= coupon.status %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_coupon_path(coupon)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,31 @@
+<h2> New Coupon </h2>
+
+<%= simple_form_for [:admin, @coupon] do |f| %>
+
+  <div class="group">
+    <%= f.input :title, class: 'title', placeholder: "请输入优惠券标题" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :price, class: 'price', placeholder: "请输入优惠价格" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :start_at,  class: 'datetime-local', type: "data", value: @coupon.start_at, placeholder: "请输入开始时间", id: "datetimepicker-expire", "data-date-format" => "YYYY-MM-DD HH:mm:ss" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :expire_at, class: 'datetime-local', type: "data", value: @coupon.start_at, placeholder: "请输入结束时间", id: "datetimepicker-expire", "data-date-format" => "YYYY-MM-DD HH:mm:ss" %>
+  </div>
+
+  <div class="group">
+    <%= f.input :is_online %>
+  </div>
+
+  <div class="group">
+    <%= f.select(:status, [['待使用', 1], ['已使用', "0"], ['未到使用期', "2"]], {}, class: 'form-control', placeholder: "请选择当前的状态") %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
