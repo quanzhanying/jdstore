@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         post :return
       end
     end
+    resources :coupons
   end
 
   resources :products do

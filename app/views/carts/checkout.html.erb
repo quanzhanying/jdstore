@@ -64,6 +64,11 @@
             <%= f.input :shipping_address  %>
           </div>
 
+          <legend> 优惠券</legend>
+          <div class="form-group col-lg-6">
+           <%= f.input :shipping_name  %>
+          </div>
+
         <div class="checkout">
           <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
                        data: { disable_with: "Submitting..." } %>
