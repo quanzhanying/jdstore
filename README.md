@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 项目说明
+## 本项目为freedomsky和kuangbenzhuzhu的合作项目，用于学习团队协作开发网站，并为kuangbenzhuzhu的PPT老师一宏提供个人网站的雏形。
