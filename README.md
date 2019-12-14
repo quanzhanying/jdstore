@@ -1,3 +1,3 @@
 # README
 
-clear all cart_items
+delete cart_item btn
