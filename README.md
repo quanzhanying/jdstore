@@ -1,3 +1,3 @@
 # README
 
-delete cart_item btn
+cant add same item in cart
