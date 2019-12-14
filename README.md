@@ -1,3 +1,3 @@
 # README
 
-change quantity in cart
+cant add product with quantity 0
