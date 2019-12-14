@@ -1,3 +1,3 @@
 # README
 
-cant add same item in cart
+change quantity in cart
