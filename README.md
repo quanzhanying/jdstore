@@ -1,3 +1,3 @@
 # README
 
-第一週作業
+clear all cart_items
