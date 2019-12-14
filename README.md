@@ -1,3 +1,3 @@
 # README
 
-clear all carts_items
+clear all cart_items
