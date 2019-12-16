@@ -1,3 +1,3 @@
 # README
 
-cant add product with quantity 0
+checkout index 
