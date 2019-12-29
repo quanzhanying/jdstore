@@ -36,6 +36,7 @@ gem 'mini_magick'
 gem 'aasm'
 gem 'figaro'
 gem 'postmark-rails'
+gem 'will_paginate'
 gem 'letter_opener', group: :development
 
 
