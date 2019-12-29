@@ -1,18 +1,34 @@
+<br>
+
 <div class="row">
-  <div class="col-md-12">
+    <div style="display: table; margin: auto;">
+        <span class="step step_complete"> <a href="/carts" class="check-bc">購物車</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+        <span class="step step_complete"> <a href="/carts/checkout" class="check-bc">填寫資料</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+        <span class="step_thankyou check-bc step_complete">訂單確認</span>
+    </div>
+</div>
 
-    <%= link_to("清空購物車", clean_carts_path,
-                 method: :delete,
-                 class: "pull-right",
-                 style: "text-decoration: underline;",
-                 data: { confirm: "你確定要清空整個購物車嗎？"}) %>
+<br>
 
-    <h2> 購物車 </h2>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
 
-    <table class="table table-bordered">
+      <%= link_to("清空購物車", clean_carts_path,
+                   method: :delete,
+                   class: "pull-right",
+                   style: "text-decoration: underline;",
+                   data: { confirm: "你確定要清空整個購物車嗎？"}) %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">購物車</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
       <thead>
         <tr>
-          <th colspan="2">商品資訊</th>
+          <th>商品照片</th>
+          <th>商品名稱</th>
           <th>單價</th>
           <th>數量</th>
           <th>操作選項</th>
@@ -55,6 +71,12 @@
     </table>
 
     <br>
+  </div>
+</div>
+
+
+
+
 
     <div class="total clearfix">
       <span class="pull-right">

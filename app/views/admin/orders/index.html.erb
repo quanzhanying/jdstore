@@ -1,23 +1,32 @@
-<h2>訂單列表</h2>
+<br>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>生成時間</th>
-      <th>訂購者</th>
-      <th>訂單狀態</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-    <tr>
-      <td> <%= link_to(order.id, admin_order_path(order)) %></td>
-      <td> <%= order.created_at.to_s(:long) %></td>
-      <td> <%= order.user.email %></td>
-      <td> <%= order.aasm_state %></td>
-    </tr>
-    <% end %>
-    
-  </tbody>
-</table>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">訂單列表</h3>
+      </div>
+      <div class="panel-body">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>生成時間</th>
+              <th>訂購者</th>
+              <th>訂單狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+              <td> <%= link_to(order.id, admin_order_path(order)) %></td>
+              <td> <%= order.created_at.to_s(:long) %></td>
+              <td> <%= order.user.email %></td>
+              <td> <%= order.aasm_state %></td>
+            </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
