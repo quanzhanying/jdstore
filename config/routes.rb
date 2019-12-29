@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :setting
+    resources :favlist
   end
 
 end
