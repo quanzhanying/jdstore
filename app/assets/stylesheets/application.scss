@@ -17,3 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+//------------------------------------------------------
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.text-centered{
+  text-align: center;
+}
