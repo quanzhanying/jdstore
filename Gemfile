@@ -38,6 +38,7 @@ gem 'figaro'
 gem 'postmark-rails'
 gem 'will_paginate'
 gem 'letter_opener', group: :development
+gem 'ancestry'
 
 
 group :development, :test do
