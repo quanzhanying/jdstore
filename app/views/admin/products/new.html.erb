@@ -1,27 +1,82 @@
-<h2> New Product </h2>
+<div>
+  <h1><%= @product.new_record? ? "新建商品" : "修改商品 ##{params[:id]}" %></h1>
+</div>
 
-<%= simple_form_for [:admin, @product] do |f| %>
+<div class="form-body">
+  <%= form_for @product,
+  url: (@product.new_record? ? admin_products_path : admin_product_path(@product)),
+  method: (@product.new_record? ? 'post' : 'put'),
+  html: { class: 'form-horizontal' } do |f| %>
 
-  <div class="group">
-    <%= f.input :title %>
-  </div>
+  <% unless @product.errors.blank? %>
+    <div class="alert alert-danger">
+      <ul class="list-unstyled">
+        <% @product.errors.messages.values.flatten.each do |error| %>
+          <li><i class="fa fa-exclamation-circle"></i> <%= error %></li>
+          <% end -%>
+      </ul>
+    </div>
+    <% end -%>
 
-  <div class="group">
-    <%= f.input :description %>
-  </div>
+    <div class="form-group">
+      <label for="title" class="col-sm-2 control-label">名稱:*</label>
+      <div class="col-sm-5">
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="category_id" class="col-sm-2 control-label">所屬分類:</label>
+      <div class="col-sm-5">
+        <select name="product[category_id]">
+          <option></option>
+          <% @root_categories.each do |category| %>
+            <optgroup label="<%= category.title %>"></optgroup>
 
-  <div class="group">
-    <%= f.input :quantity %>
-  </div>
-
-  <div class="group">
-    <%= f.input :price %>
-  </div>
-
-  <div class="group">
-    <%= f.input :image, as: :file %>
-  </div>
-
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-
-<% end %>
+            <% category.children.each do |sub_category| %>
+              <option value="<%= sub_category.id %>" <%= @product.category_id == sub_category.id ? 'selected' : '' %>><%= sub_category.title %></option>
+            <% end -%>
+          <% end -%>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="title" class="col-sm-2 control-label">上下架狀態:*</label>
+      <div class="col-sm-5">
+        <select name="product[status]">
+          <% [[Product::Status::On, '上架'], [Product::Status::Off, '下架']].each do |row| %>
+            <option value="<%= row.first %>" <%= 'selected' if @product.status == row.first %>><%= row.last %></option>
+          <% end -%>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="quantity" class="col-sm-2 control-label">庫存*:</label>
+      <div class="col-sm-5">
+        <%= f.text_field :quantity, class: "form-control" %> 必須為整數
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price" class="col-sm-2 control-label">價格*:</label>
+      <div class="col-sm-5">
+        <%= f.text_field :price, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="msrp" class="col-sm-2 control-label">原價*:</label>
+      <div class="col-sm-5">
+        <%= f.text_field :msrp, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-2 control-label">描述*:</label>
+      <div class="col-sm-5">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+        <%= f.submit (@product.new_record? ? "新建商品" : "編輯商品"), class: "btn btn-default" %>
+      </div>
+    </div>
+  <% end -%>
+</div>
