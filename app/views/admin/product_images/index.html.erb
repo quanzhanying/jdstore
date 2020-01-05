@@ -1,0 +1,39 @@
+<div>
+  <div class="pull-right">
+    <%= form_tag admin_product_product_images_path(product_id: @product), method: :post, enctype: "multipart/form-data", class: "form-horizontal" do %>
+      <input type="file" name="images[]" multiple class="image-input" />
+      <%= submit_tag "上傳", class: "btn btn-primary" %>
+    <% end -%>
+  </div>
+
+  <h1>
+    商品 #<%= @product.id %> <%= @product.title %>
+  </h1>
+</div>
+
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>圖片</th>
+      <th>權重</th>
+      <th></th>
+    </tr>
+
+    <% @product_images.each do |product_image| %>
+      <tr>
+        <td><%= product_image.id %></td>
+        <td><%= image_tag product_image.image.url(:middle) %></td>
+        <td>
+          <%= form_tag admin_product_product_images_path(@product, product_iamge), method: :put do %>
+            <input type="text" value="<%= product_image.weight %>" name="weight" />
+            <%= submit_tag "更新", class: "btn btn-default btn-xs" %>
+          <%= end -%>
+        </td>
+        <td align="right">
+          <%= link_to "刪除", admin_product_product_images_path(@product, product_image), method: :delete, 'data-confirm': "確定刪除嗎?" %>
+        </td>
+      </tr>
+      <%= end -%>
+  </table>
+</div>

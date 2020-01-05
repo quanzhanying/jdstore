@@ -2,6 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//----商品列表簡單樣式-----
+.list-group-item a {
+  display: block;
+}
+.msrp {
+  text-decoration: line-through;
+}
+.thumbnail {
+  height: 290px;
+  &.detail {
+    height: auto;
+  }
+  a.title {
+    color: #333;
+
+  }
+}
+
+
+//----圖片上傳區塊樣式----
+input[type="file"] {
+ &.image-input {
+   display: inline-block;
+   border: 1px solid #ccc;
+
+   padding: 5px 20px;
+   border-radius: 4px
+ }
+}
+
+
 //-----------carousel------------
 
 .bs-slider{

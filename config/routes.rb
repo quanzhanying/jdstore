@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories, only: [:show]
+
   namespace :admin do
     get 'categories/index'
   end
@@ -13,7 +15,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :products
+    resources :products do
+      resources :product_images, only: [:index, :create, :destroy, :update]
+    end
     resources :categories
     resources :orders do
       member do

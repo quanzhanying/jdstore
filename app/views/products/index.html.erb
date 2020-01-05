@@ -4,6 +4,15 @@
         Text Align: slide_style_center, slide_style_left, slide_style_right
         Add Text Animation: https://daneden.github.io/animate.css/
         -->
+<div class="row">
+ <div class="col-lg-12">
+   <ol class="breadcrumb">
+     <li class="active">首頁</li>
+   </ol>
+   <%= render 'common/products' %>
+ </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-centered">
@@ -106,33 +115,16 @@
                   <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="...">
               </a>
             </div>
-    </div>
+  </div>
 
-    <div class="text-centered">
-      <h2>熱門商品</h2>
-    </div>
 
-    <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-lg-3">
-          <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-            <% end %>
-          <% end %>
-          <%= product.title %> NT$ <%= product.price %>
-        </div>
-      <% end %>
-    </div>
+<!-- 原始代碼位置
 
-     <div class="text-center">
-       <%= will_paginate @products %>
-     </div>
+-->
 
   </div>
 </div>
+
     <!-- <div class="row">
       <div class="col-lg-3">
         <div class="thumbnail">

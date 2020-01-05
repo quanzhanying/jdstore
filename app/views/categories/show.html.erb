@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-3">
+    <%= render 'common/categories' %>
+  </div>
+  <div class="col-lg-9">
+    <ol class="breadcrumb">
+      <li><a href="<%= root_path %>">首頁</a></li>
+      <li class="active"><%= @category.parent.title %></li>
+      <li class="active"><%= @category.title %></li>
+    </ol>
+    <h1><%= @category.title %></h1>
+
+    <%= render 'common/products' %>
+  </div>
+</div>
