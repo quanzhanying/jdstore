@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191221083057) do
+ActiveRecord::Schema.define(version: 20200105120335) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20191221083057) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "weight",           default: 0
+    t.integer  "products_counter", default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["title"], name: "index_categories_on_title"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -55,9 +64,17 @@ ActiveRecord::Schema.define(version: 20191221083057) do
     t.text     "description"
     t.integer  "quantity"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.string   "image"
+    t.integer  "category_id"
+    t.string   "status",                               default: "off"
+    t.string   "uuid"
+    t.decimal  "msrp",        precision: 10, scale: 2
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["status", "category_id"], name: "index_products_on_status_and_category_id"
+    t.index ["title"], name: "index_products_on_title"
+    t.index ["uuid"], name: "index_products_on_uuid", unique: true
   end
 
   create_table "users", force: :cascade do |t|
