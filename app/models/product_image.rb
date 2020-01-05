@@ -17,5 +17,5 @@ class ProductImage < ApplicationRecord
   #限制上傳圖片的大小
 
   validates_attachment_size :image, in: 0..5.megabytes
-  
+
 end
