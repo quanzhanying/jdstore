@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'categories/index'
+  end
+
+  namespace :admin do
+    get 'categories/new'
+  end
+
   root 'welcome#index'
 
   devise_for :users
 
   namespace :admin do
     resources :products
+    resources :categories
     resources :orders do
       member do
         post :cancel
