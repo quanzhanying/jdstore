@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
+            <a class="navbar-brand" href="/">JayDStore </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -14,25 +14,30 @@
             <ul class="nav navbar-nav navbar-right">
                <li>
                    <%= link_to carts_path do  %>
-                      购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+                      購物車 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
                    <% end %>
                </li>
                 <% if !current_user %>
-                  <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#signup-modal">註冊</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Hi!, <%= current_user.email %>
+
                         <b class="caret"></b>
+
                     </a>
                     <ul class="dropdown-menu">
+                      <li>
+                         <%= link_to("個人訂單列表", account_orders_path ) %>
+                      </li>
+                      <li>
+                         <%= link_to("用户中心", edit_account_user_path(current_user)) %>
+                      </li>
                          <% if current_user.admin? %>
                            <li>
-                              <%= link_to("Admin 选单", admin_products_path ) %>
-                           </li>
-                           <li>
-                              <%= link_to("个人订单列表", account_orders_path ) %>
+                              <%= link_to("Admin 選單", admin_products_path ) %>
                            </li>
                          <% end %>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
