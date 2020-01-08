@@ -1,15 +1,12 @@
 <div class="row">
-  <div class="col-lg-3">
-    <%= render 'common/categories' %>
-  </div>
-  <div class="col-lg-9">
+  <div class="col-lg-12">
     <ol class="breadcrumb">
       <li><a href="<%= root_path %>">所有宝贝</a></li>
       <li class="active"><%= @product.category.parent.title %></li>
       <li><a href="<%= category_path @product.category %>"><%= @product.category.title %></a></li>
       <li class="active"><%= @product.title %></li>
     </ol>
-
+    <!-- Start of product card -->
     <div class="preview col-md-7 " style="">
       <% @product.product_images.each do |product_image| %>
         <div class="col-xs-6 col-md-6">
@@ -19,7 +16,6 @@
         </div>
       <% end %>
     </div>
-
     <div class="preview col-md-5 " style="">
       <h1><%= @product.title %></h1>
       <ul class="list-unstyled">
@@ -29,13 +25,11 @@
       <h4><span class="msrp">原价: ¥<%= @product.msrp %></span></h4>
       <h3><strong>现价: ¥<%= @product.price %></strong> </h3>
       <p>购买: <input type="text" name="quantity" value="1" />件</p>
-
       <%= link_to like_product_path(@product), method: :put do %>
-         <div class="pi-thumbs-up">
-             讚（<%= @product.get_upvotes.size %>）
-         </div>
-     <% end %>
-
+        <div class="pi-thumbs-up">
+          赞（<%= @product.get_upvotes.size %>）
+        </div>
+      <% end %>
       <div class="pull-right">
          <% if @product.quantity.present? && @product.quantity > 0 %>
             <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
@@ -44,47 +38,67 @@
            已销售一空，无法购买
          <% end %>
       </div>
-
-    </div>
-    <br />
-    <br />
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active">
-        <a href="#tab_default_1" data-toggle="tab">宝贝详情</a>
-      </li>
-      <li>
-        <a href="#tab_default_2" data-toggle="tab">宝贝评价(<%= "0" %>) </a>
-      </li>
-    </ul>
-
-    <br />
-
-    <div class="tab-content">
-      <div class="tab-pane active" id="tab_default_1">
-         <p class="product-description"><%= @product.description.html_safe %></p>
-         <p class="product-description2 text-center">产品展示</p>
-         <div class="row">
-           <% @product.product_images.each do |product_image| %>
-             <div class="col-xs-12 col-md-12 product-show-detail">
-                 <%= image_tag product_image.image.url %>
-             </div>
-           <% end %>
-         </div>
-         <div class="faq">
-           <p class="faq-title text-center">常见问题</p>
-           <p class="question">使用什么快递发货？</p>
-           <p class="answer">伴客默认使用顺丰快递发货，配送范围覆盖全国大部分地区（港澳台地区除外）。</p>
-           <p class="question">如何申请退货？</p>
-           <p class="answer">
-             1.自收到商品之日起7日内，顾客可申请无忧退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账；<br />
-             2.退货流程：<br />
-             确认收货-申请退货-客服审核通过-用户寄回商品-仓库签收验货-退款审核-退款完成；<br />
-             3.因MONSOON产生的退货，如质量问题，退货邮费由MONSOON承担，退款完成后钱款将沿原渠道返还。因客户个人原因产生的退货，购买和寄回运费由客户个人承担。<br />
-           </p>
-           <p class="question">如何开具发票？</p>
-           <p class="answer">如需开具普通发票，请在下单时联系客服办理，我们将虽货物一起快递给您；</p>
-         </div>
-      </div>
     </div>
   </div>
-</div>
+  <!-- End of product card -->
+  <!-- Start of product description & reviews -->
+  <div class="col-md-8">
+    <div class="tabs" >
+      <div class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+              <a href="#tab_default_1" data-toggle="tab">宝贝详情</a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">宝贝评价(<%= @product.reviews.count %>) </a>
+            </li>
+          </ul>
+          <br />
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_default_1">
+               <p class="product-description"><%= @product.description.html_safe %></p>
+               <p class="product-description2 text-center">产品展示</p>
+                <!--商品大图展示 -->
+               <div class="row">
+                 <% @product.product_images.each do |product_image| %>
+                   <div class="col-xs-12 col-md-12 product-show-detail">
+                       <%= image_tag product_image.image.url(:big) %>
+                   </div>
+                 <% end %>
+               </div>
+               <div class="faq">
+                 <p class="faq-title text-center">常见问题</p>
+                 <p class="question">使用什么快递发货？</p>
+                 <p class="answer">伴客默认使用顺丰快递发货，配送范围覆盖全国大部分地区（港澳台地区除外）。</p>
+                 <p class="question">如何申请退货？</p>
+                 <p class="answer">
+                   1.自收到商品之日起7日内，顾客可申请无忧退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账；<br />
+                   2.退货流程：<br />
+                   确认收货-申请退货-客服审核通过-用户寄回商品-仓库签收验货-退款审核-退款完成；<br />
+                   3.因MONSOON产生的退货，如质量问题，退货邮费由MONSOON承担，退款完成后钱款将沿原渠道返还。因客户个人原因产生的退货，购买和寄回运费由客户个人承担。<br />
+                 </p>
+                 <p class="question">如何开具发票？</p>
+                 <p class="answer">如需开具普通发票，请在下单时联系客服办理，我们将虽货物一起快递给您；</p>
+               </div>
+            </div><!-- End of tab_default_1 -->
+            <div class="tab-pane" id="tab_default_2">
+                <div class="row">
+                  <div class="col-sm-12 ">
+                    <h4>
+                      <%= @product.reviews.count %> Reviews
+                    </h4>
+                    <hr>
+                    <div >
+                      <%= render @product.reviews%>
+                      <%= render "reviews/form"%>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End of tab_default_2 -->
+            </div><!-- End of tab-content -->
+          </div><!-- End of tabbable-line -->
+        </div><!-- End of tabbable-panel -->
+      </div><!-- End of tabs -->
+    </div><!-- End of product description & reviews -->
+</div><!-- End of product show page -->
