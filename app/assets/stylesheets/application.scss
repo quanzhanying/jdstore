@@ -18,6 +18,19 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+@import "social-share-button";
+
+//------分享按钮样式---------
+ $size: 24px;
+
+ .social-share-button {
+   .ssb-icon {
+     background-size: $size $size;
+     height: $size;
+     width: $size;
+   }
+ }
+ /****** 完成分享按钮样式 ******/
 
 //------LOGIN MODAL（弹窗登录效果)-------
 .loginmodal-container {

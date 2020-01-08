@@ -17,4 +17,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap-sprockets
 //= require bootstrap/modal
+//= require social-share-button
+//= require social-share-button/wechat
 //= require_tree .

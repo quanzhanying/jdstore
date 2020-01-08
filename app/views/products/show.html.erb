@@ -25,6 +25,9 @@
       <h4><span class="msrp">原价: ¥<%= @product.msrp %></span></h4>
       <h3><strong>现价: ¥<%= @product.price %></strong> </h3>
       <p>购买: <input type="text" name="quantity" value="1" />件</p>
+
+      <%= social_share_button_tag(@product.title) %><!-- 社交分享 -->
+
       <%= link_to like_product_path(@product), method: :put do %>
         <div class="pi-thumbs-up">
           赞（<%= @product.get_upvotes.size %>）
