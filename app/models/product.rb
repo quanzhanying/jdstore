@@ -19,7 +19,9 @@ class Product < ApplicationRecord
 
   has_many :product_images, -> { order(weight: 'desc') }, dependent: :destroy
   has_one :main_product_image, -> { order(weight: 'desc') }, class_name: :ProductImage
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
+  has_many :favorites
+  has_many :fans, :through => :favorites, :source => :user
 
   acts_as_votable
 

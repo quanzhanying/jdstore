@@ -33,6 +33,9 @@
                          <%= link_to("個人訂單列表", account_orders_path ) %>
                       </li>
                       <li>
+                         <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
+                      </li>
+                      <li>
                          <%= link_to("用户中心", edit_account_user_path(current_user)) %>
                       </li>
                          <% if current_user.admin? %>

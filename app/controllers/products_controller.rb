@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+    before_action :authenticate_user!, only: [:upvote, :downvote, :favorite, :unfavorite]
+
   def index
     @products = Product.onshelf.page(params[:page] || 1).per_page(params[:per_page] || 12).order("id desc").includes(:main_product_image)
   end
@@ -30,6 +32,20 @@ class ProductsController < ApplicationController
     def downvote
       @product = Product.find(params[:id])
       @product.downvote_by current_user
+      redirect_to :back
+    end
+
+    def favorite
+      @product = Product.find(params[:id])
+      current_user.favorite_products << @product
+      flash[:notice] = "成功珍藏此商品！"
+      redirect_to :back
+    end
+
+    def unfavorite
+      @product = Product.find(params[:id])
+      current_user.favorite_products.delete(@product)
+      flash[:notice] = "已取消珍藏此商品！"
       redirect_to :back
     end
 

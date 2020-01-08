@@ -34,11 +34,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :favorites
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products do
     get :search, on: :collection
     member do
       post :add_to_cart
+      post :favorite
+      post :unfavorite
       put "like", to: "products#upvote"
       put "dislike", to: "products#downvote"
     end

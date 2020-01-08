@@ -1,51 +1,107 @@
-<div class="row">
-  <div class="col-lg-12">
+<div class="show-page">
     <ol class="breadcrumb">
       <li><a href="<%= root_path %>">所有宝贝</a></li>
       <li class="active"><%= @product.category.parent.title %></li>
       <li><a href="<%= category_path @product.category %>"><%= @product.category.title %></a></li>
       <li class="active"><%= @product.title %></li>
     </ol>
-    <!-- Start of product card -->
+  <!-- Start of product card -->
+  <div class="container card">
+    <!-- Start of left card -->
     <div class="preview col-md-7 " style="">
-      <% @product.product_images.each do |product_image| %>
-        <div class="col-xs-6 col-md-6">
-          <a href="#" class="thumbnail detail">
-            <%= image_tag product_image.image.url %>
-          </a>
+      <% if @product.product_images.present? %>
+        <% if @product.product_images.count > 4 %>
+          <div class="preview-pic tab-content" >
+            <div class="tab-pane active" id="pic-1">#九牛雲</div>
+            <div class="tab-pane" id="pic-2">#九牛雲</div>
+            <div class="tab-pane" id="pic-3">#九牛雲</div>
+            <div class="tab-pane" id="pic-4">#九牛雲</div>
+            <div class="tab-pane" id="pic-5">#九牛雲</div>
+          </div>
+          <ul class="preview-thumbnail nav nav-tabs">
+            <li class="active"><a data-target="#pic-1" data-toggle="tab"><#九牛雲</li>
+            <li><a data-target="#pic-2" data-toggle="tab">#九牛雲</li>
+            <li><a data-target="#pic-3" data-toggle="tab">#九牛雲</li>
+            <li><a data-target="#pic-4" data-toggle="tab">#九牛雲</li>
+            <li><a data-target="#pic-5" data-toggle="tab">#九牛雲</li>
+          </ul>
+        <% else %>
+          <div class="preview-pic tab-content" >
+            #九牛雲
+          </div>
+        <% end %>
+      <% else %>
+        <div class="preview-pic tab-content" >
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
         </div>
       <% end %>
     </div>
-    <div class="preview col-md-5 " style="">
-      <h1><%= @product.title %></h1>
-      <ul class="list-unstyled">
-        <li>商品编号: <%= @product.uuid %></li>
-        <li>库存: <%= @product.quantity %></li>
-      </ul>
-      <h4><span class="msrp">原价: ¥<%= @product.msrp %></span></h4>
-      <h3><strong>现价: ¥<%= @product.price %></strong> </h3>
-      <p>购买: <input type="text" name="quantity" value="1" />件</p>
-
-      <%= social_share_button_tag(@product.title) %><!-- 社交分享 -->
-
-      <%= link_to like_product_path(@product), method: :put do %>
-        <div class="pi-thumbs-up">
-          赞（<%= @product.get_upvotes.size %>）
-        </div>
-      <% end %>
-      <div class="pull-right">
-         <% if @product.quantity.present? && @product.quantity > 0 %>
-            <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
-                        class: "btn btn-lg btn-danger") %>
-         <% else %>
-           已销售一空，无法购买
-         <% end %>
+    <!-- End of left card -->
+    <!-- Start of right cart -->
+    <div class="details col-md-5" style="margin-top:50px;">
+      <h3 class="product-title"><%= @product.title %></h3>
+      <div class="price-service">
+        <p class="price">原价 <span class="rmb">￥ </span><span class="msrp"><%= @product.msrp.to_i %></span> 元</p>
+        <p class="price">现价 <span class="rmb">￥ </span><span class="price"><%= @product.price %></span> 元</p>
+        <p class="service">服务 <span class="service-detail">7天无忧退货 | 48小时快速退款 | 正品保证</span></p>
       </div>
-    </div>
-  </div>
-  <!-- End of product card -->
+      <div class="quantity-size">
+        <p class="delivery">运费 <span class="delivery">全场包邮</span></p>
+        <p class="quantity">库存 <span class="quantity"><%= @product.quantity %></span> 件 </p>
+        <!-- <p>购买: &nbsp &nbsp &nbsp<input type="text" style="width:50px" name="quantity" value="1" />&nbsp件</p> -->
+      </div>
+      <div class="action">
+        <div class="col-md-10" >
+             <% if @product.quantity.present? && @product.quantity > 0 %>
+                <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
+                            class: "add-to-cart btn btn-block") %>
+             <% else %>
+               已销售一空，无法购买
+             <% end %>
+        </div>
+        <div class="col-md-2"  >
+          <% if current_user %>
+           <% if !current_user.is_fan_of?(@product) %>
+             <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+               <i class="fa fa-heart fa-lg"></i>
+             <% end %>
+           <% else %>
+             <%= link_to unfavorite_product_path(@product), :class => "unlike btn btn-default", method: :post do %>
+               <i class="fa fa-heart fa-lg"></i>
+             <% end %>
+           <% end %>
+         <% else %>
+           <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+             <i class="fa fa-heart fa-lg"></i>
+           <% end %>
+         <% end %>
+        </div>
+      </div>
+      <div class="row share">
+        <hr />
+        <div class="col-md-6">
+            <p> 收藏人气（<%= @product.fans.count %>） </p>
+        </div>
+        <div class="col-md-6">
+          <%= link_to like_product_path(@product), method: :put do %>
+            <div class="pi-thumbs-up">
+              点赞（<%= @product.get_upvotes.size %>）
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row share">
+        <div class="col-md-6 ">
+            <p><i class="fa fa-share-alt" aria-hidden="true"></i> 分享 </p>
+        </div>
+        <div class="col-md-6" style="margin-left:-40px;">
+          <%= social_share_button_tag(@product.title) %><!-- 社交分享 -->
+        </div>
+      </div>
+    </div><!-- End of left card -->
+  </div><!-- End of product card -->
   <!-- Start of product description & reviews -->
-  <div class="col-md-8">
+  <div class="row product_description col-md-12">
     <div class="tabs" >
       <div class="tabbable-panel">
         <div class="tabbable-line">
@@ -66,7 +122,7 @@
                <div class="row">
                  <% @product.product_images.each do |product_image| %>
                    <div class="col-xs-12 col-md-12 product-show-detail">
-                       <%= image_tag product_image.image.url(:big) %>
+                       #九牛雲
                    </div>
                  <% end %>
                </div>
