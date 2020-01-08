@@ -21,6 +21,18 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+    def upvote
+      @product = Product.find(params[:id])
+      @product.upvote_by current_user
+      redirect_to :back
+    end
+
+    def downvote
+      @product = Product.find(params[:id])
+      @product.downvote_by current_user
+      redirect_to :back
+    end
+
     def search
 
     #在全栈商品中搜索

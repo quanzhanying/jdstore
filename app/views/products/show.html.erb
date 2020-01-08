@@ -30,6 +30,12 @@
       <h3><strong>现价: ¥<%= @product.price %></strong> </h3>
       <p>购买: <input type="text" name="quantity" value="1" />件</p>
 
+      <%= link_to like_product_path(@product), method: :put do %>
+         <div class="pi-thumbs-up">
+             讚（<%= @product.get_upvotes.size %>）
+         </div>
+     <% end %>
+
       <div class="pull-right">
          <% if @product.quantity.present? && @product.quantity > 0 %>
             <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
