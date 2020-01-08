@@ -1,16 +1,40 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JayDStore </a>
+            <a class="navbar-brand" href="/"><strong> JayDstore </strong></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-             <li class="active">
-               <%= link_to("Products", products_path) %>
+             <li>
+               <%= link_to("商品", products_path) %>
              </li>
+             <li class="dropdown">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#">商品類別
+                 <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu">
+                 <% @categories.each do |group| %>
+                   <% group.last.each do |sub_category| %>
+                     <li class="list-group-item"><a href="<%= category_path(sub_category) %>"><%= sub_category.title %></a></li>
+                   <% end %>
+                 <% end %>
+               </ul>
+             </li>
+             <li><%= link_to "服務", static_pages_help_path %></li>
+             <li><%= link_to "關於", static_pages_about_path %></li>
             </ul>
+            <!-- 搜索框 -->
+            <%= form_tag search_products_path, method: :get, class: "navbar-form navbar-left" do %>
+              <div class="form-group">
+                <% if @category %>
+                  <input type="hidden" name="category_id" value="<%= @category.id %>" />
+               <% end %>
+               <input type="text" name="w" value="<%= params[:w] %>" class="form-control search-input" placeholder="<%= @category ? "在 #{@category.title} 下搜尋.." : '搜尋全站商品..' %>">
+              </div>
+              <button type="submit" class="btn btn-default">搜尋商品</button>
+            <% end %>
             <ul class="nav navbar-nav navbar-right">
                <li>
                    <%= link_to carts_path do  %>
@@ -24,24 +48,21 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Hi!, <%= current_user.email %>
-
                         <b class="caret"></b>
-
                     </a>
                     <ul class="dropdown-menu">
-                      <li>
-                         <%= link_to("個人訂單列表", account_orders_path ) %>
-                      </li>
-                      <li>
-                         <%= link_to(content_tag(:i, " 我的收藏", class: "fa fa-gratipay"), favorites_path ) %>
-                      </li>
-                      <li>
-                         <%= link_to("用户中心", edit_account_user_path(current_user)) %>
-                      </li>
                          <% if current_user.admin? %>
                            <li>
-                              <%= link_to("Admin 選單", admin_products_path ) %>
+                              <%= link_to('後台管理<span class="glyphicon glyphicon-stats pull-right">'.html_safe,
+                                         admin_root_path) %>
                            </li>
+                           <li role="separator" class="divider"></li>
+                           <li> <%= link_to('我的訂單 <span class="glyphicon glyphicon-envelope pull-right"></span>'.html_safe, account_orders_path) %> </li>
+                           <li> <%= link_to('我的收貨地址<span class="glyphicon glyphicon-home pull-right"></span>'.html_safe,"#") %> </li>
+                           <li> <%= link_to('我珍藏的商品<span class="glyphicon glyphicon-heart pull-right"></span>'.html_safe, "#") %> </li>
+                           <li role="separator" class="divider"></li>
+                           <li><%= link_to('用户中心 <span class="glyphicon glyphicon-cog pull-right"></span>'.html_safe, edit_account_user_path(current_user)) %></li>
+                           <li role="separator" class="divider"></li>
                          <% end %>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>

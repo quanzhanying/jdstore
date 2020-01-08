@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JayDstore</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="shortcut icon" href="/images/favicon.ico">
-  </head>
-
-  <body>
-      <%= render "common/flashes" %>
-      <div class="container-fluid">
-
-          <div class="row">
-            <%= render "common/navbar" %>
+    <head>
+        <title>JayDstore</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+      <div id="id_wrapper">
+        <div id="id_header">
+          <%= render "common/navbar" %>
+        </div> <!-- /id_header -->
+        <div class="row" id="id_content">
+            <div class="container">
+              <%= render "common/flashes" %>
+            </div>
             <%= yield %>
-          </div>
-      </div>
-
-      <%= render "common/footer" %>
-
-
-  </body>
+        </div><!-- /id_content -->
+      </div> <!-- /id_wrapper -->
+        <div id="id_footer">
+          <%= render "common/footer" %>
+        </div> <!-- /id_footer -->
+    </body>
 </html>

@@ -385,22 +385,27 @@ ul.list-group{
   background: #fff;
 }
 
-//----商品列表簡單樣式-----
-.list-group-item a {
-  display: block;
-}
-.msrp {
-  text-decoration: line-through;
-}
-.thumbnail {
-  height: 290px;
-  &.detail {
-    height: auto;
+/*  products index page */
+ .product-box .carousel img {
+     width: 100%;
+     height: 500px;
+     margin: 0px 0px 15px -15px;
+     border-radius: 10px;
+ }
+ .product-list-style {                                 //图片+文字 块样式整形
+  margin: 3em auto 2em;
+  img{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
   }
-  a.title {
-    color: #333;
-
-  }
+}
+.product-list-style-img {                             //文字 块样式整形
+  margin-bottom: 1.2em;
+}
+.all-product-box {
+  background-color: #fff;
+  margin-bottom: 3em;
 }
 
 
