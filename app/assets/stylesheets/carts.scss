@@ -4,6 +4,133 @@
 
 //------------------------------------------------------
 
+//------cart.index--------
+.shopping-cart {
+  width: 100%;
+}
+.shopping-cart .item {
+  position: relative;
+  display: table;
+  width: 100%;
+  padding: 0 45px 30px 0;
+  border-bottom: 2px solid #ededed;
+  margin-bottom: 30px;
+}
+.shopping-cart .item .item-thumb,
+.shopping-cart .item .item-details {
+  display: table-cell;
+  vertical-align: top;
+  text-align: left;
+}
+.shopping-cart .item .item-thumb {
+  width: 165px;
+  padding-right: 25px;
+}
+.shopping-cart .item .item-thumb > img {
+  width: 100%;
+}
+.shopping-cart .item .item-title {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+.shopping-cart .item .item-title > a {
+  color: #606060;
+  text-decoration: none;
+}
+.shopping-cart .item .item-title > a:hover, .shopping-cart .item .item-title > a:focus {
+  color: #a6a6a6;
+  text-decoration: none;
+}
+.shopping-cart .item .item-price {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+.shopping-cart .item .item-remove {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 28px;
+  top: 28px;
+  right: 0;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.shopping-cart .item .item-remove > i {
+  line-height: 25px;
+}
+.shopping-cart .btn, .shopping-cart .back-btn, .shopping-cart .done-btn, .shopping-cart .search-btn {
+  margin-top: 0;
+}
+@media screen and (max-width: 480px) {
+  .shopping-cart .item {
+    padding-bottom: 20px;
+  }
+  .shopping-cart .item .item-thumb,
+  .shopping-cart .item .item-details {
+    display: block;
+  }
+  .shopping-cart .item .item-thumb {
+    margin-bottom: 20px;
+  }
+}
+.count-input {
+  position: absolute;
+  top:20px;
+  left:60%;
+  width: 100px;
+  margin: 10px 0;
+  select{
+    width: 100px;
+  }
+}
+.count-input input {
+  width: 80%;
+  height: 25px;
+  border: 2px solid #ededed;
+  border-radius: 4px;
+  background: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.count-input input:focus {
+  outline: none;
+}
+.count-input .incr-btn {
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  color: #606060;
+  font-weight: 300;
+  text-align: center;
+  line-height: 33px;
+  text-decoration: none;
+  top: -5px;
+  right: 20px;
+}
+.count-input .incr-btn:first-child {
+  right: auto;
+  left: 0;
+}
+.amount {
+  color:#ef0568;
+}
+.tips{
+  color:gray;
+  font-size: 13px;
+  font-family:fantasy;
+  letter-spacing: 1px;
+}
+//--------------------
+
 html,body,.wrapper{
     background: #f7f7f7;
 }

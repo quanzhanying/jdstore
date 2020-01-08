@@ -2,7 +2,7 @@
   <div class="col-xs-6 col-md-3 text-center product-list-style">
     <div>
       <% if product.product_images.present? %>
-      <a href="<%= product_path(product) %>"> <img src="https://unsplash.com/photos/egmEb0HgtgU"></a> #改過
+      <a href="<%= product_path(product) %>"> <img src="https://unsplash.com/photos/egmEb0HgtgU"></a> #九牛雲
 
       <% else %>
         <%= link_to image_tag("http://placehold.it/200x200&text=No Pic", class: "product-list-style-img img-responsive center-block"), product_path(product), target: "_blank" %>
