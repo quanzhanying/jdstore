@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" href="/"><strong> JayDstore </strong></a>
@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
              <li>
-               <%= link_to("商品", products_path) %>
+               <%= link_to("所有商品", products_path) %>
              </li>
              <li class="dropdown">
                <a class="dropdown-toggle" data-toggle="dropdown" href="#">商品類別
@@ -22,8 +22,8 @@
                  <% end %>
                </ul>
              </li>
-             <li><%= link_to "服務", static_pages_help_path %></li>
-             <li><%= link_to "關於", static_pages_about_path %></li>
+             <li><%= link_to "常見ＱＡ", static_pages_help_path %></li>
+             <li><%= link_to "品牌故事", static_pages_about_path %></li>
             </ul>
             <!-- 搜索框 -->
             <%= form_tag search_products_path, method: :get, class: "navbar-form navbar-left" do %>
@@ -54,7 +54,7 @@
                          <% if current_user.admin? %>
                            <li>
                               <%= link_to('後台管理<span class="glyphicon glyphicon-stats pull-right">'.html_safe,
-                                         admin_root_path) %>
+                                         admin_products_path) %>
                            </li>
                            <li role="separator" class="divider"></li>
                            <li> <%= link_to('我的訂單 <span class="glyphicon glyphicon-envelope pull-right"></span>'.html_safe, account_orders_path) %> </li>

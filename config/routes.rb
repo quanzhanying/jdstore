@@ -1,25 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/about'
-
-  get 'static_pages/help'
-
-  resources :categories, only: [:show]
-
-  namespace :admin do
-    get 'categories/index'
-  end
-
-  namespace :admin do
-    get 'categories/new'
-  end
-
   root 'welcome#index'
 
   devise_for :users
 
+  get 'static_pages/about'
+  get 'static_pages/help'
+
   namespace :admin do
     root 'sessions#new'
+    get 'categories/index'
+    get 'categories/new'
     resources :products do
       resources :product_images, only: [:index, :create, :destroy, :update]
     end
@@ -34,7 +25,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :favorites
+  namespace :account do
+    resources :users
+    resources :orders
+    resources :setting
+    resources :favlist
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :products do
@@ -71,11 +67,8 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :account do
-    resources :users
-    resources :orders
-    resources :setting
-    resources :favlist
-  end
+  resources :categories, only: [:show]
+
+  resources :favorites
 
 end

@@ -1,6 +1,6 @@
 <div class="show-page">
     <ol class="breadcrumb">
-      <li><a href="<%= root_path %>">所有宝贝</a></li>
+      <li><a href="<%= root_path %>">所有商品</a></li>
       <li class="active"><%= @product.category.parent.title %></li>
       <li><a href="<%= category_path @product.category %>"><%= @product.category.title %></a></li>
       <li class="active"><%= @product.title %></li>
@@ -41,22 +41,22 @@
     <div class="details col-md-5" style="margin-top:50px;">
       <h3 class="product-title"><%= @product.title %></h3>
       <div class="price-service">
-        <p class="price">原价 <span class="rmb">￥ </span><span class="msrp"><%= @product.msrp.to_i %></span> 元</p>
-        <p class="price">现价 <span class="rmb">￥ </span><span class="price"><%= @product.price %></span> 元</p>
-        <p class="service">服务 <span class="service-detail">7天无忧退货 | 48小时快速退款 | 正品保证</span></p>
+        <p class="price">原價 <span class="rmb">NT$ </span><span class="msrp"><%= @product.msrp.to_i %></span> 元</p>
+        <p class="price">現價 <span class="rmb">NT$ </span><span class="price"><%= @product.price %></span> 元</p>
+        <p class="service">服務 <span class="service-detail">7天內無條件退貨</span></p>
       </div>
       <div class="quantity-size">
-        <p class="delivery">运费 <span class="delivery">全场包邮</span></p>
-        <p class="quantity">库存 <span class="quantity"><%= @product.quantity %></span> 件 </p>
-        <!-- <p>购买: &nbsp &nbsp &nbsp<input type="text" style="width:50px" name="quantity" value="1" />&nbsp件</p> -->
+        <p class="delivery">運費 <span class="delivery">全站免運</span></p>
+        <p class="quantity">庫存 <span class="quantity"><%= @product.quantity %></span> 件 </p>
+        <!-- <p>購買: &nbsp &nbsp &nbsp<input type="text" style="width:50px" name="quantity" value="1" />&nbsp件</p> -->
       </div>
       <div class="action">
         <div class="col-md-10" >
              <% if @product.quantity.present? && @product.quantity > 0 %>
-                <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post,
+                <%= link_to("加入購物車", add_to_cart_product_path(@product), method: :post,
                             class: "add-to-cart btn btn-block") %>
              <% else %>
-               已销售一空，无法购买
+               無現貨
              <% end %>
         </div>
         <div class="col-md-2"  >
@@ -80,12 +80,12 @@
       <div class="row share">
         <hr />
         <div class="col-md-6">
-            <p> 收藏人气（<%= @product.fans.count %>） </p>
+            <p> 珍藏人氣（<%= @product.fans.count %>） </p>
         </div>
         <div class="col-md-6">
           <%= link_to like_product_path(@product), method: :put do %>
             <div class="pi-thumbs-up">
-              点赞（<%= @product.get_upvotes.size %>）
+              點讚（<%= @product.get_upvotes.size %>）
             </div>
           <% end %>
         </div>
@@ -107,18 +107,18 @@
         <div class="tabbable-line">
           <ul class="nav nav-tabs">
             <li role="presentation" class="active">
-              <a href="#tab_default_1" data-toggle="tab">宝贝详情</a>
+              <a href="#tab_default_1" data-toggle="tab">商品資訊</a>
             </li>
             <li>
-              <a href="#tab_default_2" data-toggle="tab">宝贝评价(<%= @product.reviews.count %>) </a>
+              <a href="#tab_default_2" data-toggle="tab">商品評價(<%= @product.reviews.count %>) </a>
             </li>
           </ul>
           <br />
           <div class="tab-content">
             <div class="tab-pane active" id="tab_default_1">
                <p class="product-description"><%= @product.description.html_safe %></p>
-               <p class="product-description2 text-center">产品展示</p>
-                <!--商品大图展示 -->
+               <p class="product-description2 text-center">商品展示</p>
+                <!--商品大圖展示 -->
                <div class="row">
                  <% @product.product_images.each do |product_image| %>
                    <div class="col-xs-12 col-md-12 product-show-detail">
@@ -127,18 +127,16 @@
                  <% end %>
                </div>
                <div class="faq">
-                 <p class="faq-title text-center">常见问题</p>
-                 <p class="question">使用什么快递发货？</p>
-                 <p class="answer">伴客默认使用顺丰快递发货，配送范围覆盖全国大部分地区（港澳台地区除外）。</p>
-                 <p class="question">如何申请退货？</p>
+                 <p class="faq-title text-center">常見問題</p>
+                 <p class="question">如何申請退貨？</p>
                  <p class="answer">
-                   1.自收到商品之日起7日内，顾客可申请无忧退货，退款将原路返还，不同的银行处理时间不同，预计1-5个工作日到账；<br />
-                   2.退货流程：<br />
-                   确认收货-申请退货-客服审核通过-用户寄回商品-仓库签收验货-退款审核-退款完成；<br />
-                   3.因MONSOON产生的退货，如质量问题，退货邮费由MONSOON承担，退款完成后钱款将沿原渠道返还。因客户个人原因产生的退货，购买和寄回运费由客户个人承担。<br />
+                   1.自收到商品之日起7日内，買家可申請無條件退貨，JayDstore將全額退款，不同的銀行處理時間不同，預計1-3個工作日到帳；<br />
+                   2.退貨流程：<br />
+                   確認收貨-申請退貨-客服審核通過-用户寄回商品-倉庫簽收驗貨-退款審核-退款完成；<br />
+                   3.因JayDstore疏失導致的退貨（如質量問題，退貨運費由JayDstore承擔。因買家個人因素導致的退貨，退貨運費將由買家承擔。<br />
                  </p>
-                 <p class="question">如何开具发票？</p>
-                 <p class="answer">如需开具普通发票，请在下单时联系客服办理，我们将虽货物一起快递给您；</p>
+                 <p class="question">需要發票？</p>
+                 <p class="answer">如需開具發票，請在下單時聯繫客服處理，我們將連同貨物一起寄送给您；</p>
                </div>
             </div><!-- End of tab_default_1 -->
             <div class="tab-pane" id="tab_default_2">
@@ -149,7 +147,7 @@
                     </h4>
                     <hr>
                     <div >
-                      <%= render @product.reviews%>
+                      <%= render @product.reviews %>
                       <%= render "reviews/form"%>
                     </div>
                   </div>
