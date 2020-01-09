@@ -1,39 +1,46 @@
-<div>
-  <div class="pull-right">
-    <%= form_tag admin_product_product_images_path(product_id: @product), method: :post, enctype: "multipart/form-data", class: "form-horizontal" do %>
-      <input type="file" name="images[]" multiple class="image-input" />
-      <%= submit_tag "上傳", class: "btn btn-primary" %>
-    <% end -%>
+<br>
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+        <div class="panel panel-default">
+          <div class="panel-heading" align="center">
+          <h1>商品 #<%= @product.id %> <%= @product.title %></h1>
   </div>
-
-  <h1>
-    商品 #<%= @product.id %> <%= @product.title %>
-  </h1>
-</div>
-
-<div>
-  <table class="table table-striped">
+  <div class="panel-body">
+    <div class="pull-right">
+      <%= form_tag admin_product_product_images_path(product_id: @product), method: :post, enctype: "multipart/form-data", class: "form-horizontal" do %>
+        <input type="file" name="images[]" multiple class="image-input" />
+        <%= submit_tag "上传", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div style="margin-left: 50px;">
+      <h4>請至少上傳５張圖片！</h4>
+      <h4>圖片“權重”最高者為商品的主要圖片</h4>
+    </div>
+  </div>
+  <br>
+  <!-- Table -->
+  <table class="table table-striped ">
     <tr>
       <th>ID</th>
-      <th>圖片</th>
-      <th>權重</th>
-      <th></th>
+      <th>商品圖片</th>
+      <th>圖片權重</th>
+      <th>圖片管理</th>
     </tr>
-
     <% @product_images.each do |product_image| %>
       <tr>
         <td><%= product_image.id %></td>
-        <td><%= image_tag product_image.image.url(:middle) %></td>
+        <td>#九牛雲</td>
         <td>
           <%= form_tag admin_product_product_image_path(@product, product_image), method: :put do %>
             <input type="text" value="<%= product_image.weight %>" name="weight" />
             <%= submit_tag "更新", class: "btn btn-default btn-xs" %>
           <% end -%>
         </td>
-        <td align="right">
-          <%= link_to "刪除", admin_product_product_images_path(@product, product_image), method: :delete, 'data-confirm': "確定刪除嗎?" %>
+        <td>
+          <%= link_to "刪除", admin_product_product_image_path(@product, product_image), method: :delete, 'data-confirm': "确认删除吗?" %>
         </td>
       </tr>
-      <% end -%>
+    <% end %>
   </table>
 </div>

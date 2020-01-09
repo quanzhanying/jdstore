@@ -1,43 +1,49 @@
-<div>
-  <div class="pull-right">
-    <%= link_to "新建分類", new_admin_category_path, class: "btn btn-primary" %>
-  </div>
+<br>
 
-  <h1>
-
-  </h1>
-    <% if @category %>
-      分類：<%= @category.title %>(<%= @categories.total_entries %>)
-    <% else %>
-      分類(<%= @categories.total_entries %>)
-    <% end %>
-  </h1>
-</div>
-
-<div>
-  <table class="table table-striped">
-    <tr>
-      <th>ID</th>
-      <th>名稱</th>
-      <th>權重</th>
-      <th></th>
-    </tr>
-
-    <% @categories.each do |category| %>
-    <tr>
-      <td><%= category.id %></td>
-      <td><%= category.title %></td>
-      <td><%= category.weight %></td>
-      <td align="right">
-        <%= link_to "編輯", edit_admin_category_path(category) %>
-        <%= link_to "刪除", admin_category_path(category), method: :delete, 'data-confirm': "確認刪除嗎?" %>
-        <% if category.root? %>
-          <%= link_to "查看子分類", admin_categories_path(id: category) %>
+      <div class="panel panel-default">
+        <div class="panel-heading" align="center">
+          <h3 class="panel-title"> <h1>商品類別管理</h1></div>
+  <div class="panel-body">
+    <div class="pull-right">
+      <%= link_to "新建分類", new_admin_category_path, class: "btn btn-info" %>
+    </div>
+    <div style="margin-left: 50px;">
+      <% if @category %>
+        當前一級分類為: <strong><%= @category.title %></strong> ，該分類下共有 <strong><%= @categories.total_entries %></strong> 個二級分類。
+      <% else %>
+        當前共計 <strong><%= @categories.total_entries %></strong> 個一級分類!
+      <% end %>
+    </div>
+<br>
+<br>
+    <div class="row" >
+      <table class="table  table-striped">
+        <tr >
+          <th>類別 ID</th>
+          <th>類別名稱</th>
+          <th>權重</th>
+          <th>分類管理</th>
+        </tr>
+        <% @categories.each do |category| %>
+          <tr >
+            <td><%= category.id %></td>
+            <td><%= category.title %></td>
+            <td><%= category.weight %></td>
+            <td >
+              <% if category.root? %>
+                <%= link_to("查看子分類", admin_categories_path(id: category)) %>｜
+              <% else %>
+                <%= link_to("返回上級分類", admin_categories_path) %>｜
+              <% end %>
+              <%= link_to("編輯", edit_admin_category_path(category)) %>｜
+              <%= link_to("刪除", admin_category_path(category), :method => :delete,:data => { :confirm => "Are you sure?" }) %>
+            </td>
+          </tr>
         <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
-
-  <%= will_paginate @categories %>
+      </table>
+      <div class="page-box" align="center">
+      <%= will_paginate @categories %>
+      </div>
+    </div>
+  </div>
 </div>

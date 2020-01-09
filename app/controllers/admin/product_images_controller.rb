@@ -1,4 +1,4 @@
-class Admin::ProductImagesController < ApplicationController
+class Admin::ProductImagesController < Admin::BaseController
   before_action :find_product
 
   def index
