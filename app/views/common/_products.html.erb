@@ -10,8 +10,8 @@
     </div>
 
     <br>
-    <%= link_to(product.title, product_path(product), target: "_blank") %>
+    <%= link_to(product.title, product_path(product)) %>
     <br>
-    <p><strong>NT$ <%= link_to(product.price, product_path(product), target: "_blank") %> </strong></p>
+    <p><strong>NT$ <%= product.price %> </strong></p>
   </div>
 <% end %>

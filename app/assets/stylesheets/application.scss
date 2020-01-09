@@ -20,10 +20,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 @import "social-share-button";
 
-//-------category bar-------
-.breadcrumb{
-  margin-top: 60px;
-}
 
 /*===== navbar ====*/
  .navbar-default {
@@ -224,6 +220,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 100px;
+  margin-top:50px;
 }
 
 .col-centered{

@@ -51,17 +51,14 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+                      <li> <%= link_to('我的訂單 <span class="glyphicon glyphicon-envelope pull-right"></span>'.html_safe, account_orders_path) %> </li>
+                      <li> <%= link_to('我的珍藏 <span class="glyphicon glyphicon-heart pull-right"></span>'.html_safe, favorites_path) %> </li>
+                      <li> <%= link_to('用户中心 <span class="glyphicon glyphicon-cog pull-right"></span>'.html_safe, edit_account_user_path(current_user)) %></li>
                          <% if current_user.admin? %>
                            <li>
                               <%= link_to('後台管理<span class="glyphicon glyphicon-stats pull-right">'.html_safe,
-                                         admin_products_path) %>
+                                         admin_root_path) %>
                            </li>
-                           <li role="separator" class="divider"></li>
-                           <li> <%= link_to('我的訂單 <span class="glyphicon glyphicon-envelope pull-right"></span>'.html_safe, account_orders_path) %> </li>
-                           <li> <%= link_to('我的收貨地址<span class="glyphicon glyphicon-home pull-right"></span>'.html_safe,"#") %> </li>
-                           <li> <%= link_to('我珍藏的商品<span class="glyphicon glyphicon-heart pull-right"></span>'.html_safe, "#") %> </li>
-                           <li role="separator" class="divider"></li>
-                           <li><%= link_to('用户中心 <span class="glyphicon glyphicon-cog pull-right"></span>'.html_safe, edit_account_user_path(current_user)) %></li>
                            <li role="separator" class="divider"></li>
                          <% end %>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
