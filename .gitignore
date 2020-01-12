@@ -25,3 +25,4 @@ public/system/product_images
 
 # Ignore application configuration
 /config/application.yml
+/config/cloudinary.yml

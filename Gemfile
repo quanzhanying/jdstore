@@ -41,8 +41,10 @@ gem 'letter_opener', group: :development
 gem 'rails-erd'
 gem 'ancestry'
 gem 'paperclip'
+gem 'paperclip-cloudinary'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'social-share-button'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

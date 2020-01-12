@@ -10,7 +10,7 @@
     <div class="pull-right">
       <%= form_tag admin_product_product_images_path(product_id: @product), method: :post, enctype: "multipart/form-data", class: "form-horizontal" do %>
         <input type="file" name="images[]" multiple class="image-input" />
-        <%= submit_tag "上传", class: "btn btn-primary" %>
+        <%= submit_tag "上傳", class: "btn btn-primary" %>
       <% end %>
     </div>
     <div style="margin-left: 50px;">
@@ -38,7 +38,7 @@
           <% end -%>
         </td>
         <td>
-          <%= link_to "刪除", admin_product_product_image_path(@product, product_image), method: :delete, 'data-confirm': "确认删除吗?" %>
+          <%= link_to "刪除", admin_product_product_image_path(@product, product_image), method: :delete, 'data-confirm': "確定刪除嗎?" %>
         </td>
       </tr>
     <% end %>

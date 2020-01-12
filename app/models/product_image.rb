@@ -2,8 +2,8 @@ class ProductImage < ApplicationRecord
 
   belongs_to :product
 
-  #指定圖片尺寸
 
+  #指定圖片尺寸
   has_attached_file :image, styles: {
     small: '60^x60',
     middle: '200^x200',

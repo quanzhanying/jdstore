@@ -19,13 +19,13 @@
           </div>
         <% end %>
         <div class="form-group">
-          <label for="title" class="col-sm-2 control-label">名称:*</label>
+          <label for="title" class="col-sm-2 control-label">名稱:*</label>
           <div class="col-sm-5">
             <%= f.text_field :title, class: "form-control" %>
           </div>
         </div>
         <div class="form-group">
-          <label for="category_id" class="col-sm-2 control-label">所属分类:</label>
+          <label for="category_id" class="col-sm-2 control-label">所屬分類:</label>
           <div class="col-sm-5">
             <select name="product[category_id]">
               <option></option>
@@ -35,35 +35,35 @@
                   <option value="<%= sub_category.id %>" <%= @product.category_id == sub_category.id ? 'selected' : '' %>><%= sub_category.title %></option>
                 <% end -%>
               <% end -%>
-            </select>   请选择2级分类
+            </select>   請選擇二級分類
           </div>
         </div>
         <div class="form-group">
-          <label for="title" class="col-sm-2 control-label">上下架状态:*</label>
+          <label for="title" class="col-sm-2 control-label">上下架狀態:*</label>
           <div class="col-sm-5">
             <select name="product[status]">
               <% [[Product::Status::On, '上架'], [Product::Status::Off, '下架']].each do |row| %>
                 <option value="<%= row.first %>" <%= 'selected' if @product.status == row.first %>><%= row.last %></option>
               <% end %>
-            </select> 若商品图片少于5张请勿上架！
+            </select> 若商品圖片少於五張請勿上架！
           </div>
         </div>
         <div class="form-group">
-          <label for="quantity" class="col-sm-2 control-label">库存*:</label>
+          <label for="quantity" class="col-sm-2 control-label">庫存*:</label>
           <div class="col-sm-5">
-            <%= f.text_field :quantity, class: "form-control" %> 必须为整数
+            <%= f.text_field :quantity, class: "form-control" %> 必須為整数
           </div>
         </div>
         <div class="form-group">
-          <label for="price" class="col-sm-2 control-label">价格*:</label>
+          <label for="price" class="col-sm-2 control-label">價格*:</label>
           <div class="col-sm-5">
-            <%= f.text_field :price, class: "form-control" %>必须为数字
+            <%= f.text_field :price, class: "form-control" %>必須為數字
           </div>
         </div>
         <div class="form-group">
-          <label for="msrp" class="col-sm-2 control-label">原价*:</label>
+          <label for="msrp" class="col-sm-2 control-label">原價*:</label>
           <div class="col-sm-5">
-            <%= f.text_field :msrp, class: "form-control" %>必须为数字
+            <%= f.text_field :msrp, class: "form-control" %>必須為數字
           </div>
         </div>
         <div class="form-group">
@@ -74,7 +74,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-8">
-            <%= f.submit (@product.new_record? ? "新建商品" : "编辑商品"), class: "btn btn-default" %>
+            <%= f.submit (@product.new_record? ? "新建商品" : "編輯商品"), class: "btn btn-default" %>
           </div>
         </div>
       <% end %>
