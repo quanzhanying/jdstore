@@ -2,13 +2,14 @@ class ProductImage < ApplicationRecord
 
   belongs_to :product
 
-
   #指定圖片尺寸
-  has_attached_file :image, styles: {
-    small: '60^x60',
-    middle: '200^x200',
-    big: "960x"
-  }
+  has_attached_file :image, :storage => :cloudinary,
+                            :path => ":class/:attachment/:id/:basename.:extension",
+                            styles: {
+                                small: '60^x60',
+                                middle: '200^x200',
+                                big: "960x"
+                              }
 
   #限制上傳類型
 

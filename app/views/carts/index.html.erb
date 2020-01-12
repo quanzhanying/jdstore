@@ -13,7 +13,7 @@
           <div class="item">
             <%= link_to product_path(cart_item.product),class: "item-thumb" do %>
                <% if cart_item.product.main_product_image.present? %>
-                <%= image_tag(cart_item.product.main_product_image.image.url(:small), class: "thumbnail") %>
+                  <img src=<%= cl_image_path(cart_item.product.main_product_image.image.url) %>>
               <% else %>
                 <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
               <% end %>

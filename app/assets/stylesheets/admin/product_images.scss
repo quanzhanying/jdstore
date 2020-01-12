@@ -1,3 +1,15 @@
 // Place all the styles related to the admin::product_images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-image-inex-list-style {                                 //图片+文字 块样式整形
+ width: 300px;
+ img{
+   width: 100%;
+   height: 200px;
+   border-radius: 10px;
+ }
+}
+.product-image-inex-list-style-img {                             //文字 块样式整形
+ margin-bottom: 1.2em;
+}

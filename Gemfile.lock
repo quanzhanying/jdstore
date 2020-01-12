@@ -262,6 +262,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave
+  cloudinary
   coffee-rails (~> 4.2)
   devise
   figaro

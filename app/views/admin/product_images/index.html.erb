@@ -20,24 +20,29 @@
   </div>
   <br>
   <!-- Table -->
-  <table class="table table-striped ">
+  <table class="table table-striped">
     <tr>
-      <th>ID</th>
-      <th>商品圖片</th>
-      <th>圖片權重</th>
-      <th>圖片管理</th>
+      <th class="text-center">ID</th>
+      <th class="text-center">商品圖片</th>
+      <th class="text-center">圖片權重</th>
+      <th class="text-center">圖片管理</th>
     </tr>
     <% @product_images.each do |product_image| %>
+
       <tr>
-        <td><%= product_image.id %></td>
-        <td>#九牛雲</td>
-        <td>
+        <td class="text-center"><%= product_image.id %></td>
+        <td class="text-center">
+          <div class="product-image-inex-list-style col-centered">
+            <img src=<%= cl_image_path(product_image.image.url) %>>
+          </div>
+        </td>
+        <td class="text-center">
           <%= form_tag admin_product_product_image_path(@product, product_image), method: :put do %>
             <input type="text" value="<%= product_image.weight %>" name="weight" />
             <%= submit_tag "更新", class: "btn btn-default btn-xs" %>
           <% end -%>
         </td>
-        <td>
+        <td class="text-center">
           <%= link_to "刪除", admin_product_product_image_path(@product, product_image), method: :delete, 'data-confirm': "確定刪除嗎?" %>
         </td>
       </tr>

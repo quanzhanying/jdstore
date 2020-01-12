@@ -12,22 +12,22 @@
       <% if @product.product_images.present? %>
         <% if @product.product_images.count > 4 %>
           <div class="preview-pic tab-content" >
-            <div class="tab-pane active" id="pic-1">#九牛雲</div>
-            <div class="tab-pane" id="pic-2">#九牛雲</div>
-            <div class="tab-pane" id="pic-3">#九牛雲</div>
-            <div class="tab-pane" id="pic-4">#九牛雲</div>
-            <div class="tab-pane" id="pic-5">#九牛雲</div>
+            <div class="tab-pane active" id="pic-1"><img src=<%= cl_image_path(@product.product_images[0].image.url) %>></div>
+            <div class="tab-pane" id="pic-2"><img src=<%= cl_image_path(@product.product_images[1].image.url) %>></div>
+            <div class="tab-pane" id="pic-3"><img src=<%= cl_image_path(@product.product_images[2].image.url) %>></div>
+            <div class="tab-pane" id="pic-4"><img src=<%= cl_image_path(@product.product_images[3].image.url) %>></div>
+            <div class="tab-pane" id="pic-5"><img src=<%= cl_image_path(@product.product_images[4].image.url) %>></div>
           </div>
           <ul class="preview-thumbnail nav nav-tabs">
-            <li class="active"><a data-target="#pic-1" data-toggle="tab"><#九牛雲</li>
-            <li><a data-target="#pic-2" data-toggle="tab">#九牛雲</li>
-            <li><a data-target="#pic-3" data-toggle="tab">#九牛雲</li>
-            <li><a data-target="#pic-4" data-toggle="tab">#九牛雲</li>
-            <li><a data-target="#pic-5" data-toggle="tab">#九牛雲</li>
+            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src=<%= cl_image_path(@product.product_images[0].image.url) %>></li>
+            <li><a data-target="#pic-2" data-toggle="tab"><img src=<%= cl_image_path(@product.product_images[1].image.url) %>></li>
+            <li><a data-target="#pic-3" data-toggle="tab"><img src=<%= cl_image_path(@product.product_images[2].image.url) %>></li>
+            <li><a data-target="#pic-4" data-toggle="tab"><img src=<%= cl_image_path(@product.product_images[3].image.url) %>></li>
+            <li><a data-target="#pic-5" data-toggle="tab"><img src=<%= cl_image_path(@product.product_images[4].image.url) %>></li>
           </ul>
         <% else %>
           <div class="preview-pic tab-content" >
-            #九牛雲
+            <img src=<%= cl_image_path(@product.main_product_image.image.url) %>>
           </div>
         <% end %>
       <% else %>
@@ -122,7 +122,7 @@
                <div class="row">
                  <% @product.product_images.each do |product_image| %>
                    <div class="col-xs-12 col-md-12 product-show-detail">
-                       #九牛雲
+                      <img src=<%= cl_image_path(product_image.image.url) %>>
                    </div>
                  <% end %>
                </div>
