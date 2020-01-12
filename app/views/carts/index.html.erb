@@ -46,8 +46,11 @@
         <h3 class="toolbar-title">總價:</h3>
         <h4 class="amount">NT$ <%= render_cart_total_price(current_cart) %></h4>
         <p class="tips">* 確認購買商品無誤後，前往結帳頁填寫寄送資料</p>
+        <% if current_cart.products.count > 0 %>
         <%= link_to("清空購物車", clean_carts_path, method: :delete, class: "btn btn-info btn-block", data: {confirm: "Are you sure to clean the cart?"}) %>
         <%= link_to("結帳", checkout_carts_path, method: :post, class: "btn btn-danger btn-block") %>
+        <% end %>
+
       </aside>
     </div>
   <!-- Sidebar -->
