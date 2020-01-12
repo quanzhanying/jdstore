@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -52,5 +55,17 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: 'localhost:3000'}
-  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :letter_opener
+
+  # 加上這段 SMTP 設定
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.mailgun.org',
+  port:                 587,
+  domain:               'heroku.com',
+  user_name:            ENV["mailgun_user_name"],
+  password:             ENV["mailgun_user_key"],
+  authentication:       'plain',
+  enable_starttls_auto: true
+}
 end
