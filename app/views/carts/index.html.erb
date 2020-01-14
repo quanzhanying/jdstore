@@ -23,7 +23,7 @@
                   <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
                 </p>
                 <p class="item-price">
-                  ¥ <%= cart_item.product.price %>
+                  NT$ <%= cart_item.product.price %> 元
                 </p>
             </div>
             <div class="count-input">
@@ -44,7 +44,7 @@
     <div class="col-md-3 col-md-offset-1 col-sm-4 padding-bottom-2x">
       <aside>
         <h3 class="toolbar-title">總價:</h3>
-        <h4 class="amount">NT$ <%= render_cart_total_price(current_cart) %></h4>
+        <h4 class="amount">NT$ <%= render_cart_total_price(current_cart) %> 元</h4>
         <p class="tips">* 確認購買商品無誤後，前往結帳頁填寫寄送資料</p>
         <% if current_cart.products.count > 0 %>
         <%= link_to("清空購物車", clean_carts_path, method: :delete, class: "btn btn-info btn-block", data: {confirm: "Are you sure to clean the cart?"}) %>
