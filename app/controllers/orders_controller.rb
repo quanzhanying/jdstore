@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
       end
       current_cart.clean!
       OrderMailer.notify_order_placed(@order).deliver!
+      flash[:notice] = "訂單明細已寄送到您的信箱！"
 
       redirect_to order_path(@order.token)
     else

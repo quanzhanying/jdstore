@@ -22,6 +22,15 @@
 
 
 /*===== navbar ====*/
+.navbar-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 1400px;      // 隨螢幕尺寸而變，當螢幕尺寸 ≥ 1200px 時是 1140px。
+}
+
  .navbar-default {
    margin-bottom: 0;
    border-radius: 0;
