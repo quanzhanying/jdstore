@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     before_action :authenticate_user!, only: [:upvote, :downvote, :favorite, :unfavorite]
 
   def index
-    @products = Product.onshelf.page(params[:page] || 1).per_page(params[:per_page] || 12).order("id desc").includes(:main_product_image)
+    @products = Product.onshelf.page(params[:page] || 1).per_page(params[:per_page] || 8).order("id desc").includes(:main_product_image)
   end
 
   def show
