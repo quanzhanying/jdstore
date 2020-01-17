@@ -40,8 +40,3 @@ ProductImage.create!(product: Product.find_by(title: '燒杯蠟燭'), image: ope
 ProductImage.create!(product: Product.find_by(title: '化學郵票'), image: open("https://res.cloudinary.com/dwqkqpffc/image/upload/v1579274476/pic%20assets/chemistry_stamp_epnqfp.jpg"))
 ProductImage.create!(product: Product.find_by(title: '分子項鍊'), image: open("https://res.cloudinary.com/dwqkqpffc/image/upload/v1579274475/pic%20assets/molecule_necklace_dhjs9l.jpg"))
 ProductImage.create!(product: Product.find_by(title: '元素週期表壁貼'), image: open("https://res.cloudinary.com/dwqkqpffc/image/upload/v1579274477/pic%20assets/Periodic_Table_pke9iz.png"))
-
-
-
-
-ProductImage.create!(product: Product.find_by(title: '燒杯蠟燭'), image: open("https://res.cloudinary.com/dwqkqpffc/image/upload/v1579274476/pic%20assets/chemistry_stamp_epnqfp.jpg"))
