@@ -1,7 +1,6 @@
 <div class="show-page">
     <ol class="breadcrumb">
       <li><a href="<%= root_path %>">所有商品</a></li>
-      <li class="active"><%= @product.category.parent.title %></li>
       <li><a href="<%= category_path @product.category %>"><%= @product.category.title %></a></li>
       <li class="active"><%= @product.title %></li>
     </ol>
