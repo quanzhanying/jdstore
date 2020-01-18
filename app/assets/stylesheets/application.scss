@@ -28,10 +28,11 @@
   padding-right: 15px;
   padding-left: 15px;
   width: 100%;
-  max-width: 1400px;      // 隨螢幕尺寸而變，當螢幕尺寸 ≥ 1200px 時是 1140px。
+  max-width: 1300px;      // 隨螢幕尺寸而變，當螢幕尺寸 ≥ 1200px 時是 1140px。
 }
 
  .navbar-default {
+   border-color: #000000;
    margin-bottom: 0;
    border-radius: 0;
    background: #000;
@@ -252,10 +253,12 @@ body {
 //---------Box---------
 
 .box {
+    margin-right: auto;
+    margin-left: auto;
     background-image: url("https://images.unsplash.com/photo-1477764803552-6dd3f4744774?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80");
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     height: 850px;
 
     .box-inner {

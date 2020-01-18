@@ -9,10 +9,12 @@
     <body>
       <div id="id_wrapper">
         <div id="id_header">
+          <div class="row">
           <%= render "common/navbar" %>
+                    </div>
         </div> <!-- /id_header -->
         <div class="row" id="id_content">
-            <div class="container">
+            <div class="navbar-container" align="center">
               <%= render "common/flashes" %>
             </div>
             <%= yield %>
