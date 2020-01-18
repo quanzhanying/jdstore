@@ -36,7 +36,9 @@
 /****** 服务页面样式 ******/
  // 中间区域介绍内容样式
   .landing-page-mid {                                   //给图片整好形
-    height: 534px;
+    background-image: url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);
+    height: 600px;
+
     background-size: cover;                             //确保图片完全撑开
     margin-top: -15px;
     background-position: center center;
@@ -44,23 +46,23 @@
   }
   .landing-page-mid .tagline {                          //编写标题样式
     text-align: center;
-    color: #7f8c8d;
+    color: #FAFAFA;
     letter-spacing: 0.1em;                              //把字间距撑开，视觉感更优雅
     font-size: 1.6em;
     margin-top: 3.2em;
   }
   .landing-page-mid .tagp {                             //编写内容样式
     text-align: center;
-    color: #666;
+    color: #FAFAFA;
     font-size: 1.2em;
-    margin-top: 2.5em;
+    margin-top: 4.5em;
     line-height: 2.5em;                                 //行间距也要拉开大一些
     letter-spacing: 0.18em;                             //把字间距撑开，视觉感更优雅
   }
 /* question */
 #question {
   background-color: #EFEBE9;
-  margin-bottom: 45px;
+  margin-bottom: 0px;
   margin-top:-20px;
   color: none;
   font-family: 300;
