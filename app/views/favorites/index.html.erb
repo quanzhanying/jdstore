@@ -10,14 +10,18 @@
                       <div class="row">
                         <div class="col-md-12">
 
-<% @products.each do |product|%>
+                              <% @products.each do |product|%>
 
 
-  <h3><%= link_to(product.title, product_path(product)) %></h3>
-  <p><%= product.description %></p>
-  <p>NT$ <%= product.price %></p>
-  <br>
-<% end %>
+                                <h3><%= link_to(product.title, product_path(product)) %><%= link_to("取消珍藏", unfavorite_favorite_path(product), :class => "pull-right btn btn-default", method: :post) %></h3>
+
+
+
+                                <p><%= product.description %></p>
+                                <p>NT$ <%= product.price %></p>
+                                <br>
+
+                              <% end %>
 
                         </div>
                       </div>

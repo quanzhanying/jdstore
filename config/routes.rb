@@ -28,8 +28,6 @@ Rails.application.routes.draw do
   namespace :account do
     resources :users
     resources :orders
-    resources :setting
-    resources :favlist
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -69,6 +67,10 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
-  resources :favorites
+  resources :favorites do
+    member do
+      post :unfavorite
+    end
+  end
 
 end

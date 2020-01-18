@@ -63,17 +63,14 @@
            <% if !current_user.is_fan_of?(@product) %>
              <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
                <i class="fa fa-heart fa-lg"></i>
-             <% end %>
+             <% end %>    <!-- 對應do -->
            <% else %>
              <%= link_to unfavorite_product_path(@product), :class => "unlike btn btn-default", method: :post do %>
                <i class="fa fa-heart fa-lg"></i>
-             <% end %>
-           <% end %>
-         <% else %>
-           <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
-             <i class="fa fa-heart fa-lg"></i>
-           <% end %>
-         <% end %>
+             <% end %>   <!-- 對應do -->
+           <% end %>  <!-- 對應if! -->
+
+         <% end %> <!-- 對應if -->
         </div>
       </div>
       <div class="row share">
