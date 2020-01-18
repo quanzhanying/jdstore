@@ -59,7 +59,6 @@
              <% end %>
         </div>
         <div class="col-md-2"  >
-          <% if current_user %>
            <% if !current_user.is_fan_of?(@product) %>
              <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
                <i class="fa fa-heart fa-lg"></i>
@@ -69,8 +68,6 @@
                <i class="fa fa-heart fa-lg"></i>
              <% end %>   <!-- 對應do -->
            <% end %>  <!-- 對應if! -->
-
-         <% end %> <!-- 對應if -->
         </div>
       </div>
       <div class="row share">
