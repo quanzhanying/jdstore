@@ -75,13 +75,20 @@
         <div class="col-md-6">
             <p> 珍藏人氣（<%= @product.fans.count %>） </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3 col-md-3 col-lg-3">
           <%= link_to like_product_path(@product), method: :put do %>
             <div class="pi-thumbs-up">
-              點讚（<%= @product.get_upvotes.size %>）
+              好評 <i class="fa fa-thumbs-up"></i>（<%= @product.get_upvotes.size %>）
             </div>
           <% end %>
-        </div>
+          </div>
+          <div class="col-md-3 col-lg-3">
+          <%= link_to dislike_product_path(@product), method: :put do %>
+            <div class="pi-thumbs-down">
+              差評 <i class="fa fa-thumbs-down"></i>（<%= @product.get_downvotes.size%>）
+            </div>
+          <% end %>
+          </div>
       </div>
       <div class="row share">
         <div class="col-md-6 ">
