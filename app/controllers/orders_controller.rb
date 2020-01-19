@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.total = current_cart.total_price
 
-    if @order.save
+    if current_cart.products.count > 0
+      @order.save
 
       current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
@@ -15,13 +16,15 @@ class OrdersController < ApplicationController
         product_list.quantity = cart_item.quantity
         product_list.save
       end
+
       current_cart.clean!
       OrderMailer.notify_order_placed(@order).deliver!
       flash[:notice] = "訂單明細已寄送到您的信箱！"
 
       redirect_to order_path(@order.token)
     else
-      render 'carts/checkout'
+      redirect_to carts_path
+      flash[:warning] = "購物車內沒有商品！"
     end
   end
 
