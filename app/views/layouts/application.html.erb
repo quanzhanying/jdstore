@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Jdstore</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+    <head>
+        <title>JayDstore</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+      <div id="id_wrapper">
+        <div id="id_header">
+          <div class="row">
+          <%= render "common/navbar" %>
+                    </div>
+        </div> <!-- /id_header -->
+        <div class="row" id="id_content">
+            <div class="navbar-container" align="center">
+              <%= render "common/flashes" %>
+            </div>
+            <%= yield %>
+        </div><!-- /id_content -->
+      </div> <!-- /id_wrapper -->
+        <div id="id_footer">
+          <%= render "common/footer" %>
+        </div> <!-- /id_footer -->
+    </body>
 </html>

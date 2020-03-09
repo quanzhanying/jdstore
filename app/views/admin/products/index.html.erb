@@ -1,0 +1,43 @@
+<br>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">商品(<%= @products.total_entries %>)</h3>
+        </div>
+        <div class="panel-body">
+          <div class="pull-right" style="padding-bottom: 20px;">
+            <%= link_to("新增產品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
+          </div>
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>名稱</th>
+              <th>產品序列號</th>
+              <th>原價</th>
+              <th>現價</th>
+              <th>庫存</th>
+              <th>上架狀態</th>
+              <th></th>
+            </tr>
+            <tbody>
+              <% @products.each do |product| %>
+              <tr>
+                <td><%= product.id %></td>
+                  <td><%= product.title %></td>
+                  <td><%= product.uuid %></td>
+                  <td><%= product.msrp %></td>
+                  <td><%= product.price %></td>
+                  <td><%= product.quantity %></td>
+                  <td><%= product.status %></td>
+                  <td align="right">
+                    <%= link_to "編輯", edit_admin_product_path(product) %>
+                    <%= link_to "刪除", admin_product_path(product), method: :delete, 'data-confirm': "確認刪除嗎?" %>
+                    <%= link_to "圖片管理", admin_product_product_images_path(product_id: product) %>
+                  </td>
+              </tr>
+              <% end -%>
+            </tbody>
+          </table>
+          <%= will_paginate @products %>
+        </div>
+      </div>

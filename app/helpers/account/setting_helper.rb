@@ -1,0 +1,2 @@
+module Account::SettingHelper
+end

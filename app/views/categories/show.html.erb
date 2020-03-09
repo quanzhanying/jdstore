@@ -1,0 +1,11 @@
+<div class="container">
+  <%= render "common/flashes" %>
+  <div class="col-lg-12">
+    <ol class="breadcrumb">
+      <li><a href="<%= products_path %>">所有商品</a></li>
+      <li class="active"><%= @category.title %></li>
+    </ol>
+
+    <%= render 'common/products' %>
+  </div>
+</div>

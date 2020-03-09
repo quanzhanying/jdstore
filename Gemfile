@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '4.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -18,8 +18,6 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -29,10 +27,30 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'mini_magick'
+gem 'aasm'
+gem 'figaro'
+gem 'postmark-rails'
+gem 'will_paginate'
+gem 'letter_opener', group: :development
+gem 'rails-erd'
+gem 'ancestry'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'paperclip'
+gem 'paperclip-cloudinary'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'social-share-button'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development do
@@ -46,3 +64,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'pg'
+end

@@ -1,0 +1,373 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import "social-share-button";
+
+
+/*===== navbar ====*/
+.navbar-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 1300px;      // 隨螢幕尺寸而變，當螢幕尺寸 ≥ 1200px 時是 1140px。
+}
+
+ .navbar-default {
+   border-color: #000000;
+   margin-bottom: 0;
+   border-radius: 0;
+   background: #000;
+     color: #000 !important;
+     font-size: 1.2em;
+     a:focus {
+       color: #eb5424 !important;
+     }
+     &.show_bgcolor {
+       background-color: #02061A;
+     }
+     .navbar-header {
+       a {
+         font-size: 20px;
+         color: #fff;
+         transition: 0.35s;
+       }
+       a:hover {
+         color: #D0CFCE;
+       }
+     }
+     .navbar-nav li a {
+       color: #fff;
+       font-size: 16px;
+       transition: 0.35s;
+     }
+     .navbar-nav li a:hover {
+       color: #D0CFCE;
+       text-decoration: none
+     }
+     .navbar-nav .dropdown-menu {
+       padding-bottom: 0;
+       padding-top: 0;
+       a {
+         text-align: center;
+         color: #000;
+       }
+       li.divider:last-child {
+         display: none;
+       }
+     }
+     .login {
+       border: 1px solid #fff;
+       margin-top: 12px;
+       padding: 3px 17px 3px 17px;
+       margin-right: 130px;
+       border-radius: 15px;
+     }
+     .search-nav{
+       width: 280px;
+     }
+  }
+  .navbar-brand {
+    letter-spacing: 0.1em;       //拉开一点点字间距
+    font-weight:lighter;         //字体粗细比默认样式缩小100磅值，让logo显得精致高级
+  }
+ /*===== end of navbar ====*/
+
+//---------Footer---------
+.footer{
+    text-align: center;
+    background: #000;
+    // margin-bottom: -50px;
+    padding: -50;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 100px;
+    p{
+      font-size: 14px;
+      margin-top: 20px;
+      a{
+        // color: #4A6BB5;
+        text-decoration:none;
+        color: #fff;
+      }
+      a:hover{
+        color: #35CCC6;
+      }
+      a:focus{
+        color: #4A6BB5;
+      }
+    }
+}
+/*===== end of footer ====*/
+
+
+
+//------分享按钮样式---------
+ $size: 24px;
+
+ .social-share-button {
+   .ssb-icon {
+     background-size: $size $size;
+     height: $size;
+     width: $size;
+   }
+ }
+ /****** 完成分享按钮样式 ******/
+
+//------LOGIN MODAL（弹窗登录效果)-------
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+.login-help{
+  font-size: 12px;
+}
+//------------------------------------------------------
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+  margin-top:50px;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.text-centered{
+  text-align: center;
+}
+//---------logo----------
+.navbar-brand > img {
+     display: inline-block; //图片和链接文字显示在同一行
+     margin-right: 10px; //图片和链接文字拉开一点距离
+     width: 32px; //定制图片宽度
+     height: 32px; //定制图片高度
+ }
+
+
+//---------Box---------
+
+.box {
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("https://images.unsplash.com/photo-1477764803552-6dd3f4744774?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0px;
+    height: 850px;
+
+    .box-inner {
+        background-color: rgba(250, 250, 250, 0.69);
+        padding-bottom: 5px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .slogan {
+        color: #222;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 25px;
+        top: 12px;
+    }
+
+    .lead {
+        margin-bottom: 60px;
+        text-align: center;
+        color: white;
+    }
+}
+
+//---------Content---------
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+//------loginbox-------
+
+.loginbox {
+    background-image: url('https://cdn.pixabay.com/photo/2019/09/17/17/35/chemistry-4484141_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+
+    .loginbox-inner {
+        background: #ecf0f1;
+        margin-top: 135px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        box-shadow: 1px 3px 5px #333;
+        border: 5px solid #666;
+        border-radius: 25px;
+        opacity: 0.95;
+    }
+
+    .loginbox-btn{
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .loginbox-btn:hover{
+      color: #fff;
+      background-color: #11345f;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .forgetpsw {
+    float: right;
+    margin-top: -33px;
+    position: relative;
+    }
+
+    a{
+      color: #42A5F5;
+      background-color: transparent;
+    }
+
+    a:hover{
+      color: #42A5F5;
+      background-color: transparent;
+    }
+
+}

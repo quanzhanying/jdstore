@@ -1,0 +1,6 @@
+development:
+  mailgun_user_name: 'xxxxx'
+  mailgun_user_key: 'xxxx'
+production:
+  mailgun_user_name: 'xxxxxx'
+  mailgun_user_key: 'xxxxxx'

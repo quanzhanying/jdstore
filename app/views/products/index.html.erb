@@ -1,0 +1,98 @@
+<div class="container ">
+      <ol class="breadcrumb">
+        <li class="active">所有商品</li>
+      </ol>
+
+<!-- start bootstrap-touch-slider Slider -->
+      <div class="row">
+        <div class="col-centered">
+
+            <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                    <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper For Slides -->
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- 第一張slide -->
+                    <div class="item active">
+
+                        <!-- Slide Background -->
+                        <img src="https://res.cloudinary.com/hzvz7zv2w/image/upload/c_scale,h_707,w_1111/v1579343073/pic%20assets/Quantum_Dots_tzlqv5.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                        <div class="bs-slider-overlay"></div>
+
+                        <div class="container">
+                            <div class="row">
+                                <!-- Slide Text Layer -->
+                                <div class="slide-text slide_style_left">
+                                    <h1 data-animation="animated zoomInRight">科學飾品</h1>
+                                    <p data-animation="animated fadeInLeft">點綴你的居家生活</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Slide -->
+
+                    <!-- 第二張slide -->
+                    <div class="item">
+
+                        <!-- Slide Background -->
+                        <img src="https://res.cloudinary.com/hzvz7zv2w/image/upload/v1579343075/pic%20assets/soap_qzovkr.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                        <div class="bs-slider-overlay"></div>
+                        <!-- Slide Text Layer -->
+                        <div class="slide-text slide_style_center">
+                            <h1 data-animation="animated flipInX">科學玩物</h1>
+                            <p data-animation="animated lightSpeedIn">激發你的科學魂</p>
+                        </div>
+                    </div>
+                    <!-- End of Slide -->
+
+                    <!-- 第三張slide -->
+                    <div class="item">
+
+                        <!-- Slide Background -->
+                        <img src="https://res.cloudinary.com/hzvz7zv2w/image/upload/v1579343080/pic%20assets/colorful_fire_edit_g7ztfn.png" alt="Bootstrap Touch Slider"  class="slide-image">
+                        <div class="bs-slider-overlay"></div>
+                        <!-- Slide Text Layer -->
+                        <div class="slide-text slide_style_right">
+                            <h1 data-animation="animated zoomInLeft">創意科學</h1>
+                            <p data-animation="animated fadeInRight">開拓你的想像力</p>
+                        </div>
+                    </div>
+                    <!-- End of Slide -->
+
+
+                </div><!-- End of Wrapper For Slides -->
+
+                <!-- Left Control -->
+                <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+                    <span class="fa fa-angle-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <!-- Right Control -->
+                <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+<!-- End  bootstrap-touch-slider Slider -->
+            <br>
+          </div>
+        </div>
+
+      <div class="product-box">
+          <%= render 'common/products' %>
+      </div>
+
+</div>
+
+<div  align="center">
+  <%= will_paginate @products %>
+</div>
