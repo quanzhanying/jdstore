@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525035803) do
+ActiveRecord::Schema.define(version: 20170524144636) do
+
 
   create_table "answers", force: :cascade do |t|
     t.string   "true_answer"
@@ -158,6 +159,16 @@ ActiveRecord::Schema.define(version: 20170525035803) do
     t.datetime "image_updated_at"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "test_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "answer"
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.string   "name"
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
     t.string   "rateable_type"
@@ -188,6 +199,13 @@ ActiveRecord::Schema.define(version: 20170525035803) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "body"
   end
 
   create_table "users", force: :cascade do |t|

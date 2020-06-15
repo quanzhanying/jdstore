@@ -1,24 +1,24 @@
 Rails.application.routes.draw do
-  post '/rate' => 'rater#create', :as => 'rate'
-  get '/info' => 'info#index'
-  devise_for :users
-  # devise_for :users, :controllers => {
-  #   :sessions      => "users/sessions",
-  #   :registrations => "users/registrations",
-  #   :passwords     => "users/passwords",
-  # }
-  resources :products do
-    member do
-      post :add_to_cart
-      post :favorite
-      post :unfavorite
-      post :instant_buy
+    post '/rate' => 'rater#create', :as => 'rate'
+    get '/info' => 'info#index'
+    devise_for :users
+    # devise_for :users, :controllers => {
+    #   :sessions      => "users/sessions",
+    #   :registrations => "users/registrations",
+    #   :passwords     => "users/passwords",
+    # }
+    resources :products do
+        member do
+            post :add_to_cart
+            post :favorite
+            post :unfavorite
+            post :instant_buy
+        end
+        collection do
+            get :search
+        end
+        resources :reviews, only: [:new, :create]
     end
-    collection do
-      get :search
-    end
-    resources :reviews, only: [:new, :create]
-  end
 
   namespace :admin do
     resources :exams do
@@ -53,8 +53,6 @@ Rails.application.routes.draw do
         post :return
       end
     end
-  end
-
   resources :answers do
   post :ture_answer
 end
@@ -73,24 +71,33 @@ end
       delete :clean
       post :checkout
     end
-  end
 
-  resources :cart_items
+    resources :cart_items
 
-  resources :orders do
-    member do
-      post :pay_with_alipay
-      post :pay_with_wechat
-      post :apply_to_cancel
+    resources :orders do
+        member do
+            post :pay_with_alipay
+            post :pay_with_wechat
+            post :apply_to_cancel
+        end
     end
-  end
 
-  namespace :account do
-    resources :orders
-  end
+    namespace :account do
+        resources :orders
+    end
 
-  resources :favorites
+    resources :favorites
 
+    resources :exams do
+        member do
+            post :check_answer
+        end
+    end
+
+    resources :answers
+    resources :tests do
+        resources :questions
+    end
   resources :choices do
     member do
         post :aa
@@ -112,8 +119,7 @@ end
         post :ff1
       end
   end
+    root 'welcome#index'
 
-  root "welcome#index"
-
-  get 'about' => 'welcome#about'
+    get 'about' => 'welcome#about'
 end

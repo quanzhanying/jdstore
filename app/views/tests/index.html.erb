@@ -1,0 +1,17 @@
+
+<h3>这个仅仅是测试</h3>
+
+<table>
+  <% @tests.each do |test| %>
+  <tr>
+    <td><%=link_to(test.body, test) %></td>
+  </tr>
+  <% end %>
+
+
+<% if current_user %>
+<%= link_to "Click here to make a new test", new_test_path %>
+<% else %>
+<h3><%= link_to("登录后，可以添加考卷", new_user_session_path) %></h3>
+<% end %>
+</table>
