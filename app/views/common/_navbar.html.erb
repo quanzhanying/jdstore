@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active">
-          <%= link_to("exams", "#") %>
+          <%= link_to("考试答题", exams_path) %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -20,8 +20,8 @@
         </li>
 
         <% if !current_user %>
-         <li><%= link_to("注册", new_user_registration_path) %> </li>
-         <li><%= link_to(content_tag(:i, '登录',class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
         <% else %>
 
         <li class="dropdown ">
@@ -58,3 +58,148 @@
   </div>
   <!-- /.container-fluid -->
 </nav>
+
+
+
+<!--      LOGIN MODAL        -->
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="modal-header">
+          <h2 class="text-center">注册</h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                               :html => {:id => "sign_up_user"},
+                               :format => :json,
+                               :remote => true ) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "邮箱" %>
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, autocomplete: "off", required: true,minlength: 8, class: "form-control", placeholder: "密码（至少8位）" %>
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength: 8, class: "form-control", placeholder: "确认密码" %>
+          </div>
+
+          <div class="form-actions">
+            <br>
+            <%= f.submit "注册", class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>取消</button>
+        <div class="links pull-right">
+          <button class="btn btn-info btn-small" data-toggle="modal" data-target="#login-modal" data-dismiss='modal'>已有账号登录</button><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="login-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="text-center">登录</h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                               :html => {:id => "log_in_user"},
+                               :format => :json,
+                               :remote => true ) do |f| %>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder:"邮箱" %>
+          </div>
+
+          <br>
+
+          <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+            <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: "密码" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+          <div class="checkbox col-md-12" style="padding-left:1.5em;">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <% end -%>
+
+          <div class="form-actions">
+            <br>
+            <%= f.submit "登录", class: 'btn btn-success', id: 'login_btn' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <div class="center1">
+          <button class="btn btn-small text-center" data-toggle="modal" data-target="#forgot-modal" data-dismiss='modal'>忘记密码?</button><br />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>取消</button>
+        <div class="links pull-right">
+          <button class="btn btn-info btn-small" data-toggle="modal" data-target="#signup-modal" data-dismiss='modal'>去注册</button><br />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="forgot-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2>忘记密码?</h2>
+            </div>
+            <div class="modal-body">
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name),
+                                                :html => {:id => "forgot_password_user"},
+                                                :format => :json,
+                                                :remote => true ) do |f| %>
+                    <%= devise_error_messages! %>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                      </span>
+                      <%= f.email_field :email, autofocus: true, required:true, class: "form-control", placeholder:"邮箱" %>
+                    </div>
+
+                  <div class="form-actions">
+                    <br>
+                    <%= f.submit "发送给我重置密码说明", class: 'btn btn-success' %>
+                  </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

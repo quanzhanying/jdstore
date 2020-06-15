@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :orders
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -9,4 +8,15 @@ class User < ApplicationRecord
     is_admin
   end
 
+  has_many :orders
+  has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "30x30#" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  has_many :reviews, dependent: :destroy
+  has_many :favorites
+  has_many :favorite_products, :through => :favorites, :source => :product
+
+  def is_fan_of?(group)
+    favorite_products.include?(group)
+  end
+  ratyrate_rater
 end
