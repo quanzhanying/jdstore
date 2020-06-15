@@ -1,0 +1,10 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <li>
+      <% @answers.each do |answer| %>
+        第<%= link_to(answer.id, answer_path(answer)) %>题答案
+        <% end %>
+    </li>
+  </div>
+</div>

@@ -1,0 +1,571 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+
+.container-fluid{
+  margin: 0 auto;
+}
+.row {
+  margin: 0 -15px;
+}
+//------- navbar  -------------
+ .navbar-default {
+      background-color: #000000;  //背景颜色
+
+      border-color: #262626; //边框色
+  }
+
+  @media (min-width: 768px) {
+    .navbar {
+      border-radius: 0; //圆角为0
+    }
+  }
+
+  .navbar-default .navbar-brand {
+    color: #bfbdbd; //字体颜色
+
+    padding: 10px 15px; //上下10px，左右15px
+    line-height: 30px; //文字行高
+  }
+
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus {
+    color: #777777; //鼠标放置在链接上的文字颜色
+    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+  }
+
+  .navbar-default .navbar-nav > li > a{
+    color: #bfbdbd;
+ }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-default .navbar-nav > .active > a:focus {
+    color: #777777;
+
+    background-color: transparent;
+
+  }
+
+  .container-fluid .jumbotron{
+    padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+    margin: -20px -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    border-radius: 0;//圆角为0
+  }
+
+//-----LOGIN MODAL ---------
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #e5e5e5;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.center1 {
+  text-align: center;
+  color: #777777;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+//----------- 首页大图-----------
+.jumbotron {
+  font-family: 'Open sans', sans-serif;
+  font-size: 36px;
+  font-weight: 300px;
+ background-image: url('https://ws1.sinaimg.cn/large/006tNc79ly1ffz25t5uplj31hc0zj7dc.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding-bottom: 110px;
+ text-align: center;
+}
+
+.slogan {
+ margin-top: 10px;
+ margin-bottom: 50px;
+ text-align: center;
+ color: white;
+ top: 12px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.lead {
+ margin-bottom: 80px;
+ text-align: center;
+ color: white;
+ border-bottom-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+}
+
+.jumbotron p {
+    margin: 0 auto;//上下左右margin为0
+    font-size: 18px;//字体大小
+    max-width: 500px;//最大宽度
+    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+    padding: 20px;//上下左右padding为20px
+    text-align: center;//文字左对齐
+    color: #222;//字体颜色
+}
+
+.jumbotron h2 {
+  font-family: 'Open sans', sans-serif;
+  color: #515050;
+  margin: 105px auto;
+  align: center;//文字左对齐
+  padding: 30px 20px 10px 0;//上50px，左右20px，下0
+ }
+
+.title {
+  max-width: 500px;//最大宽度
+  margin-top: 250px;//和顶部拉开距离
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+}
+
+ //-----part 2----------
+ .part2 {
+   background-color: #ffffff;
+   height: auto;
+   margin: -30px -20px;
+ }
+
+ h2.section-title {
+   color: #727272;
+   margin-top: 10px;
+   margin-bottom: 30px;
+   font-size: 24px;
+   font-weight: 700
+ }
+ .talk-about-us {
+   padding-bottom: 160px;
+   padding-top: 60px;
+   color: #666
+ }
+
+ .talk-about-us strong {
+   margin-top: 25px;
+   color: #4A6BB5;
+   font-weight: 600;
+   font-style: italic
+ }
+
+ .talk-about-us .item>img {
+   width: 150px;
+   height: 80px;
+   margin: 0 auto;
+   border-radius: 10px;
+   border: 2px solid #ccc;
+   margin-bottom: 10px
+ }
+
+ .talk-about-us .item>p {
+   max-width: 600px;
+   letter-spacing: 1px;
+   margin: 0 auto;
+   line-height: 2;
+   margin-bottom: 20px
+ }
+
+ .talk-about-us .carousel-indicators>li {
+   background-color: #dcdcdc;
+   border: 0 none;
+   height: 10px;
+   margin: 1px;
+   width: 10px;
+   border-radius: 0;
+   margin: 0 5px;
+   -moz-transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+   -o-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+   transform: rotate(45deg)
+ }
+
+ .talk-about-us .carousel-indicators li.active {
+   background-color: #4A6BB5
+ }
+
+ .talk-about-us .carousel-indicators {
+   bottom: -70px
+ }
+
+ .carousel-inner {
+   position: relative;
+   overflow: hidden;
+   width: 100%
+ }
+
+ .carousel-inner>.item {
+   display: none;
+   position: relative;
+   -webkit-transition: 0.6s ease-in-out left;
+   -o-transition: 0.6s ease-in-out left;
+   transition: 0.6s ease-in-out left
+ }
+
+ .carousel-inner>.item>img,.carousel-inner>.item>a>img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+   line-height: 1
+ }
+
+ @media all and (transform-3d), (-webkit-transform-3d) {
+   .carousel-inner>.item {
+     -webkit-transition: -webkit-transform 0.6s ease-in-out;
+     -moz-transition: -moz-transform 0.6s ease-in-out;
+     -o-transition: -o-transform 0.6s ease-in-out;
+     transition: transform 0.6s ease-in-out;
+     -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+     backface-visibility: hidden;
+     -webkit-perspective: 1000px;
+     -moz-perspective: 1000px;
+     perspective: 1000px
+   }
+
+   .carousel-inner>.item.next,.carousel-inner>.item.active.right {
+     -webkit-transform: translate3d(100%, 0, 0);
+     transform: translate3d(100%, 0, 0);
+     left: 0
+   }
+
+   .carousel-inner>.item.prev,.carousel-inner>.item.active.left {
+     -webkit-transform: translate3d(-100%, 0, 0);
+     transform: translate3d(-100%, 0, 0);
+     left: 0
+   }
+
+   .carousel-inner>.item.next.left,.carousel-inner>.item.prev.right,.carousel-inner>.item.active {
+     -webkit-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+     left: 0
+   }
+ }
+
+ .carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev {
+   display: block
+ }
+
+ .carousel-inner>.active {
+   left: 0
+ }
+
+ .carousel-inner>.next,.carousel-inner>.prev {
+   position: absolute;
+   top: 0;
+   width: 100%
+ }
+
+ .carousel-inner>.next {
+   left: 100%
+ }
+
+ .carousel-inner>.prev {
+   left: -100%
+ }
+
+ .carousel-inner>.next.left,.carousel-inner>.prev.right {
+   left: 0
+ }
+
+ .carousel-inner>.active.left {
+   left: -100%
+ }
+
+ .carousel-inner>.active.right {
+   left: 100%
+ }
+
+.lp-section-3 {
+   background-color: #e2e2e2;
+   min-width: 100%;
+   height: 650px;
+   padding-bottom: 10px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: 0 -15px 20px;
+}
+
+.short-line {
+   display: block;
+   background: #848484;
+   border-style: none;
+   border-radius: 0;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 0px;
+   margin-bottom: 20px;
+   z-index: 53;
+   width: 70px;
+   height: 3px;
+   position: relative;
+ }
+
+#trip1 {
+    transition: box-shadow 0.3s;
+}
+#trip1:hover{
+  box-shadow: 5px 0px 40px rgba(0,0,0, 0.9)
+}
+
+// ----------   3 -----------
+.lp-section-4 {
+   background-color: #e2e2e2;
+   width: auto;
+   height: 450px;
+   padding-bottom: 10px;//内部的底部边距，这样按钮不会很靠近底部了
+   margin: -20px -15px 20px;
+}
+.content_body {
+   width: 980px;
+   width: 1240px;
+   margin: 0 auto;
+   padding: 130px 0;
+}
+li, ul{
+   margin: 0;
+   padding: 0;
+   color: #000000;
+}
+.content_body ul li {
+   /* box-sizing: border-box; */
+   float: left;
+}
+.banners_li {
+   width: 33.33%;
+   text-align: left;
+}
+.banners_li a {
+   padding-top: 30px;
+   display: block;
+   text-align: center;
+   border-right: 2px solid #777676;
+}
+
+.banners_li_last a {
+  display: block;
+  text-align: center;
+  border-right: none;
+}
+
+ol, ul {
+   list-style: none;
+}
+
+.banners_li a img {
+  border-radius: 5px;
+   margin-right: 24px;
+   margin-top: -40px;
+   width: 100px;
+   height: 100px;
+   align: center;
+}
+.banners_li a div {
+   display: inline-block;
+   cursor: pointer;
+   zoom: 1;
+}
+.banners_li a h3 {
+   font-size: 20px;
+   color: #333333;
+   line-height: 28px;
+   text-align: center;
+   cursor: pointer;
+}
+.banners_li a p {
+  padding: 0 5px;
+   font-size: 14px;
+   color: #939393;
+   line-height: 28px;
+   text-align: center;
+   cursor: pointer;
+}
+.content-3 {
+   display: block;
+   width: 960px;
+   height: 550px;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+   text-align: center;
+   padding-top: 50px;
+}
+
+.feature-block {
+   display: block;
+   border-style: none;
+   border-radius: 0;
+   width: 290px;
+   position: relative;
+   margin: 40px 15px 0;
+   float: left;
+}
+.feature-block img {
+   border-radius: 5px;
+   width: 300px;
+   height: 150px;
+}
+
+//--------  4 --------------
+ .lp-section-6 {
+    background-image: url('https://ws3.sinaimg.cn/large/006tNbRwly1ffztdoxar2j31hc0dcgr9.jpg');
+    min-width: 100%;
+    height: 200px;
+    padding-bottom: 10px;//内部的底部边距，这样按钮不会很靠近底部了
+    margin: -20px -15px 20px;
+ }
+
+ .oblique {
+  font-style:oblique;
+  text-align: center;
+  color: white;
+ }
+
+//---------- 5 ------------
+.content-5 {
+   height: auto;
+   padding: 0;
+}
+.content-4 {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 100%;
+   height: auto;
+   padding: 30px 0 0 120px;
+   position: relative;
+}
+.des {
+   text-align: center;
+   color: #666;
+   font-size: 18px;
+   margin-bottom: 30px;
+}
+
+.list {
+   max-width: 960px;
+   text-align: center;
+}
+.list img {
+   max-height: 40px;
+   margin: 15px auto 15px;
+}
+
+
+ timer{
+
+ text-align: center;
+
+ font-size: 30px;
+
+ color: white;
+
+ background-color:black; 
+
+ }
+

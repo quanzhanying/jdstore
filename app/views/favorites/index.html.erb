@@ -1,0 +1,56 @@
+<div class="products-1 fav-index" >
+  <h3 class="introduction">收藏我的心路历程</h3>
+  <h4 class="introduction-sub">心路</h4>
+  <hr>
+  <div class="row">
+      <h5>您已收藏<%= @products.count %>个宝贝~</h5>
+
+      <% @products.each do |product| %>
+      <div class=" col-md-4 col-xs-6 box">
+        <div class="image">
+          <%= link_to product_path(product) do %>
+            <% if product.photos.present? %>
+              <%= image_tag(product.photos[0].image.url) %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="fig">
+          <p class="actions">
+            <% if product.quantity.present? && product.quantity > 0 %>
+              <%= link_to("去看看", product_path(product), class: "see btn", :method => :get) %>
+            <% else %>
+              已售馨
+            <% end %>
+
+            <% if product.quantity.present? && product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(product), class: "add-to-cart btn ", :method => :post) %>
+            <% else %>
+              已销售一空，无法购买
+            <% end %>
+
+            <% if user_signed_in? %>
+              <% if !current_user.is_fan_of?(product) %>
+                <%= link_to favorite_product_path(product), :class => "like btn btn-default", method: :post do %>
+                  <i class="fa fa-heart fa-lg"></i>
+                <% end %>
+              <% else %>
+                <%= link_to unfavorite_product_path(product), :class => "unlike btn btn-default",method: :post do %>
+                  <i class="fa fa-heart fa-lg"></i>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= link_to favorite_product_path(product), :class => "like btn btn-default",  method: :post do %>
+                <i class="fa fa-heart-o fa-lg"></i>
+              <% end %>
+            <% end %>
+          </p>
+          <p class="title" style="padding-left:72px;"><%= product.title %></p>
+          <p class="price" style="padding-left:72px;">￥ <%= product.price %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

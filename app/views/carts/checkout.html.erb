@@ -1,0 +1,67 @@
+<div class="row checkout-page">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="shopping-cart" style="margin-top: 50px;">
+      <div class="column-labels">
+        <label class="product-image">商品</label>
+        <label class="product-price">单价</label>
+        <label class="product-quantity">数量</label>
+        <label class="product-line-price">小计</label>
+        <label class="actual-pay">实付</label>
+      </div>
+      <% current_cart.cart_items.each do |cart_item| %>
+        <div class="product">
+          <div class="product-image">
+            <%= link_to product_path(cart_item.product) do %>
+              <% if cart_item.product.photos.present? %>
+                <%= image_tag(cart_item.product.photos[0].image.thumb.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="product-price">￥<%= cart_item.product.price %></div>
+          <div class="product-quantity">
+            <%= cart_item.quantity %>
+          </div>
+          <div class="product-line-price">
+            <%= cart_item.product.price * cart_item.quantity %> RMB
+          </div>
+          <div class="product-line-price">
+            <%= cart_item.product.price * cart_item.quantity %> RMB
+          </div>
+        </div>
+      <% end %>
+
+      <div class="total-order clearfix">
+        <div>
+          商品合计：<span><%= render_cart_total_price(current_cart) %> CNY</span>
+        </div>
+        <div>
+          总计： <span><%= render_cart_total_price(current_cart)  %> CNY</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="order-form">
+      <%= simple_form_for @order do |f| %>
+        <legend>付款信息</legend>
+        <div class="form-group col-lg-6">
+          <%= f.input :billing_name, label: "付款人" %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.input :billing_address, label: "付款地址" %>
+        </div>
+        <legend>收货信息</legend>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_name, label: "收货人" %>
+        </div>
+        <div class="form-group col-lg-6">
+          <%= f.input :shipping_address, label: "收获地址" %>
+        </div>
+        <div class="checkout text-center">
+          <%= f.submit "生成订单", class: "btn btn-lg btn-danger", data: {disable_with: "Submitting..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

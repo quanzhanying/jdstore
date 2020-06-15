@@ -1,0 +1,27 @@
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <h4>本题无图</h4>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= @exam.question %></h2>
+    <div style="height: 100px;">
+      <p>
+        <%= @exam.answer_1 %>
+        <br>
+        <%= @exam.answer_2 %>
+      </p>
+    </div>
+    <div>试题类别: <%= @exam.category_id %></div>
+  </div>
+</div>

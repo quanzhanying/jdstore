@@ -1,0 +1,58 @@
+<div class="row cart-page">
+  <div class="col-md-8 col-md-offset-2">
+    <h4>购物车宝贝~</h4>
+    <span class="pull-right">
+      <%= link_to("清空购物车", clean_carts_path, method: :delete, class: "pull-right",
+          style:"color: #ef5350;", data: {confirm: "你确定要清空整个购物车吗？"}) %>
+    </span>
+
+    <div class="shopping-cart" style="margin-top: 50px;">
+      <div class="column-labels">
+        <label class="product-image">商品</label>
+        <label class="product-price">单价</label>
+        <label class="product-quantity">数量</label>
+        <label class="product-removal">操作</label>
+        <label class="product-line-price">小计</label>
+      </div>
+      <% current_cart.cart_items.each do |cart_item| %>
+        <div class="product">
+          <div class="product-image">
+            <%= link_to product_path(cart_item.product) do %>
+              <% if cart_item.product.photos.present? %>
+                <%= image_tag(cart_item.product.photos[0].image.thumb.url) %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="product-price">￥<%= cart_item.product.price %></div>
+          <div class="product-quantity">
+            <% cart_item = current_cart.cart_items.find_by(product_id: cart_item.product_id)%>
+            <%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
+              <%= f.select :quantity, 1..cart_item.product.quantity %>
+              <%= f.submit "更新", data: {disable_with: "Submitting..."} %>
+            <% end %>
+          </div>
+          <div class="product-removal">
+            <button class="remove-product">
+              <%= link_to("移除商品", cart_item_path(cart_item.product_id), method: :delete)  %>
+            </button>
+          </div>
+          <div class="product-line-price">
+            <%= cart_item.product.price * cart_item.quantity %> RMB
+          </div>
+        </div>
+      <% end %>
+
+      <div class="totals pull-right">
+        <div class="totals-item">
+          <div class="totals-value" id="cart-subtotal">
+            <b>总计：</b><%= render_cart_total_price(current_cart) %> RMB
+          </div>
+        </div>
+        <br>
+        <%= link_to("确认结账", checkout_carts_path, method: :post, class: "checkout-btn") %>
+      </div>
+    </div>
+  </div>
+</div>

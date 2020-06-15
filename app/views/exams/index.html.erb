@@ -1,0 +1,109 @@
+
+
+<div class="row">
+  <div class="col-md-6">
+
+    <li>
+      题：
+      <br>
+       <% @exams.each do |exam| %>
+        <!-- <%= link_to exam.name, exam_path(exam) %>
+        <%= link_to("开始答题", exam_path(exam), method: :post, class: "option-btn") %> -->
+
+        <table class="table table-bordered">
+
+          <thead>
+            <tr>
+              <th>
+                <%= exam.name %>
+              </th>
+
+              <th>
+                <%= exam.question %>
+              </th>
+
+              <th>
+                我的选择
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+            <td>
+              <%= exam.name %>
+            </td>
+
+            <td>
+              <%= simple_form_for @choice do |f| %>
+              <%= f.input :is_aa1en, :label => "A." %><%= exam.answer_1 %>
+              <br>
+              <%= f.input :is_bb1en, :label => "B." %><%= exam.answer_2 %>
+              <br>
+              <%= f.input :is_cc1en, :label => "C." %><%= exam.answer_3 %>
+              <br>
+              <%= f.input :is_dd1en, :label => "D." %><%= exam.answer_4 %>
+
+            </td>
+
+            <td>
+
+              <% @choices.each do |choice| %>
+              <% if choice.is_aa1en %>
+              <%= link_to aa_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
+              <i class="fa fa-check"></i><% end %>  A. <%= exam.answer_1 %>
+              <% else %>
+              <%= link_to aa1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
+              <i class="fa fa-square-o"></i><% end %> A. <%= exam.answer_1 %>
+              <% end %>
+              <br><br>
+              <% if choice.is_bb1en %>
+              <%= link_to bb_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
+              <i class="fa fa-check"></i><% end %> B. <%= exam.answer_2 %>
+              <% else %>
+              <%= link_to bb1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
+              <i class="fa fa-square-o"></i><% end %> B. <%= exam.answer_2 %>
+              <% end %>
+               <br><br>
+              <% if choice.is_cc1en %>
+              <%= link_to cc_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
+              <i class="fa fa-check"></i><% end %> C. <%= exam.answer_3 %>
+              <% else %>
+              <%= link_to cc1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
+              <i class="fa fa-square-o"></i><% end %> C. <%= exam.answer_3 %>
+              <% end %>
+               <br><br>
+              <% if choice.is_dd1en %>
+              <%= link_to dd_choice_path(choice), method: :post, class: "btn btn-xs btn-success" do %>
+              <i class="fa fa-check"></i><% end %> D. <%= exam.answer_4 %>
+              <% else %>
+              <%= link_to dd1_choice_path(choice), method: :post, class: "btn btn-xs btn-warning" do %>
+              <i class="fa fa-square-o"></i><% end %> D. <%= exam.answer_4 %>
+              <% end %>
+
+             <% end %>
+
+           </td>
+
+            </tr>
+
+          </tbody>
+        </table>
+        <%= f.submit "确定", class: "btn btn-info btn-info", data: {disable_with: "Submitting..."} %>
+
+        <% end %>
+        <% end %>
+
+    </li>
+  </div>
+
+
+
+
+
+</div>
+<div class="text-center">
+      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+ </div>

@@ -1,0 +1,67 @@
+
+
+<div class="row order-page">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="column-labels">
+      <label class="product-image">商品</label>
+      <label class="product-price">单价</label>
+      <label class="product-quantity">数量</label>
+    </div>
+
+    <div class="product-list">
+      <% @product_lists.each do |product_list| %>
+        <div class="name">
+          <%= product_list.product_name %>
+        </div>
+        <div class="price">
+          <%= product_list.product_price %>
+        </div>
+        <div class="quantity">
+          <%= product_list.quantity %>
+        </div>
+      <% end %>
+    </div>
+    <div class="total clearfix">
+      <span class="pull-right">
+        总计： <span><%= @order.total %> CNY</span>
+      </span>
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="order-info">
+      <div>
+        <span>
+          付款信息
+        </span>
+        <span>
+          <%= @order.billing_name %> - <%= @order.billing_address %>
+        </span>
+      </div>
+      <div>
+        <span>
+          收件信息
+        </span>
+        <span>
+          <%= @order.shipping_name %> - <%= @order.shipping_address %>
+        </span>
+      </div>
+    </div>
+    <div class="actions row">
+      <div class="pull-left">
+        <% if @order.order_placed? || @order.paid? %>
+          <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn  btn-info") %>
+        <% end %>
+      </div>
+      <div class="group pull-right">
+        <% if !@order.is_paid? %>
+        <div class="group pull-right">
+          <%= link_to("支付宝支付", pay_with_alipay_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+          <%= link_to("微信支付", pay_with_wechat_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+        </div>
+        <% else %>
+          <p class="text-center">此订单已完成付款</p>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

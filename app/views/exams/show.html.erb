@@ -1,0 +1,102 @@
+
+<hr>
+
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <h4>#</h4>
+    <% end %>
+  </div>
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>第<%= @exam.id %>题</th>
+        <th>题目：<%= @exam.question%></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>
+          <%= @exam.name %>
+        </td>
+         <td>
+           <%= simple_form_for @choice do |f| %>
+
+           <%= f.input :is_aa1en, :label => "A." %><%= @exam.answer_1 %>
+           <br>
+           <%= f.input :is_bb1en, :label => "B." %><%= @exam.answer_2 %>
+           <br>
+           <%= f.input :is_cc1en, :label => "C." %><%= @exam.answer_3 %>
+           <br>
+           <%= f.input :is_dd1en, :label => "D." %><%= @exam.answer_4 %>
+
+
+         </td>
+       </tr>
+
+     </tbody>
+
+   </table>
+
+   <%= f.submit "确定", class: "btn btn-info btn-danger", data: {disable_with: "提交..."} %>
+
+<% end %>
+   <div class="button">
+        <%= link_to("查看答案", check_answer_exams_path(exam), class: "buy btn btn-block ",  :method => :post) %>
+   </div>
+
+
+    <% if @exam.countdown.present?%>
+    <% closedate = DateTime.strptime(exam.countdown, "%FT%R") - 0.333333 %>
+
+    <div class="text-center">
+      Time left:<p id="timer"></p>
+    </div>
+
+
+
+    <% end %>
+
+
+    <script> // countdown
+    // Set the date we're counting down to
+    var closedate = <%= closedate.to_json.html_safe%>;
+    var countDownDate = new Date(closedate).getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("timer").innerHTML = days + " D | " + hours + " H | "
+      + minutes + " M | " + seconds + " S ";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>

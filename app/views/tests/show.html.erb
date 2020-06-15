@@ -1,0 +1,19 @@
+<h2><%= @test.body %></h2>
+
+<table>
+  <tr>
+    <td>问题</td>
+    <td>答案</td>
+    <td>编辑</td>
+    <td>删除</td>
+  </tr>
+<% @test.questions.each do |question| %>
+<tr>
+  <td><%= question.body %></td>
+  <td><%= question.answer %></td>
+  <td><%= link_to("Edit", edit_test_question_path(:id => question.id, :test_id => @test.id))%></td>
+  <td><%= link_to("Destroy", [question.test, question], confirm: "Are you sure", method: :delete)%></td>
+</tr>
+  <% end %>
+  <%= render "questions" %>
+</table>

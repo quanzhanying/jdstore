@@ -1,0 +1,27 @@
+<br>
+<div class="row">
+  <div class="col-md-6">
+
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= @post.title %></h2>
+    <div style="height: 100px;">
+      <p>
+        <%= @post.description %>
+      </p>
+    </div>
+    <div>Author: <%= @post.author %></div>
+    <div>Source: ￥ <%= @post.source %></div>
+  </div>
+</div>

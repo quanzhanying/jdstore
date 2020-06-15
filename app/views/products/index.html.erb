@@ -1,0 +1,379 @@
+<div class="products-1">
+  <%= render "common/flashes" %>
+  <!-- hot-products -->
+
+  <div class="row" id="products">
+    <div class="container" style="margin-bottom:60px;box-sizing: border-box;">
+        <div class="col-md-offset-1 col-md-8">
+                <div id="myCarousel" class="carousel slide">
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="row">
+
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+
+                                    <div class="img-block">
+
+                                      <%= link_to product_path(@p1) do %>
+                                      <% if @p1.photos.present? %>
+                                          <%= image_tag(@p1.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+
+                                    </div>
+                                    <div class="info-block">
+
+                                      <p >
+                                        <span><%= link_to(@p1.title, product_path(@product1)) %></span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p1.price %> </span>
+                                        <span class="like pull-right">
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p1) %>
+                                              <%= link_to favorite_product_path(@p1), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p1.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p1), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p1.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p1), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p1.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                    <div class="img-block">
+                                      <%= link_to product_path(@p2) do %>
+                                      <% if @p2.photos.present? %>
+                                          <%= image_tag(@p2.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+                                    </div>
+                                    <div class="info-block ">
+                                      <p >
+                                        <span> <%= link_to(@p2.title, product_path(@product2))  %> </span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p2.price %> </span>
+                                        <span class="like pull-right">
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p2) %>
+                                              <%= link_to favorite_product_path(@p2), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p2.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p2), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p2.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p2), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p2.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                    <div class="img-block">
+                                      <%= link_to product_path(@p3) do %>
+                                      <% if @p3.photos.present? %>
+                                          <%= image_tag(@p3.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+                                    </div>
+                                    <div class="info-block">
+                                      <p >
+                                        <span> <%= link_to(@p3.title, product_path(@product3))  %> </span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p3.price %> </span>
+                                        <span class="like pull-right">
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p3) %>
+                                              <%= link_to favorite_product_path(@p3), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p3.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p3), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p3.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p3), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p3.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                    <div class="img-block">
+                                      <%= link_to product_path(@p4) do %>
+                                      <% if @p4.photos.present? %>
+                                          <%= image_tag(@p4.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+                                    </div>
+                                    <div class="info-block">
+                                      <p >
+                                        <span> <%= link_to(@p4.title, product_path(@product4))  %> </span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p4.price %> </span>
+                                        <span class="like pull-right" >
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p4) %>
+                                              <%= link_to favorite_product_path(@p4), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p4.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p4), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p4.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p4), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p4.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/item-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                  <div class="img-block">
+
+                                    <%= link_to product_path(@p5) do %>
+                                    <% if @p5.photos.present? %>
+                                        <%= image_tag(@p5.photos[0].image.thumb.url) %>
+                                    <% else %>
+                                      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                    <% end %>
+                                    <% end %>
+
+                                  </div>
+                                  <div class="info-block">
+
+                                    <p >
+                                      <span> <%= link_to(@p5.title, product_path(@product5))  %> </span>
+                                      </br>
+                                      <span  class="price" >￥ <%= @p5.price %> </span>
+                                      <span class="like pull-right">
+                                        <% if user_signed_in? %>
+                                          <% if !current_user.is_fan_of?(@p5) %>
+                                            <%= link_to favorite_product_path(@p5), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p5.fans.count %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to unfavorite_product_path(@p5), :class => "unlike ",method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p5.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        <% else %>
+                                          <%= link_to favorite_product_path(@p5), :class => "like ",  method: :post do %>
+                                            <i class="fa fa-heart fa-lg"></i><%= @p5.fans.count %>
+                                          <% end %>
+                                        <% end %>
+                                      </span>
+                                    </p>
+
+                                  </div>
+                                </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                    <div class="img-block">
+
+                                      <%= link_to product_path(@p6) do %>
+                                      <% if @p4.photos.present? %>
+                                          <%= image_tag(@p6.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+
+                                    </div>
+                                    <div class="info-block">
+
+                                      <p >
+                                        <span> <%= link_to(@p6.title, product_path(@product6))  %> </span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p6.price %> </span>
+                                        <span class="like pull-right">
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p6) %>
+                                              <%= link_to favorite_product_path(@p6), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p6.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p6), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p6.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p6), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p6.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        </span>
+                                      </p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                    <div class="img-block">
+
+                                      <%= link_to product_path(@p7) do %>
+                                      <% if @p7.photos.present? %>
+                                          <%= image_tag(@p7.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+
+                                    </div>
+                                    <div class="info-block">
+
+                                      <p >
+                                        <span> <%= link_to(@p7.title, product_path(@product7))  %> </span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p7.price %> </span>
+                                        <span class="like pull-right">
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p7) %>
+                                              <%= link_to favorite_product_path(@p7), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p7.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p7), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p7.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p7), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p7.fans.count %>
+                                            <% end %>
+                                          <% end %>
+                                        </span>
+                                      </p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="product-card-block">
+                                    <div class="img-block">
+
+                                      <%= link_to product_path(@p8) do %>
+                                      <% if @p8.photos.present? %>
+                                          <%= image_tag(@p8.photos[0].image.thumb.url) %>
+                                      <% else %>
+                                        <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                      <% end %>
+                                      <% end %>
+
+                                    </div>
+                                    <div class="info-block">
+
+                                      <p >
+                                        <span> <%= link_to(@p8.title, product_path(@product8))  %> </span>
+                                        </br>
+                                        <span  class="price" >￥ <%= @p8.price %> </span>
+                                        <span class="like pull-right">
+                                          <% if user_signed_in? %>
+                                            <% if !current_user.is_fan_of?(@p8) %>
+                                              <%= link_to favorite_product_path(@p8), :class => "like ",  method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p8.fans.count %>
+                                              <% end %>
+                                            <% else %>
+                                              <%= link_to unfavorite_product_path(@p8), :class => "unlike ",method: :post do %>
+                                                <i class="fa fa-heart fa-lg"></i><%= @p8.fans.count %>
+                                              <% end %>
+                                            <% end %>
+                                          <% else %>
+                                            <%= link_to favorite_product_path(@p8), :class => "like ",  method: :post do %>
+                                              <i class="fa fa-heart fa-lg"></i><%= @p8.fans.count %>
+                                            <% end %>
+                                          <% end %>
+
+                                        </span>
+                                      </p>
+
+                                    </div>
+
+                                  </div>
+                                </div>
+
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/item-->
+
+                    </div>
+                    <!--/carousel-inner-->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                </div>
+                <!--/myCarousel-->
+
+        </div>
+    </div>
+  </div>
+    <!-- end of hot products -->
+  <hr>
+
+  <div class="filter">
+    <span><%= link_to("热门", products_path(:order => "by_viewed")) %><i class="fa fa-arrow-down" ></i></span>
+    <span><%= link_to("收藏", products_path(:order => "by_fans")) %><i class="fa fa-arrow-down"></i></span>
+    <span><%= link_to("最新课程", products_path) %><i class="fa fa-arrow-down"></i></span>
+    <!-- <span><%= link_to("销量", products_path(:order => "by_product_quantity")) %><i class="fa fa-arrow-down"></span> -->
+  </div>
+
+  <div class="row">
+
+      <div id="pins" class="transitions-enabled">
+        <%= render :partial => "product_items", :collection => @products, :as => :product %>
+      </div>
+  </div>
+  <p class=" text-center ending">
+    没有更多商品了
+  </p>
+
+  <div class="index">
+    <i class="fa fa-arrow-up"></i>
+  </div>
+</div>

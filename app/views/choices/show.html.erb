@@ -1,0 +1,48 @@
+
+<hr>
+
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <% if @photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.image.medium.url %>
+        <% else %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <h4>#</h4>
+    <% end %>
+  </div>
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+
+        </td>
+
+         <td>
+           <%= render_aa1_status(@choice) %> A.
+           <br><br>
+           <%= render_bb1_status(@choice) %> B.
+           <br><br>
+           <%= render_cc1_status(@choice) %> C.
+           <br><br>
+           <%= render_dd1_status(@choice) %> D.
+         </td>
+
+       </tr>
+     </tbody>
+   </table>
+
+   <div class="col-md-2 col-md-offset-10">
+      <%= link_to(content_tag(:i, "继续答题", class: "fa fa-reply-all"), exams_path) %>
+    </div>

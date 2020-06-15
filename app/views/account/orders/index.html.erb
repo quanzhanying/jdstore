@@ -1,0 +1,43 @@
+<div class="col-md-8 col-md-offset-2 my-orders-page" >
+  <% if @orders.present? %>
+    <h4 style="color: rgba(0, 0, 0, 0.5);">订单列表(<%= @orders.count %>)</h4>
+  <% end %>
+
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>下单时间</th>
+        <th>订购者</th>
+        <th>订单状态</th>
+        <th>管理</th>
+        <th>管理</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td>
+            <%= link_to(order.id, order_path(order.token)) %>
+          </td>
+          <td>
+            <%= order.created_at.to_s(:long) %>
+          </td>
+          <td> <%= order.user.email %></td>
+          <td> <%= order.aasm_state %> </td>
+          <td>
+            <%if order.is_paid %>
+            <%= link_to("考试去", exams_path) %>
+            <% end %>
+          </td>
+          <td>
+            <%if order.is_paid %>
+            <%= link_to("choice去", choices_path) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
